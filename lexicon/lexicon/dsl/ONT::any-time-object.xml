@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::any-time-object">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">
+  <or>
+   interval
+   point
+  </or>
+  </feat>
+  <feat name="time-function">any-time-function</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  interval
+  point
+ </or>
+ </feat>
+ <feat name="time-function">any-time-function</feat>
+ </sem-feats>
+ <concept name="time" />
+ <concept name="ont::root" />
+ <concept name="ont::time-object">
+ <relation label="inherit">
+  ont::any-time-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">
+  <or>
+   point
+   interval
+  </or>
+  </feat>
+ </sem-feats>
+ </concept>
+</dsl>

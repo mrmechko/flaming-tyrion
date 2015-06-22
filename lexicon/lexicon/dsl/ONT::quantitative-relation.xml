@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::quantitative-relation">
+ <relation label="inherit">
+  ont::quantity
+ </relation>
+ <relation label="overlap">
+  wn::|magnitude_relation%1:24:00|
+  wn::|quantitative_relation%1:24:00|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="ont::measure-unit">
+ <relation label="inherit">
+  ont::abstract-object-nontemporal
+ </relation>
+ <relation label="overlap">
+  wn::|unit_of_measurement%1:23:00|
+  wn::|unit%1:23:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="measure-function">value</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::quantity">
+ <relation label="inherit">
+  ont::measure-unit
+ </relation>
+ <relation label="overlap">
+  wn::|measure%1:03:00|
+  wn::|quantity%1:03:00|
+  wn::|amount%1:03:00|
+ </relation>
+ </concept>
+ <concept name="ont::abstract-object-nontemporal">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="measure-function">value</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::percent">
+ <relation label="inherit">
+  ont::quantitative-relation
+ </relation>
+ <relation label="overlap">
+  wn::|percentage%1:24:00|
+  wn::|percent%1:24:00|
+  wn::|per_centum%1:24:00|
+  wn::|pct%1:24:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">percent-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::ratio">
+ <relation label="inherit">
+  ont::quantitative-relation
+ </relation>
+ <relation label="overlap">
+  wn::|percentage%1:24:00|
+  wn::|percent%1:24:00|
+  wn::|per_centum%1:24:00|
+  wn::|pct%1:24:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ratio-scale</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of1">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+</dsl>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::binary-constraint-s-implicit-templ">
+ <template-call template="ont::binary-constraint-s-implicit-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+  <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+ </syn-sem>
+ <syn-feats>
+  <feat name="allow-deleted-comp">+</feat>
+  <feat name="atype">
+  <or>
+   pre
+   post
+  </or>
+  </feat>
+  <feat name="sort">binary-constraint</feat>
+ </syn-feats>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="after" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he left (after 5 pm)">
+ </example>
+ <relation label="inherit">
+  ont::event-time-rel
+  ont::binary-constraint-s-implicit-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="before" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he arrived before (5 pm)">
+ </example>
+ <relation label="inherit">
+  ont::event-time-rel
+  ont::binary-constraint-s-implicit-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="over" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::pos-as-over
+  ont::binary-constraint-s-implicit-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="since" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he has had no problems since">
+ </example>
+ <relation label="inherit">
+  ont::event-time-rel
+  ont::binary-constraint-s-implicit-templ
+ </relation>
+ </sense>
+</dsl>

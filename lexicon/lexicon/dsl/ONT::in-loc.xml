@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::in-loc">
+ <relation label="inherit">
+  ont::pos-as-containment-reln
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::val">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::predicate">
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="container">-</feat>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="scale">-</feat>
+  <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::val" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::pos-as-containment-reln">
+ <relation label="inherit">
+  ont::position-as-point-reln
+ </relation>
+ </concept>
+ <concept name="ont::position-as-point-reln">
+ <relation label="inherit">
+  ont::position-reln
+ </relation>
+ </concept>
+ <concept name="ont::position-reln">
+ <relation label="inherit">
+  ont::predicate
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::val">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::val" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="in" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the dog is in the park">
+ </example>
+ <relation label="inherit">
+  ont::in-loc
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="?" head-word="x" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="inside" />
+ </morph>
+ <example text="the dog is inside the house">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::in-loc
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="?" head-word="x" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="inside" remaining-words="of" />
+ </morph>
+ <relation label="inherit">
+  ont::in-loc
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="?" head-word="x" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="within" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the dog is within the boundaries of the property">
+ </example>
+ <relation label="inherit">
+  ont::in-loc
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="?" head-word="x" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

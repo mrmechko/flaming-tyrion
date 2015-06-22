@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::time-object">
+ <relation label="inherit">
+  ont::any-time-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">
+  <or>
+   point
+   interval
+  </or>
+  </feat>
+ </sem-feats>
+ </concept>
+ <concept name="time" />
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  interval
+  point
+ </or>
+ </feat>
+ <feat name="time-function">any-time-function</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  point
+  interval
+ </or>
+ </feat>
+ </sem-feats>
+ <concept name="ont::any-time-object">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">
+  <or>
+   interval
+   point
+  </or>
+  </feat>
+  <feat name="time-function">any-time-function</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::time-interval">
+ <relation label="inherit">
+  ont::time-object
+ </relation>
+ <relation label="overlap">
+  wn::|interval%1:28:00|
+  wn::|time_interval%1:28:00|
+  wn::|time%1:28:03|
+  wn::|clock_time%1:28:00|
+  wn::|time%1:28:00|
+  wn::|time%1:28:05|
+  wn::|time_period%1:28:00|
+  wn::|period_of_time%1:28:00|
+  wn::|period%1:28:00|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::val" optional="optional">
+   <concept name="abstr-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::of" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     time
+    </relation>
+    <feat name="scale">duration-scale</feat>
+    <feat name="time-scale">interval</feat>
+    <feat name="time-function">time-frame</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::time-point">
+ <relation label="inherit">
+  ont::time-object
+ </relation>
+ <relation label="overlap">
+  wn::|time%1:28:06|
+  wn::|clip%1:11:00|
+  wn::|time%1:11:00|
+  wn::|point%1:28:00|
+  wn::|point_in_time%1:28:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">point</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::interval" optional="optional">
+   <concept name="time" />
+  </role-restr-map>
+  <role-restr-map roles="ont::action" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="aspect">unbounded</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::of" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::date-object">
+ <relation label="inherit">
+  ont::time-object
+ </relation>
+ <relation label="overlap">
+  wn::|date%1:28:03|
+  wn::|time%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-function">time-of-year</feat>
+ </sem-feats>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="a" remaining-words="bitch" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::time-object
+  ont::pred-no-form-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-function">day-period</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="a" remaining-words="bitch" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::time-object
+  ont::pred-no-form-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-function">day-period</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="am" />
+  <forms>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-object
+  ont::pred-no-form-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-function">day-period</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="pro" />
+  <word first-word="midnight" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-object
+  ont::pronoun-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-function">day-point</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="pro" />
+  <word first-word="noon" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-object
+  ont::pronoun-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-function">day-point</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="p" remaining-words="d a" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="p" remaining-words="d as" />
+   </plur>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::time-object
+  ont::pred-no-form-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-function">day-period</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="p" remaining-words="d a" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="p" remaining-words="d as" />
+   </plur>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::time-object
+  ont::pred-no-form-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-function">day-period</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pm" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-object
+  ont::pred-no-form-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-function">day-period</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

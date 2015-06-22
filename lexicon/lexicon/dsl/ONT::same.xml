@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::same">
+ <relation label="inherit">
+  ont::identity-val
+ </relation>
+ <relation label="overlap">
+  wn::|same%3:00:02|
+  wn::|identical%5:00:00|
+  wn::|same%3:00:02|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::property" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intensity">hi</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object-property">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::identity-val">
+ <relation label="inherit">
+  ont::similarity-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::property">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::similarity-val">
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::property">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::property">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::relation">
+ <relation label="inherit">
+  ont::abstract-object-property
+ </relation>
+ <relation label="overlap">
+  wn::|relation%1:03:00|
+  wn::|amount%2:42:03|
+  wn::|bear_on%2:42:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intensity">hi</feat>
+  <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::property" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::property">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="homo" />
+ </morph>
+ <example text="homodimerize">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::same
+  ont::pred-vp-pre-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="homo" />
+ </morph>
+ <example text="homodimer">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::same
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="identical" />
+ </morph>
+ <example text="They are identical [to each other]">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::same
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-co-theme-templ" xp="'(w::pp w::to)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="to" sem-role="ont::neutral1" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="same" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="They are same [as John's]">
+ </example>
+ <relation label="inherit">
+  ont::same
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-co-theme-templ" xp="'(w::pp w::as)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="as" sem-role="ont::neutral1" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

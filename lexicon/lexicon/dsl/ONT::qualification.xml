@@ -1,0 +1,679 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::qualification">
+ <relation label="inherit">
+  ont::predicate
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::val" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::predicate">
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="container">-</feat>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="scale">-</feat>
+  <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::val" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="actually" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="alas" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="almost" />
+ </morph>
+ <example text="he almost smiled">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="although" />
+ </morph>
+ <example text="you are right although I don't think you understand what I'm saying">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::binary-constraint-s-decl-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="barely" />
+ </morph>
+ <example text="he barely smiled">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="basically" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="basically" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="clearly" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="clearly" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="despite" />
+ </morph>
+ <example text="I did it despite the bad weather">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="e" remaining-words="punc-period g punc-period" />
+ </morph>
+ <example text="e.g. if x=5, y=7">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-pre-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="essentially" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="essentially" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="even" remaining-words="though" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::binary-constraint-s-decl-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="eventually" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="extraordinarily" />
+ </morph>
+ <example text="the task is extraordinarily difficult">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::adj-operator-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="for" remaining-words="example" />
+ </morph>
+ <example text="take this mac for example">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="given" remaining-words="that" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::binary-constraint-s-decl-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="hardly" />
+ </morph>
+ <example text="he hardly slept">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="impossibly" />
+ </morph>
+ <example text="the task is impossibly difficult">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::adj-operator-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="in" remaining-words="spite of" />
+ </morph>
+ <example text="I did it despite the bad weather">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="largely" />
+ </morph>
+ <example text="largely unregulated stocks">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::adj-adv-operator-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="likely" />
+ </morph>
+ <example text="it is likely broken">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-s-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="mainly" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-s-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="maybe" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="maybe" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="a few thousand maybe">
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="nearly" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="obviously" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="obviously" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="offhand" />
+ </morph>
+ <example text="I don't know offhand">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-post-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="or" remaining-words="so" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::binary-constraint-measure-np-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="originally" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="palpably" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="possibly" />
+ </morph>
+ <example text="that is possibly the answer">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-s-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="practically" />
+ </morph>
+ <example text="he is practically finished">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="presumably" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="presumably" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="simply" />
+ </morph>
+ <example text="that is simply divine">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="specifically" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="specifically" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="though" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::qualification
+  ont::binary-constraint-s-decl-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="though" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-post-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="undoubtedly" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="undoubtedly" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="unquestionably" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="unquestionably" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="virtually" />
+ </morph>
+ <example text="he is virtually finished">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="whereas" />
+ </morph>
+ <relation label="inherit">
+  ont::qualification
+  ont::binary-constraint-s-decl-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="while" />
+ </morph>
+ <example text="while A is true, B is not">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::qualification
+  ont::binary-constraint-s-decl-templ
+ </relation>
+ </sense>
+</dsl>

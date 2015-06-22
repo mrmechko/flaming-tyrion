@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::typicality-val">
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="ont::property-val">
+ <relation label="inherit">
+  ont::abstract-object-property
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="scale">-</feat>
+  <feat name="gradability">+</feat>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::purpose-implicit" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::purpose" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="aspect">dynamic</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::abstract-object-property">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::purpose-implicit" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::purpose" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">dynamic</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::stereotypicality-val">
+ <relation label="inherit">
+  ont::typicality-val
+ </relation>
+ </concept>
+ <concept name="ont::common">
+ <relation label="inherit">
+  ont::typicality-val
+ </relation>
+ <relation label="overlap">
+  wn::|common%3:00:01|
+  wn::|typical%3:00:00|
+  wn::|regular%3:00:00|
+  wn::|conventional%3:00:00|
+  wn::|ordinary%3:00:00|
+  wn::|normal%3:00:01|
+  wn::|everyday%5:00:00|
+  wn::|run-of-the-mill%5:00:00|
+  wn::|common%5:00:00|
+  wn::|conventional%5:00:00|
+  wn::|standard%5:00:00|
+  wn::|familiar%3:00:02|
+  wn::|orthodox%3:00:00|
+  wn::|usual%3:00:00|
+  wn::|regular(a)%5:00:00|
+  wn::|common%5:00:00|
+  wn::|standard%5:00:00|
+  wn::|regular%5:00:00|
+  wn::|typical%5:00:00|
+ </relation>
+ </concept>
+ <concept name="ont::strange">
+ <relation label="inherit">
+  ont::typicality-val
+ </relation>
+ <relation label="overlap">
+  wn::|strange%3:00:00|
+  wn::|abnormal%3:00:00|
+  wn::|bizarre%5:00:00|
+  wn::|bizarre%5:00:00|
+  wn::|bizarre%5:00:00|
+  wn::|especial(a)%5:00:00|
+  wn::|irregular%5:00:00|
+  wn::|atypical%5:00:00|
+  wn::|unconventional%3:00:01|
+  wn::|unconventional%3:00:01|
+  wn::|unconventional%3:00:01|
+  wn::|unconventional%3:00:01|
+  wn::|uncommon%3:00:00|
+  wn::|unusual%3:00:00|
+  wn::|unconventional%3:00:00|
+  wn::|curious%5:00:00|
+  wn::|remarkable%5:00:00|
+  wn::|remarkable%5:00:00|
+  wn::|strange%5:00:01|
+  wn::|atypical%3:00:00|
+  wn::|extraordinary%3:00:00|
+  wn::|extraordinary%3:00:00|
+  wn::|unfamiliar%3:00:00|
+  wn::|uncommon%3:00:00|
+  wn::|funky%5:00:00|
+  wn::|unusual%5:00:00|
+  wn::|odd%5:00:00|
+  wn::|weird%5:00:00|
+  wn::|freaky%5:00:00|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="freak" />
+ </morph>
+ <example text="freak storms are popping up">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::typicality-val
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="orientation">less</feat>
+   <feat name="intensity">med</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="generic" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <example text="I'll take the generic ones">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::typicality-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="wild" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <example text="a wild idea">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::typicality-val
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="orientation">less</feat>
+   <feat name="intensity">med</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

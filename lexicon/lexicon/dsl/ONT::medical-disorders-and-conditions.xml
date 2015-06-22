@@ -1,0 +1,649 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::medical-disorders-and-conditions">
+ <relation label="inherit">
+  ont::physical-condition
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">human</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <sem-frame>
+ <role-restr-map roles="ont::spatial-loc" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::arg1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::arg0" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">natural</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">indiv-level</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::spatial-loc" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg0" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">human</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::physical-condition">
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <relation label="overlap">
+  wn::|condition%1:26:02|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">indiv-level</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">natural</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="situation" />
+ <concept name="ont::breathing-disorder">
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+ </relation>
+ <relation label="overlap">
+  wn::|asthma%1:26:00|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">human</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::physical-symptom">
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+ </relation>
+ <relation label="overlap">
+  wn::|symptom%1:26:00|
+  wn::|sign%1:26:00|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">human</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::injury">
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+ </relation>
+ <relation label="overlap">
+  wn::|injury%1:26:00|
+  wn::|hurt%1:26:00|
+  wn::|harm%1:26:00|
+  wn::|trauma%1:26:02|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">human</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::illness">
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+ </relation>
+ <relation label="overlap">
+  wn::|health_problem%1:26:00|
+  wn::|unhealthiness%1:26:00|
+  wn::|ill_health%1:26:00|
+  wn::|illness%1:26:00|
+  wn::|unwellness%1:26:00|
+  wn::|malady%1:26:00|
+  wn::|sickness%1:26:00|
+  wn::|condition%1:26:05|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">human</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="addiction" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="allergi" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="amnesia" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="anemia" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="aneurysm" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="anorexia" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="arthritis" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="asthma" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="atherosclerosis" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="bulemia" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cancer" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::bare-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="clot" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="coma" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="defect" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="dementia" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="diabetes" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="disease" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="disorder" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="gallstone" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="gout" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="hyperkalemia" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="hypertension" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="hypoglycemia" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="kidney" remaining-words="stone" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="leukemia" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="malaria" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="malformation" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mania" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="osteoarthritis" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="osteoporosis" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pain" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pancreatitis" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pathologi" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="phlebitis" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="phobia" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pneumonia" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pregnanci" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="seizure" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="stroke" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="syndrome" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="thrombosis" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="ulcer" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

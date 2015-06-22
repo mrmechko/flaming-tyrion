@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::dose">
+ <relation label="inherit">
+  ont::volume-unit
+ </relation>
+ <relation label="overlap">
+  wn::|dose%1:06:00|
+  wn::|dosage%1:06:00|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="measure-function">value</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object-nontemporal">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::volume-unit">
+ <relation label="inherit">
+  ont::tangible-unit
+ </relation>
+ <relation label="overlap">
+  wn::|volume_unit%1:23:00|
+  wn::|capacity_unit%1:23:00|
+  wn::|capacity_measure%1:23:00|
+  wn::|cubage_unit%1:23:00|
+  wn::|cubic_measure%1:23:00|
+  wn::|cubic_content_unit%1:23:00|
+  wn::|displacement_unit%1:23:00|
+  wn::|cubature_unit%1:23:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">volume-scale</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="form">substance</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::tangible-unit">
+ <relation label="inherit">
+  ont::measure-unit
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">volume-scale</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="form">substance</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::measure-unit">
+ <relation label="inherit">
+  ont::abstract-object-nontemporal
+ </relation>
+ <relation label="overlap">
+  wn::|unit_of_measurement%1:23:00|
+  wn::|unit%1:23:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="measure-function">value</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::substance-delivery-unit">
+ <relation label="inherit">
+  ont::dose
+ </relation>
+ <relation label="overlap">
+  wn::|pill%1:06:00|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="form">substance</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="dosage" />
+ </morph>
+ <relation label="inherit">
+  ont::dose
+ </relation>
+ <syntax>
+  <template-call template="ont::substance-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">substance-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="dose" />
+ </morph>
+ <relation label="inherit">
+  ont::dose
+ </relation>
+ <syntax>
+  <template-call template="ont::substance-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">substance-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

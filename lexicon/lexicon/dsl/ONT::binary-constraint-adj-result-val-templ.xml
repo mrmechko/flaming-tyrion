@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::binary-constraint-adj-result-val-templ">
+ <template-call template="ont::binary-constraint-adj-result-val-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="subcat" syn-cat="adjp" sem-role="ont::result-val"/>
+  <syn-sem-map syn-arg="argument" syn-cat="?" head-word="ag" sem-role="ont::of"/>
+ </syn-sem>
+ <syn-feats>
+  <feat name="atype">
+  <or>
+   pre
+   post
+  </or>
+  </feat>
+  <feat name="sort">binary-constraint</feat>
+ </syn-feats>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="until" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="beat the mixture until smooth">
+ </example>
+ <relation label="inherit">
+  ont::time-culmination-rel
+  ont::binary-constraint-adj-result-val-templ
+ </relation>
+ </sense>
+</dsl>

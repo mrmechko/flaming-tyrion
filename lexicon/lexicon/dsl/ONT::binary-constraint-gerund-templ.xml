@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::binary-constraint-gerund-templ">
+ <template-call template="ont::binary-constraint-gerund-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+  <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+ </syn-sem>
+ <syn-feats>
+  <feat name="allow-deleted-comp">-</feat>
+  <feat name="atype">
+  <or>
+   pre
+   post
+  </or>
+  </feat>
+  <feat name="sort">binary-constraint</feat>
+ </syn-feats>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="even" remaining-words="if" />
+ </morph>
+ <example text="be careful even if walking">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::pos-condition
+  ont::binary-constraint-gerund-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="if" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="be careful if walking">
+ </example>
+ <relation label="inherit">
+  ont::pos-condition
+  ont::binary-constraint-gerund-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="only" remaining-words="if" />
+ </morph>
+ <example text="do it only if walking">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::pos-condition
+  ont::binary-constraint-gerund-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="unless" />
+ </morph>
+ <example text="be careful unless walking">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::neg-condition
+  ont::binary-constraint-gerund-templ
+ </relation>
+ </sense>
+</dsl>

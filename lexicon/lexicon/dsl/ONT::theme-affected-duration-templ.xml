@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::theme-affected-duration-templ">
+ <template-call template="ont::theme-affected-duration-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="lcomp" syn-cat="np" sem-role="ont::duration"/>
+  <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected" optional="optional"/>
+  <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::formal"/>
+ </syn-sem>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="save" />
+ </morph>
+ <example text="it saves us five hours [to go along the coast]">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::leave-time
+  ont::theme-affected-duration-templ
+ </relation>
+ </sense>
+</dsl>

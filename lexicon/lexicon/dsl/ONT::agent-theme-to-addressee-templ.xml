@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::agent-theme-to-addressee-templ">
+ <template-call template="ont::agent-theme-to-addressee-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="to" sem-role="ont::agent1"/>
+  <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+  <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+ </syn-sem>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="claim" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="claim" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="he claimed his innocence to me">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::mention-claim
+  ont::agent-theme-to-addressee-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="mention" />
+ </morph>
+ <example text="mention it to him">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::mention-claim
+  ont::agent-theme-to-addressee-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="say" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="said" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="say it to him">
+ </example>
+ <relation label="inherit">
+  ont::say
+  ont::agent-theme-to-addressee-templ
+ </relation>
+ </sense>
+</dsl>

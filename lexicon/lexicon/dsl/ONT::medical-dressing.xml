@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::medical-dressing">
+ <relation label="inherit">
+  ont::covering
+ </relation>
+ <relation label="overlap">
+  wn::|medical_dressing%1:06:00|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="phys-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::of" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">-</feat>
+ <feat name="mobility">non-self-moving</feat>
+ <feat name="container">-</feat>
+ <feat name="intentional">-</feat>
+ <feat name="form">object</feat>
+ <feat name="origin">artifact</feat>
+ </sem-feats>
+ <concept name="ont::part">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|part%1:24:00|
+  wn::|portion%1:24:00|
+  wn::|component_part%1:24:00|
+  wn::|component%1:24:00|
+  wn::|constituent%1:24:00|
+  wn::|part%1:17:00|
+  wn::|piece%1:17:00|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="object-function">covering</feat>
+ <feat name="form">solid-object</feat>
+ </sem-feats>
+ <concept name="ont::device-component">
+ <relation label="inherit">
+  ont::part
+ </relation>
+ <relation label="overlap">
+  wn::|component%1:06:00|
+  wn::|constituent%1:06:00|
+  wn::|element%1:06:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">-</feat>
+  <feat name="mobility">non-self-moving</feat>
+  <feat name="container">-</feat>
+  <feat name="intentional">-</feat>
+  <feat name="form">object</feat>
+  <feat name="origin">artifact</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::covering">
+ <relation label="inherit">
+  ont::device-component
+ </relation>
+ <relation label="overlap">
+  wn::|covering%1:06:00|
+  wn::|cover%1:06:03|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">covering</feat>
+  <feat name="form">solid-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="bandage" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-dressing
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="bandaid" />
+ </morph>
+ <relation label="inherit">
+  ont::medical-dressing
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

@@ -1,0 +1,651 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::time-unit">
+ <relation label="inherit">
+  ont::measure-unit
+ </relation>
+ <relation label="overlap">
+  wn::|time_unit%1:28:00|
+  wn::|unit_of_time%1:28:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">duration-scale</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="ont::measure-unit">
+ <relation label="inherit">
+  ont::abstract-object-nontemporal
+ </relation>
+ <relation label="overlap">
+  wn::|unit_of_measurement%1:23:00|
+  wn::|unit%1:23:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="measure-function">value</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">duration-scale</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object-nontemporal">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="measure-function">value</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="centuri" />
+ </morph>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="day" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="day of 24 hours">
+ </example>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="era" />
+ </morph>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="hour" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="5 hours">
+ </example>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="millisecond" />
+ </morph>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="minute" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="five minutes of silence">
+ </example>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="moment" />
+ </morph>
+ <example text="a moment of silence">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="month" />
+ </morph>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="ms" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="ms" />
+   </plur>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="night" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="for some nights">
+ </example>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="s" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="s" />
+   </plur>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="sec" />
+ </morph>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="second" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">unit-measure</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="week" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="two weeks of work">
+ </example>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::substance-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">substance-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="year" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="a 3 year warranty">
+ </example>
+ <relation label="inherit">
+  ont::time-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::substance-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">substance-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

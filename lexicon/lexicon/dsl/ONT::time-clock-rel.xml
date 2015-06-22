@@ -1,0 +1,539 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::time-clock-rel">
+ <relation label="inherit">
+  ont::temporal-location
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::sit-val">
+   <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::val">
+   <sem-feats>
+    <relation label="inherit">
+     time
+    </relation>
+    <feat name="time-function">
+    <or>
+     clock-time
+     day-point
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">time-measure-scale</feat>
+ </sem-feats>
+ <concept name="ont::predicate">
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="container">-</feat>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="scale">-</feat>
+  <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::val" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::temporal-location">
+ <relation label="inherit">
+  ont::temporal-modifier
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::sit-val">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::val">
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="time-function">
+   <or>
+    clock-time
+    day-point
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::temporal-modifier">
+ <relation label="inherit">
+  ont::temporal-predicate
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::temporal-predicate">
+ <relation label="inherit">
+  ont::predicate
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">time-measure-scale</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::val" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="^bout" />
+ </morph>
+ <relation label="inherit">
+  ont::time-clock-rel
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="about" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it's about midnight">
+ </example>
+ <relation label="inherit">
+  ont::time-clock-rel
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="almost" />
+ </morph>
+ <example text="it's almost midnight">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::time-clock-rel
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="around" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it's around 5 pm">
+ </example>
+ <relation label="inherit">
+  ont::time-clock-rel
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="at" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-clock-rel
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="at" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-clock-rel
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    post
+    pre
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="barely" />
+ </morph>
+ <example text="it's barely midnight">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::time-clock-rel
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="between" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="between 4 and 5 pm">
+ </example>
+ <relation label="inherit">
+  ont::time-clock-rel
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="?" head-word="x" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="bout" />
+ </morph>
+ <example text="bout midnight">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::time-clock-rel
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="close" remaining-words="to" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <example text="it is close to five">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::time-clock-rel
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="near" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it is near five pm">
+ </example>
+ <relation label="inherit">
+  ont::time-clock-rel
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="nearly" />
+ </morph>
+ <example text="it's nearly midnight">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::time-clock-rel
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

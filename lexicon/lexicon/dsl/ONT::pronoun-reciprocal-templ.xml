@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::pronoun-reciprocal-templ">
+ <template-call template="ont::pronoun-reciprocal-templ" />
+ <syn-feats>
+  <feat name="agr">
+  <or>
+   |3s|
+   |3p|
+  </or>
+  </feat>
+  <feat name="pro">recip</feat>
+  <feat name="case">
+  <or>
+   obj
+   -
+  </or>
+  </feat>
+  <feat name="status">pro</feat>
+  <feat name="mass">count</feat>
+ </syn-feats>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="pro" />
+  <word first-word="each" remaining-words="other" />
+ </morph>
+ <example text="they evaluated each other">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::referential-sem
+  ont::pronoun-reciprocal-templ
+ </relation>
+ </sense>
+</dsl>

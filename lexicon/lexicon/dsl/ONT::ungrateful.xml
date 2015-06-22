@@ -1,0 +1,516 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::ungrateful">
+ <relation label="inherit">
+  ont::emotional-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|ungrateful%3:00:00|
+  wn::|ungrateful%3:00:00|
+  wn::|melancholy%5:00:00|
+  wn::|sad%3:00:00|
+  wn::|sad%3:00:00|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::purpose-implicit" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::purpose" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">dynamic</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object-property">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::physical-property-val">
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::emotional-property-val">
+ <relation label="inherit">
+  ont::psychological-property-val
+ </relation>
+ </concept>
+ <concept name="ont::psychological-property-val">
+ <relation label="inherit">
+  ont::animal-property-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::content" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::stimulus" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::animal-property-val">
+ <relation label="inherit">
+  ont::body-related-property-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::content" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::content" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::stimulus" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::body-related-property-val">
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::content" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::property-val">
+ <relation label="inherit">
+  ont::abstract-object-property
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="scale">-</feat>
+  <feat name="gradability">+</feat>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::purpose-implicit" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::purpose" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="aspect">dynamic</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="melancholi" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <example text="I am melancholy / a melancholy person">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::ungrateful
+  ont::central-adj-experiencer-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="melancholi" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <example text="a melancholy outlook">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::ungrateful
+  ont::central-adj-content-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="melancholi" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <example text="I am melancholy about it">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::ungrateful
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp w::about)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="melancholi" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <example text="I am melancholy that she does that">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::ungrateful
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-of-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::content"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="sad" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::ungrateful
+  ont::central-adj-experiencer-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="sad" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <example text="a sad day">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::ungrateful
+  ont::central-adj-content-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="sad" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <example text="I am happy for her">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::ungrateful
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp
+                                                          (w::or
+                                                            w::for
+                                                            w::about))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(or for about)" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="sad" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <example text="I am happy that she does that">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::ungrateful
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-of-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::content"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="ungrateful" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <example text="he is ungrateful / an ungrateful person">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::ungrateful
+  ont::central-adj-experiencer-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="ungrateful" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <example text="a ungrateful comment">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::ungrateful
+  ont::central-adj-content-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="ungrateful" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <example text="I am ungrateful that she does that">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::ungrateful
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-of-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::content"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

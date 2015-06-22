@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::binary-constraint-s-or-np-time-val-templ">
+ <template-call template="ont::binary-constraint-s-or-np-time-val-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="subcat" syn-cat="?" head-word="cat" sem-role="ont::time-val"/>
+  <syn-sem-map syn-arg="argument" syn-cat="?" head-word="x" sem-role="ont::of"/>
+ </syn-sem>
+ <syn-feats>
+  <feat name="atype">
+  <or>
+   pre
+   post
+  </or>
+  </feat>
+  <feat name="sort">binary-constraint</feat>
+ </syn-feats>
+ </syntax>
+</dsl>

@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::official-document">
+ <relation label="inherit">
+  ont::direct-representation
+ </relation>
+ <relation label="overlap">
+  wn::|document%1:10:00|
+  wn::|written_document%1:10:00|
+  wn::|papers%1:10:00|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="ont::phys-representation">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|representation%1:06:00|
+  wn::|representation%1:04:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+   strip
+  </or>
+  </feat>
+  <feat name="mobility">non-self-moving</feat>
+  <feat name="information">information-content</feat>
+  <feat name="container">+</feat>
+  <feat name="trajectory">+</feat>
+  <feat name="object-function">representation</feat>
+  <feat name="intentional">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">object</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::associated-information" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::info-holder">
+ <relation label="inherit">
+  ont::phys-representation
+ </relation>
+ </concept>
+ <concept name="ont::direct-representation">
+ <relation label="inherit">
+  ont::info-holder
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::associated-information" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::phys-object">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00|
+  wn::|physical_object%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+  strip
+ </or>
+ </feat>
+ <feat name="mobility">non-self-moving</feat>
+ <feat name="information">information-content</feat>
+ <feat name="container">+</feat>
+ <feat name="trajectory">+</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::of" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="phys-obj" />
+ <concept name="ont::financial-statement">
+ <relation label="inherit">
+  ont::official-document
+ </relation>
+ <relation label="overlap">
+  wn::|statement%1:10:01|
+  wn::|financial_statement%1:10:00|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="agreement" />
+ </morph>
+ <example text="read the licensing agreement before you install the software">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::official-document
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="contract" />
+ </morph>
+ <example text="Does it have a service contract">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::official-document
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="copyright" />
+ </morph>
+ <example text="don't infringe the copyright">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::official-document
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="gpl" />
+ </morph>
+ <example text="this code is licensed under the GPL">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::official-document
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="license" />
+ </morph>
+ <example text="obey the license">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::official-document
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="patent" />
+ </morph>
+ <example text="he obtained a patent for the invention">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::official-document
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-theme-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::formal"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="patent" />
+ </morph>
+ <example text="don't infringe on my patent">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::official-document
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="ticket" />
+ </morph>
+ <example text="do you have a ticket">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::official-document
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="treati" />
+ </morph>
+ <example text="the software is protected by international copyright treaties">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::official-document
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

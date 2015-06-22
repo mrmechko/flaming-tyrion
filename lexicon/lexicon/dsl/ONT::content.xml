@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::content">
+ <relation label="inherit">
+  ont::information
+ </relation>
+ <relation label="overlap">
+  wn::|content%1:14:00|
+  wn::|substance%1:10:00|
+  wn::|subject_matter%1:10:00|
+  wn::|content%1:10:00|
+  wn::|message%1:10:00|
+  wn::|meaning%1:09:00|
+  wn::|substance%1:09:00|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="ont::abstract-object-property">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::associated-information" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">information-content</feat>
+ </sem-feats>
+ <concept name="ont::function-object">
+ <relation label="inherit">
+  ont::abstract-object-property
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::information-function-object">
+ <relation label="inherit">
+  ont::function-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="intentional">-</feat>
+  <feat name="information">information-content</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::associated-information" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::information">
+ <relation label="inherit">
+  ont::information-function-object
+ </relation>
+ <relation label="overlap">
+  wn::|information%1:10:00|
+  wn::|info%1:10:00|
+ </relation>
+ </concept>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="content" />
+ </morph>
+ <example text="Mail displays the contents of messages">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::content
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="subject" />
+ </morph>
+ <example text="this is the subject/the subject line will say this">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::content
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="topic" />
+ </morph>
+ <example text="see help about the topic">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::content
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

@@ -1,0 +1,981 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::length-unit">
+ <relation label="inherit">
+  ont::tangible-unit
+ </relation>
+ <relation label="overlap">
+  wn::|linear_measure%1:23:00|
+  wn::|linear_unit%1:23:00|
+  wn::|week%1:28:00|
+  wn::|hebdomad%1:28:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">length-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="measure-function">value</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object-nontemporal">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::measure-unit">
+ <relation label="inherit">
+  ont::abstract-object-nontemporal
+ </relation>
+ <relation label="overlap">
+  wn::|unit_of_measurement%1:23:00|
+  wn::|unit%1:23:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="measure-function">value</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">length-scale</feat>
+ </sem-feats>
+ <concept name="ont::tangible-unit">
+ <relation label="inherit">
+  ont::measure-unit
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="c" remaining-words="m" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="centimeter" />
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="centimetre" />
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cm" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-plural-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">|3p|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="foot" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="feet" />
+   </plur>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="in" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it is 5 in high">
+ </example>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-plural-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">|3p|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="in" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it is 1 in high">
+ </example>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="inch" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="k" remaining-words="m" />
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="kilometer" />
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="kilometre" />
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="km" />
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-plural-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">|3p|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="m" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-plural-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">|3p|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="m" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="megapixel" />
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="meter" />
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="metre" />
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mi" />
+ </morph>
+ <example text="the distance is 2.3 mi">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-plural-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">|3p|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="micron" />
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mile" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="millimeter" />
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="millimetre" />
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mm" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-plural-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">|3p|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pixel" />
+ </morph>
+ <example text="move the object by one pixel">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="punc-quotemark" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="punc-quotemark" />
+   </plur>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="yard" />
+ </morph>
+ <example text="he bought three yards of cloth">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::length-unit
+ </relation>
+ <syntax>
+  <template-call template="ont::attribute-unit-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">attribute-unit</feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

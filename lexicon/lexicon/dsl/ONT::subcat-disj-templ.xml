@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::subcat-disj-templ">
+ <template-call template="ont::subcat-disj-templ" />
+ <syn-feats>
+  <feat name="disj">+</feat>
+  <feat name="conj">-</feat>
+  <feat name="operator">one-of</feat>
+  <feat name="agr">?agr</feat>
+  <feat name="status">indefinite</feat>
+  <feat name="subcat">
+  <or>
+   s
+   pp
+   np
+   vp
+   adjp
+  </or>
+  </feat>
+ </syn-feats>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="conj" />
+  <word first-word="nor" />
+ </morph>
+ <relation label="inherit">
+  ont::subcat-disj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="conj" />
+  <word first-word="or" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::subcat-disj-templ
+ </relation>
+ </sense>
+</dsl>

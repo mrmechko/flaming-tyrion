@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::ppword-question-adv-pred-templ">
+ <template-call template="ont::ppword-question-adv-pred-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="subcat" syn-cat="?sc" sem-role="ont::val"/>
+  <syn-sem-map syn-arg="argument" syn-cat="(? argcat s np)" head-word="?arglex" sem-role="ont::of"/>
+ </syn-sem>
+ <syn-feats>
+  <feat name="atype">
+  <or>
+   pre
+   post
+  </or>
+  </feat>
+  <feat name="sort">pp-word</feat>
+  <feat name="wh">q</feat>
+  <feat name="else-word">+</feat>
+  <feat name="sing-lf-only">+</feat>
+ </syn-feats>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="when" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::event-time-rel
+  ont::ppword-question-adv-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="information">information-content</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="where" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::wh-location
+  ont::ppword-question-adv-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="information">information-content</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

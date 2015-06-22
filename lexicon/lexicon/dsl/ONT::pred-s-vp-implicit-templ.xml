@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::pred-s-vp-implicit-templ">
+ <template-call template="ont::pred-s-vp-implicit-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+  <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+ </syn-sem>
+ <syn-feats>
+  <feat name="implicit-arg">+</feat>
+  <feat name="atype">
+  <or>
+   pre
+   post
+   pre-vp
+  </or>
+  </feat>
+  <feat name="sort">pred</feat>
+ </syn-feats>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="as" remaining-words="well" />
+ </morph>
+ <relation label="inherit">
+  ont::additive
+  ont::pred-s-vp-implicit-templ
+ </relation>
+ </sense>
+</dsl>

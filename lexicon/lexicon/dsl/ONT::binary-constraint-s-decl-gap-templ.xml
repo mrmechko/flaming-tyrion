@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::binary-constraint-s-decl-gap-templ">
+ <template-call template="ont::binary-constraint-s-decl-gap-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="subcat" syn-cat="s" sem-role="ont::val"/>
+  <syn-sem-map syn-arg="argument" syn-cat="?" head-word="x" sem-role="ont::of"/>
+ </syn-sem>
+ <syn-feats>
+  <feat name="allow-deleted-comp">-</feat>
+  <feat name="atype">
+  <or>
+   pre
+   post
+  </or>
+  </feat>
+  <feat name="sort">binary-constraint</feat>
+ </syn-feats>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="than" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::binary-constraint-s-decl-gap-templ
+ </relation>
+ </sense>
+</dsl>
