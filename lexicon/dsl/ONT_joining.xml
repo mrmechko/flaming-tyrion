@@ -36,7 +36,7 @@
   <role-restr-map roles="ont::result">
    <concept name="phys-obj" />
   </role-restr-map>
-  <role-restr-map roles="ont::affected1">
+  <role-restr-map roles="ont::affected1" optional="optional">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -44,7 +44,10 @@
     <feat name="intentional">-</feat>
    </sem-feats>
   </role-restr-map>
-  <role-restr-map roles="ont::affected">
+  <role-restr-map roles="ont::affected" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent1" optional="optional">
    <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
@@ -190,7 +193,7 @@
  <role-restr-map roles="ont::result">
   <concept name="phys-obj" />
  </role-restr-map>
- <role-restr-map roles="ont::affected1">
+ <role-restr-map roles="ont::affected1" optional="optional">
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -198,7 +201,10 @@
    <feat name="intentional">-</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::affected">
+ <role-restr-map roles="ont::affected" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::agent1" optional="optional">
   <concept name="phys-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::agent" optional="optional">
@@ -302,13 +308,11 @@
   ont::joining
  </relation>
  <relation label="overlap">
-  wn::|associate%2:31:00|
-  wn::|tie_in%2:31:00|
-  wn::|relate%2:31:00|
-  wn::|link%2:31:00|
-  wn::|colligate%2:31:02|
-  wn::|link_up%2:31:00|
-  wn::|connect%2:31:00|
+  wn::|team%2:33:00|
+  wn::|pair%2:41:00|
+  wn::|pair%2:35:01|
+  wn::|join%2:41:00|
+  wn::|join%2:41:01|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -336,6 +340,38 @@
   <feat name="aspect">dynamic</feat>
  </sem-feats>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="assemble" />
+ </morph>
+ <example text="assemble the parts">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::joining
+  ont::agent-affected-plural-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="assemble" />
+ </morph>
+ <example text="the pieces assemble (into a toy)">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::joining
+ </relation>
+ <syntax>
+  <template-call template="ont::affected-result-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="into" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
+  </syn-sem>
+ </syntax>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -477,6 +513,51 @@
   <pos pos="v" />
   <word first-word="join" />
  </morph>
+ <example text="green join team bravo">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::joining
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="join" />
+ </morph>
+ <example text="they joined together">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::joining
+  ont::affected-plural-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="join" />
+ </morph>
+ <example text="We joined the two parts">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::joining
+  ont::agent-affected-plural-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="join" />
+ </morph>
  <example text="join this cell with the next cell">
   <provenance name="TRIPS"/>
  </example>
@@ -534,6 +615,34 @@
   <word first-word="merge" />
  </morph>
  <example text="the merged examples">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::joining
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="put" remaining-words="" particle="together" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="put" />
+   </past>
+   <ing>
+    <word first-word="putting" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="put the pieces together">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">

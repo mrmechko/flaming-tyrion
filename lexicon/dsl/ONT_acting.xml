@@ -294,6 +294,7 @@
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
+    <concept name="situation" />
    </or>
   </role-restr-map>
  </sem-frame>
@@ -355,6 +356,7 @@
  </relation>
  <relation label="overlap">
   wn::|hold_one's_own%2:42:00|
+  wn::|succeed%2:41:00|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::agent" optional="optional">
@@ -417,29 +419,30 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="n" />
-  <word first-word="activiti" />
+  <pos pos="v" />
+  <word first-word="activity-verb-doesnotexist" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="activity" />
+   </nom>
+   <nomsubjpreps>
+    <word first-word="of" remaining-words="by" />
+   </nomsubjpreps>
+   <nomobjpreps>
+    <word first-word="on" remaining-words="" />
+   </nomobjpreps>
+  </forms>
  </morph>
  <relation label="inherit">
   ont::acting
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-cause-templ" />
+  <template-call template="ont::agent-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">|3s|</feat>
-  </syn-feats>
  </syntax>
  </sense>
 </dsl>

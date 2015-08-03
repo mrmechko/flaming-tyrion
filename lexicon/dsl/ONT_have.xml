@@ -17,7 +17,6 @@
   wn::|include%2:42:00|
   wn::|have%2:40:00|
   wn::|have%2:42:00|
-  wn::|have%2:40:04|
   wn::|have%2:41:00|
   wn::|have%2:40:01|
   wn::|have_got%2:40:00|
@@ -199,6 +198,7 @@
   wn::|own%2:40:00|
   wn::|have%2:40:04|
   wn::|possess%2:40:00|
+  wn::|belong%2:40:00|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -207,6 +207,50 @@
   <feat name="time-span">extended</feat>
   <feat name="aspect">indiv-level</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::membership">
+ <relation label="inherit">
+  ont::have
+ </relation>
+ <relation label="overlap">
+  wn::|belong%2:42:01|
+  wn::|belong%2:42:07|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">indiv-level</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral1">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">group-object</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sense>
  <morph>
@@ -232,9 +276,9 @@
   <word first-word="have" />
   <forms>
    -VB
-   <|3s|>
+   <third-singular>
     <word first-word="has" />
-   </|3s|>
+   </third-singular>
    <past>
     <word first-word="had" />
    </past>
@@ -296,6 +340,9 @@
    <nom>
     <word first-word="involvement" />
    </nom>
+   <nomsubjpreps>
+    <word first-word="in" remaining-words="" />
+   </nomsubjpreps>
   </forms>
  </morph>
  <example text="it involves a wireless card">
@@ -317,5 +364,26 @@
    <feat name="aspect">static</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="involved" />
+  <forms>
+  </forms>
+ </morph>
+ <example text="I am involved in that">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::have
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral1-neutral-templ" xp="'(w::pp w::in)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="in" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral1"/>
+  </syn-sem>
+ </syntax>
  </sense>
 </dsl>

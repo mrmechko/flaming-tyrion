@@ -10,6 +10,7 @@
   wn::|own%2:40:00|
   wn::|have%2:40:04|
   wn::|possess%2:40:00|
+  wn::|belong%2:40:00|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -18,6 +19,16 @@
   <feat name="time-span">extended</feat>
   <feat name="aspect">indiv-level</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::root" />
  <sem-frame>
@@ -101,6 +112,45 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::have">
+ <relation label="inherit">
+  ont::having
+ </relation>
+ <relation label="overlap">
+  wn::|keep%2:40:12|
+  wn::|keep%2:42:12|
+  wn::|keep%2:42:01|
+  wn::|take%2:42:10|
+  wn::|pack%2:42:00|
+  wn::|carry%2:42:01|
+  wn::|include%2:31:00|
+  wn::|include%2:42:00|
+  wn::|have%2:40:00|
+  wn::|have%2:42:00|
+  wn::|have%2:41:00|
+  wn::|have%2:40:01|
+  wn::|have_got%2:40:00|
+  wn::|have%2:29:02|
+  wn::|hold%2:40:00|
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">indiv-level</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::having">
  <relation label="inherit">
   ont::event-of-state
@@ -128,36 +178,6 @@
    </or>
   </role-restr-map>
  </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="time-span">extended</feat>
- <feat name="aspect">indiv-level</feat>
- </sem-feats>
- <concept name="ont::have">
- <relation label="inherit">
-  ont::having
- </relation>
- <relation label="overlap">
-  wn::|keep%2:40:12|
-  wn::|keep%2:42:12|
-  wn::|keep%2:42:01|
-  wn::|take%2:42:10|
-  wn::|pack%2:42:00|
-  wn::|carry%2:42:01|
-  wn::|include%2:31:00|
-  wn::|include%2:42:00|
-  wn::|have%2:40:00|
-  wn::|have%2:42:00|
-  wn::|have%2:40:04|
-  wn::|have%2:41:00|
-  wn::|have%2:40:01|
-  wn::|have_got%2:40:00|
-  wn::|have%2:29:02|
-  wn::|hold%2:40:00|
- </relation>
  </concept>
  <concept name="ont::situation-root">
  <relation label="inherit">

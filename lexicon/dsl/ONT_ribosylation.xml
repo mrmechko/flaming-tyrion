@@ -2,23 +2,10 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::monoubiquitination">
+ <concept name="ont::ribosylation">
  <relation label="inherit">
-  ont::ubiquitination
+  ont::post-translational-modification
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::location" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="type">molecular-part</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::root" />
  <sem-frame>
@@ -149,94 +136,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">agentive</feat>
- </sem-feats>
- <concept name="ont::transformation">
- <relation label="inherit">
-  ont::change
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::ubiquitination">
- <relation label="inherit">
-  ont::post-translational-modification
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::location" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="type">molecular-part</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::location" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="type">molecular-part</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::post-translational-modification">
  <relation label="inherit">
   ont::adjust
@@ -255,19 +154,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::location" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="type">molecular-part</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::adjust">
  <relation label="inherit">
   ont::transformation
@@ -316,6 +202,68 @@
    </relation>
    <feat name="type">molecular-part</feat>
   </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::transformation">
+ <relation label="inherit">
+  ont::change
+ </relation>
+ <relation label="overlap">
+  wn::|metabolize%2:34:00|
+  wn::|transform%2:30:00|
+  wn::|transform%2:30:03|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected1" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="time" />
+  </or>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::change">
@@ -477,11 +425,11 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="monoubiquitinate" />
+  <word first-word="ribosylate" />
   <forms>
    -VB
    <nom>
-    <word first-word="monoubiquitination" />
+    <word first-word="ribosylation" />
    </nom>
    <nomobjpreps>
     <word first-word="on" remaining-words="" />
@@ -489,12 +437,12 @@
   </forms>
  </morph>
  <relation label="inherit">
-  ont::monoubiquitination
+  ont::ribosylation
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::location" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>

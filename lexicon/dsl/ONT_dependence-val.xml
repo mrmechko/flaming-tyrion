@@ -4,8 +4,16 @@
  <provenance name="TRIPS"/>
  <concept name="ont::dependence-val">
  <relation label="inherit">
-  ont::is-doing-val
+  ont::property-val
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::val" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::root" />
  <concept name="abstr-obj" />
@@ -79,16 +87,14 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::process-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::is-doing-val">
- <relation label="inherit">
-  ont::process-val
- </relation>
- </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::val" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::abstract-object-property">
  <relation label="inherit">
   ont::abstract-object

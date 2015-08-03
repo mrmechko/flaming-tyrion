@@ -255,39 +255,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::interact">
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|interact%2:41:00|
-  wn::|collide%2:35:01|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::objective-influence">
  <relation label="inherit">
   ont::event-of-causation
@@ -515,16 +482,15 @@
   wn::|control%2:41:00|
   wn::|command%2:41:00|
   wn::|discharge%2:33:01|
+  wn::|direct%2:41:00|
+  wn::|drive%2:41:02|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::agent ont::cause">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -577,8 +543,8 @@
   <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::effect" optional="optional">
-   <concept name="abstr-obj" />
+  <role-restr-map roles="ont::affected-result" optional="optional">
+   <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::result" optional="optional">
    <concept name="t" />
@@ -593,7 +559,7 @@
     <concept name="situation" />
    </or>
   </role-restr-map>
-  <role-restr-map roles="ont::agent ont::cause">
+  <role-restr-map roles="ont::agent">
    <sem-feats>
     <or>
      <concept name="abstr-obj" />
@@ -664,6 +630,7 @@
  </relation>
  <relation label="overlap">
   wn::|turn%2:38:00|
+  wn::|rotate%2:38:01|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -919,7 +886,7 @@
   <role-restr-map roles="ont::result">
    <concept name="phys-obj" />
   </role-restr-map>
-  <role-restr-map roles="ont::affected1">
+  <role-restr-map roles="ont::affected1" optional="optional">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -927,7 +894,10 @@
     <feat name="intentional">-</feat>
    </sem-feats>
   </role-restr-map>
-  <role-restr-map roles="ont::affected">
+  <role-restr-map roles="ont::affected" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent1" optional="optional">
    <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">

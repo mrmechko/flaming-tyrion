@@ -281,11 +281,7 @@
    <concept name="situation" />
   </role-restr-map>
   <role-restr-map roles="ont::neutral">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
+   <concept name="phys-obj" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -405,6 +401,9 @@
  <concept name="ont::be-inclined">
  <relation label="inherit">
   ont::event-of-state
+ </relation>
+ <relation label="overlap">
+  wn::|tend%2:42:01|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::formal">
@@ -622,7 +621,7 @@
   wn::|idle%2:35:00|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
+  <role-restr-map roles="ont::extent" optional="optional">
    <sem-feats>
     <relation label="inherit">
      abstr-obj
@@ -664,14 +663,11 @@
   <role-restr-map roles="ont::place" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::source" optional="optional">
+  <role-restr-map roles="ont::neutral1" optional="optional">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
+   <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::formal">
    <concept name="t" />
@@ -720,6 +716,62 @@
   </role-restr-map>
   <role-restr-map roles="ont::neutral">
    <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::relate">
+ <relation label="inherit">
+  ont::event-of-state
+ </relation>
+ <relation label="overlap">
+  wn::|associate%2:31:00|
+  wn::|tie_in%2:31:00|
+  wn::|relate%2:31:00|
+  wn::|link%2:31:00|
+  wn::|colligate%2:31:02|
+  wn::|link_up%2:31:00|
+  wn::|connect%2:31:00|
+  wn::|correlate%2:42:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="aspect">static</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral2">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <or>
+    <concept name="situation" />
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
    </or>

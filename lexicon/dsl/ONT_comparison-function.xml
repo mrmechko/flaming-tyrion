@@ -7,7 +7,7 @@
   ont::abstract-function
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::property">
+  <role-restr-map roles="ont::neutral">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::formal">
@@ -66,7 +66,7 @@
  </relation>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::property">
+ <role-restr-map roles="ont::neutral">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::formal">
@@ -127,13 +127,13 @@
   ont::comparison-function
  </relation>
  <syntax>
-  <template-call template="ont::reln-theme-property-templ" xp1="'(w::pp
-                                                                  w::between)" xp2="'(w::pp
-                                                                                      (w::or
-                                                                                        w::of
-                                                                                        w::in))" />
+  <template-call template="ont::reln-scale-neutral-templ" xp1="'(w::pp
+                                                                 w::between)" xp2="'(w::pp
+                                                                                     (w::or
+                                                                                       w::of
+                                                                                       w::in))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(or of in)" sem-role="ont::property"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(or of in)" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="between" sem-role="ont::formal"/>
   </syn-sem>
   <syn-feats>
@@ -164,10 +164,10 @@
   ont::comparison-function
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-property-templ" xp="'(w::pp
-                                                                 w::between)" />
+  <template-call template="ont::other-reln-neutral-templ" xp="'(w::pp
+                                                                w::between)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="between" sem-role="ont::property"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="between" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -197,11 +197,11 @@
   ont::comparison-function
  </relation>
  <syntax>
-  <template-call template="ont::reln-theme-property-templ" xp1="'(w::pp
-                                                                  w::between)" xp2="'(w::pp
-                                                                                      w::between)" />
+  <template-call template="ont::reln-scale-neutral-templ" xp1="'(w::pp
+                                                                 w::between)" xp2="'(w::pp
+                                                                                     w::between)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="between" sem-role="ont::property"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="between" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="between" sem-role="ont::formal"/>
   </syn-sem>
   <syn-feats>
@@ -225,52 +225,24 @@
    -S-3P
   </forms>
  </morph>
- <example text="the difference of 1.5V between the terminals">
+ <example text="the difference of 1.5V in/between the terminals">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::comparison-function
  </relation>
  <syntax>
-  <template-call template="ont::reln-val-property-templ" />
+  <template-call template="ont::reln-scale-neutral-templ" xp1="'(w::pp
+                                                                 (w::or
+                                                                   w::in
+                                                                   w::between))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="in" sem-role="ont::property"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="(or in between)" sem-role="ont::formal"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">other-reln</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="difference" />
-  <forms>
-   -S-3P
-  </forms>
- </morph>
- <example text="the difference of 1.5V in their states">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::comparison-function
- </relation>
- <syntax>
-  <template-call template="ont::reln-val-theme-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="between" sem-role="ont::formal"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
    <feat name="case">
    <or>
     sub

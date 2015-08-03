@@ -721,7 +721,7 @@
    </nom>
   </forms>
  </morph>
- <example text="export the docuemnt">
+ <example text="export the document">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
@@ -755,8 +755,14 @@
  <morph>
   <pos pos="v" />
   <word first-word="import" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="import" />
+   </nom>
+  </forms>
  </morph>
- <example text="import the docuemnt">
+ <example text="import the document">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
@@ -830,6 +836,84 @@
  </sense>
  <sense>
  <morph>
+  <pos pos="n" />
+  <word first-word="sort" />
+  <forms>
+   -S-3P
+  </forms>
+ </morph>
+ <example text="protein sorting">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::transport
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="target" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="targeted" />
+   </past>
+   <ing>
+    <word first-word="targeting" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="protein targeting">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::transport
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="traffic" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="trafficked" />
+   </past>
+   <ing>
+    <word first-word="trafficking" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="protein trafficking">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::transport
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
   <pos pos="v" />
   <word first-word="transport" />
   <forms>
@@ -855,6 +939,39 @@
    <feat name="aspect">unbounded</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="transportation" />
+  <forms>
+   -S-3P
+  </forms>
+ </morph>
+ <example text="the transportation of oranges">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::transport
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-affected-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::affected"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
  </sense>
  <sense>
  <morph>

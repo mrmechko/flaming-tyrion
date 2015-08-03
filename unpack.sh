@@ -1,12 +1,17 @@
 #!/bin/bash
 
 rm -rf lexicon
-tar xjvf $1
+
+tar xvf $1
 mv u/www/research/cisd/projects/trips/lexicon .
-rm -rf u
-mmv lexicon/data/ONT::\* lexicon/data/ONT_#1
-mmv lexicon/data/W::\* lexicon/data/W_#1
-mmv lexicon/dsl/ONT::\* lexicon/dsl/ONT_#1
+
+rename ONT:: ONT_ lexicon/dsl/ONT::*
+rename ONT:: ONT_ lexicon/data/ONT::*
+rename W:: W_ lexicon/data/W::*
+
+rm lexicon/dsl/*~1~
+rm lexicon/data/*~1~
 rm -r lexicon/data/oldlf
+rm -rf u
 
 cp lexicon/data/*.dtd .

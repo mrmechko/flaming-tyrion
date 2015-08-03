@@ -326,6 +326,7 @@
   wn::|move%2:38:02|
   wn::|move_out%2:41:00|
   wn::|wreathe%2:38:00|
+  wn::|mobilize%2:30:00|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -472,12 +473,18 @@
    </nom>
   </forms>
  </morph>
- <example text="the protein translocates into the nucleus">
+ <example text="this protein translocates that protein into the nucleus">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::translocate
-  ont::agent-templ
  </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
 </dsl>

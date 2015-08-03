@@ -143,7 +143,7 @@
   <role-restr-map roles="ont::result">
    <concept name="phys-obj" />
   </role-restr-map>
-  <role-restr-map roles="ont::affected1">
+  <role-restr-map roles="ont::affected1" optional="optional">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -151,7 +151,10 @@
     <feat name="intentional">-</feat>
    </sem-feats>
   </role-restr-map>
-  <role-restr-map roles="ont::affected">
+  <role-restr-map roles="ont::affected" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent1" optional="optional">
    <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
@@ -207,7 +210,7 @@
  <role-restr-map roles="ont::result">
   <concept name="phys-obj" />
  </role-restr-map>
- <role-restr-map roles="ont::affected1">
+ <role-restr-map roles="ont::affected1" optional="optional">
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -215,7 +218,10 @@
    <feat name="intentional">-</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::affected">
+ <role-restr-map roles="ont::affected" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::agent1" optional="optional">
   <concept name="phys-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::agent" optional="optional">
@@ -322,6 +328,105 @@
  <concept name="proposition" />
  </or>
  <concept name="situation" />
+ <concept name="ont::bind-interact">
+ <relation label="inherit">
+  ont::attach
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected1">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="type">molecular-part</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="type">molecular-part</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="associate" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="association" />
+   </nom>
+   <nomobjpreps>
+    <word first-word="between" remaining-words="" />
+   </nomobjpreps>
+  </forms>
+ </morph>
+ <example text="associate this voice note with site three">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::attach
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected2-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="with" sem-role="ont::affected1"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="associate" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="association" />
+   </nom>
+   <nomobjpreps>
+    <word first-word="between" remaining-words="" />
+   </nomobjpreps>
+  </forms>
+ </morph>
+ <example text="This protein associates with another protein">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::attach
+ </relation>
+ <syntax>
+  <template-call template="ont::affected-affected-as-comp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="with" sem-role="ont::affected1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -367,6 +472,9 @@
    </pastpart>
   </forms>
  </morph>
+ <example text="We bind the patient to the stretcher">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::attach
  </relation>
@@ -397,8 +505,14 @@
    <past>
     <word first-word="bound" />
    </past>
+   <pastpart>
+    <word first-word="bound" />
+   </pastpart>
   </forms>
  </morph>
+ <example text="It binds to the stretcher">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::attach
  </relation>
@@ -422,6 +536,34 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="bind" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="bound" />
+   </past>
+   <pastpart>
+    <word first-word="bound" />
+   </pastpart>
+  </forms>
+ </morph>
+ <example text="They bind together">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::attach
+  ont::affected-plural-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="bond" />
  </morph>
  <relation label="inherit">
@@ -433,6 +575,45 @@
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="to" sem-role="ont::affected1"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="complex" />
+ </morph>
+ <example text="We complexed this protein with another protein">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::attach
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected2-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="with" sem-role="ont::affected1" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="complex" />
+ </morph>
+ <example text="this protein complexed with another protein">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::attach
+ </relation>
+ <syntax>
+  <template-call template="ont::affected-affected-as-comp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="with" sem-role="ont::affected1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  </sense>

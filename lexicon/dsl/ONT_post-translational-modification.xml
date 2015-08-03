@@ -203,6 +203,11 @@
  <relation label="inherit">
   ont::change
  </relation>
+ <relation label="overlap">
+  wn::|metabolize%2:34:00|
+  wn::|transform%2:30:00|
+  wn::|transform%2:30:03|
+ </relation>
  <sem-feats>
   <relation label="inherit">
    situation
@@ -416,37 +421,46 @@
  <relation label="inherit">
   ont::post-translational-modification
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::location" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="type">molecular-part</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::ubiquitination">
  <relation label="inherit">
   ont::post-translational-modification
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::location" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="type">molecular-part</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
+ </concept>
+ <concept name="ont::acetylation">
+ <relation label="inherit">
+  ont::post-translational-modification
+ </relation>
+ </concept>
+ <concept name="ont::farnesylation">
+ <relation label="inherit">
+  ont::post-translational-modification
+ </relation>
+ </concept>
+ <concept name="ont::glycosylation">
+ <relation label="inherit">
+  ont::post-translational-modification
+ </relation>
+ </concept>
+ <concept name="ont::hydroxylation">
+ <relation label="inherit">
+  ont::post-translational-modification
+ </relation>
+ </concept>
+ <concept name="ont::methylation">
+ <relation label="inherit">
+  ont::post-translational-modification
+ </relation>
+ </concept>
+ <concept name="ont::ribosylation">
+ <relation label="inherit">
+  ont::post-translational-modification
+ </relation>
+ </concept>
+ <concept name="ont::sumoylation">
+ <relation label="inherit">
+  ont::post-translational-modification
+ </relation>
  </concept>
  <sense>
  <morph>
@@ -571,8 +585,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -593,8 +608,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -615,8 +631,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -637,8 +654,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -659,30 +677,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="farnesylate" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="farnesylation" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::post-translational-modification
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -703,8 +700,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -725,8 +723,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -747,8 +746,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -769,8 +769,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -791,52 +792,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="acetylate" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="acetylation" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::post-translational-modification
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="deacetylation" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="deacetylation" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::post-translational-modification
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -857,8 +815,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -879,52 +838,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="methylate" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="methylation" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::post-translational-modification
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="demethylation" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="demethylation" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::post-translational-modification
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -945,8 +861,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -967,8 +884,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -989,8 +907,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1011,8 +930,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1033,8 +953,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1055,30 +976,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="glycosylate" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="glycosylation" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::post-translational-modification
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1099,8 +999,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1121,30 +1022,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="hydroxylate" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="hydroxylation" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::post-translational-modification
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1165,8 +1045,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1187,34 +1068,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="dephosphorylate" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="dephosphorylation" />
-   </nom>
-   <nomobjpreps>
-    <word first-word="on" remaining-words="" />
-   </nomobjpreps>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::post-translational-modification
- </relation>
- <syntax>
   <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::location" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1235,8 +1091,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1257,8 +1114,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1279,8 +1137,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1301,8 +1160,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1323,8 +1183,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1345,8 +1206,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1367,8 +1229,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1389,8 +1252,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1411,8 +1275,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1433,30 +1298,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="sumoylation" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="sumoylation" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::post-translational-modification
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1477,8 +1321,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1499,8 +1344,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1521,8 +1367,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1543,8 +1390,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1565,8 +1413,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1587,8 +1436,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1609,8 +1459,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1631,8 +1482,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1653,8 +1505,9 @@
   ont::post-translational-modification
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-loc-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>

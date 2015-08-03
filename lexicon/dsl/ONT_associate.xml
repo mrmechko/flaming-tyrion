@@ -7,13 +7,11 @@
   ont::joining
  </relation>
  <relation label="overlap">
-  wn::|associate%2:31:00|
-  wn::|tie_in%2:31:00|
-  wn::|relate%2:31:00|
-  wn::|link%2:31:00|
-  wn::|colligate%2:31:02|
-  wn::|link_up%2:31:00|
-  wn::|connect%2:31:00|
+  wn::|team%2:33:00|
+  wn::|pair%2:41:00|
+  wn::|pair%2:35:01|
+  wn::|join%2:41:00|
+  wn::|join%2:41:01|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -146,7 +144,7 @@
   <role-restr-map roles="ont::result">
    <concept name="phys-obj" />
   </role-restr-map>
-  <role-restr-map roles="ont::affected1">
+  <role-restr-map roles="ont::affected1" optional="optional">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -154,7 +152,10 @@
     <feat name="intentional">-</feat>
    </sem-feats>
   </role-restr-map>
-  <role-restr-map roles="ont::affected">
+  <role-restr-map roles="ont::affected" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent1" optional="optional">
    <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
@@ -210,7 +211,7 @@
  <role-restr-map roles="ont::result">
   <concept name="phys-obj" />
  </role-restr-map>
- <role-restr-map roles="ont::affected1">
+ <role-restr-map roles="ont::affected1" optional="optional">
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -218,7 +219,10 @@
    <feat name="intentional">-</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::affected">
+ <role-restr-map roles="ont::affected" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::agent1" optional="optional">
   <concept name="phys-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::agent" optional="optional">
@@ -325,6 +329,15 @@
  <concept name="proposition" />
  </or>
  <concept name="situation" />
+ <concept name="ont::marry">
+ <relation label="inherit">
+  ont::associate
+ </relation>
+ <relation label="overlap">
+  wn::|marry%2:41:00|
+  wn::|marry%2:41:01|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="v" />
@@ -341,38 +354,6 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="associate" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="association" />
-   </nom>
-  </forms>
- </morph>
- <example text="associate this voice note with site three">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::associate
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected2-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="with" sem-role="ont::affected1"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
  </sense>
  <sense>
  <morph>
@@ -411,43 +392,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="identifi" />
- </morph>
- <example text="he identifies him with her">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::associate
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected2-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="with" sem-role="ont::affected1"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="muddle" />
- </morph>
- <relation label="inherit">
-  ont::associate
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected2-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="with" sem-role="ont::affected1"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="pair" />
  </morph>
  <relation label="inherit">
@@ -461,35 +405,6 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="relate" />
-  <forms>
-   -VB
-  </forms>
- </morph>
- <example text="relate this to that">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::associate
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected2-templ" xp="'(w::pp w::to)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="to" sem-role="ont::affected1"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
  </sense>
  <sense>
  <morph>

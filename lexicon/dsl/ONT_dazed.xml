@@ -84,6 +84,27 @@
   abstr-obj
  </relation>
  </concept>
+ <concept name="ont::physical-symptom-val">
+ <relation label="inherit">
+  ont::has-medical-condition
+ </relation>
+ </concept>
+ <concept name="ont::has-medical-condition">
+ <relation label="inherit">
+  ont::physical-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+    <feat name="origin">human</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::physical-val">
  <relation label="inherit">
   ont::property-val
@@ -94,16 +115,17 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::has-medical-condition">
- <relation label="inherit">
-  ont::physical-val
- </relation>
- </concept>
- <concept name="ont::physical-symptom-val">
- <relation label="inherit">
-  ont::has-medical-condition
- </relation>
- </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+   <feat name="origin">human</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::abstract-object-property

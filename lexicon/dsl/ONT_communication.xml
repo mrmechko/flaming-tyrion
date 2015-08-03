@@ -37,7 +37,7 @@
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::formal">
-   <concept name="t" />
+   <concept name="situation" />
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -173,7 +173,7 @@
   </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::formal">
-  <concept name="t" />
+  <concept name="situation" />
  </role-restr-map>
  <role-restr-map roles="ont::affected">
   <or>
@@ -527,7 +527,7 @@
   wn::|mention%2:32:00|
   wn::|remark%2:32:00|
   wn::|say%2:32:13|
-  wn::|say%2:32:10|
+  wn::|say%2:32:01|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -611,14 +611,6 @@
   wn::|expose%2:35:00|
   wn::|confront%2:32:03|
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::write">
  <relation label="inherit">
@@ -629,13 +621,7 @@
   wn::|complete%2:32:00|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected-create" optional="optional">
+  <role-restr-map roles="ont::affected-result" optional="optional">
    <sem-feats>
     <or>
      <concept name="phys-obj" />
@@ -682,6 +668,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="signal" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="signal" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::communication
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />

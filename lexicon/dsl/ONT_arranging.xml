@@ -155,16 +155,15 @@
   wn::|control%2:41:00|
   wn::|command%2:41:00|
   wn::|discharge%2:33:01|
+  wn::|direct%2:41:00|
+  wn::|drive%2:41:02|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::agent ont::cause">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -231,13 +230,10 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::agent ont::cause">
-  <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::affected">
   <or>
@@ -450,25 +446,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="assemble" />
- </morph>
- <example text="assemble the computer">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::arranging
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="center" />
   <forms>
    -VB
@@ -566,34 +543,6 @@
   <template-call template="ont::agent-theme-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="put" remaining-words="" particle="together" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="put" />
-   </past>
-   <ing>
-    <word first-word="putting" />
-   </ing>
-  </forms>
- </morph>
- <example text="put the pieces together">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::arranging
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

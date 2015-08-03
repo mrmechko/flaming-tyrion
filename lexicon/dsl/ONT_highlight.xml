@@ -18,30 +18,6 @@
   </relation>
   <feat name="cause">agentive</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="information">
-    <or>
-     data
-     information-content
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::root" />
  <sem-frame>
@@ -170,14 +146,6 @@
   wn::|expose%2:35:00|
   wn::|confront%2:32:03|
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -185,30 +153,6 @@
  </relation>
  <feat name="cause">agentive</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::formal">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="information">
-   <or>
-    data
-    information-content
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::communication">
  <relation label="inherit">
   ont::agent-interaction
@@ -244,7 +188,7 @@
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::formal">
-   <concept name="t" />
+   <concept name="situation" />
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -254,14 +198,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::agent-interaction">
  <relation label="inherit">
   ont::event-of-agent-interaction
@@ -299,7 +235,7 @@
   </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::formal">
-  <concept name="t" />
+  <concept name="situation" />
  </role-restr-map>
  <role-restr-map roles="ont::affected">
   <or>
@@ -420,9 +356,9 @@
   ont::highlight
  </relation>
  <syntax>
-  <template-call template="ont::agent-theme-xp-templ" />
+  <template-call template="ont::agent-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -442,9 +378,9 @@
   ont::highlight
  </relation>
  <syntax>
-  <template-call template="ont::agent-theme-xp-templ" />
+  <template-call template="ont::agent-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

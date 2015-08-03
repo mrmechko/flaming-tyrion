@@ -25,14 +25,11 @@
   <role-restr-map roles="ont::place" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::source" optional="optional">
+  <role-restr-map roles="ont::neutral1" optional="optional">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
+   <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::formal">
    <concept name="t" />
@@ -131,14 +128,11 @@
  <role-restr-map roles="ont::place" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::source" optional="optional">
+ <role-restr-map roles="ont::neutral1" optional="optional">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
+  <concept name="phys-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::formal">
   <concept name="t" />
@@ -223,17 +217,15 @@
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <example text="I know him (as a friend)">
+ <example text="I know him ">
  </example>
  <relation label="inherit">
   ont::familiar
  </relation>
  <syntax>
-  <template-call template="ont::neutral-theme-objcontrol-templ" xp="'(w::pp
-                                                                      w::as)" />
+  <template-call template="ont::neutral-neutral-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="as" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" head-word="?dobjlex" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral1"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
  </syntax>

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::interact">
  <relation label="inherit">
-  ont::event-of-causation
+  ont::event-of-agent-interaction
  </relation>
  <relation label="overlap">
   wn::|interact%2:41:00|
@@ -17,10 +17,7 @@
   <feat name="trajectory">-</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
+  <role-restr-map roles="ont::agent1">
    <or>
     <concept name="situation" />
     <concept name="phys-obj" />
@@ -31,6 +28,7 @@
    <or>
     <concept name="situation" />
     <concept name="phys-obj" />
+    <concept name="abstr-obj" />
    </or>
   </role-restr-map>
  </sem-frame>
@@ -125,11 +123,11 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::affected">
+ <role-restr-map roles="ont::agent1">
   <or>
+   <concept name="situation" />
    <concept name="abstr-obj" />
    <concept name="phys-obj" />
-   <concept name="situation" />
   </or>
  </role-restr-map>
  </sem-frame>
@@ -154,10 +152,7 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::result" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::affected">
+ <role-restr-map roles="ont::agent1">
   <or>
    <concept name="situation" />
    <concept name="phys-obj" />
@@ -168,6 +163,7 @@
   <or>
    <concept name="situation" />
    <concept name="phys-obj" />
+   <concept name="abstr-obj" />
   </or>
  </role-restr-map>
  </sem-frame>
@@ -177,17 +173,17 @@
  </relation>
  <feat name="trajectory">-</feat>
  </sem-feats>
- <concept name="ont::event-of-causation">
+ <concept name="ont::event-of-agent-interaction">
  <relation label="inherit">
   ont::event-of-action
   situation
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::affected">
+  <role-restr-map roles="ont::agent1">
    <or>
+    <concept name="situation" />
     <concept name="abstr-obj" />
     <concept name="phys-obj" />
-    <concept name="situation" />
    </or>
   </role-restr-map>
  </sem-frame>
@@ -272,6 +268,12 @@
    <nom>
     <word first-word="interaction" />
    </nom>
+   <nomsubjpreps>
+    <word first-word="of" remaining-words="between" />
+   </nomsubjpreps>
+   <nomobjpreps>
+    <word first-word="between" remaining-words="" />
+   </nomobjpreps>
   </forms>
  </morph>
  <example text="aspirin interacts with celebrex">
@@ -281,12 +283,43 @@
   ont::interact
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" xp="'(w::pp w::with)" />
+  <template-call template="ont::agent-with-co-agent-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="with" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="with" sem-role="ont::agent1"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="interact" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="interaction" />
+   </nom>
+   <nomsubjpreps>
+    <word first-word="of" remaining-words="between" />
+   </nomsubjpreps>
+   <nomobjpreps>
+    <word first-word="between" remaining-words="" />
+   </nomobjpreps>
+  </forms>
+ </morph>
+ <example text="This and that interact.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::interact
+  ont::agent-plural-templ
+ </relation>
  <semantics>
   <sem-feats>
    <feat name="time-span">extended</feat>
@@ -305,13 +338,17 @@
    </nom>
   </forms>
  </morph>
+ <example text="The cat transacted business with the mouse.">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::interact
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" xp="'(w::pp w::with)" />
+  <template-call template="ont::agent-affected-co-agent-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="with" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="with" sem-role="ont::agent1" optional="optional"/>
+   <syn-sem-map syn-arg="liobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

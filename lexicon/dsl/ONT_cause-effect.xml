@@ -356,6 +356,8 @@
   wn::|begin%2:32:04|
   wn::|lie_in%2:29:00|
   wn::|originate_in%2:42:00|
+  wn::|activate%2:36:00|
+  wn::|activate%2:30:00|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::neutral" optional="optional">
@@ -379,11 +381,36 @@
   ont::cause-effect
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::affected-create">
+  <role-restr-map roles="ont::affected-result">
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
     <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::attract">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|attract%2:35:00|
+  wn::|attract%2:35:01|
+  wn::|affinity%1:19:01|
+  wn::|affinity%1:19:02|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
    </or>
   </role-restr-map>
  </sem-frame>
@@ -765,6 +792,7 @@
   wn::|keep%2:42:07|
   wn::|persist%2:42:01|
   wn::|welter%2:31:00|
+  wn::|sustain%2:42:01|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::effect">
@@ -778,6 +806,7 @@
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
+    <concept name="situation" />
    </or>
   </role-restr-map>
  </sem-frame>

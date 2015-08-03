@@ -303,75 +303,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="assail" />
- </morph>
- <example text="the smell assailed his senses">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::objective-influence
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="assault" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="assault" />
-   </nom>
-  </forms>
- </morph>
- <example text="the smell assualted his senses">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::objective-influence
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="attack" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="attack" />
-   </nom>
-  </forms>
- </morph>
- <example text="the virus attacked his immune system">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::objective-influence
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="cramp" />
  </morph>
  <example text="restrictions cramp his style">
@@ -400,9 +331,9 @@
    <pastpart>
     <word first-word="done" />
    </pastpart>
-   <|3s|>
+   <third-singular>
     <word first-word="does" />
-   </|3s|>
+   </third-singular>
   </forms>
  </morph>
  <provenance name="TRIPS">
@@ -424,32 +355,33 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="n" />
+  <pos pos="v" />
   <word first-word="effect" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="effect" />
+   </nom>
+   <nomsubjpreps>
+    <word first-word="of" remaining-words="" />
+   </nomsubjpreps>
+   <nomobjpreps>
+    <word first-word="on" remaining-words="" />
+   </nomobjpreps>
+  </forms>
  </morph>
- <example text="bulb A has no effect on bulb B">
+ <example text="to effect a change">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::objective-influence
  </relation>
  <syntax>
-  <template-call template="ont::reln-cause-affected-templ" />
+  <template-call template="ont::agent-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="on" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">other-reln</feat>
-  </syn-feats>
  </syntax>
  </sense>
  <sense>
@@ -510,46 +442,22 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="n" />
+  <pos pos="v" />
   <word first-word="impact" />
   <forms>
-   -NONE
+   -VB
+   <nom>
+    <word first-word="impact" />
+   </nom>
+   <nomsubjpreps>
+    <word first-word="of" remaining-words="" />
+   </nomsubjpreps>
+   <nomobjpreps>
+    <word first-word="on" remaining-words="" />
+   </nomobjpreps>
   </forms>
  </morph>
- <example text="the impact of the ball">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::objective-influence
- </relation>
- <syntax>
-  <template-call template="ont::reln-cause-affected-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="on" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::agent"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">other-reln</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="impact" />
-  <forms>
-   -NONE
-  </forms>
- </morph>
- <example text="the switch imacts the state of the lightbulb">
+ <example text="the switch impacts the state of the lightbulb">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
@@ -590,36 +498,6 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="n" />
-  <word first-word="influence" />
- </morph>
- <example text="his influence on the course of events">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::objective-influence
- </relation>
- <syntax>
-  <template-call template="ont::reln-cause-affected-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="on" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::agent"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">other-reln</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
   <pos pos="v" />
   <word first-word="influence" />
   <forms>
@@ -627,6 +505,12 @@
    <nom>
     <word first-word="influence" />
    </nom>
+   <nomsubjpreps>
+    <word first-word="of" remaining-words="" />
+   </nomsubjpreps>
+   <nomobjpreps>
+    <word first-word="on" remaining-words="" />
+   </nomobjpreps>
   </forms>
  </morph>
  <example text="influence the voters">
