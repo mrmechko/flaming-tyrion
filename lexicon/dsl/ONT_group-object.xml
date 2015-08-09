@@ -22,22 +22,18 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
+  ont::root
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::of" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
+ <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -52,18 +48,22 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="abstr-obj" />
- <concept name="ont::any-sem">
+ <sem-frame>
+ <role-restr-map roles="ont::of" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
  <relation label="inherit">
-  ont::root
+  ont::referential-sem
+  abstr-obj
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
  <concept name="ont::social-group">
  <relation label="inherit">
   ont::group-object
@@ -132,7 +132,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -169,7 +169,7 @@
  <syntax>
   <template-call template="ont::classifier-count-pl-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -220,7 +220,7 @@
  <syntax>
   <template-call template="ont::classifier-count-pl-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -249,7 +249,7 @@
  <syntax>
   <template-call template="ont::classifier-count-pl-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

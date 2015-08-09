@@ -35,6 +35,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -115,6 +126,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::place" optional="optional">
   <concept name="t" />
@@ -164,18 +176,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <concept name="ont::not-familiar">
  <relation label="inherit">
   ont::salience
@@ -224,7 +224,7 @@
   <template-call template="ont::expletive-theme-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::neutral"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="lexicon-data::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::norole"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -249,7 +249,7 @@
   <template-call template="ont::expletive-theme-templ" xp2="'w::np" />
   <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="lexicon-data::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::norole"/>
   </syn-sem>
  </syntax>
  <semantics>

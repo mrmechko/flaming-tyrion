@@ -19,7 +19,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -33,6 +43,18 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::purpose-implicit" optional="optional">
@@ -91,40 +113,6 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="ont::task-complexity-val">
- <relation label="inherit">
-  ont::process-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::content">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::process-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::content">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::abstract-object-property
@@ -181,28 +169,40 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
+ <sem-frame>
+ <role-restr-map roles="ont::content">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::process-val">
  <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
+  ont::property-val
  </relation>
  </concept>
- <concept name="ont::any-sem">
+ <concept name="ont::task-complexity-val">
  <relation label="inherit">
-  ont::root
+  ont::process-val
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::content">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
  <sense>
  <morph>
   <pos pos="adj" />
@@ -217,7 +217,7 @@
  <syntax>
   <template-call template="ont::adj-content-affected-optional-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::content"/>
   </syn-sem>
   <syn-feats>
@@ -242,7 +242,7 @@
   <template-call template="ont::adj-expletive-content-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::content"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="it" sem-role="lexicon-data::norole"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="w::it" sem-role="ont::norole"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">-</feat>
@@ -265,7 +265,7 @@
  <syntax>
   <template-call template="ont::adj-content-affected-optional-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::content"/>
   </syn-sem>
   <syn-feats>
@@ -290,7 +290,7 @@
   <template-call template="ont::adj-expletive-content-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::content"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="it" sem-role="lexicon-data::norole"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="w::it" sem-role="ont::norole"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">-</feat>
@@ -313,7 +313,7 @@
  <syntax>
   <template-call template="ont::adj-content-affected-optional-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::content"/>
   </syn-sem>
   <syn-feats>
@@ -338,7 +338,7 @@
   <template-call template="ont::adj-expletive-content-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::content"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="it" sem-role="lexicon-data::norole"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="w::it" sem-role="ont::norole"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">-</feat>
@@ -361,7 +361,7 @@
  <syntax>
   <template-call template="ont::adj-content-affected-optional-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::content"/>
   </syn-sem>
   <syn-feats>
@@ -386,7 +386,7 @@
   <template-call template="ont::adj-expletive-content-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::content"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="it" sem-role="lexicon-data::norole"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="w::it" sem-role="ont::norole"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">-</feat>
@@ -432,7 +432,7 @@
  <syntax>
   <template-call template="ont::adj-content-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::content"/>
   </syn-sem>
   <syn-feats>
@@ -462,7 +462,7 @@
   <template-call template="ont::adj-expletive-content-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::content"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="it" sem-role="lexicon-data::norole"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="w::it" sem-role="ont::norole"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">-</feat>
@@ -491,8 +491,8 @@
   <template-call template="ont::adj-expletive-content-control-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat2" syn-cat="cp" sem-role="ont::content"/>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="it" sem-role="lexicon-data::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="w::it" sem-role="ont::norole"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">-</feat>
@@ -518,7 +518,7 @@
  <syntax>
   <template-call template="ont::adj-content-affected-optional-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::content"/>
   </syn-sem>
   <syn-feats>
@@ -546,7 +546,7 @@
   <template-call template="ont::adj-expletive-content-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::content"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="it" sem-role="lexicon-data::norole"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="w::it" sem-role="ont::norole"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">-</feat>
@@ -572,7 +572,7 @@
  <syntax>
   <template-call template="ont::adj-content-affected-optional-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::content"/>
   </syn-sem>
   <syn-feats>
@@ -600,7 +600,7 @@
   <template-call template="ont::adj-expletive-content-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::content"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="it" sem-role="lexicon-data::norole"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" head-word="w::it" sem-role="ont::norole"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">-</feat>

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::awareness">
  <relation label="inherit">
-  ont::event-of-state
+  ont::event-of-experience
  </relation>
  <relation label="overlap">
   wn::|think%2:31:00|
@@ -26,13 +26,10 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::formal">
    <concept name="t" />
@@ -40,6 +37,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -121,32 +129,15 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
+ <role-restr-map roles="ont::experiencer">
   <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
+   <relation label="inherit">
+    phys-obj
+   </relation>
    <feat name="intentional">+</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::formal">
-  <concept name="t" />
- </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">mental</feat>
- </sem-feats>
  <concept name="ont::event-of-state">
  <relation label="inherit">
   ont::situation-root
@@ -169,18 +160,67 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::any-sem">
+ <sem-frame>
+ <role-restr-map roles="ont::experiencer">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::formal">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
  <relation label="inherit">
-  ont::root
+  situation
  </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">mental</feat>
+ </sem-feats>
+ <concept name="ont::event-of-experience">
+ <relation label="inherit">
+  ont::event-of-state
+  ont::event-of-state
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::experiencer">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ <sem-frame>
+  <role-restr-map roles="ont::experiencer">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <concept name="ont::expectation">
  <relation label="inherit">
   ont::awareness
@@ -283,6 +323,59 @@
   <feat name="time-span">extended</feat>
   <feat name="aspect">indiv-level</feat>
  </sem-feats>
+ </concept>
+ <concept name="ont::understand">
+ <relation label="inherit">
+  ont::awareness
+ </relation>
+ <relation label="overlap">
+  wn::|know%2:31:02|
+  wn::|know%2:31:03|
+  wn::|know%2:31:01|
+  wn::|cognize%2:31:00|
+  wn::|cognise%2:31:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">indiv-level</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::familiar">
+ <relation label="inherit">
+  ont::awareness
+ </relation>
+ <relation label="overlap">
+  wn::|know%2:31:14|
+  wn::|know%2:31:00|
+  wn::|recognize%2:31:00|
+  wn::|recognise%2:31:00|
+  wn::|know%2:31:15|
+  wn::|know%2:31:04|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::predicate" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::place" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::suppose">
  <relation label="inherit">
@@ -425,59 +518,5 @@
   ont::awareness
   ont::mass-pred-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="understand" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="understood" />
-   </past>
-  </forms>
- </morph>
- <example text="I understand the plan">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::awareness
- </relation>
- <syntax>
-  <template-call template="ont::neutral-theme-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="aspect">stage-level</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="understand" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="understood" />
-   </past>
-  </forms>
- </morph>
- <example text="I understand">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::awareness
-  ont::neutral-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="aspect">indiv-level</feat>
-  </sem-feats>
- </semantics>
  </sense>
 </dsl>

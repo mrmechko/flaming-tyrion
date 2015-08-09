@@ -27,8 +27,24 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="time" />
  <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  interval
+  point
+ </or>
+ </feat>
+ <feat name="time-function">any-time-function</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   time
@@ -79,6 +95,7 @@
   </feat>
  </sem-feats>
  </concept>
+ <concept name="time" />
  <sem-frame>
  <role-restr-map roles="ont::val" optional="optional">
   <concept name="t" />
@@ -111,23 +128,6 @@
   <feat name="time-function">time-of-year</feat>
  </sem-feats>
  </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">
- <or>
-  interval
-  point
- </or>
- </feat>
- <feat name="time-function">any-time-function</feat>
- </sem-feats>
  <sense>
  <morph>
   <pos pos="name" />

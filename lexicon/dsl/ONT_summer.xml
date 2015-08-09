@@ -7,8 +7,25 @@
   ont::season
  </relation>
  </concept>
- <concept name="time" />
  <concept name="ont::root" />
+ <concept name="time" />
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  interval
+  point
+ </or>
+ </feat>
+ <feat name="time-function">any-time-function</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   time
@@ -104,23 +121,6 @@
   ont::time-interval
  </relation>
  </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">
- <or>
-  interval
-  point
- </or>
- </feat>
- <feat name="time-function">any-time-function</feat>
- </sem-feats>
  <sense>
  <morph>
   <pos pos="n" />
@@ -132,7 +132,7 @@
  <syntax>
   <template-call template="ont::time-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

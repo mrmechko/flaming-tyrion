@@ -14,23 +14,18 @@
  </sem-feats>
  </concept>
  <concept name="ont::root" />
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
+  ont::root
  </relation>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="information">mental-construct</feat>
- </sem-feats>
+ <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -45,18 +40,23 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="abstr-obj" />
- <concept name="ont::any-sem">
+ <sem-feats>
  <relation label="inherit">
-  ont::root
+  abstr-obj
+ </relation>
+ <feat name="information">mental-construct</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
  <concept name="ont::mental-object">
  <relation label="inherit">
   ont::mental-construction
@@ -67,6 +67,28 @@
   wn::|noesis%1:03:00|
   wn::|grounds%1:10:00|
   wn::|reason%1:10:00|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="cause">mental</feat>
+    <feat name="information">mental-construct</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::feeling">
+ <relation label="inherit">
+  ont::mental-construction
+ </relation>
+ <relation label="overlap">
+  wn::|feeling%1:03:00|
+  wn::|bother%1:09:00|
+  wn::|worry%1:09:00|
+  wn::|sorrow%1:09:00|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::of" optional="optional">
@@ -110,5 +132,21 @@
   </relation>
   <feat name="information">data</feat>
  </sem-feats>
+ </concept>
+ <concept name="ont::social-contract">
+ <relation label="inherit">
+  ont::mental-construction
+ </relation>
+ <relation label="overlap">
+  wn::|right%1:07:00|
+  wn::|law%1:14:00|
+  wn::|freedom%1:26:00|
+  wn::|freedom%1:26:01|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
 </dsl>

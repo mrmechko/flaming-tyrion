@@ -49,6 +49,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -68,6 +79,28 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="object-function">spatial-object</feat>
+ <feat name="form">geographical-object</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00|
+  wn::|physical_object%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::of" optional="optional">
@@ -100,17 +133,28 @@
   <feat name="form">geographical-object</feat>
  </sem-feats>
  </concept>
- <concept name="ont::location-by-description">
+ <concept name="ont::location">
  <relation label="inherit">
-  ont::location
+  ont::geo-object
  </relation>
- </concept>
  <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="spatial-abstraction">spatial-point</feat>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">spatial-object</feat>
+  <feat name="form">geographical-object</feat>
+  <feat name="origin">non-living</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="phys-obj" />
  <sem-frame>
  <role-restr-map roles="ont::of2" optional="optional">
   <sem-feats>
@@ -143,61 +187,17 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::location">
- <relation label="inherit">
-  ont::geo-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="object-function">spatial-object</feat>
-  <feat name="form">geographical-object</feat>
-  <feat name="origin">non-living</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::of" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::phys-object">
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <relation label="overlap">
-  wn::|object%1:03:00|
-  wn::|physical_object%1:03:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="intentional">-</feat>
- </sem-feats>
- </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="object-function">spatial-object</feat>
- <feat name="form">geographical-object</feat>
+ <feat name="spatial-abstraction">spatial-point</feat>
  </sem-feats>
- <concept name="ont::any-sem">
+ <concept name="ont::location-by-description">
  <relation label="inherit">
-  ont::root
+  ont::location
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="phys-obj" />
  <sense>
  <morph>
   <pos pos="n" />
@@ -209,8 +209,8 @@
  <syntax>
   <template-call template="ont::count-pred-junction-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat2" syn-cat="pp" head-word="with" sem-role="ont::of2" optional="optional"/>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of" optional="optional"/>
+   <syn-sem-map syn-arg="subcat2" syn-cat="pp" head-word="w::with" sem-role="ont::of2" optional="optional"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of" optional="optional"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

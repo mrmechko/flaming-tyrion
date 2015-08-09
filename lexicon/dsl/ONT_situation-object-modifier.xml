@@ -24,7 +24,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -69,6 +79,7 @@
   abstr-obj
  </relation>
  </concept>
+ <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::of">
   <or>
@@ -109,17 +120,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
  <concept name="ont::phys-modifier">
  <relation label="inherit">
   ont::situation-object-modifier

@@ -8,7 +8,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -22,6 +32,18 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::purpose-implicit" optional="optional">
@@ -80,110 +102,6 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="ont::physical-property-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::psychological-property-val">
- <relation label="inherit">
-  ont::animal-property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::content" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::stimulus" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::animal-property-val">
- <relation label="inherit">
-  ont::body-related-property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::content" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::content" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::stimulus" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::body-related-property-val">
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::content" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::abstract-object-property
@@ -240,28 +158,110 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
+ <concept name="ont::physical-property-val">
  <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
+  ont::property-val
  </relation>
  </concept>
- <concept name="ont::any-sem">
+ <sem-frame>
+ <role-restr-map roles="ont::content" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::body-related-property-val">
  <relation label="inherit">
-  ont::root
+  ont::physical-property-val
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
+ <sem-frame>
+ <role-restr-map roles="ont::content" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::stimulus" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::animal-property-val">
+ <relation label="inherit">
+  ont::body-related-property-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::content" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::psychological-property-val">
+ <relation label="inherit">
+  ont::animal-property-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::content" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::stimulus" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::euphoric">
  <relation label="inherit">
   ont::emotional-property-val
@@ -338,7 +338,7 @@
  <syntax>
   <template-call template="ont::adj-stimulus-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::stimulus"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::stimulus"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -362,7 +362,7 @@
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -447,11 +447,10 @@
  </relation>
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp
-                                                          (w::or
-                                                            w::at
-                                                            w::about))" />
+                                                          (w::or w::at
+                                                                 w::about))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(or at about)" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::at w::about)" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -538,7 +537,7 @@
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp w::about)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -600,7 +599,7 @@
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp w::about)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -624,7 +623,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -678,7 +677,7 @@
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -764,7 +763,7 @@
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp w::about)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -806,11 +805,10 @@
  </relation>
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp
-                                                          (w::or
-                                                            w::at
-                                                            w::about))" />
+                                                          (w::or w::at
+                                                                 w::about))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(or at about)" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::at w::about)" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -899,7 +897,7 @@
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp w::about)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -958,7 +956,7 @@
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp w::about)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1020,7 +1018,7 @@
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp w::about)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1069,7 +1067,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -1117,7 +1115,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -1152,7 +1150,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -1207,12 +1205,13 @@
  </relation>
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp
-                                                          (w::or
-                                                            w::at
-                                                            w::about
-                                                            w::for))" />
+                                                          (w::or w::at
+                                                                 w::about
+                                                                 w::for))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(or at about for)" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::at
+                                                                w::about
+                                                                w::for)" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1302,7 +1301,7 @@
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp w::about)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1326,7 +1325,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -1414,7 +1413,7 @@
  <syntax>
   <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp w::about)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>

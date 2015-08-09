@@ -32,6 +32,18 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -68,80 +80,23 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::state-of-being">
- <relation label="inherit">
-  ont::event-of-state
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral ont::donor">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::neutral1">
+ <role-restr-map roles="ont::formal">
   <or>
-   <concept name="phys-obj" />
    <concept name="situation" />
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::neutral">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="intentional">-</feat>
-  </sem-feats>
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::event-of-state">
- <relation label="inherit">
-  ont::situation-root
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">static</feat>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">static</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral ont::donor">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::situation-root">
  <relation label="inherit">
   ont::referential-sem
@@ -169,39 +124,84 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">static</feat>
- </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::formal">
   <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral ont::donor">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-state">
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">static</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral1">
+  <or>
+   <concept name="phys-obj" />
    <concept name="situation" />
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::neutral">
-  <concept name="t" />
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">-</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::any-sem">
+ <concept name="ont::state-of-being">
  <relation label="inherit">
-  ont::root
+  ont::event-of-state
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral ont::donor">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="accept" />
+  <word first-word="acceptance" />
   <forms>
    -VB
    <nom>
@@ -232,7 +232,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="characterize" />
+  <word first-word="characterization" />
   <forms>
    -VB
    <nom>

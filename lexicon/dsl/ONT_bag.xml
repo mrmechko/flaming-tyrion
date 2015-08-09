@@ -11,6 +11,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -31,10 +42,61 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::small-container">
+ <concept name="phys-obj" />
+ <sem-feats>
  <relation label="inherit">
-  ont::container
+  phys-obj
  </relation>
+ <feat name="form">solid-object</feat>
+ <feat name="origin">artifact</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00|
+  wn::|physical_object%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::contents" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="object-function">container-object</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">solid-object</feat>
+ <feat name="container">+</feat>
+ </sem-feats>
+ <concept name="ont::manufactured-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|instrumentation%1:06:00|
+  wn::|instrumentality%1:06:00|
+  wn::|device%1:06:00|
+  wn::|artifact%1:03:00|
+  wn::|artefact%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">solid-object</feat>
+  <feat name="origin">artifact</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::container">
  <relation label="inherit">
@@ -61,73 +123,11 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::manufactured-object">
+ <concept name="ont::small-container">
  <relation label="inherit">
-  ont::phys-object
- </relation>
- <relation label="overlap">
-  wn::|instrumentation%1:06:00|
-  wn::|instrumentality%1:06:00|
-  wn::|device%1:06:00|
-  wn::|artifact%1:03:00|
-  wn::|artefact%1:03:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="form">solid-object</feat>
-  <feat name="origin">artifact</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="object-function">container-object</feat>
- <feat name="origin">artifact</feat>
- <feat name="form">solid-object</feat>
- <feat name="container">+</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::contents" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::phys-object">
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <relation label="overlap">
-  wn::|object%1:03:00|
-  wn::|physical_object%1:03:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="intentional">-</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="form">solid-object</feat>
- <feat name="origin">artifact</feat>
- </sem-feats>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
+  ont::container
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="phys-obj" />
  <sense>
  <morph>
   <pos pos="n" />
@@ -139,7 +139,7 @@
  <syntax>
   <template-call template="ont::pred-subcat-contents-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::contents"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::contents"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

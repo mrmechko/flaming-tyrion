@@ -28,6 +28,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -70,6 +81,7 @@
   <feat name="intentional">-</feat>
  </sem-feats>
  </concept>
+ <concept name="phys-obj" />
  <sem-frame>
  <role-restr-map roles="ont::contents" optional="optional">
   <sem-feats>
@@ -109,18 +121,6 @@
   <feat name="origin">artifact</feat>
  </sem-feats>
  </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="phys-obj" />
  <concept name="ont::boxcar">
  <relation label="inherit">
   ont::vehicle-container
@@ -156,7 +156,7 @@
  <syntax>
   <template-call template="ont::pred-subcat-contents-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::contents"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::contents"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -187,7 +187,7 @@
  <syntax>
   <template-call template="ont::pred-subcat-contents-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::contents"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::contents"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

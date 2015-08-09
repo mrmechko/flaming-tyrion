@@ -19,6 +19,17 @@
  </sem-feats>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -54,6 +65,50 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">static</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::spatial-loc" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg0" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::affected1" optional="optional">
@@ -180,6 +235,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-feats>
  <relation label="inherit">
   situation
@@ -209,62 +265,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::situation-root">
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="container">-</feat>
-  <feat name="information">mental-construct</feat>
-  <feat name="intentional">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::spatial-loc" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg0" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">static</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::formal">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <sense>
  <morph>
   <pos pos="v" />
@@ -279,7 +279,11 @@
  <syntax>
   <template-call template="ont::neutral-location-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(or on in under into at)" sem-role="ont::spatial-loc"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
+                                                               w::in
+                                                               w::under
+                                                               w::into
+                                                               w::at)" sem-role="ont::spatial-loc"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
  </syntax>
@@ -312,7 +316,11 @@
  <syntax>
   <template-call template="ont::neutral-location-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(or on in under into at)" sem-role="ont::spatial-loc"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
+                                                               w::in
+                                                               w::under
+                                                               w::into
+                                                               w::at)" sem-role="ont::spatial-loc"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
  </syntax>

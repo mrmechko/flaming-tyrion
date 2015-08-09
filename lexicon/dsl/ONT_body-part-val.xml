@@ -8,7 +8,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -22,6 +32,18 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::purpose-implicit" optional="optional">
@@ -80,21 +102,6 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="ont::physical-property-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::body-related-property-val">
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- </concept>
- <concept name="ont::body-system-val">
- <relation label="inherit">
-  ont::body-related-property-val
- </relation>
- </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::abstract-object-property
@@ -151,28 +158,21 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
+ <concept name="ont::physical-property-val">
  <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
+  ont::property-val
  </relation>
  </concept>
- <concept name="ont::any-sem">
+ <concept name="ont::body-related-property-val">
  <relation label="inherit">
-  ont::root
+  ont::physical-property-val
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
+ <concept name="ont::body-system-val">
+ <relation label="inherit">
+  ont::body-related-property-val
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="adj" />

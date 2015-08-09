@@ -3,12 +3,39 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::linear-extent">
+ <relation label="overlap">
+  wn::|low%3:00:02|
+  wn::|low%3:00:01|
+  wn::|deep%5:00:00|
+  wn::|deep%5:00:00|
+  wn::|shallow%3:00:01|
+  wn::|high%3:00:02|
+  wn::|long%5:00:00|
+  wn::|long%3:00:02|
+  wn::|tall%3:00:00|
+  wn::|short%3:00:03|
+  wn::|deep%3:00:01|
+  wn::|short%3:00:02|
+  wn::|low%3:00:02|
+  wn::|low%3:00:01|
+ </relation>
  <relation label="inherit">
+  ont::linear-val
   ont::position-as-extent-reln
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -23,32 +50,166 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::position-as-extent-reln">
+ <sem-frame>
+ <role-restr-map roles="ont::purpose-implicit" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::purpose" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">dynamic</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
  <relation label="inherit">
-  ont::position-reln
+  abstr-obj
+ </relation>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object-property">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
  </relation>
  </concept>
- <concept name="ont::position-reln">
- <relation label="inherit">
-  ont::predicate
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::val">
+ <role-restr-map roles="ont::val" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::property-val">
+ <relation label="inherit">
+  ont::abstract-object-property
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="scale">-</feat>
+  <feat name="gradability">+</feat>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::purpose-implicit" optional="optional">
    <or>
     <concept name="phys-obj" />
+    <concept name="abstr-obj" />
     <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::purpose" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="aspect">dynamic</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <or>
+    <concept name="phys-obj" />
     <concept name="abstr-obj" />
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::of">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
+   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::val">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::predicate">
  <relation label="inherit">
   ont::abstract-object
@@ -73,63 +234,54 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::val">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::of">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="intentional">-</feat>
- <feat name="container">-</feat>
- <feat name="orientation">-</feat>
- <feat name="intensity">-</feat>
- <feat name="scale">-</feat>
- <feat name="gradability">+</feat>
+ <feat name="scale">linear-scale</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::val" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::of">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
+ <concept name="ont::spatial">
  <relation label="inherit">
-  ont::root
+  ont::property-val
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
+ <concept name="ont::position-reln">
+ <relation label="inherit">
+  ont::predicate
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::val">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::position-as-extent-reln">
+ <relation label="inherit">
+  ont::position-reln
+ </relation>
+ </concept>
+ <concept name="ont::linear-val">
+ <relation label="inherit">
+  ont::spatial
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">linear-scale</feat>
+ </sem-feats>
+ </concept>
  <sense>
  <morph>
   <pos pos="adv" />
@@ -167,6 +319,114 @@
  <relation label="inherit">
   ont::linear-extent
   ont::binary-constraint-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="deep" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="a deep hole">
+ </example>
+ <relation label="inherit">
+  ont::linear-extent
+  ont::less-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="high" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="a high mountain">
+ </example>
+ <relation label="inherit">
+  ont::linear-extent
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="long" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="a long line">
+ </example>
+ <relation label="inherit">
+  ont::linear-extent
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="low" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="a low ceiling">
+ </example>
+ <relation label="inherit">
+  ont::linear-extent
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="short" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::linear-extent
+  ont::less-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="tall" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <example text="a tall building">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::linear-extent
+  ont::central-adj-templ
  </relation>
  </sense>
 </dsl>

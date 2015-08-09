@@ -25,6 +25,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -61,6 +72,7 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::formal">
   <or>
@@ -178,18 +190,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <concept name="ont::possess">
  <relation label="inherit">
   ont::have
@@ -303,7 +303,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="include" />
+  <word first-word="inclusion" />
   <forms>
    -VB
    <nom>
@@ -334,15 +334,12 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="involve" />
+  <word first-word="involvement" />
   <forms>
    -VB
    <nom>
     <word first-word="involvement" />
    </nom>
-   <nomsubjpreps>
-    <word first-word="in" remaining-words="" />
-   </nomsubjpreps>
   </forms>
  </morph>
  <example text="it involves a wireless card">
@@ -381,7 +378,7 @@
  <syntax>
   <template-call template="ont::neutral1-neutral-templ" xp="'(w::pp w::in)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="in" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::in" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral1"/>
   </syn-sem>
  </syntax>

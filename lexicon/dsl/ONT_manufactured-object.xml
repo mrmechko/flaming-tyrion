@@ -22,27 +22,22 @@
  </sem-feats>
  </concept>
  <concept name="ont::root" />
- <concept name="ont::phys-object">
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::referential-sem
+  ont::root
  </relation>
- <relation label="overlap">
-  wn::|object%1:03:00|
-  wn::|physical_object%1:03:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="intentional">-</feat>
- </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="form">solid-object</feat>
- <feat name="origin">artifact</feat>
+ <feat name="intentional">-</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <relation label="inherit">
@@ -58,24 +53,29 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="phys-obj" />
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="intentional">-</feat>
+ <feat name="form">solid-object</feat>
+ <feat name="origin">artifact</feat>
  </sem-feats>
- <concept name="ont::any-sem">
+ <concept name="ont::phys-object">
  <relation label="inherit">
-  ont::root
+  ont::referential-sem
  </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00|
+  wn::|physical_object%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="phys-obj" />
  <concept name="ont::automaton">
  <relation label="inherit">
   ont::manufactured-object
@@ -458,6 +458,24 @@
   <pos pos="n" />
   <word first-word="ball" />
  </morph>
+ <relation label="inherit">
+  ont::manufactured-object
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="block" />
+  <forms>
+   -VB
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="paint the block">
+ </example>
  <relation label="inherit">
   ont::manufactured-object
   ont::count-pred-templ

@@ -8,6 +8,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <relation label="inherit">
@@ -23,24 +34,45 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::ordered-domain">
- <relation label="inherit">
-  ont::domain
- </relation>
- </concept>
- <concept name="ont::domain">
- <relation label="inherit">
-  ont::abstract-function
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::val" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::of">
-   <concept name="t" />
-  </role-restr-map>
+ <role-restr-map roles="ont::val">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="measure-function">value</feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="information">-</feat>
+ <feat name="gradability">-</feat>
+ <feat name="measure-function">term</feat>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::val" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::abstract-function">
  <relation label="inherit">
   ont::abstract-object
@@ -66,56 +98,24 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::val" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::of">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
+ <concept name="ont::domain">
  <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
+  ont::abstract-function
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::val" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::ordered-domain">
+ <relation label="inherit">
+  ont::domain
  </relation>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="information">-</feat>
- <feat name="gradability">-</feat>
- <feat name="measure-function">term</feat>
- <feat name="intentional">-</feat>
- <feat name="container">-</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::val">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="measure-function">value</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
  <concept name="ont::range">
  <relation label="inherit">
   ont::non-measure-ordered-domain
@@ -267,7 +267,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -339,7 +339,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -384,7 +384,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -449,7 +449,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -491,7 +491,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -562,7 +562,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -610,7 +610,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -630,19 +630,6 @@
    </feat>
   </syn-feats>
  </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="freedom" />
- </morph>
- <example text="you have the freedom to distribute copies">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::non-measure-ordered-domain
-  ont::count-pred-templ
- </relation>
  </sense>
  <sense>
  <morph>
@@ -708,7 +695,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -740,7 +727,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -777,7 +764,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -812,7 +799,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -870,7 +857,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -915,7 +902,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -950,7 +937,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -992,7 +979,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -1024,7 +1011,7 @@
  <syntax>
   <template-call template="ont::reln-subcat-of-units-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1060,7 +1047,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -1092,7 +1079,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

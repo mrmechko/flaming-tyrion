@@ -8,7 +8,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -23,14 +33,58 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::organization">
+ <concept name="abstr-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::of" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
  <relation label="inherit">
-  ont::social-group
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="object-function">occupation</feat>
+ <feat name="intentional">+</feat>
+ <feat name="information">information-content</feat>
+ </sem-feats>
+ <concept name="ont::group-object">
+ <relation label="inherit">
+  ont::abstract-object
  </relation>
  <relation label="overlap">
-  wn::|organization%1:14:00|
-  wn::|organisation%1:14:00|
+  wn::|mathematical_group%1:09:00|
+  wn::|group%1:09:00|
+  wn::|chemical_group%1:27:00|
+  wn::|radical%1:27:00|
+  wn::|group%1:27:00|
+  wn::|group%1:03:00|
+  wn::|grouping%1:03:00|
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::social-group">
  <relation label="inherit">
@@ -57,67 +111,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::group-object">
+ <concept name="ont::organization">
  <relation label="inherit">
-  ont::abstract-object
+  ont::social-group
  </relation>
  <relation label="overlap">
-  wn::|mathematical_group%1:09:00|
-  wn::|group%1:09:00|
-  wn::|chemical_group%1:27:00|
-  wn::|radical%1:27:00|
-  wn::|group%1:27:00|
-  wn::|group%1:03:00|
-  wn::|grouping%1:03:00|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::of" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="container">-</feat>
- <feat name="object-function">occupation</feat>
- <feat name="intentional">+</feat>
- <feat name="information">information-content</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::of" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
+  wn::|organization%1:14:00|
+  wn::|organisation%1:14:00|
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::of" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
 </dsl>

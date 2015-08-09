@@ -14,6 +14,17 @@
  </sem-feats>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -50,6 +61,39 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::spatial-loc" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg0" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::content" optional="optional">
   <concept name="t" />
@@ -73,38 +117,6 @@
    situation
   </relation>
   <feat name="intentional">-</feat>
- </sem-feats>
- </concept>
- <concept name="ont::trip">
- <relation label="inherit">
-  ont::travel
- </relation>
- <relation label="overlap">
-  wn::|journey%1:04:00|
-  wn::|journeying%1:04:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">+</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">+</feat>
- </sem-feats>
- <concept name="ont::travel">
- <relation label="inherit">
-  ont::event
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">+</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -141,51 +153,39 @@
  </relation>
  <feat name="trajectory">+</feat>
  </sem-feats>
- <concept name="ont::situation-root">
+ <concept name="ont::travel">
  <relation label="inherit">
-  ont::referential-sem
+  ont::event
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="container">-</feat>
-  <feat name="information">mental-construct</feat>
-  <feat name="intentional">-</feat>
+  <feat name="trajectory">+</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::spatial-loc" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg0" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="intentional">-</feat>
+ <feat name="trajectory">+</feat>
  </sem-feats>
- <concept name="ont::any-sem">
+ <concept name="ont::trip">
  <relation label="inherit">
-  ont::root
+  ont::travel
  </relation>
+ <relation label="overlap">
+  wn::|journey%1:04:00|
+  wn::|journeying%1:04:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">+</feat>
+ </sem-feats>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <sense>
  <morph>
   <pos pos="n" />

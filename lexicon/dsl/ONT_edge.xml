@@ -30,6 +30,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -49,6 +60,28 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="object-function">spatial-object</feat>
+ <feat name="form">geographical-object</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00|
+  wn::|physical_object%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::of" optional="optional">
@@ -81,28 +114,6 @@
   <feat name="form">geographical-object</feat>
  </sem-feats>
  </concept>
- <concept name="ont::location-by-description">
- <relation label="inherit">
-  ont::location
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="spatial-abstraction">line</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::of" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="spatial-abstraction">spatial-region</feat>
-   <feat name="form">object</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::location">
  <relation label="inherit">
   ont::geo-object
@@ -124,40 +135,29 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::phys-object">
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <relation label="overlap">
-  wn::|object%1:03:00|
-  wn::|physical_object%1:03:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="intentional">-</feat>
- </sem-feats>
- </concept>
+ <concept name="phys-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::of" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="spatial-abstraction">spatial-region</feat>
+   <feat name="form">object</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="object-function">spatial-object</feat>
- <feat name="form">geographical-object</feat>
+ <feat name="spatial-abstraction">line</feat>
  </sem-feats>
- <concept name="ont::any-sem">
+ <concept name="ont::location-by-description">
  <relation label="inherit">
-  ont::root
+  ont::location
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="phys-obj" />
  <sense>
  <morph>
   <pos pos="n" />
@@ -185,7 +185,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -217,7 +217,7 @@
  <syntax>
   <template-call template="ont::part-of-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -247,7 +247,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -282,7 +282,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

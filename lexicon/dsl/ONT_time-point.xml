@@ -39,11 +39,38 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="time" />
  <concept name="ont::root" />
- <concept name="ont::time-object">
+ <sem-feats>
  <relation label="inherit">
-  ont::any-time-object
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  interval
+  point
+ </or>
+ </feat>
+ <feat name="time-function">any-time-function</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  point
+  interval
+ </or>
+ </feat>
+ </sem-feats>
+ <concept name="ont::any-time-object">
+ <relation label="inherit">
+  ont::any-sem
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -51,18 +78,14 @@
   </relation>
   <feat name="time-scale">
   <or>
-   point
    interval
+   point
   </or>
   </feat>
+  <feat name="time-function">any-time-function</feat>
  </sem-feats>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">point</feat>
- </sem-feats>
+ <concept name="time" />
  <sem-frame>
  <role-restr-map roles="ont::interval" optional="optional">
   <concept name="time" />
@@ -82,9 +105,15 @@
   </or>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::any-time-object">
+ <sem-feats>
  <relation label="inherit">
-  ont::any-sem
+  time
+ </relation>
+ <feat name="time-scale">point</feat>
+ </sem-feats>
+ <concept name="ont::time-object">
+ <relation label="inherit">
+  ont::any-time-object
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -92,41 +121,12 @@
   </relation>
   <feat name="time-scale">
   <or>
-   interval
    point
+   interval
   </or>
   </feat>
-  <feat name="time-function">any-time-function</feat>
  </sem-feats>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">
- <or>
-  point
-  interval
- </or>
- </feat>
- </sem-feats>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">
- <or>
-  interval
-  point
- </or>
- </feat>
- <feat name="time-function">any-time-function</feat>
- </sem-feats>
  <sense>
  <morph>
   <pos pos="n" />
@@ -147,11 +147,9 @@
  </relation>
  <syntax>
   <template-call template="ont::other-reln-templ" xp="'(w::pp
-                                                        (w::or
-                                                          w::for
-                                                          w::of))" />
+                                                        (w::or w::for w::of))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(or for of)" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::for w::of)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -186,7 +184,7 @@
  <syntax>
   <template-call template="ont::gen-part-of-reln-action-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::action"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::action"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -216,7 +214,7 @@
  <syntax>
   <template-call template="ont::gen-part-of-reln-interval-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::interval"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::interval"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -246,7 +244,7 @@
  <syntax>
   <template-call template="ont::gen-part-of-reln-action-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::action"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::action"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -276,7 +274,7 @@
  <syntax>
   <template-call template="ont::gen-part-of-reln-interval-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::interval"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::interval"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -306,7 +304,7 @@
  <syntax>
   <template-call template="ont::gen-part-of-reln-action-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::action"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::action"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -336,7 +334,7 @@
  <syntax>
   <template-call template="ont::gen-part-of-reln-interval-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::interval"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::interval"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -368,7 +366,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

@@ -38,6 +38,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -73,6 +84,65 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::spatial-loc" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg0" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::agent">
@@ -127,6 +197,35 @@
  </sem-frame>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::agent1">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-action">
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
  <role-restr-map roles="ont::agent">
   <sem-feats>
    <or>
@@ -152,33 +251,41 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::conversing">
- <relation label="inherit">
-  ont::communication
- </relation>
- <relation label="overlap">
-  wn::|talk_about%2:32:01|
-  wn::|talk_of%2:32:00|
-  wn::|converse%2:32:00|
-  wn::|discourse%2:32:01|
-  wn::|correspond%2:32:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::agent1">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::associated-information" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::instrument" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="intentional">-</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::formal">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">force</feat>
+ </sem-feats>
+ <concept name="ont::agent-interaction">
+ <relation label="inherit">
+  ont::event-of-agent-interaction
+ </relation>
+ <sem-frame>
   <role-restr-map roles="ont::agent">
    <sem-feats>
     <or>
@@ -190,24 +297,32 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::agent1">
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="time-span">extended</feat>
- <feat name="aspect">unbounded</feat>
  <feat name="cause">agentive</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::formal">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-   <concept name="proposition" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::communication">
  <relation label="inherit">
   ont::agent-interaction
@@ -253,37 +368,52 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::formal">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">unbounded</feat>
  <feat name="cause">agentive</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::agent1">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::agent-interaction">
+ <concept name="ont::conversing">
  <relation label="inherit">
-  ont::event-of-agent-interaction
+  ont::communication
  </relation>
+ <relation label="overlap">
+  wn::|talk_about%2:32:01|
+  wn::|talk_of%2:32:00|
+  wn::|converse%2:32:00|
+  wn::|discourse%2:32:01|
+  wn::|correspond%2:32:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::agent1">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
   <role-restr-map roles="ont::agent">
    <sem-feats>
     <or>
@@ -295,136 +425,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">force</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::instrument" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::formal">
-  <concept name="situation" />
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::event-of-action">
- <relation label="inherit">
-  ont::event-of-change
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">force</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::agent1">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-root">
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="container">-</feat>
-  <feat name="information">mental-construct</feat>
-  <feat name="intentional">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::spatial-loc" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg0" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">dynamic</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::beneficiary" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <concept name="ont::discuss">
  <relation label="inherit">
   ont::talk
@@ -469,7 +469,7 @@
  <syntax>
   <template-call template="ont::agent-affected-xp-templ" xp="'(w::pp w::with)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="with" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::with" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -490,34 +490,5 @@
   ont::talk
   ont::agent-theme-to-addressee-optional-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="yell" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="yelled" />
-   </past>
-   <ing>
-    <word first-word="yelling" />
-   </ing>
-  </forms>
- </morph>
- <example text="yell to him">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::talk
- </relation>
- <syntax>
-  <template-call template="ont::agent-to-addressee-associated-info-optional-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="about" sem-role="ont::formal" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="to" sem-role="ont::agent1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
  </sense>
 </dsl>

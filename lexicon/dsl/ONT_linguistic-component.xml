@@ -18,7 +18,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -33,47 +43,12 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::linguistic-object">
- <relation label="inherit">
-  ont::mental-construction
- </relation>
- <relation label="overlap">
-  wn::|language_unit%1:10:00|
-  wn::|linguistic_unit%1:10:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="information">data</feat>
- </sem-feats>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::of">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="information">information-content</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::mental-construction">
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="information">mental-construct</feat>
- </sem-feats>
- </concept>
+ <concept name="abstr-obj" />
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="information">data</feat>
+ <feat name="information">mental-construct</feat>
  </sem-feats>
  <concept name="ont::abstract-object">
  <relation label="overlap">
@@ -90,19 +65,44 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="information">mental-construct</feat>
+ <feat name="information">data</feat>
  </sem-feats>
- <concept name="ont::any-sem">
+ <concept name="ont::mental-construction">
  <relation label="inherit">
-  ont::root
+  ont::abstract-object
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="information">mental-construct</feat>
+ </sem-feats>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="information">information-content</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::linguistic-object">
+ <relation label="inherit">
+  ont::mental-construction
+ </relation>
+ <relation label="overlap">
+  wn::|language_unit%1:10:00|
+  wn::|linguistic_unit%1:10:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="information">data</feat>
+ </sem-feats>
+ </concept>
  <sense>
  <morph>
   <pos pos="n" />
@@ -117,7 +117,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -152,7 +152,7 @@
  <syntax>
   <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

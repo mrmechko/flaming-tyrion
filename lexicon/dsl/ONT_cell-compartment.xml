@@ -11,6 +11,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -30,6 +41,33 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="origin">natural</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00|
+  wn::|physical_object%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::natural-object">
  <relation label="inherit">
@@ -51,6 +89,7 @@
   <feat name="origin">natural</feat>
  </sem-feats>
  </concept>
+ <concept name="phys-obj" />
  <sem-frame>
  <role-restr-map roles="ont::of" optional="optional">
   <sem-feats>
@@ -127,45 +166,6 @@
   ont::internal-body-part
  </relation>
  </concept>
- <concept name="ont::phys-object">
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <relation label="overlap">
-  wn::|object%1:03:00|
-  wn::|physical_object%1:03:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="intentional">-</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="spatial-abstraction">
- <or>
-  spatial-point
-  spatial-region
- </or>
- </feat>
- <feat name="origin">natural</feat>
- </sem-feats>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="phys-obj" />
  <concept name="ont::nucleus">
  <relation label="inherit">
   ont::cell-compartment

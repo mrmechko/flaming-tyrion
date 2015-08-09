@@ -25,6 +25,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -61,91 +72,23 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::expensiveness">
- <relation label="inherit">
-  ont::event-of-state
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::cost">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">indiv-level</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::beneficiary" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::cost">
-  <concept name="abstr-obj" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::event-of-state">
- <relation label="inherit">
-  ont::situation-root
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">static</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">-</feat>
- </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::formal">
   <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
    <concept name="situation" />
+   <concept name="abstr-obj" />
   </or>
  </role-restr-map>
- <role-restr-map roles="ont::cost">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">static</feat>
+ </sem-feats>
  <concept name="ont::situation-root">
  <relation label="inherit">
   ont::referential-sem
@@ -173,35 +116,92 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::cost">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">static</feat>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">-</feat>
+ </sem-feats>
+ <concept name="ont::event-of-state">
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">static</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::formal">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
  </role-restr-map>
- <role-restr-map roles="ont::neutral">
-  <concept name="t" />
+ <role-restr-map roles="ont::cost">
+  <concept name="abstr-obj" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::any-sem">
+ <sem-feats>
  <relation label="inherit">
-  ont::root
+  situation
  </relation>
+ <feat name="aspect">indiv-level</feat>
+ </sem-feats>
+ <concept name="ont::expensiveness">
+ <relation label="inherit">
+  ont::event-of-state
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::cost">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <sense>
  <morph>
   <pos pos="v" />

@@ -31,7 +31,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -46,30 +56,7 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::abstract-object-property">
- <relation label="inherit">
-  ont::abstract-object
-  abstr-obj
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="intensity">hi</feat>
- <feat name="gradability">+</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::property" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral1">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
+ <concept name="abstr-obj" />
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00|
@@ -81,17 +68,30 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="ont::any-sem">
+ <sem-frame>
+ <role-restr-map roles="ont::property" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
  <relation label="inherit">
-  ont::root
+  abstr-obj
+ </relation>
+ <feat name="intensity">hi</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object-property">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
  <concept name="ont::own">
  <relation label="inherit">
   ont::relation
@@ -202,7 +202,7 @@
  <syntax>
   <template-call template="ont::neutral-neutral-templ" xp="'(w::pp w::to)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="to" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::to" sem-role="ont::neutral1"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
  </syntax>
@@ -227,7 +227,7 @@
  <syntax>
   <template-call template="ont::reln-between-neutral-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="between" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::between" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -256,7 +256,7 @@
  <syntax>
   <template-call template="ont::reln-between-neutral-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="between" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::between" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

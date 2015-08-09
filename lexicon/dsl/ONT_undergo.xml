@@ -13,6 +13,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -93,22 +104,17 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::neutral1">
-  <concept name="situation" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral">
-  <concept name="phys-obj" />
+ <role-restr-map roles="ont::experiencer">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="time-span">extended</feat>
- <feat name="aspect">static</feat>
- </sem-feats>
  <concept name="ont::event-of-state">
  <relation label="inherit">
   ont::situation-root
@@ -131,9 +137,61 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::have-experience">
+ <sem-frame>
+ <role-restr-map roles="ont::experiencer">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral1">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">static</feat>
+ </sem-feats>
+ <concept name="ont::event-of-experience">
  <relation label="inherit">
   ont::event-of-state
+  ont::event-of-state
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::experiencer">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ <sem-frame>
+  <role-restr-map roles="ont::experiencer">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::have-experience">
+ <relation label="inherit">
+  ont::event-of-experience
  </relation>
  <relation label="overlap">
   wn::|get%2:29:00|
@@ -165,18 +223,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <sense>
  <morph>
   <pos pos="v" />

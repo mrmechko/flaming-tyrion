@@ -29,7 +29,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -43,6 +53,37 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <concept name="abstr-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::val" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -74,15 +115,46 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::temporal-location">
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::temporal-predicate">
  <relation label="inherit">
-  ont::temporal-modifier
+  ont::predicate
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">time-measure-scale</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::temporal-modifier">
+ <relation label="inherit">
+  ont::temporal-predicate
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::of">
    <or>
-    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
     <concept name="situation" />
+    <concept name="abstr-obj" />
     <concept name="time" />
    </or>
   </role-restr-map>
@@ -109,92 +181,30 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::temporal-modifier">
+ <concept name="ont::temporal-location">
  <relation label="inherit">
-  ont::temporal-predicate
+  ont::temporal-modifier
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::of">
    <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
     <concept name="abstr-obj" />
+    <concept name="situation" />
     <concept name="time" />
    </or>
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::time-rel-so-far">
+ <relation label="inherit">
+  ont::event-time-rel
+ </relation>
  <sem-frame>
- <role-restr-map roles="ont::of">
-  <or>
-   <concept name="abstr-obj" />
+  <role-restr-map roles="ont::of">
    <concept name="situation" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
+  </role-restr-map>
  </sem-frame>
- <concept name="ont::temporal-predicate">
- <relation label="inherit">
-  ont::predicate
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">time-measure-scale</feat>
- </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::of">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="intentional">-</feat>
- <feat name="container">-</feat>
- <feat name="orientation">-</feat>
- <feat name="intensity">-</feat>
- <feat name="scale">-</feat>
- <feat name="gradability">+</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::val" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::of">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
  <concept name="ont::event-time">
  <relation label="inherit">
   ont::event-time-rel
@@ -339,8 +349,7 @@
  <syntax>
   <template-call template="ont::ppword-adv-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="?sc" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(? argcat s np vp)" head-word="?arglex" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -381,7 +390,7 @@
   <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="?" head-word="x" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -600,7 +609,7 @@
   <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="?" head-word="x" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -690,8 +699,7 @@
  <syntax>
   <template-call template="ont::ppword-adv-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="?sc" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(? argcat s np vp)" head-word="?arglex" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -915,7 +923,7 @@
   <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="?" head-word="x" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -946,35 +954,6 @@
  <sense>
  <morph>
   <pos pos="adv" />
-  <word first-word="so" remaining-words="far" />
- </morph>
- <example text="add the best answer so far to the list of choices">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::ppword-adv-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="?sc" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(? argcat s np vp)" head-word="?arglex" sem-role="ont::of"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-   </or>
-   </feat>
-   <feat name="sort">pp-word</feat>
-   <feat name="wh">-</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
   <word first-word="sometime" />
  </morph>
  <provenance name="TRIPS">
@@ -986,8 +965,7 @@
  <syntax>
   <template-call template="ont::ppword-adv-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="?sc" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(? argcat s np vp)" head-word="?arglex" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -1028,8 +1006,7 @@
  <syntax>
   <template-call template="ont::ppword-adv-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="?sc" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(? argcat s np vp)" head-word="?arglex" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -1128,35 +1105,6 @@
  <sense>
  <morph>
   <pos pos="adv" />
-  <word first-word="to" remaining-words="date" />
- </morph>
- <example text="add the best answer to date to the list of choices">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::ppword-adv-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="?sc" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(? argcat s np vp)" head-word="?arglex" sem-role="ont::of"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-   </or>
-   </feat>
-   <feat name="sort">pp-word</feat>
-   <feat name="wh">-</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
   <word first-word="to" />
  </morph>
  <provenance name="TRIPS">
@@ -1171,7 +1119,7 @@
   <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="?" head-word="x" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -1198,8 +1146,7 @@
  <syntax>
   <template-call template="ont::ppword-adv-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="?sc" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(? argcat s np vp)" head-word="?arglex" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -1227,8 +1174,7 @@
  <syntax>
   <template-call template="ont::ppword-adv-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="?sc" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(? argcat s np vp)" head-word="?arglex" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -1256,8 +1202,7 @@
  <syntax>
   <template-call template="ont::ppword-adv-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="?sc" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(? argcat s np vp)" head-word="?arglex" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -1321,7 +1266,7 @@
   <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="?" head-word="x" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -1445,8 +1390,7 @@
  <syntax>
   <template-call template="ont::ppword-adv-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="?sc" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(? argcat s np vp)" head-word="?arglex" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -1476,8 +1420,7 @@
  <syntax>
   <template-call template="ont::ppword-adv-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="?sc" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(? argcat s np vp)" head-word="?arglex" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">

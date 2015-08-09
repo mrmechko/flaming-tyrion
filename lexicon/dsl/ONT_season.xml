@@ -7,8 +7,25 @@
   ont::time-interval
  </relation>
  </concept>
- <concept name="time" />
  <concept name="ont::root" />
+ <concept name="time" />
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  interval
+  point
+ </or>
+ </feat>
+ <feat name="time-function">any-time-function</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   time
@@ -99,23 +116,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">
- <or>
-  interval
-  point
- </or>
- </feat>
- <feat name="time-function">any-time-function</feat>
- </sem-feats>
  <concept name="ont::winter">
  <relation label="inherit">
   ont::season

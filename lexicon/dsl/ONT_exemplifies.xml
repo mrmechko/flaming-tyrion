@@ -16,7 +16,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -30,6 +40,18 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::property" optional="optional">
@@ -124,28 +146,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
- </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
  <sense>
  <morph>
   <pos pos="adj" />
@@ -160,7 +160,7 @@
  <syntax>
   <template-call template="ont::binary-constraint-adj-templ" xp="'(w::pp w::in)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="in" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::in" sem-role="ont::val"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -196,7 +196,7 @@
  <syntax>
   <template-call template="ont::binary-constraint-adj-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="as" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::as" sem-role="ont::val"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>

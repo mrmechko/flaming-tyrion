@@ -23,6 +23,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -118,6 +129,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::agent">
   <or>
@@ -170,18 +182,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <concept name="ont::event-of-agent-interaction">
  <relation label="inherit">
   ont::event-of-action
@@ -246,6 +246,7 @@
   wn::|deed%1:03:00|
   wn::|human_action%1:03:00|
   wn::|human_activity%1:03:00|
+  wn::|activity%1:04:00|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::agent">
@@ -288,38 +289,6 @@
     <concept name="abstr-obj" />
     <concept name="situation" />
    </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::perception">
- <relation label="inherit">
-  ont::event-of-action
- </relation>
- <relation label="overlap">
-  wn::|feel%2:35:00|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -378,6 +347,8 @@
   ont::event-of-action
  </relation>
  <relation label="overlap">
+  wn::|project%1:04:00|
+  wn::|project%1:09:00|
   wn::|activity%1:04:00|
  </relation>
  <sem-feats>

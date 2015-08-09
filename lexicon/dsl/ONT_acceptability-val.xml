@@ -8,7 +8,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -23,9 +33,73 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::evaluation-attribute-val">
+ <concept name="abstr-obj" />
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
  <relation label="inherit">
-  ont::property-val
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::purpose-implicit" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::purpose" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">dynamic</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object-property">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
  </relation>
  </concept>
  <concept name="ont::property-val">
@@ -84,85 +158,11 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::abstract-object-property">
+ <concept name="ont::evaluation-attribute-val">
  <relation label="inherit">
-  ont::abstract-object
-  abstr-obj
+  ont::property-val
  </relation>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="orientation">-</feat>
- <feat name="intensity">-</feat>
- <feat name="scale">-</feat>
- <feat name="gradability">+</feat>
- <feat name="intentional">-</feat>
- <feat name="information">-</feat>
- <feat name="container">-</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::purpose-implicit" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::purpose" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::of">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
- </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
  <concept name="ont::good">
  <relation label="inherit">
   ont::acceptability-val
@@ -289,7 +289,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -319,7 +319,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -349,7 +349,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -459,7 +459,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -490,7 +490,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -521,7 +521,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -668,7 +668,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -702,7 +702,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -736,7 +736,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -848,7 +848,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -883,7 +883,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -918,7 +918,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1002,7 +1002,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1033,7 +1033,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1064,7 +1064,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1151,7 +1151,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1178,7 +1178,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1205,7 +1205,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1269,7 +1269,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1300,7 +1300,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1331,7 +1331,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1490,7 +1490,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1788,7 +1788,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1822,7 +1822,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1856,7 +1856,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1941,7 +1941,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -1976,7 +1976,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2011,7 +2011,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2068,7 +2068,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2102,7 +2102,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2136,7 +2136,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2193,7 +2193,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2227,7 +2227,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2261,7 +2261,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2361,7 +2361,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2391,7 +2391,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2421,7 +2421,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2512,7 +2512,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2545,7 +2545,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2578,7 +2578,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2748,7 +2748,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2779,7 +2779,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2810,7 +2810,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2968,7 +2968,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -2999,7 +2999,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3030,7 +3030,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3157,7 +3157,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3188,7 +3188,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3219,7 +3219,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3269,7 +3269,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3296,7 +3296,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3323,7 +3323,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3667,7 +3667,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3698,7 +3698,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3729,7 +3729,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3853,7 +3853,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3884,7 +3884,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -3915,7 +3915,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -4006,7 +4006,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -4037,7 +4037,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -4068,7 +4068,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -4112,7 +4112,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -4136,7 +4136,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -4160,7 +4160,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -4217,7 +4217,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -4248,7 +4248,7 @@
  <syntax>
   <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::purpose-implicit"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose-implicit"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
@@ -4279,7 +4279,7 @@
  <syntax>
   <template-call template="ont::adj-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>

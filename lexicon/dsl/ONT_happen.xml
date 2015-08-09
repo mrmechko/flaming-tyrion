@@ -41,6 +41,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -121,6 +132,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::formal" optional="optional">
   <or>
@@ -157,18 +169,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <sense>
  <morph>
   <pos pos="v" />
@@ -181,10 +181,10 @@
   ont::happen
  </relation>
  <syntax>
-  <template-call template="ont::neutral-theme-subjcontrol-templ" />
+  <template-call template="ont::experiencer-theme-subjcontrol-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" head-word="?lsubjlex" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -197,7 +197,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="happen" />
+  <word first-word="happening" />
   <forms>
    -VB
    <past>
@@ -223,7 +223,7 @@
   <template-call template="ont::neutral-theme-subjcontrol-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" head-word="?lsubjlex" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
  </syntax>
  </sense>

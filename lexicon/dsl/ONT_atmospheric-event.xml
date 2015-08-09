@@ -19,6 +19,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -55,63 +66,13 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::natural-event">
- <relation label="inherit">
-  ont::event-type
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">phenomenal</feat>
-  <feat name="aspect">dynamic</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
-    <feat name="cause">phenomenal</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::agent">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::event-type">
- <relation label="inherit">
-  ont::situation-root
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="intentional">-</feat>
- </sem-feats>
- </concept>
+ <concept name="situation" />
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">phenomenal</feat>
- <feat name="aspect">dynamic</feat>
+ <feat name="intentional">-</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::agent">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="cause">phenomenal</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::situation-root">
  <relation label="inherit">
   ont::referential-sem
@@ -139,24 +100,63 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::agent">
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="cause">phenomenal</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="intentional">-</feat>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">phenomenal</feat>
+ <feat name="aspect">dynamic</feat>
  </sem-feats>
- <concept name="ont::any-sem">
+ <concept name="ont::event-type">
  <relation label="inherit">
-  ont::root
+  ont::situation-root
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::agent">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::natural-event">
+ <relation label="inherit">
+  ont::event-type
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">phenomenal</feat>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="cause">phenomenal</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::precipitating">
  <relation label="inherit">
   ont::atmospheric-event

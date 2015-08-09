@@ -24,6 +24,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -43,6 +54,33 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="origin">natural</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00|
+  wn::|physical_object%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -69,6 +107,36 @@
   </or>
   </feat>
   <feat name="origin">natural</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">
+ <or>
+  human
+  non-human-animal
+ </or>
+ </feat>
+ <feat name="form">solid-object</feat>
+ <feat name="intentional">+</feat>
+ </sem-feats>
+ <concept name="ont::organism">
+ <relation label="inherit">
+  ont::natural-object
+ </relation>
+ <relation label="overlap">
+  wn::|organism%1:03:00|
+  wn::|being%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">-</feat>
+  <feat name="origin">living</feat>
  </sem-feats>
  </concept>
  <concept name="ont::animal">
@@ -98,6 +166,49 @@
   <feat name="intentional">+</feat>
  </sem-feats>
  </concept>
+ <concept name="phys-obj" />
+ <concept name="ont::vertebrate">
+ <relation label="inherit">
+  ont::animal
+ </relation>
+ <relation label="overlap">
+  wn::|vertebrate%1:05:00|
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">-</feat>
+ <feat name="intentional">+</feat>
+ <feat name="container">-</feat>
+ <feat name="mobility">self-moving</feat>
+ <feat name="object-function">occupation</feat>
+ <feat name="origin">human</feat>
+ <feat name="spatial-abstraction">spatial-point</feat>
+ <feat name="form">solid-object</feat>
+ </sem-feats>
+ <concept name="ont::mammal">
+ <relation label="inherit">
+  ont::vertebrate
+ </relation>
+ <relation label="overlap">
+  wn::|mammal%1:05:00|
+  wn::|mammalian%1:05:00|
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="trajectory">-</feat>
+   <feat name="origin">human</feat>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::person">
  <relation label="inherit">
   ont::mammal
@@ -124,117 +235,6 @@
   <feat name="form">solid-object</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::of">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="trajectory">-</feat>
-   <feat name="origin">human</feat>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::mammal">
- <relation label="inherit">
-  ont::vertebrate
- </relation>
- <relation label="overlap">
-  wn::|mammal%1:05:00|
-  wn::|mammalian%1:05:00|
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="information">-</feat>
- <feat name="intentional">+</feat>
- <feat name="container">-</feat>
- <feat name="mobility">self-moving</feat>
- <feat name="object-function">occupation</feat>
- <feat name="origin">human</feat>
- <feat name="spatial-abstraction">spatial-point</feat>
- <feat name="form">solid-object</feat>
- </sem-feats>
- <concept name="ont::vertebrate">
- <relation label="inherit">
-  ont::animal
- </relation>
- <relation label="overlap">
-  wn::|vertebrate%1:05:00|
- </relation>
- </concept>
- <concept name="ont::organism">
- <relation label="inherit">
-  ont::natural-object
- </relation>
- <relation label="overlap">
-  wn::|organism%1:03:00|
-  wn::|being%1:03:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="object-function">-</feat>
-  <feat name="origin">living</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="origin">
- <or>
-  human
-  non-human-animal
- </or>
- </feat>
- <feat name="form">solid-object</feat>
- <feat name="intentional">+</feat>
- </sem-feats>
- <concept name="ont::phys-object">
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <relation label="overlap">
-  wn::|object%1:03:00|
-  wn::|physical_object%1:03:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="intentional">-</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="spatial-abstraction">
- <or>
-  spatial-point
-  spatial-region
- </or>
- </feat>
- <feat name="origin">natural</feat>
- </sem-feats>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="phys-obj" />
  <concept name="ont::child">
  <relation label="inherit">
   ont::family-relation
@@ -254,7 +254,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -281,7 +281,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -308,7 +308,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -335,7 +335,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -365,7 +365,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -392,7 +392,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -419,7 +419,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -446,7 +446,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -473,7 +473,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -500,7 +500,7 @@
  <syntax>
   <template-call template="ont::part-of-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -527,7 +527,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -557,7 +557,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -584,7 +584,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -611,7 +611,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -638,7 +638,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -665,7 +665,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -692,7 +692,7 @@
  <syntax>
   <template-call template="ont::part-of-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -719,7 +719,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -752,7 +752,7 @@
  <syntax>
   <template-call template="ont::part-of-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -779,7 +779,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -806,7 +806,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -833,7 +833,7 @@
  <syntax>
   <template-call template="ont::part-of-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -860,7 +860,7 @@
  <syntax>
   <template-call template="ont::kinship-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -893,7 +893,7 @@
  <syntax>
   <template-call template="ont::part-of-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

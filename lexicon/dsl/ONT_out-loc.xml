@@ -8,6 +8,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <relation label="inherit">
@@ -22,6 +33,36 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::val" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::val">
@@ -63,21 +104,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::position-as-point-reln">
- <relation label="inherit">
-  ont::position-reln
- </relation>
- </concept>
- <concept name="ont::pos-as-containment-reln">
- <relation label="inherit">
-  ont::position-as-point-reln
- </relation>
- </concept>
- <concept name="ont::outside">
- <relation label="inherit">
-  ont::pos-as-containment-reln
- </relation>
- </concept>
  <concept name="ont::position-reln">
  <relation label="inherit">
   ont::predicate
@@ -99,45 +125,19 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
+ <concept name="ont::position-as-point-reln">
  <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
+  ont::position-reln
  </relation>
  </concept>
- <sem-feats>
+ <concept name="ont::pos-as-containment-reln">
  <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="intentional">-</feat>
- <feat name="container">-</feat>
- <feat name="orientation">-</feat>
- <feat name="intensity">-</feat>
- <feat name="scale">-</feat>
- <feat name="gradability">+</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::val" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::of">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
+  ont::position-as-point-reln
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
+ <concept name="ont::outside">
+ <relation label="inherit">
+  ont::pos-as-containment-reln
+ </relation>
+ </concept>
 </dsl>

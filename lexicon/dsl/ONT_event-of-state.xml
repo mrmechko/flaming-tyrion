@@ -25,6 +25,71 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::spatial-loc" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::arg1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::arg0" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::formal">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">static</feat>
+ </sem-feats>
  <concept name="ont::situation-root">
  <relation label="inherit">
   ont::referential-sem
@@ -52,105 +117,29 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">static</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::formal">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::referential-sem">
- <relation label="inherit">
-  ont::any-sem
- </relation>
- <relation label="overlap">
-  wn::|entity%1:03:00|
- </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="container">-</feat>
- <feat name="information">mental-construct</feat>
- <feat name="intentional">-</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::spatial-loc" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::arg1" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::arg0" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
- <concept name="ont::awareness">
+ <concept name="ont::event-of-experience">
  <relation label="inherit">
   ont::event-of-state
+  ont::event-of-state
  </relation>
- <relation label="overlap">
-  wn::|think%2:31:00|
-  wn::|cogitate%2:31:00|
-  wn::|cerebrate%2:31:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">mental</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
+  <role-restr-map roles="ont::experiencer">
    <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
+    <relation label="inherit">
+     phys-obj
+    </relation>
     <feat name="intentional">+</feat>
    </sem-feats>
   </role-restr-map>
-  <role-restr-map roles="ont::formal">
-   <concept name="t" />
+ </sem-frame>
+ <sem-frame>
+  <role-restr-map roles="ont::experiencer">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -186,44 +175,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::experiencer-emotion">
- <relation label="inherit">
-  ont::event-of-state
- </relation>
- <relation label="overlap">
-  wn::|like%2:37:05|
-  wn::|experience%2:37:00|
-  wn::|feel%2:37:00|
-  wn::|feeling%1:03:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">stage-level</feat>
-  <feat name="cause">mental</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::action" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::expensiveness">
  <relation label="inherit">
   ont::event-of-state
@@ -248,40 +199,6 @@
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
    </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::have-experience">
- <relation label="inherit">
-  ont::event-of-state
- </relation>
- <relation label="overlap">
-  wn::|get%2:29:00|
-  wn::|take%2:29:08|
-  wn::|contract%2:29:00|
-  wn::|take%2:39:00|
-  wn::|have%2:39:06|
-  wn::|have%2:42:12|
-  wn::|have%2:30:01|
-  wn::|have%2:40:05|
-  wn::|have%2:40:03|
-  wn::|have%2:29:05|
-  wn::|have%2:35:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="time-span">extended</feat>
-  <feat name="aspect">static</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::neutral1">
-   <concept name="situation" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <concept name="phys-obj" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -637,40 +554,6 @@
     </or>
     <feat name="intentional">-</feat>
    </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::familiar">
- <relation label="inherit">
-  ont::event-of-state
- </relation>
- <relation label="overlap">
-  wn::|know%2:31:14|
-  wn::|know%2:31:00|
-  wn::|recognize%2:31:00|
-  wn::|recognise%2:31:00|
-  wn::|know%2:31:15|
-  wn::|know%2:31:04|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::predicate" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::place" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::formal">
-   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>

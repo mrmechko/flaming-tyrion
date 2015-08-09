@@ -21,6 +21,18 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="phys-obj" />
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -40,6 +52,33 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="origin">natural</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00|
+  wn::|physical_object%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::natural-object">
  <relation label="inherit">
@@ -61,12 +100,9 @@
   <feat name="origin">natural</feat>
  </sem-feats>
  </concept>
- <concept name="ont::molecule">
+ <concept name="ont::molecular-part">
  <relation label="inherit">
-  ont::molecular-part
- </relation>
- <relation label="overlap">
-  wn::|molecule%1:27:00|
+  ont::natural-object
  </relation>
  </concept>
  <sem-frame>
@@ -79,50 +115,14 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::molecular-part">
+ <concept name="ont::molecule">
  <relation label="inherit">
-  ont::natural-object
- </relation>
- </concept>
- <concept name="ont::phys-object">
- <relation label="inherit">
-  ont::referential-sem
+  ont::molecular-part
  </relation>
  <relation label="overlap">
-  wn::|object%1:03:00|
-  wn::|physical_object%1:03:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="intentional">-</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="spatial-abstraction">
- <or>
-  spatial-point
-  spatial-region
- </or>
- </feat>
- <feat name="origin">natural</feat>
- </sem-feats>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
+  wn::|molecule%1:27:00|
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="phys-obj" />
  <sense>
  <morph>
   <pos pos="n" />
@@ -134,7 +134,7 @@
  <syntax>
   <template-call template="ont::pred-subcat-contents-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::contents"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::contents"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

@@ -21,7 +21,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -36,6 +46,18 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="abstr-obj" />
  <concept name="ont::abstract-object-property">
  <relation label="inherit">
   ont::abstract-object
@@ -61,28 +83,6 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
- </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
  <concept name="ont::information">
  <relation label="inherit">
   ont::information-function-object
@@ -340,10 +340,10 @@
  <syntax>
   <template-call template="ont::other-reln-associated-info-count-templ" xp="'(w::pp
                                                                               (w::or
-                                                                                w::of
-                                                                                w::with))" />
+                                                                               w::of
+                                                                               w::with))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(or of with)" sem-role="ont::associated-information"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::of w::with)" sem-role="ont::associated-information"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -388,19 +388,6 @@
   <word first-word="label" />
  </morph>
  <example text="read the label">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::information-function-object
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="law" />
- </morph>
- <example text="congress passed the new law">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
@@ -504,19 +491,6 @@
   <pos pos="n" />
   <word first-word="rolodex" />
  </morph>
- <relation label="inherit">
-  ont::information-function-object
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="rule" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
  <relation label="inherit">
   ont::information-function-object
   ont::count-pred-templ

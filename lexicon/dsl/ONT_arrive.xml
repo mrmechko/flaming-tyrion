@@ -40,6 +40,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -76,47 +87,80 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::event-of-action">
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
  <relation label="inherit">
-  ont::event-of-change
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <relation label="inherit">
+  ont::referential-sem
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="cause">force</feat>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
+  <role-restr-map roles="ont::spatial-loc" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg0" optional="optional">
+   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">bounded</feat>
+ <feat name="cause">force</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::spatial-loc">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">
-   <or>
-    place
-    representation
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::event-of-change">
  <relation label="inherit">
   ont::situation-root
@@ -154,96 +198,52 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::spatial-loc">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="object-function">
+   <or>
+    place
+    representation
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="cause">force</feat>
+ <feat name="aspect">bounded</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::agent">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-root">
+ <concept name="ont::event-of-action">
  <relation label="inherit">
-  ont::referential-sem
+  ont::event-of-change
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="container">-</feat>
-  <feat name="information">mental-construct</feat>
-  <feat name="intentional">-</feat>
+  <feat name="cause">force</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::spatial-loc" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg0" optional="optional">
-   <concept name="t" />
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">dynamic</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::beneficiary" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="arrive" />
+  <word first-word="arrival" />
   <forms>
    -VB
    <nom>
@@ -260,10 +260,10 @@
  <syntax>
   <template-call template="ont::agent-location-optional-templ" xp="'(w::pp
                                                                      (w::or
-                                                                       w::at
-                                                                       w::in))" />
+                                                                      w::at
+                                                                      w::in))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(or at in)" sem-role="ont::spatial-loc" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::at w::in)" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -285,7 +285,11 @@
  <syntax>
   <template-call template="ont::agent-location-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(or on in under into at)" sem-role="ont::spatial-loc" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
+                                                               w::in
+                                                               w::under
+                                                               w::into
+                                                               w::at)" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -301,7 +305,11 @@
  <syntax>
   <template-call template="ont::agent-location-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(or on in under into at)" sem-role="ont::spatial-loc" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
+                                                               w::in
+                                                               w::under
+                                                               w::into
+                                                               w::at)" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -317,7 +325,11 @@
  <syntax>
   <template-call template="ont::agent-location-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(or on in under into at)" sem-role="ont::spatial-loc" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
+                                                               w::in
+                                                               w::under
+                                                               w::into
+                                                               w::at)" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -325,7 +337,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="land" />
+  <word first-word="landing" />
   <forms>
    -VB
    <nom>
@@ -342,7 +354,11 @@
  <syntax>
   <template-call template="ont::agent-location-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(or on in under into at)" sem-role="ont::spatial-loc" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
+                                                               w::in
+                                                               w::under
+                                                               w::into
+                                                               w::at)" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -364,7 +380,11 @@
  <syntax>
   <template-call template="ont::agent-location-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(or on in under into at)" sem-role="ont::spatial-loc" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
+                                                               w::in
+                                                               w::under
+                                                               w::into
+                                                               w::at)" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -387,7 +407,7 @@
   <template-call template="ont::agent-location-optional-templ" xp="'(w::pp
                                                                      w::at)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="at" sem-role="ont::spatial-loc" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::at" sem-role="ont::spatial-loc" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

@@ -21,6 +21,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -56,6 +67,65 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::spatial-loc" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg0" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::agent">
@@ -110,6 +180,35 @@
  </sem-frame>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-action">
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
  <role-restr-map roles="ont::formal" optional="optional">
   <or>
    <concept name="abstr-obj" />
@@ -149,6 +248,138 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::result" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected1" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <concept name="ont::change">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|change%1:07:00|
+  wn::|variety%1:07:01|
+  wn::|change%1:06:01|
+  wn::|change%2:30:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">agentive</feat>
+ </sem-feats>
+ <concept name="ont::transformation">
+ <relation label="inherit">
+  ont::change
+ </relation>
+ <relation label="overlap">
+  wn::|metabolize%2:34:00|
+  wn::|transform%2:30:00|
+  wn::|transform%2:30:03|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected1" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::location" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="type">molecular-part</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::adjust">
  <relation label="inherit">
   ont::transformation
@@ -186,237 +417,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::location" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="type">molecular-part</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::transformation">
- <relation label="inherit">
-  ont::change
- </relation>
- <relation label="overlap">
-  wn::|metabolize%2:34:00|
-  wn::|transform%2:30:00|
-  wn::|transform%2:30:03|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::change">
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|change%1:07:00|
-  wn::|variety%1:07:01|
-  wn::|change%1:06:01|
-  wn::|change%2:30:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">force</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">dynamic</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::result" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::affected1" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::event-of-action">
- <relation label="inherit">
-  ont::event-of-change
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">force</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::affected">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-root">
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="container">-</feat>
-  <feat name="information">mental-construct</feat>
-  <feat name="intentional">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::spatial-loc" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg0" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">dynamic</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::beneficiary" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <concept name="ont::phosphorylation">
  <relation label="inherit">
   ont::post-translational-modification
@@ -473,7 +473,7 @@
  <syntax>
   <template-call template="ont::other-reln-affected-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::affected"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -500,7 +500,7 @@
  <syntax>
   <template-call template="ont::other-reln-affected-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::affected"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -527,7 +527,7 @@
  <syntax>
   <template-call template="ont::other-reln-affected-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::affected"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -554,7 +554,7 @@
  <syntax>
   <template-call template="ont::other-reln-affected-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="of" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::affected"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -573,7 +573,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="gamma" remaining-words="carboxylize" />
+  <word first-word="gamma" remaining-words="carboxilation" />
   <forms>
    -VB
    <nom>
@@ -596,7 +596,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="myristoylate" />
+  <word first-word="myristoylation" />
   <forms>
    -VB
    <nom>
@@ -619,7 +619,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="palmitoylate" />
+  <word first-word="palmitoylation" />
   <forms>
    -VB
    <nom>
@@ -642,7 +642,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="isoprenylate" />
+  <word first-word="isoprenylation" />
   <forms>
    -VB
    <nom>
@@ -665,7 +665,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="prenylate" />
+  <word first-word="prenylation" />
   <forms>
    -VB
    <nom>
@@ -688,7 +688,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="geranylgeranylate" />
+  <word first-word="geranylgeranylation" />
   <forms>
    -VB
    <nom>
@@ -711,7 +711,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="glypiate" />
+  <word first-word="glypiation" />
   <forms>
    -VB
    <nom>
@@ -734,7 +734,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="lipoylate" />
+  <word first-word="lipoylation" />
   <forms>
    -VB
    <nom>
@@ -757,7 +757,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="phosphopantetheinylate" />
+  <word first-word="phosphopantetheinylation" />
   <forms>
    -VB
    <nom>
@@ -780,7 +780,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="acylate" />
+  <word first-word="acylation" />
   <forms>
    -VB
    <nom>
@@ -803,7 +803,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="formylate" />
+  <word first-word="formylation" />
   <forms>
    -VB
    <nom>
@@ -826,7 +826,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="alkylate" />
+  <word first-word="alkylation" />
   <forms>
    -VB
    <nom>
@@ -849,7 +849,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="amidate" />
+  <word first-word="amidation" />
   <forms>
    -VB
    <nom>
@@ -872,7 +872,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="arginylate" />
+  <word first-word="arginylation" />
   <forms>
    -VB
    <nom>
@@ -895,7 +895,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="polyglutamylate" />
+  <word first-word="polyglutamylation" />
   <forms>
    -VB
    <nom>
@@ -918,7 +918,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="polyglycylate" />
+  <word first-word="polyglycylation" />
   <forms>
    -VB
    <nom>
@@ -941,7 +941,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="butyrylate" />
+  <word first-word="butyrylation" />
   <forms>
    -VB
    <nom>
@@ -964,7 +964,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="gamma-carboxylate" />
+  <word first-word="gamma-carboxylation" />
   <forms>
    -VB
    <nom>
@@ -987,7 +987,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="polysialylate" />
+  <word first-word="polysialylation" />
   <forms>
    -VB
    <nom>
@@ -1010,7 +1010,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="malonylate" />
+  <word first-word="malonylation" />
   <forms>
    -VB
    <nom>
@@ -1033,7 +1033,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="iodinate" />
+  <word first-word="iodination" />
   <forms>
    -VB
    <nom>
@@ -1056,7 +1056,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="oxidate" />
+  <word first-word="oxidation" />
   <forms>
    -VB
    <nom>
@@ -1079,7 +1079,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="adenylylate" />
+  <word first-word="adenylylation" />
   <forms>
    -VB
    <nom>
@@ -1102,7 +1102,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="propionylate" />
+  <word first-word="propionylation" />
   <forms>
    -VB
    <nom>
@@ -1125,7 +1125,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="s-glutathionylate" />
+  <word first-word="s-glutathionylation" />
   <forms>
    -VB
    <nom>
@@ -1148,7 +1148,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="s-nitrosylate" />
+  <word first-word="s-nitrosylation" />
   <forms>
    -VB
    <nom>
@@ -1171,7 +1171,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="succinylate" />
+  <word first-word="succinylation" />
   <forms>
    -VB
    <nom>
@@ -1194,7 +1194,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="sulfate" />
+  <word first-word="sulfation" />
   <forms>
    -VB
    <nom>
@@ -1217,7 +1217,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="glycate" />
+  <word first-word="glycation" />
   <forms>
    -VB
    <nom>
@@ -1240,7 +1240,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="biotinylate" />
+  <word first-word="biotinylation" />
   <forms>
    -VB
    <nom>
@@ -1263,7 +1263,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="pegylate" />
+  <word first-word="pegylation" />
   <forms>
    -VB
    <nom>
@@ -1286,7 +1286,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="isgylate" />
+  <word first-word="isgylation" />
   <forms>
    -VB
    <nom>
@@ -1309,7 +1309,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="ubiquitylate" />
+  <word first-word="ubiquitylation" />
   <forms>
    -VB
    <nom>
@@ -1332,7 +1332,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="neddylate" />
+  <word first-word="neddylation" />
   <forms>
    -VB
    <nom>
@@ -1355,7 +1355,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="pupylate" />
+  <word first-word="pupylation" />
   <forms>
    -VB
    <nom>
@@ -1378,7 +1378,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="citrullinate" />
+  <word first-word="citrullination" />
   <forms>
    -VB
    <nom>
@@ -1401,7 +1401,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="deiminate" />
+  <word first-word="deimination" />
   <forms>
    -VB
    <nom>
@@ -1424,7 +1424,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="deamidate" />
+  <word first-word="deamidation" />
   <forms>
    -VB
    <nom>
@@ -1447,7 +1447,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="eliminylate" />
+  <word first-word="eliminylation" />
   <forms>
    -VB
    <nom>
@@ -1470,7 +1470,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="carbamylate" />
+  <word first-word="carbamylation" />
   <forms>
    -VB
    <nom>
@@ -1493,7 +1493,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="racemizate" />
+  <word first-word="racemization" />
   <forms>
    -VB
    <nom>

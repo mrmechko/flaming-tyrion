@@ -29,6 +29,17 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -65,50 +76,6 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::awareness">
- <relation label="inherit">
-  ont::event-of-state
- </relation>
- <relation label="overlap">
-  wn::|think%2:31:00|
-  wn::|cogitate%2:31:00|
-  wn::|cerebrate%2:31:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">mental</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::formal">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="time-span">extended</feat>
- <feat name="aspect">static</feat>
- </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::formal">
   <or>
@@ -116,59 +83,16 @@
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
- <role-restr-map roles="ont::neutral1" optional="optional">
+ <role-restr-map roles="ont::neutral">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::event-of-state">
- <relation label="inherit">
-  ont::situation-root
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">static</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">mental</feat>
+ <feat name="aspect">static</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::formal">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::situation-root">
  <relation label="inherit">
   ont::referential-sem
@@ -196,12 +120,99 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::experiencer">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-state">
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">static</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::experiencer">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::formal">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">static</feat>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">mental</feat>
  </sem-feats>
+ <concept name="ont::event-of-experience">
+ <relation label="inherit">
+  ont::event-of-state
+  ont::event-of-state
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::experiencer">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ <sem-frame>
+  <role-restr-map roles="ont::experiencer">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::formal">
   <or>
@@ -209,22 +220,51 @@
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
- <role-restr-map roles="ont::neutral">
+ <role-restr-map roles="ont::neutral1" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::any-sem">
+ <sem-feats>
  <relation label="inherit">
-  ont::root
+  situation
  </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">static</feat>
+ </sem-feats>
+ <concept name="ont::awareness">
+ <relation label="inherit">
+  ont::event-of-experience
+ </relation>
+ <relation label="overlap">
+  wn::|think%2:31:00|
+  wn::|cogitate%2:31:00|
+  wn::|cerebrate%2:31:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">mental</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <sense>
  <morph>
   <pos pos="v" />
@@ -240,10 +280,10 @@
   ont::hypothesize
  </relation>
  <syntax>
-  <template-call template="ont::neutral-formal-as-comp-templ" xp="'w::cp" />
+  <template-call template="ont::experiencer-formal-as-comp-templ" xp="'w::cp" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -282,7 +322,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="hypothesize" />
+  <word first-word="hypothesis" />
   <forms>
    -VB
    <nom>
@@ -297,10 +337,10 @@
   ont::hypothesize
  </relation>
  <syntax>
-  <template-call template="ont::neutral-formal-as-comp-templ" xp="'w::cp" />
+  <template-call template="ont::experiencer-formal-as-comp-templ" xp="'w::cp" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -312,7 +352,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="hypothesize" />
+  <word first-word="hypothesis" />
   <forms>
    -VB
    <nom>
@@ -327,10 +367,10 @@
   ont::hypothesize
  </relation>
  <syntax>
-  <template-call template="ont::neutral-neutral-xp-templ" />
+  <template-call template="ont::experiencer-neutral-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -342,49 +382,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="propose" />
- </morph>
- <relation label="inherit">
-  ont::hypothesize
- </relation>
- <syntax>
-  <template-call template="ont::neutral-formal-as-comp-templ" xp="'w::cp" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="aspect">stage-level</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="propose" />
- </morph>
- <relation label="inherit">
-  ont::hypothesize
- </relation>
- <syntax>
-  <template-call template="ont::neutral-neutral-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="aspect">stage-level</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="theorize" />
+  <word first-word="theory" />
   <forms>
    -VB
    <nom>
@@ -399,10 +397,10 @@
   ont::hypothesize
  </relation>
  <syntax>
-  <template-call template="ont::neutral-formal-as-comp-templ" xp="'w::cp" />
+  <template-call template="ont::experiencer-formal-as-comp-templ" xp="'w::cp" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -414,7 +412,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="theorize" />
+  <word first-word="theory" />
   <forms>
    -VB
    <nom>
@@ -429,10 +427,10 @@
   ont::hypothesize
  </relation>
  <syntax>
-  <template-call template="ont::neutral-neutral-xp-templ" />
+  <template-call template="ont::experiencer-neutral-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
   </syn-sem>
  </syntax>
  <semantics>

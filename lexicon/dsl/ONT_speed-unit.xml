@@ -16,7 +16,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -30,6 +40,17 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::of">
@@ -49,6 +70,49 @@
  <relation label="inherit">
   ont::abstract-object
   abstr-obj
+ </relation>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::measure-unit">
+ <relation label="inherit">
+  ont::abstract-object-nontemporal
+ </relation>
+ <relation label="overlap">
+  wn::|unit_of_measurement%1:23:00|
+  wn::|unit%1:23:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="measure-function">value</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">rate-scale</feat>
+ </sem-feats>
+ <concept name="ont::formal-unit">
+ <relation label="inherit">
+  ont::measure-unit
  </relation>
  </concept>
  <concept name="ont::rate-unit">
@@ -73,70 +137,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::formal-unit">
- <relation label="inherit">
-  ont::measure-unit
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">rate-scale</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::of">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::measure-unit">
- <relation label="inherit">
-  ont::abstract-object-nontemporal
- </relation>
- <relation label="overlap">
-  wn::|unit_of_measurement%1:23:00|
-  wn::|unit%1:23:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="intentional">-</feat>
-  <feat name="information">-</feat>
-  <feat name="container">-</feat>
-  <feat name="measure-function">value</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::of">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
- </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
  <sense>
  <morph>
   <pos pos="n" />
@@ -154,7 +154,7 @@
  <syntax>
   <template-call template="ont::attribute-unit-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -192,7 +192,7 @@
  <syntax>
   <template-call template="ont::attribute-unit-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -230,7 +230,7 @@
  <syntax>
   <template-call template="ont::attribute-unit-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -268,7 +268,7 @@
  <syntax>
   <template-call template="ont::attribute-unit-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -306,7 +306,7 @@
  <syntax>
   <template-call template="ont::attribute-unit-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -344,7 +344,7 @@
  <syntax>
   <template-call template="ont::attribute-unit-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -382,7 +382,7 @@
  <syntax>
   <template-call template="ont::attribute-unit-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -420,7 +420,7 @@
  <syntax>
   <template-call template="ont::attribute-unit-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

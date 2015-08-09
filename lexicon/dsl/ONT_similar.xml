@@ -20,7 +20,17 @@
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -35,25 +45,56 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::similarity-val">
- <relation label="inherit">
-  ont::relation
+ <concept name="abstr-obj" />
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::property">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::of">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral1">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::property" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intensity">hi</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object-property">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::property">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::relation">
  <relation label="inherit">
   ont::abstract-object-property
@@ -82,66 +123,25 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::similarity-val">
+ <relation label="inherit">
+  ont::relation
+ </relation>
  <sem-frame>
- <role-restr-map roles="ont::property">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::of">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral1">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral">
-  <concept name="t" />
- </role-restr-map>
+  <role-restr-map roles="ont::property">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
  </sem-frame>
- <concept name="ont::abstract-object-property">
- <relation label="inherit">
-  ont::abstract-object
-  abstr-obj
- </relation>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="intensity">hi</feat>
- <feat name="gradability">+</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::property" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral1">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
- </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
  <sense>
  <morph>
   <pos pos="adj" />
@@ -155,11 +155,9 @@
  </relation>
  <syntax>
   <template-call template="ont::adj-co-theme-templ" xp="'(w::pp
-                                                          (w::or
-                                                            w::in
-                                                            w::to))" />
+                                                          (w::or w::in w::to))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(or in to)" sem-role="ont::neutral1" optional="optional"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::in w::to)" sem-role="ont::neutral1" optional="optional"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>
@@ -179,11 +177,9 @@
  </relation>
  <syntax>
   <template-call template="ont::adj-co-theme-templ" xp="'(w::pp
-                                                          (w::or
-                                                            w::in
-                                                            w::to))" />
+                                                          (w::or w::in w::to))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(or in to)" sem-role="ont::neutral1" optional="optional"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::in w::to)" sem-role="ont::neutral1" optional="optional"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>
@@ -232,11 +228,9 @@
  </relation>
  <syntax>
   <template-call template="ont::adj-co-theme-templ" xp="'(w::pp
-                                                          (w::or
-                                                            w::in
-                                                            w::to))" />
+                                                          (w::or w::in w::to))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(or in to)" sem-role="ont::neutral1" optional="optional"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::in w::to)" sem-role="ont::neutral1" optional="optional"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>

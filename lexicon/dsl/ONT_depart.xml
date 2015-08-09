@@ -26,6 +26,17 @@
  </sem-feats>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::spatial-loc" optional="optional">
   <concept name="t" />
@@ -61,6 +72,65 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::spatial-loc" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::arg0" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::agent">
@@ -106,6 +176,35 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-action">
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
    <or>
     <concept name="situation" />
     <concept name="abstr-obj" />
@@ -173,70 +272,36 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::departing">
- <relation label="inherit">
-  ont::physical-motion
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::from-loc">
-   <concept name="t" />
-  </role-restr-map>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">quantity</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="mobility">movable</feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="time-span">atomic</feat>
- <feat name="cause">force</feat>
- <feat name="aspect">bounded</feat>
+ <feat name="aspect">dynamic</feat>
+ <feat name="cause">
+ <or>
+  force
+  -
+ </or>
+ </feat>
  </sem-feats>
- <concept name="ont::physical-motion">
- <relation label="inherit">
-  ont::motion
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
-  <feat name="cause">
-  <or>
-   force
-   -
-  </or>
-  </feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">quantity</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="mobility">movable</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::from-loc">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::motion">
  <relation label="inherit">
   ont::event-of-causation
@@ -286,140 +351,75 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">dynamic</feat>
- <feat name="cause">
- <or>
-  force
-  -
- </or>
- </feat>
- </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">quantity</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="mobility">movable</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::from-loc">
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::event-of-action">
+ <concept name="ont::physical-motion">
  <relation label="inherit">
-  ont::event-of-change
+  ont::motion
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="cause">force</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::affected">
+  <feat name="aspect">dynamic</feat>
+  <feat name="cause">
   <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-   <concept name="situation" />
+   force
+   -
   </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-root">
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="container">-</feat>
-  <feat name="information">mental-construct</feat>
-  <feat name="intentional">-</feat>
+  </feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::spatial-loc" optional="optional">
-   <concept name="t" />
+  <role-restr-map roles="ont::extent" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">quantity</feat>
+   </sem-feats>
   </role-restr-map>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg0" optional="optional">
-   <concept name="t" />
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="mobility">movable</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">dynamic</feat>
+ <feat name="time-span">atomic</feat>
+ <feat name="cause">force</feat>
+ <feat name="aspect">bounded</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::beneficiary" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
+ <concept name="ont::departing">
  <relation label="inherit">
-  ont::root
+  ont::physical-motion
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::from-loc">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="situation" />
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="depart" />
+  <word first-word="departure" />
   <forms>
    -VB
    <nom>
@@ -437,8 +437,8 @@
   <template-call template="ont::go-from-to-templ" xp1="'(w::pp w::from)" xp2="'(w::pp
                                                                                 w::for)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="for" sem-role="ont::result" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="from" sem-role="ont::source" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::for" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::from" sem-role="ont::source" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
@@ -452,7 +452,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="depart" />
+  <word first-word="departure" />
   <forms>
    -VB
    <nom>
@@ -469,7 +469,7 @@
  <syntax>
   <template-call template="ont::go-from-to-templ" xp2="'(w::pp w::for)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="for" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::for" sem-role="ont::result" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::source" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
@@ -606,8 +606,8 @@
   <template-call template="ont::go-from-to-templ" xp1="'(w::pp w::from)" xp2="'(w::pp
                                                                                 w::for)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="for" sem-role="ont::result" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="from" sem-role="ont::source" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::for" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::from" sem-role="ont::source" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>

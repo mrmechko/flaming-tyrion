@@ -9,21 +9,24 @@
  <relation label="overlap">
   wn::|slender%5:00:00|
   wn::|thin%3:00:03|
-  wn::|high%3:00:02|
-  wn::|narrow%3:00:00|
-  wn::|long%3:00:02|
-  wn::|tall%3:00:00|
   wn::|scraggy%5:00:00|
-  wn::|slender%5:00:00|
   wn::|compressed%5:00:00|
-  wn::|shallow%3:00:01|
   wn::|narrow%3:00:00|
   wn::|thin%3:00:01|
-  wn::|long%5:00:00|
  </relation>
  </concept>
  <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -37,6 +40,17 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
+ </concept>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::purpose-implicit" optional="optional">
@@ -95,28 +109,7 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="ont::linear-val">
- <relation label="inherit">
-  ont::spatial
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">linear-scale</feat>
- </sem-feats>
- </concept>
- <concept name="ont::spatial">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">linear-scale</feat>
- </sem-feats>
+ <concept name="abstr-obj" />
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::abstract-object-property
@@ -173,28 +166,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::abstract-object">
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
- </relation>
+ <sem-feats>
  <relation label="inherit">
-  ont::referential-sem
   abstr-obj
  </relation>
- </concept>
- <concept name="ont::any-sem">
+ <feat name="scale">linear-scale</feat>
+ </sem-feats>
+ <concept name="ont::spatial">
  <relation label="inherit">
-  ont::root
+  ont::property-val
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
+ <concept name="ont::linear-val">
+ <relation label="inherit">
+  ont::spatial
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">linear-scale</feat>
+ </sem-feats>
+ </concept>
  <sense>
  <morph>
   <pos pos="adj" />
@@ -205,43 +198,6 @@
  </morph>
  <example text="a flat screen">
   <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::slight
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="high" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="a high mountain">
- </example>
- <relation label="inherit">
-  ont::slight
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="long" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="a long line">
  </example>
  <relation label="inherit">
   ont::slight
@@ -325,22 +281,6 @@
    -ER
   </forms>
  </morph>
- <relation label="inherit">
-  ont::slight
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="tall" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <example text="a tall building">
-  <provenance name="TRIPS"/>
- </example>
  <relation label="inherit">
   ont::slight
   ont::central-adj-templ
