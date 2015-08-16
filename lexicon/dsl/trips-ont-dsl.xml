@@ -6261,7 +6261,7 @@
  </concept>
  <concept name="ont::correlation">
   <relation label="inherit">
-   ont::event-of-state
+   ont::event-of-experience
   </relation>
   <relation label="overlap">
    wn::|indicate%2:32:02|
@@ -6273,6 +6273,7 @@
    wn::|affirm%2:31:00|
    wn::|conform%2:42:06|
    wn::|intend%2:32:02|
+   wn::|read%2:32:02:|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -6282,14 +6283,6 @@
    <feat name="aspect">static</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::affected" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="intentional">+</feat>
-    </sem-feats>
-   </role-restr-map>
    <role-restr-map roles="ont::formal">
     <concept name="situation" />
    </role-restr-map>
@@ -8259,6 +8252,26 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::encodes-textual-info">
+  <relation label="inherit">
+   ont::correlation
+  </relation>
+  <relation label="overlap">
+   wn::|read%2:42:00|
+   wn::|go%2:42:02|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::neutral">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="information">information-content</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::encoding">
   <relation label="inherit">
    ont::communication
@@ -8819,18 +8832,7 @@
  <concept name="ont::event-of-experience">
   <relation label="inherit">
    ont::event-of-state
-   ont::event-of-state
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::experiencer">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="intentional">+</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
   <sem-frame>
    <role-restr-map roles="ont::experiencer">
     <sem-feats>
@@ -13515,7 +13517,10 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::linear-extent">
+ <concept name="ont::linear-dimension">
+  <relation label="inherit">
+   ont::linear-val
+  </relation>
   <relation label="overlap">
    wn::|low%3:00:02|
    wn::|low%3:00:01|
@@ -13532,8 +13537,9 @@
    wn::|low%3:00:02|
    wn::|low%3:00:01|
   </relation>
+ </concept>
+ <concept name="ont::linear-extent">
   <relation label="inherit">
-   ont::linear-val
    ont::position-as-extent-reln
   </relation>
  </concept>

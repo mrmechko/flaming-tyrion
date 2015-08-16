@@ -2798,7 +2798,7 @@
 (CONCEPT ONT::CORRECTNESS-VAL (INHERIT ONT::PROPERTY-VAL))
 
 (CONCEPT ONT::CORRELATION
-         (INHERIT ONT::EVENT-OF-STATE)
+         (INHERIT ONT::EVENT-OF-EXPERIENCE)
          (OVERLAP WN::|indicate%2:32:02|
                   WN::|argue%2:32:01|
                   WN::|imply%2:32:01|
@@ -2807,14 +2807,12 @@
                   WN::|mean%2:42:00|
                   WN::|affirm%2:31:00|
                   WN::|conform%2:42:06|
-                  WN::|intend%2:32:02|)
+                  WN::|intend%2:32:02|
+                  WN::|read%2:32:02:|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (ASPECT STATIC))
-         (SEM-FRAME
-          (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +))
-           OPTIONAL)
-          (ONT::FORMAL (CONCEPT SITUATION))
-          (ONT::NEUTRAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
-          (ONT::NEUTRAL (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
+         (SEM-FRAME (ONT::FORMAL (CONCEPT SITUATION))
+                    (ONT::NEUTRAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
+                    (ONT::NEUTRAL (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
 
 (CONCEPT ONT::COST-RELATION
          (INHERIT ONT::PREDICATE)
@@ -3680,6 +3678,14 @@
          (SEM-FRAME
           (ONT::AFFECTED (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
 
+(CONCEPT ONT::ENCODES-TEXTUAL-INFO
+         (INHERIT ONT::CORRELATION)
+         (OVERLAP WN::|read%2:42:00| WN::|go%2:42:02|)
+         (SEM-FRAME
+          (ONT::NEUTRAL
+           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
+                      (INFORMATION INFORMATION-CONTENT)))))
+
 (CONCEPT ONT::ENCODING
          (INHERIT ONT::COMMUNICATION)
          (OVERLAP WN::|spell%2:32:00|
@@ -3936,9 +3942,7 @@
            OPTIONAL)))
 
 (CONCEPT ONT::EVENT-OF-EXPERIENCE
-         (INHERIT ONT::EVENT-OF-STATE ONT::EVENT-OF-STATE)
-         (SEM-FRAME
-          (ONT::EXPERIENCER (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +))))
+         (INHERIT ONT::EVENT-OF-STATE)
          (SEM-FRAME
           (ONT::EXPERIENCER (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
 
@@ -6054,7 +6058,8 @@
                       (MEASURE-FUNCTION VALUE)
                       (SCALE LINEAR-SCALE)))))
 
-(CONCEPT ONT::LINEAR-EXTENT
+(CONCEPT ONT::LINEAR-DIMENSION
+         (INHERIT ONT::LINEAR-VAL)
          (OVERLAP WN::|low%3:00:02|
                   WN::|low%3:00:01|
                   WN::|deep%5:00:00|
@@ -6068,8 +6073,9 @@
                   WN::|deep%3:00:01|
                   WN::|short%3:00:02|
                   WN::|low%3:00:02|
-                  WN::|low%3:00:01|)
-         (INHERIT ONT::LINEAR-VAL ONT::POSITION-AS-EXTENT-RELN))
+                  WN::|low%3:00:01|))
+
+(CONCEPT ONT::LINEAR-EXTENT (INHERIT ONT::POSITION-AS-EXTENT-RELN))
 
 (CONCEPT ONT::LINEAR-SCALE (INHERIT ONT::SIZE-SCALE))
 
