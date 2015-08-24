@@ -5168,7 +5168,13 @@
      <feat name="intentional">-</feat>
     </sem-feats>
    </role-restr-map>
-   <role-restr-map roles="ont::formal">
+   <role-restr-map roles="ont::neutral" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+   <role-restr-map roles="ont::formal" optional="optional">
     <concept name="situation" />
    </role-restr-map>
    <role-restr-map roles="ont::affected">
@@ -6283,20 +6289,23 @@
    <feat name="aspect">static</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::formal">
+   <role-restr-map roles="ont::formal" optional="optional">
     <concept name="situation" />
    </role-restr-map>
-   <role-restr-map roles="ont::neutral1">
+   <role-restr-map roles="ont::neutral1" optional="optional">
     <or>
      <concept name="phys-obj" />
      <concept name="abstr-obj" />
     </or>
    </role-restr-map>
    <role-restr-map roles="ont::neutral">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="intentional">-</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -15462,7 +15471,7 @@
  </concept>
  <concept name="ont::naming">
   <relation label="inherit">
-   ont::categorization
+   ont::performative-act
   </relation>
   <relation label="overlap">
    wn::|designate%2:32:00|
@@ -15714,9 +15723,9 @@
    wn::|loud%3:00:00|
   </relation>
  </concept>
- <concept name="ont::nominate-refer">
+ <concept name="ont::nominate">
   <relation label="inherit">
-   ont::suggest
+   ont::performative-act
   </relation>
  </concept>
  <concept name="ont::non-measure-ordered-domain">
@@ -16894,6 +16903,17 @@
    ont::gathering-event
   </relation>
  </concept>
+ <concept name="ont::performative-act">
+  <relation label="inherit">
+   ont::communication
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::person">
   <relation label="inherit">
    ont::mammal
@@ -17189,8 +17209,7 @@
   </sem-frame>
  </concept>
  <concept name="ont::physical-property-val">
-  <relation label="
-inherit">
+  <relation label="inherit">
    ont::property-val
   </relation>
  </concept>
@@ -18564,11 +18583,6 @@ inherit">
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::propose-recommend-suggest">
-  <relation label="inherit">
-   ont::suggest
-  </relation>
  </concept>
  <concept name="ont::protecting">
   <relation label="inherit">
@@ -20636,11 +20650,11 @@ inherit">
  </concept>
  <concept name="ont::ritual-classification">
   <relation label="inherit">
-   ont::categorization
+   ont::performative-act
   </relation>
   <relation label="overlap">
    wn::|anoint%2:31:00|
-   wn::|instal%2:41:00|
+   wn::|install%2:41:00|
   </relation>
  </concept>
  <concept name="ont::road">
@@ -23384,7 +23398,7 @@ inherit">
    <feat name="cause">agentive</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::effect">
+   <role-restr-map roles="ont::formal" optional="optional">
     <concept name="situation" />
    </role-restr-map>
   </sem-frame>

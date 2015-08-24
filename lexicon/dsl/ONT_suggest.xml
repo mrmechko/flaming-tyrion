@@ -18,7 +18,7 @@
   <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::effect">
+  <role-restr-map roles="ont::formal" optional="optional">
    <concept name="situation" />
   </role-restr-map>
  </sem-frame>
@@ -250,7 +250,13 @@
    <feat name="intentional">-</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::formal">
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
   <concept name="situation" />
  </role-restr-map>
  <role-restr-map roles="ont::affected">
@@ -285,7 +291,7 @@
  </concept>
  <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::effect">
+ <role-restr-map roles="ont::formal" optional="optional">
   <concept name="situation" />
  </role-restr-map>
  </sem-frame>
@@ -329,7 +335,13 @@
     <feat name="intentional">-</feat>
    </sem-feats>
   </role-restr-map>
-  <role-restr-map roles="ont::formal">
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
    <concept name="situation" />
   </role-restr-map>
   <role-restr-map roles="ont::affected">
@@ -340,16 +352,116 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::propose-recommend-suggest">
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="propose" />
+ </morph>
+ <example text="he proposed that we make a plan">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::suggest
  </relation>
- </concept>
- <concept name="ont::nominate-refer">
+ <syntax>
+  <template-call template="ont::agent-formal-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="propose" />
+ </morph>
+ <example text="He proposed a plan">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::suggest
  </relation>
- </concept>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="recommend" />
+ </morph>
+ <relation label="inherit">
+  ont::suggest
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="recommend" />
+ </morph>
+ <example text="he recommends that you get enough sleep">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::suggest
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-formal-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="recommend" />
+ </morph>
+ <example text="I recommend this computer (to you)">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::suggest
+  ont::agent-theme-to-addressee-optional-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -374,6 +486,53 @@
   ont::suggest
   ont::agent-theme-to-addressee-optional-templ
  </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="suggest" />
+ </morph>
+ <relation label="inherit">
+  ont::suggest
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-formal-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="suggest" />
+ </morph>
+ <example text="He suggested a plan">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::suggest
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  <semantics>
   <sem-feats>
    <feat name="time-span">extended</feat>
