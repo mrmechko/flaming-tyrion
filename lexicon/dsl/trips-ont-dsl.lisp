@@ -1024,7 +1024,12 @@
                   WN::|avoid%2:34:00|
                   WN::|forbear%2:42:00|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
-         (SEM-FRAME (ONT::FORMAL (CONCEPT T))))
+         (SEM-FRAME (ONT::FORMAL (CONCEPT SITUATION) OPTIONAL)
+                    (ONT::NEUTRAL
+                     (OR (CONCEPT PHYS-OBJ)
+                         (CONCEPT ABSTR-OBJ)
+                         (CONCEPT SITUATION))
+                     OPTIONAL)))
 
 (CONCEPT ONT::AWARENESS
          (INHERIT ONT::EVENT-OF-EXPERIENCE)
@@ -5008,6 +5013,10 @@
                   WN::|stay_in_place%2:38:00|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE PHENOMENAL))
          (SEM-FRAME
+          (ONT::EXPERIENCER
+           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
+                      (INTENTIONAL +))
+           OPTIONAL)
           (ONT::FORMAL (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
 
 (CONCEPT ONT::HARMFUL-AGENCY (INHERIT ONT::AGENT))
@@ -6982,7 +6991,7 @@
                     (TIME-SPAN EXTENDED)
                     (ASPECT STATIC))
          (SEM-FRAME (ONT::ACTION (CONCEPT SITUATION) OPTIONAL)
-                    (ONT::NEUTRAL (CONCEPT T))
+                    (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
                     (ONT::FORMAL
                      (OR (CONCEPT PHYS-OBJ)
                          (CONCEPT ABSTR-OBJ)
@@ -7889,21 +7898,13 @@
          (OVERLAP WN::|own%2:40:00|
                   WN::|have%2:40:04|
                   WN::|possess%2:40:00|
-                  WN::|belong%2:40:00|)
+                  WN::|belong%2:40:00|
+                  WN::|possession%1:03:00|)
          (SEM-FEATS (INHERIT SITUATION)
                     (TIME-SPAN EXTENDED)
                     (ASPECT INDIV-LEVEL))
          (SEM-FRAME
           (ONT::NEUTRAL (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
-
-(CONCEPT ONT::POSSESSION
-         (INHERIT ONT::RELATION)
-         (OVERLAP WN::|possession%1:03:00|)
-         (SEM-FRAME (ONT::NEUTRAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
-                    (ONT::NEUTRAL
-                     (SEM-FEATS (INHERIT PHYS-OBJ)
-                                (INTENTIONAL +)
-                                (ORIGIN HUMAN)))))
 
 (CONCEPT ONT::POSSESSOR-RELN
          (INHERIT ONT::PERSON-RELN)
