@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::judgement-val">
+ <relation label="inherit">
+  ont::social-judgement
+ </relation>
+ <relation label="overlap">
+  wn::|justice%1:07:00|
+  wn::|injustice%1:07:00|
+  wn::|moral%3:00:00::|
+  wn::|immoral%3:00:00::|
+  wn::|immoral%3:00:00:wrong:01|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="information">mental-construct</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00|
+  wn::|abstraction%1:03:00|
+  wn::|abstract_entity%1:03:00|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of" optional="optional">
+  <concept name="situation" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::mental-construction">
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="information">mental-construct</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::social-contract">
+ <relation label="inherit">
+  ont::mental-construction
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::social-imperative">
+ <relation label="inherit">
+  ont::social-contract
+ </relation>
+ <relation label="overlap">
+  wn::|freedom%1:26:01|
+  wn::|slavery%1:26:00|
+ </relation>
+ </concept>
+ <concept name="ont::social-judgement">
+ <relation label="inherit">
+  ont::social-imperative
+ </relation>
+ </concept>
+</dsl>

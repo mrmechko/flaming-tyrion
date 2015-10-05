@@ -6525,6 +6525,14 @@
    ont::social-group
   </relation>
  </concept>
+ <concept name="ont::criminal-activity">
+  <relation label="inherit">
+   ont::governing-principle
+  </relation>
+  <relation label="overlap">
+   wn::|transgression%1:04:00|
+  </relation>
+ </concept>
  <concept name="ont::criticize">
   <relation label="inherit">
    ont::statement
@@ -8552,6 +8560,16 @@
    <feat name="time-function">era</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::essential-contract">
+  <relation label="inherit">
+   ont::social-imperative
+  </relation>
+  <relation label="overlap">
+   wn::|right%1:07:00|
+   wn::|absolute%1:09:00|
+   wn::|absolute%3:00:00:inalienable:00|
+  </relation>
+ </concept>
  <concept name="ont::establish">
   <relation label="inherit">
    ont::create
@@ -9511,6 +9529,15 @@
   <relation label="overlap">
    wn::|external%3:00:00|
    wn::|outer%5:00:00|
+  </relation>
+ </concept>
+ <concept name="ont::external-authority">
+  <relation label="inherit">
+   ont::governing-principle
+  </relation>
+  <relation label="overlap">
+   wn::|law%1:14:00|
+   wn::|treaty%1:10:00|
   </relation>
  </concept>
  <concept name="ont::external-body-part">
@@ -10880,6 +10907,17 @@
  <concept name="ont::goose">
   <relation label="inherit">
    ont::poultry
+  </relation>
+ </concept>
+ <concept name="ont::governing-principle">
+  <relation label="inherit">
+   ont::social-contract
+  </relation>
+  <relation label="overlap">
+   wn::|morality%1:07:00|
+   wn::|morality%1:16:00|
+   wn::|ethic%1:09:00|
+   wn::|ethic%1:10:00|
   </relation>
  </concept>
  <concept name="ont::grade-modifier">
@@ -12511,6 +12549,14 @@
    wn::|inner%5:00:00|
   </relation>
  </concept>
+ <concept name="ont::internal-authority">
+  <relation label="inherit">
+   ont::governing-principle
+  </relation>
+  <relation label="overlap">
+   wn::|conscience%1:16:00|
+  </relation>
+ </concept>
  <concept name="ont::internal-body-part">
   <relation label="inherit">
    ont::body-part
@@ -12808,6 +12854,18 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::judgement-val">
+  <relation label="inherit">
+   ont::social-judgement
+  </relation>
+  <relation label="overlap">
+   wn::|justice%1:07:00|
+   wn::|injustice%1:07:00|
+   wn::|moral%3:00:00::|
+   wn::|immoral%3:00:00::|
+   wn::|immoral%3:00:00:wrong:01|
+  </relation>
  </concept>
  <concept name="ont::juice">
   <relation label="inherit">
@@ -15754,6 +15812,16 @@
    ont::actuality-val
   </relation>
  </concept>
+ <concept name="ont::nonessential-contract">
+  <relation label="inherit">
+   ont::social-imperative
+  </relation>
+  <relation label="overlap">
+   wn::|freedom%1:26:00|
+   wn::|privilege%1:07:02|
+   wn::|status%1:26:00::|
+  </relation>
+ </concept>
  <concept name="ont::nonhuman-animal">
   <relation label="inherit">
    ont::mammal
@@ -17206,8 +17274,7 @@
     phys-obj
    </relation>
    <feat name="origin">non-living</feat>
-  </
-sem-feats>
+  </sem-feats>
  </concept>
  <concept name="ont::physical-process">
   <relation label="overlap">
@@ -19690,6 +19757,11 @@ sem-feats>
    ont::specific-loc
   </relation>
  </concept>
+ <concept name="ont::relative-quantity-val">
+  <relation label="inherit">
+   ont::quantity-related-property-val
+  </relation>
+ </concept>
  <concept name="ont::releasing">
   <relation label="inherit">
    ont::control-manage
@@ -20345,6 +20417,15 @@ sem-feats>
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::responsible-to-or-for">
+  <relation label="inherit">
+   ont::social-contract
+  </relation>
+  <relation label="overlap">
+   wn::|duty%1:04:00|
+   wn::|duty%1:04:02|
+  </relation>
  </concept>
  <concept name="ont::restart">
   <relation label="inherit">
@@ -22189,12 +22270,6 @@ sem-feats>
   <relation label="inherit">
    ont::mental-construction
   </relation>
-  <relation label="overlap">
-   wn::|right%1:07:00|
-   wn::|law%1:14:00|
-   wn::|freedom%1:26:00|
-   wn::|freedom%1:26:01|
-  </relation>
   <sem-frame>
    <role-restr-map roles="ont::of" optional="optional">
     <concept name="situation" />
@@ -22237,6 +22312,15 @@ sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::social-imperative">
+  <relation label="inherit">
+   ont::social-contract
+  </relation>
+  <relation label="overlap">
+   wn::|freedom%1:26:01|
+   wn::|slavery%1:26:00|
+  </relation>
+ </concept>
  <concept name="ont::social-interaction-val">
   <relation label="inherit">
    ont::property-val
@@ -22250,6 +22334,11 @@ sem-feats>
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::social-judgement">
+  <relation label="inherit">
+   ont::social-imperative
+  </relation>
  </concept>
  <concept name="ont::socially-remove">
   <relation label="inherit">
