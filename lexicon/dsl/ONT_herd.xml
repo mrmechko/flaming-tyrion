@@ -4,10 +4,10 @@
  <provenance name="TRIPS"/>
  <concept name="ont::herd">
  <relation label="inherit">
-  ont::collect
+  ont::cause-to-move
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::formal">
+  <role-restr-map roles="ont::affected">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -209,7 +209,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::agent" optional="optional">
   <or>
@@ -269,6 +268,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::extent" optional="optional">
   <sem-feats>
@@ -349,13 +349,17 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::formal">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::agent">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">+</feat>
+ <feat name="cause">force</feat>
+ </sem-feats>
  <concept name="ont::physical-motion">
  <relation label="inherit">
   ont::motion
@@ -392,7 +396,7 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::formal">
+ <role-restr-map roles="ont::affected">
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -405,20 +409,22 @@
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::collect">
+ <concept name="ont::cause-to-move">
  <relation label="inherit">
   ont::physical-motion
  </relation>
  <relation label="overlap">
-  wn::|gather%2:35:00|
-  wn::|garner%2:35:00|
-  wn::|collect%2:35:00|
-  wn::|pull_together%2:35:00|
+  wn::|reflect%2:39:00|
+  wn::|drive%2:35:01|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">+</feat>
+  <feat name="cause">force</feat>
+ </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::agent">
    <concept name="t" />
   </role-restr-map>
@@ -433,9 +439,9 @@
   ont::herd
  </relation>
  <syntax>
-  <template-call template="ont::agent-theme-xp-templ" />
+  <template-call template="ont::agent-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

@@ -623,6 +623,12 @@
          (OVERLAP WN::|appliance%1:06:00|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION INSTRUMENT)))
 
+(CONCEPT ONT::APPLY-FORCE
+         (INHERIT ONT::EVENT-OF-CAUSATION)
+         (OVERLAP WN::|reflect%2:39:00| WN::|drive%2:35:01|)
+         (SEM-FEATS (INHERIT SITUATION) (CAUSE FORCE))
+         (SEM-FRAME (ONT::AGENT (CONCEPT T))))
+
 (CONCEPT ONT::APPRECIATE
          (INHERIT ONT::EXPERIENCER-EMOTION)
          (OVERLAP WN::|savour%2:37:00|
@@ -2054,12 +2060,12 @@
 (CONCEPT ONT::COLLATE (INHERIT ONT::ARRANGING))
 
 (CONCEPT ONT::COLLECT
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|gather%2:35:00|
                   WN::|garner%2:35:00|
                   WN::|collect%2:35:00|
                   WN::|pull_together%2:35:00|)
-         (SEM-FRAME (ONT::FORMAL (CONCEPT T)) (ONT::AGENT (CONCEPT T))))
+         (SEM-FRAME (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::COLLECTION
          (INHERIT ONT::GROUP-OBJECT)
@@ -5164,9 +5170,9 @@
            OPTIONAL)))
 
 (CONCEPT ONT::HERD
-         (INHERIT ONT::COLLECT)
+         (INHERIT ONT::CAUSE-TO-MOVE)
          (SEM-FRAME
-          (ONT::FORMAL
+          (ONT::AFFECTED
            (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +) (MOBILITY MOVABLE)))
           (ONT::AGENT (CONCEPT T))))
 
@@ -7760,7 +7766,7 @@
 
 (CONCEPT ONT::PICKUP
          (INHERIT ONT::PHYSICAL-MOTION)
-         (SEM-FRAME (ONT::FORMAL (CONCEPT T)) (ONT::AGENT (CONCEPT T))))
+         (SEM-FRAME (ONT::AFFECTED (CONCEPT T)) (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::PIGEON (INHERIT ONT::POULTRY))
 
@@ -7777,7 +7783,7 @@
                     (FORM GEOGRAPHICAL-OBJECT)
                     (ORIGIN NON-LIVING)))
 
-(CONCEPT ONT::PLACING (INHERIT ONT::DIRECTED-MOTION))
+(CONCEPT ONT::PLACING)
 
 (CONCEPT ONT::PLANET
          (INHERIT ONT::NATURAL-OBJECT)
@@ -7865,8 +7871,6 @@
 (CONCEPT ONT::POLLUTION
          (INHERIT ONT::ATMOSPHERIC-PHENOMENON)
          (SEM-FEATS (INHERIT PHYS-OBJ) (TRAJECTORY -) (ORIGIN NON-LIVING)))
-
-(CONCEPT ONT::POP (INHERIT ONT::CAUSE-TO-MOVE) (OVERLAP WN::|pop%2:35:05|))
 
 (CONCEPT ONT::POPULATION
          (INHERIT ONT::ORDERED-DOMAIN)
@@ -8335,7 +8339,7 @@
            OPTIONAL)))
 
 (CONCEPT ONT::PULL
-         (INHERIT ONT::CAUSE-TO-MOVE)
+         (INHERIT ONT::APPLY-FORCE)
          (OVERLAP WN::|force%2:35:01|
                   WN::|draw%2:35:03|
                   WN::|pull%2:35:00|
@@ -8401,7 +8405,7 @@
                     (ASPECT UNBOUNDED)))
 
 (CONCEPT ONT::PUSH
-         (INHERIT ONT::CAUSE-TO-MOVE)
+         (INHERIT ONT::APPLY-FORCE)
          (OVERLAP WN::|push%2:38:00|
                   WN::|force%2:38:00|
                   WN::|thrust%2:38:00|
@@ -8410,7 +8414,7 @@
 (CONCEPT ONT::PUSH-OUT-OF (INHERIT ONT::COME-OUT-OF))
 
 (CONCEPT ONT::PUT
-         (INHERIT ONT::MOTION)
+         (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|put%2:35:00|
                   WN::|set%2:35:00|
                   WN::|place%2:35:00|
@@ -9257,7 +9261,7 @@
                   WN::|identical%5:00:00|
                   WN::|same%3:00:02|))
 
-(CONCEPT ONT::SAMPLING (INHERIT ONT::COLLECT))
+(CONCEPT ONT::SAMPLING (INHERIT ONT::CHOOSING))
 
 (CONCEPT ONT::SAVE-COST
          (INHERIT ONT::EXPENSIVENESS)
@@ -9440,7 +9444,7 @@
                   WN::|vote%2:41:09|
                   WN::|determine%2:31:01|)
          (SEM-FRAME
-          (ONT::AFFECTED
+          (ONT::NEUTRAL
            (OR (CONCEPT PHYS-OBJ)
                (CONCEPT ABSTR-OBJ)
                (CONCEPT SITUATION)
@@ -10039,7 +10043,7 @@
 (CONCEPT ONT::SPRING (INHERIT ONT::SEASON))
 
 (CONCEPT ONT::SQUEEZE
-         (INHERIT ONT::CAUSE-TO-MOVE)
+         (INHERIT ONT::APPLY-FORCE)
          (OVERLAP WN::|squeeze%2:35:00|))
 
 (CONCEPT ONT::SSN
@@ -10500,10 +10504,6 @@
 (CONCEPT ONT::SWIM
          (INHERIT ONT::SELF-LOCOMOTE)
          (OVERLAP WN::|float%2:38:01| WN::|swim%2:38:01|))
-
-(CONCEPT ONT::SWING-BY
-         (INHERIT ONT::PASS)
-         (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC)))
 
 (CONCEPT ONT::SWITCH (INHERIT ONT::OPERATING-SWITCH))
 

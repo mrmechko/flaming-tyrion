@@ -1363,6 +1363,26 @@
    <feat name="object-function">instrument</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::apply-force">
+  <relation label="inherit">
+   ont::event-of-causation
+  </relation>
+  <relation label="overlap">
+   wn::|reflect%2:39:00|
+   wn::|drive%2:35:01|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="cause">force</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::agent">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::appreciate">
   <relation label="inherit">
    ont::experiencer-emotion
@@ -4634,7 +4654,7 @@
  </concept>
  <concept name="ont::collect">
   <relation label="inherit">
-   ont::physical-motion
+   ont::event-of-causation
   </relation>
   <relation label="overlap">
    wn::|gather%2:35:00|
@@ -4643,9 +4663,6 @@
    wn::|pull_together%2:35:00|
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::formal">
-    <concept name="t" />
-   </role-restr-map>
    <role-restr-map roles="ont::agent">
     <concept name="t" />
    </role-restr-map>
@@ -11458,10 +11475,10 @@
  </concept>
  <concept name="ont::herd">
   <relation label="inherit">
-   ont::collect
+   ont::cause-to-move
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::formal">
+   <role-restr-map roles="ont::affected">
     <sem-feats>
      <relation label="inherit">
       phys-obj
@@ -17176,7 +17193,8 @@
    ont::situation-root
   </relation>
   <relation label="overlap">
-   wn::|condition%1:26:02|
+   
+wn::|condition%1:26:02|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -17437,7 +17455,7 @@
    ont::physical-motion
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::formal">
+   <role-restr-map roles="ont::affected">
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::agent">
@@ -17474,11 +17492,7 @@
    <feat name="origin">non-living</feat>
   </sem-feats>
  </concept>
- <concept name="ont::placing">
-  <relation label="inherit">
-   ont::directed-motion
-  </relation>
- </concept>
+ <concept name="ont::placing" />
  <concept name="ont::planet">
   <relation label="inherit">
    ont::natural-object
@@ -17670,14 +17684,6 @@
    <feat name="trajectory">-</feat>
    <feat name="origin">non-living</feat>
   </sem-feats>
- </concept>
- <concept name="ont::pop">
-  <relation label="inherit">
-   ont::cause-to-move
-  </relation>
-  <relation label="overlap">
-   wn::|pop%2:35:05|
-  </relation>
  </concept>
  <concept name="ont::population">
   <relation label="inherit">
@@ -18805,7 +18811,7 @@
  </concept>
  <concept name="ont::pull">
   <relation label="inherit">
-   ont::cause-to-move
+   ont::apply-force
   </relation>
   <relation label="overlap">
    wn::|force%2:35:01|
@@ -18960,7 +18966,7 @@
  </concept>
  <concept name="ont::push">
   <relation label="inherit">
-   ont::cause-to-move
+   ont::apply-force
   </relation>
   <relation label="overlap">
    wn::|push%2:38:00|
@@ -18976,7 +18982,7 @@
  </concept>
  <concept name="ont::put">
   <relation label="inherit">
-   ont::motion
+   ont::event-of-causation
   </relation>
   <relation label="overlap">
    wn::|put%2:35:00|
@@ -20936,7 +20942,7 @@
  </concept>
  <concept name="ont::sampling">
   <relation label="inherit">
-   ont::collect
+   ont::choosing
   </relation>
  </concept>
  <concept name="ont::save-cost">
@@ -21331,7 +21337,7 @@
    wn::|determine%2:31:01|
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::affected">
+   <role-restr-map roles="ont::neutral">
     <or>
      <concept name="phys-obj" />
      <concept name="abstr-obj" />
@@ -22779,7 +22785,7 @@
  </concept>
  <concept name="ont::squeeze">
   <relation label="inherit">
-   ont::cause-to-move
+   ont::apply-force
   </relation>
   <relation label="overlap">
    wn::|squeeze%2:35:00|
@@ -23706,17 +23712,6 @@
    wn::|float%2:38:01|
    wn::|swim%2:38:01|
   </relation>
- </concept>
- <concept name="ont::swing-by">
-  <relation label="inherit">
-   ont::pass
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::switch">
   <relation label="inherit">
