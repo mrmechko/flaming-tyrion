@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::answer">
  <relation label="inherit">
-  ont::statement
+  ont::response
  </relation>
  <relation label="overlap">
   wn::|answer%2:32:00|
@@ -200,6 +200,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::agent">
   <sem-feats>
@@ -226,20 +227,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::instrument" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-  </sem-feats>
- </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -247,7 +235,11 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::affected">
   <or>
@@ -260,8 +252,10 @@
  <relation label="inherit">
   situation
  </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">bounded</feat>
  <feat name="trajectory">-</feat>
- <feat name="cause">force</feat>
+ <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::agent-interaction">
  <relation label="inherit">
@@ -279,27 +273,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::effect" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">dynamic</feat>
- <feat name="cause">agentive</feat>
- </sem-feats>
  <concept name="ont::communication">
  <relation label="inherit">
   ont::agent-interaction
@@ -318,22 +291,12 @@
   <relation label="inherit">
    situation
   </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">bounded</feat>
   <feat name="trajectory">-</feat>
-  <feat name="cause">force</feat>
+  <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::instrument" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -341,7 +304,11 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="situation" />
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="proposition" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -351,40 +318,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::statement">
+ <concept name="ont::response">
  <relation label="inherit">
   ont::communication
  </relation>
  <relation label="overlap">
-  wn::|tell%2:32:04|
-  wn::|say%2:32:00|
-  wn::|state%2:32:00|
-  wn::|speak%2:32:01|
-  wn::|talk%2:32:01|
-  wn::|inform%2:32:00|
+  wn::|react%2:31:00|
+  wn::|respond%2:31:00|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::effect" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::formal">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="answer" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::answer
+  ont::count-pred-templ
+ </relation>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />

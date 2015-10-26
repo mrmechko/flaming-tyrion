@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::discuss">
  <relation label="inherit">
-  ont::talk
+  ont::conversing
  </relation>
  <relation label="overlap">
   wn::|discuss%2:32:00|
@@ -224,19 +224,8 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::instrument" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-  </sem-feats>
- </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -244,7 +233,11 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::affected">
   <or>
@@ -257,8 +250,10 @@
  <relation label="inherit">
   situation
  </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">bounded</feat>
  <feat name="trajectory">-</feat>
- <feat name="cause">force</feat>
+ <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::agent-interaction">
  <relation label="inherit">
@@ -276,7 +271,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::agent1">
   <sem-feats>
@@ -321,22 +315,12 @@
   <relation label="inherit">
    situation
   </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">bounded</feat>
   <feat name="trajectory">-</feat>
-  <feat name="cause">force</feat>
+  <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::instrument" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -344,7 +328,11 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="situation" />
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="proposition" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -354,24 +342,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-   <concept name="proposition" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="time-span">extended</feat>
- <feat name="aspect">unbounded</feat>
- <feat name="cause">agentive</feat>
- </sem-feats>
  <concept name="ont::conversing">
  <relation label="inherit">
   ont::communication
@@ -410,45 +380,72 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::talk">
+ <concept name="ont::negotiate">
  <relation label="inherit">
-  ont::conversing
+  ont::discuss
  </relation>
  <relation label="overlap">
-  wn::|posit%2:32:02|
-  wn::|put_forward%2:32:00|
-  wn::|state%2:32:01|
-  wn::|submit%2:32:00|
-  wn::|talk%2:32:00|
-  wn::|speak%2:32:00|
-  wn::|utter%2:32:00|
-  wn::|mouth%2:32:00|
-  wn::|verbalize%2:32:00|
-  wn::|verbalise%2:32:00|
+  wn::|negociate%2:32:00|
+  wn::|negotiate%2:32:00|
+  wn::|talk_terms%2:32:00|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="time-span">extended</feat>
-  <feat name="aspect">unbounded</feat>
-  <feat name="cause">agentive</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="proposition" />
-    <concept name="phys-obj" />
-   </or>
+  <role-restr-map roles="ont::result" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::argue">
+ <relation label="inherit">
+  ont::discuss
+ </relation>
+ <relation label="overlap">
+  wn::|argue%2:32:00|
+ </relation>
  </concept>
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="discuss" />
+  <word first-word="confer" />
+ </morph>
+ <relation label="inherit">
+  ont::discuss
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="confer" />
+ </morph>
+ <relation label="inherit">
+  ont::discuss
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-about-theme-addressee-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::to w::with)" sem-role="ont::agent1" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="discussion" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="discussion" />
+   </nom>
+  </forms>
  </morph>
  <example text="he discussed it [with her]">
   <provenance name="TRIPS"/>

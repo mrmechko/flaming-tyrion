@@ -4,26 +4,12 @@
  <provenance name="TRIPS"/>
  <concept name="ont::response">
  <relation label="inherit">
-  ont::agreement
+  ont::communication
  </relation>
  <relation label="overlap">
   wn::|react%2:31:00|
   wn::|respond%2:31:00|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -213,6 +199,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::agent">
   <sem-feats>
@@ -240,13 +227,35 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
- <role-restr-map roles="ont::formal">
-  <concept name="t" />
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">bounded</feat>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">agentive</feat>
+ </sem-feats>
  <concept name="ont::agent-interaction">
  <relation label="inherit">
   ont::event-of-agent-interaction
@@ -263,37 +272,69 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
- <sem-frame>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="cause">agentive</feat>
- </sem-feats>
- <concept name="ont::agreement">
+ <concept name="ont::communication">
  <relation label="inherit">
   ont::agent-interaction
  </relation>
+ <relation label="overlap">
+  wn::|put_across%2:32:00|
+  wn::|pass_along%2:32:00|
+  wn::|pass%2:32:01|
+  wn::|pass_on%2:32:00|
+  wn::|communicate%2:32:01|
+  wn::|intercommunicate%2:32:00|
+  wn::|communicate%2:32:00|
+  wn::|communication%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">bounded</feat>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
-  <role-restr-map roles="ont::formal">
-   <concept name="t" />
+  <role-restr-map roles="ont::formal" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="proposition" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
  <concept name="ont::acknowledge">
  <relation label="inherit">
   ont::response
+ </relation>
+ </concept>
+ <concept name="ont::accept">
+ <relation label="inherit">
+  ont::response
+ </relation>
+ <relation label="overlap">
+  wn::|take_on%2:40:00|
+  wn::|take%2:40:07|
+  wn::|admit%2:40:00|
+  wn::|accept%2:40:03|
+  wn::|accept%2:40:12|
+  wn::|take%2:40:15|
+  wn::|take%2:31:09|
+  wn::|submit%2:31:12|
  </relation>
  </concept>
  <concept name="ont::contest">
@@ -321,19 +362,27 @@
   wn::|refuse%2:41:00|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="answer" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
+ <concept name="ont::answer">
  <relation label="inherit">
   ont::response
-  ont::count-pred-templ
  </relation>
- </sense>
+ <relation label="overlap">
+  wn::|answer%2:32:00|
+  wn::|reply%2:32:00|
+  wn::|respond%2:32:00|
+ </relation>
+ </concept>
+ <concept name="ont::consent">
+ <relation label="inherit">
+  ont::response
+ </relation>
+ <relation label="overlap">
+  wn::|accept%2:32:00|
+  wn::|consent%2:32:00|
+  wn::|go_for%2:32:00|
+  wn::|affirm%2:32:01|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="v" />

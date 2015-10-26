@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::repeat">
  <relation label="inherit">
-  ont::inform
+  ont::say
  </relation>
  <relation label="overlap">
   wn::|repeat%2:32:00|
@@ -235,19 +235,8 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::instrument" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-  </sem-feats>
- </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -255,7 +244,11 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::affected">
   <or>
@@ -268,8 +261,10 @@
  <relation label="inherit">
   situation
  </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">bounded</feat>
  <feat name="trajectory">-</feat>
- <feat name="cause">force</feat>
+ <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::agent-interaction">
  <relation label="inherit">
@@ -287,15 +282,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::effect" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
+ <role-restr-map roles="ont::result" optional="optional">
+  <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::associated-information" optional="optional">
+ <role-restr-map roles="ont::agent">
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::formal">
@@ -306,7 +306,6 @@
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">dynamic</feat>
  <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::communication">
@@ -327,22 +326,12 @@
   <relation label="inherit">
    situation
   </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">bounded</feat>
   <feat name="trajectory">-</feat>
-  <feat name="cause">force</feat>
+  <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::instrument" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -350,7 +339,11 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="situation" />
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="proposition" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -361,74 +354,21 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::addressee">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="cause">agentive</feat>
- </sem-feats>
- <concept name="ont::statement">
- <relation label="inherit">
-  ont::communication
- </relation>
- <relation label="overlap">
-  wn::|tell%2:32:04|
-  wn::|say%2:32:00|
-  wn::|state%2:32:00|
-  wn::|speak%2:32:01|
-  wn::|talk%2:32:01|
-  wn::|inform%2:32:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::effect" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::formal">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
  <role-restr-map roles="ont::formal">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::inform">
+ <concept name="ont::say">
  <relation label="inherit">
-  ont::statement
+  ont::communication
  </relation>
  <relation label="overlap">
-  wn::|apprize%2:32:01|
-  wn::|apprise%2:32:00|
-  wn::|send_word%2:32:00|
-  wn::|give_notice%2:32:00|
-  wn::|notify%2:32:00|
-  wn::|advise%2:32:01|
-  wn::|declare%2:32:00|
-  wn::|prosecute%2:41:00|
+  wn::|note%2:32:00|
+  wn::|observe%2:32:00|
+  wn::|mention%2:32:00|
+  wn::|remark%2:32:00|
+  wn::|say%2:32:13|
+  wn::|say%2:32:01|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -437,7 +377,10 @@
   <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::addressee">
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
    <sem-feats>
     <or>
      <concept name="phys-obj" />
@@ -446,36 +389,14 @@
     <feat name="intentional">+</feat>
    </sem-feats>
   </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <concept name="t" />
+  </role-restr-map>
  </sem-frame>
  </concept>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="clarification" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="clarification" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::repeat
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">unbounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -584,6 +505,35 @@
    <feat name="aspect">unbounded</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="reiteration" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="reiteration" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::repeat
+  ont::agent-theme-to-addressee-optional-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="relay" />
+ </morph>
+ <example text="relay the news to him">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::repeat
+  ont::agent-affected-iobj-theme-templ
+ </relation>
  </sense>
  <sense>
  <morph>
@@ -701,49 +651,5 @@
    <feat name="aspect">unbounded</feat>
   </sem-feats>
  </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="say" remaining-words="" particle="over" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="said" />
-   </past>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::repeat
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="say" remaining-words="" particle="again" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="said" />
-   </past>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::repeat
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
  </sense>
 </dsl>

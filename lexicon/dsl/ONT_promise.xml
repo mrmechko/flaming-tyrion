@@ -4,29 +4,12 @@
  <provenance name="TRIPS"/>
  <concept name="ont::promise">
  <relation label="inherit">
-  ont::communication
+  ont::commissive
  </relation>
  <relation label="overlap">
   wn::|promise%2:32:00|
-  wn::|assure%2:32:02|
+  wn::|promise%2:32:01|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::addressee">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -242,19 +225,8 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::instrument" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-  </sem-feats>
- </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -262,7 +234,11 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::affected">
   <or>
@@ -275,8 +251,10 @@
  <relation label="inherit">
   situation
  </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">bounded</feat>
  <feat name="trajectory">-</feat>
- <feat name="cause">force</feat>
+ <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::agent-interaction">
  <relation label="inherit">
@@ -294,18 +272,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
- <sem-frame>
- <role-restr-map roles="ont::addressee">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
@@ -330,22 +296,12 @@
   <relation label="inherit">
    situation
   </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">bounded</feat>
   <feat name="trajectory">-</feat>
-  <feat name="cause">force</feat>
+  <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::instrument" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -353,7 +309,11 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="situation" />
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="proposition" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -363,32 +323,22 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::insure">
+ <concept name="ont::illocution">
  <relation label="inherit">
-  ont::promise
+  ont::communication
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::commissive">
+ <relation label="inherit">
+  ont::illocution
  </relation>
  </concept>
- <concept name="ont::gum-promise">
- <relation label="inherit">
-  ont::promise
- </relation>
- </concept>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="ensure" />
- </morph>
- <relation label="inherit">
-  ont::promise
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -410,15 +360,95 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="n" />
+  <pos pos="v" />
   <word first-word="promise" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="promise" />
+   </nom>
+  </forms>
  </morph>
- <example text="he made a promise">
+ <relation label="inherit">
+  ont::promise
+  ont::agent-affected-iobj-theme-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="promise" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="promise" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="he promised to go">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::promise
-  ont::count-pred-templ
  </relation>
+ <syntax>
+  <template-call template="ont::agent-theme-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="promise" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="promise" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="he promised me to go">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::promise
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-theme-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="promise" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="promise" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="he promised me to go">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::promise
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-theme-optional-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
 </dsl>

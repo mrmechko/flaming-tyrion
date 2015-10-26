@@ -11,7 +11,7 @@
    situation
   </relation>
   <feat name="locative">located</feat>
-  <feat name="trajectory">+</feat>
+  <feat name="trajectory">-</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::neutral" optional="optional">
@@ -117,7 +117,7 @@
   situation
  </relation>
  <feat name="locative">located</feat>
- <feat name="trajectory">+</feat>
+ <feat name="trajectory">-</feat>
  </sem-feats>
  <concept name="ont::event-type">
  <relation label="inherit">
@@ -144,6 +144,33 @@
  <relation label="inherit">
   ont::located-event
  </relation>
+ </concept>
+ <concept name="ont::riot">
+ <relation label="inherit">
+  ont::located-event
+ </relation>
+ <relation label="overlap">
+  wn::|riot%2:41:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sense>
  <morph>

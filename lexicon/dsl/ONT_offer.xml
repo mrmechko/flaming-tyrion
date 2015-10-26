@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::offer">
  <relation label="inherit">
-  ont::statement
+  ont::commissive
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::result">
@@ -228,18 +228,6 @@
  </concept>
  <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::instrument" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-  </sem-feats>
- </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -247,7 +235,11 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::affected">
   <or>
@@ -260,8 +252,10 @@
  <relation label="inherit">
   situation
  </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">bounded</feat>
  <feat name="trajectory">-</feat>
- <feat name="cause">force</feat>
+ <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::agent-interaction">
  <relation label="inherit">
@@ -279,25 +273,10 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::effect" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">dynamic</feat>
  <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::communication">
@@ -318,22 +297,12 @@
   <relation label="inherit">
    situation
   </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">bounded</feat>
   <feat name="trajectory">-</feat>
-  <feat name="cause">force</feat>
+  <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::instrument" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -341,7 +310,11 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="situation" />
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="proposition" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -351,81 +324,43 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::result">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::statement">
+ <concept name="ont::illocution">
  <relation label="inherit">
   ont::communication
- </relation>
- <relation label="overlap">
-  wn::|tell%2:32:04|
-  wn::|say%2:32:00|
-  wn::|state%2:32:00|
-  wn::|speak%2:32:01|
-  wn::|talk%2:32:01|
-  wn::|inform%2:32:00|
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="aspect">dynamic</feat>
   <feat name="cause">agentive</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::effect" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::formal">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="offer" />
- </morph>
- <example text="make an offer">
-  <provenance name="TRIPS"/>
- </example>
+ <sem-frame>
+ <role-restr-map roles="ont::result">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::commissive">
  <relation label="inherit">
-  ont::offer
+  ont::illocution
  </relation>
- <syntax>
-  <template-call template="ont::other-reln-affected-templ" xp="'(w::pp
-                                                                 (w::or w::for
-                                                                        w::on))" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::for w::on)" sem-role="ont::affected"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">|3s|</feat>
-  </syn-feats>
- </syntax>
- </sense>
+ </concept>
  <sense>
  <morph>
   <pos pos="v" />
   <word first-word="offer" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="offered" />
+   </past>
+   <ing>
+    <word first-word="offering" />
+   </ing>
+   <nom>
+    <word first-word="offer" />
+   </nom>
+  </forms>
  </morph>
  <example text="offer him a job">
   <provenance name="TRIPS"/>
@@ -446,6 +381,18 @@
  <morph>
   <pos pos="v" />
   <word first-word="offer" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="offered" />
+   </past>
+   <ing>
+    <word first-word="offering" />
+   </ing>
+   <nom>
+    <word first-word="offer" />
+   </nom>
+  </forms>
  </morph>
  <example text="the bid offers incentive (to the group)">
   <provenance name="TRIPS"/>
@@ -461,11 +408,5 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
  </sense>
 </dsl>

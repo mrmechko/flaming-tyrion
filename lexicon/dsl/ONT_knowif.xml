@@ -131,7 +131,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::neutral1" optional="optional">
   <or>
@@ -171,13 +170,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="time-span">extended</feat>
- <feat name="aspect">indiv-level</feat>
- </sem-feats>
+ <concept name="situation" />
  <concept name="ont::awareness">
  <relation label="inherit">
   ont::event-of-experience
@@ -212,9 +205,21 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::know">
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">indiv-level</feat>
+ </sem-feats>
+ <concept name="ont::attitude-of-belief">
  <relation label="inherit">
   ont::awareness
+ </relation>
+ </concept>
+ <concept name="ont::know">
+ <relation label="inherit">
+  ont::attitude-of-belief
  </relation>
  <relation label="overlap">
   wn::|know%2:31:02|

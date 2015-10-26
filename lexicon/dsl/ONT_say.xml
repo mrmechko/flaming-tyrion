@@ -256,18 +256,6 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::instrument" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-  </sem-feats>
- </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -275,7 +263,11 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::affected">
   <or>
@@ -288,8 +280,10 @@
  <relation label="inherit">
   situation
  </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">bounded</feat>
  <feat name="trajectory">-</feat>
- <feat name="cause">force</feat>
+ <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::agent-interaction">
  <relation label="inherit">
@@ -352,22 +346,12 @@
   <relation label="inherit">
    situation
   </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">bounded</feat>
   <feat name="trajectory">-</feat>
-  <feat name="cause">force</feat>
+  <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::instrument" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -375,7 +359,11 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="situation" />
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="proposition" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -385,32 +373,81 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="answer" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="if it says rain then answer yes">
- </example>
+ <concept name="ont::extended-say">
  <relation label="inherit">
   ont::say
  </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" xp="'w::utt" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="utt" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
+ <relation label="overlap">
+  wn::|recount%2:32:00|
+  wn::|dictate%2:31:00|
+  wn::|narrate%2:31:01|
+ </relation>
+ </concept>
+ <concept name="ont::scripted-say">
+ <relation label="inherit">
+  ont::say
+ </relation>
+ <relation label="overlap">
+  wn::|quote%2:32:00|
+ </relation>
+ </concept>
+ <concept name="ont::repeat">
+ <relation label="inherit">
+  ont::say
+ </relation>
+ <relation label="overlap">
+  wn::|repeat%2:32:00|
+  wn::|reiterate%2:32:00|
+  wn::|ingeminate%2:32:00|
+  wn::|iterate%2:32:00|
+  wn::|restate%2:32:00|
+  wn::|retell%2:32:00|
+  wn::|remind%2:31:00|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::manner-say">
+ <relation label="inherit">
+  ont::say
+ </relation>
+ <relation label="overlap">
+  wn::|whisper%2:32:00|
+  wn::|blab%2:32:02|
+  wn::|scream%2:32:01|
+  wn::|scream%2:32:08|
+  wn::|scream%2:39:00|
+  wn::|shout%2:32:00|
+  wn::|shout%2:38:08|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::nonverbal-say">
+ <relation label="inherit">
+  ont::say
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="articulate" />
+ </morph>
+ <relation label="inherit">
+  ont::say
+  ont::agent-theme-to-addressee-optional-templ
+ </relation>
  </sense>
  <sense>
  <morph>
@@ -446,6 +483,61 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="confide" />
+ </morph>
+ <relation label="inherit">
+  ont::say
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-optional-formal-templ" xp="'(w::pp
+                                                                               (w::or
+                                                                                w::in
+                                                                                w::to
+                                                                                w::with))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="(w::or w::in
+                                                              w::to
+                                                              w::with)" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="expression" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="expression" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="she expressed the idea to him">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::say
+  ont::agent-theme-to-addressee-optional-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="mention" />
+ </morph>
+ <example text="mention it to him">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::say
+  ont::agent-theme-to-addressee-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="mention" />
  </morph>
  <example text="he mentioned that he saw her">
@@ -471,67 +563,18 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="murmur" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="murmured" />
-   </past>
-   <ing>
-    <word first-word="murmuring" />
-   </ing>
-   <nom>
-    <word first-word="murmur" />
-   </nom>
-  </forms>
+  <word first-word="mention" />
  </morph>
- <example text="He whispered that three teams are going to Delta">
+ <example text="he mentioned the truck">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::say
  </relation>
  <syntax>
-  <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
+  <template-call template="ont::agent-theme-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="murmur" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="murmured" />
-   </past>
-   <ing>
-    <word first-word="murmuring" />
-   </ing>
-   <nom>
-    <word first-word="murmur" />
-   </nom>
-  </forms>
- </morph>
- <example text="he whispered go over there">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" xp="'w::utt" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="utt" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -720,175 +763,7 @@
  </example>
  <relation label="inherit">
   ont::say
-  ont::agent-theme-to-addressee-optional-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="scream" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="scream" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">unbounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="scream" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="scream" />
-   </nom>
-  </forms>
- </morph>
- <example text="he screamed at her [about it]">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-addressee-theme-optional-templ" xp1="'(w::pp
-                                                                             w::at)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::about" sem-role="ont::formal" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::at" sem-role="ont::agent1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="scream" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="scream" />
-   </nom>
-  </forms>
- </morph>
- <example text="he screamed about it [to/with her]">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-about-theme-addressee-optional-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::to w::with)" sem-role="ont::agent1" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="scream" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="scream" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::say
-  ont::agent-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="shout" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="shout" />
-   </nom>
-  </forms>
- </morph>
- <example text="he shouted at/to her [about it]">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-addressee-theme-optional-templ" xp1="'(w::pp
-                                                                             (w::or
-                                                                              w::at
-                                                                              w::to))" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::about" sem-role="ont::formal" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="(w::or w::at w::to)" sem-role="ont::agent1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="shout" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="shout" />
-   </nom>
-  </forms>
- </morph>
- <example text="he shouted about it [to/with her]">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-about-theme-addressee-optional-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::to w::with)" sem-role="ont::agent1" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="shout" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="shout" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::say
-  ont::agent-templ
+  ont::agent-neutral-to-addressee-optional-templ
  </relation>
  </sense>
  <sense>
@@ -925,226 +800,40 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="state" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he stated that he couldn't come">
- </example>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="swear" />
+  <word first-word="speak" />
   <forms>
    -VB
    <past>
-    <word first-word="swore" />
+    <word first-word="spoke" />
    </past>
    <pastpart>
-    <word first-word="sworn" />
+    <word first-word="spoken" />
    </pastpart>
   </forms>
  </morph>
- <example text="swear that it's true">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="swear" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="swore" />
-   </past>
-   <pastpart>
-    <word first-word="sworn" />
-   </pastpart>
-  </forms>
- </morph>
- <example text="swear to you that it's true">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-to-recipient-theme-templ" xp="'w::cp" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="utter" />
- </morph>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="whisper" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="whispered" />
-   </past>
-   <ing>
-    <word first-word="whispering" />
-   </ing>
-   <nom>
-    <word first-word="whisper" />
-   </nom>
-  </forms>
- </morph>
- <example text="He whispered that three teams are going to Delta">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="whisper" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="whispered" />
-   </past>
-   <ing>
-    <word first-word="whispering" />
-   </ing>
-   <nom>
-    <word first-word="whisper" />
-   </nom>
-  </forms>
- </morph>
- <example text="he whispered go over there">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" xp="'w::utt" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="utt" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="whisper" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="whispered" />
-   </past>
-   <ing>
-    <word first-word="whispering" />
-   </ing>
-   <nom>
-    <word first-word="whisper" />
-   </nom>
-  </forms>
- </morph>
- <example text="whisper it to him">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::say
-  ont::agent-theme-to-addressee-optional-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="whisper" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="whispered" />
-   </past>
-   <ing>
-    <word first-word="whispering" />
-   </ing>
-   <nom>
-    <word first-word="whisper" />
-   </nom>
-  </forms>
- </morph>
- <example text="whisper">
-  <provenance name="TRIPS"/>
- </example>
  <relation label="inherit">
   ont::say
   ont::agent-templ
  </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="voice" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::say
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-theme-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
  <sense>
  <morph>
@@ -1214,74 +903,6 @@
   <template-call template="ont::agent-theme-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="yell" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="yelled" />
-   </past>
-   <ing>
-    <word first-word="yelling" />
-   </ing>
-  </forms>
- </morph>
- <example text="He yelled that three teams are going to Delta">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-formal-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="yell" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="yelled" />
-   </past>
-   <ing>
-    <word first-word="yelling" />
-   </ing>
-  </forms>
- </morph>
- <example text="he yelled go over there">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::say
- </relation>
- <syntax>
-  <template-call template="ont::agent-formal-xp-templ" xp="'w::utt" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="utt" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

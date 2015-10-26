@@ -251,18 +251,6 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::instrument" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-  </sem-feats>
- </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -270,7 +258,11 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::affected">
   <or>
@@ -283,8 +275,10 @@
  <relation label="inherit">
   situation
  </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">bounded</feat>
  <feat name="trajectory">-</feat>
- <feat name="cause">force</feat>
+ <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::agent-interaction">
  <relation label="inherit">
@@ -342,22 +336,12 @@
   <relation label="inherit">
    situation
   </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">bounded</feat>
   <feat name="trajectory">-</feat>
-  <feat name="cause">force</feat>
+  <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::instrument" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -365,7 +349,11 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="situation" />
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="proposition" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -385,16 +373,6 @@
   wn::|lay_out%2:32:00|
  </relation>
  </concept>
- <concept name="ont::offer">
- <relation label="inherit">
-  ont::statement
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::result">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::inform">
  <relation label="inherit">
   ont::statement
@@ -409,178 +387,5 @@
   wn::|declare%2:32:00|
   wn::|prosecute%2:41:00|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::addressee">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <concept name="ont::swear">
- <relation label="inherit">
-  ont::statement
- </relation>
- </concept>
- <concept name="ont::warn">
- <relation label="inherit">
-  ont::statement
- </relation>
- <relation label="overlap">
-  wn::|warn%2:32:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::addressee">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::criticize">
- <relation label="inherit">
-  ont::statement
- </relation>
- <relation label="overlap">
-  wn::|knock%2:32:02|
-  wn::|criticize%2:32:00|
-  wn::|criticise%2:32:00|
-  wn::|pick_apart%2:32:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- </concept>
- <concept name="ont::praise">
- <relation label="inherit">
-  ont::statement
- </relation>
- <relation label="overlap">
-  wn::|praise%2:32:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::predicate" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::complain">
- <relation label="inherit">
-  ont::statement
- </relation>
- <relation label="overlap">
-  wn::|complain%2:32:00|
-  wn::|kick%2:32:00|
-  wn::|plain%2:32:00|
-  wn::|sound_off%2:32:00|
-  wn::|quetch%2:32:00|
-  wn::|kvetch%2:32:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- </concept>
- <concept name="ont::insult">
- <relation label="inherit">
-  ont::statement
- </relation>
- <relation label="overlap">
-  wn::|diss%2:32:00|
-  wn::|insult%2:32:00|
-  wn::|affront%2:32:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- </concept>
- <concept name="ont::accuse">
- <relation label="inherit">
-  ont::statement
- </relation>
- <relation label="overlap">
-  wn::|accuse%2:32:00|
-  wn::|impeach%2:32:00|
-  wn::|incriminate%2:32:00|
-  wn::|criminate%2:32:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- </concept>
- <concept name="ont::convince">
- <relation label="inherit">
-  ont::statement
- </relation>
- <relation label="overlap">
-  wn::|convert%2:32:00|
-  wn::|win_over%2:32:00|
-  wn::|convince%2:32:00|
-  wn::|court%2:41:01|
- </relation>
- </concept>
- <concept name="ont::answer">
- <relation label="inherit">
-  ont::statement
- </relation>
- <relation label="overlap">
-  wn::|answer%2:32:00|
-  wn::|reply%2:32:00|
-  wn::|respond%2:32:00|
- </relation>
- </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="statement" />
- </morph>
- <example text="make a statement">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::statement
-  ont::count-pred-templ
- </relation>
- </sense>
 </dsl>

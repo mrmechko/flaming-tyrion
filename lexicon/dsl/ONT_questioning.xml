@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::questioning">
  <relation label="inherit">
-  ont::communication
+  ont::directed-communication
  </relation>
  <relation label="overlap">
   wn::|ask%2:32:00|
@@ -18,9 +18,6 @@
   <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::formal">
    <concept name="t" />
   </role-restr-map>
@@ -241,18 +238,6 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::instrument" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-  </sem-feats>
- </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -260,7 +245,11 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::affected">
   <or>
@@ -273,8 +262,10 @@
  <relation label="inherit">
   situation
  </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">bounded</feat>
  <feat name="trajectory">-</feat>
- <feat name="cause">force</feat>
+ <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::agent-interaction">
  <relation label="inherit">
@@ -292,21 +283,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
- <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="cause">agentive</feat>
- </sem-feats>
  <concept name="ont::communication">
  <relation label="inherit">
   ont::agent-interaction
@@ -325,22 +301,12 @@
   <relation label="inherit">
    situation
   </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">bounded</feat>
   <feat name="trajectory">-</feat>
-  <feat name="cause">force</feat>
+  <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::instrument" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -348,7 +314,11 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="situation" />
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="proposition" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -357,6 +327,23 @@
    </or>
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::formal">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">agentive</feat>
+ </sem-feats>
+ <concept name="ont::directed-communication">
+ <relation label="inherit">
+  ont::communication
+ </relation>
  </concept>
  <concept name="ont::ask-query-question">
  <relation label="inherit">
@@ -368,4 +355,26 @@
   ont::questioning
  </relation>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="quiz" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="quizzed" />
+   </past>
+   <ing>
+    <word first-word="quizzing" />
+   </ing>
+   <nom>
+    <word first-word="quiz" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::questioning
+  ont::agent-addressee-templ
+ </relation>
+ </sense>
 </dsl>

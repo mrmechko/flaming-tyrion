@@ -4,7 +4,10 @@
  <provenance name="TRIPS"/>
  <concept name="ont::tell">
  <relation label="inherit">
-  ont::talk
+  ont::representative
+ </relation>
+ <relation label="overlap">
+  wn::|say%2:32:00|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -221,19 +224,8 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::instrument" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-  </sem-feats>
- </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -241,7 +233,11 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::affected">
   <or>
@@ -254,8 +250,10 @@
  <relation label="inherit">
   situation
  </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">bounded</feat>
  <feat name="trajectory">-</feat>
- <feat name="cause">force</feat>
+ <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::agent-interaction">
  <relation label="inherit">
@@ -273,27 +271,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
- <sem-frame>
- <role-restr-map roles="ont::agent1">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
@@ -318,22 +295,12 @@
   <relation label="inherit">
    situation
   </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">bounded</feat>
   <feat name="trajectory">-</feat>
-  <feat name="cause">force</feat>
+  <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::instrument" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -341,7 +308,11 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="situation" />
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="proposition" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -351,97 +322,165 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-   <concept name="proposition" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="time-span">extended</feat>
- <feat name="aspect">unbounded</feat>
- <feat name="cause">agentive</feat>
- </sem-feats>
- <concept name="ont::conversing">
+ <concept name="ont::illocution">
  <relation label="inherit">
   ont::communication
  </relation>
- <relation label="overlap">
-  wn::|talk_about%2:32:01|
-  wn::|talk_of%2:32:00|
-  wn::|converse%2:32:00|
-  wn::|discourse%2:32:01|
-  wn::|correspond%2:32:00|
- </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
   <feat name="cause">agentive</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent1">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <concept name="ont::talk">
+ <concept name="ont::representative">
  <relation label="inherit">
-  ont::conversing
+  ont::illocution
  </relation>
- <relation label="overlap">
-  wn::|posit%2:32:02|
-  wn::|put_forward%2:32:00|
-  wn::|state%2:32:01|
-  wn::|submit%2:32:00|
-  wn::|talk%2:32:00|
-  wn::|speak%2:32:00|
-  wn::|utter%2:32:00|
-  wn::|mouth%2:32:00|
-  wn::|verbalize%2:32:00|
-  wn::|verbalise%2:32:00|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="time-span">extended</feat>
-  <feat name="aspect">unbounded</feat>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="proposition" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="assurance" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="assurance" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-theme-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::about" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="assurance" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="assurance" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-associated-information-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="assurance" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="assurance" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-theme-optional-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="inform" />
+ </morph>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-associated-information-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="inform" />
+ </morph>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-theme-optional-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="notifi" />
+ </morph>
+ <example text="notify him that the plan changed">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-theme-optional-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="notifi" />
+ </morph>
+ <example text="notify him about the change">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-associated-information-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />

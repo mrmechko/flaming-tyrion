@@ -496,6 +496,59 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::direct-information">
+ <relation label="overlap">
+  wn::|traffic%1:10:00|
+ </relation>
+ <relation label="inherit">
+  ont::event-of-action
+  situation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::instrument">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <sem-feats>
+    <relation label="inherit">
+     ?s
+    </relation>
+    <feat name="information">information-content</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::nonverbal-expression">
+ <relation label="inherit">
+  ont::event-of-action
+ </relation>
+ <relation label="overlap">
+  wn::|express_emotion%2:37:00|
+  wn::|express_feelings%2:37:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::record">
  <relation label="overlap">
   wn::|maintain%2:32:04|
