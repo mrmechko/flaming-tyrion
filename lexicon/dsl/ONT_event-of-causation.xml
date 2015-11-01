@@ -30,16 +30,7 @@
  </relation>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::spatial-loc" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::arg1" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::arg0" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
@@ -110,16 +101,7 @@
   <feat name="intentional">-</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::spatial-loc" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg0" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
@@ -223,6 +205,14 @@
   </feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">quantity</feat>
+   </sem-feats>
+  </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -235,15 +225,6 @@
   </role-restr-map>
   <role-restr-map roles="ont::source" optional="optional">
    <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::instrument" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">-</feat>
-    <feat name="mobility">movable</feat>
-   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::affected">
    <or>
@@ -280,9 +261,6 @@
   <feat name="trajectory">-</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::effect" optional="optional">
-   <concept name="situation" />
-  </role-restr-map>
   <role-restr-map roles="ont::result" optional="optional">
    <concept name="phys-obj" />
   </role-restr-map>
@@ -315,24 +293,6 @@
   </relation>
   <feat name="trajectory">+</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::path" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::addressee" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::body-manipulation">
  <relation label="inherit">
@@ -351,26 +311,6 @@
   <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::instrument" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">-</feat>
-    <feat name="origin">living</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::place" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
   <role-restr-map roles="ont::agent">
    <sem-feats>
     <relation label="inherit">
@@ -922,7 +862,7 @@
   <feat name="trajectory">-</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::spatial-loc" optional="optional">
+  <role-restr-map roles="ont::location" optional="optional">
    <sem-feats>
     <relation label="inherit">
      phys-obj

@@ -24,7 +24,7 @@
   <feat name="aspect">bounded</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::spatial-loc">
+  <role-restr-map roles="ont::location">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -52,16 +52,7 @@
  </relation>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::spatial-loc" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::arg1" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::arg0" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
@@ -132,16 +123,7 @@
   <feat name="intentional">-</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::spatial-loc" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg0" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
@@ -200,7 +182,7 @@
  </concept>
  <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::spatial-loc">
+ <role-restr-map roles="ont::location">
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -258,13 +240,10 @@
   ont::arrive
  </relation>
  <syntax>
-  <template-call template="ont::agent-location-optional-templ" xp="'(w::pp
-                                                                     (w::or
-                                                                      w::at
-                                                                      w::in))" />
+  <template-call template="ont::affected-result-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::at w::in)" sem-role="ont::spatial-loc" optional="optional"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -283,14 +262,10 @@
   ont::arrive
  </relation>
  <syntax>
-  <template-call template="ont::agent-location-optional-templ" />
+  <template-call template="ont::affected-result-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
-                                                               w::in
-                                                               w::under
-                                                               w::into
-                                                               w::at)" sem-role="ont::spatial-loc" optional="optional"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  </sense>
@@ -303,14 +278,10 @@
   ont::arrive
  </relation>
  <syntax>
-  <template-call template="ont::agent-location-optional-templ" />
+  <template-call template="ont::affected-result-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
-                                                               w::in
-                                                               w::under
-                                                               w::into
-                                                               w::at)" sem-role="ont::spatial-loc" optional="optional"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  </sense>
@@ -323,14 +294,10 @@
   ont::arrive
  </relation>
  <syntax>
-  <template-call template="ont::agent-location-optional-templ" />
+  <template-call template="ont::affected-result-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
-                                                               w::in
-                                                               w::under
-                                                               w::into
-                                                               w::at)" sem-role="ont::spatial-loc" optional="optional"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  </sense>
@@ -352,14 +319,10 @@
   ont::arrive
  </relation>
  <syntax>
-  <template-call template="ont::agent-location-optional-templ" />
+  <template-call template="ont::affected-result-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
-                                                               w::in
-                                                               w::under
-                                                               w::into
-                                                               w::at)" sem-role="ont::spatial-loc" optional="optional"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -378,14 +341,10 @@
   ont::arrive
  </relation>
  <syntax>
-  <template-call template="ont::agent-location-optional-templ" />
+  <template-call template="ont::affected-result-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
-                                                               w::in
-                                                               w::under
-                                                               w::into
-                                                               w::at)" sem-role="ont::spatial-loc" optional="optional"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  </sense>
@@ -404,11 +363,10 @@
   ont::arrive
  </relation>
  <syntax>
-  <template-call template="ont::agent-location-optional-templ" xp="'(w::pp
-                                                                     w::at)" />
+  <template-call template="ont::affected-result-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::at" sem-role="ont::spatial-loc" optional="optional"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  </sense>

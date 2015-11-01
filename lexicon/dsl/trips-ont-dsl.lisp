@@ -19,7 +19,7 @@
                   WN::|able%5:00:00|))
 
 (CONCEPT ONT::ABNORMALITY
-         (INHERIT ONT::EVENT)
+         (INHERIT ONT::EVENT-TYPE)
          (OVERLAP WN::|abnormality%1:04:00| WN::|irregularity%1:04:00|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
          (SEM-FRAME (ONT::OF (CONCEPT T) OPTIONAL)))
@@ -221,30 +221,6 @@
 
 (CONCEPT ONT::ACROSS (INHERIT ONT::TRAJECTORY))
 
-(CONCEPT ONT::ACT
-         (INHERIT ONT::EVENT-OF-ACTION)
-         (OVERLAP WN::|atone%2:37:00|
-                  WN::|break_even%2:40:00|
-                  WN::|campaign%2:33:00|
-                  WN::|err%2:31:00|
-                  WN::|excel%2:42:00|
-                  WN::|exercise%2:29:00|
-                  WN::|experiment%2:41:02|
-                  WN::|fall%2:41:15|
-                  WN::|fall_in%2:41:02|
-                  WN::|go%2:33:00|
-                  WN::|hide%2:39:01|
-                  WN::|indulge%2:41:01|
-                  WN::|keep_one's_mouth_shut%2:32:00|
-                  WN::|keep_to_oneself%2:41:00|
-                  WN::|keep_up%2:33:00|)
-         (SEM-FRAME (ONT::OF (CONCEPT SITUATION))
-                    (ONT::AGENT
-                     (OR (CONCEPT PHYS-OBJ)
-                         (CONCEPT ABSTR-OBJ)
-                         (CONCEPT SITUATION))
-                     OPTIONAL)))
-
 (CONCEPT ONT::ACT-BEHAVE
          (INHERIT ONT::ACTING)
          (OVERLAP WN::|act%2:36:04| WN::|act%2:41:00| WN::|act%2:41:07|)
@@ -418,8 +394,11 @@
                     (INFORMATION INFORMATION-CONTENT)))
 
 (CONCEPT ONT::AGENT-INTERACTION
-         (INHERIT ONT::EVENT-OF-AGENT-INTERACTION)
+         (INHERIT ONT::EVENT-OF-ACTION)
          (SEM-FRAME
+          (ONT::AGENT1
+           (SEM-FEATS (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ))
+                      (INTENTIONAL +)))
           (ONT::AGENT
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL +)))))
@@ -492,7 +471,11 @@
                   WN::|allow%2:41:00|
                   WN::|permit%2:41:00|
                   WN::|decertify%2:41:00|
-                  WN::|give%2:40:11|)
+                  WN::|give%2:40:11|
+                  WN::|indulge%2:41:01|
+                  WN::|indulge%2:34:00|
+                  WN::|indulge%2:34:12|
+                  WN::|indulge%2:41:00|)
          (SEM-FRAME
           (ONT::AFFECTED
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
@@ -753,12 +736,12 @@
                   WN::|come_across%2:31:00|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT BOUNDED))
          (SEM-FRAME
-          (ONT::SPATIAL-LOC
+          (ONT::LOCATION
            (SEM-FEATS (INHERIT PHYS-OBJ)
                       (OBJECT-FUNCTION (OR PLACE REPRESENTATION))))))
 
 (CONCEPT ONT::ARRIVING
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (SEM-FRAME (ONT::TO-LOC (CONCEPT T))))
 
 (CONCEPT ONT::ARTICLE
@@ -1109,7 +1092,7 @@
                     (CONTAINER -)
                     (TIME-SPAN EXTENDED)
                     (ASPECT STATIC))
-         (SEM-FRAME (ONT::SPATIAL-LOC (CONCEPT T)) (ONT::NEUTRAL (CONCEPT T))))
+         (SEM-FRAME (ONT::LOCATION (CONCEPT T)) (ONT::NEUTRAL (CONCEPT T))))
 
 (CONCEPT ONT::BE-AT-LOC
          (INHERIT ONT::BE-AT)
@@ -1354,24 +1337,12 @@
                   WN::|immobilise%2:35:00|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
          (SEM-FRAME
-          (ONT::INSTRUMENT
-           (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL -) (ORIGIN LIVING))
-           OPTIONAL)
-          (ONT::PLACE (CONCEPT T) OPTIONAL)
-          (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL -)))
           (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
 
 (CONCEPT ONT::BODY-MOVEMENT
          (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|change_posture%2:38:00|)
-         (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +))
-         (SEM-FRAME (ONT::PATH (CONCEPT T) OPTIONAL)
-                    (ONT::ADDRESSEE (CONCEPT T) OPTIONAL)
-                    (ONT::AGENT
-                     (OR (CONCEPT SITUATION)
-                         (CONCEPT PHYS-OBJ)
-                         (CONCEPT ABSTR-OBJ)))
-                    (ONT::AFFECTED (CONCEPT T))))
+         (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +)))
 
 (CONCEPT ONT::BODY-MOVEMENT-PLACE (INHERIT ONT::BODY-MOVEMENT))
 
@@ -1699,9 +1670,9 @@
          (SEM-FEATS (INHERIT SITUATION)
                     (TRAJECTORY -)
                     (CAUSE (OR FORCE AGENTIVE)))
-         (SEM-FRAME (ONT::RESULT (CONCEPT T) OPTIONAL)
-                    (ONT::FORMAL (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))
-                    (ONT::AFFECTED (CONCEPT T))
+         (SEM-FRAME (ONT::FORMAL (CONCEPT T) OPTIONAL)
+                    (ONT::RESULT (CONCEPT T))
+                    (ONT::AFFECTED (CONCEPT T) OPTIONAL)
                     (ONT::AGENT
                      (OR (CONCEPT PHYS-OBJ)
                          (CONCEPT ABSTR-OBJ)
@@ -1771,7 +1742,7 @@
             (INTENTIONAL -)))))
 
 (CONCEPT ONT::CAUSE-TO-MOVE
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (OVERLAP WN::|reflect%2:39:00| WN::|drive%2:35:01|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +) (CAUSE FORCE))
          (SEM-FRAME (ONT::AGENT (CONCEPT T))))
@@ -1852,6 +1823,12 @@
 
 (CONCEPT ONT::CHANGE-FORMAT (INHERIT ONT::ADJUST))
 
+(CONCEPT ONT::CHANGE-INTEGRITY
+         (INHERIT ONT::CHANGE-STATE)
+         (OVERLAP WN::|change_integrity%2:30:00|)
+         (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
+         (SEM-FRAME (ONT::RESULT (CONCEPT PHYS-OBJ) OPTIONAL)))
+
 (CONCEPT ONT::CHANGE-MAGNITUDE
          (INHERIT ONT::ADJUST)
          (OVERLAP WN::|change_magnitude%2:30:00|
@@ -1863,7 +1840,6 @@
                   WN::|modification%1:11:00|
                   WN::|alteration%1:11:00|
                   WN::|change%1:11:00|
-                  WN::|change_integrity%2:30:00|
                   WN::|change%1:04:00|
                   WN::|overload%2:35:01|)
          (SEM-FRAME
@@ -2022,7 +1998,7 @@
                   WN::|smoggy%5:00:00|))
 
 (CONCEPT ONT::CO-MOTION
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (SEM-FRAME (ONT::NEUTRAL (CONCEPT T))))
 
 (CONCEPT ONT::COALESCE
@@ -2331,7 +2307,10 @@
                     (TRAJECTORY -)
                     (CAUSE AGENTIVE))
          (SEM-FRAME
-          (ONT::NEUTRAL (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
+          (ONT::NEUTRAL
+           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
+                      (INFORMATION INFORMATION-CONTENT))
+           OPTIONAL)
           (ONT::FORMAL
            (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION) (CONCEPT PROPOSITION))
            OPTIONAL)
@@ -2353,6 +2332,10 @@
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::COMPARISON (INHERIT ONT::PS-OBJECT))
+
+(CONCEPT ONT::COMPENSATE
+         (INHERIT ONT::JUDGEMENT)
+         (OVERLAP WN::|compensate%2:40:01|))
 
 (CONCEPT ONT::COMPETITION (INHERIT ONT::PROCESS))
 
@@ -3147,7 +3130,7 @@
                     (ASPECT BOUNDED)))
 
 (CONCEPT ONT::DEPARTING
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (SEM-FRAME (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
                     (ONT::FROM-LOC (CONCEPT T))))
 
@@ -3368,7 +3351,7 @@
 (CONCEPT ONT::DIRECTED-COMMUNICATION (INHERIT ONT::COMMUNICATION))
 
 (CONCEPT ONT::DIRECTED-MOTION
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (SEM-FRAME
           (ONT::ADDRESSEE
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
@@ -3695,7 +3678,7 @@
                     (ONT::SOURCE (CONCEPT T) OPTIONAL)
                     (ONT::AGENT (CONCEPT T) OPTIONAL)))
 
-(CONCEPT ONT::EMPTYING (INHERIT ONT::PHYSICAL-MOTION))
+(CONCEPT ONT::EMPTYING (INHERIT ONT::MOTION))
 
 (CONCEPT ONT::EMU (INHERIT ONT::MEAT))
 
@@ -3704,7 +3687,7 @@
          (SEM-FRAME
           (ONT::AFFECTED (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
 
-(CONCEPT ONT::ENCODES-TEXTUAL-INFO
+(CONCEPT ONT::ENCODES-MESSAGE
          (INHERIT ONT::CORRELATION)
          (OVERLAP WN::|read%2:42:00| WN::|go%2:42:02|)
          (SEM-FRAME
@@ -3773,7 +3756,7 @@
            OPTIONAL)))
 
 (CONCEPT ONT::ENTERING
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (OVERLAP WN::|enter%2:38:00|
                   WN::|come_in%2:38:02|
                   WN::|get_into%2:38:00|
@@ -3895,9 +3878,12 @@
                (CONCEPT PHYS-OBJ)
                (CONCEPT SITUATION)))))
 
-(CONCEPT ONT::EVENT
+(CONCEPT ONT::EVENT-DEFINED-BY-ACTIVITY
          (INHERIT ONT::EVENT-TYPE)
-         (OVERLAP WN::|event%1:03:00|)
+         (OVERLAP WN::|event%1:03:00|
+                  WN::|time_period%1:28:00|
+                  WN::|period_of_time%1:28:00|
+                  WN::|period%1:28:00|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
          (SEM-FRAME (ONT::CONTENT (CONCEPT T) OPTIONAL)
                     (ONT::OF (CONCEPT T) OPTIONAL)))
@@ -3917,12 +3903,6 @@
          (SEM-FEATS (INHERIT SITUATION) (CAUSE FORCE))
          (SEM-FRAME
           (ONT::AGENT
-           (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ)))))
-
-(CONCEPT ONT::EVENT-OF-AGENT-INTERACTION
-         (INHERIT ONT::EVENT-OF-ACTION SITUATION)
-         (SEM-FRAME
-          (ONT::AGENT1
            (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ)))))
 
 (CONCEPT ONT::EVENT-OF-AWARENESS
@@ -4325,7 +4305,7 @@
                   WN::|fail%2:41:08|
                   WN::|fail%2:41:12|
                   WN::|fall_short_of%2:42:00|
-                  WN::|neglect%2:31:05|)
+                  WN::|neglect%2:41:00|)
          (SEM-FRAME (ONT::AGENT (CONCEPT T) OPTIONAL)
                     (ONT::AFFECTED (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
                     (ONT::FORMAL (CONCEPT SITUATION))
@@ -4441,7 +4421,7 @@
           (ONT::AFFECTED-RESULT (SEM-FEATS (INHERIT PHYS-OBJ) (CONTAINER +)))))
 
 (CONCEPT ONT::FILLING
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (OVERLAP WN::|impregnate%2:30:00|
                   WN::|saturate%2:30:04|
                   WN::|spread%2:35:13|)
@@ -4554,7 +4534,7 @@
 (CONCEPT ONT::FLUCTUATE (INHERIT ONT::CHANGE) (OVERLAP WN::|fluctuate%2:30:00|))
 
 (CONCEPT ONT::FLUIDIC-MOTION
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (OVERLAP WN::|course%2:38:00|
                   WN::|feed%2:38:04|
                   WN::|flow%2:38:00|
@@ -5180,10 +5160,11 @@
                   WN::|obscure%5:00:00|))
 
 (CONCEPT ONT::HIDE
-         (INHERIT ONT::CONTROL-MANAGE)
+         (INHERIT ONT::PUT)
          (OVERLAP WN::|hide%2:39:00|
                   WN::|conceal%2:39:01|
-                  WN::|conceal%2:39:00|))
+                  WN::|conceal%2:39:00|
+                  WN::|hide%2:39:01|))
 
 (CONCEPT ONT::HIGHLIGHT
          (INHERIT ONT::VISUAL-DISPLAY)
@@ -5231,7 +5212,7 @@
                   WN::|disrupt%2:30:01|))
 
 (CONCEPT ONT::HITTING
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (OVERLAP WN::|collide_with%2:35:00|
                   WN::|run_into%2:35:01|
                   WN::|impinge_on%2:35:00|
@@ -5532,7 +5513,7 @@
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL +))
            OPTIONAL)
-          (ONT::FORMAL (CONCEPT SITUATION))
+          (ONT::RESULT (CONCEPT SITUATION))
           (ONT::AFFECTED
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
 
@@ -5639,7 +5620,7 @@
           (ONT::ACTION (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE)))))
 
 (CONCEPT ONT::INTERACT
-         (INHERIT ONT::EVENT-OF-AGENT-INTERACTION)
+         (INHERIT ONT::AGENT-INTERACTION)
          (OVERLAP WN::|interact%2:41:00| WN::|collide%2:35:01|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
          (SEM-FRAME
@@ -5683,7 +5664,7 @@
                   WN::|hold%2:35:01|
                   WN::|coexist%2:42:00|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE -) (ASPECT INDIV-LEVEL))
-         (SEM-FRAME (ONT::SPATIAL-LOC (CONCEPT PHYS-OBJ))
+         (SEM-FRAME (ONT::LOCATION (CONCEPT PHYS-OBJ))
                     (ONT::NEUTRAL1
                      (SEM-FEATS (INHERIT PHYS-OBJ)
                                 (SPATIAL-ABSTRACTION
@@ -5752,7 +5733,7 @@
          (OVERLAP WN::|join%2:35:00| WN::|conjoin%2:35:00|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
          (SEM-FRAME
-          (ONT::SPATIAL-LOC (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL -))
+          (ONT::LOCATION (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL -))
            OPTIONAL)
           (ONT::INSTRUMENT (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL -))
            OPTIONAL)
@@ -6192,7 +6173,7 @@
          (INHERIT ONT::EVENT-OF-ACTION)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
          (SEM-FRAME (ONT::FORMAL (CONCEPT T))
-                    (ONT::SPATIAL-LOC
+                    (ONT::LOCATION
                      (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION PLACE)))
                     (ONT::AGENT (CONCEPT T))))
 
@@ -6355,7 +6336,8 @@
                   WN::|keep%2:42:07|
                   WN::|persist%2:42:01|
                   WN::|welter%2:31:00|
-                  WN::|sustain%2:42:01|)
+                  WN::|sustain%2:42:01|
+                  WN::|keep_up%2:33:00|)
          (SEM-FRAME
           (ONT::EFFECT
            (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION) (CONCEPT PHYS-OBJ)))
@@ -6495,7 +6477,7 @@
 (CONCEPT ONT::MAXIMIZE (INHERIT ONT::ADJUST-TO-EXTREME))
 
 (CONCEPT ONT::MEAL-EVENT
-         (INHERIT ONT::EVENT)
+         (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY)
          (SEM-FEATS (INHERIT SITUATION)
                     (TRAJECTORY -)
                     (ASPECT DYNAMIC)
@@ -6803,14 +6785,13 @@
          (INHERIT ONT::EVENT-OF-CAUSATION)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC) (CAUSE (OR FORCE -)))
          (SEM-FRAME
+          (ONT::EXTENT (SEM-FEATS (INHERIT ABSTR-OBJ) (TYPE QUANTITY))
+           OPTIONAL)
           (ONT::AGENT
            (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ))
            OPTIONAL)
           (ONT::RESULT (CONCEPT T) OPTIONAL)
           (ONT::SOURCE (CONCEPT T) OPTIONAL)
-          (ONT::INSTRUMENT
-           (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL -) (MOBILITY MOVABLE))
-           OPTIONAL)
           (ONT::AFFECTED
            (OR (CONCEPT PHYS-OBJ)
                (CONCEPT ABSTR-OBJ)
@@ -6827,7 +6808,7 @@
                     (ONT::ASSOCIATED-INFORMATION (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::MOVE
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (OVERLAP WN::|make%2:38:05|
                   WN::|take%2:38:05|
                   WN::|travel%2:38:00|
@@ -6844,7 +6825,8 @@
                   WN::|move%2:38:02|
                   WN::|move_out%2:41:00|
                   WN::|wreathe%2:38:00|
-                  WN::|mobilize%2:30:00|)
+                  WN::|mobilize%2:30:00|
+                  WN::|go%2:33:00|)
          (SEM-FEATS (INHERIT SITUATION)
                     (TRAJECTORY +)
                     (LOCATIVE -)
@@ -7174,7 +7156,7 @@
          (INHERIT ONT::INGREDIENTS)
          (OVERLAP WN::|seed%1:20:00|))
 
-(CONCEPT ONT::NYCHTHEMERON-EVENT (INHERIT ONT::EVENT))
+(CONCEPT ONT::NYCHTHEMERON-EVENT (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY))
 
 (CONCEPT ONT::OBJ-IN-PATH (INHERIT ONT::DIR-IN-TERMS-OF-OBJ))
 
@@ -7232,8 +7214,7 @@
                   WN::|unbalance%2:42:00|
                   WN::|undo%2:36:00|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
-         (SEM-FRAME (ONT::EFFECT (CONCEPT SITUATION) OPTIONAL)
-                    (ONT::RESULT (CONCEPT PHYS-OBJ) OPTIONAL)
+         (SEM-FRAME (ONT::RESULT (CONCEPT PHYS-OBJ) OPTIONAL)
                     (ONT::AGENT
                      (OR (CONCEPT SITUATION)
                          (CONCEPT PHYS-OBJ)
@@ -7528,7 +7509,7 @@
            (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))))
 
 (CONCEPT ONT::PATH-SHAPE
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (SEM-FRAME (ONT::PATH (CONCEPT T))))
 
 (CONCEPT ONT::PATIENT
@@ -7682,14 +7663,6 @@
 (CONCEPT ONT::PHYSICAL-DISCRETE-PROPERTY-VAL
          (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
 
-(CONCEPT ONT::PHYSICAL-MOTION
-         (INHERIT ONT::MOTION)
-         (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC) (CAUSE (OR FORCE -)))
-         (SEM-FRAME
-          (ONT::EXTENT (SEM-FEATS (INHERIT ABSTR-OBJ) (TYPE QUANTITY))
-           OPTIONAL)
-          (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (MOBILITY MOVABLE)))))
-
 (CONCEPT ONT::PHYSICAL-PHENOMENON
          (INHERIT ONT::NATURAL-PHENOMENON)
          (OVERLAP WN::|strength%1:07:06|
@@ -7719,7 +7692,7 @@
                      (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
 
 (CONCEPT ONT::PHYSICAL-SCRUTINY
-         (INHERIT ONT::MOTION)
+         (INHERIT ONT::SCRUTINY)
          (OVERLAP WN::|inspect%2:38:00|
                   WN::|visit%2:38:01|
                   WN::|see%2:39:13|
@@ -7735,7 +7708,6 @@
                   WN::|search%2:35:00|
                   WN::|seek%2:35:00|
                   WN::|look_for%2:35:00|)
-         (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +))
          (SEM-FRAME
           (ONT::AGENT
            (SEM-FEATS (INHERIT PHYS-OBJ)
@@ -7772,7 +7744,7 @@
          (SEM-FRAME (ONT::VAL (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::PICKUP
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (SEM-FRAME (ONT::AFFECTED (CONCEPT T)) (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::PIGEON (INHERIT ONT::POULTRY))
@@ -7992,7 +7964,8 @@
 
 (CONCEPT ONT::POST-TRANSLATIONAL-MODIFICATION
          (INHERIT ONT::ADJUST)
-         (SEM-FRAME (ONT::LOCATION (CONCEPT T) OPTIONAL)
+         (SEM-FRAME (ONT::SPATIAL-LOC (CONCEPT T) OPTIONAL)
+                    (ONT::LOCATION (CONCEPT T) OPTIONAL)
                     (ONT::AFFECTED
                      (SEM-FEATS (INHERIT PHYS-OBJ) (TYPE MOLECULAR-PART)))))
 
@@ -8678,7 +8651,8 @@
          (OVERLAP WN::|deplore%2:32:01|
                   WN::|lament%2:32:00|
                   WN::|bewail%2:32:00|
-                  WN::|bemoan%2:32:00|))
+                  WN::|bemoan%2:32:00|
+                  WN::|atone%2:37:00|))
 
 (CONCEPT ONT::REGULAR
          (INHERIT ONT::FREQUENCY-VAL)
@@ -9132,7 +9106,7 @@
                   WN::|reward%2:41:01|))
 
 (CONCEPT ONT::RHYTHMIC-MOTION
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (OVERLAP WN::|beat%2:38:03|))
 
 (CONCEPT ONT::RIBOSYLATION (INHERIT ONT::POST-TRANSLATIONAL-MODIFICATION))
@@ -9402,7 +9376,9 @@
                   WN::|check%2:42:09|
                   WN::|check_out%2:40:00|
                   WN::|follow%2:30:01|
-                  WN::|follow%2:39:13|)
+                  WN::|follow%2:39:13|
+                  WN::|experiment%2:41:02|
+                  WN::|experiment%2:41:01|)
          (SEM-FRAME
           (ONT::AGENT
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
@@ -9613,7 +9589,7 @@
          (SEM-FEATS (INHERIT ABSTR-OBJ) (MEASURE-FUNCTION VALUE)))
 
 (CONCEPT ONT::SHARE
-         (INHERIT ONT::EVENT-OF-AGENT-INTERACTION)
+         (INHERIT ONT::AGENT-INTERACTION)
          (OVERLAP WN::|share%2:40:02| WN::|share%2:40:01| WN::|share%2:40:00|)
          (SEM-FRAME (ONT::AFFECTED (CONCEPT T))))
 
@@ -9763,10 +9739,7 @@
                     (CONTAINER -)
                     (INFORMATION MENTAL-CONSTRUCT)
                     (INTENTIONAL -))
-         (SEM-FRAME (ONT::SPATIAL-LOC (CONCEPT T) OPTIONAL)
-                    (ONT::NOROLE (CONCEPT T) OPTIONAL)
-                    (ONT::ARG1 (CONCEPT T) OPTIONAL)
-                    (ONT::ARG0 (CONCEPT T) OPTIONAL)))
+         (SEM-FRAME (ONT::NOROLE (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::SIZE
          (INHERIT ONT::PHYSICAL-DISCRETE-DOMAIN)
@@ -9838,7 +9811,7 @@
          (SEM-FRAME (ONT::OF (CONCEPT SITUATION) OPTIONAL)))
 
 (CONCEPT ONT::SOCIAL-EVENT
-         (INHERIT ONT::EVENT)
+         (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC)))
 
 (CONCEPT ONT::SOCIAL-GROUP
@@ -10371,7 +10344,9 @@
 
 (CONCEPT ONT::SUCCEED
          (INHERIT ONT::ACTING)
-         (OVERLAP WN::|hold_one's_own%2:42:00| WN::|succeed%2:41:00|)
+         (OVERLAP WN::|hold_one's_own%2:42:00|
+                  WN::|succeed%2:41:00|
+                  WN::|excel%2:42:00|)
          (SEM-FRAME (ONT::AGENT (CONCEPT T) OPTIONAL)
                     (ONT::EFFECT (CONCEPT SITUATION))
                     (ONT::INSTRUMENT
@@ -10763,10 +10738,7 @@
                   WN::|time%1:28:03|
                   WN::|clock_time%1:28:00|
                   WN::|time%1:28:00|
-                  WN::|time%1:28:05|
-                  WN::|time_period%1:28:00|
-                  WN::|period_of_time%1:28:00|
-                  WN::|period%1:28:00|)
+                  WN::|time%1:28:05|)
          (SEM-FRAME (ONT::VAL (CONCEPT ABSTR-OBJ) OPTIONAL)
                     (ONT::OF
                      (SEM-FEATS (INHERIT TIME)
@@ -10863,7 +10835,7 @@
          (OVERLAP WN::|touch%2:35:00|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE -) (ASPECT INDIV-LEVEL)))
 
-(CONCEPT ONT::TOUR (INHERIT ONT::EVENT))
+(CONCEPT ONT::TOUR (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY))
 
 (CONCEPT ONT::TOW-TRUCK
          (INHERIT ONT::TRUCK)
@@ -10887,7 +10859,7 @@
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE)))
 
 (CONCEPT ONT::TRANSFER-EVENT
-         (INHERIT ONT::EVENT)
+         (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC)))
 
 (CONCEPT ONT::TRANSFER-INFORMATION
@@ -10922,7 +10894,7 @@
            (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL -) (MOBILITY MOVABLE)))))
 
 (CONCEPT ONT::TRANSPORTATION
-         (INHERIT ONT::PHYSICAL-MOTION)
+         (INHERIT ONT::MOTION)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
          (SEM-FRAME
           (ONT::INSTRUMENT
@@ -10938,7 +10910,7 @@
          (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
 
 (CONCEPT ONT::TRAVEL
-         (INHERIT ONT::EVENT)
+         (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +)))
 
 (CONCEPT ONT::TRAVELLER
@@ -11278,7 +11250,7 @@
          (INHERIT ONT::FUNCTION-OBJECT)
          (SEM-FRAME (ONT::OF (CONCEPT T))))
 
-(CONCEPT ONT::VACATION (INHERIT ONT::EVENT))
+(CONCEPT ONT::VACATION (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY))
 
 (CONCEPT ONT::VALUE-COST
          (INHERIT ONT::COST-RELATION)
@@ -11653,7 +11625,8 @@
                   WN::|exercising%1:04:00|
                   WN::|physical_exercise%1:04:00|
                   WN::|physical_exertion%1:04:00|
-                  WN::|workout%1:04:00|)
+                  WN::|workout%1:04:00|
+                  WN::|exercise%2:29:00|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE FORCE) (ASPECT DYNAMIC))
          (SEM-FRAME
           (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN HUMAN)))

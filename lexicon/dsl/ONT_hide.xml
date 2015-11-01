@@ -4,12 +4,13 @@
  <provenance name="TRIPS"/>
  <concept name="ont::hide">
  <relation label="inherit">
-  ont::control-manage
+  ont::put
  </relation>
  <relation label="overlap">
   wn::|hide%2:39:00|
   wn::|conceal%2:39:01|
   wn::|conceal%2:39:00|
+  wn::|hide%2:39:01|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -25,16 +26,7 @@
  </relation>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::spatial-loc" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::arg1" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::arg0" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
@@ -105,16 +97,7 @@
   <feat name="intentional">-</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::spatial-loc" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg0" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
@@ -202,18 +185,8 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::agent ont::cause">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
+ <role-restr-map roles="ont::agent">
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::event-of-causation">
@@ -231,30 +204,22 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::control-manage">
+ <concept name="ont::put">
  <relation label="inherit">
   ont::event-of-causation
  </relation>
  <relation label="overlap">
-  wn::|control%2:41:00|
-  wn::|command%2:41:00|
-  wn::|discharge%2:33:01|
-  wn::|direct%2:41:00|
-  wn::|drive%2:41:02|
+  wn::|put%2:35:00|
+  wn::|set%2:35:00|
+  wn::|place%2:35:00|
+  wn::|pose%2:35:02|
+  wn::|position%2:35:00|
+  wn::|lay%2:35:01|
+  wn::|interpose%2:38:01|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::agent ont::cause">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
+  <role-restr-map roles="ont::agent">
+   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>

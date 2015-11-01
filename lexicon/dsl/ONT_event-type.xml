@@ -26,16 +26,7 @@
  </relation>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::spatial-loc" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::arg1" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::arg0" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
@@ -81,26 +72,20 @@
   <feat name="intentional">-</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::spatial-loc" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg0" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::event">
+ <concept name="ont::event-defined-by-activity">
  <relation label="inherit">
   ont::event-type
  </relation>
  <relation label="overlap">
   wn::|event%1:03:00|
+  wn::|time_period%1:28:00|
+  wn::|period_of_time%1:28:00|
+  wn::|period%1:28:00|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -175,6 +160,26 @@
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::abnormality">
+ <relation label="inherit">
+  ont::event-type
+ </relation>
+ <relation label="overlap">
+  wn::|abnormality%1:04:00|
+  wn::|irregularity%1:04:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>

@@ -32,6 +32,8 @@
   wn::|check_out%2:40:00|
   wn::|follow%2:30:01|
   wn::|follow%2:39:13|
+  wn::|experiment%2:41:02|
+  wn::|experiment%2:41:01|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::agent">
@@ -72,16 +74,7 @@
  </relation>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::spatial-loc" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::arg1" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::arg0" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
@@ -152,16 +145,7 @@
   <feat name="intentional">-</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::spatial-loc" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::arg0" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
@@ -442,6 +426,51 @@
     </relation>
     <feat name="information">information-content</feat>
    </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::physical-scrutiny">
+ <relation label="inherit">
+  ont::scrutiny
+ </relation>
+ <relation label="overlap">
+  wn::|inspect%2:38:00|
+  wn::|visit%2:38:01|
+  wn::|see%2:39:13|
+  wn::|examine%2:39:00|
+  wn::|check_into%2:31:00|
+  wn::|go_over%2:31:01|
+  wn::|check_over%2:31:00|
+  wn::|suss_out%2:31:00|
+  wn::|check_out%2:31:00|
+  wn::|look_into%2:31:00|
+  wn::|check_up_on%2:31:00|
+  wn::|check%2:31:00|
+  wn::|search%2:35:00|
+  wn::|seek%2:35:00|
+  wn::|look_for%2:35:00|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
