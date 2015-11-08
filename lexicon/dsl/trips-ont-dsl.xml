@@ -3769,6 +3769,37 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::cause-interact">
+  <relation label="inherit">
+   ont::cause-effect
+  </relation>
+  <relation label="overlap">
+   wn::|interact%2:41:00|
+   wn::|collide%2:35:01|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="trajectory">-</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::agent1">
+    <or>
+     <concept name="situation" />
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+   <role-restr-map roles="ont::agent">
+    <or>
+     <concept name="situation" />
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::cause-make">
   <relation label="inherit">
    ont::cause-effect
@@ -9765,6 +9796,15 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::female-child">
+  <relation label="inherit">
+   ont::female-person
+  </relation>
+  <relation label="overlap">
+   wn::|woman%1:18:00|
+   wn::|adult_female%1:18:00|
+  </relation>
+ </concept>
  <concept name="ont::female-person">
   <relation label="inherit">
    ont::person
@@ -12450,7 +12490,6 @@
   </relation>
   <relation label="overlap">
    wn::|interact%2:41:00|
-   wn::|collide%2:35:01|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -14205,6 +14244,15 @@
     <concept name="situation" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::male-child">
+  <relation label="inherit">
+   ont::male-person
+  </relation>
+  <relation label="overlap">
+   wn::|man%1:18:00|
+   wn::|adult_male%1:18:00|
+  </relation>
  </concept>
  <concept name="ont::male-person">
   <relation label="inherit">
@@ -17884,9 +17932,6 @@
    ont::adjust
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::spatial-loc" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
    <role-restr-map roles="ont::location" optional="optional">
     <concept name="t" />
    </role-restr-map>

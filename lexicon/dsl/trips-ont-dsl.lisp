@@ -1678,6 +1678,16 @@
                          (CONCEPT ABSTR-OBJ)
                          (CONCEPT SITUATION)))))
 
+(CONCEPT ONT::CAUSE-INTERACT
+         (INHERIT ONT::CAUSE-EFFECT)
+         (OVERLAP WN::|interact%2:41:00| WN::|collide%2:35:01|)
+         (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
+         (SEM-FRAME
+          (ONT::AGENT1
+           (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
+          (ONT::AGENT
+           (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
+
 (CONCEPT ONT::CAUSE-MAKE
          (INHERIT ONT::CAUSE-EFFECT)
          (OVERLAP WN::|induce%2:32:00|
@@ -4394,6 +4404,10 @@
                       (INFORMATION MENTAL-CONSTRUCT))
            OPTIONAL)))
 
+(CONCEPT ONT::FEMALE-CHILD
+         (INHERIT ONT::FEMALE-PERSON)
+         (OVERLAP WN::|woman%1:18:00| WN::|adult_female%1:18:00|))
+
 (CONCEPT ONT::FEMALE-PERSON
          (INHERIT ONT::PERSON)
          (OVERLAP WN::|woman%1:18:00| WN::|adult_female%1:18:00|))
@@ -5621,7 +5635,7 @@
 
 (CONCEPT ONT::INTERACT
          (INHERIT ONT::AGENT-INTERACTION)
-         (OVERLAP WN::|interact%2:41:00| WN::|collide%2:35:01|)
+         (OVERLAP WN::|interact%2:41:00|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
          (SEM-FRAME
           (ONT::AGENT1
@@ -6360,6 +6374,10 @@
          (INHERIT ONT::EMIT-GIVEOFF-DISCHARGE)
          (OVERLAP WN::|utter%2:32:02|)
          (SEM-FRAME (ONT::EFFECT (CONCEPT SITUATION) OPTIONAL)))
+
+(CONCEPT ONT::MALE-CHILD
+         (INHERIT ONT::MALE-PERSON)
+         (OVERLAP WN::|man%1:18:00| WN::|adult_male%1:18:00|))
 
 (CONCEPT ONT::MALE-PERSON
          (INHERIT ONT::PERSON)
@@ -7964,8 +7982,7 @@
 
 (CONCEPT ONT::POST-TRANSLATIONAL-MODIFICATION
          (INHERIT ONT::ADJUST)
-         (SEM-FRAME (ONT::SPATIAL-LOC (CONCEPT T) OPTIONAL)
-                    (ONT::LOCATION (CONCEPT T) OPTIONAL)
+         (SEM-FRAME (ONT::LOCATION (CONCEPT T) OPTIONAL)
                     (ONT::AFFECTED
                      (SEM-FEATS (INHERIT PHYS-OBJ) (TYPE MOLECULAR-PART)))))
 
