@@ -1141,9 +1141,7 @@
                   WN::|go%2:30:04|
                   WN::|get%2:30:00|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (ASPECT DYNAMIC))
-         (SEM-FRAME (ONT::FORMAL (CONCEPT T))
-                    (ONT::PROPERTY (CONCEPT T))
-                    (ONT::AFFECTED (CONCEPT T))))
+         (SEM-FRAME (ONT::FORMAL (CONCEPT T)) (ONT::AFFECTED (CONCEPT T))))
 
 (CONCEPT ONT::BECOMING-AWARE
          (INHERIT ONT::ACQUIRE-BELIEF)
@@ -3202,13 +3200,10 @@
 
 (CONCEPT ONT::DESTROY
          (INHERIT ONT::CHANGE-STATE)
-         (OVERLAP WN::|kill%2:35:00|
-                  WN::|destroy%2:35:00|
+         (OVERLAP WN::|destroy%2:35:00|
                   WN::|destroy%2:36:00|
                   WN::|destroy%2:35:01|
-                  WN::|down%2:38:00|
-                  WN::|kill%2:35:01|
-                  WN::|kill%2:35:02|))
+                  WN::|down%2:38:00|))
 
 (CONCEPT ONT::DESTROY-PART-OF-WHOLE
          (INHERIT ONT::DESTROY)
@@ -3544,16 +3539,11 @@
          (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
 
 (CONCEPT ONT::DRIVE
-         (INHERIT ONT::TRANSPORT)
+         (INHERIT ONT::MOTION)
          (OVERLAP WN::|drive%2:38:01|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
          (SEM-FRAME
-          (ONT::INSTRUMENT
-           (SEM-FEATS (INHERIT PHYS-OBJ)
-                      (INTENTIONAL -)
-                      (MOBILITY LAND-MOVABLE)
-                      (CONTAINER +)
-                      (OBJECT-FUNCTION VEHICLE)))))
+          (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (MOBILITY LAND-MOVABLE)))))
 
 (CONCEPT ONT::DRIVING-TRIP (INHERIT ONT::WATER-TRAVEL))
 
@@ -3969,7 +3959,8 @@
 (CONCEPT ONT::EVENT-OF-UNDERGOING-ACTION
          (INHERIT ONT::EVENT-OF-CHANGE SITUATION)
          (SEM-FRAME
-          (ONT::AFFECTED (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ)))))
+          (ONT::AFFECTED
+           (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::EVENT-TIME
          (INHERIT ONT::EVENT-TIME-REL)
@@ -4564,16 +4555,11 @@
 (CONCEPT ONT::FLUTTER (INHERIT ONT::MOVE))
 
 (CONCEPT ONT::FLY
-         (INHERIT ONT::TRANSPORT)
+         (INHERIT ONT::MOTION)
          (OVERLAP WN::|fly%2:38:00| WN::|wing%2:38:00| WN::|fly%2:38:07|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
          (SEM-FRAME
-          (ONT::INSTRUMENT
-           (SEM-FEATS (INHERIT PHYS-OBJ)
-                      (INTENTIONAL -)
-                      (MOBILITY AIR-MOVABLE)
-                      (CONTAINER +)
-                      (OBJECT-FUNCTION VEHICLE)))))
+          (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (MOBILITY AIR-MOVABLE)))))
 
 (CONCEPT ONT::FOLD
          (INHERIT ONT::MOVE)
@@ -5306,7 +5292,7 @@
 
 (CONCEPT ONT::IDENTITY-VAL
          (INHERIT ONT::SIMILARITY-VAL)
-         (SEM-FRAME (ONT::PROPERTY (CONCEPT T))
+         (SEM-FRAME (ONT::FORMAL (CONCEPT T))
                     (ONT::OF (CONCEPT T))
                     (ONT::NEUTRAL1 (CONCEPT T))
                     (ONT::NEUTRAL (CONCEPT T))))
@@ -5804,6 +5790,10 @@
 (CONCEPT ONT::KICKING
          (INHERIT ONT::HITTING)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -)))
+
+(CONCEPT ONT::KILL
+         (INHERIT ONT::DESTROY)
+         (OVERLAP WN::|kill%2:35:00| WN::|kill%2:35:01| WN::|kill%2:35:02|))
 
 (CONCEPT ONT::KIND
          (INHERIT ONT::ABSTRACT-OBJECT-NONTEMPORAL)
@@ -7726,13 +7716,15 @@
                   WN::|search%2:35:00|
                   WN::|seek%2:35:00|
                   WN::|look_for%2:35:00|)
-         (SEM-FRAME
-          (ONT::AGENT
-           (SEM-FEATS (INHERIT PHYS-OBJ)
-                      (INTENTIONAL +)
-                      (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL))))
-          (ONT::FORMAL
-           (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
+         (SEM-FRAME (ONT::LOCATION (CONCEPT T))
+                    (ONT::AGENT
+                     (SEM-FEATS (INHERIT PHYS-OBJ)
+                                (INTENTIONAL +)
+                                (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL))))
+                    (ONT::FORMAL
+                     (OR (CONCEPT PHYS-OBJ)
+                         (CONCEPT ABSTR-OBJ)
+                         (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::PHYSICAL-SENSATION (INHERIT ONT::PERCEPTION))
 
@@ -8718,9 +8710,7 @@
                   WN::|amount%2:42:03|
                   WN::|bear_on%2:42:00|)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (INTENSITY HI) (GRADABILITY +))
-         (SEM-FRAME (ONT::PROPERTY (CONCEPT T) OPTIONAL)
-                    (ONT::NEUTRAL (CONCEPT T))
-                    (ONT::NEUTRAL1 (CONCEPT T))))
+         (SEM-FRAME (ONT::NEUTRAL (CONCEPT T)) (ONT::NEUTRAL1 (CONCEPT T))))
 
 (CONCEPT ONT::RELATIVE
          (INHERIT ONT::INVOLVES-DOING-VAL)
@@ -9703,7 +9693,7 @@
 
 (CONCEPT ONT::SIMILARITY-VAL
          (INHERIT ONT::RELATION)
-         (SEM-FRAME (ONT::PROPERTY (CONCEPT T))
+         (SEM-FRAME (ONT::FORMAL (CONCEPT T) OPTIONAL)
                     (ONT::OF (CONCEPT T))
                     (ONT::NEUTRAL1 (CONCEPT T))
                     (ONT::NEUTRAL (CONCEPT T))))

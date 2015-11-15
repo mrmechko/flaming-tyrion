@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::drive">
  <relation label="inherit">
-  ont::transport
+  ont::motion
  </relation>
  <relation label="overlap">
   wn::|drive%2:38:01|
@@ -16,15 +16,12 @@
   <feat name="aspect">dynamic</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::instrument">
+  <role-restr-map roles="ont::agent">
    <sem-feats>
     <relation label="inherit">
      phys-obj
     </relation>
-    <feat name="intentional">-</feat>
     <feat name="mobility">land-movable</feat>
-    <feat name="container">+</feat>
-    <feat name="object-function">vehicle</feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
@@ -257,14 +254,14 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::instrument">
+ <role-restr-map roles="ont::agent">
   <sem-feats>
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="intentional">-</feat>
-   <feat name="object-function">vehicle</feat>
+   <feat name="mobility">land-movable</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
@@ -272,7 +269,7 @@
  <relation label="inherit">
   situation
  </relation>
- <feat name="cause">agentive</feat>
+ <feat name="aspect">dynamic</feat>
  </sem-feats>
  <concept name="ont::motion">
  <relation label="inherit">
@@ -319,96 +316,6 @@
     <concept name="situation" />
     <concept name="time" />
    </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::instrument">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="intentional">-</feat>
-   <feat name="mobility">movable</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">+</feat>
- <feat name="cause">agentive</feat>
- </sem-feats>
- <concept name="ont::transportation">
- <relation label="inherit">
-  ont::motion
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::instrument">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">-</feat>
-    <feat name="object-function">vehicle</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="situation" />
- <sem-frame>
- <role-restr-map roles="ont::instrument">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="intentional">-</feat>
-   <feat name="mobility">land-movable</feat>
-   <feat name="container">+</feat>
-   <feat name="object-function">vehicle</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">dynamic</feat>
- </sem-feats>
- <concept name="ont::transport">
- <relation label="inherit">
-  ont::transportation
- </relation>
- <relation label="overlap">
-  wn::|bring%2:38:00|
-  wn::|convey%2:38:00|
-  wn::|take%2:38:10|
-  wn::|bring%2:35:02|
-  wn::|port%2:38:06|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">+</feat>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::instrument">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">-</feat>
-    <feat name="mobility">movable</feat>
-   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>

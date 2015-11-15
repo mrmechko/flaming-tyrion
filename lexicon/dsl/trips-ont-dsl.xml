@@ -2535,9 +2535,6 @@
    <role-restr-map roles="ont::formal">
     <concept name="t" />
    </role-restr-map>
-   <role-restr-map roles="ont::property">
-    <concept name="t" />
-   </role-restr-map>
    <role-restr-map roles="ont::affected">
     <concept name="t" />
    </role-restr-map>
@@ -7190,13 +7187,10 @@
    ont::change-state
   </relation>
   <relation label="overlap">
-   wn::|kill%2:35:00|
    wn::|destroy%2:35:00|
    wn::|destroy%2:36:00|
    wn::|destroy%2:35:01|
    wn::|down%2:38:00|
-   wn::|kill%2:35:01|
-   wn::|kill%2:35:02|
   </relation>
  </concept>
  <concept name="ont::destroy-part-of-whole">
@@ -7930,7 +7924,7 @@
  </concept>
  <concept name="ont::drive">
   <relation label="inherit">
-   ont::transport
+   ont::motion
   </relation>
   <relation label="overlap">
    wn::|drive%2:38:01|
@@ -7942,15 +7936,12 @@
    <feat name="aspect">dynamic</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::instrument">
+   <role-restr-map roles="ont::agent">
     <sem-feats>
      <relation label="inherit">
       phys-obj
      </relation>
-     <feat name="intentional">-</feat>
      <feat name="mobility">land-movable</feat>
-     <feat name="container">+</feat>
-     <feat name="object-function">vehicle</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -8899,6 +8890,7 @@
     <or>
      <concept name="abstr-obj" />
      <concept name="phys-obj" />
+     <concept name="situation" />
     </or>
    </role-restr-map>
   </sem-frame>
@@ -10172,7 +10164,7 @@
  </concept>
  <concept name="ont::fly">
   <relation label="inherit">
-   ont::transport
+   ont::motion
   </relation>
   <relation label="overlap">
    wn::|fly%2:38:00|
@@ -10186,15 +10178,12 @@
    <feat name="aspect">dynamic</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::instrument">
+   <role-restr-map roles="ont::agent">
     <sem-feats>
      <relation label="inherit">
       phys-obj
      </relation>
-     <feat name="intentional">-</feat>
      <feat name="mobility">air-movable</feat>
-     <feat name="container">+</feat>
-     <feat name="object-function">vehicle</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -11773,7 +11762,7 @@
    ont::similarity-val
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::property">
+   <role-restr-map roles="ont::formal">
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::of">
@@ -12936,6 +12925,16 @@
    </relation>
    <feat name="trajectory">-</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::kill">
+  <relation label="inherit">
+   ont::destroy
+  </relation>
+  <relation label="overlap">
+   wn::|kill%2:35:00|
+   wn::|kill%2:35:01|
+   wn::|kill%2:35:02|
+  </relation>
  </concept>
  <concept name="ont::kind">
   <relation label="inherit">
@@ -17186,7 +17185,8 @@
    <feat name="intentional">-</feat>
    <feat name="form">object</feat>
   </sem-feats>
- </concept>
+ </
+concept>
  <concept name="ont::physical-activity">
   <relation label="inherit">
    ont::activity
@@ -17326,6 +17326,9 @@
    wn::|look_for%2:35:00|
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::location">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::agent">
     <sem-feats>
      <relation label="inherit">
@@ -19683,9 +19686,6 @@
    <feat name="gradability">+</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::property" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
    <role-restr-map roles="ont::neutral">
     <concept name="t" />
    </role-restr-map>
@@ -21893,7 +21893,7 @@
    ont::relation
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::property">
+   <role-restr-map roles="ont::formal" optional="optional">
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::of">
