@@ -617,7 +617,10 @@
      <feat name="intentional">+</feat>
     </sem-feats>
    </role-restr-map>
-   <role-restr-map roles="ont::action">
+   <role-restr-map roles="ont::neutral">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::formal">
     <concept name="situation" />
    </role-restr-map>
   </sem-frame>
@@ -3752,7 +3755,10 @@
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::result">
-    <concept name="t" />
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
    </role-restr-map>
    <role-restr-map roles="ont::affected" optional="optional">
     <concept name="t" />
@@ -5362,9 +5368,6 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::action" optional="optional">
-    <concept name="situation" />
-   </role-restr-map>
    <role-restr-map roles="ont::formal">
     <concept name="abstr-obj" />
    </role-restr-map>
@@ -6116,11 +6119,8 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::result" optional="optional">
-    <concept name="phys-obj" />
-   </role-restr-map>
    <role-restr-map roles="ont::affected-result" optional="optional">
-    <concept name="t" />
+    <concept name="phys-obj" />
    </role-restr-map>
    <role-restr-map roles="ont::affected">
     <concept name="t" />
@@ -11907,6 +11907,11 @@
   <relation label="inherit">
    ont::pos-as-containment-reln
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::val">
+    <concept name="phys-obj" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::in-relation">
   <relation label="inherit">
@@ -15759,9 +15764,6 @@
    <feat name="aspect">static</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::action" optional="optional">
-    <concept name="situation" />
-   </role-restr-map>
    <role-restr-map roles="ont::neutral" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -16193,7 +16195,10 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::result" optional="optional">
-    <concept name="phys-obj" />
+    <or>
+     <concept name="situation" />
+     <concept name="abstra-obj" />
+    </or>
    </role-restr-map>
    <role-restr-map roles="ont::agent">
     <or>
@@ -17190,7 +17195,8 @@
   <relation label="inherit">
    ont::activity
   </relation>
-  <relation label="overlap">
+  <relation label="
+overlap">
    wn::|exercise%2:29:01|
   </relation>
  </concept>

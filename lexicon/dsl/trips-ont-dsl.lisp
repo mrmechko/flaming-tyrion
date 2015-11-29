@@ -289,7 +289,8 @@
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL +))
            OPTIONAL)
-          (ONT::ACTION (CONCEPT SITUATION))))
+          (ONT::NEUTRAL (CONCEPT T))
+          (ONT::FORMAL (CONCEPT SITUATION))))
 
 (CONCEPT ONT::ACTIVITY-VAL (INHERIT ONT::PROCESS-VAL))
 
@@ -1669,7 +1670,7 @@
                     (TRAJECTORY -)
                     (CAUSE (OR FORCE AGENTIVE)))
          (SEM-FRAME (ONT::FORMAL (CONCEPT T) OPTIONAL)
-                    (ONT::RESULT (CONCEPT T))
+                    (ONT::RESULT (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))
                     (ONT::AFFECTED (CONCEPT T) OPTIONAL)
                     (ONT::AGENT
                      (OR (CONCEPT PHYS-OBJ)
@@ -2383,8 +2384,7 @@
                   WN::|obey%2:41:00|
                   WN::|break%2:42:00|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC) (CAUSE AGENTIVE))
-         (SEM-FRAME (ONT::ACTION (CONCEPT SITUATION) OPTIONAL)
-                    (ONT::FORMAL (CONCEPT ABSTR-OBJ))
+         (SEM-FRAME (ONT::FORMAL (CONCEPT ABSTR-OBJ))
                     (ONT::AGENT
                      (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                                 (INTENTIONAL +))
@@ -2736,8 +2736,7 @@
                   WN::|flavor%2:39:00|
                   WN::|percolate%2:35:02|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (CAUSE AGENTIVE))
-         (SEM-FRAME (ONT::RESULT (CONCEPT PHYS-OBJ) OPTIONAL)
-                    (ONT::AFFECTED-RESULT (CONCEPT T) OPTIONAL)
+         (SEM-FRAME (ONT::AFFECTED-RESULT (CONCEPT PHYS-OBJ) OPTIONAL)
                     (ONT::AFFECTED (CONCEPT T))
                     (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN HUMAN)))))
 
@@ -5352,7 +5351,9 @@
           (ONT::FORMAL
            (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION) (CONCEPT PHYS-OBJ)))))
 
-(CONCEPT ONT::IN-LOC (INHERIT ONT::POS-AS-CONTAINMENT-RELN))
+(CONCEPT ONT::IN-LOC
+         (INHERIT ONT::POS-AS-CONTAINMENT-RELN)
+         (SEM-FRAME (ONT::VAL (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::IN-RELATION
          (INHERIT ONT::OBJECT-COMPARE)
@@ -7024,8 +7025,7 @@
                     (CAUSE -)
                     (TIME-SPAN EXTENDED)
                     (ASPECT STATIC))
-         (SEM-FRAME (ONT::ACTION (CONCEPT SITUATION) OPTIONAL)
-                    (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
+         (SEM-FRAME (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
                     (ONT::FORMAL
                      (OR (CONCEPT PHYS-OBJ)
                          (CONCEPT ABSTR-OBJ)
@@ -7222,15 +7222,12 @@
                   WN::|unbalance%2:42:00|
                   WN::|undo%2:36:00|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
-         (SEM-FRAME (ONT::RESULT (CONCEPT PHYS-OBJ) OPTIONAL)
-                    (ONT::AGENT
-                     (OR (CONCEPT SITUATION)
-                         (CONCEPT PHYS-OBJ)
-                         (CONCEPT ABSTR-OBJ)))
-                    (ONT::AFFECTED
-                     (OR (CONCEPT SITUATION)
-                         (CONCEPT PHYS-OBJ)
-                         (CONCEPT ABSTR-OBJ)))))
+         (SEM-FRAME
+          (ONT::RESULT (OR (CONCEPT SITUATION) (CONCEPT ABSTRA-OBJ)) OPTIONAL)
+          (ONT::AGENT
+           (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
+          (ONT::AFFECTED
+           (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
 
 (CONCEPT ONT::OBSTRUCTED (INHERIT ONT::FLOW-VAL))
 

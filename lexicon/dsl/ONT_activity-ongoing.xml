@@ -24,7 +24,10 @@
     <feat name="intentional">+</feat>
    </sem-feats>
   </role-restr-map>
-  <role-restr-map roles="ont::action">
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
    <concept name="situation" />
   </role-restr-map>
  </sem-frame>
@@ -181,7 +184,10 @@
    <feat name="intentional">+</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::action">
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal">
   <concept name="situation" />
  </role-restr-map>
  </sem-frame>
@@ -230,10 +236,10 @@
   ont::activity-ongoing
  </relation>
  <syntax>
-  <template-call template="ont::agent-action-optional-templ" xp="'(w::pp
-                                                                   w::with)" />
+  <template-call template="ont::agent-neutral-optional-templ" xp="'(w::pp
+                                                                    w::with)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::with" sem-role="ont::action" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::with" sem-role="ont::neutral" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -266,10 +272,10 @@
   ont::activity-ongoing
  </relation>
  <syntax>
-  <template-call template="ont::agent-action-optional-templ" xp="'(w::pp
-                                                                   w::with)" />
+  <template-call template="ont::agent-neutral-optional-templ" xp="'(w::pp
+                                                                    w::with)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::with" sem-role="ont::action" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::with" sem-role="ont::neutral" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -299,10 +305,10 @@
   ont::activity-ongoing
  </relation>
  <syntax>
-  <template-call template="ont::agent-action-optional-templ" xp="'(w::pp
-                                                                   w::with)" />
+  <template-call template="ont::agent-neutral-optional-templ" xp="'(w::pp
+                                                                    w::with)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::with" sem-role="ont::action" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::with" sem-role="ont::neutral" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -323,10 +329,26 @@
   ont::activity-ongoing
  </relation>
  <syntax>
-  <template-call template="ont::agent-action-optional-templ" xp="'(w::pp
-                                                                   w::with)" />
+  <template-call template="ont::agent-neutral-optional-templ" xp="'(w::pp
+                                                                    w::with)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::with" sem-role="ont::action" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::with" sem-role="ont::neutral" optional="optional"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="proceed" />
+ </morph>
+ <relation label="inherit">
+  ont::activity-ongoing
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-theme-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
