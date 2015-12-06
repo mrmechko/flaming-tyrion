@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::wireless">
  <relation label="inherit">
-  ont::machine
+  ont::computer-part
  </relation>
  <relation label="overlap">
   wn::|wireless_local_area_network%1:06:00|
@@ -103,11 +103,24 @@
   <feat name="origin">artifact</feat>
  </sem-feats>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="mobility">non-self-moving</feat>
+   <feat name="origin">artifact</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
  <feat name="origin">artifact</feat>
+ <feat name="object-function">instrument</feat>
+ <feat name="mobility">non-self-moving</feat>
  </sem-feats>
  <concept name="ont::device">
  <relation label="inherit">
@@ -133,19 +146,29 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::machine">
+ <concept name="ont::computer-part">
  <relation label="inherit">
   ont::device
- </relation>
- <relation label="overlap">
-  wn::|machine%1:06:00|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
   <feat name="origin">artifact</feat>
+  <feat name="object-function">instrument</feat>
+  <feat name="mobility">non-self-moving</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="mobility">non-self-moving</feat>
+    <feat name="origin">artifact</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sense>
  <morph>

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::encodes-message">
  <relation label="inherit">
-  ont::correlation
+  ont::event-of-state
  </relation>
  <relation label="overlap">
   wn::|read%2:42:00|
@@ -34,6 +34,7 @@
   ont::root
  </relation>
  </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
@@ -96,14 +97,14 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::experiencer">
+ <role-restr-map roles="ont::neutral">
   <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="intentional">+</feat>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="information">information-content</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
@@ -129,103 +130,84 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral">
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="denote" />
+ </morph>
+ <relation label="inherit">
+  ont::encodes-message
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-neutral-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="depict" />
+ </morph>
+ <relation label="inherit">
+  ont::encodes-message
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-neutral-as-theme-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::as" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="depict" />
+ </morph>
+ <example text="it depicts him standing on a turtle">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::encodes-message
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-neutral-theme-objcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="designate" />
+ </morph>
+ <example text="designate the libraries">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::encodes-message
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-theme-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
   <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
   </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="aspect">static</feat>
- </sem-feats>
- <concept name="ont::event-of-experience">
- <relation label="inherit">
-  ont::event-of-state
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::experiencer">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::neutral">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="information">information-content</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::correlation">
- <relation label="inherit">
-  ont::event-of-experience
- </relation>
- <relation label="overlap">
-  wn::|indicate%2:32:02|
-  wn::|argue%2:32:01|
-  wn::|imply%2:32:01|
-  wn::|entail%2:42:01|
-  wn::|imply%2:42:00|
-  wn::|mean%2:42:00|
-  wn::|affirm%2:31:00|
-  wn::|conform%2:42:06|
-  wn::|intend%2:32:02|
-  wn::|read%2:32:02:|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="aspect">static</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="situation" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
+ </semantics>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -273,6 +255,26 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="picture" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::encodes-message
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-neutral-as-theme-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::as" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="present" />
  </morph>
  <example text="this book presents a different solution">
@@ -285,6 +287,50 @@
   <template-call template="ont::neutral-theme-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="reflection" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="reflection" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="his actions reflect his beliefs">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::encodes-message
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-neutral-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="represent" />
+ </morph>
+ <example text="this diagram represents circuit 5">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::encodes-message
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-neutral-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral1"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
  </syntax>

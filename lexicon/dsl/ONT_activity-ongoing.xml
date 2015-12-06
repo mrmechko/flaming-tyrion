@@ -6,6 +6,38 @@
  <relation label="inherit">
   ont::event-of-action
  </relation>
+ <relation label="overlap">
+  wn::|keep%2:30:10|
+  wn::|preserve%2:30:00|
+  wn::|maintain%2:40:10|
+  wn::|keep%2:40:10|
+  wn::|save%2:40:03|
+  wn::|keep%2:40:09|
+  wn::|hold_open%2:40:00|
+  wn::|keep_open%2:40:00|
+  wn::|maintain%2:34:00|
+  wn::|keep%2:34:00|
+  wn::|sustain%2:34:00|
+  wn::|keep_on%2:41:00|
+  wn::|keep%2:41:02|
+  wn::|continue%2:41:00|
+  wn::|retain%2:41:01|
+  wn::|maintain%2:31:00|
+  wn::|keep%2:31:00|
+  wn::|observe%2:31:00|
+  wn::|hold%2:42:00|
+  wn::|maintain%2:42:00|
+  wn::|keep%2:42:00|
+  wn::|continue%2:42:01|
+  wn::|go_on%2:42:00|
+  wn::|proceed%2:42:00|
+  wn::|go_along%2:42:00|
+  wn::|keep%2:42:07|
+  wn::|persist%2:42:01|
+  wn::|welter%2:31:00|
+  wn::|sustain%2:42:01|
+  wn::|keep_up%2:33:00|
+ </relation>
  <sem-feats>
   <relation label="inherit">
    situation
@@ -16,13 +48,10 @@
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::agent" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::neutral">
    <concept name="t" />
@@ -176,13 +205,10 @@
  <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::agent" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::neutral">
   <concept name="t" />
@@ -219,11 +245,116 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::resume-action">
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="continue" />
+  <forms>
+   -VB
+  </forms>
+ </morph>
+ <example text="continue walking">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::activity-ongoing
  </relation>
- </concept>
+ <syntax>
+  <template-call template="ont::agent-effect-subjcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="locative">located</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="continue" />
+  <forms>
+   -VB
+  </forms>
+ </morph>
+ <example text="they will continue to light up">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::activity-ongoing
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="locative">located</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="continue" />
+  <forms>
+   -VB
+  </forms>
+ </morph>
+ <example text="Continue with your work">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::activity-ongoing
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-optional-templ" xp="'w::pp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="locative">located</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="continue" />
+  <forms>
+   -VB
+  </forms>
+ </morph>
+ <example text="he continued the patient on the therapy">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::activity-ongoing
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-theme-templ" xp="'(w::pp
+                                                                  (w::or
+                                                                   w::with
+                                                                   w::on))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::with w::on)" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -290,6 +421,97 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="keep" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="keeping" />
+   </ing>
+   <past>
+    <word first-word="kept" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="keep the room clean">
+ </example>
+ <relation label="inherit">
+  ont::activity-ongoing
+  ont::agent-affected-theme-objcontrol-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="locative">located</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="keep" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="keeping" />
+   </ing>
+   <past>
+    <word first-word="kept" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="are you keeping busy">
+ </example>
+ <relation label="inherit">
+  ont::activity-ongoing
+  ont::agent-theme-complex-subjcontrol-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="keep" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="keeping" />
+   </ing>
+   <past>
+    <word first-word="kept" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="Keep walking">
+ </example>
+ <relation label="inherit">
+  ont::activity-ongoing
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-subjcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="locative">located</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="motion" />
   <forms>
    -VB
@@ -319,6 +541,22 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="persistance" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="persistance" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::activity-ongoing
+  ont::agent-templ
+ </relation>
  </sense>
  <sense>
  <morph>

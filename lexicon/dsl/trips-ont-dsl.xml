@@ -599,6 +599,38 @@
   <relation label="inherit">
    ont::event-of-action
   </relation>
+  <relation label="overlap">
+   wn::|keep%2:30:10|
+   wn::|preserve%2:30:00|
+   wn::|maintain%2:40:10|
+   wn::|keep%2:40:10|
+   wn::|save%2:40:03|
+   wn::|keep%2:40:09|
+   wn::|hold_open%2:40:00|
+   wn::|keep_open%2:40:00|
+   wn::|maintain%2:34:00|
+   wn::|keep%2:34:00|
+   wn::|sustain%2:34:00|
+   wn::|keep_on%2:41:00|
+   wn::|keep%2:41:02|
+   wn::|continue%2:41:00|
+   wn::|retain%2:41:01|
+   wn::|maintain%2:31:00|
+   wn::|keep%2:31:00|
+   wn::|observe%2:31:00|
+   wn::|hold%2:42:00|
+   wn::|maintain%2:42:00|
+   wn::|keep%2:42:00|
+   wn::|continue%2:42:01|
+   wn::|go_on%2:42:00|
+   wn::|proceed%2:42:00|
+   wn::|go_along%2:42:00|
+   wn::|keep%2:42:07|
+   wn::|persist%2:42:01|
+   wn::|welter%2:31:00|
+   wn::|sustain%2:42:01|
+   wn::|keep_up%2:33:00|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     situation
@@ -609,13 +641,10 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::agent" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
    </role-restr-map>
    <role-restr-map roles="ont::neutral">
     <concept name="t" />
@@ -2024,6 +2053,17 @@
    <feat name="aspect">dynamic</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::attack">
+  <relation label="inherit">
+   ont::objective-influence
+  </relation>
+  <relation label="overlap">
+   wn::|attack%2:33:00|
+   wn::|attack%2:32:00|
+   wn::|attack%2:33:02|
+   wn::|attack%2:29:00|
+  </relation>
+ </concept>
  <concept name="ont::attention-val">
   <relation label="inherit">
    ont::psychological-property-val
@@ -2805,7 +2845,7 @@
    <feat name="aspect">dynamic</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::affected1">
+   <role-restr-map roles="ont::affected" optional="optional">
     <sem-feats>
      <relation label="inherit">
       phys-obj
@@ -2813,7 +2853,15 @@
      <feat name="type">molecular-part</feat>
     </sem-feats>
    </role-restr-map>
-   <role-restr-map roles="ont::affected">
+   <role-restr-map roles="ont::agent1" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="type">molecular-part</feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::agent">
     <sem-feats>
      <relation label="inherit">
       phys-obj
@@ -3829,7 +3877,7 @@
  </concept>
  <concept name="ont::cause-make-things">
   <relation label="inherit">
-   ont::cause-make
+   ont::create
   </relation>
   <relation label="overlap">
    wn::|create_from_raw_material%2:36:00|
@@ -4151,6 +4199,18 @@
   <relation label="inherit">
    ont::adjust
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+      <concept name="situation" />
+     </or>
+     <feat name="type">information-content</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::change-integrity">
   <relation label="inherit">
@@ -5202,20 +5262,15 @@
    <relation label="inherit">
     situation
    </relation>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">bounded</feat>
    <feat name="trajectory">-</feat>
    <feat name="cause">agentive</feat>
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::neutral" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="information">information-content</feat>
-    </sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
    </role-restr-map>
    <role-restr-map roles="ont::formal" optional="optional">
     <or>
@@ -6269,7 +6324,7 @@
  </concept>
  <concept name="ont::correlation">
   <relation label="inherit">
-   ont::event-of-experience
+   ont::event-of-state
   </relation>
   <relation label="overlap">
    wn::|indicate%2:32:02|
@@ -6279,8 +6334,6 @@
    wn::|imply%2:42:00|
    wn::|mean%2:42:00|
    wn::|affirm%2:31:00|
-   wn::|conform%2:42:06|
-   wn::|intend%2:32:02|
    wn::|read%2:32:02:|
   </relation>
   <sem-feats>
@@ -6477,13 +6530,10 @@
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::agent" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="intentional">-</feat>
-    </sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -8288,7 +8338,7 @@
  </concept>
  <concept name="ont::encodes-message">
   <relation label="inherit">
-   ont::correlation
+   ont::event-of-state
   </relation>
   <relation label="overlap">
    wn::|read%2:42:00|
@@ -10010,7 +10060,7 @@
  </concept>
  <concept name="ont::fixture">
   <relation label="inherit">
-   ont::device
+   ont::manufactured-object
   </relation>
   <relation label="overlap">
    wn::|fixture%1:06:00|
@@ -10609,6 +10659,16 @@
    wn::|expression%1:22:00|
    wn::|express%2:39:09|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected-result">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="type">molecular-part</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::gene-transcription">
   <relation label="inherit">
@@ -10618,6 +10678,16 @@
    wn::|transcription%1:22:00|
    wn::|transcribe%2:30:00|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected-result">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="type">molecular-part</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::gene-translation">
   <relation label="inherit">
@@ -10627,6 +10697,16 @@
    wn::|translation%1:22:00|
    wn::|translate%2:32:05|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="type">molecular-part</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::general-structure">
   <relation label="inherit">
@@ -12227,13 +12307,13 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::agent ont::cause" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+   <role-restr-map roles="ont::formal" optional="optional">
+    <concept name="situation" />
    </role-restr-map>
    <role-restr-map roles="ont::result">
     <concept name="situation" />
@@ -14150,59 +14230,6 @@
    wn::|letter%1:10:00|
    wn::|missive%1:10:00|
   </relation>
- </concept>
- <concept name="ont::maintain-activity">
-  <relation label="inherit">
-   ont::cause-effect
-  </relation>
-  <relation label="overlap">
-   wn::|keep%2:30:10|
-   wn::|preserve%2:30:00|
-   wn::|maintain%2:40:10|
-   wn::|keep%2:40:10|
-   wn::|save%2:40:03|
-   wn::|keep%2:40:09|
-   wn::|hold_open%2:40:00|
-   wn::|keep_open%2:40:00|
-   wn::|maintain%2:34:00|
-   wn::|keep%2:34:00|
-   wn::|sustain%2:34:00|
-   wn::|keep_on%2:41:00|
-   wn::|keep%2:41:02|
-   wn::|continue%2:41:00|
-   wn::|retain%2:41:01|
-   wn::|maintain%2:31:00|
-   wn::|keep%2:31:00|
-   wn::|observe%2:31:00|
-   wn::|hold%2:42:00|
-   wn::|maintain%2:42:00|
-   wn::|keep%2:42:00|
-   wn::|continue%2:42:01|
-   wn::|go_on%2:42:00|
-   wn::|proceed%2:42:00|
-   wn::|go_along%2:42:00|
-   wn::|keep%2:42:07|
-   wn::|persist%2:42:01|
-   wn::|welter%2:31:00|
-   wn::|sustain%2:42:01|
-   wn::|keep_up%2:33:00|
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::effect">
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-     <concept name="phys-obj" />
-    </or>
-   </role-restr-map>
-   <role-restr-map roles="ont::affected">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::make-it-so">
   <relation label="inherit">
@@ -16197,7 +16224,7 @@
    <role-restr-map roles="ont::result" optional="optional">
     <or>
      <concept name="situation" />
-     <concept name="abstra-obj" />
+     <concept name="abstr-obj" />
     </or>
    </role-restr-map>
    <role-restr-map roles="ont::agent">
@@ -17177,7 +17204,8 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::phys-shape">
+ <
+concept name="ont::phys-shape">
   <relation label="inherit">
    ont::shape
   </relation>
@@ -17195,8 +17223,7 @@
   <relation label="inherit">
    ont::activity
   </relation>
-  <relation label="
-overlap">
+  <relation label="overlap">
    wn::|exercise%2:29:01|
   </relation>
  </concept>
@@ -19370,12 +19397,17 @@ overlap">
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::neutral" optional="optional">
-    <concept name="t" />
+    <sem-feats>
+     <relation label="inherit">
+      ?ttype
+     </relation>
+     <feat name="information">information-content</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::agent">
     <concept name="t" />
    </role-restr-map>
-   <role-restr-map roles="ont::formal">
+   <role-restr-map roles="ont::formal" optional="optional">
     <or>
      <concept name="phys-obj" />
      <concept name="abstr-obj" />
@@ -19445,7 +19477,7 @@ overlap">
    <concept name="proposition" />
   </or>
  </concept>
- <concept name="ont::refridgerator">
+ <concept name="ont::refrigerator">
   <relation label="inherit">
    ont::appliance
   </relation>
@@ -20379,8 +20411,7 @@ overlap">
    ont::start
   </relation>
   <relation label="overlap">
-   wn::|restart%2:38:00|
-   wn::|re-start%2:38:00|
+   wn::|restart%2:30:00|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -20413,11 +20444,6 @@ overlap">
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::resume-action">
-  <relation label="inherit">
-   ont::activity-ongoing
-  </relation>
  </concept>
  <concept name="ont::retain">
   <relation label="inherit">
@@ -21512,6 +21538,9 @@ overlap">
      <concept name="phys-obj" />
      <concept name="abstr-obj" />
     </or>
+   </role-restr-map>
+   <role-restr-map roles="ont::agent1" optional="optional">
+    <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::agent" optional="optional">
     <concept name="t" />
@@ -23715,6 +23744,11 @@ overlap">
   <relation label="overlap">
    wn::|take%2:41:04|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::formal">
+    <concept name="situation" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::take-by-deception">
   <relation label="inherit">
@@ -24515,7 +24549,7 @@ overlap">
  </concept>
  <concept name="ont::tool">
   <relation label="inherit">
-   ont::device
+   ont::equipment
   </relation>
   <relation label="overlap">
    wn::|tool%1:06:00|
@@ -25861,6 +25895,7 @@ overlap">
    wn::|weapon%1:06:00|
    wn::|arm%1:06:01|
    wn::|weapon_system%1:06:00|
+   wn::|warhead%1:06:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -26163,7 +26198,7 @@ overlap">
  </concept>
  <concept name="ont::wireless">
   <relation label="inherit">
-   ont::machine
+   ont::computer-part
   </relation>
   <relation label="overlap">
    wn::|wireless_local_area_network%1:06:00|

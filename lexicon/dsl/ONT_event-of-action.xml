@@ -431,6 +431,38 @@
  <relation label="inherit">
   ont::event-of-action
  </relation>
+ <relation label="overlap">
+  wn::|keep%2:30:10|
+  wn::|preserve%2:30:00|
+  wn::|maintain%2:40:10|
+  wn::|keep%2:40:10|
+  wn::|save%2:40:03|
+  wn::|keep%2:40:09|
+  wn::|hold_open%2:40:00|
+  wn::|keep_open%2:40:00|
+  wn::|maintain%2:34:00|
+  wn::|keep%2:34:00|
+  wn::|sustain%2:34:00|
+  wn::|keep_on%2:41:00|
+  wn::|keep%2:41:02|
+  wn::|continue%2:41:00|
+  wn::|retain%2:41:01|
+  wn::|maintain%2:31:00|
+  wn::|keep%2:31:00|
+  wn::|observe%2:31:00|
+  wn::|hold%2:42:00|
+  wn::|maintain%2:42:00|
+  wn::|keep%2:42:00|
+  wn::|continue%2:42:01|
+  wn::|go_on%2:42:00|
+  wn::|proceed%2:42:00|
+  wn::|go_along%2:42:00|
+  wn::|keep%2:42:07|
+  wn::|persist%2:42:01|
+  wn::|welter%2:31:00|
+  wn::|sustain%2:42:01|
+  wn::|keep_up%2:33:00|
+ </relation>
  <sem-feats>
   <relation label="inherit">
    situation
@@ -441,13 +473,10 @@
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::agent" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::neutral">
    <concept name="t" />
@@ -522,12 +551,17 @@
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::neutral" optional="optional">
-   <concept name="t" />
+   <sem-feats>
+    <relation label="inherit">
+     ?ttype
+    </relation>
+    <feat name="information">information-content</feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::agent">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::formal">
+  <role-restr-map roles="ont::formal" optional="optional">
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
