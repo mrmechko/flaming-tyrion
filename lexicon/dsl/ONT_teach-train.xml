@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::teach-train">
  <relation label="inherit">
-  ont::transfer-information
+  ont::show
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -148,6 +148,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::agent1">
   <sem-feats>
@@ -188,7 +189,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::neutral" optional="optional">
   <or>
@@ -243,26 +243,16 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::effect" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal">
-  <concept name="t" />
+ <role-restr-map roles="ont::agent">
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="intentional">+</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">dynamic</feat>
- <feat name="cause">agentive</feat>
- </sem-feats>
  <concept name="ont::communication">
  <relation label="inherit">
   ont::agent-interaction
@@ -306,63 +296,29 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::statement">
+ <concept name="ont::show">
  <relation label="inherit">
   ont::communication
  </relation>
  <relation label="overlap">
-  wn::|tell%2:32:04|
-  wn::|say%2:32:00|
-  wn::|state%2:32:00|
-  wn::|speak%2:32:01|
-  wn::|talk%2:32:01|
-  wn::|inform%2:32:00|
+  wn::|show%2:39:02|
+  wn::|demo%2:39:00|
+  wn::|exhibit%2:39:00|
+  wn::|present%2:39:00|
+  wn::|demonstrate%2:39:01|
+  wn::|show%2:39:00|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
-  <feat name="cause">agentive</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::effect" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::formal">
-   <concept name="t" />
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::inform">
- <relation label="inherit">
-  ont::statement
- </relation>
- <relation label="overlap">
-  wn::|apprize%2:32:01|
-  wn::|apprise%2:32:00|
-  wn::|send_word%2:32:00|
-  wn::|give_notice%2:32:00|
-  wn::|notify%2:32:00|
-  wn::|advise%2:32:01|
-  wn::|declare%2:32:00|
-  wn::|prosecute%2:41:00|
- </relation>
- </concept>
- <concept name="ont::transfer-information">
- <relation label="inherit">
-  ont::inform
- </relation>
- <relation label="overlap">
-  wn::|explain%2:32:00|
-  wn::|explicate%2:32:00|
- </relation>
  </concept>
  <sense>
  <morph>
@@ -461,6 +417,32 @@
   ont::teach-train
   ont::agent-templ
  </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="train" remaining-words="station" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="train" remaining-words="stations" />
+   </plur>
+  </forms>
+ </morph>
+ <example text="Train him to do it">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::teach-train
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-theme-optional-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
  <sense>
  <morph>

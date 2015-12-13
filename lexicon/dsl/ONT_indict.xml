@@ -352,16 +352,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="imprecate" />
- </morph>
- <relation label="inherit">
-  ont::indict
-  ont::agent-addressee-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="incrimination" />
   <forms>
    -VB
@@ -390,5 +380,27 @@
   ont::indict
   ont::agent-addressee-templ
  </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="prosecution" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="prosecution" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::indict
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
 </dsl>

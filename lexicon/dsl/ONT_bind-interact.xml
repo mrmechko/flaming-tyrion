@@ -382,9 +382,23 @@
  </sem-feats>
  </concept>
  <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="dimerize" />
+ </morph>
+ <example text="The protein dimerizes with itself">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::bind-interact
  </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-as-comp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  <semantics>
   <sem-feats>
    <feat name="time-span">atomic</feat>
@@ -393,8 +407,78 @@
  </semantics>
  </sense>
  <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="dimerize" />
+ </morph>
+ <example text="The proteins dimerize (to a dimer).">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::bind-interact
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-result-optional-templ" xp="'w::pp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="interaction" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="interaction" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="This protein interacts with that protein.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bind-interact
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-as-comp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="interaction" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="interaction" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="This protein and that protein interact.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bind-interact
+  ont::agent-plural-templ
  </relation>
  <semantics>
   <sem-feats>

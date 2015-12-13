@@ -387,6 +387,8 @@
          (SEM-FRAME
           (ONT::SOURCE (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
 
+(CONCEPT ONT::ADVISE (INHERIT ONT::SUGGEST) (OVERLAP WN::|advise%2:32:00|))
+
 (CONCEPT ONT::AFFECT-EXPERIENCER
          (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|greet%2:39:00|
@@ -607,7 +609,7 @@
 
 (CONCEPT ONT::APPEAL-APPLY-DEMAND
          (INHERIT ONT::REQUEST)
-         (OVERLAP WN::|turn_to%2:30:00| WN::|play%2:42:00|))
+         (OVERLAP WN::|turn_to%2:30:00|))
 
 (CONCEPT ONT::APPEAR
          (INHERIT ONT::LOCATED-MOVE-STATE)
@@ -797,11 +799,13 @@
 
 (CONCEPT ONT::ASK (INHERIT ONT::REQUEST))
 
-(CONCEPT ONT::ASK-QUERY-QUESTION (INHERIT ONT::QUESTIONING))
+(CONCEPT ONT::ASK-QUESTION
+         (INHERIT ONT::COMMUNICATION)
+         (OVERLAP WN::|ask%2:32:02| WN::|ask%2:32:04|))
 
 (CONCEPT ONT::ASSERT
          (INHERIT ONT::REPRESENTATIVE)
-         (OVERLAP WN::|insist%2:32:00|))
+         (OVERLAP WN::|assert%2:32:01|))
 
 (CONCEPT ONT::ASSESS (INHERIT ONT::PREDICATE))
 
@@ -1308,6 +1312,8 @@
 (CONCEPT ONT::BIRD (INHERIT ONT::VERTEBRATE) (OVERLAP WN::|bird%1:05:00|))
 
 (CONCEPT ONT::BLACK (INHERIT ONT::COLOR-VAL))
+
+(CONCEPT ONT::BLAME (INHERIT ONT::JUDGEMENT) (OVERLAP WN::|blame%2:32:00|))
 
 (CONCEPT ONT::BLUE (INHERIT ONT::COLOR-VAL))
 
@@ -2749,7 +2755,9 @@
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL +)))))
 
-(CONCEPT ONT::CONVEY (INHERIT ONT::ANNOUNCE) (OVERLAP WN::|bring_on%2:39:00|))
+(CONCEPT ONT::CONVEY
+         (INHERIT ONT::COMMUNICATION)
+         (OVERLAP WN::|bring_on%2:39:00|))
 
 (CONCEPT ONT::CONVINCE
          (INHERIT ONT::PERLOCUTION)
@@ -2807,7 +2815,7 @@
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::COPE-DEAL
-         (INHERIT ONT::EXPERIENCER-EMOTION)
+         (INHERIT ONT::ACTIVE-PERCEPTION)
          (OVERLAP WN::|dispense_with%2:41:00|
                   WN::|empathise%2:31:00|
                   WN::|cope%2:41:00|))
@@ -3078,6 +3086,10 @@
                 (CONCEPT PROPOSITION)
                 (CONCEPT SITUATION))
             (INFORMATION INFORMATION-CONTENT)))))
+
+(CONCEPT ONT::DECLARE-PERFORMATIVE
+         (INHERIT ONT::CONVENTIONAL-SPEECH-ACT)
+         (OVERLAP WN::|pronounce%2:32:00| WN::|proclaim%2:32:02|))
 
 (CONCEPT ONT::DECREASE
          (INHERIT ONT::CHANGE-MAGNITUDE)
@@ -3487,7 +3499,9 @@
                   WN::|waste_matter%1:27:00|
                   WN::|waste_product%1:27:00|))
 
-(CONCEPT ONT::DISSUADE (INHERIT ONT::PERLOCUTION))
+(CONCEPT ONT::DISSUADE
+         (INHERIT ONT::PERLOCUTION)
+         (OVERLAP WN::|dissuade%2:32:00|))
 
 (CONCEPT ONT::DISTAL-RELN (INHERIT ONT::POS-DISTANCE))
 
@@ -3760,8 +3774,6 @@
          (INHERIT ONT::QUANTITY-RELATED-PROPERTY-VAL)
          (SEM-FRAME (ONT::VAL (CONCEPT T))))
 
-(CONCEPT ONT::ENQUIRE-INQUIRE (INHERIT ONT::QUESTIONING))
-
 (CONCEPT ONT::ENROLL
          (OVERLAP WN::|enroll%2:41:00|
                   WN::|inscribe%2:41:00|
@@ -3867,7 +3879,7 @@
                     (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::ESTABLISH-COMMUNICATION
-         (INHERIT ONT::AGENT-INTERACTION)
+         (INHERIT ONT::COMMUNICATION)
          (OVERLAP WN::|ring%2:32:00|
                   WN::|phone%2:32:00|
                   WN::|call_up%2:32:00|
@@ -4283,7 +4295,7 @@
          (INHERIT ONT::SAY)
          (OVERLAP WN::|recount%2:32:00|
                   WN::|dictate%2:31:00|
-                  WN::|narrate%2:31:01|))
+                  WN::|narrate%2:32:00|))
 
 (CONCEPT ONT::EXTENSION
          (INHERIT ONT::PREDICATE)
@@ -4541,6 +4553,15 @@
                     (INFORMATION -)
                     (INTENTIONAL -)
                     (FORM OBJECT)))
+
+(CONCEPT ONT::FLATTER
+         (INHERIT ONT::PRAISE)
+         (OVERLAP WN::|flatter%2:32:00|)
+         (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
+         (SEM-FRAME
+          (ONT::PREDICATE
+           (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION))
+           OPTIONAL)))
 
 (CONCEPT ONT::FLIGHT (INHERIT ONT::AIR-TRAVEL))
 
@@ -5250,6 +5271,8 @@
                   WN::|crush%2:41:00|
                   WN::|disrupt%2:30:01|))
 
+(CONCEPT ONT::HINT (INHERIT ONT::REPRESENTATIVE) (OVERLAP WN::|hint%2:32:00|))
+
 (CONCEPT ONT::HITTING
          (INHERIT ONT::MOTION)
          (OVERLAP WN::|collide_with%2:35:00|
@@ -5496,17 +5519,6 @@
          (OVERLAP WN::|written_communication%1:10:00|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (INFORMATION DATA)))
 
-(CONCEPT ONT::INFORM
-         (INHERIT ONT::STATEMENT)
-         (OVERLAP WN::|apprize%2:32:01|
-                  WN::|apprise%2:32:00|
-                  WN::|send_word%2:32:00|
-                  WN::|give_notice%2:32:00|
-                  WN::|notify%2:32:00|
-                  WN::|advise%2:32:01|
-                  WN::|declare%2:32:00|
-                  WN::|prosecute%2:41:00|))
-
 (CONCEPT ONT::INFORMATION
          (INHERIT ONT::INFORMATION-FUNCTION-OBJECT)
          (OVERLAP WN::|information%1:10:00| WN::|info%1:10:00|))
@@ -5575,8 +5587,6 @@
 (CONCEPT ONT::INSTALL (INHERIT ONT::SET-UP-DEVICE))
 
 (CONCEPT ONT::INSTITUTION (INHERIT ONT::ORGANIZATION))
-
-(CONCEPT ONT::INSTRUCT (INHERIT ONT::DIRECTIVE))
 
 (CONCEPT ONT::INSTRUCTION-EVENT (INHERIT ONT::LOCATED-EVENT))
 
@@ -5783,6 +5793,8 @@
           (ONT::AFFECTED (CONCEPT PHYS-OBJ) OPTIONAL)
           (ONT::AGENT1 (CONCEPT PHYS-OBJ) OPTIONAL)
           (ONT::AGENT (CONCEPT PHYS-OBJ) OPTIONAL)))
+
+(CONCEPT ONT::JOKE (INHERIT ONT::REPRESENTATIVE) (OVERLAP WN::|joke%2:32:00|))
 
 (CONCEPT ONT::JUDGEMENT
          (INHERIT ONT::AGENT-INTERACTION)
@@ -6056,6 +6068,8 @@
           (ONT::OF (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
 
 (CONCEPT ONT::LID (INHERIT ONT::COVERING))
+
+(CONCEPT ONT::LIE (INHERIT ONT::REPRESENTATIVE) (OVERLAP WN::|lie%2:32:00|))
 
 (CONCEPT ONT::LIFE-PROCESS
          (INHERIT ONT::EVENT-OF-UNDERGOING-ACTION)
@@ -6431,7 +6445,7 @@
                   WN::|scream%2:32:08|
                   WN::|scream%2:39:00|
                   WN::|shout%2:32:00|
-                  WN::|shout%2:38:08|)
+                  WN::|shout%2:32:08|)
          (SEM-FRAME (ONT::FORMAL (CONCEPT T))))
 
 (CONCEPT ONT::MANNER-UNDO
@@ -6640,10 +6654,6 @@
 (CONCEPT ONT::MENTAL-VAL
          (INHERIT ONT::PROPERTY-VAL)
          (SEM-FRAME (ONT::VAL (CONCEPT T) OPTIONAL)))
-
-(CONCEPT ONT::MENTION-CLAIM
-         (INHERIT ONT::TALK)
-         (OVERLAP WN::|leak%2:30:00| WN::|articulate%2:32:00|))
 
 (CONCEPT ONT::MESSAGE (INHERIT ONT::DIRECT-REPRESENTATION))
 
@@ -7044,10 +7054,7 @@
                   WN::|negotiate%2:32:00|
                   WN::|talk_terms%2:32:00|)
          (SEM-FRAME
-          (ONT::RESULT
-           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
-                      (INTENTIONAL +))
-           OPTIONAL)))
+          (ONT::RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
 
 (CONCEPT ONT::NOISY
          (INHERIT ONT::LOUDNESS-VAL)
@@ -8456,9 +8463,7 @@
 
 (CONCEPT ONT::QUESTIONING
          (INHERIT ONT::DIRECTED-COMMUNICATION)
-         (OVERLAP WN::|ask%2:32:00|
-                  WN::|inquire%2:32:01|
-                  WN::|enquire%2:32:00|)
+         (OVERLAP WN::|quiz%2:32:00| WN::|interrogate%2:32:00|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
          (SEM-FRAME (ONT::FORMAL (CONCEPT T))))
 
@@ -9254,7 +9259,8 @@
                   WN::|mention%2:32:00|
                   WN::|remark%2:32:00|
                   WN::|say%2:32:13|
-                  WN::|say%2:32:01|)
+                  WN::|say%2:32:01|
+                  WN::|talk%2:32:00|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
          (SEM-FRAME (ONT::RESULT (CONCEPT T) OPTIONAL)
                     (ONT::AGENT
@@ -9645,7 +9651,7 @@
          (SEM-FEATS (INHERIT SITUATION) (ASPECT STAGE-LEVEL)))
 
 (CONCEPT ONT::SHOW
-         (INHERIT ONT::VISUAL-DISPLAY)
+         (INHERIT ONT::COMMUNICATION)
          (OVERLAP WN::|show%2:39:02|
                   WN::|demo%2:39:00|
                   WN::|exhibit%2:39:00|
@@ -10554,12 +10560,7 @@
                   WN::|put_forward%2:32:00|
                   WN::|state%2:32:01|
                   WN::|submit%2:32:00|
-                  WN::|talk%2:32:00|
-                  WN::|speak%2:32:00|
-                  WN::|utter%2:32:00|
-                  WN::|mouth%2:32:00|
-                  WN::|verbalize%2:32:00|
-                  WN::|verbalise%2:32:00|)
+                  WN::|talk%2:32:01|)
          (SEM-FEATS (INHERIT SITUATION) (TIME-SPAN EXTENDED) (CAUSE AGENTIVE))
          (SEM-FRAME
           (ONT::FORMAL
@@ -10593,7 +10594,7 @@
 
 (CONCEPT ONT::TEA (INHERIT ONT::TEAS-COCKTAILS-BLENDS))
 
-(CONCEPT ONT::TEACH-TRAIN (INHERIT ONT::TRANSFER-INFORMATION))
+(CONCEPT ONT::TEACH-TRAIN (INHERIT ONT::SHOW))
 
 (CONCEPT ONT::TEAS-COCKTAILS-BLENDS (INHERIT ONT::BEVERAGES))
 
@@ -10601,7 +10602,9 @@
          (INHERIT ONT::DISCIPLINE ABSTR-OBJ)
          (SEM-FRAME (ONT::OF (CONCEPT T))))
 
-(CONCEPT ONT::TELL (INHERIT ONT::REPRESENTATIVE) (OVERLAP WN::|say%2:32:00|))
+(CONCEPT ONT::TELL
+         (INHERIT ONT::REPRESENTATIVE)
+         (OVERLAP WN::|state%2:32:00| WN::|tell%2:32:00| WN::|inform%2:32:00|))
 
 (CONCEPT ONT::TEMPERATURE
          (INHERIT ONT::PHYS-MEASURE-DOMAIN)
@@ -10870,10 +10873,6 @@
 (CONCEPT ONT::TRANSFER-EVENT
          (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC)))
-
-(CONCEPT ONT::TRANSFER-INFORMATION
-         (INHERIT ONT::INFORM)
-         (OVERLAP WN::|explain%2:32:00| WN::|explicate%2:32:00|))
 
 (CONCEPT ONT::TRANSFORMATION
          (INHERIT ONT::CHANGE)
@@ -11343,7 +11342,7 @@
                   WN::|blur%2:39:00|))
 
 (CONCEPT ONT::VISUAL-DISPLAY
-         (INHERIT ONT::COMMUNICATION)
+         (INHERIT ONT::ADJUST)
          (OVERLAP WN::|expose%2:39:00|
                   WN::|exhibit%2:39:01|
                   WN::|display%2:39:00|

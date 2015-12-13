@@ -7,7 +7,9 @@
   ont::representative
  </relation>
  <relation label="overlap">
-  wn::|say%2:32:00|
+  wn::|state%2:32:00|
+  wn::|tell%2:32:00|
+  wn::|inform%2:32:00|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -313,22 +315,75 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="assurance" />
+  <word first-word="announcement" />
   <forms>
    -VB
    <nom>
-    <word first-word="assurance" />
+    <word first-word="announcement" />
    </nom>
   </forms>
+ </morph>
+ <example text="apple announced the new imac">
+  <provenance name="TRIPS"/>
+ </example>
+ <example text="announce it to them">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::tell
+  ont::agent-theme-to-addressee-optional-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="announcement" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="announcement" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="microsoft announced yesterday that they will acquire yahoo">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="confide" />
  </morph>
  <relation label="inherit">
   ont::tell
  </relation>
  <syntax>
-  <template-call template="ont::agent-addressee-theme-optional-templ" />
+  <template-call template="ont::agent-affected-xp-optional-formal-templ" xp="'(w::pp
+                                                                               (w::or
+                                                                                w::in
+                                                                                w::to
+                                                                                w::with))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::about" sem-role="ont::formal" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="(w::or w::in
+                                                              w::to
+                                                              w::with)" sem-role="ont::affected" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -336,11 +391,11 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="assurance" />
+  <word first-word="disclosure" />
   <forms>
    -VB
    <nom>
-    <word first-word="assurance" />
+    <word first-word="disclosure" />
    </nom>
   </forms>
  </morph>
@@ -348,10 +403,9 @@
   ont::tell
  </relation>
  <syntax>
-  <template-call template="ont::agent-addressee-associated-information-templ" />
+  <template-call template="ont::agent-theme-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -359,11 +413,11 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="assurance" />
+  <word first-word="disclosure" />
   <forms>
    -VB
    <nom>
-    <word first-word="assurance" />
+    <word first-word="disclosure" />
    </nom>
   </forms>
  </morph>
@@ -371,10 +425,9 @@
   ont::tell
  </relation>
  <syntax>
-  <template-call template="ont::agent-addressee-theme-optional-templ" xp="'w::cp" />
+  <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -416,7 +469,13 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="notifi" />
+  <word first-word="notification" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="notification" />
+   </nom>
+  </forms>
  </morph>
  <example text="notify him that the plan changed">
   <provenance name="TRIPS"/>
@@ -436,7 +495,13 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="notifi" />
+  <word first-word="notification" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="notification" />
+   </nom>
+  </forms>
  </morph>
  <example text="notify him about the change">
   <provenance name="TRIPS"/>
@@ -454,11 +519,207 @@
  </syntax>
  </sense>
  <sense>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
+ <morph>
+  <pos pos="v" />
+  <word first-word="remind" />
+ </morph>
+ <example text="remind me [ of the rule ]">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::tell
  </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-theme-optional-templ" xp="'(w::pp
+                                                                            w::of)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::of" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="remind" />
+ </morph>
+ <example text="remind him about the date">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-associated-information-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="remind" />
+ </morph>
+ <example text="remind him that the meeting is tomorrow">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-theme-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="reveal" />
+ </morph>
+ <relation label="inherit">
+  ont::tell
+  ont::agent-theme-to-addressee-optional-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="tell" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="told" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="tell the driver the plan">
+ </example>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-neutral-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="np" sem-role="ont::neutral" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="tell" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="told" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="tell the plan to the driver">
+ </example>
+ <relation label="inherit">
+  ont::tell
+  ont::agent-theme-to-addressee-optional-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="tell" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="told" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="tell the driver about the plan">
+ </example>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-associated-information-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="tell" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="told" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="Tell the driver that the trucks are ready">
+ </example>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-addressee-theme-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="tell" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="told" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="a zero voltage tells you that the terminals are connected">
+ </example>
+ <relation label="inherit">
+  ont::tell
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-theme-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
 </dsl>

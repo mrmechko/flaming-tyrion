@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::cope-deal">
  <relation label="inherit">
-  ont::experiencer-emotion
+  ont::active-perception
  </relation>
  <relation label="overlap">
   wn::|dispense_with%2:41:00|
@@ -24,6 +24,7 @@
   ont::root
  </relation>
  </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
@@ -86,7 +87,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::experiencer">
   <sem-feats>
@@ -120,26 +120,16 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::action" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::neutral1" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
+ <role-restr-map roles="ont::neutral">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">stage-level</feat>
- <feat name="cause">mental</feat>
- </sem-feats>
  <concept name="ont::event-of-experience">
  <relation label="inherit">
   ont::event-of-state
@@ -155,35 +145,81 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::experiencer-emotion">
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::action">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::perception">
  <relation label="inherit">
   ont::event-of-experience
  </relation>
  <relation label="overlap">
-  wn::|like%2:37:05|
-  wn::|experience%2:37:00|
-  wn::|feel%2:37:00|
-  wn::|feeling%1:03:00|
+  wn::|feel%2:35:00|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">stage-level</feat>
-  <feat name="cause">mental</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::action" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::neutral1" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
+  <role-restr-map roles="ont::neutral">
    <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::active-perception">
+ <relation label="inherit">
+  ont::perception
+ </relation>
+ <relation label="overlap">
+  wn::|look%2:39:00|
+  wn::|feel%2:39:00|
+  wn::|sense%2:39:00|
+  wn::|note%2:39:02|
+  wn::|look_on%2:39:00|
+  wn::|look_out%2:39:00|
+  wn::|watch%2:39:00|
+  wn::|watch%2:39:03|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::action">
+   <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>

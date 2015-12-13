@@ -13,7 +13,7 @@
   wn::|scream%2:32:08|
   wn::|scream%2:39:00|
   wn::|shout%2:32:00|
-  wn::|shout%2:38:08|
+  wn::|shout%2:32:08|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::formal">
@@ -341,6 +341,7 @@
   wn::|remark%2:32:00|
   wn::|say%2:32:13|
   wn::|say%2:32:01|
+  wn::|talk%2:32:00|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -396,6 +397,22 @@
   ont::manner-say
   ont::agent-theme-to-addressee-optional-templ
  </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="exclaim" />
+ </morph>
+ <relation label="inherit">
+  ont::manner-say
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
  <sense>
  <morph>
@@ -692,22 +709,6 @@
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="utter" />
- </morph>
- <relation label="inherit">
-  ont::manner-say
- </relation>
- <syntax>
-  <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
