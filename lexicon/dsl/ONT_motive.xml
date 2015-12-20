@@ -6,14 +6,6 @@
  <relation label="inherit">
   ont::mental-object
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::purpose" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -61,13 +53,7 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::of" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="cause">mental</feat>
-   <feat name="information">mental-construct</feat>
-  </sem-feats>
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::mental-construction">
@@ -81,14 +67,6 @@
   <feat name="information">mental-construct</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::purpose" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::associated-information" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::mental-object">
  <relation label="inherit">
   ont::mental-construction
@@ -102,13 +80,7 @@
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::of" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
-    <feat name="cause">mental</feat>
-    <feat name="information">mental-construct</feat>
-   </sem-feats>
+   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -124,9 +96,10 @@
   ont::motive
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" />
+  <template-call template="ont::other-reln-templ" xp="'(w::pp
+                                                        (w::or w::for w::of))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::for w::of)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -159,9 +132,10 @@
   ont::motive
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" xp="'(w::pp w::for)" />
+  <template-call template="ont::other-reln-templ" xp="'(w::pp
+                                                        (w::or w::for w::of))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::for w::of)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -229,14 +203,15 @@
   ont::motive
  </relation>
  <syntax>
-  <template-call template="ont::count-subcat-purpose-templ" />
+  <template-call template="ont::other-reln-templ" xp="'(w::pp
+                                                        (w::or w::for w::of))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::purpose" optional="optional"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::for w::of)" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
    <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">pred</feat>
+   <feat name="sort">other-reln</feat>
    <feat name="case">
    <or>
     sub

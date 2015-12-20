@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::confirm">
  <relation label="inherit">
-  ont::agreement
+  ont::response
  </relation>
  <relation label="overlap">
   wn::|shew%2:31:00|
@@ -35,11 +35,6 @@
   ont::root
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
@@ -106,11 +101,6 @@
   <feat name="information">mental-construct</feat>
   <feat name="intentional">-</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::agent">
@@ -205,13 +195,36 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::associated-information" optional="optional">
+ <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::formal">
-  <concept name="t" />
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">agentive</feat>
+ </sem-feats>
  <concept name="ont::agent-interaction">
  <relation label="inherit">
   ont::event-of-action
@@ -237,6 +250,52 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::communication">
+ <relation label="inherit">
+  ont::agent-interaction
+ </relation>
+ <relation label="overlap">
+  wn::|put_across%2:32:00|
+  wn::|pass_along%2:32:00|
+  wn::|pass%2:32:01|
+  wn::|pass_on%2:32:00|
+  wn::|communicate%2:32:01|
+  wn::|intercommunicate%2:32:00|
+  wn::|communicate%2:32:00|
+  wn::|communication%1:03:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="proposition" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="situation" />
  <sem-feats>
  <relation label="inherit">
@@ -244,18 +303,14 @@
  </relation>
  <feat name="cause">agentive</feat>
  </sem-feats>
- <concept name="ont::agreement">
+ <concept name="ont::response">
  <relation label="inherit">
-  ont::agent-interaction
+  ont::communication
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::associated-information" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::formal">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
+ <relation label="overlap">
+  wn::|react%2:31:00|
+  wn::|respond%2:31:00|
+ </relation>
  </concept>
  <sense>
  <morph>
@@ -324,6 +379,26 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="confirm" />
+ </morph>
+ <example text="we confirm in this paper that it works">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::confirm
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-located-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="liobj" syn-cat="advbl" sem-role="ont::location"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="demonstration" />
   <forms>
    -VB
@@ -339,6 +414,32 @@
   <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
   <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="demonstration" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="demonstration" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="we demonstrate in this paper that it works">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::confirm
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-located-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="liobj" syn-cat="advbl" sem-role="ont::location"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -387,9 +488,34 @@
   ont::confirm
  </relation>
  <syntax>
-  <template-call template="ont::agent-theme-xp-templ" />
+  <template-call template="ont::agent-neutral-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="establishment" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="establishment" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="establish that...">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::confirm
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -455,6 +581,26 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="prove" />
+ </morph>
+ <example text="we prove in this paper that it works">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::confirm
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-located-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="liobj" syn-cat="advbl" sem-role="ont::location"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="proven" />
   <forms>
   </forms>
@@ -494,6 +640,34 @@
   <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
   <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="show" />
+  <forms>
+   -VB
+   <pastpart>
+    <word first-word="shown" />
+   </pastpart>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="We show in this paper that it works">
+ </example>
+ <relation label="inherit">
+  ont::confirm
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-located-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="liobj" syn-cat="advbl" sem-role="ont::location"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

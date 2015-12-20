@@ -24,11 +24,6 @@
   ont::root
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
@@ -95,11 +90,6 @@
   <feat name="information">mental-construct</feat>
   <feat name="intentional">-</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::agent">
@@ -195,6 +185,9 @@
  </sem-frame>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -269,6 +262,9 @@
   <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -314,6 +310,19 @@
   wn::|submit%2:31:12|
  </relation>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="accord" />
+ </morph>
+ <example text="do we have an accord">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::accept-agree
+  ont::count-pred-templ
+ </relation>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -372,52 +381,15 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="v" />
-  <word first-word="support" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="support" />
-   </nom>
-  </forms>
+  <pos pos="n" />
+  <word first-word="agreement" />
  </morph>
- <example text="He supports the petition">
+ <example text="they reached an agreement">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::accept-agree
+  ont::count-pred-templ
  </relation>
- <syntax>
-  <template-call template="ont::agent-neutral-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="support" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="support" />
-   </nom>
-  </forms>
- </morph>
- <example text="He supports the cat releases the mouse.">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::accept-agree
- </relation>
- <syntax>
-  <template-call template="ont::agent-formal-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
  </sense>
 </dsl>
