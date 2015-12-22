@@ -144,29 +144,18 @@
    ont::research-institution
   </relation>
  </concept>
- <concept name="ont::accept">
-  <relation label="inherit">
-   ont::response
-  </relation>
-  <relation label="overlap">
-   wn::|take_on%2:40:00|
-   wn::|take%2:40:07|
-   wn::|admit%2:40:00|
-   wn::|accept%2:40:03|
-   wn::|accept%2:40:12|
-   wn::|take%2:40:15|
-   wn::|take%2:31:09|
-   wn::|submit%2:31:12|
-  </relation>
- </concept>
  <concept name="ont::accept-agree">
   <relation label="inherit">
-   ont::accept
+   ont::response
   </relation>
   <relation label="overlap">
    wn::|grudge%2:37:00|
    wn::|agree%2:32:00|
    wn::|agree%2:32:04|
+   wn::|accept%2:32:00|
+   wn::|consent%2:32:00|
+   wn::|go_for%2:32:00|
+   wn::|affirm%2:32:01|
   </relation>
  </concept>
  <concept name="ont::acceptability-val">
@@ -792,6 +781,9 @@
   <relation label="inherit">
    ont::enroll
   </relation>
+  <relation label="overlap">
+   wn::|accept%2:40:03|
+  </relation>
  </concept>
  <concept name="ont::advancing">
   <relation label="inherit">
@@ -1222,16 +1214,6 @@
    wn::|commentary%1:10:00|
   </relation>
  </concept>
- <concept name="ont::announce">
-  <relation label="inherit">
-   ont::statement
-  </relation>
-  <relation label="overlap">
-   wn::|present%2:32:00|
-   wn::|represent%2:32:11|
-   wn::|lay_out%2:32:00|
-  </relation>
- </concept>
  <concept name="ont::answer">
   <relation label="inherit">
    ont::response
@@ -1442,6 +1424,7 @@
    wn::|grab%2:35:00|
    wn::|take_hold_of%2:35:01|
    wn::|snatch%2:35:02|
+   wn::|take%2:40:15|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -5677,14 +5660,7 @@
    ont::response
   </relation>
   <relation label="overlap">
-   wn::|shew%2:31:00|
-   wn::|show%2:31:00|
-   wn::|establish%2:31:00|
-   wn::|demonstrate%2:31:00|
-   wn::|prove%2:31:00|
    wn::|confirm%2:32:00|
-   wn::|reassert%2:32:00|
-   wn::|base%2:31:00|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -5803,17 +5779,6 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::consent">
-  <relation label="inherit">
-   ont::response
-  </relation>
-  <relation label="overlap">
-   wn::|accept%2:32:00|
-   wn::|consent%2:32:00|
-   wn::|go_for%2:32:00|
-   wn::|affirm%2:32:01|
-  </relation>
  </concept>
  <concept name="ont::consistent-val">
   <relation label="inherit">
@@ -6099,14 +6064,6 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::convey">
-  <relation label="inherit">
-   ont::communication
-  </relation>
-  <relation label="overlap">
-   wn::|bring_on%2:39:00|
-  </relation>
  </concept>
  <concept name="ont::convince">
   <relation label="inherit">
@@ -6819,28 +6776,6 @@
    wn::|dazed%5:00:00|
    wn::|lethargic%3:00:00|
   </relation>
- </concept>
- <concept name="ont::debug">
-  <relation label="inherit">
-   ont::revise
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="trajectory">-</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::agent">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="origin">human</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::decide">
   <relation label="inherit">
@@ -12084,6 +12019,7 @@
   <relation label="overlap">
    wn::|get%2:39:14|
    wn::|inherit%2:40:02|
+   wn::|take%2:31:09|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected1">
@@ -17206,8 +17142,7 @@
      <relation label="inherit">
       phys-obj
      </relation>
-     <feat name="
-intentional">+</feat>
+     <feat name="intentional">+</feat>
      <feat name="origin">
      <or>
       human
@@ -17264,7 +17199,8 @@ intentional">+</feat>
      <feat name="origin">human</feat>
     </sem-feats>
    </role-restr-map>
-  </sem-frame>
+  </
+sem-frame>
  </concept>
  <concept name="ont::physical-symptom-manner">
   <relation label="inherit">
@@ -18718,11 +18654,12 @@ intentional">+</feat>
    ont::situation-modifier
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::reason">
-    <concept name="abstr-obj" />
-   </role-restr-map>
    <role-restr-map roles="ont::val">
-    <concept name="situation" />
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
    </role-restr-map>
    <role-restr-map roles="ont::of">
     <sem-feats>
@@ -21560,6 +21497,7 @@ intentional">+</feat>
    wn::|present%2:39:00|
    wn::|demonstrate%2:39:01|
    wn::|show%2:39:00|
+   wn::|prove%2:31:00|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::agent">
@@ -22631,37 +22569,6 @@ intentional">+</feat>
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::statement">
-  <relation label="inherit">
-   ont::communication
-  </relation>
-  <relation label="overlap">
-   wn::|tell%2:32:04|
-   wn::|say%2:32:00|
-   wn::|state%2:32:00|
-   wn::|speak%2:32:01|
-   wn::|talk%2:32:01|
-   wn::|inform%2:32:00|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::effect" optional="optional">
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-    </or>
-   </role-restr-map>
-   <role-restr-map roles="ont::formal">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::status">
   <relation label="inherit">
    ont::non-measure-ordered-domain
@@ -23494,11 +23401,6 @@ intentional">+</feat>
   <relation label="overlap">
    wn::|bleed%2:40:09|
    wn::|drain%2:34:00|
-  </relation>
- </concept>
- <concept name="ont::take-on">
-  <relation label="inherit">
-   ont::accept
   </relation>
  </concept>
  <concept name="ont::take-time">
@@ -25968,7 +25870,7 @@ intentional">+</feat>
  </concept>
  <concept name="ont::write">
   <relation label="inherit">
-   ont::communication
+   ont::create
   </relation>
   <relation label="overlap">
    wn::|create_verbally%2:36:00|

@@ -66,20 +66,15 @@
 
 (CONCEPT ONT::ACADEMIC-INSTITUTION (INHERIT ONT::RESEARCH-INSTITUTION))
 
-(CONCEPT ONT::ACCEPT
-         (INHERIT ONT::RESPONSE)
-         (OVERLAP WN::|take_on%2:40:00|
-                  WN::|take%2:40:07|
-                  WN::|admit%2:40:00|
-                  WN::|accept%2:40:03|
-                  WN::|accept%2:40:12|
-                  WN::|take%2:40:15|
-                  WN::|take%2:31:09|
-                  WN::|submit%2:31:12|))
-
 (CONCEPT ONT::ACCEPT-AGREE
-         (INHERIT ONT::ACCEPT)
-         (OVERLAP WN::|grudge%2:37:00| WN::|agree%2:32:00| WN::|agree%2:32:04|))
+         (INHERIT ONT::RESPONSE)
+         (OVERLAP WN::|grudge%2:37:00|
+                  WN::|agree%2:32:00|
+                  WN::|agree%2:32:04|
+                  WN::|accept%2:32:00|
+                  WN::|consent%2:32:00|
+                  WN::|go_for%2:32:00|
+                  WN::|affirm%2:32:01|))
 
 (CONCEPT ONT::ACCEPTABILITY-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
@@ -379,7 +374,7 @@
                   WN::|maximize%2:30:00|
                   WN::|maximise%2:30:00|))
 
-(CONCEPT ONT::ADMIT (INHERIT ONT::ENROLL))
+(CONCEPT ONT::ADMIT (INHERIT ONT::ENROLL) (OVERLAP WN::|accept%2:40:03|))
 
 (CONCEPT ONT::ADVANCING
          (INHERIT ONT::ADJUST)
@@ -574,12 +569,6 @@
          (INHERIT ONT::INFO-HOLDER)
          (OVERLAP WN::|comment%1:10:01| WN::|commentary%1:10:00|))
 
-(CONCEPT ONT::ANNOUNCE
-         (INHERIT ONT::STATEMENT)
-         (OVERLAP WN::|present%2:32:00|
-                  WN::|represent%2:32:11|
-                  WN::|lay_out%2:32:00|))
-
 (CONCEPT ONT::ANSWER
          (INHERIT ONT::RESPONSE)
          (OVERLAP WN::|answer%2:32:00|
@@ -674,7 +663,8 @@
                   WN::|catch%2:35:00|
                   WN::|grab%2:35:00|
                   WN::|take_hold_of%2:35:01|
-                  WN::|snatch%2:35:02|)
+                  WN::|snatch%2:35:02|
+                  WN::|take%2:40:15|)
          (SEM-FEATS (INHERIT SITUATION)
                     (ASPECT DYNAMIC)
                     (TRAJECTORY -)
@@ -2542,14 +2532,7 @@
 
 (CONCEPT ONT::CONFIRM
          (INHERIT ONT::RESPONSE)
-         (OVERLAP WN::|shew%2:31:00|
-                  WN::|show%2:31:00|
-                  WN::|establish%2:31:00|
-                  WN::|demonstrate%2:31:00|
-                  WN::|prove%2:31:00|
-                  WN::|confirm%2:32:00|
-                  WN::|reassert%2:32:00|
-                  WN::|base%2:31:00|)
+         (OVERLAP WN::|confirm%2:32:00|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE)))
 
 (CONCEPT ONT::CONFUSE
@@ -2601,13 +2584,6 @@
          (INHERIT ONT::SPATIAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY +))
          (SEM-FRAME (ONT::NEUTRAL1 (CONCEPT T)) (ONT::NEUTRAL (CONCEPT T))))
-
-(CONCEPT ONT::CONSENT
-         (INHERIT ONT::RESPONSE)
-         (OVERLAP WN::|accept%2:32:00|
-                  WN::|consent%2:32:00|
-                  WN::|go_for%2:32:00|
-                  WN::|affirm%2:32:01|))
 
 (CONCEPT ONT::CONSISTENT-VAL
          (INHERIT ONT::PROPERTY-VAL)
@@ -2735,10 +2711,6 @@
           (ONT::AGENT
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL +)))))
-
-(CONCEPT ONT::CONVEY
-         (INHERIT ONT::COMMUNICATION)
-         (OVERLAP WN::|bring_on%2:39:00|))
 
 (CONCEPT ONT::CONVINCE
          (INHERIT ONT::PERLOCUTION)
@@ -3038,11 +3010,6 @@
 (CONCEPT ONT::DAZED
          (INHERIT ONT::PHYSICAL-SYMPTOM-VAL)
          (OVERLAP WN::|dazed%5:00:00| WN::|lethargic%3:00:00|))
-
-(CONCEPT ONT::DEBUG
-         (INHERIT ONT::REVISE)
-         (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (CAUSE AGENTIVE))
-         (SEM-FRAME (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN HUMAN)))))
 
 (CONCEPT ONT::DECIDE
          (INHERIT ONT::ACQUIRE-BELIEF)
@@ -5441,7 +5408,7 @@
 
 (CONCEPT ONT::INCUR-INHERIT-RECEIVE
          (INHERIT ONT::EVENT-OF-UNDERGOING-ACTION)
-         (OVERLAP WN::|get%2:39:14| WN::|inherit%2:40:02|)
+         (OVERLAP WN::|get%2:39:14| WN::|inherit%2:40:02| WN::|take%2:31:09|)
          (SEM-FRAME (ONT::AFFECTED1 (CONCEPT T))))
 
 (CONCEPT ONT::INDEPENDENT (INHERIT ONT::DEPENDENCE-VAL))
@@ -8285,10 +8252,10 @@
 
 (CONCEPT ONT::PURPOSE
          (INHERIT ONT::SITUATION-MODIFIER)
-         (SEM-FRAME (ONT::REASON (CONCEPT ABSTR-OBJ))
-                    (ONT::VAL (CONCEPT SITUATION))
-                    (ONT::OF
-                     (SEM-FEATS (INHERIT SITUATION) (TYPE EVENT-OF-ACTION)))))
+         (SEM-FRAME
+          (ONT::VAL
+           (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ)))
+          (ONT::OF (SEM-FEATS (INHERIT SITUATION) (TYPE EVENT-OF-ACTION)))))
 
 (CONCEPT ONT::PURSUE
          (INHERIT ONT::CO-MOTION)
@@ -9530,7 +9497,8 @@
                   WN::|exhibit%2:39:00|
                   WN::|present%2:39:00|
                   WN::|demonstrate%2:39:01|
-                  WN::|show%2:39:00|)
+                  WN::|show%2:39:00|
+                  WN::|prove%2:31:00|)
          (SEM-FRAME
           (ONT::AGENT
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
@@ -9984,19 +9952,6 @@
           ((ONT::NEUTRAL ONT::DONOR)
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
 
-(CONCEPT ONT::STATEMENT
-         (INHERIT ONT::COMMUNICATION)
-         (OVERLAP WN::|tell%2:32:04|
-                  WN::|say%2:32:00|
-                  WN::|state%2:32:00|
-                  WN::|speak%2:32:01|
-                  WN::|talk%2:32:01|
-                  WN::|inform%2:32:00|)
-         (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC) (CAUSE AGENTIVE))
-         (SEM-FRAME
-          (ONT::EFFECT (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)) OPTIONAL)
-          (ONT::FORMAL (CONCEPT T))))
-
 (CONCEPT ONT::STATUS
          (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN)
          (OVERLAP WN::|condition%1:26:00|
@@ -10407,8 +10362,6 @@
 (CONCEPT ONT::TAKE-INCREMENTALLY
          (INHERIT ONT::ACQUIRE-BY-ACTION)
          (OVERLAP WN::|bleed%2:40:09| WN::|drain%2:34:00|))
-
-(CONCEPT ONT::TAKE-ON (INHERIT ONT::ACCEPT))
 
 (CONCEPT ONT::TAKE-TIME
          (INHERIT ONT::EVENT-OF-STATE)
@@ -11498,7 +11451,7 @@
 (CONCEPT ONT::WOUND (INHERIT ONT::INJURY))
 
 (CONCEPT ONT::WRITE
-         (INHERIT ONT::COMMUNICATION)
+         (INHERIT ONT::CREATE)
          (OVERLAP WN::|create_verbally%2:36:00| WN::|complete%2:32:00|)
          (SEM-FRAME
           (ONT::AFFECTED-RESULT

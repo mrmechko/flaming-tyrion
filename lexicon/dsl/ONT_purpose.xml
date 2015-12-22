@@ -7,11 +7,12 @@
   ont::situation-modifier
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::reason">
-   <concept name="abstr-obj" />
-  </role-restr-map>
   <role-restr-map roles="ont::val">
-   <concept name="situation" />
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::of">
    <sem-feats>
@@ -153,11 +154,12 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::reason">
-  <concept name="abstr-obj" />
- </role-restr-map>
  <role-restr-map roles="ont::val">
-  <concept name="situation" />
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::of">
   <sem-feats>
@@ -202,34 +204,6 @@
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
    <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="for" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <relation label="inherit">
-  ont::purpose
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-pred-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="pred" sem-role="ont::of"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
