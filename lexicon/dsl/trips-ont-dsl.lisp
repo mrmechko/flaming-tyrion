@@ -498,7 +498,8 @@
                   WN::|indulge%2:41:01|
                   WN::|indulge%2:34:00|
                   WN::|indulge%2:34:12|
-                  WN::|indulge%2:41:00|)
+                  WN::|indulge%2:41:00|
+                  WN::|condone%2:32:00|)
          (SEM-FRAME
           (ONT::AFFECTED
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
@@ -7058,7 +7059,7 @@
 
 (CONCEPT ONT::OBJ-IN-PATH (INHERIT ONT::DIR-IN-TERMS-OF-OBJ))
 
-(CONCEPT ONT::OBJECT (INHERIT ONT::CONTEST))
+(CONCEPT ONT::OBJECT (INHERIT ONT::CONTEST) (OVERLAP WN::|object%2:42:00|))
 
 (CONCEPT ONT::OBJECT-CHANGE
          (INHERIT ONT::CHANGE SITUATION)
