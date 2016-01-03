@@ -204,14 +204,17 @@
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
- <role-restr-map roles="ont::result">
+ <role-restr-map roles="ont::result" optional="optional">
   <or>
    <concept name="situation" />
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::affected" optional="optional">
-  <concept name="t" />
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::agent">
   <or>
@@ -304,14 +307,17 @@
     <concept name="abstr-obj" />
    </or>
   </role-restr-map>
-  <role-restr-map roles="ont::result">
+  <role-restr-map roles="ont::result" optional="optional">
    <or>
     <concept name="situation" />
     <concept name="abstr-obj" />
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::affected" optional="optional">
-   <concept name="t" />
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::agent">
    <or>
@@ -365,9 +371,9 @@
   ont::execute
  </relation>
  <syntax>
-  <template-call template="ont::agent-effect-xp-templ" xp="'(w::pp w::on)" />
+  <template-call template="ont::agent-theme-optional-templ" xp="'(w::pp w::on)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::on" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::on" sem-role="ont::formal" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

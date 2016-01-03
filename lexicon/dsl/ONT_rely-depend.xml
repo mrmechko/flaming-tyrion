@@ -4,8 +4,16 @@
  <provenance name="TRIPS"/>
  <concept name="ont::rely-depend">
  <relation label="inherit">
-  ont::position
+  ont::event-of-state
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -19,6 +27,7 @@
   ont::root
  </relation>
  </concept>
+ <concept name="situation" />
  <sem-feats>
  <relation label="inherit">
   situation
@@ -41,7 +50,6 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
@@ -76,45 +84,13 @@
  </sem-feats>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::affected1" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
+  <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::neutral1" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- </sem-feats>
  <concept name="ont::event-of-state">
  <relation label="inherit">
   ont::situation-root
@@ -137,51 +113,6 @@
   </role-restr-map>
   <role-restr-map roles="ont::neutral">
    <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::position">
- <relation label="inherit">
-  ont::event-of-state
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::affected1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
   </role-restr-map>
  </sem-frame>
  </concept>

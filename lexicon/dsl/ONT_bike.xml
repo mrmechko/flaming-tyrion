@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::bike">
  <relation label="inherit">
-  ont::drive
+  ont::transport
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -167,7 +167,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::extent" optional="optional">
   <sem-feats>
@@ -226,21 +225,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::agent">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="mobility">land-movable</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">dynamic</feat>
+ <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::motion">
  <relation label="inherit">
@@ -290,29 +288,50 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::drive">
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">+</feat>
+ <feat name="cause">agentive</feat>
+ </sem-feats>
+ <concept name="ont::transportation">
  <relation label="inherit">
   ont::motion
- </relation>
- <relation label="overlap">
-  wn::|drive%2:38:01|
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="aspect">dynamic</feat>
+  <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="mobility">land-movable</feat>
-   </sem-feats>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::transport">
+ <relation label="inherit">
+  ont::transportation
+ </relation>
+ <relation label="overlap">
+  wn::|bring%2:38:00|
+  wn::|convey%2:38:00|
+  wn::|take%2:38:10|
+  wn::|bring%2:35:02|
+  wn::|port%2:38:06|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">+</feat>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
  </concept>
  <sense>
  <morph>

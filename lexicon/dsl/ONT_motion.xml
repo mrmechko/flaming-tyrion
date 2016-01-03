@@ -276,6 +276,7 @@
  <relation label="overlap">
   wn::|reflect%2:39:00|
   wn::|drive%2:35:01|
+  wn::|drive%2:41:02|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -285,6 +286,12 @@
   <feat name="cause">force</feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
   <role-restr-map roles="ont::agent">
    <concept name="t" />
   </role-restr-map>
@@ -397,6 +404,14 @@
   </relation>
   <feat name="cause">agentive</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::move">
  <relation label="inherit">
@@ -452,30 +467,6 @@
      non-human-animal
     </or>
     </feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::drive">
- <relation label="inherit">
-  ont::motion
- </relation>
- <relation label="overlap">
-  wn::|drive%2:38:01|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="mobility">land-movable</feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
