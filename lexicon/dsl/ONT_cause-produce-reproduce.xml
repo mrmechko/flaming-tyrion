@@ -6,6 +6,12 @@
  <relation label="inherit">
   ont::cause-effect
  </relation>
+ <relation label="overlap">
+  wn::|yield%2:40:02|
+  wn::|produce%2:36:03|
+  wn::|cause%2:36:00|
+  wn::|induce%2:32:00|
+ </relation>
  <sem-frame>
   <role-restr-map roles="ont::affected-result">
    <or>
@@ -178,6 +184,9 @@
  </sem-frame>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
   <or>
    <concept name="situation" />
@@ -194,6 +203,7 @@
   <or>
    <concept name="situation" />
    <concept name="abstr-obj" />
+   <concept name="phys-obj" />
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::agent">
@@ -254,7 +264,7 @@
   ont::acting
  </relation>
  <relation label="overlap">
-  wn::|cause%2:36:00|
+  wn::|cause%2:32:00|
   wn::|do%2:36:02|
   wn::|make%2:36:08|
   wn::|receive%2:35:00|
@@ -275,6 +285,9 @@
   </feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
    <or>
     <concept name="situation" />
@@ -291,6 +304,7 @@
    <or>
     <concept name="situation" />
     <concept name="abstr-obj" />
+    <concept name="phys-obj" />
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::agent">
@@ -302,6 +316,40 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="bring" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="brought" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="his consultations brought about his expertise">
+ </example>
+ <relation label="inherit">
+  ont::cause-produce-reproduce
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-create-templ" xp="'(w::pp
+                                                                   w::about)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::about" sem-role="ont::affected-result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -328,6 +376,37 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="give" remaining-words="rise" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="gave" />
+   </past>
+  </forms>
+ </morph>
+ <example text="The spark gave rise to a fire">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cause-produce-reproduce
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-create-templ" xp="'(w::pp w::to)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::to" sem-role="ont::affected-result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
  </sense>
  <sense>
  <morph>
@@ -370,6 +449,22 @@
  <example text="reproduce the effect">
   <provenance name="TRIPS"/>
  </example>
+ <relation label="inherit">
+  ont::cause-produce-reproduce
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-create-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected-result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="yield" />
+ </morph>
  <relation label="inherit">
   ont::cause-produce-reproduce
  </relation>

@@ -7,7 +7,7 @@
   ont::acting
  </relation>
  <relation label="overlap">
-  wn::|cause%2:36:00|
+  wn::|cause%2:32:00|
   wn::|do%2:36:02|
   wn::|make%2:36:08|
   wn::|receive%2:35:00|
@@ -28,6 +28,9 @@
   </feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
    <or>
     <concept name="situation" />
@@ -44,6 +47,7 @@
    <or>
     <concept name="situation" />
     <concept name="abstr-obj" />
+    <concept name="phys-obj" />
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::agent">
@@ -217,6 +221,9 @@
  </concept>
  <concept name="situation" />
  <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
   <or>
    <concept name="situation" />
@@ -233,6 +240,7 @@
   <or>
    <concept name="situation" />
    <concept name="abstr-obj" />
+   <concept name="phys-obj" />
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::agent">
@@ -396,6 +404,12 @@
  <relation label="inherit">
   ont::cause-effect
  </relation>
+ <relation label="overlap">
+  wn::|yield%2:40:02|
+  wn::|produce%2:36:03|
+  wn::|cause%2:36:00|
+  wn::|induce%2:32:00|
+ </relation>
  <sem-frame>
   <role-restr-map roles="ont::affected-result">
    <or>
@@ -483,27 +497,6 @@
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
    </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::cause-make">
- <relation label="inherit">
-  ont::cause-effect
- </relation>
- <relation label="overlap">
-  wn::|induce%2:32:00|
-  wn::|stimulate%2:32:01|
-  wn::|cause%2:32:00|
-  wn::|have%2:32:00|
-  wn::|get%2:32:00|
-  wn::|make%2:32:00|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::result">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::effect">
-   <concept name="situation" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -797,10 +790,10 @@
   ont::cause-effect
  </relation>
  <syntax>
-  <template-call template="ont::agent-effect-affected-objcontrol-templ" />
+  <template-call template="ont::agent-theme-objcontrol-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

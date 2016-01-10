@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::manner-refl">
  <relation label="inherit">
-  ont::situation-modifier
+  ont::manner
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::val">
@@ -146,7 +146,14 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::val">
-  <concept name="phys-obj" />
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="intentional">-</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::of">
   <concept name="situation" />
@@ -162,6 +169,34 @@
   </role-restr-map>
   <role-restr-map roles="ont::val" optional="optional">
    <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <concept name="situation" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::val">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <concept name="situation" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::manner">
+ <relation label="inherit">
+  ont::situation-modifier
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::val">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="intentional">-</feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::of">
    <concept name="situation" />

@@ -3748,7 +3748,7 @@
    ont::acting
   </relation>
   <relation label="overlap">
-   wn::|cause%2:36:00|
+   wn::|cause%2:32:00|
    wn::|do%2:36:02|
    wn::|make%2:36:08|
    wn::|receive%2:35:00|
@@ -3769,6 +3769,9 @@
    </feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::norole" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::formal" optional="optional">
     <or>
      <concept name="situation" />
@@ -3785,6 +3788,7 @@
     <or>
      <concept name="situation" />
      <concept name="abstr-obj" />
+     <concept name="phys-obj" />
     </or>
    </role-restr-map>
    <role-restr-map roles="ont::agent">
@@ -3824,27 +3828,6 @@
      <concept name="phys-obj" />
      <concept name="abstr-obj" />
     </or>
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::cause-make">
-  <relation label="inherit">
-   ont::cause-effect
-  </relation>
-  <relation label="overlap">
-   wn::|induce%2:32:00|
-   wn::|stimulate%2:32:01|
-   wn::|cause%2:32:00|
-   wn::|have%2:32:00|
-   wn::|get%2:32:00|
-   wn::|make%2:32:00|
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::result">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::effect">
-    <concept name="situation" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -3928,6 +3911,12 @@
  <concept name="ont::cause-produce-reproduce">
   <relation label="inherit">
    ont::cause-effect
+  </relation>
+  <relation label="overlap">
+   wn::|yield%2:40:02|
+   wn::|produce%2:36:03|
+   wn::|cause%2:36:00|
+   wn::|induce%2:32:00|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected-result">
@@ -4100,6 +4089,7 @@
    wn::|variety%1:07:01|
    wn::|change%1:06:01|
    wn::|change%2:30:00|
+   wn::|change%1:04:00|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -4229,7 +4219,6 @@
    wn::|modification%1:11:00|
    wn::|alteration%1:11:00|
    wn::|change%1:11:00|
-   wn::|change%1:04:00|
    wn::|overload%2:35:01|
   </relation>
   <sem-frame>
@@ -9129,7 +9118,7 @@
  </concept>
  <concept name="ont::exclusive">
   <relation label="inherit">
-   ont::predicate
+   ont::manner
   </relation>
  </concept>
  <concept name="ont::execute">
@@ -11942,6 +11931,11 @@
    wn::|insufficient%3:00:00|
   </relation>
  </concept>
+ <concept name="ont::inclusive">
+  <relation label="inherit">
+   ont::manner
+  </relation>
+ </concept>
  <concept name="ont::incoming">
   <relation label="inherit">
    ont::direction-val
@@ -14251,7 +14245,7 @@
  </concept>
  <concept name="ont::manner-refl">
   <relation label="inherit">
-   ont::situation-modifier
+   ont::manner
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::val">
@@ -14283,7 +14277,7 @@
  </concept>
  <concept name="ont::manner-undo">
   <relation label="inherit">
-   ont::situation-modifier
+   ont::manner
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::val">
@@ -15170,6 +15164,8 @@
    wn::|wreathe%2:38:00|
    wn::|mobilize%2:30:00|
    wn::|go%2:33:00|
+   wn::|transport%1:04:01|
+   wn::|relocation%1:04:00|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -16645,6 +16641,22 @@
      </relation>
      <feat name="intentional">+</feat>
     </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::parts-removed">
+  <relation label="inherit">
+   ont::come-from
+  </relation>
+  <relation label="overlap">
+   wn::|precipitate%2:30:00|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected1" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::agent" optional="optional">
+    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -19709,9 +19721,16 @@
  </concept>
  <concept name="ont::remove-parts">
   <relation label="inherit">
-   ont::come-from
+   ont::event-of-causation
+  </relation>
+  <relation label="overlap">
+   wn::|purify%2:30:00|
+   wn::|filter%2:35:00|
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::affected1" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::agent" optional="optional">
     <concept name="t" />
    </role-restr-map>
