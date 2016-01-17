@@ -271,6 +271,90 @@
  <sense>
  <morph>
   <pos pos="adv" />
+  <word first-word="by" remaining-words="means of" />
+ </morph>
+ <example text="we can go by car/by air; he communicated by phone">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::by-means-of
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="by" remaining-words="means of" />
+ </morph>
+ <example text="it is accessible by helicopter">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::by-means-of
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-pred-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pred" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="by" remaining-words="means of" />
+ </morph>
+ <example text="he killed it by immersing it in water">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::by-means-of
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="vp" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
   <word first-word="through" />
  </morph>
  <provenance name="TRIPS">
@@ -333,7 +417,7 @@
   <pos pos="adv" />
   <word first-word="via" />
  </morph>
- <example text="via this road">
+ <example text="via the activation">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
@@ -355,5 +439,10 @@
    <feat name="sort">binary-constraint</feat>
   </syn-feats>
  </syntax>
+ </sense>
+ <sense>
+ <relation label="inherit">
+  ont::by-means-of
+ </relation>
  </sense>
 </dsl>

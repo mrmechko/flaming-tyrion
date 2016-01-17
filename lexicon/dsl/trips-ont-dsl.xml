@@ -492,6 +492,9 @@
    wn::|activity%1:04:00|
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::norole" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::agent">
     <or>
      <concept name="phys-obj" />
@@ -912,16 +915,6 @@
      </or>
      <feat name="intentional">+</feat>
     </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::agreement">
-  <relation label="inherit">
-   ont::agent-interaction
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::formal">
-    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -3769,9 +3762,6 @@
    </feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::norole" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
    <role-restr-map roles="ont::formal" optional="optional">
     <or>
      <concept name="situation" />
@@ -7857,6 +7847,7 @@
      <relation label="inherit">
       phys-obj
      </relation>
+     <feat name="intentional">+</feat>
      <feat name="mobility">land-movable</feat>
     </sem-feats>
    </role-restr-map>
@@ -17202,7 +17193,8 @@
      </relation>
      <feat name="origin">human</feat>
      <feat name="form">solid-object</feat>
-     <feat name="container">-</feat>
+     <feat name="container">
+-</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -25662,17 +25654,6 @@
    </relation>
    <feat name="mobility">non-self-moving</feat>
    <feat name="form">solid-object</feat>
-  </sem-feats>
- </concept>
- <concept name="ont::wheel-drive">
-  <relation label="inherit">
-   ont::drive
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
   </sem-feats>
  </concept>
  <concept name="ont::wheeze">

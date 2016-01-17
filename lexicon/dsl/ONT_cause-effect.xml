@@ -28,9 +28,6 @@
   </feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
    <or>
     <concept name="situation" />
@@ -191,6 +188,9 @@
  </sem-frame>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::agent">
   <or>
    <concept name="phys-obj" />
@@ -221,9 +221,6 @@
  </concept>
  <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::formal" optional="optional">
   <or>
    <concept name="situation" />
@@ -278,6 +275,9 @@
   wn::|activity%1:04:00|
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::agent">
    <or>
     <concept name="phys-obj" />
@@ -790,83 +790,25 @@
   ont::cause-effect
  </relation>
  <syntax>
-  <template-call template="ont::agent-theme-objcontrol-templ" />
+  <template-call template="ont::agent-effect-affected-objcontrol-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
  </sense>
  <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="drive" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="drove" />
-   </past>
-   <pastpart>
-    <word first-word="driven" />
-   </pastpart>
-   <nom>
-    <word first-word="drive" />
-   </nom>
-  </forms>
- </morph>
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <example text="it drove him crazy">
- </example>
  <relation label="inherit">
   ont::cause-effect
-  ont::agent-affected-effect-objcontrol-pred-templ
  </relation>
  <semantics>
   <sem-feats>
    <feat name="time-span">atomic</feat>
    <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="drive" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="drove" />
-   </past>
-   <pastpart>
-    <word first-word="driven" />
-   </pastpart>
-   <nom>
-    <word first-word="drive" />
-   </nom>
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="the principle drives the execution">
- </example>
- <relation label="inherit">
-  ont::cause-effect
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">unbounded</feat>
   </sem-feats>
  </semantics>
  </sense>
@@ -1008,6 +950,32 @@
   <template-call template="ont::agent-affected-formal-subjcontrol-obj-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="induction" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="induction" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="He induced him to run for office">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-affected-objcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1171,5 +1139,25 @@
    <feat name="aspect">bounded</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="result" remaining-words="in" />
+ </morph>
+ <example text="The stimulation results in the cat jumping">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-affected-objcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
 </dsl>
