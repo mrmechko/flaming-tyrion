@@ -13,21 +13,10 @@
   wn::|significant%3:00:00|
   wn::|important%3:00:00|
   wn::|senior%3:00:00|
-  wn::|necessary%3:00:00|
-  wn::|essential%3:00:00|
-  wn::|essential%3:00:00|
-  wn::|necessary%3:00:00|
-  wn::|critical%3:00:03|
   wn::|cardinal%5:00:00|
   wn::|chief(a)%5:00:02|
   wn::|all-important(a)%5:00:00|
-  wn::|crucial%3:00:00|
-  wn::|critical%5:00:00|
-  wn::|critical%5:00:00|
-  wn::|essential%5:00:00|
-  wn::|vital%5:00:00|
   wn::|basal%5:00:00|
-  wn::|indispensable%3:00:00|
   wn::|major(ip)%5:00:00|
  </relation>
  </concept>
@@ -98,11 +87,10 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::neutral1" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
  </role-restr-map>
  <role-restr-map roles="ont::of">
   <concept name="t" />
@@ -171,11 +159,10 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::neutral1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="situation" />
   </role-restr-map>
   <role-restr-map roles="ont::of">
    <concept name="t" />
@@ -192,60 +179,26 @@
   ont::evaluation-attribute-val
  </relation>
  </concept>
+ <concept name="ont::necessary">
+ <relation label="inherit">
+  ont::primary
+ </relation>
+ <relation label="overlap">
+  wn::|necessary%3:00:00|
+  wn::|essential%3:00:00|
+  wn::|critical%3:00:03|
+  wn::|crucial%3:00:00|
+  wn::|critical%5:00:00|
+  wn::|essential%5:00:00|
+  wn::|vital%5:00:00|
+  wn::|indispensable%3:00:00|
+  wn::|major(ip)%5:00:00|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="adj" />
   <word first-word="central" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::primary
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="critical" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::primary
- </relation>
- <syntax>
-  <template-call template="ont::adj-purpose-optional-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::reason"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="crucial" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::primary
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="essential" />
   <forms>
    -LY
   </forms>
@@ -285,26 +238,6 @@
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="indispensable" />
- </morph>
- <relation label="inherit">
-  ont::primary
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="indispensable" />
- </morph>
- <relation label="inherit">
-  ont::primary
-  ont::less-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
   <word first-word="main" />
   <forms>
    -LY
@@ -322,26 +255,6 @@
  <morph>
   <pos pos="adj" />
   <word first-word="major" />
- </morph>
- <relation label="inherit">
-  ont::primary
-  ont::less-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="necessari" />
- </morph>
- <relation label="inherit">
-  ont::primary
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="necessari" />
  </morph>
  <relation label="inherit">
   ont::primary
@@ -391,19 +304,6 @@
  <morph>
   <pos pos="adj" />
   <word first-word="significant" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::primary
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="vital" />
   <forms>
    -LY
   </forms>

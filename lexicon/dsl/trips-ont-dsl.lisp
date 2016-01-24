@@ -2331,7 +2331,8 @@
                   WN::|communicate%2:32:00|
                   WN::|communication%1:03:00|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (CAUSE AGENTIVE))
-         (SEM-FRAME (ONT::NOROLE (CONCEPT T) OPTIONAL)
+         (SEM-FRAME (ONT::LOCATION (CONCEPT T) OPTIONAL)
+                    (ONT::NOROLE (CONCEPT T) OPTIONAL)
                     (ONT::NEUTRAL (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                      OPTIONAL)
                     (ONT::FORMAL
@@ -2530,7 +2531,9 @@
 (CONCEPT ONT::CONFIRM
          (INHERIT ONT::RESPONSE)
          (OVERLAP WN::|confirm%2:32:00|)
-         (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE)))
+         (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
+         (SEM-FRAME
+          (ONT::LOCATION (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ)) OPTIONAL)))
 
 (CONCEPT ONT::CONFUSE
          (INHERIT ONT::EVENT-OF-AWARENESS)
@@ -6547,7 +6550,8 @@
                   WN::|noesis%1:03:00|
                   WN::|grounds%1:10:00|
                   WN::|reason%1:10:00|)
-         (SEM-FRAME (ONT::OF (CONCEPT T) OPTIONAL)))
+         (SEM-FRAME (ONT::FORMAL (CONCEPT SITUATION) OPTIONAL)
+                    (ONT::OF (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::MENTAL-VAL
          (INHERIT ONT::PROPERTY-VAL)
@@ -6898,6 +6902,18 @@
                   WN::|nearby%5:00:00|))
 
 (CONCEPT ONT::NEAR-RELN (INHERIT ONT::PROXIMATE-RELN))
+
+(CONCEPT ONT::NECESSARY
+         (INHERIT ONT::PRIMARY)
+         (OVERLAP WN::|necessary%3:00:00|
+                  WN::|essential%3:00:00|
+                  WN::|critical%3:00:03|
+                  WN::|crucial%3:00:00|
+                  WN::|critical%5:00:00|
+                  WN::|essential%5:00:00|
+                  WN::|vital%5:00:00|
+                  WN::|indispensable%3:00:00|
+                  WN::|major(ip)%5:00:00|))
 
 (CONCEPT ONT::NECESSITY
          (INHERIT ONT::EVENT-OF-STATE)
@@ -8014,21 +8030,10 @@
                   WN::|significant%3:00:00|
                   WN::|important%3:00:00|
                   WN::|senior%3:00:00|
-                  WN::|necessary%3:00:00|
-                  WN::|essential%3:00:00|
-                  WN::|essential%3:00:00|
-                  WN::|necessary%3:00:00|
-                  WN::|critical%3:00:03|
                   WN::|cardinal%5:00:00|
                   WN::|chief(a)%5:00:02|
                   WN::|all-important(a)%5:00:00|
-                  WN::|crucial%3:00:00|
-                  WN::|critical%5:00:00|
-                  WN::|critical%5:00:00|
-                  WN::|essential%5:00:00|
-                  WN::|vital%5:00:00|
                   WN::|basal%5:00:00|
-                  WN::|indispensable%3:00:00|
                   WN::|major(ip)%5:00:00|))
 
 (CONCEPT ONT::PRIORITY (INHERIT ONT::PREDICATE))
@@ -8143,11 +8148,8 @@
                          (CONCEPT ABSTR-OBJ)
                          (CONCEPT SITUATION))
                      OPTIONAL)
-                    (ONT::NEUTRAL1
-                     (OR (CONCEPT PHYS-OBJ)
-                         (CONCEPT ABSTR-OBJ)
-                         (CONCEPT SITUATION))
-                     OPTIONAL)
+                    (ONT::NEUTRAL1 (CONCEPT T) OPTIONAL)
+                    (ONT::FORMAL (CONCEPT SITUATION) OPTIONAL)
                     (ONT::OF (CONCEPT T))))
 
 (CONCEPT ONT::PROPOSAL
@@ -8198,7 +8200,6 @@
 (CONCEPT ONT::PSYCHOLOGICAL-PROPERTY-VAL
          (INHERIT ONT::ANIMAL-PROPERTY-VAL)
          (SEM-FRAME
-          (ONT::FORMAL (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
           (ONT::STIMULUS
            (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ))
            OPTIONAL)))
@@ -8916,6 +8917,14 @@
 (CONCEPT ONT::RESTRICTION (INHERIT ONT::PREDICATE))
 
 (CONCEPT ONT::RESULT (INHERIT ONT::OUTCOME) (SEM-FRAME (ONT::OF (CONCEPT T))))
+
+(CONCEPT ONT::RESULTING-OBJECT
+         (INHERIT ONT::PREDICATE)
+         (SEM-FRAME
+          (ONT::VAL
+           (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +) (ORIGIN LIVING)))
+          (ONT::OF
+           (SEM-FEATS (INHERIT SITUATION) (TYPE CHANGE) (ASPECT DYNAMIC)))))
 
 (CONCEPT ONT::RETAIN
          (INHERIT ONT::LOCATED-MOVE-STATE)
@@ -9661,11 +9670,6 @@
 (CONCEPT ONT::SMELLABLE-PROPERTY-VAL (INHERIT ONT::SENSORY-PROPERTY-VAL))
 
 (CONCEPT ONT::SMOKING (INHERIT ONT::CONSUME) (OVERLAP WN::|smoke%2:34:00|))
-
-(CONCEPT ONT::SO-THAT
-         (INHERIT ONT::PREDICATE)
-         (SEM-FRAME (ONT::VAL (CONCEPT T) OPTIONAL)
-                    (ONT::OF (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::SOCIAL-ACTIVITY
          (INHERIT ONT::ACTIVITY)
@@ -10530,7 +10534,7 @@
 
 (CONCEPT ONT::THERE (INHERIT ONT::POS-WRT-SPEAKER-RELN))
 
-(CONCEPT ONT::THEREFORE (INHERIT ONT::REASON))
+(CONCEPT ONT::THEREFORE (INHERIT ONT::SITUATION-MODIFIER))
 
 (CONCEPT ONT::THICKNESS (INHERIT ONT::LINEAR-D))
 

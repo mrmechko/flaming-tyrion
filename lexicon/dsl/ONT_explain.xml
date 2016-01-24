@@ -184,6 +184,9 @@
  </concept>
  <concept name="situation" />
  <sem-frame>
+ <role-restr-map roles="ont::location" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
  </role-restr-map>
@@ -267,6 +270,9 @@
   <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::location" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
   </role-restr-map>
@@ -381,6 +387,68 @@
   <template-call template="ont::agent-neutral-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="explanation" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="explanation" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="He explained that the cat caught the mouse.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::explain
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-formal-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="explanation" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="explanation" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="He explained how the cat caught the mouse.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::explain
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-theme-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

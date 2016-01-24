@@ -488,7 +488,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="result" remaining-words="in" />
+  <word first-word="result" />
  </morph>
  <example text="The stimulation results in the activation">
   <provenance name="TRIPS"/>
@@ -497,12 +497,30 @@
   ont::cause-produce-reproduce
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-as-comp-templ" xp="'(w::pp w::in)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::in" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="result" />
+ </morph>
+ <example text="Side effects may result.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cause-produce-reproduce
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <relation label="inherit">
+  ont::cause-produce-reproduce
+ </relation>
  </sense>
  <sense>
  <morph>

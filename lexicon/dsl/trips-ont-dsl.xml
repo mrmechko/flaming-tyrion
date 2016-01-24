@@ -5217,6 +5217,9 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::location" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::norole" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -5658,6 +5661,14 @@
    </relation>
    <feat name="cause">agentive</feat>
   </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::location" optional="optional">
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::confuse">
   <relation label="inherit">
@@ -14742,6 +14753,9 @@
    wn::|reason%1:10:00|
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::formal" optional="optional">
+    <concept name="situation" />
+   </role-restr-map>
    <role-restr-map roles="ont::of" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -15559,6 +15573,22 @@
  <concept name="ont::near-reln">
   <relation label="inherit">
    ont::proximate-reln
+  </relation>
+ </concept>
+ <concept name="ont::necessary">
+  <relation label="inherit">
+   ont::primary
+  </relation>
+  <relation label="overlap">
+   wn::|necessary%3:00:00|
+   wn::|essential%3:00:00|
+   wn::|critical%3:00:03|
+   wn::|crucial%3:00:00|
+   wn::|critical%5:00:00|
+   wn::|essential%5:00:00|
+   wn::|vital%5:00:00|
+   wn::|indispensable%3:00:00|
+   wn::|major(ip)%5:00:00|
   </relation>
  </concept>
  <concept name="ont::necessity">
@@ -17193,8 +17223,7 @@
      </relation>
      <feat name="origin">human</feat>
      <feat name="form">solid-object</feat>
-     <feat name="container">
--</feat>
+     <feat name="container">-</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -18117,21 +18146,10 @@
    wn::|significant%3:00:00|
    wn::|important%3:00:00|
    wn::|senior%3:00:00|
-   wn::|necessary%3:00:00|
-   wn::|essential%3:00:00|
-   wn::|essential%3:00:00|
-   wn::|necessary%3:00:00|
-   wn::|critical%3:00:03|
    wn::|cardinal%5:00:00|
    wn::|chief(a)%5:00:02|
    wn::|all-important(a)%5:00:00|
-   wn::|crucial%3:00:00|
-   wn::|critical%5:00:00|
-   wn::|critical%5:00:00|
-   wn::|essential%5:00:00|
-   wn::|vital%5:00:00|
    wn::|basal%5:00:00|
-   wn::|indispensable%3:00:00|
    wn::|major(ip)%5:00:00|
   </relation>
  </concept>
@@ -18383,11 +18401,10 @@
     </or>
    </role-restr-map>
    <role-restr-map roles="ont::neutral1" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::formal" optional="optional">
+    <concept name="situation" />
    </role-restr-map>
    <role-restr-map roles="ont::of">
     <concept name="t" />
@@ -18505,12 +18522,6 @@
    ont::animal-property-val
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::formal" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-   </role-restr-map>
    <role-restr-map roles="ont::stimulus" optional="optional">
     <or>
      <concept name="phys-obj" />
@@ -20166,6 +20177,31 @@
   <sem-frame>
    <role-restr-map roles="ont::of">
     <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::resulting-object">
+  <relation label="inherit">
+   ont::predicate
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::val">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="intentional">+</feat>
+     <feat name="origin">living</feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::of">
+    <sem-feats>
+     <relation label="inherit">
+      situation
+     </relation>
+     <feat name="type">change</feat>
+     <feat name="aspect">dynamic</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -21884,19 +21920,6 @@
   <relation label="overlap">
    wn::|smoke%2:34:00|
   </relation>
- </concept>
- <concept name="ont::so-that">
-  <relation label="inherit">
-   ont::predicate
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::val" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::of" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::social-activity">
   <relation label="inherit">
@@ -23808,7 +23831,7 @@
  </concept>
  <concept name="ont::therefore">
   <relation label="inherit">
-   ont::reason
+   ont::situation-modifier
   </relation>
  </concept>
  <concept name="ont::thickness">
