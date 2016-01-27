@@ -41,6 +41,23 @@
  </or>
  </concept>
  <concept name="abstr-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::scale">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="gradability">+</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00|
@@ -102,15 +119,31 @@
  <feat name="information">-</feat>
  <feat name="container">-</feat>
  </sem-feats>
- <concept name="ont::abstract-object-property">
+ <concept name="ont::domain-property">
  <relation label="inherit">
   ont::abstract-object
-  abstr-obj
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::scale">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
-  ont::abstract-object-property
+  ont::domain-property
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -333,7 +366,7 @@
   <template-call template="ont::adj-theme-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">-</feat>
@@ -420,7 +453,7 @@
   <template-call template="ont::adj-theme-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">-</feat>
@@ -506,7 +539,7 @@
   <template-call template="ont::adj-theme-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">-</feat>

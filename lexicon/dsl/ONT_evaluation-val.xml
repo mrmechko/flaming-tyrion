@@ -52,6 +52,23 @@
  </or>
  </concept>
  <concept name="abstr-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::scale">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="gradability">+</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00|
@@ -63,14 +80,6 @@
   abstr-obj
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::neutral">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral1">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
@@ -78,11 +87,27 @@
  <feat name="intensity">hi</feat>
  <feat name="gradability">+</feat>
  </sem-feats>
- <concept name="ont::abstract-object-property">
+ <concept name="ont::domain-property">
  <relation label="inherit">
   ont::abstract-object
-  abstr-obj
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::scale">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::neutral1" optional="optional">
@@ -104,7 +129,7 @@
  </sem-frame>
  <concept name="ont::relation">
  <relation label="inherit">
-  ont::abstract-object-property
+  ont::domain-property
  </relation>
  <relation label="overlap">
   wn::|relation%1:03:00|
@@ -118,14 +143,6 @@
   <feat name="intensity">hi</feat>
   <feat name="gradability">+</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::neutral">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral1">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sense>
  <morph>
@@ -141,7 +158,7 @@
  <syntax>
   <template-call template="ont::adj-co-theme-templ" xp="'(w::pp w::for)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::neutral1" optional="optional"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::neutral1"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>

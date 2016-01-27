@@ -41,6 +41,23 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::scale">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="gradability">+</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00|
@@ -53,11 +70,27 @@
  </relation>
  </concept>
  <concept name="abstr-obj" />
- <concept name="ont::abstract-object-property">
+ <concept name="ont::domain-property">
  <relation label="inherit">
   ont::abstract-object
-  abstr-obj
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::scale">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -69,8 +102,13 @@
  </sem-feats>
  <concept name="ont::function-object">
  <relation label="inherit">
-  ont::abstract-object-property
+  ont::domain-property
   abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::composition">
+ <relation label="inherit">
+  ont::information-function-object
  </relation>
  </concept>
  <concept name="ont::information">
@@ -136,32 +174,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="abstract" />
- </morph>
- <example text="read the abstract">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::information-function-object
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="autobiographi" />
- </morph>
- <example text="he wrote an autobiography">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::information-function-object
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="badge" />
  </morph>
  <example text="here's your visitor security badge">
@@ -178,19 +190,6 @@
   <word first-word="banner" />
  </morph>
  <example text="click the Load Images button in the Junk Mail banner">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::information-function-object
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="biographi" />
- </morph>
- <example text="he wrote a biography">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
@@ -368,19 +367,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="memoir" />
- </morph>
- <example text="he wrote a memoir about his adventures">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::information-function-object
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="notice" />
  </morph>
  <provenance name="TRIPS">
@@ -521,21 +507,6 @@
   <provenance name="BASE500"/>
  </provenance>
  <example text="delete this step">
- </example>
- <relation label="inherit">
-  ont::information-function-object
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="stori" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he wrote a story about his adventures">
  </example>
  <relation label="inherit">
   ont::information-function-object

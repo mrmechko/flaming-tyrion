@@ -39,12 +39,6 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="abstr-obj" />
- <sem-frame>
- <role-restr-map roles="ont::of" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00|
@@ -53,6 +47,18 @@
  </relation>
  <relation label="inherit">
   ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="abstr-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::of" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object-nontemporal">
+ <relation label="inherit">
+  ont::abstract-object
   abstr-obj
  </relation>
  </concept>
@@ -75,7 +81,7 @@
  </sem-feats>
  <concept name="ont::group-object">
  <relation label="inherit">
-  ont::abstract-object
+  ont::abstract-object-nontemporal
  </relation>
  <relation label="overlap">
   wn::|mathematical_group%1:09:00|

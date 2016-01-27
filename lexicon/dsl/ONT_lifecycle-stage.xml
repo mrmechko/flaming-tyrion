@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::lifecycle-stage">
  <relation label="inherit">
-  ont::abstract-object
+  ont::domain-property
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::of" optional="optional">
@@ -45,15 +45,22 @@
  </or>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::of" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">living</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::scale">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="gradability">+</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00|
@@ -64,6 +71,38 @@
   ont::referential-sem
   abstr-obj
  </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">living</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::domain-property">
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::scale">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sense>
  <morph>
