@@ -390,6 +390,10 @@
          (INHERIT ONT::EXPENSIVENESS)
          (OVERLAP WN::|afford%2:34:00|))
 
+(CONCEPT ONT::AFRAID
+         (INHERIT ONT::NEG-INTENSE-EMOTIONAL-VAL)
+         (OVERLAP WN::|afraid%3:00:00|))
+
 (CONCEPT ONT::AGE
          (INHERIT ONT::PHYS-MEASURE-DOMAIN)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (MEASURE-FUNCTION TERM)))
@@ -415,6 +419,10 @@
           (ONT::AGENT
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL +)))))
+
+(CONCEPT ONT::AGITATED
+         (INHERIT ONT::NEG-INTENSE-EMOTIONAL-VAL)
+         (OVERLAP WN::|agitated%3:00:00|))
 
 (CONCEPT ONT::AILING
          (INHERIT ONT::PHYSICAL-SYMPTOM-VAL)
@@ -517,6 +525,10 @@
          (INHERIT ONT::VERTEBRATE)
          (OVERLAP WN::|amphibian%1:05:00|))
 
+(CONCEPT ONT::AMUSED
+         (INHERIT ONT::POS-SOFT-EMOTIONAL-VAL)
+         (OVERLAP WN::|amused%3:00:00:pleased:00|))
+
 (CONCEPT ONT::ANALOG
          (INHERIT ONT::MODE)
          (OVERLAP WN::|analogue%3:00:00| WN::|analogue%3:00:00|))
@@ -528,6 +540,10 @@
          (OVERLAP WN::|angular_unit%1:23:00|)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE LINEAR-SCALE))
          (SEM-FRAME (ONT::OF (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +)))))
+
+(CONCEPT ONT::ANGRY
+         (INHERIT ONT::NEG-INTENSE-EMOTIONAL-VAL)
+         (OVERLAP WN::|afraid%3:00:00|))
 
 (CONCEPT ONT::ANIMAL
          (INHERIT ONT::ORGANISM)
@@ -1401,6 +1417,11 @@
 
 (CONCEPT ONT::BOOT-UP (INHERIT ONT::START-OBJECT))
 
+(CONCEPT ONT::BORED
+         (INHERIT ONT::NEG-SOFT-EMOTIONAL-VAL)
+         (OVERLAP WN::|bored%3:00:00:tired:00|
+                  WN::|bored%3:00:00:uninterested:00|))
+
 (CONCEPT ONT::BORING
          (INHERIT ONT::FASCINATION-VAL)
          (OVERLAP WN::|boring%5:00:00|
@@ -1555,6 +1576,10 @@
 (CONCEPT ONT::CALCULATION
          (INHERIT ONT::BECOMING-AWARE-OF-VALUE)
          (OVERLAP WN::|account%2:40:00| WN::|get%2:31:03|))
+
+(CONCEPT ONT::CALM
+         (INHERIT ONT::POS-SOFT-EMOTIONAL-VAL)
+         (OVERLAP WN::|calm%3:00:00:composed:00|))
 
 (CONCEPT ONT::CAN-BE-DONE-VAL
          (INHERIT ONT::PROCESS-VAL)
@@ -2317,17 +2342,14 @@
                   WN::|communicate%2:32:00|
                   WN::|communication%1:03:00|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (CAUSE AGENTIVE))
-         (SEM-FRAME (ONT::LOCATION (CONCEPT T) OPTIONAL)
-                    (ONT::NOROLE (CONCEPT T) OPTIONAL)
-                    (ONT::NEUTRAL (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
-                     OPTIONAL)
-                    (ONT::FORMAL
-                     (OR (CONCEPT ABSTR-OBJ)
-                         (CONCEPT SITUATION)
-                         (CONCEPT PROPOSITION))
-                     OPTIONAL)
-                    (ONT::AFFECTED
-                     (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
+         (SEM-FRAME
+          (ONT::LOCATION (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ)) OPTIONAL)
+          (ONT::NOROLE (CONCEPT T) OPTIONAL)
+          (ONT::NEUTRAL (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
+          (ONT::FORMAL
+           (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION) (CONCEPT PROPOSITION))
+           OPTIONAL)
+          (ONT::AFFECTED (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
 
 (CONCEPT ONT::COMMUNICATION-CHANNEL (INHERIT ONT::INFO-HOLDER))
 
@@ -2517,11 +2539,9 @@
 (CONCEPT ONT::CONFIGURATION-PROPERTY-VAL (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
 
 (CONCEPT ONT::CONFIRM
-         (INHERIT ONT::RESPONSE)
+         (INHERIT ONT::ASSERT)
          (OVERLAP WN::|confirm%2:32:00|)
-         (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
-         (SEM-FRAME
-          (ONT::LOCATION (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ)) OPTIONAL)))
+         (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE)))
 
 (CONCEPT ONT::CONFUSE
          (INHERIT ONT::EVENT-OF-AWARENESS)
@@ -3145,6 +3165,10 @@
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL +)))))
 
+(CONCEPT ONT::DESIROUS
+         (INHERIT ONT::POS-INTENSE-EMOTIONAL-VAL)
+         (OVERLAP WN::|desirous%3:00:00|))
+
 (CONCEPT ONT::DESTINATION
          (INHERIT ONT::LOCATION)
          (OVERLAP WN::|finish%1:15:00|
@@ -3376,6 +3400,10 @@
          (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -)))
 
 (CONCEPT ONT::DISCUSS (INHERIT ONT::CONVERSING) (OVERLAP WN::|discuss%2:32:00|))
+
+(CONCEPT ONT::DISGUSTED
+         (INHERIT ONT::NEG-INTENSE-EMOTIONAL-VAL)
+         (OVERLAP WN::|disgusted%3:00:00:displeased:00|))
 
 (CONCEPT ONT::DISLIKING
          (INHERIT ONT::EXPERIENCER-EMOTION)
@@ -3750,6 +3778,10 @@
 
 (CONCEPT ONT::ENTRANT (INHERIT ONT::PERSON) (OVERLAP WN::|entrant%1:18:02|))
 
+(CONCEPT ONT::ENVIOUS
+         (INHERIT ONT::NEG-INTENSE-EMOTIONAL-VAL)
+         (OVERLAP WN::|envious%3:00:00:desirous:00|))
+
 (CONCEPT ONT::ENVYING
          (INHERIT ONT::EXPERIENCER-EMOTION)
          (OVERLAP WN::|envy%2:37:01| WN::|begrudge%2:37:00|))
@@ -4072,6 +4104,12 @@
                   WN::|beat%2:29:00|
                   WN::|tucker%2:29:00|
                   WN::|tucker_out%2:29:00|))
+
+(CONCEPT ONT::EXCITED
+         (INHERIT ONT::POS-INTENSE-EMOTIONAL-VAL)
+         (OVERLAP WN::|excited%3:00:00|
+                  WN::|excited%3:00:00:wild:02|
+                  WN::|enthusiastic%3:00:00|))
 
 (CONCEPT ONT::EXCLAMATION (INHERIT ONT::COMMUNICATION))
 
@@ -6961,6 +6999,8 @@
          (SEM-FRAME
           (ONT::RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
 
+(CONCEPT ONT::NEUTRAL-EMOTIONAL-VAL (INHERIT ONT::EMOTIONAL-VAL))
+
 (CONCEPT ONT::NOISY
          (INHERIT ONT::LOUDNESS-VAL)
          (OVERLAP WN::|noisy%3:00:00| WN::|loud%3:00:00|))
@@ -7727,6 +7767,10 @@
 (CONCEPT ONT::PLAY
          (INHERIT ONT::EXECUTE)
          (OVERLAP WN::|play%2:33:00| WN::|play%2:41:03| WN::|play%2:41:00|))
+
+(CONCEPT ONT::PLEASANT
+         (INHERIT ONT::POS-SOFT-EMOTIONAL-VAL)
+         (OVERLAP WN::|pleasant%3:00:00|))
 
 (CONCEPT ONT::PLEASANT-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
@@ -9747,7 +9791,9 @@
                   WN::|resolve%2:31:03|
                   WN::|solve%2:31:01|))
 
-(CONCEPT ONT::SORRY (INHERIT ONT::NEG-SOFT-EMOTIONAL-VAL))
+(CONCEPT ONT::SORRY
+         (INHERIT ONT::NEG-SOFT-EMOTIONAL-VAL)
+         (OVERLAP WN::|sorry%3:00:02|))
 
 (CONCEPT ONT::SORT (INHERIT ONT::ARRANGING))
 
@@ -10281,6 +10327,8 @@
 (CONCEPT ONT::SURPLUS
          (INHERIT ONT::ORDERED-DOMAIN)
          (SEM-FRAME (ONT::OF (CONCEPT T))))
+
+(CONCEPT ONT::SURPRISED (INHERIT ONT::EMOTIONAL-VAL))
 
 (CONCEPT ONT::SURRENDER
          (INHERIT ONT::RELINQUISH)
@@ -10916,6 +10964,10 @@
                   WN::|disrobe%2:29:01|
                   WN::|peel%2:29:02|))
 
+(CONCEPT ONT::UNEASY
+         (INHERIT ONT::NEG-SOFT-EMOTIONAL-VAL)
+         (OVERLAP WN::|anxious%3:00:00:troubled:00| WN::|uneasy%3:00:00|))
+
 (CONCEPT ONT::UNFAMILIARITY-VAL
          (INHERIT ONT::PROPERTY-VAL)
          (SEM-FRAME (ONT::STIMULUS (CONCEPT T) OPTIONAL)))
@@ -10927,12 +10979,13 @@
 (CONCEPT ONT::UNFORTUNATE (INHERIT ONT::PERSON))
 
 (CONCEPT ONT::UNHAPPY
-         (INHERIT ONT::NEG-INTENSE-EMOTIONAL-VAL)
+         (INHERIT ONT::NEG-SOFT-EMOTIONAL-VAL)
          (OVERLAP WN::|dysphoric%3:00:00|
                   WN::|unhappy%3:00:00|
                   WN::|miserable%5:00:00|
                   WN::|melancholy%5:00:00|
-                  WN::|sad%3:00:00|))
+                  WN::|sad%3:00:00|
+                  WN::|gloomy%3:00:00:dejected:00|))
 
 (CONCEPT ONT::UNIQUENESS-VAL (INHERIT ONT::NUMBER-RELATED-PROPERTY-VAL))
 
@@ -10972,6 +11025,12 @@
                   WN::|inconspicuous%3:00:00|))
 
 (CONCEPT ONT::UNOBSTRUCTED (INHERIT ONT::FLOW-VAL))
+
+(CONCEPT ONT::UNPLEASANT
+         (INHERIT ONT::NEG-SOFT-EMOTIONAL-VAL)
+         (OVERLAP WN::|grumpy%3:00:00:ill-natured:00|
+                  WN::|disagreeable%3:00:00:ill-natured:00|
+                  WN::|unpleasant%3:00:00|))
 
 (CONCEPT ONT::UNRELIABLE
          (INHERIT ONT::CERTAINTY-VAL)

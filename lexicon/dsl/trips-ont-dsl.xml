@@ -823,6 +823,14 @@
    wn::|afford%2:34:00|
   </relation>
  </concept>
+ <concept name="ont::afraid">
+  <relation label="inherit">
+   ont::neg-intense-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|afraid%3:00:00|
+  </relation>
+ </concept>
  <concept name="ont::age">
   <relation label="inherit">
    ont::phys-measure-domain
@@ -886,6 +894,14 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::agitated">
+  <relation label="inherit">
+   ont::neg-intense-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|agitated%3:00:00|
+  </relation>
  </concept>
  <concept name="ont::ailing">
   <relation label="inherit">
@@ -1077,6 +1093,14 @@
    wn::|amphibian%1:05:00|
   </relation>
  </concept>
+ <concept name="ont::amused">
+  <relation label="inherit">
+   ont::pos-soft-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|amused%3:00:00:pleased:00|
+  </relation>
+ </concept>
  <concept name="ont::analog">
   <relation label="inherit">
    ont::mode
@@ -1114,6 +1138,14 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::angry">
+  <relation label="inherit">
+   ont::neg-intense-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|afraid%3:00:00|
+  </relation>
  </concept>
  <concept name="ont::animal">
   <relation label="inherit">
@@ -3114,6 +3146,15 @@
    ont::start-object
   </relation>
  </concept>
+ <concept name="ont::bored">
+  <relation label="inherit">
+   ont::neg-soft-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|bored%3:00:00:tired:00|
+   wn::|bored%3:00:00:uninterested:00|
+  </relation>
+ </concept>
  <concept name="ont::boring">
   <relation label="inherit">
    ont::fascination-val
@@ -3445,6 +3486,14 @@
   <relation label="overlap">
    wn::|account%2:40:00|
    wn::|get%2:31:03|
+  </relation>
+ </concept>
+ <concept name="ont::calm">
+  <relation label="inherit">
+   ont::pos-soft-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|calm%3:00:00:composed:00|
   </relation>
  </concept>
  <concept name="ont::can-be-done-val">
@@ -5187,7 +5236,10 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::location" optional="optional">
-    <concept name="t" />
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
    </role-restr-map>
    <role-restr-map roles="ont::norole" optional="optional">
     <concept name="t" />
@@ -5624,7 +5676,7 @@
  </concept>
  <concept name="ont::confirm">
   <relation label="inherit">
-   ont::response
+   ont::assert
   </relation>
   <relation label="overlap">
    wn::|confirm%2:32:00|
@@ -5635,14 +5687,6 @@
    </relation>
    <feat name="cause">agentive</feat>
   </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::location" optional="optional">
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::confuse">
   <relation label="inherit">
@@ -7055,6 +7099,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::desirous">
+  <relation label="inherit">
+   ont::pos-intense-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|desirous%3:00:00|
+  </relation>
+ </concept>
  <concept name="ont::destination">
   <relation label="inherit">
    ont::location
@@ -7550,6 +7602,14 @@
   </relation>
   <relation label="overlap">
    wn::|discuss%2:32:00|
+  </relation>
+ </concept>
+ <concept name="ont::disgusted">
+  <relation label="inherit">
+   ont::neg-intense-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|disgusted%3:00:00:displeased:00|
   </relation>
  </concept>
  <concept name="ont::disliking">
@@ -8422,6 +8482,14 @@
    wn::|entrant%1:18:02|
   </relation>
  </concept>
+ <concept name="ont::envious">
+  <relation label="inherit">
+   ont::neg-intense-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|envious%3:00:00:desirous:00|
+  </relation>
+ </concept>
  <concept name="ont::envying">
   <relation label="inherit">
    ont::experiencer-emotion
@@ -9093,6 +9161,16 @@
    wn::|beat%2:29:00|
    wn::|tucker%2:29:00|
    wn::|tucker_out%2:29:00|
+  </relation>
+ </concept>
+ <concept name="ont::excited">
+  <relation label="inherit">
+   ont::pos-intense-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|excited%3:00:00|
+   wn::|excited%3:00:00:wild:02|
+   wn::|enthusiastic%3:00:00|
   </relation>
  </concept>
  <concept name="ont::exclamation">
@@ -15681,6 +15759,11 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::neutral-emotional-val">
+  <relation label="inherit">
+   ont::emotional-val
+  </relation>
+ </concept>
  <concept name="ont::noisy">
   <relation label="inherit">
    ont::loudness-val
@@ -17099,7 +17182,8 @@
    <role-restr-map roles="ont::of">
     <concept name="phys-obj" />
    </role-restr-map>
-  </sem-frame>
+  </
+sem-frame>
  </concept>
  <concept name="ont::physical-discrete-property-val">
   <relation label="inherit">
@@ -17420,6 +17504,14 @@
    wn::|play%2:33:00|
    wn::|play%2:41:03|
    wn::|play%2:41:00|
+  </relation>
+ </concept>
+ <concept name="ont::pleasant">
+  <relation label="inherit">
+   ont::pos-soft-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|pleasant%3:00:00|
   </relation>
  </concept>
  <concept name="ont::pleasant-val">
@@ -22112,6 +22204,9 @@
   <relation label="inherit">
    ont::neg-soft-emotional-val
   </relation>
+  <relation label="overlap">
+   wn::|sorry%3:00:02|
+  </relation>
  </concept>
  <concept name="ont::sort">
   <relation label="inherit">
@@ -23244,6 +23339,11 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::surprised">
+  <relation label="inherit">
+   ont::emotional-val
+  </relation>
  </concept>
  <concept name="ont::surrender">
   <relation label="inherit">
@@ -24715,6 +24815,15 @@
    wn::|peel%2:29:02|
   </relation>
  </concept>
+ <concept name="ont::uneasy">
+  <relation label="inherit">
+   ont::neg-soft-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|anxious%3:00:00:troubled:00|
+   wn::|uneasy%3:00:00|
+  </relation>
+ </concept>
  <concept name="ont::unfamiliarity-val">
   <relation label="inherit">
    ont::property-val
@@ -24740,7 +24849,7 @@
  </concept>
  <concept name="ont::unhappy">
   <relation label="inherit">
-   ont::neg-intense-emotional-val
+   ont::neg-soft-emotional-val
   </relation>
   <relation label="overlap">
    wn::|dysphoric%3:00:00|
@@ -24748,6 +24857,7 @@
    wn::|miserable%5:00:00|
    wn::|melancholy%5:00:00|
    wn::|sad%3:00:00|
+   wn::|gloomy%3:00:00:dejected:00|
   </relation>
  </concept>
  <concept name="ont::uniqueness-val">
@@ -24819,6 +24929,16 @@
  <concept name="ont::unobstructed">
   <relation label="inherit">
    ont::flow-val
+  </relation>
+ </concept>
+ <concept name="ont::unpleasant">
+  <relation label="inherit">
+   ont::neg-soft-emotional-val
+  </relation>
+  <relation label="overlap">
+   wn::|grumpy%3:00:00:ill-natured:00|
+   wn::|disagreeable%3:00:00:ill-natured:00|
+   wn::|unpleasant%3:00:00|
   </relation>
  </concept>
  <concept name="ont::unreliable">

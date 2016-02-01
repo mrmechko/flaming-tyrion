@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::confirm">
  <relation label="inherit">
-  ont::response
+  ont::assert
  </relation>
  <relation label="overlap">
   wn::|confirm%2:32:00|
@@ -15,14 +15,6 @@
   </relation>
   <feat name="cause">agentive</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::location" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -197,7 +189,10 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::location" optional="optional">
-  <concept name="t" />
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
@@ -254,6 +249,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">agentive</feat>
+ </sem-feats>
  <concept name="ont::communication">
  <relation label="inherit">
   ont::agent-interaction
@@ -277,7 +278,10 @@
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::location" optional="optional">
-   <concept name="t" />
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
@@ -303,28 +307,35 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::illocution">
+ <relation label="inherit">
+  ont::communication
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::representative">
+ <relation label="inherit">
+  ont::illocution
+ </relation>
+ </concept>
  <concept name="situation" />
- <sem-frame>
- <role-restr-map roles="ont::location" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
  <feat name="cause">agentive</feat>
  </sem-feats>
- <concept name="ont::response">
+ <concept name="ont::assert">
  <relation label="inherit">
-  ont::communication
+  ont::representative
  </relation>
  <relation label="overlap">
-  wn::|react%2:31:00|
-  wn::|respond%2:31:00|
+  wn::|assert%2:32:01|
  </relation>
  </concept>
  <sense>
