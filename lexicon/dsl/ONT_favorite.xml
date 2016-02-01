@@ -4,11 +4,12 @@
  <provenance name="TRIPS"/>
  <concept name="ont::favorite">
  <relation label="inherit">
-  ont::comparison
+  ont::relation
  </relation>
  <relation label="overlap">
   wn::|favorite%1:09:00|
-  wn::|favourite%1:09:00|
+  wn::|favourite%3:00:00:popular:00|
+  wn::|favourite%3:00:00:loved:00|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -38,6 +39,23 @@
  </or>
  </concept>
  <concept name="abstr-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::scale">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="gradability">+</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00|
@@ -53,56 +71,47 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="information">mental-construct</feat>
+ <feat name="intensity">hi</feat>
+ <feat name="gradability">+</feat>
  </sem-feats>
- <concept name="ont::abstract-object-nontemporal">
+ <concept name="ont::domain-property">
  <relation label="inherit">
   ont::abstract-object
-  abstr-obj
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::val" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::of" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::mental-construction">
- <relation label="inherit">
-  ont::abstract-object-nontemporal
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="information">mental-construct</feat>
+  <feat name="gradability">+</feat>
  </sem-feats>
- </concept>
- <concept name="ont::ps-object">
- <relation label="inherit">
-  ont::mental-construction
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::val" optional="optional">
+  <role-restr-map roles="ont::scale">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::formal" optional="optional">
+  <role-restr-map roles="ont::ground">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::of" optional="optional">
+  <role-restr-map roles="ont::figure">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::comparison">
+ <concept name="ont::relation">
  <relation label="inherit">
-  ont::ps-object
+  ont::domain-property
  </relation>
+ <relation label="overlap">
+  wn::|relation%1:03:00|
+  wn::|amount%2:42:03|
+  wn::|bear_on%2:42:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intensity">hi</feat>
+  <feat name="gradability">+</feat>
+ </sem-feats>
  </concept>
  <sense>
  <morph>

@@ -8115,7 +8115,7 @@
    wn::|discharge%2:29:00|
   </relation>
  </concept>
- <concept name="ont::emotional-property-val">
+ <concept name="ont::emotional-val">
   <relation label="inherit">
    ont::psychological-property-val
   </relation>
@@ -8533,11 +8533,13 @@
  </concept>
  <concept name="ont::euphoric">
   <relation label="inherit">
-   ont::emotional-property-val
+   ont::pos-intense-emotional-val
   </relation>
   <relation label="overlap">
    wn::|euphoric%3:00:00|
    wn::|happy%3:00:00|
+   wn::|beaming%5:00:00|
+   wn::|cheerful%3:00:00|
   </relation>
  </concept>
  <concept name="ont::evacuate">
@@ -9634,11 +9636,12 @@
  </concept>
  <concept name="ont::favorite">
   <relation label="inherit">
-   ont::comparison
+   ont::relation
   </relation>
   <relation label="overlap">
    wn::|favorite%1:09:00|
-   wn::|favourite%1:09:00|
+   wn::|favourite%3:00:00:popular:00|
+   wn::|favourite%3:00:00:loved:00|
   </relation>
  </concept>
  <concept name="ont::fearing">
@@ -10925,12 +10928,10 @@
  </concept>
  <concept name="ont::grateful">
   <relation label="inherit">
-   ont::emotional-property-val
+   ont::pos-soft-emotional-val
   </relation>
   <relation label="overlap">
    wn::|grateful%3:00:00|
-   wn::|beaming%5:00:00|
-   wn::|cheerful%3:00:00|
    wn::|glad%3:00:00|
    wn::|glad%5:00:00|
   </relation>
@@ -15647,6 +15648,21 @@
    ont::condition
   </relation>
  </concept>
+ <concept name="ont::neg-emotional-val">
+  <relation label="inherit">
+   ont::emotional-val
+  </relation>
+ </concept>
+ <concept name="ont::neg-intense-emotional-val">
+  <relation label="inherit">
+   ont::neg-emotional-val
+  </relation>
+ </concept>
+ <concept name="ont::neg-soft-emotional-val">
+  <relation label="inherit">
+   ont::neg-emotional-val
+  </relation>
+ </concept>
  <concept name="ont::negotiate">
   <relation label="inherit">
    ont::discuss
@@ -15865,7 +15881,7 @@
  </concept>
  <concept name="ont::number-unit">
   <relation label="inherit">
-   ont::measure-unit
+   ont::unit
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -17207,8 +17223,7 @@
  <concept name="ont::physical-sense">
   <relation label="inherit">
    ont::non-measure-ordered-domain
-  
-</relation>
+  </relation>
   <sem-frame>
    <role-restr-map roles="ont::of">
     <sem-feats>
@@ -17566,9 +17581,19 @@
    ont::position-as-point-reln
   </relation>
  </concept>
+ <concept name="ont::pos-emotional-val">
+  <relation label="inherit">
+   ont::emotional-val
+  </relation>
+ </concept>
  <concept name="ont::pos-end-of-trajectory">
   <relation label="inherit">
    ont::pos-located-in-trajectory
+  </relation>
+ </concept>
+ <concept name="ont::pos-intense-emotional-val">
+  <relation label="inherit">
+   ont::pos-emotional-val
   </relation>
  </concept>
  <concept name="ont::pos-located-in-trajectory">
@@ -17584,6 +17609,11 @@
  <concept name="ont::pos-relative-wrt-trajectory">
   <relation label="inherit">
    ont::position-w-trajectory-reln
+  </relation>
+ </concept>
+ <concept name="ont::pos-soft-emotional-val">
+  <relation label="inherit">
+   ont::pos-emotional-val
   </relation>
  </concept>
  <concept name="ont::pos-start-of-trajectory">
@@ -22080,7 +22110,7 @@
  </concept>
  <concept name="ont::sorry">
   <relation label="inherit">
-   ont::emotional-property-val
+   ont::neg-soft-emotional-val
   </relation>
  </concept>
  <concept name="ont::sort">
@@ -24708,27 +24738,16 @@
    ont::person
   </relation>
  </concept>
- <concept name="ont::ungrateful">
-  <relation label="inherit">
-   ont::emotional-property-val
-  </relation>
-  <relation label="overlap">
-   wn::|ungrateful%3:00:00|
-   wn::|ungrateful%3:00:00|
-   wn::|melancholy%5:00:00|
-   wn::|sad%3:00:00|
-   wn::|sad%3:00:00|
-  </relation>
- </concept>
  <concept name="ont::unhappy">
   <relation label="inherit">
-   ont::emotional-property-val
+   ont::neg-intense-emotional-val
   </relation>
   <relation label="overlap">
    wn::|dysphoric%3:00:00|
    wn::|unhappy%3:00:00|
-   wn::|unhappy%3:00:00|
    wn::|miserable%5:00:00|
+   wn::|melancholy%5:00:00|
+   wn::|sad%3:00:00|
   </relation>
  </concept>
  <concept name="ont::uniqueness-val">
