@@ -5786,7 +5786,9 @@
 
 (CONCEPT ONT::KILL
          (INHERIT ONT::DESTROY)
-         (OVERLAP WN::|kill%2:35:00| WN::|kill%2:35:01| WN::|kill%2:35:02|))
+         (OVERLAP WN::|kill%2:35:00| WN::|kill%2:35:01| WN::|kill%2:35:02|)
+         (SEM-FRAME
+          (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN LIVING)))))
 
 (CONCEPT ONT::KIND
          (INHERIT ONT::ABSTRACT-OBJECT-NONTEMPORAL)
