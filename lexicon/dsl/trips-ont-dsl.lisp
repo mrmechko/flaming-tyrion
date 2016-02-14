@@ -1434,7 +1434,9 @@
 
 (CONCEPT ONT::BOUND
          (INHERIT ONT::ORDERED-DOMAIN)
-         (OVERLAP WN::|extremity%1:15:00|)
+         (OVERLAP WN::|extremity%1:15:00|
+                  WN::|extreme%1:07:00|
+                  WN::|extreme%1:15:00|)
          (SEM-FRAME (ONT::VAL (CONCEPT T))
                     (ONT::OF
                      (OR (CONCEPT PHYS-OBJ)
@@ -10638,13 +10640,19 @@
                   WN::|clock_time%1:28:00|
                   WN::|time%1:28:00|
                   WN::|time%1:28:05|)
-         (SEM-FRAME (ONT::VAL (CONCEPT ABSTR-OBJ) OPTIONAL)
-                    (ONT::OF
-                     (SEM-FEATS (INHERIT TIME)
-                                (SCALE DURATION-SCALE)
-                                (TIME-SCALE INTERVAL)
-                                (TIME-FUNCTION TIME-FRAME))
-                     OPTIONAL)))
+         (SEM-FRAME
+          (ONT::EXTENT
+           (SEM-FEATS (INHERIT ABSTR-OBJ)
+                      (SCALE DURATION-SCALE)
+                      (TIME-SCALE INTERVAL))
+           OPTIONAL)
+          (ONT::VAL (CONCEPT ABSTR-OBJ) OPTIONAL)
+          (ONT::OF
+           (SEM-FEATS (INHERIT TIME)
+                      (SCALE DURATION-SCALE)
+                      (TIME-SCALE INTERVAL)
+                      (TIME-FUNCTION TIME-FRAME))
+           OPTIONAL)))
 
 (CONCEPT ONT::TIME-MEASURE-SCALE (INHERIT ONT::SCALE))
 
