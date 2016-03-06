@@ -31,6 +31,7 @@
   ont::root
  </relation>
  </concept>
+ <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -45,11 +46,7 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="abstr-obj" />
  <sem-frame>
- <role-restr-map roles="ont::scale">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::ground">
   <concept name="t" />
  </role-restr-map>
@@ -61,7 +58,7 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="gradability">+</feat>
+ <feat name="intensity">hi</feat>
  </sem-feats>
  <concept name="ont::abstract-object">
  <relation label="overlap">
@@ -73,35 +70,6 @@
   ont::referential-sem
   abstr-obj
  </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="intensity">hi</feat>
- <feat name="gradability">+</feat>
- </sem-feats>
- <concept name="ont::domain-property">
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="gradability">+</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::scale">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::formal" optional="optional">
@@ -119,7 +87,7 @@
  </sem-frame>
  <concept name="ont::relation">
  <relation label="inherit">
-  ont::domain-property
+  ont::abstract-object
  </relation>
  <relation label="overlap">
   wn::|relation%1:03:00|
@@ -131,8 +99,15 @@
    abstr-obj
   </relation>
   <feat name="intensity">hi</feat>
-  <feat name="gradability">+</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::similarity-val">
  <relation label="inherit">
@@ -168,8 +143,8 @@
   <template-call template="ont::adj-co-theme-templ" xp="'(w::pp
                                                           (w::or w::in w::to))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::in w::to)" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::in w::to)" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">+</feat>
@@ -190,8 +165,8 @@
   <template-call template="ont::adj-co-theme-templ" xp="'(w::pp
                                                           (w::or w::in w::to))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::in w::to)" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::in w::to)" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">+</feat>
@@ -216,8 +191,8 @@
  <syntax>
   <template-call template="ont::adj-co-theme-templ" xp="'w::np" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">+</feat>
@@ -241,8 +216,8 @@
   <template-call template="ont::adj-co-theme-templ" xp="'(w::pp
                                                           (w::or w::in w::to))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::in w::to)" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::in w::to)" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">+</feat>

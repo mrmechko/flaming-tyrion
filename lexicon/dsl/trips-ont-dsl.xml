@@ -2219,6 +2219,9 @@
    ont::situation-root
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::neutral" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::norole" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -9245,14 +9248,6 @@
   <relation label="inherit">
    ont::similarity-val
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::val">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::of">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::exists">
   <relation label="inherit">
@@ -11815,20 +11810,6 @@
   <relation label="inherit">
    ont::similarity-val
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::formal">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::of">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::neutral1">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::neutral">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::illness">
   <relation label="inherit">
@@ -13800,6 +13781,11 @@
   </relation>
  </concept>
  <concept name="ont::loc-def-by-intersection">
+  <relation label="inherit">
+   ont::loc-as-area
+  </relation>
+ </concept>
+ <concept name="ont::loc-defined-by-contrast">
   <relation label="inherit">
    ont::loc-as-area
   </relation>
@@ -16575,6 +16561,15 @@
    ont::poultry
   </relation>
  </concept>
+ <concept name="ont::other">
+  <relation label="inherit">
+   ont::identity-val
+  </relation>
+  <relation label="overlap">
+   wn::|other%3:00:00|
+   wn::|another%3:00:00|
+  </relation>
+ </concept>
  <concept name="ont::other-scale">
   <relation label="inherit">
    ont::scale
@@ -16650,17 +16645,6 @@
   <relation label="inherit">
    ont::relation
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::of">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::ground">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::figure">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::package">
   <relation label="inherit">
@@ -17209,7 +17193,8 @@
    wn::|strength%1:07:06|
    wn::|forcefulness%1:07:00|
    wn::|force%1:07:00|
-   wn::|force%1:19:00|
+   
+wn::|force%1:19:00|
    wn::|causal_agency%1:03:00|
    wn::|cause%1:03:00|
    wn::|causal_agent%1:03:00|
@@ -19603,7 +19588,7 @@
  </concept>
  <concept name="ont::relation">
   <relation label="inherit">
-   ont::domain-property
+   ont::abstract-object
   </relation>
   <relation label="overlap">
    wn::|relation%1:03:00|
@@ -19615,8 +19600,15 @@
     abstr-obj
    </relation>
    <feat name="intensity">hi</feat>
-   <feat name="gradability">+</feat>
   </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::figure">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::relative">
   <relation label="inherit">

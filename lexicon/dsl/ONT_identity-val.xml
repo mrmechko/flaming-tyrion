@@ -6,20 +6,6 @@
  <relation label="inherit">
   ont::similarity-val
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::of">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral1">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -33,6 +19,7 @@
   ont::root
  </relation>
  </concept>
+ <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -47,11 +34,7 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="abstr-obj" />
  <sem-frame>
- <role-restr-map roles="ont::scale">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::ground">
   <concept name="t" />
  </role-restr-map>
@@ -63,7 +46,7 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="gradability">+</feat>
+ <feat name="intensity">hi</feat>
  </sem-feats>
  <concept name="ont::abstract-object">
  <relation label="overlap">
@@ -75,35 +58,6 @@
   ont::referential-sem
   abstr-obj
  </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="intensity">hi</feat>
- <feat name="gradability">+</feat>
- </sem-feats>
- <concept name="ont::domain-property">
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="gradability">+</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::scale">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::formal" optional="optional">
@@ -121,7 +75,7 @@
  </sem-frame>
  <concept name="ont::relation">
  <relation label="inherit">
-  ont::domain-property
+  ont::abstract-object
  </relation>
  <relation label="overlap">
   wn::|relation%1:03:00|
@@ -133,23 +87,16 @@
    abstr-obj
   </relation>
   <feat name="intensity">hi</feat>
-  <feat name="gradability">+</feat>
  </sem-feats>
- </concept>
  <sem-frame>
- <role-restr-map roles="ont::formal">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::of">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral1">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral">
-  <concept name="t" />
- </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
  </sem-frame>
+ </concept>
  <concept name="ont::similarity-val">
  <relation label="inherit">
   ont::relation
@@ -179,6 +126,41 @@
   wn::|same%3:00:02|
  </relation>
  </concept>
+ <concept name="ont::other">
+ <relation label="inherit">
+  ont::identity-val
+ </relation>
+ <relation label="overlap">
+  wn::|other%3:00:00|
+  wn::|another%3:00:00|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="alternate" />
+ </morph>
+ <relation label="inherit">
+  ont::identity-val
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-co-theme-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::to w::for)" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="gradability">-</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
  <sense>
  <morph>
   <pos pos="adv" />
@@ -188,24 +170,6 @@
   ont::identity-val
   ont::else-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="other" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <relation label="inherit">
-  ont::identity-val
-  ont::adj-theme-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">-</feat>
-  </sem-feats>
- </semantics>
  </sense>
  <sense>
  <morph>
@@ -221,8 +185,8 @@
  <syntax>
   <template-call template="ont::adj-co-theme-templ" xp="'(w::pp w::as)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::as" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::as" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">+</feat>
@@ -245,7 +209,60 @@
  <syntax>
   <template-call template="ont::adj-co-theme-templ" xp="'(w::pp w::as)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::as" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::as" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="unequal" />
+ </morph>
+ <example text="are they unequal to each other">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::identity-val
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-co-theme-templ" xp="'(w::pp w::to)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::to" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="gradability">-</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="unequal" />
+ </morph>
+ <example text="are they unequal in length">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::identity-val
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-property-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::in" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>
@@ -254,5 +271,10 @@
    <feat name="sort">pred</feat>
   </syn-feats>
  </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="gradability">-</feat>
+  </sem-feats>
+ </semantics>
  </sense>
 </dsl>
