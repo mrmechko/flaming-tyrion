@@ -1011,9 +1011,8 @@
 
 (CONCEPT ONT::AUX
          (INHERIT ONT::SITUATION-ROOT)
-         (SEM-FRAME (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
-                    (ONT::NOROLE (CONCEPT T) OPTIONAL)
-                    (ONT::FORMAL (CONCEPT T))))
+         (SEM-FRAME (ONT::NOROLE (CONCEPT T) OPTIONAL)
+                    (ONT::NEUTRAL (CONCEPT T))))
 
 (CONCEPT ONT::AVAILABILITY-VAL
          (INHERIT ONT::CAN-BE-DONE-VAL)
@@ -1136,9 +1135,8 @@
          (OVERLAP WN::|tend%2:42:01|)
          (SEM-FRAME
           (ONT::FORMAL
-           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
-                      (INTENTIONAL -)))
-          (ONT::EFFECT (CONCEPT SITUATION))))
+           (SEM-FEATS (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ))
+                      (INTENTIONAL -)))))
 
 (CONCEPT ONT::BEANS-PEAS
          (INHERIT ONT::VEGETABLE)
@@ -2228,20 +2226,6 @@
 
 (CONCEPT ONT::COMFORTABLENESS (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN))
 
-(CONCEPT ONT::COMING-TO-BELIEVE
-         (INHERIT ONT::COGITATION)
-         (OVERLAP WN::|reason%2:31:01|
-                  WN::|reason_out%2:31:00|
-                  WN::|conclude%2:31:00|
-                  WN::|ascertain%2:32:00|
-                  WN::|ascertain%2:32:01|
-                  WN::|discover%2:31:01|)
-         (SEM-FRAME (ONT::FORMAL (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
-                    (ONT::SOURCE (CONCEPT T) OPTIONAL)
-                    (ONT::AGENT
-                     (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
-                                (INTENTIONAL +)))))
-
 (CONCEPT ONT::COMMAND
          (INHERIT ONT::REQUEST)
          (OVERLAP WN::|command%2:32:00|
@@ -2696,6 +2680,9 @@
                   WN::|discharge%2:33:01|
                   WN::|direct%2:41:00|)
          (SEM-FRAME
+          (ONT::FORMAL
+           (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
+           OPTIONAL)
           ((ONT::AGENT ONT::CAUSE) (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ)))
           (ONT::AFFECTED
            (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
@@ -3218,6 +3205,20 @@
                          (CONCEPT ABSTR-OBJ)
                          (CONCEPT SITUATION)))))
 
+(CONCEPT ONT::DETERMINE
+         (INHERIT ONT::COGITATION)
+         (OVERLAP WN::|reason%2:31:01|
+                  WN::|reason_out%2:31:00|
+                  WN::|conclude%2:31:00|
+                  WN::|ascertain%2:32:00|
+                  WN::|ascertain%2:32:01|
+                  WN::|discover%2:31:01|)
+         (SEM-FRAME (ONT::FORMAL (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
+                    (ONT::SOURCE (CONCEPT T) OPTIONAL)
+                    (ONT::AGENT
+                     (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
+                                (INTENTIONAL +)))))
+
 (CONCEPT ONT::DEVELOP (INHERIT ONT::TRANSFORMATION))
 
 (CONCEPT ONT::DEVICE
@@ -3243,7 +3244,8 @@
                     (CONTAINER -)
                     (INTENTIONAL -)
                     (FORM OBJECT)
-                    (ORIGIN ARTIFACT)))
+                    (ORIGIN ARTIFACT))
+         (SEM-FRAME (ONT::OF (CONCEPT T))))
 
 (CONCEPT ONT::DIE
          (INHERIT ONT::LIFE-PROCESS)
@@ -3331,6 +3333,11 @@
          (SEM-FRAME (ONT::OF (SEM-FEATS (INHERIT SITUATION) (TYPE MOTION)))))
 
 (CONCEPT ONT::DIR-ROTATION (INHERIT ONT::DIRECTION-RELN))
+
+(CONCEPT ONT::DIRECT-AT
+         (INHERIT ONT::EVENT-OF-STATE)
+         (OVERLAP WN::|target%2:33:00|)
+         (SEM-FRAME (ONT::NEUTRAL1 (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::DIRECT-INFORMATION
          (OVERLAP WN::|traffic%1:10:00|)
@@ -3489,8 +3496,7 @@
          (SEM-FRAME (ONT::VAL (CONCEPT T) OPTIONAL) (ONT::OF (CONCEPT T))))
 
 (CONCEPT ONT::DOMAIN-PROPERTY
-         (INHERIT ONT::ABSTRACT-OBJECT)
-         (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY +))
+         (INHERIT ONT::ABSTRACT-OBJECT ABSTR-OBJ)
          (SEM-FRAME (ONT::SCALE (CONCEPT T))
                     (ONT::GROUND (CONCEPT T))
                     (ONT::FIGURE (CONCEPT T))))
@@ -4854,7 +4860,9 @@
 
 (CONCEPT ONT::GOAL-AS-ON (INHERIT ONT::GOAL-RELN))
 
-(CONCEPT ONT::GOAL-RELN (INHERIT ONT::PATH))
+(CONCEPT ONT::GOAL-RELN
+         (INHERIT ONT::PATH)
+         (SEM-FRAME (ONT::OF (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +)))))
 
 (CONCEPT ONT::GOING-TO
          (INHERIT ONT::AUX)
@@ -4981,15 +4989,8 @@
 (CONCEPT ONT::HABITUAL
          (INHERIT ONT::AUX)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
-         (SEM-FRAME
-          (ONT::FORMAL
-           (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION))
-           OPTIONAL)
-          (ONT::AGENT
-           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
-                      (INTENTIONAL +))
-           OPTIONAL)
-          (ONT::EFFECT (CONCEPT SITUATION))))
+         (SEM-FRAME (ONT::FORMAL (CONCEPT SITUATION))
+                    (ONT::AGENT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
 
 (CONCEPT ONT::HABITUATED
          (INHERIT ONT::PROPERTY-VAL)
@@ -6152,7 +6153,9 @@
 
 (CONCEPT ONT::LOC-DEF-BY-INTERSECTION (INHERIT ONT::LOC-AS-AREA))
 
-(CONCEPT ONT::LOC-DEFINED-BY-CONTRAST (INHERIT ONT::LOC-AS-AREA))
+(CONCEPT ONT::LOC-DEFINED-BY-CONTRAST
+         (INHERIT ONT::LOC-AS-AREA)
+         (OVERLAP WN::|spot%1:07:00| WN::|spot%1:07:01| WN::|spot%1:10:02|))
 
 (CONCEPT ONT::LOC-WRT-GROUND-AS-SPATIAL-OBJ
          (INHERIT ONT::LOC-AS-DEFINED-BY-RELN-TO-GROUND))
@@ -8184,7 +8187,6 @@
                     (ORIENTATION -)
                     (INTENSITY -)
                     (SCALE -)
-                    (GRADABILITY +)
                     (INTENTIONAL -)
                     (INFORMATION -)
                     (CONTAINER -))
@@ -10266,6 +10268,20 @@
 (CONCEPT ONT::SUCH
          (INHERIT ONT::PREDICATE)
          (SEM-FRAME (ONT::VAL (CONCEPT T) OPTIONAL) (ONT::OF (CONCEPT T))))
+
+(CONCEPT ONT::SUFFICIENCY
+         (INHERIT ONT::EVENT-OF-STATE)
+         (OVERLAP WN::|suffice%2:42:00|)
+         (SEM-FEATS (INHERIT SITUATION)
+                    (TRAJECTORY -)
+                    (CAUSE -)
+                    (TIME-SPAN EXTENDED)
+                    (ASPECT STATIC))
+         (SEM-FRAME (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
+                    (ONT::FORMAL
+                     (OR (CONCEPT PHYS-OBJ)
+                         (CONCEPT ABSTR-OBJ)
+                         (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::SUGAR (INHERIT ONT::INGREDIENTS))
 

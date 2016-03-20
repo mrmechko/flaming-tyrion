@@ -357,7 +357,7 @@
   <template-call template="ont::agent-goal-affected-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -428,7 +428,7 @@
   <template-call template="ont::agent-goal-affected-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -472,7 +472,7 @@
   <template-call template="ont::agent-goal-affected-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -514,7 +514,7 @@
   <template-call template="ont::agent-goal-affected-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -538,7 +538,7 @@
   <template-call template="ont::agent-goal-affected-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -598,7 +598,7 @@
   <template-call template="ont::agent-goal-affected-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -608,61 +608,19 @@
   <pos pos="v" />
   <word first-word="load" />
  </morph>
- <example text="load the truck with oj">
+ <example text="load the oj into the tanker">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::fill-container
  </relation>
  <syntax>
-  <template-call template="ont::agent-goal-affected-templ" />
+  <template-call template="ont::agent-affected-goal-optional-templ" xp="'(w::pp
+                                                                          (w::or
+                                                                           w::into
+                                                                           w::in))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="load" remaining-words="" particle="up" />
- </morph>
- <relation label="inherit">
-  ont::fill-container
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="load" remaining-words="" particle="up" />
- </morph>
- <relation label="inherit">
-  ont::fill-container
- </relation>
- <syntax>
-  <template-call template="ont::agent-goal-affected-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::into w::in)" sem-role="ont::result" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -686,7 +644,7 @@
   <template-call template="ont::agent-goal-affected-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -761,7 +719,7 @@
   <template-call template="ont::agent-goal-affected-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -808,7 +766,7 @@
   <template-call template="ont::agent-goal-affected-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -857,7 +815,7 @@
   <template-call template="ont::agent-goal-affected-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -890,43 +848,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="stack" />
- </morph>
- <relation label="inherit">
-  ont::fill-container
- </relation>
- <syntax>
-  <template-call template="ont::agent-goal-affected-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="stack" />
- </morph>
- <relation label="inherit">
-  ont::fill-container
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-goal-optional-templ" xp="'(w::pp
-                                                                          (w::or
-                                                                           w::into
-                                                                           w::in))" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::into w::in)" sem-role="ont::result" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="stock" />
  </morph>
  <relation label="inherit">
@@ -936,7 +857,7 @@
   <template-call template="ont::agent-goal-affected-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
