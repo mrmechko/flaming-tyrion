@@ -100,13 +100,38 @@
   ont::molecular-part
  </relation>
  </concept>
- <concept name="ont::gene">
+ <concept name="ont::residue">
+ <relation label="inherit">
+  ont::molecular-part
+ </relation>
+ </concept>
+ <concept name="ont::biological-role">
+ <relation label="inherit">
+  ont::molecular-part
+ </relation>
+ </concept>
+ <concept name="ont::gene-protein">
+ <relation label="inherit">
+  ont::molecular-part
+ </relation>
+ </concept>
+ <concept name="ont::macromolecular-complex">
  <relation label="inherit">
   ont::molecular-part
  </relation>
  <relation label="overlap">
-  wn::|gene%1:08:00|
+  wn::|complex%1:27:00|
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::contents">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="type">molecular-part</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::promoter">
  <relation label="inherit">

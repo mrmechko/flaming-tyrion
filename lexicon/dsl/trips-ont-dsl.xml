@@ -2851,7 +2851,7 @@
  </concept>
  <concept name="ont::biological-role">
   <relation label="inherit">
-   ont::molecule
+   ont::molecular-part
   </relation>
  </concept>
  <concept name="ont::bird">
@@ -10595,7 +10595,7 @@
  </concept>
  <concept name="ont::gene">
   <relation label="inherit">
-   ont::molecular-part
+   ont::gene-protein
   </relation>
   <relation label="overlap">
    wn::|gene%1:08:00|
@@ -10628,6 +10628,11 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::gene-protein">
+  <relation label="inherit">
+   ont::molecular-part
+  </relation>
  </concept>
  <concept name="ont::gene-transcription">
   <relation label="inherit">
@@ -14155,7 +14160,7 @@
  </concept>
  <concept name="ont::macromolecular-complex">
   <relation label="inherit">
-   ont::molecule
+   ont::molecular-part
   </relation>
   <relation label="overlap">
    wn::|complex%1:27:00|
@@ -16759,7 +16764,7 @@
    <role-restr-map roles="ont::neutral">
     <or>
      <concept name="situation" />
-     <concept name="abstract-object" />
+     <concept name="abstr-obj" />
     </or>
    </role-restr-map>
    <role-restr-map roles="ont::agent">
@@ -18600,7 +18605,7 @@
  </concept>
  <concept name="ont::protein">
   <relation label="inherit">
-   ont::molecule
+   ont::gene-protein
   </relation>
   <relation label="overlap">
    wn::|protein%1:27:00|
@@ -18608,7 +18613,7 @@
  </concept>
  <concept name="ont::protein-family">
   <relation label="inherit">
-   ont::molecule
+   ont::gene-protein
   </relation>
  </concept>
  <concept name="ont::protocol">
@@ -19619,6 +19624,9 @@
    <feat name="intensity">hi</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::neutral" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::ground">
     <concept name="t" />
    </role-restr-map>
@@ -20213,7 +20221,7 @@
  </concept>
  <concept name="ont::residue">
   <relation label="inherit">
-   ont::molecule
+   ont::molecular-part
   </relation>
  </concept>
  <concept name="ont::resolution">
