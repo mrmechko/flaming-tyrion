@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::click">
  <relation label="inherit">
-  ont::select
+  ont::apply-force
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::affected">
@@ -145,14 +145,12 @@
  </concept>
  <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::agent">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::event-of-action">
@@ -176,94 +174,28 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::agent">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="cause">agentive</feat>
+ <feat name="cause">force</feat>
  </sem-feats>
- <concept name="ont::intentionally-act">
+ <concept name="ont::event-of-causation">
  <relation label="inherit">
   ont::event-of-action
+  situation
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::neutral">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::choosing">
- <relation label="inherit">
-  ont::intentionally-act
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::affected">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -272,39 +204,23 @@
   <concept name="phys-obj" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::select">
+ <concept name="ont::apply-force">
  <relation label="inherit">
-  ont::choosing
+  ont::event-of-causation
  </relation>
  <relation label="overlap">
-  wn::|take%2:40:02|
-  wn::|pick_out%2:31:00|
-  wn::|select%2:31:00|
-  wn::|take%2:31:01|
-  wn::|choose%2:31:00|
-  wn::|choose%2:31:02|
-  wn::|prefer%2:31:00|
-  wn::|opt%2:31:00|
-  wn::|vote%2:41:09|
-  wn::|determine%2:31:01|
+  wn::|reflect%2:39:00|
+  wn::|drive%2:35:01|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::neutral">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
   <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -356,9 +272,9 @@
   ont::click
  </relation>
  <syntax>
-  <template-call template="ont::agent-theme-xp-templ" xp="'(w::pp w::on)" />
+  <template-call template="ont::agent-affected-xp-templ" xp="'(w::pp w::on)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::on" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::on" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -387,9 +303,9 @@
   ont::click
  </relation>
  <syntax>
-  <template-call template="ont::agent-theme-xp-templ" />
+  <template-call template="ont::agent-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

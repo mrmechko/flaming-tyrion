@@ -263,9 +263,7 @@
 
 (CONCEPT ONT::ACTIVITY-ONGOING
          (INHERIT ONT::EVENT-OF-ACTION)
-         (OVERLAP WN::|keep%2:30:10|
-                  WN::|preserve%2:30:00|
-                  WN::|maintain%2:40:10|
+         (OVERLAP WN::|maintain%2:40:10|
                   WN::|keep%2:40:10|
                   WN::|save%2:40:03|
                   WN::|keep%2:40:09|
@@ -1994,7 +1992,7 @@
          (OVERLAP WN::|clear%3:00:03| WN::|clear%3:00:03| WN::|fair%5:00:00|))
 
 (CONCEPT ONT::CLICK
-         (INHERIT ONT::SELECT)
+         (INHERIT ONT::APPLY-FORCE)
          (SEM-FRAME (ONT::AFFECTED (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::CLINICAL-FINDING
@@ -2801,7 +2799,7 @@
                   WN::|imply%2:42:00|
                   WN::|mean%2:42:00|
                   WN::|affirm%2:31:00|
-                  WN::|read%2:32:02:|)
+                  WN::|read%2:32:02|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (ASPECT STATIC))
          (SEM-FRAME (ONT::FORMAL (CONCEPT SITUATION) OPTIONAL)
                     (ONT::NEUTRAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
@@ -4483,7 +4481,7 @@
 
 (CONCEPT ONT::FIREARM
          (INHERIT ONT::WEAPON)
-         (OVERLAP WN::|gun%1:06:00:00|)
+         (OVERLAP WN::|gun%1:06:00|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (MOBILITY NON-SELF-MOVING)))
 
 (CONCEPT ONT::FIRSTNAME
@@ -6840,6 +6838,8 @@
 
 (CONCEPT ONT::MOVE-UPWARD (INHERIT ONT::MOVE) (OVERLAP WN::|rise%2:37:00|))
 
+(CONCEPT ONT::MRNA (INHERIT ONT::RNA) (OVERLAP WN::|mrna%1:27:00|))
+
 (CONCEPT ONT::MUG (INHERIT ONT::TABLEWARE) (OVERLAP WN::|mug%1:06:00|))
 
 (CONCEPT ONT::MUSIC (INHERIT ONT::COMPOSITION) (OVERLAP WN::|music%1:10:00|))
@@ -9107,6 +9107,8 @@
          (INHERIT ONT::CONVENTIONAL-SPEECH-ACT)
          (OVERLAP WN::|anoint%2:31:00| WN::|install%2:41:00|))
 
+(CONCEPT ONT::RNA (INHERIT ONT::MOLECULAR-PART) (OVERLAP WN::|rna%1:27:00|))
+
 (CONCEPT ONT::ROAD (INHERIT ONT::ROUTE) (OVERLAP WN::|road%1:06:00|))
 
 (CONCEPT ONT::ROBOT
@@ -10897,7 +10899,7 @@
                   WN::|attempt%2:41:00|
                   WN::|essay%2:41:00|
                   WN::|assay%2:41:00|
-                  WN::|come_near%2:41:00:|)
+                  WN::|come_near%2:41:00|)
          (SEM-FRAME
           (ONT::NEUTRAL (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)) OPTIONAL)))
 
