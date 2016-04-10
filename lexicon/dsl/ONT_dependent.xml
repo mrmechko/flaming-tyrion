@@ -7,9 +7,9 @@
   ont::dependence-val
  </relation>
  <relation label="overlap">
-  wn::|dependent%5:00:00|
-  wn::|dependent%3:00:00|
-  wn::|conditional%3:00:00|
+  wn::|dependent%5:00:00::|
+  wn::|dependent%3:00:00::|
+  wn::|conditional%3:00:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -29,7 +29,7 @@
   ont::any-sem
  </relation>
  <relation label="overlap">
-  wn::|entity%1:03:00|
+  wn::|entity%1:03:00::|
  </relation>
  <or>
   <concept name="phys-obj" />
@@ -52,9 +52,9 @@
  </sem-frame>
  <concept name="ont::abstract-object">
  <relation label="overlap">
-  wn::|psychological_feature%1:03:00|
-  wn::|abstraction%1:03:00|
-  wn::|abstract_entity%1:03:00|
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
  </relation>
  <relation label="inherit">
   ont::referential-sem
@@ -216,8 +216,26 @@
  </relation>
  </sense>
  <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="dependent" />
+ </morph>
  <relation label="inherit">
   ont::dependent
  </relation>
+ <syntax>
+  <template-call template="ont::adj-neutral-neutral-templ" xp="'(w::pp
+                                                                 (w::or w::on
+                                                                        w::upon))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::on w::upon)" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
  </sense>
 </dsl>
