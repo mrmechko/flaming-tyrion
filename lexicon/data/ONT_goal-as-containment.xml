@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
-<ONTTYPE name="goal-as-containment" parent="goal-reln" modified="Sun Apr 10 03:16:13 2016">
+<ONTTYPE name="goal-as-containment" parent="goal-reln" modified="Sun Apr 17 03:15:09 2016">
 <SEM fltype="abstr-obj">
 <FEATURES type="goal-as-containment" />
 </SEM>
-<ARGUMENT role="of" optionality="essential" fltype="(? of2 situation)">
-<FEATURES trajectory="+" />
+<ARGUMENT role="of" optionality="essential" fltype="situation">
+<FEATURES type="motion" aspect="dynamic" trajectory="+" />
 </ARGUMENT>
-<ARGUMENT role="val" optionality="essential" fltype="(? val phys-obj situation abstr-obj)" />
+<ARGUMENT role="val" optionality="required" fltype="phys-obj">
+<FEATURES container="+" />
+</ARGUMENT>
 <WORD name="into" />
 </ONTTYPE>

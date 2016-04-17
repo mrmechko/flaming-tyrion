@@ -4828,9 +4828,7 @@
 
 (CONCEPT ONT::GEOGRAPHIC-REGION
          (INHERIT ONT::SPECIFIC-LOC)
-         (SEM-FEATS (INHERIT PHYS-OBJ)
-                    (SPATIAL-ABSTRACTION (OR SPATIAL-POINT SPATIAL-REGION))
-                    (FORM GEOGRAPHICAL-OBJECT)))
+         (SEM-FEATS (INHERIT PHYS-OBJ) (FORM GEOGRAPHICAL-OBJECT)))
 
 (CONCEPT ONT::GIST
          (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN)
@@ -4896,7 +4894,13 @@
          (INHERIT ONT::PS-OBJECT)
          (OVERLAP WN::|goal%1:09:00::| WN::|end%1:09:02::|))
 
-(CONCEPT ONT::GOAL-AS-CONTAINMENT (INHERIT ONT::GOAL-RELN))
+(CONCEPT ONT::GOAL-AS-CONTAINMENT
+         (INHERIT ONT::GOAL-RELN)
+         (SEM-FRAME (ONT::VAL (SEM-FEATS (INHERIT PHYS-OBJ) (CONTAINER +)))
+                    (ONT::OF
+                     (SEM-FEATS (INHERIT SITUATION)
+                                (TYPE MOTION)
+                                (ASPECT DYNAMIC)))))
 
 (CONCEPT ONT::GOAL-AS-ON (INHERIT ONT::GOAL-RELN))
 
@@ -8744,7 +8748,8 @@
                   WN::|amount%2:42:03::|
                   WN::|bear_on%2:42:00::|)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (INTENSITY HI))
-         (SEM-FRAME (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
+         (SEM-FRAME (ONT::NEUTRAL1 (CONCEPT T) OPTIONAL)
+                    (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
                     (ONT::GROUND (CONCEPT T))
                     (ONT::FIGURE (CONCEPT T))))
 
@@ -9070,12 +9075,20 @@
 (CONCEPT ONT::RESULT (INHERIT ONT::OUTCOME) (SEM-FRAME (ONT::OF (CONCEPT T))))
 
 (CONCEPT ONT::RESULTING-OBJECT
-         (INHERIT ONT::PREDICATE)
-         (SEM-FRAME
-          (ONT::VAL
-           (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +) (ORIGIN LIVING)))
-          (ONT::OF
-           (SEM-FEATS (INHERIT SITUATION) (TYPE CHANGE) (ASPECT DYNAMIC)))))
+         (INHERIT ONT::GOAL-RELN)
+         (SEM-FRAME (ONT::VAL (CONCEPT PHYS-OBJ))
+                    (ONT::OF
+                     (SEM-FEATS (INHERIT SITUATION)
+                                (TYPE CHANGE)
+                                (ASPECT DYNAMIC)))))
+
+(CONCEPT ONT::RESULTING-STATE
+         (INHERIT ONT::GOAL-RELN)
+         (SEM-FRAME (ONT::VAL (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
+                    (ONT::OF
+                     (SEM-FEATS (INHERIT SITUATION)
+                                (TYPE CHANGE)
+                                (ASPECT DYNAMIC)))))
 
 (CONCEPT ONT::RETAIN
          (INHERIT ONT::LOCATED-MOVE-STATE)
@@ -9730,7 +9743,8 @@
 
 (CONCEPT ONT::SIMILARITY-VAL
          (INHERIT ONT::RELATION)
-         (SEM-FRAME (ONT::FORMAL (CONCEPT T) OPTIONAL)
+         (SEM-FRAME (ONT::VAL (CONCEPT T) OPTIONAL)
+                    (ONT::FORMAL (CONCEPT T) OPTIONAL)
                     (ONT::OF (CONCEPT T))
                     (ONT::NEUTRAL1 (CONCEPT T))
                     (ONT::NEUTRAL (CONCEPT T))))
@@ -10845,10 +10859,9 @@
 
 (CONCEPT ONT::TO-LOC
          (INHERIT ONT::GOAL-RELN)
-         (SEM-FRAME
-          (ONT::VAL
-           (SEM-FEATS (INHERIT PHYS-OBJ) (SPATIAL-ABSTRACTION SPATIAL-POINT)))
-          (ONT::OF (SEM-FEATS (INHERIT SITUATION) (TYPE EVENT-OF-CHANGE)))))
+         (SEM-FRAME (ONT::VAL (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
+                    (ONT::OF
+                     (SEM-FEATS (INHERIT SITUATION) (TYPE EVENT-OF-CHANGE)))))
 
 (CONCEPT ONT::TOOL
          (INHERIT ONT::EQUIPMENT)

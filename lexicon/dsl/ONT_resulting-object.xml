@@ -4,17 +4,11 @@
  <provenance name="TRIPS"/>
  <concept name="ont::resulting-object">
  <relation label="inherit">
-  ont::predicate
+  ont::goal-reln
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::val">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-    <feat name="origin">living</feat>
-   </sem-feats>
+   <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::of">
    <sem-feats>
@@ -39,7 +33,6 @@
   ont::root
  </relation>
  </concept>
- <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -86,24 +79,21 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::val">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="intentional">+</feat>
-   <feat name="origin">living</feat>
-  </sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::of">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="type">change</feat>
-   <feat name="aspect">dynamic</feat>
-  </sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
+ <concept name="abstr-obj" />
  <concept name="ont::predicate">
  <relation label="inherit">
   ont::abstract-object
@@ -128,6 +118,67 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::of">
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="trajectory">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::path">
+ <relation label="inherit">
+  ont::predicate
+  abstr-obj
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::val">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::of">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::val">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::of">
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="type">change</feat>
+   <feat name="aspect">dynamic</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::goal-reln">
+ <relation label="inherit">
+  ont::path
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of">
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="trajectory">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sense>
  <morph>
   <pos pos="adv" />
@@ -137,6 +188,36 @@
   <provenance name="BASE500"/>
  </provenance>
  <example text="fold it into a heart">
+ </example>
+ <relation label="inherit">
+  ont::resulting-object
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="to" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="change to a toad">
  </example>
  <relation label="inherit">
   ont::resulting-object
