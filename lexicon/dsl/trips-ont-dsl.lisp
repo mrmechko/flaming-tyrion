@@ -5263,7 +5263,8 @@
                   WN::|barricade%1:06:00::|
                   WN::|obstruction%1:06:00::|
                   WN::|crush%2:41:00::|
-                  WN::|disrupt%2:30:01::|))
+                  WN::|disrupt%2:30:01::|
+                  WN::|suppress%2:30:00::|))
 
 (CONCEPT ONT::HINT (INHERIT ONT::REPRESENTATIVE) (OVERLAP WN::|hint%2:32:00::|))
 
@@ -10331,11 +10332,7 @@
 (CONCEPT ONT::SUBDUING
          (INHERIT ONT::EVOKE-EMOTION)
          (OVERLAP WN::|curb%2:30:01::|
-                  WN::|conquer%2:30:00::|
-                  WN::|subdue%2:30:01::|
                   WN::|inhibit%2:30:00::|
-                  WN::|stamp_down%2:30:00::|
-                  WN::|suppress%2:30:00::|
                   WN::|pacify%2:37:00::|
                   WN::|lenify%2:37:00::|
                   WN::|conciliate%2:37:00::|
@@ -10346,7 +10343,7 @@
                   WN::|gentle%2:37:00::|
                   WN::|gruntle%2:37:00::|
                   WN::|comfort%2:37:01::|
-                  WN::|keep_down%2:29:00::|))
+                  WN::|keep_down%2:41:00::|))
 
 (CONCEPT ONT::SUBMIT
          (OVERLAP WN::|submit%2:32:01::| WN::|subject%2:32:04::|)
