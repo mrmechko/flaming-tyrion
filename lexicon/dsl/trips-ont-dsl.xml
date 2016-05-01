@@ -1183,7 +1183,7 @@
      <concept name="situation" />
     </or>
    </role-restr-map>
-   <role-restr-map roles="ont::neutral" optional="optional">
+   <role-restr-map roles="ont::experiencer" optional="optional">
     <sem-feats>
      <relation label="inherit">
       phys-obj
@@ -1194,6 +1194,14 @@
       non-human-animal
      </or>
      </feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::neutral" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="origin">non-living</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -11989,7 +11997,6 @@
    wn::|diverge%2:42:00::|
    wn::|dominate%2:42:00::|
    wn::|go_by%2:32:00::|
-   wn::|differ%2:42:00::|
    wn::|exceed%2:42:01::|
    wn::|follow%2:42:00::|
   </relation>
@@ -17109,15 +17116,15 @@
    ont::referential-sem
   </relation>
   <relation label="overlap">
-   wn::|object%1:03:00::|
+   
+wn::|object%1:03:00::|
    wn::|physical_object%1:03:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="intentional">
--</feat>
+   <feat name="intentional">-</feat>
   </sem-feats>
  </concept>
  <concept name="ont::phys-representation">
@@ -17809,7 +17816,7 @@
  </concept>
  <concept name="ont::position-reln">
   <relation label="inherit">
-   ont::predicate
+   ont::abstract-object
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::val">
@@ -18584,6 +18591,22 @@
   <sem-frame>
    <role-restr-map roles="ont::of">
     <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::proposition-equal">
+  <relation label="inherit">
+   ont::be
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::neutral">
+    <sem-feats>
+     <or>
+      <concept name="abstr-obj" />
+      <concept name="situation" />
+     </or>
+     <feat name="type">mental-construction</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -22430,8 +22453,30 @@
  </concept>
  <concept name="ont::spatial">
   <relation label="inherit">
-   ont::property-val
+   ont::abstract-object
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::val" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+   <role-restr-map roles="ont::of" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::spatial-distance-rel">
   <relation label="inherit">

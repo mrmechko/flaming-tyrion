@@ -36,23 +36,20 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::val">
-  <concept name="t" />
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::of">
-  <concept name="t" />
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="intentional">-</feat>
- <feat name="container">-</feat>
- <feat name="orientation">-</feat>
- <feat name="intensity">-</feat>
- <feat name="scale">-</feat>
- <feat name="gradability">+</feat>
- </sem-feats>
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00::|
@@ -64,49 +61,9 @@
   abstr-obj
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::val">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::of">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::predicate">
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="intentional">-</feat>
-  <feat name="container">-</feat>
-  <feat name="orientation">-</feat>
-  <feat name="intensity">-</feat>
-  <feat name="scale">-</feat>
-  <feat name="gradability">+</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::val">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::of">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::position-reln">
  <relation label="inherit">
-  ont::predicate
+  ont::abstract-object
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::val">
@@ -151,62 +108,6 @@
   <word first-word="down" remaining-words="to" />
  </morph>
  <example text="let's go down to the beach">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::down
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::of"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="down" remaining-words="of" />
- </morph>
- <example text="to the left and down of ocean view terrace">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::down
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::of"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="down" remaining-words="from" />
- </morph>
- <example text="to the left and down from ocean view terrace">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">

@@ -561,8 +561,10 @@
          (INHERIT ONT::BODY-RELATED-PROPERTY-VAL)
          (SEM-FRAME
           (ONT::FORMAL (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)) OPTIONAL)
-          (ONT::NEUTRAL
+          (ONT::EXPERIENCER
            (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL)))
+           OPTIONAL)
+          (ONT::NEUTRAL (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN NON-LIVING))
            OPTIONAL)))
 
 (CONCEPT ONT::ANNOTATION
@@ -5414,7 +5416,6 @@
          (OVERLAP WN::|diverge%2:42:00::|
                   WN::|dominate%2:42:00::|
                   WN::|go_by%2:32:00::|
-                  WN::|differ%2:42:00::|
                   WN::|exceed%2:42:01::|
                   WN::|follow%2:42:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TIME-SPAN EXTENDED) (ASPECT STATIC)))
@@ -7952,7 +7953,7 @@
 (CONCEPT ONT::POSITION-AS-POINT-RELN (INHERIT ONT::POSITION-RELN))
 
 (CONCEPT ONT::POSITION-RELN
-         (INHERIT ONT::PREDICATE)
+         (INHERIT ONT::ABSTRACT-OBJECT)
          (SEM-FRAME
           (ONT::VAL
            (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))
@@ -8299,6 +8300,13 @@
 (CONCEPT ONT::PROPOSAL
          (INHERIT ONT::PS-OBJECT)
          (SEM-FRAME (ONT::OF (CONCEPT T))))
+
+(CONCEPT ONT::PROPOSITION-EQUAL
+         (INHERIT ONT::BE)
+         (SEM-FRAME
+          (ONT::NEUTRAL
+           (SEM-FEATS (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION))
+                      (TYPE MENTAL-CONSTRUCTION)))))
 
 (CONCEPT ONT::PROTECTING
          (INHERIT ONT::EVENT-OF-CAUSATION)
@@ -9978,7 +9986,20 @@
                   WN::|roll%2:42:00::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT STAGE-LEVEL)))
 
-(CONCEPT ONT::SPATIAL (INHERIT ONT::PROPERTY-VAL))
+(CONCEPT ONT::SPATIAL
+         (INHERIT ONT::ABSTRACT-OBJECT)
+         (SEM-FRAME (ONT::GROUND (CONCEPT T) OPTIONAL)
+                    (ONT::FIGURE (CONCEPT T) OPTIONAL)
+                    (ONT::VAL
+                     (OR (CONCEPT PHYS-OBJ)
+                         (CONCEPT SITUATION)
+                         (CONCEPT ABSTR-OBJ))
+                     OPTIONAL)
+                    (ONT::OF
+                     (OR (CONCEPT PHYS-OBJ)
+                         (CONCEPT SITUATION)
+                         (CONCEPT ABSTR-OBJ))
+                     OPTIONAL)))
 
 (CONCEPT ONT::SPATIAL-DISTANCE-REL
          (INHERIT ONT::EXTENT-PREDICATE)

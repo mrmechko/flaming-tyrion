@@ -44,23 +44,20 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::val">
-  <concept name="t" />
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::of">
-  <concept name="t" />
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="intentional">-</feat>
- <feat name="container">-</feat>
- <feat name="orientation">-</feat>
- <feat name="intensity">-</feat>
- <feat name="scale">-</feat>
- <feat name="gradability">+</feat>
- </sem-feats>
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00::|
@@ -72,49 +69,9 @@
   abstr-obj
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::val">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::of">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::predicate">
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="intentional">-</feat>
-  <feat name="container">-</feat>
-  <feat name="orientation">-</feat>
-  <feat name="intensity">-</feat>
-  <feat name="scale">-</feat>
-  <feat name="gradability">+</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::val">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::of">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::position-reln">
  <relation label="inherit">
-  ont::predicate
+  ont::abstract-object
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::val">
