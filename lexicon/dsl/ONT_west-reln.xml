@@ -35,6 +35,20 @@
  </or>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
  <role-restr-map roles="ont::val">
   <or>
    <concept name="phys-obj" />
@@ -66,6 +80,20 @@
   ont::abstract-object
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
   <role-restr-map roles="ont::val">
    <or>
     <concept name="phys-obj" />
@@ -97,4 +125,29 @@
   ont::pos-directional-reln
  </relation>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="west" remaining-words="of" />
+ </morph>
+ <relation label="inherit">
+  ont::west-reln
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
 </dsl>

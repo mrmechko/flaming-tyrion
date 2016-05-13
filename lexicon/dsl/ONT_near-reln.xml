@@ -35,6 +35,20 @@
  </or>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
  <role-restr-map roles="ont::val">
   <or>
    <concept name="phys-obj" />
@@ -66,6 +80,20 @@
   ont::abstract-object
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
   <role-restr-map roles="ont::val">
    <or>
     <concept name="phys-obj" />
@@ -114,13 +142,230 @@
  </sem-frame>
  </concept>
  <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="around" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he ran around the house">
+ </example>
  <relation label="inherit">
   ont::near-reln
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="around" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the house around the corner">
+ </example>
+ <relation label="inherit">
+  ont::near-reln
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    post
+    pre
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="close" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="move it close [to that]">
+ </example>
+ <relation label="inherit">
+  ont::near-reln
+ </relation>
+ <syntax>
+  <template-call template="ont::pred-s-post-subcat-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::to" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="atype">post</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="in" remaining-words="the presence of" />
+ </morph>
+ <example text="we combine them in the presence of oxygen">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::near-reln
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="near" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="find a hotel near a zipcode">
+ </example>
+ <relation label="inherit">
+  ont::near-reln
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    post
+    pre
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="near" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="move it near the triangle">
+ </example>
+ <relation label="inherit">
+  ont::near-reln
+  ont::binary-constraint-s-trajectory-templ
  </relation>
  </sense>
  <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="nearby" />
+ </morph>
+ <relation label="inherit">
+  ont::near-reln
+  ont::pred-s-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="nearby" />
+ </morph>
+ <relation label="inherit">
+  ont::near-reln
+  ont::pred-np-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="thereabouts" />
+ </morph>
+ <relation label="inherit">
+  ont::near-reln
+  ont::pred-s-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="thereabouts" />
+ </morph>
+ <relation label="inherit">
+  ont::near-reln
+  ont::pred-np-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="touching" />
+ </morph>
  <relation label="inherit">
   ont::near-reln
  </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    post
+    pre
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
  </sense>
 </dsl>

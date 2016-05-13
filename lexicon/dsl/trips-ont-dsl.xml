@@ -1937,6 +1937,11 @@
    ont::position-as-point-reln
   </relation>
  </concept>
+ <concept name="ont::at-scale-value">
+  <relation label="inherit">
+   ont::positional-reln
+  </relation>
+ </concept>
  <concept name="ont::athlete">
   <relation label="inherit">
    ont::person
@@ -5113,6 +5118,8 @@
   </relation>
   <relation label="overlap">
    wn::|finance%1:04:00::|
+   wn::|commerce%1:04:00::|
+   wn::|base%1:06:06::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -6818,6 +6825,7 @@
   </relation>
   <relation label="overlap">
    wn::|decrease%2:30:00::|
+   wn::|decrease%2:30:01::|
    wn::|diminish%2:30:00::|
    wn::|lessen%2:30:00::|
    wn::|fall%2:30:06::|
@@ -7858,6 +7866,8 @@
   </relation>
   <relation label="overlap">
    wn::|donate%2:40:00::|
+   wn::|gift%2:40:00::|
+   wn::|gift%1:21:00::|
   </relation>
  </concept>
  <concept name="ont::dose">
@@ -10803,13 +10813,11 @@
    wn::|give%2:40:00::|
    wn::|offer%1:10:01::|
    wn::|offering%1:10:01::|
-   wn::|gift%2:40:00::|
    wn::|give%2:40:03::|
    wn::|allow%2:41:01::|
    wn::|fall%2:40:12::|
    wn::|send_in%2:41:00::|
    wn::|giving%1:04:00::|
-   wn::|gift%1:21:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -13439,6 +13447,9 @@
  <concept name="ont::level">
   <relation label="inherit">
    ont::ordered-domain
+  </relation>
+  <relation label="overlap">
+   wn::|level%1:26:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::val">
@@ -17099,7 +17110,8 @@
      <feat name="form">object</feat>
     </sem-feats>
    </role-restr-map>
-  </sem-frame>
+  </
+sem-frame>
  </concept>
  <concept name="ont::phys-modifier">
   <relation label="inherit">
@@ -17112,8 +17124,7 @@
   </sem-frame>
  </concept>
  <concept name="ont::phys-object">
-  <relation label="
-inherit">
+  <relation label="inherit">
    ont::referential-sem
   </relation>
   <relation label="overlap">
@@ -17501,6 +17512,7 @@ inherit">
    wn::|plant%1:03:00::|
    wn::|flora%1:03:00::|
    wn::|plant_life%1:03:00::|
+   wn::|cultivar%1:20:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -17819,6 +17831,20 @@ inherit">
    ont::abstract-object
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+   <role-restr-map roles="ont::figure">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
    <role-restr-map roles="ont::val">
     <or>
      <concept name="phys-obj" />
@@ -17840,6 +17866,7 @@ inherit">
    ont::position-reln
   </relation>
  </concept>
+ <concept name="ont::positional-reln" />
  <concept name="ont::possess">
   <relation label="inherit">
    ont::have
@@ -22041,6 +22068,9 @@ inherit">
    <feat name="scale">size-scale</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::extent" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::of">
     <concept name="phys-obj" />
    </role-restr-map>
@@ -25127,6 +25157,8 @@ inherit">
    wn::|unsteady%3:00:00::|
    wn::|shaky%5:00:00::|
    wn::|unsteady%3:00:00::|
+   wn::|unstable%3:00:00::|
+   wn::|volatile%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::unsteady-move">

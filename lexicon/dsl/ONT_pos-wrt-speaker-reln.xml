@@ -35,6 +35,20 @@
  </or>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
  <role-restr-map roles="ont::val">
   <or>
    <concept name="phys-obj" />
@@ -66,6 +80,20 @@
   ont::abstract-object
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
   <role-restr-map roles="ont::val">
    <or>
     <concept name="phys-obj" />
@@ -98,11 +126,59 @@
  </relation>
  </concept>
  <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="here" />
+ </morph>
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
  <relation label="inherit">
   ont::pos-wrt-speaker-reln
  </relation>
+ <syntax>
+  <template-call template="ont::ppword-adv-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">pp-word</feat>
+   <feat name="wh">-</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="there" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::pos-wrt-speaker-reln
+ </relation>
+ <syntax>
+  <template-call template="ont::ppword-adv-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::of"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">pp-word</feat>
+   <feat name="wh">-</feat>
+  </syn-feats>
+ </syntax>
  </sense>
 </dsl>

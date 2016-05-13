@@ -882,6 +882,8 @@
 
 (CONCEPT ONT::AT-LOC (INHERIT ONT::POSITION-AS-POINT-RELN))
 
+(CONCEPT ONT::AT-SCALE-VALUE (INHERIT ONT::POSITIONAL-RELN))
+
 (CONCEPT ONT::ATHLETE
          (INHERIT ONT::PERSON)
          (OVERLAP WN::|athlete%1:18:00::| WN::|jock%1:18:00::|))
@@ -2296,7 +2298,9 @@
 
 (CONCEPT ONT::COMMERCIAL-ACTIVITY
          (INHERIT ONT::ACTIVITY)
-         (OVERLAP WN::|finance%1:04:00::|)
+         (OVERLAP WN::|finance%1:04:00::|
+                  WN::|commerce%1:04:00::|
+                  WN::|base%1:06:06::|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE (OR AGENTIVE FORCE))))
 
 (CONCEPT ONT::COMMERCIAL-FACILITY
@@ -3050,6 +3054,7 @@
 (CONCEPT ONT::DECREASE
          (INHERIT ONT::CHANGE-MAGNITUDE)
          (OVERLAP WN::|decrease%2:30:00::|
+                  WN::|decrease%2:30:01::|
                   WN::|diminish%2:30:00::|
                   WN::|lessen%2:30:00::|
                   WN::|fall%2:30:06::|
@@ -3528,7 +3533,11 @@
                     (ONT::GROUND (CONCEPT T))
                     (ONT::FIGURE (CONCEPT T))))
 
-(CONCEPT ONT::DONATE (INHERIT ONT::GIVING) (OVERLAP WN::|donate%2:40:00::|))
+(CONCEPT ONT::DONATE
+         (INHERIT ONT::GIVING)
+         (OVERLAP WN::|donate%2:40:00::|
+                  WN::|gift%2:40:00::|
+                  WN::|gift%1:21:00::|))
 
 (CONCEPT ONT::DOSE
          (INHERIT ONT::VOLUME-UNIT)
@@ -4856,13 +4865,11 @@
          (OVERLAP WN::|give%2:40:00::|
                   WN::|offer%1:10:01::|
                   WN::|offering%1:10:01::|
-                  WN::|gift%2:40:00::|
                   WN::|give%2:40:03::|
                   WN::|allow%2:41:01::|
                   WN::|fall%2:40:12::|
                   WN::|send_in%2:41:00::|
-                  WN::|giving%1:04:00::|
-                  WN::|gift%1:21:00::|)
+                  WN::|giving%1:04:00::|)
          (SEM-FEATS (INHERIT SITUATION) (IOBJ RECIPIENT) (CAUSE AGENTIVE))
          (SEM-FRAME
           (ONT::RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
@@ -6062,6 +6069,7 @@
 
 (CONCEPT ONT::LEVEL
          (INHERIT ONT::ORDERED-DOMAIN)
+         (OVERLAP WN::|level%1:26:00::|)
          (SEM-FRAME
           (ONT::VAL
            (SEM-FEATS (INHERIT ABSTR-OBJ) (INFORMATION INFORMATION-CONTENT)))
@@ -7831,7 +7839,8 @@
                   WN::|vascular_plant%1:20:00::|
                   WN::|plant%1:03:00::|
                   WN::|flora%1:03:00::|
-                  WN::|plant_life%1:03:00::|)
+                  WN::|plant_life%1:03:00::|
+                  WN::|cultivar%1:20:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN PLANT)))
 
 (CONCEPT ONT::PLANT-PART
@@ -7955,12 +7964,18 @@
 (CONCEPT ONT::POSITION-RELN
          (INHERIT ONT::ABSTRACT-OBJECT)
          (SEM-FRAME
+          (ONT::GROUND
+           (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))
+          (ONT::FIGURE
+           (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))
           (ONT::VAL
            (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))
           (ONT::OF
            (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))))
 
 (CONCEPT ONT::POSITION-W-TRAJECTORY-RELN (INHERIT ONT::POSITION-RELN))
+
+(CONCEPT ONT::POSITIONAL-RELN)
 
 (CONCEPT ONT::POSSESS
          (INHERIT ONT::HAVE)
@@ -9811,7 +9826,8 @@
 (CONCEPT ONT::SIZE
          (INHERIT ONT::PHYSICAL-DISCRETE-DOMAIN)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE SIZE-SCALE))
-         (SEM-FRAME (ONT::OF (CONCEPT PHYS-OBJ))))
+         (SEM-FRAME (ONT::EXTENT (CONCEPT T) OPTIONAL)
+                    (ONT::OF (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::SIZE-SCALE (INHERIT ONT::SCALE))
 
@@ -11213,7 +11229,9 @@
          (INHERIT ONT::STEADINESS-VAL)
          (OVERLAP WN::|unsteady%3:00:00::|
                   WN::|shaky%5:00:00::|
-                  WN::|unsteady%3:00:00::|))
+                  WN::|unsteady%3:00:00::|
+                  WN::|unstable%3:00:00::|
+                  WN::|volatile%3:00:00::|))
 
 (CONCEPT ONT::UNSTEADY-MOVE (INHERIT ONT::MOVE))
 

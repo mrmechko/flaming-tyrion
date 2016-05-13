@@ -180,7 +180,25 @@
  </morph>
  <relation label="inherit">
   ont::biological-process
-  ont::count-pred-templ
  </relation>
+ <syntax>
+  <template-call template="ont::reln-cause-affected-templ" xp1="'(w::pp w::by)" xp2="'(w::pp
+                                                                                       w::of)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="argument" syn-cat="pp" head-word="w::by" sem-role="ont::agent"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
  </sense>
 </dsl>
