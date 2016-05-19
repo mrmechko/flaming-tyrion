@@ -612,7 +612,7 @@
  </concept>
  <concept name="ont::activity-val">
   <relation label="inherit">
-   ont::process-val
+   ont::property-val
   </relation>
  </concept>
  <concept name="ont::actual">
@@ -1312,6 +1312,7 @@
   </relation>
   <relation label="overlap">
    wn::|sound%2:39:06::|
+   wn::|come_across%2:31:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -1625,12 +1626,7 @@
    wn::|come%2:38:04::|
    wn::|get%2:38:00::|
    wn::|arrive%2:38:00::|
-   wn::|happen%2:30:01::|
-   wn::|materialize%2:30:00::|
-   wn::|materialise%2:30:00::|
-   wn::|appear%2:41:03::|
    wn::|arrive_at%2:38:00::|
-   wn::|come_across%2:31:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -1673,21 +1669,6 @@
       ?o
      </relation>
      <feat name="information">information-content</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::artifact-property-val">
-  <relation label="inherit">
-   ont::configuration-property-val
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::of">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="origin">artifact</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -10230,7 +10211,6 @@
   </relation>
   <relation label="overlap">
    wn::|follow%2:38:00::|
-   wn::|follow%2:38:13::|
    wn::|come_after%2:41:00::|
    wn::|follow%2:42:03::|
   </relation>
@@ -12016,17 +11996,6 @@
    <feat name="aspect">static</feat>
   </sem-feats>
  </concept>
- <concept name="ont::in-working-order-val">
-  <relation label="inherit">
-   ont::configuration-property-val
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="gradability">-</feat>
-  </sem-feats>
- </concept>
  <concept name="ont::inaccessible">
   <relation label="inherit">
    ont::accessibility-val
@@ -12443,18 +12412,15 @@
    wn::|acute%5:00:00::|
    wn::|powerful%3:00:00::|
    wn::|strong%3:00:00::|
-   wn::|low%3:00:02::|
-   wn::|low%3:00:01::|
    wn::|deep%3:00:01::|
-   wn::|shallow%3:00:01::|
    wn::|high%3:00:02::|
    wn::|intense%3:00:00::|
    wn::|sharp%3:00:04::|
    wn::|potent%5:00:00::|
    wn::|deep%5:00:00::|
-   wn::|dull%3:00:04::|
    wn::|strong%5:00:00::|
    wn::|deep%5:00:00::|
+   wn::|intensive%5:00:00:intense:00|
   </relation>
  </concept>
  <concept name="ont::intensifier">
@@ -15344,8 +15310,7 @@
   </relation>
   <relation label="overlap">
    wn::|back%2:38:01::|
-   wn::|back_away%2:32:00::|
-   wn::|back_up%2:41:00::|
+   wn::|move_back%2:38:00::|
   </relation>
  </concept>
  <concept name="ont::move-back-and-forth">
@@ -15928,6 +15893,17 @@
    ont::salience
   </relation>
  </concept>
+ <concept name="ont::not-in-working-order-val">
+  <relation label="inherit">
+   ont::inactive
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="gradability">-</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::noticeable">
   <relation label="inherit">
    ont::attention-worthy-val
@@ -16237,6 +16213,9 @@
  <concept name="ont::occurring">
   <relation label="inherit">
    ont::situation-root
+  </relation>
+  <relation label="overlap">
+   wn::|happen%2:30:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -17113,8 +17092,7 @@
   </sem-frame>
  </concept>
  <concept name="ont::phys-modifier">
-  <relation label="
-inherit">
+  <relation label="inherit">
    ont::situation-object-modifier
   </relation>
   <sem-frame>
@@ -25786,6 +25764,10 @@ inherit">
    wn::|weak%3:00:00::|
    wn::|faint%5:00:00::|
    wn::|weak%3:00:00::|
+   wn::|low%3:00:02::|
+   wn::|low%3:00:01::|
+   wn::|shallow%3:00:01::|
+   wn::|dull%3:00:04::|
   </relation>
  </concept>
  <concept name="ont::weapon">

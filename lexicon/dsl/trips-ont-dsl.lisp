@@ -300,7 +300,7 @@
           (ONT::NEUTRAL (CONCEPT T))
           (ONT::FORMAL (CONCEPT SITUATION))))
 
-(CONCEPT ONT::ACTIVITY-VAL (INHERIT ONT::PROCESS-VAL))
+(CONCEPT ONT::ACTIVITY-VAL (INHERIT ONT::PROPERTY-VAL))
 
 (CONCEPT ONT::ACTUAL (INHERIT ONT::ACTUALITY-VAL))
 
@@ -610,7 +610,7 @@
 
 (CONCEPT ONT::APPEARS-TO-HAVE-PROPERTY
          (INHERIT ONT::HAVE-PROPERTY)
-         (OVERLAP WN::|sound%2:39:06::|)
+         (OVERLAP WN::|sound%2:39:06::| WN::|come_across%2:31:00::|)
          (SEM-FEATS (INHERIT SITUATION)
                     (TIME-SPAN EXTENDED)
                     (ASPECT STAGE-LEVEL))
@@ -741,12 +741,7 @@
          (OVERLAP WN::|come%2:38:04::|
                   WN::|get%2:38:00::|
                   WN::|arrive%2:38:00::|
-                  WN::|happen%2:30:01::|
-                  WN::|materialize%2:30:00::|
-                  WN::|materialise%2:30:00::|
-                  WN::|appear%2:41:03::|
-                  WN::|arrive_at%2:38:00::|
-                  WN::|come_across%2:31:00::|)
+                  WN::|arrive_at%2:38:00::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT BOUNDED))
          (SEM-FRAME
           (ONT::LOCATION
@@ -761,10 +756,6 @@
          (SEM-FRAME
           (ONT::OF (SEM-FEATS (INHERIT ?O) (INFORMATION INFORMATION-CONTENT))
            OPTIONAL)))
-
-(CONCEPT ONT::ARTIFACT-PROPERTY-VAL
-         (INHERIT ONT::CONFIGURATION-PROPERTY-VAL)
-         (SEM-FRAME (ONT::OF (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN ARTIFACT)))))
 
 (CONCEPT ONT::ARTIFICIAL
          (INHERIT ONT::NATURAL-VAL)
@@ -4615,7 +4606,6 @@
 (CONCEPT ONT::FOLLOW-PATH
          (INHERIT ONT::CO-MOTION)
          (OVERLAP WN::|follow%2:38:00::|
-                  WN::|follow%2:38:13::|
                   WN::|come_after%2:41:00::|
                   WN::|follow%2:42:03::|)
          (SEM-FEATS (INHERIT SITUATION)
@@ -5427,10 +5417,6 @@
                   WN::|follow%2:42:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TIME-SPAN EXTENDED) (ASPECT STATIC)))
 
-(CONCEPT ONT::IN-WORKING-ORDER-VAL
-         (INHERIT ONT::CONFIGURATION-PROPERTY-VAL)
-         (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -)))
-
 (CONCEPT ONT::INACCESSIBLE
          (INHERIT ONT::ACCESSIBILITY-VAL)
          (OVERLAP WN::|inaccessible%3:00:00::| WN::|inaccessible%3:00:00::|))
@@ -5629,18 +5615,15 @@
                   WN::|acute%5:00:00::|
                   WN::|powerful%3:00:00::|
                   WN::|strong%3:00:00::|
-                  WN::|low%3:00:02::|
-                  WN::|low%3:00:01::|
                   WN::|deep%3:00:01::|
-                  WN::|shallow%3:00:01::|
                   WN::|high%3:00:02::|
                   WN::|intense%3:00:00::|
                   WN::|sharp%3:00:04::|
                   WN::|potent%5:00:00::|
                   WN::|deep%5:00:00::|
-                  WN::|dull%3:00:04::|
                   WN::|strong%5:00:00::|
-                  WN::|deep%5:00:00::|))
+                  WN::|deep%5:00:00::|
+                  WN::|intensive%5:00:00:intense:00|))
 
 (CONCEPT ONT::INTENSIFIER (INHERIT ONT::MODIFIER))
 
@@ -6872,9 +6855,7 @@
 
 (CONCEPT ONT::MOVE-BACK
          (INHERIT ONT::MOVE)
-         (OVERLAP WN::|back%2:38:01::|
-                  WN::|back_away%2:32:00::|
-                  WN::|back_up%2:41:00::|))
+         (OVERLAP WN::|back%2:38:01::| WN::|move_back%2:38:00::|))
 
 (CONCEPT ONT::MOVE-BACK-AND-FORTH (INHERIT ONT::MOVE))
 
@@ -7136,6 +7117,10 @@
 
 (CONCEPT ONT::NOT-FAMILIAR (INHERIT ONT::SALIENCE))
 
+(CONCEPT ONT::NOT-IN-WORKING-ORDER-VAL
+         (INHERIT ONT::INACTIVE)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -)))
+
 (CONCEPT ONT::NOTICEABLE
          (INHERIT ONT::ATTENTION-WORTHY-VAL)
          (OVERLAP WN::|outstanding%5:00:00::|
@@ -7277,6 +7262,7 @@
 
 (CONCEPT ONT::OCCURRING
          (INHERIT ONT::SITUATION-ROOT)
+         (OVERLAP WN::|happen%2:30:00::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
          (SEM-FRAME
           (ONT::NEUTRAL (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC)))))
@@ -11528,7 +11514,11 @@
          (INHERIT ONT::INTENSITY-VAL)
          (OVERLAP WN::|weak%3:00:00::|
                   WN::|faint%5:00:00::|
-                  WN::|weak%3:00:00::|))
+                  WN::|weak%3:00:00::|
+                  WN::|low%3:00:02::|
+                  WN::|low%3:00:01::|
+                  WN::|shallow%3:00:01::|
+                  WN::|dull%3:00:04::|))
 
 (CONCEPT ONT::WEAPON
          (INHERIT ONT::DEVICE)

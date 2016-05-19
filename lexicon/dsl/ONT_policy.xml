@@ -112,9 +112,9 @@
   ont::policy
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" />
+  <template-call template="ont::other-reln-formal-templ" xp="'(w::pp w::for)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::formal"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -126,12 +126,37 @@
     obj
    </or>
    </feat>
-   <feat name="agr">
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="policy" />
+ </morph>
+ <example text="the policy to close the park">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::policy
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-formal-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::formal"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
    <or>
-    |3s|
-    |3p|
+    sub
+    obj
    </or>
    </feat>
+   <feat name="agr">|3s|</feat>
   </syn-feats>
  </syntax>
  </sense>

@@ -180,15 +180,21 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::process-val">
+ <concept name="ont::activity-val">
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
- <concept name="ont::activity-val">
+ <concept name="ont::not-in-working-order-val">
  <relation label="inherit">
-  ont::process-val
+  ont::inactive
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="gradability">-</feat>
+ </sem-feats>
  </concept>
  <sense>
  <morph>
@@ -246,6 +252,21 @@
    <feat name="gradability">+</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="off" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="The switch is off -- predicative only, because 'the off switch' is not at all the same">
+ </example>
+ <relation label="inherit">
+  ont::inactive
+  ont::central-adj-templ
+ </relation>
  </sense>
  <sense>
  <morph>
