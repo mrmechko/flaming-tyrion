@@ -500,6 +500,11 @@
    wn::|active%3:00:06::|
    wn::|busy%5:00:01::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <concept name="phys-obj" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::active-perception">
   <relation label="inherit">
@@ -5328,7 +5333,12 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::of">
-    <concept name="situation" />
+    <sem-feats>
+     <relation label="inherit">
+      situation
+     </relation>
+     <feat name="type">event-of-change</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>

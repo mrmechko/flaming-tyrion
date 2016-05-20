@@ -234,7 +234,8 @@
          (OVERLAP WN::|busy%3:00:00::|
                   WN::|active%3:00:03::|
                   WN::|active%3:00:06::|
-                  WN::|busy%5:00:01::|))
+                  WN::|busy%5:00:01::|)
+         (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::ACTIVE-PERCEPTION
          (INHERIT ONT::PERCEPTION)
@@ -2394,7 +2395,8 @@
 
 (CONCEPT ONT::COMPLETELY
          (INHERIT ONT::PREDICATE)
-         (SEM-FRAME (ONT::OF (CONCEPT SITUATION))))
+         (SEM-FRAME
+          (ONT::OF (SEM-FEATS (INHERIT SITUATION) (TYPE EVENT-OF-CHANGE)))))
 
 (CONCEPT ONT::COMPLETION-VAL
          (INHERIT ONT::PROCESS-VAL)
