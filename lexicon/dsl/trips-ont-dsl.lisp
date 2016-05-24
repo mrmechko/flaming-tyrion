@@ -2396,7 +2396,10 @@
 (CONCEPT ONT::COMPLETELY
          (INHERIT ONT::PREDICATE)
          (SEM-FRAME
-          (ONT::OF (SEM-FEATS (INHERIT SITUATION) (TYPE EVENT-OF-CHANGE)))))
+          (ONT::OF
+           (SEM-FEATS (INHERIT SITUATION)
+                      (TRAJECTORY -)
+                      (TYPE EVENT-OF-CHANGE)))))
 
 (CONCEPT ONT::COMPLETION-VAL
          (INHERIT ONT::PROCESS-VAL)
@@ -3379,10 +3382,11 @@
 
 (CONCEPT ONT::DIRECTION
          (INHERIT ONT::PREDICATE)
-         (SEM-FRAME (ONT::VAL (CONCEPT PHYS-OBJ))
+         (SEM-FRAME (ONT::VAL (CONCEPT PHYS-OBJ) OPTIONAL)
                     (ONT::OF
-                     (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION))
-                                (TRAJECTORY +)))))
+                     (SEM-FEATS (INHERIT SITUATION)
+                                (TRAJECTORY +)
+                                (TYPE MOTION)))))
 
 (CONCEPT ONT::DIRECTION-RELN
          (INHERIT ONT::PATH)
