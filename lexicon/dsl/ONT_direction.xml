@@ -7,16 +7,22 @@
   ont::predicate
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::val" optional="optional">
+  <role-restr-map roles="ont::val">
    <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::of">
    <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="type">
+    <or>
+     motion
+     apply-force
+    </or>
+    </feat>
     <feat name="trajectory">+</feat>
-    <feat name="type">motion</feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
@@ -79,16 +85,22 @@
  </relation>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::val" optional="optional">
+ <role-restr-map roles="ont::val">
   <concept name="phys-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::of">
   <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+   <feat name="type">
+   <or>
+    motion
+    apply-force
+   </or>
+   </feat>
    <feat name="trajectory">+</feat>
-   <feat name="type">motion</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>

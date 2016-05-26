@@ -141,7 +141,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::affected">
   <or>
@@ -171,17 +170,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::agent">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="cause">force</feat>
- </sem-feats>
+ <concept name="situation" />
  <concept name="ont::event-of-causation">
  <relation label="inherit">
   ont::event-of-action
@@ -197,9 +186,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::apply-force">
+ <sem-frame>
+ <role-restr-map roles="ont::agent">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">force</feat>
+ </sem-feats>
+ <concept name="ont::touch">
  <relation label="inherit">
   ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|touch%2:35:00::|
+ </relation>
+ </concept>
+ <concept name="ont::apply-force">
+ <relation label="inherit">
+  ont::touch
  </relation>
  <relation label="overlap">
   wn::|reflect%2:39:00::|

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
 <ONTTYPE name="root">
-<ONTTYPE name="-" />
 <ONTTYPE name="any-sem">
-<ONTTYPE name="+" />
 <ONTTYPE name="any-time-object">
 <ONTTYPE name="time-object">
 <WORD name="a_m" />
@@ -3574,7 +3572,6 @@
 <WORD name="uptown" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="dwelling" />
 <ONTTYPE name="floor-rel">
 <ONTTYPE name="floor-above">
 <WORD name="upstairs" />
@@ -3672,19 +3669,27 @@
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="navigational">
+<ONTTYPE name="navigational-reln">
+<WORD name="northeast" />
+<WORD name="northwest" />
+<WORD name="southeast" />
+<WORD name="southwest" />
 <ONTTYPE name="east-reln">
 <WORD name="east_of" />
+<WORD name="east" />
 </ONTTYPE>
 <ONTTYPE name="north-reln">
 <WORD name="north_of" />
+<WORD name="north" />
 <WORD name="northward" />
 </ONTTYPE>
 <ONTTYPE name="south-reln">
 <WORD name="south_of" />
+<WORD name="south" />
 </ONTTYPE>
 <ONTTYPE name="west-reln">
 <WORD name="west_of" />
+<WORD name="west" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -3700,11 +3705,13 @@
 <WORD name="near" />
 <WORD name="nearby" />
 <WORD name="thereabouts" />
-<WORD name="touching" />
 <ONTTYPE name="adjacent">
 <WORD name="adjacent_to" />
 <WORD name="next_to" />
+<WORD name="adjacent" />
 <WORD name="by" />
+<WORD name="contiguous" />
+<WORD name="flush" />
 <MAPPING to="wordnet" name="adjacent%5:00:00:close:01" />
 </ONTTYPE>
 </ONTTYPE>
@@ -3842,9 +3849,6 @@
 </ONTTYPE>
 <ONTTYPE name="destination-loc">
 <WORD name="to" />
-</ONTTYPE>
-<ONTTYPE name="dimension">
-<WORD name="by" />
 </ONTTYPE>
 <ONTTYPE name="direction">
 <WORD name="back_and_forth" />
@@ -4012,7 +4016,6 @@
 <WORD name="not_at_all" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="grade-modifier" />
 <ONTTYPE name="intensifier">
 <WORD name="really" />
 <WORD name="so" />
@@ -4181,21 +4184,6 @@
 <ONTTYPE name="restriction">
 <WORD name="merely" />
 <WORD name="only" />
-</ONTTYPE>
-<ONTTYPE name="scale-relation">
-<WORD name="between" />
-<WORD name="down" />
-<WORD name="up" />
-<WORD name="within" />
-<ONTTYPE name="has-value-on-scale" />
-<ONTTYPE name="less-than-rel">
-<WORD name="below" />
-<WORD name="under" />
-</ONTTYPE>
-<ONTTYPE name="more-than-rel">
-<WORD name="above" />
-<WORD name="over" />
-</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="sequence-position">
 <WORD name="first_of_all" />
@@ -4713,11 +4701,6 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="spatial">
-<ONTTYPE name="connected-val">
-<WORD name="adjacent" />
-<WORD name="contiguous" />
-<WORD name="flush" />
-</ONTTYPE>
 <ONTTYPE name="direction-val">
 <ONTTYPE name="incoming">
 <WORD name="inbound" />
@@ -4842,18 +4825,12 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="map-location-val">
-<WORD name="northeast" />
-<WORD name="northwest" />
-<WORD name="southeast" />
-<WORD name="southwest" />
 <ONTTYPE name="east">
-<WORD name="east" />
 <WORD name="eastern" />
 <MAPPING to="wordnet" name="east%3:00:00::" />
 <MAPPING to="wordnet" name="eastern%5:00:00:east:00" />
 </ONTTYPE>
 <ONTTYPE name="north">
-<WORD name="north" />
 <WORD name="northern" />
 <MAPPING to="wordnet" name="northwestern%5:00:00:north:00" />
 <MAPPING to="wordnet" name="northeastern%5:00:00:north:00" />
@@ -4861,7 +4838,6 @@
 <MAPPING to="wordnet" name="northerly%5:00:02:north:00" />
 </ONTTYPE>
 <ONTTYPE name="south">
-<WORD name="south" />
 <WORD name="southern" />
 <MAPPING to="wordnet" name="southeasterly%5:00:02:south:00" />
 <MAPPING to="wordnet" name="southerly%5:00:02:south:00" />
@@ -4869,7 +4845,6 @@
 <MAPPING to="wordnet" name="south%3:00:00::" />
 </ONTTYPE>
 <ONTTYPE name="west">
-<WORD name="west" />
 <WORD name="western" />
 <MAPPING to="wordnet" name="west%3:00:00::" />
 <MAPPING to="wordnet" name="western%5:00:00:west:00" />
@@ -9730,7 +9705,6 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="social-activity">
-<WORD name="go_out" />
 <WORD name="hobnob" />
 <WORD name="socialize" />
 <WORD name="visit" />
@@ -10293,6 +10267,9 @@
 <WORD name="employ" />
 <WORD name="hire" />
 <MAPPING to="wordnet" name="hire%2:41:00::" />
+</ONTTYPE>
+<ONTTYPE name="fire-dismiss">
+<WORD name="can" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="fighting">
@@ -10923,43 +10900,6 @@
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="apply-force">
-<MAPPING to="wordnet" name="reflect%2:39:00::" />
-<MAPPING to="wordnet" name="drive%2:35:01::" />
-<ONTTYPE name="click">
-<WORD name="click" />
-<WORD name="click" />
-</ONTTYPE>
-<ONTTYPE name="pull">
-<WORD name="draw" />
-<WORD name="jerk" />
-<WORD name="pull" />
-<WORD name="tug" />
-<WORD name="wrench" />
-<WORD name="yank" />
-<MAPPING to="wordnet" name="pull%2:35:00::" />
-<MAPPING to="wordnet" name="pull%2:35:04::" />
-<MAPPING to="wordnet" name="trigger%2:33:00::" />
-</ONTTYPE>
-<ONTTYPE name="push">
-<WORD name="force" />
-<WORD name="prod" />
-<WORD name="push" />
-<WORD name="shove" />
-<WORD name="thrust" />
-<MAPPING to="wordnet" name="push%2:38:00::" />
-<MAPPING to="wordnet" name="thrust%2:38:00::" />
-<MAPPING to="wordnet" name="thrust%2:42:01::" />
-<ONTTYPE name="press">
-<WORD name="press" />
-<MAPPING to="wordnet" name="compress%2:35:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="squeeze">
-<WORD name="squeeze" />
-<MAPPING to="wordnet" name="squeeze%2:35:00::" />
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="bet">
 <WORD name="bet" />
 <WORD name="bid" />
@@ -11104,7 +11044,6 @@
 <WORD name="light" />
 </ONTTYPE>
 <ONTTYPE name="extinguish">
-<WORD name="go_out" />
 <ONTTYPE name="turn-off">
 <WORD name="shut_off" />
 <WORD name="switch_off" />
@@ -11557,7 +11496,6 @@
 </ONTTYPE>
 <ONTTYPE name="increase">
 <WORD name="bump_up" />
-<WORD name="go_up" />
 <WORD name="pick_up" />
 <WORD name="plump_up" />
 <WORD name="speed_up" />
@@ -12222,7 +12160,6 @@
 <MAPPING to="wordnet" name="enter%2:36:00::" />
 <ONTTYPE name="penetrate">
 <WORD name="stick" />
-<MAPPING to="wordnet" name="jab%2:35:00::" />
 <MAPPING to="wordnet" name="knife%2:35:00::" />
 <MAPPING to="wordnet" name="penetrate%2:35:00::" />
 </ONTTYPE>
@@ -12353,7 +12290,6 @@
 <WORD name="wrinkle" />
 </ONTTYPE>
 <ONTTYPE name="go-back">
-<WORD name="go_back" />
 <WORD name="backtrack" />
 </ONTTYPE>
 <ONTTYPE name="go-on">
@@ -12853,11 +12789,7 @@
 <MAPPING to="wordnet" name="pawn%2:40:00::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="donate">
-<WORD name="contribute" />
-<WORD name="donate" />
-<WORD name="gift" />
-<WORD name="leave" />
+<ONTTYPE name="donate-give">
 <MAPPING to="wordnet" name="donate%2:40:00::" />
 <MAPPING to="wordnet" name="give%2:40:01::" />
 <MAPPING to="wordnet" name="gift%1:21:00::" />
@@ -13020,6 +12952,48 @@
 <WORD name="fire" />
 <MAPPING to="wordnet" name="displace%2:41:04::" />
 </ONTTYPE>
+<ONTTYPE name="touch">
+<WORD name="touch" />
+<MAPPING to="wordnet" name="touch%2:35:00::" />
+<ONTTYPE name="apply-force">
+<MAPPING to="wordnet" name="reflect%2:39:00::" />
+<MAPPING to="wordnet" name="drive%2:35:01::" />
+<ONTTYPE name="click">
+<WORD name="click" />
+<WORD name="click" />
+</ONTTYPE>
+<ONTTYPE name="pull">
+<WORD name="draw" />
+<WORD name="jerk" />
+<WORD name="pull" />
+<WORD name="tug" />
+<WORD name="wrench" />
+<WORD name="yank" />
+<MAPPING to="wordnet" name="pull%2:35:00::" />
+<MAPPING to="wordnet" name="pull%2:35:04::" />
+<MAPPING to="wordnet" name="trigger%2:33:00::" />
+</ONTTYPE>
+<ONTTYPE name="push">
+<WORD name="force" />
+<WORD name="prod" />
+<WORD name="push" />
+<WORD name="shove" />
+<WORD name="thrust" />
+<MAPPING to="wordnet" name="jab%2:35:00::" />
+<MAPPING to="wordnet" name="push%2:38:00::" />
+<MAPPING to="wordnet" name="thrust%2:38:00::" />
+<MAPPING to="wordnet" name="thrust%2:42:01::" />
+<ONTTYPE name="press">
+<WORD name="press" />
+<MAPPING to="wordnet" name="compress%2:35:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="squeeze">
+<WORD name="squeeze" />
+<MAPPING to="wordnet" name="squeeze%2:35:00::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="event-of-creation">
 <ONTTYPE name="create">
@@ -13110,6 +13084,9 @@
 </ONTTYPE>
 <ONTTYPE name="steep">
 <WORD name="steep" />
+</ONTTYPE>
+<ONTTYPE name="transform-to-preserve">
+<WORD name="can" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="emit-giveoff-discharge">
@@ -13766,20 +13743,6 @@
 <MAPPING to="wordnet" name="jumble%2:36:00::" />
 <MAPPING to="wordnet" name="confuse%2:31:01::" />
 <MAPPING to="wordnet" name="disorganize%2:41:00::" />
-</ONTTYPE>
-<ONTTYPE name="register">
-<WORD name="clock" />
-<WORD name="measure" />
-<WORD name="quantify" />
-<WORD name="time" />
-<MAPPING to="wordnet" name="take%2:30:08::" />
-<MAPPING to="wordnet" name="clock%2:30:00::" />
-<ONTTYPE name="weigh">
-<WORD name="total" />
-<WORD name="weigh" />
-<MAPPING to="wordnet" name="weigh%2:42:01::" />
-<MAPPING to="wordnet" name="weigh%2:42:00::" />
-</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="event-of-undergoing-action">
@@ -14597,11 +14560,14 @@
 <MAPPING to="wordnet" name="limit%2:30:00::" />
 </ONTTYPE>
 <ONTTYPE name="connected">
+<WORD name="abut" />
+<WORD name="adjoin" />
 <WORD name="connect" />
 <WORD name="connection" />
 <WORD name="link" />
 <WORD name="network" />
 <WORD name="plug" />
+<WORD name="touch" />
 <MAPPING to="wordnet" name="connect%2:42:02::" />
 <MAPPING to="wordnet" name="admit%2:42:00::" />
 <MAPPING to="wordnet" name="afford%2:40:01::" />
@@ -14619,7 +14585,6 @@
 <MAPPING to="wordnet" name="overlay%2:35:00::" />
 </ONTTYPE>
 <ONTTYPE name="intersect">
-<WORD name="adjoin" />
 <WORD name="coincide" />
 <WORD name="cross" />
 <WORD name="hit" />
@@ -14630,11 +14595,6 @@
 <MAPPING to="wordnet" name="meet%2:41:01::" />
 <MAPPING to="wordnet" name="hold%2:35:01::" />
 <MAPPING to="wordnet" name="coexist%2:42:00::" />
-<ONTTYPE name="touch">
-<WORD name="abut" />
-<WORD name="touch" />
-<MAPPING to="wordnet" name="touch%2:35:00::" />
-</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="orient">
 <WORD name="aim" />

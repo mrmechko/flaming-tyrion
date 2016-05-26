@@ -1356,7 +1356,7 @@
  </concept>
  <concept name="ont::apply-force">
   <relation label="inherit">
-   ont::event-of-causation
+   ont::touch
   </relation>
   <relation label="overlap">
    wn::|reflect%2:39:00::|
@@ -4189,7 +4189,7 @@
       <concept name="abstr-obj" />
       <concept name="situation" />
      </or>
-     <feat name="type">information-content</feat>
+     <feat name="information">information-content</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -4805,13 +4805,10 @@
      <relation label="inherit">
       abstr-obj
      </relation>
-     <feat name="scale">scale</feat>
+     <feat name="scale">color-scale</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::agent" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::formal">
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
@@ -5755,25 +5752,6 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::neutral2" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::connected-val">
-  <relation label="inherit">
-   ont::spatial
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="gradability">+</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::neutral1">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::neutral">
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
@@ -7505,16 +7483,22 @@
    ont::predicate
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::val" optional="optional">
+   <role-restr-map roles="ont::val">
     <concept name="phys-obj" />
    </role-restr-map>
    <role-restr-map roles="ont::of">
     <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="situation" />
+     </or>
+     <feat name="type">
+     <or>
+      motion
+      apply-force
+     </or>
+     </feat>
      <feat name="trajectory">+</feat>
-     <feat name="type">motion</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -7852,7 +7836,7 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::donate">
+ <concept name="ont::donate-give">
   <relation label="inherit">
    ont::giving
   </relation>
@@ -8031,11 +8015,6 @@
    wn::|particulate%1:27:00::|
   </relation>
  </concept>
- <concept name="ont::dwelling">
-  <relation label="inherit">
-   ont::conventional-position-reln
-  </relation>
- </concept>
  <concept name="ont::dyspnea">
   <relation label="inherit">
    ont::physical-symptom
@@ -8080,7 +8059,7 @@
  </concept>
  <concept name="ont::east-reln">
   <relation label="inherit">
-   ont::navigational
+   ont::navigational-reln
   </relation>
  </concept>
  <concept name="ont::easy">
@@ -9160,6 +9139,17 @@
   <relation label="inherit">
    ont::affect-experiencer
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="intentional">+</feat>
+     <feat name="origin">living</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::evoke-sadness">
   <relation label="inherit">
@@ -9958,6 +9948,11 @@
    ont::located-event
   </relation>
  </concept>
+ <concept name="ont::fire-dismiss">
+  <relation label="inherit">
+   ont::employment
+  </relation>
+ </concept>
  <concept name="ont::fire-truck">
   <relation label="inherit">
    ont::truck
@@ -10563,7 +10558,7 @@
  </concept>
  <concept name="ont::future-giving">
   <relation label="inherit">
-   ont::donate
+   ont::donate-give
   </relation>
   <relation label="overlap">
    wn::|bequeath%2:40:00::|
@@ -15656,7 +15651,7 @@
    wn::|treat%2:30:01::|
   </relation>
  </concept>
- <concept name="ont::navigational">
+ <concept name="ont::navigational-reln">
   <relation label="inherit">
    ont::pos-directional-reln
   </relation>
@@ -15896,7 +15891,7 @@
  </concept>
  <concept name="ont::north-reln">
   <relation label="inherit">
-   ont::navigational
+   ont::navigational-reln
   </relation>
  </concept>
  <concept name="ont::not-familiar">
@@ -16913,7 +16908,6 @@
    ont::entering
   </relation>
   <relation label="overlap">
-   wn::|poke%2:35:01::|
    wn::|stab%2:35:02::|
    wn::|penetrate%2:35:00::|
   </relation>
@@ -17127,10 +17121,10 @@
    <feat name="intentional">-</feat>
   </sem-feats>
  </concept>
- <
-concept name="ont::phys-representation">
+ <concept name="ont::phys-representation">
   <relation label="inherit">
-   ont::phys-object
+   
+ont::phys-object
   </relation>
   <relation label="overlap">
    wn::|representation%1:06:00::|
@@ -18926,6 +18920,7 @@ concept name="ont::phys-representation">
    ont::apply-force
   </relation>
   <relation label="overlap">
+   wn::|poke%2:35:01::|
    wn::|push%2:38:00::|
    wn::|force%2:38:00::|
    wn::|thrust%2:38:00::|
@@ -22420,7 +22415,7 @@ concept name="ont::phys-representation">
  </concept>
  <concept name="ont::south-reln">
   <relation label="inherit">
-   ont::navigational
+   ont::navigational-reln
   </relation>
  </concept>
  <concept name="ont::space">
@@ -24493,18 +24488,11 @@ concept name="ont::phys-representation">
  </concept>
  <concept name="ont::touch">
   <relation label="inherit">
-   ont::intersect
+   ont::event-of-causation
   </relation>
   <relation label="overlap">
    wn::|touch%2:35:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="cause">-</feat>
-   <feat name="aspect">indiv-level</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::tour">
   <relation label="inherit">
@@ -24571,6 +24559,11 @@ concept name="ont::phys-representation">
    </relation>
    <feat name="aspect">dynamic</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::transform-to-preserve">
+  <relation label="inherit">
+   ont::cooking
+  </relation>
  </concept>
  <concept name="ont::transformation">
   <relation label="inherit">
@@ -25958,7 +25951,7 @@ concept name="ont::phys-representation">
  </concept>
  <concept name="ont::west-reln">
   <relation label="inherit">
-   ont::navigational
+   ont::navigational-reln
   </relation>
  </concept>
  <concept name="ont::wh-location">
