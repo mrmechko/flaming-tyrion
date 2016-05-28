@@ -2125,7 +2125,7 @@
                   WN::|color%1:09:01::|
                   WN::|colour%1:09:01::|)
          (SEM-FRAME
-          (ONT::VAL (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE OTHER-SCALE)))))
+          (ONT::VAL (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE COLOR-SCALE)))))
 
 (CONCEPT ONT::COLOR-SCALE (INHERIT ONT::SCALE))
 
@@ -3345,8 +3345,8 @@
 (CONCEPT ONT::DIMENSION
          (INHERIT ONT::PREDICATE)
          (SEM-FRAME
-          (ONT::VAL2 (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE SCALE)) OPTIONAL)
-          (ONT::VAL (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE SCALE)))
+          (ONT::VAL2 (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE ?!SC2)) OPTIONAL)
+          (ONT::VAL (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE ?!SC)))
           (ONT::OF (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::DIR-IN-TERMS-OF-OBJ
@@ -4949,7 +4949,7 @@
 
 (CONCEPT ONT::GRADE-MODIFIER
          (INHERIT ONT::MODIFIER)
-         (SEM-FRAME (ONT::VAL (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE SCALE)))
+         (SEM-FRAME (ONT::VAL (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE ?!SC)))
                     (ONT::OF (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY +)))))
 
 (CONCEPT ONT::GRAINS
@@ -6047,7 +6047,7 @@
 (CONCEPT ONT::LESS-VAL
          (INHERIT ONT::DOMAIN-PROPERTY)
          (SEM-FEATS (INHERIT ABSTR-OBJ)
-                    (SCALE OTHER-SCALE)
+                    (SCALE ?!SC)
                     (GRADABILITY +)
                     (INTENTIONAL -)
                     (INFORMATION -)
@@ -6497,7 +6497,7 @@
 (CONCEPT ONT::MAX-VAL
          (INHERIT ONT::DOMAIN-PROPERTY)
          (SEM-FEATS (INHERIT ABSTR-OBJ)
-                    (SCALE OTHER-SCALE)
+                    (SCALE ?!SC)
                     (GRADABILITY +)
                     (INTENTIONAL -)
                     (INFORMATION -)
@@ -6688,7 +6688,7 @@
 (CONCEPT ONT::MIN-VAL
          (INHERIT ONT::DOMAIN-PROPERTY)
          (SEM-FEATS (INHERIT ABSTR-OBJ)
-                    (SCALE OTHER-SCALE)
+                    (SCALE ?!SC)
                     (GRADABILITY +)
                     (INTENTIONAL -)
                     (INFORMATION -)
@@ -6789,7 +6789,7 @@
 (CONCEPT ONT::MORE-VAL
          (INHERIT ONT::DOMAIN-PROPERTY)
          (SEM-FEATS (INHERIT ABSTR-OBJ)
-                    (SCALE OTHER-SCALE)
+                    (SCALE ?!SC)
                     (GRADABILITY +)
                     (INTENTIONAL -)
                     (INFORMATION -)
@@ -8700,7 +8700,7 @@
                   WN::|clock%2:30:00::|
                   WN::|time%2:30:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (CAUSE AGENTIVE))
-         (SEM-FRAME (ONT::EXTENT (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE SCALE)))
+         (SEM-FRAME (ONT::EXTENT (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE ?!SC)))
                     (ONT::NEUTRAL (CONCEPT PHYS-OBJ))
                     (ONT::AGENT
                      (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
@@ -9380,7 +9380,7 @@
 
 (CONCEPT ONT::SCALE-RELATION
          (INHERIT ONT::PREDICATE)
-         (SEM-FRAME (ONT::VAL (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE SCALE)))
+         (SEM-FRAME (ONT::VAL (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE ?!SC)))
                     (ONT::OF
                      (OR (CONCEPT PHYS-OBJ)
                          (CONCEPT ABSTR-OBJ)
