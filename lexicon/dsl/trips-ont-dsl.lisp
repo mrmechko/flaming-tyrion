@@ -85,7 +85,7 @@
          (INHERIT ONT::POSITION)
          (OVERLAP WN::|afford%2:42:00::| WN::|admit%2:42:06::|))
 
-(CONCEPT ONT::ACCOMODATION
+(CONCEPT ONT::ACCOMMODATION
          (INHERIT ONT::LODGING)
          (OVERLAP WN::|hotel%1:06:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
@@ -1183,7 +1183,7 @@
          (SEM-FRAME (ONT::FORMAL (CONCEPT ABSTR-OBJ))))
 
 (CONCEPT ONT::BEDANDBREAKFAST
-         (INHERIT ONT::ACCOMODATION)
+         (INHERIT ONT::ACCOMMODATION)
          (OVERLAP WN::|boarding_house%1:06:00::|
                   WN::|boarding_house%1:06:00::|))
 
