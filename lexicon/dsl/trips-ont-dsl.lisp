@@ -3026,6 +3026,8 @@
          (INHERIT ONT::PHYSICAL-SYMPTOM-VAL)
          (OVERLAP WN::|dazed%5:00:00::| WN::|lethargic%3:00:00::|))
 
+(CONCEPT ONT::DEACTIVATE (INHERIT ONT::STOP))
+
 (CONCEPT ONT::DECIDE
          (INHERIT ONT::ACQUIRE-BELIEF)
          (OVERLAP WN::|decide%2:31:00::|)
