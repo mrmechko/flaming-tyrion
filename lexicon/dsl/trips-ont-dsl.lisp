@@ -3378,7 +3378,7 @@
          (SEM-FRAME (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::DIRECTION
-         (INHERIT ONT::PREDICATE)
+         (INHERIT ONT::POSITION-RELN)
          (SEM-FRAME (ONT::VAL (CONCEPT PHYS-OBJ))
                     (ONT::OF
                      (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION))
@@ -10376,7 +10376,7 @@
          (OVERLAP WN::|submit%2:32:01::| WN::|subject%2:32:04::|)
          (INHERIT ONT::GIVING SITUATION)
          (SEM-FRAME (ONT::AGENT (CONCEPT T))
-                    (ONT::FORMAL
+                    (ONT::AFFECTED
                      (OR (CONCEPT PHYS-OBJ)
                          (CONCEPT ABSTR-OBJ)
                          (CONCEPT SITUATION)))))
