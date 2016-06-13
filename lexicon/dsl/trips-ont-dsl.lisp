@@ -4150,6 +4150,10 @@
                   WN::|tucker%2:29:00::|
                   WN::|tucker_out%2:29:00::|))
 
+(CONCEPT ONT::EVOKE-WORRY
+         (INHERIT ONT::EVOKE-DISTRESS)
+         (OVERLAP WN::|worry%2:37:01::|))
+
 (CONCEPT ONT::EXCITED
          (INHERIT ONT::POS-INTENSE-EMOTIONAL-VAL)
          (OVERLAP WN::|excited%3:00:00::|
@@ -10182,6 +10186,10 @@
           ((ONT::NEUTRAL ONT::DONOR)
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
 
+(CONCEPT ONT::STATE-OF-WORRYING
+         (INHERIT ONT::CARE)
+         (OVERLAP WN::|worry%2:37:00::| WN::|concern%2:42:01::|))
+
 (CONCEPT ONT::STATUS
          (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN)
          (OVERLAP WN::|condition%1:26:00::|
@@ -11706,10 +11714,6 @@
           (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN HUMAN)))
           (ONT::AGENT
            (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +) (ORIGIN HUMAN)))))
-
-(CONCEPT ONT::WORRYING
-         (INHERIT ONT::CARE)
-         (OVERLAP WN::|worry%2:37:00::| WN::|concern%2:42:01::|))
 
 (CONCEPT ONT::WOUND (INHERIT ONT::INJURY))
 
