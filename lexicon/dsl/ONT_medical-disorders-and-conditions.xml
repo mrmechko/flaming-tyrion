@@ -6,13 +6,21 @@
  <relation label="inherit">
   ont::physical-condition
  </relation>
+ <relation label="overlap">
+  wn::|disorder%1:26:03::|
+ </relation>
  <sem-frame>
   <role-restr-map roles="ont::of" optional="optional">
    <sem-feats>
     <relation label="inherit">
      phys-obj
     </relation>
-    <feat name="origin">human</feat>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
@@ -87,7 +95,12 @@
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="origin">human</feat>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
@@ -115,42 +128,104 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::breathing-disorder">
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
- </relation>
- <relation label="overlap">
-  wn::|asthma%1:26:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::of" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">human</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::physical-symptom">
+ <concept name="ont::medical-symptom">
  <relation label="inherit">
   ont::medical-disorders-and-conditions
  </relation>
  <relation label="overlap">
   wn::|symptom%1:26:00::|
   wn::|sign%1:26:00::|
+  wn::|fever%1:26:00::|
+  wn::|febrility%1:26:00::|
+  wn::|febricity%1:26:00::|
+  wn::|pyrexia%1:26:00::|
+  wn::|feverishness%1:26:00::|
+  wn::|pain%1:26:00::|
+  wn::|hurting%1:26:00::|
+  wn::|pain_sensation%1:09:00::|
+  wn::|painful_sensation%1:09:00::|
+  wn::|syndrome%1:26:00::|
+  wn::|amnesia%1:09:00::|
+  wn::|backache%1:26:00::|
+  wn::|stomachache%1:26:00::|
+  wn::|chest_pain%1:26:00::|
+  wn::|chill%1:26:01::|
+  wn::|constipation%1:26:00::|
+  wn::|constriction%1:09:00::|
+  wn::|contraction%1:04:01::|
+  wn::|cough%1:26:00::|
+  wn::|cramp%1:26:00::|
+  wn::|diarrhea%1:26:00::|
+  wn::|dyspepsia%1:26:00::|
+  wn::|edema%1:26:00::|
+  wn::|heartburn%1:26:00::|
+  wn::|hives%1:26:00::|
+  wn::|hoarseness%1:07:00::|
+  wn::|hyperventilation%1:04:00::|
+  wn::|arrhythmia%1:26:00::|
+  wn::|tachycardia%1:26:00::|
+  wn::|lightheadedness%1:26:00::|
+  wn::|nausea%1:26:00::|
+  wn::|nosebleed%1:26:00::|
+  wn::|numbness%1:26:00::|
+  wn::|palpitation%1:26:00::|
+  wn::|edema%1:26:00::|
+  wn::|redness%1:26:00::|
+  wn::|sneeze%1:26:00::|
+  wn::|sniffle%1:04:00::|
+  wn::|soreness%1:26:00::|
+  wn::|spasm%1:26:00::|
+  wn::|tightness%1:09:00::|
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::of" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">human</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
+ </concept>
+ <concept name="ont::medical-condition">
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+ </relation>
+ <relation label="overlap">
+  wn::|condition%1:26:05::|
+  wn::|sign%1:26:00::|
+  wn::|arteriosclerosis%1:26:00::|
+  wn::|eating_disorder%1:26:00::|
+  wn::|anorexia%1:26:00::|
+  wn::|clot%1:08:00::|
+  wn::|insanity%1:26:00::|
+  wn::|disorder%1:26:03::|
+  wn::|cholelithiasis%1:26:00::|
+  wn::|lithiasis%1:26:00::|
+  wn::|hyperkalemia%1:26:00::|
+  wn::|hypoglycemia%1:26:00::|
+  wn::|kidney_stone%1:17:00::|
+  wn::|malformation%1:26:00::|
+  wn::|mania%1:26:00::|
+  wn::|pathology%1:26:00::|
+  wn::|phlebitis%1:26:00::|
+  wn::|phobia%1:26:00::|
+  wn::|seizure%1:26:00::|
+  wn::|stroke%1:26:00::|
+  wn::|thrombosis%1:26:00::|
+  wn::|psychological_condition%1:26:00::|
+  wn::|anesthesia%1:26:00::|
+  wn::|angina%1:26:01::|
+  wn::|anxiety%1:26:00::|
+  wn::|nervous_disorder%1:26:00::|
+  wn::|ataxia%1:26:00::|
+  wn::|confusion%1:09:00::|
+  wn::|depression%1:26:03::|
+  wn::|distress%1:12:02::|
+  wn::|dizziness%1:26:00::|
+  wn::|drowsiness%1:26:00::|
+  wn::|exhaustion%1:26:00::|
+  wn::|fatigue%1:26:00::|
+  wn::|headache%1:26:00::|
+  wn::|irritation%1:26:00::|
+  wn::|anorexia%1:26:00::|
+  wn::|restlessness%1:07:00::|
+  wn::|stress%1:26:01::|
+  wn::|tiredness%1:26:00::|
+  wn::|weakness%1:07:00::|
+  wn::|addiction%1:26:00::|
+ </relation>
  </concept>
  <concept name="ont::injury">
  <relation label="inherit">
@@ -162,18 +237,8 @@
   wn::|harm%1:26:00::|
   wn::|trauma%1:26:02::|
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::of" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">human</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <concept name="ont::illness">
+ <concept name="ont::disease">
  <relation label="inherit">
   ont::medical-disorders-and-conditions
  </relation>
@@ -185,139 +250,27 @@
   wn::|unwellness%1:26:00::|
   wn::|malady%1:26:00::|
   wn::|sickness%1:26:00::|
-  wn::|condition%1:26:05::|
+  wn::|ailment%1:26:00::|
+  wn::|complaint%1:26:00::|
+  wn::|ill%1:26:00::|
+  wn::|abnormality%1:26:00::|
+  wn::|abnormalcy%1:26:00::|
+  wn::|aids%1:26:00::|
+  wn::|acquired_immune_deficiency_syndrome%1:26:00::|
+  wn::|anemia%1:26:00::|
+  wn::|aneurysm%1:26:00::|
+  wn::|gout%1:26:00::|
+  wn::|arthritis%1:26:00::|
+  wn::|osteoarthritis%1:26:00::|
+  wn::|osteoporosis%1:26:00::|
+  wn::|pancreatitis%1:26:00::|
+  wn::|pneumonia%1:26:00::|
+  wn::|angina%1:26:00::|
+  wn::|cardiovascular_disease%1:26:00::|
+  wn::|allergy%1:26:00::|
+  wn::|hypertension%1:26:00::|
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::of" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">human</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="addiction" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="allergy" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="amnesia" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="anemia" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="aneurysm" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="anorexia" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="arthritis" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="asthma" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="atherosclerosis" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="bulemia" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="cancer" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::bare-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="clot" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
  <sense>
  <morph>
   <pos pos="n" />
@@ -332,286 +285,6 @@
  <morph>
   <pos pos="n" />
   <word first-word="defect" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="dementia" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="diabetes" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="disease" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="disorder" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="gallstone" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="gout" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="hyperkalemia" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="hypertension" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="hypoglycemia" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="kidney" remaining-words="stone" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="leukemia" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="malaria" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="malformation" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="mania" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="osteoarthritis" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="osteoporosis" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="pain" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="pancreatitis" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="pathology" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="phlebitis" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="phobia" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="pneumonia" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="pregnancy" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="seizure" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="stroke" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="syndrome" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="thrombosis" />
- </morph>
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="ulcer" />
  </morph>
  <relation label="inherit">
   ont::medical-disorders-and-conditions

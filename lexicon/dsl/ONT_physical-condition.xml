@@ -90,21 +90,6 @@
   <feat name="intentional">-</feat>
  </sem-feats>
  </concept>
- <concept name="ont::medical-disorders-and-conditions">
- <relation label="inherit">
-  ont::physical-condition
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::of" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">human</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::health">
  <relation label="inherit">
   ont::physical-condition
@@ -112,6 +97,31 @@
  <relation label="overlap">
   wn::|wellness%1:26:00::|
   wn::|wellbeing%1:26:00::|
+  wn::|health%1:26:00::|
+  wn::|fitness%1:26:00::|
  </relation>
+ </concept>
+ <concept name="ont::medical-disorders-and-conditions">
+ <relation label="inherit">
+  ont::physical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|disorder%1:26:03::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::of" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
 </dsl>

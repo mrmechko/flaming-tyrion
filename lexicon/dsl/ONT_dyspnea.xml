@@ -4,12 +4,13 @@
  <provenance name="TRIPS"/>
  <concept name="ont::dyspnea">
  <relation label="inherit">
-  ont::physical-symptom
+  ont::medical-symptom
  </relation>
  <relation label="overlap">
-  wn::|shortness_of_breath%1:26:00::|
-  wn::|breathlessness%1:26:00::|
   wn::|dyspnea%1:26:00::|
+  wn::|dyspnea%1:26:00::|
+  wn::|dyspnoea%1:26:00::|
+  wn::|asthma%1:26:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -82,7 +83,12 @@
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="origin">human</feat>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
@@ -110,19 +116,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::of" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">human</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::medical-disorders-and-conditions">
  <relation label="inherit">
   ont::physical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|disorder%1:26:03::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::of" optional="optional">
@@ -130,29 +129,65 @@
     <relation label="inherit">
      phys-obj
     </relation>
-    <feat name="origin">human</feat>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-symptom">
+ <concept name="ont::medical-symptom">
  <relation label="inherit">
   ont::medical-disorders-and-conditions
  </relation>
  <relation label="overlap">
   wn::|symptom%1:26:00::|
   wn::|sign%1:26:00::|
+  wn::|fever%1:26:00::|
+  wn::|febrility%1:26:00::|
+  wn::|febricity%1:26:00::|
+  wn::|pyrexia%1:26:00::|
+  wn::|feverishness%1:26:00::|
+  wn::|pain%1:26:00::|
+  wn::|hurting%1:26:00::|
+  wn::|pain_sensation%1:09:00::|
+  wn::|painful_sensation%1:09:00::|
+  wn::|syndrome%1:26:00::|
+  wn::|amnesia%1:09:00::|
+  wn::|backache%1:26:00::|
+  wn::|stomachache%1:26:00::|
+  wn::|chest_pain%1:26:00::|
+  wn::|chill%1:26:01::|
+  wn::|constipation%1:26:00::|
+  wn::|constriction%1:09:00::|
+  wn::|contraction%1:04:01::|
+  wn::|cough%1:26:00::|
+  wn::|cramp%1:26:00::|
+  wn::|diarrhea%1:26:00::|
+  wn::|dyspepsia%1:26:00::|
+  wn::|edema%1:26:00::|
+  wn::|heartburn%1:26:00::|
+  wn::|hives%1:26:00::|
+  wn::|hoarseness%1:07:00::|
+  wn::|hyperventilation%1:04:00::|
+  wn::|arrhythmia%1:26:00::|
+  wn::|tachycardia%1:26:00::|
+  wn::|lightheadedness%1:26:00::|
+  wn::|nausea%1:26:00::|
+  wn::|nosebleed%1:26:00::|
+  wn::|numbness%1:26:00::|
+  wn::|palpitation%1:26:00::|
+  wn::|edema%1:26:00::|
+  wn::|redness%1:26:00::|
+  wn::|sneeze%1:26:00::|
+  wn::|sniffle%1:04:00::|
+  wn::|soreness%1:26:00::|
+  wn::|spasm%1:26:00::|
+  wn::|tightness%1:09:00::|
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::of" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">human</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sense>
  <morph>

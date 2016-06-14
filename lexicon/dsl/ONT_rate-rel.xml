@@ -7,6 +7,26 @@
   ont::predicate
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">
+    <or>
+     rate-scale
+     money-scale
+    </or>
+    </feat>
+    <feat name="measure-function">value</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
   <role-restr-map roles="ont::val">
    <sem-feats>
     <relation label="inherit">
@@ -57,6 +77,12 @@
  </or>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::val">
   <concept name="t" />
  </role-restr-map>
@@ -87,6 +113,26 @@
  </relation>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">
+   <or>
+    rate-scale
+    money-scale
+   </or>
+   </feat>
+   <feat name="measure-function">value</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
  <role-restr-map roles="ont::val">
   <sem-feats>
    <relation label="inherit">
@@ -124,6 +170,12 @@
   <feat name="gradability">+</feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::val">
    <concept name="t" />
   </role-restr-map>
@@ -148,8 +200,8 @@
  <syntax>
   <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::val"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::of"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">

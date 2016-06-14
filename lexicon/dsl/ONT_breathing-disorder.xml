@@ -4,21 +4,15 @@
  <provenance name="TRIPS"/>
  <concept name="ont::breathing-disorder">
  <relation label="inherit">
-  ont::medical-disorders-and-conditions
+  ont::disease
  </relation>
  <relation label="overlap">
   wn::|asthma%1:26:00::|
+  wn::|respiratory_disorder%1:26:00::|
+  wn::|shortness_of_breath%1:26:00::|
+  wn::|breathlessness%1:26:00::|
+  wn::|sob%1:26:00::|
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::of" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">human</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -90,7 +84,12 @@
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="origin">human</feat>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
@@ -118,19 +117,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::of" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">human</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::medical-disorders-and-conditions">
  <relation label="inherit">
   ont::physical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|disorder%1:26:03::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::of" optional="optional">
@@ -138,9 +130,57 @@
     <relation label="inherit">
      phys-obj
     </relation>
-    <feat name="origin">human</feat>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::disease">
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+ </relation>
+ <relation label="overlap">
+  wn::|health_problem%1:26:00::|
+  wn::|unhealthiness%1:26:00::|
+  wn::|ill_health%1:26:00::|
+  wn::|illness%1:26:00::|
+  wn::|unwellness%1:26:00::|
+  wn::|malady%1:26:00::|
+  wn::|sickness%1:26:00::|
+  wn::|ailment%1:26:00::|
+  wn::|complaint%1:26:00::|
+  wn::|ill%1:26:00::|
+  wn::|abnormality%1:26:00::|
+  wn::|abnormalcy%1:26:00::|
+  wn::|aids%1:26:00::|
+  wn::|acquired_immune_deficiency_syndrome%1:26:00::|
+  wn::|anemia%1:26:00::|
+  wn::|aneurysm%1:26:00::|
+  wn::|gout%1:26:00::|
+  wn::|arthritis%1:26:00::|
+  wn::|osteoarthritis%1:26:00::|
+  wn::|osteoporosis%1:26:00::|
+  wn::|pancreatitis%1:26:00::|
+  wn::|pneumonia%1:26:00::|
+  wn::|angina%1:26:00::|
+  wn::|cardiovascular_disease%1:26:00::|
+  wn::|allergy%1:26:00::|
+  wn::|hypertension%1:26:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="asthma" />
+ </morph>
+ <relation label="inherit">
+  ont::breathing-disorder
+  ont::mass-pred-templ
+ </relation>
+ </sense>
 </dsl>

@@ -18,6 +18,12 @@
   <feat name="gradability">+</feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::val">
    <concept name="t" />
   </role-restr-map>
@@ -54,6 +60,12 @@
  </or>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::val">
   <concept name="t" />
  </role-restr-map>
@@ -751,6 +763,26 @@
   ont::predicate
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">
+    <or>
+     rate-scale
+     money-scale
+    </or>
+    </feat>
+    <feat name="measure-function">value</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
   <role-restr-map roles="ont::val">
    <sem-feats>
     <relation label="inherit">

@@ -1502,10 +1502,12 @@
                   WN::|suspire%2:29:03::|))
 
 (CONCEPT ONT::BREATHING-DISORDER
-         (INHERIT ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
-         (OVERLAP WN::|asthma%1:26:00::|)
-         (SEM-FRAME
-          (ONT::OF (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN HUMAN)) OPTIONAL)))
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|asthma%1:26:00::|
+                  WN::|respiratory_disorder%1:26:00::|
+                  WN::|shortness_of_breath%1:26:00::|
+                  WN::|breathlessness%1:26:00::|
+                  WN::|sob%1:26:00::|))
 
 (CONCEPT ONT::BROAD
          (INHERIT ONT::LINEAR-VAL)
@@ -1598,6 +1600,23 @@
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL -))
            OPTIONAL)))
+
+(CONCEPT ONT::CANCER
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|cancer%1:26:00::|
+                  WN::|malignancy%1:26:00::|
+                  WN::|malignance%1:26:00::|
+                  WN::|carcinoma%1:26:00::|
+                  WN::|melanoma%1:26:00::|
+                  WN::|malignant_melanoma%1:26:00::|
+                  WN::|lymphoma%1:26:00::|
+                  WN::|leukemia%1:26:00::|
+                  WN::|leukaemia%1:26:00::|
+                  WN::|leucaemia%1:26:00::|
+                  WN::|cancer_of_the_blood%1:26:00::|
+                  WN::|sarcoma%1:26:00::|
+                  WN::|angiosarcoma%1:26:00::|
+                  WN::|myeloma%1:26:00::|))
 
 (CONCEPT ONT::CAPTURE
          (INHERIT ONT::ACQUIRE-BY-ACTION)
@@ -1875,7 +1894,7 @@
 
 (CONCEPT ONT::CHANGE-INTEGRITY
          (INHERIT ONT::CHANGE-STATE)
-         (OVERLAP WN::|change_integrity%2:30:00::|)
+         (OVERLAP WN::|change_integrity%2:30:00::| WN::|clot%2:30:01::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
          (SEM-FRAME (ONT::RESULT (CONCEPT PHYS-OBJ) OPTIONAL)))
 
@@ -3270,6 +3289,10 @@
                     (ORIGIN ARTIFACT))
          (SEM-FRAME (ONT::OF (CONCEPT T))))
 
+(CONCEPT ONT::DIABETES
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|diabetes%1:26:00::|))
+
 (CONCEPT ONT::DIE
          (INHERIT ONT::LIFE-PROCESS)
          (OVERLAP WN::|demise%1:28:00::|
@@ -3353,7 +3376,8 @@
 
 (CONCEPT ONT::DIR-IN-TERMS-OF-OBJ
          (INHERIT ONT::DIRECTION-RELN)
-         (SEM-FRAME (ONT::OF (SEM-FEATS (INHERIT SITUATION) (TYPE MOTION)))))
+         (SEM-FRAME (ONT::FIGURE (SEM-FEATS (INHERIT SITUATION) (TYPE MOTION)))
+                    (ONT::OF (SEM-FEATS (INHERIT SITUATION) (TYPE MOTION)))))
 
 (CONCEPT ONT::DIR-ROTATION (INHERIT ONT::DIRECTION-RELN))
 
@@ -3387,7 +3411,8 @@
 
 (CONCEPT ONT::DIRECTION-RELN
          (INHERIT ONT::PATH)
-         (SEM-FRAME (ONT::VAL (CONCEPT PHYS-OBJ))))
+         (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ))
+                    (ONT::VAL (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::DIRECTION-VAL (INHERIT ONT::SPATIAL))
 
@@ -3436,6 +3461,35 @@
 (CONCEPT ONT::DISCUSS
          (INHERIT ONT::CONVERSING)
          (OVERLAP WN::|discuss%2:32:00::|))
+
+(CONCEPT ONT::DISEASE
+         (INHERIT ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
+         (OVERLAP WN::|health_problem%1:26:00::|
+                  WN::|unhealthiness%1:26:00::|
+                  WN::|ill_health%1:26:00::|
+                  WN::|illness%1:26:00::|
+                  WN::|unwellness%1:26:00::|
+                  WN::|malady%1:26:00::|
+                  WN::|sickness%1:26:00::|
+                  WN::|ailment%1:26:00::|
+                  WN::|complaint%1:26:00::|
+                  WN::|ill%1:26:00::|
+                  WN::|abnormality%1:26:00::|
+                  WN::|abnormalcy%1:26:00::|
+                  WN::|aids%1:26:00::|
+                  WN::|acquired_immune_deficiency_syndrome%1:26:00::|
+                  WN::|anemia%1:26:00::|
+                  WN::|aneurysm%1:26:00::|
+                  WN::|gout%1:26:00::|
+                  WN::|arthritis%1:26:00::|
+                  WN::|osteoarthritis%1:26:00::|
+                  WN::|osteoporosis%1:26:00::|
+                  WN::|pancreatitis%1:26:00::|
+                  WN::|pneumonia%1:26:00::|
+                  WN::|angina%1:26:00::|
+                  WN::|cardiovascular_disease%1:26:00::|
+                  WN::|allergy%1:26:00::|
+                  WN::|hypertension%1:26:00::|))
 
 (CONCEPT ONT::DISGUSTED
          (INHERIT ONT::NEG-INTENSE-EMOTIONAL-VAL)
@@ -3604,10 +3658,11 @@
          (OVERLAP WN::|particulate%1:27:00::|))
 
 (CONCEPT ONT::DYSPNEA
-         (INHERIT ONT::PHYSICAL-SYMPTOM)
-         (OVERLAP WN::|shortness_of_breath%1:26:00::|
-                  WN::|breathlessness%1:26:00::|
-                  WN::|dyspnea%1:26:00::|))
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|dyspnea%1:26:00::|
+                  WN::|dyspnea%1:26:00::|
+                  WN::|dyspnoea%1:26:00::|
+                  WN::|asthma%1:26:00::|))
 
 (CONCEPT ONT::EARNING
          (INHERIT ONT::COMMERCE-COLLECT)
@@ -4000,7 +4055,7 @@
 
 (CONCEPT ONT::EVENT-TIME
          (INHERIT ONT::EVENT-TIME-REL)
-         (SEM-FRAME (ONT::VAL (CONCEPT TIME))))
+         (SEM-FRAME (ONT::GROUND (CONCEPT TIME)) (ONT::VAL (CONCEPT TIME))))
 
 (CONCEPT ONT::EVENT-TIME-REL
          (INHERIT ONT::TEMPORAL-LOCATION)
@@ -4583,6 +4638,12 @@
            (SEM-FEATS (INHERIT PHYS-OBJ)
                       (SPATIAL-ABSTRACTION (OR LINE STRIP))))))
 
+(CONCEPT ONT::FLU
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|flu%1:26:00::|
+                  WN::|influenza%1:26:00::|
+                  WN::|grippe%1:26:00::|))
+
 (CONCEPT ONT::FLUCTUATE
          (INHERIT ONT::CHANGE)
          (OVERLAP WN::|fluctuate%2:30:00::|))
@@ -5163,7 +5224,10 @@
 
 (CONCEPT ONT::HEALTH
          (INHERIT ONT::PHYSICAL-CONDITION)
-         (OVERLAP WN::|wellness%1:26:00::| WN::|wellbeing%1:26:00::|))
+         (OVERLAP WN::|wellness%1:26:00::|
+                  WN::|wellbeing%1:26:00::|
+                  WN::|health%1:26:00::|
+                  WN::|fitness%1:26:00::|))
 
 (CONCEPT ONT::HEALTH-CARE-FACILITY
          (INHERIT ONT::FACILITY)
@@ -5361,19 +5425,6 @@
 
 (CONCEPT ONT::IDENTITY-VAL (INHERIT ONT::SIMILARITY-VAL))
 
-(CONCEPT ONT::ILLNESS
-         (INHERIT ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
-         (OVERLAP WN::|health_problem%1:26:00::|
-                  WN::|unhealthiness%1:26:00::|
-                  WN::|ill_health%1:26:00::|
-                  WN::|illness%1:26:00::|
-                  WN::|unwellness%1:26:00::|
-                  WN::|malady%1:26:00::|
-                  WN::|sickness%1:26:00::|
-                  WN::|condition%1:26:05::|)
-         (SEM-FRAME
-          (ONT::OF (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN HUMAN)) OPTIONAL)))
-
 (CONCEPT ONT::ILLOCUTION
          (INHERIT ONT::COMMUNICATION)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE)))
@@ -5508,9 +5559,20 @@
          (INHERIT ONT::ACCUSE)
          (OVERLAP WN::|charge%2:32:02::| WN::|accuse%2:32:01::|))
 
+(CONCEPT ONT::INDIGESTION
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|stomach_upset%1:26:00::|
+                  WN::|indigestion%1:26:00::|
+                  WN::|dyspepsia%1:26:00::|
+                  WN::|upset_stomach%1:26:00::|))
+
 (CONCEPT ONT::INEXPENSIVE
          (INHERIT ONT::COST-VAL)
          (OVERLAP WN::|cheap%3:00:00::| WN::|cheap%3:00:00::|))
+
+(CONCEPT ONT::INFECTION
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|infection%1:26:00::|))
 
 (CONCEPT ONT::INFO-HOLDER (INHERIT ONT::PHYS-REPRESENTATION))
 
@@ -5575,9 +5637,7 @@
          (OVERLAP WN::|injury%1:26:00::|
                   WN::|hurt%1:26:00::|
                   WN::|harm%1:26:00::|
-                  WN::|trauma%1:26:02::|)
-         (SEM-FRAME
-          (ONT::OF (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN HUMAN)) OPTIONAL)))
+                  WN::|trauma%1:26:02::|))
 
 (CONCEPT ONT::INSANE
          (INHERIT ONT::REASONABLE-VAL)
@@ -6555,6 +6615,51 @@
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
          (SEM-FRAME (ONT::OF (CONCEPT T) OPTIONAL)))
 
+(CONCEPT ONT::MEDICAL-CONDITION
+         (INHERIT ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
+         (OVERLAP WN::|condition%1:26:05::|
+                  WN::|sign%1:26:00::|
+                  WN::|arteriosclerosis%1:26:00::|
+                  WN::|eating_disorder%1:26:00::|
+                  WN::|anorexia%1:26:00::|
+                  WN::|clot%1:08:00::|
+                  WN::|insanity%1:26:00::|
+                  WN::|disorder%1:26:03::|
+                  WN::|cholelithiasis%1:26:00::|
+                  WN::|lithiasis%1:26:00::|
+                  WN::|hyperkalemia%1:26:00::|
+                  WN::|hypoglycemia%1:26:00::|
+                  WN::|kidney_stone%1:17:00::|
+                  WN::|malformation%1:26:00::|
+                  WN::|mania%1:26:00::|
+                  WN::|pathology%1:26:00::|
+                  WN::|phlebitis%1:26:00::|
+                  WN::|phobia%1:26:00::|
+                  WN::|seizure%1:26:00::|
+                  WN::|stroke%1:26:00::|
+                  WN::|thrombosis%1:26:00::|
+                  WN::|psychological_condition%1:26:00::|
+                  WN::|anesthesia%1:26:00::|
+                  WN::|angina%1:26:01::|
+                  WN::|anxiety%1:26:00::|
+                  WN::|nervous_disorder%1:26:00::|
+                  WN::|ataxia%1:26:00::|
+                  WN::|confusion%1:09:00::|
+                  WN::|depression%1:26:03::|
+                  WN::|distress%1:12:02::|
+                  WN::|dizziness%1:26:00::|
+                  WN::|drowsiness%1:26:00::|
+                  WN::|exhaustion%1:26:00::|
+                  WN::|fatigue%1:26:00::|
+                  WN::|headache%1:26:00::|
+                  WN::|irritation%1:26:00::|
+                  WN::|anorexia%1:26:00::|
+                  WN::|restlessness%1:07:00::|
+                  WN::|stress%1:26:01::|
+                  WN::|tiredness%1:26:00::|
+                  WN::|weakness%1:07:00::|
+                  WN::|addiction%1:26:00::|))
+
 (CONCEPT ONT::MEDICAL-DIAGNOSTIC
          (INHERIT ONT::MEDICAL-TEST)
          (OVERLAP WN::|diagnostic_procedure%1:04:00::|
@@ -6562,8 +6667,11 @@
 
 (CONCEPT ONT::MEDICAL-DISORDERS-AND-CONDITIONS
          (INHERIT ONT::PHYSICAL-CONDITION)
+         (OVERLAP WN::|disorder%1:26:03::|)
          (SEM-FRAME
-          (ONT::OF (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN HUMAN)) OPTIONAL)))
+          (ONT::OF
+           (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL)))
+           OPTIONAL)))
 
 (CONCEPT ONT::MEDICAL-DRESSING
          (INHERIT ONT::COVERING)
@@ -6580,6 +6688,52 @@
                   WN::|incision%1:04:00::|
                   WN::|section%1:04:00::|
                   WN::|surgical_incision%1:04:00::|))
+
+(CONCEPT ONT::MEDICAL-SYMPTOM
+         (INHERIT ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
+         (OVERLAP WN::|symptom%1:26:00::|
+                  WN::|sign%1:26:00::|
+                  WN::|fever%1:26:00::|
+                  WN::|febrility%1:26:00::|
+                  WN::|febricity%1:26:00::|
+                  WN::|pyrexia%1:26:00::|
+                  WN::|feverishness%1:26:00::|
+                  WN::|pain%1:26:00::|
+                  WN::|hurting%1:26:00::|
+                  WN::|pain_sensation%1:09:00::|
+                  WN::|painful_sensation%1:09:00::|
+                  WN::|syndrome%1:26:00::|
+                  WN::|amnesia%1:09:00::|
+                  WN::|backache%1:26:00::|
+                  WN::|stomachache%1:26:00::|
+                  WN::|chest_pain%1:26:00::|
+                  WN::|chill%1:26:01::|
+                  WN::|constipation%1:26:00::|
+                  WN::|constriction%1:09:00::|
+                  WN::|contraction%1:04:01::|
+                  WN::|cough%1:26:00::|
+                  WN::|cramp%1:26:00::|
+                  WN::|diarrhea%1:26:00::|
+                  WN::|dyspepsia%1:26:00::|
+                  WN::|edema%1:26:00::|
+                  WN::|heartburn%1:26:00::|
+                  WN::|hives%1:26:00::|
+                  WN::|hoarseness%1:07:00::|
+                  WN::|hyperventilation%1:04:00::|
+                  WN::|arrhythmia%1:26:00::|
+                  WN::|tachycardia%1:26:00::|
+                  WN::|lightheadedness%1:26:00::|
+                  WN::|nausea%1:26:00::|
+                  WN::|nosebleed%1:26:00::|
+                  WN::|numbness%1:26:00::|
+                  WN::|palpitation%1:26:00::|
+                  WN::|edema%1:26:00::|
+                  WN::|redness%1:26:00::|
+                  WN::|sneeze%1:26:00::|
+                  WN::|sniffle%1:04:00::|
+                  WN::|soreness%1:26:00::|
+                  WN::|spasm%1:26:00::|
+                  WN::|tightness%1:09:00::|))
 
 (CONCEPT ONT::MEDICAL-TEST (INHERIT ONT::PROCEDURE))
 
@@ -7756,7 +7910,15 @@
                          (CONCEPT ABSTR-OBJ)
                          (CONCEPT SITUATION)))))
 
-(CONCEPT ONT::PHYSICAL-SENSATION (INHERIT ONT::PERCEPTION))
+(CONCEPT ONT::PHYSICAL-SENSATION
+         (INHERIT ONT::PERCEPTION)
+         (OVERLAP WN::|nauseous%3:00:00:ill:01|
+                  WN::|nauseated%3:00:00:ill:01|
+                  WN::|queasy%3:00:00:ill:01|
+                  WN::|sickish%3:00:00:ill:01|
+                  WN::|chill%1:26:01::|
+                  WN::|shivering%1:26:00::|
+                  WN::|nausea%1:26:00::|))
 
 (CONCEPT ONT::PHYSICAL-SENSE
          (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN)
@@ -7766,12 +7928,6 @@
                       (ORIGIN HUMAN)
                       (FORM SOLID-OBJECT)
                       (CONTAINER -)))))
-
-(CONCEPT ONT::PHYSICAL-SYMPTOM
-         (INHERIT ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
-         (OVERLAP WN::|symptom%1:26:00::| WN::|sign%1:26:00::|)
-         (SEM-FRAME
-          (ONT::OF (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN HUMAN)) OPTIONAL)))
 
 (CONCEPT ONT::PHYSICAL-SYMPTOM-MANNER
          (INHERIT ONT::PREDICATE)
@@ -8095,7 +8251,10 @@
                     (INTENSITY -)
                     (SCALE -)
                     (GRADABILITY +))
-         (SEM-FRAME (ONT::VAL (CONCEPT T)) (ONT::OF (CONCEPT T))))
+         (SEM-FRAME (ONT::GROUND (CONCEPT T))
+                    (ONT::FIGURE (CONCEPT T))
+                    (ONT::VAL (CONCEPT T))
+                    (ONT::OF (CONCEPT T))))
 
 (CONCEPT ONT::PREDICT
          (INHERIT ONT::COGITATION)
@@ -8111,6 +8270,10 @@
          (SEM-FRAME (ONT::AFFECTED (CONCEPT T))))
 
 (CONCEPT ONT::PREFERENCE-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT ONT::PREGNANCY
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|pregnancy%1:26:00::|))
 
 (CONCEPT ONT::PREPARE (INHERIT ONT::CAUSE-EFFECT) (OVERLAP WN::|arm%2:33:00::|))
 
@@ -8555,6 +8718,11 @@
 (CONCEPT ONT::RATE-REL
          (INHERIT ONT::PREDICATE)
          (SEM-FRAME
+          (ONT::GROUND
+           (SEM-FEATS (INHERIT ABSTR-OBJ)
+                      (SCALE (OR RATE-SCALE MONEY-SCALE))
+                      (MEASURE-FUNCTION VALUE)))
+          (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)) OPTIONAL)
           (ONT::VAL
            (SEM-FEATS (INHERIT ABSTR-OBJ)
                       (SCALE (OR RATE-SCALE MONEY-SCALE))
@@ -9773,7 +9941,9 @@
 
 (CONCEPT ONT::SITUATED-IN
          (INHERIT ONT::SITUATION-MODIFIER)
-         (SEM-FRAME (ONT::VAL (CONCEPT SITUATION))
+         (SEM-FRAME (ONT::GROUND (CONCEPT SITUATION))
+                    (ONT::FIGURE (CONCEPT SITUATION))
+                    (ONT::VAL (CONCEPT SITUATION))
                     (ONT::OF (CONCEPT SITUATION))))
 
 (CONCEPT ONT::SITUATED-OUT
@@ -10893,7 +11063,10 @@
 
 (CONCEPT ONT::TO-LOC
          (INHERIT ONT::GOAL-RELN)
-         (SEM-FRAME (ONT::VAL (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
+         (SEM-FRAME (ONT::GROUND (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
+                    (ONT::FIGURE
+                     (SEM-FEATS (INHERIT SITUATION) (TYPE EVENT-OF-CHANGE)))
+                    (ONT::VAL (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
                     (ONT::OF
                      (SEM-FEATS (INHERIT SITUATION) (TYPE EVENT-OF-CHANGE)))))
 
@@ -11715,7 +11888,14 @@
           (ONT::AGENT
            (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +) (ORIGIN HUMAN)))))
 
-(CONCEPT ONT::WOUND (INHERIT ONT::INJURY))
+(CONCEPT ONT::WOUND
+         (INHERIT ONT::INJURY)
+         (OVERLAP WN::|wound%1:26:00::|
+                  WN::|lesion%1:26:02::|
+                  WN::|bruise%1:26:00::|
+                  WN::|contusion%1:26:00::|
+                  WN::|injury%1:26:00::|
+                  WN::|sore%1:26:00::|))
 
 (CONCEPT ONT::WRITE
          (INHERIT ONT::CREATE)
