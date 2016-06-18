@@ -201,6 +201,11 @@
 
 (CONCEPT ONT::ACQUIRE-BY-ACTION (INHERIT ONT::ACQUIRE))
 
+(CONCEPT ONT::ACQUIRED-IMMUNE-DEFICIENCY-SYNDROME
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|aids%1:26:00::|
+                  WN::|acquired_immune_deficiency_syndrome%1:26:00::|))
+
 (CONCEPT ONT::ACROSS (INHERIT ONT::TRAJECTORY))
 
 (CONCEPT ONT::ACT-BEHAVE
@@ -472,6 +477,8 @@
 (CONCEPT ONT::ALGA (INHERIT ONT::PLANT) (OVERLAP WN::|algae%1:05:00::|))
 
 (CONCEPT ONT::ALGORITHM (INHERIT ONT::PROCEDURE))
+
+(CONCEPT ONT::ALLERGY (INHERIT ONT::DISEASE) (OVERLAP WN::|allergy%1:26:00::|))
 
 (CONCEPT ONT::ALLERGY-MEDICATION
          (INHERIT ONT::MEDICATION)
@@ -750,6 +757,12 @@
                       (OBJECT-FUNCTION (OR PLACE REPRESENTATION))))))
 
 (CONCEPT ONT::ARRIVING (INHERIT ONT::MOTION))
+
+(CONCEPT ONT::ARTHRITIS
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|arthritis%1:26:00::|
+                  WN::|gout%1:26:00::|
+                  WN::|osteoarthritis%1:26:00::|))
 
 (CONCEPT ONT::ARTICLE
          (INHERIT ONT::PUBLICATION)
@@ -1643,6 +1656,12 @@
 (CONCEPT ONT::CARDIOPULMONARY-EXERCISE
          (INHERIT ONT::WORKING-OUT)
          (OVERLAP WN::|cardiopulmonary_exercise%1:04:00::|))
+
+(CONCEPT ONT::CARDIOVASCULAR-DISEASE
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|aneurysm%1:26:00::|
+                  WN::|cardiovascular_disease%1:26:00::|
+                  WN::|hypertension%1:26:00::|))
 
 (CONCEPT ONT::CARE
          (INHERIT ONT::EXPERIENCER-EMOTION)
@@ -3476,20 +3495,9 @@
                   WN::|ill%1:26:00::|
                   WN::|abnormality%1:26:00::|
                   WN::|abnormalcy%1:26:00::|
-                  WN::|aids%1:26:00::|
-                  WN::|acquired_immune_deficiency_syndrome%1:26:00::|
                   WN::|anemia%1:26:00::|
-                  WN::|aneurysm%1:26:00::|
-                  WN::|gout%1:26:00::|
-                  WN::|arthritis%1:26:00::|
-                  WN::|osteoarthritis%1:26:00::|
-                  WN::|osteoporosis%1:26:00::|
                   WN::|pancreatitis%1:26:00::|
-                  WN::|pneumonia%1:26:00::|
-                  WN::|angina%1:26:00::|
-                  WN::|cardiovascular_disease%1:26:00::|
-                  WN::|allergy%1:26:00::|
-                  WN::|hypertension%1:26:00::|))
+                  WN::|brain_disease%1:26:00::|))
 
 (CONCEPT ONT::DISGUSTED
          (INHERIT ONT::NEG-INTENSE-EMOTIONAL-VAL)
@@ -3696,6 +3704,8 @@
 
 (CONCEPT ONT::EATING-PLAN (INHERIT ONT::RECIPE))
 
+(CONCEPT ONT::EBOLA (INHERIT ONT::DISEASE) (OVERLAP WN::|ebola%1:26:00::|))
+
 (CONCEPT ONT::ECONOMIC-VAL (INHERIT ONT::PROPERTY-VAL))
 
 (CONCEPT ONT::EDGE
@@ -3881,6 +3891,10 @@
 (CONCEPT ONT::ENVYING
          (INHERIT ONT::EXPERIENCER-EMOTION)
          (OVERLAP WN::|envy%2:37:01::| WN::|begrudge%2:37:00::|))
+
+(CONCEPT ONT::EPILEPSY
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|epilepsy%1:26:00::|))
 
 (CONCEPT ONT::EQUAL
          (INHERIT ONT::SIMILARITY-VAL)
@@ -6258,6 +6272,10 @@
                   WN::|live%2:42:07::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC)))
 
+(CONCEPT ONT::LIVER-DISEASE
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|liver_disease%1:26:00::|))
+
 (CONCEPT ONT::LIVING-VAL
          (INHERIT ONT::PROPERTY-VAL)
          (OVERLAP WN::|live%3:00:00::|
@@ -6658,7 +6676,8 @@
                   WN::|stress%1:26:01::|
                   WN::|tiredness%1:26:00::|
                   WN::|weakness%1:07:00::|
-                  WN::|addiction%1:26:00::|))
+                  WN::|addiction%1:26:00::|
+                  WN::|stroke%1:26:00::|))
 
 (CONCEPT ONT::MEDICAL-DIAGNOSTIC
          (INHERIT ONT::MEDICAL-TEST)
@@ -6733,7 +6752,8 @@
                   WN::|sniffle%1:04:00::|
                   WN::|soreness%1:26:00::|
                   WN::|spasm%1:26:00::|
-                  WN::|tightness%1:09:00::|))
+                  WN::|tightness%1:09:00::|
+                  WN::|jaundice%1:26:00::|))
 
 (CONCEPT ONT::MEDICAL-TEST (INHERIT ONT::PROCEDURE))
 
@@ -7582,6 +7602,10 @@
                                 (INFORMATION INFORMATION-CONTENT)
                                 (INTENTIONAL -)))))
 
+(CONCEPT ONT::OSTEOPOROSIS
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|osteoporosis%1:26:00::|))
+
 (CONCEPT ONT::OSTRICH (INHERIT ONT::POULTRY))
 
 (CONCEPT ONT::OTHER
@@ -8016,6 +8040,10 @@
          (OVERLAP WN::|pleasant%3:00:00::|))
 
 (CONCEPT ONT::PLEASANT-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT ONT::PNEUMONIA
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|pneumonia%1:26:00::|))
 
 (CONCEPT ONT::POINT
          (INHERIT ONT::LOCATION)
@@ -10391,6 +10419,10 @@
            OPTIONAL)
           (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (MOBILITY MOVABLE)))))
 
+(CONCEPT ONT::STD
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|sexually_transmitted_disease%1:26:00::|))
+
 (CONCEPT ONT::STEADINESS-VAL (INHERIT ONT::PROCESS-VAL))
 
 (CONCEPT ONT::STEADY (INHERIT ONT::STEADINESS-VAL))
@@ -11225,6 +11257,8 @@
           (ONT::NEUTRAL (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)) OPTIONAL)))
 
 (CONCEPT ONT::TRY-AGAIN (INHERIT ONT::TRY))
+
+(CONCEPT ONT::TUBERCULOSIS (INHERIT ONT::DISEASE) (OVERLAP WN::|tb%1:26:00::|))
 
 (CONCEPT ONT::TUNNEL (INHERIT ONT::ROUTE) (OVERLAP WN::|tunnel%1:06:00::|))
 
