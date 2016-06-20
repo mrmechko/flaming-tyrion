@@ -4561,7 +4561,7 @@
  </concept>
  <concept name="ont::clock-speed">
   <relation label="inherit">
-   ont::rate
+   ont::time-rate
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::of">
@@ -6999,6 +6999,20 @@
      </or>
      <feat name="intentional">+</feat>
     </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::density">
+  <relation label="inherit">
+   ont::rate
+  </relation>
+  <relation label="overlap">
+   wn::|density%1:07:00::|
+   wn::|concentration%1:07:02::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::of">
+    <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -13546,6 +13560,12 @@
   <relation label="overlap">
    wn::|level%1:26:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">linear-scale</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::val">
     <sem-feats>
@@ -17310,12 +17330,30 @@
    ont::physical-property-val
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="type">
+     <or>
+      molecular-part
+      chemical
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
    <role-restr-map roles="ont::of">
     <sem-feats>
      <relation label="inherit">
       phys-obj
      </relation>
-     <feat name="type">molecular-part</feat>
+     <feat name="type">
+     <or>
+      molecular-part
+      chemical
+     </or>
+     </feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -19313,13 +19351,18 @@
  </concept>
  <concept name="ont::quantity">
   <relation label="inherit">
-   ont::measure-unit
+   ont::abstract-object
   </relation>
   <relation label="overlap">
    wn::|measure%1:03:00::|
    wn::|quantity%1:03:00::|
    wn::|amount%1:03:00::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::of">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::quantity-related-property-val">
   <relation label="inherit">
@@ -24613,6 +24656,16 @@
      <concept name="situation" />
      <concept name="time" />
     </or>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::time-rate">
+  <relation label="inherit">
+   ont::rate
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::of">
+    <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
  </concept>
