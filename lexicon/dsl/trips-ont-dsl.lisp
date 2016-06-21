@@ -541,6 +541,8 @@
 
 (CONCEPT ONT::ANATOMY (INHERIT ONT::NATURAL-OBJECT))
 
+(CONCEPT ONT::ANEMIA (INHERIT ONT::DISEASE) (OVERLAP WN::|anemia%1:26:00::|))
+
 (CONCEPT ONT::ANGLE-UNIT
          (INHERIT ONT::FORMAL-UNIT)
          (OVERLAP WN::|angular_unit%1:23:00::|)
@@ -1466,6 +1468,10 @@
          (INHERIT ONT::VEHICLE-CONTAINER)
          (OVERLAP WN::|boxcar%1:06:00::|))
 
+(CONCEPT ONT::BRAIN-DISEASE
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|brain_disease%1:26:00::|))
+
 (CONCEPT ONT::BREAD (INHERIT ONT::BAKED-GOODS))
 
 (CONCEPT ONT::BREAK-OBJECT
@@ -1518,9 +1524,7 @@
          (INHERIT ONT::DISEASE)
          (OVERLAP WN::|asthma%1:26:00::|
                   WN::|respiratory_disorder%1:26:00::|
-                  WN::|shortness_of_breath%1:26:00::|
-                  WN::|breathlessness%1:26:00::|
-                  WN::|sob%1:26:00::|))
+                  WN::|breathlessness%1:26:00::|))
 
 (CONCEPT ONT::BROAD
          (INHERIT ONT::LINEAR-VAL)
@@ -1661,7 +1665,8 @@
          (INHERIT ONT::DISEASE)
          (OVERLAP WN::|aneurysm%1:26:00::|
                   WN::|cardiovascular_disease%1:26:00::|
-                  WN::|hypertension%1:26:00::|))
+                  WN::|hypertension%1:26:00::|
+                  WN::|heart_attack%1:26:00::|))
 
 (CONCEPT ONT::CARE
          (INHERIT ONT::EXPERIENCER-EMOTION)
@@ -3499,10 +3504,7 @@
                   WN::|complaint%1:26:00::|
                   WN::|ill%1:26:00::|
                   WN::|abnormality%1:26:00::|
-                  WN::|abnormalcy%1:26:00::|
-                  WN::|anemia%1:26:00::|
-                  WN::|pancreatitis%1:26:00::|
-                  WN::|brain_disease%1:26:00::|))
+                  WN::|abnormalcy%1:26:00::|))
 
 (CONCEPT ONT::DISGUSTED
          (INHERIT ONT::NEG-INTENSE-EMOTIONAL-VAL)
@@ -3675,7 +3677,8 @@
          (OVERLAP WN::|dyspnea%1:26:00::|
                   WN::|dyspnea%1:26:00::|
                   WN::|dyspnoea%1:26:00::|
-                  WN::|asthma%1:26:00::|))
+                  WN::|shortness_of_breath%1:26:00::|
+                  WN::|sob%1:26:00::|))
 
 (CONCEPT ONT::EARNING
          (INHERIT ONT::COMMERCE-COLLECT)
@@ -5653,7 +5656,8 @@
 
 (CONCEPT ONT::INJURY
          (INHERIT ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
-         (OVERLAP WN::|injury%1:26:00::|
+         (OVERLAP WN::|concussion%1:11:00::|
+                  WN::|injury%1:26:00::|
                   WN::|hurt%1:26:00::|
                   WN::|harm%1:26:00::|
                   WN::|trauma%1:26:02::|))
@@ -6646,9 +6650,7 @@
                   WN::|arteriosclerosis%1:26:00::|
                   WN::|eating_disorder%1:26:00::|
                   WN::|anorexia%1:26:00::|
-                  WN::|clot%1:08:00::|
                   WN::|insanity%1:26:00::|
-                  WN::|disorder%1:26:03::|
                   WN::|cholelithiasis%1:26:00::|
                   WN::|lithiasis%1:26:00::|
                   WN::|hyperkalemia%1:26:00::|
@@ -6752,7 +6754,6 @@
                   WN::|nosebleed%1:26:00::|
                   WN::|numbness%1:26:00::|
                   WN::|palpitation%1:26:00::|
-                  WN::|edema%1:26:00::|
                   WN::|redness%1:26:00::|
                   WN::|sneeze%1:26:00::|
                   WN::|sniffle%1:04:00::|
@@ -7657,6 +7658,10 @@
 (CONCEPT ONT::PAIN-RELIEVER (INHERIT ONT::MEDICATION))
 
 (CONCEPT ONT::PAN (INHERIT ONT::MOVE))
+
+(CONCEPT ONT::PANCREATITIS
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|pancreatitis%1:26:00::|))
 
 (CONCEPT ONT::PARDON
          (INHERIT ONT::FORGIVE)
@@ -11942,7 +11947,6 @@
                   WN::|lesion%1:26:02::|
                   WN::|bruise%1:26:00::|
                   WN::|contusion%1:26:00::|
-                  WN::|injury%1:26:00::|
                   WN::|sore%1:26:00::|))
 
 (CONCEPT ONT::WRITE
