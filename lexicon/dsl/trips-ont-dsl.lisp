@@ -525,6 +525,10 @@
          (INHERIT ONT::CHEMICAL)
          (OVERLAP WN::|amino_acid%1:27:00::|))
 
+(CONCEPT ONT::AMNESIA
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|amnesia%1:09:00::|))
+
 (CONCEPT ONT::AMONG (INHERIT ONT::COMPLEX-GROUND-RELN))
 
 (CONCEPT ONT::AMPHIBIAN
@@ -762,9 +766,7 @@
 
 (CONCEPT ONT::ARTHRITIS
          (INHERIT ONT::DISEASE)
-         (OVERLAP WN::|arthritis%1:26:00::|
-                  WN::|gout%1:26:00::|
-                  WN::|osteoarthritis%1:26:00::|))
+         (OVERLAP WN::|arthritis%1:26:00::|))
 
 (CONCEPT ONT::ARTICLE
          (INHERIT ONT::PUBLICATION)
@@ -1070,6 +1072,8 @@
 (CONCEPT ONT::AWAY (INHERIT ONT::DIR-IN-TERMS-OF-OBJ))
 
 (CONCEPT ONT::BACK (INHERIT ONT::ORIENTED-LOC-RELN))
+
+(CONCEPT ONT::BACKACHE (INHERIT ONT::PAIN) (OVERLAP WN::|backache%1:26:00::|))
 
 (CONCEPT ONT::BACTERIUM
          (INHERIT ONT::MICROORGANISM)
@@ -1522,9 +1526,7 @@
 
 (CONCEPT ONT::BREATHING-DISORDER
          (INHERIT ONT::DISEASE)
-         (OVERLAP WN::|asthma%1:26:00::|
-                  WN::|respiratory_disorder%1:26:00::|
-                  WN::|breathlessness%1:26:00::|))
+         (OVERLAP WN::|asthma%1:26:00::| WN::|respiratory_disorder%1:26:00::|))
 
 (CONCEPT ONT::BROAD
          (INHERIT ONT::LINEAR-VAL)
@@ -1969,6 +1971,10 @@
 (CONCEPT ONT::CHILD
          (INHERIT ONT::FAMILY-RELATION)
          (OVERLAP WN::|child%1:18:00::|))
+
+(CONCEPT ONT::CHILL
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|chill%1:26:01::|))
 
 (CONCEPT ONT::CHOICE-OPTION
          (INHERIT ONT::PREDICATE)
@@ -2642,6 +2648,10 @@
          (SEM-FRAME (ONT::VAL (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
                     (ONT::OF (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
 
+(CONCEPT ONT::CONSTIPATION
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|constipation%1:26:00::|))
+
 (CONCEPT ONT::CONSTRAINT
          (INHERIT ONT::SITUATION)
          (OVERLAP WN::|control%1:04:00::|
@@ -2890,6 +2900,10 @@
          (SEM-FRAME (ONT::BENEFICIARY (CONCEPT PHYS-OBJ) OPTIONAL)
                     (ONT::EXTENT (CONCEPT ABSTR-OBJ))))
 
+(CONCEPT ONT::COUGH
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|cough%1:26:00::|))
+
 (CONCEPT ONT::COULD-BE-AT
          (INHERIT ONT::BE-AT)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT INDIV-LEVEL)))
@@ -2919,6 +2933,10 @@
                     (FORM SOLID-OBJECT)))
 
 (CONCEPT ONT::CRACKERS (INHERIT ONT::BAKED-GOODS))
+
+(CONCEPT ONT::CRAMP
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|cramp%1:26:00::|))
 
 (CONCEPT ONT::CRATER
          (INHERIT ONT::SUNKEN-NATURAL-FORMATION)
@@ -3322,6 +3340,10 @@
          (INHERIT ONT::DISEASE)
          (OVERLAP WN::|diabetes%1:26:00::|))
 
+(CONCEPT ONT::DIARRHEA
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|diarrhea%1:26:00::|))
+
 (CONCEPT ONT::DIE
          (INHERIT ONT::LIFE-PROCESS)
          (OVERLAP WN::|demise%1:28:00::|
@@ -3672,13 +3694,18 @@
          (INHERIT ONT::SUBSTANCE)
          (OVERLAP WN::|particulate%1:27:00::|))
 
+(CONCEPT ONT::DYSPEPSIA
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|dyspepsia%1:26:00::|))
+
 (CONCEPT ONT::DYSPNEA
          (INHERIT ONT::MEDICAL-SYMPTOM)
          (OVERLAP WN::|dyspnea%1:26:00::|
                   WN::|dyspnea%1:26:00::|
                   WN::|dyspnoea%1:26:00::|
                   WN::|shortness_of_breath%1:26:00::|
-                  WN::|sob%1:26:00::|))
+                  WN::|sob%1:26:00::|
+                  WN::|breathlessness%1:26:00::|))
 
 (CONCEPT ONT::EARNING
          (INHERIT ONT::COMMERCE-COLLECT)
@@ -3715,6 +3742,10 @@
 (CONCEPT ONT::EBOLA (INHERIT ONT::DISEASE) (OVERLAP WN::|ebola%1:26:00::|))
 
 (CONCEPT ONT::ECONOMIC-VAL (INHERIT ONT::PROPERTY-VAL))
+
+(CONCEPT ONT::EDEMA
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|edema%1:26:00::|))
 
 (CONCEPT ONT::EDGE
          (INHERIT ONT::LOCATION-BY-DESCRIPTION)
@@ -4519,6 +4550,14 @@
          (INHERIT ONT::PERSON)
          (OVERLAP WN::|woman%1:18:00::| WN::|adult_female%1:18:00::|))
 
+(CONCEPT ONT::FEVER
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|fever%1:26:00::|
+                  WN::|febrility%1:26:00::|
+                  WN::|febricity%1:26:00::|
+                  WN::|pyrexia%1:26:00::|
+                  WN::|feverishness%1:26:00::|))
+
 (CONCEPT ONT::FIGHTING
          (INHERIT ONT::AGENT-INTERACTION)
          (OVERLAP WN::|struggle%2:33:00::|
@@ -5029,6 +5068,8 @@
 
 (CONCEPT ONT::GOOSE (INHERIT ONT::POULTRY))
 
+(CONCEPT ONT::GOUT (INHERIT ONT::ARTHRITIS) (OVERLAP WN::|gout%1:26:00::|))
+
 (CONCEPT ONT::GOVERNING-PRINCIPLE
          (INHERIT ONT::SOCIAL-CONTRACT)
          (OVERLAP WN::|morality%1:07:00::|
@@ -5266,6 +5307,10 @@
                   WN::|PCP%1:18:00::|
                   WN::|health_care_provider%1:18:00::|
                   WN::|caregiver%1:18:01::|))
+
+(CONCEPT ONT::HEARTBURN
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|heartburn%1:26:00::|))
 
 (CONCEPT ONT::HEAT (INHERIT ONT::CONTINUOUS-CHANGE))
 
@@ -5660,7 +5705,9 @@
                   WN::|injury%1:26:00::|
                   WN::|hurt%1:26:00::|
                   WN::|harm%1:26:00::|
-                  WN::|trauma%1:26:02::|))
+                  WN::|trauma%1:26:02::|
+                  WN::|bruise%1:26:00::|
+                  WN::|contusion%1:26:00::|))
 
 (CONCEPT ONT::INSANE
          (INHERIT ONT::REASONABLE-VAL)
@@ -6720,30 +6767,9 @@
          (INHERIT ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
          (OVERLAP WN::|symptom%1:26:00::|
                   WN::|sign%1:26:00::|
-                  WN::|fever%1:26:00::|
-                  WN::|febrility%1:26:00::|
-                  WN::|febricity%1:26:00::|
-                  WN::|pyrexia%1:26:00::|
-                  WN::|feverishness%1:26:00::|
-                  WN::|pain%1:26:00::|
-                  WN::|hurting%1:26:00::|
-                  WN::|pain_sensation%1:09:00::|
-                  WN::|painful_sensation%1:09:00::|
                   WN::|syndrome%1:26:00::|
-                  WN::|amnesia%1:09:00::|
-                  WN::|backache%1:26:00::|
-                  WN::|stomachache%1:26:00::|
-                  WN::|chest_pain%1:26:00::|
-                  WN::|chill%1:26:01::|
-                  WN::|constipation%1:26:00::|
                   WN::|constriction%1:09:00::|
                   WN::|contraction%1:04:01::|
-                  WN::|cough%1:26:00::|
-                  WN::|cramp%1:26:00::|
-                  WN::|diarrhea%1:26:00::|
-                  WN::|dyspepsia%1:26:00::|
-                  WN::|edema%1:26:00::|
-                  WN::|heartburn%1:26:00::|
                   WN::|hives%1:26:00::|
                   WN::|hoarseness%1:07:00::|
                   WN::|hyperventilation%1:04:00::|
@@ -7609,6 +7635,10 @@
                                 (INFORMATION INFORMATION-CONTENT)
                                 (INTENTIONAL -)))))
 
+(CONCEPT ONT::OSTEOARTHRITIS
+         (INHERIT ONT::ARTHRITIS)
+         (OVERLAP WN::|osteoarthritis%1:26:00::|))
+
 (CONCEPT ONT::OSTEOPOROSIS
          (INHERIT ONT::DISEASE)
          (OVERLAP WN::|osteoporosis%1:26:00::|))
@@ -7654,6 +7684,14 @@
 (CONCEPT ONT::OWN (INHERIT ONT::RELATION))
 
 (CONCEPT ONT::PACKAGE (INHERIT ONT::SMALL-CONTAINER))
+
+(CONCEPT ONT::PAIN
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|pain%1:26:00::|
+                  WN::|hurting%1:26:00::|
+                  WN::|pain_sensation%1:09:00::|
+                  WN::|painful_sensation%1:09:00::|
+                  WN::|chest_pain%1:26:00::|))
 
 (CONCEPT ONT::PAIN-RELIEVER (INHERIT ONT::MEDICATION))
 
@@ -10448,6 +10486,10 @@
 
 (CONCEPT ONT::STIR (INHERIT ONT::MOVE))
 
+(CONCEPT ONT::STOMACHACHE
+         (INHERIT ONT::PAIN)
+         (OVERLAP WN::|stomachache%1:26:00::|))
+
 (CONCEPT ONT::STOP
          (INHERIT ONT::INHIBIT-EFFECT)
          (OVERLAP WN::|lay_off%2:42:00::|
@@ -11945,8 +11987,6 @@
          (INHERIT ONT::INJURY)
          (OVERLAP WN::|wound%1:26:00::|
                   WN::|lesion%1:26:02::|
-                  WN::|bruise%1:26:00::|
-                  WN::|contusion%1:26:00::|
                   WN::|sore%1:26:00::|))
 
 (CONCEPT ONT::WRITE
