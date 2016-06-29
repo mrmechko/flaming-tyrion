@@ -14,7 +14,7 @@
   <role-restr-map roles="ont::formal" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::of">
+  <role-restr-map roles="ont::figure">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
@@ -31,7 +31,6 @@
   ont::root
  </relation>
  </concept>
- <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <relation label="inherit">
   ont::any-sem
@@ -47,10 +46,17 @@
  </or>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::of">
+ <role-restr-map roles="ont::scale">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
+ <concept name="abstr-obj" />
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00::|
@@ -63,16 +69,38 @@
  </relation>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::domain-property">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::scale">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
  <role-restr-map roles="ont::formal" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::of">
+ <role-restr-map roles="ont::figure">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::quantity">
  <relation label="inherit">
-  ont::abstract-object
+  ont::domain-property
  </relation>
  <relation label="overlap">
   wn::|measure%1:03:00::|
@@ -80,7 +108,7 @@
   wn::|amount%1:03:00::|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::of">
+  <role-restr-map roles="ont::figure">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
@@ -119,7 +147,7 @@
   <feat name="scale">ratio-scale</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::of1">
+  <role-restr-map roles="ont::figure1">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
