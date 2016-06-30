@@ -935,7 +935,9 @@
                   WN::|attach%2:35:02::|
                   WN::|catch%2:35:08::|
                   WN::|connect%2:35:00::|)
-         (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE) (ASPECT DYNAMIC)))
+         (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE) (ASPECT DYNAMIC))
+         (SEM-FRAME
+          (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN NATURAL)))))
 
 (CONCEPT ONT::ATTACK
          (INHERIT ONT::OBJECTIVE-INFLUENCE)
