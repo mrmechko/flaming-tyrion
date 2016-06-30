@@ -7,10 +7,7 @@
   ont::disease
  </relation>
  <relation label="overlap">
-  wn::|aneurysm%1:26:00::|
   wn::|cardiovascular_disease%1:26:00::|
-  wn::|hypertension%1:26:00::|
-  wn::|heart_attack%1:26:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -152,33 +149,42 @@
   wn::|malady%1:26:00::|
   wn::|sickness%1:26:00::|
   wn::|ailment%1:26:00::|
-  wn::|complaint%1:26:00::|
   wn::|ill%1:26:00::|
   wn::|abnormality%1:26:00::|
   wn::|abnormalcy%1:26:00::|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="aneurysm" />
- </morph>
+ <concept name="ont::aneurysm">
  <relation label="inherit">
   ont::cardiovascular-disease
-  ont::count-pred-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="heart" remaining-words="attack" />
- </morph>
- <example text="He had a heart attack.">
-  <provenance name="TRIPS"/>
- </example>
+ <relation label="overlap">
+  wn::|aneurysm%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::arrhythmia">
  <relation label="inherit">
   ont::cardiovascular-disease
-  ont::count-pred-templ
  </relation>
- </sense>
+ <relation label="overlap">
+  wn::|arrhythmia%1:26:00::|
+  wn::|tachycardia%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::heart-attack">
+ <relation label="inherit">
+  ont::cardiovascular-disease
+ </relation>
+ <relation label="overlap">
+  wn::|heart_attack%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::hypertension">
+ <relation label="inherit">
+  ont::cardiovascular-disease
+ </relation>
+ <relation label="overlap">
+  wn::|hypertension%1:26:00::|
+ </relation>
+ </concept>
 </dsl>

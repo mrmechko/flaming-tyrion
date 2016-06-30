@@ -203,10 +203,8 @@
 (CONCEPT ONT::ACQUIRE-BY-ACTION (INHERIT ONT::ACQUIRE))
 
 (CONCEPT ONT::ACQUIRED-IMMUNE-DEFICIENCY-SYNDROME
-         (INHERIT ONT::DISEASE ONT::DISEASE)
+         (INHERIT ONT::DISEASE)
          (OVERLAP WN::|aids%1:26:00::|
-                  WN::|acquired_immune_deficiency_syndrome%1:26:00::|
-                  WN::|aids%1:26:00::|
                   WN::|acquired_immune_deficiency_syndrome%1:26:00::|))
 
 (CONCEPT ONT::ACROSS (INHERIT ONT::TRAJECTORY))
@@ -328,6 +326,10 @@
           (ONT::RESULT
            (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
            OPTIONAL)))
+
+(CONCEPT ONT::ADDICTION
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|addiction%1:26:00::|))
 
 (CONCEPT ONT::ADDITIVE
          (INHERIT ONT::PREDICATE)
@@ -550,6 +552,14 @@
 
 (CONCEPT ONT::ANEMIA (INHERIT ONT::DISEASE) (OVERLAP WN::|anemia%1:26:00::|))
 
+(CONCEPT ONT::ANEURYSM
+         (INHERIT ONT::CARDIOVASCULAR-DISEASE)
+         (OVERLAP WN::|aneurysm%1:26:00::|))
+
+(CONCEPT ONT::ANGINA
+         (INHERIT ONT::MEDICAL-CONDITION ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|angina%1:26:01::| WN::|angina%1:26:00::|))
+
 (CONCEPT ONT::ANGLE-UNIT
          (INHERIT ONT::FORMAL-UNIT)
          (OVERLAP WN::|angular_unit%1:23:00::|)
@@ -598,6 +608,10 @@
 (CONCEPT ONT::ANTIBIOTIC
          (INHERIT ONT::MEDICATION)
          (OVERLAP WN::|Antibiotic%1:06:00::| WN::|antibiotic_drug%1:06:00::|))
+
+(CONCEPT ONT::ANXIETY
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|anxiety%1:26:00::|))
 
 (CONCEPT ONT::ANY-SCALE (INHERIT ONT::SCALE))
 
@@ -754,6 +768,10 @@
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL +)))))
 
+(CONCEPT ONT::ARRHYTHMIA
+         (INHERIT ONT::CARDIOVASCULAR-DISEASE)
+         (OVERLAP WN::|arrhythmia%1:26:00::| WN::|tachycardia%1:26:00::|))
+
 (CONCEPT ONT::ARRIVE
          (INHERIT ONT::EVENT-OF-ACTION)
          (OVERLAP WN::|come%2:38:04::|
@@ -767,6 +785,10 @@
                       (OBJECT-FUNCTION (OR PLACE REPRESENTATION))))))
 
 (CONCEPT ONT::ARRIVING (INHERIT ONT::MOTION))
+
+(CONCEPT ONT::ARTERIOSCLEROSIS
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|arteriosclerosis%1:26:00::|))
 
 (CONCEPT ONT::ARTHRITIS
          (INHERIT ONT::DISEASE)
@@ -1677,10 +1699,7 @@
 
 (CONCEPT ONT::CARDIOVASCULAR-DISEASE
          (INHERIT ONT::DISEASE)
-         (OVERLAP WN::|aneurysm%1:26:00::|
-                  WN::|cardiovascular_disease%1:26:00::|
-                  WN::|hypertension%1:26:00::|
-                  WN::|heart_attack%1:26:00::|))
+         (OVERLAP WN::|cardiovascular_disease%1:26:00::|))
 
 (CONCEPT ONT::CARE
          (INHERIT ONT::EXPERIENCER-EMOTION)
@@ -1993,6 +2012,10 @@
          (INHERIT ONT::PREDICATE)
          (SEM-FRAME (ONT::GROUND (CONCEPT T))
                     (ONT::FIGURE (CONCEPT SITUATION))))
+
+(CONCEPT ONT::CHOLELITHIASIS
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|cholelithiasis%1:26:00::|))
 
 (CONCEPT ONT::CHOOSING
          (INHERIT ONT::INTENTIONALLY-ACT)
@@ -2951,10 +2974,6 @@
 
 (CONCEPT ONT::CRACKERS (INHERIT ONT::BAKED-GOODS))
 
-(CONCEPT ONT::CRAMP
-         (INHERIT ONT::MEDICAL-SYMPTOM)
-         (OVERLAP WN::|cramp%1:26:00::|))
-
 (CONCEPT ONT::CRATER
          (INHERIT ONT::SUNKEN-NATURAL-FORMATION)
          (OVERLAP WN::|volcanic_crater%1:17:00::|
@@ -3541,7 +3560,6 @@
                   WN::|malady%1:26:00::|
                   WN::|sickness%1:26:00::|
                   WN::|ailment%1:26:00::|
-                  WN::|complaint%1:26:00::|
                   WN::|ill%1:26:00::|
                   WN::|abnormality%1:26:00::|
                   WN::|abnormalcy%1:26:00::|))
@@ -3751,6 +3769,10 @@
          (INHERIT ONT::ORGANISM)
          (OVERLAP WN::|eater%1:18:00::| WN::|feeder%1:18:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (TRAJECTORY -) (ORIGIN LIVING)))
+
+(CONCEPT ONT::EATING-DISORDER
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|anorexia%1:26:00::| WN::|eating_disorder%1:26:00::|))
 
 (CONCEPT ONT::EATING-ESTABLISHMENT
          (INHERIT ONT::COMMERCIAL-FACILITY)
@@ -5309,6 +5331,8 @@
                          (CONCEPT ABSTR-OBJ)
                          (CONCEPT SITUATION)))))
 
+(CONCEPT ONT::HEADACHE (INHERIT ONT::PAIN) (OVERLAP WN::|headache%1:26:00::|))
+
 (CONCEPT ONT::HEALTH
          (INHERIT ONT::PHYSICAL-CONDITION)
          (OVERLAP WN::|wellness%1:26:00::|
@@ -5331,6 +5355,10 @@
                   WN::|PCP%1:18:00::|
                   WN::|health_care_provider%1:18:00::|
                   WN::|caregiver%1:18:01::|))
+
+(CONCEPT ONT::HEART-ATTACK
+         (INHERIT ONT::CARDIOVASCULAR-DISEASE)
+         (OVERLAP WN::|heart_attack%1:26:00::|))
 
 (CONCEPT ONT::HEARTBURN
          (INHERIT ONT::MEDICAL-SYMPTOM)
@@ -5445,6 +5473,10 @@
          (SEM-FRAME
           (ONT::FORMAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
 
+(CONCEPT ONT::HIVES
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|hives%1:26:00::|))
+
 (CONCEPT ONT::HOLE (INHERIT ONT::SUNKEN-NATURAL-FORMATION))
 
 (CONCEPT ONT::HOLIDAY (INHERIT ONT::VACATION))
@@ -5498,6 +5530,22 @@
                   WN::|hydrolyse%2:30:00::|))
 
 (CONCEPT ONT::HYDROXYLATION (INHERIT ONT::POST-TRANSLATIONAL-MODIFICATION))
+
+(CONCEPT ONT::HYPERKALEMIA
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|hyperkalemia%1:26:00::|))
+
+(CONCEPT ONT::HYPERTENSION
+         (INHERIT ONT::CARDIOVASCULAR-DISEASE)
+         (OVERLAP WN::|hypertension%1:26:00::|))
+
+(CONCEPT ONT::HYPERVENTILATION
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|hyperventilation%1:04:00::|))
+
+(CONCEPT ONT::HYPOGLYCEMIA
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|hypoglycemia%1:26:00::|))
 
 (CONCEPT ONT::HYPOTHESIZE
          (INHERIT ONT::ATTITUDE-OF-BELIEF)
@@ -5667,6 +5715,12 @@
          (INHERIT ONT::DISEASE)
          (OVERLAP WN::|infection%1:26:00::|))
 
+(CONCEPT ONT::INFLAMMATION
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|inflammation%1:26:00::|
+                  WN::|phlebitis%1:26:00::|
+                  WN::|redness%1:26:00::|))
+
 (CONCEPT ONT::INFO-HOLDER (INHERIT ONT::PHYS-REPRESENTATION))
 
 (CONCEPT ONT::INFO-MEDIUM
@@ -5731,11 +5785,18 @@
                   WN::|injury%1:26:00::|
                   WN::|hurt%1:26:00::|
                   WN::|harm%1:26:00::|
-                  WN::|trauma%1:26:02::|))
+                  WN::|trauma%1:26:02::|
+                  WN::|bruise%1:26:00::|
+                  WN::|contusion%1:26:00::|
+                  WN::|bump%1:26:00::|))
 
 (CONCEPT ONT::INSANE
          (INHERIT ONT::REASONABLE-VAL)
          (OVERLAP WN::|brainsick%5:00:00::| WN::|insane%3:00:00::|))
+
+(CONCEPT ONT::INSANITY
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|insanity%1:26:00::|))
 
 (CONCEPT ONT::INSECT
          (INHERIT ONT::INVERTEBRATE)
@@ -5930,6 +5991,10 @@
          (SEM-FRAME
           (ONT::FIGURE (SEM-FEATS (INHERIT SITUATION) (ASPECT BOUNDED)))))
 
+(CONCEPT ONT::JAUNDICE
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|jaundice%1:09:00::|))
+
 (CONCEPT ONT::JAUNT (INHERIT ONT::TRIP))
 
 (CONCEPT ONT::JOINING
@@ -5996,6 +6061,10 @@
 (CONCEPT ONT::KICKING
          (INHERIT ONT::HITTING)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -)))
+
+(CONCEPT ONT::KIDNEY-STONE
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|kidney_stone%1:17:00::|))
 
 (CONCEPT ONT::KILL
          (INHERIT ONT::DESTROY)
@@ -6267,6 +6336,10 @@
 (CONCEPT ONT::LIGHT-VAL
          (INHERIT ONT::VISIBLE-PROPERTY-VAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE LUMINOSITY-SCALE)))
+
+(CONCEPT ONT::LIGHTHEADEDNESS
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|lightheadedness%1:26:00::| WN::|dizziness%1:26:00::|))
 
 (CONCEPT ONT::LIGHTWEIGHT
          (INHERIT ONT::WEIGHT-VAL)
@@ -6590,6 +6663,10 @@
                   WN::|process%2:41:01::|
                   WN::|rest%2:32:01::|))
 
+(CONCEPT ONT::MANIA
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|mania%1:26:00::|))
+
 (CONCEPT ONT::MANIPULATE
          (INHERIT ONT::CONTROL-MANAGE)
          (OVERLAP WN::|operate%2:35:00::| WN::|control%2:35:00::|)
@@ -6726,45 +6803,23 @@
          (INHERIT ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
          (OVERLAP WN::|condition%1:26:05::|
                   WN::|sign%1:26:00::|
-                  WN::|arteriosclerosis%1:26:00::|
-                  WN::|eating_disorder%1:26:00::|
-                  WN::|anorexia%1:26:00::|
-                  WN::|insanity%1:26:00::|
-                  WN::|cholelithiasis%1:26:00::|
-                  WN::|lithiasis%1:26:00::|
-                  WN::|hyperkalemia%1:26:00::|
-                  WN::|hypoglycemia%1:26:00::|
-                  WN::|kidney_stone%1:17:00::|
+                  WN::|drowsiness%1:26:00::|
                   WN::|malformation%1:26:00::|
-                  WN::|mania%1:26:00::|
                   WN::|pathology%1:26:00::|
-                  WN::|phlebitis%1:26:00::|
-                  WN::|phobia%1:26:00::|
-                  WN::|seizure%1:26:00::|
-                  WN::|stroke%1:26:00::|
                   WN::|thrombosis%1:26:00::|
                   WN::|psychological_condition%1:26:00::|
                   WN::|anesthesia%1:26:00::|
-                  WN::|angina%1:26:01::|
-                  WN::|anxiety%1:26:00::|
-                  WN::|nervous_disorder%1:26:00::|
                   WN::|ataxia%1:26:00::|
                   WN::|confusion%1:09:00::|
                   WN::|depression%1:26:03::|
                   WN::|distress%1:12:02::|
-                  WN::|dizziness%1:26:00::|
-                  WN::|drowsiness%1:26:00::|
                   WN::|exhaustion%1:26:00::|
                   WN::|fatigue%1:26:00::|
-                  WN::|headache%1:26:00::|
                   WN::|irritation%1:26:00::|
-                  WN::|anorexia%1:26:00::|
                   WN::|restlessness%1:07:00::|
                   WN::|stress%1:26:01::|
                   WN::|tiredness%1:26:00::|
-                  WN::|weakness%1:07:00::|
-                  WN::|addiction%1:26:00::|
-                  WN::|stroke%1:26:00::|))
+                  WN::|weakness%1:07:00::|))
 
 (CONCEPT ONT::MEDICAL-DIAGNOSTIC
          (INHERIT ONT::MEDICAL-TEST)
@@ -6800,25 +6855,9 @@
          (OVERLAP WN::|symptom%1:26:00::|
                   WN::|sign%1:26:00::|
                   WN::|syndrome%1:26:00::|
-                  WN::|constriction%1:09:00::|
-                  WN::|contraction%1:04:01::|
-                  WN::|hives%1:26:00::|
                   WN::|hoarseness%1:07:00::|
-                  WN::|hyperventilation%1:04:00::|
-                  WN::|arrhythmia%1:26:00::|
-                  WN::|tachycardia%1:26:00::|
-                  WN::|lightheadedness%1:26:00::|
-                  WN::|nausea%1:26:00::|
-                  WN::|nosebleed%1:26:00::|
-                  WN::|numbness%1:26:00::|
-                  WN::|palpitation%1:26:00::|
-                  WN::|redness%1:26:00::|
-                  WN::|sneeze%1:26:00::|
                   WN::|sniffle%1:04:00::|
-                  WN::|soreness%1:26:00::|
-                  WN::|spasm%1:26:00::|
-                  WN::|tightness%1:09:00::|
-                  WN::|jaundice%1:26:00::|))
+                  WN::|tightness%1:09:00::|))
 
 (CONCEPT ONT::MEDICAL-TEST (INHERIT ONT::PROCEDURE))
 
@@ -7244,6 +7283,10 @@
                   WN::|process%2:30:00::|
                   WN::|treat%2:30:01::|))
 
+(CONCEPT ONT::NAUSEA
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|nausea%1:26:00::|))
+
 (CONCEPT ONT::NAVIGATIONAL-RELN (INHERIT ONT::POS-DIRECTIONAL-RELN))
 
 (CONCEPT ONT::NEAR
@@ -7369,6 +7412,10 @@
 
 (CONCEPT ONT::NORTH-RELN (INHERIT ONT::NAVIGATIONAL-RELN))
 
+(CONCEPT ONT::NOSEBLEED
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|nosebleed%1:26:00::|))
+
 (CONCEPT ONT::NOT-FAMILIAR (INHERIT ONT::SALIENCE))
 
 (CONCEPT ONT::NOT-IN-WORKING-ORDER-VAL
@@ -7425,6 +7472,10 @@
          (INHERIT ONT::UNIT)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (INFORMATION DATA))
          (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
+
+(CONCEPT ONT::NUMBNESS
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|numbness%1:26:00::|))
 
 (CONCEPT ONT::NUMERICAL-PROPERTY-VAL
          (INHERIT ONT::DISCRETE-PROPERTY-VAL)
@@ -7729,9 +7780,13 @@
                   WN::|hurting%1:26:00::|
                   WN::|pain_sensation%1:09:00::|
                   WN::|painful_sensation%1:09:00::|
-                  WN::|chest_pain%1:26:00::|))
+                  WN::|soreness%1:26:00::|))
 
 (CONCEPT ONT::PAIN-RELIEVER (INHERIT ONT::MEDICATION))
+
+(CONCEPT ONT::PALPITATION
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|palpitation%1:26:00::|))
 
 (CONCEPT ONT::PAN (INHERIT ONT::MOVE))
 
@@ -7891,6 +7946,10 @@
          (OVERLAP WN::|drug%1:06:00::|))
 
 (CONCEPT ONT::PHEASANT (INHERIT ONT::POULTRY))
+
+(CONCEPT ONT::PHOBIA
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|phobia%1:26:00::|))
 
 (CONCEPT ONT::PHOSPHORILATED
          (INHERIT ONT::PHYSICAL-PROPERTY-VAL)
@@ -9768,6 +9827,10 @@
 
 (CONCEPT ONT::SEEK (INHERIT ONT::SCRUTINY))
 
+(CONCEPT ONT::SEIZURE
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|seizure%1:26:00::|))
+
 (CONCEPT ONT::SELECT
          (INHERIT ONT::CHOOSING)
          (OVERLAP WN::|take%2:40:02::|
@@ -10155,6 +10218,10 @@
 
 (CONCEPT ONT::SMOKING (INHERIT ONT::CONSUME) (OVERLAP WN::|smoke%2:34:00::|))
 
+(CONCEPT ONT::SNEEZE
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|sneeze%1:26:00::|))
+
 (CONCEPT ONT::SOCIAL-ACTIVITY
          (INHERIT ONT::ACTIVITY)
          (OVERLAP WN::|socialize%2:41:01::|
@@ -10288,6 +10355,10 @@
                   WN::|range%2:42:03::|
                   WN::|roll%2:42:00::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT STAGE-LEVEL)))
+
+(CONCEPT ONT::SPASM
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|cramp%1:26:00::| WN::|spasm%1:26:00::|))
 
 (CONCEPT ONT::SPATIAL
          (INHERIT ONT::ABSTRACT-OBJECT)
@@ -10621,6 +10692,10 @@
          (INHERIT ONT::MANUFACTURED-OBJECT)
          (OVERLAP WN::|stretcher%1:06:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (CONTAINER +)))
+
+(CONCEPT ONT::STROKE
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|stroke%1:26:00::|))
 
 (CONCEPT ONT::STRUCTURAL-COMPONENT
          (INHERIT ONT::GENERAL-STRUCTURE)
@@ -12030,8 +12105,6 @@
          (INHERIT ONT::INJURY)
          (OVERLAP WN::|wound%1:26:00::|
                   WN::|lesion%1:26:02::|
-                  WN::|bruise%1:26:00::|
-                  WN::|contusion%1:26:00::|
                   WN::|sore%1:26:00::|))
 
 (CONCEPT ONT::WRITE

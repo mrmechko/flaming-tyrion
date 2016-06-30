@@ -9,45 +9,23 @@
  <relation label="overlap">
   wn::|condition%1:26:05::|
   wn::|sign%1:26:00::|
-  wn::|arteriosclerosis%1:26:00::|
-  wn::|eating_disorder%1:26:00::|
-  wn::|anorexia%1:26:00::|
-  wn::|insanity%1:26:00::|
-  wn::|cholelithiasis%1:26:00::|
-  wn::|lithiasis%1:26:00::|
-  wn::|hyperkalemia%1:26:00::|
-  wn::|hypoglycemia%1:26:00::|
-  wn::|kidney_stone%1:17:00::|
+  wn::|drowsiness%1:26:00::|
   wn::|malformation%1:26:00::|
-  wn::|mania%1:26:00::|
   wn::|pathology%1:26:00::|
-  wn::|phlebitis%1:26:00::|
-  wn::|phobia%1:26:00::|
-  wn::|seizure%1:26:00::|
-  wn::|stroke%1:26:00::|
   wn::|thrombosis%1:26:00::|
   wn::|psychological_condition%1:26:00::|
   wn::|anesthesia%1:26:00::|
-  wn::|angina%1:26:01::|
-  wn::|anxiety%1:26:00::|
-  wn::|nervous_disorder%1:26:00::|
   wn::|ataxia%1:26:00::|
   wn::|confusion%1:09:00::|
   wn::|depression%1:26:03::|
   wn::|distress%1:12:02::|
-  wn::|dizziness%1:26:00::|
-  wn::|drowsiness%1:26:00::|
   wn::|exhaustion%1:26:00::|
   wn::|fatigue%1:26:00::|
-  wn::|headache%1:26:00::|
   wn::|irritation%1:26:00::|
-  wn::|anorexia%1:26:00::|
   wn::|restlessness%1:07:00::|
   wn::|stress%1:26:01::|
   wn::|tiredness%1:26:00::|
   wn::|weakness%1:07:00::|
-  wn::|addiction%1:26:00::|
-  wn::|stroke%1:26:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -176,6 +154,79 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::addiction">
+ <relation label="inherit">
+  ont::medical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|addiction%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::eating-disorder">
+ <relation label="inherit">
+  ont::medical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|anorexia%1:26:00::|
+  wn::|eating_disorder%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::anxiety">
+ <relation label="inherit">
+  ont::medical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|anxiety%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::arteriosclerosis">
+ <relation label="inherit">
+  ont::medical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|arteriosclerosis%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::cholelithiasis">
+ <relation label="inherit">
+  ont::medical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|cholelithiasis%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::insanity">
+ <relation label="inherit">
+  ont::medical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|insanity%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::kidney-stone">
+ <relation label="inherit">
+  ont::medical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|kidney_stone%1:17:00::|
+ </relation>
+ </concept>
+ <concept name="ont::mania">
+ <relation label="inherit">
+  ont::medical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|mania%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::phobia">
+ <relation label="inherit">
+  ont::medical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|phobia%1:26:00::|
+ </relation>
+ </concept>
  <concept name="ont::pregnancy">
  <relation label="inherit">
   ont::medical-condition
@@ -184,16 +235,32 @@
   wn::|pregnancy%1:26:00::|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="addiction" />
- </morph>
+ <concept name="ont::seizure">
  <relation label="inherit">
   ont::medical-condition
-  ont::count-pred-templ
  </relation>
- </sense>
+ <relation label="overlap">
+  wn::|seizure%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::stroke">
+ <relation label="inherit">
+  ont::medical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|stroke%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::angina">
+ <relation label="inherit">
+  ont::medical-condition
+  ont::medical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|angina%1:26:01::|
+  wn::|angina%1:26:00::|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="n" />
@@ -208,36 +275,6 @@
  <morph>
   <pos pos="n" />
   <word first-word="anesthesia" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="angina" remaining-words="pectoris" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="anorexia" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="anxiety" />
  </morph>
  <relation label="inherit">
   ont::medical-condition
@@ -320,16 +357,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="dizziness" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="drowsiness" />
  </morph>
  <relation label="inherit">
@@ -360,61 +387,11 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="headache" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="hyperkalemia" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="hypoglycemia" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="kidney" remaining-words="stone" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="malformation" />
  </morph>
  <relation label="inherit">
   ont::medical-condition
   ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="mania" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::mass-pred-templ
  </relation>
  </sense>
  <sense>
@@ -440,26 +417,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="phlebitis" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="phobia" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="restlessness" />
  </morph>
  <relation label="inherit">
@@ -470,31 +427,11 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="seizure" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="stress" />
  </morph>
  <relation label="inherit">
   ont::medical-condition
   ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="stroke" />
- </morph>
- <relation label="inherit">
-  ont::medical-condition
-  ont::count-pred-templ
  </relation>
  </sense>
  <sense>
