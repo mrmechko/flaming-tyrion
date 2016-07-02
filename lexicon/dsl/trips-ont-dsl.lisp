@@ -3255,6 +3255,10 @@
                   WN::|dependent%3:00:00::|
                   WN::|conditional%3:00:00::|))
 
+(CONCEPT ONT::DEPRESSION
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|depression%1:26:03::|))
+
 (CONCEPT ONT::DEPRIVE
          (INHERIT ONT::HINDERING)
          (OVERLAP WN::|deprive%2:40:01::|
@@ -3625,6 +3629,8 @@
            (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
           (ONT::NEUTRAL
            (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
+
+(CONCEPT ONT::DISTRESS (INHERIT ONT::PAIN) (OVERLAP WN::|distress%1:26:00::|))
 
 (CONCEPT ONT::DISTRIBUTED-POS (INHERIT ONT::POS-AS-OVER))
 
@@ -4581,7 +4587,8 @@
          (OVERLAP WN::|feeling%1:03:00::|
                   WN::|bother%1:09:00::|
                   WN::|worry%1:09:00::|
-                  WN::|sorrow%1:09:00::|)
+                  WN::|sorrow%1:09:00::|
+                  WN::|distress%1:12:02::|)
          (SEM-FRAME (ONT::FIGURE (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::FEMALE-CHILD
@@ -6806,13 +6813,8 @@
                   WN::|drowsiness%1:26:00::|
                   WN::|malformation%1:26:00::|
                   WN::|pathology%1:26:00::|
-                  WN::|thrombosis%1:26:00::|
-                  WN::|psychological_condition%1:26:00::|
                   WN::|anesthesia%1:26:00::|
-                  WN::|ataxia%1:26:00::|
                   WN::|confusion%1:09:00::|
-                  WN::|depression%1:26:03::|
-                  WN::|distress%1:12:02::|
                   WN::|exhaustion%1:26:00::|
                   WN::|fatigue%1:26:00::|
                   WN::|irritation%1:26:00::|
@@ -7363,6 +7365,10 @@
                   WN::|talk_terms%2:32:00::|)
          (SEM-FRAME
           (ONT::RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
+
+(CONCEPT ONT::NERVOUS-DISORDER
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|ataxia%1:26:00::| WN::|nervous_disorder%1:26:00::|))
 
 (CONCEPT ONT::NEUTRAL-EMOTIONAL-VAL (INHERIT ONT::EMOTIONAL-VAL))
 
@@ -11141,6 +11147,10 @@
                   WN::|street%1:06:00::|
                   WN::|avenue%1:06:00::|
                   WN::|boulevard%1:06:00::|))
+
+(CONCEPT ONT::THROMBOSIS
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|thrombosis%1:26:00::|))
 
 (CONCEPT ONT::THRUWAY
          (INHERIT ONT::HIGHWAY)
