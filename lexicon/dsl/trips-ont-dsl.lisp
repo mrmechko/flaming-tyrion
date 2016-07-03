@@ -328,7 +328,7 @@
            OPTIONAL)))
 
 (CONCEPT ONT::ADDICTION
-         (INHERIT ONT::MEDICAL-CONDITION)
+         (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
          (OVERLAP WN::|addiction%1:26:00::|))
 
 (CONCEPT ONT::ADDITIVE
@@ -442,7 +442,8 @@
                   WN::|ill%3:00:01::|
                   WN::|faint%5:00:00::|
                   WN::|feverish%5:00:00::|
-                  WN::|upset%5:00:00::|))
+                  WN::|upset%5:00:00::|
+                  WN::|lightheaded%3:00:00:ill:01|))
 
 (CONCEPT ONT::AIR-CURRENT
          (INHERIT ONT::ATMOSPHERIC-PHENOMENON)
@@ -531,7 +532,7 @@
          (OVERLAP WN::|amino_acid%1:27:00::|))
 
 (CONCEPT ONT::AMNESIA
-         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
          (OVERLAP WN::|amnesia%1:09:00::|))
 
 (CONCEPT ONT::AMONG (INHERIT ONT::COMPLEX-GROUND-RELN))
@@ -610,7 +611,7 @@
          (OVERLAP WN::|Antibiotic%1:06:00::| WN::|antibiotic_drug%1:06:00::|))
 
 (CONCEPT ONT::ANXIETY
-         (INHERIT ONT::MEDICAL-CONDITION)
+         (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
          (OVERLAP WN::|anxiety%1:26:00::|))
 
 (CONCEPT ONT::ANY-SCALE (INHERIT ONT::SCALE))
@@ -3256,7 +3257,7 @@
                   WN::|conditional%3:00:00::|))
 
 (CONCEPT ONT::DEPRESSION
-         (INHERIT ONT::MEDICAL-CONDITION)
+         (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
          (OVERLAP WN::|depression%1:26:03::|))
 
 (CONCEPT ONT::DEPRIVE
@@ -3740,7 +3741,7 @@
 
 (CONCEPT ONT::DYSPEPSIA
          (INHERIT ONT::MEDICAL-SYMPTOM)
-         (OVERLAP WN::|dyspepsia%1:26:00::|))
+         (OVERLAP WN::|dyspepsia%1:26:00::| WN::|indigestion%1:26:00::|))
 
 (CONCEPT ONT::DYSPNEA
          (INHERIT ONT::MEDICAL-SYMPTOM)
@@ -3777,7 +3778,7 @@
          (SEM-FEATS (INHERIT PHYS-OBJ) (TRAJECTORY -) (ORIGIN LIVING)))
 
 (CONCEPT ONT::EATING-DISORDER
-         (INHERIT ONT::MEDICAL-CONDITION)
+         (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
          (OVERLAP WN::|anorexia%1:26:00::| WN::|eating_disorder%1:26:00::|))
 
 (CONCEPT ONT::EATING-ESTABLISHMENT
@@ -5707,13 +5708,6 @@
          (INHERIT ONT::ACCUSE)
          (OVERLAP WN::|charge%2:32:02::| WN::|accuse%2:32:01::|))
 
-(CONCEPT ONT::INDIGESTION
-         (INHERIT ONT::DISEASE)
-         (OVERLAP WN::|stomach_upset%1:26:00::|
-                  WN::|indigestion%1:26:00::|
-                  WN::|dyspepsia%1:26:00::|
-                  WN::|upset_stomach%1:26:00::|))
-
 (CONCEPT ONT::INEXPENSIVE
          (INHERIT ONT::COST-VAL)
          (OVERLAP WN::|cheap%3:00:00::| WN::|cheap%3:00:00::|))
@@ -5802,7 +5796,7 @@
          (OVERLAP WN::|brainsick%5:00:00::| WN::|insane%3:00:00::|))
 
 (CONCEPT ONT::INSANITY
-         (INHERIT ONT::MEDICAL-CONDITION)
+         (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
          (OVERLAP WN::|insanity%1:26:00::|))
 
 (CONCEPT ONT::INSECT
@@ -6671,7 +6665,7 @@
                   WN::|rest%2:32:01::|))
 
 (CONCEPT ONT::MANIA
-         (INHERIT ONT::MEDICAL-CONDITION)
+         (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
          (OVERLAP WN::|mania%1:26:00::|))
 
 (CONCEPT ONT::MANIPULATE
@@ -6941,6 +6935,11 @@
          (SEM-FRAME (ONT::FORMAL (CONCEPT SITUATION) OPTIONAL)
                     (ONT::GROUND (CONCEPT T) OPTIONAL)
                     (ONT::FIGURE (CONCEPT T) OPTIONAL)))
+
+(CONCEPT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER
+         (INHERIT ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
+         (OVERLAP WN::|mental_illness%1:26:00::|
+                  WN::|mental_disorder%1:26:00::|))
 
 (CONCEPT ONT::MENTAL-VAL
          (INHERIT ONT::PROPERTY-VAL)
@@ -7367,7 +7366,7 @@
           (ONT::RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
 
 (CONCEPT ONT::NERVOUS-DISORDER
-         (INHERIT ONT::MEDICAL-CONDITION)
+         (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
          (OVERLAP WN::|ataxia%1:26:00::| WN::|nervous_disorder%1:26:00::|))
 
 (CONCEPT ONT::NEUTRAL-EMOTIONAL-VAL (INHERIT ONT::EMOTIONAL-VAL))
@@ -7954,7 +7953,7 @@
 (CONCEPT ONT::PHEASANT (INHERIT ONT::POULTRY))
 
 (CONCEPT ONT::PHOBIA
-         (INHERIT ONT::MEDICAL-CONDITION)
+         (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
          (OVERLAP WN::|phobia%1:26:00::|))
 
 (CONCEPT ONT::PHOSPHORILATED
@@ -9834,7 +9833,7 @@
 (CONCEPT ONT::SEEK (INHERIT ONT::SCRUTINY))
 
 (CONCEPT ONT::SEIZURE
-         (INHERIT ONT::MEDICAL-CONDITION)
+         (INHERIT ONT::MEDICAL-SYMPTOM)
          (OVERLAP WN::|seizure%1:26:00::|))
 
 (CONCEPT ONT::SELECT
