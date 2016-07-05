@@ -5922,6 +5922,15 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::consistent">
+  <relation label="inherit">
+   ont::consistent-val
+  </relation>
+  <relation label="overlap">
+   wn::|consistent%3:00:00::|
+   wn::|consistent%3:00:01::|
+  </relation>
+ </concept>
  <concept name="ont::consistent-val">
   <relation label="inherit">
    ont::property-val
@@ -6110,6 +6119,14 @@
  <concept name="ont::contest-deny-oppose-protest">
   <relation label="inherit">
    ont::contest
+  </relation>
+ </concept>
+ <concept name="ont::continuous">
+  <relation label="inherit">
+   ont::continuous-val
+  </relation>
+  <relation label="overlap">
+   wn::|continuous%3:00:01::|
   </relation>
  </concept>
  <concept name="ont::continuous-change">
@@ -7831,6 +7848,14 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::discontinuous">
+  <relation label="inherit">
+   ont::continuous-val
+  </relation>
+  <relation label="overlap">
+   wn::|discontinuous%3:00:01::|
+  </relation>
  </concept>
  <concept name="ont::discrete-domain">
   <relation label="inherit">
@@ -10688,6 +10713,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::frequent">
+  <relation label="inherit">
+   ont::frequency-val
+  </relation>
+  <relation label="overlap">
+   wn::|frequent%3:00:00::|
+  </relation>
+ </concept>
  <concept name="ont::freshwater-fish">
   <relation label="inherit">
    ont::seafood
@@ -11869,6 +11902,11 @@
    ont::linear-d
   </relation>
  </concept>
+ <concept name="ont::height-val">
+  <relation label="inherit">
+   ont::linear-dimension
+  </relation>
+ </concept>
  <concept name="ont::help">
   <relation label="inherit">
    ont::cause-effect
@@ -11942,6 +11980,15 @@
    wn::|conceal%2:39:01::|
    wn::|conceal%2:39:00::|
    wn::|hide%2:39:01::|
+  </relation>
+ </concept>
+ <concept name="ont::high">
+  <relation label="inherit">
+   ont::height-val
+  </relation>
+  <relation label="overlap">
+   wn::|high%3:00:02::|
+   wn::|high%3:00:01::|
   </relation>
  </concept>
  <concept name="ont::highlight">
@@ -12440,6 +12487,15 @@
    wn::|incomplete%3:00:00::|
    wn::|unfinished%3:00:01::|
    wn::|incomplete%5:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::inconsistent">
+  <relation label="inherit">
+   ont::consistent-val
+  </relation>
+  <relation label="overlap">
+   wn::|inconsistent%3:00:00::|
+   wn::|inconsistent%5:00:00:irreconcilable:00|
   </relation>
  </concept>
  <concept name="ont::incorrect">
@@ -13135,6 +13191,16 @@
  <concept name="ont::io-device">
   <relation label="inherit">
    ont::computer-part
+  </relation>
+ </concept>
+ <concept name="ont::irregular">
+  <relation label="inherit">
+   ont::frequency-val
+  </relation>
+  <relation label="overlap">
+   wn::|irregular%5:00:00:sporadic:00|
+   wn::|casual%5:00:00:irregular:00|
+   wn::|sporadic%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::is-compatible-with">
@@ -14058,20 +14124,14 @@
    ont::linear-val
   </relation>
   <relation label="overlap">
-   wn::|low%3:00:02::|
-   wn::|low%3:00:01::|
-   wn::|deep%5:00:00::|
    wn::|deep%5:00:00::|
    wn::|shallow%3:00:01::|
-   wn::|high%3:00:02::|
    wn::|long%5:00:00::|
    wn::|long%3:00:02::|
    wn::|tall%3:00:00::|
    wn::|short%3:00:03::|
    wn::|deep%3:00:01::|
    wn::|short%3:00:02::|
-   wn::|low%3:00:02::|
-   wn::|low%3:00:01::|
   </relation>
  </concept>
  <concept name="ont::linear-extent">
@@ -14459,27 +14519,6 @@
    wn::|valid%3:00:00::|
   </relation>
  </concept>
- <concept name="ont::long">
-  <relation label="inherit">
-   ont::event-duration-modifier
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="scale">duration-scale</feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::figure">
-    <or>
-     <concept name="situation" />
-     <concept name="time" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::long-term-control-drug">
   <relation label="inherit">
    ont::bronchodilator
@@ -14530,6 +14569,15 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::low">
+  <relation label="inherit">
+   ont::height-val
+  </relation>
+  <relation label="overlap">
+   wn::|low%3:00:02::|
+   wn::|low%3:00:01::|
+  </relation>
  </concept>
  <concept name="ont::luckiness-val">
   <relation label="inherit">
@@ -16753,11 +16801,9 @@
    ont::frequency-val
   </relation>
   <relation label="overlap">
-   wn::|casual%5:00:00::|
    wn::|infrequent%3:00:00::|
-   wn::|infrequent%3:00:00::|
-   wn::|irregular%3:00:00::|
-   wn::|rare%5:00:00::|
+   wn::|rare%5:00:00:infrequent:00|
+   wn::|occasional%5:00:00:infrequent:00|
   </relation>
  </concept>
  <concept name="ont::occurring">
@@ -17590,6 +17636,22 @@
  <concept name="ont::perlocution">
   <relation label="inherit">
    ont::communication
+  </relation>
+ </concept>
+ <concept name="ont::persistence-val">
+  <relation label="inherit">
+   ont::process-val
+  </relation>
+ </concept>
+ <concept name="ont::persistent">
+  <relation label="inherit">
+   ont::persistence-val
+  </relation>
+  <relation label="overlap">
+   wn::|persistent%5:00:00:continual:00|
+   wn::|permanent%3:00:00::|
+   wn::|lasting%5:00:00:long:02|
+   wn::|lasting%5:00:00:stable:00|
   </relation>
  </concept>
  <concept name="ont::person">
@@ -19207,7 +19269,12 @@
       <concept name="abstr-obj" />
       <concept name="situation" />
      </or>
-     <feat name="type">mental-construction</feat>
+     <feat name="type">
+     <or>
+      mental-construction
+      fact
+     </or>
+     </feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -19687,16 +19754,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::quick">
-  <relation label="inherit">
-   ont::event-duration-modifier
-  </relation>
-  <relation label="overlap">
-   wn::|quick%5:00:00::|
-   wn::|fast%3:00:01::|
-   wn::|instantaneous%5:00:00::|
-  </relation>
- </concept>
  <concept name="ont::quick-relief-drug">
   <relation label="inherit">
    ont::bronchodilator
@@ -19734,14 +19791,6 @@
    <feat name="scale">rate-scale</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::formal">
-    <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
-     <feat name="type">event-of-change</feat>
-    </sem-feats>
-   </role-restr-map>
    <role-restr-map roles="ont::extent">
     <sem-feats>
      <relation label="inherit">
@@ -20171,10 +20220,7 @@
    ont::frequency-val
   </relation>
   <relation label="overlap">
-   wn::|regular%5:00:00::|
-   wn::|frequent%3:00:00::|
-   wn::|regular%3:00:00::|
-   wn::|frequent%3:00:00::|
+   wn::|regular%5:00:00:steady:00|
   </relation>
  </concept>
  <concept name="ont::regulatory-organization">
@@ -22329,27 +22375,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::short">
-  <relation label="inherit">
-   ont::event-duration-modifier
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="scale">duration-scale</feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::figure">
-    <or>
-     <concept name="situation" />
-     <concept name="time" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::shortcut">
   <relation label="inherit">
    ont::route
@@ -23592,6 +23617,13 @@
   <relation label="inherit">
    ont::steadiness-val
   </relation>
+  <relation label="overlap">
+   wn::|steady%3:00:00::|
+   wn::|steady%5:00:00:stable:00|
+   wn::|stable%3:00:00::|
+   wn::|unchanged%3:00:00::|
+   wn::|unchanged%3:00:04::|
+  </relation>
  </concept>
  <concept name="ont::steep">
   <relation label="inherit">
@@ -24664,6 +24696,16 @@
    </relation>
    <feat name="scale">time-measure-scale</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::temporary">
+  <relation label="inherit">
+   ont::persistence-val
+  </relation>
+  <relation label="overlap">
+   wn::|temporary%3:00:00::|
+   wn::|transient%5:00:00:impermanent:00|
+   wn::|impermanent%5:00:00:finite:00|
+  </relation>
  </concept>
  <concept name="ont::terminate">
   <relation label="inherit">
@@ -25827,7 +25869,6 @@
   <relation label="overlap">
    wn::|unsteady%3:00:00::|
    wn::|shaky%5:00:00::|
-   wn::|unsteady%3:00:00::|
    wn::|unstable%3:00:00::|
    wn::|volatile%3:00:00::|
   </relation>

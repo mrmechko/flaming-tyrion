@@ -2684,6 +2684,10 @@
          (SEM-FEATS (INHERIT SITUATION) (CAUSE -) (ASPECT INDIV-LEVEL))
          (SEM-FRAME (ONT::NEUTRAL2 (CONCEPT T) OPTIONAL)))
 
+(CONCEPT ONT::CONSISTENT
+         (INHERIT ONT::CONSISTENT-VAL)
+         (OVERLAP WN::|consistent%3:00:00::| WN::|consistent%3:00:01::|))
+
 (CONCEPT ONT::CONSISTENT-VAL
          (INHERIT ONT::PROPERTY-VAL)
          (SEM-FRAME (ONT::GROUND (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
@@ -2771,6 +2775,10 @@
                   WN::|take_issue%2:32:00::|))
 
 (CONCEPT ONT::CONTEST-DENY-OPPOSE-PROTEST (INHERIT ONT::CONTEST))
+
+(CONCEPT ONT::CONTINUOUS
+         (INHERIT ONT::CONTINUOUS-VAL)
+         (OVERLAP WN::|continuous%3:00:01::|))
 
 (CONCEPT ONT::CONTINUOUS-CHANGE (INHERIT ONT::TRANSFORMATION))
 
@@ -3544,6 +3552,10 @@
                   WN::|study%1:09:02::|)
          (INHERIT ONT::FUNCTION-OBJECT ABSTR-OBJ)
          (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
+
+(CONCEPT ONT::DISCONTINUOUS
+         (INHERIT ONT::CONTINUOUS-VAL)
+         (OVERLAP WN::|discontinuous%3:00:01::|))
 
 (CONCEPT ONT::DISCRETE-DOMAIN (INHERIT ONT::DOMAIN))
 
@@ -4853,6 +4865,10 @@
          (INHERIT ONT::PROCESS-VAL ABSTR-OBJ)
          (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
 
+(CONCEPT ONT::FREQUENT
+         (INHERIT ONT::FREQUENCY-VAL)
+         (OVERLAP WN::|frequent%3:00:00::|))
+
 (CONCEPT ONT::FRESHWATER-FISH (INHERIT ONT::SEAFOOD))
 
 (CONCEPT ONT::FRIEND
@@ -5384,6 +5400,8 @@
 
 (CONCEPT ONT::HEIGHT (INHERIT ONT::LINEAR-D))
 
+(CONCEPT ONT::HEIGHT-VAL (INHERIT ONT::LINEAR-DIMENSION))
+
 (CONCEPT ONT::HELP
          (INHERIT ONT::CAUSE-EFFECT)
          (OVERLAP WN::|help%2:41:00::|
@@ -5420,6 +5438,10 @@
                   WN::|conceal%2:39:01::|
                   WN::|conceal%2:39:00::|
                   WN::|hide%2:39:01::|))
+
+(CONCEPT ONT::HIGH
+         (INHERIT ONT::HEIGHT-VAL)
+         (OVERLAP WN::|high%3:00:02::| WN::|high%3:00:01::|))
 
 (CONCEPT ONT::HIGHLIGHT
          (INHERIT ONT::VISUAL-DISPLAY)
@@ -5653,6 +5675,11 @@
          (OVERLAP WN::|incomplete%3:00:00::|
                   WN::|unfinished%3:00:01::|
                   WN::|incomplete%5:00:00::|))
+
+(CONCEPT ONT::INCONSISTENT
+         (INHERIT ONT::CONSISTENT-VAL)
+         (OVERLAP WN::|inconsistent%3:00:00::|
+                  WN::|inconsistent%5:00:00:irreconcilable:00|))
 
 (CONCEPT ONT::INCORRECT
          (INHERIT ONT::CORRECTNESS-VAL)
@@ -5972,6 +5999,12 @@
 (CONCEPT ONT::INVOLVES-DOING-VAL (INHERIT ONT::PROCESS-VAL))
 
 (CONCEPT ONT::IO-DEVICE (INHERIT ONT::COMPUTER-PART))
+
+(CONCEPT ONT::IRREGULAR
+         (INHERIT ONT::FREQUENCY-VAL)
+         (OVERLAP WN::|irregular%5:00:00:sporadic:00|
+                  WN::|casual%5:00:00:irregular:00|
+                  WN::|sporadic%3:00:00::|))
 
 (CONCEPT ONT::IS-COMPATIBLE-WITH
          (INHERIT ONT::STATE-OF-BEING)
@@ -6372,20 +6405,14 @@
 
 (CONCEPT ONT::LINEAR-DIMENSION
          (INHERIT ONT::LINEAR-VAL)
-         (OVERLAP WN::|low%3:00:02::|
-                  WN::|low%3:00:01::|
-                  WN::|deep%5:00:00::|
-                  WN::|deep%5:00:00::|
+         (OVERLAP WN::|deep%5:00:00::|
                   WN::|shallow%3:00:01::|
-                  WN::|high%3:00:02::|
                   WN::|long%5:00:00::|
                   WN::|long%3:00:02::|
                   WN::|tall%3:00:00::|
                   WN::|short%3:00:03::|
                   WN::|deep%3:00:01::|
-                  WN::|short%3:00:02::|
-                  WN::|low%3:00:02::|
-                  WN::|low%3:00:01::|))
+                  WN::|short%3:00:02::|))
 
 (CONCEPT ONT::LINEAR-EXTENT (INHERIT ONT::POSITION-AS-EXTENT-RELN))
 
@@ -6544,12 +6571,6 @@
          (INHERIT ONT::CORRECTNESS-VAL)
          (OVERLAP WN::|legitimate%5:00:00::| WN::|valid%3:00:00::|))
 
-(CONCEPT ONT::LONG
-         (INHERIT ONT::EVENT-DURATION-MODIFIER)
-         (SEM-FRAME
-          (ONT::GROUND (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE DURATION-SCALE)))
-          (ONT::FIGURE (OR (CONCEPT SITUATION) (CONCEPT TIME)))))
-
 (CONCEPT ONT::LONG-TERM-CONTROL-DRUG
          (INHERIT ONT::BRONCHODILATOR)
          (OVERLAP WN::|corticosteroid%1:27:00::|
@@ -6575,6 +6596,10 @@
          (INHERIT ONT::AUDIBLE-PROPERTY-VAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (MEASURE-FUNCTION VALUE))
          (SEM-FRAME (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
+
+(CONCEPT ONT::LOW
+         (INHERIT ONT::HEIGHT-VAL)
+         (OVERLAP WN::|low%3:00:02::| WN::|low%3:00:01::|))
 
 (CONCEPT ONT::LUCKINESS-VAL (INHERIT ONT::PROPERTY-VAL))
 
@@ -7566,11 +7591,9 @@
 
 (CONCEPT ONT::OCCASIONAL
          (INHERIT ONT::FREQUENCY-VAL)
-         (OVERLAP WN::|casual%5:00:00::|
-                  WN::|infrequent%3:00:00::|
-                  WN::|infrequent%3:00:00::|
-                  WN::|irregular%3:00:00::|
-                  WN::|rare%5:00:00::|))
+         (OVERLAP WN::|infrequent%3:00:00::|
+                  WN::|rare%5:00:00:infrequent:00|
+                  WN::|occasional%5:00:00:infrequent:00|))
 
 (CONCEPT ONT::OCCURRING
          (INHERIT ONT::SITUATION-ROOT)
@@ -7921,6 +7944,15 @@
 (CONCEPT ONT::PERFORMANCE-PLAY (INHERIT ONT::GATHERING-EVENT))
 
 (CONCEPT ONT::PERLOCUTION (INHERIT ONT::COMMUNICATION))
+
+(CONCEPT ONT::PERSISTENCE-VAL (INHERIT ONT::PROCESS-VAL))
+
+(CONCEPT ONT::PERSISTENT
+         (INHERIT ONT::PERSISTENCE-VAL)
+         (OVERLAP WN::|persistent%5:00:00:continual:00|
+                  WN::|permanent%3:00:00::|
+                  WN::|lasting%5:00:00:long:02|
+                  WN::|lasting%5:00:00:stable:00|))
 
 (CONCEPT ONT::PERSON
          (INHERIT ONT::MAMMAL)
@@ -8655,7 +8687,7 @@
          (SEM-FRAME
           (ONT::NEUTRAL
            (SEM-FEATS (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION))
-                      (TYPE MENTAL-CONSTRUCTION)))))
+                      (TYPE (OR MENTAL-CONSTRUCTION FACT))))))
 
 (CONCEPT ONT::PROTECTING
          (INHERIT ONT::EVENT-OF-CAUSATION)
@@ -8866,12 +8898,6 @@
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
          (SEM-FRAME (ONT::FORMAL (CONCEPT T))))
 
-(CONCEPT ONT::QUICK
-         (INHERIT ONT::EVENT-DURATION-MODIFIER)
-         (OVERLAP WN::|quick%5:00:00::|
-                  WN::|fast%3:00:01::|
-                  WN::|instantaneous%5:00:00::|))
-
 (CONCEPT ONT::QUICK-RELIEF-DRUG
          (INHERIT ONT::BRONCHODILATOR)
          (OVERLAP WN::|albuterol%1:06:00::|
@@ -8891,7 +8917,6 @@
          (INHERIT ONT::MEASURE-DOMAIN)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE RATE-SCALE))
          (SEM-FRAME
-          (ONT::FORMAL (SEM-FEATS (INHERIT SITUATION) (TYPE EVENT-OF-CHANGE)))
           (ONT::EXTENT
            (SEM-FEATS (INHERIT ABSTR-OBJ)
                       (SCALE RATE-SCALE)
@@ -9069,10 +9094,7 @@
 
 (CONCEPT ONT::REGULAR
          (INHERIT ONT::FREQUENCY-VAL)
-         (OVERLAP WN::|regular%5:00:00::|
-                  WN::|frequent%3:00:00::|
-                  WN::|regular%3:00:00::|
-                  WN::|frequent%3:00:00::|))
+         (OVERLAP WN::|regular%5:00:00:steady:00|))
 
 (CONCEPT ONT::REGULATORY-ORGANIZATION (INHERIT ONT::ORGANIZATION))
 
@@ -10047,12 +10069,6 @@
                       (FORM GEOGRAPHICAL-OBJECT))
            OPTIONAL)))
 
-(CONCEPT ONT::SHORT
-         (INHERIT ONT::EVENT-DURATION-MODIFIER)
-         (SEM-FRAME
-          (ONT::GROUND (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE DURATION-SCALE)))
-          (ONT::FIGURE (OR (CONCEPT SITUATION) (CONCEPT TIME)))))
-
 (CONCEPT ONT::SHORTCUT (INHERIT ONT::ROUTE) (OVERLAP WN::|shortcut%1:06:00::|))
 
 (CONCEPT ONT::SHOULD
@@ -10591,7 +10607,13 @@
 
 (CONCEPT ONT::STEADINESS-VAL (INHERIT ONT::PROCESS-VAL))
 
-(CONCEPT ONT::STEADY (INHERIT ONT::STEADINESS-VAL))
+(CONCEPT ONT::STEADY
+         (INHERIT ONT::STEADINESS-VAL)
+         (OVERLAP WN::|steady%3:00:00::|
+                  WN::|steady%5:00:00:stable:00|
+                  WN::|stable%3:00:00::|
+                  WN::|unchanged%3:00:00::|
+                  WN::|unchanged%3:00:04::|))
 
 (CONCEPT ONT::STEEP (INHERIT ONT::COOKING))
 
@@ -11093,6 +11115,12 @@
 (CONCEPT ONT::TEMPORAL-PREDICATE
          (INHERIT ONT::PREDICATE)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE TIME-MEASURE-SCALE)))
+
+(CONCEPT ONT::TEMPORARY
+         (INHERIT ONT::PERSISTENCE-VAL)
+         (OVERLAP WN::|temporary%3:00:00::|
+                  WN::|transient%5:00:00:impermanent:00|
+                  WN::|impermanent%5:00:00:finite:00|))
 
 (CONCEPT ONT::TERMINATE
          (INHERIT ONT::EVENT-OF-CAUSATION)
@@ -11620,7 +11648,6 @@
          (INHERIT ONT::STEADINESS-VAL)
          (OVERLAP WN::|unsteady%3:00:00::|
                   WN::|shaky%5:00:00::|
-                  WN::|unsteady%3:00:00::|
                   WN::|unstable%3:00:00::|
                   WN::|volatile%3:00:00::|))
 

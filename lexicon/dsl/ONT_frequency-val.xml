@@ -197,11 +197,17 @@
   ont::frequency-val
  </relation>
  <relation label="overlap">
-  wn::|casual%5:00:00::|
   wn::|infrequent%3:00:00::|
-  wn::|infrequent%3:00:00::|
-  wn::|irregular%3:00:00::|
-  wn::|rare%5:00:00::|
+  wn::|rare%5:00:00:infrequent:00|
+  wn::|occasional%5:00:00:infrequent:00|
+ </relation>
+ </concept>
+ <concept name="ont::frequent">
+ <relation label="inherit">
+  ont::frequency-val
+ </relation>
+ <relation label="overlap">
+  wn::|frequent%3:00:00::|
  </relation>
  </concept>
  <concept name="ont::regular">
@@ -209,10 +215,17 @@
   ont::frequency-val
  </relation>
  <relation label="overlap">
-  wn::|regular%5:00:00::|
-  wn::|frequent%3:00:00::|
-  wn::|regular%3:00:00::|
-  wn::|frequent%3:00:00::|
+  wn::|regular%5:00:00:steady:00|
+ </relation>
+ </concept>
+ <concept name="ont::irregular">
+ <relation label="inherit">
+  ont::frequency-val
+ </relation>
+ <relation label="overlap">
+  wn::|irregular%5:00:00:sporadic:00|
+  wn::|casual%5:00:00:irregular:00|
+  wn::|sporadic%3:00:00::|
  </relation>
  </concept>
  <sense>
@@ -224,35 +237,6 @@
   </forms>
  </morph>
  <example text="they have annual meetings">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::frequency-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="continual" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::frequency-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="customary" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="it's customary to distribute code on cdrom">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
@@ -276,22 +260,6 @@
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="habitual" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="they had habitual meetings">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::frequency-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
   <word first-word="monthly" />
  </morph>
  <example text="they have monthly meetings">
@@ -300,22 +268,6 @@
  <relation label="inherit">
   ont::frequency-val
   ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="multiple" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="they have multiple meetings">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::frequency-val
-  ont::central-adj-plur-templ
  </relation>
  </sense>
  <sense>
