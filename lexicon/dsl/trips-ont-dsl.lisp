@@ -1720,7 +1720,7 @@
          (SEM-FEATS (INHERIT SITUATION)
                     (TRAJECTORY +)
                     (CAUSE AGENTIVE)
-                    (ASPECT UNBOUNDED))
+                    (ASPECT BOUNDED))
          (SEM-FRAME
           (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)) OPTIONAL)
           (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +))
