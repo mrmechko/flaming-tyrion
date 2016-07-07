@@ -6,6 +6,12 @@
  <relation label="inherit">
   ont::linear-dimension
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">height-scale</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -33,7 +39,6 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::ground" optional="optional">
   <or>
@@ -99,6 +104,13 @@
   <feat name="scale">linear-scale</feat>
  </sem-feats>
  </concept>
+ <concept name="abstr-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">height-scale</feat>
+ </sem-feats>
  <concept name="ont::linear-dimension">
  <relation label="inherit">
   ont::linear-val
@@ -106,30 +118,105 @@
  <relation label="overlap">
   wn::|deep%5:00:00::|
   wn::|shallow%3:00:01::|
-  wn::|long%5:00:00::|
-  wn::|long%3:00:02::|
-  wn::|tall%3:00:00::|
-  wn::|short%3:00:03::|
   wn::|deep%3:00:01::|
-  wn::|short%3:00:02::|
  </relation>
  </concept>
- <concept name="ont::high">
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="height" />
+ </morph>
  <relation label="inherit">
   ont::height-val
  </relation>
- <relation label="overlap">
-  wn::|high%3:00:02::|
-  wn::|high%3:00:01::|
- </relation>
- </concept>
- <concept name="ont::low">
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="height" />
+ </morph>
  <relation label="inherit">
   ont::height-val
  </relation>
- <relation label="overlap">
-  wn::|low%3:00:02::|
-  wn::|low%3:00:01::|
+ <syntax>
+  <template-call template="ont::reln-subcat-of-units-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="short" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::height-val
+  ont::less-adj-templ
  </relation>
- </concept>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="tall" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <example text="a tall building">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::height-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
 </dsl>

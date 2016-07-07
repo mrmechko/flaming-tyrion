@@ -935,7 +935,7 @@
 <WORD name="nutritional" />
 <MAPPING to="wordnet" name="shape%1:07:00::" />
 <MAPPING to="wordnet" name="shape%1:03:00::" />
-<ONTTYPE name="color">
+<ONTTYPE name="color-scale">
 <WORD name="color" />
 <WORD name="colour" />
 <WORD name="shade" />
@@ -1063,11 +1063,7 @@
 <WORD name="way" />
 <WORD name="ways" />
 </ONTTYPE>
-<ONTTYPE name="height">
-<WORD name="height" />
-<WORD name="short" />
-<WORD name="tall" />
-</ONTTYPE>
+<ONTTYPE name="height-scale" />
 <ONTTYPE name="length">
 <WORD name="length" />
 </ONTTYPE>
@@ -1229,6 +1225,11 @@
 <MAPPING to="wordnet" name="condition%1:26:00::" />
 <MAPPING to="wordnet" name="state_of_matter%1:26:00::" />
 <MAPPING to="wordnet" name="state%1:03:00::" />
+<ONTTYPE name="sleepiness">
+<WORD name="drowsiness" />
+<WORD name="sleepiness" />
+<MAPPING to="wordnet" name="sleepiness%1:26:00::" />
+</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="number">
@@ -3258,10 +3259,12 @@
 <WORD name="speedy" />
 <WORD name="swift" />
 <MAPPING to="wordnet" name="quick%5:00:00:fast:01" />
+<MAPPING to="wordnet" name="immediate%5:00:00:fast:01" />
 <MAPPING to="wordnet" name="fast%3:00:01::" />
 <MAPPING to="wordnet" name="fleet%5:00:00:fast:01" />
-<MAPPING to="wordnet" name="rapid%5:00:02:fast:01" />
 <MAPPING to="wordnet" name="rapid%5:00:00:fast:01" />
+<MAPPING to="wordnet" name="rapid%5:00:02:fast:01" />
+<MAPPING to="wordnet" name="instantaneous%5:00:00:fast:01" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="stage-val">
@@ -4142,7 +4145,6 @@
 </ONTTYPE>
 <ONTTYPE name="parenthetical">
 <WORD name="and_not" />
-<WORD name="but_not" />
 <WORD name="like" />
 <WORD name="unlike" />
 </ONTTYPE>
@@ -4762,7 +4764,6 @@
 <ONTTYPE name="scale">
 <ONTTYPE name="age-scale" />
 <ONTTYPE name="any-scale" />
-<ONTTYPE name="color-scale" />
 <ONTTYPE name="humidity-scale" />
 <ONTTYPE name="luminosity-scale" />
 <ONTTYPE name="number-scale" />
@@ -4839,26 +4840,35 @@
 </ONTTYPE>
 <ONTTYPE name="linear-dimension">
 <WORD name="deep" />
-<WORD name="long" />
 <MAPPING to="wordnet" name="deep%5:00:00:profound:00" />
 <MAPPING to="wordnet" name="shallow%3:00:01::" />
-<MAPPING to="wordnet" name="long%5:00:00:tall:00" />
-<MAPPING to="wordnet" name="long%3:00:02::" />
-<MAPPING to="wordnet" name="tall%3:00:00::" />
-<MAPPING to="wordnet" name="short%3:00:03::" />
 <MAPPING to="wordnet" name="deep%3:00:01::" />
-<MAPPING to="wordnet" name="short%3:00:02::" />
 <ONTTYPE name="height-val">
-<ONTTYPE name="high">
+<WORD name="height" />
+<WORD name="short" />
+<WORD name="tall" />
+</ONTTYPE>
+<ONTTYPE name="high-val">
 <WORD name="high" />
 <MAPPING to="wordnet" name="high%3:00:02::" />
 <MAPPING to="wordnet" name="high%3:00:01::" />
+<MAPPING to="wordnet" name="tall%3:00:00::" />
 </ONTTYPE>
-<ONTTYPE name="low">
+<ONTTYPE name="length-val">
+<ONTTYPE name="long">
+<WORD name="long" />
+<MAPPING to="wordnet" name="long%3:00:02::" />
+<MAPPING to="wordnet" name="long%3:00:01::" />
+</ONTTYPE>
+<ONTTYPE name="short">
+<MAPPING to="wordnet" name="short%3:00:02::" />
+<MAPPING to="wordnet" name="short%3:00:01::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="low-val">
 <WORD name="low" />
 <MAPPING to="wordnet" name="low%3:00:02::" />
 <MAPPING to="wordnet" name="low%3:00:01::" />
-</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="slight">
@@ -15251,12 +15261,10 @@
 </ONTTYPE>
 <ONTTYPE name="medical-condition">
 <WORD name="anaesthesia" />
-<WORD name="anesthesia" />
 <WORD name="atherosclerosis" />
 <WORD name="bulimia" />
 <WORD name="condition" />
 <WORD name="dementia" />
-<WORD name="drowsiness" />
 <WORD name="fatigue" />
 <WORD name="gallstone" />
 <WORD name="malformation" />
@@ -15268,17 +15276,18 @@
 <WORD name="weakness" />
 <MAPPING to="wordnet" name="condition%1:26:05::" />
 <MAPPING to="wordnet" name="sign%1:26:00::" />
-<MAPPING to="wordnet" name="sleepiness%1:26:00::" />
 <MAPPING to="wordnet" name="deformity%1:26:00::" />
 <MAPPING to="wordnet" name="pathology%1:26:00::" />
-<MAPPING to="wordnet" name="anesthesia%1:26:00::" />
-<MAPPING to="wordnet" name="confusion%1:09:00::" />
 <MAPPING to="wordnet" name="exhaustion%1:26:00::" />
 <MAPPING to="wordnet" name="irritation%1:26:00::" />
 <MAPPING to="wordnet" name="restlessness%1:07:00::" />
 <MAPPING to="wordnet" name="tension%1:26:03::" />
 <MAPPING to="wordnet" name="fatigue%1:26:00::" />
 <MAPPING to="wordnet" name="weakness%1:07:00::" />
+<ONTTYPE name="anesthesia">
+<WORD name="anesthesia" />
+<MAPPING to="wordnet" name="anesthesia%1:26:00::" />
+</ONTTYPE>
 <ONTTYPE name="angina">
 <WORD name="angina_pectoris" />
 <WORD name="angina" />
@@ -15461,6 +15470,10 @@
 <ONTTYPE name="anxiety">
 <WORD name="anxiety" />
 <MAPPING to="wordnet" name="anxiety%1:26:00::" />
+</ONTTYPE>
+<ONTTYPE name="confusion">
+<WORD name="confusion" />
+<MAPPING to="wordnet" name="confusion%1:09:00::" />
 </ONTTYPE>
 <ONTTYPE name="depression">
 <WORD name="depression" />

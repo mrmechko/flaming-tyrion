@@ -553,6 +553,10 @@
 
 (CONCEPT ONT::ANEMIA (INHERIT ONT::DISEASE) (OVERLAP WN::|anemia%1:26:00::|))
 
+(CONCEPT ONT::ANESTHESIA
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|anesthesia%1:26:00::|))
+
 (CONCEPT ONT::ANEURYSM
          (INHERIT ONT::CARDIOVASCULAR-DISEASE)
          (OVERLAP WN::|aneurysm%1:26:00::|))
@@ -2206,7 +2210,7 @@
                   WN::|accumulation%1:14:00::|
                   WN::|assemblage%1:14:01::|))
 
-(CONCEPT ONT::COLOR
+(CONCEPT ONT::COLOR-SCALE
          (INHERIT ONT::PHYSICAL-DISCRETE-DOMAIN)
          (OVERLAP WN::|colouring%1:07:00::|
                   WN::|coloring%1:07:00::|
@@ -2214,10 +2218,9 @@
                   WN::|color%1:07:00::|
                   WN::|color%1:09:01::|
                   WN::|colour%1:09:01::|)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE COLOR-SCALE))
          (SEM-FRAME
           (ONT::GROUND (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE COLOR-SCALE)))))
-
-(CONCEPT ONT::COLOR-SCALE (INHERIT ONT::SCALE))
 
 (CONCEPT ONT::COLOR-VAL
          (INHERIT ONT::VISIBLE-PROPERTY-VAL)
@@ -2661,6 +2664,10 @@
                     (ONT::AGENT
                      (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                                 (INTENTIONAL +)))))
+
+(CONCEPT ONT::CONFUSION
+         (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
+         (OVERLAP WN::|confusion%1:09:00::|))
 
 (CONCEPT ONT::CONGENITAL (INHERIT ONT::BODY-RELATED-PROPERTY-VAL))
 
@@ -3274,7 +3281,9 @@
                   WN::|strip%2:40:03::|
                   WN::|divest%2:40:01::|))
 
-(CONCEPT ONT::DEPTH (INHERIT ONT::LINEAR-D))
+(CONCEPT ONT::DEPTH
+         (INHERIT ONT::LINEAR-D)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE DEPTH)))
 
 (CONCEPT ONT::DESCRIBE
          (INHERIT ONT::REPRESENTATIVE)
@@ -3629,7 +3638,7 @@
 
 (CONCEPT ONT::DISTANCE
          (INHERIT ONT::LINEAR-D)
-         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE LINEAR-SCALE))
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE DISTANCE))
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ) OPTIONAL)
                     (ONT::NEUTRAL1 (CONCEPT PHYS-OBJ) OPTIONAL)
                     (ONT::NEUTRAL (CONCEPT PHYS-OBJ))))
@@ -4095,7 +4104,10 @@
 (CONCEPT ONT::EVENT-DURATION-MODIFIER
          (INHERIT ONT::TEMPORAL-MODIFIER)
          (SEM-FRAME
-          (ONT::GROUND (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE DURATION-SCALE)))
+          (ONT::GROUND
+           (SEM-FEATS (INHERIT ABSTR-OBJ)
+                      (TYPE TIME-UNIT)
+                      (SCALE DURATION-SCALE)))
           (ONT::FIGURE (OR (CONCEPT SITUATION) (CONCEPT TIME)))))
 
 (CONCEPT ONT::EVENT-EVENT-TIME
@@ -5398,9 +5410,13 @@
 
 (CONCEPT ONT::HEEDLESS (INHERIT ONT::ATTENTION-VAL))
 
-(CONCEPT ONT::HEIGHT (INHERIT ONT::LINEAR-D))
+(CONCEPT ONT::HEIGHT-SCALE
+         (INHERIT ONT::LINEAR-D)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE HEIGHT-SCALE)))
 
-(CONCEPT ONT::HEIGHT-VAL (INHERIT ONT::LINEAR-DIMENSION))
+(CONCEPT ONT::HEIGHT-VAL
+         (INHERIT ONT::LINEAR-DIMENSION)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE HEIGHT-SCALE)))
 
 (CONCEPT ONT::HELP
          (INHERIT ONT::CAUSE-EFFECT)
@@ -5439,9 +5455,11 @@
                   WN::|conceal%2:39:00::|
                   WN::|hide%2:39:01::|))
 
-(CONCEPT ONT::HIGH
-         (INHERIT ONT::HEIGHT-VAL)
-         (OVERLAP WN::|high%3:00:02::| WN::|high%3:00:01::|))
+(CONCEPT ONT::HIGH-VAL
+         (INHERIT ONT::LINEAR-DIMENSION)
+         (OVERLAP WN::|high%3:00:02::|
+                  WN::|high%3:00:01::|
+                  WN::|tall%3:00:00::|))
 
 (CONCEPT ONT::HIGHLIGHT
          (INHERIT ONT::VISUAL-DISPLAY)
@@ -6298,7 +6316,9 @@
                   WN::|soak%2:40:03::|
                   WN::|hock%2:40:00::|))
 
-(CONCEPT ONT::LENGTH (INHERIT ONT::LINEAR-D))
+(CONCEPT ONT::LENGTH
+         (INHERIT ONT::LINEAR-D)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE LENGTH)))
 
 (CONCEPT ONT::LENGTH-UNIT
          (INHERIT ONT::TANGIBLE-UNIT)
@@ -6307,6 +6327,8 @@
                   WN::|week%1:28:00::|
                   WN::|hebdomad%1:28:00::|)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE LENGTH-SCALE)))
+
+(CONCEPT ONT::LENGTH-VAL (INHERIT ONT::LINEAR-DIMENSION))
 
 (CONCEPT ONT::LESS-THAN-REL (INHERIT ONT::SCALE-RELATION))
 
@@ -6407,12 +6429,7 @@
          (INHERIT ONT::LINEAR-VAL)
          (OVERLAP WN::|deep%5:00:00::|
                   WN::|shallow%3:00:01::|
-                  WN::|long%5:00:00::|
-                  WN::|long%3:00:02::|
-                  WN::|tall%3:00:00::|
-                  WN::|short%3:00:03::|
-                  WN::|deep%3:00:01::|
-                  WN::|short%3:00:02::|))
+                  WN::|deep%3:00:01::|))
 
 (CONCEPT ONT::LINEAR-EXTENT (INHERIT ONT::POSITION-AS-EXTENT-RELN))
 
@@ -6571,6 +6588,10 @@
          (INHERIT ONT::CORRECTNESS-VAL)
          (OVERLAP WN::|legitimate%5:00:00::| WN::|valid%3:00:00::|))
 
+(CONCEPT ONT::LONG
+         (INHERIT ONT::LENGTH-VAL)
+         (OVERLAP WN::|long%3:00:02::| WN::|long%3:00:01::|))
+
 (CONCEPT ONT::LONG-TERM-CONTROL-DRUG
          (INHERIT ONT::BRONCHODILATOR)
          (OVERLAP WN::|corticosteroid%1:27:00::|
@@ -6597,8 +6618,8 @@
          (SEM-FEATS (INHERIT ABSTR-OBJ) (MEASURE-FUNCTION VALUE))
          (SEM-FRAME (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
 
-(CONCEPT ONT::LOW
-         (INHERIT ONT::HEIGHT-VAL)
+(CONCEPT ONT::LOW-VAL
+         (INHERIT ONT::LINEAR-DIMENSION)
          (OVERLAP WN::|low%3:00:02::| WN::|low%3:00:01::|))
 
 (CONCEPT ONT::LUCKINESS-VAL (INHERIT ONT::PROPERTY-VAL))
@@ -6829,11 +6850,8 @@
          (INHERIT ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
          (OVERLAP WN::|condition%1:26:05::|
                   WN::|sign%1:26:00::|
-                  WN::|drowsiness%1:26:00::|
                   WN::|malformation%1:26:00::|
                   WN::|pathology%1:26:00::|
-                  WN::|anesthesia%1:26:00::|
-                  WN::|confusion%1:09:00::|
                   WN::|exhaustion%1:26:00::|
                   WN::|fatigue%1:26:00::|
                   WN::|irritation%1:26:00::|
@@ -10069,6 +10087,10 @@
                       (FORM GEOGRAPHICAL-OBJECT))
            OPTIONAL)))
 
+(CONCEPT ONT::SHORT
+         (INHERIT ONT::LENGTH-VAL)
+         (OVERLAP WN::|short%3:00:02::| WN::|short%3:00:01::|))
+
 (CONCEPT ONT::SHORTCUT (INHERIT ONT::ROUTE) (OVERLAP WN::|shortcut%1:06:00::|))
 
 (CONCEPT ONT::SHOULD
@@ -10208,6 +10230,10 @@
          (SEM-FRAME
           (ONT::FORMAL
            (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
+
+(CONCEPT ONT::SLEEPINESS
+         (INHERIT ONT::STATUS)
+         (OVERLAP WN::|sleepiness%1:26:00::| WN::|drowsiness%1:26:00::|))
 
 (CONCEPT ONT::SLIGHT
          (INHERIT ONT::LINEAR-VAL)
@@ -10453,11 +10479,13 @@
 
 (CONCEPT ONT::SPEEDY
          (INHERIT ONT::SPEED-VAL)
-         (OVERLAP WN::|quick%5:00:00::|
+         (OVERLAP WN::|quick%5:00:00:fast:01|
+                  WN::|quick%5:00:02:fast:01|
                   WN::|fast%3:00:01::|
-                  WN::|fleet%5:00:00::|
-                  WN::|rapid%5:00:02::|
-                  WN::|rapid%5:00:00::|))
+                  WN::|fleet%5:00:00:fast:01|
+                  WN::|rapid%5:00:00:fast:01|
+                  WN::|rapid%5:00:02:fast:01|
+                  WN::|instantaneous%5:00:00:fast:01|))
 
 (CONCEPT ONT::SPEND-TIME
          (INHERIT ONT::TAKE-TIME)
@@ -11166,7 +11194,9 @@
 
 (CONCEPT ONT::THEREFORE (INHERIT ONT::SITUATION-MODIFIER))
 
-(CONCEPT ONT::THICKNESS (INHERIT ONT::LINEAR-D))
+(CONCEPT ONT::THICKNESS
+         (INHERIT ONT::LINEAR-D)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE THICKNESS)))
 
 (CONCEPT ONT::THOROUGHFARE
          (INHERIT ONT::ROUTE)
@@ -12060,7 +12090,9 @@
          (INHERIT ONT::PART-WHOLE-VAL)
          (OVERLAP WN::|whole%3:00:00::|))
 
-(CONCEPT ONT::WIDTH (INHERIT ONT::LINEAR-D))
+(CONCEPT ONT::WIDTH
+         (INHERIT ONT::LINEAR-D)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE WIDTH)))
 
 (CONCEPT ONT::WILD-GAME (INHERIT ONT::MEAT))
 

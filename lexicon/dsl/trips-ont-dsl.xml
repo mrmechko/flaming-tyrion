@@ -1160,6 +1160,14 @@
    wn::|anemia%1:26:00::|
   </relation>
  </concept>
+ <concept name="ont::anesthesia">
+  <relation label="inherit">
+   ont::medical-condition
+  </relation>
+  <relation label="overlap">
+   wn::|anesthesia%1:26:00::|
+  </relation>
+ </concept>
  <concept name="ont::aneurysm">
   <relation label="inherit">
    ont::cardiovascular-disease
@@ -4899,7 +4907,7 @@
    wn::|assemblage%1:14:01::|
   </relation>
  </concept>
- <concept name="ont::color">
+ <concept name="ont::color-scale">
   <relation label="inherit">
    ont::physical-discrete-domain
   </relation>
@@ -4911,6 +4919,12 @@
    wn::|color%1:09:01::|
    wn::|colour%1:09:01::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">color-scale</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::ground">
     <sem-feats>
@@ -4921,11 +4935,6 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::color-scale">
-  <relation label="inherit">
-   ont::scale
-  </relation>
  </concept>
  <concept name="ont::color-val">
   <relation label="inherit">
@@ -5874,6 +5883,14 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::confusion">
+  <relation label="inherit">
+   ont::mental-psychological-illness-or-disorder
+  </relation>
+  <relation label="overlap">
+   wn::|confusion%1:09:00::|
+  </relation>
  </concept>
  <concept name="ont::congenital">
   <relation label="inherit">
@@ -7255,6 +7272,12 @@
   <relation label="inherit">
    ont::linear-d
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">depth</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::describe">
   <relation label="inherit">
@@ -7996,7 +8019,7 @@
    <relation label="inherit">
     abstr-obj
    </relation>
-   <feat name="scale">linear-scale</feat>
+   <feat name="scale">distance</feat>
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
@@ -9037,6 +9060,7 @@
      <relation label="inherit">
       abstr-obj
      </relation>
+     <feat name="type">time-unit</feat>
      <feat name="scale">duration-scale</feat>
     </sem-feats>
    </role-restr-map>
@@ -11897,15 +11921,27 @@
    ont::attention-val
   </relation>
  </concept>
- <concept name="ont::height">
+ <concept name="ont::height-scale">
   <relation label="inherit">
    ont::linear-d
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">height-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::height-val">
   <relation label="inherit">
    ont::linear-dimension
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">height-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::help">
   <relation label="inherit">
@@ -11982,13 +12018,14 @@
    wn::|hide%2:39:01::|
   </relation>
  </concept>
- <concept name="ont::high">
+ <concept name="ont::high-val">
   <relation label="inherit">
-   ont::height-val
+   ont::linear-dimension
   </relation>
   <relation label="overlap">
    wn::|high%3:00:02::|
    wn::|high%3:00:01::|
+   wn::|tall%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::highlight">
@@ -13863,6 +13900,12 @@
   <relation label="inherit">
    ont::linear-d
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">length</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::length-unit">
   <relation label="inherit">
@@ -13880,6 +13923,11 @@
    </relation>
    <feat name="scale">length-scale</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::length-val">
+  <relation label="inherit">
+   ont::linear-dimension
+  </relation>
  </concept>
  <concept name="ont::less-than-rel">
   <relation label="inherit">
@@ -14126,12 +14174,7 @@
   <relation label="overlap">
    wn::|deep%5:00:00::|
    wn::|shallow%3:00:01::|
-   wn::|long%5:00:00::|
-   wn::|long%3:00:02::|
-   wn::|tall%3:00:00::|
-   wn::|short%3:00:03::|
    wn::|deep%3:00:01::|
-   wn::|short%3:00:02::|
   </relation>
  </concept>
  <concept name="ont::linear-extent">
@@ -14519,6 +14562,15 @@
    wn::|valid%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::long">
+  <relation label="inherit">
+   ont::length-val
+  </relation>
+  <relation label="overlap">
+   wn::|long%3:00:02::|
+   wn::|long%3:00:01::|
+  </relation>
+ </concept>
  <concept name="ont::long-term-control-drug">
   <relation label="inherit">
    ont::bronchodilator
@@ -14570,9 +14622,9 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::low">
+ <concept name="ont::low-val">
   <relation label="inherit">
-   ont::height-val
+   ont::linear-dimension
   </relation>
   <relation label="overlap">
    wn::|low%3:00:02::|
@@ -15129,11 +15181,8 @@
   <relation label="overlap">
    wn::|condition%1:26:05::|
    wn::|sign%1:26:00::|
-   wn::|drowsiness%1:26:00::|
    wn::|malformation%1:26:00::|
    wn::|pathology%1:26:00::|
-   wn::|anesthesia%1:26:00::|
-   wn::|confusion%1:09:00::|
    wn::|exhaustion%1:26:00::|
    wn::|fatigue%1:26:00::|
    wn::|irritation%1:26:00::|
@@ -22375,6 +22424,15 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::short">
+  <relation label="inherit">
+   ont::length-val
+  </relation>
+  <relation label="overlap">
+   wn::|short%3:00:02::|
+   wn::|short%3:00:01::|
+  </relation>
+ </concept>
  <concept name="ont::shortcut">
   <relation label="inherit">
    ont::route
@@ -22729,6 +22787,15 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::sleepiness">
+  <relation label="inherit">
+   ont::status
+  </relation>
+  <relation label="overlap">
+   wn::|sleepiness%1:26:00::|
+   wn::|drowsiness%1:26:00::|
+  </relation>
  </concept>
  <concept name="ont::slight">
   <relation label="inherit">
@@ -23301,11 +23368,13 @@
    ont::speed-val
   </relation>
   <relation label="overlap">
-   wn::|quick%5:00:00::|
+   wn::|quick%5:00:00:fast:01|
+   wn::|quick%5:00:02:fast:01|
    wn::|fast%3:00:01::|
-   wn::|fleet%5:00:00::|
-   wn::|rapid%5:00:02::|
-   wn::|rapid%5:00:00::|
+   wn::|fleet%5:00:00:fast:01|
+   wn::|rapid%5:00:00:fast:01|
+   wn::|rapid%5:00:02:fast:01|
+   wn::|instantaneous%5:00:00:fast:01|
   </relation>
  </concept>
  <concept name="ont::spend-time">
@@ -24807,6 +24876,12 @@
   <relation label="inherit">
    ont::linear-d
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">thickness</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::thoroughfare">
   <relation label="inherit">
@@ -26753,6 +26828,12 @@
   <relation label="inherit">
    ont::linear-d
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">width</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::wild-game">
   <relation label="inherit">
