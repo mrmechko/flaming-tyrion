@@ -3294,6 +3294,23 @@
    wn::|borrow%2:40:00::|
   </relation>
  </concept>
+ <concept name="ont::bottom-location">
+  <relation label="inherit">
+   ont::object-dependent-location
+  </relation>
+  <relation label="overlap">
+   wn::|bottom%1:15:00::|
+   wn::|bottom%1:15:01::|
+  </relation>
+ </concept>
+ <concept name="ont::bottom-location-val">
+  <relation label="inherit">
+   ont::location-val
+  </relation>
+  <relation label="overlap">
+   wn::|bottom%3:00:00::|
+  </relation>
+ </concept>
  <concept name="ont::bound">
   <relation label="inherit">
    ont::ordered-domain
@@ -4905,6 +4922,11 @@
    wn::|aggregation%1:14:00::|
    wn::|accumulation%1:14:00::|
    wn::|assemblage%1:14:01::|
+  </relation>
+ </concept>
+ <concept name="ont::color-level">
+  <relation label="inherit">
+   ont::level
   </relation>
  </concept>
  <concept name="ont::color-scale">
@@ -10865,7 +10887,7 @@
  </concept>
  <concept name="ont::function-object">
   <relation label="inherit">
-   ont::domain-property
+   ont::abstract-object-nontemporal
    abstr-obj
   </relation>
  </concept>
@@ -11907,6 +11929,11 @@
  <concept name="ont::heedless">
   <relation label="inherit">
    ont::attention-val
+  </relation>
+ </concept>
+ <concept name="ont::height-level">
+  <relation label="inherit">
+   ont::level
   </relation>
  </concept>
  <concept name="ont::height-scale">
@@ -13931,18 +13958,13 @@
   </relation>
  </concept>
  <concept name="ont::level">
-  <relation label="inherit">
-   ont::ordered-domain
-  </relation>
   <relation label="overlap">
    wn::|level%1:26:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">linear-scale</feat>
-  </sem-feats>
+  <relation label="inherit">
+   ont::abstract-object
+   abstr-obj
+  </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground">
     <sem-feats>
@@ -14165,7 +14187,7 @@
  </concept>
  <concept name="ont::linear-val">
   <relation label="inherit">
-   ont::spatial
+   ont::property-val
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -14173,6 +14195,22 @@
    </relation>
    <feat name="scale">linear-scale</feat>
   </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::ground" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::linguistic-component">
   <relation label="inherit">
@@ -19719,7 +19757,7 @@
  </concept>
  <concept name="ont::quantitative-relation">
   <relation label="inherit">
-   ont::quantity
+   ont::level
   </relation>
   <relation label="overlap">
    wn::|magnitude_relation%1:24:00::|
@@ -19736,7 +19774,7 @@
  </concept>
  <concept name="ont::quantity">
   <relation label="inherit">
-   ont::domain-property
+   ont::group-object
   </relation>
   <relation label="overlap">
    wn::|measure%1:03:00::|
@@ -19807,7 +19845,7 @@
  </concept>
  <concept name="ont::rate">
   <relation label="inherit">
-   ont::measure-domain
+   ont::level
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -22490,6 +22528,22 @@
    wn::|wither%2:30:00::|
   </relation>
  </concept>
+ <concept name="ont::side-location">
+  <relation label="inherit">
+   ont::object-dependent-location
+  </relation>
+  <relation label="overlap">
+   wn::|side%1:15:02::|
+  </relation>
+ </concept>
+ <concept name="ont::side-location-val">
+  <relation label="inherit">
+   ont::location-val
+  </relation>
+  <relation label="overlap">
+   wn::|side%3:00:00::|
+  </relation>
+ </concept>
  <concept name="ont::signaling-pathway">
   <relation label="inherit">
    ont::process
@@ -23166,7 +23220,7 @@
  </concept>
  <concept name="ont::spatial">
   <relation label="inherit">
-   ont::abstract-object
+   ont::property-val
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground" optional="optional">
@@ -23674,6 +23728,19 @@
   <relation label="inherit">
    ont::cooking
   </relation>
+ </concept>
+ <concept name="ont::step">
+  <relation label="inherit">
+   ont::structural-component
+  </relation>
+  <relation label="overlap">
+   wn::|step%1:06:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="phys-obj" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::stereotypicality-val">
   <relation label="inherit">
@@ -24238,6 +24305,15 @@
    <feat name="time-span">extended</feat>
    <feat name="aspect">stage-level</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::surface-location">
+  <relation label="inherit">
+   ont::object-dependent-location
+  </relation>
+  <relation label="overlap">
+   wn::|surface%1:06:00::|
+   wn::|surface%1:15:00::|
+  </relation>
  </concept>
  <concept name="ont::surplus">
   <relation label="inherit">
@@ -25233,6 +25309,23 @@
    </relation>
    <feat name="object-function">instrument</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::top-location">
+  <relation label="inherit">
+   ont::object-dependent-location
+  </relation>
+  <relation label="overlap">
+   wn::|top%1:15:01::|
+   wn::|top%1:15:00::|
+  </relation>
+ </concept>
+ <concept name="ont::top-location-val">
+  <relation label="inherit">
+   ont::location-val
+  </relation>
+  <relation label="overlap">
+   wn::|top%3:00:00::|
+  </relation>
  </concept>
  <concept name="ont::topic">
   <relation label="inherit">

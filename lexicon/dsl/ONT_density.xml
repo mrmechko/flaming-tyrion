@@ -42,15 +42,21 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="abstr-obj" />
  <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
+ <role-restr-map roles="ont::ground">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="information">information-content</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <concept name="t" />
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::abstract-object">
@@ -62,47 +68,6 @@
  <relation label="inherit">
   ont::referential-sem
   abstr-obj
- </relation>
- </concept>
- <concept name="ont::domain">
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="abstr-obj" />
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="measure-function">value</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="measure-function">term</feat>
- </sem-feats>
- <concept name="ont::ordered-domain">
- <relation label="inherit">
-  ont::domain
  </relation>
  </concept>
  <sem-frame>
@@ -128,27 +93,28 @@
  </relation>
  <feat name="scale">rate-scale</feat>
  </sem-feats>
- <concept name="ont::measure-domain">
- <relation label="inherit">
-  ont::ordered-domain
+ <concept name="ont::level">
+ <relation label="overlap">
+  wn::|level%1:26:00::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="measure-function">term</feat>
- </sem-feats>
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground">
    <sem-feats>
     <relation label="inherit">
      abstr-obj
     </relation>
-    <feat name="measure-function">value</feat>
+    <feat name="information">information-content</feat>
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <concept name="t" />
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -159,7 +125,7 @@
  </sem-frame>
  <concept name="ont::rate">
  <relation label="inherit">
-  ont::measure-domain
+  ont::level
  </relation>
  <sem-feats>
   <relation label="inherit">
