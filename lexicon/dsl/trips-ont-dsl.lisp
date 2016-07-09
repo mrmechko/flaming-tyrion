@@ -562,8 +562,12 @@
          (OVERLAP WN::|aneurysm%1:26:00::|))
 
 (CONCEPT ONT::ANGINA
-         (INHERIT ONT::MEDICAL-CONDITION ONT::DISEASE)
-         (OVERLAP WN::|angina%1:26:01::| WN::|angina%1:26:00::|))
+         (INHERIT ONT::MEDICAL-CONDITION)
+         (OVERLAP WN::|angina%1:26:01::|))
+
+(CONCEPT ONT::ANGINA-SYMP
+         (INHERIT ONT::MEDICAL-SYMPTOM)
+         (OVERLAP WN::|angina%1:26:00::|))
 
 (CONCEPT ONT::ANGLE-UNIT
          (INHERIT ONT::FORMAL-UNIT)
