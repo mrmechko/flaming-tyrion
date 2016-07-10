@@ -14,6 +14,7 @@
   wn::|flow%2:38:01::|
   wn::|flux%2:38:00::|
   wn::|flow%2:38:02::|
+  wn::|pour%2:38:03::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -351,5 +352,37 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="pour" />
+ </morph>
+ <example text="he poured the water over the floor">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::fluidic-motion
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="pour" />
+ </morph>
+ <example text="the water poured over the floor">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::fluidic-motion
+  ont::affected-templ
+ </relation>
  </sense>
 </dsl>

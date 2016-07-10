@@ -221,6 +221,47 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::push-out-of">
+ <relation label="inherit">
+  ont::cause-out-of
+ </relation>
+ </concept>
+ <concept name="ont::pull-out-of">
+ <relation label="inherit">
+  ont::cause-out-of
+ </relation>
+ </concept>
+ <concept name="ont::pull-off">
+ <relation label="inherit">
+  ont::cause-out-of
+ </relation>
+ <relation label="overlap">
+  wn::|draw_off%2:35:00::|
+  wn::|draw_away%2:35:01::|
+  wn::|pull_off%2:35:01::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::parts-removed">
+ <relation label="inherit">
+  ont::cause-out-of
+ </relation>
+ <relation label="overlap">
+  wn::|precipitate%2:30:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sense>
  <morph>
   <pos pos="v" />
@@ -250,6 +291,25 @@
    <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
    <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="egress" />
+ </morph>
+ <example text="I am starting to egress">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cause-out-of
+  ont::agent-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
   </sem-feats>
  </semantics>
  </sense>

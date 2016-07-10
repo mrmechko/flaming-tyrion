@@ -1577,7 +1577,7 @@
  </concept>
  <concept name="ont::archive">
   <relation label="inherit">
-   ont::retain
+   ont::record
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::source">
@@ -1745,11 +1745,6 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::arriving">
-  <relation label="inherit">
-   ont::motion
-  </relation>
  </concept>
  <concept name="ont::arteriosclerosis">
   <relation label="inherit">
@@ -4930,11 +4925,6 @@
    wn::|assemblage%1:14:01::|
   </relation>
  </concept>
- <concept name="ont::color-level">
-  <relation label="inherit">
-   ont::level
-  </relation>
- </concept>
  <concept name="ont::color-scale">
   <relation label="inherit">
    ont::physical-discrete-domain
@@ -5532,6 +5522,13 @@
    ont::predicate
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+   </role-restr-map>
    <role-restr-map roles="ont::figure">
     <sem-feats>
      <relation label="inherit">
@@ -7160,7 +7157,7 @@
  </concept>
  <concept name="ont::deliver">
   <relation label="inherit">
-   ont::transportation
+   ont::transfer
   </relation>
   <relation label="overlap">
    wn::|deliver%2:35:00::|
@@ -7224,7 +7221,7 @@
  </concept>
  <concept name="ont::depart">
   <relation label="inherit">
-   ont::departing
+   ont::event-of-action
   </relation>
   <relation label="overlap">
    wn::|depart%2:38:01::|
@@ -7244,16 +7241,6 @@
    <feat name="cause">force</feat>
    <feat name="aspect">bounded</feat>
   </sem-feats>
- </concept>
- <concept name="ont::departing">
-  <relation label="inherit">
-   ont::motion
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::neutral" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::dependence-val">
   <relation label="inherit">
@@ -7759,16 +7746,6 @@
   <relation label="inherit">
    ont::communication
   </relation>
- </concept>
- <concept name="ont::directed-motion">
-  <relation label="inherit">
-   ont::motion
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::agent">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::direction">
   <relation label="inherit">
@@ -9073,11 +9050,11 @@
   <sem-frame>
    <role-restr-map roles="ont::ground">
     <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="type">time-unit</feat>
-     <feat name="scale">duration-scale</feat>
+     <or>
+      <concept name="abstr-obj" />
+      <concept name="time" />
+     </or>
+     <feat name="time-scale">interval</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
@@ -10544,6 +10521,7 @@
    wn::|flow%2:38:01::|
    wn::|flux%2:38:00::|
    wn::|flow%2:38:02::|
+   wn::|pour%2:38:03::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -11253,32 +11231,6 @@
    ont::post-translational-modification
   </relation>
  </concept>
- <concept name="ont::go-back">
-  <relation label="inherit">
-   ont::move
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::source" optional="optional">
-    <concept name="phys-obj" />
-   </role-restr-map>
-   <role-restr-map roles="ont::agent ont::formal">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="mobility">self-moving</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::go-on">
   <relation label="inherit">
    ont::move
@@ -11935,11 +11887,6 @@
  <concept name="ont::heedless">
   <relation label="inherit">
    ont::attention-val
-  </relation>
- </concept>
- <concept name="ont::height-level">
-  <relation label="inherit">
-   ont::level
   </relation>
  </concept>
  <concept name="ont::height-scale">
@@ -13964,13 +13911,18 @@
   </relation>
  </concept>
  <concept name="ont::level">
+  <relation label="inherit">
+   ont::abstract-object
+  </relation>
   <relation label="overlap">
    wn::|level%1:26:00::|
   </relation>
-  <relation label="inherit">
-   ont::abstract-object
-   abstr-obj
-  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">linear-scale</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::ground">
     <sem-feats>
@@ -14059,11 +14011,6 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::lift">
-  <relation label="inherit">
-   ont::move
-  </relation>
  </concept>
  <concept name="ont::light">
   <relation label="inherit">
@@ -15954,7 +15901,7 @@
  </concept>
  <concept name="ont::move-by-means">
   <relation label="inherit">
-   ont::move
+   ont::transportation
   </relation>
   <relation label="overlap">
    wn::|take%2:38:02::|
@@ -16049,7 +15996,7 @@
    ont::move
   </relation>
   <relation label="overlap">
-   wn::|rise%2:37:00::|
+   wn::|raise%2:38:00::|
   </relation>
  </concept>
  <concept name="ont::mrna">
@@ -16605,7 +16552,7 @@
  </concept>
  <concept name="ont::number">
   <relation label="inherit">
-   ont::ordered-domain
+   ont::mathematical-term
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -16618,7 +16565,7 @@
  </concept>
  <concept name="ont::number-measure-domain">
   <relation label="inherit">
-   ont::measure-domain
+   ont::mathematical-term
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
@@ -17499,7 +17446,7 @@
  </concept>
  <concept name="ont::parts-removed">
   <relation label="inherit">
-   ont::come-from
+   ont::cause-out-of
   </relation>
   <relation label="overlap">
    wn::|precipitate%2:30:00::|
@@ -17636,7 +17583,7 @@
  </concept>
  <concept name="ont::percent">
   <relation label="inherit">
-   ont::quantitative-relation
+   ont::mathematical-term
   </relation>
   <relation label="overlap">
    wn::|percentage%1:24:00::|
@@ -18716,14 +18663,6 @@
    ont::meat
   </relation>
  </concept>
- <concept name="ont::pour">
-  <relation label="inherit">
-   ont::move
-  </relation>
-  <relation label="overlap">
-   wn::|pour%2:38:03::|
-  </relation>
- </concept>
  <concept name="ont::power">
   <relation label="inherit">
    ont::substance
@@ -19501,7 +19440,7 @@
  </concept>
  <concept name="ont::pull-off">
   <relation label="inherit">
-   ont::come-from
+   ont::cause-out-of
   </relation>
   <relation label="overlap">
    wn::|draw_off%2:35:00::|
@@ -19516,7 +19455,7 @@
  </concept>
  <concept name="ont::pull-out-of">
   <relation label="inherit">
-   ont::come-out-of
+   ont::cause-out-of
   </relation>
  </concept>
  <concept name="ont::pulse">
@@ -19655,7 +19594,7 @@
  </concept>
  <concept name="ont::push-out-of">
   <relation label="inherit">
-   ont::come-out-of
+   ont::cause-out-of
   </relation>
  </concept>
  <concept name="ont::put">
@@ -19763,7 +19702,7 @@
  </concept>
  <concept name="ont::quantitative-relation">
   <relation label="inherit">
-   ont::level
+   ont::mathematical-term
   </relation>
   <relation label="overlap">
    wn::|magnitude_relation%1:24:00::|
@@ -19851,7 +19790,7 @@
  </concept>
  <concept name="ont::rate">
   <relation label="inherit">
-   ont::level
+   ont::ordered-domain
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -19936,10 +19875,9 @@
    ont::quantitative-relation
   </relation>
   <relation label="overlap">
-   wn::|percentage%1:24:00::|
-   wn::|percent%1:24:00::|
-   wn::|per_centum%1:24:00::|
-   wn::|pct%1:24:00::|
+   wn::|ratio%1:24:01::|
+   wn::|proportion%1:24:00::|
+   wn::|ratio%1:24:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -21380,6 +21318,19 @@
      </or>
      <feat name="intentional">+</feat>
     </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::rise">
+  <relation label="inherit">
+   ont::event-of-undergoing-action
+  </relation>
+  <relation label="overlap">
+   wn::|rise%2:38:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::agent" optional="optional">
+    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -23839,56 +23790,6 @@
    <feat name="object-function">building</feat>
   </sem-feats>
  </concept>
- <concept name="ont::store-info">
-  <relation label="inherit">
-   ont::storing
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::agent" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="intentional">+</feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::formal">
-    <sem-feats>
-     <or>
-      <concept name="abstr-obj" />
-      <concept name="phys-obj" />
-     </or>
-     <feat name="information">
-     <or>
-      data
-      information-content
-     </or>
-     </feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::storing">
-  <relation label="inherit">
-   ont::directed-motion
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::agent" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="intentional">+</feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::affected">
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::straddle">
   <relation label="inherit">
    ont::body-movement
@@ -25071,7 +24972,14 @@
    wn::|clock_time%1:28:00::|
    wn::|time%1:28:00::|
    wn::|time%1:28:05::|
+   wn::|time_period%1:28:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="time-scale">interval</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::extent" optional="optional">
     <sem-feats>

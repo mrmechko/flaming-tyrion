@@ -323,6 +323,46 @@
   ont::transfer
  </relation>
  </concept>
+ <concept name="ont::deliver">
+ <relation label="inherit">
+  ont::transfer
+ </relation>
+ <relation label="overlap">
+  wn::|deliver%2:35:00::|
+  wn::|get%2:30:02::|
+  wn::|let%2:30:01::|
+  wn::|have%2:30:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::source" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::send">
  <relation label="inherit">
   ont::transfer

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::pull-out-of">
  <relation label="inherit">
-  ont::come-out-of
+  ont::cause-out-of
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -86,16 +86,21 @@
   <feat name="intentional">-</feat>
  </sem-feats>
  </concept>
- <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::affected">
+ <role-restr-map roles="ont::agent">
   <or>
+   <concept name="situation" />
    <concept name="abstr-obj" />
    <concept name="phys-obj" />
-   <concept name="situation" />
   </or>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">force</feat>
+ </sem-feats>
  <concept name="ont::event-of-change">
  <relation label="inherit">
   ont::situation-root
@@ -134,24 +139,46 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::source" optional="optional">
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="situation" />
+ <concept name="ont::event-of-action">
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::source">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
+ <role-restr-map roles="ont::agent">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <sem-feats>
+ <concept name="ont::event-of-causation">
  <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">bounded</feat>
- <feat name="trajectory">+</feat>
- <feat name="cause">force</feat>
- </sem-feats>
- <concept name="ont::event-of-undergoing-action">
- <relation label="inherit">
-  ont::event-of-change
+  ont::event-of-action
   situation
  </relation>
  <sem-frame>
@@ -164,54 +191,40 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::agent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::come-from">
+ <concept name="ont::cause-come-from">
  <relation label="inherit">
-  ont::event-of-undergoing-action
+  ont::event-of-causation
  </relation>
  <relation label="overlap">
-  wn::|issue%2:30:00::|
-  wn::|emerge%2:30:02::|
-  wn::|come_out%2:30:04::|
-  wn::|come_forth%2:30:00::|
-  wn::|go_forth%2:30:00::|
-  wn::|egress%2:30:00::|
+  wn::|remove%2:30:00::|
+  wn::|take%2:30:00::|
+  wn::|take_away%2:30:01::|
+  wn::|withdraw%2:30:01::|
+  wn::|remove%2:30:02::|
+  wn::|remove%2:41:00::|
+  wn::|suction%2:38:00::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">bounded</feat>
-  <feat name="trajectory">+</feat>
-  <feat name="cause">force</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::source" optional="optional">
+  <role-restr-map roles="ont::source">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::affected" optional="optional">
+  <role-restr-map roles="ont::agent">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::come-out-of">
+ <concept name="ont::cause-out-of">
  <relation label="inherit">
-  ont::come-from
+  ont::cause-come-from
  </relation>
  <relation label="overlap">
-  wn::|egress%1:04:01::|
-  wn::|egression%1:04:00::|
-  wn::|emergence%1:04:00::|
+  wn::|extract%2:35:04::|
+  wn::|pull_out%2:35:00::|
+  wn::|pull%2:35:10::|
+  wn::|pull_up%2:35:00::|
+  wn::|take_out%2:35:09::|
+  wn::|draw_out%2:35:05::|
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sense>
  <morph>

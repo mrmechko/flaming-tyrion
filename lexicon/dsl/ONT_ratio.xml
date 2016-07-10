@@ -7,10 +7,9 @@
   ont::quantitative-relation
  </relation>
  <relation label="overlap">
-  wn::|percentage%1:24:00::|
-  wn::|percent%1:24:00::|
-  wn::|per_centum%1:24:00::|
-  wn::|pct%1:24:00::|
+  wn::|ratio%1:24:01::|
+  wn::|proportion%1:24:00::|
+  wn::|ratio%1:24:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -50,22 +49,6 @@
   <concept name="proposition" />
  </or>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="information">information-content</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00::|
@@ -78,6 +61,37 @@
  </relation>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="measure-function">value</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="measure-function">term</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="information">data</feat>
+ <feat name="gradability">-</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object-nontemporal">
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-frame>
  <role-restr-map roles="ont::formal" optional="optional">
   <concept name="t" />
  </role-restr-map>
@@ -85,28 +99,33 @@
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::level">
- <relation label="overlap">
-  wn::|level%1:26:00::|
- </relation>
+ <concept name="ont::mathematical-term">
  <relation label="inherit">
-  ont::abstract-object
-  abstr-obj
+  ont::abstract-object-nontemporal
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="information">data</feat>
+  <feat name="gradability">-</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::ground">
    <sem-feats>
     <relation label="inherit">
      abstr-obj
     </relation>
-    <feat name="information">information-content</feat>
+    <feat name="measure-function">value</feat>
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="measure-function">term</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -124,7 +143,7 @@
  </sem-feats>
  <concept name="ont::quantitative-relation">
  <relation label="inherit">
-  ont::level
+  ont::mathematical-term
  </relation>
  <relation label="overlap">
   wn::|magnitude_relation%1:24:00::|
@@ -139,6 +158,38 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="fraction" />
+ </morph>
+ <relation label="inherit">
+  ont::ratio
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
  <sense>
  <morph>
   <pos pos="n" />

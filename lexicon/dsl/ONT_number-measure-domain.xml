@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::number-measure-domain">
  <relation label="inherit">
-  ont::measure-domain
+  ont::mathematical-term
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure">
@@ -43,17 +43,7 @@
   <concept name="proposition" />
  </or>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
+ <concept name="abstr-obj" />
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00::|
@@ -65,23 +55,6 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="abstr-obj" />
- <concept name="ont::domain">
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground">
   <sem-feats>
@@ -92,18 +65,25 @@
   </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <concept name="t" />
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="measure-function">term</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="measure-function">term</feat>
+ <feat name="information">data</feat>
+ <feat name="gradability">-</feat>
  </sem-feats>
- <concept name="ont::ordered-domain">
+ <concept name="ont::abstract-object-nontemporal">
  <relation label="inherit">
-  ont::domain
+  ont::abstract-object
+  abstr-obj
  </relation>
  </concept>
  <sem-frame>
@@ -116,15 +96,16 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::measure-domain">
+ <concept name="ont::mathematical-term">
  <relation label="inherit">
-  ont::ordered-domain
+  ont::abstract-object-nontemporal
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="measure-function">term</feat>
+  <feat name="information">data</feat>
+  <feat name="gradability">-</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::ground">
@@ -136,7 +117,12 @@
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <concept name="t" />
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="measure-function">term</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>

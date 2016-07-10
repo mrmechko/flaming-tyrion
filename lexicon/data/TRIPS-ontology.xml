@@ -134,6 +134,7 @@
 <MAPPING to="wordnet" name="clock_time%1:28:00::" />
 <MAPPING to="wordnet" name="time%1:28:00::" />
 <MAPPING to="wordnet" name="time%1:28:05::" />
+<MAPPING to="wordnet" name="time_period%1:28:00::" />
 <ONTTYPE name="season">
 <ONTTYPE name="autumn">
 <WORD name="autumn" />
@@ -683,13 +684,45 @@
 <WORD name="expression" />
 <WORD name="factor" />
 <WORD name="formula" />
-<WORD name="fraction" />
 <WORD name="multiplication" />
 <WORD name="numerator" />
 <WORD name="parameter" />
 <WORD name="simplification" />
 <WORD name="subtraction" />
 <WORD name="term" />
+<ONTTYPE name="number">
+<WORD name="number" />
+<ONTTYPE name="number-object">
+<WORD name="digit" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="number-measure-domain">
+<WORD name="cubic_root" />
+<WORD name="square_root" />
+<WORD name="cos" />
+<WORD name="cosine" />
+<WORD name="exponent" />
+<WORD name="log" />
+<WORD name="logarithm" />
+<WORD name="root" />
+<WORD name="sin" />
+<WORD name="sine" />
+</ONTTYPE>
+<ONTTYPE name="percent">
+<WORD name="percent" />
+<MAPPING to="wordnet" name="percentage%1:24:00::" />
+</ONTTYPE>
+<ONTTYPE name="quantitative-relation">
+<MAPPING to="wordnet" name="magnitude_relation%1:24:00::" />
+<ONTTYPE name="ratio">
+<WORD name="fraction" />
+<WORD name="proportion" />
+<WORD name="ratio" />
+<MAPPING to="wordnet" name="ratio%1:24:01::" />
+<MAPPING to="wordnet" name="proportion%1:24:00::" />
+<MAPPING to="wordnet" name="proportion%1:24:01::" />
+</ONTTYPE>
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="mental-construction">
 <ONTTYPE name="feeling">
@@ -1201,6 +1234,9 @@
 <MAPPING to="wordnet" name="shape%1:07:00::" />
 <MAPPING to="wordnet" name="shape%1:03:00::" />
 <ONTTYPE name="color-scale">
+<WORD name="color" />
+<WORD name="colour" />
+<WORD name="shade" />
 <MAPPING to="wordnet" name="color%1:07:00::" />
 <MAPPING to="wordnet" name="color%1:09:01::" />
 </ONTTYPE>
@@ -1283,18 +1319,6 @@
 <MAPPING to="wordnet" name="cheap%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="number-measure-domain">
-<WORD name="cubic_root" />
-<WORD name="square_root" />
-<WORD name="cos" />
-<WORD name="cosine" />
-<WORD name="exponent" />
-<WORD name="log" />
-<WORD name="logarithm" />
-<WORD name="root" />
-<WORD name="sin" />
-<WORD name="sine" />
-</ONTTYPE>
 <ONTTYPE name="phys-measure-domain">
 <WORD name="charge" />
 <WORD name="current" />
@@ -1316,11 +1340,12 @@
 <ONTTYPE name="distance">
 <WORD name="how_far" />
 <WORD name="distance" />
-<WORD name="interval" />
 <WORD name="way" />
 <WORD name="ways" />
 </ONTTYPE>
-<ONTTYPE name="height-scale" />
+<ONTTYPE name="height-scale">
+<WORD name="height" />
+</ONTTYPE>
 <ONTTYPE name="length">
 <WORD name="length" />
 </ONTTYPE>
@@ -1452,9 +1477,7 @@
 <ONTTYPE name="protection">
 <WORD name="insurance" />
 </ONTTYPE>
-<ONTTYPE name="range">
-<WORD name="range" />
-</ONTTYPE>
+<ONTTYPE name="range" />
 <ONTTYPE name="sheet">
 <WORD name="layer" />
 <WORD name="sheet" />
@@ -1474,14 +1497,23 @@
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="number">
-<WORD name="number" />
-<ONTTYPE name="number-object">
-<WORD name="digit" />
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="population">
 <WORD name="population" />
+</ONTTYPE>
+<ONTTYPE name="rate">
+<WORD name="rate" />
+<ONTTYPE name="density">
+<MAPPING to="wordnet" name="density%1:07:00::" />
+<MAPPING to="wordnet" name="concentration%1:07:02::" />
+</ONTTYPE>
+<ONTTYPE name="time-rate">
+<WORD name="bandwidth" />
+<WORD name="speed" />
+<WORD name="velocity" />
+<ONTTYPE name="clock-speed">
+<WORD name="clock_speed" />
+</ONTTYPE>
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="requirements">
 <WORD name="condition" />
@@ -3566,6 +3598,7 @@
 <MAPPING to="wordnet" name="leftmost%5:00:00:left:00" />
 </ONTTYPE>
 <ONTTYPE name="right">
+<WORD name="right" />
 <WORD name="rightmost" />
 <MAPPING to="wordnet" name="right%3:00:03::" />
 <MAPPING to="wordnet" name="right%3:00:00::" />
@@ -3619,7 +3652,6 @@
 </ONTTYPE>
 <ONTTYPE name="vertical">
 <WORD name="perpendicular" />
-<WORD name="straight" />
 <WORD name="vertical" />
 <MAPPING to="wordnet" name="erect%3:00:00::" />
 <MAPPING to="wordnet" name="vertical%3:00:00::" />
@@ -3631,6 +3663,7 @@
 <WORD name="circular" />
 <WORD name="direct" />
 <WORD name="nonstop" />
+<WORD name="straight" />
 </ONTTYPE>
 <ONTTYPE name="shape-val">
 <WORD name="geometric" />
@@ -3812,42 +3845,8 @@
 <ONTTYPE name="level">
 <WORD name="extent" />
 <WORD name="level" />
+<WORD name="range" />
 <MAPPING to="wordnet" name="degree%1:26:01::" />
-<ONTTYPE name="color-level">
-<WORD name="color" />
-<WORD name="colour" />
-<WORD name="shade" />
-</ONTTYPE>
-<ONTTYPE name="height-level">
-<WORD name="height" />
-</ONTTYPE>
-<ONTTYPE name="quantitative-relation">
-<MAPPING to="wordnet" name="magnitude_relation%1:24:00::" />
-<ONTTYPE name="percent">
-<WORD name="percent" />
-<MAPPING to="wordnet" name="percentage%1:24:00::" />
-</ONTTYPE>
-<ONTTYPE name="ratio">
-<WORD name="proportion" />
-<WORD name="ratio" />
-<MAPPING to="wordnet" name="percentage%1:24:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="rate">
-<WORD name="rate" />
-<ONTTYPE name="density">
-<MAPPING to="wordnet" name="density%1:07:00::" />
-<MAPPING to="wordnet" name="concentration%1:07:02::" />
-</ONTTYPE>
-<ONTTYPE name="time-rate">
-<WORD name="bandwidth" />
-<WORD name="speed" />
-<WORD name="velocity" />
-<ONTTYPE name="clock-speed">
-<WORD name="clock_speed" />
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="position-reln">
 <WORD name="in_vitro" />
@@ -4680,6 +4679,7 @@
 <ONTTYPE name="event-duration-modifier">
 <WORD name="in" />
 <WORD name="long" />
+<WORD name="over" />
 <WORD name="short" />
 <WORD name="slow" />
 <ONTTYPE name="interval-duration-modifier" />
@@ -4840,7 +4840,6 @@
 <WORD name="during" />
 <WORD name="forever" />
 <WORD name="in" />
-<WORD name="over" />
 </ONTTYPE>
 <ONTTYPE name="time-weekday-rel">
 <WORD name="on" />
@@ -5779,6 +5778,7 @@
 </ONTTYPE>
 <ONTTYPE name="stairs">
 <WORD name="staircase" />
+<WORD name="stairs" />
 <MAPPING to="wordnet" name="stairway%1:06:00::" />
 </ONTTYPE>
 <ONTTYPE name="thoroughfare">
@@ -9275,7 +9275,6 @@
 <WORD name="pane" />
 <WORD name="panel" />
 <WORD name="rectangle" />
-<WORD name="row" />
 <WORD name="sidebar" />
 <WORD name="silhouette" />
 <WORD name="square" />
@@ -10536,6 +10535,13 @@
 <MAPPING to="wordnet" name="obey%2:41:00::" />
 <MAPPING to="wordnet" name="violate%2:42:00::" />
 </ONTTYPE>
+<ONTTYPE name="depart">
+<WORD name="depart" />
+<WORD name="exit" />
+<WORD name="leave" />
+<WORD name="scram" />
+<MAPPING to="wordnet" name="depart%2:38:01::" />
+</ONTTYPE>
 <ONTTYPE name="direct-information">
 <WORD name="stream" />
 <WORD name="traffic" />
@@ -11102,10 +11108,32 @@
 <ONTTYPE name="cause-out-of">
 <WORD name="dig_out" />
 <WORD name="take_out" />
+<WORD name="egress" />
 <WORD name="extract" />
 <WORD name="subtract" />
 <WORD name="withdraw" />
 <MAPPING to="wordnet" name="extract%2:35:04::" />
+<ONTTYPE name="parts-removed">
+<WORD name="precipitate" />
+<WORD name="precipitate" />
+<MAPPING to="wordnet" name="precipitate%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="pull-off">
+<WORD name="pull_off" />
+<WORD name="strip" />
+<MAPPING to="wordnet" name="draw_off%2:35:00::" />
+</ONTTYPE>
+<ONTTYPE name="pull-out-of">
+<WORD name="pull_out" />
+<WORD name="retract" />
+</ONTTYPE>
+<ONTTYPE name="push-out-of">
+<WORD name="disgorge" />
+<WORD name="eject" />
+<WORD name="expel" />
+<WORD name="flush" />
+<WORD name="purge" />
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="deselect">
 <WORD name="deselect" />
@@ -12197,7 +12225,6 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="motion">
-<ONTTYPE name="arriving" />
 <ONTTYPE name="cause-to-move">
 <WORD name="drive" />
 <WORD name="throw" />
@@ -12242,21 +12269,6 @@
 <WORD name="track" />
 <WORD name="trail" />
 <MAPPING to="wordnet" name="pursue%2:38:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="departing">
-<WORD name="egress" />
-<ONTTYPE name="depart">
-<WORD name="depart" />
-<WORD name="exit" />
-<WORD name="leave" />
-<WORD name="scram" />
-<MAPPING to="wordnet" name="depart%2:38:01::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="directed-motion">
-<ONTTYPE name="storing">
-<ONTTYPE name="store-info" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="disperse">
@@ -12340,9 +12352,11 @@
 </ONTTYPE>
 <ONTTYPE name="fluidic-motion">
 <WORD name="flow" />
+<WORD name="pour" />
 <MAPPING to="wordnet" name="run%2:38:01::" />
 <MAPPING to="wordnet" name="flow%2:38:01::" />
 <MAPPING to="wordnet" name="flow%2:38:02::" />
+<MAPPING to="wordnet" name="pour%2:38:03::" />
 </ONTTYPE>
 <ONTTYPE name="fly">
 <WORD name="fly" />
@@ -12415,9 +12429,6 @@
 <WORD name="rumple" />
 <WORD name="wrinkle" />
 </ONTTYPE>
-<ONTTYPE name="go-back">
-<WORD name="backtrack" />
-</ONTTYPE>
 <ONTTYPE name="go-on">
 <WORD name="continue_on" />
 <WORD name="go_on" />
@@ -12439,11 +12450,6 @@
 <WORD name="tilt" />
 <WORD name="tilt" />
 </ONTTYPE>
-<ONTTYPE name="lift">
-<WORD name="heft" />
-<WORD name="hoist" />
-<WORD name="lift" />
-</ONTTYPE>
 <ONTTYPE name="move-around">
 <WORD name="bypass" />
 </ONTTYPE>
@@ -12460,11 +12466,6 @@
 <WORD name="rock" />
 <WORD name="sway" />
 <WORD name="swing" />
-</ONTTYPE>
-<ONTTYPE name="move-by-means">
-<WORD name="take" />
-<MAPPING to="wordnet" name="take%2:38:02::" />
-<MAPPING to="wordnet" name="drive%2:38:11::" />
 </ONTTYPE>
 <ONTTYPE name="move-downward">
 <WORD name="descend" />
@@ -12508,19 +12509,18 @@
 </ONTTYPE>
 <ONTTYPE name="move-upward">
 <WORD name="elevate" />
+<WORD name="heft" />
+<WORD name="hoist" />
+<WORD name="lift" />
 <WORD name="raise" />
-<WORD name="rise" />
-<MAPPING to="wordnet" name="rise%2:37:00::" />
+<MAPPING to="wordnet" name="raise%2:38:00::" />
 </ONTTYPE>
 <ONTTYPE name="pan">
 <WORD name="pan" />
 </ONTTYPE>
-<ONTTYPE name="pour">
-<WORD name="pour" />
-<MAPPING to="wordnet" name="pour%2:38:03::" />
-</ONTTYPE>
 <ONTTYPE name="return">
 <WORD name="put_back" />
+<WORD name="backtrack" />
 <WORD name="return" />
 <MAPPING to="wordnet" name="return%2:38:12::" />
 </ONTTYPE>
@@ -12703,10 +12703,10 @@
 <MAPPING to="wordnet" name="beat%2:38:03::" />
 </ONTTYPE>
 <ONTTYPE name="transportation">
-<ONTTYPE name="deliver">
-<WORD name="deliver" />
-<MAPPING to="wordnet" name="deliver%2:35:00::" />
-<MAPPING to="wordnet" name="get%2:30:02::" />
+<ONTTYPE name="move-by-means">
+<WORD name="take" />
+<MAPPING to="wordnet" name="take%2:38:02::" />
+<MAPPING to="wordnet" name="drive%2:38:11::" />
 </ONTTYPE>
 <ONTTYPE name="transport">
 <WORD name="cart_off" />
@@ -12951,6 +12951,11 @@
 <MAPPING to="wordnet" name="transfer%2:38:02::" />
 <MAPPING to="wordnet" name="transfer%2:40:00::" />
 <MAPPING to="wordnet" name="move%2:38:01::" />
+<ONTTYPE name="deliver">
+<WORD name="deliver" />
+<MAPPING to="wordnet" name="deliver%2:35:00::" />
+<MAPPING to="wordnet" name="get%2:30:02::" />
+</ONTTYPE>
 <ONTTYPE name="divert">
 <WORD name="divert" />
 </ONTTYPE>
@@ -13133,6 +13138,7 @@
 <WORD name="construct" />
 <WORD name="create" />
 <WORD name="derive" />
+<WORD name="develop" />
 <WORD name="engender" />
 <WORD name="fabricate" />
 <WORD name="form" />
@@ -13445,10 +13451,6 @@
 <MAPPING to="wordnet" name="keep%2:40:00::" />
 <MAPPING to="wordnet" name="cling%2:37:00::" />
 <MAPPING to="wordnet" name="save%2:40:01::" />
-<ONTTYPE name="archive">
-<WORD name="archive" />
-<WORD name="backup" />
-</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="stay">
 <WORD name="dally" />
@@ -13566,6 +13568,10 @@
 <WORD name="transcribe" />
 <MAPPING to="wordnet" name="keep%2:32:00::" />
 <MAPPING to="wordnet" name="take%1:04:00::" />
+<ONTTYPE name="archive">
+<WORD name="archive" />
+<WORD name="backup" />
+</ONTTYPE>
 <ONTTYPE name="duplicate">
 <WORD name="copy" />
 <WORD name="duplicate" />
@@ -13905,27 +13911,6 @@
 <ONTTYPE name="come-out-of">
 <WORD name="emerge" />
 <MAPPING to="wordnet" name="egress%1:04:01::" />
-<ONTTYPE name="pull-out-of">
-<WORD name="pull_out" />
-<WORD name="retract" />
-</ONTTYPE>
-<ONTTYPE name="push-out-of">
-<WORD name="disgorge" />
-<WORD name="eject" />
-<WORD name="expel" />
-<WORD name="flush" />
-<WORD name="purge" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="parts-removed">
-<WORD name="precipitate" />
-<WORD name="precipitate" />
-<MAPPING to="wordnet" name="precipitate%2:30:00::" />
-</ONTTYPE>
-<ONTTYPE name="pull-off">
-<WORD name="pull_off" />
-<WORD name="strip" />
-<MAPPING to="wordnet" name="draw_off%2:35:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="experiencer-obj">
@@ -14118,6 +14103,10 @@
 <WORD name="sensitive" />
 </ONTTYPE>
 </ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="rise">
+<WORD name="rise" />
+<MAPPING to="wordnet" name="rise%2:38:00::" />
 </ONTTYPE>
 <ONTTYPE name="undergo-action">
 <WORD name="go" />
@@ -15109,7 +15098,6 @@
 <WORD name="turn_out" />
 <WORD name="befall" />
 <WORD name="come" />
-<WORD name="develop" />
 <WORD name="ensue" />
 <WORD name="eventuate" />
 <WORD name="go" />

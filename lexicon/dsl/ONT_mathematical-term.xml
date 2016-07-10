@@ -101,6 +101,68 @@
   abstr-obj
  </relation>
  </concept>
+ <concept name="ont::number">
+ <relation label="inherit">
+  ont::mathematical-term
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">information-content</feat>
+  <feat name="container">-</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::number-measure-domain">
+ <relation label="inherit">
+  ont::mathematical-term
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="measure-function">term</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::quantitative-relation">
+ <relation label="inherit">
+  ont::mathematical-term
+ </relation>
+ <relation label="overlap">
+  wn::|magnitude_relation%1:24:00::|
+  wn::|quantitative_relation%1:24:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::percent">
+ <relation label="inherit">
+  ont::mathematical-term
+ </relation>
+ <relation label="overlap">
+  wn::|percentage%1:24:00::|
+  wn::|percent%1:24:00::|
+  wn::|per_centum%1:24:00::|
+  wn::|pct%1:24:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">percent-scale</feat>
+ </sem-feats>
+ </concept>
  <sense>
  <morph>
   <pos pos="n" />
@@ -295,38 +357,6 @@
  <morph>
   <pos pos="n" />
   <word first-word="formula" />
- </morph>
- <relation label="inherit">
-  ont::mathematical-term
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="fraction" />
  </morph>
  <relation label="inherit">
   ont::mathematical-term

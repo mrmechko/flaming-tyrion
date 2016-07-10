@@ -302,6 +302,31 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::move-by-means">
+ <relation label="inherit">
+  ont::transportation
+ </relation>
+ <relation label="overlap">
+  wn::|take%2:38:02::|
+  wn::|drive%2:38:11::|
+  wn::|take%2:38:11::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="spatial-abstraction">
+    <or>
+     line
+     strip
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::transport">
  <relation label="inherit">
   ont::transportation
@@ -320,45 +345,5 @@
   <feat name="trajectory">+</feat>
   <feat name="cause">agentive</feat>
  </sem-feats>
- </concept>
- <concept name="ont::deliver">
- <relation label="inherit">
-  ont::transportation
- </relation>
- <relation label="overlap">
-  wn::|deliver%2:35:00::|
-  wn::|get%2:30:02::|
-  wn::|let%2:30:01::|
-  wn::|have%2:30:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::source" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
 </dsl>

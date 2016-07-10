@@ -38,21 +38,15 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="abstr-obj" />
  <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="information">information-content</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::abstract-object">
@@ -65,6 +59,23 @@
   ont::referential-sem
   abstr-obj
  </relation>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::domain">
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::extent">
@@ -89,30 +100,10 @@
  </relation>
  <feat name="scale">rate-scale</feat>
  </sem-feats>
- <concept name="ont::level">
- <relation label="overlap">
-  wn::|level%1:26:00::|
- </relation>
+ <concept name="ont::ordered-domain">
  <relation label="inherit">
-  ont::abstract-object
-  abstr-obj
+  ont::domain
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="information">information-content</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
@@ -121,7 +112,7 @@
  </sem-frame>
  <concept name="ont::rate">
  <relation label="inherit">
-  ont::level
+  ont::ordered-domain
  </relation>
  <sem-feats>
   <relation label="inherit">
