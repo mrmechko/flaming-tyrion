@@ -733,7 +733,7 @@
          (INHERIT ONT::RECORD)
          (SEM-FRAME
           (ONT::SOURCE
-           (SEM-FEATS (INHERIT ?TTYPE) (OBJECT-FUNCTION INSTRUMENT)))
+           (SEM-FEATS (INHERIT ?TTYPE1) (OBJECT-FUNCTION INSTRUMENT)))
           (ONT::AFFECTED
            (SEM-FEATS (INHERIT ?TTYPE) (INFORMATION INFORMATION-CONTENT)))))
 
@@ -1634,7 +1634,8 @@
 
 (CONCEPT ONT::CALC-ADD
          (INHERIT ONT::CALCULATION)
-         (SEM-FRAME (ONT::FORMAL1 (CONCEPT T) OPTIONAL)))
+         (SEM-FRAME (ONT::FORMAL1 (CONCEPT T) OPTIONAL)
+                    (ONT::FORMAL (CONCEPT ABSTR-OBJ))))
 
 (CONCEPT ONT::CALC-DIVIDE
          (INHERIT ONT::CALCULATION)
@@ -3266,7 +3267,8 @@
          (SEM-FEATS (INHERIT SITUATION)
                     (TIME-SPAN ATOMIC)
                     (CAUSE FORCE)
-                    (ASPECT BOUNDED)))
+                    (ASPECT BOUNDED))
+         (SEM-FRAME (ONT::SOURCE (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::DEPENDENCE-VAL
          (INHERIT ONT::PROPERTY-VAL)
@@ -3746,7 +3748,7 @@
          (INHERIT ONT::RECORD SITUATION)
          (SEM-FRAME
           (ONT::SOURCE
-           (SEM-FEATS (INHERIT ?TTYPE) (OBJECT-FUNCTION INSTRUMENT)))
+           (SEM-FEATS (INHERIT ?TTYPE1) (OBJECT-FUNCTION INSTRUMENT)))
           (ONT::NEUTRAL
            (SEM-FEATS (INHERIT ?TTYPE) (INFORMATION INFORMATION-CONTENT)))))
 
@@ -4868,6 +4870,8 @@
          (OVERLAP WN::|forgive%2:32:00::|))
 
 (CONCEPT ONT::FORMAL-UNIT (INHERIT ONT::MEASURE-UNIT))
+
+(CONCEPT ONT::FORMATION (INHERIT ONT::GROUP-OBJECT))
 
 (CONCEPT ONT::FREQUENCY
          (INHERIT ONT::TEMPORAL-MODIFIER)
@@ -9655,11 +9659,16 @@
 
 (CONCEPT ONT::ROUTE-TOPOLOGY-VAL
          (INHERIT ONT::SPATIAL)
+         (OVERLAP WN::|straight%3:00:01::|)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -))
          (SEM-FRAME
           (ONT::FIGURE
            (SEM-FEATS (INHERIT PHYS-OBJ)
                       (SPATIAL-ABSTRACTION (OR LINE STRIP))))))
+
+(CONCEPT ONT::ROW-FORMATION
+         (INHERIT ONT::FORMATION)
+         (OVERLAP WN::|row%1:14:00::| WN::|row%1:17:00::|))
 
 (CONCEPT ONT::RW-STATUS-VAL (INHERIT ONT::CAN-BE-DONE-VAL))
 
@@ -11840,8 +11849,7 @@
          (OVERLAP WN::|erect%3:00:00::|
                   WN::|vertical%3:00:00::|
                   WN::|vertical%3:00:00::|
-                  WN::|perpendicular%3:00:00::|
-                  WN::|straight%5:00:00::|))
+                  WN::|perpendicular%3:00:00::|))
 
 (CONCEPT ONT::VIA
          (INHERIT ONT::TRAJECTORY)
