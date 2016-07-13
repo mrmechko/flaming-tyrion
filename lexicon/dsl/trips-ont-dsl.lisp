@@ -5702,7 +5702,9 @@
 
 (CONCEPT ONT::INCREASE
          (INHERIT ONT::CHANGE-MAGNITUDE)
-         (OVERLAP WN::|increase%2:30:00::| WN::|protuberate%2:42:01::|))
+         (OVERLAP WN::|increase%2:30:00::|
+                  WN::|protuberate%2:42:01::|
+                  WN::|lengthen%2:30:01::|))
 
 (CONCEPT ONT::INCREASE-NUMBER (INHERIT ONT::INCREASE))
 
@@ -5731,6 +5733,10 @@
                   WN::|hurry%2:30:00::|
                   WN::|look_sharp%2:30:00::|
                   WN::|festinate%2:30:00::|))
+
+(CONCEPT ONT::INCREASE-TIME
+         (INHERIT ONT::INCREASE)
+         (OVERLAP WN::|prolong%2:30:00::|))
 
 (CONCEPT ONT::INCREMENTAL-VAL (INHERIT ONT::PROCESS-VAL))
 
