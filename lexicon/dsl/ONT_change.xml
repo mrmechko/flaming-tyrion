@@ -12,6 +12,10 @@
   wn::|change%1:06:01::|
   wn::|change%2:30:00::|
   wn::|change%1:04:00::|
+  wn::|change%1:19:00::|
+  wn::|change%2:30:02::|
+  wn::|change%2:30:08::|
+  wn::|change%2:30:01::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -407,6 +411,31 @@
    </nom>
   </forms>
  </morph>
+ <relation label="inherit">
+  ont::change
+ </relation>
+ <relation label="overlap">
+  vn::turn-26.6.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="alter" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="alteration" />
+   </nom>
+  </forms>
+ </morph>
  <example text="it changed in color / with time">
   <provenance name="TRIPS"/>
  </example>
@@ -490,6 +519,99 @@
   <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="(w::or w::in w::with)" sem-role="ont::formal" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="convert" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="conversion" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="convert the email to rtf">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::change
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="modification" />
+ </morph>
+ <example text="make a modification to the procedure">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::change
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-affected-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::affected"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="modify" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="modification" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="modify the plan">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::change
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
  <semantics>

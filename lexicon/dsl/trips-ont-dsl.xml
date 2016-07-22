@@ -4275,6 +4275,10 @@
    wn::|change%1:06:01::|
    wn::|change%2:30:00::|
    wn::|change%1:04:00::|
+   wn::|change%1:19:00::|
+   wn::|change%2:30:02::|
+   wn::|change%2:30:08::|
+   wn::|change%2:30:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -12064,6 +12068,7 @@
    wn::|crush%2:41:00::|
    wn::|disrupt%2:30:01::|
    wn::|suppress%2:30:00::|
+   wn::|compromise%2:32:03::|
   </relation>
  </concept>
  <concept name="ont::hint">
@@ -15657,23 +15662,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::modify">
-  <relation label="inherit">
-   ont::adjust
-  </relation>
-  <relation label="overlap">
-   wn::|change%1:19:00::|
-   wn::|change%2:30:08::|
-   wn::|deepen%2:30:02::|
-   wn::|vary%2:30:01::|
-   wn::|alter%2:30:00::|
-   wn::|change%2:30:02::|
-   wn::|change%2:30:01::|
-   wn::|alter%2:30:01::|
-   wn::|modify%2:30:10::|
-   wn::|desegregate%2:41:00::|
-  </relation>
- </concept>
  <concept name="ont::molecular-domain">
   <relation label="inherit">
    ont::molecular-part
@@ -17172,6 +17160,22 @@
   <relation label="inherit">
    ont::oriented-loc-reln
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="type">
+     <or>
+      cardinal-point
+      loc-wrt-orientation
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::origin">
   <relation label="inherit">

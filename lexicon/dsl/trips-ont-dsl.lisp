@@ -1928,7 +1928,11 @@
                   WN::|variety%1:07:01::|
                   WN::|change%1:06:01::|
                   WN::|change%2:30:00::|
-                  WN::|change%1:04:00::|)
+                  WN::|change%1:04:00::|
+                  WN::|change%1:19:00::|
+                  WN::|change%2:30:02::|
+                  WN::|change%2:30:08::|
+                  WN::|change%2:30:01::|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE FORCE))
          (SEM-FRAME
           (ONT::FORMAL
@@ -5499,7 +5503,8 @@
                   WN::|obstruction%1:06:00::|
                   WN::|crush%2:41:00::|
                   WN::|disrupt%2:30:01::|
-                  WN::|suppress%2:30:00::|))
+                  WN::|suppress%2:30:00::|
+                  WN::|compromise%2:32:03::|))
 
 (CONCEPT ONT::HINT (INHERIT ONT::REPRESENTATIVE) (OVERLAP WN::|hint%2:32:00::|))
 
@@ -7077,19 +7082,6 @@
                     (CONTAINER -))
          (SEM-FRAME (ONT::GROUND (CONCEPT T) OPTIONAL)))
 
-(CONCEPT ONT::MODIFY
-         (INHERIT ONT::ADJUST)
-         (OVERLAP WN::|change%1:19:00::|
-                  WN::|change%2:30:08::|
-                  WN::|deepen%2:30:02::|
-                  WN::|vary%2:30:01::|
-                  WN::|alter%2:30:00::|
-                  WN::|change%2:30:02::|
-                  WN::|change%2:30:01::|
-                  WN::|alter%2:30:01::|
-                  WN::|modify%2:30:10::|
-                  WN::|desegregate%2:41:00::|))
-
 (CONCEPT ONT::MOLECULAR-DOMAIN (INHERIT ONT::MOLECULAR-PART))
 
 (CONCEPT ONT::MOLECULAR-PART (INHERIT ONT::NATURAL-OBJECT))
@@ -7750,7 +7742,12 @@
 
 (CONCEPT ONT::ORIENTED-LOC-RELN (INHERIT ONT::POSITION-AS-POINT-RELN))
 
-(CONCEPT ONT::ORIENTS-TO (INHERIT ONT::ORIENTED-LOC-RELN))
+(CONCEPT ONT::ORIENTS-TO
+         (INHERIT ONT::ORIENTED-LOC-RELN)
+         (SEM-FRAME
+          (ONT::GROUND
+           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
+                      (TYPE (OR CARDINAL-POINT LOC-WRT-ORIENTATION))))))
 
 (CONCEPT ONT::ORIGIN
          (INHERIT ONT::LOCATION-BY-DESCRIPTION)
