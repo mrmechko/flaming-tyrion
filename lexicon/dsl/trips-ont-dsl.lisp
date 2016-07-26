@@ -794,7 +794,7 @@
                       (OBJECT-FUNCTION (OR PLACE REPRESENTATION))))))
 
 (CONCEPT ONT::ARTERIOSCLEROSIS
-         (INHERIT ONT::MEDICAL-CONDITION)
+         (INHERIT ONT::DISEASE)
          (OVERLAP WN::|arteriosclerosis%1:26:00::|))
 
 (CONCEPT ONT::ARTHRITIS
@@ -2032,10 +2032,6 @@
          (INHERIT ONT::PREDICATE)
          (SEM-FRAME (ONT::GROUND (CONCEPT T))
                     (ONT::FIGURE (CONCEPT SITUATION))))
-
-(CONCEPT ONT::CHOLELITHIASIS
-         (INHERIT ONT::MEDICAL-CONDITION)
-         (OVERLAP WN::|cholelithiasis%1:26:00::|))
 
 (CONCEPT ONT::CHOOSING
          (INHERIT ONT::INTENTIONALLY-ACT)
@@ -4590,6 +4586,12 @@
 
 (CONCEPT ONT::FAT-CONTENT (INHERIT ONT::SUBSTANTIAL-PROPERTY-VAL))
 
+(CONCEPT ONT::FATIGUE
+         (INHERIT ONT::FEEBLENESS)
+         (OVERLAP WN::|exhaustion%1:26:00::|
+                  WN::|fatigue%1:26:00::|
+                  WN::|tiredness%1:26:00::|))
+
 (CONCEPT ONT::FATS-OILS (INHERIT ONT::INGREDIENTS))
 
 (CONCEPT ONT::FAVORITE
@@ -4611,6 +4613,10 @@
                   WN::|authorities%1:14:00::|
                   WN::|regime%1:14:00::|))
 
+(CONCEPT ONT::FEEBLENESS
+         (INHERIT ONT::PHYSICAL-CONDITION)
+         (OVERLAP WN::|feebleness%1:26:00::|))
+
 (CONCEPT ONT::FEED (INHERIT ONT::PUBLICATION))
 
 (CONCEPT ONT::FEELING
@@ -4619,7 +4625,8 @@
                   WN::|bother%1:09:00::|
                   WN::|worry%1:09:00::|
                   WN::|sorrow%1:09:00::|
-                  WN::|distress%1:12:02::|)
+                  WN::|distress%1:12:02::|
+                  WN::|restlessness%1:12:00::|)
          (SEM-FRAME (ONT::FIGURE (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::FEMALE-CHILD
@@ -6119,10 +6126,6 @@
          (INHERIT ONT::HITTING)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -)))
 
-(CONCEPT ONT::KIDNEY-STONE
-         (INHERIT ONT::MEDICAL-CONDITION)
-         (OVERLAP WN::|kidney_stone%1:17:00::|))
-
 (CONCEPT ONT::KILL
          (INHERIT ONT::DESTROY)
          (OVERLAP WN::|kill%2:35:00::|
@@ -6859,14 +6862,7 @@
          (OVERLAP WN::|condition%1:26:05::|
                   WN::|sign%1:26:00::|
                   WN::|malformation%1:26:00::|
-                  WN::|pathology%1:26:00::|
-                  WN::|exhaustion%1:26:00::|
-                  WN::|fatigue%1:26:00::|
-                  WN::|irritation%1:26:00::|
-                  WN::|restlessness%1:07:00::|
-                  WN::|stress%1:26:01::|
-                  WN::|tiredness%1:26:00::|
-                  WN::|weakness%1:07:00::|))
+                  WN::|pathology%1:26:00::|))
 
 (CONCEPT ONT::MEDICAL-DIAGNOSTIC
          (INHERIT ONT::MEDICAL-TEST)
@@ -10673,6 +10669,13 @@
          (INHERIT ONT::PAIN)
          (OVERLAP WN::|stomachache%1:26:00::|))
 
+(CONCEPT ONT::STONES-DISEASE
+         (INHERIT ONT::DISEASE)
+         (OVERLAP WN::|cholelithiasis%1:26:00::|
+                  WN::|gallstone%1:17:
+00::|
+                  WN::|kidney_stone%1:17:00::|))
+
 (CONCEPT ONT::STOP
          (INHERIT ONT::INHIBIT-EFFECT)
          (OVERLAP WN::|lay_off%2:42:00::|
@@ -10746,6 +10749,10 @@
                   WN::|odd%5:00:00::|
                   WN::|weird%5:00:00::|
                   WN::|freaky%5:00:00::|))
+
+(CONCEPT ONT::STRESS
+         (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
+         (OVERLAP WN::|stress%1:26:01::|))
 
 (CONCEPT ONT::STRETCH (INHERIT ONT::BODY-MOVEMENT))
 
@@ -12002,6 +12009,10 @@
                   WN::|low%3:00:01::|
                   WN::|shallow%3:00:01::|
                   WN::|dull%3:00:04::|))
+
+(CONCEPT ONT::WEAKNESS
+         (INHERIT ONT::FEEBLENESS)
+         (OVERLAP WN::|weakness%1:07:00::|))
 
 (CONCEPT ONT::WEAPON
          (INHERIT ONT::DEVICE)
