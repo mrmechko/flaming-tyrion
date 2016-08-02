@@ -1665,6 +1665,10 @@
 (CONCEPT ONT::CANCEL
          (INHERIT ONT::CAUSE-ACTION)
          (SEM-FRAME
+          (ONT::NEUTRAL
+           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
+                      (INTENTIONAL -))
+           OPTIONAL)
           (ONT::FORMAL
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL -))
