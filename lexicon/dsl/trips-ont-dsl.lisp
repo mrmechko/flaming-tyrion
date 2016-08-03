@@ -1179,6 +1179,16 @@
          (SEM-FEATS (INHERIT SITUATION) (ASPECT STAGE-LEVEL))
          (SEM-FRAME (ONT::NEUTRAL (CONCEPT PHYS-OBJ))))
 
+(CONCEPT ONT::BE-BORN
+         (INHERIT ONT::LIFE-PROCESS)
+         (OVERLAP WN::|nascence%1:11:00::|
+                  WN::|nascency%1:11:00::|
+                  WN::|nativity%1:11:00::|
+                  WN::|birth%1:11:00::|)
+         (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
+         (SEM-FRAME
+          (ONT::AFFECTED-RESULT (SEM-FEATS (INHERIT PHYS-OBJ) (TYPE MAMMAL)))))
+
 (CONCEPT ONT::BE-INCLINED
          (INHERIT ONT::EVENT-OF-STATE)
          (OVERLAP WN::|tend%2:42:01::|)
@@ -3446,7 +3456,10 @@
                   WN::|choke%2:30:01::|
                   WN::|croak%2:30:00::|
                   WN::|snuff_it%2:30:00::|
-                  WN::|die%2:30:02::|)
+                  WN::|die%2:30:02::|
+                  WN::|death%1:11:00::|
+                  WN::|decease%1:11:00::|
+                  WN::|expiry%1:11:00::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC)))
 
 (CONCEPT ONT::DIETING
@@ -6375,17 +6388,6 @@
 (CONCEPT ONT::LIFE-TRANSFORMATION
          (INHERIT ONT::CONTINUOUS-CHANGE)
          (OVERLAP WN::|develop%2:30:00::| WN::|fruit%2:36:01::|))
-
-(CONCEPT ONT::LIFECYCLE-EVENT
-         (INHERIT ONT::LIFE-PROCESS)
-         (OVERLAP WN::|nascence%1:11:00::|
-                  WN::|nascency%1:11:00::|
-                  WN::|nativity%1:11:00::|
-                  WN::|birth%1:11:00::|
-                  WN::|death%1:11:00::|
-                  WN::|decease%1:11:00::|
-                  WN::|expiry%1:11:00::|)
-         (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC)))
 
 (CONCEPT ONT::LIFECYCLE-STAGE
          (INHERIT ONT::DOMAIN-PROPERTY)
