@@ -817,6 +817,15 @@
                   WN::|artificial%5:00:00::|
                   WN::|unnatural%3:00:00::|))
 
+(CONCEPT ONT::AS-MUCH-AS
+         (INHERIT ONT::DOMAIN-PROPERTY)
+         (SEM-FEATS (INHERIT ABSTR-OBJ)
+                    (SCALE ?!SC)
+                    (GRADABILITY +)
+                    (INTENTIONAL -)
+                    (INFORMATION -)
+                    (CONTAINER -)))
+
 (CONCEPT ONT::AS-ROLE
          (INHERIT ONT::PREDICATE)
          (SEM-FRAME (ONT::GROUND (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
@@ -1262,10 +1271,6 @@
                     (FORM SOLID-OBJECT)))
 
 (CONCEPT ONT::BEEF (INHERIT ONT::MEAT))
-
-(CONCEPT ONT::BEGINNING
-         (INHERIT ONT::BOUND)
-         (OVERLAP WN::|beginning%1:28:00::|))
 
 (CONCEPT ONT::BEHAVIORAL-PROPERTY
          (INHERIT ONT::PROPERTY-VAL)
@@ -3195,6 +3200,10 @@
                   WN::|fall%2:30:06::|
                   WN::|weaken%2:30:01::|))
 
+(CONCEPT ONT::DECREASE-COMPLETELY
+         (INHERIT ONT::DECREASE)
+         (OVERLAP WN::|deplete%2:34:00::| WN::|exhaust%2:30:00::|))
+
 (CONCEPT ONT::DECREASE-SPEED (INHERIT ONT::DECREASE))
 
 (CONCEPT ONT::DEFAME
@@ -3389,8 +3398,6 @@
                     (ONT::AGENT
                      (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                                 (INTENTIONAL +)))))
-
-(CONCEPT ONT::DEVELOP (INHERIT ONT::TRANSFORMATION))
 
 (CONCEPT ONT::DEVICE
          (INHERIT ONT::MANUFACTURED-OBJECT)
@@ -3714,6 +3721,10 @@
          (INHERIT ONT::VOLUME-UNIT)
          (OVERLAP WN::|dose%1:06:00::| WN::|dosage%1:06:00::|))
 
+(CONCEPT ONT::DOUBLE
+         (INHERIT ONT::INCREASE-NUMBER)
+         (OVERLAP WN::|double%2:30:00::|))
+
 (CONCEPT ONT::DOUBT
          (INHERIT ONT::ATTITUDE-OF-BELIEF)
          (OVERLAP WN::|doubt%2:31:00::|
@@ -3796,10 +3807,11 @@
          (INHERIT ONT::COMMERCE-COLLECT)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
          (SEM-FRAME
-          (ONT::FORMAL
+          (ONT::AFFECTED
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL -)
-                      (OBJECT-FUNCTION CURRENCY)))))
+                      (OBJECT-FUNCTION CURRENCY)
+                      (TYPE MONEY)))))
 
 (CONCEPT ONT::EAST
          (INHERIT ONT::MAP-LOCATION-VAL)
@@ -3928,10 +3940,6 @@
           (ONT::AFFECTED
            (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
            OPTIONAL)))
-
-(CONCEPT ONT::END
-         (INHERIT ONT::BOUND)
-         (OVERLAP WN::|end%1:28:00::| WN::|end%1:15:01::|))
 
 (CONCEPT ONT::END-AT-LOC (INHERIT ONT::BE-AT) (OVERLAP WN::|end%2:42:00::|))
 
@@ -4126,7 +4134,9 @@
          (SEM-FRAME
           (ONT::GROUND
            (SEM-FEATS (OR (CONCEPT ABSTR-OBJ) (CONCEPT TIME))
-                      (TIME-SCALE INTERVAL)))
+                      (TYPE TIME-UNIT)
+                      (TIME-SCALE INTERVAL)
+                      (SCALE DURATION-SCALE)))
           (ONT::FIGURE (OR (CONCEPT SITUATION) (CONCEPT TIME)))))
 
 (CONCEPT ONT::EVENT-EVENT-TIME
@@ -5731,11 +5741,11 @@
 
 (CONCEPT ONT::INCREASE
          (INHERIT ONT::CHANGE-MAGNITUDE)
-         (OVERLAP WN::|increase%2:30:00::|
-                  WN::|protuberate%2:42:01::|
-                  WN::|lengthen%2:30:01::|))
+         (OVERLAP WN::|increase%2:30:00::| WN::|lengthen%2:30:01::|))
 
-(CONCEPT ONT::INCREASE-NUMBER (INHERIT ONT::INCREASE))
+(CONCEPT ONT::INCREASE-NUMBER
+         (INHERIT ONT::INCREASE)
+         (OVERLAP WN::|multiply%2:30:00::|))
 
 (CONCEPT ONT::INCREASE-SPEED
          (INHERIT ONT::INCREASE)
@@ -7014,6 +7024,12 @@
          (INHERIT ONT::APPLIANCE)
          (OVERLAP WN::|microwave%1:06:00::| WN::|microwave_oven%1:06:00::|))
 
+(CONCEPT ONT::MIDDLE-LOCATION-VAL
+         (INHERIT ONT::LOCATION-VAL)
+         (OVERLAP WN::|middle%5:00:00:intermediate:00|
+                  WN::|middle%5:00:01:central:01|
+                  WN::|middle%3:00:00::|))
+
 (CONCEPT ONT::MIGRATION (INHERIT ONT::TRIP))
 
 (CONCEPT ONT::MILITARY-GROUP
@@ -7236,6 +7252,8 @@
 
 (CONCEPT ONT::MUG (INHERIT ONT::TABLEWARE) (OVERLAP WN::|mug%1:06:00::|))
 
+(CONCEPT ONT::MULTIPLE (INHERIT ONT::MATHEMATICAL-TERM ABSTR-OBJ))
+
 (CONCEPT ONT::MUSIC (INHERIT ONT::COMPOSITION) (OVERLAP WN::|music%1:10:00::|))
 
 (CONCEPT ONT::MUSICAL-INSTRUMENT
@@ -7439,10 +7457,10 @@
          (OVERLAP WN::|express_emotion%2:37:00::|
                   WN::|express_feelings%2:37:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TIME-SPAN EXTENDED) (CAUSE AGENTIVE))
-         (SEM-FRAME
-          (ONT::AGENT
-           (SEM-FEATS (INHERIT PHYS-OBJ)
-                      (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL))))))
+         (SEM-FRAME (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
+                    (ONT::AGENT
+                     (SEM-FEATS (INHERIT PHYS-OBJ)
+                                (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL))))))
 
 (CONCEPT ONT::NONVERBAL-SAY
          (INHERIT ONT::SAY)
@@ -7539,7 +7557,7 @@
 
 (CONCEPT ONT::NYCHTHEMERON-EVENT (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY))
 
-(CONCEPT ONT::OBJ-IN-PATH (INHERIT ONT::DIR-IN-TERMS-OF-OBJ))
+(CONCEPT ONT::OBJ-IN-PATH (INHERIT ONT::PATH))
 
 (CONCEPT ONT::OBJECT (INHERIT ONT::CONTEST) (OVERLAP WN::|object%2:42:00::|))
 
@@ -7805,7 +7823,7 @@
 (CONCEPT ONT::OUTSIDE (INHERIT ONT::POS-AS-CONTAINMENT-RELN))
 
 (CONCEPT ONT::OVERCOME
-         (INHERIT ONT::MANIPULATE)
+         (INHERIT ONT::CONTROL-MANAGE)
          (OVERLAP WN::|get_the_better_of%2:33:00::|
                   WN::|overcome%2:33:03::|
                   WN::|defeat%2:33:00::|))
@@ -7965,7 +7983,11 @@
 
 (CONCEPT ONT::PERLOCUTION (INHERIT ONT::COMMUNICATION))
 
-(CONCEPT ONT::PERSISTENCE-VAL (INHERIT ONT::PROCESS-VAL))
+(CONCEPT ONT::PERSISTENCE-VAL
+         (INHERIT ONT::PROCESS-VAL)
+         (SEM-FEATS (INHERIT ABSTR-OBJ)
+                    (TIME-SCALE INTERVAL)
+                    (SCALE TIME-MEASURE-SCALE)))
 
 (CONCEPT ONT::PERSISTENT
          (INHERIT ONT::PERSISTENCE-VAL)
@@ -8671,7 +8693,6 @@
          (SEM-FEATS (INHERIT ABSTR-OBJ)
                     (ORIENTATION -)
                     (INTENSITY -)
-                    (SCALE -)
                     (INTENTIONAL -)
                     (INFORMATION -)
                     (CONTAINER -))
@@ -8881,7 +8902,8 @@
                   WN::|get_dressed%2:29:00::|)
          (INHERIT ONT::CONTROL-MANAGE SITUATION)
          (SEM-FRAME
-          (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN ARTIFACT)))
+          (ONT::AFFECTED
+           (SEM-FEATS (INHERIT PHYS-OBJ) (TYPE ATTIRE) (ORIGIN ARTIFACT)))
           (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
 
 (CONCEPT ONT::QMODIFIER (INHERIT ONT::MODIFIER))
@@ -8908,7 +8930,8 @@
 
 (CONCEPT ONT::QUANTITY-RELATED-PROPERTY-VAL
          (INHERIT ONT::PROPERTY-VAL)
-         (SEM-FRAME (ONT::GROUND (CONCEPT T) OPTIONAL)))
+         (SEM-FRAME (ONT::STANDARD (CONCEPT T) OPTIONAL)
+                    (ONT::GROUND (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::QUESTIONING
          (INHERIT ONT::DIRECTED-COMMUNICATION)
@@ -10286,6 +10309,15 @@
          (INHERIT ONT::MEDICAL-SYMPTOM)
          (OVERLAP WN::|sneeze%1:26:00::|))
 
+(CONCEPT ONT::SO-MUCH-THAT
+         (INHERIT ONT::DOMAIN-PROPERTY)
+         (SEM-FEATS (INHERIT ABSTR-OBJ)
+                    (SCALE ?!SC)
+                    (GRADABILITY +)
+                    (INTENTIONAL -)
+                    (INFORMATION -)
+                    (CONTAINER -)))
+
 (CONCEPT ONT::SOCIAL-ACTIVITY
          (INHERIT ONT::ACTIVITY)
          (OVERLAP WN::|socialize%2:41:01::|
@@ -10479,6 +10511,8 @@
          (INHERIT ONT::ANY-SEM)
          (SEM-FRAME (ONT::CONTENT (CONCEPT T))))
 
+(CONCEPT ONT::SPEED-SCALE (INHERIT ONT::TIME-RATE))
+
 (CONCEPT ONT::SPEED-UNIT
          (INHERIT ONT::RATE-UNIT)
          (OVERLAP WN::|mph%1:28:01::|
@@ -10490,6 +10524,7 @@
 
 (CONCEPT ONT::SPEED-VAL
          (INHERIT ONT::PROCESS-VAL)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE SPEED-SCALE))
          (SEM-FRAME
           (ONT::FIGURE
            (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))))
@@ -10705,7 +10740,8 @@
                   WN::|halt%2:38:01::|
                   WN::|stop%2:38:01::|
                   WN::|abort%2:29:00::|
-                  WN::|terminate%2:30:01::|))
+                  WN::|terminate%2:30:01::|)
+         (SEM-FRAME (ONT::AFFECTED (CONCEPT SITUATION))))
 
 (CONCEPT ONT::STOP-MOVE
          (INHERIT ONT::LOCATED-MOVE-STATE)
@@ -11021,6 +11057,10 @@
                     (ORIGIN ARTIFACT)
                     (FORM OBJECT)))
 
+(CONCEPT ONT::SYSTEM
+         (INHERIT ONT::GROUP-OBJECT)
+         (OVERLAP WN::|system%1:06:00::| WN::|system%1:14:00::|))
+
 (CONCEPT ONT::TABLE (INHERIT ONT::FURNISHINGS) (OVERLAP WN::|table%1:06:01::|))
 
 (CONCEPT ONT::TABLEWARE
@@ -11241,6 +11281,7 @@
          (SEM-FRAME
           (ONT::GROUND
            (SEM-FEATS (INHERIT TIME)
+                      (TIME-SCALE POINT)
                       (TIME-FUNCTION (OR CLOCK-TIME DAY-POINT))))))
 
 (CONCEPT ONT::TIME-CONDITION (INHERIT ONT::CONDITION))
@@ -11366,6 +11407,15 @@
                     (ONT::FIGURE
                      (SEM-FEATS (INHERIT SITUATION) (TYPE EVENT-OF-CHANGE)))))
 
+(CONCEPT ONT::TOO-MUCH
+         (INHERIT ONT::DOMAIN-PROPERTY)
+         (SEM-FEATS (INHERIT ABSTR-OBJ)
+                    (SCALE ?!SC)
+                    (GRADABILITY +)
+                    (INTENTIONAL -)
+                    (INFORMATION -)
+                    (CONTAINER -)))
+
 (CONCEPT ONT::TOOL
          (INHERIT ONT::EQUIPMENT)
          (OVERLAP WN::|tool%1:06:00::|)
@@ -11476,6 +11526,10 @@
          (INHERIT ONT::TRAVEL)
          (OVERLAP WN::|journey%1:04:00::| WN::|journeying%1:04:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +)))
+
+(CONCEPT ONT::TRIPLE
+         (INHERIT ONT::INCREASE-NUMBER)
+         (OVERLAP WN::|triple%2:30:00::|))
 
 (CONCEPT ONT::TROUBLE
          (INHERIT ONT::SITUATION)

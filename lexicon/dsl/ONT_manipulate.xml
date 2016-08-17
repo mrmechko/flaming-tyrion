@@ -272,16 +272,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::overcome">
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="fix" />
+ </morph>
+ <example text="fix the price">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::manipulate
  </relation>
  <relation label="overlap">
-  wn::|get_the_better_of%2:33:00::|
-  wn::|overcome%2:33:03::|
-  wn::|defeat%2:33:00::|
+  vn::price-54.4
  </relation>
- </concept>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -312,5 +324,36 @@
    <feat name="aspect">bounded</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="set" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="set" />
+   </past>
+   <ing>
+    <word first-word="setting" />
+   </ing>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="Set the knob [to VDC]">
+ </example>
+ <relation label="inherit">
+  ont::manipulate
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-result-templ" xp="'(w::pp w::to)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::to" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
 </dsl>
