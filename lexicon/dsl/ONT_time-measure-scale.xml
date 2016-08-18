@@ -34,6 +34,11 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::abstract-object">
  <relation label="overlap">
   wn::|psychological_feature%1:03:00::|
@@ -49,10 +54,52 @@
  <relation label="inherit">
   ont::abstract-object
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::duration-scale">
  <relation label="inherit">
   ont::time-measure-scale
  </relation>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="time" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="what time did it arrive">
+ </example>
+ <relation label="inherit">
+  ont::time-measure-scale
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
 </dsl>

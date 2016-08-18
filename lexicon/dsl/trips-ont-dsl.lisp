@@ -3874,6 +3874,8 @@
 
 (CONCEPT ONT::ELEMENT (INHERIT ONT::KETTLE-BASE))
 
+(CONCEPT ONT::ELLIPSIS (INHERIT ONT::SITUATION-ROOT))
+
 (CONCEPT ONT::EMAIL
          (INHERIT ONT::MAIL)
          (OVERLAP WN::|electronic_mail%1:10:00::|
@@ -5180,6 +5182,8 @@
                   WN::|alright%5:00:00::|
                   WN::|superb%5:00:00::|
                   WN::|good%5:00:00::|))
+
+(CONCEPT ONT::GOODBYE (INHERIT ONT::SPEECH-ACT))
 
 (CONCEPT ONT::GOOSE (INHERIT ONT::POULTRY))
 
@@ -9804,7 +9808,9 @@
 
 (CONCEPT ONT::SA_YN-QUESTION (INHERIT ONT::SA_QUESTION))
 
-(CONCEPT ONT::SCALE (INHERIT ONT::ABSTRACT-OBJECT))
+(CONCEPT ONT::SCALE
+         (INHERIT ONT::ABSTRACT-OBJECT)
+         (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::SCALE-RELATION
          (INHERIT ONT::PREDICATE)
@@ -10740,8 +10746,7 @@
                   WN::|halt%2:38:01::|
                   WN::|stop%2:38:01::|
                   WN::|abort%2:29:00::|
-                  WN::|terminate%2:30:01::|)
-         (SEM-FRAME (ONT::AFFECTED (CONCEPT SITUATION))))
+                  WN::|terminate%2:30:01::|))
 
 (CONCEPT ONT::STOP-MOVE
          (INHERIT ONT::LOCATED-MOVE-STATE)
