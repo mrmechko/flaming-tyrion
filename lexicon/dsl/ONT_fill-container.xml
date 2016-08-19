@@ -380,14 +380,9 @@
   vn::spray-9.7-1-1
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-goal-templ" xp="'(w::pp
-                                                                 (w::or w::on
-                                                                        w::into
-                                                                        w::in))" />
+  <template-call template="ont::agent-affected-goal-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
-                                                               w::into
-                                                               w::in)" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -441,31 +436,6 @@
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="crowd" />
- </morph>
- <relation label="inherit">
-  ont::fill-container
- </relation>
- <relation label="overlap">
-  vn::spray-9.7-1-1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-goal-templ" xp="'(w::pp
-                                                                 (w::or w::on
-                                                                        w::into
-                                                                        w::in))" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
-                                                               w::into
-                                                               w::in)" sem-role="ont::result"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -573,12 +543,9 @@
   vn::spray-9.7-2
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-goal-optional-templ" xp="'(w::pp
-                                                                          (w::or
-                                                                           w::into
-                                                                           w::in))" />
+  <template-call template="ont::agent-affected-goal-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::into w::in)" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -596,15 +563,9 @@
   vn::spray-9.7-1-1
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-goal-optional-templ" xp="'(w::pp
-                                                                          (w::or
-                                                                           w::on
-                                                                           w::into
-                                                                           w::in))" />
+  <template-call template="ont::agent-affected-goal-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
-                                                               w::into
-                                                               w::in)" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -645,13 +606,39 @@
   vn::spray-9.7-2
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-goal-optional-templ" xp="'(w::pp
-                                                                          (w::or
-                                                                           w::into
-                                                                           w::in))" />
+  <template-call template="ont::agent-affected-goal-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::into w::in)" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="load" />
+ </morph>
+ <example text="load the truck with oj">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::fill-container
+ </relation>
+ <relation label="overlap">
+  vn::spray-9.7-2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-goal-affected-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -819,54 +806,6 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="pile" />
- </morph>
- <relation label="inherit">
-  ont::fill-container
- </relation>
- <relation label="overlap">
-  vn::spray-9.7-1-1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-goal-optional-templ" xp="'(w::pp
-                                                                          (w::or
-                                                                           w::on
-                                                                           w::onto
-                                                                           w::into
-                                                                           w::in))" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::on
-                                                               w::onto
-                                                               w::into
-                                                               w::in)" sem-role="ont::result" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="pile" />
- </morph>
- <relation label="inherit">
-  ont::fill-container
- </relation>
- <relation label="overlap">
-  vn::spray-9.7-1-1
- </relation>
- <syntax>
-  <template-call template="ont::agent-goal-affected-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
  </sense>
  <sense>
  <morph>

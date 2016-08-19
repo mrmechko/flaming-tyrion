@@ -864,7 +864,7 @@
  </concept>
  <concept name="ont::age-scale">
   <relation label="inherit">
-   ont::scale
+   ont::linear-scale
   </relation>
  </concept>
  <concept name="ont::age-val">
@@ -1626,7 +1626,7 @@
  </concept>
  <concept name="ont::area-scale">
   <relation label="inherit">
-   ont::size-scale
+   ont::scale
   </relation>
  </concept>
  <concept name="ont::area-unit">
@@ -9109,12 +9109,10 @@
   <sem-frame>
    <role-restr-map roles="ont::ground">
     <sem-feats>
-     <or>
-      <concept name="abstr-obj" />
-      <concept name="time" />
-     </or>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
      <feat name="type">time-unit</feat>
-     <feat name="time-scale">interval</feat>
      <feat name="scale">duration-scale</feat>
     </sem-feats>
    </role-restr-map>
@@ -9919,7 +9917,7 @@
      <relation label="inherit">
       abstr-obj
      </relation>
-     <feat name="scale">length-scale</feat>
+     <feat name="scale">length</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
@@ -13971,7 +13969,7 @@
    <relation label="inherit">
     abstr-obj
    </relation>
-   <feat name="scale">length-scale</feat>
+   <feat name="scale">length</feat>
   </sem-feats>
  </concept>
  <concept name="ont::length-val">
@@ -14209,7 +14207,7 @@
  </concept>
  <concept name="ont::linear-scale">
   <relation label="inherit">
-   ont::size-scale
+   ont::scale
   </relation>
  </concept>
  <concept name="ont::linear-val">
@@ -15757,7 +15755,7 @@
  </concept>
  <concept name="ont::money-scale">
   <relation label="inherit">
-   ont::size-scale
+   ont::scale
   </relation>
  </concept>
  <concept name="ont::money-unit">
@@ -16738,6 +16736,22 @@
   <relation label="inherit">
    ont::path
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="form">object</feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::figure">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::object">
   <relation label="inherit">
@@ -19647,7 +19661,7 @@
       <concept name="abstr-obj" />
       <concept name="phys-obj" />
      </or>
-     <feat name="scale">duration-scale</feat>
+     <feat name="scale">-</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
@@ -19985,6 +19999,11 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::ratio-scale">
+  <relation label="inherit">
+   ont::scale
+  </relation>
  </concept>
  <concept name="ont::reach">
   <relation label="inherit">
@@ -23333,7 +23352,7 @@
      <relation label="inherit">
       abstr-obj
      </relation>
-     <feat name="scale">length-scale</feat>
+     <feat name="scale">length</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
@@ -25179,7 +25198,7 @@
  </concept>
  <concept name="ont::time-measure-scale">
   <relation label="inherit">
-   ont::scale
+   ont::linear-scale
   </relation>
  </concept>
  <concept name="ont::time-object">
@@ -26548,7 +26567,7 @@
  </concept>
  <concept name="ont::volume-scale">
   <relation label="inherit">
-   ont::size-scale
+   ont::scale
   </relation>
  </concept>
  <concept name="ont::volume-unit">
@@ -26874,7 +26893,7 @@
  </concept>
  <concept name="ont::weight-scale">
   <relation label="inherit">
-   ont::size-scale
+   ont::scale
   </relation>
  </concept>
  <concept name="ont::weight-unit">
