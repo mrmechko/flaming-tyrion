@@ -34,12 +34,16 @@
            (SEM-FEATS (INHERIT ?FT) (INFORMATION INFORMATION-CONTENT)))))
 
 (CONCEPT ONT::ABSTRACT-OBJECT
+         (COMMENT
+          "abstract objects, mental constructions, with no physical realization")
          (OVERLAP WN::|psychological_feature%1:03:00::|
                   WN::|abstraction%1:03:00::|
                   WN::|abstract_entity%1:03:00::|)
          (INHERIT ONT::REFERENTIAL-SEM ABSTR-OBJ))
 
 (CONCEPT ONT::ABSTRACT-OBJECT-NONTEMPORAL
+         (COMMENT
+          "formal constructions with no temporal existence: e.g., facts, types, ...")
          (INHERIT ONT::ABSTRACT-OBJECT ABSTR-OBJ))
 
 (CONCEPT ONT::ABUSE
@@ -215,6 +219,7 @@
          (SEM-FRAME (ONT::FORMAL (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::ACTING
+         (COMMENT "abstract event of doing something: behave, activity, ...")
          (INHERIT ONT::EVENT-OF-ACTION)
          (OVERLAP WN::|do%2:29:09::|
                   WN::|behave%2:29:00::|
@@ -236,6 +241,7 @@
          (SEM-FRAME (ONT::FIGURE (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::ACTIVE
+         (COMMENT "operating as intended wrt some process")
          (INHERIT ONT::ACTIVITY-VAL)
          (OVERLAP WN::|busy%3:00:00::|
                   WN::|active%3:00:03::|
@@ -307,7 +313,10 @@
           (ONT::NEUTRAL (CONCEPT T))
           (ONT::FORMAL (CONCEPT SITUATION))))
 
-(CONCEPT ONT::ACTIVITY-VAL (INHERIT ONT::PROPERTY-VAL))
+(CONCEPT ONT::ACTIVITY-VAL
+         (COMMENT
+          "predicates relating to whether something is acting as intended for some process")
+         (INHERIT ONT::PROPERTY-VAL))
 
 (CONCEPT ONT::ACTUAL (INHERIT ONT::ACTUALITY-VAL))
 
@@ -420,6 +429,7 @@
                     (INFORMATION INFORMATION-CONTENT)))
 
 (CONCEPT ONT::AGENT-INTERACTION
+         (COMMENT "events that involve the interaction of two or more agents")
          (INHERIT ONT::EVENT-OF-ACTION)
          (SEM-FRAME
           (ONT::AGENT1
@@ -517,6 +527,8 @@
           (ONT::GROUND
            (SEM-FEATS (INHERIT PHYS-OBJ)
                       (SPATIAL-ABSTRACTION (OR LINE STRIP))))))
+
+(CONCEPT ONT::ALWAYS (INHERIT ONT::FREQUENCY))
 
 (CONCEPT ONT::AMASS
          (INHERIT ONT::ACQUIRE)
@@ -743,7 +755,10 @@
          (SEM-FRAME
           (ONT::GROUND (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE AREA-SCALE)))))
 
-(CONCEPT ONT::AREA-DEF-BY-USE (INHERIT ONT::LOC-AS-AREA))
+(CONCEPT ONT::AREA-DEF-BY-USE
+         (COMMENT
+          "places defined by their function: e.g.,  lot, plot, region, scene, section, site, territory, zone")
+         (INHERIT ONT::LOC-AS-AREA))
 
 (CONCEPT ONT::AREA-SCALE (INHERIT ONT::SCALE))
 
@@ -752,7 +767,10 @@
          (OVERLAP WN::|area_unit%1:23:00::| WN::|square_measure%1:23:00::|)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE AREA-SCALE)))
 
-(CONCEPT ONT::ARGUE (INHERIT ONT::DISCUSS) (OVERLAP WN::|argue%2:32:00::|))
+(CONCEPT ONT::ARGUE
+         (COMMENT "extended communication with opposing views on a topic")
+         (INHERIT ONT::DISCUSS)
+         (OVERLAP WN::|argue%2:32:00::|))
 
 (CONCEPT ONT::ARRANGE-TEXT (INHERIT ONT::ARRANGING))
 
@@ -837,6 +855,7 @@
          (OVERLAP WN::|ask%2:32:02::| WN::|ask%2:32:04::|))
 
 (CONCEPT ONT::ASSERT
+         (COMMENT "tell categorically")
          (INHERIT ONT::REPRESENTATIVE)
          (OVERLAP WN::|assert%2:32:01::|))
 
@@ -934,7 +953,10 @@
 
 (CONCEPT ONT::AT-LOC (INHERIT ONT::POSITION-AS-POINT-RELN))
 
-(CONCEPT ONT::AT-SCALE-VALUE (INHERIT ONT::POSITION-RELN))
+(CONCEPT ONT::AT-SCALE-VALUE
+         (COMMENT
+          "The main predicate for mapping an object to a value on a scale")
+         (INHERIT ONT::POSITION-RELN))
 
 (CONCEPT ONT::ATHLETE
          (INHERIT ONT::PERSON)
@@ -998,7 +1020,10 @@
                   WN::|habiliment%1:06:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN ARTIFACT)))
 
-(CONCEPT ONT::ATTITUDE-OF-BELIEF (INHERIT ONT::AWARENESS))
+(CONCEPT ONT::ATTITUDE-OF-BELIEF
+         (COMMENT
+          "a state that captures an EXPERIENCER to some degree of belief or disbelief")
+         (INHERIT ONT::AWARENESS))
 
 (CONCEPT ONT::ATTRACT
          (INHERIT ONT::CAUSE-EFFECT)
@@ -1102,6 +1127,8 @@
                      OPTIONAL)))
 
 (CONCEPT ONT::AWARENESS
+         (COMMENT
+          "a state in which an EXPERIENCER holds some attitude towards a proposition")
          (INHERIT ONT::EVENT-OF-EXPERIENCE)
          (OVERLAP WN::|think%2:31:00::|
                   WN::|cogitate%2:31:00::|
@@ -1262,6 +1289,7 @@
                   WN::|boarding_house%1:06:00::|))
 
 (CONCEPT ONT::BEDDING
+         (COMMENT "objects related to bedding: pillow, blanket")
          (INHERIT ONT::FURNISHINGS)
          (OVERLAP WN::|bedclothes%1:06:00::|
                   WN::|bed_clothing%1:06:00::|
@@ -1279,6 +1307,8 @@
            (SEM-FEATS (INHERIT PHYS-OBJ) (TYPE ORGANISM) (INTENTIONAL +)))))
 
 (CONCEPT ONT::BELIEF-ASCRIPTION
+         (COMMENT
+          " a subclass of believe for verbs that take constructions such as 'I deem him as unsuitable'. They do not take that complements like ONT::BELIEVE verbs do")
          (INHERIT ONT::BELIEVE)
          (OVERLAP WN::|view%2:31:00::|))
 
@@ -1299,6 +1329,8 @@
                     (ONT::NEUTRAL1 (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::BELIEVE-SOURCE
+         (COMMENT
+          "EXPERIENCER trusts or relys on some source/person/authority")
          (INHERIT ONT::AWARENESS)
          (SEM-FEATS (INHERIT SITUATION) (TIME-SPAN EXTENDED) (ASPECT STATIC))
          (SEM-FRAME
@@ -1425,6 +1457,7 @@
           (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN LIVING)))))
 
 (CONCEPT ONT::BODY-MANIPULATION
+         (COMMENT "and AGENT grasps something to manipulate it")
          (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|hold%2:35:00::|
                   WN::|take_hold%2:35:00::|
@@ -1807,6 +1840,8 @@
          (SEM-FRAME (ONT::SOURCE (CONCEPT T)) (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::CAUSE-EFFECT
+         (COMMENT
+          "an AGENT causes some event to occur or proposition to become true")
          (INHERIT ONT::ACTING)
          (OVERLAP WN::|cause%2:32:00::|
                   WN::|do%2:36:02::|
@@ -1828,6 +1863,7 @@
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::CAUSE-INTERACT
+         (COMMENT "an AGENT causes some interaction with another agent")
          (INHERIT ONT::CAUSE-EFFECT)
          (OVERLAP WN::|interact%2:41:00::| WN::|collide%2:35:01::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
@@ -1860,6 +1896,7 @@
                   WN::|draw_out%2:35:05::|))
 
 (CONCEPT ONT::CAUSE-POSITION
+         (COMMENT "events involving causing a state of type ONT::POSITION")
          (INHERIT ONT::EVENT-OF-CAUSATION)
          (SEM-FRAME
           (ONT::AFFECTED1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
@@ -1990,6 +2027,8 @@
            OPTIONAL)))
 
 (CONCEPT ONT::CHANGE-INTEGRITY
+         (COMMENT
+          "an AFFECTED undergoes a change of physical state, e.g., thaw. Allows but does not require an AGENT")
          (INHERIT ONT::CHANGE-STATE)
          (OVERLAP WN::|change_integrity%2:30:00::| WN::|clot%2:30:01::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
@@ -2425,7 +2464,10 @@
          (OVERLAP WN::|shop%1:06:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
 
-(CONCEPT ONT::COMMISSIVE (INHERIT ONT::ILLOCUTION))
+(CONCEPT ONT::COMMISSIVE
+         (COMMENT
+          "speech act that expresses the speakers commitment to future acts (cf. Searle)")
+         (INHERIT ONT::ILLOCUTION))
 
 (CONCEPT ONT::COMMITMENT (INHERIT ONT::PS-OBJECT))
 
@@ -2459,6 +2501,8 @@
                   WN::|typical%5:00:00::|))
 
 (CONCEPT ONT::COMMUNICATION
+         (COMMENT
+          "activity that involves transfer of information between agents")
          (INHERIT ONT::AGENT-INTERACTION)
          (OVERLAP WN::|put_across%2:32:00::|
                   WN::|pass_along%2:32:00::|
@@ -2553,7 +2597,9 @@
                                 (INTENTIONAL +))
                      OPTIONAL)))
 
-(CONCEPT ONT::COMPOSITION (INHERIT ONT::INFORMATION-FUNCTION-OBJECT))
+(CONCEPT ONT::COMPOSITION
+         (COMMENT "composition, e.g., result of event-of-creation")
+         (INHERIT ONT::INFORMATION-FUNCTION-OBJECT))
 
 (CONCEPT ONT::COMPRISE
          (INHERIT ONT::IN-RELATION)
@@ -2712,6 +2758,7 @@
 (CONCEPT ONT::CONJUNCT (INHERIT ONT::PREDICATE))
 
 (CONCEPT ONT::CONNECTED
+         (COMMENT "two objects are touching in some way")
          (INHERIT ONT::POSITION)
          (OVERLAP WN::|connect%2:42:02::|
                   WN::|link%2:42:01::|
@@ -2831,6 +2878,8 @@
                     (ONT::FIGURE (CONCEPT SITUATION))))
 
 (CONCEPT ONT::CONTROL-MANAGE
+         (COMMENT
+          "an agent controls another object, typically by some manipulation (physical, adding a substance,...)")
          (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|control%2:41:00::|
                   WN::|command%2:41:00::|
@@ -2846,11 +2895,16 @@
 
 (CONCEPT ONT::CONVENTIONAL-POSITION-RELN (INHERIT ONT::POSITION-RELN))
 
-(CONCEPT ONT::CONVENTIONAL-SPEECH-ACT (INHERIT ONT::ILLOCUTION))
+(CONCEPT ONT::CONVENTIONAL-SPEECH-ACT
+         (COMMENT
+          "speech act that is conventional in nature and generally determined by an explicit performative verb (cf. Searle)")
+         (INHERIT ONT::ILLOCUTION))
 
 (CONCEPT ONT::CONVENTIONALITY-VAL (INHERIT ONT::PROPERTY-VAL))
 
 (CONCEPT ONT::CONVERSING
+         (COMMENT
+          "extended interaction using communication acts, symmetric  AGENT1")
          (INHERIT ONT::COMMUNICATION)
          (OVERLAP WN::|talk_about%2:32:01::|
                   WN::|talk_of%2:32:00::|
@@ -3175,7 +3229,10 @@
          (INHERIT ONT::PHYSICAL-SYMPTOM-VAL)
          (OVERLAP WN::|dazed%5:00:00::| WN::|lethargic%3:00:00::|))
 
-(CONCEPT ONT::DEACTIVATE (INHERIT ONT::STOP))
+(CONCEPT ONT::DEACTIVATE
+         (COMMENT
+          "Stoping the running of some ongoing process or object that causes a process")
+         (INHERIT ONT::STOP))
 
 (CONCEPT ONT::DECIDE
          (INHERIT ONT::ACQUIRE-BELIEF)
@@ -3540,7 +3597,10 @@
 
 (CONCEPT ONT::DIRECT-REPRESENTATION (INHERIT ONT::INFO-HOLDER))
 
-(CONCEPT ONT::DIRECTED-COMMUNICATION (INHERIT ONT::COMMUNICATION))
+(CONCEPT ONT::DIRECTED-COMMUNICATION
+         (COMMENT
+          "typically asymmetric extended interaction controlled by a single agent")
+         (INHERIT ONT::COMMUNICATION))
 
 (CONCEPT ONT::DIRECTION
          (INHERIT ONT::POSITION-RELN)
@@ -3558,7 +3618,10 @@
 
 (CONCEPT ONT::DIRECTIONAL-VERT (INHERIT ONT::POS-DIRECTIONAL-RELN))
 
-(CONCEPT ONT::DIRECTIVE (INHERIT ONT::ILLOCUTION))
+(CONCEPT ONT::DIRECTIVE
+         (COMMENT
+          "speech act that ia aimed at influences the hearer's future actions (cf. Searle)")
+         (INHERIT ONT::ILLOCUTION))
 
 (CONCEPT ONT::DISABLE
          (INHERIT ONT::INHIBIT-EFFECT)
@@ -3603,6 +3666,7 @@
          (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -)))
 
 (CONCEPT ONT::DISCUSS
+         (COMMENT "extended communication on a specific topic (FORMAL)")
          (INHERIT ONT::CONVERSING)
          (OVERLAP WN::|discuss%2:32:00::|))
 
@@ -3702,18 +3766,23 @@
          (OVERLAP WN::|document%1:06:00::| WN::|document%1:21:00::|))
 
 (CONCEPT ONT::DOMAIN
+         (COMMENT
+          "Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)")
          (INHERIT ONT::ABSTRACT-OBJECT)
          (SEM-FRAME (ONT::EXTENT (CONCEPT T) OPTIONAL)
                     (ONT::GROUND (CONCEPT T) OPTIONAL)
                     (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::DOMAIN-PROPERTY
+         (COMMENT
+          "these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)")
          (INHERIT ONT::ABSTRACT-OBJECT ABSTR-OBJ)
          (SEM-FRAME (ONT::SCALE (CONCEPT T))
                     (ONT::GROUND (CONCEPT T))
                     (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::DONATE-GIVE
+         (COMMENT "to give without expectation of any payback or return")
          (INHERIT ONT::GIVING)
          (OVERLAP WN::|donate%2:40:00::|
                   WN::|gift%2:40:00::|
@@ -4147,6 +4216,7 @@
          (SEM-FRAME (ONT::GROUND (CONCEPT SITUATION))))
 
 (CONCEPT ONT::EVENT-OF-ACTION
+         (COMMENT "events that involve :agent (whether intentional or not)")
          (INHERIT ONT::EVENT-OF-CHANGE)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE FORCE))
          (SEM-FRAME
@@ -4154,16 +4224,20 @@
            (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ)))))
 
 (CONCEPT ONT::EVENT-OF-AWARENESS
+         (COMMENT "Events involving changing or mental state or awareness")
          (INHERIT ONT::EVENT-OF-CHANGE SITUATION)
          (SEM-FRAME (ONT::FORMAL (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))))
 
 (CONCEPT ONT::EVENT-OF-CAUSATION
+         (COMMENT "events involving an AGENT acting on an AFFECTED")
          (INHERIT ONT::EVENT-OF-ACTION SITUATION)
          (SEM-FRAME
           (ONT::AFFECTED
            (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::EVENT-OF-CHANGE
+         (COMMENT
+          "Events that involve change or force: should ahve an AGENT or AFFECTED role")
          (INHERIT ONT::SITUATION-ROOT)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
          (SEM-FRAME (ONT::BENEFICIARY (CONCEPT PHYS-OBJ) OPTIONAL)
@@ -4184,6 +4258,8 @@
                      OPTIONAL)))
 
 (CONCEPT ONT::EVENT-OF-CREATION
+         (COMMENT
+          "Events that involve creating some new object (typically the AFFECTED-RESULT)")
          (INHERIT ONT::EVENT-OF-ACTION SITUATION)
          (SEM-FRAME
           (ONT::AFFECTED-RESULT
@@ -4194,11 +4270,14 @@
            OPTIONAL)))
 
 (CONCEPT ONT::EVENT-OF-EXPERIENCE
+         (COMMENT
+          "A stative event involving a sentient being in a mental state")
          (INHERIT ONT::EVENT-OF-STATE)
          (SEM-FRAME
           (ONT::EXPERIENCER (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
 
 (CONCEPT ONT::EVENT-OF-STATE
+         (COMMENT "Events describing a state of affairs holding")
          (INHERIT ONT::SITUATION-ROOT)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT STATIC))
          (SEM-FRAME (ONT::NOROLE (CONCEPT T) OPTIONAL)
@@ -4206,6 +4285,8 @@
                     (ONT::NEUTRAL (CONCEPT T))))
 
 (CONCEPT ONT::EVENT-OF-UNDERGOING-ACTION
+         (COMMENT
+          "A small class of events that take an affected but do not allow an AGENT")
          (INHERIT ONT::EVENT-OF-CHANGE SITUATION)
          (SEM-FRAME
           (ONT::AFFECTED
@@ -4221,6 +4302,8 @@
                     (ONT::FIGURE
                      (SEM-FEATS (INHERIT SITUATION)
                                 (ASPECT (OR DYNAMIC STAGE-LEVEL))))))
+
+(CONCEPT ONT::EVENT-TIME-REL-NOW (INHERIT ONT::EVENT-TIME-REL))
 
 (CONCEPT ONT::EVENT-TYPE
          (INHERIT ONT::SITUATION-ROOT)
@@ -4373,7 +4456,10 @@
                   WN::|excited%3:00:00:wild:02|
                   WN::|enthusiastic%3:00:00::|))
 
-(CONCEPT ONT::EXCLAMATION (INHERIT ONT::COMMUNICATION))
+(CONCEPT ONT::EXCLAMATION
+         (COMMENT
+          "communicative act that expresses an emotional response with no propositional content")
+         (INHERIT ONT::COMMUNICATION))
 
 (CONCEPT ONT::EXCLUDE
          (INHERIT ONT::ADJUST)
@@ -4445,6 +4531,7 @@
                   WN::|way_out%1:06:00::|))
 
 (CONCEPT ONT::EXPECTATION
+         (COMMENT "EXPERIENCER expects some proposition to hold")
          (INHERIT ONT::ATTITUDE-OF-BELIEF)
          (OVERLAP WN::|expect%2:31:00::| WN::|anticipate%2:31:00::|)
          (SEM-FEATS (INHERIT SITUATION)
@@ -4492,6 +4579,7 @@
          (SEM-FRAME (ONT::AFFECTED (CONCEPT T))))
 
 (CONCEPT ONT::EXPLAIN
+         (COMMENT "a representative speech act that explains some situation")
          (INHERIT ONT::REPRESENTATIVE)
          (OVERLAP WN::|explain%2:32:00::| WN::|explicate%2:32:00::|))
 
@@ -4509,6 +4597,8 @@
                   WN::|burst%2:38:04::|))
 
 (CONCEPT ONT::EXTENDED-SAY
+         (COMMENT
+          "an extended series of communicative acts by an agent, following some script or structure")
          (INHERIT ONT::SAY)
          (OVERLAP WN::|recount%2:32:00::|
                   WN::|dictate%2:31:00::|
@@ -4998,6 +5088,7 @@
 (CONCEPT ONT::FUNGUS (INHERIT ONT::ORGANISM) (OVERLAP WN::|fungus%1:20:00::|))
 
 (CONCEPT ONT::FURNISHINGS
+         (COMMENT "e.g.,  chair, desk, table")
          (INHERIT ONT::MANUFACTURED-OBJECT)
          (OVERLAP WN::|furniture%1:06:00::|
                   WN::|piece_of_furniture%1:06:00::|
@@ -5007,6 +5098,7 @@
                     (FORM SOLID-OBJECT)))
 
 (CONCEPT ONT::FURNISHINGS-COMPONENT
+         (COMMENT "parts typically of furnishings: e.g., drawer")
          (INHERIT ONT::FURNISHINGS)
          (OVERLAP WN::|drawer%1:06:00::|))
 
@@ -5111,6 +5203,8 @@
                   WN::|nitty-gritty%1:09:00::|))
 
 (CONCEPT ONT::GIVING
+         (COMMENT
+          "To relinquish control of AFFECTED AFFECTED-RESULT, typically voluntarily and possibly in exchange for something")
          (INHERIT ONT::RELINQUISH)
          (OVERLAP WN::|give%2:40:00::|
                   WN::|offer%1:10:01::|
@@ -5247,7 +5341,10 @@
                   WN::|grouping%1:03:00::|)
          (SEM-FRAME (ONT::FIGURE (CONCEPT T) OPTIONAL)))
 
-(CONCEPT ONT::GROUPING (INHERIT ONT::VERSION))
+(CONCEPT ONT::GROUPING
+         (COMMENT
+          "a  classification, category, variety of things. Not a set of objects!")
+         (INHERIT ONT::VERSION))
 
 (CONCEPT ONT::GROW
          (INHERIT ONT::CONTINUOUS-CHANGE)
@@ -5653,6 +5750,8 @@
 (CONCEPT ONT::IDENTITY-VAL (INHERIT ONT::SIMILARITY-VAL))
 
 (CONCEPT ONT::ILLOCUTION
+         (COMMENT
+          "activities describe the act performed in saying something (cf. Austin)")
          (INHERIT ONT::COMMUNICATION)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE)))
 
@@ -5711,6 +5810,7 @@
          (OVERLAP WN::|inaccessible%3:00:00::| WN::|inaccessible%3:00:00::|))
 
 (CONCEPT ONT::INACTIVE
+         (COMMENT "not operating as intended wrt some process")
          (INHERIT ONT::ACTIVITY-VAL)
          (OVERLAP WN::|passive%3:00:01::| WN::|idle%3:00:00::|))
 
@@ -5857,6 +5957,8 @@
          (OVERLAP WN::|inhaler%1:06:00::|))
 
 (CONCEPT ONT::INHIBIT-EFFECT
+         (COMMENT
+          "an AGENT prevents some activity from occuring or proposition from becoming true")
          (INHERIT ONT::ACTING)
          (SEM-FEATS (INHERIT SITUATION)
                     (TRAJECTORY -)
@@ -5948,6 +6050,8 @@
 (CONCEPT ONT::INTENSITY-VAL (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
 
 (CONCEPT ONT::INTENTION
+         (COMMENT
+          "EXPERIENCERS has intention to achieve some situation (e.g., aim, intend, mean)")
          (INHERIT ONT::AWARENESS)
          (OVERLAP WN::|specify%2:31:00::|
                   WN::|designate%2:31:00::|
@@ -6010,6 +6114,7 @@
 (CONCEPT ONT::INTERNET-ORGANIZATION (INHERIT ONT::ORGANIZATION))
 
 (CONCEPT ONT::INTERSECT
+         (COMMENT "two objects share a common subpart")
          (INHERIT ONT::POSITION)
          (OVERLAP WN::|cross%2:38:03::|
                   WN::|intersect%2:38:00::|
@@ -6037,6 +6142,7 @@
                       (TIME-FUNCTION TIME-FRAME)))))
 
 (CONCEPT ONT::INTERVIEW
+         (COMMENT "interviewing people")
          (INHERIT ONT::DIRECTED-COMMUNICATION)
          (OVERLAP WN::|question%2:32:09::|
                   WN::|interview%2:32:00::|
@@ -6159,6 +6265,7 @@
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -)))
 
 (CONCEPT ONT::KILL
+         (COMMENT "killing a living being")
          (INHERIT ONT::DESTROY)
          (OVERLAP WN::|kill%2:35:00::|
                   WN::|kill%2:35:01::|
@@ -6186,6 +6293,7 @@
                      (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
 
 (CONCEPT ONT::KNOW
+         (COMMENT "EXPERIENCER is certain that a situation holds")
          (INHERIT ONT::ATTITUDE-OF-BELIEF)
          (OVERLAP WN::|know%2:31:02::|
                   WN::|know%2:31:03::|
@@ -6382,6 +6490,8 @@
 (CONCEPT ONT::LETTER-SYMBOL (INHERIT ONT::LINGUISTIC-OBJECT))
 
 (CONCEPT ONT::LEVEL
+         (COMMENT
+          "words that act as predicates that return the value on a scale/domain: What is the X on this scale?  Note: We exclude words that are identical to the names of the scales they pertain to (e.g., What is the height on the height scale?)")
          (INHERIT ONT::ABSTRACT-OBJECT)
          (OVERLAP WN::|level%1:26:00::|)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE LINEAR-SCALE))
@@ -6522,19 +6632,30 @@
 
 (CONCEPT ONT::LO (INHERIT ONT::MIN-VAL))
 
-(CONCEPT ONT::LOADED-CLAIM (INHERIT ONT::REPRESENTATIVE))
+(CONCEPT ONT::LOADED-CLAIM
+         (COMMENT
+          "speech act that expresses the speakers belief with a particular purpose (e.g., accuse, complain)")
+         (INHERIT ONT::REPRESENTATIVE))
 
-(CONCEPT ONT::LOC-AS-AREA (INHERIT ONT::LOCATION-BY-DESCRIPTION))
+(CONCEPT ONT::LOC-AS-AREA
+         (COMMENT " places that occupy space")
+         (INHERIT ONT::LOCATION-BY-DESCRIPTION))
 
 (CONCEPT ONT::LOC-AS-DEFINED-BY-RELN-TO-GROUND (INHERIT ONT::LOCATION))
 
 (CONCEPT ONT::LOC-AS-POINT (INHERIT ONT::LOCATION))
 
-(CONCEPT ONT::LOC-DEF-BY-GOAL (INHERIT ONT::LOC-AS-AREA))
+(CONCEPT ONT::LOC-DEF-BY-GOAL
+         (COMMENT " place related to a trajectory by a goal: destination")
+         (INHERIT ONT::LOC-AS-AREA))
 
-(CONCEPT ONT::LOC-DEF-BY-INTERSECTION (INHERIT ONT::LOC-AS-AREA))
+(CONCEPT ONT::LOC-DEF-BY-INTERSECTION
+         (COMMENT " place defined by the intersection of two lines/areas")
+         (INHERIT ONT::LOC-AS-AREA))
 
 (CONCEPT ONT::LOC-DEFINED-BY-CONTRAST
+         (COMMENT
+          "Objects that are subparts of larger surface but delineated by a contrasting property: e.g., spot, patch")
          (INHERIT ONT::LOC-AS-AREA)
          (OVERLAP WN::|spot%1:07:00::|
                   WN::|spot%1:07:01::|
@@ -6547,6 +6668,8 @@
          (INHERIT ONT::LOC-AS-DEFINED-BY-RELN-TO-GROUND))
 
 (CONCEPT ONT::LOCATED-EVENT
+         (COMMENT
+          "events that are located in time/space - e.g., riot, war, ...")
          (INHERIT ONT::EVENT-TYPE)
          (SEM-FEATS (INHERIT SITUATION) (LOCATIVE LOCATED) (TRAJECTORY -))
          (SEM-FRAME (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
@@ -6603,6 +6726,8 @@
            (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))))
 
 (CONCEPT ONT::LOCUTION
+         (COMMENT
+          "activities that solely address the mechanics of communicating: e.g., pronounce")
          (INHERIT ONT::COMMUNICATION)
          (OVERLAP WN::|spell%2:32:00::|
                   WN::|spell_out%2:32:01::|
@@ -6769,6 +6894,7 @@
                     (ONT::FIGURE (CONCEPT SITUATION))))
 
 (CONCEPT ONT::MANNER-SAY
+         (COMMENT "saying in a particular manner of speaking")
          (INHERIT ONT::SAY)
          (OVERLAP WN::|whisper%2:32:00::|
                   WN::|blab%2:32:02::|
@@ -6990,6 +7116,7 @@
           (ONT::FIGURE (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN ARTIFACT)))))
 
 (CONCEPT ONT::MENTAL-CONSTRUCTION
+         (COMMENT "constructions of the mind: plans, goals, beliefs, ...")
          (INHERIT ONT::ABSTRACT-OBJECT-NONTEMPORAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (INFORMATION MENTAL-CONSTRUCT)))
 
@@ -7146,6 +7273,8 @@
                     (CONTAINER -)))
 
 (CONCEPT ONT::MOTION
+         (COMMENT
+          "events of motion through some space (physical or abstract). Even though many motion verbs express simply undergoing motion, all these verbs allow to possibiliity of an AGENT")
          (INHERIT ONT::EVENT-OF-CAUSATION)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC) (CAUSE (OR FORCE -)))
          (SEM-FRAME
@@ -7351,7 +7480,9 @@
          (INHERIT ONT::MEDICAL-SYMPTOM)
          (OVERLAP WN::|nausea%1:26:00::|))
 
-(CONCEPT ONT::NAVIGATIONAL-RELN (INHERIT ONT::POS-DIRECTIONAL-RELN))
+(CONCEPT ONT::NAVIGATIONAL-RELN
+         (COMMENT "Figure is related by a cardinal directional reln to ground")
+         (INHERIT ONT::POS-DIRECTIONAL-RELN))
 
 (CONCEPT ONT::NEAR
          (INHERIT ONT::DISTANCE-VAL)
@@ -7421,6 +7552,8 @@
 (CONCEPT ONT::NEG-SOFT-EMOTIONAL-VAL (INHERIT ONT::NEG-EMOTIONAL-VAL))
 
 (CONCEPT ONT::NEGOTIATE
+         (COMMENT
+          "extended communication with goal of reaching some agreement (RESULT)")
          (INHERIT ONT::DISCUSS)
          (OVERLAP WN::|negociate%2:32:00::|
                   WN::|negotiate%2:32:00::|
@@ -7433,6 +7566,8 @@
          (OVERLAP WN::|ataxia%1:26:00::| WN::|nervous_disorder%1:26:00::|))
 
 (CONCEPT ONT::NEUTRAL-EMOTIONAL-VAL (INHERIT ONT::EMOTIONAL-VAL))
+
+(CONCEPT ONT::NEVER (INHERIT ONT::FREQUENCY))
 
 (CONCEPT ONT::NOISY
          (INHERIT ONT::LOUDNESS-VAL)
@@ -7468,6 +7603,7 @@
                                 (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL))))))
 
 (CONCEPT ONT::NONVERBAL-SAY
+         (COMMENT "saying using a medium other that speech")
          (INHERIT ONT::SAY)
          (SEM-FRAME (ONT::FORMAL (CONCEPT T))))
 
@@ -7487,6 +7623,7 @@
 (CONCEPT ONT::NOT-FAMILIAR (INHERIT ONT::SALIENCE))
 
 (CONCEPT ONT::NOT-IN-WORKING-ORDER-VAL
+         (COMMENT "broken/not-operational")
          (INHERIT ONT::INACTIVE)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -)))
 
@@ -7537,6 +7674,8 @@
 (CONCEPT ONT::NUMBER-SCALE (INHERIT ONT::SCALE))
 
 (CONCEPT ONT::NUMBER-UNIT
+         (COMMENT
+          "words that name measurement units in scales: foot, mile, ...")
          (INHERIT ONT::UNIT)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (INFORMATION DATA))
          (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
@@ -7607,6 +7746,8 @@
           (ONT::FIGURE (SEM-FEATS (INHERIT PHYS-OBJ) (FORM OBJECT)) OPTIONAL)))
 
 (CONCEPT ONT::OBJECTIVE-INFLUENCE
+         (COMMENT
+          "an AGENT influences the AFFECTED role in some way (typically unspecified by the verb)")
          (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|force%1:07:01::|
                   WN::|appeal%2:37:00::|
@@ -7637,6 +7778,7 @@
                   WN::|occasional%5:00:00:infrequent:00|))
 
 (CONCEPT ONT::OCCURRING
+         (COMMENT "event occurrence - e.g., an explosion happened")
          (INHERIT ONT::SITUATION-ROOT)
          (OVERLAP WN::|happen%2:30:00::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
@@ -7656,6 +7798,8 @@
          (OVERLAP WN::|document%1:10:00::|
                   WN::|written_document%1:10:00::|
                   WN::|papers%1:10:00::|))
+
+(CONCEPT ONT::OFTEN (INHERIT ONT::FREQUENCY))
 
 (CONCEPT ONT::OMIT
          (INHERIT ONT::ADJUST)
@@ -7878,6 +8022,8 @@
          (SEM-FRAME (ONT::GROUND (CONCEPT T)) (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::PART
+         (COMMENT
+          "Part is actually a conceptualization of things that fill the part-of role")
          (INHERIT ONT::REFERENTIAL-SEM)
          (OVERLAP WN::|part%1:24:00::|
                   WN::|portion%1:24:00::|
@@ -7904,6 +8050,7 @@
                      (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
 
 (CONCEPT ONT::PARTS-REMOVED
+         (COMMENT "the part removed is the good part")
          (INHERIT ONT::CAUSE-OUT-OF)
          (OVERLAP WN::|precipitate%2:30:00::|)
          (SEM-FRAME (ONT::AFFECTED1 (CONCEPT T) OPTIONAL)
@@ -7977,6 +8124,8 @@
          (SEM-FRAME (ONT::GROUND (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::PERCEPTION
+         (COMMENT
+          "an EXPERIENCER is perceiving something (remember its stative)")
          (INHERIT ONT::EVENT-OF-EXPERIENCE)
          (OVERLAP WN::|feel%2:35:00::|)
          (SEM-FRAME (ONT::FORMAL (CONCEPT T) OPTIONAL)
@@ -7989,7 +8138,10 @@
 
 (CONCEPT ONT::PERFORMANCE-PLAY (INHERIT ONT::GATHERING-EVENT))
 
-(CONCEPT ONT::PERLOCUTION (INHERIT ONT::COMMUNICATION))
+(CONCEPT ONT::PERLOCUTION
+         (COMMENT
+          "activities describe the act performed by saying something but beyond the speaker's control (cf. Austin)")
+         (INHERIT ONT::COMMUNICATION))
 
 (CONCEPT ONT::PERSISTENCE-VAL
          (INHERIT ONT::PROCESS-VAL)
@@ -8059,6 +8211,7 @@
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::PHYS-OBJECT
+         (COMMENT "All physical objects: things that have substance")
          (INHERIT ONT::REFERENTIAL-SEM)
          (OVERLAP WN::|object%1:03:00::| WN::|physical_object%1:03:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL -)))
@@ -8364,6 +8517,8 @@
 (CONCEPT ONT::POS-WRT-SPEAKER-RELN (INHERIT ONT::POSITION-AS-POINT-RELN))
 
 (CONCEPT ONT::POSITION
+         (COMMENT
+          "These are stative predicates indicating the position of an object with respect to another. They also typically allow a causal variant where an agent causes this position (see ONT::CAUSE-POSITION)")
          (INHERIT ONT::EVENT-OF-STATE)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
          (SEM-FRAME
@@ -8378,6 +8533,8 @@
 (CONCEPT ONT::POSITION-AS-POINT-RELN (INHERIT ONT::POSITION-RELN))
 
 (CONCEPT ONT::POSITION-RELN
+         (COMMENT
+          "Spatial relations that locate one object (the figure) in terms of another object (the ground)")
          (INHERIT ONT::ABSTRACT-OBJECT)
          (SEM-FRAME
           (ONT::GROUND
@@ -8503,6 +8660,8 @@
 (CONCEPT ONT::PRECISION-VAL (INHERIT ONT::PROPERTY-VAL))
 
 (CONCEPT ONT::PREDICATE
+         (COMMENT
+          "predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as")
          (INHERIT ONT::ABSTRACT-OBJECT)
          (SEM-FEATS (INHERIT ABSTR-OBJ)
                     (INTENTIONAL -)
@@ -8649,6 +8808,8 @@
          (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
 
 (CONCEPT ONT::PROFESSIONAL
+         (COMMENT
+          "a person defined by a role that they play. e.g., doctor, leader, ...")
          (INHERIT ONT::PERSON)
          (OVERLAP WN::|professional%1:18:00::|
                   WN::|professional_person%1:18:00::|)
@@ -8667,6 +8828,7 @@
 (CONCEPT ONT::PROFESSIONAL-ORGANIZATION (INHERIT ONT::ORGANIZATION))
 
 (CONCEPT ONT::PROGRESS
+         (COMMENT "A situation continues to develop")
          (INHERIT ONT::SITUATION-CHANGE)
          (OVERLAP WN::|go%2:30:02::|
                   WN::|progress%2:30:00::|
@@ -9089,6 +9251,8 @@
 (CONCEPT ONT::REFERENTIAL-PERSON (INHERIT ONT::PERSON))
 
 (CONCEPT ONT::REFERENTIAL-SEM
+         (COMMENT
+          "The root type for all things that can be referred to: abstract meaning for THIS and IT")
          (INHERIT ONT::ANY-SEM)
          (OVERLAP WN::|entity%1:03:00::|)
          (OR (CONCEPT PHYS-OBJ)
@@ -9242,6 +9406,8 @@
 (CONCEPT ONT::RELIGIOUS-REGION (INHERIT ONT::GEOGRAPHIC-REGION))
 
 (CONCEPT ONT::RELINQUISH
+         (COMMENT
+          "An AGENT does something that results in loss of possession or control of the AFFECTED")
          (INHERIT ONT::EVENT-OF-CAUSATION SITUATION)
          (SEM-FRAME (ONT::RESULT (CONCEPT T) OPTIONAL)
                     (ONT::AFFECTED
@@ -9253,6 +9419,8 @@
                                 (INTENTIONAL +)))))
 
 (CONCEPT ONT::RELY
+         (COMMENT
+          "EXPERIENCER relies on a certain proposition or source of information - generally allows 'on' PP")
          (INHERIT ONT::BELIEVE-SOURCE)
          (OVERLAP WN::|rely%2:31:11::|
                   WN::|depend_on%2:42:00::|
@@ -9309,6 +9477,7 @@
                     (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::REMOVE-PARTS
+         (COMMENT "the part remaining is the good part")
          (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|purify%2:30:00::| WN::|filter%2:35:00::|)
          (SEM-FRAME (ONT::AFFECTED1 (CONCEPT T) OPTIONAL)
@@ -9337,6 +9506,7 @@
                       (INTENTIONAL +)))))
 
 (CONCEPT ONT::REPEAT
+         (COMMENT "say again")
          (INHERIT ONT::SAY)
          (OVERLAP WN::|repeat%2:32:00::|
                   WN::|reiterate%2:32:00::|
@@ -9389,7 +9559,10 @@
 
 (CONCEPT ONT::REPRESENTATION (INHERIT ONT::KIND))
 
-(CONCEPT ONT::REPRESENTATIVE (INHERIT ONT::ILLOCUTION))
+(CONCEPT ONT::REPRESENTATIVE
+         (COMMENT
+          "speech act that expresses the speakers belief about what is true (cf. Searle)")
+         (INHERIT ONT::ILLOCUTION))
 
 (CONCEPT ONT::REPRIMAND
          (INHERIT ONT::CRITICIZE)
@@ -9402,6 +9575,7 @@
          (OVERLAP WN::|reptile%1:05:00::|))
 
 (CONCEPT ONT::REQUEST
+         (COMMENT "the generic directive act")
          (INHERIT ONT::DIRECTIVE)
          (OVERLAP WN::|quest%2:32:01::|
                   WN::|call_for%2:32:04::|
@@ -9477,6 +9651,8 @@
 (CONCEPT ONT::RESOURCE (INHERIT ONT::REQUIREMENTS))
 
 (CONCEPT ONT::RESPONSE
+         (COMMENT
+          "Communicative act that is in direct response to a previous communicative act")
          (INHERIT ONT::COMMUNICATION)
          (OVERLAP WN::|react%2:31:00::| WN::|respond%2:31:00::|))
 
@@ -9747,6 +9923,8 @@
                     (ONT::EXTENT (CONCEPT ABSTR-OBJ))))
 
 (CONCEPT ONT::SAY
+         (COMMENT
+          "A single act of verbal communication, or sequence of acts by the same agent")
          (INHERIT ONT::COMMUNICATION)
          (OVERLAP WN::|note%2:32:00::|
                   WN::|observe%2:32:00::|
@@ -9831,7 +10009,10 @@
          (INHERIT ONT::TEMPORAL-MODIFIER)
          (SEM-FRAME (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
 
-(CONCEPT ONT::SCHMOOZE-TALK (INHERIT ONT::TALK) (OVERLAP WN::|chat%2:32:00::|))
+(CONCEPT ONT::SCHMOOZE-TALK
+         (COMMENT "informal extended conversing ")
+         (INHERIT ONT::TALK)
+         (OVERLAP WN::|chat%2:32:00::|))
 
 (CONCEPT ONT::SCHOLAR
          (INHERIT ONT::PROFESSIONAL)
@@ -9854,7 +10035,10 @@
 
 (CONCEPT ONT::SCOUT (INHERIT ONT::PERSON) (OVERLAP WN::|scout%1:18:00::|))
 
-(CONCEPT ONT::SCRIPTED-SAY (INHERIT ONT::SAY) (OVERLAP WN::|quote%2:32:00::|))
+(CONCEPT ONT::SCRIPTED-SAY
+         (COMMENT "an communicative acts controlled by an existing source")
+         (INHERIT ONT::SAY)
+         (OVERLAP WN::|quote%2:32:00::|))
 
 (CONCEPT ONT::SCROLL (INHERIT ONT::MOVE))
 
@@ -9920,6 +10104,8 @@
 (CONCEPT ONT::SEIZURE
          (INHERIT ONT::MEDICAL-SYMPTOM)
          (OVERLAP WN::|seizure%1:26:00::|))
+
+(CONCEPT ONT::SELDOM (INHERIT ONT::FREQUENCY))
 
 (CONCEPT ONT::SELECT
          (INHERIT ONT::CHOOSING)
@@ -10101,6 +10287,7 @@
          (SEM-FEATS (INHERIT ABSTR-OBJ) (MEASURE-FUNCTION VALUE)))
 
 (CONCEPT ONT::SHARE
+         (COMMENT "two or more agents sharing something")
          (INHERIT ONT::AGENT-INTERACTION)
          (OVERLAP WN::|share%2:40:02::|
                   WN::|share%2:40:01::|
@@ -10259,6 +10446,7 @@
          (SEM-FRAME (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::SITUATION-ROOT
+         (COMMENT "root for all events, whether verbal or nominal")
          (INHERIT ONT::REFERENTIAL-SEM)
          (SEM-FEATS (INHERIT SITUATION)
                     (CONTAINER -)
@@ -10407,6 +10595,8 @@
                   WN::|solve%2:31:00::|
                   WN::|resolve%2:31:03::|
                   WN::|solve%2:31:01::|))
+
+(CONCEPT ONT::SOMETIMES (INHERIT ONT::FREQUENCY))
 
 (CONCEPT ONT::SORRY
          (INHERIT ONT::NEG-SOFT-EMOTIONAL-VAL)
@@ -10711,6 +10901,7 @@
 (CONCEPT ONT::STEEP (INHERIT ONT::COOKING))
 
 (CONCEPT ONT::STEP
+         (COMMENT "part of a staircase")
          (INHERIT ONT::STRUCTURAL-COMPONENT)
          (OVERLAP WN::|step%1:06:00::|)
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ) OPTIONAL)))
@@ -10839,6 +11030,7 @@
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ) OPTIONAL)))
 
 (CONCEPT ONT::STRUCTURE-EXTERNAL-COMPONENT
+         (COMMENT "parts of exterior of buildings: e.g., roof, window")
          (INHERIT ONT::STRUCTURAL-COMPONENT)
          (OVERLAP WN::|roof%1:06:00::|)
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ) OPTIONAL)))
@@ -10897,7 +11089,9 @@
 
 (CONCEPT ONT::SUBSTANDARD-VAL (INHERIT ONT::PROPERTY-VAL))
 
-(CONCEPT ONT::SUBSTANTIAL-PROPERTY-VAL (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
+(CONCEPT ONT::SUBSTANTIAL-PROPERTY-VAL
+         (COMMENT "properties having to do with physical substance")
+         (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
 
 (CONCEPT ONT::SUCCEED
          (INHERIT ONT::ACTING)
@@ -10988,6 +11182,7 @@
                     (FORM SOLID-OBJECT)))
 
 (CONCEPT ONT::SUPPOSE
+         (COMMENT "EXPERIENCER posits a possible proposition")
          (INHERIT ONT::ATTITUDE-OF-BELIEF)
          (OVERLAP WN::|say%2:32:03::| WN::|suppose%2:32:00::|)
          (SEM-FEATS (INHERIT SITUATION)
@@ -11005,6 +11200,7 @@
 (CONCEPT ONT::SURPRISED (INHERIT ONT::EMOTIONAL-VAL))
 
 (CONCEPT ONT::SURRENDER
+         (COMMENT " an AGENT relinquishes AFFECTED unwillingly")
          (INHERIT ONT::RELINQUISH)
          (OVERLAP WN::|concede%2:40:00::|
                   WN::|yield%2:40:01::|
@@ -11070,6 +11266,7 @@
                     (FORM OBJECT)))
 
 (CONCEPT ONT::SYSTEM
+         (COMMENT "An interconnected group of objects, abstract or physical")
          (INHERIT ONT::GROUP-OBJECT)
          (OVERLAP WN::|system%1:06:00::| WN::|system%1:14:00::|))
 
@@ -11123,6 +11320,8 @@
                                 (ASPECT (OR DYNAMIC STAGE-LEVEL))))))
 
 (CONCEPT ONT::TALK
+         (COMMENT
+          "extended communicative interaction, FORMAL is the topic of discussion")
          (INHERIT ONT::CONVERSING)
          (OVERLAP WN::|posit%2:32:02::|
                   WN::|put_forward%2:32:00::|
@@ -11171,6 +11370,7 @@
          (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::TELL
+         (COMMENT "fairly generic representative act")
          (INHERIT ONT::REPRESENTATIVE)
          (OVERLAP WN::|state%2:32:00::|
                   WN::|tell%2:32:00::|
@@ -11414,6 +11614,8 @@
 (CONCEPT ONT::TO (INHERIT ONT::GOAL-RELN))
 
 (CONCEPT ONT::TO-LOC
+         (COMMENT
+          "the generic goal role: might be a physical object (as possessor) or a resulting state")
          (INHERIT ONT::GOAL-RELN)
          (SEM-FRAME (ONT::GROUND (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
                     (ONT::FIGURE
@@ -11558,6 +11760,7 @@
          (OVERLAP WN::|truck%1:06:00::| WN::|motortruck%1:06:00::|))
 
 (CONCEPT ONT::TRUST
+         (COMMENT "e.g., trust, believe - generally 'in' something")
          (INHERIT ONT::BELIEVE-SOURCE)
          (OVERLAP WN::|accept%2:31:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TIME-SPAN EXTENDED) (ASPECT STATIC))
@@ -11721,7 +11924,9 @@
 
 (CONCEPT ONT::UNIQUENESS-VAL (INHERIT ONT::NUMBER-RELATED-PROPERTY-VAL))
 
-(CONCEPT ONT::UNIT (INHERIT ONT::ABSTRACT-OBJECT ABSTR-OBJ))
+(CONCEPT ONT::UNIT
+         (COMMENT "names of units in various scales/domains")
+         (INHERIT ONT::ABSTRACT-OBJECT ABSTR-OBJ))
 
 (CONCEPT ONT::UNLOAD
          (INHERIT ONT::EMPTYING)
@@ -12190,7 +12395,9 @@
          (INHERIT ONT::PART-WHOLE-VAL)
          (OVERLAP WN::|whole%3:00:00::|))
 
-(CONCEPT ONT::WIDTH (INHERIT ONT::LINEAR-D))
+(CONCEPT ONT::WIDTH-SCALE
+         (INHERIT ONT::LINEAR-D)
+         (OVERLAP WN::|width%1:07:00::| WN::|diameter%1:07:00::|))
 
 (CONCEPT ONT::WILD-GAME (INHERIT ONT::MEAT))
 
