@@ -1,0 +1,717 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::believe">
+ <relation label="inherit">
+  ont::attitude-of-belief
+ </relation>
+ <relation label="overlap">
+  wn::|think%2:31:01::|
+  wn::|believe%2:31:04::|
+  wn::|consider%2:31:08::|
+  wn::|conceive%2:31:00::|
+  wn::|think%2:31:03::|
+  wn::|opine%2:31:02::|
+  wn::|suppose%2:31:00::|
+  wn::|imagine%2:31:01::|
+  wn::|reckon%2:31:02::|
+  wn::|guess%2:31:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">static</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">static</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::experiencer">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-state">
+ <comment>
+  &quot;Events describing a state of affairs holding&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">static</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::formal">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">mental</feat>
+ </sem-feats>
+ <concept name="ont::event-of-experience">
+ <comment>
+  &quot;A stative event involving a sentient being in a mental state&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-state
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::experiencer">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::awareness">
+ <comment>
+  &quot;a state in which an EXPERIENCER holds some attitude towards a proposition&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-experience
+ </relation>
+ <relation label="overlap">
+  wn::|think%2:31:00::|
+  wn::|cogitate%2:31:00::|
+  wn::|cerebrate%2:31:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">mental</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::formal">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">static</feat>
+ </sem-feats>
+ <concept name="ont::attitude-of-belief">
+ <comment>
+  &quot;a state that captures an EXPERIENCER to some degree of belief or disbelief&quot;
+ </comment>
+ <relation label="inherit">
+  ont::awareness
+ </relation>
+ </concept>
+ <concept name="ont::belief-ascription">
+ <comment>
+  &quot; a subclass of believe for verbs that take constructions such as 'I deem him as unsuitable'. They do not take that complements like ONT::BELIEVE verbs do&quot;
+ </comment>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <relation label="overlap">
+  wn::|view%2:31:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="believe" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="belief" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="I believe that going along the coast is faster">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <relation label="overlap">
+  vn::consider-29.9-2
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-formal-as-comp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="aspect">indiv-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="believe" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="belief" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="they believe her to have cancer">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-theme-objcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">indiv-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="believe" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="belief" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="I believe the hypothesis">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-neutral-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">indiv-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="bet" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="bet" />
+   </past>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="I bet that I know what's going on">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">stage-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="consider" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="considered" />
+   </past>
+   <ing>
+    <word first-word="considering" />
+   </ing>
+   <nom>
+    <word first-word="consideration" />
+   </nom>
+  </forms>
+ </morph>
+ <comment>
+  &quot;MEETING-UNDERSTANDING&quot;
+ </comment>
+ <example text="he considered the speaker a genius">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-neutral-adj-predicate-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="adjp" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="deem" />
+ </morph>
+ <example text="he deems me unsuitable">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <relation label="overlap">
+  vn::appoint-29.1-2
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-neutral-objcontrol-pred-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pred" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="feel" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="felt" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <relation label="overlap">
+  vn::consider-29.9-2
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="imagine" />
+ </morph>
+ <comment>
+  &quot;S7&quot;
+ </comment>
+ <example text="I imagine that this will work">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">stage-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="judge" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="judgement" />
+   </nom>
+  </forms>
+ </morph>
+ <comment>
+  &quot;MEETING-UNDERSTANDING&quot;
+ </comment>
+ <example text="he judged his opponent incompetent">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <relation label="overlap">
+  vn::declare-29.4-1-1-2
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-neutral-objcontrol-pred-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pred" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="reckon" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="reckoned" />
+   </past>
+   <ing>
+    <word first-word="reckoning" />
+   </ing>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <relation label="overlap">
+  vn::rely-70
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-theme-xp-templ" xp="'(w::pp w::on)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::on" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="think" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="thought" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <relation label="overlap">
+  vn::consider-29.9-2
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">stage-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="think" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="thought" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::believe
+  ont::experiencer-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">stage-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="think" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="thought" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text=" they thought her to have cancer">
+ </example>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-theme-objcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">stage-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="think" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="thought" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="what do you think">
+ </example>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-theme-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">stage-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="warrant" />
+ </morph>
+ <relation label="inherit">
+  ont::believe
+ </relation>
+ <relation label="overlap">
+  vn::declare-29.4-2
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+</dsl>

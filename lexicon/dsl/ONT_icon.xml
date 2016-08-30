@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::icon">
+ <relation label="inherit">
+  ont::graphic-symbol
+ </relation>
+ <relation label="overlap">
+  wn::|symbol%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+  strip
+ </or>
+ </feat>
+ <feat name="mobility">non-self-moving</feat>
+ <feat name="information">information-content</feat>
+ <feat name="container">+</feat>
+ <feat name="trajectory">+</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+  line
+ </or>
+ </feat>
+ <feat name="mobility">non-self-moving</feat>
+ <feat name="container">-</feat>
+ <feat name="information">data</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ </sem-feats>
+ <concept name="ont::phys-representation">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|representation%1:06:00::|
+  wn::|representation%1:04:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+   strip
+  </or>
+  </feat>
+  <feat name="mobility">non-self-moving</feat>
+  <feat name="information">information-content</feat>
+  <feat name="container">+</feat>
+  <feat name="trajectory">+</feat>
+  <feat name="object-function">representation</feat>
+  <feat name="intentional">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">object</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::symbolic-representation">
+ <relation label="inherit">
+  ont::phys-representation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+   line
+  </or>
+  </feat>
+  <feat name="mobility">non-self-moving</feat>
+  <feat name="container">-</feat>
+  <feat name="information">data</feat>
+  <feat name="object-function">representation</feat>
+  <feat name="intentional">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::graphic-symbol">
+ <relation label="inherit">
+  ont::symbolic-representation
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="arrow" />
+ </morph>
+ <example text="click on the arrow in the corner of the browser">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::icon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="button" />
+ </morph>
+ <example text="click on the button in the corner of the browser">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::icon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="checkbox" />
+ </morph>
+ <example text="select the All-day_event checkbox">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::icon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cursor" />
+ </morph>
+ <example text="move the cursor">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::icon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="icon" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::icon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="logo" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::icon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pointer" />
+ </morph>
+ <example text="The pointer becomes a crosshair">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::icon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="scroller" />
+ </morph>
+ <example text="drag the vertical scroller up or down">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::icon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="slider" />
+ </morph>
+ <example text="drag the slider to make the picture smaller or larger">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::icon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="symbol" />
+ </morph>
+ <relation label="inherit">
+  ont::icon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="tab" />
+ </morph>
+ <example text="click on the tab in the corner of the browser">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::icon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

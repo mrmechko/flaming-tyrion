@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::coffee">
+ <relation label="inherit">
+  ont::teas-cocktails-blends
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">substance</feat>
+ <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::material">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|material%1:27:00::|
+  wn::|stuff%1:27:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">substance</feat>
+  <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">solid</feat>
+ <feat name="object-function">comestible</feat>
+ </sem-feats>
+ <concept name="ont::substance">
+ <relation label="inherit">
+  ont::material
+ </relation>
+ <relation label="overlap">
+  wn::|substance%1:03:00::|
+  wn::|substance%1:03:01::|
+  wn::|substance%1:27:00::|
+  wn::|matter%1:03:00::|
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">natural</feat>
+ <feat name="form">liquid</feat>
+ </sem-feats>
+ <concept name="ont::food">
+ <relation label="inherit">
+  ont::substance
+ </relation>
+ <relation label="overlap">
+  wn::|solid_food%1:13:00::|
+  wn::|food%1:13:00::|
+  wn::|meal%1:13:01::|
+  wn::|meal%1:13:00::|
+  wn::|food%1:03:00::|
+  wn::|nutrient%1:03:00::|
+  wn::|nutriment%1:13:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">solid</feat>
+  <feat name="object-function">comestible</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::beverages">
+ <relation label="inherit">
+  ont::food
+ </relation>
+ <relation label="overlap">
+  wn::|beverage%1:13:00::|
+  wn::|drink%1:13:00::|
+  wn::|drinkable%1:13:00::|
+  wn::|potable%1:13:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">natural</feat>
+  <feat name="form">liquid</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::teas-cocktails-blends">
+ <relation label="inherit">
+  ont::beverages
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="coffee" />
+ </morph>
+ <relation label="inherit">
+  ont::coffee
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+</dsl>

@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::natural-liquid-substance">
+ <relation label="inherit">
+  ont::liquid-substance
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">natural</feat>
+  <feat name="form">liquid</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">substance</feat>
+ <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::material">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|material%1:27:00::|
+  wn::|stuff%1:27:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">substance</feat>
+  <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">liquid</feat>
+ </sem-feats>
+ <concept name="ont::substance">
+ <relation label="inherit">
+  ont::material
+ </relation>
+ <relation label="overlap">
+  wn::|substance%1:03:00::|
+  wn::|substance%1:03:01::|
+  wn::|substance%1:27:00::|
+  wn::|matter%1:03:00::|
+ </relation>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">natural</feat>
+ <feat name="form">liquid</feat>
+ </sem-feats>
+ <concept name="ont::liquid-substance">
+ <relation label="inherit">
+  ont::substance
+ </relation>
+ <relation label="overlap">
+  wn::|liquid%1:27:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">liquid</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::bodily-fluid">
+ <relation label="inherit">
+  ont::natural-liquid-substance
+ </relation>
+ <relation label="overlap">
+  wn::|liquid_body_substance%1:08:00::|
+  wn::|bodily_fluid%1:08:00::|
+  wn::|body_fluid%1:08:00::|
+  wn::|humor%1:08:00::|
+  wn::|humour%1:08:00::|
+  wn::|secretion%1:08:00::|
+  wn::|sweat%1:08:00::|
+  wn::|mucus%1:08:00::|
+  wn::|phlegm%1:08:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">living</feat>
+  <feat name="form">liquid</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::water">
+ <relation label="inherit">
+  ont::natural-liquid-substance
+ </relation>
+ <relation label="overlap">
+  wn::|water%1:27:00::|
+  wn::|h2o%1:27:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">non-living</feat>
+  <feat name="object-function">comestible</feat>
+ </sem-feats>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="dew" />
+ </morph>
+ <relation label="inherit">
+  ont::natural-liquid-substance
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="oil" />
+ </morph>
+ <example text="an oil well">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::natural-liquid-substance
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+</dsl>

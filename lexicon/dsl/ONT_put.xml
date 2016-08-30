@@ -1,0 +1,920 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::put">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|put%2:35:00::|
+  wn::|set%2:35:00::|
+  wn::|place%2:35:00::|
+  wn::|pose%2:35:02::|
+  wn::|position%2:35:00::|
+  wn::|lay%2:35:01::|
+  wn::|interpose%2:38:01::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">force</feat>
+ </sem-feats>
+ <concept name="ont::event-of-change">
+ <comment>
+  &quot;Events that involve change or force: should ahve an AGENT or AFFECTED role&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::beneficiary" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="situation" />
+ <concept name="ont::event-of-action">
+ <comment>
+  &quot;events that involve :agent (whether intentional or not)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::agent">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-causation">
+ <comment>
+  &quot;events involving an AGENT acting on an AFFECTED&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-action
+  situation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::hide">
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <relation label="overlap">
+  wn::|hide%2:39:00::|
+  wn::|conceal%2:39:01::|
+  wn::|conceal%2:39:00::|
+  wn::|hide%2:39:01::|
+ </relation>
+ </concept>
+ <concept name="ont::immerse">
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <relation label="overlap">
+  wn::|immerse%2:35:00::|
+  wn::|plunge%2:35:01::|
+  wn::|immerse%2:31:01::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::put-away">
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="bury" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="burial" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="bury the chest">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <relation label="overlap">
+  vn::put-9.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="deposit" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="deposited" />
+   </past>
+   <ing>
+    <word first-word="depositing" />
+   </ing>
+   <nom>
+    <word first-word="deposit" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <relation label="overlap">
+  vn::put-9.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="embed" />
+ </morph>
+ <example text="embed an applet in the document">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="enter" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="entered" />
+   </past>
+   <ing>
+    <word first-word="entering" />
+   </ing>
+  </forms>
+ </morph>
+ <comment>
+  &quot;PLOW&quot;
+ </comment>
+ <example text="enter the title in the textbox">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="fit" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="fitting" />
+   </ing>
+   <past>
+    <word first-word="fit" />
+   </past>
+  </forms>
+ </morph>
+ <comment>
+  &quot;JANSEN&quot;
+ </comment>
+ <example text="He fit it under the table">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="fitted" />
+  <forms>
+  </forms>
+ </morph>
+ <example text="He fitted it under the table">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="insert" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="insertion" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="You can insert additional characters">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <relation label="overlap">
+  vn::put-9.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="install" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="installation" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <relation label="overlap">
+  vn::put-9.1-1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="lay" remaining-words="" particle="down" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="lay" />
+   </past>
+   <pastpart>
+    <word first-word="laid" />
+   </pastpart>
+   <ing>
+    <word first-word="laid" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="lay down your weapons">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="lay" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="lay" />
+   </past>
+   <pastpart>
+    <word first-word="laid" />
+   </pastpart>
+   <ing>
+    <word first-word="laid" />
+   </ing>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="lay an egg on the table">
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="lean" />
+ </morph>
+ <example text="lean the box against the desk">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-goal-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="lodge" />
+ </morph>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <relation label="overlap">
+  vn::put-9.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-goal-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="mount" />
+ </morph>
+ <example text="he mounted a picture on the wall">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <relation label="overlap">
+  vn::put-9.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="paste" />
+ </morph>
+ <example text="paste the graph into the document">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="perch" />
+ </morph>
+ <example text="perch the box on the desk">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-goal-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="place" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="place the book on the table">
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="plant" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="plant the cactus">
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="pop" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="put" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="put" />
+   </past>
+   <ing>
+    <word first-word="putting" />
+   </ing>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CHANGE-LF&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="put the oj into the tanker">
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-goal-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="reenter" />
+ </morph>
+ <example text="reenter the title in the textbox">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sit" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="sat" />
+   </past>
+   <ing>
+    <word first-word="sitting" />
+   </ing>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="Sit the box on the desk">
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-goal-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="superimpose" />
+ </morph>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <relation label="overlap">
+  vn::put-9.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="type" remaining-words="" particle="in" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <example text="type in the title">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::put
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

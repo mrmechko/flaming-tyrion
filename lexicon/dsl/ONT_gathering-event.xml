@@ -1,0 +1,494 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::gathering-event">
+ <relation label="inherit">
+  ont::located-event
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="situation" />
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="locative">located</feat>
+ <feat name="trajectory">-</feat>
+ </sem-feats>
+ <concept name="ont::event-type">
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::located-event">
+ <comment>
+  &quot;events that are located in time/space - e.g., riot, war, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-type
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="locative">located</feat>
+  <feat name="trajectory">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::ceremony">
+ <relation label="inherit">
+  ont::gathering-event
+ </relation>
+ </concept>
+ <concept name="ont::performance-play">
+ <relation label="inherit">
+  ont::gathering-event
+ </relation>
+ </concept>
+ <concept name="ont::presentation">
+ <relation label="inherit">
+  ont::gathering-event
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="appointment" />
+  <forms>
+   -S-3P
+  </forms>
+ </morph>
+ <comment>
+  &quot;LF-RESTRUCTURING&quot;
+ </comment>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="auction" />
+ </morph>
+ <example text="bid on things at an auction">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="baby" remaining-words="shower" />
+ </morph>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="celebration" />
+ </morph>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="check" remaining-words="up" />
+ </morph>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="concert" />
+ </morph>
+ <example text="they are giving a concert at the theatre tonight">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="conference" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="exam" />
+ </morph>
+ <example text="he passed all his exams">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::gathering-event
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-theme-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="festival" />
+ </morph>
+ <comment>
+  &quot;CALOY3-TEST-DATA&quot;
+ </comment>
+ <example text="go to the party">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="meeting" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="party" />
+ </morph>
+ <example text="go to the party">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="performance" />
+ </morph>
+ <example text="they are giving a performance at the theatre tonight">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pic-nic" />
+ </morph>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pic-nik" />
+ </morph>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="picnic" />
+ </morph>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="picnik" />
+ </morph>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="quiz" />
+ </morph>
+ <example text="he passed all his quizes">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::gathering-event
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-theme-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="reception" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <example text="your visitor is waiting in the reception area">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="summit" />
+ </morph>
+ <comment>
+  &quot;CALOY3-TEST-DATA&quot;
+ </comment>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="symposium" />
+ </morph>
+ <comment>
+  &quot;PLOW-REQ&quot;
+ </comment>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="test" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="this is a test">
+ </example>
+ <relation label="inherit">
+  ont::gathering-event
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-theme-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="trial" />
+ </morph>
+ <example text="the trial is next month">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::gathering-event
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-theme-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="workshop" />
+ </morph>
+ <comment>
+  &quot;PLOW-REQ&quot;
+ </comment>
+ <relation label="inherit">
+  ont::gathering-event
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

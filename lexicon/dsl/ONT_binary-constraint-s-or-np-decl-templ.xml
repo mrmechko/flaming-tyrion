@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::binary-constraint-s-or-np-decl-templ">
+ <template-call template="ont::binary-constraint-s-or-np-decl-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="subcat" syn-cat="s" sem-role="ont::ground"/>
+  <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::figure"/>
+ </syn-sem>
+ <syn-feats>
+  <feat name="atype">
+  <or>
+   pre
+   post
+  </or>
+  </feat>
+  <feat name="sort">binary-constraint</feat>
+ </syn-feats>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="whereby" />
+ </morph>
+ <comment>
+  &quot;GLOSS-VARIANT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::whereby
+  ont::binary-constraint-s-or-np-decl-templ
+ </relation>
+ </sense>
+</dsl>

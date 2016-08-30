@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::financial-statement">
+ <relation label="inherit">
+  ont::official-document
+ </relation>
+ <relation label="overlap">
+  wn::|statement%1:10:01::|
+  wn::|financial_statement%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+  strip
+ </or>
+ </feat>
+ <feat name="mobility">non-self-moving</feat>
+ <feat name="information">information-content</feat>
+ <feat name="container">+</feat>
+ <feat name="trajectory">+</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::phys-representation">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|representation%1:06:00::|
+  wn::|representation%1:04:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+   strip
+  </or>
+  </feat>
+  <feat name="mobility">non-self-moving</feat>
+  <feat name="information">information-content</feat>
+  <feat name="container">+</feat>
+  <feat name="trajectory">+</feat>
+  <feat name="object-function">representation</feat>
+  <feat name="intentional">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">object</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::info-holder">
+ <relation label="inherit">
+  ont::phys-representation
+ </relation>
+ </concept>
+ <concept name="ont::direct-representation">
+ <relation label="inherit">
+  ont::info-holder
+ </relation>
+ </concept>
+ <concept name="ont::official-document">
+ <relation label="inherit">
+  ont::direct-representation
+ </relation>
+ <relation label="overlap">
+  wn::|document%1:10:00::|
+  wn::|written_document%1:10:00::|
+  wn::|papers%1:10:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="invoice" />
+ </morph>
+ <comment>
+  &quot;PROJECTOR-PURCHASING&quot;
+ </comment>
+ <example text="it's printed on your invoice">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::financial-statement
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

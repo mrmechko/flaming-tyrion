@@ -1,0 +1,420 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::information">
+ <relation label="inherit">
+  ont::information-function-object
+ </relation>
+ <relation label="overlap">
+  wn::|information%1:10:00::|
+  wn::|info%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::abstract-object-nontemporal">
+ <comment>
+  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">information-content</feat>
+ </sem-feats>
+ <concept name="ont::function-object">
+ <relation label="inherit">
+  ont::abstract-object-nontemporal
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::information-function-object">
+ <relation label="inherit">
+  ont::function-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="intentional">-</feat>
+  <feat name="information">information-content</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::content">
+ <relation label="inherit">
+  ont::information
+ </relation>
+ <relation label="overlap">
+  wn::|content%1:14:00::|
+  wn::|substance%1:10:00::|
+  wn::|subject_matter%1:10:00::|
+  wn::|content%1:10:00::|
+  wn::|message%1:10:00::|
+  wn::|meaning%1:09:00::|
+  wn::|substance%1:09:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="ad" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="advertisment" />
+ </morph>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="ballpark" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="clue" />
+ </morph>
+ <comment>
+  &quot;S14&quot;
+ </comment>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="data" />
+ </morph>
+ <comment>
+  &quot;Y1V6&quot;
+ </comment>
+ <relation label="inherit">
+  ont::information
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="datum" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="data" />
+   </plur>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="demographics" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::information
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="evidence" />
+ </morph>
+ <comment>
+  &quot;S14&quot;
+ </comment>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="guess" />
+ </morph>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="hint" />
+ </morph>
+ <comment>
+  &quot;S14&quot;
+ </comment>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="indicator" />
+ </morph>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="info" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::information
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="information" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::information
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="input" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="milestone" />
+ </morph>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="news" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="notice" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="reference" />
+ </morph>
+ <example text="read the applescript reference">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="response" />
+ </morph>
+ <comment>
+  &quot;LAM-INITIAL&quot;
+ </comment>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="sense" />
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <example text="what is the sense of this word">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="sign" />
+ </morph>
+ <example text="a sign of cardiac disease">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="statistic" />
+ </morph>
+ <example text="Displaying word count and other document statistics">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="tip" />
+ </morph>
+ <example text="You can accomplish many tasks using these iCal tips and tricks">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="tooltip" />
+ </morph>
+ <example text="show tooltips">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::information
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

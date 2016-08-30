@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::specialist">
+ <relation label="inherit">
+  ont::person-reln
+ </relation>
+ <relation label="overlap">
+  wn::|expert%1:18:00::|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="origin">natural</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">living</feat>
+ </sem-feats>
+ <concept name="ont::natural-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|natural_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+  </or>
+  </feat>
+  <feat name="origin">natural</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">
+ <or>
+  human
+  non-human-animal
+ </or>
+ </feat>
+ <feat name="form">solid-object</feat>
+ <feat name="intentional">+</feat>
+ </sem-feats>
+ <concept name="ont::organism">
+ <relation label="inherit">
+  ont::natural-object
+ </relation>
+ <relation label="overlap">
+  wn::|organism%1:03:00::|
+  wn::|being%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">living</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::animal">
+ <relation label="inherit">
+  ont::organism
+ </relation>
+ <relation label="overlap">
+  wn::|animal%1:03:00::|
+  wn::|animate_being%1:03:00::|
+  wn::|beast%1:03:00::|
+  wn::|brute%1:03:00::|
+  wn::|creature%1:03:00::|
+  wn::|fauna%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">
+  <or>
+   human
+   non-human-animal
+  </or>
+  </feat>
+  <feat name="form">solid-object</feat>
+  <feat name="intentional">+</feat>
+ </sem-feats>
+ </concept>
+ <concept name="phys-obj" />
+ <concept name="ont::vertebrate">
+ <relation label="inherit">
+  ont::animal
+ </relation>
+ <relation label="overlap">
+  wn::|vertebrate%1:05:00::|
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">-</feat>
+ <feat name="intentional">+</feat>
+ <feat name="container">-</feat>
+ <feat name="mobility">self-moving</feat>
+ <feat name="object-function">occupation</feat>
+ <feat name="origin">human</feat>
+ <feat name="spatial-abstraction">spatial-point</feat>
+ <feat name="form">solid-object</feat>
+ </sem-feats>
+ <concept name="ont::mammal">
+ <relation label="inherit">
+  ont::vertebrate
+ </relation>
+ <relation label="overlap">
+  wn::|mammal%1:05:00::|
+  wn::|mammalian%1:05:00::|
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::person">
+ <relation label="inherit">
+  ont::mammal
+ </relation>
+ <relation label="overlap">
+  wn::|person%1:03:00::|
+  wn::|individual%1:03:00::|
+  wn::|someone%1:03:00::|
+  wn::|somebody%1:03:00::|
+  wn::|mortal%1:03:00::|
+  wn::|soul%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">-</feat>
+  <feat name="intentional">+</feat>
+  <feat name="container">-</feat>
+  <feat name="mobility">self-moving</feat>
+  <feat name="object-function">occupation</feat>
+  <feat name="origin">human</feat>
+  <feat name="spatial-abstraction">spatial-point</feat>
+  <feat name="form">solid-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::person-reln">
+ <relation label="inherit">
+  ont::person
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="afficionado" />
+ </morph>
+ <example text="he is a wine enthusiast">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::specialist
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="aficionado" />
+ </morph>
+ <example text="he is a wine enthusiast">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::specialist
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="enthusiast" />
+ </morph>
+ <example text="he is a wine enthusiast">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::specialist
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="expert" />
+ </morph>
+ <example text="joint photographic experts group">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::specialist
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="genius" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::specialist
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="gourmand" />
+ </morph>
+ <example text="he is a gourmet">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::specialist
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="gourmet" />
+ </morph>
+ <example text="he is a gourmet">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::specialist
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="hobbyist" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::specialist
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="leader" />
+ </morph>
+ <comment>
+  &quot;MA-REQUEST&quot;
+ </comment>
+ <relation label="inherit">
+  ont::specialist
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="listener" />
+ </morph>
+ <example text="active/passive listener">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::specialist
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="moderator" />
+ </morph>
+ <relation label="inherit">
+  ont::specialist
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="presenter" />
+ </morph>
+ <example text="customize what the presenter sees">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::specialist
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="specialist" />
+ </morph>
+ <example text="he is a wine specialist">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::specialist
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

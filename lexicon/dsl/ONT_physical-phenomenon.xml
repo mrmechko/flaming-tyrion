@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::physical-phenomenon">
+ <relation label="inherit">
+  ont::natural-phenomenon
+ </relation>
+ <relation label="overlap">
+  wn::|strength%1:07:06::|
+  wn::|forcefulness%1:07:00::|
+  wn::|force%1:07:00::|
+  wn::|force%1:19:00::|
+  wn::|causal_agency%1:03:00::|
+  wn::|cause%1:03:00::|
+  wn::|causal_agent%1:03:00::|
+  wn::|cause%1:10:00::|
+  wn::|cause%1:11:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">non-living</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="origin">natural</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::natural-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|natural_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+  </or>
+  </feat>
+  <feat name="origin">natural</feat>
+ </sem-feats>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">non-living</feat>
+ </sem-feats>
+ <concept name="ont::natural-phenomenon">
+ <relation label="inherit">
+  ont::natural-object
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="charge" />
+ </morph>
+ <example text="the charge in the cylinder ignites">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::physical-phenomenon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="compression" />
+ </morph>
+ <example text="the force of the hurricane">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::physical-phenomenon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="force" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the force of the hurricane">
+ </example>
+ <relation label="inherit">
+  ont::physical-phenomenon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pressure" />
+ </morph>
+ <example text="the pressure in the cylinder">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::physical-phenomenon
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

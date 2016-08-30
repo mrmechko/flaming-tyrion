@@ -1,0 +1,964 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::family-relation">
+ <relation label="inherit">
+  ont::person
+ </relation>
+ <relation label="overlap">
+  wn::|relative%1:18:00::|
+  wn::|relation%1:18:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="trajectory">-</feat>
+    <feat name="origin">human</feat>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="origin">natural</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">living</feat>
+ </sem-feats>
+ <concept name="ont::natural-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|natural_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+  </or>
+  </feat>
+  <feat name="origin">natural</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">
+ <or>
+  human
+  non-human-animal
+ </or>
+ </feat>
+ <feat name="form">solid-object</feat>
+ <feat name="intentional">+</feat>
+ </sem-feats>
+ <concept name="ont::organism">
+ <relation label="inherit">
+  ont::natural-object
+ </relation>
+ <relation label="overlap">
+  wn::|organism%1:03:00::|
+  wn::|being%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">living</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::animal">
+ <relation label="inherit">
+  ont::organism
+ </relation>
+ <relation label="overlap">
+  wn::|animal%1:03:00::|
+  wn::|animate_being%1:03:00::|
+  wn::|beast%1:03:00::|
+  wn::|brute%1:03:00::|
+  wn::|creature%1:03:00::|
+  wn::|fauna%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">
+  <or>
+   human
+   non-human-animal
+  </or>
+  </feat>
+  <feat name="form">solid-object</feat>
+  <feat name="intentional">+</feat>
+ </sem-feats>
+ </concept>
+ <concept name="phys-obj" />
+ <concept name="ont::vertebrate">
+ <relation label="inherit">
+  ont::animal
+ </relation>
+ <relation label="overlap">
+  wn::|vertebrate%1:05:00::|
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">-</feat>
+ <feat name="intentional">+</feat>
+ <feat name="container">-</feat>
+ <feat name="mobility">self-moving</feat>
+ <feat name="object-function">occupation</feat>
+ <feat name="origin">human</feat>
+ <feat name="spatial-abstraction">spatial-point</feat>
+ <feat name="form">solid-object</feat>
+ </sem-feats>
+ <concept name="ont::mammal">
+ <relation label="inherit">
+  ont::vertebrate
+ </relation>
+ <relation label="overlap">
+  wn::|mammal%1:05:00::|
+  wn::|mammalian%1:05:00::|
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="trajectory">-</feat>
+   <feat name="origin">human</feat>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::person">
+ <relation label="inherit">
+  ont::mammal
+ </relation>
+ <relation label="overlap">
+  wn::|person%1:03:00::|
+  wn::|individual%1:03:00::|
+  wn::|someone%1:03:00::|
+  wn::|somebody%1:03:00::|
+  wn::|mortal%1:03:00::|
+  wn::|soul%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">-</feat>
+  <feat name="intentional">+</feat>
+  <feat name="container">-</feat>
+  <feat name="mobility">self-moving</feat>
+  <feat name="object-function">occupation</feat>
+  <feat name="origin">human</feat>
+  <feat name="spatial-abstraction">spatial-point</feat>
+  <feat name="form">solid-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::child">
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <relation label="overlap">
+  wn::|child%1:18:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="aunt" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="brother" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cousin" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="daughter" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="father" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="granddaughter" />
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="grandfather" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="grandmother" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="grandson" />
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="husband" />
+ </morph>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::part-of-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">part-of-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mama" />
+ </morph>
+ <comment>
+  &quot;CALOY3-TEST-DATA&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mother" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="nephew" />
+ </morph>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="niece" />
+ </morph>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="papa" />
+ </morph>
+ <comment>
+  &quot;CALOY3-TEST-DATA&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="parent" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="partner" />
+ </morph>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::part-of-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">part-of-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="sibling" />
+ </morph>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="significant" remaining-words="other" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="significant" remaining-words="others" />
+   </plur>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::part-of-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">part-of-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="sister" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="son" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="spouse" />
+ </morph>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::part-of-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">part-of-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="uncle" />
+ </morph>
+ <comment>
+  &quot;NAIVE-SUBJECTS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::kinship-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">kinship-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="wife" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="wives" />
+   </plur>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::family-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::part-of-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">part-of-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

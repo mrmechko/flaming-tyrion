@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::exemplifies">
+ <relation label="inherit">
+  ont::similarity-val
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intensity">hi</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::relation">
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|relation%1:03:00::|
+  wn::|amount%2:42:03::|
+  wn::|bear_on%2:42:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intensity">hi</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::similarity-val">
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="as" remaining-words="in" />
+ </morph>
+ <example text="free as in freedom">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::exemplifies
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-adj-templ" xp="'(w::pp w::in)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::in" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="such" remaining-words="a" />
+ </morph>
+ <example text="such a proposal is a good candidate for funding">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::exemplifies
+  ont::central-adj-sing-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="such" remaining-words="an" />
+ </morph>
+ <example text="such an apple">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::exemplifies
+  ont::central-adj-sing-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="such" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="such proposals are good candidates for funding">
+ </example>
+ <relation label="inherit">
+  ont::exemplifies
+  ont::central-adj-plur-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="such" />
+ </morph>
+ <example text="a proposal such as that one">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::exemplifies
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-adj-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::as" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

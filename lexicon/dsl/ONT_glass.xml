@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::glass">
+ <relation label="inherit">
+  ont::tableware
+ </relation>
+ <relation label="overlap">
+  wn::|glass%1:06:00::|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">solid-object</feat>
+ <feat name="origin">artifact</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::contents" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="object-function">instrument</feat>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">solid-object</feat>
+ <feat name="container">+</feat>
+ </sem-feats>
+ <concept name="ont::manufactured-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|instrumentation%1:06:00::|
+  wn::|instrumentality%1:06:00::|
+  wn::|device%1:06:00::|
+  wn::|artifact%1:03:00::|
+  wn::|artefact%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">solid-object</feat>
+  <feat name="origin">artifact</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::tableware">
+ <relation label="inherit">
+  ont::manufactured-object
+ </relation>
+ <relation label="overlap">
+  wn::|tableware%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">instrument</feat>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">solid-object</feat>
+  <feat name="container">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::contents" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="glass" />
+ </morph>
+ <relation label="inherit">
+  ont::glass
+ </relation>
+ <syntax>
+  <template-call template="ont::pred-subcat-contents-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::contents"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

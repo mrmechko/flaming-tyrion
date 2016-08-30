@@ -1,0 +1,513 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::categorization">
+ <relation label="inherit">
+  ont::event-of-action
+ </relation>
+ <relation label="overlap">
+  wn::|declare%2:32:04::|
+  wn::|adjudge%2:32:00::|
+  wn::|hold%2:32:11::|
+  wn::|see%2:31:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal1 ont::criterion" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     ?cth
+    </relation>
+    <feat name="intentional">-</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">force</feat>
+ </sem-feats>
+ <concept name="ont::event-of-change">
+ <comment>
+  &quot;Events that involve change or force: should ahve an AGENT or AFFECTED role&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::beneficiary" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::formal1 ont::criterion" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    ?cth
+   </relation>
+   <feat name="intentional">-</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">agentive</feat>
+ </sem-feats>
+ <concept name="ont::event-of-action">
+ <comment>
+  &quot;events that involve :agent (whether intentional or not)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::ordering">
+ <relation label="inherit">
+  ont::categorization
+ </relation>
+ <relation label="overlap">
+  wn::|rate%2:31:00::|
+  wn::|rank%2:31:00::|
+  wn::|range%2:31:00::|
+  wn::|order%2:31:00::|
+  wn::|grade%2:31:03::|
+  wn::|place%2:31:01::|
+ </relation>
+ </concept>
+ <concept name="ont::classify">
+ <relation label="inherit">
+  ont::categorization
+ </relation>
+ <relation label="overlap">
+  wn::|classify%2:31:01::|
+  wn::|relegate%2:31:02::|
+  wn::|classify%2:41:00::|
+  wn::|separate%2:31:00::|
+  wn::|sort_out%2:31:00::|
+  wn::|assort%2:31:00::|
+  wn::|sort%2:31:00::|
+  wn::|class%2:31:00::|
+  wn::|classify%2:31:00::|
+  wn::|categorise%2:31:00::|
+  wn::|categorize%2:31:00::|
+  wn::|take%2:31:07::|
+  wn::|read%2:31:09::|
+  wn::|describe%2:31:00::|
+  wn::|discern%2:39:00::|
+  wn::|discover%2:39:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="certify" />
+ </morph>
+ <relation label="inherit">
+  ont::categorization
+ </relation>
+ <relation label="overlap">
+  vn::characterize-29.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-as-theme-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::as" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="characterize" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="characterization" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="he characterized the situation (as positive)">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::categorization
+ </relation>
+ <relation label="overlap">
+  vn::characterize-29.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-as-theme-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::as" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="characterize" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="characterization" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="this was characterized by him">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::categorization
+ </relation>
+ <relation label="overlap">
+  vn::characterize-29.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-theme-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="number" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::categorization
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-theme-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="plot" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="plotted" />
+   </past>
+  </forms>
+ </morph>
+ <example text="plot those points">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::categorization
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="predefine" />
+ </morph>
+ <example text="predefine this">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::categorization
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-as-theme-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::as" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="represent" />
+ </morph>
+ <comment>
+  &quot;PORTABILITY-EXPERIMENT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::categorization
+ </relation>
+ <relation label="overlap">
+  vn::characterize-29.2-1-1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="undefine" />
+ </morph>
+ <example text="undefine this">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::categorization
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-as-theme-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::as" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

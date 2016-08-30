@@ -1,0 +1,1714 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::bodily-process">
+ <relation label="overlap">
+  wn::|bodily_process%1:22:00::|
+  wn::|body_process%1:22:00::|
+  wn::|bodily_function%1:22:00::|
+  wn::|activity%1:22:00::|
+  wn::|strangle%2:29:03::|
+  wn::|suffocate%2:29:01::|
+  wn::|sleep%2:29:00::|
+  wn::|sweat%2:29:00::|
+  wn::|go_to_bed%2:29:00::|
+  wn::|oversleep%2:29:00::|
+  wn::|fall_asleep%2:29:00::|
+  wn::|gag%2:29:01::|
+  wn::|get_off%2:34:00::|
+  wn::|idle%2:41:00::|
+  wn::|lie_dormant%2:41:00::|
+  wn::|arise%2:29:00::|
+  wn::|blur%2:39:01::|
+  wn::|metabolise%2:34:00::|
+  wn::|nod%2:29:03::|
+  wn::|rage%2:37:00::|
+  wn::|splash%2:35:02::|
+  wn::|stag%2:41:00::|
+  wn::|straddle%2:42:00::|
+  wn::|study%2:31:03::|
+  wn::|take_a_dare%2:32:01::|
+  wn::|take_orders%2:41:01::|
+  wn::|take_stage%2:41:00::|
+  wn::|take_the_floor%2:32:00::|
+  wn::|think%2:31:08::|
+  wn::|wake%2:29:00::|
+  wn::|bristle%2:38:00::|
+ </relation>
+ <relation label="inherit">
+  ont::physical-process
+  situation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected1" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="form">substance</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">living</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">living</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-change">
+ <comment>
+  &quot;Events that involve change or force: should ahve an AGENT or AFFECTED role&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::beneficiary" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-undergoing-action">
+ <comment>
+  &quot;A small class of events that take an affected but do not allow an AGENT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-change
+  situation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected1" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="form">substance</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">living</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">living</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="situation" />
+ <concept name="ont::physical-process">
+ <relation label="overlap">
+  wn::|process%1:03:00::|
+  wn::|physical_process%1:03:00::|
+  wn::|physical_phenomenon%1:19:00::|
+ </relation>
+ <relation label="inherit">
+  ont::event-of-undergoing-action
+  situation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::breathe">
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  wn::|breathe%2:29:00::|
+  wn::|respire%2:29:00::|
+  wn::|suspire%2:29:03::|
+ </relation>
+ </concept>
+ <concept name="ont::vital-sign">
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  wn::|pulse%1:28:00::|
+  wn::|pulse_rate%1:28:00::|
+  wn::|heart_rate%1:28:00::|
+  wn::|pulse%1:11:00::|
+  wn::|pulsation%1:11:02::|
+  wn::|heartbeat%1:11:00::|
+  wn::|beat%1:11:00::|
+  wn::|vital_sign%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::body-process-event">
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::pulse">
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="ache" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="ached" />
+   </past>
+   <nom>
+    <word first-word="ache" />
+   </nom>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="aging" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="appetite" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::bare-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="awake" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="awoke" />
+   </past>
+   <pastpart>
+    <word first-word="awoken" />
+   </pastpart>
+   <ing>
+    <word first-word="awaking" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="he awoke at dawn">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="awake" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="awoke" />
+   </past>
+   <pastpart>
+    <word first-word="awoken" />
+   </pastpart>
+   <ing>
+    <word first-word="awaking" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="he awoke happy">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-pred-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pred" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="trajectory">-</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="bleed" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="bled" />
+   </past>
+   <nom>
+    <word first-word="bleed" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="blow" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="blew" />
+   </past>
+   <pastpart>
+    <word first-word="blown" />
+   </pastpart>
+   <ing>
+    <word first-word="blowing" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="he blew (on the fire)">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::weather-57
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="breathe" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="breath" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="breathe" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="breath" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="breathe" remaining-words="" particle="in" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="breathe" remaining-words="" particle="in" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="breathe" remaining-words="" particle="out" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="breathe" remaining-words="" particle="out" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="breathing" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="catnap" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::snooze-40.4
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="choke" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="choke" remaining-words="" particle="up" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cogitation" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="consumption" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="cough" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="cough" remaining-words="" particle="up" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="cough" remaining-words="" particle="up" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="defecation" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="digest" />
+ </morph>
+ <example text="he digested the meal">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="digest" />
+ </morph>
+ <example text="he digested in silence">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="digestion" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="doze" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::snooze-40.4
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="dribble" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="dribble" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="drool" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="drool" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="drowse" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::snooze-40.4
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="exhale" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="exhalation" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="he exhaled smoke">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="exhale" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="exhalation" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="faint" />
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <example text="he fainted">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="flush" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="flush" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="he was flushed">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="hibernation" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::bare-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="hyperventilate" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="hyperventilation" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="inhale" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="inhalation" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="he inhaled the air">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="inhale" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="inhalation" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="intake" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::bare-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="menstruation" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="metabolism" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="nap" />
+ </morph>
+ <example text="take a nap">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="nap" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::snooze-40.4
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="oversleep" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="overslept" />
+   </past>
+  </forms>
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="pee" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="peed" />
+   </past>
+   <ing>
+    <word first-word="peeing" />
+   </ing>
+   <nom>
+    <word first-word="pee" />
+   </nom>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="puke" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="puke" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="rage" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="rage" />
+   </nom>
+  </forms>
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <example text="He raged">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::entity_specific_cos-45.5
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="respiration" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="shed" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="shed" />
+   </past>
+   <ing>
+    <word first-word="shedding" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="The dog is shedding">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::substance_emission-43.4
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="shed" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="shed" />
+   </past>
+   <ing>
+    <word first-word="shedding" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="The snake shed its skin">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  vn::substance_emission-43.4
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="sleep" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he's having a sleep">
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sleep" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="slept" />
+   </past>
+   <nom>
+    <word first-word="sleep" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="slumber" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="slumbered" />
+   </past>
+   <ing>
+    <word first-word="slumbering" />
+   </ing>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::snooze-40.4
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="snooze" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="snooze" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::snooze-40.4
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="spit" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="spat" />
+   </past>
+   <ing>
+    <word first-word="spitting" />
+   </ing>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="spit" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="spat" />
+   </past>
+   <ing>
+    <word first-word="spitting" />
+   </ing>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sweat" />
+ </morph>
+ <example text="he sweated blood">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sweat" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="throw" remaining-words="" particle="up" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="threw" />
+   </past>
+   <pastpart>
+    <word first-word="thrown" />
+   </pastpart>
+  </forms>
+ </morph>
+ <example text="The patient threw up">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="uptake" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::bare-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="urinate" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="urinated" />
+   </past>
+   <ing>
+    <word first-word="urinating" />
+   </ing>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="urination" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="vomit" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="vomited" />
+   </past>
+   <ing>
+    <word first-word="vomiting" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="The patient vomited">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="vomit" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="vomited" />
+   </past>
+   <ing>
+    <word first-word="vomiting" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="The patient vomited green matter">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="wake" remaining-words="" particle="up" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="woke" />
+   </past>
+   <pastpart>
+    <word first-word="woken" />
+   </pastpart>
+   <ing>
+    <word first-word="waking" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="As soon as I wake up">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="trajectory">-</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="wake" remaining-words="" particle="up" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="woke" />
+   </past>
+   <pastpart>
+    <word first-word="woken" />
+   </pastpart>
+   <ing>
+    <word first-word="waking" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="he woke up happy">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-pred-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pred" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="trajectory">-</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="wake" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="woke" />
+   </past>
+   <pastpart>
+    <word first-word="woken" />
+   </pastpart>
+   <ing>
+    <word first-word="waking" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="he woke at dawn">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="trajectory">-</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="wake" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="woke" />
+   </past>
+   <pastpart>
+    <word first-word="woken" />
+   </pastpart>
+   <ing>
+    <word first-word="waking" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="he woke happy">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-pred-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pred" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="trajectory">-</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="weep" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="wept" />
+   </past>
+   <ing>
+    <word first-word="weeping" />
+   </ing>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="weep" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="wept" />
+   </past>
+   <ing>
+    <word first-word="weeping" />
+   </ing>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="wheeze" />
+ </morph>
+ <relation label="inherit">
+  ont::bodily-process
+  ont::affected-templ
+ </relation>
+ </sense>
+</dsl>

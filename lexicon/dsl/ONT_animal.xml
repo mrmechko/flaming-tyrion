@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::animal">
+ <relation label="inherit">
+  ont::organism
+ </relation>
+ <relation label="overlap">
+  wn::|animal%1:03:00::|
+  wn::|animate_being%1:03:00::|
+  wn::|beast%1:03:00::|
+  wn::|brute%1:03:00::|
+  wn::|creature%1:03:00::|
+  wn::|fauna%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">
+  <or>
+   human
+   non-human-animal
+  </or>
+  </feat>
+  <feat name="form">solid-object</feat>
+  <feat name="intentional">+</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="origin">natural</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">living</feat>
+ </sem-feats>
+ <concept name="ont::natural-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|natural_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+  </or>
+  </feat>
+  <feat name="origin">natural</feat>
+ </sem-feats>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">
+ <or>
+  human
+  non-human-animal
+ </or>
+ </feat>
+ <feat name="form">solid-object</feat>
+ <feat name="intentional">+</feat>
+ </sem-feats>
+ <concept name="ont::organism">
+ <relation label="inherit">
+  ont::natural-object
+ </relation>
+ <relation label="overlap">
+  wn::|organism%1:03:00::|
+  wn::|being%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">living</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::invertebrate">
+ <relation label="inherit">
+  ont::animal
+ </relation>
+ <relation label="overlap">
+  wn::|invertebrate%1:05:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">non-human-animal</feat>
+  <feat name="intentional">+</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::vertebrate">
+ <relation label="inherit">
+  ont::animal
+ </relation>
+ <relation label="overlap">
+  wn::|vertebrate%1:05:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="animal" />
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="man is an animal">
+ </example>
+ <relation label="inherit">
+  ont::animal
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="arachnid" />
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <relation label="inherit">
+  ont::animal
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mammal" />
+ </morph>
+ <example text="dogs are mammals">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::animal
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="spider" />
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <relation label="inherit">
+  ont::animal
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::phys-shape">
+ <relation label="inherit">
+  ont::shape
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="mobility">non-self-moving</feat>
+  <feat name="information">-</feat>
+  <feat name="intentional">-</feat>
+  <feat name="form">object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="mobility">non-self-moving</feat>
+ <feat name="information">-</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="mobility">non-self-moving</feat>
+ <feat name="information">-</feat>
+ <feat name="intentional">-</feat>
+ <feat name="form">object</feat>
+ </sem-feats>
+ <concept name="ont::shape">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|shape%1:07:00::|
+  wn::|form%1:07:01::|
+  wn::|configuration%1:07:00::|
+  wn::|contour%1:07:00::|
+  wn::|conformation%1:07:00::|
+  wn::|form%1:09:00::|
+  wn::|shape%1:09:00::|
+  wn::|pattern%1:09:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="mobility">non-self-moving</feat>
+  <feat name="information">-</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="gap" />
+ </morph>
+ <comment>
+  &quot;PORTABILITY-EXPERIMENT&quot;
+ </comment>
+ <example text="a gap in the circuit">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::phys-shape
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="form">hole</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

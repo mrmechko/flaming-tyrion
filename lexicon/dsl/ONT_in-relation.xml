@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::in-relation">
+ <relation label="inherit">
+  ont::object-compare
+ </relation>
+ <relation label="overlap">
+  wn::|diverge%2:42:00::|
+  wn::|dominate%2:42:00::|
+  wn::|go_by%2:32:00::|
+  wn::|exceed%2:42:01::|
+  wn::|follow%2:42:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">static</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">static</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral1">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+   <concept name="proposition" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+   <concept name="proposition" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ </sem-feats>
+ <concept name="ont::event-of-state">
+ <comment>
+  &quot;Events describing a state of affairs holding&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">static</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="situation" />
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">static</feat>
+ </sem-feats>
+ <concept name="ont::object-compare">
+ <relation label="inherit">
+  ont::event-of-state
+ </relation>
+ <relation label="overlap">
+  wn::|resemble%2:42:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral1">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="time" />
+    <concept name="proposition" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="time" />
+    <concept name="proposition" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::comprise">
+ <relation label="inherit">
+  ont::in-relation
+ </relation>
+ <relation label="overlap">
+  wn::|consist%2:42:04::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">static</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::be">
+ <relation label="inherit">
+  ont::in-relation
+ </relation>
+ <relation label="overlap">
+  wn::|be%2:42:06::|
+  wn::|be%2:42:07::|
+  wn::|be%2:41:00::|
+  wn::|be%2:42:02::|
+  wn::|be_full%2:34:00::|
+  wn::|be_quiet%2:32:00::|
+  wn::|mean%2:42:03::|
+  wn::|rest%2:41:00::|
+ </relation>
+ </concept>
+ <concept name="ont::differ">
+ <relation label="inherit">
+  ont::in-relation
+ </relation>
+ <relation label="overlap">
+  wn::|differ%2:42:00::|
+  wn::|difference%1:07:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::extent">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="measure-function">term</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="correspond" />
+ </morph>
+ <comment>
+  &quot;PORTABILITY-EXPERIMENT&quot;
+ </comment>
+ <example text="this corresponds to ...">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::in-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-neutral-templ" xp="'(w::pp
+                                                             (w::or w::with
+                                                                    w::to))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="(w::or w::with w::to)" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="shape" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="a thing shaped like a box">
+ </example>
+ <relation label="inherit">
+  ont::in-relation
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-theme-xp-templ" xp="'(w::pp w::like)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::like" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">stage-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

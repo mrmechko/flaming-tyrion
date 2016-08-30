@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::max-val">
+ <relation label="inherit">
+  ont::domain-property
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">?!sc</feat>
+  <feat name="gradability">+</feat>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::scale">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="abstr-obj" />
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">?!sc</feat>
+ <feat name="gradability">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ </sem-feats>
+ <concept name="ont::domain-property">
+ <comment>
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::scale">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::hi">
+ <relation label="inherit">
+  ont::max-val
+ </relation>
+ </concept>
+ <concept name="ont::med">
+ <relation label="inherit">
+  ont::max-val
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="best" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::max-val
+ </relation>
+ <syntax>
+  <template-call template="ont::superl-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::than" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">hi</feat>
+   <feat name="orientation">more</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="farthest" />
+ </morph>
+ <relation label="inherit">
+  ont::max-val
+ </relation>
+ <syntax>
+  <template-call template="ont::superl-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::than" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">hi</feat>
+   <feat name="orientation">more</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="max" />
+ </morph>
+ <relation label="inherit">
+  ont::max-val
+ </relation>
+ <syntax>
+  <template-call template="ont::superl-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::than" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="maximum" />
+ </morph>
+ <comment>
+  &quot;PROJECTOR-PURCHASING&quot;
+ </comment>
+ <example text="the maximum height">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::max-val
+ </relation>
+ <syntax>
+  <template-call template="ont::superl-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::than" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="most" />
+ </morph>
+ <comment>
+  &quot;PROJECTOR-PURCHASING&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the most fun I've had in years">
+ </example>
+ <relation label="inherit">
+  ont::max-val
+ </relation>
+ <syntax>
+  <template-call template="ont::superl-templ" xp="'(w::pp w::of)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

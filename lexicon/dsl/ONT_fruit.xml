@@ -1,0 +1,1100 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::fruit">
+ <relation label="inherit">
+  ont::produce
+ </relation>
+ <relation label="overlap">
+  wn::|edible_fruit%1:13:00::|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">substance</feat>
+ <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::material">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|material%1:27:00::|
+  wn::|stuff%1:27:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">substance</feat>
+  <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">solid</feat>
+ <feat name="object-function">comestible</feat>
+ </sem-feats>
+ <concept name="ont::substance">
+ <relation label="inherit">
+  ont::material
+ </relation>
+ <relation label="overlap">
+  wn::|substance%1:03:00::|
+  wn::|substance%1:03:01::|
+  wn::|substance%1:27:00::|
+  wn::|matter%1:03:00::|
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">solid</feat>
+ <feat name="origin">natural</feat>
+ </sem-feats>
+ <concept name="ont::food">
+ <relation label="inherit">
+  ont::substance
+ </relation>
+ <relation label="overlap">
+  wn::|solid_food%1:13:00::|
+  wn::|food%1:13:00::|
+  wn::|meal%1:13:01::|
+  wn::|meal%1:13:00::|
+  wn::|food%1:03:00::|
+  wn::|nutrient%1:03:00::|
+  wn::|nutriment%1:13:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">solid</feat>
+  <feat name="object-function">comestible</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::produce">
+ <relation label="inherit">
+  ont::food
+ </relation>
+ <relation label="overlap">
+  wn::|produce%1:13:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">solid</feat>
+  <feat name="origin">natural</feat>
+ </sem-feats>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="abiyuch" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="acerola" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="apple" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="applesauce" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="apricot" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="avocado" />
+ </morph>
+ <example text="take an avocado">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="banana" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="blackberry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="blueberry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="boysenberry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="breadfruit" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cantaloupe" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cape" remaining-words="gooseberry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="carambola" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="carissa" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="casaba" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cherimoya" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cherry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="crabapple" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cranberry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="currant" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="custard-apple" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="date" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="durian" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="elderberry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="feijoa" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="fig" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="fruit" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="gooseberry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="grape" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="grapefruit" />
+ </morph>
+ <example text="take two grapefruit">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-3p-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="grapefruit" />
+ </morph>
+ <example text="take a grapefruit">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="groundcherry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="guava" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="honeydew" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="jackfruit" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="java" remaining-words="plum" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="jujube" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="kiwi" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="kumquat" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="lemon" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="lime" />
+ </morph>
+ <example text="move it next to the lime">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="litchi" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="loganberry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="longan" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mammy-apple" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mandarin" remaining-words="orange" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mango" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mangosteen" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="maraschino" remaining-words="cherry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="medjool" remaining-words="date" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="melon" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mulberry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="navel" remaining-words="orange" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="nectarine" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="oheloberry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="olive" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="orange" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="papaya" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="passion" remaining-words="fruit" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="peach" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pear" />
+ </morph>
+ <example text="move it next to the pear">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="persimmon" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pineapple" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pitanga" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="plantain" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="plum" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pomegranate" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="prickly" remaining-words="pear" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="prune" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pummelo" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="quince" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="raisin" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="rambutan" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="raspberry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="rhubarb" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="rose-apple" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="roselle" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="rowal" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="sapodilla" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="sapote" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="soursop" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="starfruit" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="strawberry" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="sugar" remaining-words="apple" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="tamarind" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="tangerine" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="thompson" remaining-words="seedless grape" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="tomato" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="tomatoes" remaining-words="" />
+   </plur>
+  </forms>
+ </morph>
+ <example text="take a tomato">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="tomatos" />
+  <forms>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-3p-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="valencia" remaining-words="orange" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="watermelon" />
+ </morph>
+ <relation label="inherit">
+  ont::fruit
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

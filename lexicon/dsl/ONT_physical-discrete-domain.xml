@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::physical-discrete-domain">
+ <relation label="inherit">
+  ont::discrete-domain
+ </relation>
+ <relation label="overlap">
+  wn::|conformation%1:07:00::|
+  wn::|contour%1:07:00::|
+  wn::|configuration%1:07:00::|
+  wn::|form%1:07:01::|
+  wn::|shape%1:07:00::|
+  wn::|shape%1:03:00::|
+  wn::|form%1:03:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::domain">
+ <comment>
+  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::discrete-domain">
+ <relation label="inherit">
+  ont::domain
+ </relation>
+ </concept>
+ <concept name="ont::sensory-property">
+ <relation label="inherit">
+  ont::physical-discrete-domain
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">other-scale</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::size">
+ <relation label="inherit">
+  ont::physical-discrete-domain
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">size-scale</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::texture">
+ <relation label="inherit">
+  ont::physical-discrete-domain
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::gender">
+ <relation label="inherit">
+  ont::physical-discrete-domain
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::color-scale">
+ <relation label="inherit">
+  ont::physical-discrete-domain
+ </relation>
+ <relation label="overlap">
+  wn::|colouring%1:07:00::|
+  wn::|coloring%1:07:00::|
+  wn::|colour%1:07:00::|
+  wn::|color%1:07:00::|
+  wn::|color%1:09:01::|
+  wn::|colour%1:09:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">color-scale</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">color-scale</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="coax" />
+ </morph>
+ <comment>
+  &quot;PROJECTOR-PURCHASING&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-discrete-domain
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="coaxial" />
+ </morph>
+ <comment>
+  &quot;PROJECTOR-PURCHASING&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-discrete-domain
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="dietary" />
+ </morph>
+ <relation label="inherit">
+  ont::physical-discrete-domain
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="medicinal" />
+ </morph>
+ <relation label="inherit">
+  ont::physical-discrete-domain
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="nutritional" />
+ </morph>
+ <relation label="inherit">
+  ont::physical-discrete-domain
+  ont::central-adj-templ
+ </relation>
+ </sense>
+</dsl>

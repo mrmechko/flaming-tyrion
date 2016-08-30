@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::structural-component">
+ <relation label="inherit">
+  ont::general-structure
+ </relation>
+ <relation label="overlap">
+  wn::|annex%1:06:00::|
+  wn::|annexe%1:06:00::|
+  wn::|extension%1:06:00::|
+  wn::|wing%1:06:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="object-function">spatial-object</feat>
+ <feat name="form">geographical-object</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="object-function">spatial-object</feat>
+ <feat name="form">geographical-object</feat>
+ <feat name="origin">non-living</feat>
+ </sem-feats>
+ <concept name="ont::geo-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|location%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">spatial-object</feat>
+  <feat name="form">geographical-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::location">
+ <relation label="inherit">
+  ont::geo-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">spatial-object</feat>
+  <feat name="form">geographical-object</feat>
+  <feat name="origin">non-living</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">geographical-object</feat>
+ </sem-feats>
+ <concept name="ont::specific-loc">
+ <relation label="inherit">
+  ont::location
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::geographic-region">
+ <relation label="inherit">
+  ont::specific-loc
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">geographical-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::functional-region">
+ <relation label="inherit">
+  ont::geographic-region
+ </relation>
+ </concept>
+ <concept name="ont::man-made-structure">
+ <relation label="inherit">
+  ont::functional-region
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::general-structure">
+ <relation label="inherit">
+  ont::man-made-structure
+ </relation>
+ </concept>
+ <concept name="ont::structure-internal-component">
+ <relation label="inherit">
+  ont::structural-component
+ </relation>
+ <relation label="overlap">
+  wn::|wall%1:06:00::|
+  wn::|wall%1:06:03::|
+  wn::|ceiling%1:06:00::|
+  wn::|floor%1:06:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::structure-external-component">
+ <comment>
+  &quot;parts of exterior of buildings: e.g., roof, window&quot;
+ </comment>
+ <relation label="inherit">
+  ont::structural-component
+ </relation>
+ <relation label="overlap">
+  wn::|roof%1:06:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::step">
+ <comment>
+  &quot;part of a staircase&quot;
+ </comment>
+ <relation label="inherit">
+  ont::structural-component
+ </relation>
+ <relation label="overlap">
+  wn::|step%1:06:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="annex" />
+ </morph>
+ <comment>
+  &quot;MEETING-UNDERSTANDING&quot;
+ </comment>
+ <example text="his office is in the annex">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::structural-component
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pillar" />
+ </morph>
+ <comment>
+  &quot;Y3-TEST-DATA&quot;
+ </comment>
+ <relation label="inherit">
+  ont::structural-component
+ </relation>
+ <syntax>
+  <template-call template="ont::gen-part-of-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">gen-part-of-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="platform" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <relation label="inherit">
+  ont::structural-component
+ </relation>
+ <syntax>
+  <template-call template="ont::gen-part-of-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">gen-part-of-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="wing" />
+ </morph>
+ <comment>
+  &quot;MEETING-UNDERSTANDING&quot;
+ </comment>
+ <example text="his office is in the west wing">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::structural-component
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

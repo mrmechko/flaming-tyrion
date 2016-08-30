@@ -1,0 +1,590 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::expectation">
+ <comment>
+  &quot;EXPERIENCER expects some proposition to hold&quot;
+ </comment>
+ <relation label="inherit">
+  ont::attitude-of-belief
+ </relation>
+ <relation label="overlap">
+  wn::|expect%2:31:00::|
+  wn::|anticipate%2:31:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">static</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">static</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::experiencer">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-state">
+ <comment>
+  &quot;Events describing a state of affairs holding&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">static</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::formal">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">mental</feat>
+ </sem-feats>
+ <concept name="ont::event-of-experience">
+ <comment>
+  &quot;A stative event involving a sentient being in a mental state&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-state
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::experiencer">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::awareness">
+ <comment>
+  &quot;a state in which an EXPERIENCER holds some attitude towards a proposition&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-experience
+ </relation>
+ <relation label="overlap">
+  wn::|think%2:31:00::|
+  wn::|cogitate%2:31:00::|
+  wn::|cerebrate%2:31:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">mental</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">static</feat>
+ </sem-feats>
+ <concept name="ont::attitude-of-belief">
+ <comment>
+  &quot;a state that captures an EXPERIENCER to some degree of belief or disbelief&quot;
+ </comment>
+ <relation label="inherit">
+  ont::awareness
+ </relation>
+ </concept>
+ <concept name="ont::assume">
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <relation label="overlap">
+  wn::|assume%2:31:00::|
+  wn::|presume%2:31:00::|
+  wn::|take_for_granted%2:31:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">stage-level</feat>
+ </sem-feats>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="am" />
+  <forms>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-theme-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="anticipate" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="anticipate the problem">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::expectation
+  ont::experiencer-neutral-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="are" />
+  <forms>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-theme-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="expect" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="expectation" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="what side effects should I expect">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-theme-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="expect" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="expectation" />
+   </nom>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="he expects to have a degree next year">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <relation label="overlap">
+  vn::wish-62
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-action-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="expect" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="expectation" />
+   </nom>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="she expects him to have a degree next year">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <relation label="overlap">
+  vn::wish-62
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-action-objcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="expect" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="expectation" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="he expects that he will do it">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="foreknow" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="foreknew" />
+   </past>
+   <pastpart>
+    <word first-word="foreknown" />
+   </pastpart>
+   <ing>
+    <word first-word="foreknowing" />
+   </ing>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <relation label="overlap">
+  vn::conjecture-29.5-1
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="foresee" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="foresaw" />
+   </past>
+   <pastpart>
+    <word first-word="foreseen" />
+   </pastpart>
+   <ing>
+    <word first-word="foreseeing" />
+   </ing>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <relation label="overlap">
+  vn::conjecture-29.5-1
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="is" />
+  <forms>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-theme-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="suspect" />
+ </morph>
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <relation label="overlap">
+  vn::conjecture-29.5-1
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-theme-xp-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="was" />
+  <forms>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-theme-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="were" />
+  <forms>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::expectation
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-theme-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+</dsl>

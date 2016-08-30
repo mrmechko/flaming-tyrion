@@ -1,0 +1,373 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::time-rel-so-far">
+ <relation label="inherit">
+  ont::event-time-rel
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="situation" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="abstr-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">time-measure-scale</feat>
+ </sem-feats>
+ <concept name="ont::predicate">
+ <comment>
+  &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="container">-</feat>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="scale">-</feat>
+  <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::temporal-predicate">
+ <relation label="inherit">
+  ont::predicate
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">time-measure-scale</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::temporal-modifier">
+ <relation label="inherit">
+  ont::temporal-predicate
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <or>
+   <concept name="time" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">
+   <or>
+    dynamic
+    stage-level
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::temporal-location">
+ <relation label="inherit">
+  ont::temporal-modifier
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="situation" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-time-rel">
+ <relation label="inherit">
+  ont::temporal-location
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <or>
+    <concept name="time" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="aspect">
+    <or>
+     dynamic
+     stage-level
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="ever" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-rel-so-far
+  ont::pred-s-post-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="ever" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-rel-so-far
+  ont::pred-s-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="so" remaining-words="far" />
+ </morph>
+ <example text="add the best answer so far to the list of choices">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::time-rel-so-far
+ </relation>
+ <syntax>
+  <template-call template="ont::ppword-adv-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="t" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">pp-word</feat>
+   <feat name="wh">-</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="still" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-rel-so-far
+  ont::pred-s-post-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="still" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-rel-so-far
+  ont::pred-s-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="still" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="still 1.5 volts">
+ </example>
+ <relation label="inherit">
+  ont::time-rel-so-far
+  ont::disc-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="to" remaining-words="date" />
+ </morph>
+ <example text="add the best answer to date to the list of choices">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::time-rel-so-far
+ </relation>
+ <syntax>
+  <template-call template="ont::ppword-adv-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="t" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">pp-word</feat>
+   <feat name="wh">-</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="yet" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-rel-so-far
+  ont::pred-s-post-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="yet" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::time-rel-so-far
+  ont::pred-s-vp-templ
+ </relation>
+ </sense>
+</dsl>

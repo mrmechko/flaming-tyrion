@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::pasta">
+ <relation label="inherit">
+  ont::baked-goods
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">substance</feat>
+ <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <concept name="phys-obj" />
+ <concept name="ont::material">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|material%1:27:00::|
+  wn::|stuff%1:27:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">substance</feat>
+  <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">solid</feat>
+ <feat name="object-function">comestible</feat>
+ </sem-feats>
+ <concept name="ont::substance">
+ <relation label="inherit">
+  ont::material
+ </relation>
+ <relation label="overlap">
+  wn::|substance%1:03:00::|
+  wn::|substance%1:03:01::|
+  wn::|substance%1:27:00::|
+  wn::|matter%1:03:00::|
+ </relation>
+ </concept>
+ <concept name="ont::food">
+ <relation label="inherit">
+  ont::substance
+ </relation>
+ <relation label="overlap">
+  wn::|solid_food%1:13:00::|
+  wn::|food%1:13:00::|
+  wn::|meal%1:13:01::|
+  wn::|meal%1:13:00::|
+  wn::|food%1:03:00::|
+  wn::|nutrient%1:03:00::|
+  wn::|nutriment%1:13:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">solid</feat>
+  <feat name="object-function">comestible</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::prepared">
+ <relation label="inherit">
+  ont::food
+ </relation>
+ </concept>
+ <concept name="ont::baked-goods">
+ <relation label="inherit">
+  ont::prepared
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="chow" remaining-words="mein" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::pasta
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="macaroni" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::pasta
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="macaroni" remaining-words="and cheese" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <comment>
+  &quot;ICMI&quot;
+ </comment>
+ <relation label="inherit">
+  ont::pasta
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mac" remaining-words="and cheese" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <comment>
+  &quot;ICMI&quot;
+ </comment>
+ <relation label="inherit">
+  ont::pasta
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="noodle" />
+ </morph>
+ <relation label="inherit">
+  ont::pasta
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pasta" />
+ </morph>
+ <relation label="inherit">
+  ont::pasta
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="ramen" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::pasta
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="soba" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::pasta
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="spaghetti" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::pasta
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+</dsl>

@@ -1,0 +1,354 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::machine">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <relation label="overlap">
+  wn::|machine%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">artifact</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">solid-object</feat>
+ <feat name="origin">artifact</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">artifact</feat>
+ </sem-feats>
+ <concept name="ont::manufactured-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|instrumentation%1:06:00::|
+  wn::|instrumentality%1:06:00::|
+  wn::|device%1:06:00::|
+  wn::|artifact%1:03:00::|
+  wn::|artefact%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">solid-object</feat>
+  <feat name="origin">artifact</feat>
+ </sem-feats>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">artifact</feat>
+ </sem-feats>
+ <concept name="ont::device">
+ <relation label="inherit">
+  ont::manufactured-object
+ </relation>
+ <relation label="overlap">
+  wn::|device%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">artifact</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::recording-device">
+ <relation label="inherit">
+  ont::machine
+ </relation>
+ <relation label="overlap">
+  wn::|recorder%1:06:01::|
+  wn::|recording_equipment%1:06:00::|
+  wn::|recording_machine%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">artifact</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::projector">
+ <relation label="inherit">
+  ont::machine
+ </relation>
+ <relation label="overlap">
+  wn::|projector%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">instrument</feat>
+  <feat name="form">object</feat>
+  <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::computer">
+ <relation label="inherit">
+  ont::machine
+ </relation>
+ <relation label="overlap">
+  wn::|computer%1:06:00::|
+  wn::|computing_machine%1:06:00::|
+  wn::|computing_device%1:06:00::|
+  wn::|data_processor%1:06:00::|
+  wn::|electronic_computer%1:06:00::|
+  wn::|information_processing_system%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">instrument</feat>
+  <feat name="form">object</feat>
+  <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="copier" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <relation label="inherit">
+  ont::machine
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="engine" />
+  <forms>
+   -S-3P
+  </forms>
+ </morph>
+ <example text="an engine is a motor that converts thermal energy to mechanical work">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::machine
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="fax" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="he used the fax (machine)">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::machine
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="faxer" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <relation label="inherit">
+  ont::machine
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="generator" />
+ </morph>
+ <relation label="inherit">
+  ont::machine
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="machine" />
+ </morph>
+ <comment>
+  &quot;CALO-Y1SCRIPT&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::machine
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="maker" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <example text="where is the coffee maker">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::machine
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="motor" />
+  <forms>
+   -S-3P
+  </forms>
+ </morph>
+ <example text="a motor is a machine that converts other forms of energy into mechanical energy and so imparts motion">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::machine
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="photocopier" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <relation label="inherit">
+  ont::machine
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="shredder" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <example text="run it through the shredder, rosemary">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::machine
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="turbine" />
+  <forms>
+   -S-3P
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::machine
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="windmill" />
+  <forms>
+   -S-3P
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::machine
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

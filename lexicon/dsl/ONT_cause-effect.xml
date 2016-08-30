@@ -1,0 +1,1301 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::cause-effect">
+ <comment>
+  &quot;an AGENT causes some event to occur or proposition to become true&quot;
+ </comment>
+ <relation label="inherit">
+  ont::acting
+ </relation>
+ <relation label="overlap">
+  wn::|cause%2:32:00::|
+  wn::|do%2:36:02::|
+  wn::|make%2:36:08::|
+  wn::|receive%2:35:00::|
+  wn::|drive%2:35:00::|
+  wn::|get%2:30:02::|
+  wn::|get%2:30:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">
+  <or>
+   force
+   agentive
+  </or>
+  </feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">force</feat>
+ </sem-feats>
+ <concept name="ont::event-of-change">
+ <comment>
+  &quot;Events that involve change or force: should ahve an AGENT or AFFECTED role&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::beneficiary" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-action">
+ <comment>
+  &quot;events that involve :agent (whether intentional or not)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">
+ <or>
+  force
+  agentive
+ </or>
+ </feat>
+ </sem-feats>
+ <concept name="ont::acting">
+ <comment>
+  &quot;abstract event of doing something: behave, activity, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-action
+ </relation>
+ <relation label="overlap">
+  wn::|do%2:29:09::|
+  wn::|behave%2:29:00::|
+  wn::|act%2:29:00::|
+  wn::|act%1:03:00::|
+  wn::|deed%1:03:00::|
+  wn::|human_action%1:03:00::|
+  wn::|human_activity%1:03:00::|
+  wn::|activity%1:04:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::cause-interact">
+ <comment>
+  &quot;an AGENT causes some interaction with another agent&quot;
+ </comment>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|interact%2:41:00::|
+  wn::|collide%2:35:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent1">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::try">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|try%1:04:00::|
+  wn::|endeavour%1:04:00::|
+  wn::|endeavor%1:04:00::|
+  wn::|effort%1:04:00::|
+  wn::|attempt%1:04:00::|
+  wn::|try%2:29:00::|
+  wn::|try_on%2:29:00::|
+  wn::|taste%2:34:00::|
+  wn::|try_out%2:34:00::|
+  wn::|try%2:34:00::|
+  wn::|sample%2:34:00::|
+  wn::|essay%2:41:01::|
+  wn::|examine%2:41:00::|
+  wn::|try_out%2:41:00::|
+  wn::|try%2:41:01::|
+  wn::|prove%2:41:03::|
+  wn::|test%2:41:00::|
+  wn::|try%2:41:00::|
+  wn::|seek%2:41:00::|
+  wn::|attempt%2:41:00::|
+  wn::|essay%2:41:00::|
+  wn::|assay%2:41:00::|
+  wn::|come_near%2:41:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::start">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|take%2:41:13::|
+  wn::|start%2:36:00::|
+  wn::|initiate%2:36:01::|
+  wn::|originate%2:36:00::|
+  wn::|commence%2:30:01::|
+  wn::|start%2:30:01::|
+  wn::|lead_off%2:30:00::|
+  wn::|begin%2:30:01::|
+  wn::|get_down%2:30:00::|
+  wn::|begin%2:30:00::|
+  wn::|get%2:30:12::|
+  wn::|start_out%2:30:00::|
+  wn::|start%2:30:00::|
+  wn::|set_about%2:30:00::|
+  wn::|set_out%2:30:00::|
+  wn::|commence%2:30:00::|
+  wn::|begin%2:32:04::|
+  wn::|lie_in%2:29:00::|
+  wn::|originate_in%2:42:00::|
+  wn::|activate%2:36:00::|
+  wn::|activate%2:30:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::prepare">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|arm%2:33:00::|
+ </relation>
+ </concept>
+ <concept name="ont::cause-produce-reproduce">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|yield%2:40:02::|
+  wn::|produce%2:36:03::|
+  wn::|cause%2:36:00::|
+  wn::|induce%2:32:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected-result">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::attract">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|attract%2:35:00::|
+  wn::|attract%2:35:01::|
+  wn::|affinity%1:19:01::|
+  wn::|affinity%1:19:02::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::achieve">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|pull_off%2:41:00::|
+  wn::|negociate%2:41:02::|
+  wn::|bring_off%2:41:00::|
+  wn::|carry_off%2:41:00::|
+  wn::|manage%2:41:09::|
+ </relation>
+ </concept>
+ <concept name="ont::cause-action">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::effect">
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="aspect">dynamic</feat>
+    <feat name="cause">agentive</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::ensure">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|guarantee%2:32:03::|
+  wn::|ensure%2:32:00::|
+  wn::|insure%2:32:04::|
+  wn::|assure%2:32:03::|
+  wn::|secure%2:32:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::encourage">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|egg_on%2:35:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::provoke">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|persuade%2:32:00::|
+  wn::|force%2:36:00::|
+  wn::|impel%2:36:00::|
+  wn::|coerce%2:41:00::|
+  wn::|hale%2:41:00::|
+  wn::|squeeze%2:41:01::|
+  wn::|pressure%2:41:00::|
+  wn::|force%2:41:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::cause-stimulate">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|persuade%2:32:00::|
+  wn::|force%2:36:00::|
+  wn::|impel%2:36:00::|
+  wn::|coerce%2:41:00::|
+  wn::|hale%2:41:00::|
+  wn::|squeeze%2:41:01::|
+  wn::|pressure%2:41:00::|
+  wn::|force%2:41:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="intentional">-</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::help">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|help%2:41:00::|
+  wn::|assist%2:41:02::|
+  wn::|aid%2:41:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::allow">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|include%2:41:03::|
+  wn::|let_in%2:41:00::|
+  wn::|admit%2:41:00::|
+  wn::|let%2:41:00::|
+  wn::|allow%2:41:00::|
+  wn::|permit%2:41:00::|
+  wn::|decertify%2:41:00::|
+  wn::|give%2:40:11::|
+  wn::|indulge%2:41:01::|
+  wn::|indulge%2:34:00::|
+  wn::|indulge%2:34:12::|
+  wn::|indulge%2:41:00::|
+  wn::|condone%2:32:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::enable">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::use">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|use%1:04:01::|
+  wn::|habit%1:04:02::|
+  wn::|use_of_goods_and_services%1:22:00::|
+  wn::|use%1:22:00::|
+  wn::|usance%1:22:00::|
+  wn::|economic_consumption%1:22:00::|
+  wn::|consumption%1:22:00::|
+  wn::|use%1:07:02::|
+  wn::|use%1:07:00::|
+  wn::|role%1:07:00::|
+  wn::|purpose%1:07:00::|
+  wn::|function%1:07:00::|
+  wn::|exercise%1:04:03::|
+  wn::|employment%1:04:01::|
+  wn::|utilisation%1:04:00::|
+  wn::|utilization%1:04:00::|
+  wn::|usage%1:04:00::|
+  wn::|use%1:04:00::|
+  wn::|practical_application%1:04:00::|
+  wn::|application%1:04:02::|
+  wn::|use%2:41:03::|
+  wn::|use%2:41:04::|
+  wn::|apply%2:41:01::|
+  wn::|practice%2:41:01::|
+  wn::|use%2:41:14::|
+  wn::|expend%2:34:00::|
+  wn::|use%2:34:00::|
+  wn::|habituate%2:34:00::|
+  wn::|use%2:34:02::|
+  wn::|use%2:34:01::|
+  wn::|utilize%2:34:00::|
+  wn::|utilise%2:34:00::|
+  wn::|apply%2:34:00::|
+  wn::|employ%2:34:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::reason" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal1" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::make-it-so">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|have%2:30:00::|
+  wn::|have%2:36:00::|
+  wn::|have%2:32:00::|
+  wn::|have%2:40:02::|
+  wn::|have%2:29:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::execute">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|take%2:41:04::|
+  wn::|fulfil%2:36:00::|
+  wn::|fulfill%2:36:00::|
+  wn::|action%2:36:00::|
+  wn::|carry_out%2:36:00::|
+  wn::|execute%2:36:00::|
+  wn::|accomplish%2:36:00::|
+  wn::|carry_through%2:36:00::|
+  wn::|perform%2:36:00::|
+  wn::|execute%2:36:01::|
+  wn::|do%2:36:01::|
+  wn::|do%2:41:01::|
+  wn::|play%2:36:05::|
+  wn::|conduct%2:41:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="cause" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="cause" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="A caused B to hire C">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-affected-objcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="deliver" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="delivered" />
+   </past>
+   <ing>
+    <word first-word="delivering" />
+   </ing>
+   <nom>
+    <word first-word="delivery" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="deliver a blow">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="drive" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="drove" />
+   </past>
+   <pastpart>
+    <word first-word="driven" />
+   </pastpart>
+   <nom>
+    <word first-word="drive" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it drove him crazy">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+  ont::agent-formal-objcontrol-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="drive" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="drove" />
+   </past>
+   <pastpart>
+    <word first-word="driven" />
+   </pastpart>
+   <nom>
+    <word first-word="drive" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the principle drives the execution">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="drive" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="drove" />
+   </past>
+   <pastpart>
+    <word first-word="driven" />
+   </pastpart>
+   <nom>
+    <word first-word="drive" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="It drives him to scream">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-affected-objcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="get" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="getting" />
+   </ing>
+   <past>
+    <word first-word="got" />
+   </past>
+   <pastpart>
+    <word first-word="gotten" />
+   </pastpart>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the truck got to delta">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-loc-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="get" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="getting" />
+   </ing>
+   <past>
+    <word first-word="got" />
+   </past>
+   <pastpart>
+    <word first-word="gotten" />
+   </pastpart>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CHANGE-LF&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="get the oranges into the truck">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-effect-loc-objcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="get" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="getting" />
+   </ing>
+   <past>
+    <word first-word="got" />
+   </past>
+   <pastpart>
+    <word first-word="gotten" />
+   </pastpart>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he got them confused">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+  ont::agent-affected-effect-objcontrol-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="give" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="gave" />
+   </past>
+   <pastpart>
+    <word first-word="given" />
+   </pastpart>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he gave me a beating">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-formal-subjcontrol-obj-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="induce" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="induction" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="He induced him to run for office">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  vn::59-force
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-affected-objcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="lead" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="led" />
+   </past>
+   <ing>
+    <word first-word="leading" />
+   </ing>
+   <nom>
+    <word first-word="lead" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it has led him to find a solution">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  vn::59-force
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-affected-objcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="lead" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="led" />
+   </past>
+   <ing>
+    <word first-word="leading" />
+   </ing>
+   <nom>
+    <word first-word="lead" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it led to disaster">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  vn::59-force
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-xp-templ" xp="'(w::pp w::to)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::to" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="make" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="made" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="aspirin makes him sick">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+  ont::agent-affected-effect-objcontrol-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="make" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="made" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="aspirin makes him bleed">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-affected-objcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="serve" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="The knife serves to open the letter">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-theme-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+</dsl>

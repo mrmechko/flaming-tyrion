@@ -1,0 +1,869 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::active-perception">
+ <relation label="inherit">
+  ont::perception
+ </relation>
+ <relation label="overlap">
+  wn::|look%2:39:00::|
+  wn::|feel%2:39:00::|
+  wn::|sense%2:39:00::|
+  wn::|note%2:39:02::|
+  wn::|look_on%2:39:00::|
+  wn::|look_out%2:39:00::|
+  wn::|watch%2:39:00::|
+  wn::|watch%2:39:03::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="situation" />
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">static</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::experiencer">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-state">
+ <comment>
+  &quot;Events describing a state of affairs holding&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">static</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-experience">
+ <comment>
+  &quot;A stative event involving a sentient being in a mental state&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-state
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::experiencer">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::perception">
+ <comment>
+  &quot;an EXPERIENCER is perceiving something (remember its stative)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-experience
+ </relation>
+ <relation label="overlap">
+  wn::|feel%2:35:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::enduring">
+ <relation label="inherit">
+  ont::active-perception
+ </relation>
+ <relation label="overlap">
+  wn::|digest%2:31:03::|
+  wn::|endure%2:31:00::|
+  wn::|stick_out%2:31:00::|
+  wn::|stomach%2:31:00::|
+  wn::|bear%2:31:00::|
+  wn::|stand%2:31:00::|
+  wn::|tolerate%2:31:00::|
+  wn::|support%2:31:04::|
+  wn::|brook%2:31:00::|
+  wn::|abide%2:31:00::|
+  wn::|suffer%2:31:00::|
+  wn::|put_up%2:31:00::|
+  wn::|last_out%2:42:00::|
+ </relation>
+ </concept>
+ <concept name="ont::cope-deal">
+ <relation label="inherit">
+  ont::active-perception
+ </relation>
+ <relation label="overlap">
+  wn::|dispense_with%2:41:00::|
+  wn::|empathise%2:31:00::|
+  wn::|cope%2:41:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="descry" />
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-neutral-templ
+ </relation>
+ <relation label="overlap">
+  vn::sight-30.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="espy" />
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::experiencer-neutral-templ
+ </relation>
+ <relation label="overlap">
+  vn::sight-30.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="eye" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-neutral-templ
+ </relation>
+ <relation label="overlap">
+  vn::sight-30.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="eyeing" />
+  <forms>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-neutral-templ
+ </relation>
+ <relation label="overlap">
+  vn::sight-30.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="gaze" />
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::peer-30.3
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="glance" />
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::peer-30.3
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="goggle" />
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::peer-30.3
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="hear" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="heard" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-neutral-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="hear" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="heard" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="hear" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="heard" />
+   </past>
+  </forms>
+ </morph>
+ <comment>
+  &quot;MISSING-SENSE&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he heard him arrive">
+ </example>
+ <relation label="inherit">
+  ont::active-perception
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-action-objcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="leer" />
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::peer-30.3
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="listen" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="listened" />
+   </past>
+   <ing>
+    <word first-word="listening" />
+   </ing>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="listen to this">
+ </example>
+ <relation label="inherit">
+  ont::active-perception
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" xp="'(w::pp w::to)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::to" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="listen" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="listened" />
+   </past>
+   <ing>
+    <word first-word="listening" />
+   </ing>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="you're not listening">
+ </example>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="observe" />
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-neutral-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="overhear" />
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::experiencer-neutral-templ
+ </relation>
+ <relation label="overlap">
+  vn::sight-30.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="overhear" />
+ </morph>
+ <comment>
+  &quot;MISSING-SENSE&quot;
+ </comment>
+ <example text="he overheard him speak about it">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::active-perception
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-action-objcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">stage-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="perceive" />
+ </morph>
+ <comment>
+  &quot;PERCEIVE&quot;
+ </comment>
+ <example text="he perceived the damage">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::active-perception
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-neutral-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="regard" />
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-neutral-templ
+ </relation>
+ <relation label="overlap">
+  vn::sight-30.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="savor" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="savored" />
+   </past>
+   <ing>
+    <word first-word="savoring" />
+   </ing>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::experiencer-neutral-templ
+ </relation>
+ <relation label="overlap">
+  vn::sight-30.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="see" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="seeing" />
+   </ing>
+   <past>
+    <word first-word="saw" />
+   </past>
+   <pastpart>
+    <word first-word="seen" />
+   </pastpart>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he saw the man with the telescope">
+ </example>
+ <relation label="inherit">
+  ont::active-perception
+  ont::experiencer-neutral-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="see" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="seeing" />
+   </ing>
+   <past>
+    <word first-word="saw" />
+   </past>
+   <pastpart>
+    <word first-word="seen" />
+   </pastpart>
+  </forms>
+ </morph>
+ <comment>
+  &quot;S2&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="I can't hear, I can't see">
+ </example>
+ <relation label="inherit">
+  ont::active-perception
+  ont::experiencer-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="see" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="seeing" />
+   </ing>
+   <past>
+    <word first-word="saw" />
+   </past>
+   <pastpart>
+    <word first-word="seen" />
+   </pastpart>
+  </forms>
+ </morph>
+ <comment>
+  &quot;MISSING-SENSE&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he saw him drink / drinking ">
+ </example>
+ <relation label="inherit">
+  ont::active-perception
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-action-objcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="see" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="seeing" />
+   </ing>
+   <past>
+    <word first-word="saw" />
+   </past>
+   <pastpart>
+    <word first-word="seen" />
+   </pastpart>
+  </forms>
+ </morph>
+ <comment>
+  &quot;MISSING-SENSE&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he saw him happy / drunk ">
+ </example>
+ <relation label="inherit">
+  ont::active-perception
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-neutral-complex-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pred" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sense" />
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::experiencer-neutral-templ
+ </relation>
+ <relation label="overlap">
+  vn::see-30.1
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sight" />
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::experiencer-neutral-templ
+ </relation>
+ <relation label="overlap">
+  vn::sight-30.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="smell" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::active-perception
+  ont::experiencer-neutral-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="smell" />
+ </morph>
+ <comment>
+  &quot;MISSING-SENSE&quot;
+ </comment>
+ <example text="he smelled the cake bake">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::active-perception
+ </relation>
+ <syntax>
+  <template-call template="ont::experiencer-action-objcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::experiencer"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="spy" />
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::experiencer-neutral-templ
+ </relation>
+ <relation label="overlap">
+  vn::sight-30.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="taste" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="taste" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::active-perception
+  ont::experiencer-neutral-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="view" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="view" />
+   </nom>
+  </forms>
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::active-perception
+  ont::agent-neutral-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

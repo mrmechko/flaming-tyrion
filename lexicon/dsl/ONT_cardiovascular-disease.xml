@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::cardiovascular-disease">
+ <relation label="inherit">
+  ont::disease
+ </relation>
+ <relation label="overlap">
+  wn::|cardiovascular_disease%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="situation" />
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">natural</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">indiv-level</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::physical-condition">
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <relation label="overlap">
+  wn::|condition%1:26:02::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">indiv-level</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">natural</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::medical-disorders-and-conditions">
+ <relation label="inherit">
+  ont::physical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|disorder%1:26:03::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::disease">
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+ </relation>
+ <relation label="overlap">
+  wn::|health_problem%1:26:00::|
+  wn::|unhealthiness%1:26:00::|
+  wn::|ill_health%1:26:00::|
+  wn::|illness%1:26:00::|
+  wn::|unwellness%1:26:00::|
+  wn::|malady%1:26:00::|
+  wn::|sickness%1:26:00::|
+  wn::|ailment%1:26:00::|
+  wn::|ill%1:26:00::|
+  wn::|abnormality%1:26:00::|
+  wn::|abnormalcy%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::aneurysm">
+ <relation label="inherit">
+  ont::cardiovascular-disease
+ </relation>
+ <relation label="overlap">
+  wn::|aneurysm%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::arrhythmia">
+ <relation label="inherit">
+  ont::cardiovascular-disease
+ </relation>
+ <relation label="overlap">
+  wn::|arrhythmia%1:26:00::|
+  wn::|tachycardia%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::heart-attack">
+ <relation label="inherit">
+  ont::cardiovascular-disease
+ </relation>
+ <relation label="overlap">
+  wn::|heart_attack%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::hypertension">
+ <relation label="inherit">
+  ont::cardiovascular-disease
+ </relation>
+ <relation label="overlap">
+  wn::|hypertension%1:26:00::|
+ </relation>
+ </concept>
+</dsl>

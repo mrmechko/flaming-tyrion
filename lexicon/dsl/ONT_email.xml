@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::email">
+ <relation label="inherit">
+  ont::mail
+ </relation>
+ <relation label="overlap">
+  wn::|electronic_mail%1:10:00::|
+  wn::|e-mail%1:10:00::|
+  wn::|email%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+  strip
+ </or>
+ </feat>
+ <feat name="mobility">non-self-moving</feat>
+ <feat name="information">information-content</feat>
+ <feat name="container">+</feat>
+ <feat name="trajectory">+</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::phys-representation">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|representation%1:06:00::|
+  wn::|representation%1:04:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+   strip
+  </or>
+  </feat>
+  <feat name="mobility">non-self-moving</feat>
+  <feat name="information">information-content</feat>
+  <feat name="container">+</feat>
+  <feat name="trajectory">+</feat>
+  <feat name="object-function">representation</feat>
+  <feat name="intentional">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">object</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::info-holder">
+ <relation label="inherit">
+  ont::phys-representation
+ </relation>
+ </concept>
+ <concept name="ont::direct-representation">
+ <relation label="inherit">
+  ont::info-holder
+ </relation>
+ </concept>
+ <concept name="ont::mail">
+ <relation label="inherit">
+  ont::direct-representation
+ </relation>
+ <relation label="overlap">
+  wn::|letter%1:10:00::|
+  wn::|missive%1:10:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="e-mail" />
+ </morph>
+ <relation label="inherit">
+  ont::email
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="email" />
+ </morph>
+ <relation label="inherit">
+  ont::email
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="reply" />
+ </morph>
+ <example text="compose a reply">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::email
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="spam" />
+ </morph>
+ <example text="Too much of my legitimate email is getting marked as spam">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::email
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

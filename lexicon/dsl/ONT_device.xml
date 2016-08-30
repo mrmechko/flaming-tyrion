@@ -1,0 +1,1639 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::device">
+ <relation label="inherit">
+  ont::manufactured-object
+ </relation>
+ <relation label="overlap">
+  wn::|device%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">artifact</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">solid-object</feat>
+ <feat name="origin">artifact</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <concept name="phys-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">artifact</feat>
+ </sem-feats>
+ <concept name="ont::manufactured-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|instrumentation%1:06:00::|
+  wn::|instrumentality%1:06:00::|
+  wn::|device%1:06:00::|
+  wn::|artifact%1:03:00::|
+  wn::|artefact%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">solid-object</feat>
+  <feat name="origin">artifact</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::appliance">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <relation label="overlap">
+  wn::|appliance%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">instrument</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::medical-instrument">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <relation label="overlap">
+  wn::|medical_instrument%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">instrument</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::optical-device">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <relation label="overlap">
+  wn::|optical_device%1:06:00::|
+ </relation>
+ </concept>
+ <concept name="ont::acoustic-device">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <relation label="overlap">
+  wn::|acoustic_device%1:06:00::|
+  wn::|sonar%1:06:00::|
+  wn::|echo_sounder%1:06:00::|
+  wn::|asdic%1:06:00::|
+ </relation>
+ </concept>
+ <concept name="ont::sensor">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <relation label="overlap">
+  wn::|detector%1:06:00::|
+  wn::|sensor%1:06:00::|
+  wn::|sensing_element%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::weapon">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <relation label="overlap">
+  wn::|weapon%1:06:00::|
+  wn::|arm%1:06:01::|
+  wn::|weapon_system%1:06:00::|
+  wn::|warhead%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::musical-instrument">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <relation label="overlap">
+  wn::|musical_instrument%1:06:00::|
+  wn::|instrument%1:06:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">instrument</feat>
+  <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::conductor">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <relation label="overlap">
+  wn::|semiconductor%1:27:00::|
+  wn::|semiconducting_material%1:27:00::|
+  wn::|semiconductor_device%1:06:00::|
+  wn::|semiconductor_unit%1:06:00::|
+  wn::|semiconductor%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">artifact</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::machine">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <relation label="overlap">
+  wn::|machine%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">artifact</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::product-model">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <relation label="overlap">
+  wn::|model%1:09:03::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">artifact</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">artifact</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::computer-part">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">artifact</feat>
+  <feat name="object-function">instrument</feat>
+  <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="mobility">non-self-moving</feat>
+    <feat name="origin">artifact</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="adapter" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="adaptor" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="aio" />
+ </morph>
+ <comment>
+  &quot;CONCEPT-LEARNING&quot;
+ </comment>
+ <example text="I want to buy an all in one">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="alarm" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="all" remaining-words="in one" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="all" remaining-words="in ones" />
+   </plur>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CONCEPT-LEARNING&quot;
+ </comment>
+ <example text="I want to buy an all in one">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="ammeter" />
+ </morph>
+ <comment>
+  &quot;TEST-S&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="amperemeter" />
+ </morph>
+ <comment>
+  &quot;TEST-S&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="ampermeter" />
+ </morph>
+ <comment>
+  &quot;TEST-S&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="amplifier" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="ampmeter" />
+ </morph>
+ <comment>
+  &quot;TEST-S&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="anchor" />
+ </morph>
+ <comment>
+  &quot;Y3-TEST-DATA&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="battery" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="blackberry" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="bulb" />
+ </morph>
+ <comment>
+  &quot;TEST-S&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cable" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cell" remaining-words="phone" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="cell" remaining-words="phones" />
+   </plur>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="can I access it from my cell phone">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cell" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="can I access it from my cell">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="circuit" />
+ </morph>
+ <comment>
+  &quot;TEST-S PORTABILITY-FOLLOWUP BEETLE-PILOTS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="container">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="clock" />
+ </morph>
+ <example text="the clock on the wall">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="connector" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="control" />
+ </morph>
+ <comment>
+  &quot;PROJECTOR-PURCHASING&quot;
+ </comment>
+ <example text="we need the remote control">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="controller" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cylinder" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="device" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="dispenser" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <example text="tape dispenser">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="drive" remaining-words="shaft" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="electronics" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-3p-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="elevator" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <example text="take the elevator to the fifth floor">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="escalator" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <example text="take the escalator to the fifth floor">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="filter" />
+ </morph>
+ <comment>
+  &quot;PLOW-REQ&quot;
+ </comment>
+ <example text="put the water through the filter">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="gadget" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="grinder" />
+ </morph>
+ <comment>
+  &quot;PLOW-REQ&quot;
+ </comment>
+ <example text="built-in coffee grinder">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="hand" remaining-words="held" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="hand" remaining-words="helds" />
+   </plur>
+  </forms>
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <example text="Create a mobile lifestyle with your Palm hand held">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="handheld" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <example text="Create a mobile lifestyle with your Palm handheld">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="headphone" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="headset" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="instrument" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="intercom" />
+ </morph>
+ <comment>
+  &quot;PLOW-REQ&quot;
+ </comment>
+ <example text="Use the intercom">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="ipad" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="iphone" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="ipod" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="key" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <example text="he lost his house key">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="lift" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <example text="take the lift to the fifth floor">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="light" remaining-words="bulb" />
+ </morph>
+ <comment>
+  &quot;NEWBEECORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="lightbulb" />
+ </morph>
+ <comment>
+  &quot;TEST-S&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="lock" />
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <example text="are there security locks on the doors">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="lock" />
+ </morph>
+ <example text="a security header with a lock appears">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="magnifying" remaining-words="glass" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="magnifying" remaining-words="glasses" />
+   </plur>
+  </forms>
+ </morph>
+ <example text="view the file with the magnifying glass">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mechanism" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="meter" />
+ </morph>
+ <comment>
+  &quot;TEST-S&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="microphone" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mike" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mobile" remaining-words="phone" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="mobile" remaining-words="phones" />
+   </plur>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="can I access it from my mobile phone">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="mobile" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="can I access it from my mobile">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="modulator" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <example text="a signal modulator">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="multimeter" />
+ </morph>
+ <comment>
+  &quot;TEST-S PORTABILITY-FOLLOWUP&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="odometer" />
+ </morph>
+ <comment>
+  &quot;TEST-S PORTABILITY-FOLLOWUP&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="paper" remaining-words="clip" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="paper" remaining-words="clips" />
+   </plur>
+  </forms>
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="peak" remaining-words="flow meter" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pedometer" />
+ </morph>
+ <comment>
+  &quot;TEST-S PORTABILITY-FOLLOWUP&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="peripheral" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="phone" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="this company offers phone support">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="piston" />
+ </morph>
+ <example text="the resulting explosion drives the piston downwards">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="plug" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="plug" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pointer" />
+ </morph>
+ <example text="make sure there is a laser pointer for the presentation">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="power" remaining-words="supply" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="power" remaining-words="supplies" />
+   </plur>
+  </forms>
+ </morph>
+ <comment>
+  &quot;PROJECTOR-PURCHASING&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="printer" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="radio" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="remote" />
+ </morph>
+ <comment>
+  &quot;PROJECTOR-PURCHASING&quot;
+ </comment>
+ <example text="I'll take that projector as long as it has a remote">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="remover" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <example text="staple remover">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="scale" />
+ </morph>
+ <comment>
+  &quot;TEST-S PORTABILITY-FOLLOWUP&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="short" remaining-words="circuit" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="short" remaining-words="circuits" />
+   </plur>
+  </forms>
+ </morph>
+ <comment>
+  &quot;TEST-S PORTABILITY-FOLLOWUP&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="speaker" />
+ </morph>
+ <example text="plug in the speakers for the sound">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="speakerphone" />
+ </morph>
+ <comment>
+  &quot;PLOW-REQ&quot;
+ </comment>
+ <example text="I want to buy a speakerphone">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="speedometer" />
+ </morph>
+ <comment>
+  &quot;TEST-S PORTABILITY-FOLLOWUP&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="staple" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="stapler" />
+ </morph>
+ <comment>
+  &quot;OFFICE&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="t" remaining-words="v" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::bare-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="tachometer" />
+ </morph>
+ <comment>
+  &quot;TEST-S PORTABILITY-FOLLOWUP&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="telephone" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="this company offers telephone support">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="television" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::bare-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="timer" />
+ </morph>
+ <example text="set the timer">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="tool" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="treadmill" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="tv" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::bare-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="mobility">non-self-moving</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="usb" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="valve" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="voltmeter" />
+ </morph>
+ <comment>
+  &quot;TEST-S PORTABILITY-FOLLOWUP&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="wheelchair" />
+ </morph>
+ <comment>
+  &quot;PLOW-REQ&quot;
+ </comment>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="wii" />
+ </morph>
+ <relation label="inherit">
+  ont::device
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

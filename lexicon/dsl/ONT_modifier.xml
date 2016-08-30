@@ -1,0 +1,455 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::modifier">
+ <relation label="inherit">
+  ont::predicate
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="scale">-</feat>
+  <feat name="gradability">+</feat>
+  <feat name="intentional">-</feat>
+  <feat name="container">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="abstr-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ </sem-feats>
+ <concept name="ont::predicate">
+ <comment>
+  &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="container">-</feat>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="scale">-</feat>
+  <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::qmodifier">
+ <relation label="inherit">
+  ont::modifier
+ </relation>
+ </concept>
+ <concept name="ont::grade-modifier">
+ <relation label="inherit">
+  ont::modifier
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">?!sc</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="gradability">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::degree-modifier">
+ <relation label="inherit">
+  ont::modifier
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::intensifier">
+ <relation label="inherit">
+  ont::modifier
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="^bout" />
+ </morph>
+ <relation label="inherit">
+  ont::modifier
+  ont::number-operator-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="about" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he about cried">
+ </example>
+ <relation label="inherit">
+  ont::modifier
+  ont::pred-vp-pre-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="all" />
+ </morph>
+ <comment>
+  &quot;PILOT2&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="they will all be off">
+ </example>
+ <relation label="inherit">
+  ont::modifier
+  ont::pred-vp-pre-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="anyway" />
+ </morph>
+ <relation label="inherit">
+  ont::modifier
+  ont::disc-pre-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="both" />
+ </morph>
+ <comment>
+  &quot;PILOT2&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="they both will be off">
+ </example>
+ <relation label="inherit">
+  ont::modifier
+  ont::pred-vp-pre-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="bout" />
+ </morph>
+ <relation label="inherit">
+  ont::modifier
+  ont::number-operator-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="even" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::modifier
+  ont::pred-s-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="even" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::modifier
+  ont::adj-adv-operator-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="eventually" />
+ </morph>
+ <comment>
+  &quot;BEETLE2-PILOT2&quot;
+ </comment>
+ <relation label="inherit">
+  ont::modifier
+  ont::pred-vp-pre-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="in" remaining-words="fact" />
+ </morph>
+ <relation label="inherit">
+  ont::modifier
+  ont::pred-vp-pre-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="indeed" />
+ </morph>
+ <relation label="inherit">
+  ont::modifier
+  ont::pred-vp-pre-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="just" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it's just ready">
+ </example>
+ <relation label="inherit">
+  ont::modifier
+  ont::adj-adv-operator-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="just" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="just five dollars">
+ </example>
+ <relation label="inherit">
+  ont::modifier
+  ont::number-operator-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="just" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::modifier
+  ont::pred-s-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="just" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::modifier
+  ont::disc-pre-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="like" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="give me like 10 of them">
+ </example>
+ <relation label="inherit">
+  ont::modifier
+  ont::number-operator-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="miscellaneous" />
+ </morph>
+ <relation label="inherit">
+  ont::modifier
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="only" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::modifier
+  ont::number-operator-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="originally" />
+ </morph>
+ <relation label="inherit">
+  ont::modifier
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="scientific" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::modifier
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="straight" />
+ </morph>
+ <relation label="inherit">
+  ont::modifier
+  ont::binary-constraint-adv-operator-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="thus" />
+ </morph>
+ <relation label="inherit">
+  ont::modifier
+  ont::adj-adv-operator-templ
+ </relation>
+ </sense>
+</dsl>

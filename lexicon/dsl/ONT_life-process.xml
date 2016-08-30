@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::life-process">
+ <relation label="inherit">
+  ont::event-of-undergoing-action
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">living</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="situation" />
+ <concept name="ont::event-of-change">
+ <comment>
+  &quot;Events that involve change or force: should ahve an AGENT or AFFECTED role&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::beneficiary" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">living</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-undergoing-action">
+ <comment>
+  &quot;A small class of events that take an affected but do not allow an AGENT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-change
+  situation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::cure">
+ <relation label="inherit">
+  ont::life-process
+ </relation>
+ <relation label="overlap">
+  wn::|bring_around%2:29:01::|
+  wn::|cure%2:29:00::|
+  wn::|heal%2:29:01::|
+  wn::|care_for%2:29:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected ont::experiencer" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::be-born">
+ <relation label="inherit">
+  ont::life-process
+ </relation>
+ <relation label="overlap">
+  wn::|nascence%1:11:00::|
+  wn::|nascency%1:11:00::|
+  wn::|nativity%1:11:00::|
+  wn::|birth%1:11:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected-result">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="type">mammal</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::live">
+ <relation label="inherit">
+  ont::life-process
+ </relation>
+ <relation label="overlap">
+  wn::|exist%2:42:01::|
+  wn::|live%2:42:06::|
+  wn::|live%2:42:07::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::die">
+ <relation label="inherit">
+  ont::life-process
+ </relation>
+ <relation label="overlap">
+  wn::|demise%1:28:00::|
+  wn::|dying%1:28:00::|
+  wn::|death%1:28:00::|
+  wn::|death%1:26:01::|
+  wn::|destruction%1:26:00::|
+  wn::|end%1:26:00::|
+  wn::|last%1:28:01::|
+  wn::|death%1:28:01::|
+  wn::|death%1:26:00::|
+  wn::|death%1:19:00::|
+  wn::|die%2:30:00::|
+  wn::|decease%2:30:00::|
+  wn::|perish%2:30:00::|
+  wn::|go%2:30:00::|
+  wn::|exit%2:30:00::|
+  wn::|pass_away%2:30:00::|
+  wn::|expire%2:30:00::|
+  wn::|pass%2:30:11::|
+  wn::|kick_the_bucket%2:30:00::|
+  wn::|cash_in_one's_chips%2:30:00::|
+  wn::|buy_the_farm%2:30:00::|
+  wn::|conk%2:30:00::|
+  wn::|give-up_the_ghost%2:30:00::|
+  wn::|drop_dead%2:30:00::|
+  wn::|pop_off%2:30:00::|
+  wn::|choke%2:30:01::|
+  wn::|croak%2:30:00::|
+  wn::|snuff_it%2:30:00::|
+  wn::|die%2:30:02::|
+  wn::|death%1:11:00::|
+  wn::|decease%1:11:00::|
+  wn::|expiry%1:11:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="life" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="lives" />
+   </plur>
+  </forms>
+ </morph>
+ <comment>
+  &quot;LF-RESTRUCTURING&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::life-process
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

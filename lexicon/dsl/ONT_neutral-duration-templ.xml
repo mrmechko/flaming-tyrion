@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::neutral-duration-templ">
+ <template-call template="ont::neutral-duration-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::extent"/>
+  <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
+ </syn-sem>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="last" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the meeting lasted five hours">
+ </example>
+ <relation label="inherit">
+  ont::take-time
+  ont::neutral-duration-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="spend" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="spent" />
+   </past>
+   <ing>
+    <word first-word="spending" />
+   </ing>
+  </forms>
+ </morph>
+ <comment>
+  &quot;S11&quot;
+ </comment>
+ <example text="he spent 5 hours">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::spend-time
+  ont::neutral-duration-templ
+ </relation>
+ <relation label="overlap">
+  vn::consume-65-1
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="take" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="took" />
+   </past>
+   <pastpart>
+    <word first-word="taken" />
+   </pastpart>
+   <ing>
+    <word first-word="taking" />
+   </ing>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the plan took [him] 5 hours">
+ </example>
+ <relation label="inherit">
+  ont::take-time
+  ont::neutral-duration-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="waste" />
+ </morph>
+ <relation label="inherit">
+  ont::spend-time
+  ont::neutral-duration-templ
+ </relation>
+ <relation label="overlap">
+  vn::consume-65-1
+ </relation>
+ </sense>
+</dsl>

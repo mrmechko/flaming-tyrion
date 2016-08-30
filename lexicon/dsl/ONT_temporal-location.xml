@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::temporal-location">
+ <relation label="inherit">
+  ont::temporal-modifier
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="abstr-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">time-measure-scale</feat>
+ </sem-feats>
+ <concept name="ont::predicate">
+ <comment>
+  &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="container">-</feat>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="scale">-</feat>
+  <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::temporal-predicate">
+ <relation label="inherit">
+  ont::predicate
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">time-measure-scale</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::temporal-modifier">
+ <relation label="inherit">
+  ont::temporal-predicate
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::iteration-period">
+ <relation label="inherit">
+  ont::temporal-location
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="aspect">bounded</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::time-span-rel">
+ <relation label="inherit">
+  ont::temporal-location
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <sem-feats>
+    <relation label="inherit">
+     time
+    </relation>
+    <feat name="time-function">
+    <or>
+     month-name
+     year-name
+     day-period
+    </or>
+    </feat>
+    <feat name="time-scale">interval</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::event-time-rel">
+ <relation label="inherit">
+  ont::temporal-location
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <or>
+    <concept name="time" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="aspect">
+    <or>
+     dynamic
+     stage-level
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::time-weekday-rel">
+ <relation label="inherit">
+  ont::temporal-location
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <sem-feats>
+    <relation label="inherit">
+     time
+    </relation>
+    <feat name="time-function">day-of-week</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::time-clock-rel">
+ <relation label="inherit">
+  ont::temporal-location
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <sem-feats>
+    <relation label="inherit">
+     time
+    </relation>
+    <feat name="time-scale">point</feat>
+    <feat name="time-function">
+    <or>
+     clock-time
+     day-point
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="already" />
+ </morph>
+ <relation label="inherit">
+  ont::temporal-location
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="current" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::temporal-location
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="finally" />
+ </morph>
+ <relation label="inherit">
+  ont::temporal-location
+  ont::pred-s-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="initially" />
+ </morph>
+ <relation label="inherit">
+  ont::temporal-location
+  ont::pred-vp-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="present" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::temporal-location
+  ont::attributive-only-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="so" remaining-words="far" />
+ </morph>
+ <relation label="inherit">
+  ont::temporal-location
+  ont::pred-s-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="when" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="when hungry I like steak">
+ </example>
+ <relation label="inherit">
+  ont::temporal-location
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-pred-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="adjp" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

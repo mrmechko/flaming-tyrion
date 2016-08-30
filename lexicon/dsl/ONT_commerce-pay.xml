@@ -1,0 +1,777 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::commerce-pay">
+ <relation label="inherit">
+  ont::giving
+ </relation>
+ <relation label="overlap">
+  wn::|pay%2:40:00::|
+  wn::|bid%2:40:00::|
+  wn::|tithe%2:40:03::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+  <feat name="trajectory">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::extent ont::money" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">money-scale</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::source" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="object-function">currency</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">force</feat>
+ </sem-feats>
+ <concept name="ont::event-of-change">
+ <comment>
+  &quot;Events that involve change or force: should ahve an AGENT or AFFECTED role&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::beneficiary" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-action">
+ <comment>
+  &quot;events that involve :agent (whether intentional or not)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::result" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent ont::donor">
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-causation">
+ <comment>
+  &quot;events involving an AGENT acting on an AFFECTED&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-action
+  situation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected-result">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="iobj">recipient</feat>
+ <feat name="cause">agentive</feat>
+ </sem-feats>
+ <concept name="ont::relinquish">
+ <comment>
+  &quot;An AGENT does something that results in loss of possession or control of the AFFECTED&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-causation
+  situation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent ont::donor">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="situation" />
+ <sem-frame>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::extent ont::money" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">money-scale</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::source" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="object-function">currency</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ <feat name="trajectory">-</feat>
+ </sem-feats>
+ <concept name="ont::giving">
+ <comment>
+  &quot;To relinquish control of AFFECTED AFFECTED-RESULT, typically voluntarily and possibly in exchange for something&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relinquish
+ </relation>
+ <relation label="overlap">
+  wn::|give%2:40:00::|
+  wn::|offer%1:10:01::|
+  wn::|offering%1:10:01::|
+  wn::|give%2:40:03::|
+  wn::|allow%2:41:01::|
+  wn::|fall%2:40:12::|
+  wn::|send_in%2:41:00::|
+  wn::|giving%1:04:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="iobj">recipient</feat>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected-result">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="bid" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="bid" />
+   </past>
+   <ing>
+    <word first-word="bidding" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="he bid 5 dollars">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::commerce-pay
+  ont::agent-cost-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="disburse" />
+ </morph>
+ <example text="he disbursed 5 dollars">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::commerce-pay
+  ont::agent-cost-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="disburse" />
+ </morph>
+ <example text="he disbursed 5 dollars for it">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::commerce-pay
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-cost-neutral-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::for" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="disburse" />
+ </morph>
+ <example text="disburse the money to me">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::commerce-pay
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-cost-goal-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::to" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">dynamic</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="pay" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="paid" />
+   </past>
+   <ing>
+    <word first-word="paying" />
+   </ing>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALO-Y1VARIANTS&quot;
+ </comment>
+ <example text="he paid 5 dollars">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::commerce-pay
+  ont::agent-cost-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="pay" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="paid" />
+   </past>
+   <ing>
+    <word first-word="paying" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="he paid 5 dollars for it">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::commerce-pay
+ </relation>
+ <relation label="overlap">
+  vn::pay-68
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-cost-neutral-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::for" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="pay" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="paid" />
+   </past>
+   <ing>
+    <word first-word="paying" />
+   </ing>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALO-Y1VARIANTS&quot;
+ </comment>
+ <example text="he paid for the truck">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::commerce-pay
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::for" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">dynamic</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="pay" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="paid" />
+   </past>
+   <ing>
+    <word first-word="paying" />
+   </ing>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALO-Y1VARIANTS&quot;
+ </comment>
+ <example text="pay the money to me">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::commerce-pay
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-cost-goal-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::to" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">dynamic</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="pay" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="paid" />
+   </past>
+   <ing>
+    <word first-word="paying" />
+   </ing>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALO-Y1VARIANTS&quot;
+ </comment>
+ <example text="pay me the money">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::commerce-pay
+ </relation>
+ <relation label="overlap">
+  vn::pay-68
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-goal-affected-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">dynamic</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="remunerate" />
+ </morph>
+ <relation label="inherit">
+  ont::commerce-pay
+ </relation>
+ <relation label="overlap">
+  vn::judgement-33
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="repay" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="repaid" />
+   </past>
+   <ing>
+    <word first-word="repaying" />
+   </ing>
+   <nom>
+    <word first-word="repayment" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::commerce-pay
+ </relation>
+ <relation label="overlap">
+  vn::pay-68
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-goal-affected-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::for" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="repay" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="repaid" />
+   </past>
+   <ing>
+    <word first-word="repaying" />
+   </ing>
+   <nom>
+    <word first-word="repayment" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::commerce-pay
+ </relation>
+ <relation label="overlap">
+  vn::pay-68
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-cost-goal-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::to" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="spend" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="spent" />
+   </past>
+   <ing>
+    <word first-word="spending" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="he spent 5 dollars">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::commerce-pay
+  ont::agent-cost-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="spend" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="spent" />
+   </past>
+   <ing>
+    <word first-word="spending" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="he spent 5 dollars on/for it">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::commerce-pay
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-cost-neutral-templ" xp="'(w::pp
+                                                                (w::or w::for
+                                                                       w::on))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::for w::on)" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+</dsl>

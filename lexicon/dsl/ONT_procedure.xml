@@ -1,0 +1,357 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::procedure">
+ <relation label="inherit">
+  ont::ps-object
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="information">mental-construct</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object-nontemporal">
+ <comment>
+  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::mental-construction">
+ <comment>
+  &quot;constructions of the mind: plans, goals, beliefs, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object-nontemporal
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="information">mental-construct</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::ps-object">
+ <relation label="inherit">
+  ont::mental-construction
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::recipe">
+ <relation label="inherit">
+  ont::procedure
+ </relation>
+ </concept>
+ <concept name="ont::protocol">
+ <relation label="inherit">
+  ont::procedure
+ </relation>
+ </concept>
+ <concept name="ont::policy">
+ <relation label="inherit">
+  ont::procedure
+ </relation>
+ </concept>
+ <concept name="ont::algorithm">
+ <relation label="inherit">
+  ont::procedure
+ </relation>
+ </concept>
+ <concept name="ont::process">
+ <relation label="inherit">
+  ont::procedure
+ </relation>
+ <relation label="overlap">
+  wn::|procedure%1:04:00::|
+  wn::|process%1:04:00::|
+ </relation>
+ </concept>
+ <concept name="ont::treatment">
+ <relation label="inherit">
+  ont::procedure
+ </relation>
+ <relation label="overlap">
+  wn::|care%1:04:01::|
+  wn::|attention%1:04:01::|
+  wn::|aid%1:04:01::|
+  wn::|tending%1:04:00::|
+  wn::|regimen%1:09:00::|
+  wn::|regime%1:09:00::|
+ </relation>
+ </concept>
+ <concept name="ont::medical-test">
+ <relation label="inherit">
+  ont::procedure
+ </relation>
+ </concept>
+ <concept name="ont::medical-procedure">
+ <relation label="inherit">
+  ont::procedure
+ </relation>
+ <relation label="overlap">
+  wn::|medical_procedure%1:04:00::|
+  wn::|incision%1:04:00::|
+  wn::|section%1:04:00::|
+  wn::|surgical_incision%1:04:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="approach" />
+ </morph>
+ <comment>
+  &quot;LF-RESTRUCTURING&quot;
+ </comment>
+ <example text="the approach for solving this problem">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::procedure
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="experiment" />
+ </morph>
+ <example text="this is an experiment">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::procedure
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-theme-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="plan" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="let's make a plan">
+ </example>
+ <relation label="inherit">
+  ont::procedure
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="procedure" />
+ </morph>
+ <comment>
+  &quot;LF-RESTRUCTURING&quot;
+ </comment>
+ <example text="the procedure for solving this problem">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::procedure
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="scheme" />
+ </morph>
+ <example text="choose a page-numbering scheme">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::procedure
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="subtask" />
+ </morph>
+ <comment>
+  &quot;LF-RESTRUCTURING&quot;
+ </comment>
+ <relation label="inherit">
+  ont::procedure
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="system" />
+ </morph>
+ <example text="a meal system">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::procedure
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="task" />
+ </morph>
+ <comment>
+  &quot;LF-RESTRUCTURING&quot;
+ </comment>
+ <relation label="inherit">
+  ont::procedure
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="technique" />
+ </morph>
+ <comment>
+  &quot;LF-RESTRUCTURING&quot;
+ </comment>
+ <example text="the technique for solving this problem">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::procedure
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>
