@@ -4,13 +4,14 @@
  <provenance name="TRIPS"/>
  <concept name="ont::responsibility">
  <relation label="inherit">
-  ont::ordered-domain
+  ont::social-contract
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
+ <relation label="overlap">
+  wn::|duty%1:04:00::|
+  wn::|duty%1:04:02::|
+  wn::|obligation%1:04:00::|
+  wn::|responsibility%1:04:00::|
+ </relation>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -24,7 +25,6 @@
   ont::root
  </relation>
  </concept>
- <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -42,17 +42,7 @@
   <concept name="proposition" />
  </or>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
+ <concept name="abstr-obj" />
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -67,34 +57,49 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="ont::domain">
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="information">mental-construct</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object-nontemporal">
  <comment>
-  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
+  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
+  abstr-obj
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
+  <concept name="situation" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::ordered-domain">
+ <concept name="ont::mental-construction">
+ <comment>
+  &quot;constructions of the mind: plans, goals, beliefs, ...&quot;
+ </comment>
  <relation label="inherit">
-  ont::domain
+  ont::abstract-object-nontemporal
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="information">mental-construct</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::social-contract">
+ <relation label="inherit">
+  ont::mental-construction
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sense>
  <morph>
@@ -114,6 +119,9 @@
   <pos pos="n" />
   <word first-word="obligation" />
  </morph>
+ <example text="every right implies a responsibility; every opportunity, an obligation; every possession, a duty">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::responsibility
   ont::count-pred-templ
@@ -127,6 +135,9 @@
  <comment>
   &quot;related to obligation&quot;
  </comment>
+ <example text="every right implies a responsibility; every opportunity, an obligation; every possession, a duty">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::responsibility
   ont::count-pred-templ

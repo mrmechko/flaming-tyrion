@@ -9657,8 +9657,11 @@
          (OVERLAP WN::|react%2:31:00::| WN::|respond%2:31:00::|))
 
 (CONCEPT ONT::RESPONSIBILITY
-         (INHERIT ONT::ORDERED-DOMAIN)
-         (SEM-FRAME (ONT::FIGURE (CONCEPT T) OPTIONAL)))
+         (INHERIT ONT::SOCIAL-CONTRACT)
+         (OVERLAP WN::|duty%1:04:00::|
+                  WN::|duty%1:04:02::|
+                  WN::|obligation%1:04:00::|
+                  WN::|responsibility%1:04:00::|))
 
 (CONCEPT ONT::RESPONSIBILITY-VAL
          (INHERIT ONT::SOCIAL-INTERACTION-VAL)
@@ -9667,10 +9670,6 @@
                      (OR (CONCEPT ABSTR-OBJ)
                          (CONCEPT PHYS-OBJ)
                          (CONCEPT SITUATION)))))
-
-(CONCEPT ONT::RESPONSIBLE-TO-OR-FOR
-         (INHERIT ONT::SOCIAL-CONTRACT)
-         (OVERLAP WN::|duty%1:04:00::| WN::|duty%1:04:02::|))
 
 (CONCEPT ONT::RESTART
          (INHERIT ONT::START)
