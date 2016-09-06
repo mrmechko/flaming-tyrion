@@ -9,15 +9,15 @@
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="scale">length</feat>
-   </sem-feats>
+   <concept name="abstr-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <concept name="situation" />
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="type">change-magnitude</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -85,15 +85,15 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">length</feat>
-  </sem-feats>
+  <concept name="abstr-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <concept name="situation" />
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="type">change-magnitude</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
  <concept name="abstr-obj" />
@@ -154,4 +154,34 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="by" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="by two fold">
+ </example>
+ <relation label="inherit">
+  ont::extent-predicate
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
 </dsl>
