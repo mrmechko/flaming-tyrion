@@ -15,8 +15,8 @@
                   WN::|capable%3:00:00::|
                   WN::|capable%3:00:00::|
                   WN::|competent%3:00:00::|
-                  WN::|able%5:00:00::|
-                  WN::|able%5:00:00::|))
+                  WN::|able%5:00:00:competent:00|
+                  WN::|able%5:00:00:capable:00|))
 
 (CONCEPT ONT::ABNORMALITY
          (INHERIT ONT::EVENT-TYPE)
@@ -246,7 +246,7 @@
          (OVERLAP WN::|busy%3:00:00::|
                   WN::|active%3:00:03::|
                   WN::|active%3:00:06::|
-                  WN::|busy%5:00:01::|)
+                  WN::|busy%5:00:01:active:06|)
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::ACTIVE-PERCEPTION
@@ -348,7 +348,8 @@
 
 (CONCEPT ONT::ADEQUATE
          (INHERIT ONT::ENOUGH-VAL)
-         (OVERLAP WN::|adequate%5:00:00::| WN::|sufficient%3:00:00::|))
+         (OVERLAP WN::|sufficient%3:00:00::|
+                  WN::|adequate%5:00:00:sufficient:00|))
 
 (CONCEPT ONT::ADJACENT
          (INHERIT ONT::NEAR-RELN)
@@ -447,14 +448,14 @@
 (CONCEPT ONT::AILING
          (INHERIT ONT::PHYSICAL-SYMPTOM-VAL)
          (OVERLAP WN::|clammy%3:00:00::|
-                  WN::|ailing%5:00:00::|
-                  WN::|nauseated%5:00:00::|
-                  WN::|dizzy%5:00:00::|
+                  WN::|ailing%5:00:00:ill:01|
+                  WN::|nauseated%5:00:00:ill:01|
                   WN::|ill%3:00:01::|
-                  WN::|faint%5:00:00::|
-                  WN::|feverish%5:00:00::|
-                  WN::|upset%5:00:00::|
-                  WN::|lightheaded%3:00:00:ill:01|))
+                  WN::|lightheaded%3:00:00:ill:01|
+                  WN::|feverish%5:00:00:ill:01|
+                  WN::|dizzy%5:00:00:ill:01|
+                  WN::|upset%5:00:00:ill:01|
+                  WN::|faint%5:00:00:ill:01|))
 
 (CONCEPT ONT::AIR-CURRENT
          (INHERIT ONT::ATMOSPHERIC-PHENOMENON)
@@ -830,11 +831,11 @@
 
 (CONCEPT ONT::ARTIFICIAL
          (INHERIT ONT::NATURAL-VAL)
-         (OVERLAP WN::|fake%5:00:00::|
-                  WN::|affected%3:00:01::|
+         (OVERLAP WN::|affected%3:00:01::|
                   WN::|artificial%3:00:00::|
-                  WN::|artificial%5:00:00::|
-                  WN::|unnatural%3:00:00::|))
+                  WN::|unnatural%3:00:00::|
+                  WN::|artificial%5:00:00:affected:01|
+                  WN::|fake%5:00:00:artificial:00|))
 
 (CONCEPT ONT::AS-MUCH-AS
          (INHERIT ONT::DOMAIN-PROPERTY)
@@ -1103,9 +1104,9 @@
 
 (CONCEPT ONT::AVAILABLE
          (INHERIT ONT::AVAILABILITY-VAL)
-         (OVERLAP WN::|available%5:00:00::|
-                  WN::|available%3:00:00::|
-                  WN::|free%3:00:00::|))
+         (OVERLAP WN::|available%3:00:00::|
+                  WN::|free%3:00:00::|
+                  WN::|available%5:00:00:free:00|))
 
 (CONCEPT ONT::AVOID-LOCATION
          (INHERIT ONT::PATH-SHAPE)
@@ -1154,18 +1155,18 @@
 
 (CONCEPT ONT::BAD
          (INHERIT ONT::ACCEPTABILITY-VAL)
-         (OVERLAP WN::|atrocious%5:00:00::|
-                  WN::|intolerable%3:00:00::|
+         (OVERLAP WN::|intolerable%3:00:00::|
                   WN::|unfavorable%3:00:02::|
                   WN::|bad%3:00:00::|
-                  WN::|impossible%5:00:00::|
-                  WN::|dirty%5:00:00::|
                   WN::|nasty%3:00:00::|
-                  WN::|icky%5:00:00::|
-                  WN::|unfavorable%5:00:00::|
-                  WN::|unsupportable%5:00:00::|
+                  WN::|unfavorable%5:00:00:bad:00|
+                  WN::|unsupportable%5:00:00:intolerable:00|
                   WN::|unacceptable%3:00:00::|
-                  WN::|mediocre%5:00:00::|))
+                  WN::|impossible%5:00:00:intolerable:00|
+                  WN::|dirty%5:00:00:nasty:00|
+                  WN::|mediocre%5:00:00:bad:00|
+                  WN::|icky%5:00:00:bad:00|
+                  WN::|atrocious%5:00:00:bad:00|))
 
 (CONCEPT ONT::BAG (INHERIT ONT::SMALL-CONTAINER) (OVERLAP WN::|bag%1:06:00::|))
 
@@ -1242,8 +1243,8 @@
          (INHERIT ONT::BEAUTY-VAL)
          (OVERLAP WN::|beautiful%3:00:00::|
                   WN::|beautiful%3:00:00::|
-                  WN::|lovely%5:00:00::|
-                  WN::|pretty%5:00:00::|))
+                  WN::|lovely%5:00:00:beautiful:00|
+                  WN::|pretty%5:00:00:beautiful:00|))
 
 (CONCEPT ONT::BEAUTY-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
@@ -1536,7 +1537,7 @@
 
 (CONCEPT ONT::BORING
          (INHERIT ONT::FASCINATION-VAL)
-         (OVERLAP WN::|boring%5:00:00::|
+         (OVERLAP WN::|boring%5:00:00:uninteresting:00|
                   WN::|uninteresting%3:00:00::|
                   WN::|uninteresting%3:00:00::|))
 
@@ -1630,9 +1631,9 @@
          (OVERLAP WN::|wide%3:00:00::|
                   WN::|fat%3:00:01::|
                   WN::|thick%3:00:01::|
-                  WN::|compact%5:00:00::|
-                  WN::|chubby%5:00:00::|
-                  WN::|fat%3:00:01::|))
+                  WN::|chubby%5:00:00:fat:01|
+                  WN::|fat%3:00:01::|
+                  WN::|compact%5:00:00::|))
 
 (CONCEPT ONT::BRONCHODILATOR
          (INHERIT ONT::MEDICATION)
@@ -1972,11 +1973,11 @@
 
 (CONCEPT ONT::CERTAIN
          (INHERIT ONT::CONFIDENCE-VAL)
-         (OVERLAP WN::|certain(p)%3:00:01::|
-                  WN::|convinced(p)%5:00:00::|
+         (OVERLAP WN::|certain%3:00:01::|
+                  WN::|convinced%5:00:00::|
                   WN::|sealed%3:00:02::|
-                  WN::|certain(p)%3:00:02::|
-                  WN::|indisputable%5:00:00::|))
+                  WN::|certain%3:00:02::|
+                  WN::|indisputable%5:00:00:certain:01|))
 
 (CONCEPT ONT::CERTAINTY-VAL (INHERIT ONT::PROPERTY-VAL))
 
@@ -2158,13 +2159,13 @@
 
 (CONCEPT ONT::CLEAR
          (INHERIT ONT::CLARITY-VAL)
-         (OVERLAP WN::|apparent%5:00:00::| WN::|obvious%3:00:00::|))
+         (OVERLAP WN::|obvious%3:00:00::| WN::|apparent%5:00:00:obvious:00|))
 
 (CONCEPT ONT::CLEAR-WEATHER
          (INHERIT ONT::ATMOSPHERIC-VAL)
          (OVERLAP WN::|clear%3:00:03::|
                   WN::|clear%3:00:03::|
-                  WN::|fair%5:00:00::|))
+                  WN::|fair%5:00:00:clear:03|))
 
 (CONCEPT ONT::CLICK
          (INHERIT ONT::APPLY-FORCE)
@@ -2209,9 +2210,9 @@
 (CONCEPT ONT::CLOUDY
          (INHERIT ONT::ATMOSPHERIC-VAL)
          (OVERLAP WN::|cloudy%3:00:00::|
-                  WN::|cloud-covered%5:00:00::|
-                  WN::|brumous%5:00:00::|
-                  WN::|smoggy%5:00:00::|))
+                  WN::|cloud-covered%5:00:00:cloudy:00|
+                  WN::|brumous%5:00:00:cloudy:00|
+                  WN::|smoggy%5:00:00:cloudy:00|))
 
 (CONCEPT ONT::CO-MOTION
          (INHERIT ONT::MOTION)
@@ -2258,7 +2259,7 @@
          (INHERIT ONT::TEMPERATURE-VAL)
          (OVERLAP WN::|cool%3:00:01::|
                   WN::|cool%3:00:03::|
-                  WN::|cold%5:00:00::|))
+                  WN::|cold%5:00:00:cool:03|))
 
 (CONCEPT ONT::COLLABORATE
          (INHERIT ONT::AGENT-INTERACTION)
@@ -2397,8 +2398,8 @@
 (CONCEPT ONT::COMFORTABLE
          (INHERIT ONT::COMFORT-VAL)
          (OVERLAP WN::|comfortable%3:00:00::|
-                  WN::|cozy%5:00:00::|
-                  WN::|comfortable%3:00:00::|))
+                  WN::|comfortable%3:00:00::|
+                  WN::|cozy%5:00:00:comfortable:00|))
 
 (CONCEPT ONT::COMFORTABLENESS (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN))
 
@@ -2487,15 +2488,15 @@
                   WN::|conventional%3:00:00::|
                   WN::|ordinary%3:00:00::|
                   WN::|normal%3:00:01::|
-                  WN::|everyday%5:00:00::|
-                  WN::|run-of-the-mill%5:00:00::|
-                  WN::|common%5:00:00::|
-                  WN::|conventional%5:00:00::|
-                  WN::|standard%5:00:00::|
+                  WN::|run-of-the-mill%5:00:00:ordinary:00|
                   WN::|familiar%3:00:02::|
                   WN::|orthodox%3:00:00::|
                   WN::|usual%3:00:00::|
-                  WN::|regular(a)%5:00:00::|
+                  WN::|regular%5:00:00::|
+                  WN::|everyday%5:00:00::|
+                  WN::|common%5:00:00::|
+                  WN::|conventional%5:00:00::|
+                  WN::|standard%5:00:00::|
                   WN::|common%5:00:00::|
                   WN::|standard%5:00:00::|
                   WN::|regular%5:00:00::|
@@ -2997,9 +2998,9 @@
 
 (CONCEPT ONT::CORRECT
          (INHERIT ONT::CORRECTNESS-VAL)
-         (OVERLAP WN::|accurate%5:00:00::|
+         (OVERLAP WN::|accurate%5:00:00:correct:00|
                   WN::|correct%3:00:00::|
-                  WN::|correct%5:00:00::|
+                  WN::|correct%5:00:00:proper:00|
                   WN::|proper%3:00:00::|))
 
 (CONCEPT ONT::CORRECTNESS-VAL (INHERIT ONT::PROPERTY-VAL))
@@ -3228,7 +3229,7 @@
 
 (CONCEPT ONT::DAZED
          (INHERIT ONT::PHYSICAL-SYMPTOM-VAL)
-         (OVERLAP WN::|dazed%5:00:00::| WN::|lethargic%3:00:00::|))
+         (OVERLAP WN::|lethargic%3:00:00::| WN::|dazed%5:00:00:lethargic:00|))
 
 (CONCEPT ONT::DEACTIVATE
          (COMMENT
@@ -3360,9 +3361,9 @@
 
 (CONCEPT ONT::DEPENDENT
          (INHERIT ONT::DEPENDENCE-VAL)
-         (OVERLAP WN::|dependent%5:00:00::|
-                  WN::|dependent%3:00:00::|
-                  WN::|conditional%3:00:00::|))
+         (OVERLAP WN::|dependent%3:00:00::|
+                  WN::|conditional%3:00:00::|
+                  WN::|dependent%5:00:00:conditional:00|))
 
 (CONCEPT ONT::DEPRESSION
          (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
@@ -3549,22 +3550,22 @@
          (INHERIT ONT::SIMILARITY-VAL)
          (OVERLAP WN::|unlike%3:00:00::|
                   WN::|unlike%3:00:00::|
-                  WN::|distinct%5:00:00::|
-                  WN::|discrete%5:00:00::|
+                  WN::|discrete%5:00:00:separate:00|
                   WN::|different%3:00:00::|
-                  WN::|separate%3:00:00::|))
+                  WN::|separate%3:00:00::|
+                  WN::|distinct%5:00:00::|))
 
 (CONCEPT ONT::DIFFICULT
          (INHERIT ONT::TASK-COMPLEXITY-VAL)
          (OVERLAP WN::|difficult%3:00:00::|
-                  WN::|catchy%5:00:00::|
                   WN::|complex%3:00:00::|
-                  WN::|ambitious%5:00:00::|
-                  WN::|ambitious%5:00:00::|
+                  WN::|ambitious%5:00:00:difficult:00|
+                  WN::|ambitious%5:00:00:difficult:00|
                   WN::|complex%3:00:00::|
-                  WN::|rugged%5:00:00::|
-                  WN::|arduous%5:00:00::|
-                  WN::|complicated%5:00:00::|))
+                  WN::|complicated%5:00:00:complex:00|
+                  WN::|rugged%5:00:00:difficult:00|
+                  WN::|arduous%5:00:00:difficult:00|
+                  WN::|catchy%5:00:00:difficult:00|))
 
 (CONCEPT ONT::DIG
          (INHERIT ONT::CAUSE-TO-MOVE)
@@ -3887,15 +3888,15 @@
 
 (CONCEPT ONT::EAST
          (INHERIT ONT::MAP-LOCATION-VAL)
-         (OVERLAP WN::|east%3:00:00::| WN::|eastern%5:00:00::|))
+         (OVERLAP WN::|east%3:00:00::| WN::|eastern%5:00:00:east:00|))
 
 (CONCEPT ONT::EAST-RELN (INHERIT ONT::NAVIGATIONAL-RELN))
 
 (CONCEPT ONT::EASY
          (INHERIT ONT::TASK-COMPLEXITY-VAL)
-         (OVERLAP WN::|elementary%5:00:00::|
-                  WN::|simple%3:00:02::|
-                  WN::|easy%3:00:01::|))
+         (OVERLAP WN::|simple%3:00:02::|
+                  WN::|easy%3:00:01::|
+                  WN::|elementary%5:00:00:easy:01|))
 
 (CONCEPT ONT::EATER
          (INHERIT ONT::ORGANISM)
@@ -4112,7 +4113,7 @@
 (CONCEPT ONT::EQUAL
          (INHERIT ONT::SIMILARITY-VAL)
          (OVERLAP WN::|equal%3:00:00::|
-                  WN::|equivalent%5:00:00::|
+                  WN::|equivalent%5:00:00:equal:00|
                   WN::|equal%3:00:00::|))
 
 (CONCEPT ONT::EQUIPMENT
@@ -4168,8 +4169,8 @@
          (INHERIT ONT::POS-INTENSE-EMOTIONAL-VAL)
          (OVERLAP WN::|euphoric%3:00:00::|
                   WN::|happy%3:00:00::|
-                  WN::|beaming%5:00:00::|
-                  WN::|cheerful%3:00:00::|))
+                  WN::|cheerful%3:00:00::|
+                  WN::|beaming%5:00:00:cheerful:00|))
 
 (CONCEPT ONT::EVACUATE
          (INHERIT ONT::RESCUE)
@@ -4552,7 +4553,7 @@
 
 (CONCEPT ONT::EXPENSIVE
          (INHERIT ONT::COST-VAL)
-         (OVERLAP WN::|costly%5:00:01::|
+         (OVERLAP WN::|costly%5:00:01:expensive:00|
                   WN::|expensive%3:00:00::|
                   WN::|expensive%3:00:00::|))
 
@@ -4619,7 +4620,7 @@
 
 (CONCEPT ONT::EXTERNAL
          (INHERIT ONT::LOCATION-VAL)
-         (OVERLAP WN::|external%3:00:00::| WN::|outer%5:00:00::|))
+         (OVERLAP WN::|external%3:00:00::| WN::|outer%5:00:00:external:00|))
 
 (CONCEPT ONT::EXTERNAL-AUTHORITY
          (INHERIT ONT::GOVERNING-PRINCIPLE)
@@ -4835,12 +4836,12 @@
          (INHERIT ONT::COMPLETION-VAL)
          (OVERLAP WN::|finished%3:00:01::|
                   WN::|finished%3:00:01::|
-                  WN::|complete%5:00:00::|
-                  WN::|accomplished%5:00:00::|
-                  WN::|done%5:00:00::|
                   WN::|complete%3:00:00::|
-                  WN::|dead(a)%5:00:00::|
-                  WN::|complete%3:00:00::|))
+                  WN::|dead%5:00:00::|
+                  WN::|complete%3:00:00::|
+                  WN::|done%5:00:00:finished:01|
+                  WN::|complete%5:00:00:finished:01|
+                  WN::|accomplished%5:00:00:complete:00|))
 
 (CONCEPT ONT::FIRE (INHERIT ONT::LOCATED-EVENT))
 
@@ -5045,7 +5046,7 @@
 
 (CONCEPT ONT::FULL
          (INHERIT ONT::CONFIGURATION-PROPERTY-VAL)
-         (OVERLAP WN::|full%3:00:00::| WN::|filled%5:00:01::|))
+         (OVERLAP WN::|full%3:00:00::| WN::|filled%5:00:01:full:00|))
 
 (CONCEPT ONT::FULLNAME
          (INHERIT ONT::NAME)
@@ -5263,23 +5264,23 @@
 
 (CONCEPT ONT::GOOD
          (INHERIT ONT::ACCEPTABILITY-VAL)
-         (OVERLAP WN::|all_right%5:00:00::|
+         (OVERLAP WN::|all_right%5:00:00:satisfactory:00|
                   WN::|favorable%3:00:02::|
                   WN::|acceptable%3:00:00::|
                   WN::|tolerable%3:00:00::|
                   WN::|nice%3:00:00::|
                   WN::|satisfactory%3:00:00::|
-                  WN::|adequate%5:00:00::|
-                  WN::|bearable%5:00:00::|
-                  WN::|satisfactory%5:00:00::|
+                  WN::|bearable%5:00:00:tolerable:00|
+                  WN::|satisfactory%5:00:00:good:01|
                   WN::|good%3:00:01::|
                   WN::|tolerable%3:00:00::|
                   WN::|tolerable%3:00:00::|
-                  WN::|bang-up%5:00:00::|
-                  WN::|bearable%5:00:00::|
-                  WN::|alright%5:00:00::|
-                  WN::|superb%5:00:00::|
-                  WN::|good%5:00:00::|))
+                  WN::|bang-up%5:00:00:good:01|
+                  WN::|bearable%5:00:00:tolerable:00|
+                  WN::|alright%5:00:00:satisfactory:00|
+                  WN::|superb%5:00:00:good:01|
+                  WN::|good%5:00:00:nice:00|
+                  WN::|adequate%5:00:00:satisfactory:00|))
 
 (CONCEPT ONT::GOODBYE (INHERIT ONT::SPEECH-ACT))
 
@@ -5317,7 +5318,7 @@
          (INHERIT ONT::POS-SOFT-EMOTIONAL-VAL)
          (OVERLAP WN::|grateful%3:00:00::|
                   WN::|glad%3:00:00::|
-                  WN::|glad%5:00:00::|))
+                  WN::|glad%5:00:00:grateful:00|))
 
 (CONCEPT ONT::GRAY (INHERIT ONT::COLOR-VAL))
 
@@ -5581,9 +5582,9 @@
 (CONCEPT ONT::HIDDEN
          (INHERIT ONT::VISIBLE-PROPERTY-VAL)
          (OVERLAP WN::|invisible%3:00:00::|
-                  WN::|concealed%5:00:00::|
+                  WN::|concealed%5:00:00:invisible:00|
                   WN::|inconspicuous%3:00:00::|
-                  WN::|obscure%5:00:00::|))
+                  WN::|obscure%5:00:00:inconspicuous:00|))
 
 (CONCEPT ONT::HIDE
          (INHERIT ONT::PUT)
@@ -5704,10 +5705,10 @@
 (CONCEPT ONT::HUNGRY
          (INHERIT ONT::BODY-PROPERTY-VAL)
          (OVERLAP WN::|hungry%3:00:00::|
-                  WN::|famished%5:00:00::|
+                  WN::|famished%5:00:00:hungry:00|
                   WN::|hungry%3:00:00::|
                   WN::|hungry%3:00:00::|
-                  WN::|peckish%5:00:00::|))
+                  WN::|peckish%5:00:00:hungry:00|))
 
 (CONCEPT ONT::HYDROLYSIS
          (INHERIT ONT::ADJUST)
@@ -5819,21 +5820,22 @@
 
 (CONCEPT ONT::INADEQUATE
          (INHERIT ONT::ENOUGH-VAL)
-         (OVERLAP WN::|inadequate%5:00:00::| WN::|insufficient%3:00:00::|))
+         (OVERLAP WN::|inadequate%5:00:00:insufficient:00|
+                  WN::|insufficient%3:00:00::|))
 
 (CONCEPT ONT::INCLUSIVE (INHERIT ONT::MANNER))
 
 (CONCEPT ONT::INCOMING
          (INHERIT ONT::DIRECTION-VAL)
          (OVERLAP WN::|incoming%3:00:00::|
-                  WN::|inbound%5:00:00::|
+                  WN::|inbound%5:00:00:incoming:00|
                   WN::|incoming%3:00:00::|))
 
 (CONCEPT ONT::INCOMPLETE
          (INHERIT ONT::COMPLETION-VAL)
          (OVERLAP WN::|incomplete%3:00:00::|
                   WN::|unfinished%3:00:01::|
-                  WN::|incomplete%5:00:00::|))
+                  WN::|incomplete%5:00:00:unfinished:01|))
 
 (CONCEPT ONT::INCONSISTENT
          (INHERIT ONT::CONSISTENT-VAL)
@@ -5843,9 +5845,9 @@
 (CONCEPT ONT::INCORRECT
          (INHERIT ONT::CORRECTNESS-VAL)
          (OVERLAP WN::|incorrect%3:00:00::|
-                  WN::|faulty%5:00:00::|
-                  WN::|false%5:00:00::|
-                  WN::|inaccurate%3:00:00::|))
+                  WN::|inaccurate%3:00:00::|
+                  WN::|faulty%5:00:00:inaccurate:00|
+                  WN::|false%5:00:00:incorrect:00|))
 
 (CONCEPT ONT::INCREASE
          (INHERIT ONT::CHANGE-MAGNITUDE)
@@ -5987,7 +5989,7 @@
 
 (CONCEPT ONT::INSANE
          (INHERIT ONT::REASONABLE-VAL)
-         (OVERLAP WN::|brainsick%5:00:00::| WN::|insane%3:00:00::|))
+         (OVERLAP WN::|brainsick%5:00:00:insane:00| WN::|insane%3:00:00::|))
 
 (CONCEPT ONT::INSANITY
          (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
@@ -6032,19 +6034,19 @@
          (INHERIT ONT::INTENSITY-VAL)
          (OVERLAP WN::|high%3:00:03::|
                   WN::|intense%3:00:00::|
-                  WN::|shrill%5:00:00::|
-                  WN::|acute%5:00:00::|
                   WN::|powerful%3:00:00::|
                   WN::|strong%3:00:00::|
                   WN::|deep%3:00:01::|
                   WN::|high%3:00:02::|
                   WN::|intense%3:00:00::|
                   WN::|sharp%3:00:04::|
-                  WN::|potent%5:00:00::|
-                  WN::|deep%5:00:00::|
-                  WN::|strong%5:00:00::|
-                  WN::|deep%5:00:00::|
-                  WN::|intensive%5:00:00:intense:00|))
+                  WN::|intensive%5:00:00:intense:00|
+                  WN::|potent%5:00:00:powerful:00|
+                  WN::|strong%5:00:00:powerful:00|
+                  WN::|strong%5:00:00:intense:00|
+                  WN::|shrill%5:00:00:high:03|
+                  WN::|deep%5:00:00:intense:00|
+                  WN::|acute%5:00:00:sharp:04|))
 
 (CONCEPT ONT::INTENSIFIER (INHERIT ONT::MODIFIER))
 
@@ -6098,7 +6100,7 @@
 
 (CONCEPT ONT::INTERNAL
          (INHERIT ONT::LOCATION-VAL)
-         (OVERLAP WN::|internal%3:00:00::| WN::|inner%5:00:00::|))
+         (OVERLAP WN::|internal%3:00:00::| WN::|inner%5:00:00:internal:00|))
 
 (CONCEPT ONT::INTERNAL-AUTHORITY
          (INHERIT ONT::GOVERNING-PRINCIPLE)
@@ -6368,16 +6370,16 @@
 
 (CONCEPT ONT::LARGE
          (INHERIT ONT::SIZE-VAL)
-         (OVERLAP WN::|broad%5:00:00::|
-                  WN::|unlimited%3:00:00::|
+         (OVERLAP WN::|unlimited%3:00:00::|
                   WN::|large%3:00:00::|
-                  WN::|humongous%5:00:00::|
-                  WN::|huge%5:00:01::|
-                  WN::|elephantine%5:00:00::|
-                  WN::|massive%5:00:00::|
-                  WN::|extensive%5:00:00::|
-                  WN::|enormous%5:00:00::|
-                  WN::|double%5:00:00::|))
+                  WN::|humongous%5:00:00:large:00|
+                  WN::|huge%5:00:01:large:00|
+                  WN::|elephantine%5:00:00:large:00|
+                  WN::|enormous%5:00:00:large:00|
+                  WN::|massive%5:00:00:large:00|
+                  WN::|extensive%5:00:00:large:00|
+                  WN::|double%5:00:00:large:00|
+                  WN::|broad%5:00:00:large:00|))
 
 (CONCEPT ONT::LASTNAME
          (INHERIT ONT::NAME)
@@ -6449,7 +6451,7 @@
          (INHERIT ONT::LOCATION-VAL)
          (OVERLAP WN::|left%3:00:00::|
                   WN::|center%3:00:00::|
-                  WN::|leftmost%5:00:00::|))
+                  WN::|leftmost%5:00:00:left:00|))
 
 (CONCEPT ONT::LEFT-LOC
          (INHERIT ONT::LOC-WRT-ORIENTATION)
@@ -6537,7 +6539,7 @@
 
 (CONCEPT ONT::LIGHTWEIGHT
          (INHERIT ONT::WEIGHT-VAL)
-         (OVERLAP WN::|light%3:00:01::| WN::|lightweight%5:00:00::|))
+         (OVERLAP WN::|light%3:00:01::| WN::|lightweight%5:00:00:light:01|))
 
 (CONCEPT ONT::LIKELIHOOD
          (INHERIT ONT::ORDERED-DOMAIN)
@@ -6746,7 +6748,7 @@
 
 (CONCEPT ONT::LOGICAL
          (INHERIT ONT::CORRECTNESS-VAL)
-         (OVERLAP WN::|legitimate%5:00:00::| WN::|valid%3:00:00::|))
+         (OVERLAP WN::|valid%3:00:00::| WN::|legitimate%5:00:00:valid:00|))
 
 (CONCEPT ONT::LONG
          (INHERIT ONT::LENGTH-VAL)
@@ -6786,7 +6788,7 @@
 
 (CONCEPT ONT::LUCKY
          (INHERIT ONT::LUCKINESS-VAL)
-         (OVERLAP WN::|fortunate%3:00:00::| WN::|lucky%5:00:00::|))
+         (OVERLAP WN::|fortunate%3:00:00::| WN::|lucky%5:00:00:fortunate:00|))
 
 (CONCEPT ONT::LUMINOSITY-SCALE (INHERIT ONT::SCALE))
 
@@ -6858,7 +6860,8 @@
 
 (CONCEPT ONT::MANAGEABLE
          (INHERIT ONT::MANAGEABILITY-VAL)
-         (OVERLAP WN::|controllable%5:00:00::| WN::|manageable%3:00:00::|))
+         (OVERLAP WN::|controllable%5:00:00:manageable:00|
+                  WN::|manageable%3:00:00::|))
 
 (CONCEPT ONT::MANAGING
          (INHERIT ONT::CONTROL-MANAGE)
@@ -7491,9 +7494,9 @@
          (INHERIT ONT::DISTANCE-VAL)
          (OVERLAP WN::|near%3:00:00::|
                   WN::|close%3:00:02::|
-                  WN::|approximate%5:00:00::|
                   WN::|close%3:00:02::|
-                  WN::|nearby%5:00:00::|))
+                  WN::|nearby%5:00:00:near:00|
+                  WN::|approximate%5:00:00:close:02|))
 
 (CONCEPT ONT::NEAR-RELN (INHERIT ONT::PROXIMATE-RELN))
 
@@ -7507,7 +7510,7 @@
                   WN::|essential%5:00:00::|
                   WN::|vital%5:00:00::|
                   WN::|indispensable%3:00:00::|
-                  WN::|major(ip)%5:00:00::|))
+                  WN::|major%5:00:00::|))
 
 (CONCEPT ONT::NECESSITY
          (INHERIT ONT::EVENT-OF-STATE)
@@ -7612,10 +7615,10 @@
 
 (CONCEPT ONT::NORTH
          (INHERIT ONT::MAP-LOCATION-VAL)
-         (OVERLAP WN::|northwestern%5:00:00::|
-                  WN::|northeastern%5:00:00::|
-                  WN::|north%3:00:00::|
-                  WN::|northerly%5:00:02::|))
+         (OVERLAP WN::|north%3:00:00::|
+                  WN::|northerly%5:00:02:north:00|
+                  WN::|northeastern%5:00:00:north:00|
+                  WN::|northwestern%5:00:00:north:00|))
 
 (CONCEPT ONT::NORTH-RELN (INHERIT ONT::NAVIGATIONAL-RELN))
 
@@ -7972,7 +7975,7 @@
 (CONCEPT ONT::OUTGOING
          (INHERIT ONT::DIRECTION-VAL)
          (OVERLAP WN::|outgoing%3:00:00::|
-                  WN::|outbound%5:00:00::|
+                  WN::|outbound%5:00:00:outgoing:00|
                   WN::|outgoing%3:00:00::|))
 
 (CONCEPT ONT::OUTSIDE (INHERIT ONT::POS-AS-CONTAINMENT-RELN))
@@ -8577,7 +8580,7 @@
 (CONCEPT ONT::POSSIBLE
          (INHERIT ONT::TASK-COMPLEXITY-VAL)
          (OVERLAP WN::|possible%3:00:00::|
-                  WN::|accomplishable%5:00:00::|
+                  WN::|accomplishable%5:00:00:possible:00|
                   WN::|possible%3:00:00::|))
 
 (CONCEPT ONT::POSSIBLY-EXISTS
@@ -8658,7 +8661,7 @@
          (INHERIT ONT::PRECISION-VAL)
          (OVERLAP WN::|precise%3:00:00::|
                   WN::|precise%3:00:00::|
-                  WN::|dead%5:00:00::|))
+                  WN::|dead%5:00:00:precise:00|))
 
 (CONCEPT ONT::PRECISION-VAL (INHERIT ONT::PROPERTY-VAL))
 
@@ -8749,26 +8752,26 @@
 
 (CONCEPT ONT::PRIMARY
          (INHERIT ONT::IMPORTANCE-VAL)
-         (OVERLAP WN::|dangerous%5:00:00::|
+         (OVERLAP WN::|dangerous%5:00:00:critical:03|
                   WN::|important%3:00:00::|
                   WN::|significant%3:00:00::|
                   WN::|significant%3:00:00::|
                   WN::|important%3:00:00::|
                   WN::|senior%3:00:00::|
-                  WN::|cardinal%5:00:00::|
-                  WN::|chief(a)%5:00:02::|
-                  WN::|all-important(a)%5:00:00::|
-                  WN::|basal%5:00:00::|
-                  WN::|major(ip)%5:00:00::|))
+                  WN::|cardinal%5:00:00:important:00|
+                  WN::|chief%5:00:02::|
+                  WN::|all-important%5:00:00::|
+                  WN::|major%5:00:00::|
+                  WN::|basal%5:00:00::|))
 
 (CONCEPT ONT::PRIORITY (INHERIT ONT::PREDICATE))
 
 (CONCEPT ONT::PRIVATE
          (INHERIT ONT::STATUS-VAL)
-         (OVERLAP WN::|privy%5:00:00::|
-                  WN::|personal%3:00:00::|
+         (OVERLAP WN::|personal%3:00:00::|
                   WN::|private%3:00:00::|
-                  WN::|private%5:00:02::|))
+                  WN::|private%5:00:02:personal:00|
+                  WN::|privy%5:00:00:private:00|))
 
 (CONCEPT ONT::PRIZE
          (INHERIT ONT::FUNCTION-OBJECT ABSTR-OBJ)
@@ -9120,10 +9123,10 @@
 
 (CONCEPT ONT::QUIET
          (INHERIT ONT::LOUDNESS-VAL)
-         (OVERLAP WN::|hushed%5:00:00::|
-                  WN::|silent%5:00:00::|
+         (OVERLAP WN::|hushed%5:00:00:soft:04|
                   WN::|soft%3:00:04::|
-                  WN::|quiet%3:00:01::|))
+                  WN::|quiet%3:00:01::|
+                  WN::|silent%5:00:00:quiet:01|))
 
 (CONCEPT ONT::RANGE (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN))
 
@@ -9388,15 +9391,15 @@
          (INHERIT ONT::STATUS-VAL)
          (OVERLAP WN::|relevant%3:00:00::|
                   WN::|relevant%3:00:00::|
-                  WN::|pertinent%5:00:00::|
-                  WN::|applicable%5:00:00::|))
+                  WN::|applicable%5:00:00:relevant:00|
+                  WN::|pertinent%5:00:00:relevant:00|))
 
 (CONCEPT ONT::RELIABLE
          (INHERIT ONT::CERTAINTY-VAL)
          (OVERLAP WN::|reliable%3:00:00::|
                   WN::|reliable%3:00:00::|
                   WN::|trustworthy%3:00:00::|
-                  WN::|dependable%5:00:00::|))
+                  WN::|dependable%5:00:00:trustworthy:00|))
 
 (CONCEPT ONT::RELIGIOUS-FACILITY
          (INHERIT ONT::FACILITY)
@@ -9466,11 +9469,11 @@
 
 (CONCEPT ONT::REMOTE
          (INHERIT ONT::DISTANCE-VAL)
-         (OVERLAP WN::|distant%5:00:02::|
+         (OVERLAP WN::|distant%5:00:02:far:00|
                   WN::|distant%3:00:02::|
                   WN::|far%3:00:00::|
-                  WN::|distant%5:00:01::|
-                  WN::|farther%5:00:01::|))
+                  WN::|distant%5:00:01:far:00|
+                  WN::|farther%5:00:01:far:00|))
 
 (CONCEPT ONT::REMOVE-FROM
          (INHERIT ONT::EVENT-OF-CAUSATION)
@@ -9804,7 +9807,7 @@
          (INHERIT ONT::LOCATION-VAL)
          (OVERLAP WN::|right%3:00:03::|
                   WN::|right%3:00:00::|
-                  WN::|rightmost%5:00:00::|))
+                  WN::|rightmost%5:00:00:right:00|))
 
 (CONCEPT ONT::RIGHT-LOC
          (INHERIT ONT::LOC-WRT-ORIENTATION)
@@ -9912,8 +9915,8 @@
 (CONCEPT ONT::SAME
          (INHERIT ONT::IDENTITY-VAL)
          (OVERLAP WN::|same%3:00:02::|
-                  WN::|identical%5:00:00::|
-                  WN::|same%3:00:02::|))
+                  WN::|same%3:00:02::|
+                  WN::|identical%5:00:00:same:02|))
 
 (CONCEPT ONT::SAMPLING (INHERIT ONT::CHOOSING))
 
@@ -10091,15 +10094,15 @@
 
 (CONCEPT ONT::SECONDARY
          (INHERIT ONT::IMPORTANCE-VAL)
-         (OVERLAP WN::|junior-grade%5:00:00::|
+         (OVERLAP WN::|junior-grade%5:00:00:junior:00|
                   WN::|unnecessary%3:00:00::|
                   WN::|insignificant%3:00:00::|
                   WN::|insignificant%3:00:00::|
                   WN::|unimportant%3:00:00::|
                   WN::|minor%3:00:06::|
                   WN::|junior%3:00:00::|
-                  WN::|insignificant%5:00:00::|
-                  WN::|minor(ip)%5:00:00::|))
+                  WN::|minor%5:00:00::|
+                  WN::|insignificant%5:00:00:minor:06|))
 
 (CONCEPT ONT::SEEK (INHERIT ONT::SCRUTINY))
 
@@ -10380,16 +10383,16 @@
 
 (CONCEPT ONT::SIMILAR
          (INHERIT ONT::SIMILARITY-VAL)
-         (OVERLAP WN::|like%5:00:00::|
-                  WN::|corresponding%5:00:00::|
-                  WN::|comparable%5:00:00::|
+         (OVERLAP WN::|like%5:00:00:same:00|
+                  WN::|comparable%5:00:00:same:00|
                   WN::|like%3:00:04::|
                   WN::|similar%3:00:04::|
-                  WN::|alike(p)%3:00:00::|
+                  WN::|alike%3:00:00::|
                   WN::|same%3:00:04::|
                   WN::|like%3:00:02::|
                   WN::|like%3:00:00::|
-                  WN::|similar%3:00:02::|))
+                  WN::|similar%3:00:02::|
+                  WN::|corresponding%5:00:00::|))
 
 (CONCEPT ONT::SIMILARITY
          (INHERIT ONT::PREDICATE)
@@ -10489,20 +10492,20 @@
 
 (CONCEPT ONT::SMALL
          (INHERIT ONT::SIZE-VAL)
-         (OVERLAP WN::|bantam%5:00:00::|
+         (OVERLAP WN::|bantam%5:00:00:small:00|
                   WN::|small%3:00:00::|
                   WN::|limited%3:00:00::|
-                  WN::|bitty%5:00:00::|
-                  WN::|minor%5:00:00::|))
+                  WN::|bitty%5:00:00:small:00|
+                  WN::|minor%5:00:00:limited:00|))
 
 (CONCEPT ONT::SMALL-CONTAINER (INHERIT ONT::CONTAINER))
 
 (CONCEPT ONT::SMART
          (INHERIT ONT::INTELLIGENCE-VAL)
-         (OVERLAP WN::|cagey%5:00:00::|
-                  WN::|intelligent%3:00:00::|
+         (OVERLAP WN::|intelligent%3:00:00::|
                   WN::|smart%3:00:00::|
-                  WN::|bright%5:00:00::|))
+                  WN::|bright%5:00:00:intelligent:00|
+                  WN::|cagey%5:00:00:smart:00|))
 
 (CONCEPT ONT::SMELLABLE-PROPERTY-VAL (INHERIT ONT::SENSORY-PROPERTY-VAL))
 
@@ -10631,9 +10634,9 @@
 
 (CONCEPT ONT::SOUTH
          (INHERIT ONT::MAP-LOCATION-VAL)
-         (OVERLAP WN::|southeasterly%5:00:02::|
-                  WN::|southerly%5:00:02::|
-                  WN::|southwesterly%5:00:02::|
+         (OVERLAP WN::|southeasterly%5:00:02:south:00|
+                  WN::|southerly%5:00:02:south:00|
+                  WN::|southwesterly%5:00:02:south:00|
                   WN::|south%3:00:00::|))
 
 (CONCEPT ONT::SOUTH-RELN (INHERIT ONT::NAVIGATIONAL-RELN))
@@ -10969,12 +10972,11 @@
          (INHERIT ONT::TYPICALITY-VAL)
          (OVERLAP WN::|strange%3:00:00::|
                   WN::|abnormal%3:00:00::|
-                  WN::|bizarre%5:00:00::|
-                  WN::|bizarre%5:00:00::|
-                  WN::|bizarre%5:00:00::|
-                  WN::|especial(a)%5:00:00::|
-                  WN::|irregular%5:00:00::|
-                  WN::|atypical%5:00:00::|
+                  WN::|bizarre%5:00:00:unconventional:01|
+                  WN::|bizarre%5:00:00:unconventional:01|
+                  WN::|bizarre%5:00:00:unconventional:01|
+                  WN::|especial%5:00:00::|
+                  WN::|atypical%5:00:00:abnormal:00|
                   WN::|unconventional%3:00:01::|
                   WN::|unconventional%3:00:01::|
                   WN::|unconventional%3:00:01::|
@@ -10982,17 +10984,18 @@
                   WN::|uncommon%3:00:00::|
                   WN::|unusual%3:00:00::|
                   WN::|unconventional%3:00:00::|
-                  WN::|curious%5:00:00::|
-                  WN::|remarkable%5:00:00::|
-                  WN::|remarkable%5:00:00::|
-                  WN::|strange%5:00:01::|
+                  WN::|strange%5:00:01:unfamiliar:00|
                   WN::|atypical%3:00:00::|
                   WN::|extraordinary%3:00:00::|
                   WN::|extraordinary%3:00:00::|
                   WN::|unfamiliar%3:00:00::|
                   WN::|uncommon%3:00:00::|
+                  WN::|unusual%5:00:00:uncommon:00|
+                  WN::|irregular%5:00:00::|
+                  WN::|curious%5:00:00::|
+                  WN::|remarkable%5:00:00::|
+                  WN::|remarkable%5:00:00::|
                   WN::|funky%5:00:00::|
-                  WN::|unusual%5:00:00::|
                   WN::|odd%5:00:00::|
                   WN::|weird%5:00:00::|
                   WN::|freaky%5:00:00::|))
@@ -11048,8 +11051,8 @@
 (CONCEPT ONT::STUPID
          (INHERIT ONT::INTELLIGENCE-VAL)
          (OVERLAP WN::|stupid%3:00:00::|
-                  WN::|dense%5:00:00::|
-                  WN::|unintelligent%3:00:00::|))
+                  WN::|unintelligent%3:00:00::|
+                  WN::|dense%5:00:00:stupid:00|))
 
 (CONCEPT ONT::SUBDUING
          (INHERIT ONT::EVOKE-EMOTION)
@@ -11824,15 +11827,15 @@
          (INHERIT ONT::ABILITY-VAL)
          (OVERLAP WN::|incompetent%3:00:00::|
                   WN::|incapable%3:00:00::|
-                  WN::|unable(p)%5:00:00::|))
+                  WN::|unable%5:00:00::|))
 
 (CONCEPT ONT::UNADORNED
          (INHERIT ONT::SUBSTANTIAL-PROPERTY-VAL)
          (OVERLAP WN::|unadorned%3:00:00::|
-                  WN::|plain%5:00:00::|
-                  WN::|bare%5:00:00::|
                   WN::|bare%3:00:00::|
-                  WN::|naked%5:00:00::|))
+                  WN::|plain%5:00:00:unadorned:00|
+                  WN::|bare%5:00:00:unadorned:00|
+                  WN::|naked%5:00:00:bare:00|))
 
 (CONCEPT ONT::UNATTACH
          (INHERIT ONT::SEPARATION)
@@ -11848,13 +11851,13 @@
          (OVERLAP WN::|ill-defined%3:00:00::|
                   WN::|unclear%3:00:00::|
                   WN::|opaque%3:00:00::|
-                  WN::|obscure%5:00:00::|))
+                  WN::|obscure%5:00:00:unclear:00|))
 
 (CONCEPT ONT::UNCOMFORTABLE
          (INHERIT ONT::COMFORT-VAL)
-         (OVERLAP WN::|awkward%5:00:00::|
-                  WN::|uncomfortable%3:00:00::|
-                  WN::|uncomfortable%3:00:01::|))
+         (OVERLAP WN::|uncomfortable%3:00:00::|
+                  WN::|uncomfortable%3:00:01::|
+                  WN::|awkward%5:00:00:uncomfortable:01|))
 
 (CONCEPT ONT::UNCONTROLLED-BODY-MOTION
          (INHERIT ONT::BODY-MOVEMENT)
@@ -11923,10 +11926,10 @@
          (INHERIT ONT::NEG-SOFT-EMOTIONAL-VAL)
          (OVERLAP WN::|dysphoric%3:00:00::|
                   WN::|unhappy%3:00:00::|
-                  WN::|miserable%5:00:00::|
-                  WN::|melancholy%5:00:00::|
                   WN::|sad%3:00:00::|
-                  WN::|gloomy%3:00:00:dejected:00|))
+                  WN::|gloomy%3:00:00:dejected:00|
+                  WN::|melancholy%5:00:00:sad:00|
+                  WN::|miserable%5:00:00:unhappy:00|))
 
 (CONCEPT ONT::UNIQUENESS-VAL (INHERIT ONT::NUMBER-RELATED-PROPERTY-VAL))
 
@@ -11952,11 +11955,13 @@
 
 (CONCEPT ONT::UNLUCKY
          (INHERIT ONT::LUCKINESS-VAL)
-         (OVERLAP WN::|doomed%5:00:00::| WN::|unfortunate%3:00:00::|))
+         (OVERLAP WN::|unfortunate%3:00:00::|
+                  WN::|doomed%5:00:00:unfortunate:00|))
 
 (CONCEPT ONT::UNMANAGEABLE
          (INHERIT ONT::MANAGEABILITY-VAL)
-         (OVERLAP WN::|indocile%5:00:00::| WN::|unmanageable%3:00:00::|))
+         (OVERLAP WN::|indocile%5:00:00:unmanageable:00|
+                  WN::|unmanageable%3:00:00::|))
 
 (CONCEPT ONT::UNNOTICEABLE
          (INHERIT ONT::ATTENTION-WORTHY-VAL)
@@ -11964,8 +11969,8 @@
                   WN::|unobtrusive%3:00:00::|
                   WN::|unobtrusive%3:00:00::|
                   WN::|inconspicuous%3:00:00::|
-                  WN::|obscure%5:00:00::|
-                  WN::|inconspicuous%3:00:00::|))
+                  WN::|inconspicuous%3:00:00::|
+                  WN::|obscure%5:00:00:inconspicuous:00|))
 
 (CONCEPT ONT::UNOBSTRUCTED (INHERIT ONT::FLOW-VAL))
 
@@ -11980,7 +11985,7 @@
          (OVERLAP WN::|unreliable%3:00:00::|
                   WN::|unreliable%3:00:00::|
                   WN::|unreliable%3:00:00::|
-                  WN::|uncertain%5:00:00::|))
+                  WN::|uncertain%5:00:00:unreliable:00|))
 
 (CONCEPT ONT::UNSTEADY
          (INHERIT ONT::STEADINESS-VAL)
@@ -12060,8 +12065,8 @@
                   WN::|functional%3:00:02::|
                   WN::|functional%3:00:00::|
                   WN::|practical%3:00:00::|
+                  WN::|practical%5:00:00:applied:00|
                   WN::|utilitarian%5:00:00::|
-                  WN::|practical%5:00:00::|
                   WN::|functional%5:00:00::|))
 
 (CONCEPT ONT::USEFULNESS-VAL (INHERIT ONT::CAN-BE-DONE-VAL))
@@ -12268,7 +12273,7 @@
          (INHERIT ONT::TEMPERATURE-VAL)
          (OVERLAP WN::|warm%3:00:01::|
                   WN::|warm%3:00:03::|
-                  WN::|hot%5:00:00::|))
+                  WN::|hot%5:00:00:warm:03|))
 
 (CONCEPT ONT::WARN (INHERIT ONT::DIRECTIVE) (OVERLAP WN::|warn%2:32:00::|))
 
@@ -12286,12 +12291,12 @@
 (CONCEPT ONT::WEAK
          (INHERIT ONT::INTENSITY-VAL)
          (OVERLAP WN::|weak%3:00:00::|
-                  WN::|faint%5:00:00::|
                   WN::|weak%3:00:00::|
                   WN::|low%3:00:02::|
                   WN::|low%3:00:01::|
                   WN::|shallow%3:00:01::|
-                  WN::|dull%3:00:04::|))
+                  WN::|dull%3:00:04::|
+                  WN::|faint%5:00:00:weak:00|))
 
 (CONCEPT ONT::WEAKNESS
          (INHERIT ONT::FEEBLENESS)
@@ -12369,7 +12374,7 @@
 
 (CONCEPT ONT::WEST
          (INHERIT ONT::MAP-LOCATION-VAL)
-         (OVERLAP WN::|west%3:00:00::| WN::|western%5:00:00::|))
+         (OVERLAP WN::|west%3:00:00::| WN::|western%5:00:00:west:00|))
 
 (CONCEPT ONT::WEST-RELN (INHERIT ONT::NAVIGATIONAL-RELN))
 
