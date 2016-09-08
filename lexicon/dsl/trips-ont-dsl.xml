@@ -732,10 +732,7 @@
     <concept name="phys-obj" />
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
+    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -17000,10 +16997,20 @@
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="situation" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="phys-obj" />
+     </or>
+     <feat name="trajectory">+</feat>
+     <feat name="type">
+     <or>
+      motion
+      apply-force
+      route
+     </or>
+     </feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -19472,6 +19479,7 @@
      <relation label="inherit">
       phys-obj
      </relation>
+     <feat name="type">manufactured-object</feat>
      <feat name="origin">artifact</feat>
     </sem-feats>
    </role-restr-map>
@@ -22672,6 +22680,11 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::sequence-val-next">
+  <relation label="inherit">
+   ont::sequence-val
+  </relation>
+ </concept>
  <concept name="ont::set-up-device">
   <relation label="inherit">
    ont::arranging
@@ -24552,7 +24565,7 @@
    <role-restr-map roles="ont::agent" optional="optional">
     <concept name="t" />
    </role-restr-map>
-   <role-restr-map roles="ont::effect">
+   <role-restr-map roles="ont::formal">
     <concept name="situation" />
    </role-restr-map>
   </sem-frame>
