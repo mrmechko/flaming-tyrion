@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
-<ONTTYPE name="humidity-scale" parent="scale" modified="Fri Sep 23 01:43:00 2016">
+<ONTTYPE name="humidity-scale" parent="phys-measure-domain" modified="Sat Sep 24 01:44:19 2016">
 <SEM fltype="abstr-obj">
-<FEATURES type="humidity-scale" scale="?!sc" />
+<FEATURES type="humidity-scale" measure-function="term" />
 </SEM>
-<ARGUMENT role="figure" optionality="essential" fltype="?!type" />
+<ARGUMENT role="extent" optionality="optional" fltype="?!type" />
+<ARGUMENT role="figure" optionality="required" fltype="phys-obj" />
+<ARGUMENT role="ground" optionality="essential" fltype="abstr-obj">
+<FEATURES scale="humidity-scale" measure-function="value" />
+</ARGUMENT>
+<WORD name="humidity" />
 </ONTTYPE>

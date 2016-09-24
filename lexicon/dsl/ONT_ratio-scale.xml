@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::ratio-scale">
  <relation label="inherit">
-  ont::scale
+  ont::measure-domain
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -19,7 +19,6 @@
   ont::root
  </relation>
  </concept>
- <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -38,16 +37,16 @@
  </or>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::figure">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">?!sc</feat>
- </sem-feats>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -62,17 +61,69 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="ont::scale">
+ <concept name="abstr-obj" />
+ <concept name="ont::domain">
+ <comment>
+  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
+ </comment>
  <relation label="inherit">
   ont::abstract-object
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="measure-function">value</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="measure-function">term</feat>
+ </sem-feats>
+ <concept name="ont::ordered-domain">
+ <relation label="inherit">
+  ont::domain
+ </relation>
+ </concept>
+ <concept name="ont::measure-domain">
+ <relation label="inherit">
+  ont::ordered-domain
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">?!sc</feat>
+  <feat name="measure-function">term</feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="measure-function">value</feat>
+   </sem-feats>
+  </role-restr-map>
   <role-restr-map roles="ont::figure">
    <concept name="t" />
   </role-restr-map>

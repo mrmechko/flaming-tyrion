@@ -4,10 +4,9 @@
  <provenance name="TRIPS"/>
  <concept name="ont::percent">
  <relation label="inherit">
-  ont::mathematical-term
+  ont::formal-unit
  </relation>
  <relation label="overlap">
-  wn::|percentage%1:24:00::|
   wn::|percent%1:24:00::|
   wn::|per_centum%1:24:00::|
   wn::|pct%1:24:00::|
@@ -63,38 +62,50 @@
  </relation>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="measure-function">value</feat>
-  </sem-feats>
- </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="measure-function">term</feat>
-  </sem-feats>
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="information">data</feat>
- <feat name="gradability">-</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="measure-function">value</feat>
  </sem-feats>
- <concept name="ont::abstract-object-nontemporal">
+ <concept name="ont::unit">
  <comment>
-  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
+  &quot;names of units in various scales/domains&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
   abstr-obj
  </relation>
+ </concept>
+ <concept name="ont::measure-unit">
+ <relation label="inherit">
+  ont::unit
+ </relation>
+ <relation label="overlap">
+  wn::|unit_of_measurement%1:23:00::|
+  wn::|unit%1:23:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="measure-function">value</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="abstr-obj" />
  <sem-feats>
@@ -103,35 +114,10 @@
  </relation>
  <feat name="scale">percent-scale</feat>
  </sem-feats>
- <concept name="ont::mathematical-term">
+ <concept name="ont::formal-unit">
  <relation label="inherit">
-  ont::abstract-object-nontemporal
+  ont::measure-unit
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="information">data</feat>
-  <feat name="gradability">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="measure-function">value</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="measure-function">term</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sense>
  <morph>
