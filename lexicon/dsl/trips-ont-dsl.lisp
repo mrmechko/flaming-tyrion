@@ -4050,7 +4050,7 @@
                   WN::|enrol%2:41:00::|
                   WN::|recruit%2:41:01::|
                   WN::|enter%2:33:00::|)
-         (INHERIT ONT::EVENT-OF-CAUSATION SITUATION)
+         (INHERIT ONT::JOINING SITUATION)
          (SEM-FRAME
           (ONT::NEUTRAL
            (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ))
@@ -5167,7 +5167,9 @@
 
 (CONCEPT ONT::GEO-FORMATION
          (INHERIT ONT::GEO-OBJECT)
-         (OVERLAP WN::|land%1:17:00::| WN::|grassland%1:15:00::|)
+         (OVERLAP WN::|land%1:17:00::|
+                  WN::|grassland%1:15:00::|
+                  WN::|formation%1:17:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (TRAJECTORY -) (ORIGIN NATURAL)))
 
 (CONCEPT ONT::GEO-OBJECT
@@ -5665,7 +5667,9 @@
          (INHERIT ONT::MEDICAL-SYMPTOM)
          (OVERLAP WN::|hives%1:26:00::|))
 
-(CONCEPT ONT::HOLE (INHERIT ONT::SUNKEN-NATURAL-FORMATION))
+(CONCEPT ONT::HOLE
+         (INHERIT ONT::SUNKEN-NATURAL-FORMATION)
+         (OVERLAP WN::|hole%1:17:02::|))
 
 (CONCEPT ONT::HOLIDAY (INHERIT ONT::VACATION))
 
@@ -6203,6 +6207,7 @@
 (CONCEPT ONT::JAUNT (INHERIT ONT::TRIP))
 
 (CONCEPT ONT::JOINING
+         (COMMENT "abstract, social, or physical connection of objects")
          (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|join%2:35:00::| WN::|conjoin%2:35:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
@@ -10217,7 +10222,8 @@
 (CONCEPT ONT::SENSORY-PROPERTY-VAL (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
 
 (CONCEPT ONT::SEPARATION
-         (INHERIT ONT::CHANGE-STATE)
+         (COMMENT "abstract, social or physical dissociation")
+         (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|separate%2:35:01::|
                   WN::|disunite%2:35:00::|
                   WN::|divide%2:35:01::|
@@ -11159,7 +11165,8 @@
 (CONCEPT ONT::SUMOYLATION (INHERIT ONT::POST-TRANSLATIONAL-MODIFICATION))
 
 (CONCEPT ONT::SUNKEN-NATURAL-FORMATION
-         (INHERIT ONT::NATURAL-OBJECT)
+         (INHERIT ONT::GEO-OBJECT)
+         (OVERLAP WN::|depression%1:17:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (TRAJECTORY -) (ORIGIN NATURAL)))
 
 (CONCEPT ONT::SUPERNATURAL-BEING

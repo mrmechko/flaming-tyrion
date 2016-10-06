@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::joining">
+ <comment>
+  &quot;abstract, social, or physical connection of objects&quot;
+ </comment>
  <relation label="inherit">
   ont::event-of-causation
  </relation>
@@ -317,6 +320,37 @@
      phys-obj
     </relation>
     <feat name="origin">natural</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::enroll">
+ <relation label="overlap">
+  wn::|enroll%2:41:00::|
+  wn::|inscribe%2:41:00::|
+  wn::|enter%2:41:06::|
+  wn::|enrol%2:41:00::|
+  wn::|recruit%2:41:01::|
+  wn::|enter%2:33:00::|
+ </relation>
+ <relation label="inherit">
+  ont::joining
+  situation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
