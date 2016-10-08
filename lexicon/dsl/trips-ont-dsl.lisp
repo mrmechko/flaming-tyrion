@@ -5779,6 +5779,11 @@
                      (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                                 (INTENTIONAL +)))))
 
+(CONCEPT ONT::IMPLICIT-OVERLAP
+         (COMMENT
+          "this is the implicit relation between the events in sentences like He walked down the street whistling a tune")
+         (INHERIT ONT::EVENT-TIME-REL))
+
 (CONCEPT ONT::IMPORTANCE (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN))
 
 (CONCEPT ONT::IMPORTANCE-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
