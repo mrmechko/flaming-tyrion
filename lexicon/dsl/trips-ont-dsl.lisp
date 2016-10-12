@@ -720,7 +720,9 @@
                   WN::|grab%2:35:00::|
                   WN::|take_hold_of%2:35:01::|
                   WN::|snatch%2:35:02::|
-                  WN::|take%2:40:15::|)
+                  WN::|take%2:40:15::|
+                  WN::|loot%2:40:01::|
+                  WN::|loot%2:40:00::|)
          (SEM-FEATS (INHERIT SITUATION)
                     (ASPECT DYNAMIC)
                     (TRAJECTORY -)
