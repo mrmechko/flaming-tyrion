@@ -329,7 +329,9 @@
 (CONCEPT ONT::ADAPT (INHERIT ONT::ACCOMMODATE))
 
 (CONCEPT ONT::ADD-INCLUDE
-         (OVERLAP WN::|include%2:30:00::| WN::|introduce%2:38:00::|)
+         (OVERLAP WN::|include%2:30:00::|
+                  WN::|introduce%2:38:00::|
+                  WN::|add%2:30:00::|)
          (INHERIT ONT::ADJUST SITUATION)
          (SEM-FRAME
           (ONT::RESULT
@@ -1686,20 +1688,23 @@
 
 (CONCEPT ONT::CALC-ADD
          (INHERIT ONT::CALCULATION)
+         (OVERLAP WN::|add%2:31:00::|)
          (SEM-FRAME (ONT::FORMAL1 (CONCEPT T) OPTIONAL)
                     (ONT::FORMAL (CONCEPT ABSTR-OBJ))))
 
 (CONCEPT ONT::CALC-DIVIDE
          (INHERIT ONT::CALCULATION)
-         (OVERLAP WN::|go%2:42:13::|)
+         (OVERLAP WN::|go%2:42:13::| WN::|divide%2:31:00::|)
          (SEM-FRAME (ONT::FORMAL1 (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::CALC-MULTIPLY
          (INHERIT ONT::CALCULATION)
+         (OVERLAP WN::|multiply%2:31:00::|)
          (SEM-FRAME (ONT::FORMAL1 (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::CALC-SUBTRACT
          (INHERIT ONT::CALCULATION)
+         (OVERLAP WN::|subtract%2:31:00::|)
          (SEM-FRAME (ONT::FORMAL1 (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::CALCULATION
@@ -2264,6 +2269,7 @@
 
 (CONCEPT ONT::COLLABORATE
          (INHERIT ONT::AGENT-INTERACTION)
+         (OVERLAP WN::|collaborate%2:41:00::|)
          (SEM-FRAME (ONT::AGENT (CONCEPT T)) (ONT::FORMAL (CONCEPT T))))
 
 (CONCEPT ONT::COLLATE (INHERIT ONT::ARRANGING))
@@ -5244,7 +5250,11 @@
 
 (CONCEPT ONT::GOAL
          (INHERIT ONT::PS-OBJECT)
-         (OVERLAP WN::|goal%1:09:00::| WN::|end%1:09:02::|))
+         (OVERLAP WN::|goal%1:09:00::|
+                  WN::|end%1:09:02::|
+                  WN::|motivation%1:03:00::|
+                  WN::|want%1:17:00::|
+                  WN::|demand%1:26:00::|))
 
 (CONCEPT ONT::GOAL-AS-CONTAINMENT
          (INHERIT ONT::GOAL-RELN)
@@ -7528,26 +7538,10 @@
 
 (CONCEPT ONT::NECESSITY
          (INHERIT ONT::EVENT-OF-STATE)
-         (OVERLAP WN::|want%1:17:00::|
-                  WN::|need%1:17:00::|
-                  WN::|demand%1:26:00::|
-                  WN::|need%1:26:00::|
-                  WN::|need%2:34:01::|
+         (OVERLAP WN::|need%2:34:01::|
                   WN::|demand%2:42:00::|
-                  WN::|call_for%2:42:00::|
-                  WN::|involve%2:42:07::|
-                  WN::|take%2:42:00::|
-                  WN::|require%2:42:00::|
-                  WN::|need%2:42:00::|
-                  WN::|postulate%2:42:00::|
-                  WN::|ask%2:42:00::|
                   WN::|necessitate%2:42:00::|
-                  WN::|require%2:34:00::|
-                  WN::|need%2:34:00::|
-                  WN::|want%2:34:00::|
-                  WN::|motivation%1:03:00::|
-                  WN::|motive%1:03:00::|
-                  WN::|need%1:03:00::|)
+                  WN::|require%2:34:00::|)
          (SEM-FEATS (INHERIT SITUATION)
                     (TRAJECTORY -)
                     (CAUSE -)
@@ -7625,6 +7619,10 @@
 (CONCEPT ONT::NONVERBAL-SAY
          (COMMENT "saying using a medium other that speech")
          (INHERIT ONT::SAY)
+         (OVERLAP WN::|signal%1:10:00::|
+                  WN::|email%2:32:00::|
+                  WN::|write%2:32:00::|
+                  WN::|write%2:38:08::|)
          (SEM-FRAME (ONT::FORMAL (CONCEPT T))))
 
 (CONCEPT ONT::NORTH
@@ -11392,7 +11390,15 @@
 
 (CONCEPT ONT::TEA (INHERIT ONT::TEAS-COCKTAILS-BLENDS))
 
-(CONCEPT ONT::TEACH-TRAIN (INHERIT ONT::SHOW))
+(CONCEPT ONT::TEACH-TRAIN
+         (INHERIT ONT::SHOW)
+         (OVERLAP WN::|teach%2:32:00::|
+                  WN::|teach%2:30:00::|
+                  WN::|train%2:31:00::|
+                  WN::|train%2:41:02::|
+                  WN::|train%2:41:00::|
+                  WN::|train%2:41:01::|
+                  WN::|train%2:32:00::|))
 
 (CONCEPT ONT::TEAS-COCKTAILS-BLENDS (INHERIT ONT::BEVERAGES))
 
