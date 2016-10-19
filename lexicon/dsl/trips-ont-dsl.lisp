@@ -5252,7 +5252,6 @@
          (INHERIT ONT::PS-OBJECT)
          (OVERLAP WN::|goal%1:09:00::|
                   WN::|end%1:09:02::|
-                  WN::|motivation%1:03:00::|
                   WN::|want%1:17:00::|
                   WN::|demand%1:26:00::|))
 
@@ -7325,7 +7324,9 @@
          (INHERIT ONT::PROCESS-VAL)
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ))))
 
-(CONCEPT ONT::MOTIVE (INHERIT ONT::MENTAL-OBJECT))
+(CONCEPT ONT::MOTIVE
+         (INHERIT ONT::MENTAL-OBJECT)
+         (OVERLAP WN::|motivation%1:03:00::|))
 
 (CONCEPT ONT::MOVE
          (INHERIT ONT::MOTION)
@@ -9440,8 +9441,7 @@
                          (CONCEPT ABSTR-OBJ)
                          (CONCEPT SITUATION)))
                     ((ONT::AGENT ONT::DONOR)
-                     (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
-                                (INTENTIONAL +)))))
+                     (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
 
 (CONCEPT ONT::RELY
          (COMMENT
