@@ -1005,7 +1005,7 @@
           (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN NATURAL)))))
 
 (CONCEPT ONT::ATTACK
-         (INHERIT ONT::OBJECTIVE-INFLUENCE)
+         (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|attack%2:33:00::|
                   WN::|attack%2:32:00::|
                   WN::|attack%2:33:02::|
@@ -1031,7 +1031,7 @@
          (INHERIT ONT::AWARENESS))
 
 (CONCEPT ONT::ATTRACT
-         (INHERIT ONT::CAUSE-EFFECT)
+         (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|attract%2:35:00::|
                   WN::|attract%2:35:01::|
                   WN::|affinity%1:19:01::|
@@ -1849,12 +1849,11 @@
 
 (CONCEPT ONT::CAUSE-EFFECT
          (COMMENT
-          "an AGENT causes some event to occur or proposition to become true")
+          "an AGENT causes some event to occur or proposition to become true. Usually the verbs that fall under this category are very general causal verbs that take other events as their arguments and are positive causes- i.e., events are caused to happen as opposed to negative causes as in an event is prevented.")
          (INHERIT ONT::ACTING)
          (OVERLAP WN::|cause%2:32:00::|
                   WN::|do%2:36:02::|
                   WN::|make%2:36:08::|
-                  WN::|receive%2:35:00::|
                   WN::|drive%2:35:00::|
                   WN::|get%2:30:02::|
                   WN::|get%2:30:00::|)
@@ -7774,7 +7773,6 @@
          (OVERLAP WN::|force%1:07:01::|
                   WN::|appeal%2:37:00::|
                   WN::|keep_up%2:29:00::|
-                  WN::|assail%2:33:00::|
                   WN::|retire%2:33:00::|
                   WN::|sensitise%2:39:00::|
                   WN::|sound%2:39:01::|

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::attack">
  <relation label="inherit">
-  ont::objective-influence
+  ont::event-of-causation
  </relation>
  <relation label="overlap">
   wn::|attack%2:33:00::|
@@ -153,7 +153,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::affected">
   <or>
@@ -163,6 +162,7 @@
   </or>
  </role-restr-map>
  </sem-frame>
+ <concept name="situation" />
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
@@ -186,34 +186,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- </sem-feats>
  <concept name="ont::event-of-causation">
  <comment>
   &quot;events involving an AGENT acting on an AFFECTED&quot;
@@ -228,56 +200,6 @@
     <concept name="abstr-obj" />
     <concept name="phys-obj" />
     <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::objective-influence">
- <comment>
-  &quot;an AGENT influences the AFFECTED role in some way (typically unspecified by the verb)&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|force%1:07:01::|
-  wn::|appeal%2:37:00::|
-  wn::|keep_up%2:29:00::|
-  wn::|assail%2:33:00::|
-  wn::|retire%2:33:00::|
-  wn::|sensitise%2:39:00::|
-  wn::|sound%2:39:01::|
-  wn::|stampede%2:38:01::|
-  wn::|stampede%2:41:01::|
-  wn::|trip%2:38:01::|
-  wn::|unbalance%2:42:00::|
-  wn::|undo%2:36:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
    </or>
   </role-restr-map>
  </sem-frame>

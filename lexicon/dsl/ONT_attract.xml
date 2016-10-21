@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::attract">
  <relation label="inherit">
-  ont::cause-effect
+  ont::event-of-causation
  </relation>
  <relation label="overlap">
   wn::|attract%2:35:00::|
@@ -167,19 +167,16 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::agent">
+ <role-restr-map roles="ont::affected">
   <or>
-   <concept name="phys-obj" />
    <concept name="abstr-obj" />
+   <concept name="phys-obj" />
    <concept name="situation" />
   </or>
  </role-restr-map>
  </sem-frame>
+ <concept name="situation" />
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
@@ -204,76 +201,6 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">
- <or>
-  force
-  agentive
- </or>
- </feat>
- </sem-feats>
- <concept name="ont::acting">
- <comment>
-  &quot;abstract event of doing something: behave, activity, ...&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-action
- </relation>
- <relation label="overlap">
-  wn::|do%2:29:09::|
-  wn::|behave%2:29:00::|
-  wn::|act%2:29:00::|
-  wn::|act%1:03:00::|
-  wn::|deed%1:03:00::|
-  wn::|human_action%1:03:00::|
-  wn::|human_activity%1:03:00::|
-  wn::|activity%1:04:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
  <role-restr-map roles="ont::affected">
   <or>
    <concept name="phys-obj" />
@@ -287,58 +214,19 @@
   </or>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::cause-effect">
+ <concept name="ont::event-of-causation">
  <comment>
-  &quot;an AGENT causes some event to occur or proposition to become true&quot;
+  &quot;events involving an AGENT acting on an AFFECTED&quot;
  </comment>
  <relation label="inherit">
-  ont::acting
+  ont::event-of-action
+  situation
  </relation>
- <relation label="overlap">
-  wn::|cause%2:32:00::|
-  wn::|do%2:36:02::|
-  wn::|make%2:36:08::|
-  wn::|receive%2:35:00::|
-  wn::|drive%2:35:00::|
-  wn::|get%2:30:02::|
-  wn::|get%2:30:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">
-  <or>
-   force
-   agentive
-  </or>
-  </feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
+  <role-restr-map roles="ont::affected">
    <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <or>
-    <concept name="situation" />
     <concept name="abstr-obj" />
     <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
     <concept name="situation" />
    </or>
   </role-restr-map>
