@@ -2897,7 +2897,8 @@
           (ONT::FORMAL
            (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
            OPTIONAL)
-          ((ONT::AGENT ONT::CAUSE) (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ)))
+          ((ONT::AGENT ONT::CAUSE)
+           (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ)))
           (ONT::AFFECTED
            (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
 
@@ -3335,7 +3336,9 @@
 
 (CONCEPT ONT::DENSITY
          (INHERIT ONT::RATE)
-         (OVERLAP WN::|density%1:07:00::| WN::|concentration%1:07:02::|)
+         (OVERLAP WN::|density%1:07:00::|
+                  WN::|concentration%1:07:02::|
+                  WN::|concentration%1:07:03::|)
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::DENT
