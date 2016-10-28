@@ -669,10 +669,7 @@
          (OVERLAP WN::|sound%2:39:06::| WN::|come_across%2:31:00::|)
          (SEM-FEATS (INHERIT SITUATION)
                     (TIME-SPAN EXTENDED)
-                    (ASPECT STAGE-LEVEL))
-         (SEM-FRAME (ONT::FORMAL (CONCEPT SITUATION) OPTIONAL)
-                    (ONT::NEUTRAL
-                     (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN LIVING)) OPTIONAL)))
+                    (ASPECT STAGE-LEVEL)))
 
 (CONCEPT ONT::APPLIANCE
          (INHERIT ONT::DEVICE)
@@ -4679,10 +4676,6 @@
 
 (CONCEPT ONT::FALL (INHERIT ONT::MOVE-DOWNWARD))
 
-(CONCEPT ONT::FALLEN-VAL
-         (INHERIT ONT::CONFIGURATION-PROPERTY-VAL)
-         (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -)))
-
 (CONCEPT ONT::FAMILIAR
          (INHERIT ONT::AWARENESS)
          (OVERLAP WN::|know%2:31:14::|
@@ -5504,12 +5497,8 @@
                     (TRAJECTORY -)
                     (TIME-SPAN EXTENDED)
                     (ASPECT STATIC))
-         (SEM-FRAME
-          (ONT::FORMAL
-           (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION))
-           OPTIONAL)
-          (ONT::NEUTRAL
-           (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
+         (SEM-FRAME (ONT::FORMAL (CONCEPT ABSTR-OBJ) OPTIONAL)
+                    (ONT::NEUTRAL (CONCEPT T))))
 
 (CONCEPT ONT::HAVING
          (INHERIT ONT::EVENT-OF-STATE)
@@ -5818,7 +5807,8 @@
 
 (CONCEPT ONT::IN-LOC
          (INHERIT ONT::POS-AS-CONTAINMENT-RELN)
-         (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ))))
+         (SEM-FRAME
+          (ONT::GROUND (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL -)))))
 
 (CONCEPT ONT::IN-RELATION
          (INHERIT ONT::OBJECT-COMPARE)
@@ -6006,6 +5996,10 @@
                   WN::|bruise%1:26:00::|
                   WN::|contusion%1:26:00::|
                   WN::|bump%1:26:00::|))
+
+(CONCEPT ONT::INOPERABLE
+         (INHERIT ONT::CONFIGURATION-PROPERTY-VAL)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (TYPE DEVICE) (GRADABILITY -)))
 
 (CONCEPT ONT::INSANE
          (INHERIT ONT::REASONABLE-VAL)
@@ -6220,7 +6214,7 @@
 
 (CONCEPT ONT::JAUNDICE
          (INHERIT ONT::MEDICAL-SYMPTOM)
-         (OVERLAP WN::|jaundice%1:09:00::|))
+         (OVERLAP WN::|jaundice%1:26:00::|))
 
 (CONCEPT ONT::JAUNT (INHERIT ONT::TRIP))
 
@@ -7625,7 +7619,7 @@
          (OVERLAP WN::|signal%1:10:00::|
                   WN::|email%2:32:00::|
                   WN::|write%2:32:00::|
-                  WN::|write%2:38:08::|)
+                  WN::|write%2:32:08::|)
          (SEM-FRAME (ONT::FORMAL (CONCEPT T))))
 
 (CONCEPT ONT::NORTH
@@ -10027,9 +10021,7 @@
          (INHERIT ONT::PREDICATE)
          (SEM-FRAME (ONT::GROUND (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE ?!SC)))
                     (ONT::FIGURE
-                     (OR (CONCEPT PHYS-OBJ)
-                         (CONCEPT ABSTR-OBJ)
-                         (CONCEPT SITUATION)))))
+                     (SEM-FEATS (INHERIT ABSTR-OBJ) (TYPE DOMAIN)))))
 
 (CONCEPT ONT::SCHEDULED-TIME-MODIFIER
          (INHERIT ONT::TEMPORAL-MODIFIER)

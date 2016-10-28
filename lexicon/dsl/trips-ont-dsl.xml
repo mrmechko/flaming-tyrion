@@ -1432,19 +1432,6 @@
    <feat name="time-span">extended</feat>
    <feat name="aspect">stage-level</feat>
   </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::formal" optional="optional">
-    <concept name="situation" />
-   </role-restr-map>
-   <role-restr-map roles="ont::neutral" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="origin">living</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::appliance">
   <relation label="inherit">
@@ -10226,17 +10213,6 @@
    ont::move-downward
   </relation>
  </concept>
- <concept name="ont::fallen-val">
-  <relation label="inherit">
-   ont::configuration-property-val
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="gradability">-</feat>
-  </sem-feats>
- </concept>
  <concept name="ont::familiar">
   <relation label="inherit">
    ont::awareness
@@ -12043,18 +12019,10 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::formal" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
+    <concept name="abstr-obj" />
    </role-restr-map>
    <role-restr-map roles="ont::neutral">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
+    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -12705,7 +12673,12 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground">
-    <concept name="phys-obj" />
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="intentional">-</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -13075,6 +13048,18 @@
    wn::|contusion%1:26:00::|
    wn::|bump%1:26:00::|
   </relation>
+ </concept>
+ <concept name="ont::inoperable">
+  <relation label="inherit">
+   ont::configuration-property-val
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">device</feat>
+   <feat name="gradability">-</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::insane">
   <relation label="inherit">
@@ -13574,7 +13559,7 @@
    ont::medical-symptom
   </relation>
   <relation label="overlap">
-   wn::|jaundice%1:09:00::|
+   wn::|jaundice%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::jaunt">
@@ -16804,7 +16789,7 @@
    wn::|signal%1:10:00::|
    wn::|email%2:32:00::|
    wn::|write%2:32:00::|
-   wn::|write%2:38:08::|
+   wn::|write%2:32:08::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal">
@@ -22237,11 +22222,12 @@
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="type">domain</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
