@@ -11224,15 +11224,15 @@
 (CONCEPT ONT::SURRENDER
          (COMMENT " an AGENT relinquishes AFFECTED unwillingly")
          (INHERIT ONT::RELINQUISH)
-         (OVERLAP WN::|concede%2:40:00::|
-                  WN::|yield%2:40:01::|
-                  WN::|cede%2:40:01::|
-                  WN::|grant%2:40:04::|
+         (OVERLAP WN::|cede%2:40:01::|
                   WN::|chuck_up_the_sponge%2:33:00::|
+                  WN::|concede%2:40:00::|
                   WN::|despair%2:37:00::|
+                  WN::|grant%2:40:04::|
                   WN::|relent%2:42:00::|
                   WN::|submit%2:33:00::|
-                  WN::|yield%2:33:00::|))
+                  WN::|yield%2:33:00::|
+                  WN::|yield%2:40:01::|))
 
 (CONCEPT ONT::SURROUND
          (INHERIT ONT::POSITION)
