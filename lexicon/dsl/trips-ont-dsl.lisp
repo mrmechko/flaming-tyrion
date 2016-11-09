@@ -678,7 +678,7 @@
 
 (CONCEPT ONT::APPLY-FORCE
          (INHERIT ONT::TOUCH)
-         (OVERLAP WN::|reflect%2:39:00::| WN::|drive%2:35:01::|)
+         (OVERLAP WN::|reflect%2:39:00::|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE FORCE))
          (SEM-FRAME (ONT::AGENT (CONCEPT T))))
 
@@ -1909,10 +1909,11 @@
 
 (CONCEPT ONT::CAUSE-PRODUCE-REPRODUCE
          (INHERIT ONT::CAUSE-EFFECT)
-         (OVERLAP WN::|yield%2:40:02::|
+         (OVERLAP WN::|cause%2:36:00::|
+                  WN::|induce%2:32:00::|
                   WN::|produce%2:36:03::|
-                  WN::|cause%2:36:00::|
-                  WN::|induce%2:32:00::|)
+                  WN::|yield%2:40:00::|
+                  WN::|yield%2:40:02::|)
          (SEM-FRAME
           (ONT::AFFECTED-RESULT
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
@@ -1935,9 +1936,9 @@
 
 (CONCEPT ONT::CAUSE-TO-MOVE
          (INHERIT ONT::MOTION)
-         (OVERLAP WN::|reflect%2:39:00::|
-                  WN::|drive%2:35:01::|
-                  WN::|drive%2:41:02::|)
+         (OVERLAP WN::|drive%2:35:01::|
+                  WN::|drive%2:41:02::|
+                  WN::|reflect%2:39:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +) (CAUSE FORCE))
          (SEM-FRAME (ONT::AFFECTED (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
                     (ONT::AGENT (CONCEPT T))))
@@ -5216,14 +5217,13 @@
          (COMMENT
           "To relinquish control of AFFECTED AFFECTED-RESULT, typically voluntarily and possibly in exchange for something")
          (INHERIT ONT::RELINQUISH)
-         (OVERLAP WN::|give%2:40:00::|
+         (OVERLAP WN::|allow%2:41:01::|
+                  WN::|give%2:40:00::|
+                  WN::|give%2:40:03::|
+                  WN::|giving%1:04:00::|
                   WN::|offer%1:10:01::|
                   WN::|offering%1:10:01::|
-                  WN::|give%2:40:03::|
-                  WN::|allow%2:41:01::|
-                  WN::|fall%2:40:12::|
-                  WN::|send_in%2:41:00::|
-                  WN::|giving%1:04:00::|)
+                  WN::|send_in%2:41:00::|)
          (SEM-FEATS (INHERIT SITUATION) (IOBJ RECIPIENT) (CAUSE AGENTIVE))
          (SEM-FRAME
           (ONT::RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
@@ -5656,11 +5656,11 @@
 (CONCEPT ONT::HITTING
          (INHERIT ONT::MOTION)
          (OVERLAP WN::|collide_with%2:35:00::|
-                  WN::|run_into%2:35:01::|
-                  WN::|impinge_on%2:35:00::|
-                  WN::|strike%2:35:01::|
                   WN::|hit%2:35:01::|
-                  WN::|hit%2:35:03::|)
+                  WN::|hit%2:35:03::|
+                  WN::|impinge_on%2:35:00::|
+                  WN::|run_into%2:35:01::|
+                  WN::|strike%2:35:01::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
          (SEM-FRAME
           (ONT::FORMAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
@@ -5901,7 +5901,8 @@
 
 (CONCEPT ONT::INCUR-INHERIT-RECEIVE
          (INHERIT ONT::EVENT-OF-UNDERGOING-ACTION)
-         (OVERLAP WN::|get%2:39:14::|
+         (OVERLAP WN::|fall%2:40:12::|
+                  WN::|get%2:39:14::|
                   WN::|inherit%2:40:02::|
                   WN::|take%2:31:09::|)
          (SEM-FRAME (ONT::AFFECTED1 (CONCEPT T))))
@@ -11226,9 +11227,11 @@
                   WN::|chuck_up_the_sponge%2:33:00::|
                   WN::|concede%2:40:00::|
                   WN::|despair%2:37:00::|
+                  WN::|give_up%2:41:00::|
                   WN::|grant%2:40:04::|
                   WN::|relent%2:42:00::|
                   WN::|submit%2:33:00::|
+                  WN::|surrender%2:40:00::|
                   WN::|yield%2:33:00::|
                   WN::|yield%2:40:01::|))
 
