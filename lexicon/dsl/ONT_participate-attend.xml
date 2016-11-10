@@ -234,4 +234,60 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="attend" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="attended" />
+   </past>
+   <ing>
+    <word first-word="attending" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="He attended the university.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::participate-attend
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="participate" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="participated" />
+   </past>
+   <ing>
+    <word first-word="participating" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="He participated in the meeting.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::participate-attend
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" xp="'(w::pp w::in)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::in" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
 </dsl>

@@ -1451,9 +1451,6 @@
   <relation label="inherit">
    ont::touch
   </relation>
-  <relation label="overlap">
-   wn::|reflect%2:39:00::|
-  </relation>
   <sem-feats>
    <relation label="inherit">
     situation
@@ -3186,6 +3183,7 @@
    wn::|take_hold%2:35:00::|
    wn::|bear%2:35:01::|
    wn::|immobilise%2:35:00::|
+   wn::|clutch%2:35:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -4259,7 +4257,6 @@
   <relation label="overlap">
    wn::|drive%2:35:01::|
    wn::|drive%2:41:02::|
-   wn::|reflect%2:39:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -12847,7 +12844,13 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected1">
-    <concept name="t" />
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="intentional">-</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>

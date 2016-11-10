@@ -678,7 +678,6 @@
 
 (CONCEPT ONT::APPLY-FORCE
          (INHERIT ONT::TOUCH)
-         (OVERLAP WN::|reflect%2:39:00::|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE FORCE))
          (SEM-FRAME (ONT::AGENT (CONCEPT T))))
 
@@ -1464,7 +1463,8 @@
          (OVERLAP WN::|hold%2:35:00::|
                   WN::|take_hold%2:35:00::|
                   WN::|bear%2:35:01::|
-                  WN::|immobilise%2:35:00::|)
+                  WN::|immobilise%2:35:00::|
+                  WN::|clutch%2:35:00::|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
          (SEM-FRAME
           (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
@@ -1936,9 +1936,7 @@
 
 (CONCEPT ONT::CAUSE-TO-MOVE
          (INHERIT ONT::MOTION)
-         (OVERLAP WN::|drive%2:35:01::|
-                  WN::|drive%2:41:02::|
-                  WN::|reflect%2:39:00::|)
+         (OVERLAP WN::|drive%2:35:01::| WN::|drive%2:41:02::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +) (CAUSE FORCE))
          (SEM-FRAME (ONT::AFFECTED (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
                     (ONT::AGENT (CONCEPT T))))
@@ -5905,7 +5903,10 @@
                   WN::|get%2:39:14::|
                   WN::|inherit%2:40:02::|
                   WN::|take%2:31:09::|)
-         (SEM-FRAME (ONT::AFFECTED1 (CONCEPT T))))
+         (SEM-FRAME
+          (ONT::AFFECTED1
+           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
+                      (INTENTIONAL -)))))
 
 (CONCEPT ONT::INDEPENDENT (INHERIT ONT::DEPENDENCE-VAL))
 

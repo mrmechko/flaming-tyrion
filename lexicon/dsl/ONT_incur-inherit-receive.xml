@@ -14,7 +14,13 @@
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::affected1">
-   <concept name="t" />
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">-</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -155,7 +161,13 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::affected1">
-  <concept name="t" />
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="intentional">-</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::event-of-undergoing-action">
@@ -231,10 +243,10 @@
   ont::incur-inherit-receive
  </relation>
  <syntax>
-  <template-call template="ont::affected-result-xp-templ" xp="'(w::pp w::to)" />
+  <template-call template="ont::affected1-affected-templ" xp="'(w::pp w::to)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::to" sem-role="ont::result"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::to" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected1"/>
   </syn-sem>
  </syntax>
  </sense>
