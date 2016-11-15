@@ -926,11 +926,11 @@
 
 (CONCEPT ONT::ASSOCIATE
          (INHERIT ONT::JOINING)
-         (OVERLAP WN::|team%2:33:00::|
-                  WN::|pair%2:41:00::|
+         (OVERLAP WN::|join%2:41:00::|
+                  WN::|join%2:41:01::|
                   WN::|pair%2:35:01::|
-                  WN::|join%2:41:00::|
-                  WN::|join%2:41:01::|)
+                  WN::|pair%2:41:00::|
+                  WN::|team%2:33:00::|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE) (ASPECT DYNAMIC)))
 
 (CONCEPT ONT::ASSOCIATED-INFORMATION
@@ -4050,12 +4050,12 @@
          (SEM-FRAME (ONT::GROUND (CONCEPT T))))
 
 (CONCEPT ONT::ENROLL
-         (OVERLAP WN::|enroll%2:41:00::|
-                  WN::|inscribe%2:41:00::|
+         (OVERLAP WN::|enrol%2:41:00::|
+                  WN::|enroll%2:41:00::|
+                  WN::|enter%2:33:00::|
                   WN::|enter%2:41:06::|
-                  WN::|enrol%2:41:00::|
-                  WN::|recruit%2:41:01::|
-                  WN::|enter%2:33:00::|)
+                  WN::|inscribe%2:41:00::|
+                  WN::|recruit%2:41:01::|)
          (INHERIT ONT::JOINING SITUATION)
          (SEM-FRAME
           (ONT::NEUTRAL
@@ -6221,7 +6221,7 @@
 (CONCEPT ONT::JOINING
          (COMMENT "abstract, social, or physical connection of objects")
          (INHERIT ONT::EVENT-OF-CAUSATION)
-         (OVERLAP WN::|join%2:35:00::| WN::|conjoin%2:35:00::|)
+         (OVERLAP WN::|conjoin%2:35:00::| WN::|join%2:35:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
          (SEM-FRAME
           (ONT::LOCATION (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL -))
