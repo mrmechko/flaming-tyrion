@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::empty">
  <relation label="inherit">
-  ont::event-of-causation
+  ont::cause-come-from
  </relation>
  <relation label="overlap">
   wn::|empty%2:30:01::|
@@ -13,8 +13,13 @@
   <role-restr-map roles="ont::affected" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::source" optional="optional">
-   <concept name="t" />
+  <role-restr-map roles="ont::affected-result" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="container">+</feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
    <concept name="t" />
@@ -195,13 +200,10 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::affected" optional="optional">
+ <role-restr-map roles="ont::source">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::source" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
+ <role-restr-map roles="ont::agent">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
@@ -222,6 +224,68 @@
    </or>
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected-result" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="container">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::cause-come-from">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|remove%2:30:00::|
+  wn::|take%2:30:00::|
+  wn::|take_away%2:30:01::|
+  wn::|withdraw%2:30:01::|
+  wn::|remove%2:30:02::|
+  wn::|remove%2:41:00::|
+  wn::|suction%2:38:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::source">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::unload">
+ <relation label="inherit">
+  ont::empty
+ </relation>
+ <relation label="overlap">
+  wn::|offload%2:35:00::|
+  wn::|unlade%2:35:00::|
+  wn::|unload%2:35:00::|
+  wn::|drop%2:35:00::|
+  wn::|drop_off%2:35:00::|
+  wn::|set_down%2:35:00::|
+  wn::|put_down%2:35:01::|
+  wn::|unload%2:35:02::|
+  wn::|discharge%2:35:06::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">agentive</feat>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
  </concept>
  <sense>
  <morph>
@@ -316,17 +380,11 @@
  </morph>
  <relation label="inherit">
   ont::empty
+  ont::affected-templ
  </relation>
  <relation label="overlap">
   vn::clear-10.3-1
  </relation>
- <syntax>
-  <template-call template="ont::affected-source-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::from" sem-role="ont::source"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
-  </syn-sem>
- </syntax>
  </sense>
  <sense>
  <morph>

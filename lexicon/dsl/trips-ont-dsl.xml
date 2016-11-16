@@ -4032,6 +4032,21 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::cause-cover">
+  <relation label="inherit">
+   ont::event-of-causation
+  </relation>
+  <relation label="overlap">
+   wn::|impregnate%2:30:00::|
+   wn::|saturate%2:30:04::|
+   wn::|spread%2:35:13::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected-result">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::cause-effect">
   <comment>
    &quot;an AGENT causes some event to occur or proposition to become true. Usually the verbs that fall under this category are very general causal verbs that take other events as their arguments and are positive causes- i.e., events are caused to happen as opposed to negative causes as in an event is prevented.&quot;
@@ -8759,7 +8774,7 @@
  </concept>
  <concept name="ont::empty">
   <relation label="inherit">
-   ont::event-of-causation
+   ont::cause-come-from
   </relation>
   <relation label="overlap">
    wn::|empty%2:30:01::|
@@ -8768,18 +8783,18 @@
    <role-restr-map roles="ont::affected" optional="optional">
     <concept name="t" />
    </role-restr-map>
-   <role-restr-map roles="ont::source" optional="optional">
-    <concept name="t" />
+   <role-restr-map roles="ont::affected-result" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="container">+</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::agent" optional="optional">
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::emptying">
-  <relation label="inherit">
-   ont::motion
-  </relation>
  </concept>
  <concept name="ont::emu">
   <relation label="inherit">
@@ -10423,7 +10438,7 @@
  </concept>
  <concept name="ont::fill-container">
   <relation label="inherit">
-   ont::filling
+   ont::event-of-causation
   </relation>
   <relation label="overlap">
    wn::|fill%2:30:01::|
@@ -10439,21 +10454,6 @@
      </relation>
      <feat name="container">+</feat>
     </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::filling">
-  <relation label="inherit">
-   ont::motion
-  </relation>
-  <relation label="overlap">
-   wn::|impregnate%2:30:00::|
-   wn::|saturate%2:30:04::|
-   wn::|spread%2:35:13::|
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::affected-result">
-    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -20005,6 +20005,17 @@
    wn::|thrust%2:42:01::|
   </relation>
  </concept>
+ <concept name="ont::push-liquid">
+  <relation label="inherit">
+   ont::apply-force
+  </relation>
+  <relation label="overlap">
+   wn::|squirt%2:35:00::|
+   wn::|squirt%2:35:10::|
+   wn::|sprinkle%2:35:01::|
+   wn::|spray%2:35:03::|
+  </relation>
+ </concept>
  <concept name="ont::push-out-of">
   <relation label="inherit">
    ont::cause-out-of
@@ -21028,7 +21039,7 @@
    ont::change-state-action
   </relation>
   <relation label="overlap">
-   wn::|break%2:32:05::|
+   wn::|break%2:30:05::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected">
@@ -21250,7 +21261,7 @@
  </concept>
  <concept name="ont::rescue">
   <relation label="inherit">
-   ont::change-state
+   ont::help
   </relation>
   <relation label="overlap">
    wn::|rescue%2:41:00::|
@@ -21916,6 +21927,16 @@
     <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::rub-scrape-wipe">
+  <relation label="inherit">
+   ont::apply-force
+  </relation>
+  <relation label="overlap">
+   wn::|rub%2:35:00::|
+   wn::|rub%2:39:00::|
+   wn::|stroke%2:35:00::|
+  </relation>
  </concept>
  <concept name="ont::rw-status-val">
   <relation label="inherit">
@@ -23634,6 +23655,16 @@
  <concept name="ont::south-reln">
   <relation label="inherit">
    ont::navigational-reln
+  </relation>
+ </concept>
+ <concept name="ont::sow-seed">
+  <relation label="inherit">
+   ont::put
+  </relation>
+  <relation label="overlap">
+   wn::|seed%2:35:01::|
+   wn::|sow%2:35:02::|
+   wn::|plant%2:35:00::|
   </relation>
  </concept>
  <concept name="ont::space">
@@ -26471,7 +26502,7 @@
  </concept>
  <concept name="ont::unload">
   <relation label="inherit">
-   ont::emptying
+   ont::empty
   </relation>
   <relation label="overlap">
    wn::|offload%2:35:00::|

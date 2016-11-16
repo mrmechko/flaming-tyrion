@@ -1844,6 +1844,13 @@
                   WN::|suction%2:38:00::|)
          (SEM-FRAME (ONT::SOURCE (CONCEPT T)) (ONT::AGENT (CONCEPT T))))
 
+(CONCEPT ONT::CAUSE-COVER
+         (INHERIT ONT::EVENT-OF-CAUSATION)
+         (OVERLAP WN::|impregnate%2:30:00::|
+                  WN::|saturate%2:30:04::|
+                  WN::|spread%2:35:13::|)
+         (SEM-FRAME (ONT::AFFECTED-RESULT (CONCEPT T))))
+
 (CONCEPT ONT::CAUSE-EFFECT
          (COMMENT
           "an AGENT causes some event to occur or proposition to become true. Usually the verbs that fall under this category are very general causal verbs that take other events as their arguments and are positive causes- i.e., events are caused to happen as opposed to negative causes as in an event is prevented.")
@@ -3990,13 +3997,12 @@
           (ONT::EFFECT (CONCEPT SITUATION))))
 
 (CONCEPT ONT::EMPTY
-         (INHERIT ONT::EVENT-OF-CAUSATION)
+         (INHERIT ONT::CAUSE-COME-FROM)
          (OVERLAP WN::|empty%2:30:01::|)
          (SEM-FRAME (ONT::AFFECTED (CONCEPT T) OPTIONAL)
-                    (ONT::SOURCE (CONCEPT T) OPTIONAL)
+                    (ONT::AFFECTED-RESULT
+                     (SEM-FEATS (INHERIT PHYS-OBJ) (CONTAINER +)) OPTIONAL)
                     (ONT::AGENT (CONCEPT T) OPTIONAL)))
-
-(CONCEPT ONT::EMPTYING (INHERIT ONT::MOTION))
 
 (CONCEPT ONT::EMU (INHERIT ONT::MEAT))
 
@@ -4784,20 +4790,13 @@
 (CONCEPT ONT::FILE-FORMAT (INHERIT ONT::COMPUTER-LANGUAGE))
 
 (CONCEPT ONT::FILL-CONTAINER
-         (INHERIT ONT::FILLING)
+         (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|fill%2:30:01::|
                   WN::|fill_up%2:30:00::|
                   WN::|make_full%2:30:00::|
                   WN::|charge%2:35:00::|)
          (SEM-FRAME
           (ONT::AFFECTED-RESULT (SEM-FEATS (INHERIT PHYS-OBJ) (CONTAINER +)))))
-
-(CONCEPT ONT::FILLING
-         (INHERIT ONT::MOTION)
-         (OVERLAP WN::|impregnate%2:30:00::|
-                  WN::|saturate%2:30:04::|
-                  WN::|spread%2:35:13::|)
-         (SEM-FRAME (ONT::AFFECTED-RESULT (CONCEPT T))))
 
 (CONCEPT ONT::FINANCIAL-INSTITUTION (INHERIT ONT::INSTITUTION))
 
@@ -9052,6 +9051,13 @@
                   WN::|thrust%2:38:00::|
                   WN::|thrust%2:42:01::|))
 
+(CONCEPT ONT::PUSH-LIQUID
+         (INHERIT ONT::APPLY-FORCE)
+         (OVERLAP WN::|squirt%2:35:00::|
+                  WN::|squirt%2:35:10::|
+                  WN::|sprinkle%2:35:01::|
+                  WN::|spray%2:35:03::|))
+
 (CONCEPT ONT::PUSH-OUT-OF (INHERIT ONT::CAUSE-OUT-OF))
 
 (CONCEPT ONT::PUT
@@ -9500,7 +9506,7 @@
 
 (CONCEPT ONT::RENDER-INEFFECTIVE
          (INHERIT ONT::CHANGE-STATE-ACTION)
-         (OVERLAP WN::|break%2:32:05::|)
+         (OVERLAP WN::|break%2:30:05::|)
          (SEM-FRAME
           (ONT::AFFECTED (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))))
 
@@ -9606,7 +9612,7 @@
          (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::RESCUE
-         (INHERIT ONT::CHANGE-STATE)
+         (INHERIT ONT::HELP)
          (OVERLAP WN::|rescue%2:41:00::|
                   WN::|bring_through%2:41:00::|
                   WN::|deliver%2:41:03::|)
@@ -9898,6 +9904,12 @@
          (INHERIT ONT::FORMATION)
          (OVERLAP WN::|row%1:14:00::| WN::|row%1:17:00::|)
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ) OPTIONAL)))
+
+(CONCEPT ONT::RUB-SCRAPE-WIPE
+         (INHERIT ONT::APPLY-FORCE)
+         (OVERLAP WN::|rub%2:35:00::|
+                  WN::|rub%2:39:00::|
+                  WN::|stroke%2:35:00::|))
 
 (CONCEPT ONT::RW-STATUS-VAL (INHERIT ONT::CAN-BE-DONE-VAL))
 
@@ -10653,6 +10665,12 @@
                   WN::|south%3:00:00::|))
 
 (CONCEPT ONT::SOUTH-RELN (INHERIT ONT::NAVIGATIONAL-RELN))
+
+(CONCEPT ONT::SOW-SEED
+         (INHERIT ONT::PUT)
+         (OVERLAP WN::|seed%2:35:01::|
+                  WN::|sow%2:35:02::|
+                  WN::|plant%2:35:00::|))
 
 (CONCEPT ONT::SPACE
          (INHERIT ONT::EVENT-OF-CAUSATION)
@@ -11960,7 +11978,7 @@
          (INHERIT ONT::ABSTRACT-OBJECT ABSTR-OBJ))
 
 (CONCEPT ONT::UNLOAD
-         (INHERIT ONT::EMPTYING)
+         (INHERIT ONT::EMPTY)
          (OVERLAP WN::|offload%2:35:00::|
                   WN::|unlade%2:35:00::|
                   WN::|unload%2:35:00::|

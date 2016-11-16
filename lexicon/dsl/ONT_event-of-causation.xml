@@ -346,6 +346,21 @@
   wn::|touch%2:35:00::|
  </relation>
  </concept>
+ <concept name="ont::cause-cover">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|impregnate%2:30:00::|
+  wn::|saturate%2:30:04::|
+  wn::|spread%2:35:13::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected-result">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::put">
  <relation label="inherit">
   ont::event-of-causation
@@ -778,6 +793,27 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::fill-container">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|fill%2:30:01::|
+  wn::|fill_up%2:30:00::|
+  wn::|make_full%2:30:00::|
+  wn::|charge%2:35:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected-result">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="container">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::collect">
  <relation label="inherit">
   ont::event-of-causation
@@ -812,25 +848,6 @@
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::agent">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::empty">
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|empty%2:30:01::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::source" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
