@@ -991,6 +991,8 @@
 (CONCEPT ONT::ATMOSPHERIC-VAL (INHERIT ONT::SUBSTANTIAL-PROPERTY-VAL ABSTR-OBJ))
 
 (CONCEPT ONT::ATTACH
+         (COMMENT
+          "Typically Asymmetric joining: e.g. Attach the paper to the wall =/= attach the wall to the paper!")
          (INHERIT ONT::JOINING)
          (OVERLAP WN::|attach%2:35:01::|
                   WN::|attach%2:35:02::|
@@ -2337,6 +2339,8 @@
          (OVERLAP WN::|combination%1:14:00::|))
 
 (CONCEPT ONT::COMBINE-OBJECTS
+         (COMMENT
+          "symmetric combination of objects, abstract or physical: e.g., X combines with y = y combines with x = x and y combine")
          (INHERIT ONT::COALESCE)
          (OVERLAP WN::|merge%2:30:01::|
                   WN::|combine%2:30:00::|
