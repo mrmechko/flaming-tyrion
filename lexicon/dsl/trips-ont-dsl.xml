@@ -2608,6 +2608,9 @@
   </sem-frame>
  </concept>
  <concept name="ont::be-at-loc">
+  <comment>
+   &quot;relations that indicate an postural attitude as well as a location&quot;
+  </comment>
   <relation label="inherit">
    ont::be-at
   </relation>
@@ -8821,6 +8824,9 @@
   </sem-frame>
  </concept>
  <concept name="ont::encodes-message">
+  <comment>
+   &quot;some artifact conveys some message&quot;
+  </comment>
   <relation label="inherit">
    ont::event-of-state
   </relation>
@@ -8829,6 +8835,12 @@
    wn::|go%2:42:02::|
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::neutral1" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
    <role-restr-map roles="ont::neutral">
     <sem-feats>
      <or>
@@ -13989,9 +14001,12 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::lean">
+ <concept name="ont::leaning">
+  <comment>
+   &quot;The state of being in a position of leaning (against something)&quot;
+  </comment>
   <relation label="inherit">
-   ont::move
+   ont::be-at-loc
   </relation>
  </concept>
  <concept name="ont::learn">
@@ -18524,6 +18539,21 @@
    <feat name="origin">non-living</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::place-in-position">
+  <comment>
+   &quot;placing an object in a certain position: e.g., lean, sit, stand,  ...&quot;
+  </comment>
+  <relation label="inherit">
+   ont::put
+  </relation>
+  <relation label="overlap">
+   wn::|lean%2:35:00::|
+   wn::|set_down%2:35:00::|
+   wn::|seat%2:35:00::|
+   wn::|stand%2:35:01::|
+   wn::|perch%2:35:10::|
+  </relation>
+ </concept>
  <concept name="ont::planet">
   <relation label="inherit">
    ont::natural-object
@@ -19047,25 +19077,6 @@
      </relation>
      <feat name="type">molecular-part</feat>
     </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::posture">
-  <relation label="inherit">
-   ont::be-at-loc
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::location">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::agent">
-    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>

@@ -1203,6 +1203,8 @@
          (SEM-FRAME (ONT::LOCATION (CONCEPT T)) (ONT::NEUTRAL (CONCEPT T))))
 
 (CONCEPT ONT::BE-AT-LOC
+         (COMMENT
+          "relations that indicate an postural attitude as well as a location")
          (INHERIT ONT::BE-AT)
          (OVERLAP WN::|sit%2:35:00::|
                   WN::|sit_down%2:35:03::|
@@ -4016,9 +4018,11 @@
           (ONT::AFFECTED (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
 
 (CONCEPT ONT::ENCODES-MESSAGE
+         (COMMENT "some artifact conveys some message")
          (INHERIT ONT::EVENT-OF-STATE)
          (OVERLAP WN::|read%2:42:00::| WN::|go%2:42:02::|)
          (SEM-FRAME
+          (ONT::NEUTRAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
           (ONT::NEUTRAL
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INFORMATION INFORMATION-CONTENT)))))
@@ -6404,7 +6408,10 @@
          (SEM-FEATS (INHERIT ABSTR-OBJ) (INFORMATION INFORMATION-CONTENT))
          (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
 
-(CONCEPT ONT::LEAN (INHERIT ONT::MOVE))
+(CONCEPT ONT::LEANING
+         (COMMENT
+          "The state of being in a position of leaning (against something)")
+         (INHERIT ONT::BE-AT-LOC))
 
 (CONCEPT ONT::LEARN
          (INHERIT ONT::COGITATION)
@@ -8391,6 +8398,16 @@
                     (FORM GEOGRAPHICAL-OBJECT)
                     (ORIGIN NON-LIVING)))
 
+(CONCEPT ONT::PLACE-IN-POSITION
+         (COMMENT
+          "placing an object in a certain position: e.g., lean, sit, stand,  ...")
+         (INHERIT ONT::PUT)
+         (OVERLAP WN::|lean%2:35:00::|
+                  WN::|set_down%2:35:00::|
+                  WN::|seat%2:35:00::|
+                  WN::|stand%2:35:01::|
+                  WN::|perch%2:35:10::|))
+
 (CONCEPT ONT::PLANET
          (INHERIT ONT::NATURAL-OBJECT)
          (OVERLAP WN::|planet%1:17:00::|
@@ -8621,11 +8638,6 @@
          (SEM-FRAME (ONT::LOCATION (CONCEPT T) OPTIONAL)
                     (ONT::AFFECTED
                      (SEM-FEATS (INHERIT PHYS-OBJ) (TYPE MOLECULAR-PART)))))
-
-(CONCEPT ONT::POSTURE
-         (INHERIT ONT::BE-AT-LOC)
-         (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
-         (SEM-FRAME (ONT::LOCATION (CONCEPT T)) (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::POT (INHERIT ONT::COOKWARE) (OVERLAP WN::|pot%1:06:00::|))
 

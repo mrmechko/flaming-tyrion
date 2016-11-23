@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::encodes-message">
+ <comment>
+  &quot;some artifact conveys some message&quot;
+ </comment>
  <relation label="inherit">
   ont::event-of-state
  </relation>
@@ -11,6 +14,12 @@
   wn::|go%2:42:02::|
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
   <role-restr-map roles="ont::neutral">
    <sem-feats>
     <or>
@@ -97,6 +106,12 @@
  </sem-feats>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
  <role-restr-map roles="ont::neutral">
   <sem-feats>
    <or>
@@ -426,10 +441,10 @@
   ont::encodes-message
  </relation>
  <syntax>
-  <template-call template="ont::agent-effect-subjcontrol-templ" />
+  <template-call template="ont::neutral-theme-subjcontrol-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::neutral"/>
   </syn-sem>
  </syntax>
  </sense>
