@@ -11,13 +11,7 @@
    <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
-    <feat name="type">change</feat>
-    <feat name="aspect">dynamic</feat>
-   </sem-feats>
+   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -129,12 +123,7 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="trajectory">+</feat>
-  </sem-feats>
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::path">
@@ -164,13 +153,7 @@
   <concept name="phys-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="type">change</feat>
-   <feat name="aspect">dynamic</feat>
-  </sem-feats>
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::goal-reln">
@@ -179,12 +162,7 @@
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
-    <feat name="trajectory">+</feat>
-   </sem-feats>
+   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -232,16 +210,16 @@
   ont::resulting-object
  </relation>
  <syntax>
-  <template-call template="ont::binary-constraint-s-templ" />
+  <template-call template="ont::binary-constraint-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
    <or>
-    pre
     post
+    pre
    </or>
    </feat>
    <feat name="sort">binary-constraint</feat>

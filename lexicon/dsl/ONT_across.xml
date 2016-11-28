@@ -19,7 +19,6 @@
   ont::root
  </relation>
  </concept>
- <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -72,18 +71,21 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground">
-  <concept name="phys-obj" />
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-   <feat name="trajectory">+</feat>
-  </sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
+ <concept name="abstr-obj" />
  <concept name="ont::predicate">
  <comment>
   &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as&quot;
@@ -111,22 +113,52 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::trajectory">
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::path">
  <relation label="inherit">
   ont::predicate
+  abstr-obj
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::trajectory">
+ <relation label="inherit">
+  ont::path
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground">
    <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="situation" />
-    </or>
-    <feat name="trajectory">+</feat>
-   </sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -139,16 +171,16 @@
   ont::across
  </relation>
  <syntax>
-  <template-call template="ont::binary-constraint-s-templ" />
+  <template-call template="ont::binary-constraint-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
    <or>
-    pre
     post
+    pre
    </or>
    </feat>
    <feat name="sort">binary-constraint</feat>

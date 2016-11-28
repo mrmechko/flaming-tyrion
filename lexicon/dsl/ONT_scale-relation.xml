@@ -12,16 +12,11 @@
     <relation label="inherit">
      abstr-obj
     </relation>
-    <feat name="scale">?!sc</feat>
+    <feat name="scale">duration-scale</feat>
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">domain</feat>
-   </sem-feats>
+   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -94,16 +89,11 @@
    <relation label="inherit">
     abstr-obj
    </relation>
-   <feat name="scale">?!sc</feat>
+   <feat name="scale">duration-scale</feat>
   </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">domain</feat>
-  </sem-feats>
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::predicate">
@@ -255,16 +245,16 @@
   ont::scale-relation
  </relation>
  <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-templ" />
+  <template-call template="ont::binary-constraint-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
    <or>
-    pre
     post
+    pre
    </or>
    </feat>
    <feat name="sort">binary-constraint</feat>

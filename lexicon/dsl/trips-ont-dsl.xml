@@ -454,6 +454,7 @@
    wn::|act%2:36:04::|
    wn::|act%2:41:00::|
    wn::|act%2:41:07::|
+   wn::|behave%2:41:01::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal">
@@ -880,7 +881,7 @@
  </concept>
  <concept name="ont::age-scale">
   <relation label="inherit">
-   ont::linear-scale
+   ont::duration-scale
   </relation>
  </concept>
  <concept name="ont::age-val">
@@ -1091,21 +1092,6 @@
   <relation label="inherit">
    ont::trajectory
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="spatial-abstraction">
-     <or>
-      line
-      strip
-     </or>
-     </feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::always">
   <relation label="inherit">
@@ -1665,6 +1651,11 @@
   </relation>
   <relation label="overlap">
    wn::|argue%2:32:00::|
+  </relation>
+ </concept>
+ <concept name="ont::around">
+  <relation label="inherit">
+   ont::trajectory
   </relation>
  </concept>
  <concept name="ont::arrange-text">
@@ -11535,13 +11526,7 @@
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
-     <feat name="type">motion</feat>
-     <feat name="aspect">dynamic</feat>
-    </sem-feats>
+    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -11556,12 +11541,7 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
-     <feat name="trajectory">+</feat>
-    </sem-feats>
+    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -14200,7 +14180,7 @@
    <relation label="inherit">
     abstr-obj
    </relation>
-   <feat name="scale">length</feat>
+   <feat name="scale">linear-d</feat>
   </sem-feats>
  </concept>
  <concept name="ont::length-val">
@@ -17031,20 +17011,7 @@
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <or>
-      <concept name="situation" />
-      <concept name="phys-obj" />
-     </or>
-     <feat name="trajectory">+</feat>
-     <feat name="type">
-     <or>
-      motion
-      apply-force
-      route
-     </or>
-     </feat>
-    </sem-feats>
+    <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -17675,6 +17642,11 @@
  <concept name="ont::outside">
   <relation label="inherit">
    ont::pos-as-containment-reln
+  </relation>
+ </concept>
+ <concept name="ont::over">
+  <relation label="inherit">
+   ont::trajectory
   </relation>
  </concept>
  <concept name="ont::overcome">
@@ -18794,12 +18766,17 @@
    ont::pos-relative-wrt-trajectory
   </relation>
  </concept>
+ <concept name="ont::pos-as-around">
+  <relation label="inherit">
+   ont::position-as-extent-reln
+  </relation>
+ </concept>
  <concept name="ont::pos-as-containment-reln">
   <relation label="inherit">
    ont::position-as-point-reln
   </relation>
  </concept>
- <concept name="ont::pos-as-intersection">
+ <concept name="ont::pos-as-opposite">
   <relation label="inherit">
    ont::position-as-extent-reln
   </relation>
@@ -21505,13 +21482,7 @@
     <concept name="phys-obj" />
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
-     <feat name="type">change</feat>
-     <feat name="aspect">dynamic</feat>
-    </sem-feats>
+    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -21527,13 +21498,7 @@
     </or>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
-     <feat name="type">change</feat>
-     <feat name="aspect">dynamic</feat>
-    </sem-feats>
+    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -22245,16 +22210,11 @@
      <relation label="inherit">
       abstr-obj
      </relation>
-     <feat name="scale">?!sc</feat>
+     <feat name="scale">duration-scale</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="type">domain</feat>
-    </sem-feats>
+    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -23615,11 +23575,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::source-as-containment">
-  <relation label="inherit">
-   ont::from
-  </relation>
- </concept>
  <concept name="ont::source-as-loc">
   <relation label="inherit">
    ont::from
@@ -23629,11 +23584,6 @@
     <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::source-as-on">
-  <relation label="inherit">
-   ont::from
-  </relation>
  </concept>
  <concept name="ont::source-loc">
   <relation label="inherit">
@@ -25497,6 +25447,26 @@
    wn::|thrombosis%1:26:00::|
   </relation>
  </concept>
+ <concept name="ont::through">
+  <relation label="inherit">
+   ont::trajectory
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="spatial-abstraction">
+     <or>
+      spatial-point
+      spatial-region
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::thruway">
   <relation label="inherit">
    ont::highway
@@ -25847,18 +25817,17 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="form">geographical-object</feat>
+     <feat name="spatial-abstraction">?!sa</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
-     <feat name="type">event-of-change</feat>
-    </sem-feats>
+    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -25960,20 +25929,17 @@
  </concept>
  <concept name="ont::trajectory">
   <relation label="inherit">
-   ont::predicate
+   ont::path
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground">
     <concept name="phys-obj" />
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="situation" />
-     </or>
-     <feat name="trajectory">+</feat>
-    </sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -26908,26 +26874,6 @@
    wn::|vertical%3:00:00::|
    wn::|perpendicular%3:00:00::|
   </relation>
- </concept>
- <concept name="ont::via">
-  <relation label="inherit">
-   ont::trajectory
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="spatial-abstraction">
-     <or>
-      spatial-point
-      spatial-region
-     </or>
-     </feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::virus">
   <relation label="inherit">

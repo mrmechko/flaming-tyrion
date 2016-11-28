@@ -215,7 +215,10 @@
 
 (CONCEPT ONT::ACT-BEHAVE
          (INHERIT ONT::ACTING)
-         (OVERLAP WN::|act%2:36:04::| WN::|act%2:41:00::| WN::|act%2:41:07::|)
+         (OVERLAP WN::|act%2:36:04::|
+                  WN::|act%2:41:00::|
+                  WN::|act%2:41:07::|
+                  WN::|behave%2:41:01::|)
          (SEM-FRAME (ONT::FORMAL (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::ACTING
@@ -419,7 +422,7 @@
          (INHERIT ONT::PHYS-MEASURE-DOMAIN)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (MEASURE-FUNCTION TERM)))
 
-(CONCEPT ONT::AGE-SCALE (INHERIT ONT::LINEAR-SCALE))
+(CONCEPT ONT::AGE-SCALE (INHERIT ONT::DURATION-SCALE))
 
 (CONCEPT ONT::AGE-VAL
          (INHERIT ONT::TEMPORAL)
@@ -524,12 +527,7 @@
 
 (CONCEPT ONT::ALLOWS-DOING-VAL (INHERIT ONT::PROCESS-VAL))
 
-(CONCEPT ONT::ALONG
-         (INHERIT ONT::TRAJECTORY)
-         (SEM-FRAME
-          (ONT::GROUND
-           (SEM-FEATS (INHERIT PHYS-OBJ)
-                      (SPATIAL-ABSTRACTION (OR LINE STRIP))))))
+(CONCEPT ONT::ALONG (INHERIT ONT::TRAJECTORY))
 
 (CONCEPT ONT::ALWAYS (INHERIT ONT::FREQUENCY))
 
@@ -772,6 +770,8 @@
          (COMMENT "extended communication with opposing views on a topic")
          (INHERIT ONT::DISCUSS)
          (OVERLAP WN::|argue%2:32:00::|))
+
+(CONCEPT ONT::AROUND (INHERIT ONT::TRAJECTORY))
 
 (CONCEPT ONT::ARRANGE-TEXT (INHERIT ONT::ARRANGING))
 
@@ -5256,17 +5256,13 @@
 (CONCEPT ONT::GOAL-AS-CONTAINMENT
          (INHERIT ONT::GOAL-RELN)
          (SEM-FRAME (ONT::GROUND (SEM-FEATS (INHERIT PHYS-OBJ) (CONTAINER +)))
-                    (ONT::FIGURE
-                     (SEM-FEATS (INHERIT SITUATION)
-                                (TYPE MOTION)
-                                (ASPECT DYNAMIC)))))
+                    (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::GOAL-AS-ON (INHERIT ONT::GOAL-RELN))
 
 (CONCEPT ONT::GOAL-RELN
          (INHERIT ONT::PATH)
-         (SEM-FRAME
-          (ONT::FIGURE (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +)))))
+         (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::GOING-TO
          (INHERIT ONT::AUX)
@@ -6502,7 +6498,7 @@
                   WN::|linear_unit%1:23:00::|
                   WN::|week%1:28:00::|
                   WN::|hebdomad%1:28:00::|)
-         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE LENGTH)))
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE LINEAR-D)))
 
 (CONCEPT ONT::LENGTH-VAL (INHERIT ONT::LINEAR-DIMENSION))
 
@@ -7729,10 +7725,7 @@
 (CONCEPT ONT::OBJ-IN-PATH
          (INHERIT ONT::PATH)
          (SEM-FRAME (ONT::GROUND (SEM-FEATS (INHERIT PHYS-OBJ) (FORM OBJECT)))
-                    (ONT::FIGURE
-                     (SEM-FEATS (OR (CONCEPT SITUATION) (CONCEPT PHYS-OBJ))
-                                (TRAJECTORY +)
-                                (TYPE (OR MOTION APPLY-FORCE ROUTE))))))
+                    (ONT::FIGURE (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::OBJECT (INHERIT ONT::CONTEST) (OVERLAP WN::|object%2:42:00::|))
 
@@ -8000,6 +7993,8 @@
                   WN::|outgoing%3:00:00::|))
 
 (CONCEPT ONT::OUTSIDE (INHERIT ONT::POS-AS-CONTAINMENT-RELN))
+
+(CONCEPT ONT::OVER (INHERIT ONT::TRAJECTORY))
 
 (CONCEPT ONT::OVERCOME
          (INHERIT ONT::CONTROL-MANAGE)
@@ -8519,9 +8514,11 @@
 (CONCEPT ONT::POS-AFTER-IN-TRAJECTORY
          (INHERIT ONT::POS-RELATIVE-WRT-TRAJECTORY))
 
+(CONCEPT ONT::POS-AS-AROUND (INHERIT ONT::POSITION-AS-EXTENT-RELN))
+
 (CONCEPT ONT::POS-AS-CONTAINMENT-RELN (INHERIT ONT::POSITION-AS-POINT-RELN))
 
-(CONCEPT ONT::POS-AS-INTERSECTION (INHERIT ONT::POSITION-AS-EXTENT-RELN))
+(CONCEPT ONT::POS-AS-OPPOSITE (INHERIT ONT::POSITION-AS-EXTENT-RELN))
 
 (CONCEPT ONT::POS-AS-OVER (INHERIT ONT::POSITION-AS-EXTENT-RELN))
 
@@ -9728,19 +9725,12 @@
 
 (CONCEPT ONT::RESULTING-OBJECT
          (INHERIT ONT::GOAL-RELN)
-         (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ))
-                    (ONT::FIGURE
-                     (SEM-FEATS (INHERIT SITUATION)
-                                (TYPE CHANGE)
-                                (ASPECT DYNAMIC)))))
+         (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ)) (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::RESULTING-STATE
          (INHERIT ONT::GOAL-RELN)
          (SEM-FRAME (ONT::GROUND (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
-                    (ONT::FIGURE
-                     (SEM-FEATS (INHERIT SITUATION)
-                                (TYPE CHANGE)
-                                (ASPECT DYNAMIC)))))
+                    (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::RETAIN
          (INHERIT ONT::LOCATED-MOVE-STATE)
@@ -10042,9 +10032,9 @@
 
 (CONCEPT ONT::SCALE-RELATION
          (INHERIT ONT::PREDICATE)
-         (SEM-FRAME (ONT::GROUND (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE ?!SC)))
-                    (ONT::FIGURE
-                     (SEM-FEATS (INHERIT ABSTR-OBJ) (TYPE DOMAIN)))))
+         (SEM-FRAME
+          (ONT::GROUND (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE DURATION-SCALE)))
+          (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::SCHEDULED-TIME-MODIFIER
          (INHERIT ONT::TEMPORAL-MODIFIER)
@@ -10656,13 +10646,9 @@
          (INHERIT ONT::FUNCTION-OBJECT ABSTR-OBJ)
          (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
 
-(CONCEPT ONT::SOURCE-AS-CONTAINMENT (INHERIT ONT::FROM))
-
 (CONCEPT ONT::SOURCE-AS-LOC
          (INHERIT ONT::FROM)
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ))))
-
-(CONCEPT ONT::SOURCE-AS-ON (INHERIT ONT::FROM))
 
 (CONCEPT ONT::SOURCE-LOC
          (INHERIT ONT::PREDICATE)
@@ -11543,6 +11529,14 @@
          (INHERIT ONT::MEDICAL-CONDITION)
          (OVERLAP WN::|thrombosis%1:26:00::|))
 
+(CONCEPT ONT::THROUGH
+         (INHERIT ONT::TRAJECTORY)
+         (SEM-FRAME
+          (ONT::GROUND
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (SPATIAL-ABSTRACTION
+                       (OR SPATIAL-POINT SPATIAL-REGION))))))
+
 (CONCEPT ONT::THRUWAY
          (INHERIT ONT::HIGHWAY)
          (OVERLAP WN::|throughway%1:06:00::|
@@ -11680,9 +11674,12 @@
          (COMMENT
           "the generic goal role: might be a physical object (as possessor) or a resulting state")
          (INHERIT ONT::GOAL-RELN)
-         (SEM-FRAME (ONT::GROUND (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
-                    (ONT::FIGURE
-                     (SEM-FEATS (INHERIT SITUATION) (TYPE EVENT-OF-CHANGE)))))
+         (SEM-FRAME
+          (ONT::GROUND
+           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
+                      (FORM GEOGRAPHICAL-OBJECT)
+                      (SPATIAL-ABSTRACTION ?!SA)))
+          (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::TOO-MUCH
          (INHERIT ONT::DOMAIN-PROPERTY)
@@ -11729,11 +11726,9 @@
          (OVERLAP WN::|tower%1:06:00::|))
 
 (CONCEPT ONT::TRAJECTORY
-         (INHERIT ONT::PREDICATE)
+         (INHERIT ONT::PATH)
          (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ))
-                    (ONT::FIGURE
-                     (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION))
-                                (TRAJECTORY +)))))
+                    (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::TRANSFER
          (INHERIT ONT::GIVING)
@@ -12204,14 +12199,6 @@
                   WN::|vertical%3:00:00::|
                   WN::|vertical%3:00:00::|
                   WN::|perpendicular%3:00:00::|))
-
-(CONCEPT ONT::VIA
-         (INHERIT ONT::TRAJECTORY)
-         (SEM-FRAME
-          (ONT::GROUND
-           (SEM-FEATS (INHERIT PHYS-OBJ)
-                      (SPATIAL-ABSTRACTION
-                       (OR SPATIAL-POINT SPATIAL-REGION))))))
 
 (CONCEPT ONT::VIRUS
          (INHERIT ONT::MICROORGANISM)
