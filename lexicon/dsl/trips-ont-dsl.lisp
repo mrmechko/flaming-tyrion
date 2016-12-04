@@ -2573,10 +2573,13 @@
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE)))
 
 (CONCEPT ONT::COMPLETE
-         (INHERIT ONT::SITUATION-CHANGE)
+         (INHERIT ONT::ACTING)
          (OVERLAP WN::|complete%2:30:02::|
                   WN::|finish%2:30:02::|
-                  WN::|carry_to_term%2:29:00::|)
+                  WN::|carry_to_term%2:29:00::|
+                  WN::|hold_one's_own%2:42:00::|
+                  WN::|succeed%2:41:00::|
+                  WN::|excel%2:42:00::|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE)))
 
 (CONCEPT ONT::COMPLETELY
@@ -8862,7 +8865,7 @@
 
 (CONCEPT ONT::PROGRESS
          (COMMENT "A situation continues to develop")
-         (INHERIT ONT::SITUATION-CHANGE)
+         (INHERIT ONT::ACTIVITY-ONGOING)
          (OVERLAP WN::|go%2:30:02::|
                   WN::|progress%2:30:00::|
                   WN::|progress%2:38:00::|
@@ -10454,17 +10457,6 @@
          (OVERLAP WN::|phenomenon%1:03:00::|)
          (INHERIT ONT::EVENT-TYPE SITUATION))
 
-(CONCEPT ONT::SITUATION-CHANGE
-         (INHERIT ONT::CHANGE)
-         (OVERLAP WN::|go%2:42:03::| WN::|go%2:42:12::|)
-         (SEM-FEATS (INHERIT SITUATION) (CAUSE FORCE) (ASPECT DYNAMIC))
-         (SEM-FRAME
-          (ONT::EFFECT
-           (SEM-FEATS (INHERIT SITUATION) (ASPECT (OR DYNAMIC STAGE-LEVEL))))
-          (ONT::AGENT (CONCEPT T))
-          (ONT::FORMAL
-           (SEM-FEATS (INHERIT SITUATION) (ASPECT (OR DYNAMIC STAGE-LEVEL))))))
-
 (CONCEPT ONT::SITUATION-MODIFIER
          (INHERIT ONT::SITUATION-OBJECT-MODIFIER)
          (SEM-FRAME (ONT::NOROLE (CONCEPT T) OPTIONAL)
@@ -10809,7 +10801,7 @@
 (CONCEPT ONT::STAGE-VAL (INHERIT ONT::PROCESS-VAL))
 
 (CONCEPT ONT::STAIRS
-         (INHERIT ONT::ROUTE)
+         (INHERIT ONT::GENERAL-STRUCTURE)
          (OVERLAP WN::|stairway%1:06:00::| WN::|staircase%1:06:00::|))
 
 (CONCEPT ONT::STAND (INHERIT ONT::KETTLE-BASE))
@@ -11128,14 +11120,6 @@
 (CONCEPT ONT::SUBSTANTIAL-PROPERTY-VAL
          (COMMENT "properties having to do with physical substance")
          (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
-
-(CONCEPT ONT::SUCCEED
-         (INHERIT ONT::ACTING)
-         (OVERLAP WN::|hold_one's_own%2:42:00::|
-                  WN::|succeed%2:41:00::|
-                  WN::|excel%2:42:00::|)
-         (SEM-FRAME (ONT::AGENT (CONCEPT T) OPTIONAL)
-                    (ONT::FORMAL (CONCEPT SITUATION))))
 
 (CONCEPT ONT::SUCCESS-VAL (INHERIT ONT::PROCESS-VAL))
 

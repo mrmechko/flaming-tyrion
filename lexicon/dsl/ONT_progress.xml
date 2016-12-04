@@ -7,7 +7,7 @@
   &quot;A situation continues to develop&quot;
  </comment>
  <relation label="inherit">
-  ont::situation-change
+  ont::activity-ongoing
  </relation>
  <relation label="overlap">
   wn::|go%2:30:02::|
@@ -163,14 +163,27 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::affected">
+ <role-restr-map roles="ont::agent" optional="optional">
   <or>
-   <concept name="abstr-obj" />
    <concept name="phys-obj" />
-   <concept name="situation" />
+   <concept name="abstr-obj" />
   </or>
  </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal">
+  <concept name="situation" />
+ </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">phenomenal</feat>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
@@ -194,128 +207,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="cause">force</feat>
- </sem-feats>
- <concept name="ont::event-of-causation">
- <comment>
-  &quot;events involving an AGENT acting on an AFFECTED&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-action
-  situation
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::effect">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">
-   <or>
-    dynamic
-    stage-level
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">
-   <or>
-    dynamic
-    stage-level
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="cause">force</feat>
- <feat name="aspect">dynamic</feat>
- </sem-feats>
- <concept name="ont::change">
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|change%1:07:00::|
-  wn::|variety%1:07:01::|
-  wn::|change%1:06:01::|
-  wn::|change%2:30:00::|
-  wn::|change%1:04:00::|
-  wn::|change%1:19:00::|
-  wn::|change%2:30:02::|
-  wn::|change%2:30:08::|
-  wn::|change%2:30:01::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">force</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="situation" />
  <sem-feats>
  <relation label="inherit">
@@ -323,50 +214,60 @@
  </relation>
  <feat name="cause">agentive</feat>
  </sem-feats>
- <concept name="ont::situation-change">
+ <concept name="ont::activity-ongoing">
  <relation label="inherit">
-  ont::change
+  ont::event-of-action
  </relation>
  <relation label="overlap">
-  wn::|go%2:42:03::|
-  wn::|go%2:42:12::|
+  wn::|maintain%2:40:10::|
+  wn::|keep%2:40:10::|
+  wn::|save%2:40:03::|
+  wn::|keep%2:40:09::|
+  wn::|hold_open%2:40:00::|
+  wn::|keep_open%2:40:00::|
+  wn::|maintain%2:34:00::|
+  wn::|keep%2:34:00::|
+  wn::|sustain%2:34:00::|
+  wn::|keep_on%2:41:00::|
+  wn::|keep%2:41:02::|
+  wn::|continue%2:41:00::|
+  wn::|retain%2:41:01::|
+  wn::|maintain%2:31:00::|
+  wn::|keep%2:31:00::|
+  wn::|observe%2:31:00::|
+  wn::|hold%2:42:00::|
+  wn::|maintain%2:42:00::|
+  wn::|keep%2:42:00::|
+  wn::|continue%2:42:01::|
+  wn::|go_on%2:42:00::|
+  wn::|proceed%2:42:00::|
+  wn::|go_along%2:42:00::|
+  wn::|keep%2:42:07::|
+  wn::|persist%2:42:01::|
+  wn::|welter%2:31:00::|
+  wn::|sustain%2:42:01::|
+  wn::|keep_up%2:33:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="cause">force</feat>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">phenomenal</feat>
   <feat name="aspect">dynamic</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::effect">
-   <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
-    <feat name="aspect">
-    <or>
-     dynamic
-     stage-level
-    </or>
-    </feat>
-   </sem-feats>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
-  <role-restr-map roles="ont::agent">
+  <role-restr-map roles="ont::neutral">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::formal">
-   <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
-    <feat name="aspect">
-    <or>
-     dynamic
-     stage-level
-    </or>
-    </feat>
-   </sem-feats>
+   <concept name="situation" />
   </role-restr-map>
  </sem-frame>
  </concept>

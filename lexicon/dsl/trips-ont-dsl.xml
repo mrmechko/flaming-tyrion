@@ -5643,12 +5643,15 @@
  </concept>
  <concept name="ont::complete">
   <relation label="inherit">
-   ont::situation-change
+   ont::acting
   </relation>
   <relation label="overlap">
    wn::|complete%2:30:02::|
    wn::|finish%2:30:02::|
    wn::|carry_to_term%2:29:00::|
+   wn::|hold_one's_own%2:42:00::|
+   wn::|succeed%2:41:00::|
+   wn::|excel%2:42:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -19554,7 +19557,7 @@
    &quot;A situation continues to develop&quot;
   </comment>
   <relation label="inherit">
-   ont::situation-change
+   ont::activity-ongoing
   </relation>
   <relation label="overlap">
    wn::|go%2:30:02::|
@@ -23109,53 +23112,6 @@
    situation
   </relation>
  </concept>
- <concept name="ont::situation-change">
-  <relation label="inherit">
-   ont::change
-  </relation>
-  <relation label="overlap">
-   wn::|go%2:42:03::|
-   wn::|go%2:42:12::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="cause">force</feat>
-   <feat name="aspect">dynamic</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::effect">
-    <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
-     <feat name="aspect">
-     <or>
-      dynamic
-      stage-level
-     </or>
-     </feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::agent">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::formal">
-    <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
-     <feat name="aspect">
-     <or>
-      dynamic
-      stage-level
-     </or>
-     </feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::situation-modifier">
   <relation label="inherit">
    ont::situation-object-modifier
@@ -23976,7 +23932,7 @@
  </concept>
  <concept name="ont::stairs">
   <relation label="inherit">
-   ont::route
+   ont::general-structure
   </relation>
   <relation label="overlap">
    wn::|stairway%1:06:00::|
@@ -24566,24 +24522,6 @@
   <relation label="inherit">
    ont::physical-property-val
   </relation>
- </concept>
- <concept name="ont::succeed">
-  <relation label="inherit">
-   ont::acting
-  </relation>
-  <relation label="overlap">
-   wn::|hold_one's_own%2:42:00::|
-   wn::|succeed%2:41:00::|
-   wn::|excel%2:42:00::|
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::agent" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::formal">
-    <concept name="situation" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::success-val">
   <relation label="inherit">
