@@ -2563,7 +2563,9 @@
          (INHERIT ONT::JUDGEMENT)
          (OVERLAP WN::|compensate%2:40:01::|))
 
-(CONCEPT ONT::COMPETITION (INHERIT ONT::PROCESS))
+(CONCEPT ONT::COMPETITION
+         (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY)
+         (OVERLAP WN::|competition%1:11:00::|))
 
 (CONCEPT ONT::COMPLAIN
          (INHERIT ONT::LOADED-CLAIM)
@@ -3446,7 +3448,6 @@
          (INHERIT ONT::CHANGE-STATE)
          (OVERLAP WN::|destroy%2:35:00::|
                   WN::|destroy%2:36:00::|
-                  WN::|destroy%2:35:01::|
                   WN::|down%2:38:00::|))
 
 (CONCEPT ONT::DESTROY-PART-OF-WHOLE
@@ -4596,8 +4597,7 @@
          (INHERIT ONT::EVENT-OF-EXPERIENCE)
          (OVERLAP WN::|like%2:37:05::|
                   WN::|experience%2:37:00::|
-                  WN::|feel%2:37:00::|
-                  WN::|feeling%1:03:00::|)
+                  WN::|feel%2:37:00::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT STAGE-LEVEL) (CAUSE MENTAL))
          (SEM-FRAME (ONT::FORMAL (CONCEPT T) OPTIONAL)
                     (ONT::NEUTRAL1 (CONCEPT T) OPTIONAL)
@@ -5939,7 +5939,7 @@
 
 (CONCEPT ONT::INFO-MEDIUM
          (INHERIT ONT::INFO-HOLDER)
-         (OVERLAP WN::|written_communication%1:10:00::|)
+         (OVERLAP WN::|written_communication%1:10:00::| WN::|speech%1:10:01::|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (INFORMATION DATA)))
 
 (CONCEPT ONT::INFORMATION
@@ -6298,7 +6298,8 @@
          (INHERIT ONT::DESTROY)
          (OVERLAP WN::|kill%2:35:00::|
                   WN::|kill%2:35:01::|
-                  WN::|kill%2:35:02::|)
+                  WN::|kill%2:35:02::|
+                  WN::|destroy%2:35:01::|)
          (SEM-FRAME
           (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN LIVING)))))
 
@@ -8054,6 +8055,7 @@
           "Part is actually a conceptualization of things that fill the part-of role")
          (INHERIT ONT::REFERENTIAL-SEM)
          (OVERLAP WN::|part%1:24:00::|
+                  WN::|part%1:09:00::|
                   WN::|portion%1:24:00::|
                   WN::|component_part%1:24:00::|
                   WN::|component%1:24:00::|
