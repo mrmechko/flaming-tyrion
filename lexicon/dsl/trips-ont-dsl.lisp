@@ -2299,6 +2299,19 @@
                   WN::|accumulation%1:14:00::|
                   WN::|assemblage%1:14:01::|))
 
+(CONCEPT ONT::COLLIDE
+         (INHERIT ONT::MOTION)
+         (OVERLAP WN::|collide_with%2:35:00::|
+                  WN::|run_into%2:35:01::|
+                  WN::|strike%2:35:01::|
+                  WN::|collide%2:35:01::|
+                  WN::|collide%2:35:00::|
+                  WN::|crash%2:38:02::|
+                  WN::|crash%2:38:01::|)
+         (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
+         (SEM-FRAME
+          (ONT::FORMAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
+
 (CONCEPT ONT::COLOR-SCALE
          (INHERIT ONT::PHYSICAL-DISCRETE-DOMAIN)
          (OVERLAP WN::|colouring%1:07:00::|
@@ -2586,7 +2599,8 @@
                   WN::|hold_one's_own%2:42:00::|
                   WN::|succeed%2:41:00::|
                   WN::|excel%2:42:00::|)
-         (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE)))
+         (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
+         (SEM-FRAME (ONT::FORMAL (CONCEPT T))))
 
 (CONCEPT ONT::COMPLETELY
          (INHERIT ONT::PREDICATE)
@@ -4528,7 +4542,9 @@
                   WN::|do%2:36:01::|
                   WN::|do%2:41:01::|
                   WN::|play%2:36:05::|
-                  WN::|conduct%2:41:00::|)
+                  WN::|conduct%2:41:00::|
+                  WN::|commit%2:41:00::|
+                  WN::|commit%2:41:01::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
          (SEM-FRAME
           (ONT::NEUTRAL (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)) OPTIONAL)))
@@ -5661,12 +5677,7 @@
 
 (CONCEPT ONT::HITTING
          (INHERIT ONT::MOTION)
-         (OVERLAP WN::|collide_with%2:35:00::|
-                  WN::|hit%2:35:01::|
-                  WN::|hit%2:35:03::|
-                  WN::|impinge_on%2:35:00::|
-                  WN::|run_into%2:35:01::|
-                  WN::|strike%2:35:01::|)
+         (OVERLAP WN::|hit%2:35:03::| WN::|strike%2:35:01::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
          (SEM-FRAME
           (ONT::FORMAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
