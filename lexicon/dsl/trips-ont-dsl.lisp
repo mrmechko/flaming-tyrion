@@ -1899,6 +1899,8 @@
           (ONT::AFFECTED-RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))
           (ONT::RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
 
+(CONCEPT ONT::CAUSE-MOVE (INHERIT ONT::MOVE))
+
 (CONCEPT ONT::CAUSE-OFF
          (INHERIT ONT::CAUSE-COME-FROM)
          (OVERLAP WN::|take_off%2:30:00::| WN::|get_off%2:32:01::|)
@@ -4529,8 +4531,7 @@
 
 (CONCEPT ONT::EXECUTE
          (INHERIT ONT::CAUSE-EFFECT)
-         (OVERLAP WN::|take%2:41:04::|
-                  WN::|fulfil%2:36:00::|
+         (OVERLAP WN::|fulfil%2:36:00::|
                   WN::|fulfill%2:36:00::|
                   WN::|action%2:36:00::|
                   WN::|carry_out%2:36:00::|
@@ -5468,8 +5469,6 @@
            (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +) (ORIGIN HUMAN)))))
 
 (CONCEPT ONT::HAS-VALUE-ON-SCALE (INHERIT ONT::SCALE-RELATION))
-
-(CONCEPT ONT::HAUL (INHERIT ONT::MOVE))
 
 (CONCEPT ONT::HAVE
          (INHERIT ONT::HAVING)
@@ -11323,11 +11322,6 @@
                     (CONTAINER +))
          (SEM-FRAME (ONT::CONTENTS (CONCEPT T) OPTIONAL)))
 
-(CONCEPT ONT::TAKE
-         (INHERIT ONT::EXECUTE)
-         (OVERLAP WN::|take%2:41:04::|)
-         (SEM-FRAME (ONT::FORMAL (CONCEPT SITUATION))))
-
 (CONCEPT ONT::TAKE-BY-DECEPTION
          (INHERIT ONT::ACQUIRE-BY-ACTION)
          (OVERLAP WN::|cheat%2:41:00::|
@@ -11336,6 +11330,11 @@
          (SEM-FRAME
           (ONT::AFFECTED1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
            OPTIONAL)))
+
+(CONCEPT ONT::TAKE-EXECUTE
+         (INHERIT ONT::EXECUTE)
+         (OVERLAP WN::|take%2:41:04::|)
+         (SEM-FRAME (ONT::FORMAL (CONCEPT SITUATION))))
 
 (CONCEPT ONT::TAKE-IN
          (INHERIT ONT::EVENT-OF-CAUSATION)
