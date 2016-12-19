@@ -1883,7 +1883,7 @@
 (CONCEPT ONT::CAUSE-INTERACT
          (COMMENT "an AGENT causes some interaction with another agent")
          (INHERIT ONT::CAUSE-EFFECT)
-         (OVERLAP WN::|interact%2:41:00::| WN::|collide%2:35:01::|)
+         (OVERLAP WN::|interact%2:41:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
          (SEM-FRAME
           (ONT::AGENT1
@@ -2302,6 +2302,8 @@
                   WN::|assemblage%1:14:01::|))
 
 (CONCEPT ONT::COLLIDE
+         (COMMENT
+          "two objects comes into contact with force with another, typically both being negatively affected - also supports the plural subject that cincludes both objects")
          (INHERIT ONT::MOTION)
          (OVERLAP WN::|collide_with%2:35:00::|
                   WN::|run_into%2:35:01::|
@@ -2311,8 +2313,8 @@
                   WN::|crash%2:38:02::|
                   WN::|crash%2:38:01::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
-         (SEM-FRAME
-          (ONT::FORMAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
+         (SEM-FRAME (ONT::AFFECTED1 (CONCEPT PHYS-OBJ) OPTIONAL)
+                    (ONT::AFFECTED (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::COLOR-SCALE
          (INHERIT ONT::PHYSICAL-DISCRETE-DOMAIN)
@@ -5675,11 +5677,12 @@
 (CONCEPT ONT::HINT (INHERIT ONT::REPRESENTATIVE) (OVERLAP WN::|hint%2:32:00::|))
 
 (CONCEPT ONT::HITTING
+         (COMMENT
+          "an agent comes into contact with force with another object, typically harming the other object")
          (INHERIT ONT::MOTION)
          (OVERLAP WN::|hit%2:35:03::| WN::|strike%2:35:01::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))
-         (SEM-FRAME
-          (ONT::FORMAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
+         (SEM-FRAME (ONT::AFFECTED (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::HIVES
          (INHERIT ONT::MEDICAL-SYMPTOM)

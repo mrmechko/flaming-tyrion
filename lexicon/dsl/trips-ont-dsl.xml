@@ -4110,7 +4110,6 @@
   </relation>
   <relation label="overlap">
    wn::|interact%2:41:00::|
-   wn::|collide%2:35:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -5064,6 +5063,9 @@
   </relation>
  </concept>
  <concept name="ont::collide">
+  <comment>
+   &quot;two objects comes into contact with force with another, typically both being negatively affected - also supports the plural subject that cincludes both objects&quot;
+  </comment>
   <relation label="inherit">
    ont::motion
   </relation>
@@ -5083,11 +5085,11 @@
    <feat name="trajectory">-</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::formal1" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
+   <role-restr-map roles="ont::affected1" optional="optional">
+    <concept name="phys-obj" />
+   </role-restr-map>
+   <role-restr-map roles="ont::affected">
+    <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -12352,6 +12354,9 @@
   </relation>
  </concept>
  <concept name="ont::hitting">
+  <comment>
+   &quot;an agent comes into contact with force with another object, typically harming the other object&quot;
+  </comment>
   <relation label="inherit">
    ont::motion
   </relation>
@@ -12366,11 +12371,8 @@
    <feat name="trajectory">-</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::formal1" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
+   <role-restr-map roles="ont::affected">
+    <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
  </concept>

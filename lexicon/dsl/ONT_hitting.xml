@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::hitting">
+ <comment>
+  &quot;an agent comes into contact with force with another object, typically harming the other object&quot;
+ </comment>
  <relation label="inherit">
   ont::motion
  </relation>
@@ -17,11 +20,8 @@
   <feat name="trajectory">-</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::formal1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
+  <role-restr-map roles="ont::affected">
+   <concept name="phys-obj" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -260,11 +260,8 @@
  </concept>
  <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::formal1" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
+ <role-restr-map roles="ont::affected">
+  <concept name="phys-obj" />
  </role-restr-map>
  </sem-frame>
  <sem-feats>
