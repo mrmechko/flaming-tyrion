@@ -216,25 +216,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="brush" />
- </morph>
- <relation label="inherit">
-  ont::cause-cover
- </relation>
- <relation label="overlap">
-  vn::spray-9.7-1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="cover" />
   <forms>
    -VB
@@ -258,13 +239,12 @@
   vn::contiguous_location-47.8
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected2-optional-templ" xp="'(w::pp
-                                                                      (w::or
-                                                                       w::with
-                                                                       w::in))" />
+  <template-call template="ont::agent-goal-affected-templ" xp="'(w::pp
+                                                                 (w::or w::with
+                                                                        w::in))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::with w::in)" sem-role="ont::affected1" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::with w::in)" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected-result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

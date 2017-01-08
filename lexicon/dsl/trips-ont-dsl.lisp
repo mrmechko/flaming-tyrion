@@ -440,6 +440,7 @@
 (CONCEPT ONT::AGENT-INTERACTION
          (COMMENT "events that involve the interaction of two or more agents")
          (INHERIT ONT::EVENT-OF-ACTION)
+         (OVERLAP WN::|interaction%1:04:00::|)
          (SEM-FRAME
           (ONT::AGENT1
            (SEM-FEATS (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ))
@@ -789,7 +790,8 @@
                   WN::|organisation%1:09:00::|
                   WN::|system%1:09:02::|
                   WN::|put_aside%2:35:00::|
-                  WN::|address%2:32:02::|)
+                  WN::|address%2:32:02::|
+                  WN::|hairdressing%1:04:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (CAUSE AGENTIVE))
          (SEM-FRAME
           (ONT::RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
@@ -2169,7 +2171,8 @@
          (INHERIT ONT::CHANGE-STATE-ACTION)
          (OVERLAP WN::|clean%2:35:00::|
                   WN::|make_clean%2:35:00::|
-                  WN::|wash%1:04:01::|)
+                  WN::|wash%1:04:01::|
+                  WN::|dentalcare%1:04:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (CAUSE AGENTIVE)))
 
 (CONCEPT ONT::CLEANLINESS-VAL (INHERIT ONT::SUBSTANTIAL-PROPERTY-VAL))
@@ -4046,7 +4049,9 @@
 (CONCEPT ONT::ENCODES-MESSAGE
          (COMMENT "some artifact conveys some message")
          (INHERIT ONT::EVENT-OF-STATE)
-         (OVERLAP WN::|read%2:42:00::| WN::|go%2:42:02::|)
+         (OVERLAP WN::|read%2:42:00::|
+                  WN::|go%2:42:02::|
+                  WN::|represent%2:36:01::|)
          (SEM-FRAME
           (ONT::NEUTRAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
           (ONT::NEUTRAL
@@ -11714,7 +11719,7 @@
 
 (CONCEPT ONT::TOUCH
          (INHERIT ONT::EVENT-OF-CAUSATION)
-         (OVERLAP WN::|touch%2:35:00::|))
+         (OVERLAP WN::|touch%2:35:00::| WN::|touch%1:04:00::|))
 
 (CONCEPT ONT::TOUR (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY))
 
