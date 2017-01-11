@@ -5587,6 +5587,9 @@
 
 (CONCEPT ONT::HEIGHT-VAL
          (INHERIT ONT::LINEAR-DIMENSION)
+         (OVERLAP WN::|high%3:00:02::|
+                  WN::|high%3:00:01::|
+                  WN::|tall%3:00:00::|)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE HEIGHT-SCALE)))
 
 (CONCEPT ONT::HELP
@@ -5625,12 +5628,6 @@
                   WN::|conceal%2:39:01::|
                   WN::|conceal%2:39:00::|
                   WN::|hide%2:39:01::|))
-
-(CONCEPT ONT::HIGH-VAL
-         (INHERIT ONT::LINEAR-DIMENSION)
-         (OVERLAP WN::|high%3:00:02::|
-                  WN::|high%3:00:01::|
-                  WN::|tall%3:00:00::|))
 
 (CONCEPT ONT::HIGHLIGHT
          (INHERIT ONT::VISUAL-DISPLAY)
@@ -6832,7 +6829,7 @@
          (SEM-FRAME (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::LOW-VAL
-         (INHERIT ONT::LINEAR-DIMENSION)
+         (INHERIT ONT::HEIGHT-VAL)
          (OVERLAP WN::|low%3:00:02::| WN::|low%3:00:01::|))
 
 (CONCEPT ONT::LUCKINESS-VAL (INHERIT ONT::PROPERTY-VAL))
