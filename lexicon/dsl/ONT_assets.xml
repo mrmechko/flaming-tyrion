@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::assets">
  <relation label="inherit">
-  ont::measure-domain
+  ont::function-object
  </relation>
  <relation label="overlap">
   wn::|assets%1:21:00::|
@@ -62,17 +62,6 @@
   <concept name="proposition" />
  </or>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -87,50 +76,16 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="ont::domain">
+ <concept name="abstr-obj" />
+ <concept name="ont::abstract-object-nontemporal">
  <comment>
-  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
+  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="measure-function">value</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="measure-function">term</feat>
- </sem-feats>
- <concept name="ont::ordered-domain">
- <relation label="inherit">
-  ont::domain
- </relation>
  </concept>
- <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::ground">
   <sem-feats>
@@ -154,28 +109,65 @@
  </relation>
  <feat name="scale">money-scale</feat>
  </sem-feats>
- <concept name="ont::measure-domain">
+ <concept name="ont::function-object">
  <relation label="inherit">
-  ont::ordered-domain
+  ont::abstract-object-nontemporal
+  abstr-obj
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="measure-function">term</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="measure-function">value</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="assets" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::assets
+  ont::count-pred-3p-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="belongings" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <example text="don't steal my belongings">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::assets
+  ont::count-pred-3p-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="property" />
+ </morph>
+ <example text="don't steal my property">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::assets
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="wealth" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::assets
+  ont::mass-pred-templ
+ </relation>
+ </sense>
 </dsl>

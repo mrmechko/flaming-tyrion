@@ -198,14 +198,12 @@
 
 (CONCEPT ONT::ACQUIRE-BELIEF
          (INHERIT ONT::COGITATION)
-         (SEM-FRAME (ONT::EFFECT (CONCEPT SITUATION) OPTIONAL)
-                    (ONT::AGENT
-                     (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
-                                (INTENTIONAL +)))
-                    (ONT::FORMAL
-                     (OR (CONCEPT PHYS-OBJ)
-                         (CONCEPT ABSTR-OBJ)
-                         (CONCEPT SITUATION)))))
+         (SEM-FRAME
+          (ONT::AGENT
+           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
+                      (INTENTIONAL +)))
+          (ONT::FORMAL
+           (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::ACQUIRE-BY-ACTION (INHERIT ONT::ACQUIRE))
 
@@ -582,7 +580,7 @@
          (INHERIT ONT::MEDICAL-CONDITION)
          (OVERLAP WN::|angina%1:26:01::|))
 
-(CONCEPT ONT::ANGINA-SYMP
+(CONCEPT ONT::ANGINA-DISEASE
          (INHERIT ONT::MEDICAL-SYMPTOM)
          (OVERLAP WN::|angina%1:26:00::|))
 
@@ -694,9 +692,7 @@
                   WN::|like%2:37:04::|
                   WN::|love%2:37:00::|)
          (SEM-FRAME (ONT::NEUTRAL1 (CONCEPT T) OPTIONAL)
-                    (ONT::NEUTRAL
-                     (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
-                                (INTENTIONAL +)))
+                    (ONT::NEUTRAL (CONCEPT T))
                     (ONT::FORMAL
                      (OR (CONCEPT PHYS-OBJ)
                          (CONCEPT ABSTR-OBJ)
@@ -868,7 +864,7 @@
 (CONCEPT ONT::ASSESS (INHERIT ONT::PREDICATE))
 
 (CONCEPT ONT::ASSETS
-         (INHERIT ONT::MEASURE-DOMAIN)
+         (INHERIT ONT::FUNCTION-OBJECT)
          (OVERLAP WN::|assets%1:21:00::|)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE MONEY-SCALE))
          (SEM-FRAME
@@ -2070,8 +2066,6 @@
          (SEM-FRAME
           (ONT::AGENT
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
-          (ONT::EFFECT
-           (SEM-FEATS (INHERIT SITUATION) (ASPECT (OR DYNAMIC STAGE-LEVEL))))
           (ONT::AFFECTED
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
 
@@ -3107,6 +3101,8 @@
 (CONCEPT ONT::COUNTY
          (INHERIT ONT::POLITICAL-REGION)
          (OVERLAP WN::|county%1:15:00::| WN::|county%1:15:01::|))
+
+(CONCEPT ONT::COURT-GAME (INHERIT ONT::ATHLETIC-GAME))
 
 (CONCEPT ONT::COVER
          (INHERIT ONT::POSITION)
@@ -4950,7 +4946,7 @@
                       (SPATIAL-ABSTRACTION (OR LINE STRIP))))))
 
 (CONCEPT ONT::FLU
-         (INHERIT ONT::DISEASE)
+         (INHERIT ONT::BREATHING-DISORDER)
          (OVERLAP WN::|flu%1:26:00::|
                   WN::|influenza%1:26:00::|
                   WN::|grippe%1:26:00::|))
@@ -6105,8 +6101,7 @@
                   WN::|mean%2:31:00::|
                   WN::|think%2:31:06::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (CAUSE MENTAL))
-         (SEM-FRAME (ONT::EFFECT (CONCEPT SITUATION) OPTIONAL)
-                    (ONT::SOURCE (CONCEPT T) OPTIONAL)
+         (SEM-FRAME (ONT::SOURCE (CONCEPT T) OPTIONAL)
                     (ONT::FORMAL (CONCEPT T))
                     (ONT::NEUTRAL
                      (SEM-FEATS (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ))
@@ -6696,7 +6691,9 @@
 
 (CONCEPT ONT::LOC-AS-DEFINED-BY-RELN-TO-GROUND (INHERIT ONT::LOCATION))
 
-(CONCEPT ONT::LOC-AS-POINT (INHERIT ONT::LOCATION))
+(CONCEPT ONT::LOC-AS-POINT
+         (INHERIT ONT::LOCATION)
+         (OVERLAP WN::|point%1:15:00::|))
 
 (CONCEPT ONT::LOC-DEF-BY-GOAL
          (COMMENT " place related to a trajectory by a goal: destination")
@@ -8488,13 +8485,8 @@
 (CONCEPT ONT::PLEASANT-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::PNEUMONIA
-         (INHERIT ONT::DISEASE)
+         (INHERIT ONT::BREATHING-DISORDER)
          (OVERLAP WN::|pneumonia%1:26:00::|))
-
-(CONCEPT ONT::POINT
-         (INHERIT ONT::LOCATION)
-         (OVERLAP WN::|point%1:15:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (SPATIAL-ABSTRACTION SPATIAL-POINT)))
 
 (CONCEPT ONT::POLARITY-VAL (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
 
@@ -9641,8 +9633,7 @@
                   WN::|request%2:32:01::|
                   WN::|request%1:10:00::|
                   WN::|asking%1:10:00::|)
-         (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
-         (SEM-FRAME (ONT::EFFECT (CONCEPT SITUATION))))
+         (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE)))
 
 (CONCEPT ONT::REQUIREMENTS
          (INHERIT ONT::ORDERED-DOMAIN)
@@ -10360,7 +10351,7 @@
 
 (CONCEPT ONT::SHARPEN-SOFT (INHERIT ONT::SHAPE-CHANGE))
 
-(CONCEPT ONT::SHEET (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN))
+(CONCEPT ONT::SHEET (INHERIT ONT::GROUP-OBJECT))
 
 (CONCEPT ONT::SHIPPING-COMPANY (INHERIT ONT::COMPANY))
 
@@ -10928,9 +10919,6 @@
                     (CAUSE FORCE)
                     (ASPECT UNBOUNDED))
          (SEM-FRAME
-          (ONT::EFFECT
-           (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION) (CONCEPT PHYS-OBJ))
-           OPTIONAL)
           (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (MOBILITY MOVABLE)))))
 
 (CONCEPT ONT::STD
@@ -12324,6 +12312,8 @@
                   WN::|hot%5:00:00:warm:03|))
 
 (CONCEPT ONT::WARN (INHERIT ONT::DIRECTIVE) (OVERLAP WN::|warn%2:32:00::|))
+
+(CONCEPT ONT::WASHING (INHERIT ONT::ATTIRE) (OVERLAP WN::|laundry%1:06:01::|))
 
 (CONCEPT ONT::WATER
          (INHERIT ONT::NATURAL-LIQUID-SUBSTANCE)

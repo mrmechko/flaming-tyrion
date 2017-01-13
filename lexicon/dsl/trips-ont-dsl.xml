@@ -407,9 +407,6 @@
    ont::cogitation
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::effect" optional="optional">
-    <concept name="situation" />
-   </role-restr-map>
    <role-restr-map roles="ont::agent">
     <sem-feats>
      <or>
@@ -1198,7 +1195,7 @@
    wn::|angina%1:26:01::|
   </relation>
  </concept>
- <concept name="ont::angina-symp">
+ <concept name="ont::angina-disease">
   <relation label="inherit">
    ont::medical-symptom
   </relation>
@@ -1472,13 +1469,7 @@
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::neutral">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
+    <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::formal">
     <or>
@@ -1863,7 +1854,7 @@
  </concept>
  <concept name="ont::assets">
   <relation label="inherit">
-   ont::measure-domain
+   ont::function-object
   </relation>
   <relation label="overlap">
    wn::|assets%1:21:00::|
@@ -4552,19 +4543,6 @@
      <concept name="situation" />
     </or>
    </role-restr-map>
-   <role-restr-map roles="ont::effect">
-    <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
-     <feat name="aspect">
-     <or>
-      dynamic
-      stage-level
-     </or>
-     </feat>
-    </sem-feats>
-   </role-restr-map>
    <role-restr-map roles="ont::affected">
     <or>
      <concept name="phys-obj" />
@@ -6820,6 +6798,11 @@
   <relation label="overlap">
    wn::|county%1:15:00::|
    wn::|county%1:15:01::|
+  </relation>
+ </concept>
+ <concept name="ont::court-game">
+  <relation label="inherit">
+   ont::athletic-game
   </relation>
  </concept>
  <concept name="ont::cover">
@@ -10790,7 +10773,7 @@
  </concept>
  <concept name="ont::flu">
   <relation label="inherit">
-   ont::disease
+   ont::breathing-disorder
   </relation>
   <relation label="overlap">
    wn::|flu%1:26:00::|
@@ -13266,9 +13249,6 @@
    <feat name="cause">mental</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::effect" optional="optional">
-    <concept name="situation" />
-   </role-restr-map>
    <role-restr-map roles="ont::source" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -14652,6 +14632,9 @@
  <concept name="ont::loc-as-point">
   <relation label="inherit">
    ont::location
+  </relation>
+  <relation label="overlap">
+   wn::|point%1:15:00::|
   </relation>
  </concept>
  <concept name="ont::loc-def-by-goal">
@@ -18693,25 +18676,11 @@
  </concept>
  <concept name="ont::pneumonia">
   <relation label="inherit">
-   ont::disease
+   ont::breathing-disorder
   </relation>
   <relation label="overlap">
    wn::|pneumonia%1:26:00::|
   </relation>
- </concept>
- <concept name="ont::point">
-  <relation label="inherit">
-   ont::location
-  </relation>
-  <relation label="overlap">
-   wn::|point%1:15:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="spatial-abstraction">spatial-point</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::polarity-val">
   <relation label="inherit">
@@ -21289,11 +21258,6 @@
    </relation>
    <feat name="cause">agentive</feat>
   </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::effect">
-    <concept name="situation" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::requirements">
   <relation label="inherit">
@@ -22890,7 +22854,7 @@
  </concept>
  <concept name="ont::sheet">
   <relation label="inherit">
-   ont::non-measure-ordered-domain
+   ont::group-object
   </relation>
  </concept>
  <concept name="ont::shipping-company">
@@ -24170,13 +24134,6 @@
    <feat name="aspect">unbounded</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::effect" optional="optional">
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-     <concept name="phys-obj" />
-    </or>
-   </role-restr-map>
    <role-restr-map roles="ont::affected">
     <sem-feats>
      <relation label="inherit">
@@ -27132,6 +27089,14 @@
   </relation>
   <relation label="overlap">
    wn::|warn%2:32:00::|
+  </relation>
+ </concept>
+ <concept name="ont::washing">
+  <relation label="inherit">
+   ont::attire
+  </relation>
+  <relation label="overlap">
+   wn::|laundry%1:06:01::|
   </relation>
  </concept>
  <concept name="ont::water">
