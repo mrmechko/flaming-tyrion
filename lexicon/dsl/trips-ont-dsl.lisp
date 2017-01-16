@@ -2166,7 +2166,7 @@
          (OVERLAP WN::|clean%2:35:00::|
                   WN::|make_clean%2:35:00::|
                   WN::|wash%1:04:01::|
-                  WN::|dentalcare%1:04:00::|)
+                  WN::|dental_care%1:04:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (CAUSE AGENTIVE)))
 
 (CONCEPT ONT::CLEANLINESS-VAL (INHERIT ONT::SUBSTANTIAL-PROPERTY-VAL))
