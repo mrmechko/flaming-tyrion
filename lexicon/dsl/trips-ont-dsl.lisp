@@ -951,7 +951,9 @@
                     (TIME-SPAN EXTENDED)
                     (ASPECT STAGE-LEVEL)))
 
-(CONCEPT ONT::ASSURANCE (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN))
+(CONCEPT ONT::ASSURANCE
+         (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN)
+         (OVERLAP WN::|trust%1:26:00::|))
 
 (CONCEPT ONT::AT-LOC (INHERIT ONT::POSITION-AS-POINT-RELN))
 
@@ -1046,8 +1048,7 @@
                   WN::|property%1:07:00::|
                   WN::|holding%1:21:00::|
                   WN::|belongings%1:21:00::|
-                  WN::|property%1:21:00::|
-                  WN::|attribute%1:03:00::|)
+                  WN::|property%1:21:00::|)
          (SEM-FRAME
           (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
 
@@ -2434,7 +2435,9 @@
                   WN::|comfortable%3:00:00::|
                   WN::|cozy%5:00:00:comfortable:00|))
 
-(CONCEPT ONT::COMFORTABLENESS (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN))
+(CONCEPT ONT::COMFORTABLENESS
+         (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN)
+         (OVERLAP WN::|discomfort%1:26:00::| WN::|discomfort%1:12:00::|))
 
 (CONCEPT ONT::COMMAND
          (INHERIT ONT::REQUEST)
@@ -2754,7 +2757,9 @@
          (INHERIT ONT::PSYCHOLOGICAL-PROPERTY-VAL)
          (SEM-FRAME (ONT::GROUND (CONCEPT T) OPTIONAL)))
 
-(CONCEPT ONT::CONFIDENTIALITY (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN))
+(CONCEPT ONT::CONFIDENTIALITY
+         (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN)
+         (OVERLAP WN::|privacy%1:07:00::| WN::|privacy%1:26:02::|))
 
 (CONCEPT ONT::CONFIGURATION-PROPERTY-VAL (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
 
@@ -2857,6 +2862,13 @@
           (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN LIVING)))))
 
 (CONCEPT ONT::CONSUMER (INHERIT ONT::PERSON) (OVERLAP WN::|consumer%1:18:00::|))
+
+(CONCEPT ONT::CONTAIN-RELN
+         (COMMENT "Inverse of IN-LOC")
+         (INHERIT ONT::POS-AS-CONTAINMENT-RELN)
+         (SEM-FRAME
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ) (CONTAINER +) (INTENTIONAL -)))))
 
 (CONCEPT ONT::CONTAINER
          (INHERIT ONT::MANUFACTURED-OBJECT)
@@ -3814,6 +3826,7 @@
          (COMMENT
           "Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)")
          (INHERIT ONT::ABSTRACT-OBJECT)
+         (OVERLAP WN::|attribute%1:03:00::|)
          (SEM-FRAME (ONT::EXTENT (CONCEPT T) OPTIONAL)
                     (ONT::GROUND (CONCEPT T) OPTIONAL)
                     (ONT::FIGURE (CONCEPT T))))
@@ -5803,7 +5816,9 @@
           "this is the implicit relation between the events in sentences like He walked down the street whistling a tune")
          (INHERIT ONT::EVENT-TIME-REL))
 
-(CONCEPT ONT::IMPORTANCE (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN))
+(CONCEPT ONT::IMPORTANCE
+         (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN)
+         (OVERLAP WN::|importance%1:26:00::| WN::|importance%1:07:00::|))
 
 (CONCEPT ONT::IMPORTANCE-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
@@ -6085,7 +6100,9 @@
 
 (CONCEPT ONT::INTENSIFIER (INHERIT ONT::MODIFIER))
 
-(CONCEPT ONT::INTENSITY (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN))
+(CONCEPT ONT::INTENSITY
+         (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN)
+         (OVERLAP WN::|intensity%1:07:00::| WN::|intensity%1:07:03::|))
 
 (CONCEPT ONT::INTENSITY-VAL (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
 
