@@ -3556,29 +3556,11 @@
                   WN::|death%1:28:00::|
                   WN::|death%1:26:01::|
                   WN::|destruction%1:26:00::|
-                  WN::|end%1:26:00::|
                   WN::|last%1:28:01::|
                   WN::|death%1:28:01::|
                   WN::|death%1:26:00::|
                   WN::|death%1:19:00::|
                   WN::|die%2:30:00::|
-                  WN::|decease%2:30:00::|
-                  WN::|perish%2:30:00::|
-                  WN::|go%2:30:00::|
-                  WN::|exit%2:30:00::|
-                  WN::|pass_away%2:30:00::|
-                  WN::|expire%2:30:00::|
-                  WN::|pass%2:30:11::|
-                  WN::|kick_the_bucket%2:30:00::|
-                  WN::|cash_in_one's_chips%2:30:00::|
-                  WN::|buy_the_farm%2:30:00::|
-                  WN::|conk%2:30:00::|
-                  WN::|give-up_the_ghost%2:30:00::|
-                  WN::|drop_dead%2:30:00::|
-                  WN::|pop_off%2:30:00::|
-                  WN::|choke%2:30:01::|
-                  WN::|croak%2:30:00::|
-                  WN::|snuff_it%2:30:00::|
                   WN::|die%2:30:02::|
                   WN::|death%1:11:00::|
                   WN::|decease%1:11:00::|
