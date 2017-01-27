@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::cupboard">
  <relation label="inherit">
-  ont::furnishings
+  ont::storage-furnishings
  </relation>
  <relation label="overlap">
   wn::|cupboard%1:06:00::|
@@ -45,7 +45,6 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="phys-obj" />
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -71,6 +70,7 @@
   <feat name="intentional">-</feat>
  </sem-feats>
  </concept>
+ <concept name="phys-obj" />
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -97,6 +97,15 @@
   <feat name="origin">artifact</feat>
  </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="mobility">fixed</feat>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">artifact</feat>
+ </sem-feats>
  <concept name="ont::furnishings">
  <comment>
   &quot;e.g.,  chair, desk, table&quot;
@@ -115,6 +124,23 @@
   </relation>
   <feat name="object-function">furniture</feat>
   <feat name="form">solid-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::storage-furnishings">
+ <relation label="inherit">
+  ont::furnishings
+ </relation>
+ <relation label="overlap">
+  wn::|wardrobe%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="mobility">fixed</feat>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">artifact</feat>
  </sem-feats>
  </concept>
  <sense>

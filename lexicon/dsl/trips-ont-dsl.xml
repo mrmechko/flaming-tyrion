@@ -3646,7 +3646,7 @@
  </concept>
  <concept name="ont::cabinet">
   <relation label="inherit">
-   ont::furnishings
+   ont::storage-furnishings
   </relation>
   <relation label="overlap">
    wn::|cabinet%1:06:00::|
@@ -6290,9 +6290,6 @@
   </relation>
   <relation label="overlap">
    wn::|container%1:06:00::|
-   wn::|cupboard%1:06:00::|
-   wn::|closet%1:06:03::|
-   wn::|drawer%1:06:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -7002,7 +6999,7 @@
  </concept>
  <concept name="ont::cupboard">
   <relation label="inherit">
-   ont::furnishings
+   ont::storage-furnishings
   </relation>
   <relation label="overlap">
    wn::|cupboard%1:06:00::|
@@ -12711,6 +12708,7 @@
      <relation label="inherit">
       phys-obj
      </relation>
+     <feat name="container">+</feat>
      <feat name="intentional">-</feat>
     </sem-feats>
    </role-restr-map>
@@ -13394,6 +13392,15 @@
   <relation label="overlap">
    wn::|room%1:06:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="container">+</feat>
+   <feat name="mobility">fixed</feat>
+   <feat name="trajectory">-</feat>
+   <feat name="origin">artifact</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::internet-organization">
   <relation label="inherit">
@@ -16154,12 +16161,15 @@
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::affected">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-     <concept name="time" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+      <concept name="situation" />
+      <concept name="time" />
+     </or>
+     <feat name="mobility">movable</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -17699,6 +17709,17 @@
   <relation label="inherit">
    ont::pos-as-containment-reln
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="container">+</feat>
+     <feat name="intentional">-</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::over">
   <relation label="inherit">
@@ -18135,6 +18156,7 @@
    wn::|somebody%1:03:00::|
    wn::|mortal%1:03:00::|
    wn::|soul%1:03:00::|
+   wn::|witch%1:18:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -20072,6 +20094,14 @@
    wn::|interpose%2:38:01::|
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::affected">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="mobility">movable</feat>
+    </sem-feats>
+   </role-restr-map>
    <role-restr-map roles="ont::agent">
     <concept name="t" />
    </role-restr-map>
@@ -24312,6 +24342,23 @@
     phys-obj
    </relation>
    <feat name="object-function">building</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::storage-furnishings">
+  <relation label="inherit">
+   ont::furnishings
+  </relation>
+  <relation label="overlap">
+   wn::|wardrobe%1:06:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="container">+</feat>
+   <feat name="mobility">fixed</feat>
+   <feat name="trajectory">-</feat>
+   <feat name="origin">artifact</feat>
   </sem-feats>
  </concept>
  <concept name="ont::straddle">

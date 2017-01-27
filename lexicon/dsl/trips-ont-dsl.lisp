@@ -1684,7 +1684,7 @@
                      (SEM-FEATS (INHERIT SITUATION) (TYPE EVENT-OF-CHANGE)))))
 
 (CONCEPT ONT::CABINET
-         (INHERIT ONT::FURNISHINGS)
+         (INHERIT ONT::STORAGE-FURNISHINGS)
          (OVERLAP WN::|cabinet%1:06:00::| WN::|cabinet%1:06:02::|))
 
 (CONCEPT ONT::CAKE-PIE (INHERIT ONT::BAKED-GOODS))
@@ -2872,10 +2872,7 @@
 
 (CONCEPT ONT::CONTAINER
          (INHERIT ONT::MANUFACTURED-OBJECT)
-         (OVERLAP WN::|container%1:06:00::|
-                  WN::|cupboard%1:06:00::|
-                  WN::|closet%1:06:03::|
-                  WN::|drawer%1:06:00::|)
+         (OVERLAP WN::|container%1:06:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ)
                     (OBJECT-FUNCTION CONTAINER-OBJECT)
                     (ORIGIN ARTIFACT)
@@ -3195,7 +3192,7 @@
 (CONCEPT ONT::CUP (INHERIT ONT::TABLEWARE) (OVERLAP WN::|cup%1:06:00::|))
 
 (CONCEPT ONT::CUPBOARD
-         (INHERIT ONT::FURNISHINGS)
+         (INHERIT ONT::STORAGE-FURNISHINGS)
          (OVERLAP WN::|cupboard%1:06:00::|))
 
 (CONCEPT ONT::CURE
@@ -5822,7 +5819,8 @@
 (CONCEPT ONT::IN-LOC
          (INHERIT ONT::POS-AS-CONTAINMENT-RELN)
          (SEM-FRAME
-          (ONT::GROUND (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL -)))))
+          (ONT::GROUND
+           (SEM-FEATS (INHERIT PHYS-OBJ) (CONTAINER +) (INTENTIONAL -)))))
 
 (CONCEPT ONT::IN-RELATION
          (INHERIT ONT::OBJECT-COMPARE)
@@ -6147,7 +6145,12 @@
 
 (CONCEPT ONT::INTERNAL-ENCLOSURE
          (INHERIT ONT::GENERAL-STRUCTURE)
-         (OVERLAP WN::|room%1:06:00::|))
+         (OVERLAP WN::|room%1:06:00::|)
+         (SEM-FEATS (INHERIT PHYS-OBJ)
+                    (CONTAINER +)
+                    (MOBILITY FIXED)
+                    (TRAJECTORY -)
+                    (ORIGIN ARTIFACT)))
 
 (CONCEPT ONT::INTERNET-ORGANIZATION (INHERIT ONT::ORGANIZATION))
 
@@ -7336,10 +7339,12 @@
           (ONT::RESULT (CONCEPT T) OPTIONAL)
           (ONT::SOURCE (CONCEPT T) OPTIONAL)
           (ONT::AFFECTED
-           (OR (CONCEPT PHYS-OBJ)
-               (CONCEPT ABSTR-OBJ)
-               (CONCEPT SITUATION)
-               (CONCEPT TIME)))))
+           (SEM-FEATS
+            (OR (CONCEPT PHYS-OBJ)
+                (CONCEPT ABSTR-OBJ)
+                (CONCEPT SITUATION)
+                (CONCEPT TIME))
+            (MOBILITY MOVABLE)))))
 
 (CONCEPT ONT::MOTION-VAL
          (INHERIT ONT::PROCESS-VAL)
@@ -8011,7 +8016,11 @@
                   WN::|outbound%5:00:00:outgoing:00|
                   WN::|outgoing%3:00:00::|))
 
-(CONCEPT ONT::OUTSIDE (INHERIT ONT::POS-AS-CONTAINMENT-RELN))
+(CONCEPT ONT::OUTSIDE
+         (INHERIT ONT::POS-AS-CONTAINMENT-RELN)
+         (SEM-FRAME
+          (ONT::GROUND
+           (SEM-FEATS (INHERIT PHYS-OBJ) (CONTAINER +) (INTENTIONAL -)))))
 
 (CONCEPT ONT::OVER (INHERIT ONT::TRAJECTORY))
 
@@ -8206,7 +8215,8 @@
                   WN::|someone%1:03:00::|
                   WN::|somebody%1:03:00::|
                   WN::|mortal%1:03:00::|
-                  WN::|soul%1:03:00::|)
+                  WN::|soul%1:03:00::|
+                  WN::|witch%1:18:01::|)
          (SEM-FEATS (INHERIT PHYS-OBJ)
                     (INFORMATION -)
                     (INTENTIONAL +)
@@ -9097,7 +9107,9 @@
                   WN::|position%2:35:00::|
                   WN::|lay%2:35:01::|
                   WN::|interpose%2:38:01::|)
-         (SEM-FRAME (ONT::AGENT (CONCEPT T))))
+         (SEM-FRAME
+          (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (MOBILITY MOVABLE)))
+          (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::PUT-AWAY
          (INHERIT ONT::PUT)
@@ -10996,6 +11008,15 @@
          (INHERIT ONT::FACILITY)
          (OVERLAP WN::|warehouse%1:06:00::| WN::|storage_warehouse%1:06:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+
+(CONCEPT ONT::STORAGE-FURNISHINGS
+         (INHERIT ONT::FURNISHINGS)
+         (OVERLAP WN::|wardrobe%1:06:00::|)
+         (SEM-FEATS (INHERIT PHYS-OBJ)
+                    (CONTAINER +)
+                    (MOBILITY FIXED)
+                    (TRAJECTORY -)
+                    (ORIGIN ARTIFACT)))
 
 (CONCEPT ONT::STRADDLE (INHERIT ONT::BODY-MOVEMENT))
 
