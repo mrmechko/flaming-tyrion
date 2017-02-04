@@ -6,6 +6,12 @@
  <relation label="inherit">
   ont::tastable-property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">tastefulness*1--07--00xs</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -36,7 +42,6 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::scale">
   <concept name="t" />
@@ -193,53 +198,62 @@
   ont::physical-property-val
  </relation>
  </concept>
+ <concept name="abstr-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">tastefulness*1--07--00xs</feat>
+ </sem-feats>
  <concept name="ont::tastable-property-val">
  <relation label="inherit">
   ont::sensory-property-val
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="bitter" />
-  <forms>
-   -LY
-  </forms>
- </morph>
+ <concept name="ont::sweet-val">
  <relation label="inherit">
   ont::taste-val
-  ont::central-adj-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="delicious" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;Y3-TEST-DATA&quot;
- </comment>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">sweetness*1--07--00</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::bitter-val">
  <relation label="inherit">
   ont::taste-val
-  ont::central-adj-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="piquant" />
-  <forms>
-   -LY
-  </forms>
- </morph>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">bitter*1--07--00</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::tart-val">
  <relation label="inherit">
   ont::taste-val
-  ont::central-adj-templ
  </relation>
- </sense>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">tartness*1--07--00</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::sour-val">
+ <relation label="inherit">
+  ont::taste-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">sourness*1--07--00</feat>
+ </sem-feats>
+ </concept>
  <sense>
  <morph>
   <pos pos="adj" />
@@ -269,19 +283,6 @@
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="sour" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::taste-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
   <word first-word="spicy" />
   <forms>
    -LY
@@ -291,20 +292,6 @@
  <comment>
   &quot;Y3-TEST-DATA&quot;
  </comment>
- <relation label="inherit">
-  ont::taste-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="sweet" />
-  <forms>
-   -LY
-   -ER
-  </forms>
- </morph>
  <relation label="inherit">
   ont::taste-val
   ont::central-adj-templ
