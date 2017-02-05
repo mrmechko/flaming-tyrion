@@ -251,7 +251,8 @@
                   WN::|active%3:00:03::|
                   WN::|active%3:00:06::|
                   WN::|busy%5:00:01:active:06|)
-         (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ))))
+         (SEM-FRAME
+          (ONT::FIGURE (SEM-FEATS (INHERIT PHYS-OBJ) (TYPE LOCATION)))))
 
 (CONCEPT ONT::ACTIVE-PERCEPTION
          (INHERIT ONT::PERCEPTION)
@@ -320,7 +321,8 @@
 (CONCEPT ONT::ACTIVITY-VAL
          (COMMENT
           "predicates relating to whether something is acting as intended for some process")
-         (INHERIT ONT::PROPERTY-VAL))
+         (INHERIT ONT::PROPERTY-VAL)
+         (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::ACTUAL (INHERIT ONT::ACTUALITY-VAL))
 
