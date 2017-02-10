@@ -1220,7 +1220,8 @@
                   WN::|hang%2:42:01::|
                   WN::|confine%2:41:00::|
                   WN::|lie%2:35:00::|
-                  WN::|trail%2:35:05::|)
+                  WN::|trail%2:35:05::|
+                  WN::|lie%2:42:00::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT STAGE-LEVEL))
          (SEM-FRAME (ONT::NEUTRAL (CONCEPT PHYS-OBJ))))
 
@@ -3076,7 +3077,8 @@
                   WN::|imply%2:42:00::|
                   WN::|mean%2:42:00::|
                   WN::|affirm%2:31:00::|
-                  WN::|read%2:32:02::|)
+                  WN::|read%2:32:02::|
+                  WN::|underlie%2:42:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (ASPECT STATIC))
          (SEM-FRAME (ONT::FORMAL (CONCEPT SITUATION) OPTIONAL)
                     (ONT::NEUTRAL1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
@@ -10504,9 +10506,7 @@
 (CONCEPT ONT::SITUATED-IN
          (INHERIT ONT::SITUATION-MODIFIER)
          (SEM-FRAME
-          (ONT::GROUND
-           (SEM-FEATS (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION))
-                      (TYPE (OR SITUATION-ROOT DOMAIN SCALE))))
+          (ONT::GROUND (SEM-FEATS (INHERIT SITUATION) (TYPE SITUATION-ROOT)))
           (ONT::FIGURE (CONCEPT SITUATION))))
 
 (CONCEPT ONT::SITUATED-OUT
