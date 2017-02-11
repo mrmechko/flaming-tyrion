@@ -1928,14 +1928,6 @@
                   WN::|take_out%2:35:09::|
                   WN::|draw_out%2:35:05::|))
 
-(CONCEPT ONT::CAUSE-POSITION
-         (COMMENT "events involving causing a state of type ONT::POSITION")
-         (INHERIT ONT::EVENT-OF-CAUSATION)
-         (SEM-FRAME
-          (ONT::AFFECTED1 (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
-          (ONT::AFFECTED (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
-          (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)) OPTIONAL)))
-
 (CONCEPT ONT::CAUSE-PRODUCE-REPRODUCE
          (INHERIT ONT::CAUSE-EFFECT)
          (OVERLAP WN::|cause%2:36:00::|
@@ -3443,7 +3435,9 @@
                   WN::|strip%2:40:03::|
                   WN::|divest%2:40:01::|))
 
-(CONCEPT ONT::DEPTH (INHERIT ONT::LINEAR-D))
+(CONCEPT ONT::DEPTH-SCALE
+         (INHERIT ONT::LINEAR-D)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE DEPTH-SCALE)))
 
 (CONCEPT ONT::DESCRIBE
          (INHERIT ONT::REPRESENTATIVE)
@@ -5594,7 +5588,9 @@
 
 (CONCEPT ONT::HEEDLESS (INHERIT ONT::ATTENTION-VAL))
 
-(CONCEPT ONT::HEIGHT-SCALE (INHERIT ONT::LINEAR-D))
+(CONCEPT ONT::HEIGHT-SCALE
+         (INHERIT ONT::LINEAR-D)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE HEIGHT-SCALE)))
 
 (CONCEPT ONT::HEIGHT-VAL
          (INHERIT ONT::LINEAR-DIMENSION)
@@ -7663,10 +7659,13 @@
          (OVERLAP WN::|express_emotion%2:37:00::|
                   WN::|express_feelings%2:37:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TIME-SPAN EXTENDED) (CAUSE AGENTIVE))
-         (SEM-FRAME (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
-                    (ONT::AGENT
-                     (SEM-FEATS (INHERIT PHYS-OBJ)
-                                (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL))))))
+         (SEM-FRAME
+          (ONT::NEUTRAL
+           (SEM-FEATS (INHERIT ABSTR-OBJ) (TYPE INFORMATION-FUNCTION-OBJECT))
+           OPTIONAL)
+          (ONT::AGENT
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL))))))
 
 (CONCEPT ONT::NONVERBAL-SAY
          (COMMENT "saying using a medium other that speech")
@@ -8944,6 +8943,12 @@
          (OVERLAP WN::|promise%2:32:00::| WN::|promise%2:32:01::|))
 
 (CONCEPT ONT::PROMOTER (INHERIT ONT::MOLECULAR-PART))
+
+(CONCEPT ONT::PROPEL
+         (INHERIT ONT::CAUSE-TO-MOVE)
+         (OVERLAP WN::|throw%1:04:00::|
+                  WN::|propel%2:35:00::|
+                  WN::|throw%2:35:02::|))
 
 (CONCEPT ONT::PROPERTY-VAL
          (INHERIT ONT::DOMAIN-PROPERTY)
@@ -10734,7 +10739,7 @@
 (CONCEPT ONT::SOUTH-RELN (INHERIT ONT::NAVIGATIONAL-RELN))
 
 (CONCEPT ONT::SOW-SEED
-         (INHERIT ONT::PUT)
+         (INHERIT ONT::PROPEL)
          (OVERLAP WN::|seed%2:35:01::|
                   WN::|sow%2:35:02::|
                   WN::|plant%2:35:00::|))
@@ -11593,7 +11598,9 @@
 
 (CONCEPT ONT::THEREFORE (INHERIT ONT::SITUATION-MODIFIER))
 
-(CONCEPT ONT::THICKNESS (INHERIT ONT::LINEAR-D))
+(CONCEPT ONT::THICKNESS
+         (INHERIT ONT::LINEAR-D)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE THICKNESS)))
 
 (CONCEPT ONT::THOROUGHFARE
          (INHERIT ONT::ROUTE)
@@ -12532,7 +12539,8 @@
 
 (CONCEPT ONT::WIDTH-SCALE
          (INHERIT ONT::LINEAR-D)
-         (OVERLAP WN::|width%1:07:00::| WN::|diameter%1:07:00::|))
+         (OVERLAP WN::|width%1:07:00::| WN::|diameter%1:07:00::|)
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE WIDTH-SCALE)))
 
 (CONCEPT ONT::WILD-GAME (INHERIT ONT::MEAT))
 

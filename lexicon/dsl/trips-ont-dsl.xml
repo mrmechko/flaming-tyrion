@@ -4230,36 +4230,6 @@
    wn::|draw_out%2:35:05::|
   </relation>
  </concept>
- <concept name="ont::cause-position">
-  <comment>
-   &quot;events involving causing a state of type ONT::POSITION&quot;
-  </comment>
-  <relation label="inherit">
-   ont::event-of-causation
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::affected1" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-   </role-restr-map>
-   <role-restr-map roles="ont::affected" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-   </role-restr-map>
-   <role-restr-map roles="ont::agent" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="intentional">+</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::cause-produce-reproduce">
   <relation label="inherit">
    ont::cause-effect
@@ -7569,10 +7539,16 @@
    wn::|divest%2:40:01::|
   </relation>
  </concept>
- <concept name="ont::depth">
+ <concept name="ont::depth-scale">
   <relation label="inherit">
    ont::linear-d
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">depth-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::describe">
   <relation label="inherit">
@@ -12253,6 +12229,12 @@
   <relation label="inherit">
    ont::linear-d
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">height-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::height-val">
   <relation label="inherit">
@@ -16901,7 +16883,12 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::neutral" optional="optional">
-    <concept name="t" />
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="type">information-function-object</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::agent">
     <sem-feats>
@@ -19769,6 +19756,16 @@
  <concept name="ont::promoter">
   <relation label="inherit">
    ont::molecular-part
+  </relation>
+ </concept>
+ <concept name="ont::propel">
+  <relation label="inherit">
+   ont::cause-to-move
+  </relation>
+  <relation label="overlap">
+   wn::|throw%1:04:00::|
+   wn::|propel%2:35:00::|
+   wn::|throw%2:35:02::|
   </relation>
  </concept>
  <concept name="ont::property-val">
@@ -23795,7 +23792,7 @@
  </concept>
  <concept name="ont::sow-seed">
   <relation label="inherit">
-   ont::put
+   ont::propel
   </relation>
   <relation label="overlap">
    wn::|seed%2:35:01::|
@@ -25627,6 +25624,12 @@
   <relation label="inherit">
    ont::linear-d
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">thickness</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::thoroughfare">
   <relation label="inherit">
@@ -27661,6 +27664,12 @@
    wn::|width%1:07:00::|
    wn::|diameter%1:07:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">width-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::wild-game">
   <relation label="inherit">
