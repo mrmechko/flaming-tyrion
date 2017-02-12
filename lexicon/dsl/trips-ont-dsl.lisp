@@ -9106,7 +9106,8 @@
           (ONT::GROUND
            (SEM-FEATS
             (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ))
-            (SCALE -)))
+            (SCALE -)
+            (TYPE ORGANISM)))
           (ONT::FIGURE (CONCEPT SITUATION))))
 
 (CONCEPT ONT::PURSUE
