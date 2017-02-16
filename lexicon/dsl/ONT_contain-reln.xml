@@ -4,10 +4,10 @@
  <provenance name="TRIPS"/>
  <concept name="ont::contain-reln">
  <comment>
-  &quot;Inverse of IN-LOC&quot;
+  &quot;a kind of Inverse of IN-LOC, but can't be used as a result location&quot;
  </comment>
  <relation label="inherit">
-  ont::pos-as-containment-reln
+  ont::predicate
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure">
@@ -53,20 +53,23 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
+  <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -81,35 +84,6 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="ont::position-reln">
- <comment>
-  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground)&quot;
- </comment>
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::position-as-point-reln">
- <relation label="inherit">
-  ont::position-reln
- </relation>
- </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
   <sem-feats>
@@ -121,10 +95,32 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::pos-as-containment-reln">
+ <concept name="ont::predicate">
+ <comment>
+  &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as&quot;
+ </comment>
  <relation label="inherit">
-  ont::position-as-point-reln
+  ont::abstract-object
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="container">-</feat>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="scale">-</feat>
+  <feat name="gradability">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sense>
  <morph>

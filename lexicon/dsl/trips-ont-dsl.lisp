@@ -789,7 +789,8 @@
                   WN::|system%1:09:02::|
                   WN::|put_aside%2:35:00::|
                   WN::|address%2:32:02::|
-                  WN::|hairdressing%1:04:00::|)
+                  WN::|hairdressing%1:04:00::|
+                  WN::|alternate%2:30:01::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (CAUSE AGENTIVE))
          (SEM-FRAME
           (ONT::AFFECTED-RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
@@ -2879,8 +2880,9 @@
 (CONCEPT ONT::CONSUMER (INHERIT ONT::PERSON) (OVERLAP WN::|consumer%1:18:00::|))
 
 (CONCEPT ONT::CONTAIN-RELN
-         (COMMENT "Inverse of IN-LOC")
-         (INHERIT ONT::POS-AS-CONTAINMENT-RELN)
+         (COMMENT
+          "a kind of Inverse of IN-LOC, but can't be used as a result location")
+         (INHERIT ONT::PREDICATE)
          (SEM-FRAME
           (ONT::FIGURE
            (SEM-FEATS (INHERIT PHYS-OBJ) (CONTAINER +) (INTENTIONAL -)))))
@@ -3633,7 +3635,7 @@
 (CONCEPT ONT::DIR-IN-TERMS-OF-OBJ
          (INHERIT ONT::DIRECTION-RELN)
          (SEM-FRAME
-          (ONT::FIGURE (SEM-FEATS (INHERIT SITUATION) (TYPE MOTION)))))
+          (ONT::FIGURE (SEM-FEATS (INHERIT PHYS-OBJ) (MOBILITY MOVABLE)))))
 
 (CONCEPT ONT::DIR-ROTATION (INHERIT ONT::DIRECTION-RELN))
 
@@ -4073,6 +4075,10 @@
            OPTIONAL)))
 
 (CONCEPT ONT::END-AT-LOC (INHERIT ONT::BE-AT) (OVERLAP WN::|end%2:42:00::|))
+
+(CONCEPT ONT::END-LOCATION
+         (INHERIT ONT::OBJECT-DEPENDENT-LOCATION)
+         (OVERLAP WN::|end%1:15:00::| WN::|end%1:15:02::|))
 
 (CONCEPT ONT::ENDURING
          (INHERIT ONT::ACTIVE-PERCEPTION)
@@ -7818,6 +7824,7 @@
                (CONCEPT PROPOSITION)))))
 
 (CONCEPT ONT::OBJECT-DEPENDENT-LOCATION
+         (COMMENT "these are locations defined relative to another object")
          (INHERIT ONT::LOCATION)
          (OVERLAP WN::|region%1:15:00::|)
          (SEM-FRAME

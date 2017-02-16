@@ -1684,6 +1684,7 @@
    wn::|put_aside%2:35:00::|
    wn::|address%2:32:02::|
    wn::|hairdressing%1:04:00::|
+   wn::|alternate%2:30:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -6302,10 +6303,10 @@
  </concept>
  <concept name="ont::contain-reln">
   <comment>
-   &quot;Inverse of IN-LOC&quot;
+   &quot;a kind of Inverse of IN-LOC, but can't be used as a result location&quot;
   </comment>
   <relation label="inherit">
-   ont::pos-as-containment-reln
+   ont::predicate
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
@@ -7955,9 +7956,9 @@
    <role-restr-map roles="ont::figure">
     <sem-feats>
      <relation label="inherit">
-      situation
+      phys-obj
      </relation>
-     <feat name="type">motion</feat>
+     <feat name="mobility">movable</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -8960,6 +8961,15 @@
   </relation>
   <relation label="overlap">
    wn::|end%2:42:00::|
+  </relation>
+ </concept>
+ <concept name="ont::end-location">
+  <relation label="inherit">
+   ont::object-dependent-location
+  </relation>
+  <relation label="overlap">
+   wn::|end%1:15:00::|
+   wn::|end%1:15:02::|
   </relation>
  </concept>
  <concept name="ont::enduring">
@@ -17237,6 +17247,9 @@
   </sem-frame>
  </concept>
  <concept name="ont::object-dependent-location">
+  <comment>
+   &quot;these are locations defined relative to another object&quot;
+  </comment>
   <relation label="inherit">
    ont::location
   </relation>
