@@ -3198,12 +3198,11 @@
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE)))
 
 (CONCEPT ONT::CRUSH
-         (INHERIT ONT::DAMAGE)
+         (INHERIT ONT::PUSH)
          (OVERLAP WN::|squash%2:35:00::|
                   WN::|crush%2:35:00::|
                   WN::|squelch%2:35:00::|
-                  WN::|mash%2:35:00::|
-                  WN::|squeeze%2:35:05::|))
+                  WN::|mash%2:35:00::|))
 
 (CONCEPT ONT::CRUSTACEANS (INHERIT ONT::SEAFOOD))
 
@@ -3621,9 +3620,16 @@
                   WN::|arduous%5:00:00:difficult:00|
                   WN::|catchy%5:00:00:difficult:00|))
 
-(CONCEPT ONT::DIG
+(CONCEPT ONT::DIG-SCOOP
+         (COMMENT "To move something incrementally, typically using a tool")
          (INHERIT ONT::CAUSE-TO-MOVE)
-         (OVERLAP WN::|dig%2:35:01::| WN::|dig_out%2:35:00::|))
+         (OVERLAP WN::|dig%2:35:01::|
+                  WN::|dig_out%2:35:00::|
+                  WN::|scoop%2:35:01::|
+                  WN::|ladle%2:35:00::|
+                  WN::|ladle%2:35:01::|
+                  WN::|spoon%2:35:00::|
+                  WN::|hoe%2:36:00::|))
 
 (CONCEPT ONT::DIMENSION
          (INHERIT ONT::PREDICATE)
@@ -8961,6 +8967,7 @@
 (CONCEPT ONT::PROMOTER (INHERIT ONT::MOLECULAR-PART))
 
 (CONCEPT ONT::PROPEL
+         (COMMENT "causing to move by a push and release activity")
          (INHERIT ONT::CAUSE-TO-MOVE)
          (OVERLAP WN::|throw%1:04:00::|
                   WN::|propel%2:35:00::|
@@ -9140,7 +9147,8 @@
                   WN::|push%2:38:00::|
                   WN::|force%2:38:00::|
                   WN::|thrust%2:38:00::|
-                  WN::|thrust%2:42:01::|))
+                  WN::|thrust%2:42:01::|
+                  WN::|wedge%2:35:00::|))
 
 (CONCEPT ONT::PUSH-LIQUID
          (INHERIT ONT::APPLY-FORCE)
@@ -10891,7 +10899,9 @@
          (INHERIT ONT::SHAPE-VAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE SQUARENESS*1--07--00)))
 
-(CONCEPT ONT::SQUEEZE (INHERIT ONT::PUSH) (OVERLAP WN::|squeeze%2:35:00::|))
+(CONCEPT ONT::SQUEEZE
+         (INHERIT ONT::PUSH)
+         (OVERLAP WN::|squeeze%2:35:00::| WN::|squeeze%2:35:05::|))
 
 (CONCEPT ONT::SSN
          (INHERIT ONT::ID-NUMBER)
