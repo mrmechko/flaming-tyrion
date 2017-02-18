@@ -3668,9 +3668,9 @@
          (INHERIT ONT::POSITION-RELN)
          (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ))
                     (ONT::FIGURE
-                     (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION))
-                                (TYPE (OR MOTION APPLY-FORCE))
-                                (TRAJECTORY +)))))
+                     (OR (CONCEPT PHYS-OBJ)
+                         (CONCEPT SITUATION)
+                         (CONCEPT ABSTR-OBJ)))))
 
 (CONCEPT ONT::DIRECTION-RELN
          (INHERIT ONT::PATH)
@@ -9168,6 +9168,7 @@
                   WN::|position%2:35:00::|
                   WN::|lay%2:35:01::|
                   WN::|interpose%2:38:01::|)
+         (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +))
          (SEM-FRAME
           (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (MOBILITY MOVABLE)))
           (ONT::AGENT (CONCEPT T))))
@@ -9811,13 +9812,20 @@
          (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::RESULTING-OBJECT
-         (INHERIT ONT::GOAL-RELN)
-         (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ)) (ONT::FIGURE (CONCEPT T))))
+         (INHERIT ONT::PREDICATE)
+         (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ))
+                    (ONT::FIGURE
+                     (SEM-FEATS (INHERIT SITUATION)
+                                (TYPE EVENT-OF-CREATION)
+                                (ASPECT DYNAMIC)))))
 
 (CONCEPT ONT::RESULTING-STATE
          (INHERIT ONT::GOAL-RELN)
          (SEM-FRAME (ONT::GROUND (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
-                    (ONT::FIGURE (CONCEPT T))))
+                    (ONT::FIGURE
+                     (SEM-FEATS (INHERIT SITUATION)
+                                (TYPE CHANGE)
+                                (ASPECT DYNAMIC)))))
 
 (CONCEPT ONT::RETAIN
          (INHERIT ONT::LOCATED-MOVE-STATE)

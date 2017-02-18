@@ -145,19 +145,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::resulting-object">
- <relation label="inherit">
-  ont::goal-reln
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::resulting-state">
  <relation label="inherit">
   ont::goal-reln
@@ -170,7 +157,13 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <concept name="t" />
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="type">change</feat>
+    <feat name="aspect">dynamic</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>

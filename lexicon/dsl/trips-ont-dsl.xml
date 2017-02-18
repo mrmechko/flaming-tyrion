@@ -8029,19 +8029,11 @@
     <concept name="phys-obj" />
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="situation" />
-     </or>
-     <feat name="type">
-     <or>
-      motion
-      apply-force
-     </or>
-     </feat>
-     <feat name="trajectory">+</feat>
-    </sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -20229,6 +20221,12 @@
    wn::|lay%2:35:01::|
    wn::|interpose%2:38:01::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="trajectory">+</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::affected">
     <sem-feats>
@@ -21679,14 +21677,20 @@
  </concept>
  <concept name="ont::resulting-object">
   <relation label="inherit">
-   ont::goal-reln
+   ont::predicate
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground">
     <concept name="phys-obj" />
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <concept name="t" />
+    <sem-feats>
+     <relation label="inherit">
+      situation
+     </relation>
+     <feat name="type">event-of-creation</feat>
+     <feat name="aspect">dynamic</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -21702,7 +21706,13 @@
     </or>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <concept name="t" />
+    <sem-feats>
+     <relation label="inherit">
+      situation
+     </relation>
+     <feat name="type">change</feat>
+     <feat name="aspect">dynamic</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
