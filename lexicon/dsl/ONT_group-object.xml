@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::group-object">
  <relation label="inherit">
-  ont::abstract-object-nontemporal
+  ont::phys-object
  </relation>
  <relation label="overlap">
   wn::|mathematical_group%1:09:00::|
@@ -22,6 +22,7 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
+ <concept name="phys-obj" />
  <or>
  <concept name="phys-obj" />
  <concept name="abstr-obj" />
@@ -33,6 +34,12 @@
   ont::root
  </relation>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -50,34 +57,28 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="abstr-obj" />
- <concept name="ont::abstract-object">
- <comment>
-  &quot;abstract objects, mental constructions, with no physical realization&quot;
- </comment>
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00::|
-  wn::|abstraction%1:03:00::|
-  wn::|abstract_entity%1:03:00::|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
- </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::abstract-object-nontemporal">
+ <concept name="ont::phys-object">
  <comment>
-  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
+  &quot;All physical objects: things that have substance&quot;
  </comment>
  <relation label="inherit">
-  ont::abstract-object
-  abstr-obj
+  ont::referential-sem
  </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::system">
  <comment>
@@ -105,12 +106,11 @@
  </relation>
  <sem-feats>
   <relation label="inherit">
-   abstr-obj
+   phys-obj
   </relation>
   <feat name="container">-</feat>
   <feat name="object-function">occupation</feat>
   <feat name="intentional">+</feat>
-  <feat name="information">information-content</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -152,18 +152,28 @@
  </concept>
  <concept name="ont::sheet">
  <relation label="inherit">
+  ont::group-object-abstr
   ont::group-object
  </relation>
  </concept>
  <concept name="ont::quantity">
  <relation label="inherit">
+  ont::group-object-abstr
   ont::group-object
  </relation>
  <relation label="overlap">
   wn::|measure%1:03:00::|
   wn::|quantity%1:03:00::|
   wn::|amount%1:03:00::|
+  wn::|measure%1:03:00::|
+  wn::|quantity%1:03:00::|
+  wn::|amount%1:03:00::|
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  <sem-frame>
   <role-restr-map roles="ont::figure">
    <concept name="t" />

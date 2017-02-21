@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::organization-abstr">
+ <relation label="inherit">
+  ont::social-group-abstr
+ </relation>
+ <relation label="overlap">
+  wn::|organization%1:14:00::|
+  wn::|organisation%1:14:00::|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="abstr-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object-nontemporal">
+ <comment>
+  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="object-function">occupation</feat>
+ <feat name="intentional">+</feat>
+ <feat name="information">information-content</feat>
+ </sem-feats>
+ <concept name="ont::group-object-abstr">
+ <relation label="inherit">
+  ont::abstract-object-nontemporal
+ </relation>
+ <relation label="overlap">
+  wn::|mathematical_group%1:09:00::|
+  wn::|group%1:09:00::|
+  wn::|chemical_group%1:27:00::|
+  wn::|radical%1:27:00::|
+  wn::|group%1:27:00::|
+  wn::|group%1:03:00::|
+  wn::|grouping%1:03:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::social-group-abstr">
+ <relation label="inherit">
+  ont::group-object-abstr
+ </relation>
+ <relation label="overlap">
+  wn::|social_group%1:14:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="object-function">occupation</feat>
+  <feat name="intentional">+</feat>
+  <feat name="information">information-content</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::enterprise-abstr">
+ <relation label="inherit">
+  ont::organization-abstr
+ </relation>
+ </concept>
+ <concept name="ont::institution-abstr">
+ <relation label="inherit">
+  ont::organization-abstr
+ </relation>
+ </concept>
+ <concept name="ont::internet-organization-abstr">
+ <relation label="inherit">
+  ont::organization-abstr
+ </relation>
+ </concept>
+ <concept name="ont::legal-organization-abstr">
+ <relation label="inherit">
+  ont::organization-abstr
+ </relation>
+ </concept>
+ <concept name="ont::financial-organization-abstr">
+ <relation label="inherit">
+  ont::organization-abstr
+ </relation>
+ </concept>
+ <concept name="ont::federal-organization-abstr">
+ <relation label="inherit">
+  ont::organization-abstr
+ </relation>
+ <relation label="overlap">
+  wn::|government%1:14:00::|
+  wn::|authorities%1:14:00::|
+  wn::|regime%1:14:00::|
+ </relation>
+ </concept>
+ <concept name="ont::professional-organization-abstr">
+ <relation label="inherit">
+  ont::organization-abstr
+ </relation>
+ </concept>
+ <concept name="ont::regulatory-organization-abstr">
+ <relation label="inherit">
+  ont::organization-abstr
+ </relation>
+ </concept>
+</dsl>

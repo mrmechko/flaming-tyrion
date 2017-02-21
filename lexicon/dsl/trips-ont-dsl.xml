@@ -119,6 +119,11 @@
    ont::research-institution
   </relation>
  </concept>
+ <concept name="ont::academic-institution-abstr">
+  <relation label="inherit">
+   ont::research-institution-abstr
+  </relation>
+ </concept>
  <concept name="ont::accept-agree">
   <relation label="inherit">
    ont::response
@@ -860,6 +865,11 @@
    ont::company
   </relation>
  </concept>
+ <concept name="ont::affiliate-abstr">
+  <relation label="inherit">
+   ont::company-abstr
+  </relation>
+ </concept>
  <concept name="ont::afford">
   <relation label="inherit">
    ont::expensiveness
@@ -1013,6 +1023,11 @@
  <concept name="ont::airline">
   <relation label="inherit">
    ont::enterprise
+  </relation>
+ </concept>
+ <concept name="ont::airline-abstr">
+  <relation label="inherit">
+   ont::enterprise-abstr
   </relation>
  </concept>
  <concept name="ont::airport">
@@ -5068,6 +5083,17 @@
    wn::|assemblage%1:14:01::|
   </relation>
  </concept>
+ <concept name="ont::collection-abstr">
+  <relation label="inherit">
+   ont::group-object-abstr
+  </relation>
+  <relation label="overlap">
+   wn::|collection%1:14:00::|
+   wn::|aggregation%1:14:00::|
+   wn::|accumulation%1:14:00::|
+   wn::|assemblage%1:14:01::|
+  </relation>
+ </concept>
  <concept name="ont::collide">
   <comment>
    &quot;two objects comes into contact with force with another, typically both being negatively affected - also supports the plural subject that cincludes both objects&quot;
@@ -5200,9 +5226,32 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::column-formation-abstr">
+  <relation label="inherit">
+   ont::formation-abstr
+  </relation>
+  <relation label="overlap">
+   wn::|pile%1:14:00::|
+   wn::|column%1:14:00::|
+   wn::|column%1:25:02::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="phys-obj" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::combination">
   <relation label="inherit">
    ont::group-object
+  </relation>
+  <relation label="overlap">
+   wn::|combination%1:14:00::|
+  </relation>
+ </concept>
+ <concept name="ont::combination-abstr">
+  <relation label="inherit">
+   ont::group-object-abstr
   </relation>
   <relation label="overlap">
    wn::|combination%1:14:00::|
@@ -5651,6 +5700,11 @@
  <concept name="ont::company">
   <relation label="inherit">
    ont::institution
+  </relation>
+ </concept>
+ <concept name="ont::company-abstr">
+  <relation label="inherit">
+   ont::institution-abstr
   </relation>
  </concept>
  <concept name="ont::compare">
@@ -6979,7 +7033,12 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::crew">
+ <concept name="ont::crew-abstr">
+  <relation label="inherit">
+   ont::social-group-abstr
+  </relation>
+ </concept>
+ <concept name="ont::crew-phys">
   <relation label="inherit">
    ont::social-group
   </relation>
@@ -8788,6 +8847,11 @@
    ont::company
   </relation>
  </concept>
+ <concept name="ont::electronics-company-abstr">
+  <relation label="inherit">
+   ont::company-abstr
+  </relation>
+ </concept>
  <concept name="ont::element">
   <relation label="inherit">
    ont::kettle-base
@@ -8962,9 +9026,9 @@
    wn::|end%2:42:00::|
   </relation>
  </concept>
- <concept name="ont::end-location">
+ <concept name="ont::endpoint">
   <relation label="inherit">
-   ont::object-dependent-location
+   ont::loc-wrt-ground-as-spatial-obj
   </relation>
   <relation label="overlap">
    wn::|end%1:15:00::|
@@ -9111,6 +9175,11 @@
  <concept name="ont::enterprise">
   <relation label="inherit">
    ont::organization
+  </relation>
+ </concept>
+ <concept name="ont::enterprise-abstr">
+  <relation label="inherit">
+   ont::organization-abstr
   </relation>
  </concept>
  <concept name="ont::entertainment-establishment">
@@ -10461,6 +10530,16 @@
    wn::|regime%1:14:00::|
   </relation>
  </concept>
+ <concept name="ont::federal-organization-abstr">
+  <relation label="inherit">
+   ont::organization-abstr
+  </relation>
+  <relation label="overlap">
+   wn::|government%1:14:00::|
+   wn::|authorities%1:14:00::|
+   wn::|regime%1:14:00::|
+  </relation>
+ </concept>
  <concept name="ont::feebleness">
   <relation label="inherit">
    ont::physical-condition
@@ -10574,9 +10653,19 @@
    ont::institution
   </relation>
  </concept>
+ <concept name="ont::financial-institution-abstr">
+  <relation label="inherit">
+   ont::institution-abstr
+  </relation>
+ </concept>
  <concept name="ont::financial-organization">
   <relation label="inherit">
    ont::organization
+  </relation>
+ </concept>
+ <concept name="ont::financial-organization-abstr">
+  <relation label="inherit">
+   ont::organization-abstr
   </relation>
  </concept>
  <concept name="ont::financial-statement">
@@ -11050,6 +11139,11 @@
  <concept name="ont::formation">
   <relation label="inherit">
    ont::group-object
+  </relation>
+ </concept>
+ <concept name="ont::formation-abstr">
+  <relation label="inherit">
+   ont::group-object-abstr
   </relation>
  </concept>
  <concept name="ont::frequency">
@@ -11823,6 +11917,25 @@
   </relation>
  </concept>
  <concept name="ont::group-object">
+  <relation label="inherit">
+   ont::phys-object
+  </relation>
+  <relation label="overlap">
+   wn::|mathematical_group%1:09:00::|
+   wn::|group%1:09:00::|
+   wn::|chemical_group%1:27:00::|
+   wn::|radical%1:27:00::|
+   wn::|group%1:27:00::|
+   wn::|group%1:03:00::|
+   wn::|grouping%1:03:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::group-object-abstr">
   <relation label="inherit">
    ont::abstract-object-nontemporal
   </relation>
@@ -13217,6 +13330,11 @@
    ont::organization
   </relation>
  </concept>
+ <concept name="ont::institution-abstr">
+  <relation label="inherit">
+   ont::organization-abstr
+  </relation>
+ </concept>
  <concept name="ont::instruction-event">
   <relation label="inherit">
    ont::located-event
@@ -13486,6 +13604,11 @@
  <concept name="ont::internet-organization">
   <relation label="inherit">
    ont::organization
+  </relation>
+ </concept>
+ <concept name="ont::internet-organization-abstr">
+  <relation label="inherit">
+   ont::organization-abstr
   </relation>
  </concept>
  <concept name="ont::intersect">
@@ -14285,6 +14408,11 @@
    ont::organization
   </relation>
  </concept>
+ <concept name="ont::legal-organization-abstr">
+  <relation label="inherit">
+   ont::organization-abstr
+  </relation>
+ </concept>
  <concept name="ont::lend">
   <relation label="inherit">
    ont::commerce-sell
@@ -14495,26 +14623,6 @@
    ont::small
   </relation>
  </concept>
- <concept name="ont::line-dependent-location">
-  <relation label="inherit">
-   ont::location-reln
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::figure" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="spatial-abstraction">
-     <or>
-      line
-      strip
-     </or>
-     </feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::linear-d">
   <relation label="inherit">
    ont::phys-measure-domain
@@ -14558,6 +14666,14 @@
  <concept name="ont::linear-grouping">
   <relation label="inherit">
    ont::sequence
+  </relation>
+  <relation label="overlap">
+   wn::|line%1:14:01::|
+  </relation>
+ </concept>
+ <concept name="ont::linear-grouping-abstr">
+  <relation label="inherit">
+   ont::sequence-abstr
   </relation>
   <relation label="overlap">
    wn::|line%1:14:01::|
@@ -14902,33 +15018,6 @@
    </relation>
    <feat name="trajectory">+</feat>
   </sem-feats>
- </concept>
- <concept name="ont::location-reln">
-  <relation label="inherit">
-   ont::location
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="spatial-abstraction">spatial-point</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::figure" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="spatial-abstraction">
-     <or>
-      strip
-      spatial-region
-      line
-     </or>
-     </feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::location-val">
   <relation label="inherit">
@@ -15966,6 +16055,17 @@
  <concept name="ont::military-group">
   <relation label="inherit">
    ont::social-group
+  </relation>
+  <relation label="overlap">
+   wn::|military_unit%1:14:00::|
+   wn::|military_force%1:14:00::|
+   wn::|military_group%1:14:00::|
+   wn::|force%1:14:01::|
+  </relation>
+ </concept>
+ <concept name="ont::military-group-abstr">
+  <relation label="inherit">
+   ont::social-group-abstr
   </relation>
   <relation label="overlap">
    wn::|military_unit%1:14:00::|
@@ -17377,6 +17477,11 @@
    ont::company
   </relation>
  </concept>
+ <concept name="ont::office-supply-company-abstr">
+  <relation label="inherit">
+   ont::company-abstr
+  </relation>
+ </concept>
  <concept name="ont::official-document">
   <relation label="inherit">
    ont::direct-representation
@@ -17600,6 +17705,15 @@
  <concept name="ont::organization">
   <relation label="inherit">
    ont::social-group
+  </relation>
+  <relation label="overlap">
+   wn::|organization%1:14:00::|
+   wn::|organisation%1:14:00::|
+  </relation>
+ </concept>
+ <concept name="ont::organization-abstr">
+  <relation label="inherit">
+   ont::social-group-abstr
   </relation>
   <relation label="overlap">
    wn::|organization%1:14:00::|
@@ -18983,24 +19097,9 @@
    ont::emotional-val
   </relation>
  </concept>
- <concept name="ont::pos-end-of-trajectory">
-  <relation label="inherit">
-   ont::pos-located-in-trajectory
-  </relation>
- </concept>
  <concept name="ont::pos-intense-emotional-val">
   <relation label="inherit">
    ont::pos-emotional-val
-  </relation>
- </concept>
- <concept name="ont::pos-located-in-trajectory">
-  <relation label="inherit">
-   ont::position-w-trajectory-reln
-  </relation>
- </concept>
- <concept name="ont::pos-midway">
-  <relation label="inherit">
-   ont::pos-located-in-trajectory
   </relation>
  </concept>
  <concept name="ont::pos-relative-wrt-trajectory">
@@ -19011,11 +19110,6 @@
  <concept name="ont::pos-soft-emotional-val">
   <relation label="inherit">
    ont::pos-emotional-val
-  </relation>
- </concept>
- <concept name="ont::pos-start-of-trajectory">
-  <relation label="inherit">
-   ont::pos-located-in-trajectory
   </relation>
  </concept>
  <concept name="ont::pos-wrt-speaker-reln">
@@ -19721,6 +19815,11 @@
    ont::organization
   </relation>
  </concept>
+ <concept name="ont::professional-organization-abstr">
+  <relation label="inherit">
+   ont::organization-abstr
+  </relation>
+ </concept>
  <concept name="ont::progress">
   <comment>
    &quot;A situation continues to develop&quot;
@@ -20345,13 +20444,22 @@
  </concept>
  <concept name="ont::quantity">
   <relation label="inherit">
+   ont::group-object-abstr
    ont::group-object
   </relation>
   <relation label="overlap">
    wn::|measure%1:03:00::|
    wn::|quantity%1:03:00::|
    wn::|amount%1:03:00::|
+   wn::|measure%1:03:00::|
+   wn::|quantity%1:03:00::|
+   wn::|amount%1:03:00::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
   <sem-frame>
    <role-restr-map roles="ont::figure">
     <concept name="t" />
@@ -20870,6 +20978,11 @@
  <concept name="ont::regulatory-organization">
   <relation label="inherit">
    ont::organization
+  </relation>
+ </concept>
+ <concept name="ont::regulatory-organization-abstr">
+  <relation label="inherit">
+   ont::organization-abstr
   </relation>
  </concept>
  <concept name="ont::reject">
@@ -21506,6 +21619,11 @@
    ont::company
   </relation>
  </concept>
+ <concept name="ont::research-institution-abstr">
+  <relation label="inherit">
+   ont::company-abstr
+  </relation>
+ </concept>
  <concept name="ont::resemble">
   <relation label="inherit">
    ont::object-compare
@@ -22124,6 +22242,20 @@
  <concept name="ont::row-formation">
   <relation label="inherit">
    ont::formation
+  </relation>
+  <relation label="overlap">
+   wn::|row%1:14:00::|
+   wn::|row%1:17:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="phys-obj" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::row-formation-abstr">
+  <relation label="inherit">
+   ont::formation-abstr
   </relation>
   <relation label="overlap">
    wn::|row%1:14:00::|
@@ -22886,6 +23018,16 @@
    wn::|ordination%1:14:00::|
   </relation>
  </concept>
+ <concept name="ont::sequence-abstr">
+  <relation label="inherit">
+   ont::group-object-abstr
+  </relation>
+  <relation label="overlap">
+   wn::|ordering%1:14:00::|
+   wn::|order%1:14:00::|
+   wn::|ordination%1:14:00::|
+  </relation>
+ </concept>
  <concept name="ont::sequence-position">
   <relation label="inherit">
    ont::predicate
@@ -23063,12 +23205,18 @@
  </concept>
  <concept name="ont::sheet">
   <relation label="inherit">
+   ont::group-object-abstr
    ont::group-object
   </relation>
  </concept>
  <concept name="ont::shipping-company">
   <relation label="inherit">
    ont::company
+  </relation>
+ </concept>
+ <concept name="ont::shipping-company-abstr">
+  <relation label="inherit">
+   ont::company-abstr
   </relation>
  </concept>
  <concept name="ont::shore">
@@ -23616,6 +23764,30 @@
   </relation>
   <sem-feats>
    <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="container">-</feat>
+   <feat name="object-function">occupation</feat>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::social-group-abstr">
+  <relation label="inherit">
+   ont::group-object-abstr
+  </relation>
+  <relation label="overlap">
+   wn::|social_group%1:14:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
     abstr-obj
    </relation>
    <feat name="container">-</feat>
@@ -23704,6 +23876,11 @@
  <concept name="ont::software-company">
   <relation label="inherit">
    ont::company
+  </relation>
+ </concept>
+ <concept name="ont::software-company-abstr">
+  <relation label="inherit">
+   ont::company-abstr
   </relation>
  </concept>
  <concept name="ont::software-feature">
@@ -24305,6 +24482,15 @@
    wn::|start%2:38:01::|
    wn::|start%2:41:00::|
    wn::|take_to%2:41:01::|
+  </relation>
+ </concept>
+ <concept name="ont::startpoint">
+  <relation label="inherit">
+   ont::loc-wrt-ground-as-spatial-obj
+  </relation>
+  <relation label="overlap">
+   wn::|beginning%1:15:00::|
+   wn::|beginning%1:09:00::|
   </relation>
  </concept>
  <concept name="ont::state">
@@ -24932,6 +25118,11 @@
    ont::company
   </relation>
  </concept>
+ <concept name="ont::supplier-abstr">
+  <relation label="inherit">
+   ont::company-abstr
+  </relation>
+ </concept>
  <concept name="ont::supply">
   <relation label="inherit">
    ont::giving
@@ -25166,6 +25357,18 @@
   </comment>
   <relation label="inherit">
    ont::group-object
+  </relation>
+  <relation label="overlap">
+   wn::|system%1:06:00::|
+   wn::|system%1:14:00::|
+  </relation>
+ </concept>
+ <concept name="ont::system-abstr">
+  <comment>
+   &quot;An interconnected group of objects, abstract or physical&quot;
+  </comment>
+  <relation label="inherit">
+   ont::group-object-abstr
   </relation>
   <relation label="overlap">
    wn::|system%1:06:00::|
