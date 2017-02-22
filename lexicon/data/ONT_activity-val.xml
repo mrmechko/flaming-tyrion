@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
-<ONTTYPE name="activity-val" parent="property-val" modified="Tue Feb 21 01:42:51 2017" comment="predicates relating to whether something is acting as intended for some process">
+<ONTTYPE name="activity-val" parent="property-val" modified="Wed Feb 22 01:42:59 2017" comment="predicates relating to whether something is acting as intended for some process">
 <SEM fltype="abstr-obj">
-<FEATURES type="activity-val" intentional="-" information="-" container="-" />
+<FEATURES type="activity-val" gradability="-" intentional="-" information="-" container="-" />
 </SEM>
 <ARGUMENT role="norole" optionality="optional" fltype="?!type" />
 <ARGUMENT role="ground" optionality="optional" fltype="?!type" />
@@ -12,7 +12,10 @@
 <ARGUMENT role="neutral1" optionality="optional" fltype="?!type" />
 <ARGUMENT role="formal" optionality="optional" fltype="situation" />
 <ARGUMENT role="scale" optionality="essential" fltype="?!type" />
-<ARGUMENT role="figure" optionality="required" fltype="(? lof3296 phys-obj)" />
+<ARGUMENT role="figure" optionality="required" fltype="(? lof3296 phys-obj)">
+<FEATURES object-function="provides-service" type="(? !t2 location)" />
+</ARGUMENT>
 <CHILD name="active" />
+<CHILD name="in-working-order-val" />
 <CHILD name="inactive" />
 </ONTTYPE>

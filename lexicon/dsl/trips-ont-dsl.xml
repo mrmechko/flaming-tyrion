@@ -525,12 +525,46 @@
    wn::|active%3:00:06::|
    wn::|busy%5:00:01:active:06|
   </relation>
+ </concept>
+ <concept name="ont::active-on">
+  <comment>
+   &quot;operating as intended, typically due to some switching on/off&quot;
+  </comment>
+  <relation label="inherit">
+   ont::active
+  </relation>
+  <relation label="overlap">
+   wn::|on%3:00:02::|
+  </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
     <sem-feats>
      <relation label="inherit">
       phys-obj
      </relation>
+     <feat name="object-function">provides-service-on-off</feat>
+     <feat name="type">location</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::active-open">
+  <comment>
+   &quot;operating as intended, typically a physcal location with operating hours&quot;
+  </comment>
+  <relation label="inherit">
+   ont::active
+  </relation>
+  <relation label="overlap">
+   wn::|open%3:00:02::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="object-function">provides-service-open-closed</feat>
      <feat name="type">location</feat>
     </sem-feats>
    </role-restr-map>
@@ -566,6 +600,28 @@
       phys-obj
      </relation>
      <feat name="intentional">+</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::active-up">
+  <comment>
+   &quot;operating as intended, typically for ongoing available services using up/down&quot;
+  </comment>
+  <relation label="inherit">
+   ont::active
+  </relation>
+  <relation label="overlap">
+   wn::|functioning%3:00:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="object-function">provides-service-up-down</feat>
+     <feat name="type">location</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -652,9 +708,21 @@
   <relation label="inherit">
    ont::property-val
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="gradability">-</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::figure">
-    <concept name="phys-obj" />
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="object-function">provides-service</feat>
+     <feat name="type">location</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -4137,10 +4205,19 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::formal" optional="optional">
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="type">
+     <or>
+      situation-root
+      property-val
+      position-reln
+     </or>
+     </feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::result" optional="optional">
     <or>
@@ -5912,7 +5989,12 @@
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="object-function">instrument</feat>
+   <feat name="object-function">
+   <or>
+    provides-service-on-off
+    provides-service-up-down
+   </or>
+   </feat>
    <feat name="form">object</feat>
    <feat name="mobility">non-self-moving</feat>
   </sem-feats>
@@ -5946,25 +6028,11 @@
   <relation label="inherit">
    ont::computer
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">instrument</feat>
-   <feat name="mobility">non-self-moving</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::computer-model">
   <relation label="inherit">
    ont::computer
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">instrument</feat>
-   <feat name="mobility">non-self-moving</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::computer-monitor">
   <relation label="inherit">
@@ -6054,13 +6122,6 @@
   <relation label="inherit">
    ont::computer
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">instrument</feat>
-   <feat name="mobility">non-self-moving</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::condiments">
   <relation label="inherit">
@@ -6995,6 +7056,20 @@
       <concept name="abstr-obj" />
      </or>
      <feat name="intentional">-</feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::affected-result">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="type">
+     <or>
+      phys-object
+      mental-construction
+     </or>
+     </feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::agent" optional="optional">
@@ -8096,6 +8171,11 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::direction-down">
+  <relation label="inherit">
+   ont::direction
+  </relation>
+ </concept>
  <concept name="ont::direction-reln">
   <relation label="inherit">
    ont::path
@@ -8105,6 +8185,11 @@
     <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::direction-up">
+  <relation label="inherit">
+   ont::direction
+  </relation>
  </concept>
  <concept name="ont::direction-val">
   <relation label="inherit">
@@ -12927,6 +13012,14 @@
    <feat name="aspect">static</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::in-working-order-val">
+  <comment>
+   &quot;operational but not necessarily on&quot;
+  </comment>
+  <relation label="inherit">
+   ont::activity-val
+  </relation>
+ </concept>
  <concept name="ont::inaccessible">
   <relation label="inherit">
    ont::accessibility-val
@@ -12947,6 +13040,72 @@
    wn::|passive%3:00:01::|
    wn::|idle%3:00:00::|
   </relation>
+ </concept>
+ <concept name="ont::inactive-closed">
+  <comment>
+   &quot;not operating as intended,  typically a physcal location with operating hours&quot;
+  </comment>
+  <relation label="inherit">
+   ont::inactive
+  </relation>
+  <relation label="overlap">
+   wn::|closed%3:00:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="object-function">provides-service-open-closed</feat>
+     <feat name="type">location</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::inactive-down">
+  <comment>
+   &quot;not operating is intended, typically for ongoing available services using up/down&quot;
+  </comment>
+  <relation label="inherit">
+   ont::inactive
+  </relation>
+  <relation label="overlap">
+   wn::|inoperative%3:00:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="object-function">provides-service-up-down</feat>
+     <feat name="type">location</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::inactive-off">
+  <comment>
+   &quot;not operating as intended, typically due to some switching on/off&quot;
+  </comment>
+  <relation label="inherit">
+   ont::inactive
+  </relation>
+  <relation label="overlap">
+   wn::|off%3:00:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="object-function">provides-service-on-off</feat>
+     <feat name="type">location</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::inadequate">
   <relation label="inherit">
@@ -13282,18 +13441,6 @@
    wn::|contusion%1:26:00::|
    wn::|bump%1:26:00::|
   </relation>
- </concept>
- <concept name="ont::inoperable">
-  <relation label="inherit">
-   ont::configuration-property-val
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">device</feat>
-   <feat name="gradability">-</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::insane">
   <relation label="inherit">
@@ -17085,17 +17232,11 @@
  </concept>
  <concept name="ont::not-in-working-order-val">
   <comment>
-   &quot;broken/not-operational&quot;
+   &quot;broken/not-operational more permanently - needs fixing, not switching on&quot;
   </comment>
   <relation label="inherit">
    ont::inactive
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="gradability">-</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::noticeable">
   <relation label="inherit">
@@ -21267,6 +21408,11 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::remaining-part">
+  <relation label="inherit">
+   ont::part
+  </relation>
  </concept>
  <concept name="ont::remember">
   <relation label="inherit">

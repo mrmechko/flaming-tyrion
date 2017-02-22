@@ -43,7 +43,6 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::scale">
   <concept name="t" />
@@ -69,6 +68,7 @@
   abstr-obj
  </relation>
  </concept>
+ <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
@@ -139,9 +139,21 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
-  <concept name="phys-obj" />
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="object-function">provides-service</feat>
+   <feat name="type">location</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="gradability">-</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -202,25 +214,97 @@
  <relation label="inherit">
   ont::property-val
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <concept name="phys-obj" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::not-in-working-order-val">
- <comment>
-  &quot;broken/not-operational&quot;
- </comment>
- <relation label="inherit">
-  ont::inactive
- </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
   <feat name="gradability">-</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="object-function">provides-service</feat>
+    <feat name="type">location</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::inactive-off">
+ <comment>
+  &quot;not operating as intended, typically due to some switching on/off&quot;
+ </comment>
+ <relation label="inherit">
+  ont::inactive
+ </relation>
+ <relation label="overlap">
+  wn::|off%3:00:01::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="object-function">provides-service-on-off</feat>
+    <feat name="type">location</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::inactive-down">
+ <comment>
+  &quot;not operating is intended, typically for ongoing available services using up/down&quot;
+ </comment>
+ <relation label="inherit">
+  ont::inactive
+ </relation>
+ <relation label="overlap">
+  wn::|inoperative%3:00:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="object-function">provides-service-up-down</feat>
+    <feat name="type">location</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::inactive-closed">
+ <comment>
+  &quot;not operating as intended,  typically a physcal location with operating hours&quot;
+ </comment>
+ <relation label="inherit">
+  ont::inactive
+ </relation>
+ <relation label="overlap">
+  wn::|closed%3:00:01::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="object-function">provides-service-open-closed</feat>
+    <feat name="type">location</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::not-in-working-order-val">
+ <comment>
+  &quot;broken/not-operational more permanently - needs fixing, not switching on&quot;
+ </comment>
+ <relation label="inherit">
+  ont::inactive
+ </relation>
  </concept>
  <sense>
  <morph>
@@ -278,24 +362,6 @@
    <feat name="gradability">+</feat>
   </sem-feats>
  </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="off" />
- </morph>
- <comment>
-  &quot;TEST-S&quot;
- </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="The switch is off -- predicative only, because 'the off switch' is not at all the same">
- </example>
- <relation label="inherit">
-  ont::inactive
-  ont::central-adj-templ
- </relation>
  </sense>
  <sense>
  <morph>

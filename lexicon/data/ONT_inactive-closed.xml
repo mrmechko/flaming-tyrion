@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
-<ONTTYPE name="inoperable" parent="configuration-property-val" modified="Tue Feb 21 01:42:36 2017">
+<ONTTYPE name="inactive-closed" parent="inactive" modified="Wed Feb 22 01:42:59 2017" comment="not operating as intended,  typically a physcal location with operating hours">
 <SEM fltype="abstr-obj">
-<FEATURES type="inoperable" gradability="-" intentional="-" information="-" container="-" />
+<FEATURES type="inactive-closed" gradability="-" intentional="-" information="-" container="-" />
 </SEM>
 <ARGUMENT role="norole" optionality="optional" fltype="?!type" />
 <ARGUMENT role="ground" optionality="optional" fltype="?!type" />
@@ -11,7 +11,9 @@
 <ARGUMENT role="neutral" optionality="optional" fltype="(? pvt3255 phys-obj abstr-obj situation)" />
 <ARGUMENT role="neutral1" optionality="optional" fltype="?!type" />
 <ARGUMENT role="formal" optionality="optional" fltype="situation" />
-<ARGUMENT role="figure" optionality="required" fltype="?!type" />
 <ARGUMENT role="scale" optionality="essential" fltype="?!type" />
-<WORD name="down" />
+<ARGUMENT role="figure" optionality="required" fltype="phys-obj">
+<FEATURES type="(? !t2 location)" object-function="provides-service-open-closed" />
+</ARGUMENT>
+<MAPPING to="wordnet" name="closed%3:00:01::" url="http://wordnetweb.princeton.edu/perl/webwn?s=closed&amp;i=17&amp;o6=1" />
 </ONTTYPE>

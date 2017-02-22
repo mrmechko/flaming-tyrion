@@ -3,15 +3,12 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::in-working-order-val">
+ <comment>
+  &quot;operational but not necessarily on&quot;
+ </comment>
  <relation label="inherit">
-  ont::configuration-property-val
+  ont::activity-val
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="gradability">-</feat>
- </sem-feats>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -26,6 +23,9 @@
  </relation>
  </concept>
  <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
  <relation label="inherit">
   ont::any-sem
  </relation>
@@ -51,6 +51,9 @@
  </role-restr-map>
  </sem-frame>
  <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
  <relation label="overlap">
   wn::|psychological_feature%1:03:00::|
   wn::|abstraction%1:03:00::|
@@ -61,11 +64,12 @@
   abstr-obj
  </relation>
  </concept>
+ <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::val" optional="optional">
+ <role-restr-map roles="ont::ground" optional="optional">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::reason" optional="optional">
@@ -95,7 +99,7 @@
  <role-restr-map roles="ont::formal" optional="optional">
   <concept name="situation" />
  </role-restr-map>
- <role-restr-map roles="ont::of">
+ <role-restr-map roles="ont::figure">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
@@ -105,12 +109,14 @@
  </relation>
  <feat name="orientation">-</feat>
  <feat name="intensity">-</feat>
- <feat name="scale">-</feat>
  <feat name="intentional">-</feat>
  <feat name="information">-</feat>
  <feat name="container">-</feat>
  </sem-feats>
  <concept name="ont::domain-property">
+ <comment>
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+ </comment>
  <relation label="inherit">
   ont::abstract-object
   abstr-obj
@@ -127,6 +133,23 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="object-function">provides-service</feat>
+   <feat name="type">location</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="gradability">-</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -137,7 +160,6 @@
   </relation>
   <feat name="orientation">-</feat>
   <feat name="intensity">-</feat>
-  <feat name="scale">-</feat>
   <feat name="intentional">-</feat>
   <feat name="information">-</feat>
   <feat name="container">-</feat>
@@ -146,7 +168,7 @@
   <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::val" optional="optional">
+  <role-restr-map roles="ont::ground" optional="optional">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::reason" optional="optional">
@@ -176,120 +198,34 @@
   <role-restr-map roles="ont::formal" optional="optional">
    <concept name="situation" />
   </role-restr-map>
-  <role-restr-map roles="ont::of">
+  <role-restr-map roles="ont::figure">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-val">
+ <concept name="ont::activity-val">
+ <comment>
+  &quot;predicates relating to whether something is acting as intended for some process&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
- </concept>
- <concept name="abstr-obj" />
  <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="gradability">-</feat>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="gradability">-</feat>
  </sem-feats>
- <concept name="ont::configuration-property-val">
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="object-function">provides-service</feat>
+    <feat name="type">location</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="defective" />
- </morph>
- <example text="if the library is defective, you pay for it">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::in-working-order-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="faulty" />
- </morph>
- <relation label="inherit">
-  ont::in-working-order-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="functional" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::in-working-order-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="off" remaining-words="kilter" />
- </morph>
- <relation label="inherit">
-  ont::in-working-order-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="out" remaining-words="of whack" />
- </morph>
- <example text="the system is out of whack">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::in-working-order-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="out" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="the bridge is out">
- </example>
- <relation label="inherit">
-  ont::in-working-order-val
-  ont::predicative-only-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="out" remaining-words="of whack" />
- </morph>
- <relation label="inherit">
-  ont::in-working-order-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="out" remaining-words="of kilter" />
- </morph>
- <relation label="inherit">
-  ont::in-working-order-val
-  ont::central-adj-templ
- </relation>
- </sense>
 </dsl>

@@ -253,9 +253,29 @@
          (OVERLAP WN::|busy%3:00:00::|
                   WN::|active%3:00:03::|
                   WN::|active%3:00:06::|
-                  WN::|busy%5:00:01:active:06|)
+                  WN::|busy%5:00:01:active:06|))
+
+(CONCEPT ONT::ACTIVE-ON
+         (COMMENT
+          "operating as intended, typically due to some switching on/off")
+         (INHERIT ONT::ACTIVE)
+         (OVERLAP WN::|on%3:00:02::|)
          (SEM-FRAME
-          (ONT::FIGURE (SEM-FEATS (INHERIT PHYS-OBJ) (TYPE LOCATION)))))
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (OBJECT-FUNCTION PROVIDES-SERVICE-ON-OFF)
+                      (TYPE LOCATION)))))
+
+(CONCEPT ONT::ACTIVE-OPEN
+         (COMMENT
+          "operating as intended, typically a physcal location with operating hours")
+         (INHERIT ONT::ACTIVE)
+         (OVERLAP WN::|OPEN%3:00:02::|)
+         (SEM-FRAME
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (OBJECT-FUNCTION PROVIDES-SERVICE-OPEN-CLOSED)
+                      (TYPE LOCATION)))))
 
 (CONCEPT ONT::ACTIVE-PERCEPTION
          (INHERIT ONT::PERCEPTION)
@@ -271,6 +291,17 @@
                     (ONT::NEUTRAL (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))
                     (ONT::AGENT
                      (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
+
+(CONCEPT ONT::ACTIVE-UP
+         (COMMENT
+          "operating as intended, typically for ongoing available services using up/down")
+         (INHERIT ONT::ACTIVE)
+         (OVERLAP WN::|functioning%3:00:00::|)
+         (SEM-FRAME
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (OBJECT-FUNCTION PROVIDES-SERVICE-UP-DOWN)
+                      (TYPE LOCATION)))))
 
 (CONCEPT ONT::ACTIVITY
          (INHERIT ONT::EVENT-OF-ACTION)
@@ -325,7 +356,12 @@
          (COMMENT
           "predicates relating to whether something is acting as intended for some process")
          (INHERIT ONT::PROPERTY-VAL)
-         (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ))))
+         (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -))
+         (SEM-FRAME
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (OBJECT-FUNCTION PROVIDES-SERVICE)
+                      (TYPE LOCATION)))))
 
 (CONCEPT ONT::ACTUAL (INHERIT ONT::ACTUALITY-VAL))
 
@@ -1895,7 +1931,10 @@
                     (TRAJECTORY -)
                     (CAUSE (OR FORCE AGENTIVE)))
          (SEM-FRAME
-          (ONT::FORMAL (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)) OPTIONAL)
+          (ONT::FORMAL
+           (SEM-FEATS (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ))
+                      (TYPE (OR SITUATION-ROOT PROPERTY-VAL POSITION-RELN)))
+           OPTIONAL)
           (ONT::RESULT (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)) OPTIONAL)
           (ONT::AFFECTED
            (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ))
@@ -2702,7 +2741,8 @@
                   WN::|electronic_computer%1:06:00::|
                   WN::|information_processing_system%1:06:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ)
-                    (OBJECT-FUNCTION INSTRUMENT)
+                    (OBJECT-FUNCTION
+                     (OR PROVIDES-SERVICE-ON-OFF PROVIDES-SERVICE-UP-DOWN))
                     (FORM OBJECT)
                     (MOBILITY NON-SELF-MOVING)))
 
@@ -2716,17 +2756,9 @@
 
 (CONCEPT ONT::COMPUTER-LANGUAGE (INHERIT ONT::LANGUAGE))
 
-(CONCEPT ONT::COMPUTER-MAKE
-         (INHERIT ONT::COMPUTER)
-         (SEM-FEATS (INHERIT PHYS-OBJ)
-                    (OBJECT-FUNCTION INSTRUMENT)
-                    (MOBILITY NON-SELF-MOVING)))
+(CONCEPT ONT::COMPUTER-MAKE (INHERIT ONT::COMPUTER))
 
-(CONCEPT ONT::COMPUTER-MODEL
-         (INHERIT ONT::COMPUTER)
-         (SEM-FEATS (INHERIT PHYS-OBJ)
-                    (OBJECT-FUNCTION INSTRUMENT)
-                    (MOBILITY NON-SELF-MOVING)))
+(CONCEPT ONT::COMPUTER-MODEL (INHERIT ONT::COMPUTER))
 
 (CONCEPT ONT::COMPUTER-MONITOR
          (INHERIT ONT::COMPUTER-PART)
@@ -2771,11 +2803,7 @@
          (INHERIT ONT::PS-OBJECT)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (INFORMATION INFORMATION-CONTENT)))
 
-(CONCEPT ONT::COMPUTER-TYPE
-         (INHERIT ONT::COMPUTER)
-         (SEM-FEATS (INHERIT PHYS-OBJ)
-                    (OBJECT-FUNCTION INSTRUMENT)
-                    (MOBILITY NON-SELF-MOVING)))
+(CONCEPT ONT::COMPUTER-TYPE (INHERIT ONT::COMPUTER))
 
 (CONCEPT ONT::CONDIMENTS
          (INHERIT ONT::INGREDIENTS)
@@ -3196,6 +3224,9 @@
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL -))
            OPTIONAL)
+          (ONT::AFFECTED-RESULT
+           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
+                      (TYPE (OR PHYS-OBJECT MENTAL-CONSTRUCTION))))
           (ONT::AGENT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
 
 (CONCEPT ONT::CREDIT-CARD
@@ -3701,9 +3732,13 @@
                          (CONCEPT SITUATION)
                          (CONCEPT ABSTR-OBJ)))))
 
+(CONCEPT ONT::DIRECTION-DOWN (INHERIT ONT::DIRECTION))
+
 (CONCEPT ONT::DIRECTION-RELN
          (INHERIT ONT::PATH)
          (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ))))
+
+(CONCEPT ONT::DIRECTION-UP (INHERIT ONT::DIRECTION))
 
 (CONCEPT ONT::DIRECTION-VAL (INHERIT ONT::SPATIAL))
 
@@ -5927,6 +5962,10 @@
                   WN::|follow%2:42:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TIME-SPAN EXTENDED) (ASPECT STATIC)))
 
+(CONCEPT ONT::IN-WORKING-ORDER-VAL
+         (COMMENT "operational but not necessarily on")
+         (INHERIT ONT::ACTIVITY-VAL))
+
 (CONCEPT ONT::INACCESSIBLE
          (INHERIT ONT::ACCESSIBILITY-VAL)
          (OVERLAP WN::|inaccessible%3:00:00::| WN::|inaccessible%3:00:00::|))
@@ -5935,6 +5974,39 @@
          (COMMENT "not operating as intended wrt some process")
          (INHERIT ONT::ACTIVITY-VAL)
          (OVERLAP WN::|passive%3:00:01::| WN::|idle%3:00:00::|))
+
+(CONCEPT ONT::INACTIVE-CLOSED
+         (COMMENT
+          "not operating as intended,  typically a physcal location with operating hours")
+         (INHERIT ONT::INACTIVE)
+         (OVERLAP WN::|closed%3:00:01::|)
+         (SEM-FRAME
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (OBJECT-FUNCTION PROVIDES-SERVICE-OPEN-CLOSED)
+                      (TYPE LOCATION)))))
+
+(CONCEPT ONT::INACTIVE-DOWN
+         (COMMENT
+          "not operating is intended, typically for ongoing available services using up/down")
+         (INHERIT ONT::INACTIVE)
+         (OVERLAP WN::|inoperative%3:00:00::|)
+         (SEM-FRAME
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (OBJECT-FUNCTION PROVIDES-SERVICE-UP-DOWN)
+                      (TYPE LOCATION)))))
+
+(CONCEPT ONT::INACTIVE-OFF
+         (COMMENT
+          "not operating as intended, typically due to some switching on/off")
+         (INHERIT ONT::INACTIVE)
+         (OVERLAP WN::|off%3:00:01::|)
+         (SEM-FRAME
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (OBJECT-FUNCTION PROVIDES-SERVICE-ON-OFF)
+                      (TYPE LOCATION)))))
 
 (CONCEPT ONT::INADEQUATE
          (INHERIT ONT::ENOUGH-VAL)
@@ -6108,10 +6180,6 @@
                   WN::|bruise%1:26:00::|
                   WN::|contusion%1:26:00::|
                   WN::|bump%1:26:00::|))
-
-(CONCEPT ONT::INOPERABLE
-         (INHERIT ONT::CONFIGURATION-PROPERTY-VAL)
-         (SEM-FEATS (INHERIT ABSTR-OBJ) (TYPE DEVICE) (GRADABILITY -)))
 
 (CONCEPT ONT::INSANE
          (INHERIT ONT::REASONABLE-VAL)
@@ -7770,9 +7838,9 @@
 (CONCEPT ONT::NOT-FAMILIAR (INHERIT ONT::SALIENCE))
 
 (CONCEPT ONT::NOT-IN-WORKING-ORDER-VAL
-         (COMMENT "broken/not-operational")
-         (INHERIT ONT::INACTIVE)
-         (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -)))
+         (COMMENT
+          "broken/not-operational more permanently - needs fixing, not switching on")
+         (INHERIT ONT::INACTIVE))
 
 (CONCEPT ONT::NOTICEABLE
          (INHERIT ONT::ATTENTION-WORTHY-VAL)
@@ -9629,6 +9697,8 @@
          (INHERIT ONT::EVENT-OF-STATE)
          (SEM-FRAME (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
                     (ONT::NEUTRAL1 (CONCEPT T) OPTIONAL)))
+
+(CONCEPT ONT::REMAINING-PART (INHERIT ONT::PART))
 
 (CONCEPT ONT::REMEMBER
          (INHERIT ONT::ACQUIRE-BELIEF)
