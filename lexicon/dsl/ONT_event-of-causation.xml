@@ -398,6 +398,34 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::penetrate">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|stab%2:35:02::|
+  wn::|penetrate%2:35:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="object-function">
+    <or>
+     spatial-object
+     building
+    </or>
+    </feat>
+    <feat name="spatial-abstraction">spatial-region</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::consume">
  <relation label="inherit">
   ont::event-of-causation
@@ -995,35 +1023,6 @@
    <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::space">
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|space%2:38:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
    <concept name="phys-obj" />
   </role-restr-map>
  </sem-frame>

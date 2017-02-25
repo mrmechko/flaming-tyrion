@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::penetrate">
  <relation label="inherit">
-  ont::entering
+  ont::event-of-causation
  </relation>
  <relation label="overlap">
   wn::|stab%2:35:02::|
@@ -170,7 +170,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::affected">
   <or>
@@ -180,6 +179,7 @@
   </or>
  </role-restr-map>
  </sem-frame>
+ <concept name="situation" />
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
@@ -204,146 +204,6 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">quantity</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::source" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
-   <feat name="mobility">movable</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">dynamic</feat>
- <feat name="cause">
- <or>
-  force
-  -
- </or>
- </feat>
- </sem-feats>
- <concept name="ont::event-of-causation">
- <comment>
-  &quot;events involving an AGENT acting on an AFFECTED&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-action
-  situation
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::result">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">
-   <or>
-    spatial-object
-    building
-   </or>
-   </feat>
-   <feat name="spatial-abstraction">spatial-region</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <concept name="phys-obj" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::motion">
- <comment>
-  &quot;events of motion through some space (physical or abstract). Even though many motion verbs express simply undergoing motion, all these verbs allow to possibiliity of an AGENT&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
-  <feat name="cause">
-  <or>
-   force
-   -
-  </or>
-  </feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">quantity</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::source" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-     <concept name="time" />
-    </or>
-    <feat name="mobility">movable</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
  <role-restr-map roles="ont::affected">
   <sem-feats>
    <relation label="inherit">
@@ -362,43 +222,52 @@
   <concept name="phys-obj" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::entering">
+ <concept name="ont::event-of-causation">
+ <comment>
+  &quot;events involving an AGENT acting on an AFFECTED&quot;
+ </comment>
  <relation label="inherit">
-  ont::motion
- </relation>
- <relation label="overlap">
-  wn::|enter%2:38:00::|
-  wn::|come_in%2:38:02::|
-  wn::|get_into%2:38:00::|
-  wn::|get_in%2:38:01::|
-  wn::|go_into%2:38:00::|
-  wn::|go_in%2:38:00::|
-  wn::|move_into%2:38:00::|
-  wn::|enter%2:36:00::|
+  ont::event-of-action
+  situation
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::result">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="object-function">
-    <or>
-     spatial-object
-     building
-    </or>
-    </feat>
-    <feat name="spatial-abstraction">spatial-region</feat>
-   </sem-feats>
-  </role-restr-map>
   <role-restr-map roles="ont::affected">
-   <concept name="phys-obj" />
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="penetrate" />
+ </morph>
+ <comment>
+  &quot;PENETRATE&quot;
+ </comment>
+ <example text="the vehicle penetrated the enclosure">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::penetrate
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />

@@ -4205,7 +4205,7 @@
            OPTIONAL)))
 
 (CONCEPT ONT::ENTERING
-         (INHERIT ONT::MOTION)
+         (INHERIT ONT::EVENT-OF-ACTION)
          (OVERLAP WN::|enter%2:38:00::|
                   WN::|come_in%2:38:02::|
                   WN::|get_into%2:38:00::|
@@ -5520,7 +5520,7 @@
            OPTIONAL)))
 
 (CONCEPT ONT::GUIDING
-         (INHERIT ONT::INTENTIONALLY-ACT)
+         (INHERIT ONT::CONTROL-MANAGE)
          (OVERLAP WN::|lead%2:38:01::|
                   WN::|take%2:38:09::|
                   WN::|direct%2:38:00::|
@@ -5824,7 +5824,7 @@
                   WN::|parallel%3:00:00::|))
 
 (CONCEPT ONT::HOST
-         (INHERIT ONT::INTENTIONALLY-ACT)
+         (INHERIT ONT::CONTROL-MANAGE)
          (OVERLAP WN::|sponsor%2:40:00::|
                   WN::|patronize%2:40:00::|
                   WN::|patronise%2:40:00::|)
@@ -8330,7 +8330,7 @@
          (OVERLAP WN::|patient%1:18:00::|))
 
 (CONCEPT ONT::PENETRATE
-         (INHERIT ONT::ENTERING)
+         (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|stab%2:35:02::| WN::|penetrate%2:35:00::|)
          (SEM-FRAME
           (ONT::AFFECTED
@@ -9340,14 +9340,17 @@
                     (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::QUANTITY
-         (INHERIT ONT::GROUP-OBJECT-ABSTR ONT::GROUP-OBJECT)
+         (INHERIT ONT::GROUP-OBJECT)
          (OVERLAP WN::|measure%1:03:00::|
                   WN::|quantity%1:03:00::|
-                  WN::|amount%1:03:00::|
-                  WN::|measure%1:03:00::|
+                  WN::|amount%1:03:00::|)
+         (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
+
+(CONCEPT ONT::QUANTITY-ABSTR
+         (INHERIT ONT::GROUP-OBJECT-ABSTR)
+         (OVERLAP WN::|measure%1:03:00::|
                   WN::|quantity%1:03:00::|
                   WN::|amount%1:03:00::|)
-         (SEM-FRAME (ONT::FIGURE (CONCEPT T)))
          (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::QUANTITY-RELATED-PROPERTY-VAL
@@ -10580,7 +10583,9 @@
 
 (CONCEPT ONT::SHARPEN-SOFT (INHERIT ONT::SHAPE-CHANGE))
 
-(CONCEPT ONT::SHEET (INHERIT ONT::GROUP-OBJECT-ABSTR ONT::GROUP-OBJECT))
+(CONCEPT ONT::SHEET (INHERIT ONT::GROUP-OBJECT))
+
+(CONCEPT ONT::SHEET-ABSTR (INHERIT ONT::GROUP-OBJECT-ABSTR))
 
 (CONCEPT ONT::SHIPPING-COMPANY (INHERIT ONT::COMPANY))
 
@@ -10937,7 +10942,7 @@
                   WN::|plant%2:35:00::|))
 
 (CONCEPT ONT::SPACE
-         (INHERIT ONT::EVENT-OF-CAUSATION)
+         (INHERIT ONT::ARRANGING)
          (OVERLAP WN::|space%2:38:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (CAUSE AGENTIVE))
          (SEM-FRAME

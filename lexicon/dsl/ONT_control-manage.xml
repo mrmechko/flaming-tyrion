@@ -286,6 +286,40 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::host">
+ <relation label="inherit">
+  ont::control-manage
+ </relation>
+ <relation label="overlap">
+  wn::|sponsor%2:40:00::|
+  wn::|patronize%2:40:00::|
+  wn::|patronise%2:40:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">bounded</feat>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::arranging">
  <relation label="inherit">
   ont::control-manage
@@ -429,6 +463,46 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::guiding">
+ <relation label="inherit">
+  ont::control-manage
+ </relation>
+ <relation label="overlap">
+  wn::|lead%2:38:01::|
+  wn::|take%2:38:09::|
+  wn::|direct%2:38:00::|
+  wn::|conduct%2:38:01::|
+  wn::|guide%2:38:00::|
+  wn::|call%2:38:00::|
+  wn::|lead%2:42:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">dynamic</feat>
+  <feat name="trajectory">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sense>
  <morph>
   <pos pos="v" />
@@ -472,39 +546,6 @@
   ont::control-manage
   ont::count-pred-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="direct" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="direction" />
-   </nom>
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="the supervisor directs the crew">
- </example>
- <relation label="inherit">
-  ont::control-manage
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">unbounded</feat>
-  </sem-feats>
- </semantics>
  </sense>
  <sense>
  <morph>
