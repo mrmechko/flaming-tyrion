@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::situated-in">
  <relation label="inherit">
-  ont::situation-modifier
+  ont::situation-object-modifier
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground">
@@ -16,7 +16,10 @@
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <concept name="situation" />
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -127,14 +130,19 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
+ <role-restr-map roles="ont::ground">
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="type">situation-root</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <concept name="situation" />
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::situation-object-modifier">
@@ -155,35 +163,6 @@
     <concept name="phys-obj" />
     <concept name="situation" />
    </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="type">situation-root</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="situation" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-modifier">
- <relation label="inherit">
-  ont::situation-object-modifier
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="situation" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -266,7 +245,7 @@
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <example text="in that case">
+ <example text="in that event">
  </example>
  <relation label="inherit">
   ont::situated-in

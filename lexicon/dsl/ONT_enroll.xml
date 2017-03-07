@@ -215,7 +215,17 @@
   </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::result">
-  <concept name="phys-obj" />
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">
+   <or>
+    predicate
+    position-reln
+   </or>
+   </feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::affected1" optional="optional">
   <sem-feats>
@@ -304,7 +314,17 @@
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::result">
-   <concept name="phys-obj" />
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">
+    <or>
+     predicate
+     position-reln
+    </or>
+    </feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::affected1" optional="optional">
    <sem-feats>
@@ -501,11 +521,9 @@
   ont::enroll
  </relation>
  <syntax>
-  <template-call template="ont::agent-goal-optional-templ" xp="'(w::pp
-                                                                 (w::or w::for
-                                                                        w::in))" />
+  <template-call template="ont::agent-goal-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="(w::or w::for w::in)" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -531,8 +549,9 @@
   ont::enroll
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-affected-goal-optional-templ" />
   <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="advbl" sem-role="ont::result" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -567,7 +586,7 @@
  <syntax>
   <template-call template="ont::agent-goal-optional-templ" xp="'(w::pp w::into)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::into" sem-role="ont::result" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::into" sem-role="ont::result" optional="optional"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

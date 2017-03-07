@@ -317,24 +317,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::situated-in">
- <relation label="inherit">
-  ont::situation-modifier
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
-    <feat name="type">situation-root</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="situation" />
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::situated-out">
  <relation label="inherit">
   ont::situation-modifier
@@ -344,7 +326,10 @@
    <concept name="situation" />
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <concept name="situation" />
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
