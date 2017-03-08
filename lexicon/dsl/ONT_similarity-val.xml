@@ -186,13 +186,38 @@
  </relation>
  </concept>
  <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="alike" />
+ </morph>
  <relation label="inherit">
   ont::similarity-val
+  ont::adj-theme-templ
  </relation>
  </sense>
  <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="comparable" />
+ </morph>
+ <example text="png is comparable to gif">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::similarity-val
  </relation>
+ <syntax>
+  <template-call template="ont::adj-co-theme-templ" xp="'(w::pp
+                                                          (w::or w::in w::to))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::in w::to)" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
  </sense>
 </dsl>

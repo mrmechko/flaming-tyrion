@@ -231,8 +231,22 @@
  </sem-frame>
  </concept>
  <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="irresponsible" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <example text="He is an irresponsible person">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::responsibility-val
+  ont::central-adj-templ
  </relation>
  <semantics>
   <sem-feats>
@@ -241,13 +255,58 @@
  </semantics>
  </sense>
  <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="responsible" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <example text="responsible person">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::responsibility-val
+  ont::central-adj-templ
  </relation>
  <semantics>
   <sem-feats>
    <feat name="gradability">+</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="responsible" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <example text="responsible person">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::responsibility-val
+ </relation>
+ <syntax>
+  <template-call template="ont::central-adj-xp-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+   <feat name="comp-op">more</feat>
+  </syn-feats>
+ </syntax>
  </sense>
 </dsl>
