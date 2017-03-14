@@ -3501,7 +3501,7 @@
                     (TIME-SPAN ATOMIC)
                     (CAUSE FORCE)
                     (ASPECT BOUNDED))
-         (SEM-FRAME (ONT::SOURCE (CONCEPT T) OPTIONAL)))
+         (SEM-FRAME (ONT::NEUTRAL (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::DEPENDENCE-VAL
          (INHERIT ONT::PROPERTY-VAL)
@@ -6676,8 +6676,7 @@
                   WN::|abandon%2:31:01::|
                   WN::|abandon%2:40:01::|)
          (SEM-FRAME
-          (ONT::AFFECTED
-           (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
+          (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (MOBILITY MOVABLE)))
           (ONT::AGENT
            (SEM-FEATS (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ))
                       (INTENTIONAL +)))))
@@ -8471,12 +8470,6 @@
 (CONCEPT ONT::PHOBIA
          (INHERIT ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
          (OVERLAP WN::|phobia%1:26:00::|))
-
-(CONCEPT ONT::PHOSPHORILATED
-         (INHERIT ONT::PHYSICAL-PROPERTY-VAL)
-         (SEM-FRAME
-          (ONT::FIGURE
-           (SEM-FEATS (INHERIT PHYS-OBJ) (TYPE (OR MOLECULAR-PART CHEMICAL))))))
 
 (CONCEPT ONT::PHOSPHORYLATION (INHERIT ONT::POST-TRANSLATIONAL-MODIFICATION))
 
@@ -10459,10 +10452,12 @@
                     (TIME-SPAN EXTENDED)
                     (ASPECT UNBOUNDED)
                     (CAUSE AGENTIVE))
-         (SEM-FRAME (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
-                    ((ONT::AGENT ONT::FORMAL)
-                     (SEM-FEATS (INHERIT PHYS-OBJ)
-                                (ORIGIN (OR NON-HUMAN-ANIMAL HUMAN))))))
+         (SEM-FRAME
+          (ONT::NEUTRAL (SEM-FEATS (INHERIT PHYS-OBJ) (TYPE GEO-OBJECT))
+           OPTIONAL)
+          ((ONT::AGENT ONT::FORMAL)
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (ORIGIN (OR NON-HUMAN-ANIMAL HUMAN))))))
 
 (CONCEPT ONT::SEND
          (INHERIT ONT::TRANSFER)
@@ -12605,7 +12600,7 @@
                      OPTIONAL)))
 
 (CONCEPT ONT::WALKING
-         (INHERIT ONT::SELF-LOCOMOTE)
+         (INHERIT ONT::CAUSE-MOVE)
          (OVERLAP WN::|walk%2:38:05::|
                   WN::|walk%2:38:00::|
                   WN::|walk%2:38:02::|
@@ -12613,6 +12608,7 @@
          (SEM-FRAME
           (ONT::AFFECTED
            (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (MOBILITY MOVABLE)
                       (ORIGIN (OR NON-HUMAN-ANIMAL HUMAN))))))
 
 (CONCEPT ONT::WANT

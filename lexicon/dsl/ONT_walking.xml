@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::walking">
  <relation label="inherit">
-  ont::self-locomote
+  ont::cause-move
  </relation>
  <relation label="overlap">
   wn::|walk%2:38:05::|
@@ -18,6 +18,7 @@
     <relation label="inherit">
      phys-obj
     </relation>
+    <feat name="mobility">movable</feat>
     <feat name="origin">
     <or>
      non-human-animal
@@ -200,6 +201,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::extent" optional="optional">
   <sem-feats>
@@ -264,7 +266,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::reason" optional="optional">
   <sem-feats>
@@ -352,32 +353,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::agent ont::formal">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    non-human-animal
-    human
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="time-span">extended</feat>
- <feat name="aspect">unbounded</feat>
- <feat name="cause">agentive</feat>
- </sem-feats>
  <concept name="ont::move">
  <relation label="inherit">
   ont::motion
@@ -444,6 +419,7 @@
    <relation label="inherit">
     phys-obj
    </relation>
+   <feat name="mobility">movable</feat>
    <feat name="origin">
    <or>
     non-human-animal
@@ -453,36 +429,10 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::self-locomote">
+ <concept name="ont::cause-move">
  <relation label="inherit">
   ont::move
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="time-span">extended</feat>
-  <feat name="aspect">unbounded</feat>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent ont::formal">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     non-human-animal
-     human
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sense>
  <morph>

@@ -7716,7 +7716,7 @@
    <feat name="aspect">bounded</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::source" optional="optional">
+   <role-restr-map roles="ont::neutral" optional="optional">
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
@@ -14624,11 +14624,12 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="mobility">movable</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::agent">
     <sem-feats>
@@ -18738,26 +18739,6 @@
   <relation label="overlap">
    wn::|phobia%1:26:00::|
   </relation>
- </concept>
- <concept name="ont::phosphorilated">
-  <relation label="inherit">
-   ont::physical-property-val
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="type">
-     <or>
-      molecular-part
-      chemical
-     </or>
-     </feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::phosphorylation">
   <relation label="inherit">
@@ -23160,7 +23141,12 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::neutral" optional="optional">
-    <concept name="t" />
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="type">geo-object</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::agent ont::formal">
     <sem-feats>
@@ -27807,7 +27793,7 @@
  </concept>
  <concept name="ont::walking">
   <relation label="inherit">
-   ont::self-locomote
+   ont::cause-move
   </relation>
   <relation label="overlap">
    wn::|walk%2:38:05::|
@@ -27821,6 +27807,7 @@
      <relation label="inherit">
       phys-obj
      </relation>
+     <feat name="mobility">movable</feat>
      <feat name="origin">
      <or>
       non-human-animal
