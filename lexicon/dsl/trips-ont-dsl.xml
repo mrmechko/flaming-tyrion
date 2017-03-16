@@ -10117,6 +10117,11 @@
    wn::|worry%2:37:01::|
   </relation>
  </concept>
+ <concept name="ont::example">
+  <relation label="inherit">
+   ont::kind
+  </relation>
+ </concept>
  <concept name="ont::excited">
   <relation label="inherit">
    ont::pos-intense-emotional-val
@@ -18740,6 +18745,26 @@
    wn::|phobia%1:26:00::|
   </relation>
  </concept>
+ <concept name="ont::phosphorilated">
+  <relation label="inherit">
+   ont::physical-property-val
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="type">
+     <or>
+      molecular-part
+      chemical
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::phosphorylation">
   <relation label="inherit">
    ont::post-translational-modification
@@ -21829,8 +21854,13 @@
  </concept>
  <concept name="ont::representation">
   <relation label="inherit">
-   ont::kind
+   ont::mental-construction
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::representative">
   <comment>
