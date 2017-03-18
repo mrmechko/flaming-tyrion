@@ -9325,7 +9325,8 @@
                   WN::|force%2:38:00::|
                   WN::|thrust%2:38:00::|
                   WN::|thrust%2:42:01::|
-                  WN::|wedge%2:35:00::|))
+                  WN::|wedge%2:35:00::|
+                  WN::|bump%2:35:00::|))
 
 (CONCEPT ONT::PUSH-LIQUID
          (INHERIT ONT::APPLY-FORCE)
