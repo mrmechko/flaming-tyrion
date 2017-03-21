@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::earning">
  <relation label="inherit">
-  ont::commerce-collect
+  ont::acquire
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -251,43 +251,17 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="situation" />
  <sem-frame>
- <role-restr-map roles="ont::source" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
+ <role-restr-map roles="ont::affected">
   <sem-feats>
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
    </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::neutral ont::money" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">money-scale</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::affected ont::goods">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::extent ont::money" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">money-scale</feat>
+   <feat name="intentional">-</feat>
+   <feat name="object-function">currency</feat>
+   <feat name="type">money</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
@@ -296,8 +270,6 @@
   situation
  </relation>
  <feat name="aspect">dynamic</feat>
- <feat name="trajectory">-</feat>
- <feat name="cause">agentive</feat>
  </sem-feats>
  <concept name="ont::acquire">
  <relation label="inherit">
@@ -367,88 +339,6 @@
    </sem-feats>
   </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::commerce">
- <relation label="inherit">
-  ont::acquire
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::source" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral ont::money" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="scale">money-scale</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected ont::goods">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::extent ont::money" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="scale">money-scale</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="situation" />
- <sem-frame>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-   <feat name="object-function">currency</feat>
-   <feat name="type">money</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">dynamic</feat>
- </sem-feats>
- <concept name="ont::commerce-collect">
- <relation label="inherit">
-  ont::commerce
- </relation>
- <relation label="overlap">
-  wn::|charge%2:40:03::|
-  wn::|bill%2:40:00::|
- </relation>
  </concept>
  <sense>
  <morph>

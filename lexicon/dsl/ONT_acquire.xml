@@ -374,6 +374,30 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::earning">
+ <relation label="inherit">
+  ont::acquire
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">-</feat>
+    <feat name="object-function">currency</feat>
+    <feat name="type">money</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::acquire-by-action">
  <relation label="inherit">
   ont::acquire
@@ -568,10 +592,8 @@
   vn::obtain-13.5.2
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-source-templ" xp="'(w::pp
-                                                                   w::from)" />
+  <template-call template="ont::agent-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::from" sem-role="ont::source"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -909,10 +931,8 @@
   vn::obtain-13.5.2
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-source-templ" xp="'(w::pp
-                                                                   w::from)" />
+  <template-call template="ont::agent-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::from" sem-role="ont::source"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>

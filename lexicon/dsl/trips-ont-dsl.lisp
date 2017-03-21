@@ -1916,7 +1916,9 @@
                   WN::|remove%2:30:02::|
                   WN::|remove%2:41:00::|
                   WN::|suction%2:38:00::|)
-         (SEM-FRAME (ONT::SOURCE (CONCEPT T)) (ONT::AGENT (CONCEPT T))))
+         (SEM-FRAME (ONT::AFFECTED-RESULT (CONCEPT PHYS-OBJ) OPTIONAL)
+                    (ONT::SOURCE (CONCEPT T))
+                    (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::CAUSE-COVER
          (INHERIT ONT::EVENT-OF-CAUSATION)
@@ -3013,6 +3015,7 @@
           "an agent controls another object, typically by some manipulation (physical, adding a substance,...)")
          (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|control%2:41:00::|
+                  WN::|control%1:04:00::|
                   WN::|command%2:41:00::|
                   WN::|discharge%2:33:01::|
                   WN::|direct%2:41:00::|)
@@ -3501,7 +3504,8 @@
                     (TIME-SPAN ATOMIC)
                     (CAUSE FORCE)
                     (ASPECT BOUNDED))
-         (SEM-FRAME (ONT::NEUTRAL (CONCEPT T) OPTIONAL)))
+         (SEM-FRAME (ONT::SOURCE (CONCEPT T) OPTIONAL)
+                    (ONT::NEUTRAL (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::DEPENDENCE-VAL
          (INHERIT ONT::PROPERTY-VAL)
@@ -4020,7 +4024,7 @@
                   WN::|sob%1:26:00::|))
 
 (CONCEPT ONT::EARNING
-         (INHERIT ONT::COMMERCE-COLLECT)
+         (INHERIT ONT::ACQUIRE)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
          (SEM-FRAME
           (ONT::AFFECTED
@@ -9976,7 +9980,9 @@
          (OVERLAP WN::|duty%1:04:00::|
                   WN::|duty%1:04:02::|
                   WN::|obligation%1:04:00::|
-                  WN::|responsibility%1:04:00::|))
+                  WN::|responsibility%1:04:00::|
+                  WN::|role%1:04:01::|
+                  WN::|role%1:09:00::|))
 
 (CONCEPT ONT::RESPONSIBILITY-VAL
          (INHERIT ONT::SOCIAL-INTERACTION-VAL)
@@ -12396,10 +12402,6 @@
                   WN::|economic_consumption%1:22:00::|
                   WN::|consumption%1:22:00::|
                   WN::|use%1:07:02::|
-                  WN::|use%1:07:00::|
-                  WN::|role%1:07:00::|
-                  WN::|purpose%1:07:00::|
-                  WN::|function%1:07:00::|
                   WN::|exercise%1:04:03::|
                   WN::|employment%1:04:01::|
                   WN::|utilisation%1:04:00::|
@@ -12456,12 +12458,13 @@
 
 (CONCEPT ONT::UTILITY
          (INHERIT ONT::FUNCTION-OBJECT)
+         (OVERLAP WN::|utility%1:07:00::|)
          (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::VACATION (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY))
 
 (CONCEPT ONT::VALUE-COST
-         (INHERIT ONT::COST-RELATION)
+         (INHERIT ONT::ABSTRACT-OBJECT-NONTEMPORAL)
          (OVERLAP WN::|change%1:21:02::|
                   WN::|return%1:21:00::|
                   WN::|issue%1:21:00::|
@@ -12471,11 +12474,10 @@
                   WN::|yield%1:21:00::|
                   WN::|payoff%1:21:02::|)
          (SEM-FRAME
-          (ONT::GROUND
+          (ONT::FIGURE
            (SEM-FEATS (INHERIT ABSTR-OBJ)
                       (OBJECT-FUNCTION CURRENCY)
-                      (SCALE MONEY-SCALE)))
-          (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
+                      (SCALE MONEY-SCALE)))))
 
 (CONCEPT ONT::VEGETABLE
          (INHERIT ONT::PRODUCE)

@@ -37,25 +37,6 @@
  </or>
  </concept>
  <concept name="abstr-obj" />
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="intentional">-</feat>
- <feat name="container">-</feat>
- <feat name="orientation">-</feat>
- <feat name="intensity">-</feat>
- <feat name="scale">-</feat>
- <feat name="gradability">+</feat>
- </sem-feats>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -71,7 +52,7 @@
  </relation>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::ground">
+ <role-restr-map roles="ont::figure">
   <sem-feats>
    <relation label="inherit">
     abstr-obj
@@ -80,90 +61,19 @@
    <feat name="scale">money-scale</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="information">information-content</feat>
- <feat name="scale">money-scale</feat>
- </sem-feats>
- <concept name="ont::predicate">
+ <concept name="ont::abstract-object-nontemporal">
  <comment>
-  &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as&quot;
+  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
+  abstr-obj
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="intentional">-</feat>
-  <feat name="container">-</feat>
-  <feat name="orientation">-</feat>
-  <feat name="intensity">-</feat>
-  <feat name="scale">-</feat>
-  <feat name="gradability">+</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="object-function">currency</feat>
-   <feat name="scale">money-scale</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::cost-relation">
- <relation label="inherit">
-  ont::predicate
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="information">information-content</feat>
-  <feat name="scale">money-scale</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="object-function">currency</feat>
-    <feat name="scale">money-scale</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::value-cost">
  <relation label="inherit">
-  ont::cost-relation
+  ont::abstract-object-nontemporal
  </relation>
  <relation label="overlap">
   wn::|change%1:21:02::|
@@ -176,7 +86,7 @@
   wn::|payoff%1:21:02::|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::ground">
+  <role-restr-map roles="ont::figure">
    <sem-feats>
     <relation label="inherit">
      abstr-obj
@@ -184,12 +94,6 @@
     <feat name="object-function">currency</feat>
     <feat name="scale">money-scale</feat>
    </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
   </role-restr-map>
  </sem-frame>
  </concept>

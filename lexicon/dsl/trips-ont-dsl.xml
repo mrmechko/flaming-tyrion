@@ -4176,6 +4176,9 @@
    wn::|suction%2:38:00::|
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::affected-result" optional="optional">
+    <concept name="phys-obj" />
+   </role-restr-map>
    <role-restr-map roles="ont::source">
     <concept name="t" />
    </role-restr-map>
@@ -6596,6 +6599,7 @@
   </relation>
   <relation label="overlap">
    wn::|control%2:41:00::|
+   wn::|control%1:04:00::|
    wn::|command%2:41:00::|
    wn::|discharge%2:33:01::|
    wn::|direct%2:41:00::|
@@ -7716,6 +7720,9 @@
    <feat name="aspect">bounded</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::source" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::neutral" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -8845,7 +8852,7 @@
  </concept>
  <concept name="ont::earning">
   <relation label="inherit">
-   ont::commerce-collect
+   ont::acquire
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -22093,6 +22100,8 @@
    wn::|duty%1:04:02::|
    wn::|obligation%1:04:00::|
    wn::|responsibility%1:04:00::|
+   wn::|role%1:04:01::|
+   wn::|role%1:09:00::|
   </relation>
  </concept>
  <concept name="ont::responsibility-val">
@@ -27392,10 +27401,6 @@
    wn::|economic_consumption%1:22:00::|
    wn::|consumption%1:22:00::|
    wn::|use%1:07:02::|
-   wn::|use%1:07:00::|
-   wn::|role%1:07:00::|
-   wn::|purpose%1:07:00::|
-   wn::|function%1:07:00::|
    wn::|exercise%1:04:03::|
    wn::|employment%1:04:01::|
    wn::|utilisation%1:04:00::|
@@ -27504,6 +27509,9 @@
   <relation label="inherit">
    ont::function-object
   </relation>
+  <relation label="overlap">
+   wn::|utility%1:07:00::|
+  </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
     <concept name="t" />
@@ -27517,7 +27525,7 @@
  </concept>
  <concept name="ont::value-cost">
   <relation label="inherit">
-   ont::cost-relation
+   ont::abstract-object-nontemporal
   </relation>
   <relation label="overlap">
    wn::|change%1:21:02::|
@@ -27530,7 +27538,7 @@
    wn::|payoff%1:21:02::|
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::ground">
+   <role-restr-map roles="ont::figure">
     <sem-feats>
      <relation label="inherit">
       abstr-obj
@@ -27538,12 +27546,6 @@
      <feat name="object-function">currency</feat>
      <feat name="scale">money-scale</feat>
     </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::figure">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
