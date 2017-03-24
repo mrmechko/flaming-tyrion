@@ -7,6 +7,10 @@
                     (TIME-SPAN EXTENDED)
                     (ASPECT STATIC)))
 
+(CONCEPT ONT::ABILITY-EVENT
+         (INHERIT ONT::EVENT-OF-ACTION)
+         (OVERLAP WN::|ability%1:07:00::| WN::|ability%1:09:00::|))
+
 (CONCEPT ONT::ABILITY-VAL (INHERIT ONT::PROPERTY-VAL))
 
 (CONCEPT ONT::ABLE
@@ -219,23 +223,14 @@
 
 (CONCEPT ONT::ACT-BEHAVE
          (INHERIT ONT::ACTING)
-         (OVERLAP WN::|act%2:36:04::|
-                  WN::|act%2:41:00::|
-                  WN::|act%2:41:07::|
+         (OVERLAP WN::|act%2:29:00::|
+                  WN::|act%2:36:04::|
                   WN::|behave%2:41:01::|)
          (SEM-FRAME (ONT::FORMAL (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::ACTING
          (COMMENT "abstract event of doing something: behave, activity, ...")
          (INHERIT ONT::EVENT-OF-ACTION)
-         (OVERLAP WN::|do%2:29:09::|
-                  WN::|behave%2:29:00::|
-                  WN::|act%2:29:00::|
-                  WN::|act%1:03:00::|
-                  WN::|deed%1:03:00::|
-                  WN::|human_action%1:03:00::|
-                  WN::|human_activity%1:03:00::|
-                  WN::|activity%1:04:00::|)
          (SEM-FRAME (ONT::NOROLE (CONCEPT T) OPTIONAL)
                     (ONT::AGENT
                      (OR (CONCEPT PHYS-OBJ)
@@ -312,6 +307,15 @@
                     (TIME-SPAN EXTENDED)
                     (ASPECT DYNAMIC)
                     (TRAJECTORY -)))
+
+(CONCEPT ONT::ACTIVITY-EVENT
+         (INHERIT ONT::EVENT-OF-ACTION)
+         (OVERLAP WN::|activity%1:04:00::|
+                  WN::|action%1:04:02::|
+                  WN::|act%1:03:00::|
+                  WN::|act%2:41:00::|
+                  WN::|act%2:41:07::|)
+         (SEM-FRAME (ONT::FORMAL (CONCEPT T))))
 
 (CONCEPT ONT::ACTIVITY-ONGOING
          (INHERIT ONT::EVENT-OF-ACTION)
