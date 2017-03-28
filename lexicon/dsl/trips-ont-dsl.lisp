@@ -5625,6 +5625,9 @@
 
 (CONCEPT ONT::HAS-MEDICAL-CONDITION
          (INHERIT ONT::PHYSICAL-VAL)
+         (OVERLAP WN::|deaf%3:00:00::|
+                  WN::|blind%3:00:00::|
+                  WN::|mute%5:00:01:inarticulate:00|)
          (SEM-FRAME
           (ONT::FIGURE
            (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +) (ORIGIN HUMAN)))))
