@@ -9,7 +9,8 @@
 
 (CONCEPT ONT::ABILITY-EVENT
          (INHERIT ONT::EVENT-OF-ACTION)
-         (OVERLAP WN::|ability%1:07:00::| WN::|ability%1:09:00::|))
+         (OVERLAP WN::|ability%1:07:00::| WN::|ability%1:09:00::|)
+         (SEM-FRAME (ONT::FORMAL (CONCEPT T))))
 
 (CONCEPT ONT::ABILITY-VAL (INHERIT ONT::PROPERTY-VAL))
 
