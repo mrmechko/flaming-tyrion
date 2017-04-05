@@ -4,7 +4,10 @@
  <provenance name="TRIPS"/>
  <concept name="ont::message">
  <relation label="inherit">
-  ont::direct-representation
+  ont::information-function-object
+ </relation>
+ <relation label="overlap">
+  wn::|message%1:10:01::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -19,13 +22,6 @@
   ont::root
  </relation>
  </concept>
- <concept name="phys-obj" />
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="intentional">-</feat>
- </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -43,102 +39,60 @@
   <concept name="proposition" />
  </or>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="spatial-abstraction">
- <or>
-  spatial-point
-  spatial-region
-  strip
- </or>
- </feat>
- <feat name="mobility">non-self-moving</feat>
- <feat name="information">information-content</feat>
- <feat name="container">+</feat>
- <feat name="trajectory">+</feat>
- <feat name="object-function">representation</feat>
- <feat name="intentional">-</feat>
- <feat name="origin">artifact</feat>
- <feat name="form">object</feat>
- </sem-feats>
- <concept name="ont::phys-object">
+ <concept name="ont::abstract-object">
  <comment>
-  &quot;All physical objects: things that have substance&quot;
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
  </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
  <relation label="inherit">
   ont::referential-sem
+  abstr-obj
  </relation>
- <relation label="overlap">
-  wn::|object%1:03:00::|
-  wn::|physical_object%1:03:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="intentional">-</feat>
- </sem-feats>
  </concept>
- <concept name="ont::phys-representation">
+ <concept name="abstr-obj" />
+ <concept name="ont::abstract-object-nontemporal">
+ <comment>
+  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
+ </comment>
  <relation label="inherit">
-  ont::phys-object
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">information-content</feat>
+ </sem-feats>
+ <concept name="ont::function-object">
+ <relation label="inherit">
+  ont::abstract-object-nontemporal
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::information-function-object">
+ <relation label="inherit">
+  ont::function-object
  </relation>
  <relation label="overlap">
-  wn::|representation%1:06:00::|
-  wn::|representation%1:04:01::|
+  wn::|communication%1:03:00::|
+  wn::|criminal_record%1:10:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
-   phys-obj
+   abstr-obj
   </relation>
-  <feat name="spatial-abstraction">
-  <or>
-   spatial-point
-   spatial-region
-   strip
-  </or>
-  </feat>
-  <feat name="mobility">non-self-moving</feat>
-  <feat name="information">information-content</feat>
   <feat name="container">+</feat>
-  <feat name="trajectory">+</feat>
-  <feat name="object-function">representation</feat>
   <feat name="intentional">-</feat>
-  <feat name="origin">artifact</feat>
-  <feat name="form">object</feat>
+  <feat name="information">information-content</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::info-holder">
- <relation label="inherit">
-  ont::phys-representation
- </relation>
- </concept>
- <concept name="ont::direct-representation">
- <relation label="inherit">
-  ont::info-holder
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sense>
  <morph>
@@ -222,44 +176,6 @@
   ont::message
   ont::count-pred-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="message" />
- </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
- <example text="the message that he couldn't come">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::message
- </relation>
- <syntax>
-  <template-call template="ont::count-subcat-that-optional-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::formal" optional="optional"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">pred</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
  </sense>
  <sense>
  <morph>

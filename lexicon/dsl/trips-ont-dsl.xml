@@ -14,9 +14,9 @@
    <feat name="aspect">static</feat>
   </sem-feats>
  </concept>
- <concept name="ont::ability-event">
+ <concept name="ont::ability-state">
   <relation label="inherit">
-   ont::event-of-action
+   ont::event-of-state
   </relation>
   <relation label="overlap">
    wn::|ability%1:07:00::|
@@ -1531,11 +1531,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::appearance">
-  <relation label="inherit">
-   ont::perception
-  </relation>
- </concept>
  <concept name="ont::appears-to-have-property">
   <relation label="inherit">
    ont::have-property
@@ -1799,13 +1794,8 @@
    wn::|arrange%2:35:00::|
    wn::|reorient%2:30:00::|
    wn::|put%2:35:05::|
-   wn::|arrangement%1:09:00::|
-   wn::|organization%1:09:00::|
-   wn::|organisation%1:09:00::|
-   wn::|system%1:09:02::|
    wn::|put_aside%2:35:00::|
    wn::|address%2:32:02::|
-   wn::|hairdressing%1:04:00::|
    wn::|alternate%2:30:01::|
   </relation>
   <sem-feats>
@@ -4375,6 +4365,9 @@
   </relation>
  </concept>
  <concept name="ont::cause-produce-reproduce">
+  <comment>
+   &quot;an AGENT causes a new object to be created&quot;
+  </comment>
   <relation label="inherit">
    ont::cause-effect
   </relation>
@@ -5776,7 +5769,8 @@
    wn::|communicate%2:32:01::|
    wn::|intercommunicate%2:32:00::|
    wn::|communicate%2:32:00::|
-   wn::|communication%1:03:00::|
+   wn::|communication%1:10:01::|
+   wn::|communication%1:24:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -6011,6 +6005,11 @@
   </comment>
   <relation label="inherit">
    ont::information-function-object
+  </relation>
+  <relation label="overlap">
+   wn::|composition%1:07:01::|
+   wn::|composition%1:07:02::|
+   wn::|composition%1:04:01::|
   </relation>
  </concept>
  <concept name="ont::comprise">
@@ -7888,6 +7887,9 @@
   </sem-frame>
  </concept>
  <concept name="ont::destroy">
+  <comment>
+   &quot;render inoperative&quot;
+  </comment>
   <relation label="inherit">
    ont::change-state
   </relation>
@@ -7896,6 +7898,22 @@
    wn::|destroy%2:36:00::|
    wn::|down%2:38:00::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="type">
+     <or>
+      phys-object
+      mental-construction
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::destroy-part-of-whole">
   <relation label="inherit">
@@ -8371,6 +8389,7 @@
    wn::|field%1:09:00::|
    wn::|field_of_study%1:09:00::|
    wn::|study%1:09:02::|
+   wn::|technology%1:09:00::|
   </relation>
   <relation label="inherit">
    ont::function-object
@@ -8881,6 +8900,17 @@
    <feat name="aspect">dynamic</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::neutral">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="intentional">-</feat>
+     <feat name="object-function">currency</feat>
+     <feat name="type">money</feat>
+    </sem-feats>
+   </role-restr-map>
    <role-restr-map roles="ont::affected">
     <sem-feats>
      <or>
@@ -10066,6 +10096,7 @@
    wn::|gladden%2:37:01::|
    wn::|gratify%2:37:00::|
    wn::|cheer%2:32:03::|
+   wn::|entertain%2:41:00::|
   </relation>
  </concept>
  <concept name="ont::evoke-offense">
@@ -13461,11 +13492,16 @@
   <relation label="overlap">
    wn::|information%1:10:00::|
    wn::|info%1:10:00::|
+   wn::|indication%1:10:00::|
   </relation>
  </concept>
  <concept name="ont::information-function-object">
   <relation label="inherit">
    ont::function-object
+  </relation>
+  <relation label="overlap">
+   wn::|communication%1:03:00::|
+   wn::|criminal_record%1:10:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -14327,6 +14363,7 @@
       phys-obj
      </relation>
      <feat name="origin">living</feat>
+     <feat name="type">organism</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -14513,6 +14550,7 @@
   </relation>
   <relation label="overlap">
    wn::|language%1:10:00::|
+   wn::|dialect%1:10:00::|
   </relation>
  </concept>
  <concept name="ont::language-adjust">
@@ -14628,6 +14666,8 @@
    wn::|rent%2:41:00::|
    wn::|rent%2:41:01::|
    wn::|lease%2:41:00::|
+   wn::|rent%2:40:01::|
+   wn::|hire_out%2:40:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -15585,6 +15625,8 @@
   <relation label="overlap">
    wn::|letter%1:10:00::|
    wn::|missive%1:10:00::|
+   wn::|mail%1:10:01::|
+   wn::|mail%1:10:00::|
   </relation>
  </concept>
  <concept name="ont::make-it-so">
@@ -15811,7 +15853,6 @@
   <relation label="overlap">
    wn::|instrumentation%1:06:00::|
    wn::|instrumentality%1:06:00::|
-   wn::|device%1:06:00::|
    wn::|artifact%1:03:00::|
    wn::|artefact%1:03:00::|
   </relation>
@@ -16341,7 +16382,10 @@
  </concept>
  <concept name="ont::message">
   <relation label="inherit">
-   ont::direct-representation
+   ont::information-function-object
+  </relation>
+  <relation label="overlap">
+   wn::|message%1:10:01::|
   </relation>
  </concept>
  <concept name="ont::method">
@@ -16931,6 +16975,7 @@
   </relation>
   <relation label="overlap">
    wn::|music%1:10:00::|
+   wn::|musical_genre%1:10:00::|
   </relation>
  </concept>
  <concept name="ont::musical-instrument">
@@ -17649,6 +17694,8 @@
   </relation>
   <relation label="overlap">
    wn::|resemble%2:42:00::|
+   wn::|match%2:42:00::|
+   wn::|coordinate%2:30:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -18666,6 +18713,17 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::perceptual-appearance">
+  <relation label="inherit">
+   ont::perception
+  </relation>
+  <relation label="overlap">
+   wn::|appearance%1:07:00::|
+   wn::|facial_expression$+%1:10:00::|
+   wn::|countenance%1:07:00::|
+   wn::|countenance%1:08:00::|
+  </relation>
  </concept>
  <concept name="ont::perfective">
   <relation label="inherit">
@@ -21702,6 +21760,9 @@
    wn::|disembarrass%2:40:00::|
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::affected-result" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::affected" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -22667,6 +22728,7 @@
    wn::|rub%2:35:00::|
    wn::|rub%2:39:00::|
    wn::|stroke%2:35:00::|
+   wn::|smooth%2:40:00::|
   </relation>
  </concept>
  <concept name="ont::rw-status-val">
@@ -25978,8 +26040,11 @@
  </concept>
  <concept name="ont::technology">
   <relation label="inherit">
-   ont::discipline
-   abstr-obj
+   ont::manufactured-object
+  </relation>
+  <relation label="overlap">
+   wn::|technology%1:04:00::|
+   wn::|technology%1:06:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
@@ -26092,6 +26157,12 @@
    ont::temporal-predicate
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::standard">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::scale">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::figure">
     <or>
      <concept name="phys-obj" />
@@ -27563,6 +27634,15 @@
    wn::|payoff%1:21:02::|
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="object-function">currency</feat>
+     <feat name="scale">money-scale</feat>
+    </sem-feats>
+   </role-restr-map>
    <role-restr-map roles="ont::figure">
     <sem-feats>
      <relation label="inherit">

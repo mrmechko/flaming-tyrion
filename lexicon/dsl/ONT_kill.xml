@@ -22,6 +22,7 @@
      phys-obj
     </relation>
     <feat name="origin">living</feat>
+    <feat name="type">organism</feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
@@ -299,6 +300,22 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="type">
+   <or>
+    phys-object
+    mental-construction
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::change-state">
  <relation label="inherit">
   ont::change
@@ -334,10 +351,14 @@
     phys-obj
    </relation>
    <feat name="origin">living</feat>
+   <feat name="type">organism</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::destroy">
+ <comment>
+  &quot;render inoperative&quot;
+ </comment>
  <relation label="inherit">
   ont::change-state
  </relation>
@@ -346,6 +367,22 @@
   wn::|destroy%2:36:00::|
   wn::|down%2:38:00::|
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="type">
+    <or>
+     phys-object
+     mental-construction
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sense>
  <morph>
