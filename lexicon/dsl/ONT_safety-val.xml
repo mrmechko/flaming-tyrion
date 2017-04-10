@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::safety-val">
  <relation label="inherit">
-  ont::process-val
+  ont::evaluation-attribute-val
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -189,19 +189,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::process-val">
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized; subjective to the observer&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
- </relation>
- </concept>
- <concept name="ont::safe">
- <relation label="inherit">
-  ont::safety-val
- </relation>
- <relation label="overlap">
-  wn::|safe%3:00:01::|
-  wn::|secure%3:00:02::|
-  wn::|safe%3:00:01::|
  </relation>
  </concept>
  <concept name="ont::dangerous">
@@ -211,36 +204,15 @@
  <relation label="overlap">
   wn::|dangerous%3:00:00::|
   wn::|insecure%3:00:02::|
-  wn::|dangerous%3:00:00::|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="benign" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;LOU-SENT-ENTRY&quot;
- </comment>
+ <concept name="ont::safe">
  <relation label="inherit">
   ont::safety-val
-  ont::central-adj-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="confidential" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::safety-val
-  ont::central-adj-templ
+ <relation label="overlap">
+  wn::|secure%3:00:02::|
+  wn::|safe%3:00:01::|
  </relation>
- </sense>
+ </concept>
 </dsl>

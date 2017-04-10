@@ -4,7 +4,11 @@
  <provenance name="TRIPS"/>
  <concept name="ont::mental-val">
  <relation label="inherit">
-  ont::property-val
+  ont::associated-with-val
+ </relation>
+ <relation label="overlap">
+  wn::|mental%3:00:00::|
+  wn::|mental%3:01:00::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
@@ -138,11 +142,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -199,6 +198,19 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::associated-with-val">
+ <comment>
+  &quot;words that pertain to another word&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="adj" />
@@ -213,6 +225,16 @@
  <example text="mental activity">
   <provenance name="TRIPS"/>
  </example>
+ <relation label="inherit">
+  ont::mental-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="cerebral" />
+ </morph>
  <relation label="inherit">
   ont::mental-val
   ont::central-adj-templ

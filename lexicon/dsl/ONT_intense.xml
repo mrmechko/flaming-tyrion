@@ -7,21 +7,20 @@
   ont::intensity-val
  </relation>
  <relation label="overlap">
-  wn::|high%3:00:03::|
-  wn::|intense%3:00:00::|
-  wn::|powerful%3:00:00::|
-  wn::|strong%3:00:00::|
-  wn::|deep%3:00:01::|
-  wn::|high%3:00:02::|
-  wn::|intense%3:00:00::|
-  wn::|sharp%3:00:04::|
-  wn::|intensive%5:00:00:intense:00|
   wn::|potent%5:00:00:powerful:00|
-  wn::|strong%5:00:00:powerful:00|
-  wn::|strong%5:00:00:intense:00|
-  wn::|shrill%5:00:00:high:03|
-  wn::|deep%5:00:00:intense:00|
+  wn::|strong%3:00:00::|
   wn::|acute%5:00:00:sharp:04|
+  wn::|strong%5:00:00:powerful:00|
+  wn::|high%3:00:02::|
+  wn::|intense%5:00:00:sharp:04|
+  wn::|shrill%5:00:00:high:03|
+  wn::|powerful%3:00:00::|
+  wn::|strong%5:00:00:intense:00|
+  wn::|sharp%3:00:04::|
+  wn::|intense%3:00:00::|
+  wn::|high%3:00:03::|
+  wn::|deep%5:00:00:intense:00|
+  wn::|intensive%5:00:00:intense:00|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -206,16 +205,36 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-val">
+ <concept name="ont::dimensional-property-val">
+ <comment>
+  &quot;properties pertaining to dimensions and measurable extents&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
  <concept name="ont::intensity-val">
  <relation label="inherit">
-  ont::physical-property-val
+  ont::dimensional-property-val
  </relation>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="acute" />
+ </morph>
+ <relation label="inherit">
+  ont::intense
+  ont::less-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="orientation">less</feat>
+   <feat name="intensity">hi</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
  <sense>
  <morph>
   <pos pos="adj" />
@@ -353,6 +372,29 @@
  <semantics>
   <sem-feats>
    <feat name="orientation">more</feat>
+   <feat name="intensity">hi</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="vigorous" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::intense
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="orientation">less</feat>
    <feat name="intensity">hi</feat>
    <feat name="gradability">+</feat>
   </sem-feats>

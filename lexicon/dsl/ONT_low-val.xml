@@ -4,11 +4,11 @@
  <provenance name="TRIPS"/>
  <concept name="ont::low-val">
  <relation label="inherit">
-  ont::height-val
+  ont::position-on-dimension-scale-val
  </relation>
  <relation label="overlap">
-  wn::|low%3:00:02::|
   wn::|low%3:00:01::|
+  wn::|low%3:00:02::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -40,6 +40,7 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::scale">
   <concept name="t" />
@@ -136,28 +137,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">linear-scale</feat>
- </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -214,65 +193,18 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="abstr-obj" />
- <concept name="ont::linear-val">
+ <concept name="ont::dimensional-property-val">
+ <comment>
+  &quot;properties pertaining to dimensions and measurable extents&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">linear-scale</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <sem-feats>
+ <concept name="ont::position-on-dimension-scale-val">
  <relation label="inherit">
-  abstr-obj
+  ont::dimensional-property-val
  </relation>
- <feat name="scale">height-scale</feat>
- </sem-feats>
- <concept name="ont::linear-dimension">
- <relation label="inherit">
-  ont::linear-val
- </relation>
- <relation label="overlap">
-  wn::|deep%5:00:00::|
-  wn::|shallow%3:00:01::|
-  wn::|deep%3:00:01::|
- </relation>
- </concept>
- <concept name="ont::height-val">
- <relation label="inherit">
-  ont::linear-dimension
- </relation>
- <relation label="overlap">
-  wn::|high%3:00:02::|
-  wn::|high%3:00:01::|
-  wn::|tall%3:00:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">height-scale</feat>
- </sem-feats>
  </concept>
  <sense>
  <morph>

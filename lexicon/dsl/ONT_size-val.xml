@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::size-val">
  <relation label="inherit">
-  ont::physical-property-val
+  ont::dimensional-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -201,9 +201,31 @@
  </relation>
  <feat name="scale">size-scale</feat>
  </sem-feats>
- <concept name="ont::physical-property-val">
+ <concept name="ont::dimensional-property-val">
+ <comment>
+  &quot;properties pertaining to dimensions and measurable extents&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::linear-extent-val">
+ <relation label="inherit">
+  ont::size-val
+ </relation>
+ </concept>
+ <concept name="ont::two-dimensional-val">
+ <relation label="inherit">
+  ont::size-val
+ </relation>
+ <relation label="overlap">
+  wn::|roomy%5:00:00:commodious:00|
+  wn::|spacious%5:00:00:commodious:00|
+ </relation>
+ </concept>
+ <concept name="ont::relative-to-height-val">
+ <relation label="inherit">
+  ont::size-val
  </relation>
  </concept>
  <concept name="ont::large">
@@ -211,16 +233,15 @@
   ont::size-val
  </relation>
  <relation label="overlap">
-  wn::|unlimited%3:00:00::|
-  wn::|large%3:00:00::|
-  wn::|humongous%5:00:00:large:00|
-  wn::|huge%5:00:01:large:00|
-  wn::|elephantine%5:00:00:large:00|
-  wn::|enormous%5:00:00:large:00|
-  wn::|massive%5:00:00:large:00|
   wn::|extensive%5:00:00:large:00|
   wn::|double%5:00:00:large:00|
+  wn::|massive%5:00:00:large:00|
+  wn::|enormous%5:00:00:large:00|
+  wn::|humongous%5:00:00:large:00|
   wn::|broad%5:00:00:large:00|
+  wn::|elephantine%5:00:00:large:00|
+  wn::|huge%5:00:01:large:00|
+  wn::|large%3:00:00::|
  </relation>
  </concept>
  <concept name="ont::small">
@@ -230,21 +251,8 @@
  <relation label="overlap">
   wn::|bantam%5:00:00:small:00|
   wn::|small%3:00:00::|
-  wn::|limited%3:00:00::|
-  wn::|bitty%5:00:00:small:00|
-  wn::|minor%5:00:00:limited:00|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="average" />
- </morph>
- <relation label="inherit">
-  ont::size-val
-  ont::central-adj-templ
- </relation>
- </sense>
  <sense>
  <morph>
   <pos pos="adj" />
@@ -264,39 +272,6 @@
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="king" />
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="a room with a king bed">
- </example>
- <relation label="inherit">
-  ont::size-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="medium" />
- </morph>
- <relation label="inherit">
-  ont::size-val
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">-</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
   <word first-word="quadruple" />
  </morph>
  <comment>
@@ -305,54 +280,6 @@
  <relation label="inherit">
   ont::size-val
   ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="queen" />
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <example text="a room with a queen bed">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::size-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="roomy" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::size-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="slight" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::size-val
-  ont::less-adj-templ
  </relation>
  </sense>
  <sense>

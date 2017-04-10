@@ -7,7 +7,11 @@
   &quot;broken/not-operational more permanently - needs fixing, not switching on&quot;
  </comment>
  <relation label="inherit">
-  ont::inactive
+  ont::functionality-val
+ </relation>
+ <relation label="overlap">
+  wn::|broken%5:00:00:damaged:00|
+  wn::|nonfunctional%3:00:03::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -39,6 +43,7 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::scale">
   <concept name="t" />
@@ -64,7 +69,6 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
@@ -136,23 +140,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">provides-service</feat>
-   <feat name="type">location</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="gradability">-</feat>
- </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -209,80 +196,47 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::activity-val">
+ <concept name="ont::object-affordances-val">
  <comment>
-  &quot;predicates relating to whether something is acting as intended for some process&quot;
+  &quot;properties pertaining to the function of a entity or an object&quot;
  </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="gradability">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="object-function">provides-service</feat>
-    <feat name="type">location</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <concept name="ont::inactive">
- <comment>
-  &quot;not operating as intended wrt some process&quot;
- </comment>
+ <concept name="ont::functionality-val">
  <relation label="inherit">
-  ont::activity-val
- </relation>
- <relation label="overlap">
-  wn::|passive%3:00:01::|
-  wn::|idle%3:00:00::|
+  ont::object-affordances-val
  </relation>
  </concept>
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="defective" />
+  <word first-word="down" />
  </morph>
- <example text="if the library is defective, you pay for it">
-  <provenance name="TRIPS"/>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the lines are down">
  </example>
  <relation label="inherit">
   ont::not-in-working-order-val
-  ont::central-adj-templ
+  ont::predicative-only-adj-templ
  </relation>
  </sense>
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="faulty" />
+  <word first-word="down" />
  </morph>
- <comment>
-  &quot;PORTABILITY-EXPERIMENT&quot;
- </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="they have lines down">
+ </example>
  <relation label="inherit">
   ont::not-in-working-order-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="off" remaining-words="kilter" />
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <relation label="inherit">
-  ont::not-in-working-order-val
-  ont::central-adj-templ
+  ont::postpositive-adj-templ
  </relation>
  </sense>
  <sense>
@@ -298,32 +252,6 @@
  <relation label="inherit">
   ont::not-in-working-order-val
   ont::predicative-only-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="out" remaining-words="of whack" />
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <relation label="inherit">
-  ont::not-in-working-order-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="out" remaining-words="of kilter" />
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <relation label="inherit">
-  ont::not-in-working-order-val
-  ont::central-adj-templ
  </relation>
  </sense>
 </dsl>

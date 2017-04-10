@@ -4,15 +4,11 @@
  <provenance name="TRIPS"/>
  <concept name="ont::broad">
  <relation label="inherit">
-  ont::linear-val
+  ont::non-vertical-val
  </relation>
  <relation label="overlap">
+  wn::|broad%3:00:04::|
   wn::|wide%3:00:00::|
-  wn::|fat%3:00:01::|
-  wn::|thick%3:00:01::|
-  wn::|chubby%5:00:00:fat:01|
-  wn::|fat%3:00:01::|
-  wn::|compact%5:00:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -69,7 +65,6 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
@@ -141,28 +136,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">linear-scale</feat>
- </sem-feats>
+ <concept name="abstr-obj" />
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -219,45 +193,47 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::linear-val">
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">size-scale</feat>
+ </sem-feats>
+ <concept name="ont::dimensional-property-val">
+ <comment>
+  &quot;properties pertaining to dimensions and measurable extents&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::size-val">
+ <relation label="inherit">
+  ont::dimensional-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">linear-scale</feat>
+  <feat name="scale">size-scale</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
+ </concept>
+ <concept name="ont::linear-extent-val">
+ <relation label="inherit">
+  ont::size-val
+ </relation>
+ </concept>
+ <concept name="ont::non-vertical-val">
+ <relation label="inherit">
+  ont::linear-extent-val
+ </relation>
  </concept>
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="fat" />
-  <forms>
-   -ER
-  </forms>
+  <word first-word="broad" />
  </morph>
- <comment>
-  &quot;SPEECH-PRETEST&quot;
- </comment>
- <example text="a fat cat">
+ <example text="a broad range">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
@@ -266,56 +242,11 @@
  </relation>
  <semantics>
   <sem-feats>
+   <feat name="intensity">med</feat>
    <feat name="orientation">more</feat>
-   <feat name="intensity">hi</feat>
    <feat name="gradability">+</feat>
   </sem-feats>
  </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="plump" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <example text="a plump cat">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::broad
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="orientation">more</feat>
-   <feat name="intensity">hi</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="thick" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <example text="a thick wall">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::broad
-  ont::central-adj-templ
- </relation>
  </sense>
  <sense>
  <morph>

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::loudness-val">
  <relation label="inherit">
-  ont::audible-property-val
+  ont::audibility-val
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -203,6 +203,9 @@
  </sem-frame>
  </concept>
  <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
@@ -210,6 +213,11 @@
  <concept name="ont::sensory-property-val">
  <relation label="inherit">
   ont::physical-property-val
+ </relation>
+ </concept>
+ <concept name="ont::audible-property-val">
+ <relation label="inherit">
+  ont::sensory-property-val
  </relation>
  </concept>
  <concept name="abstr-obj" />
@@ -227,9 +235,12 @@
  </relation>
  <feat name="measure-function">value</feat>
  </sem-feats>
- <concept name="ont::audible-property-val">
+ <concept name="ont::audibility-val">
  <relation label="inherit">
-  ont::sensory-property-val
+  ont::audible-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|audible%3:00:00::|
  </relation>
  </concept>
  <concept name="ont::noisy">
@@ -247,9 +258,9 @@
  </relation>
  <relation label="overlap">
   wn::|hushed%5:00:00:soft:04|
-  wn::|soft%3:00:04::|
   wn::|quiet%3:00:01::|
-  wn::|silent%5:00:00:quiet:01|
+  wn::|quiet%5:00:00:soft:04|
+  wn::|soft%3:00:04::|
  </relation>
  </concept>
 </dsl>

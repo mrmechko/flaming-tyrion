@@ -184,121 +184,109 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::living-val">
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized; subjective to the observer&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
- <relation label="overlap">
-  wn::|live%3:00:00::|
-  wn::|dead%3:00:01::|
-  wn::|dead%3:00:02::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="type">organism</feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::behavioral-property">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="type">organism</feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::habituated">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <concept name="phys-obj" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
  <concept name="ont::process-val">
+ <comment>
+  &quot;properties that describe processes&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
- <concept name="ont::classification-val">
+ <concept name="ont::animal-propensity-val">
+ <comment>
+  &quot;properties that describe to human or animal tendencies or inclinations to behave in a particular manner&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
- <concept name="ont::quantity-related-property-val">
+ <concept name="ont::dimensional-property-val">
+ <comment>
+  &quot;properties pertaining to dimensions and measurable extents&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::relational-attribute-val">
+ <comment>
+  &quot;properties that describe an entity with respect to another related entity&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::temporal">
+ <comment>
+  &quot;properties relating to time&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::object-affordances-val">
+ <comment>
+  &quot;properties pertaining to the function of a entity or an object&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::status-val">
+ <comment>
+  &quot;properties that describe social or political status or position&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::standard" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::ground" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::urban-val">
+ <concept name="ont::psychological-property-val">
+ <comment>
+  &quot;properties pertaining to psychological, mental or emotional states&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
- <concept name="ont::social-interaction-val">
+ <concept name="ont::associated-with-val">
+ <comment>
+  &quot;words that pertain to another word&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <concept name="ont::automatic">
+ <concept name="ont::discrete-property-val">
  <relation label="inherit">
   ont::property-val
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::fascination-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="gradability">-</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::spatial">
  <relation label="inherit">
@@ -321,284 +309,23 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::temporal">
+ <concept name="ont::quantity-related-property-val">
  <relation label="inherit">
   ont::property-val
  </relation>
- </concept>
- <concept name="ont::linear-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">linear-scale</feat>
- </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::standard" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::ground" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
+   <concept name="t" />
   </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::consistent-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::discrete-property-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="gradability">-</feat>
- </sem-feats>
- </concept>
- <concept name="ont::certainty-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
  </concept>
  <concept name="ont::commerce-val">
  <relation label="inherit">
   ont::property-val
  </relation>
- </concept>
- <concept name="ont::correctness-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::precision-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::familiarity-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::unfamiliarity-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::typicality-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::atypicality-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::novelty-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::conventionality-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::specialness-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::substandard-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::evaluation-attribute-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::expletive-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::luckiness-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::economic-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::specificity-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::physical-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::mental-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::status-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::nationality-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::complexity-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::ability-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::expectation-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::medical">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::abstract-information-property-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="gradability">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     ?ft
-    </relation>
-    <feat name="information">information-content</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::orderliness-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::national-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::activity-val">
- <comment>
-  &quot;predicates relating to whether something is acting as intended for some process&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="gradability">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="object-function">provides-service</feat>
-    <feat name="type">location</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::dependence-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sense>
  <morph>
@@ -660,25 +387,6 @@
   &quot;CALOY2&quot;
  </comment>
  <example text="a portable computer">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::property-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="stylish" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
- <example text="do you want to choose a stylish color">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">

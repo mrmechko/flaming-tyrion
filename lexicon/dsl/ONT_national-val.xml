@@ -4,7 +4,14 @@
  <provenance name="TRIPS"/>
  <concept name="ont::national-val">
  <relation label="inherit">
-  ont::property-val
+  ont::country-related-val
+ </relation>
+ <relation label="overlap">
+  wn::|domestic%3:00:00::|
+  wn::|national%5:00:00:domestic:00|
+  wn::|interior%5:00:00:domestic:00|
+  wn::|home%5:00:00:domestic:00|
+  wn::|internal%5:00:00:domestic:00|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -133,6 +140,11 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -189,18 +201,47 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::status-val">
+ <comment>
+  &quot;properties that describe social or political status or position&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::country-related-val">
+ <relation label="inherit">
+  ont::status-val
+ </relation>
+ </concept>
+ <concept name="ont::federal-val">
+ <relation label="inherit">
+  ont::national-val
+ </relation>
+ <relation label="overlap">
+  wn::|federal%5:00:00:national:01|
+  wn::|federal%3:01:02::|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="federal" />
+  <word first-word="domestic" />
  </morph>
- <example text="federal government">
-  <provenance name="TRIPS"/>
- </example>
  <relation label="inherit">
   ont::national-val
   ont::central-adj-templ
  </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="gradability">-</feat>
+  </sem-feats>
+ </semantics>
  </sense>
  <sense>
  <morph>

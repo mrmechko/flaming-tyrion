@@ -4,38 +4,20 @@
  <provenance name="TRIPS"/>
  <concept name="ont::strange">
  <relation label="inherit">
-  ont::typicality-val
+  ont::atypical-val
  </relation>
  <relation label="overlap">
-  wn::|strange%3:00:00::|
-  wn::|abnormal%3:00:00::|
+  wn::|irregular%5:00:00:abnormal:00|
+  wn::|weird%5:00:00:strange:00|
+  wn::|freaky%5:00:00:strange:00|
   wn::|bizarre%5:00:00:unconventional:01|
-  wn::|bizarre%5:00:00:unconventional:01|
-  wn::|bizarre%5:00:00:unconventional:01|
-  wn::|especial%5:00:00::|
-  wn::|atypical%5:00:00:abnormal:00|
-  wn::|unconventional%3:00:01::|
-  wn::|unconventional%3:00:01::|
-  wn::|unconventional%3:00:01::|
-  wn::|unconventional%3:00:01::|
-  wn::|uncommon%3:00:00::|
-  wn::|unusual%3:00:00::|
-  wn::|unconventional%3:00:00::|
-  wn::|strange%5:00:01:unfamiliar:00|
+  wn::|funky%5:00:00:unconventional:01|
   wn::|atypical%3:00:00::|
-  wn::|extraordinary%3:00:00::|
-  wn::|extraordinary%3:00:00::|
-  wn::|unfamiliar%3:00:00::|
-  wn::|uncommon%3:00:00::|
-  wn::|unusual%5:00:00:uncommon:00|
-  wn::|irregular%5:00:00::|
-  wn::|curious%5:00:00::|
-  wn::|remarkable%5:00:00::|
-  wn::|remarkable%5:00:00::|
-  wn::|funky%5:00:00::|
-  wn::|odd%5:00:00::|
-  wn::|weird%5:00:00::|
-  wn::|freaky%5:00:00::|
+  wn::|atypical%5:00:00:abnormal:00|
+  wn::|abnormal%3:00:00::|
+  wn::|odd%5:00:00:unusual:00|
+  wn::|curious%5:00:00:strange:00|
+  wn::|strange%3:00:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -220,9 +202,30 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::typicality-val">
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized; subjective to the observer&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::typicality-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ </concept>
+ <concept name="ont::atypical-val">
+ <relation label="inherit">
+  ont::typicality-val
+ </relation>
+ <relation label="overlap">
+  wn::|uncommon%3:00:00::|
+  wn::|unconventional%3:00:01::|
+  wn::|unorthodox%5:00:00:unconventional:00|
+  wn::|unusual%3:00:00::|
+  wn::|unusual%5:00:00:uncommon:00|
+  wn::|unconventional%3:00:00::|
  </relation>
  </concept>
  <sense>
@@ -297,40 +300,6 @@
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="exceptional" />
- </morph>
- <relation label="inherit">
-  ont::strange
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="orientation">less</feat>
-   <feat name="intensity">med</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="extraordinary" />
- </morph>
- <relation label="inherit">
-  ont::strange
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="orientation">less</feat>
-   <feat name="intensity">med</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
   <word first-word="freaky" />
   <forms>
    -ER
@@ -381,6 +350,21 @@
    <feat name="gradability">+</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="mutant" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BIO"/>
+ </provenance>
+ <example text="mutant EGFR">
+ </example>
+ <relation label="inherit">
+  ont::strange
+  ont::central-adj-templ
+ </relation>
  </sense>
  <sense>
  <morph>
@@ -463,49 +447,6 @@
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="outlandish" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <example text="A freaky idea">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::strange
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="orientation">less</feat>
-   <feat name="intensity">hi</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="outlandish" />
- </morph>
- <relation label="inherit">
-  ont::strange
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="orientation">less</feat>
-   <feat name="intensity">med</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
   <word first-word="peculiar" />
  </morph>
  <relation label="inherit">
@@ -523,46 +464,6 @@
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="remarkable" />
- </morph>
- <relation label="inherit">
-  ont::strange
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="orientation">less</feat>
-   <feat name="intensity">med</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="singular" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::strange
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="orientation">less</feat>
-   <feat name="intensity">hi</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
   <word first-word="strange" />
   <forms>
    -ER
@@ -573,83 +474,6 @@
   &quot;HTML-PURCHASING-CORPUS&quot;
  </comment>
  <example text="A strange idea">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::strange
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="orientation">less</feat>
-   <feat name="intensity">med</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="uncommon" />
- </morph>
- <relation label="inherit">
-  ont::strange
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="orientation">less</feat>
-   <feat name="intensity">med</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="unconventional" />
- </morph>
- <relation label="inherit">
-  ont::strange
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="orientation">less</feat>
-   <feat name="intensity">med</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="unorthodox" />
- </morph>
- <relation label="inherit">
-  ont::strange
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="orientation">less</feat>
-   <feat name="intensity">med</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="unusual" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <example text="They are unusual">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">

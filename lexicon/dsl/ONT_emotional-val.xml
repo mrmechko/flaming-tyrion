@@ -189,82 +189,17 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-val">
+ <concept name="ont::psychological-property-val">
+ <comment>
+  &quot;properties pertaining to psychological, mental or emotional states&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::experiencer" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">non-living</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::body-related-property-val">
+ <concept name="ont::thankfulness-val">
  <relation label="inherit">
-  ont::physical-property-val
- </relation>
- </concept>
- <concept name="ont::animal-property-val">
- <relation label="inherit">
-  ont::body-related-property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::experiencer" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">non-living</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::psychological-property-val">
- <relation label="inherit">
-  ont::animal-property-val
+  ont::emotional-val
  </relation>
  </concept>
  <concept name="ont::pos-emotional-val">
@@ -327,71 +262,6 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="adj" />
-  <word first-word="enthusiastic" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <example text="I am enthusiastic / an enthusiastic person">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::emotional-val
-  ont::central-adj-experiencer-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="enthusiastic" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="an enthusiactic message">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::emotional-val
-  ont::central-adj-content-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="enthusiastic" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <example text="I am enthusiastic about her">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::emotional-val
- </relation>
- <syntax>
-  <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp w::about)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
   <pos pos="n" />
   <word first-word="happiness" />
  </morph>
@@ -443,22 +313,6 @@
  <relation label="inherit">
   ont::emotional-val
   ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="heartbreaking" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="unhappy news">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::emotional-val
-  ont::central-adj-content-templ
  </relation>
  </sense>
  <sense>
@@ -569,89 +423,6 @@
     |3p|
    </or>
    </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="ungrateful" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="he is ungrateful / an ungrateful person">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::emotional-val
-  ont::central-adj-experiencer-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="ungrateful" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="a ungrateful comment">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::emotional-val
-  ont::central-adj-content-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="wild" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <example text="I am wild / an angry person">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::emotional-val
-  ont::central-adj-experiencer-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="wild" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <example text="I am wild about her">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::emotional-val
- </relation>
- <syntax>
-  <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp w::about)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::about" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::neutral"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
   </syn-feats>
  </syntax>
  </sense>

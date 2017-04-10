@@ -9,7 +9,7 @@
  <relation label="overlap">
   wn::|incompetent%3:00:00::|
   wn::|incapable%3:00:00::|
-  wn::|unable%5:00:00::|
+  wn::|unable%5:00:00:incapable:00|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -194,9 +194,17 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::ability-val">
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized; subjective to the observer&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::ability-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
  </relation>
  </concept>
  <sense>
@@ -226,6 +234,30 @@
    <feat name="sort">pred</feat>
   </syn-feats>
  </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="incompetent" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <example text="He is an incompetent person">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::unable
+  ont::less-adj-templ
+ </relation>
  <semantics>
   <sem-feats>
    <feat name="gradability">+</feat>

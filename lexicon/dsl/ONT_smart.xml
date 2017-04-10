@@ -7,10 +7,10 @@
   ont::intelligence-val
  </relation>
  <relation label="overlap">
-  wn::|intelligent%3:00:00::|
   wn::|smart%3:00:00::|
   wn::|bright%5:00:00:intelligent:00|
   wn::|cagey%5:00:00:smart:00|
+  wn::|intelligent%3:00:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -195,82 +195,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-val">
+ <concept name="ont::psychological-property-val">
+ <comment>
+  &quot;properties pertaining to psychological, mental or emotional states&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::experiencer" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">non-living</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::body-related-property-val">
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- </concept>
- <concept name="ont::animal-property-val">
- <relation label="inherit">
-  ont::body-related-property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::experiencer" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">non-living</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::psychological-property-val">
- <relation label="inherit">
-  ont::animal-property-val
  </relation>
  </concept>
  <concept name="ont::intelligence-val">
@@ -278,23 +208,16 @@
   ont::psychological-property-val
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="clever" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
+ <concept name="ont::clever-val">
  <relation label="inherit">
   ont::smart
-  ont::central-adj-templ
  </relation>
- </sense>
+ <relation label="overlap">
+  wn::|cunning%5:00:00:adroit:00|
+  wn::|clever%5:00:00:adroit:00|
+  wn::|ingenious%5:00:00:adroit:00|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="adj" />

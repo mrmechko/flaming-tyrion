@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::dampness-val">
  <relation label="inherit">
-  ont::substantial-property-val
+  ont::physical-property-val
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure">
@@ -197,11 +197,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
   <or>
@@ -210,43 +205,28 @@
   </or>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::substantial-property-val">
+ <concept name="ont::physical-property-val">
  <comment>
-  &quot;properties having to do with physical substance&quot;
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
  </comment>
  <relation label="inherit">
-  ont::physical-property-val
+  ont::property-val
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="dry" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
+ <concept name="ont::dry-val">
  <relation label="inherit">
   ont::dampness-val
-  ont::less-adj-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="wet" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
+ <relation label="overlap">
+  wn::|dry%3:00:01::|
+ </relation>
+ </concept>
+ <concept name="ont::wet-val">
  <relation label="inherit">
   ont::dampness-val
-  ont::central-adj-templ
  </relation>
- </sense>
+ <relation label="overlap">
+  wn::|wet%3:00:01::|
+ </relation>
+ </concept>
 </dsl>

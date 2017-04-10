@@ -6,6 +6,9 @@
  <relation label="inherit">
   ont::heavy
  </relation>
+ <relation label="overlap">
+  wn::|overweight%5:00:00:fat:01|
+ </relation>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -195,7 +198,10 @@
  </relation>
  <feat name="scale">weight-scale</feat>
  </sem-feats>
- <concept name="ont::physical-property-val">
+ <concept name="ont::dimensional-property-val">
+ <comment>
+  &quot;properties pertaining to dimensions and measurable extents&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
@@ -208,7 +214,7 @@
  </sem-feats>
  <concept name="ont::weight-val">
  <relation label="inherit">
-  ont::physical-property-val
+  ont::dimensional-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -220,6 +226,9 @@
  <concept name="ont::heavy">
  <relation label="inherit">
   ont::weight-val
+ </relation>
+ <relation label="overlap">
+  wn::|heavy%3:00:01::|
  </relation>
  <sem-feats>
   <relation label="inherit">

@@ -4,14 +4,15 @@
  <provenance name="TRIPS"/>
  <concept name="ont::certain">
  <relation label="inherit">
-  ont::confidence-val
+  ont::certainty-val
  </relation>
  <relation label="overlap">
+  wn::|definite%5:00:00:certain:01|
   wn::|certain%3:00:01::|
-  wn::|convinced%5:00:00::|
-  wn::|sealed%3:00:02::|
   wn::|certain%3:00:02::|
   wn::|indisputable%5:00:00:certain:01|
+  wn::|sealed%3:00:02::|
+  wn::|convinced%5:00:00:certain:02|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -196,90 +197,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::experiencer" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">non-living</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::body-related-property-val">
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- </concept>
- <concept name="ont::animal-property-val">
- <relation label="inherit">
-  ont::body-related-property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::experiencer" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">non-living</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::psychological-property-val">
+ <comment>
+  &quot;properties pertaining to psychological, mental or emotional states&quot;
+ </comment>
  <relation label="inherit">
-  ont::animal-property-val
+  ont::property-val
  </relation>
  </concept>
- <concept name="ont::confidence-val">
+ <concept name="ont::certainty-val">
  <relation label="inherit">
   ont::psychological-property-val
  </relation>
@@ -391,6 +322,31 @@
   &quot;CALOY2&quot;
  </comment>
  <example text="he is confident that he will win">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::certain
+ </relation>
+ <syntax>
+  <template-call template="ont::central-adj-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+   <feat name="comp-op">more</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="definite" />
+ </morph>
+ <example text="he is certain that he will come to the party">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">

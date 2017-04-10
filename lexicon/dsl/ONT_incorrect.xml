@@ -7,10 +7,10 @@
   ont::correctness-val
  </relation>
  <relation label="overlap">
-  wn::|incorrect%3:00:00::|
-  wn::|inaccurate%3:00:00::|
   wn::|faulty%5:00:00:inaccurate:00|
   wn::|false%5:00:00:incorrect:00|
+  wn::|incorrect%3:00:00::|
+  wn::|inaccurate%3:00:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -195,9 +195,22 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::correctness-val">
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized; subjective to the observer&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::information-property-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ </concept>
+ <concept name="ont::correctness-val">
+ <relation label="inherit">
+  ont::information-property-val
  </relation>
  </concept>
  <sense>
@@ -241,5 +254,42 @@
   ont::incorrect
   ont::central-adj-templ
  </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="wrong" />
+ </morph>
+ <example text="that's wrong">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::incorrect
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="wrong" />
+ </morph>
+ <example text="that's wrong for him">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::incorrect
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-co-theme-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
  </sense>
 </dsl>

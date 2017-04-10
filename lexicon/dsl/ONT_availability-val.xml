@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::availability-val">
  <relation label="inherit">
-  ont::can-be-done-val
+  ont::process-val
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
@@ -199,40 +199,39 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::process-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
   <or>
    <concept name="phys-obj" />
    <concept name="situation" />
   </or>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::can-be-done-val">
+ <concept name="ont::process-val">
+ <comment>
+  &quot;properties that describe processes&quot;
+ </comment>
  <relation label="inherit">
-  ont::process-val
+  ont::property-val
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
+ </concept>
+ <concept name="ont::not-available-val">
+ <relation label="inherit">
+  ont::availability-val
+ </relation>
+ <relation label="overlap">
+  wn::|missing%5:00:00:nonexistent:00|
+  wn::|unavailable%3:00:00::|
+ </relation>
  </concept>
  <concept name="ont::available">
  <relation label="inherit">
   ont::availability-val
  </relation>
  <relation label="overlap">
+  wn::|ready%5:00:01:available:00|
+  wn::|free%3:00:02::|
   wn::|available%3:00:00::|
-  wn::|free%3:00:00::|
-  wn::|available%5:00:00:free:00|
+  wn::|free%5:00:02:unoccupied:00|
+  wn::|handy%5:00:00:accessible:00|
  </relation>
  </concept>
  <sense>
@@ -250,89 +249,6 @@
   ont::availability-val
   ont::postpositive-adj-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="handy" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <example text="that's handy [for him]">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::availability-val
- </relation>
- <syntax>
-  <template-call template="ont::central-adj-xp-templ" xp="'(w::pp w::for)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-   <feat name="comp-op">more</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="handy" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <example text="that's handy to use">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::availability-val
- </relation>
- <syntax>
-  <template-call template="ont::central-adj-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::ground" optional="optional"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-   <feat name="comp-op">more</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="in" remaining-words="place" />
- </morph>
- <example text="that's in place [for him]">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::availability-val
- </relation>
- <syntax>
-  <template-call template="ont::central-adj-xp-templ" xp="'(w::pp w::for)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-   <feat name="comp-op">more</feat>
-  </syn-feats>
- </syntax>
  </sense>
  <sense>
  <morph>
@@ -362,40 +278,6 @@
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="missing" />
- </morph>
- <comment>
-  &quot;MOCKUP-STUDENT-1&quot;
- </comment>
- <relation label="inherit">
-  ont::availability-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="on" remaining-words="hand" />
- </morph>
- <comment>
-  &quot;S15&quot;
- </comment>
- <example text="use what you have on hand">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::availability-val
-  ont::postpositive-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">-</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
   <word first-word="present" />
   <forms>
    -LY
@@ -411,220 +293,6 @@
   ont::availability-val
   ont::central-adj-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="ready" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="it's ready">
- </example>
- <relation label="inherit">
-  ont::availability-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="ready" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="that's ready for him">
- </example>
- <relation label="inherit">
-  ont::availability-val
- </relation>
- <syntax>
-  <template-call template="ont::central-adj-xp-templ" xp="'(w::pp w::for)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-   <feat name="comp-op">more</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="ready" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he's ready to go">
- </example>
- <relation label="inherit">
-  ont::availability-val
- </relation>
- <syntax>
-  <template-call template="ont::central-adj-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::ground" optional="optional"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-   <feat name="comp-op">more</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="unavailable" />
- </morph>
- <example text="that's unavailable [to him]">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::availability-val
- </relation>
- <syntax>
-  <template-call template="ont::central-adj-optional-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::to" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="unavailable" />
- </morph>
- <example text="it is unavailable in 4 MW capacity">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::availability-val
- </relation>
- <syntax>
-  <template-call template="ont::adj-subcat-property-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::in" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">-</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="unreachable" />
- </morph>
- <example text="the server is unreachable">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::availability-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="unusable" />
- </morph>
- <example text="your attachment may be unusable">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::availability-val
- </relation>
- <syntax>
-  <template-call template="ont::adj-purpose-optional-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::reason"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">-</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="unused" />
- </morph>
- <example text="the box is unused">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::availability-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="usable" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::availability-val
- </relation>
- <syntax>
-  <template-call template="ont::adj-purpose-optional-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::reason"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
  </sense>
  <sense>
  <morph>

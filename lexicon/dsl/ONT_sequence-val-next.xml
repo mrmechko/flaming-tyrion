@@ -6,6 +6,10 @@
  <relation label="inherit">
   ont::sequence-val
  </relation>
+ <relation label="overlap">
+  wn::|following%5:00:02:succeeding:00|
+  wn::|subsequent%3:00:00::|
+ </relation>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -200,14 +204,17 @@
  </relation>
  <feat name="gradability">-</feat>
  </sem-feats>
- <concept name="ont::process-val">
+ <concept name="ont::relational-attribute-val">
+ <comment>
+  &quot;properties that describe an entity with respect to another related entity&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
  <concept name="ont::sequence-val">
  <relation label="inherit">
-  ont::process-val
+  ont::relational-attribute-val
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -224,6 +231,16 @@
  <sense>
  <morph>
   <pos pos="adj" />
+  <word first-word="following" />
+ </morph>
+ <relation label="inherit">
+  ont::sequence-val-next
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
   <word first-word="next" />
  </morph>
  <provenance name="TRIPS">
@@ -235,5 +252,32 @@
   ont::sequence-val-next
   ont::central-adj-templ
  </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="subsequent" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <example text="it applies to all subsequent copies">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sequence-val-next
+ </relation>
+ <syntax>
+  <template-call template="ont::central-adj-optional-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::to" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
  </sense>
 </dsl>

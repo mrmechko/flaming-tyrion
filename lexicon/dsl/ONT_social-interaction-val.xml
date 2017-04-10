@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::social-interaction-val">
  <relation label="inherit">
-  ont::property-val
+  ont::animal-propensity-val
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure">
@@ -142,15 +142,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -207,6 +198,23 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::animal-propensity-val">
+ <comment>
+  &quot;properties that describe to human or animal tendencies or inclinations to behave in a particular manner&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
  <concept name="ont::responsibility-val">
  <relation label="inherit">
   ont::social-interaction-val
@@ -224,99 +232,26 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::willing">
+ <concept name="ont::willingness-val">
  <relation label="inherit">
   ont::social-interaction-val
  </relation>
- <relation label="overlap">
-  wn::|willing%3:00:00::|
-  wn::|incapable%3:00:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <concept name="ont::unwilling">
+ <concept name="ont::friendliness-val">
  <relation label="inherit">
   ont::social-interaction-val
  </relation>
- <relation label="overlap">
-  wn::|unwilling%3:00:00::|
-  wn::|unwilling%3:00:00:involuntary:01|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="affectionate" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="this class of dogs is affectionate">
-  <provenance name="TRIPS"/>
- </example>
+ <concept name="ont::tameness-val">
  <relation label="inherit">
   ont::social-interaction-val
-  ont::central-adj-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="friendly" />
- </morph>
- <example text="friendly person">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::social-interaction-val
-  ont::central-adj-templ
- </relation>
- </sense>
+ </concept>
  <sense>
  <morph>
   <pos pos="adj" />
   <word first-word="in" remaining-words="touch" />
  </morph>
- <relation label="inherit">
-  ont::social-interaction-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="warm" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="the atmosphere is warm / a warm atmosphere">
- </example>
  <relation label="inherit">
   ont::social-interaction-val
   ont::central-adj-templ

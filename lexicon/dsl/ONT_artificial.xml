@@ -4,13 +4,15 @@
  <provenance name="TRIPS"/>
  <concept name="ont::artificial">
  <relation label="inherit">
-  ont::natural-val
+  ont::artificiality-val
  </relation>
  <relation label="overlap">
-  wn::|affected%3:00:01::|
+  wn::|synthetic%5:00:00:artificial:00|
+  wn::|false%5:00:00:artificial:00|
   wn::|artificial%3:00:00::|
-  wn::|unnatural%3:00:00::|
-  wn::|artificial%5:00:00:affected:01|
+  wn::|unreal%3:00:04::|
+  wn::|faux%5:00:00:artificial:00|
+  wn::|imitation%5:00:02:artificial:00|
   wn::|fake%5:00:00:artificial:00|
  </relation>
  </concept>
@@ -196,33 +198,23 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
- <concept name="ont::natural-val">
+ <concept name="ont::real-vs-fake-val">
  <relation label="inherit">
   ont::physical-property-val
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
+ </concept>
+ <concept name="ont::artificiality-val">
+ <relation label="inherit">
+  ont::real-vs-fake-val
+ </relation>
  </concept>
  <sense>
  <morph>
@@ -247,6 +239,9 @@
   <pos pos="adj" />
   <word first-word="fake" />
  </morph>
+ <example text="fake teeth">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::artificial
   ont::central-adj-templ
@@ -256,6 +251,22 @@
    <feat name="gradability">+</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="false" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <example text="false teeth">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::artificial
+  ont::central-adj-templ
+ </relation>
  </sense>
  <sense>
  <morph>
@@ -271,6 +282,22 @@
    <feat name="gradability">+</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="realistic" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::artificial
+  ont::central-adj-templ
+ </relation>
  </sense>
  <sense>
  <morph>

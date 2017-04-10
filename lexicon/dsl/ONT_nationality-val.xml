@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::nationality-val">
  <relation label="inherit">
-  ont::property-val
+  ont::national-identity-val
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -133,6 +133,11 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -189,40 +194,34 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::status-val">
+ <comment>
+  &quot;properties that describe social or political status or position&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::country-related-val">
+ <relation label="inherit">
+  ont::status-val
+ </relation>
+ </concept>
+ <concept name="ont::national-identity-val">
+ <relation label="inherit">
+  ont::country-related-val
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="african" />
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <relation label="inherit">
-  ont::nationality-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="american" />
  </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <relation label="inherit">
-  ont::nationality-val
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="arabic" />
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
  <relation label="inherit">
   ont::nationality-val
   ont::central-adj-templ
@@ -230,28 +229,12 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="n" />
-  <word first-word="asian" />
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <relation label="inherit">
-  ont::nationality-val
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
+  <pos pos="adj" />
   <word first-word="australian" />
  </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
  <relation label="inherit">
   ont::nationality-val
-  ont::count-pred-templ
+  ont::central-adj-templ
  </relation>
  </sense>
  <sense>
@@ -309,32 +292,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="european" />
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <relation label="inherit">
-  ont::nationality-val
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="foreign" />
- </morph>
- <comment>
-  &quot;PROJECTOR-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::nationality-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="foreigner" />
  </morph>
  <comment>
@@ -360,54 +317,19 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="n" />
+  <pos pos="adj" />
   <word first-word="german" />
  </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
  <relation label="inherit">
   ont::nationality-val
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="hindu" />
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <relation label="inherit">
-  ont::nationality-val
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="indian" />
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <relation label="inherit">
-  ont::nationality-val
-  ont::count-pred-templ
+  ont::central-adj-templ
  </relation>
  </sense>
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="international" />
+  <word first-word="indian" />
  </morph>
- <comment>
-  &quot;PROJECTOR-CORPUS&quot;
- </comment>
- <example text="display international characters">
-  <provenance name="TRIPS"/>
- </example>
  <relation label="inherit">
   ont::nationality-val
   ont::central-adj-templ
@@ -428,15 +350,12 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="n" />
+  <pos pos="adj" />
   <word first-word="italian" />
  </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
  <relation label="inherit">
   ont::nationality-val
-  ont::count-pred-templ
+  ont::central-adj-templ
  </relation>
  </sense>
  <sense>
@@ -454,28 +373,12 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="n" />
+  <pos pos="adj" />
   <word first-word="korean" />
  </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
  <relation label="inherit">
   ont::nationality-val
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="north" remaining-words="american" />
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <relation label="inherit">
-  ont::nationality-val
-  ont::count-pred-templ
+  ont::central-adj-templ
  </relation>
  </sense>
  <sense>
@@ -493,15 +396,12 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="n" />
+  <pos pos="adj" />
   <word first-word="pakistani" />
  </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
  <relation label="inherit">
   ont::nationality-val
-  ont::count-pred-templ
+  ont::central-adj-templ
  </relation>
  </sense>
  <sense>
@@ -519,15 +419,12 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="n" />
+  <pos pos="adj" />
   <word first-word="russian" />
  </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
  <relation label="inherit">
   ont::nationality-val
-  ont::count-pred-templ
+  ont::central-adj-templ
  </relation>
  </sense>
  <sense>
@@ -547,19 +444,6 @@
  <morph>
   <pos pos="n" />
   <word first-word="serbian" />
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <relation label="inherit">
-  ont::nationality-val
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="south" remaining-words="american" />
  </morph>
  <comment>
   &quot;CALOY3&quot;

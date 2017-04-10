@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::body-property-val">
  <relation label="inherit">
-  ont::animal-property-val
+  ont::body-related-property-val
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -190,203 +190,46 @@
  </sem-frame>
  </concept>
  <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::experiencer" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">non-living</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::body-related-property-val">
  <relation label="inherit">
   ont::physical-property-val
  </relation>
  </concept>
- <concept name="ont::animal-property-val">
+ <concept name="ont::alertness-val">
  <relation label="inherit">
-  ont::body-related-property-val
+  ont::body-property-val
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::experiencer" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">non-living</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <concept name="ont::hungry">
+ <concept name="ont::awakeness-val">
+ <relation label="inherit">
+  ont::body-property-val
+ </relation>
+ </concept>
+ <concept name="ont::energy-supply-val">
+ <relation label="inherit">
+  ont::body-property-val
+ </relation>
+ </concept>
+ <concept name="ont::satedness-val">
+ <relation label="inherit">
+  ont::body-property-val
+ </relation>
+ </concept>
+ <concept name="ont::sweaty-val">
  <relation label="inherit">
   ont::body-property-val
  </relation>
  <relation label="overlap">
-  wn::|hungry%3:00:00::|
-  wn::|famished%5:00:00:hungry:00|
-  wn::|hungry%3:00:00::|
-  wn::|hungry%3:00:00::|
-  wn::|peckish%5:00:00:hungry:00|
+  wn::|clammy%5:00:00:wet:01|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="alert" />
- </morph>
- <example text="he is alert">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::body-property-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="asleep" />
- </morph>
- <example text="he is asleep">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::body-property-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="awake" />
- </morph>
- <example text="he is asleep">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::body-property-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="drowsy" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <relation label="inherit">
-  ont::body-property-val
-  ont::central-adj-experiencer-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="healthy" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <example text="healthy person">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::body-property-val
-  ont::central-adj-experiencer-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="healthy" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;PROJECTOR-PURCHASING&quot;
- </comment>
- <example text="a healthy diet">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::body-property-val
-  ont::central-adj-content-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="sleepy" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <relation label="inherit">
-  ont::body-property-val
-  ont::central-adj-experiencer-templ
- </relation>
- </sense>
  <sense>
  <morph>
   <pos pos="adj" />
@@ -395,23 +238,6 @@
  <relation label="inherit">
   ont::body-property-val
   ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="thirsty" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <relation label="inherit">
-  ont::body-property-val
-  ont::central-adj-experiencer-templ
  </relation>
  </sense>
 </dsl>

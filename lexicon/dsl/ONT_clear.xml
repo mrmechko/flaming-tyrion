@@ -7,8 +7,8 @@
   ont::clarity-val
  </relation>
  <relation label="overlap">
-  wn::|obvious%3:00:00::|
   wn::|apparent%5:00:00:obvious:00|
+  wn::|obvious%3:00:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -194,13 +194,21 @@
  </sem-frame>
  </concept>
  <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized; subjective to the observer&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
- <concept name="ont::clarity-val">
+ <concept name="ont::information-property-val">
  <relation label="inherit">
   ont::evaluation-attribute-val
+ </relation>
+ </concept>
+ <concept name="ont::clarity-val">
+ <relation label="inherit">
+  ont::information-property-val
  </relation>
  </concept>
  <sense>
@@ -253,6 +261,28 @@
   <sem-feats>
    <feat name="orientation">more</feat>
    <feat name="intensity">med</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="plain" />
+  <forms>
+   -LY
+   -ER
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::clear
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
    <feat name="gradability">+</feat>
   </sem-feats>
  </semantics>

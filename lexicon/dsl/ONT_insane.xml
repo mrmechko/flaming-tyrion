@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::insane">
  <relation label="inherit">
-  ont::reasonable-val
+  ont::not-sensible-val
  </relation>
  <relation label="overlap">
   wn::|brainsick%5:00:00:insane:00|
@@ -193,104 +193,26 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-val">
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized; subjective to the observer&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::experiencer" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">non-living</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::body-related-property-val">
+ <concept name="ont::sensibility-val">
  <relation label="inherit">
-  ont::physical-property-val
+  ont::evaluation-attribute-val
  </relation>
  </concept>
- <concept name="ont::animal-property-val">
+ <concept name="ont::not-sensible-val">
  <relation label="inherit">
-  ont::body-related-property-val
+  ont::sensibility-val
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::experiencer" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">non-living</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::psychological-property-val">
- <relation label="inherit">
-  ont::animal-property-val
+ <relation label="overlap">
+  wn::|unreasonable%3:00:00::|
  </relation>
- </concept>
- <concept name="ont::reasonable-val">
- <relation label="inherit">
-  ont::psychological-property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sense>
  <morph>

@@ -220,8 +220,29 @@
  <feat name="scale">speed-scale</feat>
  </sem-feats>
  <concept name="ont::process-val">
+ <comment>
+  &quot;properties that describe processes&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::slow-val">
+ <relation label="inherit">
+  ont::speed-val
+ </relation>
+ <relation label="overlap">
+  wn::|slow%3:00:01::|
+ </relation>
+ </concept>
+ <concept name="ont::instant-val">
+ <relation label="inherit">
+  ont::speed-val
+ </relation>
+ <relation label="overlap">
+  wn::|instantaneous%5:00:00:fast:01|
+  wn::|instant%5:00:00:fast:01|
+  wn::|sudden%3:00:00::|
  </relation>
  </concept>
  <concept name="ont::speedy">
@@ -229,13 +250,12 @@
   ont::speed-val
  </relation>
  <relation label="overlap">
-  wn::|quick%5:00:00:fast:01|
   wn::|quick%5:00:02:fast:01|
-  wn::|fast%3:00:01::|
   wn::|fleet%5:00:00:fast:01|
   wn::|rapid%5:00:00:fast:01|
   wn::|rapid%5:00:02:fast:01|
-  wn::|instantaneous%5:00:00:fast:01|
+  wn::|fast%3:00:01::|
+  wn::|quick%5:00:00:fast:01|
  </relation>
  </concept>
  <sense>
@@ -249,39 +269,6 @@
  <comment>
   &quot;CALOY3&quot;
  </comment>
- <relation label="inherit">
-  ont::speed-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="slow" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <relation label="inherit">
-  ont::speed-val
-  ont::less-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="sudden" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="sudden cardiac death">
-  <provenance name="TRIPS"/>
- </example>
  <relation label="inherit">
   ont::speed-val
   ont::central-adj-templ

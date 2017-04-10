@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::specificity-val">
  <relation label="inherit">
-  ont::property-val
+  ont::evaluation-attribute-val
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -189,56 +189,31 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="certain" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="a certain number of results">
- </example>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized; subjective to the observer&quot;
+ </comment>
  <relation label="inherit">
-  ont::specificity-val
-  ont::central-adj-templ
+  ont::property-val
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="particular" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::specificity-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="specific" />
-  <forms>
-   -LY
-  </forms>
- </morph>
+ </concept>
+ <concept name="ont::specific-val">
  <relation label="inherit">
   ont::specificity-val
  </relation>
- <syntax>
-  <template-call template="ont::central-adj-optional-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::to" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- </sense>
+ <relation label="overlap">
+  wn::|specific%3:00:00::|
+  wn::|particular%5:00:00:specific:00|
+ </relation>
+ </concept>
+ <concept name="ont::general-val">
+ <relation label="inherit">
+  ont::specificity-val
+ </relation>
+ <relation label="overlap">
+  wn::|general%3:00:00::|
+  wn::|overall%5:00:00:general:00|
+  wn::|nonspecific%3:00:00::|
+ </relation>
+ </concept>
 </dsl>

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::actuality-val">
  <relation label="inherit">
-  ont::physical-property-val
+  ont::real-vs-fake-val
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure">
@@ -199,6 +199,14 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
   <sem-feats>
@@ -209,19 +217,31 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::physical-property-val">
+ <concept name="ont::real-vs-fake-val">
  <relation label="inherit">
-  ont::property-val
+  ont::physical-property-val
  </relation>
  </concept>
  <concept name="ont::actual">
  <relation label="inherit">
   ont::actuality-val
  </relation>
+ <relation label="overlap">
+  wn::|real%3:00:00::|
+  wn::|real%5:00:00:concrete:00|
+  wn::|actual%5:00:00:real:00|
+ </relation>
  </concept>
  <concept name="ont::nonactual">
  <relation label="inherit">
   ont::actuality-val
+ </relation>
+ <relation label="overlap">
+  wn::|virtual%5:00:00:essential:00|
+  wn::|imaginary%5:00:00:unreal:00|
+  wn::|theoretical%3:00:00::|
+  wn::|hypothetical%5:00:00:theoretical:00|
+  wn::|unreal%3:00:00::|
  </relation>
  </concept>
 </dsl>

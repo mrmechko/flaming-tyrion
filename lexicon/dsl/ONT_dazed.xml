@@ -4,11 +4,12 @@
  <provenance name="TRIPS"/>
  <concept name="ont::dazed">
  <relation label="inherit">
-  ont::physical-symptom-val
+  ont::ailing
  </relation>
  <relation label="overlap">
   wn::|lethargic%3:00:00::|
   wn::|dazed%5:00:00:lethargic:00|
+  wn::|groggy%5:00:00:lethargic:00|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -137,11 +138,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -198,6 +194,14 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
   <sem-feats>
@@ -209,19 +213,14 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::physical-val">
+ <concept name="ont::body-related-property-val">
  <relation label="inherit">
-  ont::property-val
+  ont::physical-property-val
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::has-medical-condition">
  <relation label="inherit">
-  ont::physical-val
+  ont::body-related-property-val
  </relation>
  <relation label="overlap">
   wn::|deaf%3:00:00::|
@@ -243,6 +242,21 @@
  <concept name="ont::physical-symptom-val">
  <relation label="inherit">
   ont::has-medical-condition
+ </relation>
+ <relation label="overlap">
+  wn::|puffy%5:00:00:unhealthy:00|
+ </relation>
+ </concept>
+ <concept name="ont::ailing">
+ <relation label="inherit">
+  ont::physical-symptom-val
+ </relation>
+ <relation label="overlap">
+  wn::|unwell%5:00:01:ill:01|
+  wn::|ailing%5:00:00:ill:01|
+  wn::|sick%3:00:01::|
+  wn::|ill%3:00:01::|
+  wn::|upset%5:00:00:ill:01|
  </relation>
  </concept>
  <sense>
@@ -270,6 +284,23 @@
    -LY
   </forms>
  </morph>
+ <relation label="inherit">
+  ont::dazed
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="muzzy" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
  <relation label="inherit">
   ont::dazed
   ont::central-adj-templ

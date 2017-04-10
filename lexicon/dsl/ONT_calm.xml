@@ -7,7 +7,7 @@
   ont::pos-soft-emotional-val
  </relation>
  <relation label="overlap">
-  wn::|calm%3:00:00:composed:00|
+  wn::|calm%5:00:00:composed:00|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -192,82 +192,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-val">
+ <concept name="ont::psychological-property-val">
+ <comment>
+  &quot;properties pertaining to psychological, mental or emotional states&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::experiencer" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">non-living</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::body-related-property-val">
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- </concept>
- <concept name="ont::animal-property-val">
- <relation label="inherit">
-  ont::body-related-property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::experiencer" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">non-living</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::psychological-property-val">
- <relation label="inherit">
-  ont::animal-property-val
  </relation>
  </concept>
  <concept name="ont::emotional-val">
@@ -285,4 +215,14 @@
   ont::pos-emotional-val
  </relation>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="calm" />
+ </morph>
+ <relation label="inherit">
+  ont::calm
+  ont::central-adj-templ
+ </relation>
+ </sense>
 </dsl>

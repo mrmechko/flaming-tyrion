@@ -10,10 +10,10 @@
   ont::activity-val
  </relation>
  <relation label="overlap">
-  wn::|busy%3:00:00::|
-  wn::|active%3:00:03::|
-  wn::|active%3:00:06::|
   wn::|busy%5:00:01:active:06|
+  wn::|active%3:00:06::|
+  wn::|active%3:00:03::|
+  wn::|busy%3:00:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -45,6 +45,7 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::scale">
   <concept name="t" />
@@ -70,7 +71,6 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
@@ -142,23 +142,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">provides-service</feat>
-   <feat name="type">location</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="gradability">-</feat>
- </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -215,19 +198,32 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="object-function">provides-service</feat>
+   <feat name="type">location</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::object-affordances-val">
+ <comment>
+  &quot;properties pertaining to the function of a entity or an object&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
  <concept name="ont::activity-val">
  <comment>
   &quot;predicates relating to whether something is acting as intended for some process&quot;
  </comment>
  <relation label="inherit">
-  ont::property-val
+  ont::object-affordances-val
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="gradability">-</feat>
- </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure">
    <sem-feats>
@@ -235,50 +231,6 @@
      phys-obj
     </relation>
     <feat name="object-function">provides-service</feat>
-    <feat name="type">location</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::active-on">
- <comment>
-  &quot;operating as intended, typically due to some switching on/off&quot;
- </comment>
- <relation label="inherit">
-  ont::active
- </relation>
- <relation label="overlap">
-  wn::|on%3:00:02::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="object-function">provides-service-on-off</feat>
-    <feat name="type">location</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::active-up">
- <comment>
-  &quot;operating as intended, typically for ongoing available services using up/down&quot;
- </comment>
- <relation label="inherit">
-  ont::active
- </relation>
- <relation label="overlap">
-  wn::|functioning%3:00:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="object-function">provides-service-up-down</feat>
     <feat name="type">location</feat>
    </sem-feats>
   </role-restr-map>
@@ -305,6 +257,38 @@
    </sem-feats>
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::active-on">
+ <comment>
+  &quot;operating as intended, typically due to some switching on/off&quot;
+ </comment>
+ <relation label="inherit">
+  ont::active
+ </relation>
+ <relation label="overlap">
+  wn::|on%3:00:00::|
+  wn::|on%3:00:02::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="object-function">provides-service-on-off</feat>
+    <feat name="type">location</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::hyperactive-val">
+ <relation label="inherit">
+  ont::active
+ </relation>
+ <relation label="overlap">
+  wn::|hyperactive%5:00:00:active:01|
+  wn::|overactive%5:00:00:active:01|
+ </relation>
  </concept>
  <sense>
  <morph>
@@ -361,36 +345,5 @@
   ont::active
   ont::central-adj-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="functional" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::active
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="hyperactive" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::active
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
  </sense>
 </dsl>

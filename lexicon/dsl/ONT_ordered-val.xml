@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::ordered-val">
  <relation label="inherit">
-  ont::process-val
+  ont::relational-attribute-val
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -189,80 +189,32 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::process-val">
+ <concept name="ont::relational-attribute-val">
+ <comment>
+  &quot;properties that describe an entity with respect to another related entity&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="consecutive" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="display consecutive pages side-by-side">
-  <provenance name="TRIPS"/>
- </example>
+ <concept name="ont::sequential-val">
  <relation label="inherit">
   ont::ordered-val
-  ont::central-adj-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="respective" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="put them in their respective slots">
-  <provenance name="TRIPS"/>
- </example>
+ <relation label="overlap">
+  wn::|sequential%5:00:00:ordered:00|
+  wn::|consecutive%5:00:00:ordered:00|
+  wn::|sequent%5:00:00:ordered:00|
+  wn::|successive%5:00:00:ordered:00|
+  wn::|serial%5:00:00:ordered:00|
+ </relation>
+ </concept>
+ <concept name="ont::random-val">
  <relation label="inherit">
   ont::ordered-val
-  ont::central-adj-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="sequential" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="do it in sequential order">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::ordered-val
-  ont::central-adj-templ
+ <relation label="overlap">
+  wn::|random%3:00:00::|
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="serial" />
- </morph>
- <example text="a serial broadcast">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::ordered-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="successive" />
- </morph>
- <relation label="inherit">
-  ont::ordered-val
-  ont::central-adj-templ
- </relation>
- </sense>
+ </concept>
 </dsl>

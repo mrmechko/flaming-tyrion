@@ -7,23 +7,15 @@
   ont::acceptability-val
  </relation>
  <relation label="overlap">
-  wn::|all_right%5:00:00:satisfactory:00|
-  wn::|favorable%3:00:02::|
-  wn::|acceptable%3:00:00::|
-  wn::|tolerable%3:00:00::|
-  wn::|nice%3:00:00::|
-  wn::|satisfactory%3:00:00::|
-  wn::|bearable%5:00:00:tolerable:00|
-  wn::|satisfactory%5:00:00:good:01|
-  wn::|good%3:00:01::|
-  wn::|tolerable%3:00:00::|
-  wn::|tolerable%3:00:00::|
-  wn::|bang-up%5:00:00:good:01|
-  wn::|bearable%5:00:00:tolerable:00|
-  wn::|alright%5:00:00:satisfactory:00|
-  wn::|superb%5:00:00:good:01|
-  wn::|good%5:00:00:nice:00|
   wn::|adequate%5:00:00:satisfactory:00|
+  wn::|nice%3:00:00::|
+  wn::|good%3:00:01::|
+  wn::|satisfactory%5:00:00:good:01|
+  wn::|all_right%5:00:00:satisfactory:00|
+  wn::|good%5:00:00:nice:00|
+  wn::|satisfactory%3:00:00::|
+  wn::|acceptable%3:00:00::|
+  wn::|favorable%3:00:02::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -209,6 +201,9 @@
  </sem-frame>
  </concept>
  <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized; subjective to the observer&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
@@ -216,6 +211,18 @@
  <concept name="ont::acceptability-val">
  <relation label="inherit">
   ont::evaluation-attribute-val
+ </relation>
+ </concept>
+ <concept name="ont::great-val">
+ <relation label="inherit">
+  ont::good
+ </relation>
+ <relation label="overlap">
+  wn::|superb%5:00:00:good:01|
+  wn::|bang-up%5:00:00:good:01|
+  wn::|great%5:00:01:extraordinary:00|
+  wn::|phenomenal%5:00:00:extraordinary:00|
+  wn::|fantastic%5:00:00:extraordinary:00|
  </relation>
  </concept>
  <sense>
@@ -234,6 +241,46 @@
   <sem-feats>
    <feat name="intensity">med</feat>
    <feat name="orientation">more</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="acceptably" />
+ </morph>
+ <example text="his ankles are acceptably strong">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+  ont::adj-operator-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">med</feat>
+   <feat name="orientation">pos</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="acceptably" />
+ </morph>
+ <example text="he performed acceptably on the exam">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+  ont::pred-vp-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">med</feat>
+   <feat name="orientation">pos</feat>
    <feat name="gradability">+</feat>
   </sem-feats>
  </semantics>
@@ -358,6 +405,115 @@
  <sense>
  <morph>
   <pos pos="adj" />
+  <word first-word="allright" />
+ </morph>
+ <example text="a good book">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">lo</feat>
+   <feat name="orientation">more</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="allright" />
+ </morph>
+ <example text="a wall good for climbing">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-purpose-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::reason"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">lo</feat>
+   <feat name="orientation">more</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="allright" />
+ </morph>
+ <example text="a drug suitable for cancer">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-purpose-implicit-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::reason"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">lo</feat>
+   <feat name="orientation">more</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="allright" />
+ </morph>
+ <example text="a solution good for him">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">lo</feat>
+   <feat name="orientation">more</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
   <word first-word="alright" />
  </morph>
  <example text="a good book">
@@ -467,19 +623,46 @@
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="bearable" />
+  <word first-word="cool" />
   <forms>
+   -ER
    -LY
   </forms>
  </morph>
  <relation label="inherit">
   ont::good
-  ont::less-adj-templ
+  ont::central-adj-templ
  </relation>
  <semantics>
   <sem-feats>
-   <feat name="intensity">lo</feat>
-   <feat name="orientation">less</feat>
+   <feat name="intensity">med</feat>
+   <feat name="orientation">more</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="decent" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="a good book">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">med</feat>
+   <feat name="orientation">more</feat>
    <feat name="gradability">+</feat>
   </sem-feats>
  </semantics>
@@ -762,143 +945,6 @@
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="great" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="a good book">
- </example>
- <relation label="inherit">
-  ont::good
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">hi</feat>
-   <feat name="orientation">more</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="great" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="a wall good for climbing">
- </example>
- <relation label="inherit">
-  ont::good
- </relation>
- <syntax>
-  <template-call template="ont::adj-purpose-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::reason"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">hi</feat>
-   <feat name="orientation">more</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="great" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="a drug suitable for cancer">
- </example>
- <relation label="inherit">
-  ont::good
- </relation>
- <syntax>
-  <template-call template="ont::adj-purpose-implicit-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::reason"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">hi</feat>
-   <feat name="orientation">more</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="great" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="a solution good for him">
- </example>
- <relation label="inherit">
-  ont::good
- </relation>
- <syntax>
-  <template-call template="ont::adj-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">hi</feat>
-   <feat name="orientation">more</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
   <word first-word="nice" />
   <forms>
    -ER
@@ -1022,6 +1068,155 @@
    <feat name="intensity">med</feat>
    <feat name="orientation">more</feat>
    <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="nicely" />
+ </morph>
+ <example text="his ankles are nicely recovered">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+  ont::adj-operator-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">med</feat>
+   <feat name="orientation">pos</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="nicely" />
+ </morph>
+ <example text="he performed nicely on the exam">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+  ont::pred-vp-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">med</feat>
+   <feat name="orientation">pos</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="o" remaining-words="k" />
+ </morph>
+ <example text="a good book">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">lo</feat>
+   <feat name="orientation">more</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="o" remaining-words="k" />
+ </morph>
+ <example text="a wall good for climbing">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-purpose-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::reason"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">lo</feat>
+   <feat name="orientation">more</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="o" remaining-words="k" />
+ </morph>
+ <example text="a drug suitable for cancer">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-purpose-implicit-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::reason"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">lo</feat>
+   <feat name="orientation">more</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="o" remaining-words="k" />
+ </morph>
+ <example text="a solution good for him">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::good
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="intensity">lo</feat>
+   <feat name="orientation">more</feat>
   </sem-feats>
  </semantics>
  </sense>
@@ -1304,197 +1499,6 @@
  <semantics>
   <sem-feats>
    <feat name="intensity">lo</feat>
-   <feat name="orientation">more</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="super" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <example text="a good book">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::good
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">hi</feat>
-   <feat name="orientation">more</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="super" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <example text="a wall good for climbing">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::good
- </relation>
- <syntax>
-  <template-call template="ont::adj-purpose-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::reason"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">hi</feat>
-   <feat name="orientation">more</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="super" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <example text="a drug suitable for cancer">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::good
- </relation>
- <syntax>
-  <template-call template="ont::adj-purpose-implicit-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::reason"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">hi</feat>
-   <feat name="orientation">more</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="super" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <example text="a solution good for him">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::good
- </relation>
- <syntax>
-  <template-call template="ont::adj-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">hi</feat>
-   <feat name="orientation">more</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="superb" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <example text="a good book">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::good
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">hi</feat>
-   <feat name="orientation">more</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="supportable" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::good
-  ont::less-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">lo</feat>
-   <feat name="orientation">less</feat>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="tolerable" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::good
-  ont::less-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">med</feat>
    <feat name="orientation">more</feat>
    <feat name="gradability">+</feat>
   </sem-feats>

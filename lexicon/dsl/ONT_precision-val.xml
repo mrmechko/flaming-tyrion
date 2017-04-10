@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::precision-val">
  <relation label="inherit">
-  ont::property-val
+  ont::information-property-val
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -189,79 +189,37 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized; subjective to the observer&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::information-property-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ </concept>
+ <concept name="ont::not-precise-val">
+ <relation label="inherit">
+  ont::precision-val
+ </relation>
+ <relation label="overlap">
+  wn::|imprecise%3:00:00::|
+  wn::|vague%3:00:04::|
+ </relation>
+ </concept>
  <concept name="ont::precise">
  <relation label="inherit">
   ont::precision-val
  </relation>
  <relation label="overlap">
-  wn::|precise%3:00:00::|
-  wn::|precise%3:00:00::|
   wn::|dead%5:00:00:precise:00|
+  wn::|precise%3:00:00::|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="approximate" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
- <relation label="inherit">
-  ont::precision-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="approximately" />
- </morph>
- <relation label="inherit">
-  ont::precision-val
-  ont::number-operator-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="exact" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::precision-val
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">-</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="imprecise" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::precision-val
-  ont::central-adj-templ
- </relation>
- </sense>
  <sense>
  <morph>
   <pos pos="adv" />
@@ -280,23 +238,6 @@
  <relation label="inherit">
   ont::precision-val
   ont::number-operator-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="vague" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <relation label="inherit">
-  ont::precision-val
-  ont::central-adj-templ
  </relation>
  </sense>
 </dsl>

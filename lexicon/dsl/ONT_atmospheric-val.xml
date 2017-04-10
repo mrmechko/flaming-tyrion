@@ -3,8 +3,11 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::atmospheric-val">
+ <relation label="overlap">
+  wn::|atmospheric%3:01:00::|
+ </relation>
  <relation label="inherit">
-  ont::substantial-property-val
+  ont::physical-property-val
   abstr-obj
  </relation>
  </concept>
@@ -189,18 +192,51 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="abstr-obj" />
  <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
- <concept name="abstr-obj" />
- <concept name="ont::substantial-property-val">
- <comment>
-  &quot;properties having to do with physical substance&quot;
- </comment>
+ <concept name="ont::sunny-val">
  <relation label="inherit">
-  ont::physical-property-val
+  ont::atmospheric-val
+ </relation>
+ </concept>
+ <concept name="ont::mild-and-pleasant-val">
+ <relation label="inherit">
+  ont::atmospheric-val
+ </relation>
+ <relation label="overlap">
+  wn::|balmy%5:00:00:clement:02|
+ </relation>
+ </concept>
+ <concept name="ont::windy-val">
+ <relation label="inherit">
+  ont::atmospheric-val
+ </relation>
+ <relation label="overlap">
+  wn::|windy%5:00:00:stormy:00|
+  wn::|breezy%5:00:00:stormy:00|
+ </relation>
+ </concept>
+ <concept name="ont::humid-val">
+ <relation label="inherit">
+  ont::atmospheric-val
+ </relation>
+ <relation label="overlap">
+  wn::|humid%5:00:00:wet:01|
+ </relation>
+ </concept>
+ <concept name="ont::precipitating-val">
+ <relation label="inherit">
+  ont::atmospheric-val
+ </relation>
+ <relation label="overlap">
+  wn::|rainy%5:00:00:wet:01|
  </relation>
  </concept>
  <concept name="ont::clear-weather">
@@ -208,7 +244,6 @@
   ont::atmospheric-val
  </relation>
  <relation label="overlap">
-  wn::|clear%3:00:03::|
   wn::|clear%3:00:03::|
   wn::|fair%5:00:00:clear:03|
  </relation>
@@ -218,8 +253,8 @@
   ont::atmospheric-val
  </relation>
  <relation label="overlap">
-  wn::|cloudy%3:00:00::|
   wn::|cloud-covered%5:00:00:cloudy:00|
+  wn::|cloudy%3:00:00::|
   wn::|brumous%5:00:00:cloudy:00|
   wn::|smoggy%5:00:00:cloudy:00|
  </relation>
@@ -235,131 +270,6 @@
  <example text="a rise in atmospheric pressure">
   <provenance name="TRIPS"/>
  </example>
- <relation label="inherit">
-  ont::atmospheric-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="balmy" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <comment>
-  &quot;PQ&quot;
- </comment>
- <relation label="inherit">
-  ont::atmospheric-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="breezy" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <comment>
-  &quot;PQ&quot;
- </comment>
- <relation label="inherit">
-  ont::atmospheric-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="humid" />
- </morph>
- <comment>
-  &quot;PQ&quot;
- </comment>
- <relation label="inherit">
-  ont::atmospheric-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="muggy" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <comment>
-  &quot;PQ&quot;
- </comment>
- <relation label="inherit">
-  ont::atmospheric-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="rainy" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <comment>
-  &quot;PQ&quot;
- </comment>
- <relation label="inherit">
-  ont::atmospheric-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="snowy" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <comment>
-  &quot;PQ&quot;
- </comment>
- <relation label="inherit">
-  ont::atmospheric-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="sunny" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <comment>
-  &quot;PQ&quot;
- </comment>
- <relation label="inherit">
-  ont::atmospheric-val
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="windy" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <comment>
-  &quot;PQ&quot;
- </comment>
  <relation label="inherit">
   ont::atmospheric-val
   ont::central-adj-templ

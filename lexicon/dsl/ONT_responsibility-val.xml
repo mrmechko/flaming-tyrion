@@ -145,15 +145,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -211,6 +202,23 @@
  </sem-frame>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::animal-propensity-val">
+ <comment>
+  &quot;properties that describe to human or animal tendencies or inclinations to behave in a particular manner&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <sem-frame>
  <role-restr-map roles="ont::ground" optional="optional">
   <concept name="t" />
  </role-restr-map>
@@ -224,7 +232,7 @@
  </sem-frame>
  <concept name="ont::social-interaction-val">
  <relation label="inherit">
-  ont::property-val
+  ont::animal-propensity-val
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure">
@@ -236,83 +244,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="irresponsible" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <example text="He is an irresponsible person">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::responsibility-val
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="responsible" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <example text="responsible person">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::responsibility-val
-  ont::central-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="responsible" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <example text="responsible person">
-  <provenance name="TRIPS"/>
- </example>
+ <concept name="ont::responsible-val">
  <relation label="inherit">
   ont::responsibility-val
  </relation>
- <syntax>
-  <template-call template="ont::central-adj-xp-templ" xp="'(w::pp w::for)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-   <feat name="comp-op">more</feat>
-  </syn-feats>
- </syntax>
- </sense>
+ <relation label="overlap">
+  wn::|responsible%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::not-responsible-val">
+ <relation label="inherit">
+  ont::responsibility-val
+ </relation>
+ <relation label="overlap">
+  wn::|irresponsible%3:00:00::|
+ </relation>
+ </concept>
 </dsl>
