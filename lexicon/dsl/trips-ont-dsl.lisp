@@ -3006,7 +3006,9 @@
                   WN::|obnubilate%2:31:00::|
                   WN::|disorganise%2:41:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TIME-SPAN ATOMIC) (ASPECT UNBOUNDED))
-         (SEM-FRAME (ONT::FORMAL1 (CONCEPT T) OPTIONAL)
+         (SEM-FRAME (ONT::NEUTRAL1 (CONCEPT T) OPTIONAL)
+                    (ONT::NEUTRAL (CONCEPT T) OPTIONAL)
+                    (ONT::FORMAL1 (CONCEPT T) OPTIONAL)
                     (ONT::FORMAL (CONCEPT T) OPTIONAL)
                     (ONT::AGENT
                      (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
@@ -3399,10 +3401,16 @@
            OPTIONAL)
           (ONT::AFFECTED
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
-                      (TYPE (OR PHYS-OBJECT MENTAL-CONSTRUCTION))))
+                      (TYPE
+                       (OR PHYS-OBJECT
+                           MENTAL-CONSTRUCTION
+                           INFORMATION-FUNCTION-OBJECT))))
           (ONT::AFFECTED-RESULT
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
-                      (TYPE (OR PHYS-OBJECT MENTAL-CONSTRUCTION))))
+                      (TYPE
+                       (OR PHYS-OBJECT
+                           MENTAL-CONSTRUCTION
+                           INFORMATION-FUNCTION-OBJECT))))
           (ONT::AGENT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)))
 
 (CONCEPT ONT::CREDIBILITY-VAL (INHERIT ONT::INFORMATION-PROPERTY-VAL))
