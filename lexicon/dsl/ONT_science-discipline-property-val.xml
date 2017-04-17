@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::science-discipline-property-val">
  <relation label="inherit">
-  ont::discrete-property-val
+  ont::associated-with-val
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -36,6 +36,7 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::scale">
   <concept name="t" />
@@ -61,7 +62,6 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="abstr-obj" />
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
@@ -133,12 +133,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="gradability">-</feat>
- </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -195,36 +189,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::discrete-property-val">
+ <concept name="ont::associated-with-val">
+ <comment>
+  &quot;words that pertain to another word&quot;
+ </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="gradability">-</feat>
- </sem-feats>
  </concept>
  <concept name="ont::biological">
  <relation label="inherit">
   ont::science-discipline-property-val
  </relation>
+ <relation label="overlap">
+  wn::|biological%3:01:00::|
+ </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="chemical" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;PILOT1&quot;
- </comment>
+ <concept name="ont::chemical-val">
  <relation label="inherit">
   ont::science-discipline-property-val
-  ont::central-adj-templ
  </relation>
- </sense>
+ <relation label="overlap">
+  wn::|chemical%3:01:00::|
+ </relation>
+ </concept>
 </dsl>

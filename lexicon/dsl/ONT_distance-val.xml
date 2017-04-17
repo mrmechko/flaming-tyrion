@@ -255,6 +255,9 @@
  <relation label="inherit">
   ont::property-val
  </relation>
+ <relation label="overlap">
+  wn::|spatial%3:01:00::|
+ </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
    <or>
@@ -296,123 +299,21 @@
   wn::|farther%5:00:01:far:00|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="close" remaining-words="by" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <example text="the houses are close by">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::distance-val
-  ont::adj-theme-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">hi</feat>
-   <feat name="orientation">less</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="closeby" />
- </morph>
- <example text="the houses are close by">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::distance-val
-  ont::adj-theme-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">hi</feat>
-   <feat name="orientation">less</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="equidistant" />
- </morph>
- <example text="They are equidistant [between the lines]">
-  <provenance name="TRIPS"/>
- </example>
+ <concept name="ont::local-val">
  <relation label="inherit">
   ont::distance-val
  </relation>
- <syntax>
-  <template-call template="ont::adj-co-theme-templ" xp="'(w::pp w::between)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::between" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">-</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="local" />
- </morph>
- <example text="This problem is local [to the area]">
-  <provenance name="TRIPS"/>
- </example>
+ <relation label="overlap">
+  wn::|local%3:00:01::|
+  wn::|local%3:01:01::|
+ </relation>
+ </concept>
+ <concept name="ont::equal-distance-val">
  <relation label="inherit">
   ont::distance-val
  </relation>
- <syntax>
-  <template-call template="ont::adj-co-theme-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::to w::for)" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">med</feat>
-   <feat name="orientation">less</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="nearby" />
- </morph>
- <example text="they went to nearby schools">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::distance-val
-  ont::adj-theme-templ
+ <relation label="overlap">
+  wn::|equidistant%5:00:00:equal:00|
  </relation>
- <semantics>
-  <sem-feats>
-   <feat name="intensity">hi</feat>
-   <feat name="orientation">less</feat>
-  </sem-feats>
- </semantics>
- </sense>
+ </concept>
 </dsl>
