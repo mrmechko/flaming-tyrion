@@ -4003,7 +4003,10 @@
 (CONCEPT ONT::DIRECTION
          (INHERIT ONT::POSITION-RELN)
          (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ))
-                    (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
+                    (ONT::FIGURE
+                     (OR (CONCEPT PHYS-OBJ)
+                         (CONCEPT ABSTR-OBJ)
+                         (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::DIRECTION-DOWN (INHERIT ONT::DIRECTION))
 
@@ -14353,6 +14356,8 @@
                     (TIME-SPAN EXTENDED)
                     (ASPECT UNBOUNDED))
          (SEM-FRAME
+          (ONT::NEUTRAL
+           (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
           (ONT::AGENT
            (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
                       (INTENTIONAL +)))
