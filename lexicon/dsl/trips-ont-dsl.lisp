@@ -12,7 +12,9 @@
          (OVERLAP WN::|ability%1:07:00::| WN::|ability%1:09:00::|)
          (SEM-FRAME (ONT::FORMAL (CONCEPT T))))
 
-(CONCEPT ONT::ABILITY-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+(CONCEPT ONT::ABILITY-VAL
+         (COMMENT "evaluation of ability or capability to do something")
+         (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::ABLE
          (INHERIT ONT::ABILITY-VAL)
@@ -74,7 +76,9 @@
                   WN::|go_for%2:32:00::|
                   WN::|affirm%2:32:01::|))
 
-(CONCEPT ONT::ACCEPTABILITY-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+(CONCEPT ONT::ACCEPTABILITY-VAL
+         (COMMENT "properties having to do with good vs. bad")
+         (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::ACCESSIBILITY-VAL
          (INHERIT ONT::CAN-BE-DONE-VAL)
@@ -366,6 +370,7 @@
                   WN::|actual%5:00:00:real:00|))
 
 (CONCEPT ONT::ACTUALITY-VAL
+         (COMMENT "existing or occuring in fact vs. imagined or supposed")
          (INHERIT ONT::REAL-VS-FAKE-VAL)
          (SEM-FRAME
           (ONT::FIGURE
@@ -435,7 +440,9 @@
          (INHERIT ONT::ADORNMENT-VAL)
          (OVERLAP WN::|adorned%3:00:00::|))
 
-(CONCEPT ONT::ADORNMENT-VAL (INHERIT ONT::CONFIGURATION-PROPERTY-VAL))
+(CONCEPT ONT::ADORNMENT-VAL
+         (COMMENT "having or missing adornment")
+         (INHERIT ONT::CONFIGURATION-PROPERTY-VAL))
 
 (CONCEPT ONT::ADVANCING
          (INHERIT ONT::ADJUST)
@@ -514,7 +521,7 @@
          (OVERLAP WN::|agitated%3:00:00::|))
 
 (CONCEPT ONT::AILING
-         (INHERIT ONT::PHYSICAL-SYMPTOM-VAL)
+         (INHERIT ONT::HEALTHINESS-VAL)
          (OVERLAP WN::|unwell%5:00:01:ill:01|
                   WN::|ailing%5:00:00:ill:01|
                   WN::|sick%3:00:01::|
@@ -930,7 +937,9 @@
                   WN::|imitation%5:00:02:artificial:00|
                   WN::|fake%5:00:00:artificial:00|))
 
-(CONCEPT ONT::ARTIFICIALITY-VAL (INHERIT ONT::REAL-VS-FAKE-VAL))
+(CONCEPT ONT::ARTIFICIALITY-VAL
+         (COMMENT "artificial vs. natural")
+         (INHERIT ONT::REAL-VS-FAKE-VAL))
 
 (CONCEPT ONT::AS-MUCH-AS
          (INHERIT ONT::DOMAIN-PROPERTY)
@@ -1099,6 +1108,7 @@
                     (ORIGIN NON-LIVING)))
 
 (CONCEPT ONT::ATMOSPHERIC-VAL
+         (COMMENT "having to do with weather")
          (OVERLAP WN::|atmospheric%3:01:00::|)
          (INHERIT ONT::PHYSICAL-PROPERTY-VAL ABSTR-OBJ))
 
@@ -1121,7 +1131,10 @@
                   WN::|attack%2:33:02::|
                   WN::|attack%2:29:00::|))
 
-(CONCEPT ONT::ATTENTION-VAL (INHERIT ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+(CONCEPT ONT::ATTENTION-VAL
+         (COMMENT
+          "attributes that indicate the presence or absence of attention")
+         (INHERIT ONT::PSYCHOLOGICAL-PROPERTY-VAL))
 
 (CONCEPT ONT::ATTENTION-WORTHY-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
@@ -1204,7 +1217,9 @@
                   WN::|actual%5:00:00:true:00|
                   WN::|real%5:00:00:true:00|))
 
-(CONCEPT ONT::AUTHENTICITY-VAL (INHERIT ONT::REAL-VS-FAKE-VAL))
+(CONCEPT ONT::AUTHENTICITY-VAL
+         (COMMENT "truly what it is said to be vs. made as imitation")
+         (INHERIT ONT::REAL-VS-FAKE-VAL))
 
 (CONCEPT ONT::AUTHOR
          (INHERIT ONT::PROFESSIONAL)
@@ -1348,6 +1363,8 @@
          (OVERLAP WN::|basic%3:00:00::|
                   WN::|fundamental%5:00:00:basic:00|
                   WN::|elementary%5:00:00:basic:00|))
+
+(CONCEPT ONT::BASIS-OF-EVIDENCE-VAL (INHERIT ONT::PROCESS-VAL))
 
 (CONCEPT ONT::BATH (INHERIT ONT::CLEAN))
 
@@ -1551,7 +1568,9 @@
            OPTIONAL)
           (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (TYPE MOLECULAR-PART)))))
 
-(CONCEPT ONT::BINDING-VAL (INHERIT ONT::CONFIGURATION-PROPERTY-VAL))
+(CONCEPT ONT::BINDING-VAL
+         (COMMENT "describes how firmly something is fixed in place")
+         (INHERIT ONT::CONFIGURATION-PROPERTY-VAL))
 
 (CONCEPT ONT::BIOLOGICAL
          (INHERIT ONT::SCIENCE-DISCIPLINE-PROPERTY-VAL)
@@ -1676,7 +1695,9 @@
            (SEM-FEATS (INHERIT PHYS-OBJ) (FORM OBJECT) (ORIGIN LIVING))
            OPTIONAL)))
 
-(CONCEPT ONT::BODY-PART-VAL (INHERIT ONT::BODY-SYSTEM-VAL))
+(CONCEPT ONT::BODY-PART-VAL
+         (COMMENT "adjectives having to do with body parts")
+         (INHERIT ONT::BODY-SYSTEM-VAL))
 
 (CONCEPT ONT::BODY-PROCESS-EVENT
          (INHERIT ONT::BODILY-PROCESS)
@@ -1688,11 +1709,18 @@
           (ONT::FIGURE (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN LIVING))
            OPTIONAL)))
 
-(CONCEPT ONT::BODY-PROPERTY-VAL (INHERIT ONT::BODY-RELATED-PROPERTY-VAL))
+(CONCEPT ONT::BODY-PROPERTY-VAL
+         (COMMENT
+          "properties having to do with human/animal body conditions or states")
+         (INHERIT ONT::BODY-RELATED-PROPERTY-VAL))
 
-(CONCEPT ONT::BODY-RELATED-PROPERTY-VAL (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
+(CONCEPT ONT::BODY-RELATED-PROPERTY-VAL
+         (COMMENT "properties having to do with human/animal body")
+         (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
 
-(CONCEPT ONT::BODY-SYSTEM-VAL (INHERIT ONT::BODY-RELATED-PROPERTY-VAL))
+(CONCEPT ONT::BODY-SYSTEM-VAL
+         (COMMENT "adjective having to do with body systems")
+         (INHERIT ONT::BODY-RELATED-PROPERTY-VAL))
 
 (CONCEPT ONT::BOIL (INHERIT ONT::COOKING))
 
@@ -1912,6 +1940,7 @@
                   WN::|assuasive%5:00:00:reassuring:00|))
 
 (CONCEPT ONT::CAN-BE-DONE-VAL
+         (COMMENT "adjectives meaning 'can [not] be verb-d' for some verb")
          (INHERIT ONT::PROCESS-VAL)
          (SEM-FRAME (ONT::GROUND (CONCEPT T) OPTIONAL)))
 
@@ -2352,12 +2381,22 @@
 (CONCEPT ONT::CITY-REL (INHERIT ONT::CONVENTIONAL-POSITION-RELN))
 
 (CONCEPT ONT::CITY-RELATED-VAL
+         (COMMENT "having to do with a city (or its government)")
          (INHERIT ONT::STATUS-VAL)
          (OVERLAP WN::|civic%3:01:00::|))
 
-(CONCEPT ONT::CLARITY-VAL (INHERIT ONT::INFORMATION-PROPERTY-VAL))
+(CONCEPT ONT::CLARITY-VAL
+         (COMMENT "clear, obvious vs. unclear, obscure")
+         (INHERIT ONT::INFORMATION-PROPERTY-VAL))
 
-(CONCEPT ONT::CLASSIFICATION-VAL (INHERIT ONT::STATUS-VAL))
+(CONCEPT ONT::CLASSIFICATION-VAL
+         (COMMENT
+          "official designation that allows access to only authorized persons")
+         (INHERIT ONT::STATUS-VAL))
+
+(CONCEPT ONT::CLASSIFIED-VAL
+         (INHERIT ONT::CLASSIFICATION-VAL)
+         (OVERLAP WN::|classified%3:00:02::|))
 
 (CONCEPT ONT::CLASSIFY
          (INHERIT ONT::CATEGORIZATION)
@@ -2870,7 +2909,12 @@
                       (TRAJECTORY -)
                       (TYPE EVENT-OF-CHANGE)))))
 
+(CONCEPT ONT::COMPLETENESS-VAL
+         (COMMENT "having or not having all the necessary parts")
+         (INHERIT ONT::PART-WHOLE-VAL))
+
 (CONCEPT ONT::COMPLETION-VAL
+         (COMMENT "done or finished")
          (INHERIT ONT::PROCESS-VAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -))
          (SEM-FRAME (ONT::GROUND (CONCEPT T) OPTIONAL)))
@@ -2879,7 +2923,7 @@
 
 (CONCEPT ONT::COMPLEXITY-VAL
          (COMMENT
-          "Like task-complexity-val, but adverbial that does not define roles of formal, cause and action.")
+          "Like ont::task-complexity-val, but adverbial that does not define roles of formal, cause and action.")
          (INHERIT ONT::PROCESS-VAL))
 
 (CONCEPT ONT::COMPLIANCE
@@ -3006,7 +3050,10 @@
          (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN)
          (OVERLAP WN::|privacy%1:07:00::| WN::|privacy%1:26:02::|))
 
-(CONCEPT ONT::CONFIGURATION-PROPERTY-VAL (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
+(CONCEPT ONT::CONFIGURATION-PROPERTY-VAL
+         (COMMENT
+          "properties regarding the configuration, arrangement, or layout of elements")
+         (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
 
 (CONCEPT ONT::CONFIRM
          (INHERIT ONT::ASSERT)
@@ -3076,6 +3123,8 @@
          (OVERLAP WN::|consistent%3:00:00::| WN::|consistent%3:00:01::|))
 
 (CONCEPT ONT::CONSISTENT-VAL
+         (COMMENT
+          "marked by a (il)logical or (dis)orderly consistent relation of parts")
          (INHERIT ONT::INFORMATION-PROPERTY-VAL)
          (SEM-FRAME (ONT::GROUND (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
                     (ONT::FIGURE (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
@@ -3090,7 +3139,10 @@
          (SEM-FRAME (ONT::FORMAL (CONCEPT T) OPTIONAL)
                     (ONT::FIGURE (CONCEPT T) OPTIONAL)))
 
-(CONCEPT ONT::CONSTRICTING-VAL (INHERIT ONT::CONFIGURATION-PROPERTY-VAL))
+(CONCEPT ONT::CONSTRICTING-VAL
+         (COMMENT
+          "describes how constricting something is with regards to another item; close-fitting vs. loose-fitting")
+         (INHERIT ONT::CONFIGURATION-PROPERTY-VAL))
 
 (CONCEPT ONT::CONSUME
          (INHERIT ONT::EVENT-OF-CAUSATION)
@@ -3327,7 +3379,9 @@
                   WN::|correct%3:00:00::|
                   WN::|accurate%5:00:00:correct:00|))
 
-(CONCEPT ONT::CORRECTNESS-VAL (INHERIT ONT::INFORMATION-PROPERTY-VAL))
+(CONCEPT ONT::CORRECTNESS-VAL
+         (COMMENT "describing the quality of being error-free or error-prone")
+         (INHERIT ONT::INFORMATION-PROPERTY-VAL))
 
 (CONCEPT ONT::CORRELATION
          (INHERIT ONT::EVENT-OF-STATE)
@@ -3383,7 +3437,9 @@
 
 (CONCEPT ONT::COUNTRY (INHERIT ONT::POLITICAL-REGION))
 
-(CONCEPT ONT::COUNTRY-RELATED-VAL (INHERIT ONT::STATUS-VAL))
+(CONCEPT ONT::COUNTRY-RELATED-VAL
+         (COMMENT "adjectives relating to a nation or a country")
+         (INHERIT ONT::STATUS-VAL))
 
 (CONCEPT ONT::COUNTY
          (INHERIT ONT::POLITICAL-REGION)
@@ -4069,6 +4125,8 @@
 (CONCEPT ONT::DISCRETE-DOMAIN (INHERIT ONT::DOMAIN))
 
 (CONCEPT ONT::DISCRETE-PROPERTY-VAL
+         (COMMENT
+          "temporary node. Will be deleted as soon as the words in this type are placed in their correct places in the ontology")
          (INHERIT ONT::PROPERTY-VAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -)))
 
@@ -4427,10 +4485,12 @@
                   WN::|emit%2:43:00::|
                   WN::|discharge%2:29:00::|))
 
-(CONCEPT ONT::EMOTIONAL-VAL (INHERIT ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+(CONCEPT ONT::EMOTIONAL-VAL
+         (COMMENT "state of having a particular emotion")
+         (INHERIT ONT::PSYCHOLOGICAL-PROPERTY-VAL))
 
 (CONCEPT ONT::EMPIRICAL-VAL
-         (INHERIT ONT::CAN-BE-VERIFIED-VAL)
+         (INHERIT ONT::BASIS-OF-EVIDENCE-VAL)
          (OVERLAP WN::|empirical%3:00:00::|))
 
 (CONCEPT ONT::EMPLOY
@@ -4957,7 +5017,10 @@
          (INHERIT ONT::EVOKE-DISTRESS)
          (OVERLAP WN::|worry%2:37:01::|))
 
-(CONCEPT ONT::EVOKING-EMOTION-VAL (INHERIT ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+(CONCEPT ONT::EVOKING-EMOTION-VAL
+         (COMMENT
+          "attributes that indicate the evocation of a particular emotion")
+         (INHERIT ONT::PSYCHOLOGICAL-PROPERTY-VAL))
 
 (CONCEPT ONT::EVOKING-NEG-EMOTION-VAL (INHERIT ONT::EVOKING-EMOTION-VAL))
 
@@ -5204,6 +5267,7 @@
 (CONCEPT ONT::FALL (INHERIT ONT::MOVE-DOWNWARD))
 
 (CONCEPT ONT::FAME-VAL
+         (COMMENT "social status relating to fame")
          (INHERIT ONT::STATUS-VAL)
          (OVERLAP WN::|famous%5:00:00:known:00|
                   WN::|celebrated%5:00:00:known:00|))
@@ -5249,6 +5313,7 @@
          (OVERLAP WN::|nonfat%3:00:00::| WN::|skim%5:00:00:nonfat:00|))
 
 (CONCEPT ONT::FAT-VAL
+         (COMMENT "more in  horizontal orientation with respect to the height")
          (INHERIT ONT::RELATIVE-TO-HEIGHT-VAL)
          (OVERLAP WN::|plump%5:00:00:fat:01| WN::|fat%3:00:01::|))
 
@@ -5264,7 +5329,9 @@
                   WN::|exhausted%5:00:00:tired:00|
                   WN::|weary%5:00:00:tired:00|))
 
-(CONCEPT ONT::FATINESS-VAL (INHERIT ONT::PROPORTION-VAL))
+(CONCEPT ONT::FATINESS-VAL
+         (COMMENT "indicates relative proportion/ratio on a fatiness scale")
+         (INHERIT ONT::PROPORTION-VAL))
 
 (CONCEPT ONT::FATS-OILS (INHERIT ONT::INGREDIENTS))
 
@@ -5484,6 +5551,7 @@
 (CONCEPT ONT::FLOOR-REL (INHERIT ONT::CONVENTIONAL-POSITION-RELN))
 
 (CONCEPT ONT::FLOW-VAL
+         (COMMENT "presence or absense of obstruction; e.g., for routes")
          (INHERIT ONT::CONFIGURATION-PROPERTY-VAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -))
          (SEM-FRAME
@@ -5637,7 +5705,7 @@
                   WN::|fresh%3:00:01::|))
 
 (CONCEPT ONT::FRESHNESS-VAL
-         (COMMENT "recently made, obtained, or practiced")
+         (COMMENT "relating to how recently an object was made or obtained")
          (INHERIT ONT::TEMPORAL))
 
 (CONCEPT ONT::FRESHWATER-FISH (INHERIT ONT::SEAFOOD))
@@ -5726,7 +5794,9 @@
           "properties relating to  whether something is functioning as intended")
          (INHERIT ONT::OBJECT-AFFORDANCES-VAL))
 
-(CONCEPT ONT::FUNDAMENTAL-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+(CONCEPT ONT::FUNDAMENTAL-VAL
+         (COMMENT "forming a necessary base or core")
+         (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::FUNGUS (INHERIT ONT::ORGANISM) (OVERLAP WN::|fungus%1:20:00::|))
 
@@ -6124,7 +6194,10 @@
                   WN::|harmful%3:00:00::|
                   WN::|ruinous%5:00:00:harmful:00|))
 
-(CONCEPT ONT::HARMFULNESS-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+(CONCEPT ONT::HARMFULNESS-VAL
+         (COMMENT
+          "regarding capability of harm or injury (compare to ont::safety-val)")
+         (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::HAS-MEDICAL-CONDITION
          (INHERIT ONT::BODY-RELATED-PROPERTY-VAL)
@@ -6225,8 +6298,10 @@
                   WN::|health_care_provider%1:18:00::|
                   WN::|caregiver%1:18:01::|))
 
+(CONCEPT ONT::HEALTHINESS-VAL (INHERIT ONT::BODY-RELATED-PROPERTY-VAL))
+
 (CONCEPT ONT::HEALTHY-VAL
-         (INHERIT ONT::BODY-RELATED-PROPERTY-VAL)
+         (INHERIT ONT::HEALTHINESS-VAL)
          (OVERLAP WN::|well%3:00:01::| WN::|healthy%3:00:00::|))
 
 (CONCEPT ONT::HEART-ATTACK
@@ -6242,6 +6317,7 @@
 (CONCEPT ONT::HEATER (INHERIT ONT::KETTLE-BASE))
 
 (CONCEPT ONT::HEAVY
+         (COMMENT "indicates more in orientation on a weight scale")
          (INHERIT ONT::WEIGHT-VAL)
          (OVERLAP WN::|heavy%3:00:01::|)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE WEIGHT-SCALE)))
@@ -6341,7 +6417,9 @@
 
 (CONCEPT ONT::HINT (INHERIT ONT::REPRESENTATIVE) (OVERLAP WN::|hint%2:32:00::|))
 
-(CONCEPT ONT::HISTORICAL-ERA-VAL (INHERIT ONT::TEMPORAL))
+(CONCEPT ONT::HISTORICAL-ERA-VAL
+         (COMMENT "relating to the distinct periods in history")
+         (INHERIT ONT::TEMPORAL))
 
 (CONCEPT ONT::HITTING
          (COMMENT
@@ -6419,7 +6497,7 @@
           (ONT::GROUND (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE HUMIDITY-SCALE)))))
 
 (CONCEPT ONT::HUNGRY
-         (INHERIT ONT::SATIATED-VAL)
+         (INHERIT ONT::NOT-SATIATED-VAL)
          (OVERLAP WN::|famished%5:00:00:hungry:00|
                   WN::|peckish%5:00:00:hungry:00|
                   WN::|hungry%3:00:00::|))
@@ -6514,7 +6592,10 @@
          (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN)
          (OVERLAP WN::|importance%1:26:00::| WN::|importance%1:07:00::|))
 
-(CONCEPT ONT::IMPORTANCE-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+(CONCEPT ONT::IMPORTANCE-VAL
+         (COMMENT
+          "of primary (i.e., major, significant), secondary (i.e., minor), or no importance")
+         (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::IMPRESS
          (INHERIT ONT::JUDGEMENT)
@@ -6605,6 +6686,7 @@
                   WN::|incoming%3:00:00::|))
 
 (CONCEPT ONT::INCOMPLETE
+         (COMMENT "unfinished")
          (INHERIT ONT::COMPLETION-VAL)
          (OVERLAP WN::|unfinished%3:00:01::|
                   WN::|incomplete%5:00:00:unfinished:01|))
@@ -6726,7 +6808,10 @@
                     (INTENTIONAL -)
                     (INFORMATION INFORMATION-CONTENT)))
 
-(CONCEPT ONT::INFORMATION-PROPERTY-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+(CONCEPT ONT::INFORMATION-PROPERTY-VAL
+         (COMMENT
+          "properties regarding the evaluation of information, knowledge, or understanding (e.g. credible, correct, consistent)")
+         (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::INFORMATION-SCRUTINY
          (INHERIT ONT::SCRUTINY)
@@ -6859,7 +6944,10 @@
          (INHERIT ONT::NON-MEASURE-ORDERED-DOMAIN)
          (OVERLAP WN::|intensity%1:07:00::| WN::|intensity%1:07:03::|))
 
-(CONCEPT ONT::INTENSITY-VAL (INHERIT ONT::DIMENSIONAL-PROPERTY-VAL))
+(CONCEPT ONT::INTENSITY-VAL
+         (COMMENT
+          "indicates relative extent or magnitude of something on an intensity scale")
+         (INHERIT ONT::DIMENSIONAL-PROPERTY-VAL))
 
 (CONCEPT ONT::INTENTION
          (COMMENT
@@ -7235,6 +7323,7 @@
                   WN::|simplify%2:30:00::|))
 
 (CONCEPT ONT::LARGE
+         (COMMENT "more in orientation on a size scale")
          (INHERIT ONT::SIZE-VAL)
          (OVERLAP WN::|broad%5:00:00:large:00| WN::|large%3:00:00::|))
 
@@ -7415,6 +7504,7 @@
          (OVERLAP WN::|lightheadedness%1:26:00::| WN::|dizziness%1:26:00::|))
 
 (CONCEPT ONT::LIGHTWEIGHT
+         (COMMENT "indicates less in orientation on a weight scale")
          (INHERIT ONT::WEIGHT-VAL)
          (OVERLAP WN::|light%3:00:01::| WN::|lightweight%5:00:00:light:01|))
 
@@ -7423,7 +7513,9 @@
          (SEM-FEATS (INHERIT ABSTR-OBJ) (MEASURE-FUNCTION TERM))
          (SEM-FRAME (ONT::FIGURE (CONCEPT SITUATION))))
 
-(CONCEPT ONT::LIKELIHOOD-VAL (INHERIT ONT::INFORMATION-PROPERTY-VAL))
+(CONCEPT ONT::LIKELIHOOD-VAL
+         (COMMENT "(un)certainty to hold true")
+         (INHERIT ONT::INFORMATION-PROPERTY-VAL))
 
 (CONCEPT ONT::LIKELY-VAL
          (INHERIT ONT::LIKELIHOOD-VAL)
@@ -7445,7 +7537,9 @@
 
 (CONCEPT ONT::LINEAR-EXTENT (INHERIT ONT::POSITION-W-TRAJECTORY-RELN))
 
-(CONCEPT ONT::LINEAR-EXTENT-VAL (INHERIT ONT::SIZE-VAL))
+(CONCEPT ONT::LINEAR-EXTENT-VAL
+         (COMMENT "size on a linear scale")
+         (INHERIT ONT::SIZE-VAL))
 
 (CONCEPT ONT::LINEAR-GROUPING
          (INHERIT ONT::SEQUENCE)
@@ -7502,6 +7596,7 @@
          (OVERLAP WN::|liver_disease%1:26:00::|))
 
 (CONCEPT ONT::LIVING-VAL
+         (COMMENT "dead vs. alive")
          (INHERIT ONT::PHYSICAL-PROPERTY-VAL)
          (SEM-FRAME
           (ONT::FIGURE
@@ -7619,6 +7714,8 @@
          (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
 
 (CONCEPT ONT::LONG
+         (COMMENT
+          "more in orientation on a linear scale; does not indicate horizontality or verticality of the object")
          (INHERIT ONT::LINEAR-EXTENT-VAL)
          (OVERLAP WN::|long%3:00:01::| WN::|long%3:00:02::|))
 
@@ -7958,6 +8055,7 @@
          (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION COMESTIBLE)))
 
 (CONCEPT ONT::MEDIUM
+         (COMMENT "means of production and dissemination (c.f. ont::mode)")
          (INHERIT ONT::SUBSTANTIAL-PROPERTY-VAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -))
          (SEM-FRAME (ONT::FIGURE (CONCEPT T) OPTIONAL)))
@@ -8039,7 +8137,7 @@
          (SEM-FRAME (ONT::GROUND (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::MERE-VAL
-         (COMMENT "being nothing but what's specified")
+         (COMMENT "being nothing other than what's specified")
          (INHERIT ONT::PLAINNESS-VAL)
          (OVERLAP WN::|mere%5:00:00:specified:00|))
 
@@ -8146,6 +8244,7 @@
           (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::MODE
+         (COMMENT "means of representation (c.f. ont::medium)")
          (INHERIT ONT::SUBSTANTIAL-PROPERTY-VAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -))
          (SEM-FRAME (ONT::FIGURE (CONCEPT T) OPTIONAL)))
@@ -8235,6 +8334,7 @@
             (MOBILITY MOVABLE)))))
 
 (CONCEPT ONT::MOTION-VAL
+         (COMMENT "describes dynamicity of motion")
          (INHERIT ONT::PROCESS-VAL)
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ))))
 
@@ -8389,9 +8489,13 @@
          (INHERIT ONT::NON-VERTICAL-VAL)
          (OVERLAP WN::|narrow%3:00:00::|))
 
-(CONCEPT ONT::NATIONAL-IDENTITY-VAL (INHERIT ONT::COUNTRY-RELATED-VAL))
+(CONCEPT ONT::NATIONAL-IDENTITY-VAL
+         (COMMENT
+          "identity based on the country/region of origin or residence")
+         (INHERIT ONT::COUNTRY-RELATED-VAL))
 
 (CONCEPT ONT::NATIONAL-VAL
+         (COMMENT "having to do with a nation (or its government)")
          (INHERIT ONT::COUNTRY-RELATED-VAL)
          (OVERLAP WN::|domestic%3:00:00::|
                   WN::|national%5:00:00:domestic:00|
@@ -8530,7 +8634,9 @@
 
 (CONCEPT ONT::NON-MEASURE-ORDERED-DOMAIN (INHERIT ONT::ORDERED-DOMAIN))
 
-(CONCEPT ONT::NON-VERTICAL-VAL (INHERIT ONT::LINEAR-EXTENT-VAL))
+(CONCEPT ONT::NON-VERTICAL-VAL
+         (COMMENT "size specific to non-vertical linear scale")
+         (INHERIT ONT::LINEAR-EXTENT-VAL))
 
 (CONCEPT ONT::NON-ZERO-VAL (INHERIT ONT::CARDINALITY-VAL))
 
@@ -8692,6 +8798,11 @@
          (INHERIT ONT::HONESTY-VAL)
          (OVERLAP WN::|misleading%5:00:00:dishonest:00|
                   WN::|dishonest%3:00:00::|))
+
+(CONCEPT ONT::NOT-IMPORTANT-VAL
+         (COMMENT "devoid of significance or importance")
+         (INHERIT ONT::IMPORTANCE-VAL)
+         (OVERLAP WN::|insignificant%3:00:00::| WN::|unimportant%3:00:00::|))
 
 (CONCEPT ONT::NOT-IN-WORKING-ORDER-VAL
          (COMMENT
@@ -8917,7 +9028,7 @@
 
 (CONCEPT ONT::OBJECT-AFFORDANCES-VAL
          (COMMENT
-          "properties pertaining to the function of a entity or an object")
+          "properties pertaining to the function of an entity or an object")
          (INHERIT ONT::PROPERTY-VAL))
 
 (CONCEPT ONT::OBJECT-CHANGE
@@ -9115,7 +9226,9 @@
 
 (CONCEPT ONT::ORDERED-DOMAIN (INHERIT ONT::DOMAIN))
 
-(CONCEPT ONT::ORDERED-VAL (INHERIT ONT::RELATIONAL-ATTRIBUTE-VAL))
+(CONCEPT ONT::ORDERED-VAL
+         (COMMENT "properties that deal with ordered nature of objects")
+         (INHERIT ONT::RELATIONAL-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::ORDERING
          (INHERIT ONT::CATEGORIZATION)
@@ -9230,6 +9343,7 @@
          (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::OUTCOME-VAL
+         (COMMENT "outcome of the process")
          (INHERIT ONT::PROCESS-VAL)
          (OVERLAP WN::|ensuing%5:00:00:succeeding:00|))
 
@@ -9317,11 +9431,13 @@
          (SEM-FRAME (ONT::FIGURE (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::PART-WHOLE-VAL
+         (COMMENT
+          "properties describing the relationship between the complete or complex whole and its parts")
          (INHERIT ONT::PHYSICAL-PROPERTY-VAL ABSTR-OBJ)
          (SEM-FRAME (ONT::GROUND (CONCEPT T) OPTIONAL)))
 
 (CONCEPT ONT::PARTIAL-INCOMPLETE
-         (INHERIT ONT::PART-WHOLE-VAL)
+         (INHERIT ONT::COMPLETENESS-VAL)
          (OVERLAP WN::|partial%5:00:00:incomplete:00|
                   WN::|incomplete%3:00:00::|))
 
@@ -9634,7 +9750,7 @@
          (SEM-FRAME (ONT::FIGURE (CONCEPT SITUATION))))
 
 (CONCEPT ONT::PHYSICAL-SYMPTOM-VAL
-         (INHERIT ONT::HAS-MEDICAL-CONDITION)
+         (INHERIT ONT::AILING)
          (OVERLAP WN::|puffy%5:00:00:unhealthy:00|))
 
 (CONCEPT ONT::PHYSICAL-VAL
@@ -9678,7 +9794,10 @@
          (INHERIT ONT::PLAINNESS-VAL)
          (OVERLAP WN::|plain%3:00:01::| WN::|stark%5:00:00:plain:01|))
 
-(CONCEPT ONT::PLAINNESS-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+(CONCEPT ONT::PLAINNESS-VAL
+         (COMMENT
+          "evaluation attributes dealing with plainess or elaborateness of something")
+         (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::PLANET
          (INHERIT ONT::NATURAL-OBJECT)
@@ -9857,6 +9976,8 @@
 (CONCEPT ONT::POSITION-AS-POINT-RELN (INHERIT ONT::POSITION-RELN))
 
 (CONCEPT ONT::POSITION-ON-DIMENSION-SCALE-VAL
+         (COMMENT
+          "indicates a position given a dimensional scale. These adjectives do not specify the shape, direction, or alignment of the scale.")
          (INHERIT ONT::DIMENSIONAL-PROPERTY-VAL))
 
 (CONCEPT ONT::POSITION-RELN
@@ -9988,7 +10109,9 @@
 
 (CONCEPT ONT::PRECISION-VAL (INHERIT ONT::INFORMATION-PROPERTY-VAL))
 
-(CONCEPT ONT::PREDEFINED-MEASURE-VAL (INHERIT ONT::DIMENSIONAL-PROPERTY-VAL))
+(CONCEPT ONT::PREDEFINED-MEASURE-VAL
+         (COMMENT "standardized size/quantity given a predefined measure")
+         (INHERIT ONT::DIMENSIONAL-PROPERTY-VAL))
 
 (CONCEPT ONT::PREDEFINED-SIZE-VAL (INHERIT ONT::PREDEFINED-MEASURE-VAL))
 
@@ -10039,7 +10162,9 @@
          (INHERIT ONT::PREMEDITATION-VAL)
          (OVERLAP WN::|planned%3:00:00::| WN::|premeditated%3:00:00::|))
 
-(CONCEPT ONT::PREMEDITATION-VAL (INHERIT ONT::PROCESS-VAL))
+(CONCEPT ONT::PREMEDITATION-VAL
+         (COMMENT "is the process pre-planned?")
+         (INHERIT ONT::PROCESS-VAL))
 
 (CONCEPT ONT::PREPARE (INHERIT ONT::CAUSE-EFFECT) (OVERLAP WN::|arm%2:33:00::|))
 
@@ -10104,6 +10229,7 @@
           (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
 
 (CONCEPT ONT::PRIMARY
+         (COMMENT "important; of primary importance")
          (INHERIT ONT::IMPORTANCE-VAL)
          (OVERLAP WN::|chief%5:00:02:important:00|
                   WN::|important%3:00:00::|
@@ -10270,7 +10396,9 @@
                     (ONT::FORMAL (CONCEPT SITUATION) OPTIONAL)
                     (ONT::FIGURE (CONCEPT T))))
 
-(CONCEPT ONT::PROPORTION-VAL (INHERIT ONT::DIMENSIONAL-PROPERTY-VAL))
+(CONCEPT ONT::PROPORTION-VAL
+         (COMMENT "indicates relative proportion/ratio on a specified scale")
+         (INHERIT ONT::DIMENSIONAL-PROPERTY-VAL))
 
 (CONCEPT ONT::PROPOSAL
          (INHERIT ONT::PS-OBJECT)
@@ -10814,7 +10942,7 @@
 
 (CONCEPT ONT::RELATIONAL-ATTRIBUTE-VAL
          (COMMENT
-          "properties that describe an entity with respect to another related entity")
+          "properties that describe an entity with respect to another related entity; an implicit second entity always present when these properties are evoked")
          (INHERIT ONT::PROPERTY-VAL))
 
 (CONCEPT ONT::RELATIVE
@@ -10826,7 +10954,10 @@
 (CONCEPT ONT::RELATIVE-QUANTITY-VAL
          (INHERIT ONT::QUANTITY-RELATED-PROPERTY-VAL))
 
-(CONCEPT ONT::RELATIVE-TO-HEIGHT-VAL (INHERIT ONT::SIZE-VAL))
+(CONCEPT ONT::RELATIVE-TO-HEIGHT-VAL
+         (COMMENT
+          "size specification relative to height. E.g. fat means more in  horizontal orientation with respect to the height")
+         (INHERIT ONT::SIZE-VAL))
 
 (CONCEPT ONT::RELAXED-VAL
          (INHERIT ONT::RESTLESSNESS-VAL)
@@ -10849,7 +10980,7 @@
                       (INTENTIONAL +)))
           (ONT::AFFECTED (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)))))
 
-(CONCEPT ONT::RELEVANCE-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+(CONCEPT ONT::RELEVANCE-VAL (INHERIT ONT::INFORMATION-PROPERTY-VAL))
 
 (CONCEPT ONT::RELEVANT
          (INHERIT ONT::RELEVANCE-VAL)
@@ -10857,7 +10988,7 @@
                   WN::|applicable%5:00:00:relevant:00|
                   WN::|relevant%3:00:00::|))
 
-(CONCEPT ONT::RELIABILITY-VAL (INHERIT ONT::INFORMATION-PROPERTY-VAL))
+(CONCEPT ONT::RELIABILITY-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::RELIABLE
          (INHERIT ONT::RELIABILITY-VAL)
@@ -10865,7 +10996,9 @@
                   WN::|dependable%5:00:00:trustworthy:00|
                   WN::|reliable%3:00:00::|))
 
-(CONCEPT ONT::RELIGION-RELATED-VAL (INHERIT ONT::STATUS-VAL))
+(CONCEPT ONT::RELIGION-RELATED-VAL
+         (COMMENT "having to do with religion")
+         (INHERIT ONT::STATUS-VAL))
 
 (CONCEPT ONT::RELIGIOUS-FACILITY
          (INHERIT ONT::FACILITY)
@@ -10875,7 +11008,9 @@
                   WN::|house_of_worship%1:06:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
 
-(CONCEPT ONT::RELIGIOUS-IDENTITY-VAL (INHERIT ONT::RELIGION-RELATED-VAL))
+(CONCEPT ONT::RELIGIOUS-IDENTITY-VAL
+         (COMMENT "identity based on religious affiliation")
+         (INHERIT ONT::RELIGION-RELATED-VAL))
 
 (CONCEPT ONT::RELIGIOUS-REGION (INHERIT ONT::GEOGRAPHIC-REGION))
 
@@ -10921,6 +11056,7 @@
 (CONCEPT ONT::REMAINING-PART (INHERIT ONT::PART))
 
 (CONCEPT ONT::REMAINING-VAL
+         (COMMENT "remaining after reaching a complete whole")
          (INHERIT ONT::PART-WHOLE-VAL)
          (OVERLAP WN::|left%5:00:00:unexhausted:00|
                   WN::|remaining%5:00:00:unexhausted:00|))
@@ -11363,7 +11499,9 @@
          (INHERIT ONT::ROBUSTNESS-VAL)
          (OVERLAP WN::|robust%3:00:00::| WN::|hardy%5:00:00:robust:00|))
 
-(CONCEPT ONT::ROBUSTNESS-VAL (INHERIT ONT::DIMENSIONAL-PROPERTY-VAL))
+(CONCEPT ONT::ROBUSTNESS-VAL
+         (COMMENT "indicates relative extent on a robustness scale")
+         (INHERIT ONT::DIMENSIONAL-PROPERTY-VAL))
 
 (CONCEPT ONT::ROLL (INHERIT ONT::MOVE))
 
@@ -11435,7 +11573,10 @@
          (INHERIT ONT::SAFETY-VAL)
          (OVERLAP WN::|secure%3:00:02::| WN::|safe%3:00:01::|))
 
-(CONCEPT ONT::SAFETY-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+(CONCEPT ONT::SAFETY-VAL
+         (COMMENT
+          "regarding liability or exposure to danger, risk or peril (compare to ont::harmfulness-val)")
+         (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::SALIENCE
          (INHERIT ONT::EVENT-OF-STATE)
@@ -11643,13 +11784,11 @@
 (CONCEPT ONT::SECOND-DURATION (INHERIT ONT::TIME-UNIT))
 
 (CONCEPT ONT::SECONDARY
+         (COMMENT "holding some but minor importance")
          (INHERIT ONT::IMPORTANCE-VAL)
          (OVERLAP WN::|minor%3:00:06::|
                   WN::|junior%3:00:00::|
-                  WN::|insignificant%5:00:00:minor:06|
-                  WN::|insignificant%3:00:00::|
-                  WN::|insignificant%3:00:00::|
-                  WN::|unimportant%3:00:00::|))
+                  WN::|insignificant%5:00:00:minor:06|))
 
 (CONCEPT ONT::SECRECY-VAL (INHERIT ONT::STATUS-VAL))
 
@@ -11786,7 +11925,9 @@
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE OTHER-SCALE))
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ))))
 
-(CONCEPT ONT::SENSORY-PROPERTY-VAL (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
+(CONCEPT ONT::SENSORY-PROPERTY-VAL
+         (COMMENT "properties that have to do with sensory input")
+         (INHERIT ONT::PHYSICAL-PROPERTY-VAL))
 
 (CONCEPT ONT::SEPARATION
          (COMMENT "abstract, social or physical dissociation")
@@ -11823,6 +11964,8 @@
                     (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::SEQUENCE-VAL
+         (COMMENT
+          "properties that deal with an object's location with respect to another object in an ordered sequence")
          (INHERIT ONT::RELATIONAL-ATTRIBUTE-VAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (GRADABILITY -))
          (SEM-FRAME (ONT::GROUND (CONCEPT T) OPTIONAL)))
@@ -11853,6 +11996,8 @@
          (OVERLAP WN::|severe%5:00:01:bad:00| WN::|severe%5:00:00:intense:00|))
 
 (CONCEPT ONT::SEVERITY-VAL
+         (COMMENT
+          "indicates relative extent or magnitude of something on a severity scale")
          (INHERIT ONT::DIMENSIONAL-PROPERTY-VAL)
          (SEM-FRAME (ONT::FIGURE (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)))))
 
@@ -11939,6 +12084,8 @@
            OPTIONAL)))
 
 (CONCEPT ONT::SHORT-VAL
+         (COMMENT
+          "less in orientation on a linear scale; does not indicate horizontality or verticality of the object")
          (INHERIT ONT::LINEAR-EXTENT-VAL)
          (OVERLAP WN::|short%3:00:02::| WN::|short%3:00:01::|))
 
@@ -12086,6 +12233,8 @@
 (CONCEPT ONT::SIZE-SCALE (INHERIT ONT::SCALE))
 
 (CONCEPT ONT::SIZE-VAL
+         (COMMENT
+          "indicates relative extent or magnitude of something on a size scale")
          (INHERIT ONT::DIMENSIONAL-PROPERTY-VAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE SIZE-SCALE)))
 
@@ -12095,6 +12244,7 @@
                   WN::|doubtful%5:00:00:uncertain:02|))
 
 (CONCEPT ONT::SKINNY-VAL
+         (COMMENT "less in horizontal orientation with respect to the height")
          (INHERIT ONT::RELATIVE-TO-HEIGHT-VAL)
          (OVERLAP WN::|slim%5:00:00:thin:03|
                   WN::|skinny%5:00:00:thin:03|
@@ -12114,6 +12264,7 @@
 (CONCEPT ONT::SLOW-VAL (INHERIT ONT::SPEED-VAL) (OVERLAP WN::|slow%3:00:01::|))
 
 (CONCEPT ONT::SMALL
+         (COMMENT "negative orientation on a size scale")
          (INHERIT ONT::SIZE-VAL)
          (OVERLAP WN::|bantam%5:00:00:small:00| WN::|small%3:00:00::|))
 
@@ -12197,6 +12348,8 @@
          (OVERLAP WN::|freedom%1:26:01::| WN::|slavery%1:26:00::|))
 
 (CONCEPT ONT::SOCIAL-INTERACTION-VAL
+         (COMMENT
+          "properties of human behavior having to do with social interaction; e.g. friendly, kind, mean")
          (INHERIT ONT::ANIMAL-PROPENSITY-VAL)
          (SEM-FRAME
           (ONT::FIGURE
@@ -12312,6 +12465,7 @@
          (OVERLAP WN::|cramp%1:26:00::| WN::|spasm%1:26:00::|))
 
 (CONCEPT ONT::SPATIAL
+         (COMMENT "properties relating to space")
          (INHERIT ONT::PROPERTY-VAL)
          (OVERLAP WN::|spatial%3:01:00::|)
          (SEM-FRAME
@@ -12408,6 +12562,7 @@
          (OVERLAP WN::|spicy%5:00:01:tasty:00| WN::|spicy%5:00:00:tasty:00|))
 
 (CONCEPT ONT::SPLIT-VAL
+         (COMMENT "sub-dividing a complete whole")
          (INHERIT ONT::PART-WHOLE-VAL)
          (OVERLAP WN::|split%5:00:00:divided:00| WN::|divided%3:00:00::|))
 
@@ -12533,7 +12688,7 @@
 
 (CONCEPT ONT::STATUS-VAL
          (COMMENT
-          "properties that describe social or political status or position")
+          "properties that describe social, political or official status or position")
          (INHERIT ONT::PROPERTY-VAL)
          (SEM-FRAME (ONT::GROUND (CONCEPT T) OPTIONAL)))
 
@@ -12846,6 +13001,7 @@
                     (FORM SOLID-OBJECT)))
 
 (CONCEPT ONT::SUPPLEMENTAL-VAL
+         (COMMENT "supplemental addition to a complete whole")
          (INHERIT ONT::PART-WHOLE-VAL)
          (OVERLAP WN::|supplemental%5:00:00:additive:00|))
 
@@ -13085,7 +13241,10 @@
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
           (ONT::AFFECTED (CONCEPT T))))
 
-(CONCEPT ONT::TASK-PURPOSE-VAL (INHERIT ONT::PROCESS-VAL))
+(CONCEPT ONT::TASK-PURPOSE-VAL
+         (COMMENT
+          "the word itself describes the purpose of the task, e.g., exploratory - task for exploration; startup - task for starting something")
+         (INHERIT ONT::PROCESS-VAL))
 
 (CONCEPT ONT::TASTABLE-PROPERTY-VAL (INHERIT ONT::SENSORY-PROPERTY-VAL))
 
@@ -13138,6 +13297,7 @@
          (SEM-FRAME (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::TEMPERATURE-VAL
+         (COMMENT "having to do with temperature")
          (INHERIT ONT::PHYSICAL-PROPERTY-VAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE TEMPERATURE-SCALE)))
 
@@ -13221,7 +13381,7 @@
 (CONCEPT ONT::THANKFULNESS-VAL (INHERIT ONT::EMOTIONAL-VAL))
 
 (CONCEPT ONT::THEORETICAL-VAL
-         (INHERIT ONT::CAN-BE-VERIFIED-VAL)
+         (INHERIT ONT::BASIS-OF-EVIDENCE-VAL)
          (OVERLAP WN::|theoretical%3:00:01::|))
 
 (CONCEPT ONT::THERE (INHERIT ONT::POS-WRT-SPEAKER-RELN))
@@ -13241,7 +13401,7 @@
          (OVERLAP WN::|thin%3:00:01::| WN::|flat%5:00:00:thin:01|))
 
 (CONCEPT ONT::THIRSTY-VAL
-         (INHERIT ONT::SATIATED-VAL)
+         (INHERIT ONT::NOT-SATIATED-VAL)
          (OVERLAP WN::|thirsty%3:00:00::|))
 
 (CONCEPT ONT::THOROUGHFARE
@@ -13626,6 +13786,7 @@
          (SEM-FRAME (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::TWO-DIMENSIONAL-VAL
+         (COMMENT "size the deals with area(2D)")
          (INHERIT ONT::SIZE-VAL)
          (OVERLAP WN::|roomy%5:00:00:commodious:00|
                   WN::|spacious%5:00:00:commodious:00|))
@@ -13647,7 +13808,9 @@
                   WN::|standard%5:00:00:common:01|
                   WN::|common%3:00:01::|))
 
-(CONCEPT ONT::TYPICALITY-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+(CONCEPT ONT::TYPICALITY-VAL
+         (COMMENT "abiding by or breaking with customary or usual practices")
+         (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::UBIQUITINATION (INHERIT ONT::POST-TRANSLATIONAL-MODIFICATION))
 
@@ -13676,6 +13839,10 @@
          (OVERLAP WN::|unsure%3:00:00::|
                   WN::|unsealed%3:00:02::|
                   WN::|uncertain%3:00:02::|))
+
+(CONCEPT ONT::UNCLASSIFIED-VAL
+         (INHERIT ONT::CLASSIFICATION-VAL)
+         (OVERLAP WN::|unclassified%3:00:02::|))
 
 (CONCEPT ONT::UNCLEAR
          (INHERIT ONT::CLARITY-VAL)
@@ -13796,7 +13963,10 @@
                   WN::|obscure%5:00:00:inconspicuous:00|
                   WN::|inconspicuous%3:00:00::|))
 
-(CONCEPT ONT::UNOBSTRUCTED (INHERIT ONT::FLOW-VAL))
+(CONCEPT ONT::UNOBSTRUCTED
+         (INHERIT ONT::FLOW-VAL)
+         (OVERLAP WN::|unobstructed%3:00:00::|
+                  WN::|clear%5:00:00:unobstructed:00|))
 
 (CONCEPT ONT::UNPLEASANT
          (INHERIT ONT::NEG-SOFT-EMOTIONAL-VAL)
@@ -14006,7 +14176,9 @@
                   WN::|vertical%3:00:00::|
                   WN::|perpendicular%3:00:00::|))
 
-(CONCEPT ONT::VERTICAL-VAL (INHERIT ONT::LINEAR-EXTENT-VAL))
+(CONCEPT ONT::VERTICAL-VAL
+         (COMMENT "size specific to vertical linear scale")
+         (INHERIT ONT::LINEAR-EXTENT-VAL))
 
 (CONCEPT ONT::VIRUS
          (INHERIT ONT::MICROORGANISM)
@@ -14229,6 +14401,8 @@
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::WEIGHT-VAL
+         (COMMENT
+          "indicates relative extent or magnitude of something on a weight scale")
          (INHERIT ONT::DIMENSIONAL-PROPERTY-VAL)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE WEIGHT-SCALE)))
 
@@ -14272,7 +14446,7 @@
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE WHITE*1--07--00)))
 
 (CONCEPT ONT::WHOLE-COMPLETE
-         (INHERIT ONT::PART-WHOLE-VAL)
+         (INHERIT ONT::COMPLETENESS-VAL)
          (OVERLAP WN::|complete%3:00:00::| WN::|whole%3:00:00::|))
 
 (CONCEPT ONT::WIDTH-SCALE
@@ -14383,7 +14557,10 @@
           (ONT::AGENT
            (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +) (ORIGIN HUMAN)))))
 
-(CONCEPT ONT::WORTHINESS-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+(CONCEPT ONT::WORTHINESS-VAL
+         (COMMENT
+          "evaluation attributes dealing with the value or worth of something")
+         (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT ONT::WORTHY-VAL
          (INHERIT ONT::WORTHINESS-VAL)

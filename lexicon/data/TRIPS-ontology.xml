@@ -1980,7 +1980,6 @@
 </ONTTYPE>
 <ONTTYPE name="non-vertical-val">
 <ONTTYPE name="broad">
-<WORD name="broad" />
 <WORD name="wide" />
 <MAPPING to="wordnet" name="wide%3:00:00::" />
 </ONTTYPE>
@@ -2451,6 +2450,12 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="importance-val">
+<ONTTYPE name="not-important-val">
+<WORD name="insignificant" />
+<WORD name="unimportant" />
+<MAPPING to="wordnet" name="insignificant%5:00:00:unnoticeable:00" />
+<MAPPING to="wordnet" name="unimportant%3:00:00::" />
+</ONTTYPE>
 <ONTTYPE name="primary">
 <WORD name="central" />
 <WORD name="chief" />
@@ -2469,15 +2474,11 @@
 <MAPPING to="wordnet" name="significant%3:00:00::" />
 </ONTTYPE>
 <ONTTYPE name="secondary">
-<WORD name="insignificant" />
 <WORD name="minor" />
 <WORD name="secondary" />
-<WORD name="unimportant" />
 <MAPPING to="wordnet" name="minor%3:00:06::" />
 <MAPPING to="wordnet" name="junior%3:00:00::" />
 <MAPPING to="wordnet" name="insignificant%5:00:00:minor:06" />
-<MAPPING to="wordnet" name="insignificant%5:00:00:unnoticeable:00" />
-<MAPPING to="wordnet" name="unimportant%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="information-property-val">
@@ -2601,20 +2602,18 @@
 <MAPPING to="wordnet" name="questionable%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="reliability-val">
-<ONTTYPE name="reliable">
-<WORD name="dependable" />
-<WORD name="reliable" />
-<WORD name="trustworthy" />
-<MAPPING to="wordnet" name="trustworthy%3:00:00::" />
-<MAPPING to="wordnet" name="dependable%5:00:00:trustworthy:00" />
-<MAPPING to="wordnet" name="reliable%3:00:00::" />
+<ONTTYPE name="relevance-val">
+<ONTTYPE name="not-relevant-val">
+<WORD name="irrelevant" />
+<MAPPING to="wordnet" name="irrelevant%3:00:00::" />
 </ONTTYPE>
-<ONTTYPE name="unreliable">
-<WORD name="uncertain" />
-<WORD name="unreliable" />
-<MAPPING to="wordnet" name="uncertain%5:00:00:unreliable:00" />
-<MAPPING to="wordnet" name="undependable%5:00:00:fallible:00" />
+<ONTTYPE name="relevant">
+<WORD name="applicable" />
+<WORD name="pertinent" />
+<WORD name="relevant" />
+<MAPPING to="wordnet" name="pertinent%5:00:00:relevant:00" />
+<MAPPING to="wordnet" name="applicable%5:00:00:relevant:00" />
+<MAPPING to="wordnet" name="relevant%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="validity-val">
@@ -2749,18 +2748,20 @@
 <MAPPING to="wordnet" name="advisable%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="relevance-val">
-<ONTTYPE name="not-relevant-val">
-<WORD name="irrelevant" />
-<MAPPING to="wordnet" name="irrelevant%3:00:00::" />
+<ONTTYPE name="reliability-val">
+<ONTTYPE name="reliable">
+<WORD name="dependable" />
+<WORD name="reliable" />
+<WORD name="trustworthy" />
+<MAPPING to="wordnet" name="trustworthy%3:00:00::" />
+<MAPPING to="wordnet" name="dependable%5:00:00:trustworthy:00" />
+<MAPPING to="wordnet" name="reliable%3:00:00::" />
 </ONTTYPE>
-<ONTTYPE name="relevant">
-<WORD name="applicable" />
-<WORD name="pertinent" />
-<WORD name="relevant" />
-<MAPPING to="wordnet" name="pertinent%5:00:00:relevant:00" />
-<MAPPING to="wordnet" name="applicable%5:00:00:relevant:00" />
-<MAPPING to="wordnet" name="relevant%3:00:00::" />
+<ONTTYPE name="unreliable">
+<WORD name="uncertain" />
+<WORD name="unreliable" />
+<MAPPING to="wordnet" name="uncertain%5:00:00:unreliable:00" />
+<MAPPING to="wordnet" name="undependable%5:00:00:fallible:00" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="safety-val">
@@ -3148,10 +3149,6 @@
 <ONTTYPE name="not-satiated-val">
 <WORD name="unsatiated" />
 <MAPPING to="wordnet" name="unsated%5:00:00:insatiate:00" />
-</ONTTYPE>
-<ONTTYPE name="satiated-val">
-<WORD name="satiated" />
-<MAPPING to="wordnet" name="satiate%3:00:00::" />
 <ONTTYPE name="hungry">
 <WORD name="hungry" />
 <WORD name="peckish" />
@@ -3163,6 +3160,10 @@
 <WORD name="thirsty" />
 <MAPPING to="wordnet" name="thirsty%5:00:00:dry:01" />
 </ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="satiated-val">
+<WORD name="satiated" />
+<MAPPING to="wordnet" name="satiate%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="sweaty-val">
@@ -3226,11 +3227,8 @@
 <MAPPING to="wordnet" name="deaf%3:00:00::" />
 <MAPPING to="wordnet" name="blind%3:00:00::" />
 <MAPPING to="wordnet" name="dumb%5:00:01:inarticulate:00" />
-<ONTTYPE name="physical-symptom-val">
-<WORD name="bloody" />
-<WORD name="puffy" />
-<WORD name="twitchy" />
-<MAPPING to="wordnet" name="puffy%5:00:00:unhealthy:00" />
+</ONTTYPE>
+<ONTTYPE name="healthiness-val">
 <ONTTYPE name="ailing">
 <WORD name="ill" />
 <WORD name="sick" />
@@ -3283,7 +3281,11 @@
 <MAPPING to="wordnet" name="aching%5:00:00:painful:00" />
 <MAPPING to="wordnet" name="painful%3:00:00::" />
 </ONTTYPE>
-</ONTTYPE>
+<ONTTYPE name="physical-symptom-val">
+<WORD name="bloody" />
+<WORD name="puffy" />
+<WORD name="twitchy" />
+<MAPPING to="wordnet" name="puffy%5:00:00:unhealthy:00" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="healthy-val">
@@ -3291,6 +3293,7 @@
 <WORD name="well" />
 <MAPPING to="wordnet" name="well%3:00:01::" />
 <MAPPING to="wordnet" name="healthy%3:00:00::" />
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="hereditary">
 <WORD name="genetic" />
@@ -3379,6 +3382,8 @@
 </ONTTYPE>
 <ONTTYPE name="unobstructed">
 <WORD name="clear" />
+<MAPPING to="wordnet" name="unobstructed%3:00:00::" />
+<MAPPING to="wordnet" name="clear%5:00:00:unobstructed:00" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="homogeneity-val">
@@ -3421,12 +3426,24 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="part-whole-val">
+<ONTTYPE name="completeness-val">
 <ONTTYPE name="partial-incomplete">
 <WORD name="in_part" />
 <WORD name="incomplete" />
 <WORD name="partial" />
 <MAPPING to="wordnet" name="partial%5:00:00:incomplete:00" />
 <MAPPING to="wordnet" name="incomplete%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="whole-complete">
+<WORD name="complete" />
+<WORD name="comprehensive" />
+<WORD name="entire" />
+<WORD name="total" />
+<WORD name="utter" />
+<WORD name="whole" />
+<MAPPING to="wordnet" name="complete%3:00:00::" />
+<MAPPING to="wordnet" name="whole%3:00:00::" />
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="remaining-val">
 <WORD name="left_over" />
@@ -3444,16 +3461,6 @@
 <WORD name="spare" />
 <WORD name="supplemental" />
 <MAPPING to="wordnet" name="supplementary%5:00:00:additive:00" />
-</ONTTYPE>
-<ONTTYPE name="whole-complete">
-<WORD name="complete" />
-<WORD name="comprehensive" />
-<WORD name="entire" />
-<WORD name="total" />
-<WORD name="utter" />
-<WORD name="whole" />
-<MAPPING to="wordnet" name="complete%3:00:00::" />
-<MAPPING to="wordnet" name="whole%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="phosphorilated">
@@ -3481,6 +3488,7 @@
 <ONTTYPE name="actual">
 <WORD name="actual" />
 <WORD name="real" />
+<WORD name="realistic" />
 <WORD name="so" />
 <MAPPING to="wordnet" name="real%3:00:00::" />
 <MAPPING to="wordnet" name="real%5:00:00:concrete:00" />
@@ -3505,7 +3513,6 @@
 <WORD name="fake" />
 <WORD name="false" />
 <WORD name="phony" />
-<WORD name="realistic" />
 <WORD name="unnatural" />
 <MAPPING to="wordnet" name="man-made%5:00:00:artificial:00" />
 <MAPPING to="wordnet" name="artificial%3:00:00::" />
@@ -3907,6 +3914,16 @@
 <MAPPING to="wordnet" name="unavailable%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="basis-of-evidence-val">
+<ONTTYPE name="empirical-val">
+<WORD name="empirical" />
+<MAPPING to="wordnet" name="empirical%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="theoretical-val">
+<WORD name="theoretical" />
+<MAPPING to="wordnet" name="theoretical%3:00:01::" />
+</ONTTYPE>
+</ONTTYPE>
 <ONTTYPE name="can-be-done-val">
 <ONTTYPE name="accessibility-val">
 <ONTTYPE name="accessible-val">
@@ -4010,17 +4027,9 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="can-be-verified-val">
-<ONTTYPE name="empirical-val">
-<WORD name="empirical" />
-<MAPPING to="wordnet" name="empirical%3:00:00::" />
-</ONTTYPE>
 <ONTTYPE name="not-verified-val">
 <WORD name="unevaluated" />
 <MAPPING to="wordnet" name="unverified%5:00:00:unproved:00" />
-</ONTTYPE>
-<ONTTYPE name="theoretical-val">
-<WORD name="theoretical" />
-<MAPPING to="wordnet" name="theoretical%3:00:01::" />
 </ONTTYPE>
 <ONTTYPE name="verified-val">
 <WORD name="verified" />
@@ -5073,7 +5082,16 @@
 <MAPPING to="wordnet" name="urban%3:01:00::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="classification-val" />
+<ONTTYPE name="classification-val">
+<ONTTYPE name="classified-val">
+<WORD name="classified" />
+<MAPPING to="wordnet" name="classified%3:00:02::" />
+</ONTTYPE>
+<ONTTYPE name="unclassified-val">
+<WORD name="unclassified" />
+<MAPPING to="wordnet" name="unclassified%3:00:02::" />
+</ONTTYPE>
+</ONTTYPE>
 <ONTTYPE name="country-related-val">
 <ONTTYPE name="foreign-val">
 <WORD name="foreign" />
