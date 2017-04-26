@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::pitch-interval">
+ <relation label="overlap">
+  wn::|musical_interval%1:10:00::|
+ </relation>
+ <relation label="inherit">
+  ont::music-composition-element
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::abstract-object-nontemporal">
+ <comment>
+  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">information-content</feat>
+ </sem-feats>
+ <concept name="ont::function-object">
+ <relation label="inherit">
+  ont::abstract-object-nontemporal
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::information-function-object">
+ <relation label="inherit">
+  ont::function-object
+ </relation>
+ <relation label="overlap">
+  wn::|communication%1:03:00::|
+  wn::|criminal_record%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="intentional">-</feat>
+  <feat name="information">information-content</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::composition">
+ <comment>
+  &quot;composition, e.g., result of event-of-creation&quot;
+ </comment>
+ <relation label="inherit">
+  ont::information-function-object
+ </relation>
+ <relation label="overlap">
+  wn::|composition%1:07:01::|
+  wn::|composition%1:07:02::|
+  wn::|composition%1:04:01::|
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">-</feat>
+ </sem-feats>
+ <concept name="ont::music">
+ <relation label="inherit">
+  ont::composition
+ </relation>
+ <relation label="overlap">
+  wn::|music%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::music-composition-element">
+ <relation label="inherit">
+  ont::music
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">-</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::octave">
+ <relation label="overlap">
+  wn::|octave%1:10:00::|
+ </relation>
+ <relation label="inherit">
+  ont::pitch-interval
+  abstr-obj
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="interval" />
+ </morph>
+ <example text="Major third is an interval.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::pitch-interval
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

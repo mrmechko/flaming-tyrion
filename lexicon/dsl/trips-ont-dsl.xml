@@ -186,6 +186,20 @@
    wn::|accessible%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::accidental">
+  <relation label="inherit">
+   ont::music-composition-element
+  </relation>
+  <relation label="overlap">
+   wn::|accidental%1:10:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">-</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::accommodate">
   <relation label="inherit">
    ont::event-of-causation
@@ -2896,6 +2910,23 @@
    ont::prepared
   </relation>
  </concept>
+ <concept name="ont::bar-measure">
+  <relation label="overlap">
+   wn::|measure%1:10:00::|
+  </relation>
+  <relation label="inherit">
+   ont::music-composition-element
+   abstr-obj
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::base">
   <relation label="inherit">
    ont::kettle-base
@@ -3045,6 +3076,28 @@
   <relation label="overlap">
    wn::|legume%1:20:02::|
   </relation>
+ </concept>
+ <concept name="ont::beat">
+  <relation label="inherit">
+   ont::music-composition-element
+  </relation>
+  <relation label="overlap">
+   wn::|beat%1:10:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">-</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::beautiful">
   <relation label="inherit">
@@ -5154,6 +5207,20 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::chord">
+  <relation label="inherit">
+   ont::music-composition-element
+  </relation>
+  <relation label="overlap">
+   wn::|chord%1:10:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">-</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::chronicle">
   <relation label="inherit">
@@ -13349,6 +13416,15 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::half-step">
+  <relation label="overlap">
+   wn::|half_step%1:10:00::|
+  </relation>
+  <relation label="inherit">
+   ont::pitch-unit
+   abstr-obj
+  </relation>
+ </concept>
  <concept name="ont::happen">
   <relation label="inherit">
    ont::event-of-state
@@ -15594,6 +15670,15 @@
    <feat name="form">solid-object</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::key">
+  <relation label="overlap">
+   wn::|key%1:10:00::|
+  </relation>
+  <relation label="inherit">
+   ont::music-composition-element
+   abstr-obj
+  </relation>
+ </concept>
  <concept name="ont::kicking">
   <relation label="inherit">
    ont::hitting
@@ -16869,6 +16954,20 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::lyric">
+  <relation label="inherit">
+   ont::music
+  </relation>
+  <relation label="overlap">
+   wn::|lyric%1:10:01::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">-</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::machine">
   <relation label="inherit">
    ont::device
@@ -17560,6 +17659,20 @@
     situation
    </relation>
    <feat name="trajectory">-</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::melody">
+  <relation label="inherit">
+   ont::music
+  </relation>
+  <relation label="overlap">
+   wn::|melody%1:09:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">-</feat>
   </sem-feats>
  </concept>
  <concept name="ont::member">
@@ -18404,6 +18517,57 @@
   </relation>
   <relation label="overlap">
    wn::|music%1:10:00::|
+  </relation>
+ </concept>
+ <concept name="ont::music-composition-element">
+  <relation label="inherit">
+   ont::music
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">-</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::music-composition-type">
+  <relation label="inherit">
+   ont::music
+  </relation>
+  <relation label="overlap">
+   wn::|musical_style%1:10:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">-</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::music-movement">
+  <relation label="inherit">
+   ont::music
+  </relation>
+  <relation label="overlap">
+   wn::|movement%1:10:00::|
+  </relation>
+ </concept>
+ <concept name="ont::music-scale">
+  <relation label="overlap">
+   wn::|scale%1:10:00::|
+  </relation>
+  <relation label="inherit">
+   ont::music-composition-element
+   abstr-obj
+  </relation>
+ </concept>
+ <concept name="ont::musical-document">
+  <relation label="overlap">
+   wn::|sheet_music%1:10:00::|
+  </relation>
+  <relation label="inherit">
+   ont::info-medium
+   phys-obj
   </relation>
  </concept>
  <concept name="ont::musical-instrument">
@@ -19419,6 +19583,14 @@
    wn::|worthless%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::note-length-unit">
+  <relation label="inherit">
+   ont::sound-unit
+  </relation>
+  <relation label="overlap">
+   wn::|whole_note%1:10:00::|
+  </relation>
+ </concept>
  <concept name="ont::noticeable">
   <relation label="inherit">
    ont::attention-worthy-val
@@ -19821,6 +19993,15 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::octave">
+  <relation label="overlap">
+   wn::|octave%1:10:00::|
+  </relation>
+  <relation label="inherit">
+   ont::pitch-interval
+   abstr-obj
+  </relation>
  </concept>
  <concept name="ont::off">
   <relation label="inherit">
@@ -21271,6 +21452,58 @@
     abstr-obj
    </relation>
    <feat name="scale">pink*1--07--00</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::pitch">
+  <relation label="overlap">
+   wn::|note%1:10:04::|
+   wn::|pitch%1:07:00::|
+  </relation>
+  <relation label="inherit">
+   ont::music-composition-element
+   abstr-obj
+  </relation>
+ </concept>
+ <concept name="ont::pitch-interval">
+  <relation label="overlap">
+   wn::|musical_interval%1:10:00::|
+  </relation>
+  <relation label="inherit">
+   ont::music-composition-element
+   abstr-obj
+  </relation>
+ </concept>
+ <concept name="ont::pitch-scale">
+  <relation label="inherit">
+   ont::phys-measure-domain
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">pitch-scale</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::extent">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="measure-function">value</feat>
+     <feat name="scale">pitch-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::pitch-unit">
+  <relation label="inherit">
+   ont::sound-unit
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">pitch-scale</feat>
   </sem-feats>
  </concept>
  <concept name="ont::place">
@@ -27121,6 +27354,12 @@
    ont::scale
   </relation>
  </concept>
+ <concept name="ont::sound-unit">
+  <relation label="inherit">
+   ont::measure-unit
+   abstr-obj
+  </relation>
+ </concept>
  <concept name="ont::soup">
   <relation label="inherit">
    ont::meals
@@ -31463,6 +31702,15 @@
   <relation label="overlap">
    wn::|complete%3:00:00::|
    wn::|whole%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::whole-step">
+  <relation label="overlap">
+   wn::|step%1:10:00::|
+  </relation>
+  <relation label="inherit">
+   ont::pitch-unit
+   abstr-obj
   </relation>
  </concept>
  <concept name="ont::width-scale">
