@@ -120,10 +120,51 @@
   ont::direction
  </relation>
  </concept>
- <concept name="ont::direction-up">
+ <concept name="ont::direction-down-ground">
+ <comment>
+  &quot;this is the transitive 'down' that has a GROUND that describes a physical object and locations objects or events&quot;
+ </comment>
  <relation label="inherit">
   ont::direction
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::direction-up">
+ <comment>
+  &quot;This is the intransitive 'up' and is relative to some scale/domain: e.g., the temperature is up, move the ball up&quot;
+ </comment>
+ <relation label="inherit">
+  ont::direction
+ </relation>
+ </concept>
+ <concept name="ont::direction-up-ground">
+ <comment>
+  &quot;this is the transitive 'up' that has a GROUND that describes a physical object and locations objects or events&quot;
+ </comment>
+ <relation label="inherit">
+  ont::direction
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::cardinal-direction">
  <relation label="inherit">

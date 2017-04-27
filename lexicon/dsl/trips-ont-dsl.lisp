@@ -112,8 +112,7 @@
 
 (CONCEPT ONT::ACCOMMODATION
          (INHERIT ONT::LODGING)
-         (OVERLAP WN::|hotel%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+         (OVERLAP WN::|hotel%1:06:00::|))
 
 (CONCEPT ONT::ACCOMPANIMENT
          (INHERIT ONT::PREDICATE)
@@ -282,8 +281,7 @@
          (SEM-FRAME
           (ONT::FIGURE
            (SEM-FEATS (INHERIT PHYS-OBJ)
-                      (OBJECT-FUNCTION PROVIDES-SERVICE-OPEN-CLOSED)
-                      (TYPE LOCATION)))))
+                      (OBJECT-FUNCTION PROVIDES-SERVICE-OPEN-CLOSED)))))
 
 (CONCEPT ONT::ACTIVE-PERCEPTION
          (INHERIT ONT::PERCEPTION)
@@ -364,9 +362,7 @@
          (INHERIT ONT::OBJECT-AFFORDANCES-VAL)
          (SEM-FRAME
           (ONT::FIGURE
-           (SEM-FEATS (INHERIT PHYS-OBJ)
-                      (OBJECT-FUNCTION PROVIDES-SERVICE)
-                      (TYPE LOCATION)))))
+           (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION PROVIDES-SERVICE)))))
 
 (CONCEPT ONT::ACTUAL
          (INHERIT ONT::ACTUALITY-VAL)
@@ -887,6 +883,9 @@
                   WN::|alternate%2:30:01::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -) (CAUSE AGENTIVE))
          (SEM-FRAME
+          (ONT::AFFECTED1
+           (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION))
+           OPTIONAL)
           (ONT::AFFECTED-RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
            OPTIONAL)
           (ONT::RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
@@ -1089,8 +1088,7 @@
 
 (CONCEPT ONT::ATHLETIC-FACILITY
          (INHERIT ONT::FACILITY)
-         (OVERLAP WN::|athletic_facility%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+         (OVERLAP WN::|athletic_facility%1:06:00::|))
 
 (CONCEPT ONT::ATHLETIC-GAME
          (INHERIT ONT::SPORT)
@@ -1728,7 +1726,11 @@
 (CONCEPT ONT::BODY-PROPERTY-VAL
          (COMMENT
           "properties having to do with human/animal body conditions or states")
-         (INHERIT ONT::BODY-RELATED-PROPERTY-VAL))
+         (INHERIT ONT::BODY-RELATED-PROPERTY-VAL)
+         (SEM-FRAME
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL))))))
 
 (CONCEPT ONT::BODY-RELATED-PROPERTY-VAL
          (COMMENT "properties having to do with human/animal body")
@@ -1896,8 +1898,7 @@
 
 (CONCEPT ONT::BUSINESS-FACILITY
          (INHERIT ONT::FACILITY)
-         (OVERLAP WN::|office_building%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+         (OVERLAP WN::|office_building%1:06:00::|))
 
 (CONCEPT ONT::BUT-EXCEPTION (INHERIT ONT::CONJUNCT))
 
@@ -2824,8 +2825,7 @@
 
 (CONCEPT ONT::COMMERCIAL-FACILITY
          (INHERIT ONT::FACILITY)
-         (OVERLAP WN::|shop%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+         (OVERLAP WN::|shop%1:06:00::|))
 
 (CONCEPT ONT::COMMISSIVE
          (COMMENT
@@ -4087,11 +4087,28 @@
 
 (CONCEPT ONT::DIRECTION-DOWN (INHERIT ONT::DIRECTION))
 
+(CONCEPT ONT::DIRECTION-DOWN-GROUND
+         (COMMENT
+          "this is the transitive 'down' that has a GROUND that describes a physical object and locations objects or events")
+         (INHERIT ONT::DIRECTION)
+         (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ))
+                    (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
+
 (CONCEPT ONT::DIRECTION-RELN
          (INHERIT ONT::PATH)
          (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ))))
 
-(CONCEPT ONT::DIRECTION-UP (INHERIT ONT::DIRECTION))
+(CONCEPT ONT::DIRECTION-UP
+         (COMMENT
+          "This is the intransitive 'up' and is relative to some scale/domain: e.g., the temperature is up, move the ball up")
+         (INHERIT ONT::DIRECTION))
+
+(CONCEPT ONT::DIRECTION-UP-GROUND
+         (COMMENT
+          "this is the transitive 'up' that has a GROUND that describes a physical object and locations objects or events")
+         (INHERIT ONT::DIRECTION)
+         (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ))
+                    (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::DIRECTION-VAL (INHERIT ONT::SPATIAL))
 
@@ -4333,8 +4350,7 @@
                   WN::|bar%1:06:00::|
                   WN::|saloon%1:06:00::|
                   WN::|ginmill%1:06:00::|
-                  WN::|taproom%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+                  WN::|taproom%1:06:00::|))
 
 (CONCEPT ONT::DRIVE
          (INHERIT ONT::TRANSPORT)
@@ -4471,8 +4487,7 @@
          (INHERIT ONT::FACILITY)
          (OVERLAP WN::|school%1:06:00::|
                   WN::|university%1:06:00::|
-                  WN::|college%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+                  WN::|college%1:06:00::|))
 
 (CONCEPT ONT::EFFICIENCY-VAL (INHERIT ONT::PROCESS-VAL))
 
@@ -4508,7 +4523,11 @@
 
 (CONCEPT ONT::EMOTIONAL-VAL
          (COMMENT "state of having a particular emotion")
-         (INHERIT ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+         (INHERIT ONT::PSYCHOLOGICAL-PROPERTY-VAL)
+         (SEM-FRAME
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL))))))
 
 (CONCEPT ONT::EMPIRICAL-VAL
          (INHERIT ONT::BASIS-OF-EVIDENCE-VAL)
@@ -4667,8 +4686,7 @@
 
 (CONCEPT ONT::ENTERTAINMENT-ESTABLISHMENT
          (INHERIT ONT::COMMERCIAL-FACILITY)
-         (OVERLAP WN::|discotheque%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+         (OVERLAP WN::|discotheque%1:06:00::|))
 
 (CONCEPT ONT::ENTRANT (INHERIT ONT::PERSON) (OVERLAP WN::|entrant%1:18:02::|))
 
@@ -5058,6 +5076,16 @@
                   WN::|singular%5:00:00:extraordinary:00|
                   WN::|extraordinary%3:00:00::|))
 
+(CONCEPT ONT::EXCHANGE
+         (INHERIT ONT::ARRANGING)
+         (OVERLAP WN::|exchange%2:40:00::|
+                  WN::|exchange%2:30:00::|
+                  WN::|exchange%2:40:02::|
+                  WN::|transpose%2:30:00::|
+                  WN::|transpose%2:30:02::|
+                  WN::|transpose%2:36:00::|
+                  WN::|transpose%2:30:01::|))
+
 (CONCEPT ONT::EXCITED
          (INHERIT ONT::POS-INTENSE-EMOTIONAL-VAL)
          (OVERLAP WN::|excited%3:00:00::|
@@ -5089,7 +5117,7 @@
 (CONCEPT ONT::EXCLUSIVE (INHERIT ONT::MANNER))
 
 (CONCEPT ONT::EXECUTE
-         (INHERIT ONT::CAUSE-EFFECT)
+         (INHERIT ONT::ACTING)
          (OVERLAP WN::|fulfil%2:36:00::|
                   WN::|fulfill%2:36:00::|
                   WN::|action%2:36:00::|
@@ -5107,6 +5135,11 @@
                   WN::|commit%2:41:01::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
          (SEM-FRAME
+          (ONT::FORMAL
+           (SEM-FEATS (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ))
+                      (TYPE (OR SITUATION-ROOT PROPERTY-VAL)))
+           OPTIONAL)
+          (ONT::RESULT (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)) OPTIONAL)
           (ONT::NEUTRAL
            (SEM-FEATS (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION))
                       (TYPE (OR PROCEDURE EVENT-OF-ACTION)))
@@ -5127,7 +5160,6 @@
                   WN::|lie_in%2:42:00::|
                   WN::|be%2:42:012::|
                   WN::|play%2:36:04::|
-                  WN::|reach_one's_nostrils%2:39:00::|
                   WN::|abound%2:42:00::|)
          (SEM-FEATS (INHERIT SITUATION)
                     (TRAJECTORY -)
@@ -5254,7 +5286,7 @@
          (SEM-FEATS (INHERIT PHYS-OBJ)
                     (CONTAINER +)
                     (MOBILITY FIXED)
-                    (OBJECT-FUNCTION BUILDING)
+                    (OBJECT-FUNCTION PROVIDES-SERVICE-OPEN-CLOSED)
                     (TRAJECTORY -)
                     (ORIGIN ARTIFACT)
                     (SPATIAL-ABSTRACTION (OR SPATIAL-POINT SPATIAL-REGION))))
@@ -5813,7 +5845,12 @@
 (CONCEPT ONT::FUNCTIONALITY-VAL
          (COMMENT
           "properties relating to  whether something is functioning as intended")
-         (INHERIT ONT::OBJECT-AFFORDANCES-VAL))
+         (INHERIT ONT::OBJECT-AFFORDANCES-VAL)
+         (SEM-FRAME
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (OBJECT-FUNCTION PROVIDES-SERVICE-UP-DOWN)
+                      (ORIGIN ARTIFACT)))))
 
 (CONCEPT ONT::FUNDAMENTAL-VAL
          (COMMENT "forming a necessary base or core")
@@ -5910,9 +5947,7 @@
 (CONCEPT ONT::GEO-OBJECT
          (INHERIT ONT::PHYS-OBJECT)
          (OVERLAP WN::|location%1:03:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ)
-                    (OBJECT-FUNCTION SPATIAL-OBJECT)
-                    (FORM GEOGRAPHICAL-OBJECT)))
+         (SEM-FEATS (INHERIT PHYS-OBJ) (FORM GEOGRAPHICAL-OBJECT)))
 
 (CONCEPT ONT::GEO-SAMPLE
          (INHERIT ONT::NATURAL-OBJECT)
@@ -6231,7 +6266,9 @@
                   WN::|mute%5:00:01:inarticulate:00|)
          (SEM-FRAME
           (ONT::FIGURE
-           (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +) (ORIGIN HUMAN)))))
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (INTENTIONAL +)
+                      (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL))))))
 
 (CONCEPT ONT::HAS-VALUE-ON-SCALE (INHERIT ONT::SCALE-RELATION))
 
@@ -6312,8 +6349,7 @@
          (OVERLAP WN::|hospital%1:06:00::|
                   WN::|hospital%1:14:00::|
                   WN::|fire_department%1:14:00::|
-                  WN::|police_department%1:14:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+                  WN::|police_department%1:14:00::|))
 
 (CONCEPT ONT::HEALTH-PROFESSIONAL
          (INHERIT ONT::PROFESSIONAL)
@@ -6323,7 +6359,12 @@
                   WN::|health_care_provider%1:18:00::|
                   WN::|caregiver%1:18:01::|))
 
-(CONCEPT ONT::HEALTHINESS-VAL (INHERIT ONT::BODY-RELATED-PROPERTY-VAL))
+(CONCEPT ONT::HEALTHINESS-VAL
+         (INHERIT ONT::BODY-RELATED-PROPERTY-VAL)
+         (SEM-FRAME
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ)
+                      (ORIGIN (OR HUMAN NON-HUMAN-ANIMAL))))))
 
 (CONCEPT ONT::HEALTHY-VAL
          (INHERIT ONT::HEALTHINESS-VAL)
@@ -6676,8 +6717,7 @@
          (SEM-FRAME
           (ONT::FIGURE
            (SEM-FEATS (INHERIT PHYS-OBJ)
-                      (OBJECT-FUNCTION PROVIDES-SERVICE-OPEN-CLOSED)
-                      (TYPE LOCATION)))))
+                      (OBJECT-FUNCTION PROVIDES-SERVICE-OPEN-CLOSED)))))
 
 (CONCEPT ONT::INACTIVE-OFF
          (COMMENT
@@ -7693,7 +7733,6 @@
 (CONCEPT ONT::LOCATION
          (INHERIT ONT::GEO-OBJECT)
          (SEM-FEATS (INHERIT PHYS-OBJ)
-                    (OBJECT-FUNCTION SPATIAL-OBJECT)
                     (FORM GEOGRAPHICAL-OBJECT)
                     (ORIGIN NON-LIVING))
          (SEM-FRAME
@@ -7739,8 +7778,7 @@
          (INHERIT ONT::FACILITY)
          (OVERLAP WN::|housing%1:06:00::|
                   WN::|lodging%1:06:00::|
-                  WN::|living_accommodations%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+                  WN::|living_accommodations%1:06:00::|))
 
 (CONCEPT ONT::LONG
          (COMMENT
@@ -10384,8 +10422,7 @@
          (INHERIT ONT::FACILITY)
          (OVERLAP WN::|factory%1:06:00::|
                   WN::|manufacturing_plant%1:06:00::|
-                  WN::|manufactory%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+                  WN::|manufactory%1:06:00::|))
 
 (CONCEPT ONT::PRODUCTIVE-VAL
          (INHERIT ONT::PRODUCTIVITY-VAL)
@@ -10552,9 +10589,7 @@
           "properties pertaining to psychological, mental or emotional states")
          (INHERIT ONT::PROPERTY-VAL))
 
-(CONCEPT ONT::PUBLIC-SERVICE-FACILITY
-         (INHERIT ONT::FACILITY)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+(CONCEPT ONT::PUBLIC-SERVICE-FACILITY (INHERIT ONT::FACILITY))
 
 (CONCEPT ONT::PUBLIC-VAL
          (INHERIT ONT::PRIVACY-VAL)
@@ -11094,8 +11129,7 @@
          (OVERLAP WN::|place_of_worship%1:06:00::|
                   WN::|house_of_prayer%1:06:00::|
                   WN::|house_of_god%1:06:00::|
-                  WN::|house_of_worship%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+                  WN::|house_of_worship%1:06:00::|))
 
 (CONCEPT ONT::RELIGIOUS-IDENTITY-VAL
          (COMMENT "identity based on religious affiliation")
@@ -11333,8 +11367,7 @@
                   WN::|research_lab%1:06:00::|
                   WN::|research_laboratory%1:06:00::|
                   WN::|science_lab%1:06:00::|
-                  WN::|science_laboratory%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+                  WN::|science_laboratory%1:06:00::|))
 
 (CONCEPT ONT::RESEARCH-INSTITUTION (INHERIT ONT::COMPANY))
 
@@ -12881,8 +12914,7 @@
 
 (CONCEPT ONT::STORAGE-FACILITY
          (INHERIT ONT::FACILITY)
-         (OVERLAP WN::|warehouse%1:06:00::| WN::|storage_warehouse%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+         (OVERLAP WN::|warehouse%1:06:00::| WN::|storage_warehouse%1:06:00::|))
 
 (CONCEPT ONT::STORAGE-FURNISHINGS
          (INHERIT ONT::FURNISHINGS)
@@ -13782,8 +13814,7 @@
          (INHERIT ONT::FACILITY)
          (OVERLAP WN::|terminal%1:06:00::|
                   WN::|terminus%1:06:01::|
-                  WN::|depot%1:06:00::|)
-         (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION BUILDING)))
+                  WN::|depot%1:06:00::|))
 
 (CONCEPT ONT::TRAVEL
          (INHERIT ONT::EVENT-DEFINED-BY-ACTIVITY)
@@ -14119,7 +14150,7 @@
          (OVERLAP WN::|usable%5:00:00:serviceable:00|))
 
 (CONCEPT ONT::USE
-         (INHERIT ONT::CAUSE-EFFECT)
+         (INHERIT ONT::ACTING)
          (OVERLAP WN::|use%1:04:01::|
                   WN::|habit%1:04:02::|
                   WN::|use_of_goods_and_services%1:22:00::|
@@ -14152,13 +14183,16 @@
                   WN::|employ%2:34:00::|)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE AGENTIVE))
          (SEM-FRAME
+          (ONT::FORMAL
+           (SEM-FEATS (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ))
+                      (TYPE (OR SITUATION-ROOT PROPERTY-VAL)))
+           OPTIONAL)
+          (ONT::RESULT (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ)) OPTIONAL)
           (ONT::AFFECTED (OR (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ)) OPTIONAL)
           (ONT::REASON (CONCEPT SITUATION) OPTIONAL)
           (ONT::FORMAL1
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION))
-           OPTIONAL)
-          (ONT::FORMAL
-           (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
+           OPTIONAL)))
 
 (CONCEPT ONT::USEFUL
          (INHERIT ONT::USEFULNESS-VAL)

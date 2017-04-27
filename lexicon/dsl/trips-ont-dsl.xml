@@ -249,12 +249,6 @@
   <relation label="overlap">
    wn::|hotel%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::accompaniment">
   <relation label="inherit">
@@ -599,7 +593,6 @@
       phys-obj
      </relation>
      <feat name="object-function">provides-service-open-closed</feat>
-     <feat name="type">location</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -744,7 +737,6 @@
       phys-obj
      </relation>
      <feat name="object-function">provides-service</feat>
-     <feat name="type">location</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -1886,6 +1878,13 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::affected1" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+    </or>
+   </role-restr-map>
    <role-restr-map roles="ont::affected-result" optional="optional">
     <or>
      <concept name="phys-obj" />
@@ -2324,12 +2323,6 @@
   <relation label="overlap">
    wn::|athletic_facility%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::athletic-game">
   <relation label="inherit">
@@ -3732,6 +3725,21 @@
   <relation label="inherit">
    ont::body-related-property-val
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="origin">
+     <or>
+      human
+      non-human-animal
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::body-related-property-val">
   <comment>
@@ -4078,12 +4086,6 @@
   <relation label="overlap">
    wn::|office_building%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::but-exception">
   <relation label="inherit">
@@ -6154,12 +6156,6 @@
   <relation label="overlap">
    wn::|shop%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::commissive">
   <comment>
@@ -8928,6 +8924,25 @@
    ont::direction
   </relation>
  </concept>
+ <concept name="ont::direction-down-ground">
+  <comment>
+   &quot;this is the transitive 'down' that has a GROUND that describes a physical object and locations objects or events&quot;
+  </comment>
+  <relation label="inherit">
+   ont::direction
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <concept name="phys-obj" />
+   </role-restr-map>
+   <role-restr-map roles="ont::figure">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::direction-reln">
   <relation label="inherit">
    ont::path
@@ -8939,9 +8954,31 @@
   </sem-frame>
  </concept>
  <concept name="ont::direction-up">
+  <comment>
+   &quot;This is the intransitive 'up' and is relative to some scale/domain: e.g., the temperature is up, move the ball up&quot;
+  </comment>
   <relation label="inherit">
    ont::direction
   </relation>
+ </concept>
+ <concept name="ont::direction-up-ground">
+  <comment>
+   &quot;this is the transitive 'up' that has a GROUND that describes a physical object and locations objects or events&quot;
+  </comment>
+  <relation label="inherit">
+   ont::direction
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <concept name="phys-obj" />
+   </role-restr-map>
+   <role-restr-map roles="ont::figure">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::direction-val">
   <relation label="inherit">
@@ -9442,12 +9479,6 @@
    wn::|ginmill%1:06:00::|
    wn::|taproom%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::drive">
   <relation label="inherit">
@@ -9765,12 +9796,6 @@
    wn::|university%1:06:00::|
    wn::|college%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::efficiency-val">
   <relation label="inherit">
@@ -9841,6 +9866,21 @@
   <relation label="inherit">
    ont::psychological-property-val
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="origin">
+     <or>
+      human
+      non-human-animal
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::empirical-val">
   <relation label="inherit">
@@ -10190,12 +10230,6 @@
   <relation label="overlap">
    wn::|discotheque%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::entrant">
   <relation label="inherit">
@@ -10996,6 +11030,20 @@
    wn::|extraordinary%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::exchange">
+  <relation label="inherit">
+   ont::arranging
+  </relation>
+  <relation label="overlap">
+   wn::|exchange%2:40:00::|
+   wn::|exchange%2:30:00::|
+   wn::|exchange%2:40:02::|
+   wn::|transpose%2:30:00::|
+   wn::|transpose%2:30:02::|
+   wn::|transpose%2:36:00::|
+   wn::|transpose%2:30:01::|
+  </relation>
+ </concept>
  <concept name="ont::excited">
   <relation label="inherit">
    ont::pos-intense-emotional-val
@@ -11042,7 +11090,7 @@
  </concept>
  <concept name="ont::execute">
   <relation label="inherit">
-   ont::cause-effect
+   ont::acting
   </relation>
   <relation label="overlap">
    wn::|fulfil%2:36:00::|
@@ -11068,6 +11116,26 @@
    <feat name="aspect">dynamic</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::formal" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="type">
+     <or>
+      situation-root
+      property-val
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::result" optional="optional">
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
    <role-restr-map roles="ont::neutral" optional="optional">
     <sem-feats>
      <or>
@@ -11112,7 +11180,6 @@
    wn::|lie_in%2:42:00::|
    wn::|be%2:42:012::|
    wn::|play%2:36:04::|
-   wn::|reach_one's_nostrils%2:39:00::|
    wn::|abound%2:42:00::|
   </relation>
   <sem-feats>
@@ -11412,7 +11479,7 @@
    </relation>
    <feat name="container">+</feat>
    <feat name="mobility">fixed</feat>
-   <feat name="object-function">building</feat>
+   <feat name="object-function">provides-service-open-closed</feat>
    <feat name="trajectory">-</feat>
    <feat name="origin">artifact</feat>
    <feat name="spatial-abstraction">
@@ -12622,6 +12689,17 @@
   <relation label="inherit">
    ont::object-affordances-val
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="object-function">provides-service-up-down</feat>
+     <feat name="origin">artifact</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::fundamental-val">
   <comment>
@@ -12866,7 +12944,6 @@
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="object-function">spatial-object</feat>
    <feat name="form">geographical-object</feat>
   </sem-feats>
  </concept>
@@ -13532,7 +13609,12 @@
       phys-obj
      </relation>
      <feat name="intentional">+</feat>
-     <feat name="origin">human</feat>
+     <feat name="origin">
+     <or>
+      human
+      non-human-animal
+     </or>
+     </feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -13682,12 +13764,6 @@
    wn::|fire_department%1:14:00::|
    wn::|police_department%1:14:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::health-professional">
   <relation label="inherit">
@@ -13705,6 +13781,21 @@
   <relation label="inherit">
    ont::body-related-property-val
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="origin">
+     <or>
+      human
+      non-human-animal
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::healthy-val">
   <relation label="inherit">
@@ -14446,7 +14537,6 @@
       phys-obj
      </relation>
      <feat name="object-function">provides-service-open-closed</feat>
-     <feat name="type">location</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -16704,7 +16794,6 @@
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="object-function">spatial-object</feat>
    <feat name="form">geographical-object</feat>
    <feat name="origin">non-living</feat>
   </sem-feats>
@@ -16810,12 +16899,6 @@
    wn::|lodging%1:06:00::|
    wn::|living_accommodations%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::long">
   <comment>
@@ -22646,12 +22729,6 @@
    wn::|manufacturing_plant%1:06:00::|
    wn::|manufactory%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::productive-val">
   <relation label="inherit">
@@ -23007,12 +23084,6 @@
   <relation label="inherit">
    ont::facility
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::public-val">
   <relation label="inherit">
@@ -24232,12 +24303,6 @@
    wn::|house_of_god%1:06:00::|
    wn::|house_of_worship%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::religious-identity-val">
   <comment>
@@ -24738,12 +24803,6 @@
    wn::|science_lab%1:06:00::|
    wn::|science_laboratory%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::research-institution">
   <relation label="inherit">
@@ -28158,12 +28217,6 @@
    wn::|warehouse%1:06:00::|
    wn::|storage_warehouse%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::storage-furnishings">
   <relation label="inherit">
@@ -30144,12 +30197,6 @@
    wn::|terminus%1:06:01::|
    wn::|depot%1:06:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">building</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::travel">
   <relation label="inherit">
@@ -30799,7 +30846,7 @@
  </concept>
  <concept name="ont::use">
   <relation label="inherit">
-   ont::cause-effect
+   ont::acting
   </relation>
   <relation label="overlap">
    wn::|use%1:04:01::|
@@ -30840,6 +30887,26 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::formal" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="type">
+     <or>
+      situation-root
+      property-val
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::result" optional="optional">
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
    <role-restr-map roles="ont::affected" optional="optional">
     <or>
      <concept name="abstr-obj" />
@@ -30850,13 +30917,6 @@
     <concept name="situation" />
    </role-restr-map>
    <role-restr-map roles="ont::formal1" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
-   </role-restr-map>
-   <role-restr-map roles="ont::formal">
     <or>
      <concept name="phys-obj" />
      <concept name="abstr-obj" />

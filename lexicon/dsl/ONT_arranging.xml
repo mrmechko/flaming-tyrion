@@ -23,6 +23,13 @@
   <feat name="cause">agentive</feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::affected1" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
   <role-restr-map roles="ont::affected-result" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -268,6 +275,13 @@
  </concept>
  <concept name="situation" />
  <sem-frame>
+ <role-restr-map roles="ont::affected1" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
  <role-restr-map roles="ont::affected-result" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -345,6 +359,20 @@
  <concept name="ont::reverse">
  <relation label="inherit">
   ont::arranging
+ </relation>
+ </concept>
+ <concept name="ont::exchange">
+ <relation label="inherit">
+  ont::arranging
+ </relation>
+ <relation label="overlap">
+  wn::|exchange%2:40:00::|
+  wn::|exchange%2:30:00::|
+  wn::|exchange%2:40:02::|
+  wn::|transpose%2:30:00::|
+  wn::|transpose%2:30:02::|
+  wn::|transpose%2:36:00::|
+  wn::|transpose%2:30:01::|
  </relation>
  </concept>
  <concept name="ont::set-up-device">
