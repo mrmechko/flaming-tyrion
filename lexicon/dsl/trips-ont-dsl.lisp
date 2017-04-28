@@ -1,5 +1,7 @@
 (PROVENANCE (NAME TRIPS))
 
+(CONCEPT ONT::2D-ORIENTATION-VAL (INHERIT ONT::ORIENTATION-VAL))
+
 (CONCEPT ONT::ABILITY
          (INHERIT ONT::AUX)
          (SEM-FEATS (INHERIT SITUATION)
@@ -1051,7 +1053,7 @@
          (SEM-FRAME (ONT::GROUND (CONCEPT T)) (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::ASSOCIATED-WITH-VAL
-         (COMMENT "words that pertain to another word")
+         (COMMENT "adjectives that classify the noun that it is pertaining to")
          (INHERIT ONT::PROPERTY-VAL))
 
 (CONCEPT ONT::ASSOCIATION-PREDICATE
@@ -3968,6 +3970,11 @@
          (INHERIT ONT::DISEASE)
          (OVERLAP WN::|diabetes%1:26:00::|))
 
+(CONCEPT ONT::DIAGONAL-VAL
+         (INHERIT ONT::ORIENTATION-VAL)
+         (OVERLAP WN::|diagonal%5:00:00:inclined:01|
+                  WN::|diagonal%5:00:02:oblique:00|))
+
 (CONCEPT ONT::DIARRHEA
          (INHERIT ONT::MEDICAL-SYMPTOM)
          (OVERLAP WN::|diarrhea%1:26:00::|))
@@ -4488,6 +4495,16 @@
          (OVERLAP WN::|school%1:06:00::|
                   WN::|university%1:06:00::|
                   WN::|college%1:06:00::|))
+
+(CONCEPT ONT::EFFECTIVE-VAL
+         (INHERIT ONT::EFFECTIVENESS-VAL)
+         (OVERLAP WN::|effective%3:00:00::|
+                  WN::|effective%5:00:00:efficacious:00|))
+
+(CONCEPT ONT::EFFECTIVENESS-VAL
+         (COMMENT
+          "evaluation attributes dealing with the effectiveness or efficacy of something")
+         (INHERIT ONT::PROCESS-EVALUATION-VAL))
 
 (CONCEPT ONT::EFFICIENCY-VAL (INHERIT ONT::PROCESS-VAL))
 
@@ -7166,6 +7183,10 @@
                     (ORIGIN NON-HUMAN-ANIMAL)
                     (INTENTIONAL +)))
 
+(CONCEPT ONT::INVERTED-VAL
+         (INHERIT ONT::ORIENTATION-VAL)
+         (OVERLAP WN::|inverted%5:00:00:turned:00|))
+
 (CONCEPT ONT::INVISIBILITY-VAL
          (INHERIT ONT::VISIBLE-PROPERTY-VAL)
          (OVERLAP WN::|invisible%3:00:00::|))
@@ -7373,6 +7394,8 @@
                     (SPATIAL-ABSTRACTION SPATIAL-POINT)
                     (FORM ENCLOSURE)
                     (MOBILITY LAND-MOVABLE)))
+
+(CONCEPT ONT::LANDSCAPE-VAL (INHERIT ONT::2D-ORIENTATION-VAL))
 
 (CONCEPT ONT::LANE (INHERIT ONT::ROAD) (OVERLAP WN::|lane%1:06:00::|))
 
@@ -8328,6 +8351,10 @@
 
 (CONCEPT ONT::MODE-OF-CONTROL-VAL (INHERIT ONT::MODE))
 
+(CONCEPT ONT::MODERATE-VAL
+         (INHERIT ONT::SEVERITY-VAL)
+         (OVERLAP WN::|moderate%3:00:00::|))
+
 (CONCEPT ONT::MODERN-VAL
          (INHERIT ONT::HISTORICAL-ERA-VAL)
          (OVERLAP WN::|modern%3:00:00::| WN::|contemporary%5:00:00:modern:00|))
@@ -8853,6 +8880,11 @@
          (INHERIT ONT::HISTORICAL-ERA-VAL)
          (OVERLAP WN::|old-fashioned%5:00:00:unfashionable:00|))
 
+(CONCEPT ONT::NOT-EFFECTIVE-VAL
+         (INHERIT ONT::EFFECTIVENESS-VAL)
+         (OVERLAP WN::|ineffective%3:00:00::|
+                  WN::|toothless%5:00:00:ineffective:00|))
+
 (CONCEPT ONT::NOT-EFFICIENT-VAL
          (INHERIT ONT::EFFICIENCY-VAL)
          (OVERLAP WN::|inefficient%3:00:00::|))
@@ -9088,7 +9120,9 @@
          (SEM-FEATS (INHERIT ABSTR-OBJ) (INFORMATION DATA)))
 
 (CONCEPT ONT::NUMBER-RELATED-PROPERTY-VAL
-         (INHERIT ONT::QUANTITY-RELATED-PROPERTY-VAL))
+         (INHERIT ONT::QUANTITY-RELATED-PROPERTY-VAL)
+         (OVERLAP WN::|numerical%5:00:00:quantitative:00|
+                  WN::|numerical%3:01:00::|))
 
 (CONCEPT ONT::NUMBER-SCALE (INHERIT ONT::SCALE))
 
@@ -10055,6 +10089,8 @@
                   WN::|movable%5:00:00:portable:00|
                   WN::|movable%5:00:00:mobile:00|))
 
+(CONCEPT ONT::PORTRAIT-VAL (INHERIT ONT::2D-ORIENTATION-VAL))
+
 (CONCEPT ONT::POS-AFTER-IN-TRAJECTORY
          (INHERIT ONT::POS-RELATIVE-WRT-TRAJECTORY))
 
@@ -10392,6 +10428,10 @@
          (INHERIT ONT::PROCEDURE)
          (OVERLAP WN::|procedure%1:04:00::| WN::|process%1:04:00::|))
 
+(CONCEPT ONT::PROCESS-EVALUATION-VAL
+         (COMMENT "evaluation properties of processes")
+         (INHERIT ONT::PROCESS-VAL))
+
 (CONCEPT ONT::PROCESS-VAL
          (COMMENT "properties that describe processes")
          (INHERIT ONT::PROPERTY-VAL))
@@ -10430,7 +10470,7 @@
                   WN::|productive%5:00:00:fruitful:00|
                   WN::|fruitful%3:00:00::|))
 
-(CONCEPT ONT::PRODUCTIVITY-VAL (INHERIT ONT::PROCESS-VAL))
+(CONCEPT ONT::PRODUCTIVITY-VAL (INHERIT ONT::PROCESS-EVALUATION-VAL))
 
 (CONCEPT ONT::PROFESSIONAL
          (COMMENT
@@ -10787,10 +10827,8 @@
          (INHERIT ONT::LINGUISTIC-OBJECT)
          (OVERLAP WN::|question%1:10:00::|))
 
-(CONCEPT ONT::QUESTIONABILITY-VAL (INHERIT ONT::INFORMATION-PROPERTY-VAL))
-
 (CONCEPT ONT::QUESTIONABLE-VAL
-         (INHERIT ONT::QUESTIONABILITY-VAL)
+         (INHERIT ONT::UNCERTAIN)
          (OVERLAP WN::|problematic%5:00:00:questionable:00|
                   WN::|funny%5:00:00:questionable:00|
                   WN::|questionable%3:00:00::|))
@@ -12769,6 +12807,8 @@
          (INHERIT ONT::LOC-WRT-GROUND-AS-SPATIAL-OBJ)
          (OVERLAP WN::|beginning%1:15:00::| WN::|beginning%1:09:00::|))
 
+(CONCEPT ONT::STARTUP-VAL (INHERIT ONT::TASK-PURPOSE-VAL))
+
 (CONCEPT ONT::STATE
          (INHERIT ONT::POLITICAL-REGION)
          (OVERLAP WN::|land%1:15:02::|
@@ -14198,13 +14238,12 @@
          (INHERIT ONT::USEFULNESS-VAL)
          (OVERLAP WN::|useful%3:00:00::|
                   WN::|utilitarian%5:00:00:useful:00|
-                  WN::|functional%3:00:02::|
                   WN::|functional%5:00:00:practical:00|
                   WN::|practical%3:00:00::|
                   WN::|functional%3:00:00::|
                   WN::|practical%5:00:00:applied:00|))
 
-(CONCEPT ONT::USEFULNESS-VAL (INHERIT ONT::CAN-BE-DONE-VAL))
+(CONCEPT ONT::USEFULNESS-VAL (INHERIT ONT::PROCESS-EVALUATION-VAL))
 
 (CONCEPT ONT::USELESS
          (INHERIT ONT::USEFULNESS-VAL)

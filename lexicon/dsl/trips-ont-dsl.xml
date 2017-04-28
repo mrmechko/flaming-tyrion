@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <dsl>
  <provenance name="TRIPS"/>
+ <concept name="ont::2d-orientation-val">
+  <relation label="inherit">
+   ont::orientation-val
+  </relation>
+ </concept>
  <concept name="ont::ability">
   <relation label="inherit">
    ont::aux
@@ -2242,7 +2247,7 @@
  </concept>
  <concept name="ont::associated-with-val">
   <comment>
-   &quot;words that pertain to another word&quot;
+   &quot;adjectives that classify the noun that it is pertaining to&quot;
   </comment>
   <relation label="inherit">
    ont::property-val
@@ -8666,6 +8671,15 @@
    wn::|diabetes%1:26:00::|
   </relation>
  </concept>
+ <concept name="ont::diagonal-val">
+  <relation label="inherit">
+   ont::orientation-val
+  </relation>
+  <relation label="overlap">
+   wn::|diagonal%5:00:00:inclined:01|
+   wn::|diagonal%5:00:02:oblique:00|
+  </relation>
+ </concept>
  <concept name="ont::diarrhea">
   <relation label="inherit">
    ont::medical-symptom
@@ -9795,6 +9809,23 @@
    wn::|school%1:06:00::|
    wn::|university%1:06:00::|
    wn::|college%1:06:00::|
+  </relation>
+ </concept>
+ <concept name="ont::effective-val">
+  <relation label="inherit">
+   ont::effectiveness-val
+  </relation>
+  <relation label="overlap">
+   wn::|effective%3:00:00::|
+   wn::|effective%5:00:00:efficacious:00|
+  </relation>
+ </concept>
+ <concept name="ont::effectiveness-val">
+  <comment>
+   &quot;evaluation attributes dealing with the effectiveness or efficacy of something&quot;
+  </comment>
+  <relation label="inherit">
+   ont::process-evaluation-val
   </relation>
  </concept>
  <concept name="ont::efficiency-val">
@@ -15481,6 +15512,14 @@
    <feat name="intentional">+</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::inverted-val">
+  <relation label="inherit">
+   ont::orientation-val
+  </relation>
+  <relation label="overlap">
+   wn::|inverted%5:00:00:turned:00|
+  </relation>
+ </concept>
  <concept name="ont::invisibility-val">
   <relation label="inherit">
    ont::visible-property-val
@@ -15972,6 +16011,11 @@
    <feat name="form">enclosure</feat>
    <feat name="mobility">land-movable</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::landscape-val">
+  <relation label="inherit">
+   ont::2d-orientation-val
+  </relation>
  </concept>
  <concept name="ont::lane">
   <relation label="inherit">
@@ -18155,6 +18199,14 @@
    ont::mode
   </relation>
  </concept>
+ <concept name="ont::moderate-val">
+  <relation label="inherit">
+   ont::severity-val
+  </relation>
+  <relation label="overlap">
+   wn::|moderate%3:00:00::|
+  </relation>
+ </concept>
  <concept name="ont::modern-val">
   <relation label="inherit">
    ont::historical-era-val
@@ -19319,6 +19371,15 @@
    wn::|old-fashioned%5:00:00:unfashionable:00|
   </relation>
  </concept>
+ <concept name="ont::not-effective-val">
+  <relation label="inherit">
+   ont::effectiveness-val
+  </relation>
+  <relation label="overlap">
+   wn::|ineffective%3:00:00::|
+   wn::|toothless%5:00:00:ineffective:00|
+  </relation>
+ </concept>
  <concept name="ont::not-efficient-val">
   <relation label="inherit">
    ont::efficiency-val
@@ -19769,6 +19830,10 @@
  <concept name="ont::number-related-property-val">
   <relation label="inherit">
    ont::quantity-related-property-val
+  </relation>
+  <relation label="overlap">
+   wn::|numerical%5:00:00:quantitative:00|
+   wn::|numerical%3:01:00::|
   </relation>
  </concept>
  <concept name="ont::number-scale">
@@ -21903,6 +21968,11 @@
    wn::|movable%5:00:00:mobile:00|
   </relation>
  </concept>
+ <concept name="ont::portrait-val">
+  <relation label="inherit">
+   ont::2d-orientation-val
+  </relation>
+ </concept>
  <concept name="ont::pos-after-in-trajectory">
   <relation label="inherit">
    ont::pos-relative-wrt-trajectory
@@ -22662,6 +22732,14 @@
    wn::|process%1:04:00::|
   </relation>
  </concept>
+ <concept name="ont::process-evaluation-val">
+  <comment>
+   &quot;evaluation properties of processes&quot;
+  </comment>
+  <relation label="inherit">
+   ont::process-val
+  </relation>
+ </concept>
  <concept name="ont::process-val">
   <comment>
    &quot;properties that describe processes&quot;
@@ -22742,7 +22820,7 @@
  </concept>
  <concept name="ont::productivity-val">
   <relation label="inherit">
-   ont::process-val
+   ont::process-evaluation-val
   </relation>
  </concept>
  <concept name="ont::professional">
@@ -23525,14 +23603,9 @@
    wn::|question%1:10:00::|
   </relation>
  </concept>
- <concept name="ont::questionability-val">
-  <relation label="inherit">
-   ont::information-property-val
-  </relation>
- </concept>
  <concept name="ont::questionable-val">
   <relation label="inherit">
-   ont::questionability-val
+   ont::uncertain
   </relation>
   <relation label="overlap">
    wn::|problematic%5:00:00:questionable:00|
@@ -27948,6 +28021,11 @@
    wn::|beginning%1:09:00::|
   </relation>
  </concept>
+ <concept name="ont::startup-val">
+  <relation label="inherit">
+   ont::task-purpose-val
+  </relation>
+ </concept>
  <concept name="ont::state">
   <relation label="inherit">
    ont::political-region
@@ -30932,7 +31010,6 @@
   <relation label="overlap">
    wn::|useful%3:00:00::|
    wn::|utilitarian%5:00:00:useful:00|
-   wn::|functional%3:00:02::|
    wn::|functional%5:00:00:practical:00|
    wn::|practical%3:00:00::|
    wn::|functional%3:00:00::|
@@ -30941,7 +31018,7 @@
  </concept>
  <concept name="ont::usefulness-val">
   <relation label="inherit">
-   ont::can-be-done-val
+   ont::process-evaluation-val
   </relation>
  </concept>
  <concept name="ont::useless">
