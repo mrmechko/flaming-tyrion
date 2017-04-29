@@ -21654,6 +21654,29 @@
    <feat name="scale">pitch-scale</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::pivot">
+  <relation label="inherit">
+   ont::predicate
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <concept name="abstr-obj" />
+   </role-restr-map>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      situation
+     </relation>
+     <feat name="type">
+     <or>
+      motion
+      rotate
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::place">
   <relation label="inherit">
    ont::location
@@ -22137,6 +22160,17 @@
   <relation label="inherit">
    ont::position-reln
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <concept name="phys-obj" />
+   </role-restr-map>
+   <role-restr-map roles="ont::figure">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::possess">
   <relation label="inherit">
