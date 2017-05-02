@@ -9357,7 +9357,7 @@
 
 (CONCEPT ONT::ORANGE
          (INHERIT ONT::COLOR-VAL)
-         (OVERLAP WN::|orange%5:00:00:chromatic:00)|)
+         (OVERLAP WN::|orange%5:00:00:chromatic:00|)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE ORANGE*1--07--00)))
 
 (CONCEPT ONT::ORDER
