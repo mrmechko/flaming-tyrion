@@ -9624,6 +9624,19 @@
    wn::|dynamic%3:00:04::|
   </relation>
  </concept>
+ <concept name="ont::dynamics">
+  <relation label="inherit">
+   ont::abstract-object
+  </relation>
+  <relation label="overlap">
+   wn::|dynamics%1:09:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::dyspepsia">
   <relation label="inherit">
    ont::medical-symptom
@@ -13953,6 +13966,25 @@
    wn::|hereditary%5:00:01:inheritable:00|
   </relation>
  </concept>
+ <concept name="ont::hesitate">
+  <relation label="inherit">
+   ont::event-of-awareness
+  </relation>
+  <relation label="overlap">
+   wn::|hesitate%2:42:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::agent">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="intentional">+</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::hi">
   <relation label="inherit">
    ont::max-val
@@ -14389,6 +14421,21 @@
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
     <concept name="phys-obj" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::imitate">
+  <relation label="inherit">
+   ont::create
+  </relation>
+  <relation label="overlap">
+   wn::|simulate%2:36:04::|
+   wn::|simulate%2:36:02::|
+   wn::|imitate%2:36:03::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::neutral">
+    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -18525,6 +18572,9 @@
   <relation label="inherit">
    ont::move
   </relation>
+  <relation label="overlap">
+   wn::|move_back_and_forth%2:38:00::|
+  </relation>
  </concept>
  <concept name="ont::move-by-means">
   <relation label="inherit">
@@ -21042,6 +21092,25 @@
   <relation label="overlap">
    wn::|patient%1:18:00::|
   </relation>
+ </concept>
+ <concept name="ont::pause">
+  <relation label="inherit">
+   ont::inhibit-effect
+  </relation>
+  <relation label="overlap">
+   wn::|pause%2:42:00::|
+   wn::|pause%2:32:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::extent" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">duration-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::penetrate">
   <relation label="inherit">
@@ -29300,6 +29369,16 @@
   <relation label="inherit">
    ont::sensory-property-val
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="object-function">comestible</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::tasteful-val">
   <relation label="inherit">

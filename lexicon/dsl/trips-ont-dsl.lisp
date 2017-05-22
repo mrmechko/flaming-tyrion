@@ -4408,6 +4408,11 @@
          (INHERIT ONT::MOTION-VAL)
          (OVERLAP WN::|dynamic%3:00:04::|))
 
+(CONCEPT ONT::DYNAMICS
+         (INHERIT ONT::ABSTRACT-OBJECT)
+         (OVERLAP WN::|dynamics%1:09:00::|)
+         (SEM-FRAME (ONT::FIGURE (CONCEPT T))))
+
 (CONCEPT ONT::DYSPEPSIA
          (INHERIT ONT::MEDICAL-SYMPTOM)
          (OVERLAP WN::|dyspepsia%1:26:00::| WN::|indigestion%1:26:00::|))
@@ -6437,6 +6442,14 @@
          (INHERIT ONT::BODY-RELATED-PROPERTY-VAL)
          (OVERLAP WN::|hereditary%5:00:01:inheritable:00|))
 
+(CONCEPT ONT::HESITATE
+         (INHERIT ONT::EVENT-OF-AWARENESS)
+         (OVERLAP WN::|hesitate%2:42:00::|)
+         (SEM-FRAME
+          (ONT::AGENT
+           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
+                      (INTENTIONAL +)))))
+
 (CONCEPT ONT::HI (INHERIT ONT::MAX-VAL))
 
 (CONCEPT ONT::HIDDEN
@@ -6651,6 +6664,13 @@
                   WN::|icon%1:06:00::|
                   WN::|ikon%1:06:00::|)
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ) OPTIONAL)))
+
+(CONCEPT ONT::IMITATE
+         (INHERIT ONT::CREATE)
+         (OVERLAP WN::|simulate%2:36:04::|
+                  WN::|simulate%2:36:02::|
+                  WN::|imitate%2:36:03::|)
+         (SEM-FRAME (ONT::NEUTRAL (CONCEPT T))))
 
 (CONCEPT ONT::IMMERSE
          (INHERIT ONT::PUT)
@@ -8497,7 +8517,9 @@
          (INHERIT ONT::MOVE)
          (OVERLAP WN::|back%2:38:01::| WN::|move_back%2:38:00::|))
 
-(CONCEPT ONT::MOVE-BACK-AND-FORTH (INHERIT ONT::MOVE))
+(CONCEPT ONT::MOVE-BACK-AND-FORTH
+         (INHERIT ONT::MOVE)
+         (OVERLAP WN::|move_back_and_forth%2:38:00::|))
 
 (CONCEPT ONT::MOVE-BY-MEANS
          (INHERIT ONT::TRANSPORTATION)
@@ -9646,6 +9668,13 @@
 (CONCEPT ONT::PATIENT
          (INHERIT ONT::UNFORTUNATE)
          (OVERLAP WN::|patient%1:18:00::|))
+
+(CONCEPT ONT::PAUSE
+         (INHERIT ONT::INHIBIT-EFFECT)
+         (OVERLAP WN::|pause%2:42:00::| WN::|pause%2:32:01::|)
+         (SEM-FRAME
+          (ONT::EXTENT (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE DURATION-SCALE))
+           OPTIONAL)))
 
 (CONCEPT ONT::PENETRATE
          (INHERIT ONT::EVENT-OF-CAUSATION)
@@ -13431,7 +13460,11 @@
           "the word itself describes the purpose of the task, e.g., exploratory - task for exploration; startup - task for starting something")
          (INHERIT ONT::PROCESS-VAL))
 
-(CONCEPT ONT::TASTABLE-PROPERTY-VAL (INHERIT ONT::SENSORY-PROPERTY-VAL))
+(CONCEPT ONT::TASTABLE-PROPERTY-VAL
+         (INHERIT ONT::SENSORY-PROPERTY-VAL)
+         (SEM-FRAME
+          (ONT::FIGURE
+           (SEM-FEATS (INHERIT PHYS-OBJ) (OBJECT-FUNCTION COMESTIBLE)))))
 
 (CONCEPT ONT::TASTEFUL-VAL (INHERIT ONT::TASTABLE-PROPERTY-VAL))
 
