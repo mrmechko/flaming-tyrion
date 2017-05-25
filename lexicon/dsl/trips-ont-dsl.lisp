@@ -6443,12 +6443,8 @@
          (OVERLAP WN::|hereditary%5:00:01:inheritable:00|))
 
 (CONCEPT ONT::HESITATE
-         (INHERIT ONT::EVENT-OF-AWARENESS)
-         (OVERLAP WN::|hesitate%2:42:00::|)
-         (SEM-FRAME
-          (ONT::AGENT
-           (SEM-FEATS (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ))
-                      (INTENTIONAL +)))))
+         (INHERIT ONT::EXPERIENCER-EMOTION)
+         (OVERLAP WN::|hesitate%2:42:00::|))
 
 (CONCEPT ONT::HI (INHERIT ONT::MAX-VAL))
 
@@ -6665,7 +6661,7 @@
                   WN::|ikon%1:06:00::|)
          (SEM-FRAME (ONT::FIGURE (CONCEPT PHYS-OBJ) OPTIONAL)))
 
-(CONCEPT ONT::IMITATE
+(CONCEPT ONT::IMITATE-SIMULATE
          (INHERIT ONT::CREATE)
          (OVERLAP WN::|simulate%2:36:04::|
                   WN::|simulate%2:36:02::|
@@ -7585,8 +7581,6 @@
 
 (CONCEPT ONT::LID (INHERIT ONT::COVERING))
 
-(CONCEPT ONT::LIE (INHERIT ONT::REPRESENTATIVE) (OVERLAP WN::|lie%2:32:00::|))
-
 (CONCEPT ONT::LIFE-PROCESS
          (INHERIT ONT::EVENT-OF-UNDERGOING-ACTION)
          (SEM-FRAME
@@ -8348,6 +8342,10 @@
 (CONCEPT ONT::MINIMIZE (INHERIT ONT::ADJUST-TO-EXTREME))
 
 (CONCEPT ONT::MINUTE-DURATION (INHERIT ONT::TIME-UNIT))
+
+(CONCEPT ONT::MISINFORM
+         (INHERIT ONT::REPRESENTATIVE)
+         (OVERLAP WN::|misinform%2:32:00::|))
 
 (CONCEPT ONT::MISS
          (INHERIT ONT::ACTING)
@@ -9671,7 +9669,10 @@
 
 (CONCEPT ONT::PAUSE
          (INHERIT ONT::INHIBIT-EFFECT)
-         (OVERLAP WN::|pause%2:42:00::| WN::|pause%2:32:01::|)
+         (OVERLAP WN::|pause%2:42:00::|
+                  WN::|pause%2:32:01::|
+                  WN::|wait%2:42:00::|
+                  WN::|wait%2:42:01::|)
          (SEM-FRAME
           (ONT::EXTENT (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE DURATION-SCALE))
            OPTIONAL)))
