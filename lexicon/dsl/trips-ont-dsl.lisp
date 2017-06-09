@@ -437,7 +437,9 @@
                   WN::|maximize%2:30:00::|
                   WN::|maximise%2:30:00::|))
 
-(CONCEPT ONT::ADMIT (INHERIT ONT::ENROLL) (OVERLAP WN::|accept%2:40:03::|))
+(CONCEPT ONT::ADMIT
+         (INHERIT ONT::ENROLL)
+         (OVERLAP WN::|accept%2:40:03::| WN::|admit%2:41:00::|))
 
 (CONCEPT ONT::ADORNED-VAL
          (INHERIT ONT::ADORNMENT-VAL)
@@ -594,19 +596,7 @@
 
 (CONCEPT ONT::ALLOW
          (INHERIT ONT::CAUSE-EFFECT)
-         (OVERLAP WN::|include%2:41:03::|
-                  WN::|let_in%2:41:00::|
-                  WN::|admit%2:41:00::|
-                  WN::|let%2:41:00::|
-                  WN::|allow%2:41:00::|
-                  WN::|permit%2:41:00::|
-                  WN::|decertify%2:41:00::|
-                  WN::|give%2:40:11::|
-                  WN::|indulge%2:41:01::|
-                  WN::|indulge%2:34:00::|
-                  WN::|indulge%2:34:12::|
-                  WN::|indulge%2:41:00::|
-                  WN::|condone%2:32:00::|)
+         (OVERLAP WN::|allow%2:41:00::|)
          (SEM-FRAME
           (ONT::AFFECTED
            (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))))
@@ -833,6 +823,13 @@
                   WN::|suitable%5:00:00:fit:02|))
 
 (CONCEPT ONT::APPROPRIATENESS-VAL (INHERIT ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT ONT::APPROVE-AUTHORIZE
+         (INHERIT ONT::JUDGEMENT)
+         (OVERLAP WN::|authorize%2:32:00::|
+                  WN::|approve%2:31:00::|
+                  WN::|authorize%2:41:00::|
+                  WN::|condone%2:32:00::|))
 
 (CONCEPT ONT::APPROXIMATE-AT-LOC
          (INHERIT ONT::PREDICATE)
@@ -5042,7 +5039,11 @@
                   WN::|gladden%2:37:01::|
                   WN::|gratify%2:37:00::|
                   WN::|cheer%2:32:03::|
-                  WN::|entertain%2:41:00::|))
+                  WN::|entertain%2:41:00::|
+                  WN::|indulge%2:41:01::|
+                  WN::|indulge%2:34:00::|
+                  WN::|indulge%2:34:12::|
+                  WN::|indulge%2:41:00::|))
 
 (CONCEPT ONT::EVOKE-OFFENSE (INHERIT ONT::EVOKE-EMOTION))
 
@@ -6017,7 +6018,8 @@
                   WN::|giving%1:04:00::|
                   WN::|offer%1:10:01::|
                   WN::|offering%1:10:01::|
-                  WN::|send_in%2:41:00::|)
+                  WN::|send_in%2:41:00::|
+                  WN::|give%2:40:11::|)
          (SEM-FEATS (INHERIT SITUATION) (IOBJ RECIPIENT) (CAUSE AGENTIVE))
          (SEM-FRAME
           (ONT::RESULT (OR (CONCEPT PHYS-OBJ) (CONCEPT ABSTR-OBJ)) OPTIONAL)
@@ -9750,7 +9752,7 @@
                   WN::|somebody%1:03:00::|
                   WN::|mortal%1:03:00::|
                   WN::|soul%1:03:00::|
-                  WN::|witch%1:18:01::|)
+                  WN::|imaginary_being%1:18:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ)
                     (INFORMATION -)
                     (INTENTIONAL +)
