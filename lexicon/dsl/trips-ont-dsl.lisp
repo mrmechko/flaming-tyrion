@@ -5359,7 +5359,8 @@
                   WN::|know%2:31:15::|
                   WN::|know%2:31:04::|)
          (SEM-FRAME (ONT::NEUTRAL1 (CONCEPT T) OPTIONAL)
-                    (ONT::NEUTRAL (CONCEPT PHYS-OBJ) OPTIONAL)
+                    (ONT::NEUTRAL
+                     (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)) OPTIONAL)
                     (ONT::FORMAL (CONCEPT T))))
 
 (CONCEPT ONT::FAMILIAR-VAL
