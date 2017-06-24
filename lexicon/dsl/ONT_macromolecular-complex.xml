@@ -10,7 +10,7 @@
   wn::|complex%1:27:00::|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::contents">
+  <role-restr-map roles="ont::figure">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -107,7 +107,7 @@
  </sem-feats>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::contents">
+ <role-restr-map roles="ont::figure">
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -130,12 +130,14 @@
   ont::macromolecular-complex
  </relation>
  <syntax>
-  <template-call template="ont::pred-subcat-contents-templ" />
+  <template-call template="ont::other-reln-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::contents"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
    <feat name="case">
    <or>
     sub
@@ -148,7 +150,6 @@
     |3p|
    </or>
    </feat>
-   <feat name="sort">pred</feat>
   </syn-feats>
  </syntax>
  </sense>
