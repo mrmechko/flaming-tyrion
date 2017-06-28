@@ -103,11 +103,18 @@
  <sem-frame>
   <role-restr-map roles="ont::ground">
    <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
     <feat name="container">+</feat>
     <feat name="intentional">-</feat>
+    <feat name="type">
+    <or>
+     phys-object
+     information-function-object
+    </or>
+    </feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>

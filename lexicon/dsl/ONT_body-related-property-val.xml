@@ -200,30 +200,6 @@
   ont::property-val
  </relation>
  </concept>
- <concept name="ont::body-system-val">
- <comment>
-  &quot;adjective having to do with body systems&quot;
- </comment>
- <relation label="inherit">
-  ont::body-related-property-val
- </relation>
- </concept>
- <concept name="ont::congenital">
- <relation label="inherit">
-  ont::body-related-property-val
- </relation>
- <relation label="overlap">
-  wn::|congenital%5:00:00:noninheritable:00|
- </relation>
- </concept>
- <concept name="ont::hereditary">
- <relation label="inherit">
-  ont::body-related-property-val
- </relation>
- <relation label="overlap">
-  wn::|hereditary%5:00:01:inheritable:00|
- </relation>
- </concept>
  <concept name="ont::body-property-val">
  <comment>
   &quot;properties having to do with human/animal body conditions or states&quot;
@@ -237,32 +213,6 @@
     <relation label="inherit">
      phys-obj
     </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::has-medical-condition">
- <relation label="inherit">
-  ont::body-related-property-val
- </relation>
- <relation label="overlap">
-  wn::|deaf%3:00:00::|
-  wn::|blind%3:00:00::|
-  wn::|mute%5:00:01:inarticulate:00|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
     <feat name="origin">
     <or>
      human
@@ -292,5 +242,10 @@
    </sem-feats>
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::medical-condition-property-val">
+ <relation label="inherit">
+  ont::body-related-property-val
+ </relation>
  </concept>
 </dsl>

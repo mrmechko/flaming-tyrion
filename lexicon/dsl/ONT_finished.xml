@@ -140,7 +140,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="abstr-obj" />
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -197,6 +196,15 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::process-val">
+ <comment>
+  &quot;properties that describe processes&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground" optional="optional">
   <concept name="t" />
@@ -208,12 +216,12 @@
  </relation>
  <feat name="gradability">-</feat>
  </sem-feats>
- <concept name="ont::process-val">
+ <concept name="ont::process-status-val">
  <comment>
-  &quot;properties that describe processes&quot;
+  &quot;properties relating to status of processes&quot;
  </comment>
  <relation label="inherit">
-  ont::property-val
+  ont::process-val
  </relation>
  </concept>
  <concept name="ont::completion-val">
@@ -221,7 +229,7 @@
   &quot;done or finished&quot;
  </comment>
  <relation label="inherit">
-  ont::process-val
+  ont::process-status-val
  </relation>
  <sem-feats>
   <relation label="inherit">
