@@ -1052,7 +1052,7 @@
    &quot;age given the length or duration of existence&quot;
   </comment>
   <relation label="inherit">
-   ont::temporal
+   ont::temporal-val
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -1452,7 +1452,7 @@
    ont::neg-intense-emotional-val
   </relation>
   <relation label="overlap">
-   wn::|afraid%3:00:00::|
+   wn::|angry%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::animal">
@@ -2019,10 +2019,12 @@
    wn::|synthetic%5:00:00:artificial:00|
    wn::|false%5:00:00:artificial:00|
    wn::|artificial%3:00:00::|
+   wn::|artificial%5:00:00:affected:01|
    wn::|unreal%3:00:04::|
    wn::|faux%5:00:00:artificial:00|
    wn::|imitation%5:00:02:artificial:00|
    wn::|fake%5:00:00:artificial:00|
+   wn::|affected%3:00:01::|
   </relation>
  </concept>
  <concept name="ont::artificiality-val">
@@ -2571,6 +2573,7 @@
    wn::|unusual%3:00:00::|
    wn::|unusual%5:00:00:uncommon:00|
    wn::|unconventional%3:00:00::|
+   wn::|unnatural%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::audibility-val">
@@ -2721,6 +2724,7 @@
    wn::|available%3:00:00::|
    wn::|free%5:00:02:unoccupied:00|
    wn::|handy%5:00:00:accessible:00|
+   wn::|available%5:00:00:free:00|
   </relation>
  </concept>
  <concept name="ont::avoid-location">
@@ -2889,7 +2893,6 @@
   <relation label="overlap">
    wn::|dirty%5:00:00:nasty:00|
    wn::|unacceptable%5:00:00:unsatisfactory:00|
-   wn::|unacceptable%3:00:00::|
    wn::|atrocious%5:00:00:bad:00|
    wn::|unacceptable%3:00:00::|
    wn::|unfavorable%3:00:02::|
@@ -2956,6 +2959,7 @@
    wn::|basic%3:00:00::|
    wn::|fundamental%5:00:00:basic:00|
    wn::|elementary%5:00:00:basic:00|
+   wn::|essential%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::basis-of-evidence-val">
@@ -3989,7 +3993,12 @@
       non-living
      </or>
      </feat>
-     <feat name="form">object</feat>
+     <feat name="form">
+     <or>
+      object
+      solid
+     </or>
+     </feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -8049,9 +8058,9 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::dazed">
+ <concept name="ont::dazed-val">
   <relation label="inherit">
-   ont::medical-symptom-val
+   ont::not-energized-val
   </relation>
   <relation label="overlap">
    wn::|lethargic%3:00:00::|
@@ -8674,6 +8683,11 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::di-val">
+  <relation label="inherit">
+   ont::num-prefix-val
+  </relation>
  </concept>
  <concept name="ont::diabetes">
   <relation label="inherit">
@@ -10624,11 +10638,14 @@
     <concept name="phys-obj" />
    </role-restr-map>
    <role-restr-map roles="ont::result" optional="optional">
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+     </or>
+     <feat name="type">position-reln</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::affected" optional="optional">
     <or>
@@ -11110,7 +11127,6 @@
   <relation label="overlap">
    wn::|excited%3:00:00::|
    wn::|excited%5:00:00:wild:02|
-   wn::|enthusiastic%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::exclamation">
@@ -11733,7 +11749,7 @@
  </concept>
  <concept name="ont::fatigued-val">
   <relation label="inherit">
-   ont::energy-supply-val
+   ont::not-energized-val
   </relation>
   <relation label="overlap">
    wn::|tired%3:00:00::|
@@ -12029,7 +12045,6 @@
    wn::|done%5:00:00:finished:01|
    wn::|complete%5:00:00:finished:01|
    wn::|accomplished%5:00:00:complete:00|
-   wn::|complete%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::fire">
@@ -12500,7 +12515,6 @@
   </relation>
   <relation label="overlap">
    wn::|hectic%5:00:00:agitated:00|
-   wn::|agitated%3:00:00::|
    wn::|frantic%5:00:00:agitated:00|
   </relation>
  </concept>
@@ -12511,6 +12525,7 @@
   <relation label="overlap">
    wn::|free%3:00:01::|
    wn::|loose%5:00:01:free:00|
+   wn::|free%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::freedom-val">
@@ -12568,7 +12583,7 @@
    &quot;relating to how recently an object was made or obtained&quot;
   </comment>
   <relation label="inherit">
-   ont::temporal
+   ont::temporal-val
   </relation>
  </concept>
  <concept name="ont::freshwater-fish">
@@ -13243,6 +13258,7 @@
    wn::|satisfactory%3:00:00::|
    wn::|acceptable%3:00:00::|
    wn::|favorable%3:00:02::|
+   wn::|alright%5:00:00:satisfactory:00|
   </relation>
  </concept>
  <concept name="ont::good-aesthetic-judgement-val">
@@ -14135,7 +14151,7 @@
    &quot;relating to the distinct periods in history&quot;
   </comment>
   <relation label="inherit">
-   ont::temporal
+   ont::temporal-val
   </relation>
  </concept>
  <concept name="ont::hitting">
@@ -14213,7 +14229,6 @@
    ont::orientation-val
   </relation>
   <relation label="overlap">
-   wn::|horizontal%3:00:00::|
    wn::|horizontal%3:00:00::|
    wn::|parallel%3:00:00::|
   </relation>
@@ -14747,7 +14762,6 @@
    ont::direction-val
   </relation>
   <relation label="overlap">
-   wn::|incoming%3:00:00::|
    wn::|inbound%5:00:00:incoming:00|
    wn::|incoming%3:00:00::|
   </relation>
@@ -15252,7 +15266,6 @@
    wn::|strong%3:00:00::|
    wn::|acute%5:00:00:sharp:04|
    wn::|strong%5:00:00:powerful:00|
-   wn::|high%3:00:02::|
    wn::|intense%5:00:00:sharp:04|
    wn::|shrill%5:00:00:high:03|
    wn::|powerful%3:00:00::|
@@ -16205,6 +16218,9 @@
  <concept name="ont::lean-val">
   <relation label="inherit">
    ont::fattiness-val
+  </relation>
+  <relation label="overlap">
+   wn::|lean%3:00:04::|
   </relation>
  </concept>
  <concept name="ont::leaning">
@@ -18177,7 +18193,6 @@
    ont::location-val
   </relation>
   <relation label="overlap">
-   wn::|middle%5:00:00:intermediate:00|
    wn::|middle%5:00:01:central:01|
    wn::|middle%3:00:00::|
   </relation>
@@ -18475,6 +18490,11 @@
    <feat name="scale">money-scale</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::mono-val">
+  <relation label="inherit">
+   ont::num-prefix-val
+  </relation>
+ </concept>
  <concept name="ont::month-name">
   <relation label="inherit">
    ont::date-object
@@ -18546,7 +18566,12 @@
     </or>
    </role-restr-map>
    <role-restr-map roles="ont::result" optional="optional">
-    <concept name="t" />
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="type">position-reln</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::source" optional="optional">
     <concept name="t" />
@@ -19150,7 +19175,6 @@
   <relation label="overlap">
    wn::|near%3:00:00::|
    wn::|close%3:00:02::|
-   wn::|close%3:00:02::|
    wn::|nearby%5:00:00:near:00|
    wn::|approximate%5:00:00:close:02|
   </relation>
@@ -19519,6 +19543,7 @@
   <relation label="overlap">
    wn::|bare%5:00:00:unclothed:00|
    wn::|unclothed%3:00:00::|
+   wn::|naked%5:00:00:bare:00|
   </relation>
  </concept>
  <concept name="ont::not-compatible-val">
@@ -19570,6 +19595,11 @@
   </relation>
   <relation label="overlap">
    wn::|inefficient%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::not-energized-val">
+  <relation label="inherit">
+   ont::energy-supply-val
   </relation>
  </concept>
  <concept name="ont::not-enforceable-val">
@@ -19671,6 +19701,7 @@
   <relation label="overlap">
    wn::|broken%5:00:00:damaged:00|
    wn::|nonfunctional%3:00:03::|
+   wn::|inoperative%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::not-intentional-val">
@@ -19978,6 +20009,11 @@
    wn::|nucleus%1:08:00::|
    wn::|cell_nucleus%1:08:00::|
    wn::|karyon%1:08:00::|
+  </relation>
+ </concept>
+ <concept name="ont::num-prefix-val">
+  <relation label="inherit">
+   ont::related-to-cardinality-val
   </relation>
  </concept>
  <concept name="ont::number">
@@ -20876,7 +20912,6 @@
    ont::direction-val
   </relation>
   <relation label="overlap">
-   wn::|outgoing%3:00:00::|
    wn::|outbound%5:00:00:outgoing:00|
    wn::|outgoing%3:00:00::|
   </relation>
@@ -21785,7 +21820,7 @@
    ont::color-val
   </relation>
   <relation label="overlap">
-   wn::|brown%5:00:00:chromatic:00|
+   wn::|pink%5:00:00:chromatic:00|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -22137,6 +22172,11 @@
    <feat name="trajectory">-</feat>
    <feat name="origin">non-living</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::poly-val">
+  <relation label="inherit">
+   ont::num-prefix-val
+  </relation>
  </concept>
  <concept name="ont::poor-val">
   <relation label="inherit">
@@ -22641,6 +22681,9 @@
   <relation label="inherit">
    ont::predefined-measure-val
   </relation>
+  <relation label="overlap">
+   wn::|double%5:00:00:large:00|
+  </relation>
  </concept>
  <concept name="ont::predicate">
   <comment>
@@ -22901,6 +22944,7 @@
    wn::|major%3:00:06::|
    wn::|cardinal%5:00:00:important:00|
    wn::|basal%5:00:00:essential:00|
+   wn::|crucial%3:00:00::|
    wn::|significant%3:00:00::|
   </relation>
  </concept>
@@ -23883,7 +23927,7 @@
   </relation>
   <relation label="overlap">
    wn::|hushed%5:00:00:soft:04|
-   wn::|quiet%3:00:01::|
+   wn::|quiet%3:00:02::|
    wn::|quiet%5:00:00:soft:04|
    wn::|soft%3:00:04::|
   </relation>
@@ -24378,6 +24422,7 @@
   </relation>
   <relation label="overlap">
    wn::|regular%5:00:00:steady:00|
+   wn::|regular%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::regularity-val">
@@ -24464,6 +24509,11 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::related-to-cardinality-val">
+  <relation label="inherit">
+   ont::number-related-property-val
+  </relation>
  </concept>
  <concept name="ont::relation">
   <relation label="inherit">
@@ -26180,14 +26230,6 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::scarce-val">
-  <relation label="inherit">
-   ont::number-related-property-val
-  </relation>
-  <relation label="overlap">
-   wn::|scarce%4:02:00::|
-  </relation>
  </concept>
  <concept name="ont::scheduled-time-modifier">
   <relation label="inherit">
@@ -29652,14 +29694,6 @@
    ont::info-medium
   </relation>
  </concept>
- <concept name="ont::temporal">
-  <comment>
-   &quot;properties relating to time&quot;
-  </comment>
-  <relation label="inherit">
-   ont::property-val
-  </relation>
- </concept>
  <concept name="ont::temporal-location">
   <relation label="inherit">
    ont::temporal-modifier
@@ -29710,6 +29744,14 @@
    </relation>
    <feat name="scale">time-measure-scale</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::temporal-val">
+  <comment>
+   &quot;properties relating to time&quot;
+  </comment>
+  <relation label="inherit">
+   ont::property-val
+  </relation>
  </concept>
  <concept name="ont::temporary">
   <relation label="inherit">
@@ -30596,6 +30638,11 @@
    wn::|regime%1:09:00::|
   </relation>
  </concept>
+ <concept name="ont::tri-val">
+  <relation label="inherit">
+   ont::num-prefix-val
+  </relation>
+ </concept>
  <concept name="ont::trip">
   <relation label="inherit">
    ont::travel
@@ -30997,6 +31044,7 @@
   </relation>
   <relation label="overlap">
    wn::|unfamiliar%3:00:00::|
+   wn::|strange%5:00:01:unfamiliar:00|
   </relation>
  </concept>
  <concept name="ont::unfilled">
@@ -31181,17 +31229,17 @@
    wn::|urban%3:01:00::|
   </relation>
  </concept>
- <concept name="ont::urgency-val">
-  <relation label="inherit">
-   ont::evaluation-attribute-val
-  </relation>
- </concept>
  <concept name="ont::urgent-val">
+  <comment>
+   &quot;time-sensitive or critical&quot;
+  </comment>
   <relation label="inherit">
-   ont::urgency-val
+   ont::primary
   </relation>
   <relation label="overlap">
    wn::|urgent%5:00:00:imperative:00|
+   wn::|serious%5:00:00:critical:03|
+   wn::|critical%3:00:03::|
   </relation>
  </concept>
  <concept name="ont::us-state">
@@ -31519,7 +31567,6 @@
   </relation>
   <relation label="overlap">
    wn::|erect%3:00:00::|
-   wn::|vertical%3:00:00::|
    wn::|vertical%3:00:00::|
    wn::|perpendicular%3:00:04::|
    wn::|upright%5:00:00:vertical:00|
@@ -31859,7 +31906,6 @@
   <relation label="overlap">
    wn::|shallow%3:00:02::|
    wn::|faint%5:00:00:weak:00|
-   wn::|low%3:00:02::|
    wn::|weak%3:00:00::|
    wn::|dull%3:00:04::|
   </relation>
@@ -32524,7 +32570,6 @@
   <relation label="overlap">
    wn::|young%3:00:00::|
    wn::|immature%3:00:03::|
-   wn::|fresh%3:00:01::|
    wn::|new%3:00:09::|
   </relation>
  </concept>

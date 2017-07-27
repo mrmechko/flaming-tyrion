@@ -2,12 +2,14 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::temporal">
- <comment>
-  &quot;properties relating to time&quot;
- </comment>
+ <concept name="ont::dazed-val">
  <relation label="inherit">
-  ont::property-val
+  ont::not-energized-val
+ </relation>
+ <relation label="overlap">
+  wn::|lethargic%3:00:00::|
+  wn::|dazed%5:00:00:lethargic:00|
+  wn::|groggy%5:00:00:lethargic:00|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -192,34 +194,115 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::age-val">
+ <concept name="ont::physical-property-val">
  <comment>
-  &quot;age given the length or duration of existence&quot;
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
  </comment>
  <relation label="inherit">
-  ont::temporal
+  ont::property-val
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">age-scale</feat>
- </sem-feats>
  </concept>
- <concept name="ont::freshness-val">
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::body-related-property-val">
  <comment>
-  &quot;relating to how recently an object was made or obtained&quot;
+  &quot;properties having to do with human/animal body&quot;
  </comment>
  <relation label="inherit">
-  ont::temporal
+  ont::physical-property-val
  </relation>
  </concept>
- <concept name="ont::historical-era-val">
+ <concept name="ont::body-property-val">
  <comment>
-  &quot;relating to the distinct periods in history&quot;
+  &quot;properties having to do with human/animal body conditions or states&quot;
  </comment>
  <relation label="inherit">
-  ont::temporal
+  ont::body-related-property-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::energy-supply-val">
+ <relation label="inherit">
+  ont::body-property-val
  </relation>
  </concept>
+ <concept name="ont::not-energized-val">
+ <relation label="inherit">
+  ont::energy-supply-val
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="groggy" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <relation label="inherit">
+  ont::dazed-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="lethargic" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::dazed-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="muzzy" />
+  <forms>
+   -ER
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <relation label="inherit">
+  ont::dazed-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
 </dsl>

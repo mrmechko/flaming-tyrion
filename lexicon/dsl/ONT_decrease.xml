@@ -57,11 +57,14 @@
   <concept name="phys-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">position-reln</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::affected" optional="optional">
   <or>
@@ -133,11 +136,14 @@
    <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::result" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
+   <sem-feats>
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">position-reln</feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::affected" optional="optional">
    <or>
@@ -526,6 +532,39 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="cut" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="cut" />
+   </past>
+   <ing>
+    <word first-word="cutting" />
+   </ing>
+   <nom>
+    <word first-word="cut" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="The government cut the subsidy.">
+ </example>
+ <relation label="inherit">
+  ont::decrease
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
  <sense>
  <morph>

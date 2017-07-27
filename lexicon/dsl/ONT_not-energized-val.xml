@@ -2,9 +2,9 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::urgency-val">
+ <concept name="ont::not-energized-val">
  <relation label="inherit">
-  ont::evaluation-attribute-val
+  ont::energy-supply-val
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -189,20 +189,83 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evaluation-attribute-val">
+ <concept name="ont::physical-property-val">
  <comment>
-  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
  </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
  </concept>
- <concept name="ont::urgent-val">
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::body-related-property-val">
+ <comment>
+  &quot;properties having to do with human/animal body&quot;
+ </comment>
  <relation label="inherit">
-  ont::urgency-val
+  ont::physical-property-val
+ </relation>
+ </concept>
+ <concept name="ont::body-property-val">
+ <comment>
+  &quot;properties having to do with human/animal body conditions or states&quot;
+ </comment>
+ <relation label="inherit">
+  ont::body-related-property-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::energy-supply-val">
+ <relation label="inherit">
+  ont::body-property-val
+ </relation>
+ </concept>
+ <concept name="ont::fatigued-val">
+ <relation label="inherit">
+  ont::not-energized-val
  </relation>
  <relation label="overlap">
-  wn::|urgent%5:00:00:imperative:00|
+  wn::|tired%3:00:00::|
+  wn::|exhausted%5:00:00:tired:00|
+  wn::|weary%5:00:00:tired:00|
+ </relation>
+ </concept>
+ <concept name="ont::dazed-val">
+ <relation label="inherit">
+  ont::not-energized-val
+ </relation>
+ <relation label="overlap">
+  wn::|lethargic%3:00:00::|
+  wn::|dazed%5:00:00:lethargic:00|
+  wn::|groggy%5:00:00:lethargic:00|
  </relation>
  </concept>
 </dsl>

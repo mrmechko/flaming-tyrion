@@ -2,12 +2,9 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::scarce-val">
+ <concept name="ont::poly-val">
  <relation label="inherit">
-  ont::number-related-property-val
- </relation>
- <relation label="overlap">
-  wn::|scarce%4:02:00::|
+  ont::num-prefix-val
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -222,34 +219,92 @@
   wn::|numerical%3:01:00::|
  </relation>
  </concept>
+ <concept name="ont::related-to-cardinality-val">
+ <relation label="inherit">
+  ont::number-related-property-val
+ </relation>
+ </concept>
+ <concept name="ont::num-prefix-val">
+ <relation label="inherit">
+  ont::related-to-cardinality-val
+ </relation>
+ </concept>
  <sense>
  <morph>
-  <pos pos="adj" />
-  <word first-word="few" />
+  <pos pos="adv" />
+  <word first-word="multi-" />
  </morph>
- <example text="honest men are few">
+ <example text="multiubiquitinate">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::scarce-val
-  ont::central-adj-templ
+  ont::poly-val
+  ont::v-prefix-templ
  </relation>
  </sense>
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="scarce" />
-  <forms>
-   -ER
-   -LY
-  </forms>
+  <word first-word="multi-" />
  </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
+ <example text="multiubiquitination; multipeptide">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
-  ont::scarce-val
-  ont::central-adj-templ
+  ont::poly-val
+  ont::prefix-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="multi-" />
+ </morph>
+ <example text="multichromatic">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::poly-val
+  ont::adj-operator-prefix-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="poly-" />
+ </morph>
+ <example text="polyubiquitinate">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::poly-val
+  ont::v-prefix-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="poly-" />
+ </morph>
+ <example text="polyubiquitination; polypeptide">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::poly-val
+  ont::prefix-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="poly-" />
+ </morph>
+ <example text="polychromatic">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::poly-val
+  ont::adj-operator-prefix-templ
  </relation>
  </sense>
 </dsl>
