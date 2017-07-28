@@ -11637,18 +11637,12 @@
 (CONCEPT ONT::RESULTING-OBJECT
          (INHERIT ONT::PREDICATE)
          (SEM-FRAME (ONT::GROUND (CONCEPT PHYS-OBJ))
-                    (ONT::FIGURE
-                     (SEM-FEATS (INHERIT SITUATION)
-                                (TYPE EVENT-OF-CREATION)
-                                (ASPECT DYNAMIC)))))
+                    (ONT::FIGURE (CONCEPT PHYS-OBJ))))
 
 (CONCEPT ONT::RESULTING-STATE
          (INHERIT ONT::GOAL-RELN)
          (SEM-FRAME (ONT::GROUND (OR (CONCEPT ABSTR-OBJ) (CONCEPT SITUATION)))
-                    (ONT::FIGURE
-                     (SEM-FEATS (INHERIT SITUATION)
-                                (TYPE CHANGE)
-                                (ASPECT DYNAMIC)))))
+                    (ONT::FIGURE (CONCEPT T))))
 
 (CONCEPT ONT::RESULTING-STATE-VAL
          (COMMENT
