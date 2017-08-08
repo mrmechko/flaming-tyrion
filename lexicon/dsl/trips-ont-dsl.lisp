@@ -6364,8 +6364,15 @@
                     (TRAJECTORY -)
                     (TIME-SPAN EXTENDED)
                     (ASPECT STATIC))
-         (SEM-FRAME (ONT::NEUTRAL1 (CONCEPT SITUATION))
-                    (ONT::NEUTRAL (CONCEPT PHYS-OBJ))))
+         (SEM-FRAME (ONT::NEUTRAL (CONCEPT SITUATION))))
+
+(CONCEPT ONT::HAVE-INFLUENCE
+         (COMMENT "an AGENT causes some interaction with another agent")
+         (INHERIT ONT::CAUSE-EFFECT)
+         (OVERLAP WN::|interact%2:41:00::|)
+         (SEM-FRAME
+          (ONT::FORMAL
+           (SEM-FEATS (INHERIT SITUATION) (TYPE OBJECTIVE-INFLUENCE)))))
 
 (CONCEPT ONT::HAVE-PROPERTY
          (INHERIT ONT::EVENT-OF-STATE)
@@ -9353,6 +9360,9 @@
          (OVERLAP WN::|happen%2:30:00::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
          (SEM-FRAME
+          (ONT::AFFECTED
+           (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ))
+           OPTIONAL)
           (ONT::NEUTRAL (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC)))))
 
 (CONCEPT ONT::OCTAVE

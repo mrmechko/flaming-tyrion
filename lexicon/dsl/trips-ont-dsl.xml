@@ -13793,11 +13793,29 @@
    <feat name="aspect">static</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::neutral1">
+   <role-restr-map roles="ont::neutral">
     <concept name="situation" />
    </role-restr-map>
-   <role-restr-map roles="ont::neutral">
-    <concept name="phys-obj" />
+  </sem-frame>
+ </concept>
+ <concept name="ont::have-influence">
+  <comment>
+   &quot;an AGENT causes some interaction with another agent&quot;
+  </comment>
+  <relation label="inherit">
+   ont::cause-effect
+  </relation>
+  <relation label="overlap">
+   wn::|interact%2:41:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::formal">
+    <sem-feats>
+     <relation label="inherit">
+      situation
+     </relation>
+     <feat name="type">objective-influence</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -20353,6 +20371,13 @@
    <feat name="aspect">dynamic</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::affected" optional="optional">
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+   </role-restr-map>
    <role-restr-map roles="ont::neutral">
     <sem-feats>
      <relation label="inherit">
