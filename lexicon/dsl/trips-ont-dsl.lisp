@@ -764,6 +764,23 @@
          (SEM-FEATS (INHERIT SITUATION) (CAUSE FORCE))
          (SEM-FRAME (ONT::AGENT (CONCEPT T))))
 
+(CONCEPT ONT::APPLY-ON-SURFACE
+         (INHERIT ONT::PUT)
+         (OVERLAP WN::|drizzle%2:35:00::|
+                  WN::|plaster%2:35:00::|
+                  WN::|smear%2:35:03::|
+                  WN::|smudge%2:35:00::|
+                  WN::|spatter%2:35:00::|
+                  WN::|splash%2:35:00::|
+                  WN::|splash%2:35:04::|
+                  WN::|splatter%2:35:01::|
+                  WN::|spread%2:35:13::|
+                  WN::|swab%2:35:01::|)
+         (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
+         (SEM-FRAME
+          (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN ARTIFACT)))
+          (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
+
 (CONCEPT ONT::APPRECIATE
          (INHERIT ONT::EXPERIENCER-EMOTION)
          (OVERLAP WN::|savour%2:37:00::|
@@ -2695,7 +2712,7 @@
 (CONCEPT ONT::COMBINE-OBJECTS
          (COMMENT
           "symmetric combination of objects, abstract or physical: e.g., X combines with y = y combines with x = x and y combine")
-         (INHERIT ONT::COALESCE)
+         (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|merge%2:30:01::|
                   WN::|combine%2:30:00::|
                   WN::|meld%2:30:00::|
@@ -7299,7 +7316,8 @@
 (CONCEPT ONT::JAUNT (INHERIT ONT::TRIP))
 
 (CONCEPT ONT::JOINING
-         (COMMENT "abstract, social, or physical connection of objects")
+         (COMMENT
+          "abstract, social, or physical connection of objects such that the objects retain their original make-up/identity (whereas COMBINE-OBJECTS are not un-combinable anymore)")
          (INHERIT ONT::EVENT-OF-CAUSATION)
          (OVERLAP WN::|conjoin%2:35:00::| WN::|join%2:35:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY -))

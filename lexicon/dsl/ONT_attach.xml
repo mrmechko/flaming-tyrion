@@ -295,7 +295,7 @@
  </sem-feats>
  <concept name="ont::joining">
  <comment>
-  &quot;abstract, social, or physical connection of objects&quot;
+  &quot;abstract, social, or physical connection of objects such that the objects retain their original make-up/identity (whereas COMBINE-OBJECTS are not un-combinable anymore)&quot;
  </comment>
  <relation label="inherit">
   ont::event-of-causation
@@ -389,6 +389,34 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="append" />
+ </morph>
+ <example text="append the messages to this message">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::attach
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected2-optional-templ" xp="'(w::pp
+                                                                      w::to)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::to" sem-role="ont::affected1" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -971,39 +999,18 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="hook" remaining-words="" particle="on" />
- </morph>
- <relation label="inherit">
-  ont::attach
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="hook" remaining-words="" particle="up" />
+  <word first-word="hook" />
  </morph>
  <relation label="inherit">
   ont::attach
  </relation>
  <syntax>
   <template-call template="ont::agent-affected2-optional-templ" xp="'(w::pp
-                                                                      w::to)" />
+                                                                      (w::or
+                                                                       w::to
+                                                                       w::on))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::to" sem-role="ont::affected1" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::to w::on)" sem-role="ont::affected1" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1145,112 +1152,6 @@
   <sem-feats>
    <feat name="time-span">atomic</feat>
    <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="reconnect" />
- </morph>
- <comment>
-  &quot;MEETING-UNDERSTANDING&quot;
- </comment>
- <relation label="inherit">
-  ont::attach
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected2-optional-templ" xp="'(w::pp
-                                                                      w::to)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::to" sem-role="ont::affected1" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="rehook" remaining-words="" particle="up" />
- </morph>
- <relation label="inherit">
-  ont::attach
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="rehook" remaining-words="" particle="up" />
- </morph>
- <relation label="inherit">
-  ont::attach
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected2-optional-templ" xp="'(w::pp
-                                                                      w::to)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::to" sem-role="ont::affected1" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="relink" />
- </morph>
- <comment>
-  &quot;NIL&quot;
- </comment>
- <example text="relink the program to the library">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::attach
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected2-optional-templ" xp="'(w::pp
-                                                                      w::to)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::to" sem-role="ont::affected1" optional="optional"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
  </sense>
