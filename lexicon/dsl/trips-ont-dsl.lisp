@@ -1726,6 +1726,7 @@
          (INHERIT ONT::ANATOMY)
          (OVERLAP WN::|body_part%1:08:00::| WN::|organ%1:08:00::|)
          (SEM-FEATS (INHERIT PHYS-OBJ)
+                    (CONTAINER +)
                     (OBJECT-FUNCTION BODY-PART)
                     (FORM OBJECT)
                     (INTENTIONAL -)
@@ -2332,6 +2333,11 @@
          (OVERLAP WN::|change_magnitude%2:30:00::|
                   WN::|change_intensity%2:39:00::|)
          (SEM-FRAME
+          (ONT::RESULT
+           (SEM-FEATS
+            (OR (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ) (CONCEPT PHYS-OBJ))
+            (TYPE (OR IN-LOC AT-LOC)))
+           OPTIONAL)
           (ONT::SCALE (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE DOMAIN)))))
 
 (CONCEPT ONT::CHANGE-STATE
@@ -8536,7 +8542,8 @@
           (ONT::AGENT
            (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION) (CONCEPT ABSTR-OBJ))
            OPTIONAL)
-          (ONT::RESULT (SEM-FEATS (INHERIT ABSTR-OBJ) (TYPE POSITION-RELN))
+          (ONT::RESULT
+           (SEM-FEATS (INHERIT ABSTR-OBJ) (TYPE (OR POSITION-RELN PATH)))
            OPTIONAL)
           (ONT::SOURCE (CONCEPT T) OPTIONAL)
           (ONT::AFFECTED
