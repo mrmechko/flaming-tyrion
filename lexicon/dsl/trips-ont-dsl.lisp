@@ -1227,8 +1227,7 @@
                   WN::|attribute%1:09:00::|
                   WN::|property%1:09:00::|
                   WN::|property%1:07:00::|
-                  WN::|holding%1:21:0
-0::|
+                  WN::|holding%1:21:00::|
                   WN::|belongings%1:21:00::|
                   WN::|property%1:21:00::|)
          (SEM-FRAME
@@ -2072,15 +2071,13 @@
                   WN::|malignancy%1:26:00::|
                   WN::|malignance%1:26:00::|
                   WN::|carcinoma%1:26:00::|
-                  WN::|melanoma%1:26
-:00::|
+                  WN::|melanoma%1:26:00::|
                   WN::|malignant_melanoma%1:26:00::|
                   WN::|lymphoma%1:26:00::|
                   WN::|leukemia%1:26:00::|
                   WN::|leukaemia%1:26:00::|
                   WN::|leucaemia%1:26:00::|
-                  WN::|ca
-ncer_of_the_blood%1:26:00::|
+                  WN::|cancer_of_the_blood%1:26:00::|
                   WN::|sarcoma%1:26:00::|
                   WN::|angiosarcoma%1:26:00::|
                   WN::|myeloma%1:26:00::|))
@@ -2748,8 +2745,7 @@ ncer_of_the_blood%1:26:00::|
                   WN::|colour%1:07:00::|
                   WN::|color%1:07:00::|
                   WN::|color%1:09:01::|
-                  WN::|colo
-ur%1:09:01::|)
+                  WN::|colour%1:09:01::|)
          (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE COLOR-SCALE))
          (SEM-FRAME
           (ONT::GROUND (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE COLOR-SCALE)))))
@@ -4356,15 +4352,13 @@ ur%1:09:01::|)
                   WN::|unhealthiness%1:26:00::|
                   WN::|ill_health%1:26:00::|
                   WN::|illness%1:26:00::|
-                  WN::|unwe
-llness%1:26:00::|
+                  WN::|unwellness%1:26:00::|
                   WN::|malady%1:26:00::|
                   WN::|sickness%1:26:00::|
                   WN::|ailment%1:26:00::|
                   WN::|ill%1:26:00::|
                   WN::|abnormality%1:26:00::|
-                  WN::|abnormal
-cy%1:26:00::|))
+                  WN::|abnormalcy%1:26:00::|))
 
 (CONCEPT ONT::DISGUSTED
          (INHERIT ONT::NEG-INTENSE-EMOTIONAL-VAL)
@@ -4604,8 +4598,7 @@ cy%1:26:00::|))
                   WN::|dyspnea%1:26:00::|
                   WN::|dyspnoea%1:26:00::|
                   WN::|shortness_of_breath%1:26:00::|
-                  WN::|sob%1:2
-6:00::|))
+                  WN::|sob%1:26:00::|))
 
 (CONCEPT ONT::EAGER-VAL
          (INHERIT ONT::INTERESTED-VAL)
@@ -5678,8 +5671,7 @@ cy%1:26:00::|))
                   WN::|febrility%1:26:00::|
                   WN::|febricity%1:26:00::|
                   WN::|pyrexia%1:26:00::|
-                  WN::|feverishness%1:26:
-00::|))
+                  WN::|feverishness%1:26:00::|))
 
 (CONCEPT ONT::FEVERISH-VAL
          (INHERIT ONT::MEDICAL-SYMPTOM-VAL)
@@ -7218,8 +7210,7 @@ cy%1:26:00::|))
                   WN::|hurt%1:26:00::|
                   WN::|harm%1:26:00::|
                   WN::|trauma%1:26:02::|
-                  WN::|bruise%
-1:26:00::|
+                  WN::|bruise%1:26:00::|
                   WN::|contusion%1:26:00::|
                   WN::|bump%1:26:00::|))
 
@@ -9941,8 +9932,7 @@ cy%1:26:00::|))
                   WN::|hurting%1:26:00::|
                   WN::|pain_sensation%1:09:00::|
                   WN::|painful_sensation%1:09:00::|
-                  WN::|sorene
-ss%1:26:00::|
+                  WN::|soreness%1:26:00::|
                   WN::|painfulness%1:07:00::|))
 
 (CONCEPT ONT::PAIN-RELIEVER (INHERIT ONT::MEDICATION))
@@ -13471,8 +13461,7 @@ ss%1:26:00::|
 (CONCEPT ONT::STONES-DISEASE
          (INHERIT ONT::DISEASE)
          (OVERLAP WN::|cholelithiasis%1:26:00::|
-                  WN::|gallstone%1:17:                                                     
-00::|
+                  WN::|gallstone%1:17:00::|
                   WN::|kidney_stone%1:17:00::|))
 
 (CONCEPT ONT::STOP
