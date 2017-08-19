@@ -4,21 +4,8 @@
  <provenance name="TRIPS"/>
  <concept name="ont::luminosity-val">
  <relation label="inherit">
-  ont::phys-measure-domain
+  ont::visibility-val
  </relation>
- <relation label="overlap">
-  wn::|brightness%1:07:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="scale">luminosity-scale</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -49,11 +36,12 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="abstr-obj" />
  <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
+ <role-restr-map roles="ont::scale">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
+ <role-restr-map roles="ont::ground">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::figure">
@@ -74,37 +62,42 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="abstr-obj" />
- <concept name="ont::domain">
- <comment>
-  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
- </comment>
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <relation label="overlap">
-  wn::|attribute%1:03:00::|
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="measure-function">value</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::standard" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::reason" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
  </role-restr-map>
  <role-restr-map roles="ont::figure">
   <concept name="t" />
@@ -114,188 +107,132 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="measure-function">term</feat>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
  </sem-feats>
- <concept name="ont::ordered-domain">
+ <concept name="ont::domain-property">
+ <comment>
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+ </comment>
  <relation label="inherit">
-  ont::domain
+  ont::abstract-object
+  abstr-obj
  </relation>
- </concept>
  <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="container">+</feat>
-   <feat name="form">object</feat>
-  </sem-feats>
- </role-restr-map>
+  <role-restr-map roles="ont::scale">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
  </sem-frame>
- <concept name="ont::measure-domain">
+ </concept>
+ <concept name="ont::property-val">
  <relation label="inherit">
-  ont::ordered-domain
+  ont::domain-property
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="measure-function">term</feat>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="measure-function">value</feat>
-   </sem-feats>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::standard" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::reason" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="situation" />
   </role-restr-map>
   <role-restr-map roles="ont::figure">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">luminosity-scale</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::phys-measure-domain">
+ <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
  <relation label="inherit">
-  ont::measure-domain
+  ont::property-val
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="container">+</feat>
-    <feat name="form">object</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="bright" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
+ <concept name="ont::sensory-property-val">
  <comment>
-  &quot;PROJECTOR-PURCHASING&quot;
+  &quot;properties that have to do with sensory input&quot;
  </comment>
- <example text="I need a very bright projector">
-  <provenance name="TRIPS"/>
- </example>
  <relation label="inherit">
-  ont::luminosity-val
-  ont::central-adj-templ
+  ont::physical-property-val
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="brightness" />
- </morph>
- <comment>
-  &quot;PROJECTOR-PURCHASING&quot;
- </comment>
+ </concept>
+ <concept name="ont::visible-property-val">
+ <relation label="inherit">
+  ont::sensory-property-val
+ </relation>
+ </concept>
+ <concept name="ont::visibility-val">
+ <relation label="inherit">
+  ont::visible-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|visible%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::bright-val">
  <relation label="inherit">
   ont::luminosity-val
  </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="brightness" />
- </morph>
- <comment>
-  &quot;PROJECTOR-PURCHASING&quot;
- </comment>
+ <relation label="overlap">
+  wn::|bright%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::dim-val">
  <relation label="inherit">
   ont::luminosity-val
  </relation>
- <syntax>
-  <template-call template="ont::reln-subcat-of-units-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-   <feat name="sort">other-reln</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="dim" />
-  <forms>
-   -ER
-  </forms>
- </morph>
- <comment>
-  &quot;PROJECTOR-PURCHASING&quot;
- </comment>
- <example text="the lamp that lasts the longest is the dimmest">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::luminosity-val
-  ont::central-adj-templ
+ <relation label="overlap">
+  wn::|dim%5:00:00:dark:00|
+  wn::|dim%3:00:02::|
  </relation>
- </sense>
+ </concept>
 </dsl>

@@ -4,7 +4,11 @@
  <provenance name="TRIPS"/>
  <concept name="ont::speed-scale">
  <relation label="inherit">
-  ont::time-rate
+  ont::rate-scale
+ </relation>
+ <relation label="overlap">
+  wn::|speed%1:28:00::|
+  wn::|velocity%1:28:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -61,7 +65,6 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="abstr-obj" />
  <concept name="ont::domain">
  <comment>
   &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
@@ -84,42 +87,58 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">rate-scale</feat>
-   <feat name="measure-function">value</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
+ <concept name="ont::ordered-domain">
+ <relation label="inherit">
+  ont::domain
+ </relation>
+ </concept>
+ <concept name="ont::ordered-continuous">
+ <relation label="inherit">
+  ont::ordered-domain
+ </relation>
+ </concept>
+ <concept name="ont::attributive-scale">
+ <comment>
+  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
+ </comment>
+ <relation label="inherit">
+  ont::ordered-continuous
+ </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:00::|
+ </relation>
+ </concept>
+ <concept name="abstr-obj" />
+ <concept name="ont::measure-scale">
+ <relation label="inherit">
+  ont::attributive-scale
+ </relation>
+ <relation label="overlap">
+  wn::|quantity%1:03:00::|
+  wn::|measurement%1:04:00::|
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
  <feat name="scale">rate-scale</feat>
  </sem-feats>
- <concept name="ont::ordered-domain">
+ <concept name="ont::ratio-scale">
  <relation label="inherit">
-  ont::domain
+  ont::measure-scale
+ </relation>
+ <relation label="overlap">
+  wn::|scale%1:24:01::|
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <concept name="phys-obj" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::rate">
+ <concept name="ont::rate-scale">
  <relation label="inherit">
-  ont::ordered-domain
+  ont::ratio-scale
+ </relation>
+ <relation label="overlap">
+  wn::|rate%1:21:00::|
+  wn::|rate%1:28:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -127,32 +146,135 @@
   </relation>
   <feat name="scale">rate-scale</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::extent">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="scale">rate-scale</feat>
-    <feat name="measure-function">value</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <concept name="ont::time-rate">
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="speed" />
+ </morph>
  <relation label="inherit">
-  ont::rate
+  ont::speed-scale
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <concept name="phys-obj" />
-  </role-restr-map>
- </sem-frame>
- </concept>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="speed" />
+ </morph>
+ <relation label="inherit">
+  ont::speed-scale
+ </relation>
+ <syntax>
+  <template-call template="ont::reln-subcat-of-units-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="velocity" />
+ </morph>
+ <relation label="inherit">
+  ont::speed-scale
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="velocity" />
+ </morph>
+ <relation label="inherit">
+  ont::speed-scale
+ </relation>
+ <syntax>
+  <template-call template="ont::reln-subcat-of-units-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
 </dsl>

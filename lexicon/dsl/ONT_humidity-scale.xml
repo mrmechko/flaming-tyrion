@@ -3,8 +3,11 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::humidity-scale">
+ <relation label="overlap">
+  wn::|humidity%1:26:00::|
+ </relation>
  <relation label="inherit">
-  ont::phys-measure-domain
+  ont::atmospheric-scale
   abstr-obj
  </relation>
  <sem-frame>
@@ -94,67 +97,35 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="measure-function">value</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="measure-function">term</feat>
- </sem-feats>
  <concept name="ont::ordered-domain">
  <relation label="inherit">
   ont::domain
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="container">+</feat>
-   <feat name="form">object</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::measure-domain">
+ <concept name="ont::ordered-continuous">
  <relation label="inherit">
   ont::ordered-domain
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="measure-function">term</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="measure-function">value</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
+ </concept>
+ <concept name="ont::attributive-scale">
+ <comment>
+  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
+ </comment>
+ <relation label="inherit">
+  ont::ordered-continuous
+ </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:00::|
+ </relation>
+ </concept>
+ <concept name="ont::measure-scale">
+ <relation label="inherit">
+  ont::attributive-scale
+ </relation>
+ <relation label="overlap">
+  wn::|quantity%1:03:00::|
+  wn::|measurement%1:04:00::|
+ </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground">
@@ -167,24 +138,10 @@
  </role-restr-map>
  </sem-frame>
  <concept name="abstr-obj" />
- <concept name="ont::phys-measure-domain">
+ <concept name="ont::atmospheric-scale">
  <relation label="inherit">
-  ont::measure-domain
+  ont::measure-scale
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="container">+</feat>
-    <feat name="form">object</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sense>
  <morph>

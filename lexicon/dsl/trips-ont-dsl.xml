@@ -19,6 +19,11 @@
    <feat name="aspect">static</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::ability-scale">
+  <relation label="inherit">
+   ont::evaluation-scale
+  </relation>
+ </concept>
  <concept name="ont::ability-state">
   <relation label="inherit">
    ont::event-of-state
@@ -50,6 +55,17 @@
    wn::|able%5:00:00:capable:00|
    wn::|able%5:00:00:competent:00|
    wn::|competent%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::able-scale">
+  <relation label="inherit">
+   ont::ability-scale
+  </relation>
+  <relation label="overlap">
+   wn::|ability%1:07:00::|
+   wn::|capability%1:07:00::|
+   wn::|capacity%1:07:00::|
+   wn::|competence%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::abnormality">
@@ -160,6 +176,11 @@
    wn::|consent%2:32:00::|
    wn::|go_for%2:32:00::|
    wn::|affirm%2:32:01::|
+  </relation>
+ </concept>
+ <concept name="ont::acceptability-scale">
+  <relation label="inherit">
+   ont::evaluation-scale
   </relation>
  </concept>
  <concept name="ont::acceptability-val">
@@ -779,6 +800,16 @@
    ont::accommodate
   </relation>
  </concept>
+ <concept name="ont::adaptability-scale">
+  <relation label="inherit">
+   ont::evaluation-scale
+  </relation>
+  <relation label="overlap">
+   wn::|flexibility%1:07:01::|
+   wn::|adaptability%1:07:00::|
+   wn::|pliability%1:07:01::|
+  </relation>
+ </concept>
  <concept name="ont::add-include">
   <relation label="overlap">
    wn::|include%2:30:00::|
@@ -1031,9 +1062,12 @@
    wn::|afraid%3:00:00::|
   </relation>
  </concept>
- <concept name="ont::age">
+ <concept name="ont::age-alt-scale">
   <relation label="inherit">
-   ont::phys-measure-domain
+   ont::ordered-discrete
+  </relation>
+  <relation label="overlap">
+   wn::|age%1:07:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -1318,6 +1352,14 @@
    wn::|ambitious%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::ambitiousness-scale">
+  <relation label="inherit">
+   ont::behavioral-scale
+  </relation>
+  <relation label="overlap">
+   wn::|ambition%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::ambitiousness-val">
   <relation label="inherit">
    ont::psychological-property-val
@@ -1593,6 +1635,19 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::appearance-scale">
+  <comment>
+   &quot;scales related to surface appearance of a physical entity or object preceptible through sensory input&quot;
+  </comment>
+  <relation label="inherit">
+   ont::attributive-scale
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <concept name="phys-obj" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::appears-to-have-property">
   <relation label="inherit">
    ont::have-property
@@ -1840,9 +1895,13 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::area">
+ <concept name="ont::area-alt-scale">
   <relation label="inherit">
-   ont::phys-measure-domain
+   ont::non-vertical-scale
+  </relation>
+  <relation label="overlap">
+   wn::|area%1:07:00::|
+   wn::|footprint%1:07:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -2343,14 +2402,6 @@
    <feat name="aspect">stage-level</feat>
   </sem-feats>
  </concept>
- <concept name="ont::assurance">
-  <relation label="inherit">
-   ont::non-measure-ordered-domain
-  </relation>
-  <relation label="overlap">
-   wn::|trust%1:26:00::|
-  </relation>
- </concept>
  <concept name="ont::astronomy-val">
   <relation label="inherit">
    ont::associated-with-science-val
@@ -2431,6 +2482,11 @@
    <feat name="object-function">weather</feat>
    <feat name="origin">non-living</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::atmospheric-scale">
+  <relation label="inherit">
+   ont::measure-scale
+  </relation>
  </concept>
  <concept name="ont::atmospheric-val">
   <comment>
@@ -2574,7 +2630,8 @@
    wn::|attribute%1:09:00::|
    wn::|property%1:09:00::|
    wn::|property%1:07:00::|
-   wn::|holding%1:21:00::|
+   wn::|holding%1:21:0
+0::|
    wn::|belongings%1:21:00::|
    wn::|property%1:21:00::|
   </relation>
@@ -2602,6 +2659,17 @@
     <concept name="situation" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::attributive-scale">
+  <comment>
+   &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
+  </comment>
+  <relation label="inherit">
+   ont::ordered-continuous
+  </relation>
+  <relation label="overlap">
+   wn::|quality%1:07:00::|
+  </relation>
  </concept>
  <concept name="ont::atypical-val">
   <relation label="inherit">
@@ -2742,6 +2810,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::availability-scale">
+  <relation label="inherit">
+   ont::object-affordances-scale
+  </relation>
+  <relation label="overlap">
+   wn::|availability%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::availability-val">
   <relation label="inherit">
    ont::object-affordances-val
@@ -2875,6 +2951,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::awareness-scale">
+  <relation label="inherit">
+   ont::psychological-condition-scale
+  </relation>
+  <relation label="overlap">
+   wn::|consciousness%1:09:01::|
+  </relation>
+ </concept>
  <concept name="ont::awareness-val">
   <relation label="inherit">
    ont::attention-val
@@ -2952,6 +3036,14 @@
    wn::|tasteless%3:00:02::|
   </relation>
  </concept>
+ <concept name="ont::badness-scale">
+  <relation label="inherit">
+   ont::acceptability-scale
+  </relation>
+  <relation label="overlap">
+   wn::|badness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::bag">
   <relation label="inherit">
    ont::small-container
@@ -2968,6 +3060,14 @@
  <concept name="ont::baked-goods">
   <relation label="inherit">
    ont::prepared
+  </relation>
+ </concept>
+ <concept name="ont::balance-scale">
+  <relation label="inherit">
+   ont::state-of-affairs-scale
+  </relation>
+  <relation label="overlap">
+   wn::|balance%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::bar-measure">
@@ -3171,6 +3271,22 @@
    wn::|gorgeous%5:00:00:beautiful:00|
   </relation>
  </concept>
+ <concept name="ont::beautiful-scale">
+  <relation label="inherit">
+   ont::beauty-scale
+  </relation>
+  <relation label="overlap">
+   wn::|beauty%1:07:00::|
+   wn::|loveliness%1:07:00::|
+   wn::|prettiness%1:07:00::|
+   wn::|handsomeness%1:07:00::|
+  </relation>
+ </concept>
+ <concept name="ont::beauty-scale">
+  <relation label="inherit">
+   ont::evaluation-scale
+  </relation>
+ </concept>
  <concept name="ont::beauty-val">
   <relation label="inherit">
    ont::evaluation-attribute-val
@@ -3280,6 +3396,14 @@
  <concept name="ont::beef">
   <relation label="inherit">
    ont::meat
+  </relation>
+ </concept>
+ <concept name="ont::behavioral-scale">
+  <comment>
+   &quot;scales relating to behavioral or psychological attributes that characterize an entity. Property-val counterparts in this scale include both psychological-property-val and animal-propensity-val. To be distinguished from the temporary conditions (stage-scale).&quot;
+  </comment>
+  <relation label="inherit">
+   ont::attributive-scale
   </relation>
  </concept>
  <concept name="ont::belief-ascription">
@@ -3520,6 +3644,14 @@
    wn::|bird%1:05:00::|
   </relation>
  </concept>
+ <concept name="ont::bit-rate-scale">
+  <relation label="inherit">
+   ont::rate-scale
+  </relation>
+  <relation label="overlap">
+   wn::|bandwidth%1:23:00::|
+  </relation>
+ </concept>
  <concept name="ont::bitter-val">
   <relation label="inherit">
    ont::tasteful-val
@@ -3533,6 +3665,14 @@
    </relation>
    <feat name="scale">bitter*1--07--00</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::bitterness-scale">
+  <relation label="inherit">
+   ont::taste-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|bitterness%1:07:00::|
+  </relation>
  </concept>
  <concept name="ont::black">
   <relation label="inherit">
@@ -3570,6 +3710,14 @@
   </relation>
   <relation label="overlap">
    wn::|blue%5:00:00:chromatic:00|
+  </relation>
+ </concept>
+ <concept name="ont::blurriness-scale">
+  <relation label="inherit">
+   ont::visual-distinctivenss-scale
+  </relation>
+  <relation label="overlap">
+   wn::|blurriness%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::board-game">
@@ -3667,6 +3815,11 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::body-condition-scale">
+  <relation label="inherit">
+   ont::stage-scale
+  </relation>
  </concept>
  <concept name="ont::body-manipulation">
   <comment>
@@ -3927,28 +4080,6 @@
    wn::|bottom%3:00:00::|
   </relation>
  </concept>
- <concept name="ont::bound">
-  <relation label="inherit">
-   ont::ordered-domain
-  </relation>
-  <relation label="overlap">
-   wn::|extremity%1:15:00::|
-   wn::|extreme%1:07:00::|
-   wn::|extreme%1:15:00::|
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::figure">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::box">
   <relation label="inherit">
    ont::small-container
@@ -4072,6 +4203,23 @@
    wn::|breathless%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::bright-val">
+  <relation label="inherit">
+   ont::luminosity-val
+  </relation>
+  <relation label="overlap">
+   wn::|bright%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::brightness-scale">
+  <relation label="inherit">
+   ont::visual-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|brightness%1:07:00::|
+   wn::|brightness%1:07:02::|
+  </relation>
+ </concept>
  <concept name="ont::broad">
   <relation label="inherit">
    ont::non-vertical-val
@@ -4102,35 +4250,6 @@
    </relation>
    <feat name="scale">brownness*1--07--00</feat>
   </sem-feats>
- </concept>
- <concept name="ont::budget">
-  <relation label="inherit">
-   ont::measure-domain
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">money-scale</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="scale">money-scale</feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="information">information-content</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::burn">
   <relation label="inherit">
@@ -4345,13 +4464,15 @@
    wn::|malignancy%1:26:00::|
    wn::|malignance%1:26:00::|
    wn::|carcinoma%1:26:00::|
-   wn::|melanoma%1:26:00::|
+   wn::|melanoma%1:26
+:00::|
    wn::|malignant_melanoma%1:26:00::|
    wn::|lymphoma%1:26:00::|
    wn::|leukemia%1:26:00::|
    wn::|leukaemia%1:26:00::|
    wn::|leucaemia%1:26:00::|
-   wn::|cancer_of_the_blood%1:26:00::|
+   wn::|ca
+ncer_of_the_blood%1:26:00::|
    wn::|sarcoma%1:26:00::|
    wn::|angiosarcoma%1:26:00::|
    wn::|myeloma%1:26:00::|
@@ -4879,6 +5000,14 @@
    </feat>
   </sem-feats>
  </concept>
+ <concept name="ont::cautiousness-scale">
+  <relation label="inherit">
+   ont::behavioral-scale
+  </relation>
+  <relation label="overlap">
+   wn::|caution%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::cell">
   <relation label="inherit">
    ont::cell-part
@@ -4954,6 +5083,20 @@
    wn::|indisputable%5:00:00:certain:01|
    wn::|sealed%3:00:02::|
    wn::|convinced%5:00:00:certain:02|
+  </relation>
+ </concept>
+ <concept name="ont::certain-scale">
+  <relation label="inherit">
+   ont::certainty-scale
+  </relation>
+  <relation label="overlap">
+   wn::|certainty%1:09:00::|
+   wn::|assurance%1:09:00::|
+  </relation>
+ </concept>
+ <concept name="ont::certainty-scale">
+  <relation label="inherit">
+   ont::psychological-condition-scale
   </relation>
  </concept>
  <concept name="ont::certainty-val">
@@ -5435,6 +5578,15 @@
    wn::|clean%3:00:01::|
   </relation>
  </concept>
+ <concept name="ont::cleanliness-scale">
+  <relation label="inherit">
+   ont::state-of-affairs-scale
+  </relation>
+  <relation label="overlap">
+   wn::|cleanliness%1:26:00::|
+   wn::|cleanliness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::cleanliness-val">
   <relation label="inherit">
    ont::evaluation-attribute-val
@@ -5488,9 +5640,9 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::clock-speed">
+ <concept name="ont::clock-speed-scale">
   <relation label="inherit">
-   ont::time-rate
+   ont::rate-scale
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
@@ -5689,6 +5841,15 @@
    wn::|cool%3:00:03::|
   </relation>
  </concept>
+ <concept name="ont::cold-scale">
+  <relation label="inherit">
+   ont::temperature-alt-scale
+  </relation>
+  <relation label="overlap">
+   wn::|cold%1:07:00::|
+   wn::|cold%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::collaborate">
   <relation label="inherit">
    ont::agent-interaction
@@ -5788,6 +5949,11 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::color-quality-scale">
+  <relation label="inherit">
+   ont::visual-property-scale
+  </relation>
+ </concept>
  <concept name="ont::color-saturation-val">
   <relation label="inherit">
    ont::visibility-val
@@ -5795,7 +5961,7 @@
  </concept>
  <concept name="ont::color-scale">
   <relation label="inherit">
-   ont::physical-discrete-domain
+   ont::unordered-discrete-domain
   </relation>
   <relation label="overlap">
    wn::|colouring%1:07:00::|
@@ -5803,7 +5969,8 @@
    wn::|colour%1:07:00::|
    wn::|color%1:07:00::|
    wn::|color%1:09:01::|
-   wn::|colour%1:09:01::|
+   wn::|colo
+ur%1:09:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -6050,6 +6217,11 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::comfort-scale">
+  <relation label="inherit">
+   ont::psychological-condition-scale
+  </relation>
+ </concept>
  <concept name="ont::comfort-val">
   <relation label="inherit">
    ont::evaluation-attribute-val
@@ -6064,13 +6236,13 @@
    wn::|comfortable%3:00:00::|
   </relation>
  </concept>
- <concept name="ont::comfortableness">
+ <concept name="ont::comfortable-scale">
   <relation label="inherit">
-   ont::non-measure-ordered-domain
+   ont::comfort-scale
   </relation>
   <relation label="overlap">
-   wn::|discomfort%1:26:00::|
-   wn::|discomfort%1:12:00::|
+   wn::|comfort%1:26:00::|
+   wn::|convenience%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::command">
@@ -6378,6 +6550,14 @@
  <concept name="ont::comparison">
   <relation label="inherit">
    ont::ps-object
+  </relation>
+ </concept>
+ <concept name="ont::compatibility-scale">
+  <relation label="inherit">
+   ont::relational-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|compatibility%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::compatibility-val">
@@ -6764,13 +6944,25 @@
    <feat name="origin">artifact</feat>
   </sem-feats>
  </concept>
- <concept name="ont::confidentiality">
+ <concept name="ont::confidence-scale">
   <relation label="inherit">
-   ont::non-measure-ordered-domain
+   ont::psychological-condition-scale
+  </relation>
+  <relation label="overlap">
+   wn::|trust%1:26:00::|
+   wn::|authority%1:07:00::|
+   wn::|confidence%1:26:02::|
+   wn::|confidence%1:12:00::|
+  </relation>
+ </concept>
+ <concept name="ont::confidentiality-scale">
+  <relation label="inherit">
+   ont::status-property-scale
   </relation>
   <relation label="overlap">
    wn::|privacy%1:07:00::|
    wn::|privacy%1:26:02::|
+   wn::|security%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::configuration-property-val">
@@ -6914,6 +7106,14 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::connectivity-scale">
+  <relation label="inherit">
+   ont::state-of-affairs-scale
+  </relation>
+  <relation label="overlap">
+   wn::|connectivity%1:07:00::|
+  </relation>
  </concept>
  <concept name="ont::consistent">
   <relation label="inherit">
@@ -7214,6 +7414,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::convenience-scale">
+  <relation label="inherit">
+   ont::evaluation-scale
+  </relation>
+  <relation label="overlap">
+   wn::|convenience%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::convenience-val">
   <relation label="inherit">
    ont::evaluation-attribute-val
@@ -7490,6 +7698,15 @@
    wn::|accurate%5:00:00:correct:00|
   </relation>
  </concept>
+ <concept name="ont::correctness-scale">
+  <relation label="inherit">
+   ont::information-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|accuracy%1:07:02::|
+   wn::|correctness%1:07:01::|
+  </relation>
+ </concept>
  <concept name="ont::correctness-val">
   <comment>
    &quot;describing the quality of being error-free or error-prone&quot;
@@ -7566,17 +7783,6 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::cost-val">
-  <relation label="inherit">
-   ont::measure-domain
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">money-scale</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::costs">
   <relation label="inherit">
@@ -7698,6 +7904,15 @@
    wn::|volcanic_crater%1:17:00::|
    wn::|crater%1:17:01::|
    wn::|crater%1:17:00::|
+  </relation>
+ </concept>
+ <concept name="ont::craziness-scale">
+  <relation label="inherit">
+   ont::rationality-scale
+  </relation>
+  <relation label="overlap">
+   wn::|craziness%1:26:00::|
+   wn::|irrationality%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::create">
@@ -8058,6 +8273,14 @@
    wn::|dark%3:00:01::|
   </relation>
  </concept>
+ <concept name="ont::darkness-scale">
+  <relation label="inherit">
+   ont::presence-of-light-scale
+  </relation>
+  <relation label="overlap">
+   wn::|darkness%1:26:00::|
+  </relation>
+ </concept>
  <concept name="ont::data-storage-medium">
   <relation label="inherit">
    ont::info-medium
@@ -8386,9 +8609,9 @@
    wn::|demanding%3:00:01::|
   </relation>
  </concept>
- <concept name="ont::density">
+ <concept name="ont::density-scale">
   <relation label="inherit">
-   ont::rate
+   ont::ratio-scale
   </relation>
   <relation label="overlap">
    wn::|density%1:07:00::|
@@ -8485,7 +8708,10 @@
  </concept>
  <concept name="ont::depth-scale">
   <relation label="inherit">
-   ont::linear-d
+   ont::vertical-scale
+  </relation>
+  <relation label="overlap">
+   wn::|depth%1:07:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -8857,6 +9083,15 @@
    wn::|distinct%5:00:00::|
   </relation>
  </concept>
+ <concept name="ont::different-scale">
+  <relation label="inherit">
+   ont::similarity-scale
+  </relation>
+  <relation label="overlap">
+   wn::|difference%1:07:00::|
+   wn::|distinction%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::difficult">
   <relation label="inherit">
    ont::difficulty-val
@@ -8869,6 +9104,14 @@
    wn::|difficult%3:00:00::|
    wn::|rugged%5:00:00:difficult:00|
    wn::|complicated%5:00:00:complex:00|
+  </relation>
+ </concept>
+ <concept name="ont::difficult-scale">
+  <relation label="inherit">
+   ont::task-complexity-scale
+  </relation>
+  <relation label="overlap">
+   wn::|difficulty%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::difficulty-val">
@@ -8896,6 +9139,15 @@
  <concept name="ont::digital-val">
   <relation label="inherit">
    ont::signal-representation-val
+  </relation>
+ </concept>
+ <concept name="ont::dim-val">
+  <relation label="inherit">
+   ont::luminosity-val
+  </relation>
+  <relation label="overlap">
+   wn::|dim%5:00:00:dark:00|
+   wn::|dim%3:00:02::|
   </relation>
  </concept>
  <concept name="ont::dimension">
@@ -8933,6 +9185,15 @@
   </comment>
   <relation label="inherit">
    ont::property-val
+  </relation>
+ </concept>
+ <concept name="ont::dimensional-scale">
+  <relation label="inherit">
+   ont::measure-scale
+  </relation>
+  <relation label="overlap">
+   wn::|dimension%1:07:00::|
+   wn::|dimension%1:07:01::|
   </relation>
  </concept>
  <concept name="ont::dir-in-terms-of-obj">
@@ -9195,11 +9456,6 @@
    wn::|discontinuous%3:00:01::|
   </relation>
  </concept>
- <concept name="ont::discrete-domain">
-  <relation label="inherit">
-   ont::domain
-  </relation>
- </concept>
  <concept name="ont::discrete-property-val">
   <comment>
    &quot;temporary node. Will be deleted as soon as the words in this type are placed in their correct places in the ontology&quot;
@@ -9234,13 +9490,15 @@
    wn::|unhealthiness%1:26:00::|
    wn::|ill_health%1:26:00::|
    wn::|illness%1:26:00::|
-   wn::|unwellness%1:26:00::|
+   wn::|unwe
+llness%1:26:00::|
    wn::|malady%1:26:00::|
    wn::|sickness%1:26:00::|
    wn::|ailment%1:26:00::|
    wn::|ill%1:26:00::|
    wn::|abnormality%1:26:00::|
-   wn::|abnormalcy%1:26:00::|
+   wn::|abnormal
+cy%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::disgusted">
@@ -9332,9 +9590,22 @@
    ont::pos-distance
   </relation>
  </concept>
- <concept name="ont::distance">
+ <concept name="ont::distance-per-gasoline-scale">
   <relation label="inherit">
-   ont::linear-d
+   ont::ratio-scale
+  </relation>
+  <relation label="overlap">
+   wn::|mileage%1:24:00::|
+  </relation>
+ </concept>
+ <concept name="ont::distance-scale">
+  <relation label="inherit">
+   ont::measure-scale
+  </relation>
+  <relation label="overlap">
+   wn::|distance%1:07:00::|
+   wn::|interval%1:07:00::|
+   wn::|way%1:07:02::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
@@ -9750,7 +10021,8 @@
    wn::|dyspnea%1:26:00::|
    wn::|dyspnoea%1:26:00::|
    wn::|shortness_of_breath%1:26:00::|
-   wn::|sob%1:26:00::|
+   wn::|sob%1:2
+6:00::|
   </relation>
  </concept>
  <concept name="ont::eager-val">
@@ -9819,6 +10091,14 @@
    wn::|elementary%5:00:00:easy:01|
    wn::|easy%3:00:01::|
    wn::|simple%3:00:02::|
+  </relation>
+ </concept>
+ <concept name="ont::easy-scale">
+  <relation label="inherit">
+   ont::task-complexity-scale
+  </relation>
+  <relation label="overlap">
+   wn::|ease%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::eater">
@@ -9954,6 +10234,17 @@
    wn::|efficient%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::electric-measure-scale">
+  <relation label="inherit">
+   ont::measure-scale
+  </relation>
+  <relation label="overlap">
+   wn::|current%1:19:01::|
+   wn::|charge%1:19:00::|
+   wn::|resistance%1:19:01::|
+   wn::|polarity%1:24:00::|
+  </relation>
+ </concept>
  <concept name="ont::electrical">
   <relation label="inherit">
    ont::substantial-property-val
@@ -10001,6 +10292,11 @@
    wn::|emanation%1:04:00::|
    wn::|emit%2:43:00::|
    wn::|discharge%2:29:00::|
+  </relation>
+ </concept>
+ <concept name="ont::emotion-scale">
+  <relation label="inherit">
+   ont::psychological-condition-scale
   </relation>
  </concept>
  <concept name="ont::emotional-val">
@@ -10176,6 +10472,14 @@
   <relation label="overlap">
    wn::|end%1:15:00::|
    wn::|end%1:15:02::|
+  </relation>
+ </concept>
+ <concept name="ont::endurance-scale">
+  <relation label="inherit">
+   ont::behavioral-scale
+  </relation>
+  <relation label="overlap">
+   wn::|endurance%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::enduring">
@@ -10416,6 +10720,14 @@
    wn::|equidistant%5:00:00:equal:00|
   </relation>
  </concept>
+ <concept name="ont::equal-scale">
+  <relation label="inherit">
+   ont::similarity-scale
+  </relation>
+  <relation label="overlap">
+   wn::|equivalence%1:26:00::|
+  </relation>
+ </concept>
  <concept name="ont::equipment">
   <relation label="inherit">
    ont::manufactured-object
@@ -10548,6 +10860,17 @@
   </comment>
   <relation label="inherit">
    ont::property-val
+  </relation>
+ </concept>
+ <concept name="ont::evaluation-scale">
+  <comment>
+   &quot;scales relating to subjective evaluation of an entity or a situation&quot;
+  </comment>
+  <relation label="inherit">
+   ont::attributive-scale
+  </relation>
+  <relation label="overlap">
+   wn::|quality%1:07:02::|
   </relation>
  </concept>
  <concept name="ont::evaluation-val">
@@ -11396,16 +11719,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::expensive">
-  <relation label="inherit">
-   ont::cost-val
-  </relation>
-  <relation label="overlap">
-   wn::|costly%5:00:01:expensive:00|
-   wn::|expensive%3:00:00::|
-   wn::|expensive%3:00:00::|
-  </relation>
- </concept>
  <concept name="ont::expensiveness">
   <relation label="inherit">
    ont::event-of-state
@@ -11803,9 +12116,9 @@
    wn::|fat%3:00:01::|
   </relation>
  </concept>
- <concept name="ont::fatigue">
+ <concept name="ont::fatigue-scale">
   <relation label="inherit">
-   ont::feebleness
+   ont::feebleness-scale
   </relation>
   <relation label="overlap">
    wn::|exhaustion%1:26:00::|
@@ -11895,9 +12208,9 @@
    wn::|federal%3:01:02::|
   </relation>
  </concept>
- <concept name="ont::feebleness">
+ <concept name="ont::feebleness-scale">
   <relation label="inherit">
-   ont::physical-condition
+   ont::body-condition-scale
   </relation>
   <relation label="overlap">
    wn::|feebleness%1:26:00::|
@@ -11952,7 +12265,8 @@
    wn::|febrility%1:26:00::|
    wn::|febricity%1:26:00::|
    wn::|pyrexia%1:26:00::|
-   wn::|feverishness%1:26:00::|
+   wn::|feverishness%1:26:
+00::|
   </relation>
  </concept>
  <concept name="ont::feverish-val">
@@ -12228,6 +12542,14 @@
    </relation>
    <feat name="cause">agentive</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::flexibility-scale">
+  <relation label="inherit">
+   ont::tactile-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|flexibility%1:07:02::|
+  </relation>
  </concept>
  <concept name="ont::flexibility-val">
   <relation label="inherit">
@@ -12833,6 +13155,14 @@
    ont::geographic-region
   </relation>
  </concept>
+ <concept name="ont::functionality-scale">
+  <relation label="inherit">
+   ont::object-affordances-scale
+  </relation>
+  <relation label="overlap">
+   wn::|functionality%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::functionality-val">
   <comment>
    &quot;properties relating to  whether something is functioning as intended&quot;
@@ -12942,9 +13272,12 @@
    ont::located-event
   </relation>
  </concept>
- <concept name="ont::gender">
+ <concept name="ont::gender-scale">
   <relation label="inherit">
-   ont::physical-discrete-domain
+   ont::unordered-discrete-domain
+  </relation>
+  <relation label="overlap">
+   wn::|gender%1:07:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
@@ -13137,29 +13470,6 @@
    wn::|perpendicular%3:00:00::|
   </relation>
  </concept>
- <concept name="ont::gist">
-  <relation label="inherit">
-   ont::non-measure-ordered-domain
-  </relation>
-  <relation label="overlap">
-   wn::|kernel%1:09:00::|
-   wn::|substance%1:09:01::|
-   wn::|core%1:09:00::|
-   wn::|center%1:09:00::|
-   wn::|centre%1:09:00::|
-   wn::|essence%1:09:00::|
-   wn::|gist%1:09:00::|
-   wn::|heart%1:09:01::|
-   wn::|heart_and_soul%1:09:00::|
-   wn::|inwardness%1:09:02::|
-   wn::|marrow%1:09:00::|
-   wn::|meat%1:09:00::|
-   wn::|nub%1:09:00::|
-   wn::|pith%1:09:00::|
-   wn::|sum%1:09:00::|
-   wn::|nitty-gritty%1:09:00::|
-  </relation>
- </concept>
  <concept name="ont::giving">
   <comment>
    &quot;To relinquish control of AFFECTED AFFECTED-RESULT, typically voluntarily and possibly in exchange for something&quot;
@@ -13345,6 +13655,15 @@
    ont::speech-act
   </relation>
  </concept>
+ <concept name="ont::goodness-scale">
+  <relation label="inherit">
+   ont::acceptability-scale
+  </relation>
+  <relation label="overlap">
+   wn::|benefit%1:07:00::|
+   wn::|goodness%1:07:02::|
+  </relation>
+ </concept>
  <concept name="ont::goose">
   <relation label="inherit">
    ont::poultry
@@ -13492,6 +13811,15 @@
    wn::|greet%2:32:00::|
    wn::|recognize%2:32:01::|
    wn::|recognise%2:32:01::|
+  </relation>
+ </concept>
+ <concept name="ont::grief-scale">
+  <relation label="inherit">
+   ont::negative-emotion-scale
+  </relation>
+  <relation label="overlap">
+   wn::|grief%1:12:00::|
+   wn::|sorrow%1:12:00::|
   </relation>
  </concept>
  <concept name="ont::grievous-val">
@@ -13736,6 +14064,15 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::happiness-scale">
+  <relation label="inherit">
+   ont::positive-emotion-scale
+  </relation>
+  <relation label="overlap">
+   wn::|happiness%1:26:00::|
+   wn::|happiness%1:12:00::|
+  </relation>
+ </concept>
  <concept name="ont::hard-val">
   <relation label="inherit">
    ont::hardness-val
@@ -13948,17 +14285,6 @@
    wn::|headache%1:26:00::|
   </relation>
  </concept>
- <concept name="ont::health">
-  <relation label="inherit">
-   ont::physical-condition
-  </relation>
-  <relation label="overlap">
-   wn::|wellness%1:26:00::|
-   wn::|wellbeing%1:26:00::|
-   wn::|health%1:26:00::|
-   wn::|fitness%1:26:00::|
-  </relation>
- </concept>
  <concept name="ont::health-care-facility">
   <relation label="inherit">
    ont::facility
@@ -13980,6 +14306,19 @@
    wn::|pcp%1:18:00::|
    wn::|health_care_provider%1:18:00::|
    wn::|caregiver%1:18:01::|
+  </relation>
+ </concept>
+ <concept name="ont::health-scale">
+  <relation label="inherit">
+   ont::body-condition-scale
+  </relation>
+  <relation label="overlap">
+   wn::|wellness%1:26:00::|
+   wn::|wellbeing%1:26:00::|
+   wn::|health%1:26:00::|
+   wn::|fitness%1:26:00::|
+   wn::|healthiness%1:26:00::|
+   wn::|condition%1:26:02::|
   </relation>
  </concept>
  <concept name="ont::healthiness-val">
@@ -14032,6 +14371,15 @@
    ont::continuous-change
   </relation>
  </concept>
+ <concept name="ont::heat-scale">
+  <relation label="inherit">
+   ont::temperature-alt-scale
+  </relation>
+  <relation label="overlap">
+   wn::|heat%1:07:01::|
+   wn::|heat%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::heater">
   <relation label="inherit">
    ont::kettle-base
@@ -14056,7 +14404,10 @@
  </concept>
  <concept name="ont::height-scale">
   <relation label="inherit">
-   ont::linear-d
+   ont::vertical-scale
+  </relation>
+  <relation label="overlap">
+   wn::|height%1:07:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -14394,8 +14745,11 @@
   </relation>
  </concept>
  <concept name="ont::humidity-scale">
+  <relation label="overlap">
+   wn::|humidity%1:26:00::|
+  </relation>
   <relation label="inherit">
-   ont::phys-measure-domain
+   ont::atmospheric-scale
    abstr-obj
   </relation>
   <sem-frame>
@@ -14631,13 +14985,14 @@
    wn::|implicit%3:00:00::|
   </relation>
  </concept>
- <concept name="ont::importance">
+ <concept name="ont::importance-scale">
   <relation label="inherit">
-   ont::non-measure-ordered-domain
+   ont::evaluation-scale
   </relation>
   <relation label="overlap">
-   wn::|importance%1:26:00::|
+   wn::|significance%1:07:00::|
    wn::|importance%1:07:00::|
+   wn::|importance%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::importance-val">
@@ -14994,15 +15349,6 @@
    wn::|industrial%3:01:00::|
   </relation>
  </concept>
- <concept name="ont::inexpensive">
-  <relation label="inherit">
-   ont::cost-val
-  </relation>
-  <relation label="overlap">
-   wn::|cheap%3:00:00::|
-   wn::|cheap%3:00:00::|
-  </relation>
- </concept>
  <concept name="ont::infamous-val">
   <relation label="inherit">
    ont::fame-val
@@ -15082,6 +15428,11 @@
    <feat name="intentional">-</feat>
    <feat name="information">information-content</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::information-property-scale">
+  <relation label="inherit">
+   ont::attributive-scale
+  </relation>
  </concept>
  <concept name="ont::information-property-val">
   <comment>
@@ -15204,7 +15555,8 @@
    wn::|hurt%1:26:00::|
    wn::|harm%1:26:00::|
    wn::|trauma%1:26:02::|
-   wn::|bruise%1:26:00::|
+   wn::|bruise%
+1:26:00::|
    wn::|contusion%1:26:00::|
    wn::|bump%1:26:00::|
   </relation>
@@ -15330,6 +15682,14 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::intangibility-scale">
+  <relation label="inherit">
+   ont::touch-scale
+  </relation>
+  <relation label="overlap">
+   wn::|intangibility%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::intangibility-val">
   <relation label="inherit">
    ont::tangible-property-val
@@ -15368,9 +15728,9 @@
    ont::modifier
   </relation>
  </concept>
- <concept name="ont::intensity">
+ <concept name="ont::intensity-scale">
   <relation label="inherit">
-   ont::non-measure-ordered-domain
+   ont::dimensional-scale
   </relation>
   <relation label="overlap">
    wn::|intensity%1:07:00::|
@@ -15746,6 +16106,14 @@
    wn::|inverted%5:00:00:turned:00|
   </relation>
  </concept>
+ <concept name="ont::invisibility-scale">
+  <relation label="inherit">
+   ont::sight-scale
+  </relation>
+  <relation label="overlap">
+   wn::|invisibility%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::invisibility-val">
   <relation label="inherit">
    ont::visible-property-val
@@ -16072,6 +16440,16 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::kindness-scale">
+  <relation label="inherit">
+   ont::behavioral-scale
+  </relation>
+  <relation label="overlap">
+   wn::|kindness%1:07:00::|
+   wn::|kindness%1:07:01::|
+   wn::|tenderness%1:07:00::|
+  </relation>
  </concept>
  <concept name="ont::kissing">
   <relation label="inherit">
@@ -16497,9 +16875,12 @@
    wn::|hock%2:40:00::|
   </relation>
  </concept>
- <concept name="ont::length">
+ <concept name="ont::length-scale">
   <relation label="inherit">
-   ont::linear-d
+   ont::linear-extent-scale
+  </relation>
+  <relation label="overlap">
+   wn::|length%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::length-unit">
@@ -16643,6 +17024,11 @@
    wn::|light%3:00:05::|
   </relation>
  </concept>
+ <concept name="ont::light-passage-scale">
+  <relation label="inherit">
+   ont::visual-property-scale
+  </relation>
+ </concept>
  <concept name="ont::light-val">
   <relation label="inherit">
    ont::presense-of-light-val
@@ -16666,6 +17052,14 @@
    wn::|dizziness%1:26:00::|
   </relation>
  </concept>
+ <concept name="ont::lightness-scale">
+  <relation label="inherit">
+   ont::presence-of-light-scale
+  </relation>
+  <relation label="overlap">
+   wn::|lightness%1:07:01::|
+  </relation>
+ </concept>
  <concept name="ont::lightweight">
   <comment>
    &quot;indicates less in orientation on a weight scale&quot;
@@ -16678,9 +17072,9 @@
    wn::|lightweight%5:00:00:light:01|
   </relation>
  </concept>
- <concept name="ont::likelihood">
+ <concept name="ont::likelihood-scale">
   <relation label="inherit">
-   ont::ordered-domain
+   ont::information-property-scale
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -16702,6 +17096,14 @@
    ont::information-property-val
   </relation>
  </concept>
+ <concept name="ont::likely-scale">
+  <relation label="inherit">
+   ont::likelihood-scale
+  </relation>
+  <relation label="overlap">
+   wn::|probability%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::likely-val">
   <relation label="inherit">
    ont::likelihood-val
@@ -16720,9 +17122,14 @@
    wn::|minor%5:00:00:limited:00|
   </relation>
  </concept>
- <concept name="ont::linear-d">
+ <concept name="ont::linear-extent">
   <relation label="inherit">
-   ont::phys-measure-domain
+   ont::position-w-trajectory-reln
+  </relation>
+ </concept>
+ <concept name="ont::linear-extent-scale">
+  <relation label="inherit">
+   ont::size-alt-scale
   </relation>
   <relation label="overlap">
    wn::|dimension%1:07:00::|
@@ -16744,11 +17151,6 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::linear-extent">
-  <relation label="inherit">
-   ont::position-w-trajectory-reln
-  </relation>
  </concept>
  <concept name="ont::linear-extent-val">
   <comment>
@@ -17152,6 +17554,15 @@
    wn::|living_accommodations%1:06:00::|
   </relation>
  </concept>
+ <concept name="ont::loneliness-scale">
+  <relation label="inherit">
+   ont::negative-emotion-scale
+  </relation>
+  <relation label="overlap">
+   wn::|loneliness%1:26:00::|
+   wn::|loneliness%1:12:00::|
+  </relation>
+ </concept>
  <concept name="ont::long">
   <comment>
    &quot;more in orientation on a linear scale -- does not indicate horizontality or verticality of the object&quot;
@@ -17204,6 +17615,14 @@
    wn::|lose_sight_of%2:39:00::|
   </relation>
  </concept>
+ <concept name="ont::loudness-scale">
+  <relation label="inherit">
+   ont::sound-volume-scale
+  </relation>
+  <relation label="overlap">
+   wn::|loudness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::loudness-val">
   <relation label="inherit">
    ont::audibility-val
@@ -17232,6 +17651,14 @@
    wn::|low%3:00:02::|
   </relation>
  </concept>
+ <concept name="ont::luckiness-scale">
+  <relation label="inherit">
+   ont::state-of-affairs-scale
+  </relation>
+  <relation label="overlap">
+   wn::|luck%1:26:00::|
+  </relation>
+ </concept>
  <concept name="ont::luckiness-val">
   <relation label="inherit">
    ont::evaluation-attribute-val
@@ -17245,6 +17672,25 @@
    wn::|fortunate%3:00:00::|
    wn::|lucky%5:00:00:fortunate:00|
   </relation>
+ </concept>
+ <concept name="ont::luminosity-alt-scale">
+  <relation label="inherit">
+   ont::visual-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|brightness%1:07:00::|
+   wn::|brightness%1:07:02::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">luminosity-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::luminosity-scale">
   <relation label="inherit">
@@ -17273,21 +17719,8 @@
  </concept>
  <concept name="ont::luminosity-val">
   <relation label="inherit">
-   ont::phys-measure-domain
+   ont::visibility-val
   </relation>
-  <relation label="overlap">
-   wn::|brightness%1:07:00::|
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="scale">luminosity-scale</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::lyric">
   <relation label="inherit">
@@ -17766,36 +18199,21 @@
  </concept>
  <concept name="ont::meaningfulness-val">
   <relation label="inherit">
-   ont::evaluation-attribute-val
+   ont::information-property-val
   </relation>
- </concept>
- <concept name="ont::measure-domain">
-  <relation label="inherit">
-   ont::ordered-domain
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="measure-function">term</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="measure-function">value</feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::figure">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::measure-related-property-val">
   <relation label="inherit">
    ont::quantity-related-property-val
+  </relation>
+ </concept>
+ <concept name="ont::measure-scale">
+  <relation label="inherit">
+   ont::attributive-scale
+  </relation>
+  <relation label="overlap">
+   wn::|quantity%1:03:00::|
+   wn::|measurement%1:04:00::|
   </relation>
  </concept>
  <concept name="ont::measure-unit">
@@ -17887,7 +18305,7 @@
  </concept>
  <concept name="ont::medical-disorders-and-conditions">
   <relation label="inherit">
-   ont::physical-condition
+   ont::body-condition-scale
   </relation>
   <relation label="overlap">
    wn::|disorder%1:26:03::|
@@ -17951,7 +18369,8 @@
    wn::|syndrome%1:26:00::|
    wn::|hoarseness%1:07:00::|
    wn::|sniffle%1:04:00::|
-   wn::|tightness%1:09:00::|
+   wn::|t
+ightness%1:09:00::|
   </relation>
  </concept>
  <concept name="ont::medical-symptom-val">
@@ -18189,7 +18608,7 @@
  </concept>
  <concept name="ont::mental-psychological-illness-or-disorder">
   <relation label="inherit">
-   ont::medical-disorders-and-conditions
+   ont::psychological-condition-scale
   </relation>
   <relation label="overlap">
    wn::|mental_illness%1:26:00::|
@@ -18313,6 +18732,14 @@
   <relation label="overlap">
    wn::|mild%3:00:00::|
    wn::|slight%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::mileage-scale">
+  <relation label="inherit">
+   ont::distance-scale
+  </relation>
+  <relation label="overlap">
+   wn::|mileage%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::military-group">
@@ -19351,6 +19778,20 @@
    ont::neg-emotional-val
   </relation>
  </concept>
+ <concept name="ont::negative-emotion-scale">
+  <relation label="inherit">
+   ont::emotion-scale
+  </relation>
+ </concept>
+ <concept name="ont::negative-smell-scale">
+  <relation label="inherit">
+   ont::olfactory-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|stinkiness%1:07:00::|
+   wn::|rancidness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::negotiate">
   <comment>
    &quot;extended communication with goal of reaching some agreement (RESULT)&quot;
@@ -19379,6 +19820,15 @@
   <relation label="overlap">
    wn::|ataxia%1:26:00::|
    wn::|nervous_disorder%1:26:00::|
+  </relation>
+ </concept>
+ <concept name="ont::nervousness-scale">
+  <relation label="inherit">
+   ont::negative-emotion-scale
+  </relation>
+  <relation label="overlap">
+   wn::|nervousness%1:12:00::|
+   wn::|anxiety%1:12:00::|
   </relation>
  </concept>
  <concept name="ont::networkable-val">
@@ -19415,9 +19865,9 @@
    ont::conventional-speech-act
   </relation>
  </concept>
- <concept name="ont::non-measure-ordered-domain">
+ <concept name="ont::non-vertical-scale">
   <relation label="inherit">
-   ont::ordered-domain
+   ont::linear-extent-scale
   </relation>
  </concept>
  <concept name="ont::non-vertical-val">
@@ -19550,6 +20000,16 @@
    wn::|nosebleed%1:26:00::|
   </relation>
  </concept>
+ <concept name="ont::not-able-scale">
+  <relation label="inherit">
+   ont::ability-scale
+  </relation>
+  <relation label="overlap">
+   wn::|inability%1:07:00::|
+   wn::|incapacity%1:07:00::|
+   wn::|incapability%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::not-accessible-val">
   <relation label="inherit">
    ont::accessibility-val
@@ -19627,6 +20087,14 @@
    wn::|careless%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::not-certain-scale">
+  <relation label="inherit">
+   ont::certainty-scale
+  </relation>
+  <relation label="overlap">
+   wn::|doubt%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::not-clothed-val">
   <relation label="inherit">
    ont::clothedness-val
@@ -19635,6 +20103,14 @@
    wn::|bare%5:00:00:unclothed:00|
    wn::|unclothed%3:00:00::|
    wn::|naked%5:00:00:bare:00|
+  </relation>
+ </concept>
+ <concept name="ont::not-comfortable-scale">
+  <relation label="inherit">
+   ont::comfort-scale
+  </relation>
+  <relation label="overlap">
+   wn::|discomfort%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::not-compatible-val">
@@ -19813,6 +20289,14 @@
    wn::|disinterested%5:00:00:impartial:00|
   </relation>
  </concept>
+ <concept name="ont::not-likely-scale">
+  <relation label="inherit">
+   ont::likelihood-scale
+  </relation>
+  <relation label="overlap">
+   wn::|improbability%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::not-likely-val">
   <relation label="inherit">
    ont::likelihood-val
@@ -19886,6 +20370,14 @@
    wn::|displeasing%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::not-possible-scale">
+  <relation label="inherit">
+   ont::possibility-scale
+  </relation>
+  <relation label="overlap">
+   wn::|impossibility%1:26:00::|
+  </relation>
+ </concept>
  <concept name="ont::not-possible-val">
   <relation label="inherit">
    ont::possibility-val
@@ -19921,6 +20413,15 @@
    wn::|ad_hoc%5:00:00:unplanned:00|
    wn::|impulsive%5:00:00:unpremeditated:00|
    wn::|spontaneous%5:00:00:unscripted:00|
+  </relation>
+ </concept>
+ <concept name="ont::not-regular-scale">
+  <relation label="inherit">
+   ont::regularity-scale
+  </relation>
+  <relation label="overlap">
+   wn::|intermittence%1:07:00::|
+   wn::|irregularity%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::not-relative-val">
@@ -19981,6 +20482,15 @@
    wn::|granular%5:00:00:coarse:00|
   </relation>
  </concept>
+ <concept name="ont::not-steady-scale">
+  <relation label="inherit">
+   ont::steadiness-scale
+  </relation>
+  <relation label="overlap">
+   wn::|unsteadiness%1:07:01::|
+   wn::|instability%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::not-successful-val">
   <relation label="inherit">
    ont::success-val
@@ -20006,6 +20516,14 @@
    wn::|impossible%5:00:00:intolerable:00|
    wn::|unsupportable%5:00:00:intolerable:00|
    wn::|intolerable%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::not-typical-scale">
+  <relation label="inherit">
+   ont::typicality-scale
+  </relation>
+  <relation label="overlap">
+   wn::|irregularity%1:04:00::|
   </relation>
  </concept>
  <concept name="ont::not-usable-val">
@@ -20248,6 +20766,11 @@
   </relation>
   <relation label="overlap">
    wn::|object%2:42:00::|
+  </relation>
+ </concept>
+ <concept name="ont::object-affordances-scale">
+  <relation label="inherit">
+   ont::stage-scale
   </relation>
  </concept>
  <concept name="ont::object-affordances-val">
@@ -20533,6 +21056,14 @@
    wn::|old%3:00:02::|
   </relation>
  </concept>
+ <concept name="ont::olfactory-property-scale">
+  <relation label="inherit">
+   ont::appearance-scale
+  </relation>
+  <relation label="overlap">
+   wn::|smell%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::omit">
   <relation label="inherit">
    ont::adjust
@@ -20621,6 +21152,11 @@
   <relation label="overlap">
    wn::|next-to-last%5:00:01:intermediate:00|
    wn::|penultimate%5:00:00:intermediate:00|
+  </relation>
+ </concept>
+ <concept name="ont::opacity-scale">
+  <relation label="inherit">
+   ont::light-passage-scale
   </relation>
  </concept>
  <concept name="ont::opacity-val">
@@ -20722,6 +21258,16 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::ordered-continuous">
+  <relation label="inherit">
+   ont::ordered-domain
+  </relation>
+ </concept>
+ <concept name="ont::ordered-discrete">
+  <relation label="inherit">
+   ont::ordered-domain
+  </relation>
  </concept>
  <concept name="ont::ordered-domain">
   <relation label="inherit">
@@ -21091,7 +21637,9 @@
    wn::|hurting%1:26:00::|
    wn::|pain_sensation%1:09:00::|
    wn::|painful_sensation%1:09:00::|
-   wn::|soreness%1:26:00::|
+   wn::|sorene
+ss%1:26:00::|
+   wn::|painfulness%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::pain-reliever">
@@ -21409,7 +21957,7 @@
  </concept>
  <concept name="ont::percent-scale">
   <relation label="inherit">
-   ont::measure-domain
+   ont::size-alt-scale
   </relation>
   <relation label="overlap">
    wn::|percentage%1:24:00::|
@@ -21596,25 +22144,6 @@
    ont::post-translational-modification
   </relation>
  </concept>
- <concept name="ont::phys-measure-domain">
-  <relation label="inherit">
-   ont::measure-domain
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::extent" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="container">+</feat>
-     <feat name="form">object</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::phys-object">
   <comment>
    &quot;All physical objects: things that have substance&quot;
@@ -21688,45 +22217,6 @@
   <relation label="overlap">
    wn::|exercise%2:29:01::|
   </relation>
- </concept>
- <concept name="ont::physical-condition">
-  <relation label="inherit">
-   ont::status
-  </relation>
-  <relation label="overlap">
-   wn::|condition%1:26:02::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">indiv-level</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::figure" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="origin">natural</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::physical-discrete-domain">
-  <relation label="inherit">
-   ont::discrete-domain
-  </relation>
-  <relation label="overlap">
-   wn::|form%1:07:01::|
-   wn::|shape%1:03:00::|
-   wn::|form%1:03:00::|
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::figure">
-    <concept name="phys-obj" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::physical-phenomenon">
   <relation label="inherit">
@@ -21854,23 +22344,6 @@
    wn::|nausea%1:26:00::|
   </relation>
  </concept>
- <concept name="ont::physical-sense">
-  <relation label="inherit">
-   ont::non-measure-ordered-domain
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="origin">human</feat>
-     <feat name="form">solid-object</feat>
-     <feat name="container">-</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::physical-symptom-manner">
   <relation label="inherit">
    ont::predicate
@@ -21948,7 +22421,7 @@
  </concept>
  <concept name="ont::pitch-scale">
   <relation label="inherit">
-   ont::phys-measure-domain
+   ont::measure-scale
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -22172,6 +22645,15 @@
    wn::|fragrant%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::pleasantness-scale">
+  <relation label="inherit">
+   ont::emotion-scale
+  </relation>
+  <relation label="overlap">
+   wn::|agreeableness%1:07:00::|
+   wn::|pleasantness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::pleasing-val">
   <relation label="inherit">
    ont::evoking-pos-emotion-val
@@ -22189,6 +22671,14 @@
   </relation>
   <relation label="overlap">
    wn::|pneumonia%1:26:00::|
+  </relation>
+ </concept>
+ <concept name="ont::polarity-scale">
+  <relation label="inherit">
+   ont::relational-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|polarity%1:24:01::|
   </relation>
  </concept>
  <concept name="ont::polarity-val">
@@ -22285,9 +22775,12 @@
    wn::|poor%3:00:00::|
   </relation>
  </concept>
- <concept name="ont::population">
+ <concept name="ont::population-scale">
   <relation label="inherit">
-   ont::ordered-domain
+   ont::ordered-discrete
+  </relation>
+  <relation label="overlap">
+   wn::|population%1:23:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -22502,6 +22995,19 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::positive-emotion-scale">
+  <relation label="inherit">
+   ont::emotion-scale
+  </relation>
+ </concept>
+ <concept name="ont::positive-smell-scale">
+  <relation label="inherit">
+   ont::olfactory-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|sweetness%1:07:01::|
+  </relation>
+ </concept>
  <concept name="ont::possess">
   <relation label="inherit">
    ont::have
@@ -22555,6 +23061,11 @@
    <feat name="aspect">static</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::possibility-scale">
+  <relation label="inherit">
+   ont::information-property-scale
+  </relation>
+ </concept>
  <concept name="ont::possibility-val">
   <relation label="inherit">
    ont::information-property-val
@@ -22567,6 +23078,14 @@
   <relation label="overlap">
    wn::|accomplishable%5:00:00:possible:00|
    wn::|possible%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::possible-scale">
+  <relation label="inherit">
+   ont::possibility-scale
+  </relation>
+  <relation label="overlap">
+   wn::|possibility%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::possibly-exists">
@@ -22666,11 +23185,6 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::practice">
-  <relation label="inherit">
-   ont::non-measure-ordered-domain
-  </relation>
  </concept>
  <concept name="ont::practicing">
   <relation label="inherit">
@@ -22957,6 +23471,11 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::presence-of-light-scale">
+  <relation label="inherit">
+   ont::visual-property-scale
+  </relation>
+ </concept>
  <concept name="ont::presense-of-light-val">
   <relation label="inherit">
    ont::visibility-val
@@ -22983,6 +23502,14 @@
    wn::|compact%2:35:00::|
    wn::|contract%2:35:04::|
    wn::|press%2:35:02::|
+  </relation>
+ </concept>
+ <concept name="ont::pressure-scale">
+  <relation label="inherit">
+   ont::ratio-scale
+  </relation>
+  <relation label="overlap">
+   wn::|pressure%1:19:00::|
   </relation>
  </concept>
  <concept name="ont::prevent">
@@ -23027,6 +23554,14 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::pride-scale">
+  <relation label="inherit">
+   ont::emotion-scale
+  </relation>
+  <relation label="overlap">
+   wn::|pride%1:12:00::|
+  </relation>
  </concept>
  <concept name="ont::primary">
   <comment>
@@ -23107,12 +23642,22 @@
    wn::|process%1:04:00::|
   </relation>
  </concept>
+ <concept name="ont::process-evaluation-scale">
+  <relation label="inherit">
+   ont::process-property-scale
+  </relation>
+ </concept>
  <concept name="ont::process-evaluation-val">
   <comment>
    &quot;evaluation properties of processes&quot;
   </comment>
   <relation label="inherit">
    ont::process-val
+  </relation>
+ </concept>
+ <concept name="ont::process-property-scale">
+  <relation label="inherit">
+   ont::attributive-scale
   </relation>
  </concept>
  <concept name="ont::process-status-val">
@@ -23455,11 +24000,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::protection">
-  <relation label="inherit">
-   ont::non-measure-ordered-domain
-  </relation>
- </concept>
  <concept name="ont::protein">
   <relation label="inherit">
    ont::gene-protein
@@ -23532,6 +24072,11 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::psychological-condition-scale">
+  <relation label="inherit">
+   ont::stage-scale
+  </relation>
  </concept>
  <concept name="ont::psychological-property-val">
   <comment>
@@ -24037,6 +24582,17 @@
    wn::|soft%3:00:04::|
   </relation>
  </concept>
+ <concept name="ont::quietness-scale">
+  <comment>
+   &quot;quality of lacking sound&quot;
+  </comment>
+  <relation label="inherit">
+   ont::sound-volume-scale
+  </relation>
+  <relation label="overlap">
+   wn::|quietness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::r-able-val">
   <relation label="inherit">
    ont::rw-status-val
@@ -24049,39 +24605,6 @@
   <relation label="overlap">
    wn::|random%3:00:00::|
   </relation>
- </concept>
- <concept name="ont::range">
-  <relation label="inherit">
-   ont::non-measure-ordered-domain
-  </relation>
- </concept>
- <concept name="ont::rate">
-  <relation label="inherit">
-   ont::ordered-domain
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">rate-scale</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::extent">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="scale">rate-scale</feat>
-     <feat name="measure-function">value</feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::figure">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="situation" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::rate-rel">
   <relation label="inherit">
@@ -24112,8 +24635,18 @@
  </concept>
  <concept name="ont::rate-scale">
   <relation label="inherit">
-   ont::measure-domain
+   ont::ratio-scale
   </relation>
+  <relation label="overlap">
+   wn::|rate%1:21:00::|
+   wn::|rate%1:28:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">rate-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::rate-unit">
   <relation label="inherit">
@@ -24160,7 +24693,15 @@
  </concept>
  <concept name="ont::ratio-scale">
   <relation label="inherit">
-   ont::measure-domain
+   ont::measure-scale
+  </relation>
+  <relation label="overlap">
+   wn::|scale%1:24:01::|
+  </relation>
+ </concept>
+ <concept name="ont::rationality-scale">
+  <relation label="inherit">
+   ont::psychological-condition-scale
   </relation>
  </concept>
  <concept name="ont::reach">
@@ -24336,6 +24877,14 @@
   </relation>
   <relation label="overlap">
    wn::|red%5:00:01:chromatic:00|
+  </relation>
+ </concept>
+ <concept name="ont::redness-scale">
+  <relation label="inherit">
+   ont::color-quality-scale
+  </relation>
+  <relation label="overlap">
+   wn::|redness%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::reference-work">
@@ -24530,6 +25079,19 @@
    wn::|regular%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::regular-scale">
+  <relation label="inherit">
+   ont::regularity-scale
+  </relation>
+  <relation label="overlap">
+   wn::|regularity%1:07:00::|
+  </relation>
+ </concept>
+ <concept name="ont::regularity-scale">
+  <relation label="inherit">
+   ont::temporal-occurrence-scale
+  </relation>
+ </concept>
  <concept name="ont::regularity-val">
   <relation label="inherit">
    ont::frequency-val
@@ -24658,6 +25220,11 @@
    ont::property-val
   </relation>
  </concept>
+ <concept name="ont::relational-property-scale">
+  <relation label="inherit">
+   ont::attributive-scale
+  </relation>
+ </concept>
  <concept name="ont::relative">
   <relation label="inherit">
    ont::comparative-val
@@ -24742,9 +25309,18 @@
    wn::|relevant%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::reliability-scale">
+  <relation label="inherit">
+   ont::evaluation-scale
+  </relation>
+  <relation label="overlap">
+   wn::|reliability%1:07:00::|
+   wn::|trustworthiness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::reliability-val">
   <relation label="inherit">
-   ont::evaluation-attribute-val
+   ont::social-interaction-val
   </relation>
  </concept>
  <concept name="ont::reliable">
@@ -25236,15 +25812,13 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
  </concept>
- <concept name="ont::requirements">
+ <concept name="ont::requirement-scale">
   <relation label="inherit">
-   ont::ordered-domain
+   ont::state-of-affairs-scale
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::figure">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
+  <relation label="overlap">
+   wn::|necessity%1:17:00::|
+  </relation>
  </concept>
  <concept name="ont::rescue">
   <relation label="inherit">
@@ -25361,9 +25935,12 @@
    ont::molecular-part
   </relation>
  </concept>
- <concept name="ont::resolution">
+ <concept name="ont::resolution-scale">
   <relation label="inherit">
-   ont::phys-measure-domain
+   ont::measure-scale
+  </relation>
+  <relation label="overlap">
+   wn::|resolution%1:19:01::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground">
@@ -25375,11 +25952,6 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::resource">
-  <relation label="inherit">
-   ont::requirements
-  </relation>
  </concept>
  <concept name="ont::response">
   <comment>
@@ -25404,6 +25976,14 @@
    wn::|responsibility%1:04:00::|
    wn::|role%1:04:01::|
    wn::|role%1:09:00::|
+  </relation>
+ </concept>
+ <concept name="ont::responsibility-scale">
+  <relation label="inherit">
+   ont::behavioral-scale
+  </relation>
+  <relation label="overlap">
+   wn::|responsibility%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::responsibility-val">
@@ -25867,6 +26447,14 @@
    <feat name="aspect">dynamic</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::roughness-scale">
+  <relation label="inherit">
+   ont::texture-scale
+  </relation>
+  <relation label="overlap">
+   wn::|roughness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::round-trip">
   <relation label="inherit">
    ont::trip
@@ -26008,6 +26596,14 @@
    ont::can-be-done-val
   </relation>
  </concept>
+ <concept name="ont::sadness-scale">
+  <relation label="inherit">
+   ont::negative-emotion-scale
+  </relation>
+  <relation label="overlap">
+   wn::|sadness%1:12:00::|
+  </relation>
+ </concept>
  <concept name="ont::safe">
   <relation label="inherit">
    ont::safety-val
@@ -26080,6 +26676,15 @@
  <concept name="ont::sampling">
   <relation label="inherit">
    ont::choosing
+  </relation>
+ </concept>
+ <concept name="ont::sanity-scale">
+  <relation label="inherit">
+   ont::rationality-scale
+  </relation>
+  <relation label="overlap">
+   wn::|sanity%1:26:00::|
+   wn::|rationality%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::satedness-val">
@@ -26728,6 +27333,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::sensitivity-scale">
+  <relation label="inherit">
+   ont::sensory-scale
+  </relation>
+  <relation label="overlap">
+   wn::|sensitivity%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::sensitivity-val">
   <relation label="inherit">
    ont::sensory-property-val
@@ -26758,28 +27371,20 @@
    ont::mode
   </relation>
  </concept>
- <concept name="ont::sensory-property">
-  <relation label="inherit">
-   ont::physical-discrete-domain
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">other-scale</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::figure">
-    <concept name="phys-obj" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::sensory-property-val">
   <comment>
    &quot;properties that have to do with sensory input&quot;
   </comment>
   <relation label="inherit">
    ont::physical-property-val
+  </relation>
+ </concept>
+ <concept name="ont::sensory-scale">
+  <comment>
+   &quot;scales that deal with the quality to being perceivable through sensory input&quot;
+  </comment>
+  <relation label="inherit">
+   ont::attributive-scale
   </relation>
  </concept>
  <concept name="ont::separation">
@@ -26923,6 +27528,14 @@
    wn::|severe%5:00:00:intense:00|
   </relation>
  </concept>
+ <concept name="ont::severity-scale">
+  <relation label="inherit">
+   ont::dimensional-scale
+  </relation>
+  <relation label="overlap">
+   wn::|severity%1:07:01::|
+  </relation>
+ </concept>
  <concept name="ont::severity-val">
   <comment>
    &quot;indicates relative extent or magnitude of something on a severity scale&quot;
@@ -27054,6 +27667,14 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::sharp-texture-scale">
+  <relation label="inherit">
+   ont::texture-scale
+  </relation>
+  <relation label="overlap">
+   wn::|sharpness%1:07:01::|
+  </relation>
  </concept>
  <concept name="ont::sharpen-soft">
   <relation label="inherit">
@@ -27225,6 +27846,11 @@
    wn::|side%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::sight-scale">
+  <relation label="inherit">
+   ont::sensory-scale
+  </relation>
+ </concept>
  <concept name="ont::signal-representation-val">
   <relation label="inherit">
    ont::mode
@@ -27292,6 +27918,14 @@
    wn::|corresponding%5:00:00::|
   </relation>
  </concept>
+ <concept name="ont::similar-scale">
+  <relation label="inherit">
+   ont::similarity-scale
+  </relation>
+  <relation label="overlap">
+   wn::|similarity%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::similarity">
   <relation label="inherit">
    ont::predicate
@@ -27307,6 +27941,11 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::similarity-scale">
+  <relation label="inherit">
+   ont::relational-property-scale
+  </relation>
  </concept>
  <concept name="ont::similarity-val">
   <relation label="inherit">
@@ -27448,9 +28087,15 @@
    <feat name="intentional">-</feat>
   </sem-feats>
  </concept>
- <concept name="ont::size">
+ <concept name="ont::size-alt-scale">
   <relation label="inherit">
-   ont::physical-discrete-domain
+   ont::dimensional-scale
+  </relation>
+  <relation label="overlap">
+   wn::|size%1:07:00::|
+   wn::|size%1:07:02::|
+   wn::|size%1:07:01::|
+   wn::|magnitude%1:07:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -27495,6 +28140,16 @@
    wn::|doubtful%5:00:00:uncertain:02|
   </relation>
  </concept>
+ <concept name="ont::skillfulness-scale">
+  <relation label="inherit">
+   ont::behavioral-scale
+  </relation>
+  <relation label="overlap">
+   wn::|skillfulness%1:09:00::|
+   wn::|skill%1:09:01::|
+   wn::|expertise%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::skinny-val">
   <comment>
    &quot;less in horizontal orientation with respect to the height&quot;
@@ -27529,9 +28184,9 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::sleepiness">
+ <concept name="ont::sleepiness-scale">
   <relation label="inherit">
-   ont::status
+   ont::body-condition-scale
   </relation>
   <relation label="overlap">
    wn::|sleepiness%1:26:00::|
@@ -27606,6 +28261,14 @@
    </relation>
    <feat name="scale">smoothness*1--07--00</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::smoothness-scale">
+  <relation label="inherit">
+   ont::texture-scale
+  </relation>
+  <relation label="overlap">
+   wn::|smoothness%1:07:00::|
+  </relation>
  </concept>
  <concept name="ont::smoothness-val">
   <relation label="inherit">
@@ -27882,9 +28545,25 @@
    ont::arranging
   </relation>
  </concept>
+ <concept name="ont::sound-property-scale">
+  <relation label="inherit">
+   ont::appearance-scale
+  </relation>
+ </concept>
  <concept name="ont::sound-scale">
   <relation label="inherit">
    ont::scale
+  </relation>
+ </concept>
+ <concept name="ont::sound-softness-scale">
+  <comment>
+   &quot;quality of being low in volume&quot;
+  </comment>
+  <relation label="inherit">
+   ont::sound-volume-scale
+  </relation>
+  <relation label="overlap">
+   wn::|softness%1:07:01::|
   </relation>
  </concept>
  <concept name="ont::sound-unit">
@@ -27897,6 +28576,11 @@
     <concept name="abstr-obj" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::sound-volume-scale">
+  <relation label="inherit">
+   ont::sound-property-scale
+  </relation>
  </concept>
  <concept name="ont::soup">
   <relation label="inherit">
@@ -27950,6 +28634,14 @@
  <concept name="ont::source-reln">
   <relation label="inherit">
    ont::path
+  </relation>
+ </concept>
+ <concept name="ont::sourness-scale">
+  <relation label="inherit">
+   ont::taste-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|sourness%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::south">
@@ -28156,7 +28848,11 @@
  </concept>
  <concept name="ont::speed-scale">
   <relation label="inherit">
-   ont::time-rate
+   ont::rate-scale
+  </relation>
+  <relation label="overlap">
+   wn::|speed%1:28:00::|
+   wn::|velocity%1:28:00::|
   </relation>
  </concept>
  <concept name="ont::speed-unit">
@@ -28248,6 +28944,14 @@
    ont::ingredients
   </relation>
  </concept>
+ <concept name="ont::spiciness-scale">
+  <relation label="inherit">
+   ont::taste-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|spiciness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::spicy-val">
   <relation label="inherit">
    ont::tasteful-val
@@ -28319,6 +29023,11 @@
     <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::stage-scale">
+  <relation label="inherit">
+   ont::ordered-continuous
+  </relation>
  </concept>
  <concept name="ont::stage-val">
   <relation label="inherit">
@@ -28457,6 +29166,11 @@
    wn::|province%1:15:00::|
   </relation>
  </concept>
+ <concept name="ont::state-of-affairs-scale">
+  <relation label="inherit">
+   ont::stage-scale
+  </relation>
+ </concept>
  <concept name="ont::state-of-being">
   <relation label="inherit">
    ont::event-of-state
@@ -28506,6 +29220,11 @@
    wn::|state%1:26:02::|
    wn::|state_of_matter%1:26:00::|
    wn::|state%1:03:00::|
+  </relation>
+ </concept>
+ <concept name="ont::status-property-scale">
+  <relation label="inherit">
+   ont::attributive-scale
   </relation>
  </concept>
  <concept name="ont::status-val">
@@ -28561,6 +29280,11 @@
    wn::|sexually_transmitted_disease%1:26:00::|
   </relation>
  </concept>
+ <concept name="ont::steadiness-scale">
+  <relation label="inherit">
+   ont::process-evaluation-scale
+  </relation>
+ </concept>
  <concept name="ont::steadiness-val">
   <relation label="inherit">
    ont::process-evaluation-val
@@ -28576,6 +29300,15 @@
    wn::|unchanged%3:00:00::|
    wn::|steady%3:00:00::|
    wn::|steady%5:00:00:stable:00|
+  </relation>
+ </concept>
+ <concept name="ont::steady-scale">
+  <relation label="inherit">
+   ont::steadiness-scale
+  </relation>
+  <relation label="overlap">
+   wn::|steadiness%1:07:01::|
+   wn::|stability%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::steep">
@@ -28636,7 +29369,7 @@
   </relation>
   <relation label="overlap">
    wn::|cholelithiasis%1:26:00::|
-   wn::|gallstone%1:17:
+   wn::|gallstone%1:17:                                                     
 00::|
    wn::|kidney_stone%1:17:00::|
   </relation>
@@ -28754,6 +29487,17 @@
    wn::|odd%5:00:00:unusual:00|
    wn::|curious%5:00:00:strange:00|
    wn::|strange%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::strength-scale">
+  <relation label="inherit">
+   ont::dimensional-scale
+  </relation>
+  <relation label="overlap">
+   wn::|strength%1:07:00::|
+   wn::|vigor%1:07:00::|
+   wn::|might%1:07:00::|
+   wn::|force%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::stress">
@@ -29037,6 +29781,15 @@
    wn::|advise%2:32:02::|
   </relation>
  </concept>
+ <concept name="ont::suitability-scale">
+  <relation label="inherit">
+   ont::evaluation-scale
+  </relation>
+  <relation label="overlap">
+   wn::|suitability%1:07:00::|
+   wn::|fitness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::summarize">
   <relation label="inherit">
    ont::information-scrutiny
@@ -29204,16 +29957,6 @@
    wn::|surface%1:15:00::|
   </relation>
  </concept>
- <concept name="ont::surplus">
-  <relation label="inherit">
-   ont::ordered-domain
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::figure">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::surprised">
   <relation label="inherit">
    ont::emotional-val
@@ -29314,6 +30057,15 @@
    </relation>
    <feat name="scale">sweetness*1--07--00</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::sweetness-scale">
+  <relation label="inherit">
+   ont::taste-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|sweetness%1:07:00::|
+   wn::|sweetness%1:09:00::|
+  </relation>
  </concept>
  <concept name="ont::sweets">
   <relation label="inherit">
@@ -29422,6 +30174,27 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::tactile-hardness-scale">
+  <relation label="inherit">
+   ont::tactile-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|hardness%1:07:01::|
+  </relation>
+ </concept>
+ <concept name="ont::tactile-property-scale">
+  <relation label="inherit">
+   ont::appearance-scale
+  </relation>
+ </concept>
+ <concept name="ont::tactile-softness-scale">
+  <relation label="inherit">
+   ont::tactile-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|softness%1:07:00::|
+  </relation>
  </concept>
  <concept name="ont::take-by-deception">
   <relation label="inherit">
@@ -29585,6 +30358,14 @@
    wn::|tan%5:00:00:chromatic:00|
   </relation>
  </concept>
+ <concept name="ont::tangibility-scale">
+  <relation label="inherit">
+   ont::touch-scale
+  </relation>
+  <relation label="overlap">
+   wn::|tangibility%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::tangibility-val">
   <relation label="inherit">
    ont::tangible-property-val
@@ -29620,6 +30401,11 @@
    ont::vehicle-container
   </relation>
  </concept>
+ <concept name="ont::task-complexity-scale">
+  <relation label="inherit">
+   ont::process-evaluation-scale
+  </relation>
+ </concept>
  <concept name="ont::task-complexity-val">
   <relation label="inherit">
    ont::process-evaluation-val
@@ -29651,6 +30437,11 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::taste-property-scale">
+  <relation label="inherit">
+   ont::appearance-scale
+  </relation>
  </concept>
  <concept name="ont::tasteful-val">
   <relation label="inherit">
@@ -29716,30 +30507,14 @@
    wn::|inform%2:32:00::|
   </relation>
  </concept>
- <concept name="ont::temperature">
+ <concept name="ont::temperature-alt-scale">
   <relation label="inherit">
-   ont::phys-measure-domain
+   ont::measure-scale
   </relation>
   <relation label="overlap">
    wn::|temperature%1:07:00::|
    wn::|temperature%1:09:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">temperature-scale</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="scale">temperature-scale</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::temperature-scale">
   <relation label="inherit">
@@ -29821,6 +30596,11 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::temporal-occurrence-scale">
+  <relation label="inherit">
+   ont::process-property-scale
+  </relation>
  </concept>
  <concept name="ont::temporal-occurrence-val">
   <relation label="inherit">
@@ -29922,15 +30702,13 @@
    ont::symbolic-representation
   </relation>
  </concept>
- <concept name="ont::texture">
+ <concept name="ont::texture-scale">
   <relation label="inherit">
-   ont::physical-discrete-domain
+   ont::tactile-property-scale
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::figure">
-    <concept name="phys-obj" />
-   </role-restr-map>
-  </sem-frame>
+  <relation label="overlap">
+   wn::|texture%1:07:00::|
+  </relation>
  </concept>
  <concept name="ont::texture-val">
   <relation label="inherit">
@@ -29983,15 +30761,18 @@
    wn::|thick%3:00:01::|
   </relation>
  </concept>
- <concept name="ont::thickness">
+ <concept name="ont::thickness-scale">
   <relation label="inherit">
-   ont::linear-d
+   ont::non-vertical-scale
+  </relation>
+  <relation label="overlap">
+   wn::|thickness%1:07:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
     abstr-obj
    </relation>
-   <feat name="scale">thickness</feat>
+   <feat name="scale">thickness-scale</feat>
   </sem-feats>
  </concept>
  <concept name="ont::thin-val">
@@ -30274,16 +31055,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::time-rate">
-  <relation label="inherit">
-   ont::rate
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::figure">
-    <concept name="phys-obj" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::time-rel">
   <relation label="inherit">
    ont::temporal-predicate
@@ -30519,6 +31290,15 @@
    ont::predicate
   </relation>
  </concept>
+ <concept name="ont::total-scale">
+  <relation label="inherit">
+   ont::ordered-discrete
+  </relation>
+  <relation label="overlap">
+   wn::|total%1:06:00::|
+   wn::|count%1:23:00::|
+  </relation>
+ </concept>
  <concept name="ont::touch">
   <relation label="inherit">
    ont::event-of-causation
@@ -30526,6 +31306,11 @@
   <relation label="overlap">
    wn::|touch%2:35:00::|
    wn::|touch%1:04:00::|
+  </relation>
+ </concept>
+ <concept name="ont::touch-scale">
+  <relation label="inherit">
+   ont::sensory-scale
   </relation>
  </concept>
  <concept name="ont::tour">
@@ -30920,6 +31705,15 @@
    wn::|spacious%5:00:00:commodious:00|
   </relation>
  </concept>
+ <concept name="ont::typical-scale">
+  <relation label="inherit">
+   ont::typicality-scale
+  </relation>
+  <relation label="overlap">
+   wn::|normality%1:07:00::|
+   wn::|normality%1:07:01::|
+  </relation>
+ </concept>
  <concept name="ont::typical-val">
   <relation label="inherit">
    ont::typicality-val
@@ -30941,6 +31735,11 @@
    wn::|common%3:00:01::|
   </relation>
  </concept>
+ <concept name="ont::typicality-scale">
+  <relation label="inherit">
+   ont::state-of-affairs-scale
+  </relation>
+ </concept>
  <concept name="ont::typicality-val">
   <comment>
    &quot;abiding by or breaking with customary or usual practices&quot;
@@ -30952,6 +31751,16 @@
  <concept name="ont::ubiquitination">
   <relation label="inherit">
    ont::post-translational-modification
+  </relation>
+ </concept>
+ <concept name="ont::ugly-scale">
+  <relation label="inherit">
+   ont::beauty-scale
+  </relation>
+  <relation label="overlap">
+   wn::|ugliness%1:07:00::|
+   wn::|unsightliness%1:07:00::|
+   wn::|hideousness%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::ugly-val">
@@ -31241,6 +32050,11 @@
    wn::|clear%5:00:00:unobstructed:00|
   </relation>
  </concept>
+ <concept name="ont::unordered-discrete-domain">
+  <relation label="inherit">
+   ont::domain
+  </relation>
+ </concept>
  <concept name="ont::unpleasant-smelling-val">
   <relation label="inherit">
    ont::smellability-val
@@ -31338,6 +32152,17 @@
  <concept name="ont::us-state">
   <relation label="inherit">
    ont::state
+  </relation>
+ </concept>
+ <concept name="ont::usability-scale">
+  <comment>
+   &quot;ease of use (e.g. ipad - high usability, low utility)&quot;
+  </comment>
+  <relation label="inherit">
+   ont::object-affordances-scale
+  </relation>
+  <relation label="overlap">
+   wn::|usability%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::usability-val">
@@ -31494,6 +32319,17 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::utility-scale">
+  <comment>
+   &quot;useful function (e.g. grep - high utility, low usability)&quot;
+  </comment>
+  <relation label="inherit">
+   ont::object-affordances-scale
+  </relation>
+  <relation label="overlap">
+   wn::|utility%1:07:00::|
+  </relation>
  </concept>
  <concept name="ont::vacation">
   <relation label="inherit">
@@ -31665,6 +32501,11 @@
    wn::|upright%5:00:00:vertical:00|
   </relation>
  </concept>
+ <concept name="ont::vertical-scale">
+  <relation label="inherit">
+   ont::linear-extent-scale
+  </relation>
+ </concept>
  <concept name="ont::vertical-val">
   <comment>
    &quot;size specific to vertical linear scale&quot;
@@ -31679,6 +32520,14 @@
   </relation>
   <relation label="overlap">
    wn::|virus%1:05:00::|
+  </relation>
+ </concept>
+ <concept name="ont::visibility-scale">
+  <relation label="inherit">
+   ont::sight-scale
+  </relation>
+  <relation label="overlap">
+   wn::|visibility%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::visibility-val">
@@ -31704,6 +32553,11 @@
    wn::|blur%2:39:00::|
   </relation>
  </concept>
+ <concept name="ont::visual-clarity-scale">
+  <relation label="inherit">
+   ont::light-passage-scale
+  </relation>
+ </concept>
  <concept name="ont::visual-display">
   <relation label="inherit">
    ont::adjust
@@ -31715,6 +32569,34 @@
    wn::|bring_on%2:36:01::|
    wn::|expose%2:35:00::|
    wn::|confront%2:32:03::|
+  </relation>
+ </concept>
+ <concept name="ont::visual-distinctivenss-scale">
+  <relation label="inherit">
+   ont::visual-property-scale
+  </relation>
+ </concept>
+ <concept name="ont::visual-dullness-scale">
+  <relation label="inherit">
+   ont::visual-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|dimness%1:07:01::|
+   wn::|softness%1:07:06::|
+  </relation>
+ </concept>
+ <concept name="ont::visual-property-scale">
+  <relation label="inherit">
+   ont::appearance-scale
+  </relation>
+ </concept>
+ <concept name="ont::visual-sharpness-scale">
+  <relation label="inherit">
+   ont::visual-distinctivenss-scale
+  </relation>
+  <relation label="overlap">
+   wn::|sharpness%1:07:03::|
+   wn::|focus%1:07:01::|
   </relation>
  </concept>
  <concept name="ont::vital-sign">
@@ -31742,9 +32624,9 @@
    ont::nutritional-supplement
   </relation>
  </concept>
- <concept name="ont::voltage">
+ <concept name="ont::voltage-scale">
   <relation label="inherit">
-   ont::phys-measure-domain
+   ont::ratio-scale
   </relation>
   <relation label="overlap">
    wn::|voltage%1:19:02::|
@@ -31752,9 +32634,12 @@
    wn::|emf%1:19:00::|
   </relation>
  </concept>
- <concept name="ont::volume">
+ <concept name="ont::volume-alt-scale">
   <relation label="inherit">
-   ont::phys-measure-domain
+   ont::size-alt-scale
+  </relation>
+  <relation label="overlap">
+   wn::|volume%1:23:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -32003,9 +32888,9 @@
    wn::|dull%3:00:04::|
   </relation>
  </concept>
- <concept name="ont::weakness">
+ <concept name="ont::weakness-scale">
   <relation label="inherit">
-   ont::feebleness
+   ont::feebleness-scale
   </relation>
   <relation label="overlap">
    wn::|weakness%1:07:00::|
@@ -32117,9 +33002,9 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
  </concept>
- <concept name="ont::weight">
+ <concept name="ont::weight-alt-scale">
   <relation label="inherit">
-   ont::phys-measure-domain
+   ont::dimensional-scale
   </relation>
   <relation label="overlap">
    wn::|weight%1:07:00::|
@@ -32301,11 +33186,10 @@
  </concept>
  <concept name="ont::width-scale">
   <relation label="inherit">
-   ont::linear-d
+   ont::linear-extent-scale
   </relation>
   <relation label="overlap">
    wn::|width%1:07:00::|
-   wn::|diameter%1:07:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -32417,7 +33301,7 @@
  </concept>
  <concept name="ont::wiseness-val">
   <relation label="inherit">
-   ont::evaluation-attribute-val
+   ont::animal-propensity-val
   </relation>
  </concept>
  <concept name="ont::with-instrument">
