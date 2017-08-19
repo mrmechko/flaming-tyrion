@@ -4211,7 +4211,7 @@ ur%1:09:01::|)
 
 (CONCEPT ONT::DIM-VAL
          (INHERIT ONT::LUMINOSITY-VAL)
-         (OVERLAP WN::|dim%5:00:00:dark:00| WN::|dim%3:00:02::|))
+         (OVERLAP WN::|dim%5:00:00:dark:01| WN::|dim%3:00:02::|))
 
 (CONCEPT ONT::DIMENSION
          (INHERIT ONT::PREDICATE)
@@ -8452,8 +8452,7 @@ cy%1:26:00::|))
                   WN::|syndrome%1:26:00::|
                   WN::|hoarseness%1:07:00::|
                   WN::|sniffle%1:04:00::|
-                  WN::|t
-ightness%1:09:00::|))
+                  WN::|tightness%1:09:00::|))
 
 (CONCEPT ONT::MEDICAL-SYMPTOM-VAL (INHERIT ONT::MEDICAL-CONDITION-PROPERTY-VAL))
 
