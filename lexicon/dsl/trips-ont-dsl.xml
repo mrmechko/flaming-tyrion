@@ -8576,22 +8576,16 @@
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::source" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
    </role-restr-map>
    <role-restr-map roles="ont::result" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -11847,7 +11841,12 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground">
-    <concept name="abstr-obj" />
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">?!sc</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
     <sem-feats>
@@ -13019,19 +13018,18 @@
   <sem-frame>
    <role-restr-map roles="ont::ground">
     <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="spatial-abstraction">spatial-point</feat>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="spatial-abstraction">?!sa</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
-     <feat name="type">motion</feat>
-    </sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -25921,7 +25919,7 @@
  </concept>
  <concept name="ont::residue">
   <relation label="inherit">
-   ont::molecular-part
+   ont::chemical
   </relation>
  </concept>
  <concept name="ont::resolution-scale">
@@ -27232,13 +27230,10 @@
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::result" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -31193,12 +31188,14 @@
       <concept name="phys-obj" />
       <concept name="abstr-obj" />
      </or>
-     <feat name="form">geographical-object</feat>
      <feat name="spatial-abstraction">?!sa</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <concept name="phys-obj" />
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
