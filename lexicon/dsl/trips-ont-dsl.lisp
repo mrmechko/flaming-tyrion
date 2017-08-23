@@ -1795,9 +1795,14 @@
          (OVERLAP WN::|change_posture%2:38:00::|)
          (SEM-FEATS (INHERIT SITUATION) (TRAJECTORY +)))
 
-(CONCEPT ONT::BODY-MOVEMENT-PLACE (INHERIT ONT::BODY-MOVEMENT))
+(CONCEPT ONT::BODY-MOVEMENT-PLACE
+         (COMMENT "Verbs of posture that are with respect to some place")
+         (INHERIT ONT::BODY-MOVEMENT))
 
-(CONCEPT ONT::BODY-MOVEMENT-SELF (INHERIT ONT::BODY-MOVEMENT))
+(CONCEPT ONT::BODY-MOVEMENT-SELF
+         (COMMENT
+          "Verbs of posture that can be independent of any location: e.g., bow is not with respect to a location, but to sit it must be somewhere")
+         (INHERIT ONT::BODY-MOVEMENT))
 
 (CONCEPT ONT::BODY-PART
          (INHERIT ONT::ANATOMY)
