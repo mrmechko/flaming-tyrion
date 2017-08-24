@@ -11,6 +11,11 @@
   wn::|info%1:10:00::|
   wn::|indication%1:10:00::|
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="prop" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::root" />
  <or>
@@ -79,6 +84,11 @@
   abstr-obj
  </relation>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="prop" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::information-function-object">
  <relation label="inherit">
   ont::function-object
@@ -209,10 +219,35 @@
  <comment>
   &quot;S14&quot;
  </comment>
+ <example text="the evidence that the dog ate the cat">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::information
-  ont::count-pred-templ
  </relation>
+ <syntax>
+  <template-call template="ont::count-subcat-that-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::formal" optional="optional"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">pred</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
  </sense>
  <sense>
  <morph>

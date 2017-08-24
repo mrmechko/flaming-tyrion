@@ -1689,6 +1689,19 @@
    <feat name="cause">force</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::result" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="type">
+     <or>
+      position-reln
+      path
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
    <role-restr-map roles="ont::agent">
     <concept name="t" />
    </role-restr-map>
@@ -9156,7 +9169,13 @@
      <relation label="inherit">
       abstr-obj
      </relation>
-     <feat name="scale">?!sc2</feat>
+     <feat name="scale">
+     <or>
+      linear-scale
+      number-scale
+      linear-extent-scale
+     </or>
+     </feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::ground">
@@ -9164,7 +9183,13 @@
      <relation label="inherit">
       abstr-obj
      </relation>
-     <feat name="scale">?!sc</feat>
+     <feat name="scale">
+     <or>
+      linear-scale
+      number-scale
+      linear-extent-scale
+     </or>
+     </feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
@@ -15407,6 +15432,11 @@
    wn::|info%1:10:00::|
    wn::|indication%1:10:00::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::formal" optional="optional">
+    <concept name="prop" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::information-function-object">
   <relation label="inherit">
@@ -23292,7 +23322,7 @@
  </concept>
  <concept name="ont::predicate">
   <comment>
-   &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as&quot;
+   &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as)&quot;
   </comment>
   <relation label="inherit">
    ont::abstract-object

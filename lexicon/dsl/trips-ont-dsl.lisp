@@ -790,7 +790,11 @@
 (CONCEPT ONT::APPLY-FORCE
          (INHERIT ONT::TOUCH)
          (SEM-FEATS (INHERIT SITUATION) (CAUSE FORCE))
-         (SEM-FRAME (ONT::AGENT (CONCEPT T))))
+         (SEM-FRAME
+          (ONT::RESULT
+           (SEM-FEATS (INHERIT ABSTR-OBJ) (TYPE (OR POSITION-RELN PATH)))
+           OPTIONAL)
+          (ONT::AGENT (CONCEPT T))))
 
 (CONCEPT ONT::APPLY-ON-SURFACE
          (INHERIT ONT::PUT)
@@ -4213,8 +4217,15 @@
 (CONCEPT ONT::DIMENSION
          (INHERIT ONT::PREDICATE)
          (SEM-FRAME
-          (ONT::GROUND1 (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE ?!SC2)) OPTIONAL)
-          (ONT::GROUND (SEM-FEATS (INHERIT ABSTR-OBJ) (SCALE ?!SC)))
+          (ONT::GROUND1
+           (SEM-FEATS (INHERIT ABSTR-OBJ)
+                      (SCALE
+                       (OR LINEAR-SCALE NUMBER-SCALE LINEAR-EXTENT-SCALE)))
+           OPTIONAL)
+          (ONT::GROUND
+           (SEM-FEATS (INHERIT ABSTR-OBJ)
+                      (SCALE
+                       (OR LINEAR-SCALE NUMBER-SCALE LINEAR-EXTENT-SCALE))))
           (ONT::FIGURE (OR (CONCEPT PHYS-OBJ) (CONCEPT SITUATION)))))
 
 (CONCEPT ONT::DIMENSIONAL-PROPERTY-VAL
@@ -7143,7 +7154,8 @@
          (INHERIT ONT::INFORMATION-FUNCTION-OBJECT)
          (OVERLAP WN::|information%1:10:00::|
                   WN::|info%1:10:00::|
-                  WN::|indication%1:10:00::|))
+                  WN::|indication%1:10:00::|)
+         (SEM-FRAME (ONT::FORMAL (CONCEPT PROP) OPTIONAL)))
 
 (CONCEPT ONT::INFORMATION-FUNCTION-OBJECT
          (INHERIT ONT::FUNCTION-OBJECT)
@@ -10693,7 +10705,7 @@
 
 (CONCEPT ONT::PREDICATE
          (COMMENT
-          "predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as")
+          "predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as)")
          (INHERIT ONT::ABSTRACT-OBJECT)
          (SEM-FEATS (INHERIT ABSTR-OBJ)
                     (INTENTIONAL -)
