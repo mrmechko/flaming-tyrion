@@ -26,12 +26,7 @@
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">artifact</feat>
-   </sem-feats>
+   <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::agent">
    <sem-feats>
@@ -261,12 +256,7 @@
  <concept name="situation" />
  <sem-frame>
  <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">artifact</feat>
-  </sem-feats>
+  <concept name="phys-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::agent">
   <sem-feats>
@@ -394,6 +384,28 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="smear" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="smear" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="the paint smeared on the wall">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::apply-on-surface
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::spray-9.7-1
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="smudge" />
   <forms>
    -VB
@@ -472,11 +484,92 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="spatter" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="spattered" />
+   </past>
+   <ing>
+    <word first-word="spattering" />
+   </ing>
+   <nom>
+    <word first-word="spatter" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="the paint spattered on the wall">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::apply-on-surface
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::spray-9.7-1
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="splash" />
   <forms>
    -VB
    <nom>
     <word first-word="splash" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::apply-on-surface
+ </relation>
+ <relation label="overlap">
+  vn::spray-9.7-1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="splash" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="splash" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="the paint splashed on the wall">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::apply-on-surface
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::spray-9.7-1
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="splatter" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="splattered" />
+   </past>
+   <ing>
+    <word first-word="splattering" />
+   </ing>
+   <nom>
+    <word first-word="splatter" />
    </nom>
   </forms>
  </morph>
@@ -511,19 +604,16 @@
    </nom>
   </forms>
  </morph>
+ <example text="the paint splattered on the wall">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::apply-on-surface
+  ont::affected-templ
  </relation>
  <relation label="overlap">
   vn::spray-9.7-1
  </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
  </sense>
  <sense>
  <morph>

@@ -809,9 +809,9 @@
                   WN::|spread%2:35:13::|
                   WN::|swab%2:35:01::|)
          (SEM-FEATS (INHERIT SITUATION) (ASPECT DYNAMIC))
-         (SEM-FRAME
-          (ONT::AFFECTED (SEM-FEATS (INHERIT PHYS-OBJ) (ORIGIN ARTIFACT)))
-          (ONT::AGENT (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
+         (SEM-FRAME (ONT::AFFECTED (CONCEPT PHYS-OBJ))
+                    (ONT::AGENT
+                     (SEM-FEATS (INHERIT PHYS-OBJ) (INTENTIONAL +)))))
 
 (CONCEPT ONT::APPRECIATE
          (INHERIT ONT::EXPERIENCER-EMOTION)
