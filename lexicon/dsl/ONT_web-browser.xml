@@ -67,16 +67,16 @@
  </concept>
  <concept name="abstr-obj" />
  <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="container">+</feat>
+ </sem-feats>
  <concept name="ont::mental-construction">
  <comment>
   &quot;constructions of the mind: plans, goals, beliefs, ...&quot;
@@ -97,17 +97,17 @@
  </relation>
  <feat name="information">information-content</feat>
  </sem-feats>
- <concept name="ont::ps-object">
+ <concept name="ont::representation">
  <relation label="inherit">
   ont::mental-construction
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="container">+</feat>
+ </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
    <concept name="t" />
   </role-restr-map>
@@ -115,7 +115,7 @@
  </concept>
  <concept name="ont::computer-software">
  <relation label="inherit">
-  ont::ps-object
+  ont::representation
  </relation>
  <sem-feats>
   <relation label="inherit">

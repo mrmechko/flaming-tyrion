@@ -6897,7 +6897,7 @@
  </concept>
  <concept name="ont::computer-software">
   <relation label="inherit">
-   ont::ps-object
+   ont::representation
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -7315,9 +7315,10 @@
    </role-restr-map>
    <role-restr-map roles="ont::neutral">
     <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
      <feat name="container">+</feat>
     </sem-feats>
    </role-restr-map>
@@ -24079,6 +24080,12 @@
   <relation label="inherit">
    ont::mental-construction
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="container">+</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::ground" optional="optional">
     <concept name="t" />
@@ -25776,6 +25783,12 @@
   <relation label="inherit">
    ont::mental-construction
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="container">+</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
     <concept name="t" />
