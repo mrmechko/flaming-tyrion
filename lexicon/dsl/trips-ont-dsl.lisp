@@ -3166,14 +3166,13 @@
                   WN::|program%1:10:02::|
                   WN::|programme%1:10:02::|
                   WN::|computer_program%1:10:00::|
-                  WN::|computer_programme%1:10:00::|)
-         (SEM-FEATS (INHERIT ABSTR-OBJ)
-                    (ORIGIN ARTIFACT)
-                    (INFORMATION INFORMATION-CONTENT)))
+                  WN::|computer_programme%1:10:00::|))
 
 (CONCEPT ONT::COMPUTER-SOFTWARE
          (INHERIT ONT::REPRESENTATION)
-         (SEM-FEATS (INHERIT ABSTR-OBJ) (INFORMATION INFORMATION-CONTENT)))
+         (SEM-FEATS (INHERIT ABSTR-OBJ)
+                    (INFORMATION MENTAL-CONSTRUCT)
+                    (ORIGIN ARTIFACT)))
 
 (CONCEPT ONT::COMPUTER-TYPE (INHERIT ONT::COMPUTER))
 
