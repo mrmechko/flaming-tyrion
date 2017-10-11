@@ -17,17 +17,7 @@
  </sem-feats>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
  <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -45,7 +35,6 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="abstr-obj" />
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -75,6 +64,17 @@
   abstr-obj
  </relation>
  </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::representation">
  <relation label="inherit">
   ont::mental-construction
@@ -85,6 +85,27 @@
   </relation>
   <feat name="container">+</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::social-practice">
+ <relation label="inherit">
+  ont::mental-construction
+ </relation>
+ <relation label="overlap">
+  wn::|custom%1:09:00::|
+  wn::|practice%1:09:00::|
+  wn::|habit%1:09:00::|
+  wn::|routine%1:04:00::|
+ </relation>
+ </concept>
+ <concept name="ont::perceptual-construction">
+ <relation label="inherit">
+  ont::mental-construction
+ </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
    <concept name="t" />
@@ -113,12 +134,36 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::mental-atttitude">
+ <relation label="inherit">
+  ont::mental-construction
+ </relation>
+ <relation label="overlap">
+  wn::|mentality%1:09:01::|
+ </relation>
+ </concept>
  <concept name="ont::knowledge-belief">
  <relation label="inherit">
   ont::mental-construction
  </relation>
  <relation label="overlap">
   wn::|knowledge%1:03:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::concept-notion">
+ <relation label="inherit">
+  ont::mental-construction
+ </relation>
+ <relation label="overlap">
+  wn::|thought%1:09:01::|
+  wn::|notion%1:09:00::|
+  wn::|concept%1:09:00::|
+  wn::|conceptualization%1:09:00::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">

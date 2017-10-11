@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
-<ONTTYPE name="time-span" parent="temporal-predicate" modified="Mon Oct  9 01:42:31 2017">
-<SEM fltype="abstr-obj">
-<FEATURES type="time-span" scale="time-measure-scale" />
+<ONTTYPE name="time-span" parent="time-interval" modified="Wed Oct 11 13:54:52 2017">
+<SEM fltype="time">
+<FEATURES type="time-span" scale="duration-scale" time-scale="(? sc10 interval)" time-function="any-time-function" />
 </SEM>
-<ARGUMENT role="ground" optionality="essential" fltype="?!type" />
-<ARGUMENT role="figure" optionality="required" fltype="?!type" />
+<ARGUMENT role="extent" optionality="optional" fltype="abstr-obj">
+<FEATURES time-scale="interval" scale="duration-scale" />
+</ARGUMENT>
+<ARGUMENT role="ground" optionality="optional" fltype="time">
+<FEATURES time-function="time-frame" time-scale="interval" scale="duration-scale" />
+</ARGUMENT>
+<ARGUMENT role="figure" optionality="required" fltype="(? t490 situation abstr-obj)" />
 <WORD name="future" />
 <WORD name="past" />
-<WORD name="phase" />
 </ONTTYPE>

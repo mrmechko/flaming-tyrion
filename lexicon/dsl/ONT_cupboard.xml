@@ -11,17 +11,6 @@
  </relation>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -45,38 +34,51 @@
   <concept name="proposition" />
  </or>
  </concept>
- <sem-feats>
+ <concept name="ont::storage-furnishings">
  <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="form">solid-object</feat>
- <feat name="origin">artifact</feat>
- </sem-feats>
- <concept name="ont::phys-object">
- <comment>
-  &quot;All physical objects: things that have substance&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
+  ont::furnishings
  </relation>
  <relation label="overlap">
-  wn::|object%1:03:00::|
-  wn::|physical_object%1:03:00::|
+  wn::|wardrobe%1:06:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="intentional">-</feat>
+  <feat name="container">+</feat>
+  <feat name="mobility">fixed</feat>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">artifact</feat>
  </sem-feats>
  </concept>
- <concept name="phys-obj" />
+ <concept name="ont::furnishings">
+ <comment>
+  &quot;e.g.,  chair, desk, table&quot;
+ </comment>
+ <relation label="inherit">
+  ont::manufactured-object
+ </relation>
+ <relation label="overlap">
+  wn::|furniture%1:06:00::|
+  wn::|piece_of_furniture%1:06:00::|
+  wn::|article_of_furniture%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">furniture</feat>
+  <feat name="form">solid-object</feat>
+ </sem-feats>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="object-function">furniture</feat>
- <feat name="form">solid-object</feat>
+ <feat name="container">+</feat>
+ <feat name="mobility">fixed</feat>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">artifact</feat>
  </sem-feats>
  <concept name="ont::manufactured-object">
  <relation label="inherit">
@@ -100,48 +102,46 @@
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="container">+</feat>
- <feat name="mobility">fixed</feat>
- <feat name="trajectory">-</feat>
- <feat name="origin">artifact</feat>
+ <feat name="object-function">furniture</feat>
+ <feat name="form">solid-object</feat>
  </sem-feats>
- <concept name="ont::furnishings">
+ <concept name="ont::phys-object">
  <comment>
-  &quot;e.g.,  chair, desk, table&quot;
+  &quot;All physical objects: things that have substance&quot;
  </comment>
  <relation label="inherit">
-  ont::manufactured-object
+  ont::referential-sem
  </relation>
  <relation label="overlap">
-  wn::|furniture%1:06:00::|
-  wn::|piece_of_furniture%1:06:00::|
-  wn::|article_of_furniture%1:06:00::|
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="object-function">furniture</feat>
-  <feat name="form">solid-object</feat>
+  <feat name="intentional">-</feat>
  </sem-feats>
  </concept>
- <concept name="ont::storage-furnishings">
+ <sem-feats>
  <relation label="inherit">
-  ont::furnishings
+  phys-obj
  </relation>
- <relation label="overlap">
-  wn::|wardrobe%1:06:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="container">+</feat>
-  <feat name="mobility">fixed</feat>
-  <feat name="trajectory">-</feat>
-  <feat name="origin">artifact</feat>
+ <feat name="form">solid-object</feat>
+ <feat name="origin">artifact</feat>
  </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="phys-obj" />
  <sense>
  <morph>
   <pos pos="n" />

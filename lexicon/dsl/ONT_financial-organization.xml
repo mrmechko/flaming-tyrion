@@ -8,17 +8,6 @@
  </relation>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -42,64 +31,14 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="phys-obj" />
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::phys-object">
- <comment>
-  &quot;All physical objects: things that have substance&quot;
- </comment>
+ <concept name="ont::organization">
  <relation label="inherit">
-  ont::referential-sem
+  ont::social-group
  </relation>
  <relation label="overlap">
-  wn::|object%1:03:00::|
-  wn::|physical_object%1:03:00::|
+  wn::|organization%1:14:00::|
+  wn::|organisation%1:14:00::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="intentional">-</feat>
- </sem-feats>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="container">-</feat>
- <feat name="object-function">occupation</feat>
- <feat name="intentional">+</feat>
- </sem-feats>
- <concept name="ont::group-object">
- <relation label="inherit">
-  ont::phys-object
- </relation>
- <relation label="overlap">
-  wn::|mathematical_group%1:09:00::|
-  wn::|group%1:09:00::|
-  wn::|chemical_group%1:27:00::|
-  wn::|radical%1:27:00::|
-  wn::|group%1:27:00::|
-  wn::|group%1:03:00::|
-  wn::|grouping%1:03:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::social-group">
  <relation label="inherit">
@@ -125,15 +64,77 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::organization">
+ <concept name="ont::group-object">
  <relation label="inherit">
-  ont::social-group
+  ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|organization%1:14:00::|
-  wn::|organisation%1:14:00::|
+  wn::|mathematical_group%1:09:00::|
+  wn::|group%1:09:00::|
+  wn::|chemical_group%1:27:00::|
+  wn::|radical%1:27:00::|
+  wn::|group%1:27:00::|
+  wn::|group%1:03:00::|
+  wn::|grouping%1:03:00::|
+  wn::|union%1:14:01::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="object-function">occupation</feat>
+ <feat name="intentional">+</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
  </relation>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="phys-obj" />
  <sense>
  <morph>
   <pos pos="n" />

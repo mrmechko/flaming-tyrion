@@ -19,17 +19,6 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <comment>
@@ -47,36 +36,6 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::abstract-object">
- <comment>
-  &quot;abstract objects, mental constructions, with no physical realization&quot;
- </comment>
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00::|
-  wn::|abstraction%1:03:00::|
-  wn::|abstract_entity%1:03:00::|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
  </concept>
  <concept name="ont::position-reln">
  <comment>
@@ -102,9 +61,9 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::position-as-point-reln">
+ <concept name="ont::pos-as-containment-reln">
  <relation label="inherit">
-  ont::position-reln
+  ont::position-as-point-reln
  </relation>
  </concept>
  <sem-frame>
@@ -118,11 +77,52 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::pos-as-containment-reln">
+ <concept name="ont::position-as-point-reln">
  <relation label="inherit">
-  ont::position-as-point-reln
+  ont::position-reln
  </relation>
  </concept>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::out-loc">
  <relation label="inherit">
   ont::outside
@@ -156,7 +156,9 @@
   <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or
+                                              s
+                                              np)" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -182,7 +184,9 @@
   <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or
+                                              s
+                                              np)" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -208,7 +212,9 @@
   <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np)" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or
+                                              s
+                                              np)" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">

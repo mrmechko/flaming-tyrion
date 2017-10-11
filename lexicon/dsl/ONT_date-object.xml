@@ -17,34 +17,29 @@
   <feat name="time-function">time-of-year</feat>
  </sem-feats>
  </concept>
+ <concept name="time" />
  <concept name="ont::root" />
+ <concept name="ont::time-object">
+ <relation label="inherit">
+  ont::any-time-object
+ </relation>
  <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">
- <or>
-  interval
-  point
- </or>
- </feat>
- <feat name="time-function">any-time-function</feat>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">
+  <or>
+   point
+   interval
+  </or>
+  </feat>
  </sem-feats>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
  </concept>
  <sem-feats>
  <relation label="inherit">
   time
  </relation>
- <feat name="time-scale">
- <or>
-  point
-  interval
- </or>
- </feat>
+ <feat name="time-function">time-of-year</feat>
  </sem-feats>
  <concept name="ont::any-time-object">
  <relation label="inherit">
@@ -63,29 +58,34 @@
   <feat name="time-function">any-time-function</feat>
  </sem-feats>
  </concept>
- <concept name="time" />
  <sem-feats>
  <relation label="inherit">
   time
  </relation>
- <feat name="time-function">time-of-year</feat>
+ <feat name="time-scale">
+ <or>
+  point
+  interval
+ </or>
+ </feat>
  </sem-feats>
- <concept name="ont::time-object">
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::any-time-object
+  ont::root
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="time-scale">
-  <or>
-   point
-   interval
-  </or>
-  </feat>
- </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  interval
+  point
+ </or>
+ </feat>
+ <feat name="time-function">any-time-function</feat>
+ </sem-feats>
  <concept name="ont::day-name">
  <relation label="inherit">
   ont::date-object

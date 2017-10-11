@@ -17,17 +17,6 @@
  </sem-feats>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -51,13 +40,39 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="ont::substance">
+ <relation label="inherit">
+  ont::material
+ </relation>
+ <relation label="overlap">
+  wn::|substance%1:03:00::|
+  wn::|substance%1:03:01::|
+  wn::|substance%1:27:00::|
+  wn::|matter%1:03:00::|
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="form">substance</feat>
- <feat name="mobility">non-self-moving</feat>
+ <feat name="form">solid</feat>
  </sem-feats>
+ <concept name="ont::material">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|material%1:27:00::|
+  wn::|stuff%1:27:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">substance</feat>
+  <feat name="mobility">non-self-moving</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::phys-object">
  <comment>
   &quot;All physical objects: things that have substance&quot;
@@ -76,40 +91,25 @@
   <feat name="intentional">-</feat>
  </sem-feats>
  </concept>
- <concept name="ont::material">
- <relation label="inherit">
-  ont::phys-object
- </relation>
- <relation label="overlap">
-  wn::|material%1:27:00::|
-  wn::|stuff%1:27:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="form">substance</feat>
-  <feat name="mobility">non-self-moving</feat>
- </sem-feats>
- </concept>
- <concept name="phys-obj" />
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="form">solid</feat>
+ <feat name="form">substance</feat>
+ <feat name="mobility">non-self-moving</feat>
  </sem-feats>
- <concept name="ont::substance">
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::material
- </relation>
- <relation label="overlap">
-  wn::|substance%1:03:00::|
-  wn::|substance%1:03:01::|
-  wn::|substance%1:27:00::|
-  wn::|matter%1:03:00::|
+  ont::root
  </relation>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="phys-obj" />
  <sense>
  <morph>
   <pos pos="n" />

@@ -8,17 +8,7 @@
  </relation>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
  <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -35,31 +25,6 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::scale">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::abstract-object">
- <comment>
-  &quot;abstract objects, mental constructions, with no physical realization&quot;
- </comment>
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00::|
-  wn::|abstraction%1:03:00::|
-  wn::|abstract_entity%1:03:00::|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
@@ -132,6 +97,57 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="gradability">-</feat>
+ </sem-feats>
+ <concept name="ont::substantial-property-val">
+ <comment>
+  &quot;properties having to do with characteristic substance of the described object&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
+ </concept>
+ <concept name="ont::mode">
+ <comment>
+  &quot;means of representation (c.f. ont::medium)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::substantial-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="gradability">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::signal-representation-val">
+ <relation label="inherit">
+  ont::mode
+ </relation>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -188,58 +204,42 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="abstr-obj" />
- <concept name="ont::physical-property-val">
+ <concept name="ont::abstract-object">
  <comment>
-  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
  </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
  <relation label="inherit">
-  ont::property-val
+  ont::referential-sem
+  abstr-obj
  </relation>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
+ <role-restr-map roles="ont::scale">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <sem-feats>
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="gradability">-</feat>
- </sem-feats>
- <concept name="ont::substantial-property-val">
- <comment>
-  &quot;properties having to do with characteristic substance of the described object&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-val
+  ont::root
  </relation>
  </concept>
- <concept name="ont::mode">
- <comment>
-  &quot;means of representation (c.f. ont::medium)&quot;
- </comment>
- <relation label="inherit">
-  ont::substantial-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="gradability">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::signal-representation-val">
- <relation label="inherit">
-  ont::mode
- </relation>
- </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <sense>
  <morph>
   <pos pos="adj" />

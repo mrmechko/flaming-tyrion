@@ -24,19 +24,54 @@
    ont::evaluation-scale
   </relation>
  </concept>
- <concept name="ont::ability-state">
+ <concept name="ont::ability-to-hear">
   <relation label="inherit">
-   ont::event-of-state
+   ont::ability-to-perceive
   </relation>
   <relation label="overlap">
-   wn::|ability%1:07:00::|
-   wn::|ability%1:09:00::|
+   wn::|hearing%1:09:00::|
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::formal">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
+ </concept>
+ <concept name="ont::ability-to-perceive">
+  <relation label="inherit">
+   ont::perceptual-construction
+  </relation>
+  <relation label="overlap">
+   wn::|perception%1:09:01::|
+   wn::|sense%1:09:02::|
+  </relation>
+ </concept>
+ <concept name="ont::ability-to-see">
+  <relation label="inherit">
+   ont::ability-to-perceive
+  </relation>
+  <relation label="overlap">
+   wn::|vision%1:09:01::|
+  </relation>
+ </concept>
+ <concept name="ont::ability-to-smell">
+  <relation label="inherit">
+   ont::ability-to-perceive
+  </relation>
+  <relation label="overlap">
+   wn::|smell%1:09:01::|
+  </relation>
+ </concept>
+ <concept name="ont::ability-to-taste">
+  <relation label="inherit">
+   ont::ability-to-perceive
+  </relation>
+  <relation label="overlap">
+   wn::|taste%1:09:02::|
+  </relation>
+ </concept>
+ <concept name="ont::ability-to-touch">
+  <relation label="inherit">
+   ont::ability-to-perceive
+  </relation>
+  <relation label="overlap">
+   wn::|touch%1:09:01::|
+  </relation>
  </concept>
  <concept name="ont::ability-val">
   <comment>
@@ -63,30 +98,11 @@
   </relation>
   <relation label="overlap">
    wn::|ability%1:07:00::|
+   wn::|ability%1:09:00::|
    wn::|capability%1:07:00::|
    wn::|capacity%1:07:00::|
    wn::|competence%1:07:00::|
   </relation>
- </concept>
- <concept name="ont::abnormality">
-  <relation label="inherit">
-   ont::event-type
-  </relation>
-  <relation label="overlap">
-   wn::|abnormality%1:04:00::|
-   wn::|irregularity%1:04:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::figure" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::above">
   <relation label="inherit">
@@ -303,7 +319,7 @@
  </concept>
  <concept name="ont::account">
   <relation label="inherit">
-   ont::abstract-object-nontemporal
+   ont::value-cost
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -2215,6 +2231,7 @@
   </relation>
   <relation label="overlap">
    wn::|assets%1:21:00::|
+   wn::|resource%1:21:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -2363,6 +2380,11 @@
   </sem-frame>
  </concept>
  <concept name="ont::associated-with-body-val">
+  <relation label="inherit">
+   ont::associated-with-val
+  </relation>
+ </concept>
+ <concept name="ont::associated-with-food-val">
   <relation label="inherit">
    ont::associated-with-val
   </relation>
@@ -2629,6 +2651,20 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::attraction-scale">
+  <relation label="inherit">
+   ont::evaluation-scale
+  </relation>
+ </concept>
+ <concept name="ont::attractive-scale">
+  <relation label="inherit">
+   ont::attraction-scale
+  </relation>
+  <relation label="overlap">
+   wn::|appeal%1:07:00::|
+   wn::|attractiveness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::attribute">
   <relation label="inherit">
    ont::abstract-object-nontemporal
@@ -2726,6 +2762,14 @@
     <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::auditory-scale">
+  <relation label="inherit">
+   ont::sensory-scale
+  </relation>
+  <relation label="overlap">
+   wn::|audition%1:09:00::|
+  </relation>
  </concept>
  <concept name="ont::authentic-val">
   <relation label="inherit">
@@ -3992,6 +4036,14 @@
    ont::associated-with-body-val
   </relation>
  </concept>
+ <concept name="ont::body-tightness">
+  <relation label="inherit">
+   ont::medical-symptom
+  </relation>
+  <relation label="overlap">
+   wn::|tightness%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::boil">
   <relation label="inherit">
    ont::cooking
@@ -4263,6 +4315,14 @@
    </relation>
    <feat name="scale">brownness*1--07--00</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::budget">
+  <relation label="inherit">
+   ont::mental-plan
+  </relation>
+  <relation label="overlap">
+   wn::|budget%1:21:03::|
+  </relation>
  </concept>
  <concept name="ont::burn">
   <relation label="inherit">
@@ -5072,6 +5132,14 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::central-val">
+  <relation label="inherit">
+   ont::spatial-arrangement-val
+  </relation>
+  <relation label="overlap">
+   wn::|central%3:00:01::|
+  </relation>
  </concept>
  <concept name="ont::cereals">
   <relation label="inherit">
@@ -5907,6 +5975,8 @@
    wn::|aggregation%1:14:00::|
    wn::|accumulation%1:14:00::|
    wn::|assemblage%1:14:01::|
+   wn::|array%1:14:00::|
+   wn::|array%1:10:00::|
   </relation>
  </concept>
  <concept name="ont::collection-abstr">
@@ -6085,6 +6155,14 @@
     <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::coma">
+  <relation label="inherit">
+   ont::medical-condition
+  </relation>
+  <relation label="overlap">
+   wn::|coma%1:09:00::|
+  </relation>
  </concept>
  <concept name="ont::combination">
   <relation label="inherit">
@@ -6905,6 +6983,30 @@
    ont::computer
   </relation>
  </concept>
+ <concept name="ont::concentric-val">
+  <relation label="inherit">
+   ont::spatial-arrangement-val
+  </relation>
+  <relation label="overlap">
+   wn::|concentric%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::concept-notion">
+  <relation label="inherit">
+   ont::mental-construction
+  </relation>
+  <relation label="overlap">
+   wn::|thought%1:09:01::|
+   wn::|notion%1:09:00::|
+   wn::|concept%1:09:00::|
+   wn::|conceptualization%1:09:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::condiments">
   <relation label="inherit">
    ont::ingredients
@@ -7050,12 +7152,13 @@
    wn::|confusing%5:00:00:disorienting:00|
   </relation>
  </concept>
- <concept name="ont::confusion">
+ <concept name="ont::confusion-scale">
   <relation label="inherit">
-   ont::mental-psychological-illness-or-disorder
+   ont::psychological-condition-scale
   </relation>
   <relation label="overlap">
    wn::|confusion%1:09:00::|
+   wn::|confusion%1:12:00::|
   </relation>
  </concept>
  <concept name="ont::congenital-val">
@@ -7789,6 +7892,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::cost-val">
+  <comment>
+   &quot;properties having to do with evaluation of cost&quot;
+  </comment>
+  <relation label="inherit">
+   ont::evaluation-attribute-val
+  </relation>
+ </concept>
  <concept name="ont::costs">
   <relation label="inherit">
    ont::expensiveness
@@ -8289,6 +8400,14 @@
  <concept name="ont::data-storage-medium">
   <relation label="inherit">
    ont::info-medium
+  </relation>
+ </concept>
+ <concept name="ont::data-structure">
+  <relation label="inherit">
+   ont::mathematical-term
+  </relation>
+  <relation label="overlap">
+   wn::|matrix%1:14:00::|
   </relation>
  </concept>
  <concept name="ont::database">
@@ -9024,6 +9143,14 @@
    <feat name="aspect">dynamic</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::dietary-val">
+  <relation label="inherit">
+   ont::associated-with-food-val
+  </relation>
+  <relation label="overlap">
+   wn::|dietary%3:01:00::|
+  </relation>
+ </concept>
  <concept name="ont::dieting">
   <relation label="inherit">
    ont::activity
@@ -9384,6 +9511,14 @@
    wn::|dirty%3:00:01::|
   </relation>
  </concept>
+ <concept name="ont::disability">
+  <relation label="inherit">
+   ont::medical-condition
+  </relation>
+  <relation label="overlap">
+   wn::|disability%1:26:00::|
+  </relation>
+ </concept>
  <concept name="ont::disable">
   <relation label="inherit">
    ont::inhibit-effect
@@ -9497,17 +9632,9 @@
    ont::medical-disorders-and-conditions
   </relation>
   <relation label="overlap">
-   wn::|health_problem%1:26:00::|
-   wn::|unhealthiness%1:26:00::|
-   wn::|ill_health%1:26:00::|
-   wn::|illness%1:26:00::|
-   wn::|unwellness%1:26:00::|
-   wn::|malady%1:26:00::|
-   wn::|sickness%1:26:00::|
+   wn::|disease%1:26:00::|
    wn::|ailment%1:26:00::|
-   wn::|ill%1:26:00::|
    wn::|abnormality%1:26:00::|
-   wn::|abnormalcy%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::disgusted">
@@ -9656,12 +9783,13 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::distress">
+ <concept name="ont::distress-scale">
   <relation label="inherit">
-   ont::pain
+   ont::psychological-condition-scale
   </relation>
   <relation label="overlap">
    wn::|distress%1:26:00::|
+   wn::|distress%1:12:02::|
   </relation>
  </concept>
  <concept name="ont::distressing-val">
@@ -11526,6 +11654,14 @@
    wn::|excited%5:00:00:wild:02|
   </relation>
  </concept>
+ <concept name="ont::excitement-scale">
+  <relation label="inherit">
+   ont::positive-emotion-scale
+  </relation>
+  <relation label="overlap">
+   wn::|excitement%1:12:00::|
+  </relation>
+ </concept>
  <concept name="ont::exclamation">
   <comment>
    &quot;communicative act that expresses an emotional response with no propositional content&quot;
@@ -11726,6 +11862,15 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::expensive-val">
+  <relation label="inherit">
+   ont::cost-val
+  </relation>
+  <relation label="overlap">
+   wn::|expensive%3:00:00::|
+   wn::|pricy%5:00:00:expensive:00|
+  </relation>
  </concept>
  <concept name="ont::expensiveness">
   <relation label="inherit">
@@ -12117,6 +12262,15 @@
    wn::|skim%5:00:00:nonfat:00|
   </relation>
  </concept>
+ <concept name="ont::fat-scale">
+  <relation label="inherit">
+   ont::relative-to-height-scale
+  </relation>
+  <relation label="overlap">
+   wn::|obesity%1:07:00::|
+   wn::|fatness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::fat-val">
   <comment>
    &quot;more in  horizontal orientation with respect to the height&quot;
@@ -12223,7 +12377,7 @@
  </concept>
  <concept name="ont::feebleness-scale">
   <relation label="inherit">
-   ont::body-condition-scale
+   ont::negative-body-condition-scale
   </relation>
   <relation label="overlap">
    wn::|feebleness%1:26:00::|
@@ -12511,6 +12665,14 @@
    </relation>
    <feat name="object-function">comestible</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::fitness-scale">
+  <relation label="inherit">
+   ont::positive-body-condition-scale
+  </relation>
+  <relation label="overlap">
+   wn::|fitness%1:26:00::|
+  </relation>
  </concept>
  <concept name="ont::fixture">
   <relation label="inherit">
@@ -13481,6 +13643,14 @@
    wn::|perpendicular%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::gist">
+  <relation label="inherit">
+   ont::concept-notion
+  </relation>
+  <relation label="overlap">
+   wn::|gist%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::giving">
   <comment>
    &quot;To relinquish control of AFFECTED AFFECTED-RESULT, typically voluntarily and possibly in exchange for something&quot;
@@ -13855,6 +14025,7 @@
    wn::|group%1:27:00::|
    wn::|group%1:03:00::|
    wn::|grouping%1:03:00::|
+   wn::|union%1:14:01::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
@@ -14321,13 +14492,12 @@
  </concept>
  <concept name="ont::health-scale">
   <relation label="inherit">
-   ont::body-condition-scale
+   ont::positive-body-condition-scale
   </relation>
   <relation label="overlap">
    wn::|wellness%1:26:00::|
    wn::|wellbeing%1:26:00::|
    wn::|health%1:26:00::|
-   wn::|fitness%1:26:00::|
    wn::|healthiness%1:26:00::|
    wn::|condition%1:26:02::|
   </relation>
@@ -14632,6 +14802,14 @@
    wn::|hives%1:26:00::|
   </relation>
  </concept>
+ <concept name="ont::hoarseness-scale">
+  <relation label="inherit">
+   ont::sound-texture-scale
+  </relation>
+  <relation label="overlap">
+   wn::|hoarseness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::hole">
   <relation label="inherit">
    ont::sunken-natural-formation
@@ -14900,6 +15078,15 @@
  <concept name="ont::identity-val">
   <relation label="inherit">
    ont::similarity-val
+  </relation>
+ </concept>
+ <concept name="ont::illness-scale">
+  <relation label="inherit">
+   ont::negative-body-condition-scale
+  </relation>
+  <relation label="overlap">
+   wn::|unhealthiness%1:26:00::|
+   wn::|illness%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::illocution">
@@ -15861,9 +16048,23 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::interest-scale">
+  <relation label="inherit">
+   ont::psychological-condition-scale
+  </relation>
+ </concept>
  <concept name="ont::interest-val">
   <relation label="inherit">
    ont::psychological-property-val
+  </relation>
+ </concept>
+ <concept name="ont::interested-scale">
+  <relation label="inherit">
+   ont::interest-scale
+  </relation>
+  <relation label="overlap">
+   wn::|interest%1:09:00::|
+   wn::|enthusiasm%1:09:00::|
   </relation>
  </concept>
  <concept name="ont::interested-val">
@@ -17105,7 +17306,7 @@
  </concept>
  <concept name="ont::likelihood-val">
   <comment>
-   &quot;(un)certainty to hold true&quot;
+   &quot;likelihood to hold true&quot;
   </comment>
   <relation label="inherit">
    ont::information-property-val
@@ -17687,25 +17888,6 @@
    wn::|fortunate%3:00:00::|
    wn::|lucky%5:00:00:fortunate:00|
   </relation>
- </concept>
- <concept name="ont::luminosity-alt-scale">
-  <relation label="inherit">
-   ont::visual-property-scale
-  </relation>
-  <relation label="overlap">
-   wn::|brightness%1:07:00::|
-   wn::|brightness%1:07:02::|
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="scale">luminosity-scale</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::luminosity-scale">
   <relation label="inherit">
@@ -18320,7 +18502,7 @@
  </concept>
  <concept name="ont::medical-disorders-and-conditions">
   <relation label="inherit">
-   ont::body-condition-scale
+   ont::attribute
   </relation>
   <relation label="overlap">
    wn::|disorder%1:26:03::|
@@ -18382,9 +18564,6 @@
    wn::|symptom%1:26:00::|
    wn::|sign%1:26:00::|
    wn::|syndrome%1:26:00::|
-   wn::|hoarseness%1:07:00::|
-   wn::|sniffle%1:04:00::|
-   wn::|tightness%1:09:00::|
   </relation>
  </concept>
  <concept name="ont::medical-symptom-val">
@@ -18426,6 +18605,14 @@
    </relation>
    <feat name="object-function">comestible</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::medicinal-val">
+  <relation label="inherit">
+   ont::medical-val
+  </relation>
+  <relation label="overlap">
+   wn::|medicinal%5:00:00:healthful:00|
+  </relation>
  </concept>
  <concept name="ont::medium">
   <comment>
@@ -18584,6 +18771,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::mental-atttitude">
+  <relation label="inherit">
+   ont::mental-construction
+  </relation>
+  <relation label="overlap">
+   wn::|mentality%1:09:01::|
+  </relation>
+ </concept>
  <concept name="ont::mental-construction">
   <comment>
    &quot;constructions of the mind: plans, goals, beliefs, ...&quot;
@@ -18620,9 +18815,17 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::mental-plan">
+  <relation label="inherit">
+   ont::ps-object
+  </relation>
+  <relation label="overlap">
+   wn::|plan%1:09:01::|
+  </relation>
+ </concept>
  <concept name="ont::mental-psychological-illness-or-disorder">
   <relation label="inherit">
-   ont::psychological-condition-scale
+   ont::attribute
   </relation>
   <relation label="overlap">
    wn::|mental_illness%1:26:00::|
@@ -19374,6 +19577,14 @@
    abstr-obj
   </relation>
  </concept>
+ <concept name="ont::muscle-contraction">
+  <relation label="inherit">
+   ont::medical-symptom
+  </relation>
+  <relation label="overlap">
+   wn::|contraction%1:04:01::|
+  </relation>
+ </concept>
  <concept name="ont::music">
   <relation label="inherit">
    ont::composition
@@ -19792,6 +20003,11 @@
    ont::neg-emotional-val
   </relation>
  </concept>
+ <concept name="ont::negative-body-condition-scale">
+  <relation label="inherit">
+   ont::body-condition-scale
+  </relation>
+ </concept>
  <concept name="ont::negative-emotion-scale">
   <relation label="inherit">
    ont::emotion-scale
@@ -19863,6 +20079,14 @@
  <concept name="ont::never">
   <relation label="inherit">
    ont::frequency
+  </relation>
+ </concept>
+ <concept name="ont::no-cost-val">
+  <relation label="inherit">
+   ont::cost-val
+  </relation>
+  <relation label="overlap">
+   wn::|free%5:00:00:unpaid:00|
   </relation>
  </concept>
  <concept name="ont::noisy">
@@ -20067,6 +20291,15 @@
    wn::|heedless%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::not-attractive-scale">
+  <relation label="inherit">
+   ont::attraction-scale
+  </relation>
+  <relation label="overlap">
+   wn::|disgust%1:12:00::|
+   wn::|repugnance%1:12:00::|
+  </relation>
+ </concept>
  <concept name="ont::not-available-val">
   <relation label="inherit">
    ont::availability-val
@@ -20191,6 +20424,14 @@
    wn::|unenforceable%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::not-expensive-val">
+  <relation label="inherit">
+   ont::cost-val
+  </relation>
+  <relation label="overlap">
+   wn::|cheap%3:00:00::|
+  </relation>
+ </concept>
  <concept name="ont::not-familiar">
   <relation label="inherit">
    ont::salience
@@ -20292,6 +20533,14 @@
   <relation label="overlap">
    wn::|accidental%5:00:00:unintended:00|
    wn::|unintentional%5:00:00:unintended:00|
+  </relation>
+ </concept>
+ <concept name="ont::not-interested-scale">
+  <relation label="inherit">
+   ont::interest-scale
+  </relation>
+  <relation label="overlap">
+   wn::|apathy%1:07:01::|
   </relation>
  </concept>
  <concept name="ont::not-interested-val">
@@ -20538,6 +20787,7 @@
   </relation>
   <relation label="overlap">
    wn::|irregularity%1:04:00::|
+   wn::|abnormality%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::not-usable-val">
@@ -20687,6 +20937,16 @@
    wn::|numerical%3:01:00::|
   </relation>
  </concept>
+ <concept name="ont::number-result">
+  <relation label="inherit">
+   ont::number
+  </relation>
+  <relation label="overlap">
+   wn::|sum%1:09:01::|
+   wn::|quotient%1:23:00::|
+   wn::|product%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::number-scale">
   <relation label="inherit">
    ont::scale
@@ -20730,6 +20990,14 @@
   </relation>
   <relation label="overlap">
    wn::|vitamin%1:27:00::|
+  </relation>
+ </concept>
+ <concept name="ont::nutritional-val">
+  <relation label="inherit">
+   ont::associated-with-food-val
+  </relation>
+  <relation label="overlap">
+   wn::|nutritional%3:01:00::|
   </relation>
  </concept>
  <concept name="ont::nuts-seeds">
@@ -21220,6 +21488,17 @@
    <feat name="form">solid-object</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::opinion">
+  <relation label="inherit">
+   ont::knowledge-belief
+  </relation>
+  <relation label="overlap">
+   wn::|opinion%1:10:01::|
+   wn::|viewpoint%1:09:00::|
+   wn::|belief%1:09:00::|
+   wn::|opinion%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::optical-device">
   <relation label="inherit">
    ont::device
@@ -21652,12 +21931,22 @@
    wn::|pain_sensation%1:09:00::|
    wn::|painful_sensation%1:09:00::|
    wn::|soreness%1:26:00::|
-   wn::|painfulness%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::pain-reliever">
   <relation label="inherit">
    ont::medication
+  </relation>
+ </concept>
+ <concept name="ont::pain-scale">
+  <relation label="inherit">
+   ont::psychological-condition-scale
+  </relation>
+  <relation label="overlap">
+   wn::|painfulness%1:07:00::|
+   wn::|soreness%1:12:00::|
+   wn::|pain%1:12:00::|
+   wn::|soreness%1:12:00::|
   </relation>
  </concept>
  <concept name="ont::pained-val">
@@ -21952,6 +22241,28 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::perceivable-property">
+  <relation label="inherit">
+   ont::perceptual-construction
+  </relation>
+ </concept>
+ <concept name="ont::perceivable-smell-property">
+  <relation label="inherit">
+   ont::perceivable-property
+  </relation>
+  <relation label="overlap">
+   wn::|smell%1:09:02::|
+   wn::|aroma%1:09:01::|
+  </relation>
+ </concept>
+ <concept name="ont::perceivable-taste-property">
+  <relation label="inherit">
+   ont::perceivable-property
+  </relation>
+  <relation label="overlap">
+   wn::|flavor%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::percent">
   <relation label="inherit">
    ont::formal-unit
@@ -22009,6 +22320,16 @@
    wn::|countenance%1:08:00::|
   </relation>
  </concept>
+ <concept name="ont::perceptual-construction">
+  <relation label="inherit">
+   ont::mental-construction
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::perfective">
   <relation label="inherit">
    ont::aux
@@ -22032,6 +22353,14 @@
   </relation>
   <relation label="overlap">
    wn::|periodic%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::peripheral-val">
+  <relation label="inherit">
+   ont::spatial-arrangement-val
+  </relation>
+  <relation label="overlap">
+   wn::|peripheral%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::perlocution">
@@ -22118,6 +22447,19 @@
   <relation label="overlap">
    wn::|drug%1:06:00::|
   </relation>
+ </concept>
+ <concept name="ont::phase">
+  <comment>
+   &quot;e.g., phases of the moon, stage of the project. This type represents stages of a sequence that is more abstract than time.&quot;
+  </comment>
+  <relation label="inherit">
+   ont::time-interval
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::pheasant">
   <relation label="inherit">
@@ -23007,6 +23349,11 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::positive-body-condition-scale">
+  <relation label="inherit">
+   ont::body-condition-scale
+  </relation>
  </concept>
  <concept name="ont::positive-emotion-scale">
   <relation label="inherit">
@@ -24013,6 +24360,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::protection">
+  <relation label="inherit">
+   ont::social-contract
+  </relation>
+  <relation label="overlap">
+   wn::|insurance%1:21:02::|
+  </relation>
+ </concept>
  <concept name="ont::protein">
   <relation label="inherit">
    ont::gene-protein
@@ -24623,6 +24978,15 @@
   </relation>
   <relation label="overlap">
    wn::|random%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::range">
+  <relation label="inherit">
+   ont::level
+  </relation>
+  <relation label="overlap">
+   wn::|range%1:07:00::|
+   wn::|bracket%1:14:00::|
   </relation>
  </concept>
  <concept name="ont::rate-rel">
@@ -25263,6 +25627,11 @@
    ont::quantity-related-property-val
   </relation>
  </concept>
+ <concept name="ont::relative-to-height-scale">
+  <relation label="inherit">
+   ont::size-alt-scale
+  </relation>
+ </concept>
  <concept name="ont::relative-to-height-val">
   <comment>
    &quot;size specification relative to height. E.g. fat means more in  horizontal orientation with respect to the height&quot;
@@ -25845,6 +26214,22 @@
    wn::|necessity%1:17:00::|
   </relation>
  </concept>
+ <concept name="ont::requirements">
+  <comment>
+   &quot;reference or rules that must be met to satisfy evaluation&quot;
+  </comment>
+  <relation label="inherit">
+   ont::ps-object
+  </relation>
+  <relation label="overlap">
+   wn::|term%1:10:02::|
+   wn::|provision%1:10:00::|
+   wn::|condition%1:10:01::|
+   wn::|requirement%1:09:00::|
+   wn::|standard%1:09:00::|
+   wn::|criterion%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::rescue">
   <relation label="inherit">
    ont::help
@@ -26070,6 +26455,14 @@
    wn::|nervy%5:00:00:tense:03|
    wn::|jumpy%5:00:00:tense:03|
    wn::|jittery%5:00:00:tense:03|
+  </relation>
+ </concept>
+ <concept name="ont::restlessness-scale">
+  <relation label="inherit">
+   ont::negative-body-condition-scale
+  </relation>
+  <relation label="overlap">
+   wn::|restlessness%1:07:01::|
   </relation>
  </concept>
  <concept name="ont::restlessness-val">
@@ -27548,6 +27941,7 @@
   <relation label="overlap">
    wn::|severe%5:00:01:bad:00|
    wn::|severe%5:00:00:intense:00|
+   wn::|extreme%5:00:00:intense:00|
   </relation>
  </concept>
  <concept name="ont::severity-scale">
@@ -28165,6 +28559,17 @@
    wn::|expertise%1:09:00::|
   </relation>
  </concept>
+ <concept name="ont::skinny-scale">
+  <relation label="inherit">
+   ont::relative-to-height-scale
+  </relation>
+  <relation label="overlap">
+   wn::|thinness%1:07:00::|
+   wn::|skinniness%1:07:00::|
+   wn::|slenderness%1:07:01::|
+   wn::|wiriness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::skinny-val">
   <comment>
    &quot;less in horizontal orientation with respect to the height&quot;
@@ -28176,6 +28581,7 @@
    wn::|slim%5:00:00:thin:03|
    wn::|skinny%5:00:00:thin:03|
    wn::|slender%5:00:00:thin:03|
+   wn::|thin%3:00:03::|
   </relation>
  </concept>
  <concept name="ont::skip-action">
@@ -28296,6 +28702,14 @@
   </relation>
   <relation label="overlap">
    wn::|sneeze%1:26:00::|
+  </relation>
+ </concept>
+ <concept name="ont::sniffle">
+  <relation label="inherit">
+   ont::medical-symptom
+  </relation>
+  <relation label="overlap">
+   wn::|sniffle%1:04:00::|
   </relation>
  </concept>
  <concept name="ont::so-much-that">
@@ -28449,6 +28863,17 @@
    ont::social-imperative
   </relation>
  </concept>
+ <concept name="ont::social-practice">
+  <relation label="inherit">
+   ont::mental-construction
+  </relation>
+  <relation label="overlap">
+   wn::|custom%1:09:00::|
+   wn::|practice%1:09:00::|
+   wn::|habit%1:09:00::|
+   wn::|routine%1:04:00::|
+  </relation>
+ </concept>
  <concept name="ont::socially-remove">
   <relation label="inherit">
    ont::cause-come-from
@@ -28579,6 +29004,11 @@
   </relation>
   <relation label="overlap">
    wn::|softness%1:07:01::|
+  </relation>
+ </concept>
+ <concept name="ont::sound-texture-scale">
+  <relation label="inherit">
+   ont::sound-property-scale
   </relation>
  </concept>
  <concept name="ont::sound-unit">
@@ -28767,6 +29197,11 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::spatial-arrangement-val">
+  <relation label="inherit">
+   ont::orientation-val
+  </relation>
  </concept>
  <concept name="ont::spatial-distance-rel">
   <relation label="inherit">
@@ -29064,8 +29499,15 @@
   </relation>
  </concept>
  <concept name="ont::standard">
+  <comment>
+   &quot;the ideal in terms of which something can be judged&quot;
+  </comment>
   <relation label="inherit">
-   ont::information-function-object
+   ont::ps-object
+  </relation>
+  <relation label="overlap">
+   wn::|criterion%1:10:00::|
+   wn::|standard%1:10:00::|
   </relation>
  </concept>
  <concept name="ont::start">
@@ -29295,6 +29737,15 @@
    wn::|sexually_transmitted_disease%1:26:00::|
   </relation>
  </concept>
+ <concept name="ont::std-measurement-val">
+  <relation label="inherit">
+   ont::associated-with-val
+  </relation>
+  <relation label="overlap">
+   wn::|metric%3:01:00::|
+   wn::|imperial%3:01:02::|
+  </relation>
+ </concept>
  <concept name="ont::steadiness-scale">
   <relation label="inherit">
    ont::process-evaluation-scale
@@ -29514,9 +29965,9 @@
    wn::|force%1:07:00::|
   </relation>
  </concept>
- <concept name="ont::stress">
+ <concept name="ont::stress-scale">
   <relation label="inherit">
-   ont::mental-psychological-illness-or-disorder
+   ont::psychological-condition-scale
   </relation>
   <relation label="overlap">
    wn::|stress%1:26:01::|
@@ -29969,6 +30420,14 @@
   <relation label="overlap">
    wn::|surface%1:06:00::|
    wn::|surface%1:15:00::|
+  </relation>
+ </concept>
+ <concept name="ont::surplus">
+  <relation label="inherit">
+   ont::group-object
+  </relation>
+  <relation label="overlap">
+   wn::|surplus%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::surprised">
@@ -30798,6 +31257,14 @@
    wn::|flat%5:00:00:thin:01|
   </relation>
  </concept>
+ <concept name="ont::thinness-scale">
+  <relation label="inherit">
+   ont::non-vertical-scale
+  </relation>
+  <relation label="overlap">
+   wn::|thinness%1:07:01::|
+  </relation>
+ </concept>
  <concept name="ont::thirsty-val">
   <relation label="inherit">
    ont::not-satiated-val
@@ -31091,7 +31558,7 @@
  </concept>
  <concept name="ont::time-span">
   <relation label="inherit">
-   ont::temporal-predicate
+   ont::time-interval
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
@@ -31916,6 +32383,15 @@
    <feat name="aspect">indiv-level</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::understanding">
+  <relation label="inherit">
+   ont::knowledge-belief
+  </relation>
+  <relation label="overlap">
+   wn::|understanding%1:09:01::|
+   wn::|comprehension%1:09:00::|
+  </relation>
+ </concept>
  <concept name="ont::underweight">
   <relation label="inherit">
    ont::lightweight
@@ -32367,9 +32843,37 @@
    ont::information-property-val
   </relation>
  </concept>
- <concept name="ont::value-cost">
+ <concept name="ont::value">
   <relation label="inherit">
    ont::abstract-object-nontemporal
+  </relation>
+  <relation label="overlap">
+   wn::|value%1:07:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="object-function">currency</feat>
+     <feat name="scale">money-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="object-function">currency</feat>
+     <feat name="scale">money-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::value-cost">
+  <relation label="inherit">
+   ont::value
   </relation>
   <relation label="overlap">
    wn::|change%1:21:02::|

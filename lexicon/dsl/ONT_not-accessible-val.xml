@@ -11,17 +11,7 @@
  </relation>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
  <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -38,32 +28,6 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
- </concept>
- <concept name="abstr-obj" />
- <sem-frame>
- <role-restr-map roles="ont::scale">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::abstract-object">
- <comment>
-  &quot;abstract objects, mental constructions, with no physical realization&quot;
- </comment>
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00::|
-  wn::|abstraction%1:03:00::|
-  wn::|abstract_entity%1:03:00::|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
@@ -136,6 +100,50 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::process-val">
+ <comment>
+  &quot;properties that describe processes&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::can-be-done-val">
+ <relation label="inherit">
+  ont::process-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::accessibility-val">
+ <relation label="inherit">
+  ont::can-be-done-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -192,50 +200,42 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
  <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
+ <role-restr-map roles="ont::scale">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::process-val">
- <comment>
-  &quot;properties that describe processes&quot;
- </comment>
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::property-val
+  ont::root
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="phys-obj" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::can-be-done-val">
- <relation label="inherit">
-  ont::process-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::accessibility-val">
- <relation label="inherit">
-  ont::can-be-done-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="phys-obj" />
-  </role-restr-map>
- </sem-frame>
- </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <sense>
  <morph>
   <pos pos="adj" />
@@ -252,13 +252,15 @@
  </relation>
  <syntax>
   <template-call template="ont::central-adj-xp-templ" xp="'(w::pp
-                                                            (w::or w::on
-                                                                   w::for
-                                                                   w::by))" />
+                                                            (w::or
+                                                              w::on
+                                                              w::for
+                                                              w::by))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::on
-                                                                w::for
-                                                                w::by)" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or
+                                                           w::on
+                                                           w::for
+                                                           w::by)" sem-role="ont::ground" optional="optional"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
@@ -287,13 +289,15 @@
  </relation>
  <syntax>
   <template-call template="ont::central-adj-xp-templ" xp="'(w::pp
-                                                            (w::or w::on
-                                                                   w::for
-                                                                   w::by))" />
+                                                            (w::or
+                                                              w::on
+                                                              w::for
+                                                              w::by))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::on
-                                                                w::for
-                                                                w::by)" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or
+                                                           w::on
+                                                           w::for
+                                                           w::by)" sem-role="ont::ground" optional="optional"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>

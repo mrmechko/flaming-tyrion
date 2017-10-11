@@ -12,17 +12,7 @@
  </relation>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
  <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -39,32 +29,6 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
- </concept>
- <concept name="abstr-obj" />
- <sem-frame>
- <role-restr-map roles="ont::scale">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::abstract-object">
- <comment>
-  &quot;abstract objects, mental constructions, with no physical realization&quot;
- </comment>
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00::|
-  wn::|abstraction%1:03:00::|
-  wn::|abstract_entity%1:03:00::|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
@@ -137,6 +101,38 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::severity-val">
+ <comment>
+  &quot;indicates relative extent or magnitude of something on a severity scale&quot;
+ </comment>
+ <relation label="inherit">
+  ont::dimensional-property-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::dimensional-property-val">
+ <comment>
+  &quot;properties pertaining to dimensions and measurable extents&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -193,38 +189,42 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
  <sem-frame>
+ <role-restr-map roles="ont::scale">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::dimensional-property-val">
- <comment>
-  &quot;properties pertaining to dimensions and measurable extents&quot;
- </comment>
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::property-val
+  ont::root
  </relation>
  </concept>
- <concept name="ont::severity-val">
- <comment>
-  &quot;indicates relative extent or magnitude of something on a severity scale&quot;
- </comment>
- <relation label="inherit">
-  ont::dimensional-property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <sense>
  <morph>
   <pos pos="adj" />

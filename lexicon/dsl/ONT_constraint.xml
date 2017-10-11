@@ -20,17 +20,6 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   situation
@@ -56,12 +45,34 @@
   <concept name="proposition" />
  </or>
  </concept>
- <sem-feats>
+ <concept name="ont::situation">
+ <relation label="overlap">
+  wn::|phenomenon%1:03:00::|
+ </relation>
  <relation label="inherit">
+  ont::event-type
   situation
  </relation>
- <feat name="intentional">-</feat>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-type">
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="intentional">-</feat>
  </sem-feats>
+ </concept>
  <concept name="ont::situation-root">
  <comment>
   &quot;root for all events, whether verbal or nominal&quot;
@@ -78,35 +89,24 @@
   <feat name="intentional">-</feat>
  </sem-feats>
  </concept>
- <concept name="situation" />
- <concept name="ont::event-type">
- <relation label="inherit">
-  ont::situation-root
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="intentional">-</feat>
- </sem-feats>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation">
- <relation label="overlap">
-  wn::|phenomenon%1:03:00::|
- </relation>
  <relation label="inherit">
-  ont::event-type
   situation
  </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="situation" />
  <sense>
  <morph>
   <pos pos="n" />

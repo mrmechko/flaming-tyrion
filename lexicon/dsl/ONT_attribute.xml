@@ -25,17 +25,7 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
  <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -53,7 +43,6 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="abstr-obj" />
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -85,6 +74,17 @@
   abstr-obj
  </relation>
  </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::body-property">
  <relation label="inherit">
   ont::attribute
@@ -99,6 +99,38 @@
    </sem-feats>
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::medical-disorders-and-conditions">
+ <relation label="inherit">
+  ont::attribute
+ </relation>
+ <relation label="overlap">
+  wn::|disorder%1:26:03::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::mental-psychological-illness-or-disorder">
+ <relation label="inherit">
+  ont::attribute
+ </relation>
+ <relation label="overlap">
+  wn::|mental_illness%1:26:00::|
+  wn::|mental_disorder%1:26:00::|
+ </relation>
  </concept>
  <sense>
  <morph>
@@ -180,48 +212,12 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="disposition" />
- </morph>
- <example text="a sad disposition">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::attribute
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="feature" />
  </morph>
  <comment>
   &quot;CALOY2&quot;
  </comment>
  <example text="compare the features of this computer">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::attribute
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="moisture" />
- </morph>
- <relation label="inherit">
-  ont::attribute
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="outlook" />
- </morph>
- <example text="a sad disposition">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">

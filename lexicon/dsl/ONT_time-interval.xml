@@ -50,38 +50,11 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="time" />
  <concept name="ont::root" />
- <sem-feats>
+ <concept name="ont::time-object">
  <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">
- <or>
-  interval
-  point
- </or>
- </feat>
- <feat name="time-function">any-time-function</feat>
- </sem-feats>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">
- <or>
-  point
-  interval
- </or>
- </feat>
- </sem-feats>
- <concept name="ont::any-time-object">
- <relation label="inherit">
-  ont::any-sem
+  ont::any-time-object
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -89,14 +62,19 @@
   </relation>
   <feat name="time-scale">
   <or>
-   interval
    point
+   interval
   </or>
   </feat>
-  <feat name="time-function">any-time-function</feat>
  </sem-feats>
  </concept>
- <concept name="time" />
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="scale">duration-scale</feat>
+ <feat name="time-scale">interval</feat>
+ </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::extent" optional="optional">
   <sem-feats>
@@ -124,16 +102,9 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <sem-feats>
+ <concept name="ont::any-time-object">
  <relation label="inherit">
-  time
- </relation>
- <feat name="scale">duration-scale</feat>
- <feat name="time-scale">interval</feat>
- </sem-feats>
- <concept name="ont::time-object">
- <relation label="inherit">
-  ont::any-time-object
+  ont::any-sem
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -141,11 +112,63 @@
   </relation>
   <feat name="time-scale">
   <or>
-   point
    interval
+   point
   </or>
   </feat>
+  <feat name="time-function">any-time-function</feat>
  </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  point
+  interval
+ </or>
+ </feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  interval
+  point
+ </or>
+ </feat>
+ <feat name="time-function">any-time-function</feat>
+ </sem-feats>
+ <concept name="ont::time-span">
+ <relation label="inherit">
+  ont::time-interval
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::phase">
+ <comment>
+  &quot;e.g., phases of the moon, stage of the project. This type represents stages of a sequence that is more abstract than time.&quot;
+ </comment>
+ <relation label="inherit">
+  ont::time-interval
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::time-loc">
  <relation label="inherit">

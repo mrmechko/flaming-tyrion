@@ -28,35 +28,38 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="time" />
  <concept name="ont::root" />
+ <concept name="ont::time-object">
+ <relation label="inherit">
+  ont::any-time-object
+ </relation>
  <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">
- <or>
-  interval
-  point
- </or>
- </feat>
- <feat name="time-function">any-time-function</feat>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">
+  <or>
+   point
+   interval
+  </or>
+  </feat>
  </sem-feats>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
  </concept>
  <sem-feats>
  <relation label="inherit">
   time
  </relation>
- <feat name="time-scale">
- <or>
-  point
-  interval
- </or>
- </feat>
+ <feat name="time-scale">point</feat>
  </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::any-time-object">
  <relation label="inherit">
   ont::any-sem
@@ -74,37 +77,34 @@
   <feat name="time-function">any-time-function</feat>
  </sem-feats>
  </concept>
- <concept name="time" />
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
   time
  </relation>
- <feat name="time-scale">point</feat>
+ <feat name="time-scale">
+ <or>
+  point
+  interval
+ </or>
+ </feat>
  </sem-feats>
- <concept name="ont::time-object">
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::any-time-object
+  ont::root
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="time-scale">
-  <or>
-   point
-   interval
-  </or>
-  </feat>
- </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  interval
+  point
+ </or>
+ </feat>
+ <feat name="time-function">any-time-function</feat>
+ </sem-feats>
  <sense>
  <morph>
   <pos pos="n" />
@@ -125,9 +125,13 @@
  </relation>
  <syntax>
   <template-call template="ont::other-reln-templ" xp="'(w::pp
-                                                        (w::or w::for w::of))" />
+                                                        (w::or
+                                                          w::for
+                                                          w::of))" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or w::for w::of)" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or
+                                                           w::for
+                                                           w::of)" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>

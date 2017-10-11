@@ -24,17 +24,6 @@
  </relation>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <comment>
@@ -54,65 +43,20 @@
  </or>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::abstract-object">
+ <concept name="ont::abstract-object-nontemporal">
  <comment>
-  &quot;abstract objects, mental constructions, with no physical realization&quot;
- </comment>
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00::|
-  wn::|abstraction%1:03:00::|
-  wn::|abstract_entity%1:03:00::|
- </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
- </concept>
- <concept name="ont::domain">
- <comment>
-  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
+  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
- </relation>
- <relation label="overlap">
-  wn::|attribute%1:03:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::ordered-domain">
- <relation label="inherit">
-  ont::domain
- </relation>
- </concept>
- <concept name="ont::ordered-continuous">
- <relation label="inherit">
-  ont::ordered-domain
- </relation>
- </concept>
- <concept name="ont::stage-scale">
- <relation label="inherit">
-  ont::ordered-continuous
+  abstr-obj
  </relation>
  </concept>
  <sem-frame>
@@ -130,14 +74,31 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::body-condition-scale">
+ <concept name="ont::attribute">
  <relation label="inherit">
-  ont::stage-scale
+  ont::abstract-object-nontemporal
  </relation>
+ <relation label="overlap">
+  wn::|dimension%1:09:00::|
+  wn::|attribute%1:09:00::|
+  wn::|property%1:09:00::|
+  wn::|property%1:07:00::|
+  wn::|holding%1:21:00::|
+  wn::|belongings%1:21:00::|
+  wn::|property%1:21:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::medical-disorders-and-conditions">
  <relation label="inherit">
-  ont::body-condition-scale
+  ont::attribute
  </relation>
  <relation label="overlap">
   wn::|disorder%1:26:03::|
@@ -163,19 +124,36 @@
   ont::medical-disorders-and-conditions
  </relation>
  <relation label="overlap">
-  wn::|health_problem%1:26:00::|
-  wn::|unhealthiness%1:26:00::|
-  wn::|ill_health%1:26:00::|
-  wn::|illness%1:26:00::|
-  wn::|unwellness%1:26:00::|
-  wn::|malady%1:26:00::|
-  wn::|sickness%1:26:00::|
+  wn::|disease%1:26:00::|
   wn::|ailment%1:26:00::|
-  wn::|ill%1:26:00::|
   wn::|abnormality%1:26:00::|
-  wn::|abnormalcy%1:26:00::|
  </relation>
  </concept>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <sense>
  <morph>
   <pos pos="n" />

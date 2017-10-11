@@ -8,17 +8,6 @@
  </relation>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <comment>
@@ -96,6 +85,17 @@
   ont::position-reln
  </relation>
  </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::here">
  <relation label="inherit">
   ont::pos-wrt-speaker-reln
@@ -134,7 +134,10 @@
   <template-call template="ont::ppword-adv-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="t" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or s np vp)" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or
+                                              s
+                                              np
+                                              vp)" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">

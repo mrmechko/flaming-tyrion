@@ -14,6 +14,7 @@
   wn::|group%1:27:00::|
   wn::|group%1:03:00::|
   wn::|grouping%1:03:00::|
+  wn::|union%1:14:01::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -22,46 +23,6 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
- <concept name="phys-obj" />
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="intentional">-</feat>
- </sem-feats>
- <concept name="ont::referential-sem">
- <comment>
-  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
- </comment>
- <relation label="inherit">
-  ont::any-sem
- </relation>
- <relation label="overlap">
-  wn::|entity%1:03:00::|
- </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::phys-object">
  <comment>
   &quot;All physical objects: things that have substance&quot;
@@ -80,6 +41,46 @@
   <feat name="intentional">-</feat>
  </sem-feats>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="phys-obj" />
  <concept name="ont::system">
  <comment>
   &quot;An interconnected group of objects, abstract or physical&quot;
@@ -130,6 +131,16 @@
   wn::|aggregation%1:14:00::|
   wn::|accumulation%1:14:00::|
   wn::|assemblage%1:14:01::|
+  wn::|array%1:14:00::|
+  wn::|array%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::surplus">
+ <relation label="inherit">
+  ont::group-object
+ </relation>
+ <relation label="overlap">
+  wn::|surplus%1:07:00::|
  </relation>
  </concept>
  <concept name="ont::sequence">
@@ -364,6 +375,19 @@
    <feat name="sort">classifier</feat>
   </syn-feats>
  </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="union" />
+ </morph>
+ <comment>
+  &quot;Y3-TEST-DATA&quot;
+ </comment>
+ <relation label="inherit">
+  ont::group-object
+  ont::count-pred-templ
+ </relation>
  </sense>
  <sense>
  <morph>

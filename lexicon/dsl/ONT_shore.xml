@@ -39,17 +39,6 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -73,12 +62,72 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="ont::geo-formation">
+ <relation label="inherit">
+  ont::geo-object
+ </relation>
+ <relation label="overlap">
+  wn::|land%1:17:00::|
+  wn::|grassland%1:15:00::|
+  wn::|formation%1:17:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">natural</feat>
+ </sem-feats>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="container">+</feat>
- <feat name="form">geographical-object</feat>
+ <feat name="mobility">fixed</feat>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  line
+ </or>
+ </feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="spatial-abstraction">
+   <or>
+    strip
+    spatial-region
+   </or>
+   </feat>
+   <feat name="form">geographical-object</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::geo-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|location%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="form">geographical-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">natural</feat>
  </sem-feats>
  <concept name="ont::phys-object">
  <comment>
@@ -102,70 +151,21 @@
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="trajectory">-</feat>
- <feat name="origin">natural</feat>
+ <feat name="container">+</feat>
+ <feat name="form">geographical-object</feat>
  </sem-feats>
- <concept name="ont::geo-object">
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::phys-object
+  ont::root
  </relation>
- <relation label="overlap">
-  wn::|location%1:03:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="container">+</feat>
-  <feat name="form">geographical-object</feat>
- </sem-feats>
  </concept>
- <concept name="phys-obj" />
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="spatial-abstraction">
-   <or>
-    strip
-    spatial-region
-   </or>
-   </feat>
-   <feat name="form">geographical-object</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="mobility">fixed</feat>
- <feat name="spatial-abstraction">
  <or>
-  spatial-point
-  line
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
  </or>
- </feat>
- </sem-feats>
- <concept name="ont::geo-formation">
- <relation label="inherit">
-  ont::geo-object
- </relation>
- <relation label="overlap">
-  wn::|land%1:17:00::|
-  wn::|grassland%1:15:00::|
-  wn::|formation%1:17:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="origin">natural</feat>
- </sem-feats>
- </concept>
+ <concept name="phys-obj" />
  <sense>
  <morph>
   <pos pos="n" />

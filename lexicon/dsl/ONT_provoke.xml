@@ -29,17 +29,6 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
- </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   situation
@@ -64,57 +53,6 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::beneficiary" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="type">position-reln</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">dynamic</feat>
- </sem-feats>
- <concept name="ont::situation-root">
- <comment>
-  &quot;root for all events, whether verbal or nominal&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="container">-</feat>
-  <feat name="information">mental-construct</feat>
-  <feat name="intentional">-</feat>
- </sem-feats>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::agent">
@@ -174,121 +112,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="situation" />
- <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::event-of-action">
- <comment>
-  &quot;events that involve :agent (whether intentional or not)&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-change
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">force</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="type">
-   <or>
-    situation-root
-    property-val
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">
- <or>
-  force
-  agentive
- </or>
- </feat>
- </sem-feats>
- <concept name="ont::acting">
- <comment>
-  &quot;abstract event of doing something: behave, activity, ...&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-action
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::cause-effect">
  <comment>
   &quot;an AGENT causes some event to occur or proposition to become true. Usually the verbs that fall under this category are very general causal verbs that take other events as their arguments and are positive causes- i.e., events are caused to happen as opposed to negative causes as in an event is prevented.&quot;
@@ -353,6 +176,183 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::acting">
+ <comment>
+  &quot;abstract event of doing something: behave, activity, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-action
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">
+ <or>
+  force
+  agentive
+ </or>
+ </feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="type">
+   <or>
+    situation-root
+    property-val
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-action">
+ <comment>
+  &quot;events that involve :agent (whether intentional or not)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">position-reln</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="situation" />
  <sense>
  <morph>
   <pos pos="v" />
@@ -370,10 +370,12 @@
  <syntax>
   <template-call template="ont::agent-effect-affected-optional-templ" xp="'(w::pp
                                                                             (w::or
-                                                                             w::in
-                                                                             w::from))" />
+                                                                              w::in
+                                                                              w::from))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::in w::from)" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::in
+                                                          w::from)" sem-role="ont::affected" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -463,10 +465,12 @@
  <syntax>
   <template-call template="ont::agent-effect-affected-optional-templ" xp="'(w::pp
                                                                             (w::or
-                                                                             w::from
-                                                                             w::by))" />
+                                                                              w::from
+                                                                              w::by))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::from w::by)" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::from
+                                                          w::by)" sem-role="ont::affected" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -509,10 +513,12 @@
  <syntax>
   <template-call template="ont::agent-effect-affected-optional-templ" xp="'(w::pp
                                                                             (w::or
-                                                                             w::from
-                                                                             w::by))" />
+                                                                              w::from
+                                                                              w::by))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::from w::by)" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::from
+                                                          w::by)" sem-role="ont::affected" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -555,10 +561,12 @@
  <syntax>
   <template-call template="ont::agent-effect-affected-optional-templ" xp="'(w::pp
                                                                             (w::or
-                                                                             w::from
-                                                                             w::in))" />
+                                                                              w::from
+                                                                              w::in))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::from w::in)" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::from
+                                                          w::in)" sem-role="ont::affected" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -741,10 +749,12 @@
  <syntax>
   <template-call template="ont::agent-affected-effect-templ" xp="'(w::pp
                                                                    (w::or
-                                                                    w::into
-                                                                    w::to))" />
+                                                                     w::into
+                                                                     w::to))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::into w::to)" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::into
+                                                          w::to)" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -810,13 +820,14 @@
  <syntax>
   <template-call template="ont::agent-effect-affected-optional-templ" xp="'(w::pp
                                                                             (w::or
-                                                                             w::from
-                                                                             w::in
-                                                                             w::among))" />
+                                                                              w::from
+                                                                              w::in
+                                                                              w::among))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::from
-                                                               w::in
-                                                               w::among)" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::from
+                                                          w::in
+                                                          w::among)" sem-role="ont::affected" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -859,10 +870,12 @@
  <syntax>
   <template-call template="ont::agent-effect-affected-optional-templ" xp="'(w::pp
                                                                             (w::or
-                                                                             w::in
-                                                                             w::among))" />
+                                                                              w::in
+                                                                              w::among))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::in w::among)" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::in
+                                                          w::among)" sem-role="ont::affected" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -950,10 +963,12 @@
  <syntax>
   <template-call template="ont::agent-affected-effect-optional-templ" xp="'(w::pp
                                                                             (w::or
-                                                                             w::into
-                                                                             w::to))" />
+                                                                              w::into
+                                                                              w::to))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::into w::to)" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::into
+                                                          w::to)" sem-role="ont::formal" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -973,10 +988,12 @@
  <syntax>
   <template-call template="ont::agent-affected-effect-optional-templ" xp="'(w::pp
                                                                             (w::or
-                                                                             w::into
-                                                                             w::to))" />
+                                                                              w::into
+                                                                              w::to))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::into w::to)" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::into
+                                                          w::to)" sem-role="ont::formal" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1242,10 +1259,12 @@
  <syntax>
   <template-call template="ont::agent-effect-affected-optional-templ" xp="'(w::pp
                                                                             (w::or
-                                                                             w::in
-                                                                             w::from))" />
+                                                                              w::in
+                                                                              w::from))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::in w::from)" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::in
+                                                          w::from)" sem-role="ont::affected" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1311,10 +1330,12 @@
  <syntax>
   <template-call template="ont::agent-effect-affected-optional-templ" xp="'(w::pp
                                                                             (w::or
-                                                                             w::in
-                                                                             w::among))" />
+                                                                              w::in
+                                                                              w::among))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::in w::among)" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::in
+                                                          w::among)" sem-role="ont::affected" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1343,10 +1364,12 @@
  <syntax>
   <template-call template="ont::agent-affected-effect-optional-templ" xp="'(w::pp
                                                                             (w::or
-                                                                             w::into
-                                                                             w::to))" />
+                                                                              w::into
+                                                                              w::to))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::into w::to)" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::into
+                                                          w::to)" sem-role="ont::formal" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
@@ -1389,10 +1412,12 @@
  <syntax>
   <template-call template="ont::agent-effect-affected-optional-templ" xp="'(w::pp
                                                                             (w::or
-                                                                             w::in
-                                                                             w::among))" />
+                                                                              w::in
+                                                                              w::among))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or w::in w::among)" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="(w::or
+                                                          w::in
+                                                          w::among)" sem-role="ont::affected" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
