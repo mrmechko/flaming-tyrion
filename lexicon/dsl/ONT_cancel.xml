@@ -549,9 +549,46 @@
   ont::cancel
  </relation>
  <syntax>
-  <template-call template="ont::agent-neutral-xp-templ" />
+  <template-call template="ont::agent-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="forget" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="forgetting" />
+   </ing>
+   <past>
+    <word first-word="forgot" />
+   </past>
+   <pastpart>
+    <word first-word="forgotten" />
+   </pastpart>
+  </forms>
+ </morph>
+ <example text="forget about the problem">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cancel
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" xp="'(w::pp w::about)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::about" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

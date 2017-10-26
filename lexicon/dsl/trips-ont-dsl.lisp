@@ -28859,11 +28859,11 @@
        (OBJECT-FUNCTION CURRENCY)
        (SCALE MONEY-SCALE)))
     (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (OBJECT-FUNCTION CURRENCY)
-       (SCALE MONEY-SCALE)))))
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)))))
 
 (CONCEPT
   ONT::VALUE-COST
@@ -28886,11 +28886,11 @@
        (OBJECT-FUNCTION CURRENCY)
        (SCALE MONEY-SCALE)))
     (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (OBJECT-FUNCTION CURRENCY)
-       (SCALE MONEY-SCALE)))))
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)))))
 
 (CONCEPT
   ONT::VEGETABLE
