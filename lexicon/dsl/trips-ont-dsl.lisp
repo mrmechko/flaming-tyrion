@@ -11420,6 +11420,18 @@
     (OBJECT-FUNCTION COMESTIBLE)))
 
 (CONCEPT
+  ONT::FOOD-GRAINS
+  (COMMENT "grains and grain products for food")
+  (INHERIT
+    ONT::FOOD)
+  (OVERLAP
+    WN::|grain%1:13:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (ORIGIN NATURAL)))
+
+(CONCEPT
   ONT::FOOD-MEASURE-UNIT
   (INHERIT
     ONT::MEASURE-UNIT)
@@ -12233,17 +12245,10 @@
 (CONCEPT
   ONT::GRAINS
   (INHERIT
-    ONT::FOOD)
+    ONT::PLANT)
   (OVERLAP
-    WN::|grain%1:13:00::|
-    WN::|food_grain%1:13:00::|
-    WN::|cereal%1:13:00::|
     WN::|grain%1:20:00::|
-    WN::|caryopsis%1:20:00::|)
-  (SEM-FEATS
-    (INHERIT
-      PHYS-OBJ)
-    (ORIGIN NATURAL)))
+    WN::|cereal%1:20:00::|))
 
 (CONCEPT
   ONT::GRAPHIC-SYMBOL
@@ -15077,7 +15082,7 @@
     (ONT::AFFECTED
      (SEM-FEATS
        (INHERIT
-         PHYS-OBJ)
+         ABSTR-OBJ)
        (ORIGIN LIVING))
      OPTIONAL)))
 

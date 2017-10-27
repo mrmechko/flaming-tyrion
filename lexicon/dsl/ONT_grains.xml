@@ -4,21 +4,12 @@
  <provenance name="TRIPS"/>
  <concept name="ont::grains">
  <relation label="inherit">
-  ont::food
+  ont::plant
  </relation>
  <relation label="overlap">
-  wn::|grain%1:13:00::|
-  wn::|food_grain%1:13:00::|
-  wn::|cereal%1:13:00::|
   wn::|grain%1:20:00::|
-  wn::|caryopsis%1:20:00::|
+  wn::|cereal%1:20:00::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="origin">natural</feat>
- </sem-feats>
  </concept>
  <concept name="ont::root" />
  <sem-feats>
@@ -44,67 +35,72 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::material">
+ <concept name="ont::plant">
+ <relation label="inherit">
+  ont::organism
+ </relation>
+ <relation label="overlap">
+  wn::|tracheophyte%1:20:00::|
+  wn::|vascular_plant%1:20:00::|
+  wn::|plant%1:03:00::|
+  wn::|flora%1:03:00::|
+  wn::|plant_life%1:03:00::|
+  wn::|cultivar%1:20:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">plant</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::organism">
+ <relation label="inherit">
+  ont::natural-object
+ </relation>
+ <relation label="overlap">
+  wn::|organism%1:03:00::|
+  wn::|being%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">living</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">plant</feat>
+ </sem-feats>
+ <concept name="ont::natural-object">
  <relation label="inherit">
   ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|material%1:27:00::|
-  wn::|stuff%1:27:00::|
+  wn::|natural_object%1:03:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="form">substance</feat>
-  <feat name="mobility">non-self-moving</feat>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+  </or>
+  </feat>
+  <feat name="origin">natural</feat>
  </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="form">solid</feat>
- <feat name="object-function">comestible</feat>
+ <feat name="origin">living</feat>
  </sem-feats>
- <concept name="ont::substance">
- <relation label="inherit">
-  ont::material
- </relation>
- <relation label="overlap">
-  wn::|substance%1:03:00::|
-  wn::|substance%1:03:01::|
-  wn::|substance%1:27:00::|
-  wn::|matter%1:03:00::|
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="origin">natural</feat>
- </sem-feats>
- <concept name="ont::food">
- <relation label="inherit">
-  ont::substance
- </relation>
- <relation label="overlap">
-  wn::|solid_food%1:13:00::|
-  wn::|food%1:13:00::|
-  wn::|meal%1:13:01::|
-  wn::|meal%1:13:00::|
-  wn::|food%1:03:00::|
-  wn::|nutrient%1:03:00::|
-  wn::|nutriment%1:13:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="form">solid</feat>
-  <feat name="object-function">comestible</feat>
- </sem-feats>
- </concept>
  <concept name="ont::phys-object">
  <comment>
   &quot;All physical objects: things that have substance&quot;
@@ -127,8 +123,13 @@
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="form">substance</feat>
- <feat name="mobility">non-self-moving</feat>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="origin">natural</feat>
  </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
