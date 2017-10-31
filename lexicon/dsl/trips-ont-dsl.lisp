@@ -3686,10 +3686,6 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (ORIGIN
-        (OR
-          ARTIFACT
-          NON-LIVING))
        (FORM
         (OR
           OBJECT
@@ -15051,7 +15047,8 @@
   (INHERIT
     ONT::ABSTRACT-OBJECT)
   (OVERLAP
-    WN::|level%1:26:00::|)
+    WN::|level%1:26:00::|
+    WN::|level%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -15330,11 +15327,18 @@
   (OVERLAP
     WN::|exist%2:42:01::|
     WN::|live%2:42:06::|
-    WN::|live%2:42:07::|)
+    WN::|live%2:42:07::|
+    WN::|survive%2:42:01::|
+    WN::|survive%2:42:02::|
+    WN::|survive%2:42:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
-    (ASPECT DYNAMIC)))
+    (ASPECT DYNAMIC))
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::LIVER-DISEASE
@@ -16025,8 +16029,11 @@
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
        (MEASURE-FUNCTION TERM)))))
 
 (CONCEPT
@@ -26065,7 +26072,12 @@
     WN::|status%1:26:01::|
     WN::|state%1:26:02::|
     WN::|state_of_matter%1:26:00::|
-    WN::|state%1:03:00::|))
+    WN::|state%1:03:00::|)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::STATUS-PROPERTY-SCALE
@@ -26774,29 +26786,6 @@
       SITUATION)
     (TIME-SPAN EXTENDED)
     (ASPECT STAGE-LEVEL)))
-
-(CONCEPT
-  ONT::SURVIVE
-  (INHERIT
-    ONT::LIVE)
-  (OVERLAP
-    WN::|outlive%2:42:00::|
-    WN::|outlast%2:42:00::|
-    WN::|survive%2:42:03::|
-    WN::|endure%2:42:00::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (ASPECT DYNAMIC))
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION)))))
 
 (CONCEPT
   ONT::SWEAR

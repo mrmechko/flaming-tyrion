@@ -4225,12 +4225,6 @@
      <relation label="inherit">
       phys-obj
      </relation>
-     <feat name="origin">
-     <or>
-      artifact
-      non-living
-     </or>
-     </feat>
      <feat name="form">
      <or>
       object
@@ -17161,6 +17155,7 @@
   </relation>
   <relation label="overlap">
    wn::|level%1:26:00::|
+   wn::|level%1:07:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -17497,6 +17492,9 @@
    wn::|exist%2:42:01::|
    wn::|live%2:42:06::|
    wn::|live%2:42:07::|
+   wn::|survive%2:42:01::|
+   wn::|survive%2:42:02::|
+   wn::|survive%2:42:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -17504,6 +17502,11 @@
    </relation>
    <feat name="aspect">dynamic</feat>
   </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::neutral">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::liver-disease">
   <relation label="inherit">
@@ -18309,9 +18312,10 @@
   <sem-frame>
    <role-restr-map roles="ont::figure">
     <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
+     <or>
+      <concept name="abstr-obj" />
+      <concept name="situation" />
+     </or>
      <feat name="measure-function">term</feat>
     </sem-feats>
    </role-restr-map>
@@ -29686,6 +29690,11 @@
    wn::|state_of_matter%1:26:00::|
    wn::|state%1:03:00::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::status-property-scale">
   <relation label="inherit">
@@ -30485,32 +30494,6 @@
    <feat name="time-span">extended</feat>
    <feat name="aspect">stage-level</feat>
   </sem-feats>
- </concept>
- <concept name="ont::survive">
-  <relation label="inherit">
-   ont::live
-  </relation>
-  <relation label="overlap">
-   wn::|outlive%2:42:00::|
-   wn::|outlast%2:42:00::|
-   wn::|survive%2:42:03::|
-   wn::|endure%2:42:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::affected">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::swear">
   <relation label="inherit">
