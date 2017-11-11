@@ -46,47 +46,27 @@
   abstr-obj
  </relation>
  </concept>
- <concept name="ont::medical-disorders-and-conditions">
- <relation label="inherit">
-  ont::attribute
- </relation>
- <relation label="overlap">
-  wn::|disorder%1:26:03::|
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::disease">
+ <sem-feats>
  <relation label="inherit">
-  ont::medical-disorders-and-conditions
+  abstr-obj
  </relation>
- <relation label="overlap">
-  wn::|disease%1:26:00::|
-  wn::|ailment%1:26:00::|
-  wn::|abnormality%1:26:00::|
- </relation>
- </concept>
- <concept name="ont::arthritis">
- <relation label="inherit">
-  ont::disease
- </relation>
- <relation label="overlap">
-  wn::|arthritis%1:26:00::|
- </relation>
- </concept>
+ <feat name="container">+</feat>
+ </sem-feats>
  <concept name="ont::attribute">
  <relation label="inherit">
   ont::abstract-object-nontemporal
@@ -109,21 +89,53 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::arthritis">
+ <relation label="inherit">
+  ont::disease
+ </relation>
+ <relation label="overlap">
+  wn::|arthritis%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::disease">
+ <relation label="inherit">
+  ont::medical-disorders-and-conditions
+ </relation>
+ <relation label="overlap">
+  wn::|disease%1:26:00::|
+  wn::|ailment%1:26:00::|
+  wn::|abnormality%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::medical-disorders-and-conditions">
+ <relation label="inherit">
+  ont::attribute
+ </relation>
+ <relation label="overlap">
+  wn::|disorder%1:26:03::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="container">+</feat>
+ </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
  </sem-frame>
+ </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

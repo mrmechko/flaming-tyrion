@@ -13418,12 +13418,7 @@
          (CONCEPT
            ABSTR-OBJ))
        (CONTAINER +)
-       (INTENTIONAL -)
-       (TYPE
-        (OR
-          PHYS-OBJECT
-          INFORMATION-FUNCTION-OBJECT
-          MENTAL-CONSTRUCTION))))))
+       (INTENTIONAL -)))))
 
 (CONCEPT
   ONT::IN-RELATION
@@ -16208,6 +16203,10 @@
     ONT::ATTRIBUTE)
   (OVERLAP
     WN::|disorder%1:26:03::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (CONTAINER +))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -27211,7 +27210,11 @@
     ONT::MEASURE-SCALE)
   (OVERLAP
     WN::|temperature%1:07:00::|
-    WN::|temperature%1:09:00::|))
+    WN::|temperature%1:09:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE TEMPERATURE-SCALE)))
 
 (CONCEPT
   ONT::TEMPERATURE-SCALE
