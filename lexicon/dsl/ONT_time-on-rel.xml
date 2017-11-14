@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::time-weekday-rel">
+ <concept name="ont::time-on-rel">
  <relation label="inherit">
   ont::temporal-location
  </relation>
@@ -12,7 +12,7 @@
     <relation label="inherit">
      time
     </relation>
-    <feat name="time-function">day-of-week</feat>
+    <feat name="type">date-object-on</feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
@@ -36,12 +36,6 @@
   <concept name="proposition" />
  </or>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">time-measure-scale</feat>
- </sem-feats>
  <concept name="ont::predicate">
  <comment>
   &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as)&quot;
@@ -89,7 +83,7 @@
    <relation label="inherit">
     time
    </relation>
-   <feat name="time-function">day-of-week</feat>
+   <feat name="type">date-object-on</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
@@ -126,13 +120,8 @@
  <concept name="ont::temporal-predicate">
  <relation label="inherit">
   ont::predicate
+  abstr-obj
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">time-measure-scale</feat>
- </sem-feats>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::standard">
@@ -205,7 +194,7 @@
  <example text="he departed on Monday">
  </example>
  <relation label="inherit">
-  ont::time-weekday-rel
+  ont::time-on-rel
  </relation>
  <syntax>
   <template-call template="ont::binary-constraint-s-or-np-templ" />
@@ -241,7 +230,7 @@
  <example text="the device placed on that day">
  </example>
  <relation label="inherit">
-  ont::time-weekday-rel
+  ont::time-on-rel
   ont::binary-constraint-adj-postpos-templ
  </relation>
  </sense>

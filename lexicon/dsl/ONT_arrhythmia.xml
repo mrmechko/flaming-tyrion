@@ -12,7 +12,14 @@
  </relation>
  </concept>
  <concept name="ont::root" />
- <concept name="abstr-obj" />
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -30,97 +37,14 @@
   <concept name="proposition" />
  </or>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::abstract-object-nontemporal">
- <comment>
-  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
- </comment>
- <relation label="inherit">
-  ont::abstract-object
-  abstr-obj
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="container">+</feat>
- </sem-feats>
- <concept name="ont::attribute">
- <relation label="inherit">
-  ont::abstract-object-nontemporal
- </relation>
- <relation label="overlap">
-  wn::|dimension%1:09:00::|
-  wn::|attribute%1:09:00::|
-  wn::|property%1:09:00::|
-  wn::|property%1:07:00::|
-  wn::|holding%1:21:00::|
-  wn::|belongings%1:21:00::|
-  wn::|property%1:21:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::cardiovascular-disease">
- <relation label="inherit">
-  ont::disease
- </relation>
- <relation label="overlap">
-  wn::|cardiovascular_disease%1:26:00::|
- </relation>
- </concept>
- <concept name="ont::disease">
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
- </relation>
- <relation label="overlap">
-  wn::|disease%1:26:00::|
-  wn::|ailment%1:26:00::|
-  wn::|abnormality%1:26:00::|
- </relation>
- </concept>
  <concept name="ont::medical-disorders-and-conditions">
- <relation label="inherit">
-  ont::attribute
- </relation>
  <relation label="overlap">
   wn::|disorder%1:26:03::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="container">+</feat>
- </sem-feats>
+ <relation label="inherit">
+  ont::event-type
+  situation
+ </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
    <sem-feats>
@@ -137,20 +61,76 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::abstract-object">
- <comment>
-  &quot;abstract objects, mental constructions, with no physical realization&quot;
- </comment>
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00::|
-  wn::|abstraction%1:03:00::|
-  wn::|abstract_entity%1:03:00::|
- </relation>
+ <concept name="ont::disease">
  <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
+  ont::medical-disorders-and-conditions
+ </relation>
+ <relation label="overlap">
+  wn::|disease%1:26:00::|
+  wn::|ailment%1:26:00::|
+  wn::|abnormality%1:26:00::|
  </relation>
  </concept>
+ <concept name="ont::cardiovascular-disease">
+ <relation label="inherit">
+  ont::disease
+ </relation>
+ <relation label="overlap">
+  wn::|cardiovascular_disease%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::event-type">
+ <comment>
+  &quot;classification of situated events based on social or other criteria, and typically realized by nominals, i.e.,
+        they are not nominalization of verbal events&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="intentional">-</feat>
+ </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -162,6 +142,7 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
+ <concept name="situation" />
  <sense>
  <morph>
   <pos pos="n" />

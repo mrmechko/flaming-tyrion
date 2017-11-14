@@ -7402,6 +7402,8 @@
 
 (CONCEPT
   ONT::DATE-OBJECT
+  (COMMENT
+   "classification of time intervals with respect to some conceptual organization (e.g., calendar)")
   (INHERIT
     ONT::TIME-OBJECT)
   (OVERLAP
@@ -7410,7 +7412,20 @@
   (SEM-FEATS
     (INHERIT
       TIME)
+    (TIME-SCALE INTERVAL)
     (TIME-FUNCTION TIME-OF-YEAR)))
+
+(CONCEPT
+  ONT::DATE-OBJECT-IN
+  (COMMENT "date objects that use IN - e.g., in June")
+  (INHERIT
+    ONT::TIME-OBJECT))
+
+(CONCEPT
+  ONT::DATE-OBJECT-ON
+  (COMMENT "date objects that use ON - e.g., on Monday, on my birthday")
+  (INHERIT
+    ONT::TIME-OBJECT))
 
 (CONCEPT
   ONT::DAY-DURATION
@@ -7420,7 +7435,7 @@
 (CONCEPT
   ONT::DAY-NAME
   (INHERIT
-    ONT::DATE-OBJECT)
+    ONT::DATE-OBJECT-ON)
   (OVERLAP
     WN::|day_of_the_week%1:28:00::|)
   (SEM-FEATS
@@ -9583,7 +9598,7 @@
 (CONCEPT
   ONT::ERA
   (INHERIT
-    ONT::DATE-OBJECT)
+    ONT::DATE-OBJECT-IN)
   (SEM-FEATS
     (INHERIT
       TIME)
@@ -9743,6 +9758,10 @@
   ONT::EVENT-DURATION-MODIFIER
   (INHERIT
     ONT::TEMPORAL-MODIFIER)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE DURATION-SCALE))
   (SEM-FRAME
     (ONT::GROUND
      (SEM-FEATS
@@ -9751,7 +9770,6 @@
            ABSTR-OBJ)
          (CONCEPT
            TIME))
-       (TYPE TIME-UNIT)
        (SCALE DURATION-SCALE)))
     (ONT::FIGURE
      (OR
@@ -9810,13 +9828,15 @@
     SITUATION)
   (SEM-FRAME
     (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION)))))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)))))
 
 (CONCEPT
   ONT::EVENT-OF-CHANGE
@@ -9845,13 +9865,15 @@
        (TYPE POSITION-RELN))
      OPTIONAL)
     (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AGENT
      (OR
@@ -9872,13 +9894,15 @@
     SITUATION)
   (SEM-FRAME
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::RESULT
      (OR
@@ -9935,13 +9959,15 @@
     SITUATION)
   (SEM-FRAME
     (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION)))))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)))))
 
 (CONCEPT
   ONT::EVENT-TIME
@@ -9984,6 +10010,9 @@
 
 (CONCEPT
   ONT::EVENT-TYPE
+  (COMMENT
+   "classification of situated events based on social or other criteria, and typically realized by nominals, i.e.,
+        they are not nominalization of verbal events")
   (INHERIT
     ONT::SITUATION-ROOT)
   (SEM-FEATS
@@ -11731,7 +11760,7 @@
 (CONCEPT
   ONT::FUNCTION-OBJECT
   (INHERIT
-    ONT::ABSTRACT-OBJECT-NONTEMPORAL
+    ONT::TANGIBLE-ABSTRACT-OBJECT
     ABSTR-OBJ))
 
 (CONCEPT
@@ -12710,19 +12739,23 @@
     (ASPECT STATIC))
   (SEM-FRAME
     (ONT::NEUTRAL1
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TANGIBLE +)))
     (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION)))))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)))))
 
 (CONCEPT
   ONT::HEADACHE
@@ -13038,8 +13071,9 @@
 
 (CONCEPT
   ONT::HOLIDAY
+  (COMMENT "recurring events based on religious or social activities")
   (INHERIT
-    ONT::VACATION))
+    ONT::RECURRING-EVENT))
 
 (CONCEPT
   ONT::HOMOGENEITY-VAL
@@ -15075,6 +15109,7 @@
      (SEM-FEATS
        (INHERIT
          ABSTR-OBJ)
+       (TANGIBLE +)
        (ORIGIN LIVING))
      OPTIONAL)))
 
@@ -16199,14 +16234,11 @@
 
 (CONCEPT
   ONT::MEDICAL-DISORDERS-AND-CONDITIONS
-  (INHERIT
-    ONT::ATTRIBUTE)
   (OVERLAP
     WN::|disorder%1:26:03::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (CONTAINER +))
+  (INHERIT
+    ONT::EVENT-TYPE
+    SITUATION)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -16382,7 +16414,7 @@
     (INHERIT
       SITUATION)
     (TIME-SPAN EXTENDED)
-    (ASPECT INDIV-LEVEL))
+    (ASPECT STAGE-LEVEL))
   (SEM-FRAME
     (ONT::NEUTRAL1
      (SEM-FEATS
@@ -16433,7 +16465,7 @@
   ONT::MENTAL-CONSTRUCTION
   (COMMENT "constructions of the mind: plans, goals, beliefs, ...")
   (INHERIT
-    ONT::ABSTRACT-OBJECT-NONTEMPORAL)
+    ONT::TANGIBLE-ABSTRACT-OBJECT)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -16472,7 +16504,7 @@
 (CONCEPT
   ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER
   (INHERIT
-    ONT::ATTRIBUTE)
+    ONT::EVENT-TYPE)
   (OVERLAP
     WN::|mental_illness%1:26:00::|
     WN::|mental_disorder%1:26:00::|))
@@ -16832,7 +16864,7 @@
 (CONCEPT
   ONT::MONTH-NAME
   (INHERIT
-    ONT::DATE-OBJECT)
+    ONT::DATE-OBJECT-IN)
   (OVERLAP
     WN::|calendar_month%1:28:00::|
     WN::|month%1:28:01::|)
@@ -18606,13 +18638,15 @@
     (ASPECT DYNAMIC))
   (SEM-FRAME
     (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::NEUTRAL
      (SEM-FEATS
@@ -19723,7 +19757,7 @@
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
-    (INTENTIONAL -)))
+    (TANGIBLE +)))
 
 (CONCEPT
   ONT::PHYS-REPRESENTATION
@@ -20495,7 +20529,7 @@
     (INHERIT
       SITUATION)
     (TIME-SPAN EXTENDED)
-    (ASPECT INDIV-LEVEL))
+    (ASPECT STAGE-LEVEL))
   (SEM-FRAME
     (ONT::NEUTRAL
      (SEM-FEATS
@@ -22129,6 +22163,12 @@
     ONT::SHAPE-VAL)
   (OVERLAP
     WN::|rectangular%5:00:00:angular:00|))
+
+(CONCEPT
+  ONT::RECURRING-EVENT
+  (COMMENT "events that recur every year (or some time interval)")
+  (INHERIT
+    ONT::DATE-OBJECT-ON))
 
 (CONCEPT
   ONT::RED
@@ -27086,6 +27126,17 @@
     WN::|tangible%3:00:00::|))
 
 (CONCEPT
+  ONT::TANGIBLE-ABSTRACT-OBJECT
+  (COMMENT
+   "abstract notions that act like things. They can be created, transfered, e.g., mental objects")
+  (INHERIT
+    ONT::ABSTRACT-OBJECT)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (TANGIBLE +)))
+
+(CONCEPT
   ONT::TANGIBLE-PROPERTY-VAL
   (INHERIT
     ONT::SENSORY-PROPERTY-VAL))
@@ -27303,11 +27354,8 @@
 (CONCEPT
   ONT::TEMPORAL-PREDICATE
   (INHERIT
-    ONT::PREDICATE)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (SCALE TIME-MEASURE-SCALE)))
+    ONT::PREDICATE
+    ABSTR-OBJ))
 
 (CONCEPT
   ONT::TEMPORAL-VAL
@@ -27607,7 +27655,7 @@
   (SEM-FEATS
     (INHERIT
       TIME)
-    (SCALE DURATION-SCALE)
+    (SCALE -)
     (TIME-SCALE INTERVAL))
   (SEM-FRAME
     (ONT::EXTENT
@@ -27658,6 +27706,17 @@
      (OR
        POINT
        INTERVAL))))
+
+(CONCEPT
+  ONT::TIME-ON-REL
+  (INHERIT
+    ONT::TEMPORAL-LOCATION)
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         TIME)
+       (TYPE DATE-OBJECT-ON)))))
 
 (CONCEPT
   ONT::TIME-POINT
@@ -27743,17 +27802,6 @@
          SITUATION)
        (CONCEPT
          ABSTR-OBJ)))))
-
-(CONCEPT
-  ONT::TIME-WEEKDAY-REL
-  (INHERIT
-    ONT::TEMPORAL-LOCATION)
-  (SEM-FRAME
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         TIME)
-       (TIME-FUNCTION DAY-OF-WEEK)))))
 
 (CONCEPT
   ONT::TINY
@@ -28845,7 +28893,7 @@
 (CONCEPT
   ONT::VALUE
   (INHERIT
-    ONT::ABSTRACT-OBJECT-NONTEMPORAL)
+    ONT::TANGIBLE-ABSTRACT-OBJECT)
   (OVERLAP
     WN::|value%1:07:00::|)
   (SEM-FRAME

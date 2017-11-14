@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::month-name">
  <relation label="inherit">
-  ont::date-object
+  ont::date-object-in
  </relation>
  <relation label="overlap">
   wn::|calendar_month%1:28:00::|
@@ -47,12 +47,6 @@
   <feat name="time-function">any-time-function</feat>
  </sem-feats>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-function">time-of-year</feat>
- </sem-feats>
  <concept name="ont::time-object">
  <relation label="inherit">
   ont::any-time-object
@@ -75,20 +69,13 @@
  </relation>
  <feat name="time-function">month-name</feat>
  </sem-feats>
- <concept name="ont::date-object">
+ <concept name="ont::date-object-in">
+ <comment>
+  &quot;date objects that use IN - e.g., in June&quot;
+ </comment>
  <relation label="inherit">
   ont::time-object
  </relation>
- <relation label="overlap">
-  wn::|date%1:28:03::|
-  wn::|time%1:03:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="time-function">time-of-year</feat>
- </sem-feats>
  </concept>
  <concept name="ont::any-sem">
  <relation label="inherit">

@@ -8413,6 +8413,9 @@
   </relation>
  </concept>
  <concept name="ont::date-object">
+  <comment>
+   &quot;classification of time intervals with respect to some conceptual organization (e.g., calendar)&quot;
+  </comment>
   <relation label="inherit">
    ont::time-object
   </relation>
@@ -8424,8 +8427,25 @@
    <relation label="inherit">
     time
    </relation>
+   <feat name="time-scale">interval</feat>
    <feat name="time-function">time-of-year</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::date-object-in">
+  <comment>
+   &quot;date objects that use IN - e.g., in June&quot;
+  </comment>
+  <relation label="inherit">
+   ont::time-object
+  </relation>
+ </concept>
+ <concept name="ont::date-object-on">
+  <comment>
+   &quot;date objects that use ON - e.g., on Monday, on my birthday&quot;
+  </comment>
+  <relation label="inherit">
+   ont::time-object
+  </relation>
  </concept>
  <concept name="ont::day-duration">
   <relation label="inherit">
@@ -8434,7 +8454,7 @@
  </concept>
  <concept name="ont::day-name">
   <relation label="inherit">
-   ont::date-object
+   ont::date-object-on
   </relation>
   <relation label="overlap">
    wn::|day_of_the_week%1:28:00::|
@@ -10874,7 +10894,7 @@
  </concept>
  <concept name="ont::era">
   <relation label="inherit">
-   ont::date-object
+   ont::date-object-in
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -11052,6 +11072,12 @@
   <relation label="inherit">
    ont::temporal-modifier
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">duration-scale</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::ground">
     <sem-feats>
@@ -11059,7 +11085,6 @@
       <concept name="abstr-obj" />
       <concept name="time" />
      </or>
-     <feat name="type">time-unit</feat>
      <feat name="scale">duration-scale</feat>
     </sem-feats>
    </role-restr-map>
@@ -11131,11 +11156,14 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected">
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-     <concept name="situation" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+      <concept name="situation" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -11167,11 +11195,14 @@
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::affected" optional="optional">
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::agent" optional="optional">
     <or>
@@ -11192,11 +11223,14 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected-result" optional="optional">
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::result" optional="optional">
     <or>
@@ -11263,11 +11297,14 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected">
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-     <concept name="situation" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+      <concept name="situation" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -11318,6 +11355,10 @@
   </relation>
  </concept>
  <concept name="ont::event-type">
+  <comment>
+   &quot;classification of situated events based on social or other criteria, and typically realized by nominals, i.e.,
+        they are not nominalization of verbal events&quot;
+  </comment>
   <relation label="inherit">
    ont::situation-root
   </relation>
@@ -13313,7 +13354,7 @@
  </concept>
  <concept name="ont::function-object">
   <relation label="inherit">
-   ont::abstract-object-nontemporal
+   ont::tangible-abstract-object
    abstr-obj
   </relation>
  </concept>
@@ -14447,17 +14488,23 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::neutral1">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::neutral">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+      <concept name="situation" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -14821,8 +14868,11 @@
   </relation>
  </concept>
  <concept name="ont::holiday">
+  <comment>
+   &quot;recurring events based on religious or social activities&quot;
+  </comment>
   <relation label="inherit">
-   ont::vacation
+   ont::recurring-event
   </relation>
  </concept>
  <concept name="ont::homogeneity-val">
@@ -17188,6 +17238,7 @@
      <relation label="inherit">
       abstr-obj
      </relation>
+     <feat name="tangible">+</feat>
      <feat name="origin">living</feat>
     </sem-feats>
    </role-restr-map>
@@ -18506,18 +18557,13 @@
   </relation>
  </concept>
  <concept name="ont::medical-disorders-and-conditions">
-  <relation label="inherit">
-   ont::attribute
-  </relation>
   <relation label="overlap">
    wn::|disorder%1:26:03::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="container">+</feat>
-  </sem-feats>
+  <relation label="inherit">
+   ont::event-type
+   situation
+  </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
     <sem-feats>
@@ -18726,7 +18772,7 @@
     situation
    </relation>
    <feat name="time-span">extended</feat>
-   <feat name="aspect">indiv-level</feat>
+   <feat name="aspect">stage-level</feat>
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::neutral1">
@@ -18795,7 +18841,7 @@
    &quot;constructions of the mind: plans, goals, beliefs, ...&quot;
   </comment>
   <relation label="inherit">
-   ont::abstract-object-nontemporal
+   ont::tangible-abstract-object
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -18836,7 +18882,7 @@
  </concept>
  <concept name="ont::mental-psychological-illness-or-disorder">
   <relation label="inherit">
-   ont::attribute
+   ont::event-type
   </relation>
   <relation label="overlap">
    wn::|mental_illness%1:26:00::|
@@ -19238,7 +19284,7 @@
  </concept>
  <concept name="ont::month-name">
   <relation label="inherit">
-   ont::date-object
+   ont::date-object-in
   </relation>
   <relation label="overlap">
    wn::|calendar_month%1:28:00::|
@@ -21259,11 +21305,14 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::affected" optional="optional">
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::neutral">
     <sem-feats>
@@ -22525,7 +22574,7 @@
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="intentional">-</feat>
+   <feat name="tangible">+</feat>
   </sem-feats>
  </concept>
  <concept name="ont::phys-representation">
@@ -23395,7 +23444,7 @@
     situation
    </relation>
    <feat name="time-span">extended</feat>
-   <feat name="aspect">indiv-level</feat>
+   <feat name="aspect">stage-level</feat>
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::neutral">
@@ -25263,6 +25312,14 @@
   </relation>
   <relation label="overlap">
    wn::|rectangular%5:00:00:angular:00|
+  </relation>
+ </concept>
+ <concept name="ont::recurring-event">
+  <comment>
+   &quot;events that recur every year (or some time interval)&quot;
+  </comment>
+  <relation label="inherit">
+   ont::date-object-on
   </relation>
  </concept>
  <concept name="ont::red">
@@ -30839,6 +30896,20 @@
    wn::|tangible%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::tangible-abstract-object">
+  <comment>
+   &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
+  </comment>
+  <relation label="inherit">
+   ont::abstract-object
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::tangible-property-val">
   <relation label="inherit">
    ont::sensory-property-val
@@ -31079,13 +31150,8 @@
  <concept name="ont::temporal-predicate">
   <relation label="inherit">
    ont::predicate
+   abstr-obj
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">time-measure-scale</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::temporal-val">
   <comment>
@@ -31443,7 +31509,7 @@
    <relation label="inherit">
     time
    </relation>
-   <feat name="scale">duration-scale</feat>
+   <feat name="scale">-</feat>
    <feat name="time-scale">interval</feat>
   </sem-feats>
   <sem-frame>
@@ -31505,6 +31571,21 @@
    </or>
    </feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::time-on-rel">
+  <relation label="inherit">
+   ont::temporal-location
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <sem-feats>
+     <relation label="inherit">
+      time
+     </relation>
+     <feat name="type">date-object-on</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::time-point">
   <relation label="inherit">
@@ -31604,21 +31685,6 @@
      <concept name="situation" />
      <concept name="abstr-obj" />
     </or>
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::time-weekday-rel">
-  <relation label="inherit">
-   ont::temporal-location
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <sem-feats>
-     <relation label="inherit">
-      time
-     </relation>
-     <feat name="time-function">day-of-week</feat>
-    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -32841,7 +32907,7 @@
  </concept>
  <concept name="ont::value">
   <relation label="inherit">
-   ont::abstract-object-nontemporal
+   ont::tangible-abstract-object
   </relation>
   <relation label="overlap">
    wn::|value%1:07:00::|

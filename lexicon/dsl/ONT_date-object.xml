@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::date-object">
+ <comment>
+  &quot;classification of time intervals with respect to some conceptual organization (e.g., calendar)&quot;
+ </comment>
  <relation label="inherit">
   ont::time-object
  </relation>
@@ -14,6 +17,7 @@
   <relation label="inherit">
    time
   </relation>
+  <feat name="time-scale">interval</feat>
   <feat name="time-function">time-of-year</feat>
  </sem-feats>
  </concept>
@@ -39,6 +43,7 @@
  <relation label="inherit">
   time
  </relation>
+ <feat name="time-scale">interval</feat>
  <feat name="time-function">time-of-year</feat>
  </sem-feats>
  <concept name="ont::any-time-object">
@@ -86,57 +91,6 @@
  </feat>
  <feat name="time-function">any-time-function</feat>
  </sem-feats>
- <concept name="ont::day-name">
- <relation label="inherit">
-  ont::date-object
- </relation>
- <relation label="overlap">
-  wn::|day_of_the_week%1:28:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="time-function">day-of-week</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::month-name">
- <relation label="inherit">
-  ont::date-object
- </relation>
- <relation label="overlap">
-  wn::|calendar_month%1:28:00::|
-  wn::|month%1:28:01::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="time-function">month-name</feat>
- </sem-feats>
- </concept>
- <concept name="ont::era">
- <relation label="inherit">
-  ont::date-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="time-function">era</feat>
- </sem-feats>
- </concept>
  <sense>
  <morph>
   <pos pos="n" />

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::day-name">
  <relation label="inherit">
-  ont::date-object
+  ont::date-object-on
  </relation>
  <relation label="overlap">
   wn::|day_of_the_week%1:28:00::|
@@ -57,12 +57,31 @@
   <feat name="time-function">any-time-function</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::date-object-on">
+ <comment>
+  &quot;date objects that use ON - e.g., on Monday, on my birthday&quot;
+ </comment>
+ <relation label="inherit">
+  ont::time-object
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   time
  </relation>
- <feat name="time-function">time-of-year</feat>
+ <feat name="time-function">day-of-week</feat>
  </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::time-object">
  <relation label="inherit">
   ont::any-time-object
@@ -77,38 +96,6 @@
    interval
   </or>
   </feat>
- </sem-feats>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-function">day-of-week</feat>
- </sem-feats>
- <concept name="ont::date-object">
- <relation label="inherit">
-  ont::time-object
- </relation>
- <relation label="overlap">
-  wn::|date%1:28:03::|
-  wn::|time%1:03:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="time-function">time-of-year</feat>
  </sem-feats>
  </concept>
  <concept name="ont::any-sem">
