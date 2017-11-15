@@ -126,6 +126,15 @@
   <feat name="trajectory">+</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::action-defined-by-game">
+ <relation label="inherit">
+  ont::event-defined-by-activity
+ </relation>
+ <relation label="overlap">
+  wn::|turn%1:04:06::|
+  wn::|move%1:04:02::|
+ </relation>
+ </concept>
  <concept name="ont::competition">
  <relation label="inherit">
   ont::event-defined-by-activity
@@ -133,6 +142,22 @@
  <relation label="overlap">
   wn::|competition%1:11:00::|
  </relation>
+ </concept>
+ <concept name="ont::medical-event">
+ <relation label="inherit">
+  ont::event-defined-by-activity
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::social-event">
  <relation label="inherit">
