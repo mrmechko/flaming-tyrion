@@ -16255,6 +16255,13 @@
   ONT::MEDICAL-EVENT
   (INHERIT
     ONT::EVENT-DEFINED-BY-ACTIVITY)
+  (OVERLAP
+    WN::|care%1:04:01::|
+    WN::|attention%1:04:01::|
+    WN::|aid%1:04:01::|
+    WN::|tending%1:04:00::|
+    WN::|regimen%1:09:00::|
+    WN::|regime%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -28129,18 +28136,6 @@
   (OVERLAP
     WN::|traveler%1:18:00::|
     WN::|traveller%1:18:00::|))
-
-(CONCEPT
-  ONT::TREATMENT
-  (INHERIT
-    ONT::PROCEDURE)
-  (OVERLAP
-    WN::|care%1:04:01::|
-    WN::|attention%1:04:01::|
-    WN::|aid%1:04:01::|
-    WN::|tending%1:04:00::|
-    WN::|regimen%1:09:00::|
-    WN::|regime%1:09:00::|))
 
 (CONCEPT
   ONT::TRI-VAL
