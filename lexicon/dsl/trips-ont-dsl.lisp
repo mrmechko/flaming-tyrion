@@ -10307,7 +10307,8 @@
     WN::|transpose%2:30:00::|
     WN::|transpose%2:30:02::|
     WN::|transpose%2:36:00::|
-    WN::|transpose%2:30:01::|))
+    WN::|transpose%2:30:01::|
+    WN::|transpose%2:30:03::|))
 
 (CONCEPT
   ONT::EXCITED
@@ -15050,7 +15051,7 @@
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
-    (SCALE LINEAR-D)))
+    (SCALE LINEAR-EXTENT-SCALE)))
 
 (CONCEPT
   ONT::LESS-THAN-REL
@@ -28014,8 +28015,7 @@
   (OVERLAP
     WN::|change%2:38:00::|
     WN::|transfer%2:38:02::|
-    WN::|transfer%2:40:00::|
-    WN::|displace%2:38:02::|)
+    WN::|transfer%2:40:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
