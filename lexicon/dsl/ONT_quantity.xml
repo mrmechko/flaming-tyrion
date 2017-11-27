@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::quantity">
  <relation label="inherit">
-  ont::group-object
+  ont::ordered-domain
  </relation>
  <relation label="overlap">
   wn::|measure%1:03:00::|
@@ -18,12 +18,7 @@
  </sem-frame>
  </concept>
  <concept name="ont::root" />
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="tangible">+</feat>
- </sem-feats>
+ <concept name="abstr-obj" />
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -42,53 +37,82 @@
  </or>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::phys-object">
+ <concept name="ont::tangible-abstract-object">
  <comment>
-  &quot;All physical objects: things that have substance&quot;
+  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
  </comment>
  <relation label="inherit">
-  ont::referential-sem
- </relation>
- <relation label="overlap">
-  wn::|object%1:03:00::|
-  wn::|physical_object%1:03:00::|
+  ont::abstract-object
  </relation>
  <sem-feats>
   <relation label="inherit">
-   phys-obj
+   abstr-obj
   </relation>
   <feat name="tangible">+</feat>
  </sem-feats>
+ </concept>
+ <concept name="ont::ordered-domain">
+ <relation label="inherit">
+  ont::domain
+ </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::group-object">
+ <concept name="ont::domain">
+ <comment>
+  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
+ </comment>
  <relation label="inherit">
-  ont::phys-object
+  ont::tangible-abstract-object
  </relation>
  <relation label="overlap">
-  wn::|mathematical_group%1:09:00::|
-  wn::|group%1:09:00::|
-  wn::|chemical_group%1:27:00::|
-  wn::|radical%1:27:00::|
-  wn::|group%1:27:00::|
-  wn::|group%1:03:00::|
-  wn::|grouping%1:03:00::|
-  wn::|union%1:14:01::|
+  wn::|attribute%1:03:00::|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
+  <role-restr-map roles="ont::extent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <relation label="inherit">
+  ont::referential-sem
+  abstr-obj
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -100,7 +124,6 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
- <concept name="phys-obj" />
  <sense>
  <morph>
   <pos pos="n" />

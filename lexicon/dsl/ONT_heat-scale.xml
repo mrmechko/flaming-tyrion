@@ -30,31 +30,60 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::domain">
+ <sem-frame>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::tangible-abstract-object">
  <comment>
-  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
+  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
  </relation>
- <relation label="overlap">
-  wn::|attribute%1:03:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="tangible">+</feat>
+ </sem-feats>
  </concept>
- <concept name="ont::ordered-continuous">
+ <concept name="ont::ordered-domain">
  <relation label="inherit">
-  ont::ordered-domain
+  ont::domain
+ </relation>
+ </concept>
+ <concept name="ont::attributive-scale">
+ <comment>
+  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
+ </comment>
+ <relation label="inherit">
+  ont::ordered-continuous
+ </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:00::|
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">temperature-scale</feat>
+ </sem-feats>
+ <concept name="ont::measure-scale">
+ <relation label="inherit">
+  ont::attributive-scale
+ </relation>
+ <relation label="overlap">
+  wn::|quantity%1:03:00::|
+  wn::|measurement%1:04:00::|
  </relation>
  </concept>
  <concept name="ont::temperature-alt-scale">
@@ -72,36 +101,32 @@
   <feat name="scale">temperature-scale</feat>
  </sem-feats>
  </concept>
- <concept name="ont::measure-scale">
+ <concept name="ont::ordered-continuous">
  <relation label="inherit">
-  ont::attributive-scale
- </relation>
- <relation label="overlap">
-  wn::|quantity%1:03:00::|
-  wn::|measurement%1:04:00::|
+  ont::ordered-domain
  </relation>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">temperature-scale</feat>
- </sem-feats>
- <concept name="ont::attributive-scale">
+ <concept name="ont::domain">
  <comment>
-  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
+  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
  </comment>
  <relation label="inherit">
-  ont::ordered-continuous
+  ont::tangible-abstract-object
  </relation>
  <relation label="overlap">
-  wn::|quality%1:07:00::|
+  wn::|attribute%1:03:00::|
  </relation>
- </concept>
- <concept name="ont::ordered-domain">
- <relation label="inherit">
-  ont::domain
- </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::abstract-object">
  <comment>
@@ -117,17 +142,12 @@
   abstr-obj
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root

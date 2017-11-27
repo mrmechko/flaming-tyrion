@@ -8719,7 +8719,7 @@
   (COMMENT
    "Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)")
   (INHERIT
-    ONT::ABSTRACT-OBJECT)
+    ONT::TANGIBLE-ABSTRACT-OBJECT)
   (OVERLAP
     WN::|attribute%1:03:00::|)
   (SEM-FRAME
@@ -21831,7 +21831,7 @@
 (CONCEPT
   ONT::QUANTITY
   (INHERIT
-    ONT::GROUP-OBJECT)
+    ONT::ORDERED-DOMAIN)
   (OVERLAP
     WN::|measure%1:03:00::|
     WN::|quantity%1:03:00::|
