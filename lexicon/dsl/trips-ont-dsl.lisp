@@ -21831,7 +21831,7 @@
 (CONCEPT
   ONT::QUANTITY
   (INHERIT
-    ONT::ORDERED-DOMAIN)
+    ONT::GROUP-OBJECT)
   (OVERLAP
     WN::|measure%1:03:00::|
     WN::|quantity%1:03:00::|
@@ -21849,6 +21849,10 @@
     WN::|measure%1:03:00::|
     WN::|quantity%1:03:00::|
     WN::|amount%1:03:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (TANGIBLE +))
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
