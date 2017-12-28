@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::ppword-question-adv-np-templ">
+ <template-call template="ont::ppword-question-adv-np-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="subcat" syn-cat="t" sem-role="ont::ground"/>
+  <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+ </syn-sem>
+ <syn-feats>
+  <feat name="atype">
+  <or>
+   pre
+   post
+  </or>
+  </feat>
+  <feat name="sort">pp-word</feat>
+  <feat name="wh">q</feat>
+  <feat name="else-word">+</feat>
+  <feat name="sing-lf-only">+</feat>
+ </syn-feats>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="where" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::to-loc
+  ont::ppword-question-adv-np-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="information">information-content</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>
