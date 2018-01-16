@@ -3686,9 +3686,8 @@
     (ONT::RESULT
      (SEM-FEATS
        (INHERIT
-         PHYS-OBJ)
-       (ORIGIN ARTIFACT)
-       (FORM OBJECT))
+         ABSTR-OBJ)
+       (TYPE RESULTING-OBJECT))
      OPTIONAL)
     (ONT::AFFECTED
      (SEM-FEATS
