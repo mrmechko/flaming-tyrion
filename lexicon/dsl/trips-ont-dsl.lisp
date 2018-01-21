@@ -6220,8 +6220,7 @@
     ONT::STATUS-PROPERTY-SCALE)
   (OVERLAP
     WN::|privacy%1:07:00::|
-    WN::|privacy%1:26:02::|
-    WN::|security%1:26:00::|))
+    WN::|privacy%1:26:02::|))
 
 (CONCEPT
   ONT::CONFIGURATION-PROPERTY-VAL
@@ -12375,6 +12374,10 @@
     WN::|group%1:03:00::|
     WN::|grouping%1:03:00::|
     WN::|union%1:14:01::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (CONTAINER +))
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -23766,6 +23769,18 @@
     WN::|safe%3:00:01::|))
 
 (CONCEPT
+  ONT::SAFE-SCALE
+  (INHERIT
+    ONT::SAFETY-SCALE)
+  (OVERLAP
+    WN::|safety%1:26:00::|))
+
+(CONCEPT
+  ONT::SAFETY-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE))
+
+(CONCEPT
   ONT::SAFETY-VAL
   (COMMENT
    "regarding liability or exposure to danger, risk or peril (compare to ont::harmfulness-val)")
@@ -25343,7 +25358,6 @@
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
-    (CONTAINER -)
     (OBJECT-FUNCTION OCCUPATION)
     (INTENTIONAL +))
   (SEM-FRAME
@@ -28641,6 +28655,13 @@
   (OVERLAP
     WN::|uncertain%5:00:00:unreliable:00|
     WN::|unreliable%3:00:00::|))
+
+(CONCEPT
+  ONT::UNSAFE-SCALE
+  (INHERIT
+    ONT::SAFETY-SCALE)
+  (OVERLAP
+    WN::|insecurity%1:26:00::|))
 
 (CONCEPT
   ONT::UNSMELLABILITY-VAL

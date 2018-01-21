@@ -7070,7 +7070,6 @@
   <relation label="overlap">
    wn::|privacy%1:07:00::|
    wn::|privacy%1:26:02::|
-   wn::|security%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::configuration-property-val">
@@ -14079,6 +14078,12 @@
    wn::|grouping%1:03:00::|
    wn::|union%1:14:01::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="container">+</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
     <concept name="t" />
@@ -27122,6 +27127,19 @@
    wn::|safe%3:00:01::|
   </relation>
  </concept>
+ <concept name="ont::safe-scale">
+  <relation label="inherit">
+   ont::safety-scale
+  </relation>
+  <relation label="overlap">
+   wn::|safety%1:26:00::|
+  </relation>
+ </concept>
+ <concept name="ont::safety-scale">
+  <relation label="inherit">
+   ont::evaluation-scale
+  </relation>
+ </concept>
  <concept name="ont::safety-val">
   <comment>
    &quot;regarding liability or exposure to danger, risk or peril (compare to ont::harmfulness-val)&quot;
@@ -28885,7 +28903,6 @@
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="container">-</feat>
    <feat name="object-function">occupation</feat>
    <feat name="intentional">+</feat>
   </sem-feats>
@@ -32634,6 +32651,14 @@
   <relation label="overlap">
    wn::|uncertain%5:00:00:unreliable:00|
    wn::|unreliable%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::unsafe-scale">
+  <relation label="inherit">
+   ont::safety-scale
+  </relation>
+  <relation label="overlap">
+   wn::|insecurity%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::unsmellability-val">
