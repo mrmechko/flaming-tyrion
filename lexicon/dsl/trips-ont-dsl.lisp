@@ -7530,7 +7530,8 @@
     WN::|diminish%2:30:00::|
     WN::|lessen%2:30:00::|
     WN::|fall%2:30:06::|
-    WN::|weaken%2:30:01::|))
+    WN::|weaken%2:30:01::|
+    WN::|mitigate%2:32:00::|))
 
 (CONCEPT
   ONT::DECREASE-COMPLETELY
@@ -15828,7 +15829,15 @@
        (CONCEPT
          PHYS-OBJ)
        (CONCEPT
-         ABSTR-OBJ)))))
+         ABSTR-OBJ)))
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::MAKE-SOUND
