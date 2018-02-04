@@ -11,6 +11,7 @@
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
+    <concept name="situation" />
    </or>
   </role-restr-map>
  </sem-frame>
@@ -171,6 +172,7 @@
   <or>
    <concept name="phys-obj" />
    <concept name="abstr-obj" />
+   <concept name="situation" />
   </or>
  </role-restr-map>
  </sem-frame>
@@ -384,6 +386,73 @@
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="provide" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="provision" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="provide an opportunity (to him)">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::enable
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="provide" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="provision" />
+   </nom>
+  </forms>
+ </morph>
+ <comment>
+  &quot;VN2-INTEGRATION&quot;
+ </comment>
+ <example text="provide him with an opportunity">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::enable
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-recipient-affected-templ" xp="'(w::pp
+                                                                      w::with)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::with" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected-result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

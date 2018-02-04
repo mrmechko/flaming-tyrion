@@ -4958,6 +4958,14 @@
     (CAUSE AGENTIVE)))
 
 (CONCEPT
+  ONT::CLEAN-SCALE
+  (INHERIT
+    ONT::CLEANLINESS-SCALE)
+  (OVERLAP
+    WN::|cleanliness%1:26:00::|
+    WN::|cleanliness%1:07:00::|))
+
+(CONCEPT
   ONT::CLEAN-VAL
   (INHERIT
     ONT::CLEANLINESS-VAL)
@@ -4967,10 +4975,7 @@
 (CONCEPT
   ONT::CLEANLINESS-SCALE
   (INHERIT
-    ONT::STATE-OF-AFFAIRS-SCALE)
-  (OVERLAP
-    WN::|cleanliness%1:26:00::|
-    WN::|cleanliness%1:07:00::|))
+    ONT::STATE-OF-AFFAIRS-SCALE))
 
 (CONCEPT
   ONT::CLEANLINESS-VAL
@@ -9304,7 +9309,9 @@
        (CONCEPT
          PHYS-OBJ)
        (CONCEPT
-         ABSTR-OBJ))
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
      OPTIONAL)))
 
 (CONCEPT
@@ -12318,7 +12325,9 @@
     WN::|bang-up%5:00:00:good:01|
     WN::|great%5:00:01:extraordinary:00|
     WN::|phenomenal%5:00:00:extraordinary:00|
-    WN::|fantastic%5:00:00:extraordinary:00|))
+    WN::|fantastic%5:00:00:extraordinary:00|
+    WN::|ideal%3:00:00:perfect:00|
+    WN::|perfect%3:00:00::|))
 
 (CONCEPT
   ONT::GREEK-LETTER-SYMBOL
@@ -28436,6 +28445,13 @@
     ONT::CLASSIFICATION-VAL)
   (OVERLAP
     WN::|unclassified%3:00:02::|))
+
+(CONCEPT
+  ONT::UNCLEAN-SCALE
+  (INHERIT
+    ONT::CLEANLINESS-SCALE)
+  (OVERLAP
+    WN::|dirtiness%1:26:00::|))
 
 (CONCEPT
   ONT::UNCLEAR
