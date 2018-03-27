@@ -116,8 +116,27 @@
  </provenance>
  <relation label="inherit">
   ont::pos-wrt-speaker-reln
-  ont::pred-s-vp-templ
  </relation>
+ <syntax>
+  <template-call template="ont::ppword-adv-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="t" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or
+                                              s
+                                              np
+                                              vp)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">pp-word</feat>
+   <feat name="wh">-</feat>
+  </syn-feats>
+ </syntax>
  </sense>
  <sense>
  <morph>

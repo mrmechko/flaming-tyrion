@@ -15653,7 +15653,9 @@
 (CONCEPT
   ONT::LOOK-UP
   (INHERIT
-    ONT::SEEK))
+    ONT::SEEK)
+  (OVERLAP
+    WN::|look_up%2:32:00::|))
 
 (CONCEPT
   ONT::LOOSE-VAL
