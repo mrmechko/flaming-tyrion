@@ -19524,9 +19524,7 @@
     ONT::INHIBIT-EFFECT)
   (OVERLAP
     WN::|pause%2:42:00::|
-    WN::|pause%2:32:01::|
-    WN::|wait%2:42:00::|
-    WN::|wait%2:42:01::|)
+    WN::|pause%2:32:01::|)
   (SEM-FRAME
     (ONT::EXTENT
      (SEM-FEATS
@@ -29319,6 +29317,34 @@
        (INHERIT
          PHYS-OBJ)
        (MOBILITY MOVABLE))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::WAIT-WATCH
+  (COMMENT "action of being attentive so as to notice something")
+  (INHERIT
+    ONT::INTENTIONALLY-ACT)
+  (OVERLAP
+    WN::|wait%2:42:00::|
+    WN::|wait%2:42:01::|
+    WN::|watch%2:39:01::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (CAUSE AGENTIVE))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
      OPTIONAL)))
 
 (CONCEPT
