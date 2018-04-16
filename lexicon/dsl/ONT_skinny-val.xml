@@ -15,6 +15,12 @@
   wn::|slender%5:00:00:thin:03|
   wn::|thin%3:00:03::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">skinny-scale</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::root" />
  <concept name="abstr-obj" />
@@ -106,12 +112,18 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::relative-to-height-val">
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">size-scale</feat>
+ </sem-feats>
+ <concept name="ont::dimensional-property-val">
  <comment>
-  &quot;size specification relative to height. E.g. fat means more in  horizontal orientation with respect to the height&quot;
+  &quot;properties pertaining to dimensions and measurable extents&quot;
  </comment>
  <relation label="inherit">
-  ont::size-val
+  ont::property-val
  </relation>
  </concept>
  <concept name="ont::size-val">
@@ -128,20 +140,20 @@
   <feat name="scale">size-scale</feat>
  </sem-feats>
  </concept>
- <concept name="ont::dimensional-property-val">
- <comment>
-  &quot;properties pertaining to dimensions and measurable extents&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">size-scale</feat>
+ <feat name="scale">skinny-scale</feat>
  </sem-feats>
+ <concept name="ont::relative-to-height-val">
+ <comment>
+  &quot;size specification relative to height. E.g. fat means more in  horizontal orientation with respect to the height&quot;
+ </comment>
+ <relation label="inherit">
+  ont::size-val
+ </relation>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property

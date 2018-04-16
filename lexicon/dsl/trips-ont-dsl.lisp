@@ -3743,7 +3743,11 @@
     ONT::NON-VERTICAL-VAL)
   (OVERLAP
     WN::|broad%3:00:04::|
-    WN::|wide%3:00:00::|))
+    WN::|wide%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE WIDTH-SCALE)))
 
 (CONCEPT
   ONT::BRONCHODILATOR
@@ -7556,7 +7560,11 @@
   (INHERIT
     ONT::VERTICAL-VAL)
   (OVERLAP
-    WN::|deep%3:00:01::|))
+    WN::|deep%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE DEPTH-SCALE)))
 
 (CONCEPT
   ONT::DEFAME
@@ -10870,7 +10878,11 @@
     ONT::RELATIVE-TO-HEIGHT-VAL)
   (OVERLAP
     WN::|plump%5:00:00:fat:01|
-    WN::|fat%3:00:01::|))
+    WN::|fat%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE FAT-SCALE)))
 
 (CONCEPT
   ONT::FATIGUE-SCALE
@@ -15279,7 +15291,11 @@
   ONT::LINEAR-EXTENT-VAL
   (COMMENT "size on a linear scale")
   (INHERIT
-    ONT::SIZE-VAL))
+    ONT::SIZE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE LINEAR-EXTENT-SCALE)))
 
 (CONCEPT
   ONT::LINEAR-GROUPING
@@ -15637,7 +15653,11 @@
     ONT::LINEAR-EXTENT-VAL)
   (OVERLAP
     WN::|long%3:00:01::|
-    WN::|long%3:00:02::|))
+    WN::|long%3:00:02::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE LENGTH-SCALE)))
 
 (CONCEPT
   ONT::LONG-TERM-CONTROL-DRUG
@@ -17344,7 +17364,11 @@
   (INHERIT
     ONT::NON-VERTICAL-VAL)
   (OVERLAP
-    WN::|narrow%3:00:00::|))
+    WN::|narrow%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE WIDTH-SCALE)))
 
 (CONCEPT
   ONT::NATIONAL-IDENTITY-VAL
@@ -24662,7 +24686,11 @@
   (INHERIT
     ONT::VERTICAL-VAL)
   (OVERLAP
-    WN::|shallow%3:00:01::|))
+    WN::|shallow%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE DEPTH-SCALE)))
 
 (CONCEPT
   ONT::SHAPE
@@ -24822,7 +24850,11 @@
     ONT::LINEAR-EXTENT-VAL)
   (OVERLAP
     WN::|short%3:00:02::|
-    WN::|short%3:00:01::|))
+    WN::|short%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE HEIGHT-SCALE)))
 
 (CONCEPT
   ONT::SHORTCUT
@@ -25196,7 +25228,11 @@
     WN::|slim%5:00:00:thin:03|
     WN::|skinny%5:00:00:thin:03|
     WN::|slender%5:00:00:thin:03|
-    WN::|thin%3:00:03::|))
+    WN::|thin%3:00:03::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE SKINNY-SCALE)))
 
 (CONCEPT
   ONT::SKIP-ACTION
@@ -27142,7 +27178,11 @@
   (INHERIT
     ONT::VERTICAL-VAL)
   (OVERLAP
-    WN::|tall%3:00:00::|))
+    WN::|tall%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE HEIGHT-SCALE)))
 
 (CONCEPT
   ONT::TAME-VAL
@@ -27538,7 +27578,11 @@
   (INHERIT
     ONT::NON-VERTICAL-VAL)
   (OVERLAP
-    WN::|thick%3:00:01::|))
+    WN::|thick%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE THICKNESS-SCALE)))
 
 (CONCEPT
   ONT::THICKNESS-SCALE
@@ -27557,7 +27601,11 @@
     ONT::NON-VERTICAL-VAL)
   (OVERLAP
     WN::|thin%3:00:01::|
-    WN::|flat%5:00:00:thin:01|))
+    WN::|flat%5:00:00:thin:01|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE THINNESS-SCALE)))
 
 (CONCEPT
   ONT::THINNESS-SCALE
@@ -29101,7 +29149,11 @@
   ONT::VERTICAL-VAL
   (COMMENT "size specific to vertical linear scale")
   (INHERIT
-    ONT::LINEAR-EXTENT-VAL))
+    ONT::LINEAR-EXTENT-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE VERTICAL-SCALE)))
 
 (CONCEPT
   ONT::VIRUS
