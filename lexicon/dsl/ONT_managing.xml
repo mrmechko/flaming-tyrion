@@ -3,17 +3,11 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::managing">
+ <comment>
+  &quot;take responsibility over the production of a project, a program, or a production&quot;
+ </comment>
  <relation label="inherit">
   ont::control-manage
- </relation>
- <relation label="overlap">
-  wn::|keep%2:40:01::|
-  wn::|handle%2:41:00::|
-  wn::|care%2:41:11::|
-  wn::|deal%2:41:13::|
-  wn::|manage%2:41:00::|
-  wn::|process%2:41:01::|
-  wn::|rest%2:32:01::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -286,40 +280,140 @@
  <concept name="proposition" />
  </or>
  <concept name="situation" />
- <concept name="ont::manage">
+ <concept name="ont::guiding">
+ <comment>
+  &quot;take general control over the management and direction of a program, a project, or a production&quot;
+ </comment>
  <relation label="inherit">
   ont::managing
+ </relation>
+ <relation label="overlap">
+  wn::|lead%2:38:01::|
+  wn::|manage%2:41:01::|
+  wn::|direct%2:41:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">dynamic</feat>
+  <feat name="trajectory">+</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::organizing">
+ <comment>
+  &quot;coordinate, manage and execute a program, a project or a production&quot;
+ </comment>
+ <relation label="inherit">
+  ont::managing
+ </relation>
+ <relation label="overlap">
+  wn::|organize%2:41:00::|
+  wn::|organize%2:36:00::|
+  wn::|organize%2:31:00::|
+  wn::|stage%2:36:00::|
+  wn::|produce%2:39:00::|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="govern" />
- </morph>
+ <concept name="ont::planning">
  <comment>
-  &quot;TOP500&quot;
+  &quot;make necessary preparations for a program, a project or a production&quot;
  </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="the device governs the flow of oxygen">
- </example>
  <relation label="inherit">
   ont::managing
  </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">unbounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
- </sense>
+ <relation label="overlap">
+  wn::|plan%2:36:00::|
+  wn::|plan%2:31:00::|
+  wn::|plan%2:31:01::|
+  wn::|time%2:31:00::|
+  wn::|plan%1:09:00::|
+  wn::|arrange%2:36:03::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::effect" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::managing-resources">
+ <comment>
+  &quot;manage resources for the execution of a program, a project or a production&quot;
+ </comment>
+ <relation label="inherit">
+  ont::managing
+ </relation>
+ <relation label="overlap">
+  wn::|sponsor%2:40:00::|
+  wn::|patronize%2:40:00::|
+  wn::|patronise%2:40:00::|
+  wn::|host%2:34:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">bounded</feat>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::taking-care-of">
+ <comment>
+  &quot;take care of a problem or an issue&quot;
+ </comment>
+ <relation label="inherit">
+  ont::managing
+ </relation>
+ <relation label="overlap">
+  wn::|handle%2:41:00::|
+  wn::|process%2:41:01::|
+  wn::|take_care%2:41:11::|
+ </relation>
+ </concept>
 </dsl>

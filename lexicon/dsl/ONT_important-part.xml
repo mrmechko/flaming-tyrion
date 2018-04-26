@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::important-part">
+ <relation label="inherit">
+  ont::part
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <concept name="ont::part">
+ <comment>
+  &quot;Part is actually a conceptualization of things that fill the part-of role&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|part%1:24:00::|
+  wn::|part%1:09:00::|
+  wn::|portion%1:24:00::|
+  wn::|component_part%1:24:00::|
+  wn::|component%1:24:00::|
+  wn::|constituent%1:24:00::|
+  wn::|part%1:17:00::|
+  wn::|piece%1:17:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="keystone" />
+ </morph>
+ <comment>
+  &quot;PROJECTOR-PURCHASING&quot;
+ </comment>
+ <example text="keystone projection">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::important-part
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

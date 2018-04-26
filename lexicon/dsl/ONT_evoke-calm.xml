@@ -1,0 +1,674 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::evoke-calm">
+ <relation label="inherit">
+  ont::subduing
+ </relation>
+ <relation label="overlap">
+  wn::|pacify%2:37:00::|
+  wn::|comfort%2:37:01::|
+  wn::|mellow%2:30:01::|
+  wn::|unwind%2:29:01::|
+  wn::|ease%2:37:00::|
+  wn::|soothe%2:37:00::|
+  wn::|mellow%2:30:03::|
+  wn::|mellow%2:30:00::|
+  wn::|unwind%2:29:00::|
+  wn::|unwind%2:29:01::|
+ </relation>
+ </concept>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">force</feat>
+ </sem-feats>
+ <concept name="ont::event-of-change">
+ <comment>
+  &quot;Events that involve change or force: should ahve an AGENT or AFFECTED role&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::beneficiary" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">position-reln</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">living</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">agentive</feat>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <concept name="ont::event-of-causation">
+ <comment>
+  &quot;events involving an AGENT acting on an AFFECTED&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-action
+  situation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+   <feat name="origin">living</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::affect-experiencer">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|greet%2:39:00::|
+  wn::|come_to%2:39:00::|
+  wn::|craze%2:37:00::|
+  wn::|discourage%2:37:00::|
+  wn::|deafen%2:39:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">living</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::evoke-emotion">
+ <relation label="inherit">
+  ont::affect-experiencer
+ </relation>
+ <relation label="overlap">
+  wn::|arouse%2:37:00::|
+  wn::|elicit%2:37:00::|
+  wn::|enkindle%2:37:00::|
+  wn::|kindle%2:37:00::|
+  wn::|evoke%2:37:00::|
+  wn::|fire%2:37:00::|
+  wn::|raise%2:37:08::|
+  wn::|provoke%2:37:00::|
+  wn::|click%2:31:13::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+    <feat name="origin">living</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::subduing">
+ <relation label="inherit">
+  ont::evoke-emotion
+ </relation>
+ </concept>
+ <concept name="ont::event-of-action">
+ <comment>
+  &quot;events that involve :agent (whether intentional or not)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::beneficiary" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">position-reln</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="situation" />
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="appease" />
+ </morph>
+ <relation label="inherit">
+  ont::evoke-calm
+ </relation>
+ <relation label="overlap">
+  vn::amuse-31.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="assuage" />
+ </morph>
+ <relation label="inherit">
+  ont::evoke-calm
+ </relation>
+ <relation label="overlap">
+  vn::amuse-31.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="calm" remaining-words="" particle="down" />
+ </morph>
+ <example text="calm down">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evoke-calm
+  ont::agent-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="calm" remaining-words="" particle="down" />
+ </morph>
+ <example text="calm him down">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evoke-calm
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="calm" />
+ </morph>
+ <comment>
+  &quot;VN2-INTEGRATION&quot;
+ </comment>
+ <example text="music calms the savage beast">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evoke-calm
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="chill" remaining-words="out" />
+ </morph>
+ <example text="chill out">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evoke-calm
+  ont::affected-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="ease" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="The news eased my conscience">
+ </example>
+ <relation label="inherit">
+  ont::evoke-calm
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="mollify" />
+ </morph>
+ <relation label="inherit">
+  ont::evoke-calm
+ </relation>
+ <relation label="overlap">
+  vn::amuse-31.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="pacify" />
+ </morph>
+ <relation label="inherit">
+  ont::evoke-calm
+ </relation>
+ <relation label="overlap">
+  vn::amuse-31.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="placate" />
+ </morph>
+ <relation label="inherit">
+  ont::evoke-calm
+ </relation>
+ <relation label="overlap">
+  vn::amuse-31.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="relax" />
+ </morph>
+ <example text="relax">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evoke-calm
+  ont::affected-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="relax" />
+ </morph>
+ <example text="a massage will relax him">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evoke-calm
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="relieve" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="relief" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="The news relieved my fears">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evoke-calm
+ </relation>
+ <relation label="overlap">
+  vn::amuse-31.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="settle" remaining-words="" particle="down" />
+ </morph>
+ <example text="settle down">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evoke-calm
+  ont::affected-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="settle" remaining-words="" particle="down" />
+ </morph>
+ <example text="settle him down">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evoke-calm
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="soothe" />
+ </morph>
+ <example text="music soothes the savage beast">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evoke-calm
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

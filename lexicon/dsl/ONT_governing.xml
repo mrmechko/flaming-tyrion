@@ -2,9 +2,12 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::manage">
+ <concept name="ont::governing">
+ <comment>
+  &quot;control, influence, or regulate a process&quot;
+ </comment>
  <relation label="inherit">
-  ont::managing
+  ont::control-manage
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -94,19 +97,84 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::managing">
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-action">
+ <comment>
+  &quot;events that involve :agent (whether intentional or not)&quot;
+ </comment>
  <relation label="inherit">
-  ont::control-manage
+  ont::event-of-change
  </relation>
- <relation label="overlap">
-  wn::|keep%2:40:01::|
-  wn::|handle%2:41:00::|
-  wn::|care%2:41:11::|
-  wn::|deal%2:41:13::|
-  wn::|manage%2:41:00::|
-  wn::|process%2:41:01::|
-  wn::|rest%2:32:01::|
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent ont::cause">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-causation">
+ <comment>
+  &quot;events involving an AGENT acting on an AFFECTED&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-action
+  situation
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::control-manage">
  <comment>
@@ -146,85 +214,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::event-of-causation">
- <comment>
-  &quot;events involving an AGENT acting on an AFFECTED&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-action
-  situation
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-     <concept name="situation" />
-    </or>
-    <feat name="tangible">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent ont::cause">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::event-of-action">
- <comment>
-  &quot;events that involve :agent (whether intentional or not)&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-change
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">force</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-   <feat name="tangible">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::situation-root">
  <comment>
   &quot;root for all events, whether verbal or nominal&quot;
@@ -294,168 +283,18 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="calm" />
- </morph>
- <example text="calm the situation">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::manage
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">unbounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="cover" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="covered" />
-   </past>
-   <ing>
-    <word first-word="covering" />
-   </ing>
-  </forms>
+  <word first-word="govern" />
  </morph>
  <comment>
-  &quot;S11&quot;
+  &quot;TOP500&quot;
  </comment>
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <example text="cover the situation">
+ <example text="the device governs the flow of oxygen">
  </example>
  <relation label="inherit">
-  ont::manage
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">unbounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="direct" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="direction" />
-   </nom>
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="team alpha will direct">
- </example>
- <relation label="inherit">
-  ont::manage
-  ont::agent-templ
- </relation>
- <relation label="overlap">
-  vn::judgement-33
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="direct" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="direction" />
-   </nom>
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="the supervisor directs the crew">
- </example>
- <relation label="inherit">
-  ont::manage
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">unbounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="handle" />
- </morph>
- <comment>
-  &quot;S7&quot;
- </comment>
- <example text="handle the situation">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::manage
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">unbounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="manage" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="management" />
-   </nom>
-  </forms>
- </morph>
- <example text="he manages the project">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::manage
+  ont::governing
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-xp-templ" />
@@ -493,7 +332,7 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::manage
+  ont::governing
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-xp-templ" />
@@ -527,7 +366,7 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::manage
+  ont::governing
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-xp-templ" />
@@ -567,7 +406,7 @@
  <example text="the piston runs the drive shaft">
  </example>
  <relation label="inherit">
-  ont::manage
+  ont::governing
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-xp-templ" />
@@ -580,68 +419,6 @@
   <sem-feats>
    <feat name="time-span">extended</feat>
    <feat name="aspect">dynamic</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="take" remaining-words="care" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="took" />
-   </past>
-   <pastpart>
-    <word first-word="taken" />
-   </pastpart>
-  </forms>
- </morph>
- <example text="he took care of the problem">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::manage
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" xp="'(w::pp w::of)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::of" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">unbounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="watch" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he is watching his weight">
- </example>
- <relation label="inherit">
-  ont::manage
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">unbounded</feat>
-   <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
  </sense>

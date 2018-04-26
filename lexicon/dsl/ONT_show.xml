@@ -358,6 +358,14 @@
  <concept name="proposition" />
  </or>
  <concept name="situation" />
+ <concept name="ont::expose">
+ <relation label="inherit">
+  ont::show
+ </relation>
+ <relation label="overlap">
+  wn::|uncover%2:35:00::|
+ </relation>
+ </concept>
  <concept name="ont::teach-train">
  <relation label="inherit">
   ont::show
@@ -370,6 +378,19 @@
   wn::|train%2:41:00::|
   wn::|train%2:41:01::|
   wn::|train%2:32:00::|
+ </relation>
+ </concept>
+ <concept name="ont::visual-display">
+ <relation label="inherit">
+  ont::show
+ </relation>
+ <relation label="overlap">
+  wn::|expose%2:39:00::|
+  wn::|bring_on%2:36:01::|
+  wn::|expose%2:35:00::|
+  wn::|project%2:39:01::|
+  wn::|confront%2:32:03::|
+  wn::|flash%2:30:03::|
  </relation>
  </concept>
  <sense>
@@ -523,6 +544,28 @@
   <template-call template="ont::agent-theme-xp-templ" xp="'w::cp" />
   <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="present" />
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <example text="who is going to present the poster (to them)">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::show
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

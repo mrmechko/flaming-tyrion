@@ -580,7 +580,10 @@
     WN::|look_on%2:39:00::|
     WN::|look_out%2:39:00::|
     WN::|watch%2:39:00::|
-    WN::|watch%2:39:03::|)
+    WN::|watch%2:39:03::|
+    WN::|see%2:39:00::|
+    WN::|taste%2:39:02::|
+    WN::|smell%2:39:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -1477,8 +1480,7 @@
   (INHERIT
     ONT::HAVE-PROPERTY)
   (OVERLAP
-    WN::|sound%2:39:06::|
-    WN::|come_across%2:31:00::|)
+    WN::|sound%2:39:06::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -1532,7 +1534,8 @@
     WN::|splash%2:35:04::|
     WN::|splatter%2:35:01::|
     WN::|spread%2:35:13::|
-    WN::|swab%2:35:01::|)
+    WN::|swab%2:35:01::|
+    WN::|scent%2:39:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -1584,24 +1587,13 @@
   (INHERIT
     ONT::ACQUIRE-BY-ACTION)
   (OVERLAP
-    WN::|take%2:32:09::|
     WN::|claim%2:32:03::|
-    WN::|take_up%2:38:03::|
-    WN::|strike%2:38:08::|
-    WN::|take%2:38:00::|
     WN::|assume%2:38:00::|
-    WN::|occupy%2:41:04::|
-    WN::|take%2:41:00::|
     WN::|fill%2:41:00::|
-    WN::|get_hold_of%2:35:00::|
     WN::|take%2:35:00::|
     WN::|catch%2:35:00::|
-    WN::|grab%2:35:00::|
-    WN::|take_hold_of%2:35:01::|
     WN::|snatch%2:35:02::|
-    WN::|take%2:40:15::|
-    WN::|loot%2:40:01::|
-    WN::|loot%2:40:00::|)
+    WN::|take%2:40:15::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -1755,10 +1747,10 @@
 
 (CONCEPT
   ONT::ARRANGING
+  (COMMENT "place objects in a particular physical configuration")
   (INHERIT
     ONT::CONTROL-MANAGE)
   (OVERLAP
-    WN::|set_up%2:35:00::|
     WN::|arrange%2:35:00::|
     WN::|reorient%2:30:00::|
     WN::|put%2:35:05::|
@@ -2865,7 +2857,7 @@
 (CONCEPT
   ONT::BE-BORN
   (INHERIT
-    ONT::LIFE-PROCESS)
+    ONT::PROCREATE)
   (OVERLAP
     WN::|nascence%1:11:00::|
     WN::|nascency%1:11:00::|
@@ -3076,7 +3068,8 @@
     WN::|suppose%2:31:00::|
     WN::|imagine%2:31:01::|
     WN::|reckon%2:31:02::|
-    WN::|guess%2:31:00::|)
+    WN::|guess%2:31:00::|
+    WN::|strike%2:37:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -3355,7 +3348,6 @@
     WN::|oversleep%2:29:00::|
     WN::|fall_asleep%2:29:00::|
     WN::|gag%2:29:01::|
-    WN::|get_off%2:34:00::|
     WN::|idle%2:41:00::|
     WN::|lie_dormant%2:41:00::|
     WN::|arise%2:29:00::|
@@ -5529,11 +5521,11 @@
   (INHERIT
     ONT::ACQUIRE-BELIEF)
   (OVERLAP
-    WN::|understand%2:31:00::|
     WN::|see%2:31:01::|
     WN::|realise%2:31:00::|
     WN::|realize%2:31:00::|
-    WN::|understand%2:31:01::|)
+    WN::|understand%2:31:01::|
+    WN::|sink_in%2:31:00::|)
   (SEM-FRAME
     (ONT::AGENT
      (SEM-FEATS
@@ -6187,6 +6179,11 @@
   ONT::CONDITION
   (INHERIT
     ONT::SITUATION-MODIFIER))
+
+(CONCEPT
+  ONT::CONDITION-FAVORABILITY
+  (INHERIT
+    ONT::ATTRIBUTE))
 
 (CONCEPT
   ONT::CONDITIONAL
@@ -7506,7 +7503,8 @@
   (INHERIT
     ONT::ACQUIRE-BELIEF)
   (OVERLAP
-    WN::|decide%2:31:00::|)
+    WN::|decide%2:31:00::|
+    WN::|decide%2:31:02::|)
   (SEM-FRAME
     (ONT::FORMAL
      (SEM-FEATS
@@ -7590,6 +7588,16 @@
   (OVERLAP
     WN::|malfunctioning%3:00:00::|
     WN::|defective%5:00:00:malfunctioning:00|))
+
+(CONCEPT
+  ONT::DEFINED-BY-SEQUENCE-RELATIONSHIP
+  (INHERIT
+    ONT::PHYS-OBJECT)
+  (OVERLAP
+    WN::|successor%1:18:01::|
+    WN::|successor%1:09:00::|
+    WN::|successor%1:18:00::|
+    WN::|predecessor%1:18:00::|))
 
 (CONCEPT
   ONT::DEFINITION
@@ -7744,13 +7752,7 @@
     ONT::EVENT-OF-ACTION)
   (OVERLAP
     WN::|depart%2:38:01::|
-    WN::|part%2:38:00::|
-    WN::|start%2:38:02::|
-    WN::|start_out%2:38:00::|
-    WN::|set_forth%2:38:00::|
-    WN::|set_off%2:38:00::|
-    WN::|set_out%2:38:00::|
-    WN::|take_off%2:38:00::|)
+    WN::|leave%2:38:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -8429,7 +8431,6 @@
     ONT::LOCATED-MOVE-STATE)
   (OVERLAP
     WN::|disappear%2:30:00::|
-    WN::|go_away%2:38:00::|
     WN::|go_down%2:34:00::|)
   (SEM-FEATS
     (INHERIT
@@ -8482,17 +8483,6 @@
     ONT::CONTINUOUS-VAL)
   (OVERLAP
     WN::|discontinuous%3:00:01::|))
-
-(CONCEPT
-  ONT::DISCRETE-PROPERTY-VAL
-  (COMMENT
-   "temporary node. Will be deleted as soon as the words in this type are placed in their correct places in the ontology")
-  (INHERIT
-    ONT::PROPERTY-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (GRADABILITY -)))
 
 (CONCEPT
   ONT::DISCUSS
@@ -8870,6 +8860,13 @@
     WN::|drowsy%5:00:00:inattentive:00|))
 
 (CONCEPT
+  ONT::DRUGGING
+  (INHERIT
+    ONT::FEEDING)
+  (OVERLAP
+    WN::|drug%2:34:00::|))
+
+(CONCEPT
   ONT::DRY-VAL
   (INHERIT
     ONT::DAMPNESS-VAL)
@@ -9087,6 +9084,11 @@
     ONT::DISEASE)
   (OVERLAP
     WN::|ebola%1:26:00::|))
+
+(CONCEPT
+  ONT::ECONOMIC-EVENT
+  (INHERIT
+    ONT::EVENT-DEFINED-BY-ACTIVITY))
 
 (CONCEPT
   ONT::ECONOMIC-VAL
@@ -10092,25 +10094,70 @@
     ONT::EVOKE-EMOTION)
   (OVERLAP
     WN::|bore%2:37:00::|
-    WN::|tire%2:37:01::|))
+    WN::|tire%2:37:01::|
+    WN::|pall%2:30:00::|
+    WN::|pall%2:29:00::|
+    WN::|pall%2:30:03::|
+    WN::|pall%2:30:02::|))
+
+(CONCEPT
+  ONT::EVOKE-CALM
+  (INHERIT
+    ONT::SUBDUING)
+  (OVERLAP
+    WN::|pacify%2:37:00::|
+    WN::|comfort%2:37:01::|
+    WN::|mellow%2:30:01::|
+    WN::|unwind%2:29:01::|
+    WN::|ease%2:37:00::|
+    WN::|soothe%2:37:00::|
+    WN::|mellow%2:30:03::|
+    WN::|mellow%2:30:00::|
+    WN::|unwind%2:29:00::|
+    WN::|unwind%2:29:01::|))
 
 (CONCEPT
   ONT::EVOKE-CLARITY
   (INHERIT
-    ONT::EVOKE-EMOTION)
+    ONT::EVOKE-COGNITIVE-STATE)
   (OVERLAP
     WN::|enlighten%2:32:00::|
     WN::|edify%2:32:00::|))
 
 (CONCEPT
-  ONT::EVOKE-COMFORT
+  ONT::EVOKE-COGNITIVE-STATE
   (INHERIT
-    ONT::EVOKE-PHYSICAL))
+    ONT::AFFECT-EXPERIENCER))
+
+(CONCEPT
+  ONT::EVOKE-COMFORT
+  (COMMENT "relieve of physical pain or discomfort")
+  (INHERIT
+    ONT::EVOKE-PHYSICAL)
+  (OVERLAP
+    WN::|alleviate%2:29:00::|
+    WN::|numb%2:39:00::|
+    WN::|ease%2:29:00::|
+    WN::|soothe%2:29:00::|))
+
+(CONCEPT
+  ONT::EVOKE-COMPLIANCE
+  (INHERIT
+    ONT::SUBDUING)
+  (OVERLAP
+    WN::|curb%2:30:01::|
+    WN::|keep_down%2:41:00::|
+    WN::|still%2:30:00::|
+    WN::|break_in%2:30:00::|
+    WN::|tame%2:30:00::|
+    WN::|sedate%2:29:00::|
+    WN::|hush%2:30:00::|
+    WN::|break%2:30:12::|))
 
 (CONCEPT
   ONT::EVOKE-CONFUSION
   (INHERIT
-    ONT::EVOKE-EMOTION))
+    ONT::EVOKE-COGNITIVE-STATE))
 
 (CONCEPT
   ONT::EVOKE-DISCOMFORT
@@ -10134,7 +10181,9 @@
   (OVERLAP
     WN::|disturb%2:37:00::|
     WN::|upset%2:37:00::|
-    WN::|trouble%2:37:01::|))
+    WN::|trouble%2:37:01::|
+    WN::|tense_up%2:29:00::|
+    WN::|tense_up%2:29:01::|))
 
 (CONCEPT
   ONT::EVOKE-EMOTION
@@ -10182,6 +10231,21 @@
     WN::|affright%2:37:00::|))
 
 (CONCEPT
+  ONT::EVOKE-HARMONY
+  (INHERIT
+    ONT::EVOKE-EMOTION)
+  (OVERLAP
+    WN::|resonate%2:31:00::|))
+
+(CONCEPT
+  ONT::EVOKE-HUNGER
+  (INHERIT
+    ONT::EVOKE-DISCOMFORT)
+  (OVERLAP
+    WN::|starve%2:34:00::|
+    WN::|starve%2:34:03::|))
+
+(CONCEPT
   ONT::EVOKE-ILL-BEING
   (INHERIT
     ONT::EVOKE-DISCOMFORT))
@@ -10208,7 +10272,8 @@
     WN::|indulge%2:41:01::|
     WN::|indulge%2:34:00::|
     WN::|indulge%2:34:12::|
-    WN::|indulge%2:41:00::|))
+    WN::|indulge%2:41:00::|
+    WN::|lighten_up%2:37:01::|))
 
 (CONCEPT
   ONT::EVOKE-OFFENSE
@@ -10245,6 +10310,13 @@
     WN::|sadden%2:37:01::|))
 
 (CONCEPT
+  ONT::EVOKE-SENSORY-PERCEPTION
+  (INHERIT
+    ONT::EVOKE-PHYSICAL)
+  (OVERLAP
+    WN::|sensitize%2:39:00::|))
+
+(CONCEPT
   ONT::EVOKE-SHAME
   (INHERIT
     ONT::EVOKE-EMOTION)
@@ -10268,7 +10340,9 @@
     WN::|wash_up%2:29:01::|
     WN::|beat%2:29:00::|
     WN::|tucker%2:29:00::|
-    WN::|tucker_out%2:29:00::|))
+    WN::|tucker_out%2:29:00::|
+    WN::|weary%2:29:00::|
+    WN::|weary%2:29:01::|))
 
 (CONCEPT
   ONT::EVOKE-WORRY
@@ -10579,7 +10653,8 @@
   (INHERIT
     ONT::EVENT-OF-UNDERGOING-ACTION)
   (OVERLAP
-    WN::|itch%2:39:02::|)
+    WN::|itch%2:39:02::|
+    WN::|ache%2:39:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -10612,6 +10687,13 @@
     WN::|explode%2:30:00::|
     WN::|burst%2:30:09::|
     WN::|burst%2:38:04::|))
+
+(CONCEPT
+  ONT::EXPOSE
+  (INHERIT
+    ONT::SHOW)
+  (OVERLAP
+    WN::|uncover%2:35:00::|))
 
 (CONCEPT
   ONT::EXTENDED-SAY
@@ -10752,6 +10834,13 @@
      (CONCEPT
        T)
      OPTIONAL)))
+
+(CONCEPT
+  ONT::FAILING
+  (INHERIT
+    ONT::GRADE-SCORE)
+  (OVERLAP
+    WN::|fail%2:41:07::|))
 
 (CONCEPT
   ONT::FAKE-VAL
@@ -10922,6 +11011,16 @@
     WN::|fat%3:00:02::|))
 
 (CONCEPT
+  ONT::FAVORABLE-CONDITION
+  (INHERIT
+    ONT::CONDITION-FAVORABILITY)
+  (OVERLAP
+    WN::|advantage%1:07:00::|
+    WN::|advantage%1:07:01::|
+    WN::|asset%1:07:00::|
+    WN::|strength%1:07:01::|))
+
+(CONCEPT
   ONT::FAVORITE
   (INHERIT
     ONT::RELATION)
@@ -10977,6 +11076,15 @@
   ONT::FEED
   (INHERIT
     ONT::PUBLICATION))
+
+(CONCEPT
+  ONT::FEEDING
+  (COMMENT "giving ingestible material (e.g. food, drink)")
+  (INHERIT
+    ONT::GIVING)
+  (OVERLAP
+    WN::|give%2:34:00::|
+    WN::|drench%2:34:00::|))
 
 (CONCEPT
   ONT::FEELING
@@ -11229,6 +11337,16 @@
     (INHERIT
       PHYS-OBJ)
     (OBJECT-FUNCTION COMESTIBLE)))
+
+(CONCEPT
+  ONT::FIT
+  (COMMENT "join by fitting them together in a tight configuration")
+  (INHERIT
+    ONT::JOINING)
+  (OVERLAP
+    WN::|dovetail%2:42:00::|
+    WN::|go%2:42:05::|
+    WN::|fit%2:30:01::|))
 
 (CONCEPT
   ONT::FITNESS-SCALE
@@ -12257,6 +12375,12 @@
     WN::|gout%1:26:00::|))
 
 (CONCEPT
+  ONT::GOVERNING
+  (COMMENT "control, influence, or regulate a process")
+  (INHERIT
+    ONT::CONTROL-MANAGE))
+
+(CONCEPT
   ONT::GOVERNING-PRINCIPLE
   (INHERIT
     ONT::SOCIAL-CONTRACT)
@@ -12293,6 +12417,11 @@
        (INHERIT
          ABSTR-OBJ)
        (GRADABILITY +)))))
+
+(CONCEPT
+  ONT::GRADE-SCORE
+  (INHERIT
+    ONT::JUDGEMENT))
 
 (CONCEPT
   ONT::GRAINS
@@ -12483,16 +12612,14 @@
 
 (CONCEPT
   ONT::GUIDING
+  (COMMENT
+   "take general control over the management and direction of a program, a project, or a production")
   (INHERIT
-    ONT::CONTROL-MANAGE)
+    ONT::MANAGING)
   (OVERLAP
     WN::|lead%2:38:01::|
-    WN::|take%2:38:09::|
-    WN::|direct%2:38:00::|
-    WN::|conduct%2:38:01::|
-    WN::|guide%2:38:00::|
-    WN::|call%2:38:00::|
-    WN::|lead%2:42:01::|)
+    WN::|manage%2:41:01::|
+    WN::|direct%2:41:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -13141,33 +13268,6 @@
     WN::|parallel%3:00:00::|))
 
 (CONCEPT
-  ONT::HOST
-  (INHERIT
-    ONT::CONTROL-MANAGE)
-  (OVERLAP
-    WN::|sponsor%2:40:00::|
-    WN::|patronize%2:40:00::|
-    WN::|patronise%2:40:00::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (ASPECT BOUNDED)
-    (TRAJECTORY -)
-    (CAUSE AGENTIVE))
-  (SEM-FRAME
-    (ONT::AGENT
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +)))
-    (ONT::FORMAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION)))))
-
-(CONCEPT
   ONT::HOTSPOT
   (INHERIT
     ONT::LOCATION-BY-DESCRIPTION)
@@ -13441,14 +13541,16 @@
     ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT
+  ONT::IMPORTANT-PART
+  (INHERIT
+    ONT::PART))
+
+(CONCEPT
   ONT::IMPRESS
   (INHERIT
     ONT::JUDGEMENT)
   (OVERLAP
-    WN::|affect%2:37:00::|
-    WN::|impress%2:37:01::|
-    WN::|move%2:37:00::|
-    WN::|strike%2:37:00::|))
+    WN::|impress%2:37:00::|))
 
 (CONCEPT
   ONT::IMPROVE
@@ -14968,6 +15070,12 @@
        (INTENTIONAL -)))))
 
 (CONCEPT
+  ONT::LEAST-EXTENT
+  (COMMENT "to the least extent, to any extent")
+  (INHERIT
+    ONT::MODIFIER))
+
+(CONCEPT
   ONT::LEAVE-BEHIND
   (INHERIT
     ONT::INTENTIONALLY-ACT)
@@ -15596,7 +15704,8 @@
     WN::|shine%2:43:01::|
     WN::|reflect%2:43:00::|
     WN::|shine%2:43:00::|
-    WN::|beam%2:43:03::|)
+    WN::|beam%2:43:03::|
+    WN::|flash%2:39:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -15875,7 +15984,11 @@
   (INHERIT
     ONT::EMIT-GIVEOFF-DISCHARGE)
   (OVERLAP
-    WN::|utter%2:32:02::|)
+    WN::|clink%2:39:01::|
+    WN::|clink%2:39:00::|
+    WN::|tinkle%2:39:00::|
+    WN::|sound%2:39:00::|
+    WN::|ring%2:39:00::|)
   (SEM-FRAME
     (ONT::EFFECT
      (CONCEPT
@@ -15911,11 +16024,6 @@
     ONT::FUNCTIONAL-REGION))
 
 (CONCEPT
-  ONT::MANAGE
-  (INHERIT
-    ONT::MANAGING))
-
-(CONCEPT
   ONT::MANAGEABILITY-VAL
   (INHERIT
     ONT::CAN-BE-DONE-VAL))
@@ -15930,16 +16038,40 @@
 
 (CONCEPT
   ONT::MANAGING
+  (COMMENT
+   "take responsibility over the production of a project, a program, or a production")
   (INHERIT
-    ONT::CONTROL-MANAGE)
+    ONT::CONTROL-MANAGE))
+
+(CONCEPT
+  ONT::MANAGING-RESOURCES
+  (COMMENT
+   "manage resources for the execution of a program, a project or a production")
+  (INHERIT
+    ONT::MANAGING)
   (OVERLAP
-    WN::|keep%2:40:01::|
-    WN::|handle%2:41:00::|
-    WN::|care%2:41:11::|
-    WN::|deal%2:41:13::|
-    WN::|manage%2:41:00::|
-    WN::|process%2:41:01::|
-    WN::|rest%2:32:01::|))
+    WN::|sponsor%2:40:00::|
+    WN::|patronize%2:40:00::|
+    WN::|patronise%2:40:00::|
+    WN::|host%2:34:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (ASPECT BOUNDED)
+    (TRAJECTORY -)
+    (CAUSE AGENTIVE))
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)))
+    (ONT::FORMAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         SITUATION)))))
 
 (CONCEPT
   ONT::MANIA
@@ -16513,7 +16645,7 @@
        (ORIGIN ARTIFACT)))))
 
 (CONCEPT
-  ONT::MENTAL-ATTTITUDE
+  ONT::MENTAL-ATTITUDE
   (INHERIT
     ONT::MENTAL-CONSTRUCTION)
   (OVERLAP
@@ -17217,6 +17349,11 @@
     (INHERIT
       PHYS-OBJ)
     (CONTAINER +)))
+
+(CONCEPT
+  ONT::MULTIMEDIA-VAL
+  (INHERIT
+    ONT::MEDIUM))
 
 (CONCEPT
   ONT::MULTIPLE
@@ -17982,6 +18119,17 @@
     ONT::SALIENCE))
 
 (CONCEPT
+  ONT::NOT-FAVORABLE-CONDITION
+  (INHERIT
+    ONT::CONDITION-FAVORABILITY)
+  (OVERLAP
+    WN::|weak_point%1:07:00::|
+    WN::|liability%1:07:00::|
+    WN::|disadvantage%1:07:00::|
+    WN::|detriment%1:11:00::|
+    WN::|weakness%1:26:00::|))
+
+(CONCEPT
   ONT::NOT-FLEXIBLE-VAL
   (INHERIT
     ONT::FLEXIBILITY-VAL)
@@ -18624,7 +18772,6 @@
     WN::|keep_up%2:29:00::|
     WN::|retire%2:33:00::|
     WN::|sensitise%2:39:00::|
-    WN::|sound%2:39:01::|
     WN::|stampede%2:38:01::|
     WN::|stampede%2:41:01::|
     WN::|trip%2:38:01::|
@@ -19044,6 +19191,19 @@
   (OVERLAP
     WN::|organization%1:14:00::|
     WN::|organisation%1:14:00::|))
+
+(CONCEPT
+  ONT::ORGANIZING
+  (COMMENT
+   "coordinate, manage and execute a program, a project or a production")
+  (INHERIT
+    ONT::MANAGING)
+  (OVERLAP
+    WN::|organize%2:41:00::|
+    WN::|organize%2:36:00::|
+    WN::|organize%2:31:00::|
+    WN::|stage%2:36:00::|
+    WN::|produce%2:39:00::|))
 
 (CONCEPT
   ONT::ORIENT
@@ -19484,6 +19644,13 @@
     (INHERIT
       SITUATION)
     (TRAJECTORY -)))
+
+(CONCEPT
+  ONT::PASSING
+  (INHERIT
+    ONT::GRADE-SCORE)
+  (OVERLAP
+    WN::|pass%2:41:07::|))
 
 (CONCEPT
   ONT::PASSIVE
@@ -20140,20 +20307,17 @@
 
 (CONCEPT
   ONT::PLANNING
+  (COMMENT
+   "make necessary preparations for a program, a project or a production")
   (INHERIT
-    ONT::INTENTIONALLY-ACT)
+    ONT::MANAGING)
   (OVERLAP
-    WN::|design%2:36:02::|
-    WN::|contrive%2:36:01::|
-    WN::|project%2:36:01::|
     WN::|plan%2:36:00::|
     WN::|plan%2:31:00::|
-    WN::|be_after%2:31:00::|
     WN::|plan%2:31:01::|
     WN::|time%2:31:00::|
     WN::|plan%1:09:00::|
-    WN::|program%1:09:00::|
-    WN::|programme%1:09:00::|)
+    WN::|arrange%2:36:03::|)
   (SEM-FRAME
     (ONT::EFFECT
      (CONCEPT
@@ -20217,7 +20381,9 @@
   (OVERLAP
     WN::|play%2:33:00::|
     WN::|play%2:41:03::|
-    WN::|play%2:41:00::|))
+    WN::|play%2:41:00::|
+    WN::|sound%2:39:01::|
+    WN::|ring%2:39:01::|))
 
 (CONCEPT
   ONT::PLEASANT
@@ -21152,6 +21318,15 @@
   (COMMENT "properties that describe processes")
   (INHERIT
     ONT::PROPERTY-VAL))
+
+(CONCEPT
+  ONT::PROCREATE
+  (INHERIT
+    ONT::LIFE-PROCESS)
+  (OVERLAP
+    WN::|propagate%2:29:00::|
+    WN::|propagate%2:29:01::|
+    WN::|reproduce%2:29:00::|))
 
 (CONCEPT
   ONT::PRODUCE
@@ -22457,7 +22632,8 @@
     WN::|turn_down%2:40:00::|
     WN::|decline%2:40:00::|
     WN::|dismiss%2:32:02::|
-    WN::|refuse%2:41:00::|))
+    WN::|refuse%2:41:00::|
+    WN::|bounce%2:40:01::|))
 
 (CONCEPT
   ONT::RELATE
@@ -22817,7 +22993,9 @@
 (CONCEPT
   ONT::REMIND
   (INHERIT
-    ONT::REQUEST))
+    ONT::REQUEST)
+  (OVERLAP
+    WN::|remind%2:31:00::|))
 
 (CONCEPT
   ONT::REMOTE
@@ -22934,8 +23112,7 @@
     WN::|ingeminate%2:32:00::|
     WN::|iterate%2:32:00::|
     WN::|restate%2:32:00::|
-    WN::|retell%2:32:00::|
-    WN::|remind%2:31:00::|)
+    WN::|retell%2:32:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -23082,12 +23259,9 @@
   (INHERIT
     ONT::DIRECTIVE)
   (OVERLAP
-    WN::|quest%2:32:01::|
-    WN::|call_for%2:32:04::|
-    WN::|bespeak%2:32:00::|
     WN::|request%2:32:01::|
     WN::|request%1:10:00::|
-    WN::|asking%1:10:00::|)
+    WN::|call%2:41:04::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -23881,6 +24055,14 @@
     WN::|identical%5:00:00:same:02|))
 
 (CONCEPT
+  ONT::SAME-SCALE
+  (INHERIT
+    ONT::SIMILARITY-SCALE)
+  (OVERLAP
+    WN::|identity%1:07:02::|
+    WN::|sameness%1:07:00::|))
+
+(CONCEPT
   ONT::SAMPLING
   (INHERIT
     ONT::CHOOSING))
@@ -23937,7 +24119,8 @@
     WN::|remark%2:32:00::|
     WN::|say%2:32:13::|
     WN::|say%2:32:01::|
-    WN::|talk%2:32:00::|)
+    WN::|talk%2:32:00::|
+    WN::|utter%2:32:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -24392,7 +24575,8 @@
     WN::|channelize%2:35:00::|
     WN::|channelise%2:35:00::|
     WN::|air%2:32:02::|
-    WN::|make_pass%2:38:00::|)
+    WN::|make_pass%2:38:00::|
+    WN::|bundle_off%2:38:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -24541,7 +24725,9 @@
     WN::|part%2:35:01::|
     WN::|break%2:41:13::|
     WN::|divide%2:38:00::|
-    WN::|divide%2:42:00::|)
+    WN::|divide%2:42:00::|
+    WN::|disjoint%2:35:00::|
+    WN::|separate%2:35:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -25010,7 +25196,9 @@
   (INHERIT
     ONT::SIMILARITY-SCALE)
   (OVERLAP
-    WN::|similarity%1:07:00::|))
+    WN::|similarity%1:07:00::|
+    WN::|likeness%1:07:00::|
+    WN::|comparability%1:07:00::|))
 
 (CONCEPT
   ONT::SIMILARITY
@@ -25486,6 +25674,16 @@
     WN::|practice%1:09:00::|
     WN::|habit%1:09:00::|
     WN::|routine%1:04:00::|))
+
+(CONCEPT
+  ONT::SOCIAL-RELATIONSHIP
+  (INHERIT
+    ONT::SOCIAL-ACTIVITY)
+  (OVERLAP
+    WN::|relationship%1:24:00::|
+    WN::|relationship%1:26:00::|
+    WN::|romance%1:26:00::|
+    WN::|affair%1:26:00::|))
 
 (CONCEPT
   ONT::SOCIALLY-REMOVE
@@ -26295,6 +26493,15 @@
     WN::|stability%1:07:00::|))
 
 (CONCEPT
+  ONT::STEAL
+  (INHERIT
+    ONT::ACQUIRE-BY-ACTION)
+  (OVERLAP
+    WN::|loot%2:40:01::|
+    WN::|loot%2:40:00::|
+    WN::|steal%2:40:00::|))
+
+(CONCEPT
   ONT::STEEP
   (INHERIT
     ONT::COOKING))
@@ -26564,21 +26771,7 @@
 (CONCEPT
   ONT::SUBDUING
   (INHERIT
-    ONT::EVOKE-EMOTION)
-  (OVERLAP
-    WN::|curb%2:30:01::|
-    WN::|inhibit%2:30:00::|
-    WN::|pacify%2:37:00::|
-    WN::|lenify%2:37:00::|
-    WN::|conciliate%2:37:00::|
-    WN::|assuage%2:37:00::|
-    WN::|appease%2:37:00::|
-    WN::|mollify%2:37:00::|
-    WN::|placate%2:37:00::|
-    WN::|gentle%2:37:00::|
-    WN::|gruntle%2:37:00::|
-    WN::|comfort%2:37:01::|
-    WN::|keep_down%2:41:00::|))
+    ONT::EVOKE-EMOTION))
 
 (CONCEPT
   ONT::SUBMIT
@@ -27143,6 +27336,16 @@
         (OR
           DYNAMIC
           STAGE-LEVEL))))))
+
+(CONCEPT
+  ONT::TAKING-CARE-OF
+  (COMMENT "take care of a problem or an issue")
+  (INHERIT
+    ONT::MANAGING)
+  (OVERLAP
+    WN::|handle%2:41:00::|
+    WN::|process%2:41:01::|
+    WN::|take_care%2:41:11::|))
 
 (CONCEPT
   ONT::TALK
@@ -28101,7 +28304,8 @@
   (OVERLAP
     WN::|change%2:38:00::|
     WN::|transfer%2:38:02::|
-    WN::|transfer%2:40:00::|)
+    WN::|transfer%2:40:00::|
+    WN::|change_owners%2:40:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -28241,6 +28445,14 @@
     (TRAJECTORY +)))
 
 (CONCEPT
+  ONT::TRIP-OUT
+  (COMMENT "get high, stoned or drugged")
+  (INHERIT
+    ONT::BODILY-PROCESS)
+  (OVERLAP
+    WN::|trip%2:34:00::|))
+
+(CONCEPT
   ONT::TRIPLE
   (INHERIT
     ONT::INCREASE-NUMBER)
@@ -28300,6 +28512,13 @@
          (CONCEPT
            PHYS-OBJ))
        (INTENTIONAL +)))))
+
+(CONCEPT
+  ONT::TRUTH-SCALE
+  (INHERIT
+    ONT::UNORDERED-DISCRETE-DOMAIN)
+  (OVERLAP
+    WN::|truth%1:09:00::|))
 
 (CONCEPT
   ONT::TRUTH-VALUE-VAL
@@ -28474,7 +28693,9 @@
     ONT::SEPARATION)
   (OVERLAP
     WN::|disconnect%2:35:00::|
-    WN::|disengage%2:35:01::|)
+    WN::|disengage%2:35:01::|
+    WN::|unfasten%2:35:01::|
+    WN::|unfasten%2:35:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -28562,7 +28783,8 @@
     WN::|know%2:31:03::|
     WN::|know%2:31:01::|
     WN::|cognize%2:31:00::|
-    WN::|cognise%2:31:00::|)
+    WN::|cognise%2:31:00::|
+    WN::|understand%2:31:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -29198,14 +29420,14 @@
 (CONCEPT
   ONT::VISUAL-DISPLAY
   (INHERIT
-    ONT::ADJUST)
+    ONT::SHOW)
   (OVERLAP
     WN::|expose%2:39:00::|
-    WN::|exhibit%2:39:01::|
-    WN::|display%2:39:00::|
     WN::|bring_on%2:36:01::|
     WN::|expose%2:35:00::|
-    WN::|confront%2:32:03::|))
+    WN::|project%2:39:01::|
+    WN::|confront%2:32:03::|
+    WN::|flash%2:30:03::|))
 
 (CONCEPT
   ONT::VISUAL-DISTINCTIVENSS-SCALE

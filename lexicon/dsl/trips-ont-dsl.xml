@@ -661,6 +661,9 @@
    wn::|look_out%2:39:00::|
    wn::|watch%2:39:00::|
    wn::|watch%2:39:03::|
+   wn::|see%2:39:00::|
+   wn::|taste%2:39:02::|
+   wn::|smell%2:39:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal" optional="optional">
@@ -1679,7 +1682,6 @@
   </relation>
   <relation label="overlap">
    wn::|sound%2:39:06::|
-   wn::|come_across%2:31:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -1747,6 +1749,7 @@
    wn::|splatter%2:35:01::|
    wn::|spread%2:35:13::|
    wn::|swab%2:35:01::|
+   wn::|scent%2:39:02::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -1804,24 +1807,13 @@
    ont::acquire-by-action
   </relation>
   <relation label="overlap">
-   wn::|take%2:32:09::|
    wn::|claim%2:32:03::|
-   wn::|take_up%2:38:03::|
-   wn::|strike%2:38:08::|
-   wn::|take%2:38:00::|
    wn::|assume%2:38:00::|
-   wn::|occupy%2:41:04::|
-   wn::|take%2:41:00::|
    wn::|fill%2:41:00::|
-   wn::|get_hold_of%2:35:00::|
    wn::|take%2:35:00::|
    wn::|catch%2:35:00::|
-   wn::|grab%2:35:00::|
-   wn::|take_hold_of%2:35:01::|
    wn::|snatch%2:35:02::|
    wn::|take%2:40:15::|
-   wn::|loot%2:40:01::|
-   wn::|loot%2:40:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -2003,11 +1995,13 @@
   </relation>
  </concept>
  <concept name="ont::arranging">
+  <comment>
+   &quot;place objects in a particular physical configuration&quot;
+  </comment>
   <relation label="inherit">
    ont::control-manage
   </relation>
   <relation label="overlap">
-   wn::|set_up%2:35:00::|
    wn::|arrange%2:35:00::|
    wn::|reorient%2:30:00::|
    wn::|put%2:35:05::|
@@ -3246,7 +3240,7 @@
  </concept>
  <concept name="ont::be-born">
   <relation label="inherit">
-   ont::life-process
+   ont::procreate
   </relation>
   <relation label="overlap">
    wn::|nascence%1:11:00::|
@@ -3492,6 +3486,7 @@
    wn::|imagine%2:31:01::|
    wn::|reckon%2:31:02::|
    wn::|guess%2:31:00::|
+   wn::|strike%2:37:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -3825,7 +3820,6 @@
    wn::|oversleep%2:29:00::|
    wn::|fall_asleep%2:29:00::|
    wn::|gag%2:29:01::|
-   wn::|get_off%2:34:00::|
    wn::|idle%2:41:00::|
    wn::|lie_dormant%2:41:00::|
    wn::|arise%2:29:00::|
@@ -6293,11 +6287,11 @@
    ont::acquire-belief
   </relation>
   <relation label="overlap">
-   wn::|understand%2:31:00::|
    wn::|see%2:31:01::|
    wn::|realise%2:31:00::|
    wn::|realize%2:31:00::|
    wn::|understand%2:31:01::|
+   wn::|sink_in%2:31:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::agent">
@@ -7031,6 +7025,11 @@
  <concept name="ont::condition">
   <relation label="inherit">
    ont::situation-modifier
+  </relation>
+ </concept>
+ <concept name="ont::condition-favorability">
+  <relation label="inherit">
+   ont::attribute
   </relation>
  </concept>
  <concept name="ont::conditional">
@@ -8539,6 +8538,7 @@
   </relation>
   <relation label="overlap">
    wn::|decide%2:31:00::|
+   wn::|decide%2:31:02::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal">
@@ -8631,6 +8631,17 @@
   <relation label="overlap">
    wn::|malfunctioning%3:00:00::|
    wn::|defective%5:00:00:malfunctioning:00|
+  </relation>
+ </concept>
+ <concept name="ont::defined-by-sequence-relationship">
+  <relation label="inherit">
+   ont::phys-object
+  </relation>
+  <relation label="overlap">
+   wn::|successor%1:18:01::|
+   wn::|successor%1:09:00::|
+   wn::|successor%1:18:00::|
+   wn::|predecessor%1:18:00::|
   </relation>
  </concept>
  <concept name="ont::definition">
@@ -8797,13 +8808,7 @@
   </relation>
   <relation label="overlap">
    wn::|depart%2:38:01::|
-   wn::|part%2:38:00::|
-   wn::|start%2:38:02::|
-   wn::|start_out%2:38:00::|
-   wn::|set_forth%2:38:00::|
-   wn::|set_off%2:38:00::|
-   wn::|set_out%2:38:00::|
-   wn::|take_off%2:38:00::|
+   wn::|leave%2:38:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -9580,7 +9585,6 @@
   </relation>
   <relation label="overlap">
    wn::|disappear%2:30:00::|
-   wn::|go_away%2:38:00::|
    wn::|go_down%2:34:00::|
   </relation>
   <sem-feats>
@@ -9640,20 +9644,6 @@
   <relation label="overlap">
    wn::|discontinuous%3:00:01::|
   </relation>
- </concept>
- <concept name="ont::discrete-property-val">
-  <comment>
-   &quot;temporary node. Will be deleted as soon as the words in this type are placed in their correct places in the ontology&quot;
-  </comment>
-  <relation label="inherit">
-   ont::property-val
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="gradability">-</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::discuss">
   <comment>
@@ -10071,6 +10061,14 @@
    wn::|drowsy%5:00:00:inattentive:00|
   </relation>
  </concept>
+ <concept name="ont::drugging">
+  <relation label="inherit">
+   ont::feeding
+  </relation>
+  <relation label="overlap">
+   wn::|drug%2:34:00::|
+  </relation>
+ </concept>
  <concept name="ont::dry-val">
   <relation label="inherit">
    ont::dampness-val
@@ -10321,6 +10319,11 @@
   </relation>
   <relation label="overlap">
    wn::|ebola%1:26:00::|
+  </relation>
+ </concept>
+ <concept name="ont::economic-event">
+  <relation label="inherit">
+   ont::event-defined-by-activity
   </relation>
  </concept>
  <concept name="ont::economic-val">
@@ -11450,25 +11453,75 @@
   <relation label="overlap">
    wn::|bore%2:37:00::|
    wn::|tire%2:37:01::|
+   wn::|pall%2:30:00::|
+   wn::|pall%2:29:00::|
+   wn::|pall%2:30:03::|
+   wn::|pall%2:30:02::|
+  </relation>
+ </concept>
+ <concept name="ont::evoke-calm">
+  <relation label="inherit">
+   ont::subduing
+  </relation>
+  <relation label="overlap">
+   wn::|pacify%2:37:00::|
+   wn::|comfort%2:37:01::|
+   wn::|mellow%2:30:01::|
+   wn::|unwind%2:29:01::|
+   wn::|ease%2:37:00::|
+   wn::|soothe%2:37:00::|
+   wn::|mellow%2:30:03::|
+   wn::|mellow%2:30:00::|
+   wn::|unwind%2:29:00::|
+   wn::|unwind%2:29:01::|
   </relation>
  </concept>
  <concept name="ont::evoke-clarity">
   <relation label="inherit">
-   ont::evoke-emotion
+   ont::evoke-cognitive-state
   </relation>
   <relation label="overlap">
    wn::|enlighten%2:32:00::|
    wn::|edify%2:32:00::|
   </relation>
  </concept>
+ <concept name="ont::evoke-cognitive-state">
+  <relation label="inherit">
+   ont::affect-experiencer
+  </relation>
+ </concept>
  <concept name="ont::evoke-comfort">
+  <comment>
+   &quot;relieve of physical pain or discomfort&quot;
+  </comment>
   <relation label="inherit">
    ont::evoke-physical
+  </relation>
+  <relation label="overlap">
+   wn::|alleviate%2:29:00::|
+   wn::|numb%2:39:00::|
+   wn::|ease%2:29:00::|
+   wn::|soothe%2:29:00::|
+  </relation>
+ </concept>
+ <concept name="ont::evoke-compliance">
+  <relation label="inherit">
+   ont::subduing
+  </relation>
+  <relation label="overlap">
+   wn::|curb%2:30:01::|
+   wn::|keep_down%2:41:00::|
+   wn::|still%2:30:00::|
+   wn::|break_in%2:30:00::|
+   wn::|tame%2:30:00::|
+   wn::|sedate%2:29:00::|
+   wn::|hush%2:30:00::|
+   wn::|break%2:30:12::|
   </relation>
  </concept>
  <concept name="ont::evoke-confusion">
   <relation label="inherit">
-   ont::evoke-emotion
+   ont::evoke-cognitive-state
   </relation>
  </concept>
  <concept name="ont::evoke-discomfort">
@@ -11495,6 +11548,8 @@
    wn::|disturb%2:37:00::|
    wn::|upset%2:37:00::|
    wn::|trouble%2:37:01::|
+   wn::|tense_up%2:29:00::|
+   wn::|tense_up%2:29:01::|
   </relation>
  </concept>
  <concept name="ont::evoke-emotion">
@@ -11549,6 +11604,23 @@
    wn::|affright%2:37:00::|
   </relation>
  </concept>
+ <concept name="ont::evoke-harmony">
+  <relation label="inherit">
+   ont::evoke-emotion
+  </relation>
+  <relation label="overlap">
+   wn::|resonate%2:31:00::|
+  </relation>
+ </concept>
+ <concept name="ont::evoke-hunger">
+  <relation label="inherit">
+   ont::evoke-discomfort
+  </relation>
+  <relation label="overlap">
+   wn::|starve%2:34:00::|
+   wn::|starve%2:34:03::|
+  </relation>
+ </concept>
  <concept name="ont::evoke-ill-being">
   <relation label="inherit">
    ont::evoke-discomfort
@@ -11578,6 +11650,7 @@
    wn::|indulge%2:34:00::|
    wn::|indulge%2:34:12::|
    wn::|indulge%2:41:00::|
+   wn::|lighten_up%2:37:01::|
   </relation>
  </concept>
  <concept name="ont::evoke-offense">
@@ -11619,6 +11692,14 @@
    wn::|sadden%2:37:01::|
   </relation>
  </concept>
+ <concept name="ont::evoke-sensory-perception">
+  <relation label="inherit">
+   ont::evoke-physical
+  </relation>
+  <relation label="overlap">
+   wn::|sensitize%2:39:00::|
+  </relation>
+ </concept>
  <concept name="ont::evoke-shame">
   <relation label="inherit">
    ont::evoke-emotion
@@ -11646,6 +11727,8 @@
    wn::|beat%2:29:00::|
    wn::|tucker%2:29:00::|
    wn::|tucker_out%2:29:00::|
+   wn::|weary%2:29:00::|
+   wn::|weary%2:29:01::|
   </relation>
  </concept>
  <concept name="ont::evoke-worry">
@@ -11995,6 +12078,7 @@
   </relation>
   <relation label="overlap">
    wn::|itch%2:39:02::|
+   wn::|ache%2:39:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -12034,6 +12118,14 @@
    wn::|explode%2:30:00::|
    wn::|burst%2:30:09::|
    wn::|burst%2:38:04::|
+  </relation>
+ </concept>
+ <concept name="ont::expose">
+  <relation label="inherit">
+   ont::show
+  </relation>
+  <relation label="overlap">
+   wn::|uncover%2:35:00::|
   </relation>
  </concept>
  <concept name="ont::extended-say">
@@ -12197,6 +12289,14 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::failing">
+  <relation label="inherit">
+   ont::grade-score
+  </relation>
+  <relation label="overlap">
+   wn::|fail%2:41:07::|
+  </relation>
  </concept>
  <concept name="ont::fake-val">
   <relation label="inherit">
@@ -12393,6 +12493,17 @@
    wn::|fat%3:00:02::|
   </relation>
  </concept>
+ <concept name="ont::favorable-condition">
+  <relation label="inherit">
+   ont::condition-favorability
+  </relation>
+  <relation label="overlap">
+   wn::|advantage%1:07:00::|
+   wn::|advantage%1:07:01::|
+   wn::|asset%1:07:00::|
+   wn::|strength%1:07:01::|
+  </relation>
+ </concept>
  <concept name="ont::favorite">
   <relation label="inherit">
    ont::relation
@@ -12454,6 +12565,18 @@
  <concept name="ont::feed">
   <relation label="inherit">
    ont::publication
+  </relation>
+ </concept>
+ <concept name="ont::feeding">
+  <comment>
+   &quot;giving ingestible material (e.g. food, drink)&quot;
+  </comment>
+  <relation label="inherit">
+   ont::giving
+  </relation>
+  <relation label="overlap">
+   wn::|give%2:34:00::|
+   wn::|drench%2:34:00::|
   </relation>
  </concept>
  <concept name="ont::feeling">
@@ -12733,6 +12856,19 @@
    </relation>
    <feat name="object-function">comestible</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::fit">
+  <comment>
+   &quot;join by fitting them together in a tight configuration&quot;
+  </comment>
+  <relation label="inherit">
+   ont::joining
+  </relation>
+  <relation label="overlap">
+   wn::|dovetail%2:42:00::|
+   wn::|go%2:42:05::|
+   wn::|fit%2:30:01::|
+  </relation>
  </concept>
  <concept name="ont::fitness-scale">
   <relation label="inherit">
@@ -13943,6 +14079,14 @@
    wn::|gout%1:26:00::|
   </relation>
  </concept>
+ <concept name="ont::governing">
+  <comment>
+   &quot;control, influence, or regulate a process&quot;
+  </comment>
+  <relation label="inherit">
+   ont::control-manage
+  </relation>
+ </concept>
  <concept name="ont::governing-principle">
   <relation label="inherit">
    ont::social-contract
@@ -13989,6 +14133,11 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::grade-score">
+  <relation label="inherit">
+   ont::judgement
+  </relation>
  </concept>
  <concept name="ont::grains">
   <relation label="inherit">
@@ -14197,17 +14346,16 @@
   </relation>
  </concept>
  <concept name="ont::guiding">
+  <comment>
+   &quot;take general control over the management and direction of a program, a project, or a production&quot;
+  </comment>
   <relation label="inherit">
-   ont::control-manage
+   ont::managing
   </relation>
   <relation label="overlap">
    wn::|lead%2:38:01::|
-   wn::|take%2:38:09::|
-   wn::|direct%2:38:00::|
-   wn::|conduct%2:38:01::|
-   wn::|guide%2:38:00::|
-   wn::|call%2:38:00::|
-   wn::|lead%2:42:01::|
+   wn::|manage%2:41:01::|
+   wn::|direct%2:41:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -14951,40 +15099,6 @@
    wn::|parallel%3:00:00::|
   </relation>
  </concept>
- <concept name="ont::host">
-  <relation label="inherit">
-   ont::control-manage
-  </relation>
-  <relation label="overlap">
-   wn::|sponsor%2:40:00::|
-   wn::|patronize%2:40:00::|
-   wn::|patronise%2:40:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">bounded</feat>
-   <feat name="trajectory">-</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::agent">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="intentional">+</feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::formal">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="situation" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::hotspot">
   <relation label="inherit">
    ont::location-by-description
@@ -15294,15 +15408,17 @@
    ont::evaluation-attribute-val
   </relation>
  </concept>
+ <concept name="ont::important-part">
+  <relation label="inherit">
+   ont::part
+  </relation>
+ </concept>
  <concept name="ont::impress">
   <relation label="inherit">
    ont::judgement
   </relation>
   <relation label="overlap">
-   wn::|affect%2:37:00::|
-   wn::|impress%2:37:01::|
-   wn::|move%2:37:00::|
-   wn::|strike%2:37:00::|
+   wn::|impress%2:37:00::|
   </relation>
  </concept>
  <concept name="ont::improve">
@@ -17076,6 +17192,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::least-extent">
+  <comment>
+   &quot;to the least extent, to any extent&quot;
+  </comment>
+  <relation label="inherit">
+   ont::modifier
+  </relation>
+ </concept>
  <concept name="ont::leave-behind">
   <relation label="inherit">
    ont::intentionally-act
@@ -17826,6 +17950,7 @@
    wn::|reflect%2:43:00::|
    wn::|shine%2:43:00::|
    wn::|beam%2:43:03::|
+   wn::|flash%2:39:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -18155,7 +18280,11 @@
    ont::emit-giveoff-discharge
   </relation>
   <relation label="overlap">
-   wn::|utter%2:32:02::|
+   wn::|clink%2:39:01::|
+   wn::|clink%2:39:00::|
+   wn::|tinkle%2:39:00::|
+   wn::|sound%2:39:00::|
+   wn::|ring%2:39:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::effect" optional="optional">
@@ -18194,11 +18323,6 @@
    ont::functional-region
   </relation>
  </concept>
- <concept name="ont::manage">
-  <relation label="inherit">
-   ont::managing
-  </relation>
- </concept>
  <concept name="ont::manageability-val">
   <relation label="inherit">
    ont::can-be-done-val
@@ -18214,18 +18338,50 @@
   </relation>
  </concept>
  <concept name="ont::managing">
+  <comment>
+   &quot;take responsibility over the production of a project, a program, or a production&quot;
+  </comment>
   <relation label="inherit">
    ont::control-manage
   </relation>
-  <relation label="overlap">
-   wn::|keep%2:40:01::|
-   wn::|handle%2:41:00::|
-   wn::|care%2:41:11::|
-   wn::|deal%2:41:13::|
-   wn::|manage%2:41:00::|
-   wn::|process%2:41:01::|
-   wn::|rest%2:32:01::|
+ </concept>
+ <concept name="ont::managing-resources">
+  <comment>
+   &quot;manage resources for the execution of a program, a project or a production&quot;
+  </comment>
+  <relation label="inherit">
+   ont::managing
   </relation>
+  <relation label="overlap">
+   wn::|sponsor%2:40:00::|
+   wn::|patronize%2:40:00::|
+   wn::|patronise%2:40:00::|
+   wn::|host%2:34:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">bounded</feat>
+   <feat name="trajectory">-</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::agent">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="intentional">+</feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::formal">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::mania">
   <relation label="inherit">
@@ -18901,7 +19057,7 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::mental-atttitude">
+ <concept name="ont::mental-attitude">
   <relation label="inherit">
    ont::mental-construction
   </relation>
@@ -19700,6 +19856,11 @@
    </relation>
    <feat name="container">+</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::multimedia-val">
+  <relation label="inherit">
+   ont::medium
+  </relation>
  </concept>
  <concept name="ont::multiple">
   <relation label="inherit">
@@ -20573,6 +20734,18 @@
    ont::salience
   </relation>
  </concept>
+ <concept name="ont::not-favorable-condition">
+  <relation label="inherit">
+   ont::condition-favorability
+  </relation>
+  <relation label="overlap">
+   wn::|weak_point%1:07:00::|
+   wn::|liability%1:07:00::|
+   wn::|disadvantage%1:07:00::|
+   wn::|detriment%1:11:00::|
+   wn::|weakness%1:26:00::|
+  </relation>
+ </concept>
  <concept name="ont::not-flexible-val">
   <relation label="inherit">
    ont::flexibility-val
@@ -21299,7 +21472,6 @@
    wn::|keep_up%2:29:00::|
    wn::|retire%2:33:00::|
    wn::|sensitise%2:39:00::|
-   wn::|sound%2:39:01::|
    wn::|stampede%2:38:01::|
    wn::|stampede%2:41:01::|
    wn::|trip%2:38:01::|
@@ -21772,6 +21944,21 @@
   <relation label="overlap">
    wn::|organization%1:14:00::|
    wn::|organisation%1:14:00::|
+  </relation>
+ </concept>
+ <concept name="ont::organizing">
+  <comment>
+   &quot;coordinate, manage and execute a program, a project or a production&quot;
+  </comment>
+  <relation label="inherit">
+   ont::managing
+  </relation>
+  <relation label="overlap">
+   wn::|organize%2:41:00::|
+   wn::|organize%2:36:00::|
+   wn::|organize%2:31:00::|
+   wn::|stage%2:36:00::|
+   wn::|produce%2:39:00::|
   </relation>
  </concept>
  <concept name="ont::orient">
@@ -22272,6 +22459,14 @@
    </relation>
    <feat name="trajectory">-</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::passing">
+  <relation label="inherit">
+   ont::grade-score
+  </relation>
+  <relation label="overlap">
+   wn::|pass%2:41:07::|
+  </relation>
  </concept>
  <concept name="ont::passive">
   <relation label="inherit">
@@ -23029,21 +23224,19 @@
   </relation>
  </concept>
  <concept name="ont::planning">
+  <comment>
+   &quot;make necessary preparations for a program, a project or a production&quot;
+  </comment>
   <relation label="inherit">
-   ont::intentionally-act
+   ont::managing
   </relation>
   <relation label="overlap">
-   wn::|design%2:36:02::|
-   wn::|contrive%2:36:01::|
-   wn::|project%2:36:01::|
    wn::|plan%2:36:00::|
    wn::|plan%2:31:00::|
-   wn::|be_after%2:31:00::|
    wn::|plan%2:31:01::|
    wn::|time%2:31:00::|
    wn::|plan%1:09:00::|
-   wn::|program%1:09:00::|
-   wn::|programme%1:09:00::|
+   wn::|arrange%2:36:03::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::effect" optional="optional">
@@ -23116,6 +23309,8 @@
    wn::|play%2:33:00::|
    wn::|play%2:41:03::|
    wn::|play%2:41:00::|
+   wn::|sound%2:39:01::|
+   wn::|ring%2:39:01::|
   </relation>
  </concept>
  <concept name="ont::pleasant">
@@ -24171,6 +24366,16 @@
   </comment>
   <relation label="inherit">
    ont::property-val
+  </relation>
+ </concept>
+ <concept name="ont::procreate">
+  <relation label="inherit">
+   ont::life-process
+  </relation>
+  <relation label="overlap">
+   wn::|propagate%2:29:00::|
+   wn::|propagate%2:29:01::|
+   wn::|reproduce%2:29:00::|
   </relation>
  </concept>
  <concept name="ont::produce">
@@ -25658,6 +25863,7 @@
    wn::|decline%2:40:00::|
    wn::|dismiss%2:32:02::|
    wn::|refuse%2:41:00::|
+   wn::|bounce%2:40:01::|
   </relation>
  </concept>
  <concept name="ont::relate">
@@ -26051,6 +26257,9 @@
   <relation label="inherit">
    ont::request
   </relation>
+  <relation label="overlap">
+   wn::|remind%2:31:00::|
+  </relation>
  </concept>
  <concept name="ont::remote">
   <relation label="inherit">
@@ -26180,7 +26389,6 @@
    wn::|iterate%2:32:00::|
    wn::|restate%2:32:00::|
    wn::|retell%2:32:00::|
-   wn::|remind%2:31:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal">
@@ -26348,12 +26556,9 @@
    ont::directive
   </relation>
   <relation label="overlap">
-   wn::|quest%2:32:01::|
-   wn::|call_for%2:32:04::|
-   wn::|bespeak%2:32:00::|
    wn::|request%2:32:01::|
    wn::|request%1:10:00::|
-   wn::|asking%1:10:00::|
+   wn::|call%2:41:04::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -27260,6 +27465,15 @@
    wn::|identical%5:00:00:same:02|
   </relation>
  </concept>
+ <concept name="ont::same-scale">
+  <relation label="inherit">
+   ont::similarity-scale
+  </relation>
+  <relation label="overlap">
+   wn::|identity%1:07:02::|
+   wn::|sameness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::sampling">
   <relation label="inherit">
    ont::choosing
@@ -27324,6 +27538,7 @@
    wn::|say%2:32:13::|
    wn::|say%2:32:01::|
    wn::|talk%2:32:00::|
+   wn::|utter%2:32:02::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -27817,6 +28032,7 @@
    wn::|channelise%2:35:00::|
    wn::|air%2:32:02::|
    wn::|make_pass%2:38:00::|
+   wn::|bundle_off%2:38:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -27986,6 +28202,8 @@
    wn::|break%2:41:13::|
    wn::|divide%2:38:00::|
    wn::|divide%2:42:00::|
+   wn::|disjoint%2:35:00::|
+   wn::|separate%2:35:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -28521,6 +28739,8 @@
   </relation>
   <relation label="overlap">
    wn::|similarity%1:07:00::|
+   wn::|likeness%1:07:00::|
+   wn::|comparability%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::similarity">
@@ -29058,6 +29278,17 @@
    wn::|practice%1:09:00::|
    wn::|habit%1:09:00::|
    wn::|routine%1:04:00::|
+  </relation>
+ </concept>
+ <concept name="ont::social-relationship">
+  <relation label="inherit">
+   ont::social-activity
+  </relation>
+  <relation label="overlap">
+   wn::|relationship%1:24:00::|
+   wn::|relationship%1:26:00::|
+   wn::|romance%1:26:00::|
+   wn::|affair%1:26:00::|
   </relation>
  </concept>
  <concept name="ont::socially-remove">
@@ -29968,6 +30199,16 @@
    wn::|stability%1:07:00::|
   </relation>
  </concept>
+ <concept name="ont::steal">
+  <relation label="inherit">
+   ont::acquire-by-action
+  </relation>
+  <relation label="overlap">
+   wn::|loot%2:40:01::|
+   wn::|loot%2:40:00::|
+   wn::|steal%2:40:00::|
+  </relation>
+ </concept>
  <concept name="ont::steep">
   <relation label="inherit">
    ont::cooking
@@ -30271,21 +30512,6 @@
  <concept name="ont::subduing">
   <relation label="inherit">
    ont::evoke-emotion
-  </relation>
-  <relation label="overlap">
-   wn::|curb%2:30:01::|
-   wn::|inhibit%2:30:00::|
-   wn::|pacify%2:37:00::|
-   wn::|lenify%2:37:00::|
-   wn::|conciliate%2:37:00::|
-   wn::|assuage%2:37:00::|
-   wn::|appease%2:37:00::|
-   wn::|mollify%2:37:00::|
-   wn::|placate%2:37:00::|
-   wn::|gentle%2:37:00::|
-   wn::|gruntle%2:37:00::|
-   wn::|comfort%2:37:01::|
-   wn::|keep_down%2:41:00::|
   </relation>
  </concept>
  <concept name="ont::submit">
@@ -30934,6 +31160,19 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::taking-care-of">
+  <comment>
+   &quot;take care of a problem or an issue&quot;
+  </comment>
+  <relation label="inherit">
+   ont::managing
+  </relation>
+  <relation label="overlap">
+   wn::|handle%2:41:00::|
+   wn::|process%2:41:01::|
+   wn::|take_care%2:41:11::|
+  </relation>
  </concept>
  <concept name="ont::talk">
   <comment>
@@ -32045,6 +32284,7 @@
    wn::|change%2:38:00::|
    wn::|transfer%2:38:02::|
    wn::|transfer%2:40:00::|
+   wn::|change_owners%2:40:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -32203,6 +32443,17 @@
    <feat name="trajectory">+</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::trip-out">
+  <comment>
+   &quot;get high, stoned or drugged&quot;
+  </comment>
+  <relation label="inherit">
+   ont::bodily-process
+  </relation>
+  <relation label="overlap">
+   wn::|trip%2:34:00::|
+  </relation>
+ </concept>
  <concept name="ont::triple">
   <relation label="inherit">
    ont::increase-number
@@ -32274,6 +32525,14 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::truth-scale">
+  <relation label="inherit">
+   ont::unordered-discrete-domain
+  </relation>
+  <relation label="overlap">
+   wn::|truth%1:09:00::|
+  </relation>
  </concept>
  <concept name="ont::truth-value-val">
   <relation label="inherit">
@@ -32466,6 +32725,8 @@
   <relation label="overlap">
    wn::|disconnect%2:35:00::|
    wn::|disengage%2:35:01::|
+   wn::|unfasten%2:35:01::|
+   wn::|unfasten%2:35:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -32566,6 +32827,7 @@
    wn::|know%2:31:01::|
    wn::|cognize%2:31:00::|
    wn::|cognise%2:31:00::|
+   wn::|understand%2:31:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -33280,15 +33542,15 @@
  </concept>
  <concept name="ont::visual-display">
   <relation label="inherit">
-   ont::adjust
+   ont::show
   </relation>
   <relation label="overlap">
    wn::|expose%2:39:00::|
-   wn::|exhibit%2:39:01::|
-   wn::|display%2:39:00::|
    wn::|bring_on%2:36:01::|
    wn::|expose%2:35:00::|
+   wn::|project%2:39:01::|
    wn::|confront%2:32:03::|
+   wn::|flash%2:30:03::|
   </relation>
  </concept>
  <concept name="ont::visual-distinctivenss-scale">
