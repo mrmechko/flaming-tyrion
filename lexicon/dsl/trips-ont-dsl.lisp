@@ -8752,6 +8752,9 @@
     (ONT::SCALE
      (CONCEPT
        T))
+    (ONT::GROUND1
+     (CONCEPT
+       T))
     (ONT::GROUND
      (CONCEPT
        T))
