@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::nychthemeron-event">
  <relation label="inherit">
-  ont::event-defined-by-activity
+  ont::natural-event
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -33,25 +33,26 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::event-defined-by-activity">
+ <concept name="ont::natural-event">
  <relation label="inherit">
   ont::event-type
- </relation>
- <relation label="overlap">
-  wn::|event%1:03:00::|
-  wn::|time_period%1:28:00::|
-  wn::|period_of_time%1:28:00::|
-  wn::|period%1:28:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">phenomenal</feat>
   <feat name="aspect">dynamic</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="t" />
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="cause">phenomenal</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -74,11 +75,18 @@
  <relation label="inherit">
   situation
  </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">phenomenal</feat>
  <feat name="aspect">dynamic</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
+ <role-restr-map roles="ont::agent">
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="cause">phenomenal</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::situation-root">

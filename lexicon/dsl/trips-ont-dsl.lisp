@@ -8749,6 +8749,10 @@
     ONT::ABSTRACT-OBJECT
     ABSTR-OBJ)
   (SEM-FRAME
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::SCALE
      (CONCEPT
        T))
@@ -16332,6 +16336,19 @@
     ONT::INFORMATION-PROPERTY-VAL))
 
 (CONCEPT
+  ONT::MEASURE
+  (INHERIT
+    ONT::EVENT-OF-STATE)
+  (OVERLAP
+    WN::|weigh%2:42:01::|)
+  (SEM-FRAME
+    (ONT::EXTENT
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE ?!SC)))))
+
+(CONCEPT
   ONT::MEASURE-RELATED-PROPERTY-VAL
   (INHERIT
     ONT::QUANTITY-RELATED-PROPERTY-VAL))
@@ -18639,7 +18656,7 @@
 (CONCEPT
   ONT::NYCHTHEMERON-EVENT
   (INHERIT
-    ONT::EVENT-DEFINED-BY-ACTIVITY))
+    ONT::NATURAL-EVENT))
 
 (CONCEPT
   ONT::OBJ-IN-PATH
@@ -21521,10 +21538,6 @@
     (INFORMATION -)
     (CONTAINER -))
   (SEM-FRAME
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::STANDARD
      (CONCEPT
        T)
@@ -22713,6 +22726,10 @@
       ABSTR-OBJ)
     (INTENSITY HI))
   (SEM-FRAME
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::NEUTRAL1
      (CONCEPT
        T)
@@ -29824,7 +29841,6 @@
   (INHERIT
     ONT::REGISTER)
   (OVERLAP
-    WN::|weigh%2:42:01::|
     WN::|weigh%2:42:00::|
     WN::|librate%2:42:00::|)
   (SEM-FEATS

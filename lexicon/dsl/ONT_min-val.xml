@@ -37,6 +37,9 @@
  </or>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::scale">
   <concept name="t" />
  </role-restr-map>
@@ -83,6 +86,9 @@
   abstr-obj
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::scale">
    <concept name="t" />
   </role-restr-map>
@@ -128,12 +134,14 @@
   ont::min-val
  </relation>
  <syntax>
-  <template-call template="ont::superl-templ" xp="'(w::pp w::of)" />
+  <template-call template="ont::superl-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="subcat2" syn-cat="-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::ground" optional="optional"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
+   <feat name="allow-post-n1-subcat">+</feat>
    <feat name="comparative">superl</feat>
    <feat name="atype">central</feat>
    <feat name="sort">pred</feat>
@@ -162,10 +170,12 @@
  <syntax>
   <template-call template="ont::superl-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::than" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="subcat2" syn-cat="-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::ground" optional="optional"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
+   <feat name="allow-post-n1-subcat">+</feat>
    <feat name="comparative">superl</feat>
    <feat name="atype">central</feat>
    <feat name="sort">pred</feat>
@@ -191,10 +201,12 @@
  <syntax>
   <template-call template="ont::superl-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::than" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="subcat2" syn-cat="-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::ground" optional="optional"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
+   <feat name="allow-post-n1-subcat">+</feat>
    <feat name="comparative">superl</feat>
    <feat name="atype">central</feat>
    <feat name="sort">pred</feat>
