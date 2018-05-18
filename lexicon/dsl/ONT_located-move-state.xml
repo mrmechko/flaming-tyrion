@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::located-move-state">
+ <comment>
+  &quot;a state of (passively) maintaining some object's state (e.g., position, possession)&quot;
+ </comment>
  <relation label="inherit">
   ont::event-of-action
  </relation>
@@ -227,35 +230,6 @@
  <concept name="proposition" />
  </or>
  <concept name="situation" />
- <concept name="ont::stop-move">
- <relation label="inherit">
-  ont::located-move-state
- </relation>
- <relation label="overlap">
-  wn::|park%2:35:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">force</feat>
-  <feat name="aspect">bounded</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">-</feat>
-    <feat name="mobility">movable</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::stay">
  <relation label="inherit">
   ont::located-move-state
@@ -285,52 +259,6 @@
     </relation>
     <feat name="mobility">movable</feat>
    </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::appear">
- <relation label="inherit">
-  ont::located-move-state
- </relation>
- <relation label="overlap">
-  wn::|appear%2:30:00::|
-  wn::|appear%2:30:02::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">phenomenal</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::disappear">
- <relation label="inherit">
-  ont::located-move-state
- </relation>
- <relation label="overlap">
-  wn::|disappear%2:30:00::|
-  wn::|go_down%2:34:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">phenomenal</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -365,6 +293,9 @@
  </sem-frame>
  </concept>
  <concept name="ont::wait">
+ <comment>
+  &quot;events involving waiting about, loitering, etc&quot;
+ </comment>
  <relation label="inherit">
   ont::located-move-state
  </relation>

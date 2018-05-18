@@ -555,6 +555,14 @@
    <role-restr-map roles="ont::norole" optional="optional">
     <concept name="t" />
    </role-restr-map>
+   <role-restr-map roles="ont::result" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="type">property-val</feat>
+    </sem-feats>
+   </role-restr-map>
    <role-restr-map roles="ont::agent">
     <or>
      <concept name="phys-obj" />
@@ -721,6 +729,9 @@
   </sem-frame>
  </concept>
  <concept name="ont::activity-ongoing">
+  <comment>
+   &quot;actively doing something to maintain a state (i.e., involves an agent)&quot;
+  </comment>
   <relation label="inherit">
    ont::event-of-action
   </relation>
@@ -1648,7 +1659,7 @@
  </concept>
  <concept name="ont::appear">
   <relation label="inherit">
-   ont::located-move-state
+   ont::event-of-undergoing-action
   </relation>
   <relation label="overlap">
    wn::|appear%2:30:00::|
@@ -2095,6 +2106,19 @@
      <or>
       place
       representation
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::agent">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="type">
+     <or>
+      information-function-object
+      phys-object
      </or>
      </feat>
     </sem-feats>
@@ -4874,12 +4898,6 @@
      </or>
      </feat>
     </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::result" optional="optional">
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-    </or>
    </role-restr-map>
    <role-restr-map roles="ont::affected" optional="optional">
     <or>
@@ -8726,6 +8744,14 @@
    wn::|dehydrated%5:00:00:unhealthy:00|
   </relation>
  </concept>
+ <concept name="ont::delay">
+  <relation label="inherit">
+   ont::hindering
+  </relation>
+  <relation label="overlap">
+   wn::|hold_off%2:42:00::|
+  </relation>
+ </concept>
  <concept name="ont::delimit-reln">
   <relation label="inherit">
    ont::pos-as-containment-reln
@@ -9374,6 +9400,12 @@
   <relation label="inherit">
    ont::property-val
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">dimensional-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::dimensional-scale">
   <relation label="inherit">
@@ -9587,7 +9619,7 @@
  </concept>
  <concept name="ont::disappear">
   <relation label="inherit">
-   ont::located-move-state
+   ont::event-of-undergoing-action
   </relation>
   <relation label="overlap">
    wn::|disappear%2:30:00::|
@@ -9935,13 +9967,16 @@
    abstr-obj
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::refset" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::compar" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::norole" optional="optional">
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::scale">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::ground1">
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::ground">
@@ -10820,10 +10855,7 @@
    wn::|enter%2:36:00::|
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::neutral" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::result">
+   <role-restr-map roles="ont::neutral">
     <sem-feats>
      <relation label="inherit">
       phys-obj
@@ -15950,9 +15982,6 @@
    <role-restr-map roles="ont::formal" optional="optional">
     <concept name="situation" />
    </role-restr-map>
-   <role-restr-map roles="ont::result">
-    <concept name="situation" />
-   </role-restr-map>
    <role-restr-map roles="ont::affected">
     <or>
      <concept name="phys-obj" />
@@ -16948,6 +16977,9 @@
    wn::|knowledge%1:03:00::|
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::formal" optional="optional">
+    <concept name="situation" />
+   </role-restr-map>
    <role-restr-map roles="ont::figure" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -17868,6 +17900,9 @@
   </sem-frame>
  </concept>
  <concept name="ont::located-move-state">
+  <comment>
+   &quot;a state of (passively) maintaining some object's state (e.g., position, possession)&quot;
+  </comment>
   <relation label="inherit">
    ont::event-of-action
   </relation>
@@ -19074,7 +19109,7 @@
    <relation label="inherit">
     abstr-obj
    </relation>
-   <feat name="scale">other-scale</feat>
+   <feat name="scale">measure-scale</feat>
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::figure">
@@ -23224,6 +23259,7 @@
    wn::|seat%2:35:00::|
    wn::|stand%2:35:01::|
    wn::|perch%2:35:10::|
+   wn::|park%2:35:00::|
   </relation>
  </concept>
  <concept name="ont::plain-val">
@@ -25970,6 +26006,12 @@
    <feat name="intensity">hi</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::refset" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::compar" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::norole" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -30330,35 +30372,6 @@
    wn::|terminate%2:30:01::|
   </relation>
  </concept>
- <concept name="ont::stop-move">
-  <relation label="inherit">
-   ont::located-move-state
-  </relation>
-  <relation label="overlap">
-   wn::|park%2:35:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="cause">force</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::agent" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::affected">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="intentional">-</feat>
-     <feat name="mobility">movable</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::storage-facility">
   <relation label="inherit">
    ont::facility
@@ -33736,6 +33749,9 @@
   </relation>
  </concept>
  <concept name="ont::wait">
+  <comment>
+   &quot;events involving waiting about, loitering, etc&quot;
+  </comment>
   <relation label="inherit">
    ont::located-move-state
   </relation>

@@ -29,6 +29,28 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="ont::predefined-measure-val">
+ <comment>
+  &quot;standardized size/quantity given a predefined measure&quot;
+ </comment>
+ <relation label="inherit">
+  ont::dimensional-property-val
+ </relation>
+ </concept>
+ <concept name="ont::dimensional-property-val">
+ <comment>
+  &quot;properties pertaining to dimensions and measurable extents&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">dimensional-scale</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -82,22 +104,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::dimensional-property-val">
- <comment>
-  &quot;properties pertaining to dimensions and measurable extents&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::property-val
+  abstr-obj
  </relation>
- </concept>
- <concept name="ont::predefined-measure-val">
- <comment>
-  &quot;standardized size/quantity given a predefined measure&quot;
- </comment>
- <relation label="inherit">
-  ont::dimensional-property-val
- </relation>
- </concept>
+ <feat name="scale">dimensional-scale</feat>
+ </sem-feats>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
@@ -107,13 +119,16 @@
   abstr-obj
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::scale">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground1">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::ground">
@@ -187,13 +202,16 @@
  </relation>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::refset" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::scale">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground1">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::ground">

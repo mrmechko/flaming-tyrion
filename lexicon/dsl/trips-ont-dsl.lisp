@@ -494,6 +494,12 @@
      (CONCEPT
        T)
      OPTIONAL)
+    (ONT::RESULT
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE PROPERTY-VAL))
+     OPTIONAL)
     (ONT::AGENT
      (OR
        (CONCEPT
@@ -633,6 +639,8 @@
 
 (CONCEPT
   ONT::ACTIVITY-ONGOING
+  (COMMENT
+   "actively doing something to maintain a state (i.e., involves an agent)")
   (INHERIT
     ONT::EVENT-OF-ACTION)
   (OVERLAP
@@ -1451,7 +1459,7 @@
 (CONCEPT
   ONT::APPEAR
   (INHERIT
-    ONT::LOCATED-MOVE-STATE)
+    ONT::EVENT-OF-UNDERGOING-ACTION)
   (OVERLAP
     WN::|appear%2:30:00::|
     WN::|appear%2:30:02::|)
@@ -1836,7 +1844,15 @@
        (OBJECT-FUNCTION
         (OR
           PLACE
-          REPRESENTATION))))))
+          REPRESENTATION))))
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE
+        (OR
+          INFORMATION-FUNCTION-OBJECT
+          PHYS-OBJECT))))))
 
 (CONCEPT
   ONT::ARROGANT-VAL
@@ -4250,13 +4266,6 @@
         (OR
           SITUATION-ROOT
           PROPERTY-VAL)))
-     OPTIONAL)
-    (ONT::RESULT
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ))
      OPTIONAL)
     (ONT::AFFECTED
      (OR
@@ -7676,6 +7685,13 @@
     WN::|dehydrated%5:00:00:unhealthy:00|))
 
 (CONCEPT
+  ONT::DELAY
+  (INHERIT
+    ONT::HINDERING)
+  (OVERLAP
+    WN::|hold_off%2:42:00::|))
+
+(CONCEPT
   ONT::DELIMIT-RELN
   (INHERIT
     ONT::POS-AS-CONTAINMENT-RELN)
@@ -8240,7 +8256,11 @@
   ONT::DIMENSIONAL-PROPERTY-VAL
   (COMMENT "properties pertaining to dimensions and measurable extents")
   (INHERIT
-    ONT::PROPERTY-VAL))
+    ONT::PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE DIMENSIONAL-SCALE)))
 
 (CONCEPT
   ONT::DIMENSIONAL-SCALE
@@ -8432,7 +8452,7 @@
 (CONCEPT
   ONT::DISAPPEAR
   (INHERIT
-    ONT::LOCATED-MOVE-STATE)
+    ONT::EVENT-OF-UNDERGOING-ACTION)
   (OVERLAP
     WN::|disappear%2:30:00::|
     WN::|go_down%2:34:00::|)
@@ -8749,14 +8769,19 @@
     ONT::ABSTRACT-OBJECT
     ABSTR-OBJ)
   (SEM-FRAME
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
     (ONT::SCALE
-     (CONCEPT
-       T))
-    (ONT::GROUND1
      (CONCEPT
        T))
     (ONT::GROUND
@@ -9534,10 +9559,6 @@
     WN::|enter%2:36:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::RESULT
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
@@ -14006,9 +14027,6 @@
      (CONCEPT
        SITUATION)
      OPTIONAL)
-    (ONT::RESULT
-     (CONCEPT
-       SITUATION))
     (ONT::AFFECTED
      (OR
        (CONCEPT
@@ -14853,6 +14871,10 @@
   (OVERLAP
     WN::|knowledge%1:03:00::|)
   (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -15639,6 +15661,8 @@
 
 (CONCEPT
   ONT::LOCATED-MOVE-STATE
+  (COMMENT
+   "a state of (passively) maintaining some object's state (e.g., position, possession)")
   (INHERIT
     ONT::EVENT-OF-ACTION)
   (SEM-FEATS
@@ -16660,7 +16684,7 @@
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
-    (SCALE OTHER-SCALE))
+    (SCALE MEASURE-SCALE))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -20303,7 +20327,8 @@
     WN::|set_down%2:35:00::|
     WN::|seat%2:35:00::|
     WN::|stand%2:35:01::|
-    WN::|perch%2:35:10::|))
+    WN::|perch%2:35:10::|
+    WN::|park%2:35:00::|))
 
 (CONCEPT
   ONT::PLAIN-VAL
@@ -22726,6 +22751,14 @@
       ABSTR-OBJ)
     (INTENSITY HI))
   (SEM-FRAME
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::NOROLE
      (CONCEPT
        T)
@@ -26609,29 +26642,6 @@
     WN::|terminate%2:30:01::|))
 
 (CONCEPT
-  ONT::STOP-MOVE
-  (INHERIT
-    ONT::LOCATED-MOVE-STATE)
-  (OVERLAP
-    WN::|park%2:35:00::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (CAUSE FORCE)
-    (ASPECT BOUNDED))
-  (SEM-FRAME
-    (ONT::AGENT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL -)
-       (MOBILITY MOVABLE)))))
-
-(CONCEPT
   ONT::STORAGE-FACILITY
   (INHERIT
     ONT::FACILITY)
@@ -29584,6 +29594,7 @@
 
 (CONCEPT
   ONT::WAIT
+  (COMMENT "events involving waiting about, loitering, etc")
   (INHERIT
     ONT::LOCATED-MOVE-STATE)
   (OVERLAP

@@ -37,13 +37,16 @@
  </or>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::refset" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::scale">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground1">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::ground">
@@ -86,13 +89,16 @@
   abstr-obj
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::scale">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground1">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::ground">
@@ -131,8 +137,21 @@
  </morph>
  <relation label="inherit">
   ont::less-val
-  ont::compar-than-templ
  </relation>
+ <syntax>
+  <template-call template="ont::compar-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::than" sem-role="ont::compar" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-post-n1-subcat">+</feat>
+   <feat name="comparative">+</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
  </sense>
  <sense>
  <morph>
@@ -149,11 +168,12 @@
   <template-call template="ont::compar-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat2" syn-cat="-" sem-role="ont::norole"/>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::than" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::than" sem-role="ont::compar" optional="optional"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-post-n1-subcat">+</feat>
+   <feat name="comparative">+</feat>
    <feat name="atype">central</feat>
    <feat name="sort">pred</feat>
   </syn-feats>

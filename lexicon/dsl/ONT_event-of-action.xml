@@ -238,6 +238,14 @@
   <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
   </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">property-val</feat>
+   </sem-feats>
+  </role-restr-map>
   <role-restr-map roles="ont::agent">
    <or>
     <concept name="phys-obj" />
@@ -360,10 +368,7 @@
   wn::|enter%2:36:00::|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::result">
+  <role-restr-map roles="ont::neutral">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -500,6 +505,9 @@
  </sem-frame>
  </concept>
  <concept name="ont::located-move-state">
+ <comment>
+  &quot;a state of (passively) maintaining some object's state (e.g., position, possession)&quot;
+ </comment>
  <relation label="inherit">
   ont::event-of-action
  </relation>
@@ -527,6 +535,9 @@
  </sem-frame>
  </concept>
  <concept name="ont::activity-ongoing">
+ <comment>
+  &quot;actively doing something to maintain a state (i.e., involves an agent)&quot;
+ </comment>
  <relation label="inherit">
   ont::event-of-action
  </relation>
@@ -757,6 +768,19 @@
     <or>
      place
      representation
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="type">
+    <or>
+     information-function-object
+     phys-object
     </or>
     </feat>
    </sem-feats>

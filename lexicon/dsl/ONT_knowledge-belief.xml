@@ -10,6 +10,9 @@
   wn::|knowledge%1:03:00::|
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
    <concept name="t" />
   </role-restr-map>
@@ -49,6 +52,9 @@
  </sem-feats>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
+ </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
   <concept name="t" />
  </role-restr-map>
@@ -127,6 +133,38 @@
  <sense>
  <morph>
   <pos pos="n" />
+  <word first-word="belief" />
+ </morph>
+ <relation label="inherit">
+  ont::knowledge-belief
+ </relation>
+ <syntax>
+  <template-call template="ont::count-subcat-that-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::formal" optional="optional"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">pred</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
   <word first-word="knowledge" />
  </morph>
  <comment>
@@ -154,6 +192,38 @@
    </or>
    </feat>
    <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="knowledge" />
+ </morph>
+ <relation label="inherit">
+  ont::knowledge-belief
+ </relation>
+ <syntax>
+  <template-call template="ont::count-subcat-that-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::formal" optional="optional"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">pred</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
   </syn-feats>
  </syntax>
  </sense>

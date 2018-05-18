@@ -181,6 +181,9 @@
  </role-restr-map>
  </sem-frame>
  <concept name="ont::located-move-state">
+ <comment>
+  &quot;a state of (passively) maintaining some object's state (e.g., position, possession)&quot;
+ </comment>
  <relation label="inherit">
   ont::event-of-action
  </relation>
@@ -276,38 +279,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="cache" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="cache" />
-   </nom>
-  </forms>
- </morph>
- <example text="cache the webpage">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::retain
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="conserve" />
   <forms>
    -VB
@@ -321,25 +292,6 @@
  </relation>
  <relation label="overlap">
   vn::get-13.5.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="hoard" />
- </morph>
- <relation label="inherit">
-  ont::retain
- </relation>
- <relation label="overlap">
-  vn::keep-15.2
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-xp-templ" />
@@ -478,42 +430,23 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="stock" />
+  <word first-word="stick" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="stuck" />
+   </past>
+  </forms>
  </morph>
- <example text="do you stock organic building supplies">
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="let's stick with the mac">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::retain
+  ont::agent-theme-complex-subjcontrol-templ
  </relation>
- <relation label="overlap">
-  vn::keep-15.2
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="store" />
- </morph>
- <relation label="inherit">
-  ont::retain
- </relation>
- <relation label="overlap">
-  vn::keep-15.2
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
  </sense>
 </dsl>

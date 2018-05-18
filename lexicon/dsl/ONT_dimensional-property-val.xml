@@ -9,6 +9,12 @@
  <relation label="inherit">
   ont::property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">dimensional-scale</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::root" />
  <concept name="abstr-obj" />
@@ -82,6 +88,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">dimensional-scale</feat>
+ </sem-feats>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
@@ -91,13 +103,16 @@
   abstr-obj
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::scale">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground1">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::ground">
@@ -171,13 +186,16 @@
  </relation>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::refset" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::scale">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground1">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::ground">
