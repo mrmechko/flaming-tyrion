@@ -555,14 +555,6 @@
    <role-restr-map roles="ont::norole" optional="optional">
     <concept name="t" />
    </role-restr-map>
-   <role-restr-map roles="ont::result" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="type">property-val</feat>
-    </sem-feats>
-   </role-restr-map>
    <role-restr-map roles="ont::agent">
     <or>
      <concept name="phys-obj" />
@@ -9357,7 +9349,7 @@
    ont::predicate
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::ground1" optional="optional">
+   <role-restr-map roles="ont::ground1">
     <sem-feats>
      <relation label="inherit">
       abstr-obj
@@ -9367,6 +9359,12 @@
       linear-scale
       number-scale
       linear-extent-scale
+     </or>
+     </feat>
+     <feat name="type">
+     <or>
+      length-unit
+      number
      </or>
      </feat>
     </sem-feats>
@@ -9381,6 +9379,12 @@
       linear-scale
       number-scale
       linear-extent-scale
+     </or>
+     </feat>
+     <feat name="type">
+     <or>
+      length-unit
+      number
      </or>
      </feat>
     </sem-feats>
@@ -19930,8 +19934,13 @@
  <concept name="ont::multiple">
   <relation label="inherit">
    ont::mathematical-term
-   abstr-obj
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">?sc</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::muscle-contraction">
   <relation label="inherit">
@@ -26924,7 +26933,17 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground">
-    <concept name="phys-obj" />
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="type">
+     <or>
+      cardinal-point
+      loc-wrt-orientation
+     </or>
+     </feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure">
     <concept name="phys-obj" />

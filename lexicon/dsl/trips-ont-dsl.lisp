@@ -494,12 +494,6 @@
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::RESULT
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE PROPERTY-VAL))
-     OPTIONAL)
     (ONT::AGENT
      (OR
        (CONCEPT
@@ -8234,8 +8228,11 @@
         (OR
           LINEAR-SCALE
           NUMBER-SCALE
-          LINEAR-EXTENT-SCALE)))
-     OPTIONAL)
+          LINEAR-EXTENT-SCALE))
+       (TYPE
+        (OR
+          LENGTH-UNIT
+          NUMBER))))
     (ONT::GROUND
      (SEM-FEATS
        (INHERIT
@@ -8244,7 +8241,11 @@
         (OR
           LINEAR-SCALE
           NUMBER-SCALE
-          LINEAR-EXTENT-SCALE))))
+          LINEAR-EXTENT-SCALE))
+       (TYPE
+        (OR
+          LENGTH-UNIT
+          NUMBER))))
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -17406,8 +17407,11 @@
 (CONCEPT
   ONT::MULTIPLE
   (INHERIT
-    ONT::MATHEMATICAL-TERM
-    ABSTR-OBJ))
+    ONT::MATHEMATICAL-TERM)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ?SC)))
 
 (CONCEPT
   ONT::MUSCLE-CONTRACTION
@@ -23578,8 +23582,13 @@
     ONT::PREDICATE)
   (SEM-FRAME
     (ONT::GROUND
-     (CONCEPT
-       PHYS-OBJ))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE
+        (OR
+          CARDINAL-POINT
+          LOC-WRT-ORIENTATION))))
     (ONT::FIGURE
      (CONCEPT
        PHYS-OBJ))))
