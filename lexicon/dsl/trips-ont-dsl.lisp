@@ -21906,7 +21906,7 @@
 (CONCEPT
   ONT::PURPOSE
   (INHERIT
-    ONT::SITUATION-MODIFIER)
+    ONT::SITUATION-OBJECT-MODIFIER)
   (SEM-FRAME
     (ONT::GROUND
      (SEM-FEATS
@@ -21921,10 +21921,14 @@
        (TYPE ORGANISM)))
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
        (TYPE
         (OR
+          PHYS-OBJECT
           EVENT-OF-ACTION
           EVENT-OF-AWARENESS))))))
 

@@ -25047,7 +25047,7 @@
  </concept>
  <concept name="ont::purpose">
   <relation label="inherit">
-   ont::situation-modifier
+   ont::situation-object-modifier
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground">
@@ -25063,11 +25063,13 @@
    </role-restr-map>
    <role-restr-map roles="ont::figure">
     <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="situation" />
+     </or>
      <feat name="type">
      <or>
+      phys-object
       event-of-action
       event-of-awareness
      </or>

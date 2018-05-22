@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::purpose">
  <relation label="inherit">
-  ont::situation-modifier
+  ont::situation-object-modifier
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground">
@@ -20,11 +20,13 @@
   </role-restr-map>
   <role-restr-map roles="ont::figure">
    <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
     <feat name="type">
     <or>
+     phys-object
      event-of-action
      event-of-awareness
     </or>
@@ -52,12 +54,46 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="ont::situation-object-modifier">
+ <relation label="inherit">
+  ont::predicate
+  abstr-obj
+ </relation>
  <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="scale">-</feat>
+   <feat name="type">organism</feat>
+  </sem-feats>
+ </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+   <feat name="type">
+   <or>
+    phys-object
+    event-of-action
+    event-of-awareness
+   </or>
+   </feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::predicate">
@@ -88,72 +124,13 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <concept name="situation" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-object-modifier">
- <relation label="inherit">
-  ont::predicate
-  abstr-obj
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="scale">-</feat>
-   <feat name="type">organism</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="type">
-   <or>
-    event-of-action
-    event-of-awareness
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-modifier">
- <relation label="inherit">
-  ont::situation-object-modifier
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="phys-obj" />
    <concept name="situation" />
-  </role-restr-map>
+  </or>
+ </role-restr-map>
  </sem-frame>
- </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
