@@ -6759,8 +6759,11 @@
        PHYS-OBJ)
      OPTIONAL)
     (ONT::AFFECTED
-     (CONCEPT
-       T))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (OBJECT-FUNCTION COMESTIBLE)
+       (TYPE FOOD)))
     (ONT::AGENT
      (SEM-FEATS
        (INHERIT
