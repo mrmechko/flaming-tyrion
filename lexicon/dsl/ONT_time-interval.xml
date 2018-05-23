@@ -53,6 +53,9 @@
  <concept name="time" />
  <concept name="ont::root" />
  <concept name="ont::time-object">
+ <comment>
+  &quot;objects that refer to temporal locations in some way&quot;
+ </comment>
  <relation label="inherit">
   ont::any-time-object
  </relation>
@@ -147,16 +150,6 @@
  </feat>
  <feat name="time-function">any-time-function</feat>
  </sem-feats>
- <concept name="ont::time-span">
- <relation label="inherit">
-  ont::time-interval
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::phase">
  <comment>
   &quot;e.g., phases of the moon, stage of the project. This type represents stages of a sequence that is more abstract than time.&quot;
@@ -170,12 +163,38 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::time-loc">
+ <concept name="ont::recurring-time-of-day">
+ <comment>
+  &quot;recurring moments of the day, defined by some event&quot;
+ </comment>
  <relation label="inherit">
   ont::time-interval
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-function">day-point</feat>
+ </sem-feats>
  </concept>
- <concept name="ont::season">
+ <concept name="ont::time-defined-by-event">
+ <comment>
+  &quot;times defined by events&quot;
+ </comment>
+ <relation label="inherit">
+  ont::time-interval
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-function">day-point</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::time-defined-by-duration">
+ <comment>
+  &quot;times defined by events&quot;
+ </comment>
  <relation label="inherit">
   ont::time-interval
  </relation>

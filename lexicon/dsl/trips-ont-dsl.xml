@@ -2872,6 +2872,9 @@
   <relation label="inherit">
    ont::season
   </relation>
+  <relation label="overlap">
+   wn::|autumn%1:28:00::|
+  </relation>
  </concept>
  <concept name="ont::aux">
   <relation label="inherit">
@@ -3202,6 +3205,7 @@
    wn::|be_quiet%2:32:00::|
    wn::|mean%2:42:03::|
    wn::|rest%2:41:00::|
+   wn::|equal%2:42:01::|
   </relation>
  </concept>
  <concept name="ont::be-at">
@@ -5158,6 +5162,20 @@
   <relation label="overlap">
    wn::|central%3:00:01::|
   </relation>
+ </concept>
+ <concept name="ont::century">
+  <relation label="inherit">
+   ont::date-object-in
+  </relation>
+  <relation label="overlap">
+   wn::|century%1:28:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="time-function">time-of-year</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::cereals">
   <relation label="inherit">
@@ -8472,7 +8490,7 @@
  </concept>
  <concept name="ont::date-object-in">
   <comment>
-   &quot;date objects that use IN - e.g., in June&quot;
+   &quot;temporal objects that use IN - e.g., in June&quot;
   </comment>
   <relation label="inherit">
    ont::time-object
@@ -8496,7 +8514,7 @@
    ont::date-object-on
   </relation>
   <relation label="overlap">
-   wn::|day_of_the_week%1:28:00::|
+   wn::|calendar_day%1:28:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -8515,6 +8533,27 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::day-stage">
+  <comment>
+   &quot;a regular part of the day&quot;
+  </comment>
+  <relation label="inherit">
+   ont::date-object-in
+  </relation>
+  <relation label="overlap">
+   wn::|morning%1:28:00::|
+   wn::|evening%1:28:00::|
+   wn::|night%1:28:00::|
+   wn::|twilight%1:28:00::|
+   wn::|afternoon%1:28:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="time-function">day-period</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::dazed-val">
   <relation label="inherit">
@@ -10978,6 +11017,10 @@
  <concept name="ont::era">
   <relation label="inherit">
    ont::date-object-in
+  </relation>
+  <relation label="overlap">
+   wn::|era%1:28:00::|
+   wn::|era%1:28:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -15116,6 +15159,9 @@
   </comment>
   <relation label="inherit">
    ont::recurring-event
+  </relation>
+  <relation label="overlap">
+   wn::|leisure%1:28:00::|
   </relation>
  </concept>
  <concept name="ont::homogeneity-val">
@@ -19588,7 +19634,7 @@
  </concept>
  <concept name="ont::month-name">
   <relation label="inherit">
-   ont::date-object-in
+   ont::year-stage
   </relation>
   <relation label="overlap">
    wn::|calendar_month%1:28:00::|
@@ -25694,6 +25740,23 @@
   <relation label="inherit">
    ont::date-object-on
   </relation>
+  <relation label="overlap">
+   wn::|day%1:28:01::|
+  </relation>
+ </concept>
+ <concept name="ont::recurring-time-of-day">
+  <comment>
+   &quot;recurring moments of the day, defined by some event&quot;
+  </comment>
+  <relation label="inherit">
+   ont::time-interval
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="time-function">day-point</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::red">
   <relation label="inherit">
@@ -27977,7 +28040,10 @@
  </concept>
  <concept name="ont::season">
   <relation label="inherit">
-   ont::time-interval
+   ont::year-stage
+  </relation>
+  <relation label="overlap">
+   wn::|season%1:28:00::|
   </relation>
  </concept>
  <concept name="ont::second-duration">
@@ -29956,6 +30022,9 @@
   <relation label="inherit">
    ont::season
   </relation>
+  <relation label="overlap">
+   wn::|spring%1:28:00::|
+  </relation>
  </concept>
  <concept name="ont::square-val">
   <relation label="inherit">
@@ -30756,6 +30825,9 @@
  <concept name="ont::summer">
   <relation label="inherit">
    ont::season
+  </relation>
+  <relation label="overlap">
+   wn::|summer%1:28:00::|
   </relation>
  </concept>
  <concept name="ont::sumoylation">
@@ -31908,6 +31980,28 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::time-defined-by-duration">
+  <comment>
+   &quot;times defined by events&quot;
+  </comment>
+  <relation label="inherit">
+   ont::time-interval
+  </relation>
+ </concept>
+ <concept name="ont::time-defined-by-event">
+  <comment>
+   &quot;times defined by events&quot;
+  </comment>
+  <relation label="inherit">
+   ont::time-interval
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="time-function">day-point</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::time-duration-rel">
   <relation label="inherit">
    ont::event-duration-modifier
@@ -31987,7 +32081,7 @@
  </concept>
  <concept name="ont::time-loc">
   <relation label="inherit">
-   ont::time-interval
+   ont::time-object
   </relation>
  </concept>
  <concept name="ont::time-measure-scale">
@@ -32002,6 +32096,9 @@
   </sem-feats>
  </concept>
  <concept name="ont::time-object">
+  <comment>
+   &quot;objects that refer to temporal locations in some way&quot;
+  </comment>
   <relation label="inherit">
    ont::any-time-object
   </relation>
@@ -32080,7 +32177,7 @@
  </concept>
  <concept name="ont::time-span">
   <relation label="inherit">
-   ont::time-interval
+   ont::date-object-in
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
@@ -34066,6 +34163,20 @@
    wn::|site%1:10:00::|
   </relation>
  </concept>
+ <concept name="ont::week">
+  <relation label="inherit">
+   ont::year-stage
+  </relation>
+  <relation label="overlap">
+   wn::|week%1:28:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="time-function">time-of-year</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::week-duration">
   <relation label="inherit">
    ont::time-unit
@@ -34354,6 +34465,9 @@
   <relation label="inherit">
    ont::season
   </relation>
+  <relation label="overlap">
+   wn::|winter%1:28:00::|
+  </relation>
  </concept>
  <concept name="ont::wireless">
   <relation label="inherit">
@@ -34601,10 +34715,37 @@
    <feat name="mobility">non-self-moving</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::year">
+  <relation label="inherit">
+   ont::date-object-in
+  </relation>
+  <relation label="overlap">
+   wn::|year%1:28:00::|
+   wn::|year%1:28:01::|
+   wn::|year%1:28:02::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="time-function">year-name</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::year-duration">
   <relation label="inherit">
    ont::time-unit
   </relation>
+ </concept>
+ <concept name="ont::year-stage">
+  <relation label="inherit">
+   ont::date-object-in
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="time-function">time-of-year</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::yellow">
   <relation label="inherit">

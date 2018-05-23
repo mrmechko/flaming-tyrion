@@ -2513,7 +2513,9 @@
 (CONCEPT
   ONT::AUTUMN
   (INHERIT
-    ONT::SEASON))
+    ONT::SEASON)
+  (OVERLAP
+    WN::|autumn%1:28:00::|))
 
 (CONCEPT
   ONT::AUX
@@ -2819,7 +2821,8 @@
     WN::|be_full%2:34:00::|
     WN::|be_quiet%2:32:00::|
     WN::|mean%2:42:03::|
-    WN::|rest%2:41:00::|))
+    WN::|rest%2:41:00::|
+    WN::|equal%2:42:01::|))
 
 (CONCEPT
   ONT::BE-AT
@@ -4498,6 +4501,17 @@
     ONT::SPATIAL-ARRANGEMENT-VAL)
   (OVERLAP
     WN::|central%3:00:01::|))
+
+(CONCEPT
+  ONT::CENTURY
+  (INHERIT
+    ONT::DATE-OBJECT-IN)
+  (OVERLAP
+    WN::|century%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (TIME-FUNCTION TIME-OF-YEAR)))
 
 (CONCEPT
   ONT::CEREALS
@@ -7439,7 +7453,7 @@
 
 (CONCEPT
   ONT::DATE-OBJECT-IN
-  (COMMENT "date objects that use IN - e.g., in June")
+  (COMMENT "temporal objects that use IN - e.g., in June")
   (INHERIT
     ONT::TIME-OBJECT))
 
@@ -7459,7 +7473,7 @@
   (INHERIT
     ONT::DATE-OBJECT-ON)
   (OVERLAP
-    WN::|day_of_the_week%1:28:00::|)
+    WN::|calendar_day%1:28:00::|)
   (SEM-FEATS
     (INHERIT
       TIME)
@@ -7476,6 +7490,22 @@
        (CONCEPT
          ABSTR-OBJ))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::DAY-STAGE
+  (COMMENT "a regular part of the day")
+  (INHERIT
+    ONT::DATE-OBJECT-IN)
+  (OVERLAP
+    WN::|morning%1:28:00::|
+    WN::|evening%1:28:00::|
+    WN::|night%1:28:00::|
+    WN::|twilight%1:28:00::|
+    WN::|afternoon%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (TIME-FUNCTION DAY-PERIOD)))
 
 (CONCEPT
   ONT::DAZED-VAL
@@ -9659,6 +9689,9 @@
   ONT::ERA
   (INHERIT
     ONT::DATE-OBJECT-IN)
+  (OVERLAP
+    WN::|era%1:28:00::|
+    WN::|era%1:28:01::|)
   (SEM-FEATS
     (INHERIT
       TIME)
@@ -13269,7 +13302,9 @@
   ONT::HOLIDAY
   (COMMENT "recurring events based on religious or social activities")
   (INHERIT
-    ONT::RECURRING-EVENT))
+    ONT::RECURRING-EVENT)
+  (OVERLAP
+    WN::|leisure%1:28:00::|))
 
 (CONCEPT
   ONT::HOMOGENEITY-VAL
@@ -17106,7 +17141,7 @@
 (CONCEPT
   ONT::MONTH-NAME
   (INHERIT
-    ONT::DATE-OBJECT-IN)
+    ONT::YEAR-STAGE)
   (OVERLAP
     WN::|calendar_month%1:28:00::|
     WN::|month%1:28:01::|)
@@ -22466,7 +22501,19 @@
   ONT::RECURRING-EVENT
   (COMMENT "events that recur every year (or some time interval)")
   (INHERIT
-    ONT::DATE-OBJECT-ON))
+    ONT::DATE-OBJECT-ON)
+  (OVERLAP
+    WN::|day%1:28:01::|))
+
+(CONCEPT
+  ONT::RECURRING-TIME-OF-DAY
+  (COMMENT "recurring moments of the day, defined by some event")
+  (INHERIT
+    ONT::TIME-INTERVAL)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (TIME-FUNCTION DAY-POINT)))
 
 (CONCEPT
   ONT::RED
@@ -24513,7 +24560,9 @@
 (CONCEPT
   ONT::SEASON
   (INHERIT
-    ONT::TIME-INTERVAL))
+    ONT::YEAR-STAGE)
+  (OVERLAP
+    WN::|season%1:28:00::|))
 
 (CONCEPT
   ONT::SECOND-DURATION
@@ -26254,7 +26303,9 @@
 (CONCEPT
   ONT::SPRING
   (INHERIT
-    ONT::SEASON))
+    ONT::SEASON)
+  (OVERLAP
+    WN::|spring%1:28:00::|))
 
 (CONCEPT
   ONT::SQUARE-VAL
@@ -26978,7 +27029,9 @@
 (CONCEPT
   ONT::SUMMER
   (INHERIT
-    ONT::SEASON))
+    ONT::SEASON)
+  (OVERLAP
+    WN::|summer%1:28:00::|))
 
 (CONCEPT
   ONT::SUMOYLATION
@@ -27976,6 +28029,22 @@
        SITUATION))))
 
 (CONCEPT
+  ONT::TIME-DEFINED-BY-DURATION
+  (COMMENT "times defined by events")
+  (INHERIT
+    ONT::TIME-INTERVAL))
+
+(CONCEPT
+  ONT::TIME-DEFINED-BY-EVENT
+  (COMMENT "times defined by events")
+  (INHERIT
+    ONT::TIME-INTERVAL)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (TIME-FUNCTION DAY-POINT)))
+
+(CONCEPT
   ONT::TIME-DURATION-REL
   (INHERIT
     ONT::EVENT-DURATION-MODIFIER)
@@ -28039,7 +28108,7 @@
 (CONCEPT
   ONT::TIME-LOC
   (INHERIT
-    ONT::TIME-INTERVAL))
+    ONT::TIME-OBJECT))
 
 (CONCEPT
   ONT::TIME-MEASURE-SCALE
@@ -28052,6 +28121,7 @@
 
 (CONCEPT
   ONT::TIME-OBJECT
+  (COMMENT "objects that refer to temporal locations in some way")
   (INHERIT
     ONT::ANY-TIME-OBJECT)
   (SEM-FEATS
@@ -28117,7 +28187,7 @@
 (CONCEPT
   ONT::TIME-SPAN
   (INHERIT
-    ONT::TIME-INTERVAL)
+    ONT::DATE-OBJECT-IN)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -29859,6 +29929,17 @@
     WN::|site%1:10:00::|))
 
 (CONCEPT
+  ONT::WEEK
+  (INHERIT
+    ONT::YEAR-STAGE)
+  (OVERLAP
+    WN::|week%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (TIME-FUNCTION TIME-OF-YEAR)))
+
+(CONCEPT
   ONT::WEEK-DURATION
   (INHERIT
     ONT::TIME-UNIT))
@@ -30106,7 +30187,9 @@
 (CONCEPT
   ONT::WINTER
   (INHERIT
-    ONT::SEASON))
+    ONT::SEASON)
+  (OVERLAP
+    WN::|winter%1:28:00::|))
 
 (CONCEPT
   ONT::WIRELESS
@@ -30318,9 +30401,31 @@
     (MOBILITY NON-SELF-MOVING)))
 
 (CONCEPT
+  ONT::YEAR
+  (INHERIT
+    ONT::DATE-OBJECT-IN)
+  (OVERLAP
+    WN::|year%1:28:00::|
+    WN::|year%1:28:01::|
+    WN::|year%1:28:02::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (TIME-FUNCTION YEAR-NAME)))
+
+(CONCEPT
   ONT::YEAR-DURATION
   (INHERIT
     ONT::TIME-UNIT))
+
+(CONCEPT
+  ONT::YEAR-STAGE
+  (INHERIT
+    ONT::DATE-OBJECT-IN)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (TIME-FUNCTION TIME-OF-YEAR)))
 
 (CONCEPT
   ONT::YELLOW

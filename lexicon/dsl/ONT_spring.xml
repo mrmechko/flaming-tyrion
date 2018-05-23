@@ -6,6 +6,9 @@
  <relation label="inherit">
   ont::season
  </relation>
+ <relation label="overlap">
+  wn::|spring%1:28:00::|
+ </relation>
  </concept>
  <concept name="time" />
  <concept name="ont::root" />
@@ -37,41 +40,43 @@
   <feat name="time-function">any-time-function</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">duration-scale</feat>
-   <feat name="time-scale">interval</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    time
-   </relation>
-   <feat name="scale">duration-scale</feat>
-   <feat name="time-scale">interval</feat>
-   <feat name="time-function">time-frame</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
+ <concept name="ont::season">
+ <relation label="inherit">
+  ont::year-stage
+ </relation>
+ <relation label="overlap">
+  wn::|season%1:28:00::|
+ </relation>
+ </concept>
+ <concept name="ont::year-stage">
+ <relation label="inherit">
+  ont::date-object-in
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-function">time-of-year</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::date-object-in">
+ <comment>
+  &quot;temporal objects that use IN - e.g., in June&quot;
+ </comment>
+ <relation label="inherit">
+  ont::time-object
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   time
  </relation>
- <feat name="scale">-</feat>
- <feat name="time-scale">interval</feat>
+ <feat name="time-function">time-of-year</feat>
  </sem-feats>
  <concept name="ont::time-object">
+ <comment>
+  &quot;objects that refer to temporal locations in some way&quot;
+ </comment>
  <relation label="inherit">
   ont::any-time-object
  </relation>
@@ -86,59 +91,6 @@
   </or>
   </feat>
  </sem-feats>
- </concept>
- <concept name="ont::time-interval">
- <relation label="inherit">
-  ont::time-object
- </relation>
- <relation label="overlap">
-  wn::|interval%1:28:00::|
-  wn::|time_interval%1:28:00::|
-  wn::|time%1:28:03::|
-  wn::|clock_time%1:28:00::|
-  wn::|time%1:28:00::|
-  wn::|time%1:28:05::|
-  wn::|time_period%1:28:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="scale">-</feat>
-  <feat name="time-scale">interval</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="scale">duration-scale</feat>
-    <feat name="time-scale">interval</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     time
-    </relation>
-    <feat name="scale">duration-scale</feat>
-    <feat name="time-scale">interval</feat>
-    <feat name="time-function">time-frame</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::season">
- <relation label="inherit">
-  ont::time-interval
- </relation>
  </concept>
  <concept name="ont::any-sem">
  <relation label="inherit">

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::date-object-in">
  <comment>
-  &quot;date objects that use IN - e.g., in June&quot;
+  &quot;temporal objects that use IN - e.g., in June&quot;
  </comment>
  <relation label="inherit">
   ont::time-object
@@ -58,6 +58,9 @@
  </sem-feats>
  </concept>
  <concept name="ont::time-object">
+ <comment>
+  &quot;objects that refer to temporal locations in some way&quot;
+ </comment>
  <relation label="inherit">
   ont::any-time-object
  </relation>
@@ -73,30 +76,91 @@
   </feat>
  </sem-feats>
  </concept>
- <concept name="ont::month-name">
+ <concept name="ont::time-span">
  <relation label="inherit">
   ont::date-object-in
  </relation>
- <relation label="overlap">
-  wn::|calendar_month%1:28:00::|
-  wn::|month%1:28:01::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="time-function">month-name</feat>
- </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::era">
  <relation label="inherit">
   ont::date-object-in
+ </relation>
+ <relation label="overlap">
+  wn::|era%1:28:00::|
+  wn::|era%1:28:01::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    time
   </relation>
   <feat name="time-function">era</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::year">
+ <relation label="inherit">
+  ont::date-object-in
+ </relation>
+ <relation label="overlap">
+  wn::|year%1:28:00::|
+  wn::|year%1:28:01::|
+  wn::|year%1:28:02::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-function">year-name</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::century">
+ <relation label="inherit">
+  ont::date-object-in
+ </relation>
+ <relation label="overlap">
+  wn::|century%1:28:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-function">time-of-year</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::day-stage">
+ <comment>
+  &quot;a regular part of the day&quot;
+ </comment>
+ <relation label="inherit">
+  ont::date-object-in
+ </relation>
+ <relation label="overlap">
+  wn::|morning%1:28:00::|
+  wn::|evening%1:28:00::|
+  wn::|night%1:28:00::|
+  wn::|twilight%1:28:00::|
+  wn::|afternoon%1:28:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-function">day-period</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::year-stage">
+ <relation label="inherit">
+  ont::date-object-in
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-function">time-of-year</feat>
  </sem-feats>
  </concept>
 </dsl>
