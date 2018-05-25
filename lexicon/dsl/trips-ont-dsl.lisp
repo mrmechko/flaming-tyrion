@@ -21956,7 +21956,7 @@
          (CONCEPT
            PHYS-OBJ))
        (SCALE -)
-       (TYPE ORGANISM)))
+       (INTENTIONAL -)))
     (ONT::FIGURE
      (SEM-FEATS
        (OR
