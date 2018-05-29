@@ -6,6 +6,16 @@
  <relation label="inherit">
   ont::degree-modifier
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">property-val</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::root" />
  <concept name="abstr-obj" />
@@ -26,48 +36,22 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::degree-modifier">
- <relation label="inherit">
-  ont::modifier
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::modifier">
- <relation label="inherit">
-  ont::predicate
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="orientation">-</feat>
-  <feat name="intensity">-</feat>
-  <feat name="scale">-</feat>
-  <feat name="gradability">+</feat>
-  <feat name="intentional">-</feat>
-  <feat name="container">-</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="orientation">-</feat>
+ <feat name="intensity">-</feat>
+ <feat name="scale">-</feat>
+ <feat name="gradability">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="container">-</feat>
+ </sem-feats>
  <concept name="ont::predicate">
  <comment>
   &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as)&quot;
@@ -95,22 +79,58 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="orientation">-</feat>
- <feat name="intensity">-</feat>
- <feat name="scale">-</feat>
- <feat name="gradability">+</feat>
- <feat name="intentional">-</feat>
- <feat name="container">-</feat>
- </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
+ <concept name="ont::modifier">
+ <relation label="inherit">
+  ont::predicate
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">-</feat>
+  <feat name="intensity">-</feat>
+  <feat name="scale">-</feat>
+  <feat name="gradability">+</feat>
+  <feat name="intentional">-</feat>
+  <feat name="container">-</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">property-val</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::degree-modifier">
+ <relation label="inherit">
+  ont::modifier
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
