@@ -4,9 +4,11 @@
  <provenance name="TRIPS"/>
  <concept name="ont::mine">
  <relation label="inherit">
+  ont::area-def-by-use
   ont::manufactured-object
  </relation>
  <relation label="overlap">
+  wn::|mine%1:06:01::|
   wn::|mine%1:06:01::|
  </relation>
  <sem-feats>
@@ -17,7 +19,43 @@
   <feat name="form">solid-object</feat>
  </sem-feats>
  </concept>
+ <concept name="phys-obj" />
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">geographical-object</feat>
+ <feat name="origin">non-living</feat>
+ </sem-feats>
+ <concept name="ont::geo-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|location%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="form">geographical-object</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::root" />
+ <concept name="ont::location-by-description">
+ <relation label="inherit">
+  ont::location
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -41,6 +79,14 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="ont::loc-as-area">
+ <comment>
+  &quot; places that occupy space&quot;
+ </comment>
+ <relation label="inherit">
+  ont::location-by-description
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -48,24 +94,6 @@
  <feat name="form">solid-object</feat>
  <feat name="origin">artifact</feat>
  </sem-feats>
- <concept name="ont::phys-object">
- <comment>
-  &quot;All physical objects: things that have substance&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <relation label="overlap">
-  wn::|object%1:03:00::|
-  wn::|physical_object%1:03:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="tangible">+</feat>
- </sem-feats>
- </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
@@ -91,6 +119,19 @@
   <feat name="origin">artifact</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::area-def-by-use">
+ <comment>
+  &quot;places defined by their function: e.g.,  lot, plot, region, scene, section, site, territory, zone&quot;
+ </comment>
+ <relation label="inherit">
+  ont::loc-as-area
+ </relation>
+ <relation label="overlap">
+  wn::|field%1:15:00::|
+  wn::|field%1:15:05::|
+  wn::|plot%1:15:00::|
+ </relation>
+ </concept>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -102,5 +143,49 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
- <concept name="phys-obj" />
+ <concept name="ont::location">
+ <relation label="inherit">
+  ont::geo-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">geographical-object</feat>
+  <feat name="origin">non-living</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="form">geographical-object</feat>
+ </sem-feats>
 </dsl>

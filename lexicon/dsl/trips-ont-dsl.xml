@@ -1181,6 +1181,15 @@
   </relation>
   <relation label="overlap">
    wn::|aggressive%3:00:00::|
+   wn::|violent%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::aggressiveness-scale">
+  <relation label="inherit">
+   ont::behavioral-scale
+  </relation>
+  <relation label="overlap">
+   wn::|aggressiveness%1:12:00::|
   </relation>
  </concept>
  <concept name="ont::agitated">
@@ -1190,6 +1199,25 @@
   <relation label="overlap">
    wn::|agitated%3:00:00::|
   </relation>
+ </concept>
+ <concept name="ont::agriculture">
+  <relation label="inherit">
+   ont::activity
+  </relation>
+  <relation label="overlap">
+   wn::|agriculture%1:04:01::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="cause">
+   <or>
+    agentive
+    force
+   </or>
+   </feat>
+  </sem-feats>
  </concept>
  <concept name="ont::ailing-val">
   <relation label="inherit">
@@ -1961,6 +1989,11 @@
   <relation label="inherit">
    ont::loc-as-area
   </relation>
+  <relation label="overlap">
+   wn::|field%1:15:00::|
+   wn::|field%1:15:05::|
+   wn::|plot%1:15:00::|
+  </relation>
  </concept>
  <concept name="ont::area-scale">
   <relation label="inherit">
@@ -2174,6 +2207,7 @@
    wn::|imitation%5:00:02:artificial:00|
    wn::|fake%5:00:00:artificial:00|
    wn::|affected%3:00:01::|
+   wn::|unnatural%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::artificiality-val">
@@ -2588,7 +2622,7 @@
  </concept>
  <concept name="ont::attack">
   <relation label="inherit">
-   ont::event-of-causation
+   ont::transgress
   </relation>
   <relation label="overlap">
    wn::|attack%2:33:00::|
@@ -2750,7 +2784,6 @@
    wn::|unusual%3:00:00::|
    wn::|unusual%5:00:00:uncommon:00|
    wn::|unconventional%3:00:00::|
-   wn::|unnatural%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::audibility-val">
@@ -5604,17 +5637,6 @@
    ont::conventional-position-reln
   </relation>
  </concept>
- <concept name="ont::city-related-val">
-  <comment>
-   &quot;having to do with a city (or its government)&quot;
-  </comment>
-  <relation label="inherit">
-   ont::status-val
-  </relation>
-  <relation label="overlap">
-   wn::|civic%3:01:00::|
-  </relation>
- </concept>
  <concept name="ont::clarity-val">
   <comment>
    &quot;clear, obvious vs. unclear, obscure&quot;
@@ -5684,6 +5706,23 @@
    <feat name="trajectory">-</feat>
    <feat name="cause">agentive</feat>
   </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::result" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+     </or>
+     <feat name="type">
+     <or>
+      position-reln
+      path
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::clean-scale">
   <relation label="inherit">
@@ -5749,6 +5788,20 @@
     <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::climate">
+  <relation label="inherit">
+   ont::atmospheric-phenomenon
+  </relation>
+  <relation label="overlap">
+   wn::|climate%1:26:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">non-living</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::clinical-finding">
   <relation label="inherit">
@@ -6711,6 +6764,14 @@
    wn::|compensate%2:40:01::|
   </relation>
  </concept>
+ <concept name="ont::compete">
+  <relation label="inherit">
+   ont::agent-interaction
+  </relation>
+  <relation label="overlap">
+   wn::|compete%2:33:00::|
+  </relation>
+ </concept>
  <concept name="ont::competition">
   <relation label="inherit">
    ont::event-defined-by-activity
@@ -6828,7 +6889,6 @@
    wn::|keep%2:41:03::|
    wn::|observe%2:41:04::|
    wn::|obey%2:41:00::|
-   wn::|break%2:42:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -10174,6 +10234,21 @@
    ont::water-travel
   </relation>
  </concept>
+ <concept name="ont::drought">
+  <relation label="inherit">
+   ont::natural-event
+  </relation>
+  <relation label="overlap">
+   wn::|drought%1:26:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="cause">force</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::drowsy-val">
   <relation label="inherit">
    ont::alertness-val
@@ -10578,6 +10653,38 @@
    wn::|e-mail%1:10:00::|
    wn::|email%1:10:00::|
   </relation>
+ </concept>
+ <concept name="ont::emergency">
+  <relation label="inherit">
+   ont::located-event
+  </relation>
+  <relation label="overlap">
+   wn::|disaster%1:26:00::|
+   wn::|disaster%1:11:00::|
+   wn::|disaster%1:04:00::|
+   wn::|crisis%1:26:00::|
+   wn::|crisis%1:11:00::|
+   wn::|accident%1:11:01::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">dynamic</feat>
+   <feat name="trajectory">-</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::agent">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="intentional">+</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::emit-giveoff-discharge">
   <relation label="inherit">
@@ -12524,6 +12631,14 @@
    ont::distal-reln
   </relation>
  </concept>
+ <concept name="ont::farm">
+  <relation label="inherit">
+   ont::area-def-by-use
+  </relation>
+  <relation label="overlap">
+   wn::|farm%1:06:00::|
+  </relation>
+ </concept>
  <concept name="ont::farnesylation">
   <relation label="inherit">
    ont::post-translational-modification
@@ -12762,12 +12877,7 @@
    ont::agent-interaction
   </relation>
   <relation label="overlap">
-   wn::|struggle%2:33:00::|
    wn::|fight%2:33:00::|
-   wn::|contend%2:33:01::|
-   wn::|compete%2:33:00::|
-   wn::|vie%2:33:00::|
-   wn::|contend%2:33:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal" optional="optional">
@@ -13078,6 +13188,13 @@
  <concept name="ont::flooding">
   <relation label="inherit">
    ont::natural-event
+  </relation>
+  <relation label="overlap">
+   wn::|flood%1:19:00::|
+   wn::|flood%1:23:00::|
+   wn::|flood%2:35:00::|
+   wn::|flood%2:30:00::|
+   wn::|flood%2:30:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -14361,6 +14478,37 @@
    wn::|heartbreaking%5:00:00:sorrowful:00|
    wn::|grievous%5:00:00:sorrowful:00|
   </relation>
+ </concept>
+ <concept name="ont::group-conflict">
+  <relation label="inherit">
+   ont::transgress
+  </relation>
+  <relation label="overlap">
+   wn::|riot%2:41:00::|
+   wn::|military_action%1:04:00::|
+   wn::|revolution%1:04:00::|
+   wn::|conflict%1:04:00::|
+   wn::|rebel%2:41:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">dynamic</feat>
+   <feat name="trajectory">-</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::agent">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="intentional">+</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::group-object">
   <relation label="inherit">
@@ -17070,6 +17218,10 @@
   <relation label="inherit">
    ont::situation
   </relation>
+  <relation label="overlap">
+   wn::|deficiency%1:07:00::|
+   wn::|shortage%1:07:00::|
+  </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
     <concept name="t" />
@@ -17119,6 +17271,11 @@
  <concept name="ont::land-travel">
   <relation label="inherit">
    ont::trip
+  </relation>
+ </concept>
+ <concept name="ont::land-use-val">
+  <relation label="inherit">
+   ont::status-val
   </relation>
  </concept>
  <concept name="ont::land-vehicle">
@@ -17525,9 +17682,10 @@
   <sem-frame>
    <role-restr-map roles="ont::affected" optional="optional">
     <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
      <feat name="tangible">+</feat>
      <feat name="origin">living</feat>
     </sem-feats>
@@ -18193,6 +18351,14 @@
    wn::|lose%2:40:02::|
    wn::|lose%2:40:06::|
    wn::|lose_sight_of%2:39:00::|
+  </relation>
+ </concept>
+ <concept name="ont::lose-compete">
+  <relation label="inherit">
+   ont::compete
+  </relation>
+  <relation label="overlap">
+   wn::|lose%2:33:00::|
   </relation>
  </concept>
  <concept name="ont::loudness-scale">
@@ -19435,9 +19601,11 @@
  </concept>
  <concept name="ont::mine">
   <relation label="inherit">
+   ont::area-def-by-use
    ont::manufactured-object
   </relation>
   <relation label="overlap">
+   wn::|mine%1:06:01::|
    wn::|mine%1:06:01::|
   </relation>
   <sem-feats>
@@ -25190,6 +25358,7 @@
    ont::apply-force
   </relation>
   <relation label="overlap">
+   wn::|wet%2:30:00::|
    wn::|squirt%2:35:00::|
    wn::|squirt%2:35:10::|
    wn::|sprinkle%2:35:01::|
@@ -25527,6 +25696,7 @@
   <relation label="overlap">
    wn::|rate%1:21:00::|
    wn::|rate%1:28:00::|
+   wn::|incidence%1:24:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -27295,33 +27465,6 @@
    ont::oriented-loc-reln
   </relation>
  </concept>
- <concept name="ont::riot">
-  <relation label="inherit">
-   ont::located-event
-  </relation>
-  <relation label="overlap">
-   wn::|riot%2:41:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
-   <feat name="trajectory">-</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::agent">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::rise">
   <relation label="inherit">
    ont::event-of-undergoing-action
@@ -27550,7 +27693,7 @@
  </concept>
  <concept name="ont::rural-val">
   <relation label="inherit">
-   ont::city-related-val
+   ont::land-use-val
   </relation>
   <relation label="overlap">
    wn::|rural%3:00:00::|
@@ -29108,7 +29251,10 @@
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::figure">
-    <concept name="phys-obj" />
+    <or>
+     <concept name="phys-obj" />
+     <concept name="time" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -29443,6 +29589,10 @@
   </comment>
   <relation label="inherit">
    ont::animal-propensity-val
+  </relation>
+  <relation label="overlap">
+   wn::|social%3:01:00::|
+   wn::|social%3:00:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
@@ -29891,6 +30041,7 @@
    wn::|annual%5:00:00:periodic:00|
    wn::|weekly%5:00:00:periodic:00|
    wn::|monthly%5:00:00:periodic:00|
+   wn::|seasonal%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::speech-act">
@@ -30198,6 +30349,8 @@
    wn::|start%2:38:01::|
    wn::|start%2:41:00::|
    wn::|take_to%2:41:01::|
+   wn::|start%1:11:00::|
+   wn::|start%1:28:00::|
   </relation>
  </concept>
  <concept name="ont::startpoint">
@@ -30517,6 +30670,22 @@
    <feat name="mobility">fixed</feat>
    <feat name="trajectory">-</feat>
    <feat name="origin">artifact</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::storm">
+  <relation label="inherit">
+   ont::atmospheric-phenomenon
+  </relation>
+  <relation label="overlap">
+   wn::|storm%1:19:00::|
+   wn::|cyclone%1:26:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="form">substance</feat>
+   <feat name="origin">non-living</feat>
   </sem-feats>
  </concept>
  <concept name="ont::straddle">
@@ -32531,6 +32700,23 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::transgress">
+  <relation label="inherit">
+   ont::event-of-causation
+  </relation>
+  <relation label="overlap">
+   wn::|transgress%2:41:00::|
+   wn::|transgress%2:41:02::|
+   wn::|transgress%2:38:00::|
+   wn::|infringe%2:41:00::|
+   wn::|infringe%2:38:00::|
+   wn::|intrude%2:41:00::|
+   wn::|violate%2:42:00::|
+   wn::|violate%2:41:00::|
+   wn::|violate%2:41:02::|
+   wn::|violate%2:35:00::|
+  </relation>
+ </concept>
  <concept name="ont::translocate">
   <relation label="inherit">
    ont::move
@@ -33275,11 +33461,12 @@
  </concept>
  <concept name="ont::urban-val">
   <relation label="inherit">
-   ont::city-related-val
+   ont::land-use-val
   </relation>
   <relation label="overlap">
    wn::|urban%3:00:00::|
    wn::|urban%3:01:00::|
+   wn::|civic%3:01:00::|
   </relation>
  </concept>
  <concept name="ont::urgent-val">
@@ -34459,6 +34646,14 @@
  <concept name="ont::willingness-val">
   <relation label="inherit">
    ont::social-interaction-val
+  </relation>
+ </concept>
+ <concept name="ont::win-compete">
+  <relation label="inherit">
+   ont::compete
+  </relation>
+  <relation label="overlap">
+   wn::|win%2:33:00::|
   </relation>
  </concept>
  <concept name="ont::window">

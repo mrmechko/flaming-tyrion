@@ -539,6 +539,7 @@
 <ONTTYPE name="aggressive-val">
 <WORD name="aggressive" />
 <MAPPING to="wordnet" name="aggressive%3:00:00::" />
+<MAPPING to="wordnet" name="violent%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="not-bold-val">
@@ -605,6 +606,9 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="social-interaction-val">
+<WORD name="inter_punc-minus_personal" />
+<MAPPING to="wordnet" name="social%3:01:00::" />
+<MAPPING to="wordnet" name="social%3:00:00::" />
 <ONTTYPE name="friendliness-val">
 <ONTTYPE name="friendly-val">
 <WORD name="affectionate" />
@@ -1661,6 +1665,7 @@
 <MAPPING to="wordnet" name="artificial%3:00:00::" />
 <MAPPING to="wordnet" name="fake%5:00:00:artificial:00" />
 <MAPPING to="wordnet" name="affected%3:00:01::" />
+<MAPPING to="wordnet" name="unnatural%3:00:00::" />
 </ONTTYPE>
 <ONTTYPE name="natural">
 <WORD name="wild_punc-minus_type" />
@@ -1769,7 +1774,6 @@
 <MAPPING to="wordnet" name="unusual%3:00:00::" />
 <MAPPING to="wordnet" name="unusual%5:00:00:uncommon:00" />
 <MAPPING to="wordnet" name="unconventional%3:00:00::" />
-<MAPPING to="wordnet" name="unnatural%3:00:00::" />
 <ONTTYPE name="exceptional-val">
 <WORD name="exceptional" />
 <WORD name="extraordinary" />
@@ -3239,6 +3243,7 @@
 <MAPPING to="wordnet" name="annual%5:00:00:periodic:00" />
 <MAPPING to="wordnet" name="weekly%5:00:00:periodic:00" />
 <MAPPING to="wordnet" name="monthly%5:00:00:periodic:00" />
+<MAPPING to="wordnet" name="seasonal%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="regularity-val">
@@ -4145,20 +4150,6 @@
 </ONTTYPE>
 <ONTTYPE name="status-val">
 <WORD name="in_trouble" />
-<ONTTYPE name="city-related-val">
-<WORD name="civic" />
-<MAPPING to="wordnet" name="civic%3:01:00::" />
-<ONTTYPE name="rural-val">
-<WORD name="rural" />
-<MAPPING to="wordnet" name="rural%3:00:00::" />
-<MAPPING to="wordnet" name="rural%3:01:01::" />
-</ONTTYPE>
-<ONTTYPE name="urban-val">
-<WORD name="urban" />
-<MAPPING to="wordnet" name="urban%3:00:00::" />
-<MAPPING to="wordnet" name="urban%3:01:00::" />
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="classification-val">
 <ONTTYPE name="classified-val">
 <WORD name="classified" />
@@ -4229,6 +4220,19 @@
 <ONTTYPE name="infamous-val">
 <WORD name="infamous" />
 <MAPPING to="wordnet" name="ill-famed%5:00:00:disreputable:00" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="land-use-val">
+<ONTTYPE name="rural-val">
+<WORD name="rural" />
+<MAPPING to="wordnet" name="rural%3:00:00::" />
+<MAPPING to="wordnet" name="rural%3:01:01::" />
+</ONTTYPE>
+<ONTTYPE name="urban-val">
+<WORD name="urban" />
+<MAPPING to="wordnet" name="urban%3:00:00::" />
+<MAPPING to="wordnet" name="urban%3:01:00::" />
+<MAPPING to="wordnet" name="civic%3:01:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="obligatoriness-val">
@@ -4464,6 +4468,8 @@
 <ONTTYPE name="between">
 <WORD name="in_between" />
 <WORD name="between" />
+<WORD name="inter-" />
+<WORD name="inter-" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="oriented-loc-reln">
@@ -4493,6 +4499,8 @@
 <WORD name="inside_of" />
 <WORD name="in" />
 <WORD name="inside" />
+<WORD name="intra-" />
+<WORD name="intra-" />
 <WORD name="within" />
 </ONTTYPE>
 <ONTTYPE name="outside">
@@ -4807,6 +4815,8 @@
 <WORD name="quite" />
 <WORD name="rather" />
 <WORD name="right" />
+<WORD name="semi-" />
+<WORD name="semi-" />
 <WORD name="sorta" />
 <WORD name="tolerably" />
 </ONTTYPE>
@@ -5236,7 +5246,6 @@
 <WORD name="anymore" />
 <WORD name="daily" />
 <WORD name="ever" />
-<WORD name="frequency" />
 <WORD name="generally" />
 <WORD name="hourly" />
 <WORD name="mostly" />
@@ -5665,6 +5674,10 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="behavioral-scale">
+<ONTTYPE name="aggressiveness-scale">
+<WORD name="violence" />
+<MAPPING to="wordnet" name="aggression%1:12:00::" />
+</ONTTYPE>
 <ONTTYPE name="ambitiousness-scale">
 <WORD name="ambition" />
 <MAPPING to="wordnet" name="ambition%1:07:00::" />
@@ -5872,7 +5885,7 @@
 <MAPPING to="wordnet" name="thickness%1:07:01::" />
 </ONTTYPE>
 <ONTTYPE name="thinness-scale">
-<WORD name="thickness" />
+<WORD name="thinness" />
 <MAPPING to="wordnet" name="thinness%1:07:01::" />
 </ONTTYPE>
 </ONTTYPE>
@@ -5902,7 +5915,7 @@
 <MAPPING to="wordnet" name="fatness%1:07:00::" />
 </ONTTYPE>
 <ONTTYPE name="skinny-scale">
-<WORD name="thickness" />
+<WORD name="thinness" />
 <MAPPING to="wordnet" name="leanness%1:07:00::" />
 <MAPPING to="wordnet" name="skinniness%1:07:00::" />
 <MAPPING to="wordnet" name="slenderness%1:07:01::" />
@@ -5976,6 +5989,7 @@
 <WORD name="rate" />
 <MAPPING to="wordnet" name="rate%1:21:00::" />
 <MAPPING to="wordnet" name="rate%1:28:00::" />
+<MAPPING to="wordnet" name="incidence%1:24:00::" />
 <ONTTYPE name="bit-rate-scale">
 <WORD name="bandwidth" />
 <MAPPING to="wordnet" name="bandwidth%1:23:00::" />
@@ -6041,6 +6055,7 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="temporal-occurrence-scale">
+<WORD name="frequency" />
 <ONTTYPE name="regularity-scale">
 <ONTTYPE name="not-regular-scale">
 <WORD name="irregularity" />
@@ -7673,12 +7688,10 @@
 <WORD name="flagpole" />
 <WORD name="gadgetry" />
 <WORD name="gear" />
-<WORD name="goods" />
 <WORD name="grocery" />
 <WORD name="kit" />
 <WORD name="luggage" />
 <WORD name="pole" />
-<WORD name="supplies" />
 <MAPPING to="wordnet" name="instrumentality%1:06:00::" />
 <ONTTYPE name="card">
 <WORD name="card" />
@@ -7687,6 +7700,8 @@
 <ONTTYPE name="commodity">
 <WORD name="cargo" />
 <WORD name="commodity" />
+<WORD name="goods" />
+<WORD name="supplies" />
 <MAPPING to="wordnet" name="commodity%1:06:00::" />
 <ONTTYPE name="product">
 <WORD name="product" />
@@ -7843,6 +7858,7 @@
 <WORD name="space" />
 <WORD name="vicinity" />
 <ONTTYPE name="area-def-by-use">
+<WORD name="field" />
 <WORD name="lot" />
 <WORD name="plot" />
 <WORD name="region" />
@@ -7852,6 +7868,16 @@
 <WORD name="territory" />
 <WORD name="venue" />
 <WORD name="zone" />
+<MAPPING to="wordnet" name="field%1:15:00::" />
+<MAPPING to="wordnet" name="field%1:15:05::" />
+<MAPPING to="wordnet" name="plot%1:15:00::" />
+<ONTTYPE name="farm">
+<WORD name="farm" />
+<MAPPING to="wordnet" name="farm%1:06:00::" />
+</ONTTYPE>
+<ONTTYPE name="mine">
+<MAPPING to="wordnet" name="mine%1:06:01::" />
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="loc-def-by-goal">
 <WORD name="destination" />
@@ -7928,7 +7954,6 @@
 <WORD name="campus" />
 <WORD name="complex" />
 <WORD name="facility" />
-<WORD name="farm" />
 <WORD name="greenhouse" />
 <WORD name="nursery" />
 <WORD name="plaza" />
@@ -8371,7 +8396,6 @@
 <WORD name="bureau" />
 <WORD name="bureaucracy" />
 <WORD name="department" />
-<WORD name="farm" />
 <WORD name="organization" />
 <MAPPING to="wordnet" name="organization%1:14:00::" />
 <ONTTYPE name="enterprise">
@@ -10621,13 +10645,11 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="natural-object">
-<WORD name="lightning_bolt" />
 <WORD name="coral" />
 <WORD name="fossil" />
 <WORD name="iceberg" />
 <WORD name="icecap" />
 <WORD name="moon" />
-<WORD name="organism" />
 <WORD name="rock" />
 <WORD name="star" />
 <WORD name="stick" />
@@ -10859,27 +10881,23 @@
 <WORD name="earthquake" />
 <WORD name="tsunami" />
 <ONTTYPE name="atmospheric-phenomenon">
-<WORD name="funnel_cloud" />
-<WORD name="cyclone" />
-<WORD name="hailstorm" />
-<WORD name="hurricane" />
+<WORD name="lightning_bolt" />
 <WORD name="icestorm" />
 <WORD name="lightning" />
 <WORD name="monsoon" />
-<WORD name="rainstorm" />
-<WORD name="snowstorm" />
-<WORD name="storm" />
 <WORD name="thunder" />
-<WORD name="thunderstorm" />
-<WORD name="tornado" />
-<WORD name="twister" />
 <MAPPING to="wordnet" name="atmospheric_phenomenon%1:19:00::" />
 <ONTTYPE name="air-current">
 <WORD name="gale" />
 <WORD name="wind" />
 <MAPPING to="wordnet" name="wind%1:19:00::" />
 </ONTTYPE>
+<ONTTYPE name="climate">
+<WORD name="climate" />
+<MAPPING to="wordnet" name="climate%1:26:00::" />
+</ONTTYPE>
 <ONTTYPE name="cloud-object">
+<WORD name="funnel_cloud" />
 <WORD name="cloud" />
 <WORD name="fog" />
 <WORD name="haze" />
@@ -10897,6 +10915,11 @@
 <WORD name="sleet" />
 <WORD name="snow" />
 <MAPPING to="wordnet" name="precipitation%1:19:00::" />
+</ONTTYPE>
+<ONTTYPE name="storm">
+<WORD name="storm" />
+<MAPPING to="wordnet" name="storm%1:19:00::" />
+<MAPPING to="wordnet" name="cyclone%1:26:00::" />
 </ONTTYPE>
 <ONTTYPE name="weather">
 <WORD name="weather" />
@@ -10917,6 +10940,7 @@
 </ONTTYPE>
 <ONTTYPE name="organism">
 <WORD name="being" />
+<WORD name="organism" />
 <MAPPING to="wordnet" name="organism%1:03:00::" />
 <ONTTYPE name="animal">
 <WORD name="animal" />
@@ -11327,7 +11351,6 @@
 <WORD name="designer" />
 <WORD name="developer" />
 <WORD name="director" />
-<WORD name="driver" />
 <WORD name="editor" />
 <WORD name="electrician" />
 <WORD name="employee" />
@@ -12210,6 +12233,8 @@
 <MAPPING to="wordnet" name="start%2:38:01::" />
 <MAPPING to="wordnet" name="start%2:41:00::" />
 <MAPPING to="wordnet" name="take_to%2:41:01::" />
+<MAPPING to="wordnet" name="start%1:11:00::" />
+<MAPPING to="wordnet" name="beginning%1:28:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="try">
@@ -12300,23 +12325,17 @@
 <WORD name="bar" />
 <WORD name="block" />
 <WORD name="bottleneck" />
-<WORD name="conflict" />
 <WORD name="congestion" />
-<WORD name="delimit" />
 <WORD name="deter" />
 <WORD name="discourage" />
 <WORD name="disrupt" />
-<WORD name="dissuade" />
 <WORD name="downregulate" />
 <WORD name="dysregulate" />
 <WORD name="hamper" />
 <WORD name="hinder" />
 <WORD name="impair" />
 <WORD name="impede" />
-<WORD name="infringe" />
 <WORD name="interfere" />
-<WORD name="intervene" />
-<WORD name="intrude" />
 <WORD name="keep" />
 <WORD name="limit" />
 <WORD name="obstruct" />
@@ -12445,6 +12464,10 @@
 <MAPPING to="wordnet" name="undertaking%1:04:00::" />
 <MAPPING to="wordnet" name="project%1:09:00::" />
 <MAPPING to="wordnet" name="activity%1:04:00::" />
+<ONTTYPE name="agriculture">
+<WORD name="agriculture" />
+<MAPPING to="wordnet" name="agribusiness%1:04:00::" />
+</ONTTYPE>
 <ONTTYPE name="commercial-activity">
 <WORD name="base" />
 <WORD name="commerce" />
@@ -12942,6 +12965,7 @@
 <MAPPING to="wordnet" name="woo%2:41:01::" />
 </ONTTYPE>
 <ONTTYPE name="dissuade">
+<WORD name="dissuade" />
 <MAPPING to="wordnet" name="dissuade%2:32:00::" />
 </ONTTYPE>
 </ONTTYPE>
@@ -13123,6 +13147,18 @@
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="compete">
+<WORD name="compete" />
+<MAPPING to="wordnet" name="compete%2:33:00::" />
+<ONTTYPE name="lose-compete">
+<WORD name="lose" />
+<MAPPING to="wordnet" name="lose%2:33:00::" />
+</ONTTYPE>
+<ONTTYPE name="win-compete">
+<WORD name="win" />
+<MAPPING to="wordnet" name="win%2:33:00::" />
+</ONTTYPE>
+</ONTTYPE>
 <ONTTYPE name="employment">
 <ONTTYPE name="employ">
 <WORD name="employ" />
@@ -13134,13 +13170,11 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="fighting">
-<WORD name="compete" />
 <WORD name="contend" />
 <WORD name="defend" />
 <WORD name="fight" />
 <WORD name="struggle" />
 <MAPPING to="wordnet" name="contend%2:33:01::" />
-<MAPPING to="wordnet" name="compete%2:33:00::" />
 </ONTTYPE>
 <ONTTYPE name="interact">
 <WORD name="transact" />
@@ -13267,6 +13301,7 @@
 <WORD name="categorize" />
 <WORD name="classify" />
 <WORD name="define" />
+<WORD name="delimit" />
 <WORD name="diagnose" />
 <WORD name="envisage" />
 <WORD name="identify" />
@@ -13297,7 +13332,6 @@
 <MAPPING to="wordnet" name="observe%2:41:02::" />
 <MAPPING to="wordnet" name="observe%2:41:04::" />
 <MAPPING to="wordnet" name="obey%2:41:00::" />
-<MAPPING to="wordnet" name="violate%2:42:00::" />
 </ONTTYPE>
 <ONTTYPE name="depart">
 <WORD name="depart" />
@@ -13846,15 +13880,6 @@
 <MAPPING to="wordnet" name="capture%2:37:00::" />
 </ONTTYPE>
 </ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="attack">
-<WORD name="assail" />
-<WORD name="assault" />
-<WORD name="attack" />
-<MAPPING to="wordnet" name="attack%2:33:00::" />
-<MAPPING to="wordnet" name="attack%2:32:00::" />
-<MAPPING to="wordnet" name="assail%2:33:00::" />
-<MAPPING to="wordnet" name="attack%2:29:00::" />
 </ONTTYPE>
 <ONTTYPE name="attract">
 <WORD name="affinity-verb-doesnotexist" />
@@ -14835,6 +14860,7 @@
 </ONTTYPE>
 <ONTTYPE name="manipulate">
 <WORD name="fix" />
+<WORD name="intervene" />
 <WORD name="manipulate" />
 <WORD name="set" />
 <MAPPING to="wordnet" name="operate%2:35:00::" />
@@ -15955,6 +15981,7 @@
 <WORD name="spritz" />
 <WORD name="spurt" />
 <WORD name="squirt" />
+<MAPPING to="wordnet" name="wet%2:30:00::" />
 <MAPPING to="wordnet" name="squirt%2:35:00::" />
 <MAPPING to="wordnet" name="squirt%2:35:10::" />
 <MAPPING to="wordnet" name="scatter%2:35:00::" />
@@ -15969,6 +15996,40 @@
 <MAPPING to="wordnet" name="stroke%2:35:00::" />
 <MAPPING to="wordnet" name="smooth%2:40:00::" />
 </ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="transgress">
+<WORD name="conflict" />
+<WORD name="conflict" />
+<WORD name="infringe" />
+<WORD name="intrude" />
+<MAPPING to="wordnet" name="sin%2:41:00::" />
+<MAPPING to="wordnet" name="transgress%2:38:00::" />
+<MAPPING to="wordnet" name="conflict%2:41:11::" />
+<MAPPING to="wordnet" name="encroach%2:38:00::" />
+<MAPPING to="wordnet" name="trespass%2:41:01::" />
+<MAPPING to="wordnet" name="violate%2:42:00::" />
+<MAPPING to="wordnet" name="transgress%2:41:00::" />
+<MAPPING to="wordnet" name="desecrate%2:41:00::" />
+<MAPPING to="wordnet" name="violate%2:35:00::" />
+<ONTTYPE name="attack">
+<WORD name="assail" />
+<WORD name="assault" />
+<WORD name="attack" />
+<MAPPING to="wordnet" name="attack%2:33:00::" />
+<MAPPING to="wordnet" name="attack%2:32:00::" />
+<MAPPING to="wordnet" name="assail%2:33:00::" />
+<MAPPING to="wordnet" name="attack%2:29:00::" />
+</ONTTYPE>
+<ONTTYPE name="group-conflict">
+<WORD name="revolt" />
+<WORD name="riot" />
+<WORD name="war" />
+<MAPPING to="wordnet" name="riot%2:41:00::" />
+<MAPPING to="wordnet" name="military_action%1:04:00::" />
+<MAPPING to="wordnet" name="revolution%1:04:00::" />
+<MAPPING to="wordnet" name="conflict%1:04:00::" />
+<MAPPING to="wordnet" name="rebel%2:41:00::" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -17824,15 +17885,18 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="located-event">
-<WORD name="accident" />
-<WORD name="disaster" />
-<WORD name="emergency" />
-<WORD name="rebellion" />
-<WORD name="riot" />
 <WORD name="sale" />
 <WORD name="stroke" />
-<WORD name="war" />
 <WORD name="wave" />
+<ONTTYPE name="emergency">
+<WORD name="emergency" />
+<MAPPING to="wordnet" name="catastrophe%1:26:00::" />
+<MAPPING to="wordnet" name="calamity%1:11:00::" />
+<MAPPING to="wordnet" name="disaster%1:04:00::" />
+<MAPPING to="wordnet" name="crisis%1:26:00::" />
+<MAPPING to="wordnet" name="crisis%1:11:00::" />
+<MAPPING to="wordnet" name="accident%1:11:01::" />
+</ONTTYPE>
 <ONTTYPE name="fire">
 <WORD name="fire" />
 </ONTTYPE>
@@ -17889,10 +17953,6 @@
 <WORD name="course" />
 <WORD name="lesson" />
 <WORD name="session" />
-</ONTTYPE>
-<ONTTYPE name="riot">
-<WORD name="riot" />
-<MAPPING to="wordnet" name="riot%2:41:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="medical-disorders-and-conditions">
@@ -18294,7 +18354,6 @@
 <WORD name="clear" />
 <WORD name="freeze" />
 <WORD name="gust" />
-<WORD name="lightning" />
 <WORD name="storm" />
 <WORD name="thaw" />
 <WORD name="thunder" />
@@ -18318,9 +18377,18 @@
 <MAPPING to="wordnet" name="precipitate%2:43:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="drought">
+<WORD name="drought" />
+<MAPPING to="wordnet" name="drought%1:26:00::" />
+</ONTTYPE>
 <ONTTYPE name="flooding">
 <WORD name="flood" />
 <WORD name="flood" />
+<MAPPING to="wordnet" name="flood%1:19:00::" />
+<MAPPING to="wordnet" name="flood%1:23:00::" />
+<MAPPING to="wordnet" name="deluge%2:35:00::" />
+<MAPPING to="wordnet" name="flood%2:30:00::" />
+<MAPPING to="wordnet" name="flood%2:30:01::" />
 </ONTTYPE>
 <ONTTYPE name="nychthemeron-event">
 <WORD name="sunrise" />
@@ -18335,8 +18403,6 @@
 <WORD name="issue" />
 <WORD name="lifestyle" />
 <WORD name="matter" />
-<WORD name="mess" />
-<WORD name="turmoil" />
 <MAPPING to="wordnet" name="phenomenon%1:03:00::" />
 <ONTTYPE name="constraint">
 <WORD name="constraint" />
@@ -18351,6 +18417,8 @@
 <WORD name="deficit" />
 <WORD name="outage" />
 <WORD name="shortage" />
+<MAPPING to="wordnet" name="insufficiency%1:07:00::" />
+<MAPPING to="wordnet" name="deficit%1:07:00::" />
 </ONTTYPE>
 <ONTTYPE name="trouble">
 <WORD name="concern" />
@@ -18358,10 +18426,12 @@
 <WORD name="danger" />
 <WORD name="difficulty" />
 <WORD name="distress" />
+<WORD name="mess" />
 <WORD name="risk" />
 <WORD name="shame" />
 <WORD name="tragedy" />
 <WORD name="trouble" />
+<WORD name="turmoil" />
 <MAPPING to="wordnet" name="damage%1:11:00::" />
 <MAPPING to="wordnet" name="trouble%1:09:00::" />
 <MAPPING to="wordnet" name="trouble%1:11:00::" />

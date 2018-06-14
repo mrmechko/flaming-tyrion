@@ -1040,7 +1040,15 @@
   (INHERIT
     ONT::BOLD-VAL)
   (OVERLAP
-    WN::|aggressive%3:00:00::|))
+    WN::|aggressive%3:00:00::|
+    WN::|violent%3:00:00::|))
+
+(CONCEPT
+  ONT::AGGRESSIVENESS-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|aggressiveness%1:12:00::|))
 
 (CONCEPT
   ONT::AGITATED
@@ -1048,6 +1056,20 @@
     ONT::NEG-INTENSE-EMOTIONAL-VAL)
   (OVERLAP
     WN::|agitated%3:00:00::|))
+
+(CONCEPT
+  ONT::AGRICULTURE
+  (INHERIT
+    ONT::ACTIVITY)
+  (OVERLAP
+    WN::|agriculture%1:04:01::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (CAUSE
+     (OR
+       AGENTIVE
+       FORCE))))
 
 (CONCEPT
   ONT::AILING-VAL
@@ -1714,7 +1736,11 @@
   (COMMENT
    "places defined by their function: e.g.,  lot, plot, region, scene, section, site, territory, zone")
   (INHERIT
-    ONT::LOC-AS-AREA))
+    ONT::LOC-AS-AREA)
+  (OVERLAP
+    WN::|field%1:15:00::|
+    WN::|field%1:15:05::|
+    WN::|plot%1:15:00::|))
 
 (CONCEPT
   ONT::AREA-SCALE
@@ -1897,7 +1923,8 @@
     WN::|faux%5:00:00:artificial:00|
     WN::|imitation%5:00:02:artificial:00|
     WN::|fake%5:00:00:artificial:00|
-    WN::|affected%3:00:01::|))
+    WN::|affected%3:00:01::|
+    WN::|unnatural%3:00:00::|))
 
 (CONCEPT
   ONT::ARTIFICIALITY-VAL
@@ -2261,7 +2288,7 @@
 (CONCEPT
   ONT::ATTACK
   (INHERIT
-    ONT::EVENT-OF-CAUSATION)
+    ONT::TRANSGRESS)
   (OVERLAP
     WN::|attack%2:33:00::|
     WN::|attack%2:32:00::|
@@ -2406,8 +2433,7 @@
     WN::|unorthodox%5:00:00:unconventional:00|
     WN::|unusual%3:00:00::|
     WN::|unusual%5:00:00:uncommon:00|
-    WN::|unconventional%3:00:00::|
-    WN::|unnatural%3:00:00::|))
+    WN::|unconventional%3:00:00::|))
 
 (CONCEPT
   ONT::AUDIBILITY-VAL
@@ -4906,14 +4932,6 @@
     ONT::CONVENTIONAL-POSITION-RELN))
 
 (CONCEPT
-  ONT::CITY-RELATED-VAL
-  (COMMENT "having to do with a city (or its government)")
-  (INHERIT
-    ONT::STATUS-VAL)
-  (OVERLAP
-    WN::|civic%3:01:00::|))
-
-(CONCEPT
   ONT::CLARITY-VAL
   (COMMENT "clear, obvious vs. unclear, obscure")
   (INHERIT
@@ -4972,7 +4990,22 @@
     (INHERIT
       SITUATION)
     (TRAJECTORY -)
-    (CAUSE AGENTIVE)))
+    (CAUSE AGENTIVE))
+  (SEM-FRAME
+    (ONT::RESULT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE
+        (OR
+          POSITION-RELN
+          PATH)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::CLEAN-SCALE
@@ -5032,6 +5065,17 @@
     (ONT::AFFECTED
      (CONCEPT
        PHYS-OBJ))))
+
+(CONCEPT
+  ONT::CLIMATE
+  (INHERIT
+    ONT::ATMOSPHERIC-PHENOMENON)
+  (OVERLAP
+    WN::|climate%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (ORIGIN NON-LIVING)))
 
 (CONCEPT
   ONT::CLINICAL-FINDING
@@ -5897,6 +5941,13 @@
     WN::|compensate%2:40:01::|))
 
 (CONCEPT
+  ONT::COMPETE
+  (INHERIT
+    ONT::AGENT-INTERACTION)
+  (OVERLAP
+    WN::|compete%2:33:00::|))
+
+(CONCEPT
   ONT::COMPETITION
   (INHERIT
     ONT::EVENT-DEFINED-BY-ACTIVITY)
@@ -5995,8 +6046,7 @@
     WN::|observe%2:41:02::|
     WN::|keep%2:41:03::|
     WN::|observe%2:41:04::|
-    WN::|obey%2:41:00::|
-    WN::|break%2:42:00::|)
+    WN::|obey%2:41:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -8940,6 +8990,18 @@
     ONT::WATER-TRAVEL))
 
 (CONCEPT
+  ONT::DROUGHT
+  (INHERIT
+    ONT::NATURAL-EVENT)
+  (OVERLAP
+    WN::|drought%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (CAUSE FORCE)
+    (ASPECT BOUNDED)))
+
+(CONCEPT
   ONT::DROWSY-VAL
   (INHERIT
     ONT::ALERTNESS-VAL)
@@ -9294,6 +9356,33 @@
     WN::|electronic_mail%1:10:00::|
     WN::|e-mail%1:10:00::|
     WN::|email%1:10:00::|))
+
+(CONCEPT
+  ONT::EMERGENCY
+  (INHERIT
+    ONT::LOCATED-EVENT)
+  (OVERLAP
+    WN::|disaster%1:26:00::|
+    WN::|disaster%1:11:00::|
+    WN::|disaster%1:04:00::|
+    WN::|crisis%1:26:00::|
+    WN::|crisis%1:11:00::|
+    WN::|accident%1:11:01::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (ASPECT DYNAMIC)
+    (TRAJECTORY -)
+    (CAUSE AGENTIVE))
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::EMIT-GIVEOFF-DISCHARGE
@@ -11019,6 +11108,13 @@
     ONT::DISTAL-RELN))
 
 (CONCEPT
+  ONT::FARM
+  (INHERIT
+    ONT::AREA-DEF-BY-USE)
+  (OVERLAP
+    WN::|farm%1:06:00::|))
+
+(CONCEPT
   ONT::FARNESYLATION
   (INHERIT
     ONT::POST-TRANSLATIONAL-MODIFICATION))
@@ -11228,12 +11324,7 @@
   (INHERIT
     ONT::AGENT-INTERACTION)
   (OVERLAP
-    WN::|struggle%2:33:00::|
-    WN::|fight%2:33:00::|
-    WN::|contend%2:33:01::|
-    WN::|compete%2:33:00::|
-    WN::|vie%2:33:00::|
-    WN::|contend%2:33:00::|)
+    WN::|fight%2:33:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -11510,6 +11601,12 @@
   ONT::FLOODING
   (INHERIT
     ONT::NATURAL-EVENT)
+  (OVERLAP
+    WN::|flood%1:19:00::|
+    WN::|flood%1:23:00::|
+    WN::|flood%2:35:00::|
+    WN::|flood%2:30:00::|
+    WN::|flood%2:30:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -12597,6 +12694,32 @@
     WN::|heartrending%5:00:00:sorrowful:00|
     WN::|heartbreaking%5:00:00:sorrowful:00|
     WN::|grievous%5:00:00:sorrowful:00|))
+
+(CONCEPT
+  ONT::GROUP-CONFLICT
+  (INHERIT
+    ONT::TRANSGRESS)
+  (OVERLAP
+    WN::|riot%2:41:00::|
+    WN::|military_action%1:04:00::|
+    WN::|revolution%1:04:00::|
+    WN::|conflict%1:04:00::|
+    WN::|rebel%2:41:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (ASPECT DYNAMIC)
+    (TRAJECTORY -)
+    (CAUSE AGENTIVE))
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::GROUP-OBJECT
@@ -14940,6 +15063,9 @@
   ONT::LACK
   (INHERIT
     ONT::SITUATION)
+  (OVERLAP
+    WN::|deficiency%1:07:00::|
+    WN::|shortage%1:07:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -14986,6 +15112,11 @@
   ONT::LAND-TRAVEL
   (INHERIT
     ONT::TRIP))
+
+(CONCEPT
+  ONT::LAND-USE-VAL
+  (INHERIT
+    ONT::STATUS-VAL))
 
 (CONCEPT
   ONT::LAND-VEHICLE
@@ -15337,8 +15468,11 @@
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
        (TANGIBLE +)
        (ORIGIN LIVING))
      OPTIONAL)))
@@ -15897,6 +16031,13 @@
     WN::|lose%2:40:02::|
     WN::|lose%2:40:06::|
     WN::|lose_sight_of%2:39:00::|))
+
+(CONCEPT
+  ONT::LOSE-COMPETE
+  (INHERIT
+    ONT::COMPETE)
+  (OVERLAP
+    WN::|lose%2:33:00::|))
 
 (CONCEPT
   ONT::LOUDNESS-SCALE
@@ -16957,8 +17098,10 @@
 (CONCEPT
   ONT::MINE
   (INHERIT
+    ONT::AREA-DEF-BY-USE
     ONT::MANUFACTURED-OBJECT)
   (OVERLAP
+    WN::|mine%1:06:01::|
     WN::|mine%1:06:01::|)
   (SEM-FEATS
     (INHERIT
@@ -22018,6 +22161,7 @@
   (INHERIT
     ONT::APPLY-FORCE)
   (OVERLAP
+    WN::|wet%2:30:00::|
     WN::|squirt%2:35:00::|
     WN::|squirt%2:35:10::|
     WN::|sprinkle%2:35:01::|
@@ -22309,7 +22453,8 @@
     ONT::RATIO-SCALE)
   (OVERLAP
     WN::|rate%1:21:00::|
-    WN::|rate%1:28:00::|)
+    WN::|rate%1:28:00::|
+    WN::|incidence%1:24:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -23883,28 +24028,6 @@
     ONT::ORIENTED-LOC-RELN))
 
 (CONCEPT
-  ONT::RIOT
-  (INHERIT
-    ONT::LOCATED-EVENT)
-  (OVERLAP
-    WN::|riot%2:41:00::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (ASPECT DYNAMIC)
-    (TRAJECTORY -)
-    (CAUSE AGENTIVE))
-  (SEM-FRAME
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
-       (INTENTIONAL +)))))
-
-(CONCEPT
   ONT::RISE
   (INHERIT
     ONT::EVENT-OF-UNDERGOING-ACTION)
@@ -24099,7 +24222,7 @@
 (CONCEPT
   ONT::RURAL-VAL
   (INHERIT
-    ONT::CITY-RELATED-VAL)
+    ONT::LAND-USE-VAL)
   (OVERLAP
     WN::|rural%3:00:00::|
     WN::|rural%3:01:01::|))
@@ -25500,8 +25623,11 @@
        T)
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       PHYS-OBJ))))
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         TIME)))))
 
 (CONCEPT
   ONT::SIZE-SCALE
@@ -25789,6 +25915,9 @@
    "properties of human behavior having to do with social interaction, e.g. friendly, kind, mean")
   (INHERIT
     ONT::ANIMAL-PROPENSITY-VAL)
+  (OVERLAP
+    WN::|social%3:01:00::|
+    WN::|social%3:00:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (OR
@@ -26184,7 +26313,8 @@
     WN::|daily%5:00:00:periodic:00|
     WN::|annual%5:00:00:periodic:00|
     WN::|weekly%5:00:00:periodic:00|
-    WN::|monthly%5:00:00:periodic:00|))
+    WN::|monthly%5:00:00:periodic:00|
+    WN::|seasonal%3:00:00::|))
 
 (CONCEPT
   ONT::SPEECH-ACT
@@ -26456,7 +26586,9 @@
     WN::|get_going%2:38:00::|
     WN::|start%2:38:01::|
     WN::|start%2:41:00::|
-    WN::|take_to%2:41:01::|))
+    WN::|take_to%2:41:01::|
+    WN::|start%1:11:00::|
+    WN::|start%1:28:00::|))
 
 (CONCEPT
   ONT::STARTPOINT
@@ -26746,6 +26878,19 @@
     (MOBILITY FIXED)
     (TRAJECTORY -)
     (ORIGIN ARTIFACT)))
+
+(CONCEPT
+  ONT::STORM
+  (INHERIT
+    ONT::ATMOSPHERIC-PHENOMENON)
+  (OVERLAP
+    WN::|storm%1:19:00::|
+    WN::|cyclone%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (FORM SUBSTANCE)
+    (ORIGIN NON-LIVING)))
 
 (CONCEPT
   ONT::STRADDLE
@@ -28492,6 +28637,22 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::TRANSGRESS
+  (INHERIT
+    ONT::EVENT-OF-CAUSATION)
+  (OVERLAP
+    WN::|transgress%2:41:00::|
+    WN::|transgress%2:41:02::|
+    WN::|transgress%2:38:00::|
+    WN::|infringe%2:41:00::|
+    WN::|infringe%2:38:00::|
+    WN::|intrude%2:41:00::|
+    WN::|violate%2:42:00::|
+    WN::|violate%2:41:00::|
+    WN::|violate%2:41:02::|
+    WN::|violate%2:35:00::|))
+
+(CONCEPT
   ONT::TRANSLOCATE
   (INHERIT
     ONT::MOVE)
@@ -29150,10 +29311,11 @@
 (CONCEPT
   ONT::URBAN-VAL
   (INHERIT
-    ONT::CITY-RELATED-VAL)
+    ONT::LAND-USE-VAL)
   (OVERLAP
     WN::|urban%3:00:00::|
-    WN::|urban%3:01:00::|))
+    WN::|urban%3:01:00::|
+    WN::|civic%3:01:00::|))
 
 (CONCEPT
   ONT::URGENT-VAL
@@ -30179,6 +30341,13 @@
   ONT::WILLINGNESS-VAL
   (INHERIT
     ONT::SOCIAL-INTERACTION-VAL))
+
+(CONCEPT
+  ONT::WIN-COMPETE
+  (INHERIT
+    ONT::COMPETE)
+  (OVERLAP
+    WN::|win%2:33:00::|))
 
 (CONCEPT
   ONT::WINDOW

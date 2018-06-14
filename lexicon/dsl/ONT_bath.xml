@@ -140,44 +140,14 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::clean">
- <relation label="inherit">
-  ont::change-state-action
- </relation>
- <relation label="overlap">
-  wn::|clean%2:35:00::|
-  wn::|make_clean%2:35:00::|
-  wn::|wash%1:04:01::|
-  wn::|dental_care%1:04:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- </concept>
- <concept name="ont::change-state-action">
- <relation label="inherit">
-  ont::change-state
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">agentive</feat>
- </sem-feats>
  <concept name="ont::change-state">
  <relation label="inherit">
   ont::change
@@ -207,13 +177,77 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-  </or>
+ <role-restr-map roles="ont::result" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">
+   <or>
+    position-reln
+    path
+   </or>
+   </feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">agentive</feat>
+ </sem-feats>
+ <concept name="ont::change-state-action">
+ <relation label="inherit">
+  ont::change-state
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::clean">
+ <relation label="inherit">
+  ont::change-state-action
+ </relation>
+ <relation label="overlap">
+  wn::|clean%2:35:00::|
+  wn::|make_clean%2:35:00::|
+  wn::|wash%1:04:01::|
+  wn::|dental_care%1:04:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">agentive</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">
+    <or>
+     position-reln
+     path
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::change">
  <relation label="inherit">
   ont::event-of-causation
