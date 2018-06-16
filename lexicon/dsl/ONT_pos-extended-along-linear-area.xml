@@ -2,9 +2,12 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::along">
+ <concept name="ont::pos-extended-along-linear-area">
+ <comment>
+  &quot;FIGURE is located within the linear area (GROUND). e.g., I found it along the street. We walked along the street&quot;
+ </comment>
  <relation label="inherit">
-  ont::trajectory
+  ont::position-wrt-linear-area-reln
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -26,95 +29,69 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::trajectory">
- <relation label="inherit">
-  ont::path
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::path">
- <relation label="inherit">
-  ont::predicate
-  abstr-obj
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::predicate">
+ <concept name="ont::position-wrt-linear-area-reln">
  <comment>
-  &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as)&quot;
+  &quot;FIGURE is defined wrt an area (the GROUND) that has a linear orientation&quot;
+ </comment>
+ <relation label="inherit">
+  ont::position-reln
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="spatial-abstraction">spatial-point</feat>
+    <feat name="type">geo-object</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::position-reln">
+ <comment>
+  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="intentional">-</feat>
-  <feat name="container">-</feat>
-  <feat name="orientation">-</feat>
-  <feat name="intensity">-</feat>
-  <feat name="scale">-</feat>
-  <feat name="gradability">+</feat>
- </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::ground">
-   <concept name="t" />
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <concept name="t" />
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="spatial-abstraction">spatial-point</feat>
+   <feat name="type">geo-object</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::figure">
   <or>
    <concept name="phys-obj" />
    <concept name="situation" />
-   <concept name="abstr-obj" />
   </or>
  </role-restr-map>
  </sem-frame>
@@ -132,23 +109,20 @@
   abstr-obj
  </relation>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="intentional">-</feat>
- <feat name="container">-</feat>
- <feat name="orientation">-</feat>
- <feat name="intensity">-</feat>
- <feat name="scale">-</feat>
- <feat name="gradability">+</feat>
- </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::ground">
-  <concept name="t" />
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <concept name="t" />
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::any-sem">
@@ -167,11 +141,11 @@
   <pos pos="adv" />
   <word first-word="along" />
  </morph>
- <example text="he traveled along the river">
+ <example text="he found it along the road">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::along
+  ont::pos-extended-along-linear-area
  </relation>
  <syntax>
   <template-call template="ont::binary-constraint-np-templ" />
@@ -196,11 +170,11 @@
   <pos pos="adv" />
   <word first-word="alongside" />
  </morph>
- <example text="he walked alongside the road">
+ <example text="he found it alongside the road">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::along
+  ont::pos-extended-along-linear-area
   ont::binary-constraint-templ
  </relation>
  </sense>
@@ -209,11 +183,11 @@
   <pos pos="adv" />
   <word first-word="alongside" remaining-words="of" />
  </morph>
- <example text="he walked alongside of the road">
+ <example text="he found it alongside of the road">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::along
+  ont::pos-extended-along-linear-area
   ont::binary-constraint-templ
  </relation>
  </sense>

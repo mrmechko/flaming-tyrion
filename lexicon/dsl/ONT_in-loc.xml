@@ -3,8 +3,11 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::in-loc">
+ <comment>
+  &quot;FIGURE is within or inside the GROUND&quot;
+ </comment>
  <relation label="inherit">
-  ont::pos-as-containment-reln
+  ont::pos-wrt-containment-reln
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground">
@@ -40,7 +43,7 @@
  </concept>
  <concept name="ont::position-reln">
  <comment>
-  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground)&quot;
+  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
@@ -62,11 +65,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::pos-as-containment-reln">
- <relation label="inherit">
-  ont::position-as-point-reln
- </relation>
- </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground">
   <sem-feats>
@@ -79,7 +77,10 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::position-as-point-reln">
+ <concept name="ont::pos-wrt-containment-reln">
+ <comment>
+  &quot;locating an object (typically rthe FIGURE) within an extended object (typically the GROUND)&quot;
+ </comment>
  <relation label="inherit">
   ont::position-reln
  </relation>

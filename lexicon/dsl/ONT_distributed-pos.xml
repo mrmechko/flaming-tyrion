@@ -3,8 +3,11 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::distributed-pos">
+ <comment>
+  &quot;FIGURE is distributed over the GROUND&quot;
+ </comment>
  <relation label="inherit">
-  ont::pos-as-over
+  ont::position-wrt-area-reln
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -26,9 +29,34 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <concept name="ont::position-wrt-area-reln">
+ <comment>
+  &quot;Position of FIGURE defined in terms or a relationship to an area (the GROUND)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::position-reln
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="spatial-abstraction">spatial-point</feat>
+    <feat name="type">geo-object</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::position-reln">
  <comment>
-  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground)&quot;
+  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
@@ -50,16 +78,23 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::position-as-extent-reln">
- <relation label="inherit">
-  ont::position-reln
- </relation>
- </concept>
- <concept name="ont::pos-as-over">
- <relation label="inherit">
-  ont::position-as-extent-reln
- </relation>
- </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="spatial-abstraction">spatial-point</feat>
+   <feat name="type">geo-object</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -101,6 +136,19 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="over" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::distributed-pos
+  ont::binary-constraint-s-implicit-templ
+ </relation>
+ </sense>
  <sense>
  <morph>
   <pos pos="adv" />

@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::pos-after-in-trajectory">
+ <comment>
+  &quot;FIGURE is after the GROUND wrt a linear area&quot;
+ </comment>
  <relation label="inherit">
   ont::pos-relative-wrt-trajectory
  </relation>
@@ -27,17 +30,29 @@
  </or>
  </concept>
  <concept name="ont::pos-relative-wrt-trajectory">
+ <comment>
+  &quot;FIGURE is located along a linear area wrt some other object (GROUND)&quot;
+ </comment>
  <relation label="inherit">
-  ont::position-w-trajectory-reln
+  ont::position-wrt-linear-area-reln
  </relation>
  </concept>
- <concept name="ont::position-w-trajectory-reln">
+ <concept name="ont::position-wrt-linear-area-reln">
+ <comment>
+  &quot;FIGURE is defined wrt an area (the GROUND) that has a linear orientation&quot;
+ </comment>
  <relation label="inherit">
   ont::position-reln
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground">
-   <concept name="phys-obj" />
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="spatial-abstraction">spatial-point</feat>
+    <feat name="type">geo-object</feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure">
    <or>
@@ -49,7 +64,7 @@
  </concept>
  <concept name="ont::position-reln">
  <comment>
-  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground)&quot;
+  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
@@ -73,7 +88,13 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground">
-  <concept name="phys-obj" />
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="spatial-abstraction">spatial-point</feat>
+   <feat name="type">geo-object</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::figure">
   <or>

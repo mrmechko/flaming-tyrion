@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::orients-to">
+ <comment>
+  &quot;FIGURE is located by an object defined by an orientation wrt an object. e.g., to the east, to the back&quot;
+ </comment>
  <relation label="inherit">
   ont::oriented-loc-reln
  </relation>
@@ -16,7 +19,7 @@
     <feat name="type">
     <or>
      cardinal-point
-     loc-wrt-orientation
+     object-dependent-location
     </or>
     </feat>
    </sem-feats>
@@ -44,7 +47,7 @@
  </concept>
  <concept name="ont::position-reln">
  <comment>
-  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground)&quot;
+  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
@@ -67,6 +70,9 @@
  </sem-frame>
  </concept>
  <concept name="ont::oriented-loc-reln">
+ <comment>
+  &quot;FIGURE is located by a directional relationship with the GROUD&quot;
+ </comment>
  <relation label="inherit">
   ont::position-as-point-reln
  </relation>
@@ -81,13 +87,16 @@
    <feat name="type">
    <or>
     cardinal-point
-    loc-wrt-orientation
+    object-dependent-location
    </or>
    </feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::position-as-point-reln">
+ <comment>
+  &quot;locating an object (FIGURE) wrt a point-like object (GROUND)&quot;
+ </comment>
  <relation label="inherit">
   ont::position-reln
  </relation>

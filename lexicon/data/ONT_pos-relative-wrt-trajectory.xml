@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
-<ONTTYPE name="pos-relative-wrt-trajectory" parent="position-w-trajectory-reln" modified="Fri Jun 15 01:42:42 2018">
+<ONTTYPE name="pos-relative-wrt-trajectory" parent="position-wrt-linear-area-reln" modified="Sat Jun 16 01:42:54 2018" comment="figure is located along a linear area wrt some other object (ground)">
 <SEM fltype="abstr-obj">
 <FEATURES type="pos-relative-wrt-trajectory" />
 </SEM>
-<ARGUMENT role="ground" optionality="essential" fltype="phys-obj" />
-<ARGUMENT role="figure" optionality="essential" fltype="(? t466 phys-obj situation)" />
+<ARGUMENT role="ground" optionality="essential" fltype="phys-obj">
+<FEATURES spatial-abstraction="(? !ss spatial-point)" type="geo-object" />
+</ARGUMENT>
+<ARGUMENT role="figure" optionality="essential" fltype="(? t467 phys-obj situation)" />
 <CHILD name="pos-after-in-trajectory" />
 <CHILD name="pos-before-in-trajectory" />
 </ONTTYPE>

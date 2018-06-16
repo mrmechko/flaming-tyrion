@@ -3,8 +3,15 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::down">
+ <comment>
+  &quot;FIGURE is lower on a scale&quot;
+ </comment>
  <relation label="inherit">
-  ont::below
+  ont::directional-vert
+ </relation>
+ <relation label="overlap">
+  wn::|down%4:02:00::|
+  wn::|down%4:02:05::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -28,7 +35,7 @@
  </concept>
  <concept name="ont::position-reln">
  <comment>
-  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground)&quot;
+  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
@@ -50,14 +57,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::below">
- <relation label="inherit">
-  ont::directional-vert
- </relation>
- </concept>
  <concept name="ont::directional-vert">
+ <comment>
+  &quot;FIGURE is related via a vertical orientation to the GROUND&quot;
+ </comment>
  <relation label="inherit">
-  ont::pos-directional-reln
+  ont::oriented-loc-reln
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground">
@@ -68,7 +73,10 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::pos-directional-reln">
+ <concept name="ont::oriented-loc-reln">
+ <comment>
+  &quot;FIGURE is located by a directional relationship with the GROUD&quot;
+ </comment>
  <relation label="inherit">
   ont::position-as-point-reln
  </relation>
@@ -82,6 +90,9 @@
  </role-restr-map>
  </sem-frame>
  <concept name="ont::position-as-point-reln">
+ <comment>
+  &quot;locating an object (FIGURE) wrt a point-like object (GROUND)&quot;
+ </comment>
  <relation label="inherit">
   ont::position-reln
  </relation>

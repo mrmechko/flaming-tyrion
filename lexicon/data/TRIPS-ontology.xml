@@ -4372,6 +4372,18 @@
 <ONTTYPE name="at-scale-value">
 <WORD name="how" />
 </ONTTYPE>
+<ONTTYPE name="complex-ground-reln">
+<ONTTYPE name="among">
+<WORD name="amid" />
+<WORD name="among" />
+</ONTTYPE>
+<ONTTYPE name="between">
+<WORD name="in_between" />
+<WORD name="between" />
+<WORD name="inter-" />
+<WORD name="inter-" />
+</ONTTYPE>
+</ONTTYPE>
 <ONTTYPE name="conventional-position-reln">
 <WORD name="online" />
 <ONTTYPE name="city-rel">
@@ -4392,32 +4404,16 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="direction">
-<WORD name="back_and_forth" />
 <WORD name="against" />
-<WORD name="back" />
-<WORD name="backward" />
-<WORD name="backwards" />
 <WORD name="direction" />
-<WORD name="downhill" />
-<WORD name="downward" />
-<WORD name="downwards" />
 <WORD name="downwind" />
-<WORD name="forward" />
-<WORD name="forwards" />
-<WORD name="in" />
 <WORD name="inland" />
-<WORD name="left" />
 <WORD name="off" />
-<WORD name="out" />
 <WORD name="over" />
 <WORD name="overland" />
-<WORD name="right" />
 <WORD name="sideways" />
 <WORD name="straight" />
 <WORD name="through" />
-<WORD name="uphill" />
-<WORD name="upward" />
-<WORD name="upwards" />
 <WORD name="upwind" />
 <WORD name="way" />
 <ONTTYPE name="cardinal-direction">
@@ -4429,8 +4425,56 @@
 <WORD name="west" />
 <WORD name="westward" />
 </ONTTYPE>
+<ONTTYPE name="direction-rotation">
+<ONTTYPE name="clockwise">
+<WORD name="clockwise" />
+</ONTTYPE>
+<ONTTYPE name="counterclockwise">
+<WORD name="counter_clockwise" />
+<WORD name="counterclockwise" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="direction-wrt-containment">
+<ONTTYPE name="direction-in">
+<WORD name="in" />
+</ONTTYPE>
+<ONTTYPE name="direction-out">
+<WORD name="out" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="direction-wrt-entity">
+<WORD name="back_and_forth" />
+<ONTTYPE name="away">
+<WORD name="away" />
+</ONTTYPE>
+<ONTTYPE name="direction-backward">
+<WORD name="back" />
+<WORD name="backward" />
+<WORD name="backwards" />
+<MAPPING to="wordnet" name="back%4:02:00::" />
+</ONTTYPE>
+<ONTTYPE name="direction-forward">
+<WORD name="forward" />
+<WORD name="forwards" />
+<MAPPING to="wordnet" name="forward%4:02:00::" />
+</ONTTYPE>
+<ONTTYPE name="direction-leftward">
+<WORD name="left" />
+<MAPPING to="wordnet" name="left%4:02:03::" />
+</ONTTYPE>
+<ONTTYPE name="direction-rightward">
+<WORD name="right" />
+<MAPPING to="wordnet" name="right%4:02:03::" />
+</ONTTYPE>
+<ONTTYPE name="towards">
+<WORD name="toward" />
+<WORD name="towards" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="direction-wrt-verticality">
 <ONTTYPE name="direction-down">
 <WORD name="down" />
+<WORD name="downhill" />
 </ONTTYPE>
 <ONTTYPE name="direction-down-ground">
 <WORD name="down" />
@@ -4440,6 +4484,9 @@
 <ONTTYPE name="direction-up">
 <WORD name="up" />
 <WORD name="up" />
+<WORD name="uphill" />
+<WORD name="upward" />
+<WORD name="upwards" />
 </ONTTYPE>
 <ONTTYPE name="direction-up-ground">
 <WORD name="up" />
@@ -4447,53 +4494,11 @@
 <WORD name="upstream" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="position-as-extent-reln">
-<ONTTYPE name="pos-as-over">
-<WORD name="over" />
-<ONTTYPE name="distributed-pos">
-<WORD name="throughout" />
 </ONTTYPE>
+<ONTTYPE name="pos-wrt-containment-reln">
+<ONTTYPE name="contain-reln">
+<WORD name="of" />
 </ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="position-as-point-reln">
-<ONTTYPE name="at-loc">
-<WORD name="at" />
-<WORD name="where" />
-</ONTTYPE>
-<ONTTYPE name="complex-ground-reln">
-<ONTTYPE name="among">
-<WORD name="amid" />
-<WORD name="among" />
-</ONTTYPE>
-<ONTTYPE name="between">
-<WORD name="in_between" />
-<WORD name="between" />
-<WORD name="inter-" />
-<WORD name="inter-" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="oriented-loc-reln">
-<ONTTYPE name="back">
-<WORD name="in_back" />
-<WORD name="behind" />
-</ONTTYPE>
-<ONTTYPE name="front">
-<WORD name="in_front" />
-<WORD name="ahead" />
-</ONTTYPE>
-<ONTTYPE name="left-of" />
-<ONTTYPE name="off">
-<WORD name="off" />
-</ONTTYPE>
-<ONTTYPE name="on">
-<WORD name="on" />
-</ONTTYPE>
-<ONTTYPE name="orients-to">
-<WORD name="to" />
-</ONTTYPE>
-<ONTTYPE name="right-of" />
-</ONTTYPE>
-<ONTTYPE name="pos-as-containment-reln">
 <ONTTYPE name="delimit-reln" />
 <ONTTYPE name="in-loc">
 <WORD name="inside_of" />
@@ -4508,25 +4513,43 @@
 <WORD name="outside_of" />
 <WORD name="extra-" />
 <WORD name="outside" />
-<ONTTYPE name="out-loc" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="pos-directional-reln">
+<ONTTYPE name="position-as-point-reln">
+<ONTTYPE name="at-loc">
+<WORD name="at" />
+<WORD name="where" />
+</ONTTYPE>
+<ONTTYPE name="oriented-loc-reln">
+<ONTTYPE name="back">
+<WORD name="in_back" />
+<WORD name="behind" />
+</ONTTYPE>
 <ONTTYPE name="directional-vert">
 <ONTTYPE name="above">
 <WORD name="above" />
-<ONTTYPE name="up">
-<WORD name="up_to" />
-</ONTTYPE>
+<WORD name="over" />
 </ONTTYPE>
 <ONTTYPE name="below">
 <WORD name="below" />
 <WORD name="beneath" />
 <WORD name="under" />
 <WORD name="underneath" />
-<ONTTYPE name="down" />
+<MAPPING to="wordnet" name="below%4:02:01::" />
+</ONTTYPE>
+<ONTTYPE name="down">
+<MAPPING to="wordnet" name="down%4:02:00::" />
+<MAPPING to="wordnet" name="down%4:02:05::" />
+</ONTTYPE>
+<ONTTYPE name="up">
+<WORD name="up_to" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="front">
+<WORD name="in_front" />
+<WORD name="ahead" />
+</ONTTYPE>
+<ONTTYPE name="left-of" />
 <ONTTYPE name="navigational-reln">
 <WORD name="northeast" />
 <WORD name="northwest" />
@@ -4550,6 +4573,16 @@
 <WORD name="west" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="off">
+<WORD name="off" />
+</ONTTYPE>
+<ONTTYPE name="on">
+<WORD name="on" />
+</ONTTYPE>
+<ONTTYPE name="orients-to">
+<WORD name="to" />
+</ONTTYPE>
+<ONTTYPE name="right-of" />
 </ONTTYPE>
 <ONTTYPE name="pos-distance">
 <ONTTYPE name="distal-reln">
@@ -4583,17 +4616,31 @@
 <ONTTYPE name="there" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="position-w-trajectory-reln">
-<ONTTYPE name="linear-extent">
-<WORD name="alongside_of" />
-<WORD name="along" />
-<WORD name="alongside" />
+<ONTTYPE name="position-wrt-area-reln">
+<ONTTYPE name="across">
+<WORD name="across" />
+<WORD name="trans-" />
+<WORD name="trans-" />
 </ONTTYPE>
-<ONTTYPE name="pos-as-around">
+<ONTTYPE name="around">
 <WORD name="around" />
+</ONTTYPE>
+<ONTTYPE name="distributed-pos">
+<WORD name="over" />
+<WORD name="throughout" />
 </ONTTYPE>
 <ONTTYPE name="pos-as-opposite">
 <WORD name="across" />
+</ONTTYPE>
+<ONTTYPE name="through">
+<WORD name="through" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="position-wrt-linear-area-reln">
+<ONTTYPE name="pos-extended-along-linear-area">
+<WORD name="alongside_of" />
+<WORD name="along" />
+<WORD name="alongside" />
 </ONTTYPE>
 <ONTTYPE name="pos-relative-wrt-trajectory">
 <ONTTYPE name="pos-after-in-trajectory">
@@ -4676,9 +4723,6 @@
 <WORD name="so" />
 <ONTTYPE name="but-exception" />
 <ONTTYPE name="clause-condition" />
-</ONTTYPE>
-<ONTTYPE name="contain-reln">
-<WORD name="of" />
 </ONTTYPE>
 <ONTTYPE name="cost-relation">
 <WORD name="for" />
@@ -4780,7 +4824,9 @@
 <WORD name="wholly" />
 <WORD name="wickedly" />
 </ONTTYPE>
-<ONTTYPE name="degree-modifier-high-event" />
+<ONTTYPE name="degree-modifier-high-event">
+<WORD name="so" />
+</ONTTYPE>
 <ONTTYPE name="degree-modifier-low">
 <WORD name="a_bit" />
 <WORD name="a_little_bit" />
@@ -4894,26 +4940,6 @@
 <WORD name="unlike" />
 </ONTTYPE>
 <ONTTYPE name="path">
-<ONTTYPE name="direction-reln">
-<ONTTYPE name="dir-in-terms-of-obj">
-<ONTTYPE name="away">
-<WORD name="away" />
-</ONTTYPE>
-<ONTTYPE name="towards">
-<WORD name="toward" />
-<WORD name="towards" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="dir-rotation">
-<ONTTYPE name="clockwise">
-<WORD name="clockwise" />
-</ONTTYPE>
-<ONTTYPE name="counterclockwise">
-<WORD name="counter_clockwise" />
-<WORD name="counterclockwise" />
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="goal-reln">
 <ONTTYPE name="goal-as-containment">
 <WORD name="into" />
@@ -4946,27 +4972,6 @@
 </ONTTYPE>
 <ONTTYPE name="from-loc">
 <WORD name="from" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="trajectory">
-<ONTTYPE name="across">
-<WORD name="across" />
-<WORD name="trans-" />
-<WORD name="trans-" />
-</ONTTYPE>
-<ONTTYPE name="along">
-<WORD name="alongside_of" />
-<WORD name="along" />
-<WORD name="alongside" />
-</ONTTYPE>
-<ONTTYPE name="around">
-<WORD name="around" />
-</ONTTYPE>
-<ONTTYPE name="over">
-<WORD name="over" />
-</ONTTYPE>
-<ONTTYPE name="through">
-<WORD name="through" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -5178,7 +5183,7 @@
 <WORD name="because" />
 <WORD name="since" />
 <ONTTYPE name="due-to">
-<WORD name="due_to" />
+<WORD name="due" />
 </ONTTYPE>
 <ONTTYPE name="reason-informal">
 <WORD name="agent" />

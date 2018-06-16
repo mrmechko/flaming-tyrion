@@ -3,8 +3,11 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::pos-as-opposite">
+ <comment>
+  &quot;FIGURE is on an opposite side of an area wrt some reference object: e.g., it is across the street&quot;
+ </comment>
  <relation label="inherit">
-  ont::position-w-trajectory-reln
+  ont::position-wrt-area-reln
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -26,13 +29,22 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::position-w-trajectory-reln">
+ <concept name="ont::position-wrt-area-reln">
+ <comment>
+  &quot;Position of FIGURE defined in terms or a relationship to an area (the GROUND)&quot;
+ </comment>
  <relation label="inherit">
   ont::position-reln
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground">
-   <concept name="phys-obj" />
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="spatial-abstraction">spatial-point</feat>
+    <feat name="type">geo-object</feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure">
    <or>
@@ -44,7 +56,7 @@
  </concept>
  <concept name="ont::position-reln">
  <comment>
-  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground)&quot;
+  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
@@ -68,7 +80,13 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground">
-  <concept name="phys-obj" />
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="spatial-abstraction">spatial-point</feat>
+   <feat name="type">geo-object</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::figure">
   <or>

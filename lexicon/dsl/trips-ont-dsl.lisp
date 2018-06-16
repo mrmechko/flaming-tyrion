@@ -94,6 +94,7 @@
 
 (CONCEPT
   ONT::ABOVE
+  (COMMENT "FIGURE is higher on some vertical scale than the GROUND")
   (INHERIT
     ONT::DIRECTIONAL-VERT))
 
@@ -468,8 +469,10 @@
 
 (CONCEPT
   ONT::ACROSS
+  (COMMENT
+   "FIGURE is a slice through the GROUND from one side to the other. Conceptually on the GROUND")
   (INHERIT
-    ONT::TRAJECTORY))
+    ONT::POSITION-WRT-AREA-RELN))
 
 (CONCEPT
   ONT::ACT-BEHAVE
@@ -1220,11 +1223,6 @@
     ONT::PERMISSION-RELATED-VAL))
 
 (CONCEPT
-  ONT::ALONG
-  (INHERIT
-    ONT::TRAJECTORY))
-
-(CONCEPT
   ONT::ALWAYS
   (INHERIT
     ONT::FREQUENCY))
@@ -1542,6 +1540,7 @@
        (TYPE
         (OR
           POSITION-RELN
+          DIRECTION
           PATH)))
      OPTIONAL)
     (ONT::AGENT
@@ -1769,8 +1768,10 @@
 
 (CONCEPT
   ONT::AROUND
+  (COMMENT
+   "FIGURE is an area surrounding the boundary of the GROUND, or distrubuted over the GROUND")
   (INHERIT
-    ONT::TRAJECTORY))
+    ONT::POSITION-WRT-AREA-RELN))
 
 (CONCEPT
   ONT::ARRANGE-TEXT
@@ -2186,12 +2187,14 @@
 
 (CONCEPT
   ONT::AT-LOC
+  (COMMENT "prototypical locating of a FIGURE wrt a point-like GROUND")
   (INHERIT
     ONT::POSITION-AS-POINT-RELN))
 
 (CONCEPT
   ONT::AT-SCALE-VALUE
-  (COMMENT "The main predicate for mapping an object to a value on a scale")
+  (COMMENT
+   "The main predicate for associating an object with a value on a scale")
   (INHERIT
     ONT::POSITION-RELN))
 
@@ -2700,8 +2703,9 @@
 
 (CONCEPT
   ONT::AWAY
+  (COMMENT "direction away a given entity (the GROUND)")
   (INHERIT
-    ONT::DIR-IN-TERMS-OF-OBJ))
+    ONT::DIRECTION-WRT-ENTITY))
 
 (CONCEPT
   ONT::AWFUL-VAL
@@ -3152,8 +3156,11 @@
 
 (CONCEPT
   ONT::BELOW
+  (COMMENT "FIGURE is lower on some vertical scale than the GROUND")
   (INHERIT
-    ONT::DIRECTIONAL-VERT))
+    ONT::DIRECTIONAL-VERT)
+  (OVERLAP
+    WN::|below%4:02:01::|))
 
 (CONCEPT
   ONT::BENEFICIARY
@@ -5100,7 +5107,7 @@
 (CONCEPT
   ONT::CLOCKWISE
   (INHERIT
-    ONT::DIR-ROTATION))
+    ONT::DIRECTION-ROTATION))
 
 (CONCEPT
   ONT::CLOG
@@ -6033,8 +6040,10 @@
 
 (CONCEPT
   ONT::COMPLEX-GROUND-RELN
+  (COMMENT
+   "FIGURE is located wrt a set of objects that comprise the GROUND. e.g., between X and Y, among the participants")
   (INHERIT
-    ONT::POSITION-AS-POINT-RELN))
+    ONT::POSITION-RELN))
 
 (CONCEPT
   ONT::COMPLIANCE
@@ -6544,7 +6553,7 @@
   (COMMENT
    "a kind of Inverse of IN-LOC, but can't be used as a result location")
   (INHERIT
-    ONT::PREDICATE)
+    ONT::POS-WRT-CONTAINMENT-RELN)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -7071,7 +7080,7 @@
 (CONCEPT
   ONT::COUNTERCLOCKWISE
   (INHERIT
-    ONT::DIR-ROTATION))
+    ONT::DIRECTION-ROTATION))
 
 (CONCEPT
   ONT::COUNTRY
@@ -7787,15 +7796,23 @@
 
 (CONCEPT
   ONT::DELIMIT-RELN
+  (COMMENT
+   "the FIGURE has a value in a rnage that is delimited by the GROUND, e.g., within five dollars of the estimate, within five miles of starbucks")
   (INHERIT
-    ONT::POS-AS-CONTAINMENT-RELN)
+    ONT::POS-WRT-CONTAINMENT-RELN)
   (SEM-FRAME
     (ONT::GROUND
-     (CONCEPT
-       ABSTR-OBJ))
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)))
     (ONT::FIGURE
-     (CONCEPT
-       ABSTR-OBJ))))
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)))))
 
 (CONCEPT
   ONT::DELIVER
@@ -8372,22 +8389,6 @@
     WN::|dimension%1:07:01::|))
 
 (CONCEPT
-  ONT::DIR-IN-TERMS-OF-OBJ
-  (INHERIT
-    ONT::DIRECTION-RELN)
-  (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (MOBILITY MOVABLE)))))
-
-(CONCEPT
-  ONT::DIR-ROTATION
-  (INHERIT
-    ONT::DIRECTION-RELN))
-
-(CONCEPT
   ONT::DIRECT-AT
   (INHERIT
     ONT::EVENT-OF-STATE)
@@ -8427,6 +8428,8 @@
 
 (CONCEPT
   ONT::DIRECTION
+  (COMMENT
+   "a direction = a spatial relation between the location (FIGURE) of an object and its previous location")
   (INHERIT
     ONT::POSITION-RELN)
   (SEM-FRAME
@@ -8434,25 +8437,38 @@
      (CONCEPT
        PHYS-OBJ))
     (ONT::FIGURE
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION)))))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (MOBILITY MOVABLE)))))
+
+(CONCEPT
+  ONT::DIRECTION-BACKWARD
+  (COMMENT
+   "FIGURE moves backward from its original position, where backward is defined by the orientation of the GROUND")
+  (INHERIT
+    ONT::DIRECTION-WRT-ENTITY)
+  (OVERLAP
+    WN::|back%4:02:00::|))
 
 (CONCEPT
   ONT::DIRECTION-DOWN
+  (COMMENT
+   "This is the particle 'down' and is relative to some scale/domain: e.g., the temperature is down, move the ball down")
   (INHERIT
-    ONT::DIRECTION))
+    ONT::DIRECTION-WRT-VERTICALITY))
 
 (CONCEPT
   ONT::DIRECTION-DOWN-GROUND
   (COMMENT
    "this is the transitive 'down' that has a GROUND that describes a physical object and locations objects or events")
   (INHERIT
-    ONT::DIRECTION)
+    ONT::DIRECTION-WRT-VERTICALITY)
   (SEM-FRAME
     (ONT::GROUND
      (CONCEPT
@@ -8465,27 +8481,61 @@
          SITUATION)))))
 
 (CONCEPT
-  ONT::DIRECTION-RELN
+  ONT::DIRECTION-FORWARD
+  (COMMENT
+   "FIGURE moves forward from its original position, where forward is defined by the orientation of the GROUND")
   (INHERIT
-    ONT::PATH)
-  (SEM-FRAME
-    (ONT::GROUND
-     (CONCEPT
-       PHYS-OBJ))))
+    ONT::DIRECTION-WRT-ENTITY)
+  (OVERLAP
+    WN::|forward%4:02:00::|))
+
+(CONCEPT
+  ONT::DIRECTION-IN
+  (COMMENT "direction involving moving into some object (the GROUND)")
+  (INHERIT
+    ONT::DIRECTION-WRT-CONTAINMENT))
+
+(CONCEPT
+  ONT::DIRECTION-LEFTWARD
+  (COMMENT "direction leftward wrt respect to a given entity (the GROUND)")
+  (INHERIT
+    ONT::DIRECTION-WRT-ENTITY)
+  (OVERLAP
+    WN::|left%4:02:03::|))
+
+(CONCEPT
+  ONT::DIRECTION-OUT
+  (COMMENT "direction involving moving into some object (the GROUND)")
+  (INHERIT
+    ONT::DIRECTION-WRT-CONTAINMENT))
+
+(CONCEPT
+  ONT::DIRECTION-RIGHTWARD
+  (COMMENT "direction rightward wrt respect to a given entity (the GROUND)")
+  (INHERIT
+    ONT::DIRECTION-WRT-ENTITY)
+  (OVERLAP
+    WN::|right%4:02:03::|))
+
+(CONCEPT
+  ONT::DIRECTION-ROTATION
+  (COMMENT "rotational direction of the FIGURE")
+  (INHERIT
+    ONT::DIRECTION))
 
 (CONCEPT
   ONT::DIRECTION-UP
   (COMMENT
-   "This is the intransitive 'up' and is relative to some scale/domain: e.g., the temperature is up, move the ball up")
+   "This is the particle 'up' and is relative to some scale/domain: e.g., the temperature is up, move the ball up")
   (INHERIT
-    ONT::DIRECTION))
+    ONT::DIRECTION-WRT-VERTICALITY))
 
 (CONCEPT
   ONT::DIRECTION-UP-GROUND
   (COMMENT
    "this is the transitive 'up' that has a GROUND that describes a physical object and locations objects or events")
   (INHERIT
-    ONT::DIRECTION)
+    ONT::DIRECTION-WRT-VERTICALITY)
   (SEM-FRAME
     (ONT::GROUND
      (CONCEPT
@@ -8503,9 +8553,30 @@
     ONT::SPATIAL))
 
 (CONCEPT
-  ONT::DIRECTIONAL-VERT
+  ONT::DIRECTION-WRT-CONTAINMENT
+  (COMMENT "direction relative to containment in some object (the GROUND)")
   (INHERIT
-    ONT::POS-DIRECTIONAL-RELN)
+    ONT::DIRECTION))
+
+(CONCEPT
+  ONT::DIRECTION-WRT-ENTITY
+  (COMMENT
+   "direction wrt respect to a given entity (the GROUND), i.e., the relation between the FIGUREs orginal and final position is defined with respect to the GROUND")
+  (INHERIT
+    ONT::DIRECTION))
+
+(CONCEPT
+  ONT::DIRECTION-WRT-VERTICALITY
+  (COMMENT
+   "direction wrt respect to verticality (e.g., gravity or a 'vertical' scale, e.g., temperature), possibly also related to a extended object, e.g., a street, a body, which is the GROUND")
+  (INHERIT
+    ONT::DIRECTION))
+
+(CONCEPT
+  ONT::DIRECTIONAL-VERT
+  (COMMENT "FIGURE is related via a vertical orientation to the GROUND")
+  (INHERIT
+    ONT::ORIENTED-LOC-RELN)
   (SEM-FRAME
     (ONT::GROUND
      (OR
@@ -8787,8 +8858,9 @@
 
 (CONCEPT
   ONT::DISTRIBUTED-POS
+  (COMMENT "FIGURE is distributed over the GROUND")
   (INHERIT
-    ONT::POS-AS-OVER))
+    ONT::POSITION-WRT-AREA-RELN))
 
 (CONCEPT
   ONT::DISTRICT
@@ -8928,8 +9000,12 @@
 
 (CONCEPT
   ONT::DOWN
+  (COMMENT "FIGURE is lower on a scale")
   (INHERIT
-    ONT::BELOW))
+    ONT::DIRECTIONAL-VERT)
+  (OVERLAP
+    WN::|down%4:02:00::|
+    WN::|down%4:02:05::|))
 
 (CONCEPT
   ONT::DOWNTOWN
@@ -13787,8 +13863,9 @@
 
 (CONCEPT
   ONT::IN-LOC
+  (COMMENT "FIGURE is within or inside the GROUND")
   (INHERIT
-    ONT::POS-AS-CONTAINMENT-RELN)
+    ONT::POS-WRT-CONTAINMENT-RELN)
   (SEM-FRAME
     (ONT::GROUND
      (SEM-FEATS
@@ -15594,11 +15671,6 @@
   (OVERLAP
     WN::|limited%3:00:00::|
     WN::|minor%5:00:00:limited:00|))
-
-(CONCEPT
-  ONT::LINEAR-EXTENT
-  (INHERIT
-    ONT::POSITION-W-TRAJECTORY-RELN))
 
 (CONCEPT
   ONT::LINEAR-EXTENT-SCALE
@@ -17896,7 +17968,7 @@
   ONT::NAVIGATIONAL-RELN
   (COMMENT "Figure is related by a cardinal directional reln to ground")
   (INHERIT
-    ONT::POS-DIRECTIONAL-RELN))
+    ONT::ORIENTED-LOC-RELN))
 
 (CONCEPT
   ONT::NEAR
@@ -19512,11 +19584,14 @@
 
 (CONCEPT
   ONT::ORIENTED-LOC-RELN
+  (COMMENT "FIGURE is located by a directional relationship with the GROUD")
   (INHERIT
     ONT::POSITION-AS-POINT-RELN))
 
 (CONCEPT
   ONT::ORIENTS-TO
+  (COMMENT
+   "FIGURE is located by an object defined by an orientation wrt an object. e.g., to the east, to the back")
   (INHERIT
     ONT::ORIENTED-LOC-RELN)
   (SEM-FRAME
@@ -19530,7 +19605,7 @@
        (TYPE
         (OR
           CARDINAL-POINT
-          LOC-WRT-ORIENTATION))))))
+          OBJECT-DEPENDENT-LOCATION))))))
 
 (CONCEPT
   ONT::ORIGIN
@@ -19617,11 +19692,6 @@
     ONT::SCALE))
 
 (CONCEPT
-  ONT::OUT-LOC
-  (INHERIT
-    ONT::OUTSIDE))
-
-(CONCEPT
   ONT::OUTCOME
   (INHERIT
     ONT::INFORMATION-FUNCTION-OBJECT)
@@ -19649,7 +19719,7 @@
 (CONCEPT
   ONT::OUTSIDE
   (INHERIT
-    ONT::POS-AS-CONTAINMENT-RELN)
+    ONT::POS-WRT-CONTAINMENT-RELN)
   (SEM-FRAME
     (ONT::GROUND
      (SEM-FEATS
@@ -19657,11 +19727,6 @@
          PHYS-OBJ)
        (CONTAINER +)
        (INTENTIONAL -)))))
-
-(CONCEPT
-  ONT::OVER
-  (INHERIT
-    ONT::TRAJECTORY))
 
 (CONCEPT
   ONT::OVERCOME
@@ -20805,31 +20870,20 @@
 
 (CONCEPT
   ONT::POS-AFTER-IN-TRAJECTORY
+  (COMMENT "FIGURE is after the GROUND wrt a linear area")
   (INHERIT
     ONT::POS-RELATIVE-WRT-TRAJECTORY))
 
 (CONCEPT
-  ONT::POS-AS-AROUND
-  (INHERIT
-    ONT::POSITION-W-TRAJECTORY-RELN))
-
-(CONCEPT
-  ONT::POS-AS-CONTAINMENT-RELN
-  (INHERIT
-    ONT::POSITION-AS-POINT-RELN))
-
-(CONCEPT
   ONT::POS-AS-OPPOSITE
+  (COMMENT
+   "FIGURE is on an opposite side of an area wrt some reference object: e.g., it is across the street")
   (INHERIT
-    ONT::POSITION-W-TRAJECTORY-RELN))
-
-(CONCEPT
-  ONT::POS-AS-OVER
-  (INHERIT
-    ONT::POSITION-AS-EXTENT-RELN))
+    ONT::POSITION-WRT-AREA-RELN))
 
 (CONCEPT
   ONT::POS-BEFORE-IN-TRAJECTORY
+  (COMMENT "FIGURE is before the GROUND wrt a linear area")
   (INHERIT
     ONT::POS-RELATIVE-WRT-TRAJECTORY))
 
@@ -20837,11 +20891,6 @@
   ONT::POS-CONDITION
   (INHERIT
     ONT::CONDITION))
-
-(CONCEPT
-  ONT::POS-DIRECTIONAL-RELN
-  (INHERIT
-    ONT::POSITION-AS-POINT-RELN))
 
 (CONCEPT
   ONT::POS-DISTANCE
@@ -20854,19 +20903,35 @@
     ONT::EMOTIONAL-VAL))
 
 (CONCEPT
+  ONT::POS-EXTENDED-ALONG-LINEAR-AREA
+  (COMMENT
+   "FIGURE is located within the linear area (GROUND). e.g., I found it along the street. We walked along the street")
+  (INHERIT
+    ONT::POSITION-WRT-LINEAR-AREA-RELN))
+
+(CONCEPT
   ONT::POS-INTENSE-EMOTIONAL-VAL
   (INHERIT
     ONT::POS-EMOTIONAL-VAL))
 
 (CONCEPT
   ONT::POS-RELATIVE-WRT-TRAJECTORY
+  (COMMENT
+   "FIGURE is located along a linear area wrt some other object (GROUND)")
   (INHERIT
-    ONT::POSITION-W-TRAJECTORY-RELN))
+    ONT::POSITION-WRT-LINEAR-AREA-RELN))
 
 (CONCEPT
   ONT::POS-SOFT-EMOTIONAL-VAL
   (INHERIT
     ONT::POS-EMOTIONAL-VAL))
+
+(CONCEPT
+  ONT::POS-WRT-CONTAINMENT-RELN
+  (COMMENT
+   "locating an object (typically rthe FIGURE) within an extended object (typically the GROUND)")
+  (INHERIT
+    ONT::POSITION-RELN))
 
 (CONCEPT
   ONT::POS-WRT-SPEAKER-RELN
@@ -20920,12 +20985,8 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::POSITION-AS-EXTENT-RELN
-  (INHERIT
-    ONT::POSITION-RELN))
-
-(CONCEPT
   ONT::POSITION-AS-POINT-RELN
+  (COMMENT "locating an object (FIGURE) wrt a point-like object (GROUND)")
   (INHERIT
     ONT::POSITION-RELN))
 
@@ -20939,7 +21000,7 @@
 (CONCEPT
   ONT::POSITION-RELN
   (COMMENT
-   "Spatial relations that locate one object (the figure) in terms of another object (the ground)")
+   "Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit")
   (INHERIT
     ONT::ABSTRACT-OBJECT)
   (SEM-FRAME
@@ -20961,13 +21022,38 @@
          ABSTR-OBJ)))))
 
 (CONCEPT
-  ONT::POSITION-W-TRAJECTORY-RELN
+  ONT::POSITION-WRT-AREA-RELN
+  (COMMENT
+   "Position of FIGURE defined in terms or a relationship to an area (the GROUND)")
   (INHERIT
     ONT::POSITION-RELN)
   (SEM-FRAME
     (ONT::GROUND
-     (CONCEPT
-       PHYS-OBJ))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (SPATIAL-ABSTRACTION SPATIAL-POINT)
+       (TYPE GEO-OBJECT)))
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         SITUATION)))))
+
+(CONCEPT
+  ONT::POSITION-WRT-LINEAR-AREA-RELN
+  (COMMENT
+   "FIGURE is defined wrt an area (the GROUND) that has a linear orientation")
+  (INHERIT
+    ONT::POSITION-RELN)
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (SPATIAL-ABSTRACTION SPATIAL-POINT)
+       (TYPE GEO-OBJECT)))
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -25039,16 +25125,13 @@
 
 (CONCEPT
   ONT::SEQUENCE-POSITION
+  (COMMENT "Position related to discourse. e.g., First, we laugh")
   (INHERIT
     ONT::PREDICATE)
   (SEM-FRAME
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
-       T))))
+       SITUATION))))
 
 (CONCEPT
   ONT::SEQUENCE-VAL
@@ -28108,17 +28191,9 @@
 
 (CONCEPT
   ONT::THROUGH
+  (COMMENT "FIGURE crosses the GROUND, conceptually IN the ground")
   (INHERIT
-    ONT::TRAJECTORY)
-  (SEM-FRAME
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (SPATIAL-ABSTRACTION
-        (OR
-          SPATIAL-POINT
-          SPATIAL-REGION))))))
+    ONT::POSITION-WRT-AREA-RELN))
 
 (CONCEPT
   ONT::THRUWAY
@@ -28554,8 +28629,9 @@
 
 (CONCEPT
   ONT::TOWARDS
+  (COMMENT "direction towards from a given entity (the GROUND)")
   (INHERIT
-    ONT::DIR-IN-TERMS-OF-OBJ))
+    ONT::DIRECTION-WRT-ENTITY))
 
 (CONCEPT
   ONT::TOWER
@@ -28563,21 +28639,6 @@
     ONT::MAN-MADE-STRUCTURE)
   (OVERLAP
     WN::|tower%1:06:00::|))
-
-(CONCEPT
-  ONT::TRAJECTORY
-  (INHERIT
-    ONT::PATH)
-  (SEM-FRAME
-    (ONT::GROUND
-     (CONCEPT
-       PHYS-OBJ))
-    (ONT::FIGURE
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION)))))
 
 (CONCEPT
   ONT::TRANSFER
@@ -29300,8 +29361,9 @@
 
 (CONCEPT
   ONT::UP
+  (COMMENT "FIGURE is higher on some vertical scale than the GROUND")
   (INHERIT
-    ONT::ABOVE))
+    ONT::DIRECTIONAL-VERT))
 
 (CONCEPT
   ONT::UPTOWN

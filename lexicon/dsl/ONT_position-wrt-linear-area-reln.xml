@@ -2,13 +2,22 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::position-w-trajectory-reln">
+ <concept name="ont::position-wrt-linear-area-reln">
+ <comment>
+  &quot;FIGURE is defined wrt an area (the GROUND) that has a linear orientation&quot;
+ </comment>
  <relation label="inherit">
   ont::position-reln
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground">
-   <concept name="phys-obj" />
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="spatial-abstraction">spatial-point</feat>
+    <feat name="type">geo-object</feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure">
    <or>
@@ -69,7 +78,13 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground">
-  <concept name="phys-obj" />
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="spatial-abstraction">spatial-point</feat>
+   <feat name="type">geo-object</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::figure">
   <or>
@@ -80,7 +95,7 @@
  </sem-frame>
  <concept name="ont::position-reln">
  <comment>
-  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground)&quot;
+  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
@@ -113,24 +128,20 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
- <concept name="ont::pos-as-opposite">
+ <concept name="ont::pos-extended-along-linear-area">
+ <comment>
+  &quot;FIGURE is located within the linear area (GROUND). e.g., I found it along the street. We walked along the street&quot;
+ </comment>
  <relation label="inherit">
-  ont::position-w-trajectory-reln
- </relation>
- </concept>
- <concept name="ont::pos-as-around">
- <relation label="inherit">
-  ont::position-w-trajectory-reln
- </relation>
- </concept>
- <concept name="ont::linear-extent">
- <relation label="inherit">
-  ont::position-w-trajectory-reln
+  ont::position-wrt-linear-area-reln
  </relation>
  </concept>
  <concept name="ont::pos-relative-wrt-trajectory">
+ <comment>
+  &quot;FIGURE is located along a linear area wrt some other object (GROUND)&quot;
+ </comment>
  <relation label="inherit">
-  ont::position-w-trajectory-reln
+  ont::position-wrt-linear-area-reln
  </relation>
  </concept>
 </dsl>

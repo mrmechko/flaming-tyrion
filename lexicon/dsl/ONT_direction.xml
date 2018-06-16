@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::direction">
+ <comment>
+  &quot;a direction = a spatial relation between the location (FIGURE) of an object and its previous location&quot;
+ </comment>
  <relation label="inherit">
   ont::position-reln
  </relation>
@@ -11,11 +14,14 @@
    <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="mobility">movable</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -73,16 +79,19 @@
   <concept name="phys-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+   <feat name="mobility">movable</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::position-reln">
  <comment>
-  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground)&quot;
+  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
@@ -115,56 +124,37 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
- <concept name="ont::direction-down">
- <relation label="inherit">
-  ont::direction
- </relation>
- </concept>
- <concept name="ont::direction-down-ground">
+ <concept name="ont::direction-wrt-entity">
  <comment>
-  &quot;this is the transitive 'down' that has a GROUND that describes a physical object and locations objects or events&quot;
- </comment>
- <relation label="inherit">
-  ont::direction
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::direction-up">
- <comment>
-  &quot;This is the intransitive 'up' and is relative to some scale/domain: e.g., the temperature is up, move the ball up&quot;
+  &quot;direction wrt respect to a given entity (the GROUND), i.e., the relation between the FIGUREs orginal and final position is defined with respect to the GROUND&quot;
  </comment>
  <relation label="inherit">
   ont::direction
  </relation>
  </concept>
- <concept name="ont::direction-up-ground">
+ <concept name="ont::direction-rotation">
  <comment>
-  &quot;this is the transitive 'up' that has a GROUND that describes a physical object and locations objects or events&quot;
+  &quot;rotational direction of the FIGURE&quot;
  </comment>
  <relation label="inherit">
   ont::direction
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
+ </concept>
+ <concept name="ont::direction-wrt-verticality">
+ <comment>
+  &quot;direction wrt respect to verticality (e.g., gravity or a 'vertical' scale, e.g., temperature), possibly also related to a extended object, e.g., a street, a body, which is the GROUND&quot;
+ </comment>
+ <relation label="inherit">
+  ont::direction
+ </relation>
+ </concept>
+ <concept name="ont::direction-wrt-containment">
+ <comment>
+  &quot;direction relative to containment in some object (the GROUND)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::direction
+ </relation>
  </concept>
  <concept name="ont::cardinal-direction">
  <relation label="inherit">
@@ -203,51 +193,6 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="adv" />
-  <word first-word="back" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="move back">
- </example>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="back" remaining-words="and forth" />
- </morph>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="backward" />
- </morph>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="backwards" />
- </morph>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
   <pos pos="n" />
   <word first-word="direction" />
  </morph>
@@ -257,42 +202,6 @@
  <relation label="inherit">
   ont::direction
   ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="downhill" />
- </morph>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="downward" />
- </morph>
- <example text="the piston moves downward">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="downwards" />
- </morph>
- <example text="the piston moves downwards">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
  </relation>
  </sense>
  <sense>
@@ -308,54 +217,8 @@
  <sense>
  <morph>
   <pos pos="adv" />
-  <word first-word="forward" />
- </morph>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="forwards" />
- </morph>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="in" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
   <word first-word="inland" />
  </morph>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="left" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
  <relation label="inherit">
   ont::direction
   ont::pred-s-post-templ
@@ -377,19 +240,6 @@
  <sense>
  <morph>
   <pos pos="adv" />
-  <word first-word="out" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <relation label="inherit">
-  ont::direction
-  ont::particle-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
   <word first-word="over" />
  </morph>
  <provenance name="TRIPS">
@@ -405,21 +255,6 @@
   <pos pos="adv" />
   <word first-word="overland" />
  </morph>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="right" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="turn right">
- </example>
  <relation label="inherit">
   ont::direction
   ont::pred-s-post-templ
@@ -453,42 +288,6 @@
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="uphill" />
- </morph>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="upward" />
- </morph>
- <example text="the piston moves upward">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::direction
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="upwards" />
- </morph>
- <example text="the piston moves upwards">
-  <provenance name="TRIPS"/>
- </example>
  <relation label="inherit">
   ont::direction
   ont::pred-s-post-templ
