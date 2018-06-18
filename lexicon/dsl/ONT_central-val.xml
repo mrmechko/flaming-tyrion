@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::central-val">
  <relation label="inherit">
-  ont::spatial-arrangement-val
+  ont::subarea-location-val
  </relation>
  <relation label="overlap">
   wn::|central%3:00:01::|
@@ -106,51 +106,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::spatial-arrangement-val">
- <relation label="inherit">
-  ont::orientation-val
- </relation>
- </concept>
- <concept name="ont::orientation-val">
- <relation label="inherit">
-  ont::spatial
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::spatial">
- <comment>
-  &quot;properties relating to space&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <relation label="overlap">
-  wn::|spatial%3:01:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="phys-obj" />
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::property-val">
@@ -206,22 +175,38 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::spatial">
+ <comment>
+  &quot;properties relating to space&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|spatial%3:01:00::|
+ </relation>
  <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::subarea-location-val">
+ <relation label="inherit">
+  ont::spatial
+ </relation>
+ </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

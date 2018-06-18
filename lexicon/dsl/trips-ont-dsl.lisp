@@ -4531,7 +4531,7 @@
 (CONCEPT
   ONT::CENTRAL-VAL
   (INHERIT
-    ONT::SPATIAL-ARRANGEMENT-VAL)
+    ONT::SUBAREA-LOCATION-VAL)
   (OVERLAP
     WN::|central%3:00:01::|))
 
@@ -9243,7 +9243,7 @@
 (CONCEPT
   ONT::EAST
   (INHERIT
-    ONT::MAP-LOCATION-VAL)
+    ONT::SUBAREA-LOCATION-VAL)
   (OVERLAP
     WN::|east%3:00:00::|
     WN::|eastern%5:00:00:east:00|))
@@ -14170,6 +14170,7 @@
   (INHERIT
     ONT::INFORMATION-FUNCTION-OBJECT)
   (OVERLAP
+    WN::|information%1:09:00::|
     WN::|information%1:10:00::|
     WN::|info%1:10:00::|
     WN::|indication%1:10:00::|)
@@ -16507,11 +16508,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::MAP-LOCATION-VAL
-  (INHERIT
-    ONT::SPATIAL))
-
-(CONCEPT
   ONT::MARRY
   (INHERIT
     ONT::ASSOCIATE)
@@ -16857,6 +16853,7 @@
   (INHERIT
     ONT::POSITION-ON-DIMENSION-SCALE-VAL)
   (OVERLAP
+    WN::|average%1:09:01::|
     WN::|average%5:00:00:moderate:00|
     WN::|medium%5:00:00:moderate:00|))
 
@@ -18243,8 +18240,10 @@
 
 (CONCEPT
   ONT::NORTH
+  (COMMENT
+   "modifiers that select a subarea of a larger area: e.g., northern Canada")
   (INHERIT
-    ONT::MAP-LOCATION-VAL)
+    ONT::SUBAREA-LOCATION-VAL)
   (OVERLAP
     WN::|north%3:00:00::|
     WN::|northerly%5:00:02:north:00|
@@ -20995,7 +20994,9 @@
   (COMMENT
    "indicates a position given a dimensional scale. These adjectives do not specify the shape, direction, or alignment of the scale.")
   (INHERIT
-    ONT::DIMENSIONAL-PROPERTY-VAL))
+    ONT::DIMENSIONAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|scale_value%1:09:00::|))
 
 (CONCEPT
   ONT::POSITION-RELN
@@ -26228,7 +26229,7 @@
 (CONCEPT
   ONT::SOUTH
   (INHERIT
-    ONT::MAP-LOCATION-VAL)
+    ONT::SUBAREA-LOCATION-VAL)
   (OVERLAP
     WN::|southeasterly%5:00:02:south:00|
     WN::|southerly%5:00:02:south:00|
@@ -27113,6 +27114,11 @@
     WN::|dense%5:00:00:stupid:00|
     WN::|unintelligent%3:00:00::|
     WN::|stupid%3:00:00::|))
+
+(CONCEPT
+  ONT::SUBAREA-LOCATION-VAL
+  (INHERIT
+    ONT::SPATIAL))
 
 (CONCEPT
   ONT::SUBDUING
@@ -30262,7 +30268,7 @@
 (CONCEPT
   ONT::WEST
   (INHERIT
-    ONT::MAP-LOCATION-VAL)
+    ONT::SUBAREA-LOCATION-VAL)
   (OVERLAP
     WN::|west%3:00:00::|
     WN::|western%5:00:00:west:00|))

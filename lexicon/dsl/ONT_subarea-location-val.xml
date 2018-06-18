@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::map-location-val">
+ <concept name="ont::subarea-location-val">
  <relation label="inherit">
   ont::spatial
  </relation>
@@ -245,8 +245,11 @@
  <concept name="proposition" />
  </or>
  <concept name="ont::north">
+ <comment>
+  &quot;modifiers that select a subarea of a larger area: e.g., northern Canada&quot;
+ </comment>
  <relation label="inherit">
-  ont::map-location-val
+  ont::subarea-location-val
  </relation>
  <relation label="overlap">
   wn::|north%3:00:00::|
@@ -257,7 +260,7 @@
  </concept>
  <concept name="ont::south">
  <relation label="inherit">
-  ont::map-location-val
+  ont::subarea-location-val
  </relation>
  <relation label="overlap">
   wn::|southeasterly%5:00:02:south:00|
@@ -268,7 +271,7 @@
  </concept>
  <concept name="ont::east">
  <relation label="inherit">
-  ont::map-location-val
+  ont::subarea-location-val
  </relation>
  <relation label="overlap">
   wn::|east%3:00:00::|
@@ -277,11 +280,19 @@
  </concept>
  <concept name="ont::west">
  <relation label="inherit">
-  ont::map-location-val
+  ont::subarea-location-val
  </relation>
  <relation label="overlap">
   wn::|west%3:00:00::|
   wn::|western%5:00:00:west:00|
+ </relation>
+ </concept>
+ <concept name="ont::central-val">
+ <relation label="inherit">
+  ont::subarea-location-val
+ </relation>
+ <relation label="overlap">
+  wn::|central%3:00:01::|
  </relation>
  </concept>
 </dsl>
