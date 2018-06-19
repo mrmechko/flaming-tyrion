@@ -1061,6 +1061,14 @@
     WN::|agitated%3:00:00::|))
 
 (CONCEPT
+  ONT::AGRICULTURAL-VAL
+  (INHERIT
+    ONT::COMMERCIAL-ENTERPRISE-VAL)
+  (OVERLAP
+    WN::|agricultural%3:01:00::|
+    WN::|agricultural%5:00:00:rural:00|))
+
+(CONCEPT
   ONT::AGRICULTURE
   (INHERIT
     ONT::ACTIVITY)
@@ -4181,13 +4189,13 @@
        (CONCEPT
          SITUATION)))
     (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (INTENTIONAL +)))))
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         SITUATION)))))
 
 (CONCEPT
   ONT::CAUSE-ACTION
@@ -4937,6 +4945,14 @@
   ONT::CITY-REL
   (INHERIT
     ONT::CONVENTIONAL-POSITION-RELN))
+
+(CONCEPT
+  ONT::CITY-RELATED-VAL
+  (COMMENT "having to do with a city (or its government)")
+  (INHERIT
+    ONT::STATUS-VAL)
+  (OVERLAP
+    WN::|civic%3:01:00::|))
 
 (CONCEPT
   ONT::CLARITY-VAL
@@ -5768,8 +5784,7 @@
     ONT::ACTIVITY)
   (OVERLAP
     WN::|finance%1:04:00::|
-    WN::|commerce%1:04:00::|
-    WN::|base%1:06:06::|)
+    WN::|commerce%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -12976,23 +12991,7 @@
   (INHERIT
     ONT::EVENT-OF-STATE)
   (OVERLAP
-    WN::|come%2:30:01::|
-    WN::|take_place%2:30:00::|
-    WN::|come_about%2:30:00::|
-    WN::|fall_out%2:30:00::|
-    WN::|pass%2:30:00::|
-    WN::|occur%2:30:00::|
-    WN::|pass_off%2:30:00::|
-    WN::|go_on%2:30:00::|
-    WN::|hap%2:30:00::|
-    WN::|happen%2:30:00::|
-    WN::|happening%1:11:00::|
-    WN::|occurrence%1:11:00::|
-    WN::|occurrent%1:11:00::|
-    WN::|natural_event%1:11:00::|
-    WN::|come%2:42:13::|
-    WN::|set_in%2:30:00::|
-    WN::|stay_in_place%2:38:00::|)
+    WN::|chance%2:41:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -15192,11 +15191,6 @@
     ONT::TRIP))
 
 (CONCEPT
-  ONT::LAND-USE-VAL
-  (INHERIT
-    ONT::STATUS-VAL))
-
-(CONCEPT
   ONT::LAND-VEHICLE
   (INHERIT
     ONT::VEHICLE)
@@ -15817,6 +15811,13 @@
     ONT::DISEASE)
   (OVERLAP
     WN::|liver_disease%1:26:00::|))
+
+(CONCEPT
+  ONT::LIVESTOCK-VAL
+  (INHERIT
+    ONT::COMMERCIAL-ENTERPRISE-VAL)
+  (OVERLAP
+    WN::|pastoral%3:01:02::|))
 
 (CONCEPT
   ONT::LIVING-VAL
@@ -17167,16 +17168,9 @@
 (CONCEPT
   ONT::MINE
   (INHERIT
-    ONT::AREA-DEF-BY-USE
-    ONT::MANUFACTURED-OBJECT)
+    ONT::AREA-DEF-BY-USE)
   (OVERLAP
-    WN::|mine%1:06:01::|
-    WN::|mine%1:06:01::|)
-  (SEM-FEATS
-    (INHERIT
-      PHYS-OBJ)
-    (MOBILITY NON-SELF-MOVING)
-    (FORM SOLID-OBJECT)))
+    WN::|mine%1:06:01::|))
 
 (CONCEPT
   ONT::MINERALS
@@ -19161,7 +19155,23 @@
   (INHERIT
     ONT::SITUATION-ROOT)
   (OVERLAP
-    WN::|happen%2:30:00::|)
+    WN::|happen%2:30:00::|
+    WN::|come%2:30:01::|
+    WN::|take_place%2:30:00::|
+    WN::|come_about%2:30:00::|
+    WN::|fall_out%2:30:00::|
+    WN::|pass%2:30:00::|
+    WN::|occur%2:30:00::|
+    WN::|pass_off%2:30:00::|
+    WN::|go_on%2:30:00::|
+    WN::|hap%2:30:00::|
+    WN::|happen%2:30:00::|
+    WN::|happening%1:11:00::|
+    WN::|occurrence%1:11:00::|
+    WN::|occurrent%1:11:00::|
+    WN::|natural_event%1:11:00::|
+    WN::|come%2:42:13::|
+    WN::|set_in%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -20800,7 +20810,6 @@
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
-    (INTENTIONAL +)
     (MOBILITY FIXED)
     (ORIGIN ARTIFACT)
     (SPATIAL-ABSTRACTION
@@ -24309,7 +24318,7 @@
 (CONCEPT
   ONT::RURAL-VAL
   (INHERIT
-    ONT::LAND-USE-VAL)
+    ONT::CITY-RELATED-VAL)
   (OVERLAP
     WN::|rural%3:00:00::|
     WN::|rural%3:01:01::|))
@@ -25190,7 +25199,8 @@
   (OVERLAP
     WN::|severe%5:00:01:bad:00|
     WN::|severe%5:00:00:intense:00|
-    WN::|extreme%5:00:00:intense:00|))
+    WN::|extreme%5:00:00:intense:00|
+    WN::|drastic%5:00:00:forceful:00|))
 
 (CONCEPT
   ONT::SEVERITY-SCALE
@@ -26791,7 +26801,8 @@
     WN::|dig_in%2:35:00::|
     WN::|settle%2:30:01::|
     WN::|stand_still%2:38:00::|
-    WN::|stay%2:38:01::|)
+    WN::|stay%2:38:01::|
+    WN::|stay_in_place%2:38:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -29379,11 +29390,10 @@
 (CONCEPT
   ONT::URBAN-VAL
   (INHERIT
-    ONT::LAND-USE-VAL)
+    ONT::CITY-RELATED-VAL)
   (OVERLAP
     WN::|urban%3:00:00::|
-    WN::|urban%3:01:00::|
-    WN::|civic%3:01:00::|))
+    WN::|urban%3:01:00::|))
 
 (CONCEPT
   ONT::URGENT-VAL

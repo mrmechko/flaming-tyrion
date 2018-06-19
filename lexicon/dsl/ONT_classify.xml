@@ -91,13 +91,11 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -154,13 +152,11 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::agent">
-  <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::event-of-change">
@@ -761,6 +757,39 @@
   <template-call template="ont::agent-neutral-theme-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="pp" head-word="w::on" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="mark" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="marking" />
+   </ing>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="Mark the search criteria">
+ </example>
+ <relation label="inherit">
+  ont::classify
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" />
+  <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>

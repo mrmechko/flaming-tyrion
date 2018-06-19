@@ -1206,6 +1206,15 @@
    wn::|agitated%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::agricultural-val">
+  <relation label="inherit">
+   ont::commercial-enterprise-val
+  </relation>
+  <relation label="overlap">
+   wn::|agricultural%3:01:00::|
+   wn::|agricultural%5:00:00:rural:00|
+  </relation>
+ </concept>
  <concept name="ont::agriculture">
   <relation label="inherit">
    ont::activity
@@ -4809,13 +4818,11 @@
     </or>
    </role-restr-map>
    <role-restr-map roles="ont::agent">
-    <sem-feats>
-     <or>
-      <concept name="abstr-obj" />
-      <concept name="phys-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -5652,6 +5659,17 @@
  <concept name="ont::city-rel">
   <relation label="inherit">
    ont::conventional-position-reln
+  </relation>
+ </concept>
+ <concept name="ont::city-related-val">
+  <comment>
+   &quot;having to do with a city (or its government)&quot;
+  </comment>
+  <relation label="inherit">
+   ont::status-val
+  </relation>
+  <relation label="overlap">
+   wn::|civic%3:01:00::|
   </relation>
  </concept>
  <concept name="ont::clarity-val">
@@ -6587,7 +6605,6 @@
   <relation label="overlap">
    wn::|finance%1:04:00::|
    wn::|commerce%1:04:00::|
-   wn::|base%1:06:06::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -14819,23 +14836,7 @@
    ont::event-of-state
   </relation>
   <relation label="overlap">
-   wn::|come%2:30:01::|
-   wn::|take_place%2:30:00::|
-   wn::|come_about%2:30:00::|
-   wn::|fall_out%2:30:00::|
-   wn::|pass%2:30:00::|
-   wn::|occur%2:30:00::|
-   wn::|pass_off%2:30:00::|
-   wn::|go_on%2:30:00::|
-   wn::|hap%2:30:00::|
-   wn::|happen%2:30:00::|
-   wn::|happening%1:11:00::|
-   wn::|occurrence%1:11:00::|
-   wn::|occurrent%1:11:00::|
-   wn::|natural_event%1:11:00::|
-   wn::|come%2:42:13::|
-   wn::|set_in%2:30:00::|
-   wn::|stay_in_place%2:38:00::|
+   wn::|chance%2:41:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -17390,11 +17391,6 @@
    ont::trip
   </relation>
  </concept>
- <concept name="ont::land-use-val">
-  <relation label="inherit">
-   ont::status-val
-  </relation>
- </concept>
  <concept name="ont::land-vehicle">
   <relation label="inherit">
    ont::vehicle
@@ -18124,6 +18120,14 @@
   </relation>
   <relation label="overlap">
    wn::|liver_disease%1:26:00::|
+  </relation>
+ </concept>
+ <concept name="ont::livestock-val">
+  <relation label="inherit">
+   ont::commercial-enterprise-val
+  </relation>
+  <relation label="overlap">
+   wn::|pastoral%3:01:02::|
   </relation>
  </concept>
  <concept name="ont::living-val">
@@ -19710,19 +19714,10 @@
  <concept name="ont::mine">
   <relation label="inherit">
    ont::area-def-by-use
-   ont::manufactured-object
   </relation>
   <relation label="overlap">
    wn::|mine%1:06:01::|
-   wn::|mine%1:06:01::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="mobility">non-self-moving</feat>
-   <feat name="form">solid-object</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::minerals">
   <relation label="inherit">
@@ -21977,6 +21972,22 @@
   </relation>
   <relation label="overlap">
    wn::|happen%2:30:00::|
+   wn::|come%2:30:01::|
+   wn::|take_place%2:30:00::|
+   wn::|come_about%2:30:00::|
+   wn::|fall_out%2:30:00::|
+   wn::|pass%2:30:00::|
+   wn::|occur%2:30:00::|
+   wn::|pass_off%2:30:00::|
+   wn::|go_on%2:30:00::|
+   wn::|hap%2:30:00::|
+   wn::|happen%2:30:00::|
+   wn::|happening%1:11:00::|
+   wn::|occurrence%1:11:00::|
+   wn::|occurrent%1:11:00::|
+   wn::|natural_event%1:11:00::|
+   wn::|come%2:42:13::|
+   wn::|set_in%2:30:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -23852,7 +23863,6 @@
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="intentional">+</feat>
    <feat name="mobility">fixed</feat>
    <feat name="origin">artifact</feat>
    <feat name="spatial-abstraction">
@@ -27843,7 +27853,7 @@
  </concept>
  <concept name="ont::rural-val">
   <relation label="inherit">
-   ont::land-use-val
+   ont::city-related-val
   </relation>
   <relation label="overlap">
    wn::|rural%3:00:00::|
@@ -28812,6 +28822,7 @@
    wn::|severe%5:00:01:bad:00|
    wn::|severe%5:00:00:intense:00|
    wn::|extreme%5:00:00:intense:00|
+   wn::|drastic%5:00:00:forceful:00|
   </relation>
  </concept>
  <concept name="ont::severity-scale">
@@ -30627,6 +30638,7 @@
    wn::|settle%2:30:01::|
    wn::|stand_still%2:38:00::|
    wn::|stay%2:38:01::|
+   wn::|stay_in_place%2:38:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -33594,12 +33606,11 @@
  </concept>
  <concept name="ont::urban-val">
   <relation label="inherit">
-   ont::land-use-val
+   ont::city-related-val
   </relation>
   <relation label="overlap">
    wn::|urban%3:00:00::|
    wn::|urban%3:01:00::|
-   wn::|civic%3:01:00::|
   </relation>
  </concept>
  <concept name="ont::urgent-val">

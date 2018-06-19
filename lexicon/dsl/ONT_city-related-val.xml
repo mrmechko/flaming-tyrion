@@ -2,9 +2,15 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::land-use-val">
+ <concept name="ont::city-related-val">
+ <comment>
+  &quot;having to do with a city (or its government)&quot;
+ </comment>
  <relation label="inherit">
   ont::status-val
+ </relation>
+ <relation label="overlap">
+  wn::|civic%3:01:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -221,21 +227,33 @@
  </or>
  <concept name="ont::urban-val">
  <relation label="inherit">
-  ont::land-use-val
+  ont::city-related-val
  </relation>
  <relation label="overlap">
   wn::|urban%3:00:00::|
   wn::|urban%3:01:00::|
-  wn::|civic%3:01:00::|
  </relation>
  </concept>
  <concept name="ont::rural-val">
  <relation label="inherit">
-  ont::land-use-val
+  ont::city-related-val
  </relation>
  <relation label="overlap">
   wn::|rural%3:00:00::|
   wn::|rural%3:01:01::|
  </relation>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="civic" />
+ </morph>
+ <comment>
+  &quot;CALOY3-TEST-DATA&quot;
+ </comment>
+ <relation label="inherit">
+  ont::city-related-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
 </dsl>
