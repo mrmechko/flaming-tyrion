@@ -2521,6 +2521,11 @@
    ont::position-as-point-reln
   </relation>
  </concept>
+ <concept name="ont::at-risk-val">
+  <relation label="inherit">
+   ont::likely-val
+  </relation>
+ </concept>
  <concept name="ont::at-scale-value">
   <comment>
    &quot;The main predicate for associating an object with a value on a scale&quot;
@@ -11677,13 +11682,16 @@
  </concept>
  <concept name="ont::event-of-undergoing-action">
   <comment>
-   &quot;A small class of events that take an affected but do not allow an AGENT&quot;
+   &quot;A small class of events that take an affected but do not allow an AGENT construction (though might be caused as in he died from the plague&quot;
   </comment>
   <relation label="inherit">
    ont::event-of-change
    situation
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::agent" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::affected">
     <sem-feats>
      <or>
@@ -14455,6 +14463,14 @@
   <relation label="inherit">
    ont::control-manage
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::agent">
+    <or>
+     <concept name="situation" />
+     <concept name="phys-obj" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::governing-principle">
   <relation label="inherit">
@@ -32462,6 +32478,11 @@
    </or>
    </feat>
   </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::time-on-rel">
   <relation label="inherit">

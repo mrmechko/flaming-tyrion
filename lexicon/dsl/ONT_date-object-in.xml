@@ -12,51 +12,6 @@
  </concept>
  <concept name="time" />
  <concept name="ont::root" />
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">
- <or>
-  interval
-  point
- </or>
- </feat>
- <feat name="time-function">any-time-function</feat>
- </sem-feats>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">
- <or>
-  point
-  interval
- </or>
- </feat>
- </sem-feats>
- <concept name="ont::any-time-object">
- <relation label="inherit">
-  ont::any-sem
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="time-scale">
-  <or>
-   interval
-   point
-  </or>
-  </feat>
-  <feat name="time-function">any-time-function</feat>
- </sem-feats>
- </concept>
  <concept name="ont::time-object">
  <comment>
   &quot;objects that refer to temporal locations in some way&quot;
@@ -75,7 +30,62 @@
   </or>
   </feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
+ <concept name="ont::any-time-object">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">
+  <or>
+   interval
+   point
+  </or>
+  </feat>
+  <feat name="time-function">any-time-function</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  point
+  interval
+ </or>
+ </feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  interval
+  point
+ </or>
+ </feat>
+ <feat name="time-function">any-time-function</feat>
+ </sem-feats>
  <concept name="ont::time-span">
  <relation label="inherit">
   ont::date-object-in

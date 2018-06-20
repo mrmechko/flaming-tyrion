@@ -2200,6 +2200,11 @@
     ONT::POSITION-AS-POINT-RELN))
 
 (CONCEPT
+  ONT::AT-RISK-VAL
+  (INHERIT
+    ONT::LIKELY-VAL))
+
+(CONCEPT
   ONT::AT-SCALE-VALUE
   (COMMENT
    "The main predicate for associating an object with a value on a scale")
@@ -10243,11 +10248,15 @@
 (CONCEPT
   ONT::EVENT-OF-UNDERGOING-ACTION
   (COMMENT
-   "A small class of events that take an affected but do not allow an AGENT")
+   "A small class of events that take an affected but do not allow an AGENT construction (though might be caused as in he died from the plague")
   (INHERIT
     ONT::EVENT-OF-CHANGE
     SITUATION)
   (SEM-FRAME
+    (ONT::AGENT
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -12652,7 +12661,14 @@
   ONT::GOVERNING
   (COMMENT "control, influence, or regulate a process")
   (INHERIT
-    ONT::CONTROL-MANAGE))
+    ONT::CONTROL-MANAGE)
+  (SEM-FRAME
+    (ONT::AGENT
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         PHYS-OBJ)))))
 
 (CONCEPT
   ONT::GOVERNING-PRINCIPLE
@@ -28384,7 +28400,12 @@
     (TIME-SCALE
      (OR
        POINT
-       INTERVAL))))
+       INTERVAL)))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::TIME-ON-REL
