@@ -3069,16 +3069,10 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::neutral1" optional="optional">
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
+    <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::neutral" optional="optional">
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
+    <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::formal">
     <concept name="t" />
@@ -8403,6 +8397,7 @@
   </relation>
   <relation label="overlap">
    wn::|contemporary%5:00:00:current:00|
+   wn::|current%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::cut">
@@ -10187,6 +10182,15 @@
   </relation>
   <relation label="overlap">
    wn::|meek%5:00:00:docile:00|
+  </relation>
+ </concept>
+ <concept name="ont::doctrine">
+  <relation label="inherit">
+   ont::knowledge-belief
+  </relation>
+  <relation label="overlap">
+   wn::|doctrine%1:09:00::|
+   wn::|ideology%1:09:01::|
   </relation>
  </concept>
  <concept name="ont::document">
@@ -12364,14 +12368,6 @@
   <sem-frame>
    <role-restr-map roles="ont::formal" optional="optional">
     <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::neutral">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="intentional">+</feat>
-    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -20113,20 +20109,6 @@
      <feat name="cause">agentive</feat>
     </sem-feats>
    </role-restr-map>
-   <role-restr-map roles="ont::agent" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="mobility">self-moving</feat>
-     <feat name="origin">
-     <or>
-      human
-      non-human-animal
-     </or>
-     </feat>
-    </sem-feats>
-   </role-restr-map>
   </sem-frame>
  </concept>
  <concept name="ont::move-around">
@@ -25471,6 +25453,9 @@
    ont::situation-object-modifier
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::norole" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::ground">
     <sem-feats>
      <or>
@@ -28499,15 +28484,16 @@
      <feat name="type">geo-object</feat>
     </sem-feats>
    </role-restr-map>
-   <role-restr-map roles="ont::agent ont::formal">
+   <role-restr-map roles="ont::agent">
     <sem-feats>
      <relation label="inherit">
       phys-obj
      </relation>
+     <feat name="mobility">self-moving</feat>
      <feat name="origin">
      <or>
-      non-human-animal
       human
+      non-human-animal
      </or>
      </feat>
     </sem-feats>

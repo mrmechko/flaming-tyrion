@@ -2685,18 +2685,12 @@
     (CAUSE MENTAL))
   (SEM-FRAME
     (ONT::NEUTRAL1
-     (OR
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ))
+     (CONCEPT
+       T)
      OPTIONAL)
     (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ))
+     (CONCEPT
+       T)
      OPTIONAL)
     (ONT::FORMAL
      (CONCEPT
@@ -7367,7 +7361,8 @@
   (INHERIT
     ONT::HISTORICAL-ERA-VAL)
   (OVERLAP
-    WN::|contemporary%5:00:00:current:00|))
+    WN::|contemporary%5:00:00:current:00|
+    WN::|current%3:00:00::|))
 
 (CONCEPT
   ONT::CUT
@@ -8924,6 +8919,14 @@
     ONT::NOT-BOLD-VAL)
   (OVERLAP
     WN::|meek%5:00:00:docile:00|))
+
+(CONCEPT
+  ONT::DOCTRINE
+  (INHERIT
+    ONT::KNOWLEDGE-BELIEF)
+  (OVERLAP
+    WN::|doctrine%1:09:00::|
+    WN::|ideology%1:09:01::|))
 
 (CONCEPT
   ONT::DOCUMENT
@@ -10856,12 +10859,7 @@
     (ONT::FORMAL
      (CONCEPT
        T)
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +)))))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::EXPENSIVE-VAL
@@ -17523,16 +17521,6 @@
          SITUATION)
        (ASPECT DYNAMIC)
        (CAUSE AGENTIVE))
-     OPTIONAL)
-    (ONT::AGENT
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (MOBILITY SELF-MOVING)
-       (ORIGIN
-        (OR
-          HUMAN
-          NON-HUMAN-ANIMAL)))
      OPTIONAL)))
 
 (CONCEPT
@@ -22218,6 +22206,10 @@
   (INHERIT
     ONT::SITUATION-OBJECT-MODIFIER)
   (SEM-FRAME
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
        (OR
@@ -24915,14 +24907,15 @@
          PHYS-OBJ)
        (TYPE GEO-OBJECT))
      OPTIONAL)
-    ((ONT::AGENT ONT::FORMAL)
+    (ONT::AGENT
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (MOBILITY SELF-MOVING)
        (ORIGIN
         (OR
-          NON-HUMAN-ANIMAL
-          HUMAN))))))
+          HUMAN
+          NON-HUMAN-ANIMAL))))))
 
 (CONCEPT
   ONT::SEMANTIC-VAL
