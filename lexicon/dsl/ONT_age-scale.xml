@@ -4,7 +4,11 @@
  <provenance name="TRIPS"/>
  <concept name="ont::age-scale">
  <relation label="inherit">
-  ont::duration-scale
+  ont::time-measure-scale
+ </relation>
+ <relation label="overlap">
+  wn::|age%1:28:00::|
+  wn::|age%1:07:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -26,7 +30,21 @@
   <concept name="proposition" />
  </or>
  </concept>
- <concept name="ont::scale">
+ <sem-frame>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::tangible-abstract-object">
+ <comment>
+  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
+ </comment>
  <relation label="inherit">
   ont::abstract-object
  </relation>
@@ -34,28 +52,17 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">?!sc</feat>
+  <feat name="tangible">+</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
- <sem-feats>
+ <concept name="ont::ordered-domain">
  <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">time-measure-scale</feat>
- </sem-feats>
- <concept name="ont::linear-scale">
- <relation label="inherit">
-  ont::scale
+  ont::domain
  </relation>
  </concept>
  <concept name="ont::time-measure-scale">
  <relation label="inherit">
-  ont::linear-scale
+  ont::measure-scale
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -64,10 +71,53 @@
   <feat name="scale">time-measure-scale</feat>
  </sem-feats>
  </concept>
- <concept name="ont::duration-scale">
+ <concept name="ont::measure-scale">
  <relation label="inherit">
-  ont::time-measure-scale
+  ont::attributive-scale
  </relation>
+ <relation label="overlap">
+  wn::|quantity%1:03:00::|
+  wn::|measurement%1:04:00::|
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">time-measure-scale</feat>
+ </sem-feats>
+ <concept name="ont::attributive-scale">
+ <comment>
+  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
+ </comment>
+ <relation label="inherit">
+  ont::ordered-domain
+ </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:00::|
+ </relation>
+ </concept>
+ <concept name="ont::domain">
+ <comment>
+  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::tangible-abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|attribute%1:03:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::abstract-object">
  <comment>
@@ -87,13 +137,8 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">?!sc</feat>
+ <feat name="tangible">+</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -105,4 +150,44 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="age" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="Assess the age of the building">
+ </example>
+ <relation label="inherit">
+  ont::age-scale
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
 </dsl>

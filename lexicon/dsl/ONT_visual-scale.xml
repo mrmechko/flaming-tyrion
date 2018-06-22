@@ -2,12 +2,9 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::olfactory-property-scale">
+ <concept name="ont::visual-scale">
  <relation label="inherit">
   ont::appearance-scale
- </relation>
- <relation label="overlap">
-  wn::|smell%1:07:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -59,6 +56,22 @@
   ont::domain
  </relation>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::attributive-scale">
+ <comment>
+  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
+ </comment>
+ <relation label="inherit">
+  ont::ordered-domain
+ </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:00::|
+ </relation>
+ </concept>
  <concept name="ont::appearance-scale">
  <comment>
   &quot;scales related to surface appearance of a physical entity or object preceptible through sensory input&quot;
@@ -71,27 +84,6 @@
    <concept name="phys-obj" />
   </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::attributive-scale">
- <comment>
-  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
- </comment>
- <relation label="inherit">
-  ont::ordered-continuous
- </relation>
- <relation label="overlap">
-  wn::|quality%1:07:00::|
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <concept name="phys-obj" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::ordered-continuous">
- <relation label="inherit">
-  ont::ordered-domain
- </relation>
  </concept>
  <concept name="ont::domain">
  <comment>
@@ -146,34 +138,51 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
- <concept name="ont::negative-smell-scale">
+ <concept name="ont::luminosity-scale">
  <relation label="inherit">
-  ont::olfactory-property-scale
+  ont::visual-scale
  </relation>
  <relation label="overlap">
-  wn::|stinkiness%1:07:00::|
-  wn::|rancidness%1:07:00::|
+  wn::|brightness%1:07:00::|
+  wn::|brightness%1:07:02::|
  </relation>
  </concept>
- <concept name="ont::positive-smell-scale">
+ <concept name="ont::brightness-scale">
  <relation label="inherit">
-  ont::olfactory-property-scale
+  ont::visual-scale
  </relation>
  <relation label="overlap">
-  wn::|sweetness%1:07:01::|
+  wn::|brightness%1:07:00::|
+  wn::|brightness%1:07:02::|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="smell" />
- </morph>
- <example text="this is far worse than the smell(iness) of dirty socks">
-  <provenance name="TRIPS"/>
- </example>
+ <concept name="ont::visual-dullness-scale">
  <relation label="inherit">
-  ont::olfactory-property-scale
-  ont::mass-pred-templ
+  ont::visual-scale
  </relation>
- </sense>
+ <relation label="overlap">
+  wn::|dimness%1:07:01::|
+  wn::|softness%1:07:06::|
+ </relation>
+ </concept>
+ <concept name="ont::color-quality-scale">
+ <relation label="inherit">
+  ont::visual-scale
+ </relation>
+ </concept>
+ <concept name="ont::presence-of-light-scale">
+ <relation label="inherit">
+  ont::visual-scale
+ </relation>
+ </concept>
+ <concept name="ont::visual-distinctivenss-scale">
+ <relation label="inherit">
+  ont::visual-scale
+ </relation>
+ </concept>
+ <concept name="ont::light-passage-scale">
+ <relation label="inherit">
+  ont::visual-scale
+ </relation>
+ </concept>
 </dsl>

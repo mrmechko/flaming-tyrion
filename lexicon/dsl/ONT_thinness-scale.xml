@@ -59,61 +59,49 @@
   ont::domain
  </relation>
  </concept>
- <concept name="ont::attributive-scale">
- <comment>
-  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
- </comment>
+ <concept name="ont::measure-scale">
  <relation label="inherit">
-  ont::ordered-continuous
+  ont::attributive-scale
  </relation>
  <relation label="overlap">
-  wn::|quality%1:07:00::|
+  wn::|quantity%1:03:00::|
+  wn::|measurement%1:04:00::|
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
+ <concept name="ont::non-vertical-scale">
  <relation label="inherit">
-  abstr-obj
+  ont::linear-extent-scale
  </relation>
- <feat name="scale">size-scale</feat>
- </sem-feats>
- <concept name="ont::dimensional-scale">
+ </concept>
+ <concept name="ont::linear-extent-scale">
  <relation label="inherit">
-  ont::measure-scale
+  ont::size-scale
  </relation>
  <relation label="overlap">
   wn::|dimension%1:07:00::|
-  wn::|dimension%1:07:01::|
  </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="measure-function">value</feat>
-   <feat name="scale">linear-scale</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">linear-scale</feat>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">linear-extent-scale</feat>
  </sem-feats>
- <concept name="ont::size-alt-scale">
+ <sem-frame>
+  <role-restr-map roles="ont::extent">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="measure-function">value</feat>
+    <feat name="scale">linear-extent-scale</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::size-scale">
+ <comment>
+  &quot;the property of relative size or extent&quot;
+ </comment>
  <relation label="inherit">
   ont::dimensional-scale
  </relation>
@@ -141,48 +129,58 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::linear-extent-scale">
+ <sem-feats>
  <relation label="inherit">
-  ont::size-alt-scale
+  abstr-obj
+ </relation>
+ <feat name="scale">linear-extent-scale</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::extent">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="measure-function">value</feat>
+   <feat name="scale">linear-extent-scale</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::dimensional-scale">
+ <relation label="inherit">
+  ont::measure-scale
  </relation>
  <relation label="overlap">
   wn::|dimension%1:07:00::|
+  wn::|dimension%1:07:01::|
  </relation>
+ </concept>
  <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">linear-scale</feat>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">size-scale</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::extent">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="measure-function">value</feat>
-    <feat name="scale">linear-scale</feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::non-vertical-scale">
- <relation label="inherit">
-  ont::linear-extent-scale
- </relation>
- </concept>
- <concept name="ont::measure-scale">
- <relation label="inherit">
-  ont::attributive-scale
- </relation>
- <relation label="overlap">
-  wn::|quantity%1:03:00::|
-  wn::|measurement%1:04:00::|
- </relation>
- </concept>
- <concept name="ont::ordered-continuous">
+ <concept name="ont::attributive-scale">
+ <comment>
+  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
+ </comment>
  <relation label="inherit">
   ont::ordered-domain
+ </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:00::|
  </relation>
  </concept>
  <concept name="ont::domain">

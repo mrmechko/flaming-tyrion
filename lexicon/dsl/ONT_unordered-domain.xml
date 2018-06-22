@@ -2,9 +2,9 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::ordered-continuous">
+ <concept name="ont::unordered-domain">
  <relation label="inherit">
-  ont::ordered-domain
+  ont::domain
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -25,11 +25,6 @@
   <concept name="situation" />
   <concept name="proposition" />
  </or>
- </concept>
- <concept name="ont::ordered-domain">
- <relation label="inherit">
-  ont::domain
- </relation>
  </concept>
  <concept name="ont::domain">
  <comment>
@@ -109,20 +104,54 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
- <concept name="ont::attributive-scale">
- <comment>
-  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
- </comment>
+ <concept name="ont::color-scale">
  <relation label="inherit">
-  ont::ordered-continuous
+  ont::unordered-domain
  </relation>
  <relation label="overlap">
-  wn::|quality%1:07:00::|
+  wn::|colouring%1:07:00::|
+  wn::|coloring%1:07:00::|
+  wn::|colour%1:07:00::|
+  wn::|color%1:07:00::|
+  wn::|color%1:09:01::|
+  wn::|colour%1:09:01::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">color-scale</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">color-scale</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <concept name="ont::stage-scale">
+ <concept name="ont::gender-scale">
  <relation label="inherit">
-  ont::ordered-continuous
+  ont::unordered-domain
+ </relation>
+ <relation label="overlap">
+  wn::|gender%1:07:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::truth-scale">
+ <relation label="inherit">
+  ont::unordered-domain
+ </relation>
+ <relation label="overlap">
+  wn::|truth%1:09:00::|
  </relation>
  </concept>
 </dsl>

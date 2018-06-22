@@ -2,19 +2,13 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::age-alt-scale">
+ <concept name="ont::not-expensive-scale">
  <relation label="inherit">
-  ont::ordered-discrete
+  ont::cost-scale
  </relation>
  <relation label="overlap">
-  wn::|age%1:07:00::|
+  wn::|cheapness%1:07:00::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="measure-function">term</feat>
- </sem-feats>
  </concept>
  <concept name="ont::root" />
  <concept name="abstr-obj" />
@@ -60,20 +54,36 @@
   <feat name="tangible">+</feat>
  </sem-feats>
  </concept>
- <concept name="ont::ordered-discrete">
- <relation label="inherit">
-  ont::ordered-domain
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="measure-function">term</feat>
- </sem-feats>
  <concept name="ont::ordered-domain">
  <relation label="inherit">
   ont::domain
+ </relation>
+ </concept>
+ <concept name="ont::cost-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ </concept>
+ <concept name="ont::evaluation-scale">
+ <comment>
+  &quot;scales relating to subjective evaluation of an entity or a situation&quot;
+ </comment>
+ <relation label="inherit">
+  ont::attributive-scale
+ </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:02::|
+ </relation>
+ </concept>
+ <concept name="ont::attributive-scale">
+ <comment>
+  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
+ </comment>
+ <relation label="inherit">
+  ont::ordered-domain
+ </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:00::|
  </relation>
  </concept>
  <concept name="ont::domain">
@@ -129,20 +139,4 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="age" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <relation label="inherit">
-  ont::age-alt-scale
-  ont::count-pred-templ
- </relation>
- </sense>
 </dsl>

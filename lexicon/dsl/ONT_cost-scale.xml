@@ -2,9 +2,9 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::ordered-discrete">
+ <concept name="ont::cost-scale">
  <relation label="inherit">
-  ont::ordered-domain
+  ont::evaluation-scale
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -26,9 +26,56 @@
   <concept name="proposition" />
  </or>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::tangible-abstract-object">
+ <comment>
+  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="tangible">+</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::ordered-domain">
  <relation label="inherit">
   ont::domain
+ </relation>
+ </concept>
+ <concept name="ont::attributive-scale">
+ <comment>
+  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
+ </comment>
+ <relation label="inherit">
+  ont::ordered-domain
+ </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:00::|
+ </relation>
+ </concept>
+ <concept name="ont::evaluation-scale">
+ <comment>
+  &quot;scales relating to subjective evaluation of an entity or a situation&quot;
+ </comment>
+ <relation label="inherit">
+  ont::attributive-scale
+ </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:02::|
  </relation>
  </concept>
  <concept name="ont::domain">
@@ -53,31 +100,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::tangible-abstract-object">
- <comment>
-  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
- </comment>
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="tangible">+</feat>
- </sem-feats>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -109,51 +131,21 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
- <concept name="ont::total-scale">
+ <concept name="ont::expensive-scale">
  <relation label="inherit">
-  ont::ordered-discrete
+  ont::cost-scale
  </relation>
  <relation label="overlap">
-  wn::|total%1:06:00::|
-  wn::|count%1:23:00::|
+  wn::|costliness%1:07:00::|
+  wn::|expensiveness%1:07:00::|
  </relation>
  </concept>
- <concept name="ont::population-scale">
+ <concept name="ont::not-expensive-scale">
  <relation label="inherit">
-  ont::ordered-discrete
+  ont::cost-scale
  </relation>
  <relation label="overlap">
-  wn::|population%1:23:00::|
+  wn::|cheapness%1:07:00::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="measure-function">term</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="form">geographical-object</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::age-alt-scale">
- <relation label="inherit">
-  ont::ordered-discrete
- </relation>
- <relation label="overlap">
-  wn::|age%1:07:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="measure-function">term</feat>
- </sem-feats>
  </concept>
 </dsl>

@@ -2,29 +2,10 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::volume-alt-scale">
+ <concept name="ont::tactile-scale">
  <relation label="inherit">
-  ont::size-alt-scale
+  ont::appearance-scale
  </relation>
- <relation label="overlap">
-  wn::|volume%1:23:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">volume-scale</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="scale">volume-scale</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::root" />
  <concept name="abstr-obj" />
@@ -75,100 +56,34 @@
   ont::domain
  </relation>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::attributive-scale">
  <comment>
   &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
  </comment>
  <relation label="inherit">
-  ont::ordered-continuous
+  ont::ordered-domain
  </relation>
  <relation label="overlap">
   wn::|quality%1:07:00::|
  </relation>
  </concept>
- <concept name="ont::size-alt-scale">
- <relation label="inherit">
-  ont::dimensional-scale
- </relation>
- <relation label="overlap">
-  wn::|size%1:07:00::|
-  wn::|size%1:07:02::|
-  wn::|size%1:07:01::|
-  wn::|magnitude%1:07:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">size-scale</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">volume-scale</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">volume-scale</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::dimensional-scale">
- <relation label="inherit">
-  ont::measure-scale
- </relation>
- <relation label="overlap">
-  wn::|dimension%1:07:00::|
-  wn::|dimension%1:07:01::|
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">size-scale</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::measure-scale">
+ <concept name="ont::appearance-scale">
+ <comment>
+  &quot;scales related to surface appearance of a physical entity or object preceptible through sensory input&quot;
+ </comment>
  <relation label="inherit">
   ont::attributive-scale
  </relation>
- <relation label="overlap">
-  wn::|quantity%1:03:00::|
-  wn::|measurement%1:04:00::|
- </relation>
- </concept>
- <concept name="ont::ordered-continuous">
- <relation label="inherit">
-  ont::ordered-domain
- </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::domain">
  <comment>
@@ -223,69 +138,36 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="volume" />
- </morph>
+ <concept name="ont::flexibility-scale">
  <relation label="inherit">
-  ont::volume-alt-scale
+  ont::tactile-scale
  </relation>
- <syntax>
-  <template-call template="ont::other-reln-mass-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">mass</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="volume" />
- </morph>
+ <relation label="overlap">
+  wn::|flexibility%1:07:02::|
+ </relation>
+ </concept>
+ <concept name="ont::tactile-hardness-scale">
  <relation label="inherit">
-  ont::volume-alt-scale
+  ont::tactile-scale
  </relation>
- <syntax>
-  <template-call template="ont::reln-subcat-of-units-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-   <feat name="sort">other-reln</feat>
-  </syn-feats>
- </syntax>
- </sense>
+ <relation label="overlap">
+  wn::|hardness%1:07:01::|
+ </relation>
+ </concept>
+ <concept name="ont::tactile-softness-scale">
+ <relation label="inherit">
+  ont::tactile-scale
+ </relation>
+ <relation label="overlap">
+  wn::|softness%1:07:00::|
+ </relation>
+ </concept>
+ <concept name="ont::texture-scale">
+ <relation label="inherit">
+  ont::tactile-scale
+ </relation>
+ <relation label="overlap">
+  wn::|texture%1:07:00::|
+ </relation>
+ </concept>
 </dsl>
