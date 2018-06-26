@@ -2,15 +2,10 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::event-time">
+ <concept name="ont::until">
  <relation label="inherit">
   ont::event-time-rel
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <concept name="time" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::root" />
  <concept name="abstr-obj" />
@@ -123,11 +118,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <concept name="time" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::event-time-rel">
  <relation label="inherit">
   ont::temporal-location
@@ -223,15 +213,56 @@
  <sense>
  <morph>
   <pos pos="adv" />
-  <word first-word="by" />
+  <word first-word="til" />
+ </morph>
+ <example text="wait til he leaves">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::until
+  ont::binary-constraint-s-decl-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="til" />
+ </morph>
+ <example text="wait til 5">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::until
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="to" />
  </morph>
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <example text="by the time he arrived it was too late">
+ <example text="the meeting should go to five pm">
  </example>
  <relation label="inherit">
-  ont::event-time
+  ont::until
  </relation>
  <syntax>
   <template-call template="ont::binary-constraint-s-or-np-templ" />
@@ -252,5 +283,89 @@
    <feat name="sort">binary-constraint</feat>
   </syn-feats>
  </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="until" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he was sad until he went to the party">
+ </example>
+ <relation label="inherit">
+  ont::until
+  ont::binary-constraint-s-decl-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="until" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="show me departures until 5 pm / the party">
+ </example>
+ <relation label="inherit">
+  ont::until
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(w::or
+                                              s
+                                              np)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+    pre-vp
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="until" />
+ </morph>
+ <comment>
+  &quot;HPI-ACN-1&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he was happy until recently">
+ </example>
+ <relation label="inherit">
+  ont::until
+  ont::binary-constraint-time-adv-result-val-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="until" />
+ </morph>
+ <comment>
+  &quot;HPI-ACN-1&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="Beat the mixture until fluffy">
+ </example>
+ <relation label="inherit">
+  ont::until
+  ont::binary-constraint-adj-result-val-templ
+ </relation>
  </sense>
 </dsl>

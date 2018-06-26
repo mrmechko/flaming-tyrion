@@ -1105,6 +1105,14 @@
    wn::|afraid%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::after">
+  <relation label="inherit">
+   ont::event-time-rel
+  </relation>
+  <relation label="overlap">
+   wn::|before%4:02:03::|
+  </relation>
+ </concept>
  <concept name="ont::age-scale">
   <relation label="inherit">
    ont::time-measure-scale
@@ -2748,6 +2756,26 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::attribute-impute">
+  <comment>
+   &quot;identify a cause of an event&quot;
+  </comment>
+  <relation label="inherit">
+   ont::categorization
+  </relation>
+  <relation label="overlap">
+   wn::|impute%2:31:00::|
+   wn::|attribute%2:31:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::neutral1">
+    <concept name="situation" />
+   </role-restr-map>
+   <role-restr-map roles="ont::neutral">
+    <concept name="situation" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::attributed-information">
   <relation label="inherit">
    ont::predicate
@@ -3509,6 +3537,15 @@
  <concept name="ont::beef">
   <relation label="inherit">
    ont::meat
+  </relation>
+ </concept>
+ <concept name="ont::before">
+  <relation label="inherit">
+   ont::event-time-rel
+  </relation>
+  <relation label="overlap">
+   wn::|after%4:02:00::|
+   wn::|after%4:02:01::|
   </relation>
  </concept>
  <concept name="ont::behavioral-scale">
@@ -11676,16 +11713,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::event-time">
-  <relation label="inherit">
-   ont::event-time-rel
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <concept name="time" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::event-time-rel">
   <relation label="inherit">
    ont::temporal-location
@@ -11714,13 +11741,28 @@
  </concept>
  <concept name="ont::event-time-rel-culmination">
   <relation label="inherit">
-   ont::event-time-rel
+   ont::event-time-rel≈cwmsreader
   </relation>
  </concept>
  <concept name="ont::event-time-rel-now">
   <relation label="inherit">
    ont::event-time-rel
   </relation>
+  <relation label="overlap">
+   wn::|now%4:02:05::|
+   wn::|now%4:02:01::|
+  </relation>
+ </concept>
+ <concept name="ont::event-time-rel≈cwmsreader" />
+ <concept name="ont::event-time≈">
+  <relation label="inherit">
+   ont::event-time-rel
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <concept name="time" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::event-type">
   <comment>
@@ -15717,6 +15759,15 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::immediate">
+  <relation label="inherit">
+   ont::event-time-rel
+  </relation>
+  <relation label="overlap">
+   wn::|immediately%4:02:00::|
+   wn::|immediately%4:02:05::|
+  </relation>
  </concept>
  <concept name="ont::immerse">
   <relation label="inherit">
@@ -22296,6 +22347,9 @@
   </relation>
  </concept>
  <concept name="ont::ordering">
+  <comment>
+   &quot;Identify an ordering or ranking of objects along some dimention&quot;
+  </comment>
   <relation label="inherit">
    ont::categorization
   </relation>
@@ -32467,6 +32521,9 @@
   <relation label="inherit">
    ont::event-duration-modifier
   </relation>
+  <relation label="overlap">
+   wn::|so_far%4:02:00::|
+  </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
     <concept name="situation" />
@@ -33518,6 +33575,11 @@
  <concept name="ont::unsteady-move">
   <relation label="inherit">
    ont::move
+  </relation>
+ </concept>
+ <concept name="ont::until">
+  <relation label="inherit">
+   ont::event-time-rel
   </relation>
  </concept>
  <concept name="ont::unwilling">
@@ -34623,6 +34685,11 @@
   <relation label="overlap">
    wn::|wheeze%2:29:00::|
    wn::|wheeze%1:04:00::|
+  </relation>
+ </concept>
+ <concept name="ont::when-while">
+  <relation label="inherit">
+   ont::event-time-rel
   </relation>
  </concept>
  <concept name="ont::whereby">

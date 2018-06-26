@@ -205,9 +205,49 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
+ <concept name="ont::before">
+ <relation label="inherit">
+  ont::event-time-rel
+ </relation>
+ <relation label="overlap">
+  wn::|after%4:02:00::|
+  wn::|after%4:02:01::|
+ </relation>
+ </concept>
+ <concept name="ont::after">
+ <relation label="inherit">
+  ont::event-time-rel
+ </relation>
+ <relation label="overlap">
+  wn::|before%4:02:03::|
+ </relation>
+ </concept>
+ <concept name="ont::immediate">
+ <relation label="inherit">
+  ont::event-time-rel
+ </relation>
+ <relation label="overlap">
+  wn::|immediately%4:02:00::|
+  wn::|immediately%4:02:05::|
+ </relation>
+ </concept>
+ <concept name="ont::when-while">
+ <relation label="inherit">
+  ont::event-time-rel
+ </relation>
+ </concept>
+ <concept name="ont::until">
+ <relation label="inherit">
+  ont::event-time-rel
+ </relation>
+ </concept>
  <concept name="ont::event-time-rel-now">
  <relation label="inherit">
   ont::event-time-rel
+ </relation>
+ <relation label="overlap">
+  wn::|now%4:02:05::|
+  wn::|now%4:02:01::|
  </relation>
  </concept>
  <concept name="ont::implicit-overlap">
@@ -218,12 +258,7 @@
   ont::event-time-rel
  </relation>
  </concept>
- <concept name="ont::event-time-rel-culmination">
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- </concept>
- <concept name="ont::event-time">
+ <concept name="ont::event-time≈">
  <relation label="inherit">
   ont::event-time-rel
  </relation>
@@ -243,102 +278,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="after" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he left (after 5 pm)">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-implicit-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="after" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he left after she arrived">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-decl-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="after" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="show me departures after 5 pm">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    post
-    pre
-    pre-vp
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="afterward" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::pred-s-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="afterwards" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::pred-s-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="ago" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="five years ago">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::pred-np-templ
- </relation>
- </sense>
  <sense>
  <morph>
   <pos pos="adv" />
@@ -373,164 +312,12 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="adv" />
-  <word first-word="as" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="as this happens the valve closes">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-decl-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="as" remaining-words="soon as" />
+  <pos pos="adj" />
+  <word first-word="coming" />
  </morph>
  <relation label="inherit">
   ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or
-                                              s
-                                              np)" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-    pre-vp
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="as" remaining-words="soon as possible" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="as" remaining-words="quick as possible" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="awhile" />
- </morph>
- <comment>
-  &quot;11&quot;
- </comment>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="before" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he arrived before she left">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-decl-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="before" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he arrived before (5 pm)">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-implicit-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="before" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="show me departures before 5 pm">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    post
-    pre
-    pre-vp
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="earlier" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::pred-s-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="early" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he arrived early">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::pred-s-post-templ
+  ont::central-adj-templ
  </relation>
  </sense>
  <sense>
@@ -609,19 +396,6 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="adv" />
-  <word first-word="immediately" />
- </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::pred-s-vp-templ
- </relation>
- </sense>
- <sense>
- <morph>
   <pos pos="adj" />
   <word first-word="in" remaining-words="progress" />
  </morph>
@@ -660,16 +434,6 @@
  <relation label="inherit">
   ont::event-time-rel
   ont::pred-s-post-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="later" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::pred-s-vp-templ
  </relation>
  </sense>
  <sense>
@@ -787,163 +551,12 @@
  <sense>
  <morph>
   <pos pos="adv" />
-  <word first-word="post-" />
- </morph>
- <example text="postprocess">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::v-prefix-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="post-" />
- </morph>
- <example text="postshow, postdinner">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::prefix-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="post-" />
- </morph>
- <example text="postadolescent">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::adj-operator-prefix-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="pre-" />
- </morph>
- <example text="precook">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::v-prefix-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="pre-" />
- </morph>
- <example text="preshow, predinner">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::prefix-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="pre-" />
- </morph>
- <example text="preadolescent">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::adj-operator-prefix-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
   <word first-word="previously" />
  </morph>
  <relation label="inherit">
   ont::event-time-rel
   ont::pred-s-vp-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="prior" remaining-words="to" />
- </morph>
- <example text="prior to leaving she checked her watch">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-ing-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="prior" remaining-words="to" />
- </morph>
- <example text="prior to the meeting she checked her watch">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="prior" remaining-words="to" />
- </morph>
- <comment>
-  &quot;BIONLP&quot;
- </comment>
- <example text="show me departures prior to 5 pm / the meeting">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    post
-    pre
-    pre-vp
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
  </sense>
  <sense>
  <morph>
@@ -1138,47 +751,6 @@
  <sense>
  <morph>
   <pos pos="adv" />
-  <word first-word="til" />
- </morph>
- <example text="wait til he leaves">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-decl-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="til" />
- </morph>
- <example text="wait til 5">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="s" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
   <word first-word="till" />
  </morph>
  <example text="wait till he leaves">
@@ -1211,39 +783,6 @@
    <or>
     pre
     post
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="to" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="the meeting should go to five pm">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or
-                                              s
-                                              np)" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-    pre-vp
    </or>
    </feat>
    <feat name="sort">binary-constraint</feat>
@@ -1366,90 +905,6 @@
  </sense>
  <sense>
  <morph>
-  <pos pos="adv" />
-  <word first-word="until" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he was sad until he went to the party">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-decl-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="until" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="show me departures until 5 pm / the party">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or
-                                              s
-                                              np)" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-    pre-vp
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="until" />
- </morph>
- <comment>
-  &quot;HPI-ACN-1&quot;
- </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he was happy until recently">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-time-adv-result-val-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="until" />
- </morph>
- <comment>
-  &quot;HPI-ACN-1&quot;
- </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="Beat the mixture until fluffy">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-adj-result-val-templ
- </relation>
- </sense>
- <sense>
- <morph>
   <pos pos="adj" />
   <word first-word="upcoming" />
  </morph>
@@ -1492,39 +947,6 @@
  <sense>
  <morph>
   <pos pos="adv" />
-  <word first-word="when" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="I saw him when he left">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-decl-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="when" />
- </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="buy me a monitor when buying a computer">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-ing-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
   <word first-word="whenever" />
  </morph>
  <example text="I saw him whenever he passed by">
@@ -1549,26 +971,6 @@
  <relation label="inherit">
   ont::event-time-rel
   ont::binary-constraint-s-ing-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="while" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-decl-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="while" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-while-loc-templ
  </relation>
  </sense>
  <sense>
