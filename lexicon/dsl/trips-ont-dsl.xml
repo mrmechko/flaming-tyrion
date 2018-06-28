@@ -9654,6 +9654,9 @@
    ont::position-reln
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::norole" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::ground">
     <concept name="phys-obj" />
    </role-restr-map>
@@ -11713,6 +11716,16 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::event-time">
+  <relation label="inherit">
+   ont::event-time-rel
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground">
+    <concept name="time" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::event-time-rel">
   <relation label="inherit">
    ont::temporal-location
@@ -11741,7 +11754,7 @@
  </concept>
  <concept name="ont::event-time-rel-culmination">
   <relation label="inherit">
-   ont::event-time-rel≈cwmsreader
+   ont::event-time-rel
   </relation>
  </concept>
  <concept name="ont::event-time-rel-now">
@@ -11752,17 +11765,6 @@
    wn::|now%4:02:05::|
    wn::|now%4:02:01::|
   </relation>
- </concept>
- <concept name="ont::event-time-rel≈cwmsreader" />
- <concept name="ont::event-time≈">
-  <relation label="inherit">
-   ont::event-time-rel
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground">
-    <concept name="time" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::event-type">
   <comment>
