@@ -7722,11 +7722,10 @@
   ONT::DEFINED-BY-SEQUENCE-RELATIONSHIP
   (INHERIT
     ONT::PHYS-OBJECT)
-  (OVERLAP
-    WN::|successor%1:18:01::|
-    WN::|successor%1:09:00::|
-    WN::|successor%1:18:00::|
-    WN::|predecessor%1:18:00::|))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       PHYS-OBJ))))
 
 (CONCEPT
   ONT::DEFINITION
@@ -21341,6 +21340,13 @@
     ONT::INFORMATION-PROPERTY-VAL))
 
 (CONCEPT
+  ONT::PREDECESSOR
+  (INHERIT
+    ONT::DEFINED-BY-SEQUENCE-RELATIONSHIP)
+  (OVERLAP
+    WN::|predecessor%1:18:00::|))
+
+(CONCEPT
   ONT::PREDEFINED-MEASURE-SCALE
   (INHERIT
     ONT::MEASURE-SCALE))
@@ -27222,6 +27228,15 @@
     ONT::SUCCESS-VAL)
   (OVERLAP
     WN::|successful%3:00:00::|))
+
+(CONCEPT
+  ONT::SUCCESSOR
+  (INHERIT
+    ONT::DEFINED-BY-SEQUENCE-RELATIONSHIP)
+  (OVERLAP
+    WN::|successor%1:18:01::|
+    WN::|successor%1:09:00::|
+    WN::|successor%1:18:00::|))
 
 (CONCEPT
   ONT::SUCH
