@@ -17,7 +17,7 @@
   wn::|payoff%1:21:02::|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::ground">
+  <role-restr-map roles="ont::extent">
    <sem-feats>
     <relation label="inherit">
      abstr-obj
@@ -79,7 +79,7 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::ground">
+ <role-restr-map roles="ont::extent">
   <sem-feats>
    <relation label="inherit">
     abstr-obj
@@ -162,7 +162,7 @@
   ont::value-cost
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::ground">
+  <role-restr-map roles="ont::extent">
    <sem-feats>
     <relation label="inherit">
      abstr-obj
@@ -217,14 +217,14 @@
   ont::value-cost
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" />
+  <template-call template="ont::reln-subcat-of-units-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
+   <feat name="allow-deleted-comp">-</feat>
    <feat name="case">
    <or>
     sub
@@ -237,6 +237,7 @@
     |3p|
    </or>
    </feat>
+   <feat name="sort">other-reln</feat>
   </syn-feats>
  </syntax>
  </sense>
@@ -245,9 +246,6 @@
   <pos pos="n" />
   <word first-word="charge" />
  </morph>
- <comment>
-  &quot;NAIVE-SUBJECTS&quot;
- </comment>
  <example text="there is an extra charge for gift wrapping">
   <provenance name="TRIPS"/>
  </example>
@@ -255,9 +253,9 @@
   ont::value-cost
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" />
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::for)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -307,6 +305,39 @@
     |3p|
    </or>
    </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="cost" />
+ </morph>
+ <relation label="inherit">
+  ont::value-cost
+ </relation>
+ <syntax>
+  <template-call template="ont::reln-subcat-of-units-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
   </syn-feats>
  </syntax>
  </sense>
@@ -421,14 +452,14 @@
   ont::value-cost
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" />
+  <template-call template="ont::reln-subcat-of-units-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
+   <feat name="allow-deleted-comp">-</feat>
    <feat name="case">
    <or>
     sub
@@ -441,41 +472,7 @@
     |3p|
    </or>
    </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="fee" />
- </morph>
- <comment>
-  &quot;CALO-Y1SCRIPT&quot;
- </comment>
- <relation label="inherit">
-  ont::value-cost
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
    <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
   </syn-feats>
  </syntax>
  </sense>
@@ -484,16 +481,89 @@
   <pos pos="n" />
   <word first-word="fee" />
  </morph>
- <comment>
-  &quot;CALO-Y1SCRIPT&quot;
- </comment>
+ <example text="There is a fee of $10">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::value-cost
  </relation>
  <syntax>
   <template-call template="ont::reln-subcat-of-units-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="fee" />
+ </morph>
+ <example text="there is an extra fee for gift wrapping">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::value-cost
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="interest" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="mortgage interest of $1000 ">
+ </example>
+ <relation label="inherit">
+  ont::value-cost
+ </relation>
+ <syntax>
+  <template-call template="ont::reln-subcat-of-units-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent" optional="optional"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
@@ -523,15 +593,15 @@
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <example text="mortgage interest">
+ <example text="what is the interest on the loan">
  </example>
  <relation label="inherit">
   ont::value-cost
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" />
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::on)" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::on" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -557,16 +627,52 @@
   <pos pos="n" />
   <word first-word="payment" />
  </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
+ <example text="I sent a payment of $10">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::value-cost
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" />
+  <template-call template="ont::reln-subcat-of-units-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="payment" />
+ </morph>
+ <example text="Here is the payment for gift wrapping">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::value-cost
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -605,16 +711,52 @@
   <pos pos="n" />
   <word first-word="rebate" />
  </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
+ <example text="I got a rebate of $10">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::value-cost
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" />
+  <template-call template="ont::reln-subcat-of-units-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="rebate" />
+ </morph>
+ <example text="there is an extra rebate on gift wrapping">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::value-cost
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::on)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::on" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -640,16 +782,52 @@
   <pos pos="n" />
   <word first-word="refund" />
  </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
+ <example text="There is a rebate of $10">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::value-cost
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" />
+  <template-call template="ont::reln-subcat-of-units-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="refund" />
+ </morph>
+ <example text="there is an extra rebate on gift wrapping">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::value-cost
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::on)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::on" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -675,13 +853,52 @@
   <pos pos="n" />
   <word first-word="reimbursement" />
  </morph>
+ <example text="I got a reimbursement of $10">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::value-cost
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" />
+  <template-call template="ont::reln-subcat-of-units-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="reimbursement" />
+ </morph>
+ <example text="I got a reimbursement for gift wrapping">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::value-cost
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::for" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -707,32 +924,123 @@
   <pos pos="n" />
   <word first-word="revenue" />
  </morph>
- <comment>
-  &quot;STEP6&quot;
- </comment>
- <relation label="inherit">
-  ont::value-cost
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="tax" />
- </morph>
- <comment>
-  &quot;NAIVE-SUBJECTS&quot;
- </comment>
- <example text="hotel tax">
+ <example text="We had revenue of $10">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::value-cost
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" />
+  <template-call template="ont::reln-subcat-of-units-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="revenue" />
+ </morph>
+ <example text="there is an extra revenue from bait dales">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::value-cost
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::from)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::from" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="tax" />
+ </morph>
+ <example text="There is a tax of $10">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::value-cost
+ </relation>
+ <syntax>
+  <template-call template="ont::reln-subcat-of-units-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="tax" />
+ </morph>
+ <example text="there is an extra tax on wine">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::value-cost
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::on)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::on" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
@@ -758,9 +1066,45 @@
   <pos pos="n" />
   <word first-word="value" />
  </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
+ <example text="He gave it a value of $10">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::value-cost
+ </relation>
+ <syntax>
+  <template-call template="ont::reln-subcat-of-units-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="value" />
+ </morph>
+ <example text="What is the value of my car?">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::value-cost
  </relation>

@@ -14481,6 +14481,20 @@
    ont::control-manage
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::affected">
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="phys-obj" />
+     </or>
+     <feat name="type">
+     <or>
+      device
+      located-event
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
    <role-restr-map roles="ont::agent">
     <or>
      <concept name="situation" />
@@ -17016,15 +17030,15 @@
  </concept>
  <concept name="ont::iteration-period">
   <relation label="inherit">
-   ont::temporal-location
+   ont::predicate
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
     <sem-feats>
      <relation label="inherit">
-      situation
+      abstr-object
      </relation>
-     <feat name="aspect">bounded</feat>
+     <feat name="type">quantity</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -24742,7 +24756,7 @@
    ont::value-cost
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::ground">
+   <role-restr-map roles="ont::extent">
     <sem-feats>
      <relation label="inherit">
       abstr-obj
@@ -33898,7 +33912,7 @@
    wn::|payoff%1:21:02::|
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::ground">
+   <role-restr-map roles="ont::extent">
     <sem-feats>
      <relation label="inherit">
       abstr-obj

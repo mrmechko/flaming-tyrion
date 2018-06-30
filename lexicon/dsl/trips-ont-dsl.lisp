@@ -12681,6 +12681,17 @@
   (INHERIT
     ONT::CONTROL-MANAGE)
   (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE
+        (OR
+          DEVICE
+          LOCATED-EVENT))))
     (ONT::AGENT
      (OR
        (CONCEPT
@@ -14884,13 +14895,13 @@
 (CONCEPT
   ONT::ITERATION-PERIOD
   (INHERIT
-    ONT::TEMPORAL-LOCATION)
+    ONT::PREDICATE)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
-         SITUATION)
-       (ASPECT BOUNDED)))))
+         ABSTR-OBJECT)
+       (TYPE QUANTITY)))))
 
 (CONCEPT
   ONT::JAUNDICE
@@ -21578,7 +21589,7 @@
   (INHERIT
     ONT::VALUE-COST)
   (SEM-FRAME
-    (ONT::GROUND
+    (ONT::EXTENT
      (SEM-FEATS
        (INHERIT
          ABSTR-OBJ)
@@ -29655,7 +29666,7 @@
     WN::|yield%1:21:00::|
     WN::|payoff%1:21:02::|)
   (SEM-FRAME
-    (ONT::GROUND
+    (ONT::EXTENT
      (SEM-FEATS
        (INHERIT
          ABSTR-OBJ)
