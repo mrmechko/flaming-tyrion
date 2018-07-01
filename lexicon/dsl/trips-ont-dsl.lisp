@@ -10133,6 +10133,16 @@
     ONT::EVENT-OF-ACTION
     SITUATION)
   (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
