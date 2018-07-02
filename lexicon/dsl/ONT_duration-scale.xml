@@ -146,4 +146,128 @@
  <concept name="situation" />
  <concept name="proposition" />
  </or>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="duration" />
+ </morph>
+ <example text="the duration of the project">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::duration-scale
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="duration" />
+ </morph>
+ <example text="a duration of five hours">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::duration-scale
+ </relation>
+ <syntax>
+  <template-call template="ont::reln-subcat-of-units-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="time" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="how much time does it take">
+ </example>
+ <relation label="inherit">
+  ont::duration-scale
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="time" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="a time of five minutes">
+ </example>
+ <relation label="inherit">
+  ont::duration-scale
+ </relation>
+ <syntax>
+  <template-call template="ont::reln-subcat-of-units-mass-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">mass</feat>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
 </dsl>

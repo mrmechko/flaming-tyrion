@@ -4754,7 +4754,13 @@
      (SEM-FEATS
        (INHERIT
          ABSTR-OBJ)
-       (SCALE DOMAIN)))))
+       (SCALE DOMAIN)))
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE DOMAIN)
+       (TYPE ORDERED-DOMAIN)))))
 
 (CONCEPT
   ONT::CHANGE-STATE
@@ -9169,22 +9175,6 @@
     WN::|duplicate%5:00:00:matched:00|))
 
 (CONCEPT
-  ONT::DURATION
-  (INHERIT
-    ONT::TEMPORAL-PREDICATE)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (SCALE DURATION-SCALE))
-  (SEM-FRAME
-    (ONT::FIGURE
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ)))))
-
-(CONCEPT
   ONT::DURATION-SCALE
   (INHERIT
     ONT::TIME-MEASURE-SCALE))
@@ -9997,6 +9987,11 @@
        (INHERIT
          PHYS-OBJ)
        (FORM GEOGRAPHICAL-OBJECT)))))
+
+(CONCEPT
+  ONT::EVAL-WRT-EXPECTATION
+  (INHERIT
+    ONT::MODIFIER))
 
 (CONCEPT
   ONT::EVALUATION-ATTRIBUTE-VAL
@@ -17411,7 +17406,8 @@
   (INHERIT
     ONT::FORMAL-UNIT)
   (OVERLAP
-    WN::|monetary_unit%1:23:00::|)
+    WN::|monetary_unit%1:23:00::|
+    WN::|currency%1:21:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
