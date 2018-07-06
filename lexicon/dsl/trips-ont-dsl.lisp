@@ -4759,8 +4759,7 @@
      (SEM-FEATS
        (INHERIT
          ABSTR-OBJ)
-       (SCALE DOMAIN)
-       (TYPE ORDERED-DOMAIN)))))
+       (SCALE DOMAIN)))))
 
 (CONCEPT
   ONT::CHANGE-STATE
@@ -12696,7 +12695,8 @@
        (TYPE
         (OR
           DEVICE
-          LOCATED-EVENT))))
+          LOCATED-EVENT
+          MOLECULAR-PART))))
     (ONT::AGENT
      (OR
        (CONCEPT
