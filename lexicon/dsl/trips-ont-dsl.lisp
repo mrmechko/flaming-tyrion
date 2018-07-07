@@ -4756,10 +4756,8 @@
          ABSTR-OBJ)
        (SCALE DOMAIN)))
     (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (SCALE DOMAIN)))))
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::CHANGE-STATE
