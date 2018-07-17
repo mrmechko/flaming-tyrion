@@ -6268,7 +6268,8 @@
     WN::|thought%1:09:01::|
     WN::|notion%1:09:00::|
     WN::|concept%1:09:00::|
-    WN::|conceptualization%1:09:00::|)
+    WN::|conceptualization%1:09:00::|
+    WN::|proposition%1:10:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
