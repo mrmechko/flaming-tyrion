@@ -1678,7 +1678,14 @@
     WN::|authorize%2:32:00::|
     WN::|approve%2:31:00::|
     WN::|authorize%2:41:00::|
-    WN::|condone%2:32:00::|))
+    WN::|condone%2:32:00::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION)))))
 
 (CONCEPT
   ONT::APPROXIMATE-AT-LOC
@@ -9565,10 +9572,8 @@
        T)
      OPTIONAL)
     (ONT::AFFECTED-RESULT
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (CONTAINER +))
+     (CONCEPT
+       PHYS-OBJ)
      OPTIONAL)
     (ONT::AGENT
      (CONCEPT
