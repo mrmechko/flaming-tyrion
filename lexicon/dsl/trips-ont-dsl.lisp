@@ -9352,6 +9352,16 @@
     WN::|fiscal%3:01:00::|))
 
 (CONCEPT
+  ONT::ECOSYSTEM
+  (COMMENT "An interconnected group of entities fo5ming an ecosystem")
+  (INHERIT
+    ONT::SYSTEM)
+  (OVERLAP
+    WN::|biotic_community%1:14:00::|
+    WN::|ecosystem%1:14:00::|
+    WN::|biosphere%1:15:00::|))
+
+(CONCEPT
   ONT::EDEMA
   (INHERIT
     ONT::MEDICAL-SYMPTOM)

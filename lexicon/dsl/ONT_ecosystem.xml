@@ -2,16 +2,17 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::system">
+ <concept name="ont::ecosystem">
  <comment>
-  &quot;An interconnected group of objects, abstract or physical&quot;
+  &quot;An interconnected group of entities fo5ming an ecosystem&quot;
  </comment>
  <relation label="inherit">
-  ont::group-object
+  ont::system
  </relation>
  <relation label="overlap">
-  wn::|system%1:06:00::|
-  wn::|system%1:14:00::|
+  wn::|biotic_community%1:14:00::|
+  wn::|ecosystem%1:14:00::|
+  wn::|biosphere%1:15:00::|
  </relation>
  </concept>
  <concept name="ont::root" />
@@ -93,6 +94,18 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::system">
+ <comment>
+  &quot;An interconnected group of objects, abstract or physical&quot;
+ </comment>
+ <relation label="inherit">
+  ont::group-object
+ </relation>
+ <relation label="overlap">
+  wn::|system%1:06:00::|
+  wn::|system%1:14:00::|
+ </relation>
+ </concept>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -105,33 +118,4 @@
  <concept name="proposition" />
  </or>
  <concept name="phys-obj" />
- <concept name="ont::ecosystem">
- <comment>
-  &quot;An interconnected group of entities fo5ming an ecosystem&quot;
- </comment>
- <relation label="inherit">
-  ont::system
- </relation>
- <relation label="overlap">
-  wn::|biotic_community%1:14:00::|
-  wn::|ecosystem%1:14:00::|
-  wn::|biosphere%1:15:00::|
- </relation>
- </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="system" />
- </morph>
- <comment>
-  &quot;PROJECTOR-PURCHASING&quot;
- </comment>
- <example text="an entertainment system">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::system
-  ont::count-pred-templ
- </relation>
- </sense>
 </dsl>
