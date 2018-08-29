@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::month">
+ <comment>
+  &quot;time interval of a named month&quot;
+ </comment>
+ <relation label="inherit">
+  ont::time-interval
+ </relation>
+ </concept>
+ <concept name="time" />
+ <concept name="ont::root" />
+ <concept name="ont::time-interval">
+ <relation label="inherit">
+  ont::time-object
+ </relation>
+ <relation label="overlap">
+  wn::|interval%1:28:00::|
+  wn::|time_interval%1:28:00::|
+  wn::|time%1:28:03::|
+  wn::|clock_time%1:28:00::|
+  wn::|time%1:28:00::|
+  wn::|time%1:28:05::|
+  wn::|time_period%1:28:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="scale">-</feat>
+  <feat name="time-scale">interval</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">duration-scale</feat>
+    <feat name="time-scale">interval</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     time
+    </relation>
+    <feat name="scale">duration-scale</feat>
+    <feat name="time-scale">interval</feat>
+    <feat name="time-function">time-frame</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::time-object">
+ <comment>
+  &quot;objects that refer to temporal locations in some way&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-time-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">
+  <or>
+   point
+   interval
+  </or>
+  </feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="scale">-</feat>
+ <feat name="time-scale">interval</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">duration-scale</feat>
+   <feat name="time-scale">interval</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="scale">duration-scale</feat>
+   <feat name="time-scale">interval</feat>
+   <feat name="time-function">time-frame</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-time-object">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">
+  <or>
+   interval
+   point
+  </or>
+  </feat>
+  <feat name="time-function">any-time-function</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  point
+  interval
+ </or>
+ </feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  interval
+  point
+ </or>
+ </feat>
+ <feat name="time-function">any-time-function</feat>
+ </sem-feats>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="month" />
+ </morph>
+ <relation label="inherit">
+  ont::month
+ </relation>
+ <syntax>
+  <template-call template="ont::time-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

@@ -1244,6 +1244,23 @@
    wn::|upset%5:00:00:ill:01|
   </relation>
  </concept>
+ <concept name="ont::air">
+  <relation label="inherit">
+   ont::natural-gas-substance
+  </relation>
+  <relation label="overlap">
+   wn::|air%1:27:00::|
+   wn::|air%1:19:00::|
+   wn::|air%1:27:01::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">natural</feat>
+   <feat name="form">gas</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::air-current">
   <relation label="inherit">
    ont::atmospheric-phenomenon
@@ -1580,7 +1597,7 @@
    wn::|beast%1:03:00::|
    wn::|brute%1:03:00::|
    wn::|creature%1:03:00::|
-   wn::|fauna%1:03:00::|
+   wn::|fauna%1:14:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -2287,6 +2304,7 @@
   </relation>
   <relation label="overlap">
    wn::|assert%2:32:01::|
+   wn::|statement%1:10:00::|
   </relation>
  </concept>
  <concept name="ont::assess">
@@ -4045,6 +4063,21 @@
   <relation label="inherit">
    ont::body-movement
   </relation>
+ </concept>
+ <concept name="ont::body-of-water">
+  <relation label="inherit">
+   ont::geo-formation
+  </relation>
+  <relation label="overlap">
+   wn::|body_of_water%1:17:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="trajectory">-</feat>
+   <feat name="origin">natural</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::body-part">
   <relation label="inherit">
@@ -8632,6 +8665,14 @@
    ont::time-object
   </relation>
  </concept>
+ <concept name="ont::day">
+  <comment>
+   &quot;time interval of a day&quot;
+  </comment>
+  <relation label="inherit">
+   ont::time-interval
+  </relation>
+ </concept>
  <concept name="ont::day-duration">
   <relation label="inherit">
    ont::time-unit
@@ -8773,6 +8814,7 @@
   <relation label="overlap">
    wn::|deplete%2:34:00::|
    wn::|exhaust%2:30:00::|
+   wn::|reduction%1:04:00::|
   </relation>
  </concept>
  <concept name="ont::decrease-speed">
@@ -10661,6 +10703,17 @@
    ont::event-defined-by-activity
   </relation>
  </concept>
+ <concept name="ont::economic-system">
+  <comment>
+   &quot;An interconnected group of entities forming an economy&quot;
+  </comment>
+  <relation label="inherit">
+   ont::system
+  </relation>
+  <relation label="overlap">
+   wn::|economy%1:14:00::|
+  </relation>
+ </concept>
  <concept name="ont::economic-val">
   <relation label="inherit">
    ont::associated-with-val
@@ -10674,7 +10727,7 @@
  </concept>
  <concept name="ont::ecosystem">
   <comment>
-   &quot;An interconnected group of entities fo5ming an ecosystem&quot;
+   &quot;An interconnected group of] entities fo5ming an ecosystem&quot;
   </comment>
   <relation label="inherit">
    ont::system
@@ -13022,6 +13075,14 @@
    wn::|adult_female%1:18:00::|
   </relation>
  </concept>
+ <concept name="ont::fertilizer">
+  <relation label="inherit">
+   ont::chemical
+  </relation>
+  <relation label="overlap">
+   wn::|fertilizer%1:27:00::|
+  </relation>
+ </concept>
  <concept name="ont::fever">
   <relation label="inherit">
    ont::medical-symptom
@@ -13090,6 +13151,7 @@
    ont::configuration-property-val
   </relation>
  </concept>
+ <concept name="ont::finacial-condition" />
  <concept name="ont::finalized-val">
   <relation label="inherit">
    ont::resulting-state-val
@@ -13097,6 +13159,19 @@
   <relation label="overlap">
    wn::|settled%3:00:02::|
   </relation>
+ </concept>
+ <concept name="ont::financial-condition">
+  <relation label="inherit">
+   ont::status
+  </relation>
+  <relation label="overlap">
+   wn::|financial_condition%1:26:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::financial-institution">
   <relation label="inherit">
@@ -14209,8 +14284,6 @@
    ont::geo-object
   </relation>
   <relation label="overlap">
-   wn::|land%1:17:00::|
-   wn::|grassland%1:15:00::|
    wn::|formation%1:17:00::|
   </relation>
   <sem-feats>
@@ -15301,6 +15374,14 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::herbicide">
+  <relation label="inherit">
+   ont::chemical
+  </relation>
+  <relation label="overlap">
+   wn::|herbicide%1:27:00::|
+  </relation>
  </concept>
  <concept name="ont::herd">
   <relation label="inherit">
@@ -17395,6 +17476,7 @@
   </relation>
   <relation label="overlap">
    wn::|knowledge%1:03:00::|
+   wn::|wisdom%1:07:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal" optional="optional">
@@ -17458,6 +17540,22 @@
   <relation label="inherit">
    ont::meat
   </relation>
+ </concept>
+ <concept name="ont::land">
+  <relation label="inherit">
+   ont::geo-formation
+  </relation>
+  <relation label="overlap">
+   wn::|land%1:17:00::|
+   wn::|grassland%1:15:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="trajectory">-</feat>
+   <feat name="origin">natural</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::land-travel">
   <relation label="inherit">
@@ -20001,6 +20099,14 @@
    ont::num-prefix-val
   </relation>
  </concept>
+ <concept name="ont::month">
+  <comment>
+   &quot;time interval of a named month&quot;
+  </comment>
+  <relation label="inherit">
+   ont::time-interval
+  </relation>
+ </concept>
  <concept name="ont::month-name">
   <relation label="inherit">
    ont::year-stage
@@ -20120,6 +20226,21 @@
   <relation label="overlap">
    wn::|motivation%1:03:00::|
   </relation>
+ </concept>
+ <concept name="ont::mountain">
+  <relation label="inherit">
+   ont::geo-formation
+  </relation>
+  <relation label="overlap">
+   wn::|elevation%1:17:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="trajectory">-</feat>
+   <feat name="origin">natural</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::movable-val">
   <relation label="inherit">
@@ -21780,6 +21901,14 @@
    ont::number-related-property-val
   </relation>
  </concept>
+ <concept name="ont::nutrient">
+  <relation label="inherit">
+   ont::chemical
+  </relation>
+  <relation label="overlap">
+   wn::|nutient%1:03:01::|
+  </relation>
+ </concept>
  <concept name="ont::nutritional-supplement">
   <relation label="inherit">
    ont::food
@@ -22416,6 +22545,8 @@
   <relation label="overlap">
    wn::|organism%1:03:00::|
    wn::|being%1:03:00::|
+   wn::|life%1:19:00::|
+   wn::|life%1:26:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -23259,6 +23390,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::pesticide">
+  <relation label="inherit">
+   ont::chemical
+  </relation>
+  <relation label="overlap">
+   wn::|pesticide%1:27:00::|
+  </relation>
+ </concept>
  <concept name="ont::pharmacologic-substance">
   <relation label="inherit">
    ont::chemical
@@ -23927,6 +24066,10 @@
   <relation label="inherit">
    ont::atmospheric-phenomenon
   </relation>
+  <relation label="overlap">
+   wn::|pollution%1:26:00::|
+   wn::|pollution%1:26:02::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -24378,6 +24521,19 @@
   <relation label="inherit">
    ont::meat
   </relation>
+ </concept>
+ <concept name="ont::poverty">
+  <relation label="inherit">
+   ont::finacial-condition
+  </relation>
+  <relation label="overlap">
+   wn::|poverty%1:26:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::power">
   <relation label="inherit">
@@ -26161,6 +26317,8 @@
   </relation>
   <relation label="overlap">
    wn::|day%1:28:01::|
+   wn::|season%1:28:01::|
+   wn::|season%1:28:02::|
   </relation>
  </concept>
  <concept name="ont::recurring-time-of-day">
@@ -28318,6 +28476,9 @@
  <concept name="ont::science-discipline">
   <relation label="inherit">
    ont::discipline
+  </relation>
+  <relation label="overlap">
+   wn::|science%1:09:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -33890,6 +34051,21 @@
    ont::information-property-val
   </relation>
  </concept>
+ <concept name="ont::valley">
+  <relation label="inherit">
+   ont::geo-formation
+  </relation>
+  <relation label="overlap">
+   wn::|valley%1:17:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="trajectory">-</feat>
+   <feat name="origin">natural</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::value">
   <relation label="inherit">
    ont::tangible-abstract-object
@@ -34462,6 +34638,15 @@
    <feat name="origin">non-living</feat>
    <feat name="object-function">comestible</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::water-irrigate">
+  <relation label="inherit">
+   ont::apply-force
+  </relation>
+  <relation label="overlap">
+   wn::|water%2:30:00::|
+   wn::|irrigation%1:04:00::|
+  </relation>
  </concept>
  <concept name="ont::water-travel">
   <relation label="inherit">

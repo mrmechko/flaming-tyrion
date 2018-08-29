@@ -141,6 +141,8 @@
 <WORD name="anniversary" />
 <WORD name="birthday" />
 <MAPPING to="wordnet" name="day%1:28:01::" />
+<MAPPING to="wordnet" name="season%1:28:01::" />
+<MAPPING to="wordnet" name="season%1:28:02::" />
 <ONTTYPE name="holiday">
 <WORD name="all_hallowes_eve" />
 <WORD name="all_saints_day" />
@@ -167,11 +169,9 @@
 <ONTTYPE name="time-interval">
 <WORD name="lunch_time" />
 <WORD name="breather" />
-<WORD name="day" />
 <WORD name="era" />
 <WORD name="interim" />
 <WORD name="interval" />
-<WORD name="month" />
 <WORD name="night" />
 <WORD name="period" />
 <WORD name="span" />
@@ -188,6 +188,12 @@
 <MAPPING to="wordnet" name="time%1:28:00::" />
 <MAPPING to="wordnet" name="time%1:28:05::" />
 <MAPPING to="wordnet" name="time_period%1:28:00::" />
+<ONTTYPE name="day">
+<WORD name="day" />
+</ONTTYPE>
+<ONTTYPE name="month">
+<WORD name="month" />
+</ONTTYPE>
 <ONTTYPE name="phase">
 <WORD name="phase" />
 <WORD name="stage" />
@@ -6506,6 +6512,7 @@
 <WORD name="math" />
 <WORD name="mathematics" />
 <WORD name="physics" />
+<MAPPING to="wordnet" name="science%1:09:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="information-function-object">
@@ -6804,6 +6811,7 @@
 <ONTTYPE name="knowledge-belief">
 <WORD name="knowledge" />
 <MAPPING to="wordnet" name="cognition%1:03:00::" />
+<MAPPING to="wordnet" name="wisdom%1:07:00::" />
 <ONTTYPE name="doctrine">
 <WORD name="doctrine" />
 <MAPPING to="wordnet" name="doctrine%1:09:00::" />
@@ -7770,19 +7778,14 @@
 <WORD name="universe" />
 <MAPPING to="wordnet" name="location%1:03:00::" />
 <ONTTYPE name="geo-formation">
-<WORD name="bay" />
 <WORD name="canyon" />
 <WORD name="continent" />
 <WORD name="earth" />
 <WORD name="globe" />
 <WORD name="ground" />
-<WORD name="inlet" />
 <WORD name="island" />
 <WORD name="isle" />
-<WORD name="lake" />
-<WORD name="land" />
 <WORD name="landscape" />
-<WORD name="mountain" />
 <WORD name="nature" />
 <WORD name="oasis" />
 <WORD name="ocean" />
@@ -7795,17 +7798,33 @@
 <WORD name="strait" />
 <WORD name="summit" />
 <WORD name="tundra" />
-<WORD name="valley" />
 <WORD name="world" />
+<MAPPING to="wordnet" name="geological_formation%1:17:00::" />
+<ONTTYPE name="body-of-water">
+<WORD name="bay" />
+<WORD name="inlet" />
+<WORD name="lake" />
+<MAPPING to="wordnet" name="body_of_water%1:17:00::" />
+</ONTTYPE>
+<ONTTYPE name="land">
+<WORD name="land" />
 <MAPPING to="wordnet" name="land%1:17:00::" />
 <MAPPING to="wordnet" name="grassland%1:15:00::" />
-<MAPPING to="wordnet" name="geological_formation%1:17:00::" />
+</ONTTYPE>
+<ONTTYPE name="mountain">
+<WORD name="mountain" />
+<MAPPING to="wordnet" name="natural_elevation%1:17:00::" />
+</ONTTYPE>
 <ONTTYPE name="shore">
 <WORD name="bank" />
 <WORD name="beach" />
 <WORD name="coast" />
 <WORD name="shore" />
 <MAPPING to="wordnet" name="shore%1:17:00::" />
+</ONTTYPE>
+<ONTTYPE name="valley">
+<WORD name="valley" />
+<MAPPING to="wordnet" name="valley%1:17:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="location">
@@ -8528,6 +8547,9 @@
 <WORD name="system" />
 <MAPPING to="wordnet" name="system%1:06:00::" />
 <MAPPING to="wordnet" name="system%1:14:00::" />
+<ONTTYPE name="economic-system">
+<MAPPING to="wordnet" name="economy%1:14:00::" />
+</ONTTYPE>
 <ONTTYPE name="ecosystem">
 <MAPPING to="wordnet" name="community%1:14:02::" />
 <MAPPING to="wordnet" name="ecosystem%1:14:00::" />
@@ -9419,6 +9441,16 @@
 <MAPPING to="wordnet" name="compound%1:27:00::" />
 <ONTTYPE name="amino-acid">
 <MAPPING to="wordnet" name="amino_acid%1:27:00::" />
+</ONTTYPE>
+<ONTTYPE name="fertilizer">
+<MAPPING to="wordnet" name="fertilizer%1:27:00::" />
+</ONTTYPE>
+<ONTTYPE name="herbicide">
+<MAPPING to="wordnet" name="herbicide%1:27:00::" />
+</ONTTYPE>
+<ONTTYPE name="nutrient" />
+<ONTTYPE name="pesticide">
+<MAPPING to="wordnet" name="pesticide%1:27:00::" />
 </ONTTYPE>
 <ONTTYPE name="pharmacologic-substance">
 <MAPPING to="wordnet" name="drug%1:06:00::" />
@@ -10635,6 +10667,11 @@
 <WORD name="hydrogen" />
 <WORD name="nitrogen" />
 <WORD name="oxygen" />
+<ONTTYPE name="air">
+<MAPPING to="wordnet" name="air%1:27:00::" />
+<MAPPING to="wordnet" name="breeze%1:19:00::" />
+<MAPPING to="wordnet" name="air%1:27:01::" />
+</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="light">
@@ -10961,6 +10998,8 @@
 </ONTTYPE>
 <ONTTYPE name="pollution">
 <WORD name="pollution" />
+<MAPPING to="wordnet" name="pollution%1:26:00::" />
+<MAPPING to="wordnet" name="befoulment%1:26:00::" />
 </ONTTYPE>
 <ONTTYPE name="precipitation">
 <WORD name="hail" />
@@ -10997,12 +11036,15 @@
 <WORD name="being" />
 <WORD name="organism" />
 <MAPPING to="wordnet" name="organism%1:03:00::" />
+<MAPPING to="wordnet" name="life%1:19:00::" />
+<MAPPING to="wordnet" name="animation%1:26:00::" />
 <ONTTYPE name="animal">
 <WORD name="animal" />
 <WORD name="arachnid" />
 <WORD name="mammal" />
 <WORD name="spider" />
 <MAPPING to="wordnet" name="animal%1:03:00::" />
+<MAPPING to="wordnet" name="fauna%1:14:00::" />
 <ONTTYPE name="invertebrate">
 <MAPPING to="wordnet" name="invertebrate%1:05:00::" />
 <ONTTYPE name="insect">
@@ -12854,6 +12896,7 @@
 <WORD name="state" />
 <WORD name="statement" />
 <MAPPING to="wordnet" name="assert%2:32:01::" />
+<MAPPING to="wordnet" name="statement%1:10:00::" />
 <ONTTYPE name="confirm">
 <WORD name="confirm" />
 <WORD name="show" />
@@ -14465,6 +14508,7 @@
 <WORD name="deplete" />
 <MAPPING to="wordnet" name="consume%2:34:01::" />
 <MAPPING to="wordnet" name="exhaust%2:30:00::" />
+<MAPPING to="wordnet" name="decrease%1:04:00::" />
 </ONTTYPE>
 <ONTTYPE name="decrease-speed">
 <WORD name="slow" />
@@ -16062,6 +16106,10 @@
 <MAPPING to="wordnet" name="rub%2:39:00::" />
 <MAPPING to="wordnet" name="stroke%2:35:00::" />
 <MAPPING to="wordnet" name="smooth%2:40:00::" />
+</ONTTYPE>
+<ONTTYPE name="water-irrigate">
+<MAPPING to="wordnet" name="water%2:30:00::" />
+<MAPPING to="wordnet" name="irrigation%1:04:00::" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -18527,6 +18575,9 @@
 <MAPPING to="wordnet" name="condition%1:26:00::" />
 <MAPPING to="wordnet" name="state_of_matter%1:26:00::" />
 <MAPPING to="wordnet" name="state%1:03:00::" />
+<ONTTYPE name="financial-condition">
+<MAPPING to="wordnet" name="financial_condition%1:26:00::" />
+</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>

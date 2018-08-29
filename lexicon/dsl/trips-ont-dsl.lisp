@@ -1093,6 +1093,20 @@
     WN::|upset%5:00:00:ill:01|))
 
 (CONCEPT
+  ONT::AIR
+  (INHERIT
+    ONT::NATURAL-GAS-SUBSTANCE)
+  (OVERLAP
+    WN::|air%1:27:00::|
+    WN::|air%1:19:00::|
+    WN::|air%1:27:01::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (ORIGIN NATURAL)
+    (FORM GAS)))
+
+(CONCEPT
   ONT::AIR-CURRENT
   (INHERIT
     ONT::ATMOSPHERIC-PHENOMENON)
@@ -1388,7 +1402,7 @@
     WN::|beast%1:03:00::|
     WN::|brute%1:03:00::|
     WN::|creature%1:03:00::|
-    WN::|fauna%1:03:00::|)
+    WN::|fauna%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -1988,7 +2002,8 @@
   (INHERIT
     ONT::REPRESENTATIVE)
   (OVERLAP
-    WN::|assert%2:32:01::|))
+    WN::|assert%2:32:01::|
+    WN::|statement%1:10:00::|))
 
 (CONCEPT
   ONT::ASSESS
@@ -3515,6 +3530,18 @@
    "Verbs of posture that can be independent of any location: e.g., bow is not with respect to a location, but to sit it must be somewhere")
   (INHERIT
     ONT::BODY-MOVEMENT))
+
+(CONCEPT
+  ONT::BODY-OF-WATER
+  (INHERIT
+    ONT::GEO-FORMATION)
+  (OVERLAP
+    WN::|body_of_water%1:17:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (TRAJECTORY -)
+    (ORIGIN NATURAL)))
 
 (CONCEPT
   ONT::BODY-PART
@@ -7564,6 +7591,12 @@
     ONT::TIME-OBJECT))
 
 (CONCEPT
+  ONT::DAY
+  (COMMENT "time interval of a day")
+  (INHERIT
+    ONT::TIME-INTERVAL))
+
+(CONCEPT
   ONT::DAY-DURATION
   (INHERIT
     ONT::TIME-UNIT))
@@ -7686,7 +7719,8 @@
     ONT::DECREASE)
   (OVERLAP
     WN::|deplete%2:34:00::|
-    WN::|exhaust%2:30:00::|))
+    WN::|exhaust%2:30:00::|
+    WN::|reduction%1:04:00::|))
 
 (CONCEPT
   ONT::DECREASE-SPEED
@@ -9342,6 +9376,14 @@
     ONT::EVENT-DEFINED-BY-ACTIVITY))
 
 (CONCEPT
+  ONT::ECONOMIC-SYSTEM
+  (COMMENT "An interconnected group of entities forming an economy")
+  (INHERIT
+    ONT::SYSTEM)
+  (OVERLAP
+    WN::|economy%1:14:00::|))
+
+(CONCEPT
   ONT::ECONOMIC-VAL
   (INHERIT
     ONT::ASSOCIATED-WITH-VAL)
@@ -9353,7 +9395,7 @@
 
 (CONCEPT
   ONT::ECOSYSTEM
-  (COMMENT "An interconnected group of entities fo5ming an ecosystem")
+  (COMMENT "An interconnected group of] entities fo5ming an ecosystem")
   (INHERIT
     ONT::SYSTEM)
   (OVERLAP
@@ -11437,6 +11479,13 @@
     WN::|adult_female%1:18:00::|))
 
 (CONCEPT
+  ONT::FERTILIZER
+  (INHERIT
+    ONT::CHEMICAL)
+  (OVERLAP
+    WN::|fertilizer%1:27:00::|))
+
+(CONCEPT
   ONT::FEVER
   (INHERIT
     ONT::MEDICAL-SYMPTOM)
@@ -11498,11 +11547,26 @@
     ONT::CONFIGURATION-PROPERTY-VAL))
 
 (CONCEPT
+  ONT::FINACIAL-CONDITION)
+
+(CONCEPT
   ONT::FINALIZED-VAL
   (INHERIT
     ONT::RESULTING-STATE-VAL)
   (OVERLAP
     WN::|settled%3:00:02::|))
+
+(CONCEPT
+  ONT::FINANCIAL-CONDITION
+  (INHERIT
+    ONT::STATUS)
+  (OVERLAP
+    WN::|financial_condition%1:26:00::|)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::FINANCIAL-INSTITUTION
@@ -12452,8 +12516,6 @@
   (INHERIT
     ONT::GEO-OBJECT)
   (OVERLAP
-    WN::|land%1:17:00::|
-    WN::|grassland%1:15:00::|
     WN::|formation%1:17:00::|)
   (SEM-FEATS
     (INHERIT
@@ -13399,6 +13461,13 @@
        (CONCEPT
          ABSTR-OBJ))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::HERBICIDE
+  (INHERIT
+    ONT::CHEMICAL)
+  (OVERLAP
+    WN::|herbicide%1:27:00::|))
 
 (CONCEPT
   ONT::HERD
@@ -15197,7 +15266,8 @@
   (INHERIT
     ONT::MENTAL-CONSTRUCTION)
   (OVERLAP
-    WN::|knowledge%1:03:00::|)
+    WN::|knowledge%1:03:00::|
+    WN::|wisdom%1:07:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -15256,6 +15326,19 @@
   ONT::LAMB
   (INHERIT
     ONT::MEAT))
+
+(CONCEPT
+  ONT::LAND
+  (INHERIT
+    ONT::GEO-FORMATION)
+  (OVERLAP
+    WN::|land%1:17:00::|
+    WN::|grassland%1:15:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (TRAJECTORY -)
+    (ORIGIN NATURAL)))
 
 (CONCEPT
   ONT::LAND-TRAVEL
@@ -17433,6 +17516,12 @@
     ONT::NUM-PREFIX-VAL))
 
 (CONCEPT
+  ONT::MONTH
+  (COMMENT "time interval of a named month")
+  (INHERIT
+    ONT::TIME-INTERVAL))
+
+(CONCEPT
   ONT::MONTH-NAME
   (INHERIT
     ONT::YEAR-STAGE)
@@ -17534,6 +17623,18 @@
     ONT::MENTAL-OBJECT)
   (OVERLAP
     WN::|motivation%1:03:00::|))
+
+(CONCEPT
+  ONT::MOUNTAIN
+  (INHERIT
+    ONT::GEO-FORMATION)
+  (OVERLAP
+    WN::|elevation%1:17:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (TRAJECTORY -)
+    (ORIGIN NATURAL)))
 
 (CONCEPT
   ONT::MOVABLE-VAL
@@ -18987,6 +19088,13 @@
     ONT::NUMBER-RELATED-PROPERTY-VAL))
 
 (CONCEPT
+  ONT::NUTRIENT
+  (INHERIT
+    ONT::CHEMICAL)
+  (OVERLAP
+    WN::|nutient%1:03:01::|))
+
+(CONCEPT
   ONT::NUTRITIONAL-SUPPLEMENT
   (INHERIT
     ONT::FOOD)
@@ -19555,7 +19663,9 @@
     ONT::NATURAL-OBJECT)
   (OVERLAP
     WN::|organism%1:03:00::|
-    WN::|being%1:03:00::|)
+    WN::|being%1:03:00::|
+    WN::|life%1:19:00::|
+    WN::|life%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -20298,6 +20408,13 @@
          SITUATION)))))
 
 (CONCEPT
+  ONT::PESTICIDE
+  (INHERIT
+    ONT::CHEMICAL)
+  (OVERLAP
+    WN::|pesticide%1:27:00::|))
+
+(CONCEPT
   ONT::PHARMACOLOGIC-SUBSTANCE
   (INHERIT
     ONT::CHEMICAL)
@@ -20870,6 +20987,9 @@
   ONT::POLLUTION
   (INHERIT
     ONT::ATMOSPHERIC-PHENOMENON)
+  (OVERLAP
+    WN::|pollution%1:26:00::|
+    WN::|pollution%1:26:02::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -21263,6 +21383,18 @@
   ONT::POULTRY
   (INHERIT
     ONT::MEAT))
+
+(CONCEPT
+  ONT::POVERTY
+  (INHERIT
+    ONT::FINACIAL-CONDITION)
+  (OVERLAP
+    WN::|poverty%1:26:00::|)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::POWER
@@ -22824,7 +22956,9 @@
   (INHERIT
     ONT::DATE-OBJECT-ON)
   (OVERLAP
-    WN::|day%1:28:01::|))
+    WN::|day%1:28:01::|
+    WN::|season%1:28:01::|
+    WN::|season%1:28:02::|))
 
 (CONCEPT
   ONT::RECURRING-TIME-OF-DAY
@@ -24754,6 +24888,8 @@
   ONT::SCIENCE-DISCIPLINE
   (INHERIT
     ONT::DISCIPLINE)
+  (OVERLAP
+    WN::|science%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -29653,6 +29789,18 @@
     ONT::INFORMATION-PROPERTY-VAL))
 
 (CONCEPT
+  ONT::VALLEY
+  (INHERIT
+    ONT::GEO-FORMATION)
+  (OVERLAP
+    WN::|valley%1:17:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (TRAJECTORY -)
+    (ORIGIN NATURAL)))
+
+(CONCEPT
   ONT::VALUE
   (INHERIT
     ONT::TANGIBLE-ABSTRACT-OBJECT)
@@ -30140,6 +30288,14 @@
       PHYS-OBJ)
     (ORIGIN NON-LIVING)
     (OBJECT-FUNCTION COMESTIBLE)))
+
+(CONCEPT
+  ONT::WATER-IRRIGATE
+  (INHERIT
+    ONT::APPLY-FORCE)
+  (OVERLAP
+    WN::|water%2:30:00::|
+    WN::|irrigation%1:04:00::|))
 
 (CONCEPT
   ONT::WATER-TRAVEL
