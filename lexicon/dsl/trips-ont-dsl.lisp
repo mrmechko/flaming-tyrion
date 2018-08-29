@@ -624,7 +624,6 @@
   (INHERIT
     ONT::EVENT-OF-ACTION)
   (OVERLAP
-    WN::|activity%1:04:00::|
     WN::|action%1:04:02::|
     WN::|act%1:03:00::|
     WN::|act%2:41:00::|
@@ -2320,7 +2319,8 @@
     WN::|attack%2:33:00::|
     WN::|attack%2:32:00::|
     WN::|attack%2:33:02::|
-    WN::|attack%2:29:00::|))
+    WN::|attack%2:29:00::|
+    WN::|attack%1:04:00::|))
 
 (CONCEPT
   ONT::ATTENTION-VAL
@@ -8826,16 +8826,6 @@
     ONT::INFO-MEDIUM))
 
 (CONCEPT
-  ONT::DISPOSABLE
-  (INHERIT
-    ONT::MATERIAL)
-  (OVERLAP
-    WN::|waste%1:27:00::|
-    WN::|waste_material%1:27:00::|
-    WN::|waste_matter%1:27:00::|
-    WN::|waste_product%1:27:00::|))
-
-(CONCEPT
   ONT::DISSUADE
   (INHERIT
     ONT::PERLOCUTION)
@@ -9299,6 +9289,15 @@
        (INTENTIONAL -)
        (OBJECT-FUNCTION CURRENCY)
        (TYPE MONEY)))))
+
+(CONCEPT
+  ONT::EARTH-SUBSTANCE
+  (INHERIT
+    ONT::NATURAL-SUBSTANCE)
+  (OVERLAP
+    WN::|soil%1:27:01::|
+    WN::|soil%1:17:00::|
+    WN::|earth%1:27:00::|))
 
 (CONCEPT
   ONT::EAST
@@ -10593,7 +10592,9 @@
     ONT::EVOKE-DISCOMFORT)
   (OVERLAP
     WN::|starve%2:34:00::|
-    WN::|starve%2:34:03::|))
+    WN::|starve%2:34:03::|
+    WN::|starvation%1:26:00::|
+    WN::|starvation%1:04:00::|))
 
 (CONCEPT
   ONT::EVOKE-ILL-BEING
@@ -11547,9 +11548,6 @@
     ONT::CONFIGURATION-PROPERTY-VAL))
 
 (CONCEPT
-  ONT::FINACIAL-CONDITION)
-
-(CONCEPT
   ONT::FINALIZED-VAL
   (INHERIT
     ONT::RESULTING-STATE-VAL)
@@ -11885,7 +11883,8 @@
     WN::|flow%2:38:01::|
     WN::|flux%2:38:00::|
     WN::|flow%2:38:02::|
-    WN::|pour%2:38:03::|)
+    WN::|pour%2:38:03::|
+    WN::|flow%1:11:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -15333,7 +15332,8 @@
     ONT::GEO-FORMATION)
   (OVERLAP
     WN::|land%1:17:00::|
-    WN::|grassland%1:15:00::|)
+    WN::|grassland%1:15:00::|
+    WN::|wetland%1:17:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -16903,7 +16903,8 @@
     WN::|aid%1:04:01::|
     WN::|tending%1:04:00::|
     WN::|regimen%1:09:00::|
-    WN::|regime%1:09:00::|)
+    WN::|regime%1:09:00::|
+    WN::|immunization%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -19665,7 +19666,8 @@
     WN::|organism%1:03:00::|
     WN::|being%1:03:00::|
     WN::|life%1:19:00::|
-    WN::|life%1:26:00::|)
+    WN::|life%1:26:00::|
+    WN::|life%1:03:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -21387,7 +21389,7 @@
 (CONCEPT
   ONT::POVERTY
   (INHERIT
-    ONT::FINACIAL-CONDITION)
+    ONT::FINANCIAL-CONDITION)
   (OVERLAP
     WN::|poverty%1:26:00::|)
   (SEM-FRAME
@@ -21402,7 +21404,9 @@
     ONT::SUBSTANCE)
   (OVERLAP
     WN::|electricity%1:19:01::|
-    WN::|electrical_energy%1:19:00::|))
+    WN::|electrical_energy%1:19:00::|
+    WN::|electricity%1:19:00::|
+    WN::|energy%1:19:00::|))
 
 (CONCEPT
   ONT::POWER-UNIT
@@ -24946,7 +24950,8 @@
     WN::|follow%2:30:01::|
     WN::|follow%2:39:13::|
     WN::|experiment%2:41:02::|
-    WN::|experiment%2:41:01::|)
+    WN::|experiment%2:41:01::|
+    WN::|surveillance%1:04:01::|)
   (SEM-FRAME
     (ONT::AGENT
      (SEM-FEATS
@@ -26681,7 +26686,11 @@
 (CONCEPT
   ONT::SPICES-HERBS
   (INHERIT
-    ONT::INGREDIENTS))
+    ONT::INGREDIENTS)
+  (OVERLAP
+    WN::|spice%1:27:00::|
+    WN::|spice%1:13:00::|
+    WN::|herb%1:13:00::|))
 
 (CONCEPT
   ONT::SPICINESS-SCALE
@@ -30275,6 +30284,16 @@
     ONT::ATTIRE)
   (OVERLAP
     WN::|laundry%1:06:01::|))
+
+(CONCEPT
+  ONT::WASTE
+  (INHERIT
+    ONT::MATERIAL)
+  (OVERLAP
+    WN::|waste%1:27:00::|
+    WN::|waste_material%1:27:00::|
+    WN::|waste_matter%1:27:00::|
+    WN::|waste_product%1:27:00::|))
 
 (CONCEPT
   ONT::WATER
