@@ -1597,6 +1597,7 @@
    wn::|brute%1:03:00::|
    wn::|creature%1:03:00::|
    wn::|fauna%1:14:00::|
+   wn::|wildlife%1:14:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -3227,6 +3228,14 @@
    ont::prepared
   </relation>
  </concept>
+ <concept name="ont::bakery">
+  <relation label="inherit">
+   ont::workplace
+  </relation>
+  <relation label="overlap">
+   wn::|bakery%1:06:00::|
+  </relation>
+ </concept>
  <concept name="ont::balance-scale">
   <relation label="inherit">
    ont::state-of-affairs-scale
@@ -4405,6 +4414,14 @@
   </relation>
   <relation label="overlap">
    wn::|breathless%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::bridge">
+  <relation label="inherit">
+   ont::general-structure
+  </relation>
+  <relation label="overlap">
+   wn::|bridge%1:06:00::|
   </relation>
  </concept>
  <concept name="ont::bright-val">
@@ -12858,7 +12875,7 @@
  </concept>
  <concept name="ont::farm">
   <relation label="inherit">
-   ont::area-def-by-use
+   ont::workplace
   </relation>
   <relation label="overlap">
    wn::|farm%1:06:00::|
@@ -13334,6 +13351,15 @@
    </relation>
    <feat name="object-function">comestible</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::fishery">
+  <relation label="inherit">
+   ont::workplace
+  </relation>
+  <relation label="overlap">
+   wn::|fishery%1:06:00::|
+   wn::|fish_farm%1:06:00::|
+  </relation>
  </concept>
  <concept name="ont::fit">
   <comment>
@@ -13935,6 +13961,21 @@
   <relation label="overlap">
    wn::|edible_fruit%1:13:00::|
   </relation>
+ </concept>
+ <concept name="ont::fuel">
+  <relation label="inherit">
+   ont::liquid-substance
+  </relation>
+  <relation label="overlap">
+   wn::|fuel%1:27:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">natural</feat>
+   <feat name="form">liquid</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::full">
   <relation label="inherit">
@@ -18332,7 +18373,7 @@
  </concept>
  <concept name="ont::loc-as-area">
   <comment>
-   &quot; places that occupy space&quot;
+   &quot;places that occupy space&quot;
   </comment>
   <relation label="inherit">
    ont::location-by-description
@@ -18701,6 +18742,14 @@
   <relation label="overlap">
    wn::|fortunate%3:00:00::|
    wn::|lucky%5:00:00:fortunate:00|
+  </relation>
+ </concept>
+ <concept name="ont::lumberyard">
+  <relation label="inherit">
+   ont::workplace
+  </relation>
+  <relation label="overlap">
+   wn::|lumberyard%1:06:00::|
   </relation>
  </concept>
  <concept name="ont::luminosity-scale">
@@ -19886,7 +19935,7 @@
  </concept>
  <concept name="ont::mine">
   <relation label="inherit">
-   ont::area-def-by-use
+   ont::workplace
   </relation>
   <relation label="overlap">
    wn::|mine%1:06:01::|
@@ -31179,6 +31228,17 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::structure">
+  <comment>
+   &quot;A collection of objects organized for some purpose&quot;
+  </comment>
+  <relation label="inherit">
+   ont::system
+  </relation>
+  <relation label="overlap">
+   wn::|structure%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::structure-external-component">
   <comment>
    &quot;parts of exterior of buildings: e.g., roof, window&quot;
@@ -34676,6 +34736,22 @@
    ont::trip
   </relation>
  </concept>
+ <concept name="ont::watershed">
+  <relation label="inherit">
+   ont::geo-object
+  </relation>
+  <relation label="overlap">
+   wn::|watershed%1:15:01::|
+   wn::|watershed%1:15:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="trajectory">-</feat>
+   <feat name="origin">natural</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::waypoint">
   <relation label="inherit">
    ont::loc-wrt-ground-as-spatial-obj
@@ -35275,6 +35351,14 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::workplace">
+  <relation label="inherit">
+   ont::area-def-by-use
+  </relation>
+  <relation label="overlap">
+   wn::|work%1:06:01::|
+  </relation>
  </concept>
  <concept name="ont::worthiness-val">
   <comment>

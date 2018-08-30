@@ -1401,7 +1401,8 @@
     WN::|beast%1:03:00::|
     WN::|brute%1:03:00::|
     WN::|creature%1:03:00::|
-    WN::|fauna%1:14:00::|)
+    WN::|fauna%1:14:00::|
+    WN::|wildlife%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -2827,6 +2828,13 @@
     ONT::PREPARED))
 
 (CONCEPT
+  ONT::BAKERY
+  (INHERIT
+    ONT::WORKPLACE)
+  (OVERLAP
+    WN::|bakery%1:06:00::|))
+
+(CONCEPT
   ONT::BALANCE-SCALE
   (INHERIT
     ONT::STATE-OF-AFFAIRS-SCALE)
@@ -3818,6 +3826,13 @@
     ONT::MEDICAL-SYMPTOM-VAL)
   (OVERLAP
     WN::|breathless%3:00:00::|))
+
+(CONCEPT
+  ONT::BRIDGE
+  (INHERIT
+    ONT::GENERAL-STRUCTURE)
+  (OVERLAP
+    WN::|bridge%1:06:00::|))
 
 (CONCEPT
   ONT::BRIGHT-VAL
@@ -11289,7 +11304,7 @@
 (CONCEPT
   ONT::FARM
   (INHERIT
-    ONT::AREA-DEF-BY-USE)
+    ONT::WORKPLACE)
   (OVERLAP
     WN::|farm%1:06:00::|))
 
@@ -11712,6 +11727,14 @@
     (INHERIT
       PHYS-OBJ)
     (OBJECT-FUNCTION COMESTIBLE)))
+
+(CONCEPT
+  ONT::FISHERY
+  (INHERIT
+    ONT::WORKPLACE)
+  (OVERLAP
+    WN::|fishery%1:06:00::|
+    WN::|fish_farm%1:06:00::|))
 
 (CONCEPT
   ONT::FIT
@@ -12225,6 +12248,18 @@
     ONT::PRODUCE)
   (OVERLAP
     WN::|edible_fruit%1:13:00::|))
+
+(CONCEPT
+  ONT::FUEL
+  (INHERIT
+    ONT::LIQUID-SUBSTANCE)
+  (OVERLAP
+    WN::|fuel%1:27:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (ORIGIN NATURAL)
+    (FORM LIQUID)))
 
 (CONCEPT
   ONT::FULL
@@ -15996,7 +16031,7 @@
 
 (CONCEPT
   ONT::LOC-AS-AREA
-  (COMMENT " places that occupy space")
+  (COMMENT "places that occupy space")
   (INHERIT
     ONT::LOCATION-BY-DESCRIPTION))
 
@@ -16313,6 +16348,13 @@
   (OVERLAP
     WN::|fortunate%3:00:00::|
     WN::|lucky%5:00:00:fortunate:00|))
+
+(CONCEPT
+  ONT::LUMBERYARD
+  (INHERIT
+    ONT::WORKPLACE)
+  (OVERLAP
+    WN::|lumberyard%1:06:00::|))
 
 (CONCEPT
   ONT::LUMINOSITY-SCALE
@@ -17322,7 +17364,7 @@
 (CONCEPT
   ONT::MINE
   (INHERIT
-    ONT::AREA-DEF-BY-USE)
+    ONT::WORKPLACE)
   (OVERLAP
     WN::|mine%1:06:01::|))
 
@@ -27279,6 +27321,14 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::STRUCTURE
+  (COMMENT "A collection of objects organized for some purpose")
+  (INHERIT
+    ONT::SYSTEM)
+  (OVERLAP
+    WN::|structure%1:07:00::|))
+
+(CONCEPT
   ONT::STRUCTURE-EXTERNAL-COMPONENT
   (COMMENT "parts of exterior of buildings: e.g., roof, window")
   (INHERIT
@@ -30322,6 +30372,19 @@
     ONT::TRIP))
 
 (CONCEPT
+  ONT::WATERSHED
+  (INHERIT
+    ONT::GEO-OBJECT)
+  (OVERLAP
+    WN::|watershed%1:15:01::|
+    WN::|watershed%1:15:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (TRAJECTORY -)
+    (ORIGIN NATURAL)))
+
+(CONCEPT
   ONT::WAYPOINT
   (INHERIT
     ONT::LOC-WRT-GROUND-AS-SPATIAL-OBJ))
@@ -30836,6 +30899,13 @@
          PHYS-OBJ)
        (INTENTIONAL +)
        (ORIGIN HUMAN)))))
+
+(CONCEPT
+  ONT::WORKPLACE
+  (INHERIT
+    ONT::AREA-DEF-BY-USE)
+  (OVERLAP
+    WN::|work%1:06:01::|))
 
 (CONCEPT
   ONT::WORTHINESS-VAL
