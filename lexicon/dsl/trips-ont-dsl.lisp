@@ -887,9 +887,12 @@
     ONT::CONFIGURATION-PROPERTY-VAL))
 
 (CONCEPT
-  ONT::ADVANCING
+  ONT::ADVANCING-STATUS
   (INHERIT
-    ONT::ADJUST)
+    ONT::JUDGEMENT)
+  (OVERLAP
+    WN::|graduate%2:40:01::|
+    WN::|promote%2:41:00::|)
   (SEM-FRAME
     (ONT::SOURCE
      (OR
@@ -982,6 +985,22 @@
     ONT::EVENT-TIME-REL)
   (OVERLAP
     WN::|before%4:02:03::|))
+
+(CONCEPT
+  ONT::AGE
+  (INHERIT
+    ONT::CHANGE-IN-TIME-MEASURE)
+  (OVERLAP
+    WN::|age%2:30:02::|
+    WN::|age%2:30:00::|
+    WN::|age%2:30:01::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE AGE-SCALE)))))
 
 (CONCEPT
   ONT::AGE-SCALE
@@ -1511,7 +1530,7 @@
   (COMMENT
    "scales related to surface appearance of a physical entity or object preceptible through sensory input")
   (INHERIT
-    ONT::ATTRIBUTIVE-SCALE)
+    ONT::PHYSICAL-PROPERTY-SCALE)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -3640,7 +3659,10 @@
 (CONCEPT
   ONT::BOIL
   (INHERIT
-    ONT::COOKING))
+    ONT::COOKING)
+  (OVERLAP
+    WN::|boil%2:30:02::|
+    WN::|boil%2:30:01::|))
 
 (CONCEPT
   ONT::BOLD-VAL
@@ -3771,7 +3793,6 @@
     WN::|split_up%2:30:00::|
     WN::|separate%2:30:03::|
     WN::|break%2:30:00::|
-    WN::|damage%2:30:00::|
     WN::|break%2:30:10::|
     WN::|break%2:30:15::|
     WN::|check%2:30:03::|
@@ -3842,6 +3863,20 @@
     WN::|bright%3:00:00::|))
 
 (CONCEPT
+  ONT::BRIGHTEN
+  (INHERIT
+    ONT::CHANGE-IN-VISUAL-SCALE)
+  (OVERLAP
+    WN::|brighten%2:30:01::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE BRIGHTENESS-SCALE)))))
+
+(CONCEPT
   ONT::BRIGHTNESS-SCALE
   (INHERIT
     ONT::VISUAL-SCALE)
@@ -3889,12 +3924,15 @@
 (CONCEPT
   ONT::BURN
   (INHERIT
-    ONT::CONTINUOUS-CHANGE)
+    ONT::CHANGE-INTEGRITY)
   (OVERLAP
     WN::|scorch%2:30:07::|
     WN::|sear%2:30:07::|
     WN::|singe%2:30:07::|
-    WN::|burn%2:43:02::|))
+    WN::|burn%2:43:02::|
+    WN::|combust%2:30:00::|
+    WN::|combust%2:43:00::|
+    WN::|combust%2:43:02::|))
 
 (CONCEPT
   ONT::BURN-OUT-LIGHT-UP-CHANGE
@@ -4759,14 +4797,184 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::CHANGE-IN-APPEARANCE
+  (INHERIT
+    ONT::CHANGE-IN-PHYSICAL-PROPERTY-SCALE)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE APPEARANCE-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-CONFIGURATION
+  (INHERIT
+    ONT::CHANGE-IN-PHYSICAL-PROPERTY-SCALE)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE CONFIGURATION-PROPERTY-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-CONSTRICTION
+  (INHERIT
+    ONT::CHANGE-IN-CONFIGURATION)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE CONSTRICTION-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-DIMENSION
+  (INHERIT
+    ONT::CHANGE-IN-MEASURE-SCALE)
+  (OVERLAP
+    WN::|grow%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE DIMENSIONAL-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-LINEAR-EXTENT
+  (INHERIT
+    ONT::CHANGE-IN-SIZE)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE LINEAR-EXTENT-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-MEASURE-SCALE
+  (INHERIT
+    ONT::CHANGE-IN-SCALE)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE MEASURE-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-MOISTURE-CONTENT
+  (INHERIT
+    ONT::CHANGE-IN-PHYSICAL-PROPERTY-SCALE)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE MOISTURE-CONTENT-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-PHYSICAL-PROPERTY-SCALE
+  (INHERIT
+    ONT::CHANGE-IN-SCALE)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE PHYSICAL-PROPERTY-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-RATIO
+  (INHERIT
+    ONT::CHANGE-IN-MEASURE-SCALE)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE RATIO-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-SCALE
+  (INHERIT
+    ONT::TRANSFORMATION)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE DOMAIN)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-SIZE
+  (INHERIT
+    ONT::CHANGE-IN-DIMENSION)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE SIZE-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-TACTILE-SCALE
+  (INHERIT
+    ONT::CHANGE-IN-APPEARANCE)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE TACTILE-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-TEMPERATURE
+  (INHERIT
+    ONT::CHANGE-IN-MEASURE-SCALE)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE TEMPERATURE-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-TIME-MEASURE
+  (INHERIT
+    ONT::CHANGE-IN-MEASURE-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (SCALE TIME-MEASURE-SCALE))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE TIME-MEASURE-SCALE)))))
+
+(CONCEPT
+  ONT::CHANGE-IN-VISUAL-SCALE
+  (INHERIT
+    ONT::CHANGE-IN-APPEARANCE)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE VISUAL-SCALE)))))
+
+(CONCEPT
   ONT::CHANGE-INTEGRITY
   (COMMENT
-   "an AFFECTED undergoes a change of physical state, e.g., thaw. Allows but does not require an AGENT")
+   "an AFFECTED undergoes a change of physical or chemical state that affects its integrity, e.g., thaw. Allows but does not require an AGENT")
   (INHERIT
     ONT::CHANGE-STATE)
   (OVERLAP
-    WN::|change_integrity%2:30:00::|
-    WN::|clot%2:30:01::|)
+    WN::|change_integrity%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -4780,7 +4988,7 @@
 (CONCEPT
   ONT::CHANGE-MAGNITUDE
   (INHERIT
-    ONT::ADJUST)
+    ONT::CHANGE-IN-SCALE)
   (OVERLAP
     WN::|change_magnitude%2:30:00::|
     WN::|change_intensity%2:39:00::|)
@@ -4891,6 +5099,18 @@
     WN::|chemical%1:27:00::|
     WN::|chemical_substance%1:27:00::|
     WN::|chemical_compound%1:27:00::|))
+
+(CONCEPT
+  ONT::CHEMICAL-CHANGE
+  (INHERIT
+    ONT::CHANGE-INTEGRITY)
+  (OVERLAP
+    WN::|demulsify%2:30:01::|
+    WN::|demulsify%2:30:00::|
+    WN::|polymerize%2:30:02::|
+    WN::|polymerize%2:30:00::|
+    WN::|emulsify%2:30:01::|
+    WN::|emulsify%2:30:00::|))
 
 (CONCEPT
   ONT::CHEMICAL-VAL
@@ -5189,8 +5409,9 @@
 (CONCEPT
   ONT::CLOG
   (INHERIT
-    ONT::CONTINUOUS-CHANGE)
+    ONT::CLOSURE)
   (OVERLAP
+    WN::|obstruct%2:35:00::|
     WN::|clog%2:35:00::|
     WN::|choke_off%2:35:00::|
     WN::|clog_up%2:35:00::|
@@ -5204,17 +5425,14 @@
   (INHERIT
     ONT::CLOSURE)
   (OVERLAP
-    WN::|close%2:41:00::|))
+    WN::|close%2:41:00::|
+    WN::|close%2:35:00::|
+    WN::|close%2:35:06::|))
 
 (CONCEPT
   ONT::CLOSURE
   (INHERIT
     ONT::CHANGE-STATE-ACTION)
-  (OVERLAP
-    WN::|open_up%2:35:00::|
-    WN::|open%2:35:00::|
-    WN::|close%2:35:00::|
-    WN::|shut%2:35:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -5374,6 +5592,14 @@
        T))))
 
 (CONCEPT
+  ONT::COLLAPSE
+  (INHERIT
+    ONT::CHANGE-STATE)
+  (OVERLAP
+    WN::|collapse%2:38:00::|
+    WN::|collapse%2:38:03::|))
+
+(CONCEPT
   ONT::COLLATE
   (INHERIT
     ONT::ARRANGING))
@@ -5514,7 +5740,8 @@
     WN::|discolor%2:30:00::|
     WN::|discolour%2:30:00::|
     WN::|colour%2:30:00::|
-    WN::|color%2:30:01::|)
+    WN::|color%2:30:01::|
+    WN::|discolor%2:30:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -6386,6 +6613,13 @@
     WN::|privacy%1:26:02::|))
 
 (CONCEPT
+  ONT::CONFIGURATION-PROPERTY-SCALE
+  (COMMENT
+   "scales for properties regarding the configuration, arrangement or layout of elements")
+  (INHERIT
+    ONT::PHYSICAL-PROPERTY-SCALE))
+
+(CONCEPT
   ONT::CONFIGURATION-PROPERTY-VAL
   (COMMENT
    "properties regarding the configuration, arrangement, or layout of elements")
@@ -6579,6 +6813,11 @@
    "describes how constricting something is with regards to another item (close-fitting vs. loose-fitting)")
   (INHERIT
     ONT::CONFIGURATION-PROPERTY-VAL))
+
+(CONCEPT
+  ONT::CONSTRICTION-SCALE
+  (INHERIT
+    ONT::CONFIGURATION-PROPERTY-SCALE))
 
 (CONCEPT
   ONT::CONSUME
@@ -6943,11 +7182,18 @@
 (CONCEPT
   ONT::COOL
   (INHERIT
-    ONT::CONTINUOUS-CHANGE)
+    ONT::CHANGE-IN-TEMPERATURE)
   (OVERLAP
     WN::|cool%2:30:00::|
     WN::|chill%2:30:00::|
-    WN::|cool_down%2:30:01::|))
+    WN::|cool_down%2:30:01::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE COLD-SCALE)))))
 
 (CONCEPT
   ONT::COORDINATE
@@ -7488,6 +7734,8 @@
   ONT::DAMAGE
   (INHERIT
     ONT::TRANSFORMATION)
+  (OVERLAP
+    WN::|damage%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -7511,16 +7759,18 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
-  ONT::DAMPNESS-VAL
+  ONT::DAMPEN
   (INHERIT
-    ONT::PHYSICAL-PROPERTY-VAL)
+    ONT::CHANGE-IN-MOISTURE-CONTENT)
+  (OVERLAP
+    WN::|wet%2:30:00::|)
   (SEM-FRAME
-    (ONT::FIGURE
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION)))))
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE WET-SCALE)))))
 
 (CONCEPT
   ONT::DANCE
@@ -7551,6 +7801,21 @@
     ONT::PRESENSE-OF-LIGHT-VAL)
   (OVERLAP
     WN::|dark%3:00:01::|))
+
+(CONCEPT
+  ONT::DARKEN
+  (INHERIT
+    ONT::CHANGE-IN-VISUAL-SCALE)
+  (OVERLAP
+    WN::|darken%2:30:01::|
+    WN::|darken%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE DARKNESS-SCALE)))))
 
 (CONCEPT
   ONT::DARKNESS-SCALE
@@ -7725,7 +7990,6 @@
     WN::|diminish%2:30:00::|
     WN::|lessen%2:30:00::|
     WN::|fall%2:30:06::|
-    WN::|weaken%2:30:01::|
     WN::|mitigate%2:32:00::|))
 
 (CONCEPT
@@ -7740,7 +8004,17 @@
 (CONCEPT
   ONT::DECREASE-SPEED
   (INHERIT
-    ONT::DECREASE))
+    ONT::CHANGE-IN-RATIO)
+  (OVERLAP
+    WN::|slow%2:30:00::|
+    WN::|slow%2:30:01::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION NEG)
+       (SCALE SPEED-SCALE)))))
 
 (CONCEPT
   ONT::DEEP-VAL
@@ -7752,6 +8026,20 @@
     (INHERIT
       ABSTR-OBJ)
     (SCALE DEPTH-SCALE)))
+
+(CONCEPT
+  ONT::DEEPEN
+  (INHERIT
+    ONT::CHANGE-IN-LINEAR-EXTENT)
+  (OVERLAP
+    WN::|deepen%2:30:03::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE DEPTH-SCALE)))))
 
 (CONCEPT
   ONT::DEFAME
@@ -7870,11 +8158,37 @@
        SITUATION))))
 
 (CONCEPT
+  ONT::DEHYDRATE
+  (COMMENT
+   "dehydrating process causes something that intrinsically contains moisture to be mosture-lacking (consider 'dehydrate the apples' is possible but 'dehydrate the car' is weird)")
+  (INHERIT
+    ONT::DRY)
+  (OVERLAP
+    WN::|wither%2:30:00::|
+    WN::|dehydrate%2:30:01::|
+    WN::|dehydrate%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE DEHYDRATED-SCALE)))))
+
+(CONCEPT
+  ONT::DEHYDRATED-SCALE
+  (INHERIT
+    ONT::DRY-SCALE)
+  (OVERLAP
+    WN::|dehydration%1:26:00::|))
+
+(CONCEPT
   ONT::DEHYDRATED-VAL
   (INHERIT
-    ONT::MEDICAL-SYMPTOM-VAL)
+    ONT::DRY-VAL)
   (OVERLAP
-    WN::|dehydrated%5:00:00:unhealthy:00|))
+    WN::|withered%5:00:00:dry:01|
+    WN::|dehydrated%5:00:00:preserved:02|))
 
 (CONCEPT
   ONT::DELAY
@@ -8161,13 +8475,16 @@
 (CONCEPT
   ONT::DETERIORATE
   (INHERIT
-    ONT::CONTINUOUS-CHANGE)
+    ONT::CHANGE-INTEGRITY)
   (OVERLAP
     WN::|decompose%2:30:02::|
     WN::|decay%2:30:01::|
     WN::|disintegrate%2:30:01::|
     WN::|decay%2:30:02::|
-    WN::|acerbate%2:37:00::|)
+    WN::|acerbate%2:37:00::|
+    WN::|decay%2:30:01::|
+    WN::|decay%2:30:00::|
+    WN::|decay%2:30:02::|)
   (SEM-FRAME
     (ONT::AGENT
      (CONCEPT
@@ -8841,6 +9158,14 @@
     ONT::INFO-MEDIUM))
 
 (CONCEPT
+  ONT::DISSOLVE
+  (INHERIT
+    ONT::CHANGE-INTEGRITY)
+  (OVERLAP
+    WN::|dissolve%2:30:01::|
+    WN::|dissolve%2:30:00::|))
+
+(CONCEPT
   ONT::DISSUADE
   (INHERIT
     ONT::PERLOCUTION)
@@ -9173,9 +9498,33 @@
     WN::|drug%2:34:00::|))
 
 (CONCEPT
+  ONT::DRY
+  (COMMENT
+   "simply dry, neither suggests the object undergoing the drying process is intrinsically moistured or contains moisture internally (consider 'the apples dried', 'the car dried')")
+  (INHERIT
+    ONT::CHANGE-IN-MOISTURE-CONTENT)
+  (OVERLAP
+    WN::|dry%2:30:00::|
+    WN::|dry%2:30:01::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE DRY-SCALE)))))
+
+(CONCEPT
+  ONT::DRY-SCALE
+  (INHERIT
+    ONT::MOISTURE-CONTENT-SCALE)
+  (OVERLAP
+    WN::|dryness%1:26:00::|))
+
+(CONCEPT
   ONT::DRY-VAL
   (INHERIT
-    ONT::DAMPNESS-VAL)
+    ONT::MOISTURE-CONTENT-VAL)
   (OVERLAP
     WN::|dry%3:00:01::|))
 
@@ -9793,6 +10142,21 @@
     ONT::EVOKING-POS-EMOTION-VAL)
   (OVERLAP
     WN::|enjoyable%5:00:00:pleasant:00|))
+
+(CONCEPT
+  ONT::ENLARGE
+  (INHERIT
+    ONT::CHANGE-IN-SIZE)
+  (OVERLAP
+    WN::|enlarge%2:30:00::|
+    WN::|hypertrophy%2:29:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE SIZE-SCALE)))))
 
 (CONCEPT
   ONT::ENROLL
@@ -11054,8 +11418,7 @@
     WN::|detonate%2:30:01::|
     WN::|explode%2:30:01::|
     WN::|explode%2:30:00::|
-    WN::|burst%2:30:09::|
-    WN::|burst%2:38:04::|))
+    WN::|burst%2:30:09::|))
 
 (CONCEPT
   ONT::EXPOSE
@@ -11063,6 +11426,37 @@
     ONT::SHOW)
   (OVERLAP
     WN::|uncover%2:35:00::|))
+
+(CONCEPT
+  ONT::EXTEND
+  (INHERIT
+    ONT::CHANGE-IN-LINEAR-EXTENT)
+  (OVERLAP
+    WN::|stretch%2:30:04::|
+    WN::|stretch%2:30:00::|
+    WN::|extend%2:30:01::|
+    WN::|broaden%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE AREA-SCALE)))))
+
+(CONCEPT
+  ONT::EXTEND-TIME
+  (INHERIT
+    ONT::CHANGE-IN-TIME-MEASURE)
+  (OVERLAP
+    WN::|prolong%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE DURATION-SCALE)))))
 
 (CONCEPT
   ONT::EXTENDED-SAY
@@ -11951,6 +12345,8 @@
   ONT::FOLD
   (INHERIT
     ONT::MOVE)
+  (OVERLAP
+    WN::|fold%2:35:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -12172,7 +12568,7 @@
   ONT::FRESHNESS-VAL
   (COMMENT "relating to how recently an object was made or obtained")
   (INHERIT
-    ONT::TEMPORAL-VAL))
+    ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT
   ONT::FRESHWATER-FISH
@@ -12866,6 +13262,14 @@
     WN::|cereal%1:20:00::|))
 
 (CONCEPT
+  ONT::GRANULATE
+  (INHERIT
+    ONT::CHANGE-INTEGRITY)
+  (OVERLAP
+    WN::|granulate%2:30:00::|
+    WN::|granulate%2:30:01::|))
+
+(CONCEPT
   ONT::GRAPHIC-SYMBOL
   (INHERIT
     ONT::SYMBOLIC-REPRESENTATION))
@@ -13026,8 +13430,11 @@
     ONT::CONTINUOUS-CHANGE)
   (OVERLAP
     WN::|grow%2:30:02::|
-    WN::|bring_up%2:41:00::|
-    WN::|cultivate%2:36:00::|)
+    WN::|cultivate%2:36:00::|
+    WN::|grow%2:30:01::|
+    WN::|develop%2:30:01::|
+    WN::|grow%2:30:00::|
+    WN::|develop%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -13194,6 +13601,23 @@
     (INHERIT
       ABSTR-OBJ)
     (SCALE HARDNESS*1--07--00)))
+
+(CONCEPT
+  ONT::HARDEN
+  (INHERIT
+    ONT::CHANGE-IN-TACTILE-SCALE)
+  (OVERLAP
+    WN::|harden%2:30:01::|
+    WN::|harden%2:30:00::|
+    WN::|stiffen%2:30:01::|
+    WN::|stiffen%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE TACTILE-HARDNESS-SCALE)))))
 
 (CONCEPT
   ONT::HARDNESS-VAL
@@ -13439,7 +13863,19 @@
 (CONCEPT
   ONT::HEAT
   (INHERIT
-    ONT::CONTINUOUS-CHANGE))
+    ONT::CHANGE-IN-TEMPERATURE)
+  (OVERLAP
+    WN::|heat%2:30:00::|
+    WN::|heat%2:30:01::|
+    WN::|overheat%2:30:01::|
+    WN::|overheat%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE HEAT-SCALE)))))
 
 (CONCEPT
   ONT::HEAT-SCALE
@@ -13783,11 +14219,12 @@
 (CONCEPT
   ONT::HYDROLYSIS
   (INHERIT
-    ONT::ADJUST)
+    ONT::CHEMICAL-CHANGE)
   (OVERLAP
     WN::|hydrolysis%1:22:00::|
     WN::|hydrolyze%2:30:00::|
-    WN::|hydrolyse%2:30:00::|))
+    WN::|hydrolyse%2:30:00::|
+    WN::|hydrolize%2:30:01::|))
 
 (CONCEPT
   ONT::HYDROXYLATION
@@ -14019,7 +14456,8 @@
     ONT::ADJUST)
   (OVERLAP
     WN::|enhancement%1:04:00::|
-    WN::|sweetening%1:04:02::|)
+    WN::|sweetening%1:04:02::|
+    WN::|meliorate%2:30:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -14198,8 +14636,7 @@
   (INHERIT
     ONT::CHANGE-MAGNITUDE)
   (OVERLAP
-    WN::|increase%2:30:00::|
-    WN::|lengthen%2:30:01::|))
+    WN::|increase%2:30:00::|))
 
 (CONCEPT
   ONT::INCREASE-NUMBER
@@ -14211,7 +14648,7 @@
 (CONCEPT
   ONT::INCREASE-SPEED
   (INHERIT
-    ONT::INCREASE)
+    ONT::CHANGE-IN-RATIO)
   (OVERLAP
     WN::|hasten%2:36:00::|
     WN::|rush%2:36:00::|
@@ -14235,14 +14672,14 @@
     WN::|hasten%2:30:00::|
     WN::|hurry%2:30:00::|
     WN::|look_sharp%2:30:00::|
-    WN::|festinate%2:30:00::|))
-
-(CONCEPT
-  ONT::INCREASE-TIME
-  (INHERIT
-    ONT::INCREASE)
-  (OVERLAP
-    WN::|prolong%2:30:00::|))
+    WN::|festinate%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE SPEED-SCALE)))))
 
 (CONCEPT
   ONT::INCREMENTAL-VAL
@@ -14625,6 +15062,24 @@
   ONT::INTENSIFIER
   (INHERIT
     ONT::MODIFIER))
+
+(CONCEPT
+  ONT::INTENSIFY
+  (INHERIT
+    ONT::CHANGE-IN-DIMENSION)
+  (OVERLAP
+    WN::|augment%2:30:00::|
+    WN::|intensify%2:30:01::|
+    WN::|intensify%2:30:00::|
+    WN::|sharpen%2:30:01::|
+    WN::|sharpen%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE INTENSITY-SCALE)))))
 
 (CONCEPT
   ONT::INTENSITY-SCALE
@@ -15471,9 +15926,7 @@
 (CONCEPT
   ONT::LEAN-VAL
   (INHERIT
-    ONT::FATTINESS-VAL)
-  (OVERLAP
-    WN::|lean%3:00:04::|))
+    ONT::FATTINESS-VAL))
 
 (CONCEPT
   ONT::LEANING
@@ -15668,6 +16121,21 @@
     (SCALE LINEAR-EXTENT-SCALE)))
 
 (CONCEPT
+  ONT::LENGTHEN
+  (INHERIT
+    ONT::CHANGE-IN-LINEAR-EXTENT)
+  (OVERLAP
+    WN::|lengthen%2:30:00::|
+    WN::|lengthen%2:30:01::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE LENGTH-SCALE)))))
+
+(CONCEPT
   ONT::LESS-THAN-REL
   (INHERIT
     ONT::SCALE-RELATION))
@@ -15684,6 +16152,21 @@
     (INTENTIONAL -)
     (INFORMATION -)
     (CONTAINER -)))
+
+(CONCEPT
+  ONT::LESSEN-INTENSITY
+  (INHERIT
+    ONT::CHANGE-IN-DIMENSION)
+  (OVERLAP
+    WN::|weaken%2:30:03::|
+    WN::|slack%2:30:04::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION NEG)
+       (SCALE INTENSITY-SCALE)))))
 
 (CONCEPT
   ONT::LETTER-SYMBOL
@@ -15742,10 +16225,15 @@
 (CONCEPT
   ONT::LIFE-TRANSFORMATION
   (INHERIT
-    ONT::CONTINUOUS-CHANGE)
+    ONT::CHANGE-INTEGRITY)
   (OVERLAP
-    WN::|develop%2:30:00::|
-    WN::|fruit%2:36:01::|))
+    WN::|fruit%2:36:01::|
+    WN::|cross-fertilize%2:29:00::|
+    WN::|cross-fertilize%2:29:01::|
+    WN::|work%2:30:14::|
+    WN::|work%2:30:13::|
+    WN::|ripen%2:30:01::|
+    WN::|ripen%2:30:00::|))
 
 (CONCEPT
   ONT::LIFECYCLE-STAGE
@@ -15790,6 +16278,34 @@
     (INHERIT
       ABSTR-OBJ)
     (SCALE LUMINOSITY-SCALE)))
+
+(CONCEPT
+  ONT::LIGHTEN
+  (INHERIT
+    ONT::CHANGE-IN-VISUAL-SCALE)
+  (OVERLAP
+    WN::|lighten%2:30:02::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE LIGHTNESS-SCALE)))))
+
+(CONCEPT
+  ONT::LIGHTEN-WEIGHT
+  (INHERIT
+    ONT::CHANGE-IN-DIMENSION)
+  (OVERLAP
+    WN::|lighten%2:35:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION NEG)
+       (SCALE WEIGHT-SCALE)))))
 
 (CONCEPT
   ONT::LIGHTHEADEDNESS
@@ -15929,6 +16445,15 @@
   ONT::LINK
   (INHERIT
     ONT::SYMBOLIC-REPRESENTATION))
+
+(CONCEPT
+  ONT::LIQUEFY
+  (INHERIT
+    ONT::CHANGE-INTEGRITY)
+  (OVERLAP
+    WN::|liquefy%2:30:00::|
+    WN::|liquefy%2:30:01::|
+    WN::|melt%2:30:01::|))
 
 (CONCEPT
   ONT::LIQUID-SUBSTANCE
@@ -16278,6 +16803,30 @@
     WN::|loose%3:00:01::|))
 
 (CONCEPT
+  ONT::LOOSEN
+  (INHERIT
+    ONT::CHANGE-IN-CONSTRICTION)
+  (OVERLAP
+    WN::|loosen%2:30:00::|
+    WN::|loosen%2:30:01::|
+    WN::|slacken%2:30:00::|
+    WN::|slacken%2:30:01::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE LOOSENESS-SCALE)))))
+
+(CONCEPT
+  ONT::LOOSENESS-SCALE
+  (INHERIT
+    ONT::CONSTRICTION-SCALE)
+  (OVERLAP
+    WN::|looseness%1:07:00::|))
+
+(CONCEPT
   ONT::LOSE
   (INHERIT
     ONT::RELINQUISH)
@@ -16573,6 +17122,14 @@
          PHYS-OBJ)
        (CONCEPT
          SITUATION)))))
+
+(CONCEPT
+  ONT::MANGLE
+  (INHERIT
+    ONT::DAMAGE)
+  (OVERLAP
+    WN::|mangle%2:30:01::|
+    WN::|mar%2:30:00::|))
 
 (CONCEPT
   ONT::MANIA
@@ -16901,6 +17458,13 @@
   ONT::MEDICAL-CONDITION-PROPERTY-VAL
   (INHERIT
     ONT::BODY-RELATED-PROPERTY-VAL))
+
+(CONCEPT
+  ONT::MEDICAL-DEHYDRATION-VAL
+  (INHERIT
+    ONT::MEDICAL-SYMPTOM-VAL)
+  (OVERLAP
+    WN::|dehydrated%5:00:00:unhealthy:00|))
 
 (CONCEPT
   ONT::MEDICAL-DIAGNOSTIC
@@ -17498,6 +18062,23 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::MOISTURE-CONTENT-SCALE
+  (INHERIT
+    ONT::PHYSICAL-PROPERTY-SCALE))
+
+(CONCEPT
+  ONT::MOISTURE-CONTENT-VAL
+  (INHERIT
+    ONT::PHYSICAL-PROPERTY-VAL)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         SITUATION)))))
+
+(CONCEPT
   ONT::MOLECULAR-DOMAIN
   (INHERIT
     ONT::MOLECULAR-PART))
@@ -18013,6 +18594,20 @@
   (OVERLAP
     WN::|designate%2:32:00::|
     WN::|denominate%2:32:00::|))
+
+(CONCEPT
+  ONT::NARROW
+  (INHERIT
+    ONT::CHANGE-IN-LINEAR-EXTENT)
+  (OVERLAP
+    WN::|narrow%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION NEG)
+       (SCALE WIDTH-SCALE)))))
 
 (CONCEPT
   ONT::NARROW-VAL
@@ -19131,11 +19726,20 @@
     ONT::NUMBER-RELATED-PROPERTY-VAL))
 
 (CONCEPT
+  ONT::NURTURING
+  (COMMENT
+   "to nurture, raise, or rear humans or other animate beings; take responsibility for the growth of animate beings (compare to ont::grow)")
+  (INHERIT
+    ONT::CONTROL-MANAGE)
+  (OVERLAP
+    WN::|rear%2:41:00::|))
+
+(CONCEPT
   ONT::NUTRIENT
   (INHERIT
     ONT::CHEMICAL)
   (OVERLAP
-    WN::|nutient%1:03:01::|))
+    WN::|nutrient%1:03:01::|))
 
 (CONCEPT
   ONT::NUTRITIONAL-SUPPLEMENT
@@ -19584,7 +20188,10 @@
     ONT::CLOSURE)
   (OVERLAP
     WN::|open%2:41:00::|
-    WN::|premier%2:36:01::|))
+    WN::|premier%2:36:01::|
+    WN::|open_up%2:35:00::|
+    WN::|open%2:35:06::|
+    WN::|open%2:35:00::|))
 
 (CONCEPT
   ONT::OPENING
@@ -20602,6 +21209,13 @@
        PHYS-OBJ))))
 
 (CONCEPT
+  ONT::PHYSICAL-PROPERTY-SCALE
+  (COMMENT
+   "scales associated with properties pertaining to the attributes of physical entities or substances. Note: many properties can apply to non-physical objects.")
+  (INHERIT
+    ONT::ATTRIBUTIVE-SCALE))
+
+(CONCEPT
   ONT::PHYSICAL-PROPERTY-VAL
   (COMMENT
    "properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects")
@@ -21404,7 +22018,7 @@
 (CONCEPT
   ONT::POST-TRANSLATIONAL-MODIFICATION
   (INHERIT
-    ONT::ADJUST)
+    ONT::CHEMICAL-CHANGE)
   (SEM-FRAME
     (ONT::LOCATION
      (CONCEPT
@@ -22498,7 +23112,6 @@
   (INHERIT
     ONT::APPLY-FORCE)
   (OVERLAP
-    WN::|wet%2:30:00::|
     WN::|squirt%2:35:00::|
     WN::|squirt%2:35:10::|
     WN::|sprinkle%2:35:01::|
@@ -24296,7 +24909,8 @@
     WN::|brace%2:29:00::|
     WN::|energize%2:29:00::|
     WN::|energise%2:29:00::|
-    WN::|perk_up%2:29:01::|))
+    WN::|perk_up%2:29:01::|
+    WN::|revive%2:29:02::|))
 
 (CONCEPT
   ONT::REWARD
@@ -25303,7 +25917,7 @@
   (COMMENT
    "scales that deal with the quality to being perceivable through sensory input")
   (INHERIT
-    ONT::ATTRIBUTIVE-SCALE))
+    ONT::PHYSICAL-PROPERTY-SCALE))
 
 (CONCEPT
   ONT::SEPARATION
@@ -25319,7 +25933,8 @@
     WN::|divide%2:38:00::|
     WN::|divide%2:42:00::|
     WN::|disjoint%2:35:00::|
-    WN::|separate%2:35:00::|)
+    WN::|separate%2:35:00::|
+    WN::|separate%2:35:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -25568,9 +26183,19 @@
     WN::|sharpness%1:07:01::|))
 
 (CONCEPT
-  ONT::SHARPEN-SOFT
+  ONT::SHARPEN
   (INHERIT
-    ONT::SHAPE-CHANGE))
+    ONT::CHANGE-IN-TACTILE-SCALE)
+  (OVERLAP
+    WN::|sharpen%2:35:00::|
+    WN::|sharpen%2:30:08::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE SHARP-TEXTURE-SCALE)))))
 
 (CONCEPT
   ONT::SHEET
@@ -25640,6 +26265,36 @@
     WN::|shortcut%1:06:00::|))
 
 (CONCEPT
+  ONT::SHORTEN
+  (INHERIT
+    ONT::CHANGE-IN-LINEAR-EXTENT)
+  (OVERLAP
+    WN::|shorten%2:30:09::|
+    WN::|shorten%2:30:02::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION NEG)
+       (SCALE LENGTH-SCALE)))))
+
+(CONCEPT
+  ONT::SHORTEN-TIME
+  (INHERIT
+    ONT::CHANGE-IN-TIME-MEASURE)
+  (OVERLAP
+    WN::|shorten%2:30:01::|
+    WN::|shorten%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION NEG)
+       (SCALE DURATION-SCALE)))))
+
+(CONCEPT
   ONT::SHOULD
   (INHERIT
     ONT::AUX)
@@ -25695,12 +26350,19 @@
 (CONCEPT
   ONT::SHRINK
   (INHERIT
-    ONT::CONTINUOUS-CHANGE)
+    ONT::CHANGE-IN-SIZE)
   (OVERLAP
-    WN::|shrivel%2:30:00::|
-    WN::|shrivel_up%2:30:00::|
     WN::|shrink%2:30:02::|
-    WN::|wither%2:30:00::|))
+    WN::|compress%2:35:01::|
+    WN::|shrink%2:30:01::|
+    WN::|shrink%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION NEG)
+       (SCALE SIZE-SCALE)))))
 
 (CONCEPT
   ONT::SIDE-LOCATION
@@ -26099,6 +26761,21 @@
     (SCALE SMOOTHNESS*1--07--00)))
 
 (CONCEPT
+  ONT::SMOOTHEN
+  (INHERIT
+    ONT::CHANGE-IN-TACTILE-SCALE)
+  (OVERLAP
+    WN::|smoothen%2:30:00::|
+    WN::|smooth%2:35:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE SMOOTHNESS-SCALE)))))
+
+(CONCEPT
   ONT::SMOOTHNESS-SCALE
   (INHERIT
     ONT::TEXTURE-SCALE)
@@ -26316,6 +26993,21 @@
     (SCALE SOFTNESS*1--07--00)))
 
 (CONCEPT
+  ONT::SOFTEN
+  (INHERIT
+    ONT::CHANGE-IN-TACTILE-SCALE)
+  (OVERLAP
+    WN::|soften%2:30:00::|
+    WN::|soften%2:30:01::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE TACTILE-SOFTNESS-SCALE)))))
+
+(CONCEPT
   ONT::SOFTWARE-COMPANY
   (INHERIT
     ONT::COMPANY))
@@ -26343,6 +27035,18 @@
     (INHERIT
       PHYS-OBJ)
     (FORM SOLID)))
+
+(CONCEPT
+  ONT::SOLIDIFY
+  (INHERIT
+    ONT::CHANGE-INTEGRITY)
+  (OVERLAP
+    WN::|clot%2:30:01::|
+    WN::|freeze%2:30:02::|
+    WN::|freeze%2:30:00::|
+    WN::|solidify%2:30:00::|
+    WN::|solidify%2:30:01::|
+    WN::|crystallize%2:30:01::|))
 
 (CONCEPT
   ONT::SOLVE
@@ -27258,6 +27962,21 @@
     WN::|force%1:07:00::|))
 
 (CONCEPT
+  ONT::STRENGTHEN
+  (INHERIT
+    ONT::CHANGE-IN-DIMENSION)
+  (OVERLAP
+    WN::|strengthen%2:30:01::|
+    WN::|strengthen%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE STRENGTH-SCALE)))))
+
+(CONCEPT
   ONT::STRESS-SCALE
   (INHERIT
     ONT::PSYCHOLOGICAL-CONDITION-SCALE)
@@ -27761,13 +28480,26 @@
 (CONCEPT
   ONT::SWELL
   (INHERIT
-    ONT::CONTINUOUS-CHANGE)
+    ONT::CHANGE-IN-SIZE)
   (OVERLAP
     WN::|swell%2:30:00::|
     WN::|swell_up%2:30:00::|
     WN::|intumesce%2:30:00::|
     WN::|tumefy%2:30:00::|
-    WN::|tumesce%2:30:00::|))
+    WN::|tumesce%2:30:00::|
+    WN::|swell%2:30:01::|
+    WN::|bloat%2:30:01::|
+    WN::|bulk%2:30:00::|
+    WN::|protrude%2:30:00::|
+    WN::|rise%2:38:02::|
+    WN::|raise%2:38:01::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE SIZE-SCALE)))))
 
 (CONCEPT
   ONT::SWIM
@@ -28346,6 +29078,20 @@
     WN::|texture%1:07:00::|))
 
 (CONCEPT
+  ONT::TEXTURE-THICKNESS-SCALE
+  (INHERIT
+    ONT::TEXTURE-SCALE)
+  (OVERLAP
+    WN::|thickness%1:07:02::|))
+
+(CONCEPT
+  ONT::TEXTURE-THINNESS-SCALE
+  (INHERIT
+    ONT::TEXTURE-SCALE)
+  (OVERLAP
+    WN::|thinness%1:07:02::|))
+
+(CONCEPT
   ONT::TEXTURE-VAL
   (INHERIT
     ONT::TANGIBILITY-VAL)
@@ -28385,6 +29131,13 @@
     ONT::SITUATION-MODIFIER))
 
 (CONCEPT
+  ONT::THICK-TEXTURE-VAL
+  (INHERIT
+    ONT::THICKENESS-IN-TEXTURE-VAL)
+  (OVERLAP
+    WN::|thick%3:00:02::|))
+
+(CONCEPT
   ONT::THICK-VAL
   (INHERIT
     ONT::NON-VERTICAL-VAL)
@@ -28396,6 +29149,27 @@
     (SCALE THICKNESS-SCALE)))
 
 (CONCEPT
+  ONT::THICKEN
+  (INHERIT
+    ONT::CHANGE-IN-TACTILE-SCALE)
+  (OVERLAP
+    WN::|thicken%2:30:01::|
+    WN::|thicken%2:30:00::|
+    WN::|thicken%2:30:02::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE TEXTURE-THICKNESS-SCALE)))))
+
+(CONCEPT
+  ONT::THICKENESS-IN-TEXTURE-VAL
+  (INHERIT
+    ONT::TEXTURE-VAL))
+
+(CONCEPT
   ONT::THICKNESS-SCALE
   (INHERIT
     ONT::NON-VERTICAL-SCALE)
@@ -28405,6 +29179,28 @@
     (INHERIT
       ABSTR-OBJ)
     (SCALE THICKNESS-SCALE)))
+
+(CONCEPT
+  ONT::THIN
+  (INHERIT
+    ONT::CHANGE-IN-TACTILE-SCALE)
+  (OVERLAP
+    WN::|thin%2:30:01::|
+    WN::|thin%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE TEXTURE-THINESS-SCALE)))))
+
+(CONCEPT
+  ONT::THIN-TEXTURE-VAL
+  (INHERIT
+    ONT::THICKENESS-IN-TEXTURE-VAL)
+  (OVERLAP
+    WN::|thin%3:00:02::|))
 
 (CONCEPT
   ONT::THIN-VAL
@@ -28473,6 +29269,28 @@
     WN::|tidy%3:00:00::|
     WN::|neat%5:00:00:tidy:00|
     WN::|uncluttered%5:00:00:tidy:00|))
+
+(CONCEPT
+  ONT::TIGHTEN
+  (INHERIT
+    ONT::CHANGE-IN-CONSTRICTION)
+  (OVERLAP
+    WN::|tighten%2:30:00::|
+    WN::|tighten%2:30:01::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE TIGHTNESS-SCALE)))))
+
+(CONCEPT
+  ONT::TIGHTNESS-SCALE
+  (INHERIT
+    ONT::CONSTRICTION-SCALE)
+  (OVERLAP
+    WN::|tightness%1:07:00::|))
 
 (CONCEPT
   ONT::TIME-CLOCK-REL
@@ -30053,8 +30871,11 @@
     ONT::ADJUST)
   (OVERLAP
     WN::|sharpen%2:39:00::|
+    WN::|sharpen%2:30:03::|
     WN::|soften%2:39:00::|
-    WN::|blur%2:39:00::|))
+    WN::|blur%2:39:00::|
+    WN::|blur%2:30:01::|
+    WN::|focus%2:30:00::|))
 
 (CONCEPT
   ONT::VISUAL-CLARITY-SCALE
@@ -30400,6 +31221,22 @@
     WN::|dull%3:00:04::|))
 
 (CONCEPT
+  ONT::WEAKEN
+  (INHERIT
+    ONT::CHANGE-IN-DIMENSION)
+  (OVERLAP
+    WN::|weaken%2:30:00::|
+    WN::|weaken%2:30:01::|
+    WN::|waste%2:30:01::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE STRENGTH-SCALE)))))
+
+(CONCEPT
   ONT::WEAKNESS-SCALE
   (INHERIT
     ONT::FEEBLENESS-SCALE)
@@ -30577,9 +31414,16 @@
     ONT::NAVIGATIONAL-RELN))
 
 (CONCEPT
+  ONT::WET-SCALE
+  (INHERIT
+    ONT::MOISTURE-CONTENT-SCALE)
+  (OVERLAP
+    WN::|wetness%1:26:00::|))
+
+(CONCEPT
   ONT::WET-VAL
   (INHERIT
-    ONT::DAMPNESS-VAL)
+    ONT::MOISTURE-CONTENT-VAL)
   (OVERLAP
     WN::|wet%3:00:01::|))
 
@@ -30663,6 +31507,21 @@
   (INHERIT
     ONT::PITCH-UNIT
     ABSTR-OBJ))
+
+(CONCEPT
+  ONT::WIDEN
+  (INHERIT
+    ONT::CHANGE-IN-LINEAR-EXTENT)
+  (OVERLAP
+    WN::|widen%2:30:00::|
+    WN::|widen%2:30:03::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE WIDTH-SCALE)))))
 
 (CONCEPT
   ONT::WIDTH-SCALE

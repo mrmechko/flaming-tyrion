@@ -154,37 +154,15 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="time" />
-  </or>
+ <role-restr-map roles="ont::scale">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">domain</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">agentive</feat>
- </sem-feats>
  <concept name="ont::transformation">
  <relation label="inherit">
   ont::change
@@ -217,7 +195,7 @@
  </concept>
  <concept name="ont::change-magnitude">
  <relation label="inherit">
-  ont::adjust
+  ont::change-in-scale
  </relation>
  <relation label="overlap">
   wn::|change_magnitude%2:30:00::|
@@ -258,7 +236,6 @@
  </relation>
  <relation label="overlap">
   wn::|increase%2:30:00::|
-  wn::|lengthen%2:30:01::|
  </relation>
  </concept>
  <concept name="ont::increase-number">
@@ -269,40 +246,18 @@
   wn::|multiply%2:30:00::|
  </relation>
  </concept>
- <concept name="ont::adjust">
+ <concept name="ont::change-in-scale">
  <relation label="inherit">
   ont::transformation
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">agentive</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="time" />
-   </or>
+  <role-restr-map roles="ont::scale">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">domain</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>

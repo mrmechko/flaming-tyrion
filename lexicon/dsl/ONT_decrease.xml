@@ -12,7 +12,6 @@
   wn::|diminish%2:30:00::|
   wn::|lessen%2:30:00::|
   wn::|fall%2:30:06::|
-  wn::|weaken%2:30:01::|
   wn::|mitigate%2:32:00::|
  </relation>
  </concept>
@@ -159,9 +158,92 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::scale">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">domain</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::transformation">
+ <relation label="inherit">
+  ont::change
+ </relation>
+ <relation label="overlap">
+  wn::|metabolize%2:34:00::|
+  wn::|transform%2:30:00::|
+  wn::|transform%2:30:03::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected1" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::result" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">
+   <or>
+    in-loc
+    at-loc
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::scale">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">domain</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::change-in-scale">
+ <relation label="inherit">
+  ont::transformation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::scale">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">domain</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::change-magnitude">
  <relation label="inherit">
-  ont::adjust
+  ont::change-in-scale
  </relation>
  <relation label="overlap">
   wn::|change_magnitude%2:30:00::|
@@ -196,133 +278,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::adjust">
- <relation label="inherit">
-  ont::transformation
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::result" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="type">
-   <or>
-    in-loc
-    at-loc
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::scale">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">domain</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::transformation">
- <relation label="inherit">
-  ont::change
- </relation>
- <relation label="overlap">
-  wn::|metabolize%2:34:00::|
-  wn::|transform%2:30:00::|
-  wn::|transform%2:30:03::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">agentive</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::change">
  <relation label="inherit">
   ont::event-of-causation
@@ -505,104 +460,6 @@
   wn::|reduction%1:04:00::|
  </relation>
  </concept>
- <concept name="ont::decrease-speed">
- <relation label="inherit">
-  ont::decrease
- </relation>
- </concept>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="compress" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="compression" />
-   </nom>
-  </forms>
- </morph>
- <example text="compress the files">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::decrease
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="constrict" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="constriction" />
-   </nom>
-  </forms>
- </morph>
- <example text="the chains constricted his movement">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::decrease
- </relation>
- <relation label="overlap">
-  vn::other_cos-45.4
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="constrict" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="constriction" />
-   </nom>
-  </forms>
- </morph>
- <example text="the arteries constricted">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::decrease
-  ont::affected-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
- </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -882,35 +739,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="narrow" />
- </morph>
- <example text="narrow the gap">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::decrease
- </relation>
- <relation label="overlap">
-  vn::other_cos-45.4
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="reduce" />
   <forms>
    -VB
@@ -976,26 +804,20 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="shorten" />
+  <word first-word="subside" />
  </morph>
- <example text="names in your address book are shortened to the name only, without the email address">
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <example text="the swelling subsided">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::decrease
+  ont::affected-templ
  </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
+ <relation label="overlap">
+  vn::entity_specific_cos-45.5
+ </relation>
  </sense>
 </dsl>

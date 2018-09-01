@@ -4,14 +4,13 @@
  <provenance name="TRIPS"/>
  <concept name="ont::change-integrity">
  <comment>
-  &quot;an AFFECTED undergoes a change of physical state, e.g., thaw. Allows but does not require an AGENT&quot;
+  &quot;an AFFECTED undergoes a change of physical or chemical state that affects its integrity, e.g., thaw. Allows but does not require an AGENT&quot;
  </comment>
  <relation label="inherit">
   ont::change-state
  </relation>
  <relation label="overlap">
   wn::|change_integrity%2:30:00::|
-  wn::|clot%2:30:01::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -375,6 +374,115 @@
  <concept name="proposition" />
  </or>
  <concept name="situation" />
+ <concept name="ont::solidify">
+ <relation label="inherit">
+  ont::change-integrity
+ </relation>
+ <relation label="overlap">
+  wn::|clot%2:30:01::|
+  wn::|freeze%2:30:02::|
+  wn::|freeze%2:30:00::|
+  wn::|solidify%2:30:00::|
+  wn::|solidify%2:30:01::|
+  wn::|crystallize%2:30:01::|
+ </relation>
+ </concept>
+ <concept name="ont::liquefy">
+ <relation label="inherit">
+  ont::change-integrity
+ </relation>
+ <relation label="overlap">
+  wn::|liquefy%2:30:00::|
+  wn::|liquefy%2:30:01::|
+  wn::|melt%2:30:01::|
+ </relation>
+ </concept>
+ <concept name="ont::dissolve">
+ <relation label="inherit">
+  ont::change-integrity
+ </relation>
+ <relation label="overlap">
+  wn::|dissolve%2:30:01::|
+  wn::|dissolve%2:30:00::|
+ </relation>
+ </concept>
+ <concept name="ont::granulate">
+ <relation label="inherit">
+  ont::change-integrity
+ </relation>
+ <relation label="overlap">
+  wn::|granulate%2:30:00::|
+  wn::|granulate%2:30:01::|
+ </relation>
+ </concept>
+ <concept name="ont::life-transformation">
+ <relation label="inherit">
+  ont::change-integrity
+ </relation>
+ <relation label="overlap">
+  wn::|fruit%2:36:01::|
+  wn::|cross-fertilize%2:29:00::|
+  wn::|cross-fertilize%2:29:01::|
+  wn::|work%2:30:14::|
+  wn::|work%2:30:13::|
+  wn::|ripen%2:30:01::|
+  wn::|ripen%2:30:00::|
+ </relation>
+ </concept>
+ <concept name="ont::burn">
+ <relation label="inherit">
+  ont::change-integrity
+ </relation>
+ <relation label="overlap">
+  wn::|scorch%2:30:07::|
+  wn::|sear%2:30:07::|
+  wn::|singe%2:30:07::|
+  wn::|burn%2:43:02::|
+  wn::|combust%2:30:00::|
+  wn::|combust%2:43:00::|
+  wn::|combust%2:43:02::|
+ </relation>
+ </concept>
+ <concept name="ont::chemical-change">
+ <relation label="inherit">
+  ont::change-integrity
+ </relation>
+ <relation label="overlap">
+  wn::|demulsify%2:30:01::|
+  wn::|demulsify%2:30:00::|
+  wn::|polymerize%2:30:02::|
+  wn::|polymerize%2:30:00::|
+  wn::|emulsify%2:30:01::|
+  wn::|emulsify%2:30:00::|
+ </relation>
+ </concept>
+ <concept name="ont::deteriorate">
+ <relation label="inherit">
+  ont::change-integrity
+ </relation>
+ <relation label="overlap">
+  wn::|decompose%2:30:02::|
+  wn::|decay%2:30:01::|
+  wn::|disintegrate%2:30:01::|
+  wn::|decay%2:30:02::|
+  wn::|acerbate%2:37:00::|
+  wn::|decay%2:30:01::|
+  wn::|decay%2:30:00::|
+  wn::|decay%2:30:02::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sense>
  <morph>
   <pos pos="v" />
@@ -520,52 +628,6 @@
   <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="thicken" />
- </morph>
- <example text="thicken the sauce">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::change-integrity
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="thicken" />
- </morph>
- <example text="it thickened with flour">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::change-integrity
- </relation>
- <syntax>
-  <template-call template="ont::affected-theme-xp-optional-templ" xp="'(w::pp
-                                                                        w::with)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::with" sem-role="ont::formal" optional="optional"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  </sense>

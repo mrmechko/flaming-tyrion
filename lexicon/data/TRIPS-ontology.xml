@@ -945,7 +945,6 @@
 </ONTTYPE>
 <ONTTYPE name="lean-val">
 <WORD name="lean" />
-<MAPPING to="wordnet" name="thin%3:00:03::" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -1461,6 +1460,21 @@
 <MAPPING to="wordnet" name="unfree%3:00:01::" />
 <MAPPING to="wordnet" name="stuck%3:00:00::" />
 <MAPPING to="wordnet" name="apprenticed%5:00:00:unfree:00" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="freshness-val">
+<ONTTYPE name="fresh-val">
+<WORD name="fresh" />
+<WORD name="recent" />
+<MAPPING to="wordnet" name="recent%5:00:00:new:00" />
+<MAPPING to="wordnet" name="late%5:00:00:past:00" />
+<MAPPING to="wordnet" name="new%3:00:00::" />
+<MAPPING to="wordnet" name="fresh%3:00:01::" />
+</ONTTYPE>
+<ONTTYPE name="not-fresh-val">
+<WORD name="rusty" />
+<MAPPING to="wordnet" name="stale%3:00:00::" />
+<MAPPING to="wordnet" name="hoary%5:00:00:old:01" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="fundamental-val">
@@ -2364,10 +2378,6 @@
 <WORD name="breathless" />
 <MAPPING to="wordnet" name="breathless%3:00:00::" />
 </ONTTYPE>
-<ONTTYPE name="dehydrated-val">
-<WORD name="dehydrated" />
-<MAPPING to="wordnet" name="dehydrated%5:00:00:unhealthy:00" />
-</ONTTYPE>
 <ONTTYPE name="dizzy-val">
 <WORD name="light_headed" />
 <WORD name="light_punc-minus_headed" />
@@ -2385,6 +2395,10 @@
 <WORD name="feverish" />
 <MAPPING to="wordnet" name="feverish%5:00:00:ill:01" />
 <MAPPING to="wordnet" name="febrile%3:01:00::" />
+</ONTTYPE>
+<ONTTYPE name="medical-dehydration-val">
+<WORD name="dehydrated" />
+<MAPPING to="wordnet" name="dehydrated%5:00:00:unhealthy:00" />
 </ONTTYPE>
 <ONTTYPE name="pained-val">
 <WORD name="in_pain" />
@@ -2503,16 +2517,6 @@
 <MAPPING to="wordnet" name="crossed%3:00:01::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="dampness-val">
-<ONTTYPE name="dry-val">
-<WORD name="dry" />
-<MAPPING to="wordnet" name="dry%3:00:01::" />
-</ONTTYPE>
-<ONTTYPE name="wet-val">
-<WORD name="wet" />
-<MAPPING to="wordnet" name="wet%3:00:01::" />
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="living-val">
 <ONTTYPE name="alive">
 <WORD name="alive" />
@@ -2522,6 +2526,21 @@
 <WORD name="dead" />
 <MAPPING to="wordnet" name="dead%3:00:02::" />
 <MAPPING to="wordnet" name="dead%3:00:01::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="moisture-content-val">
+<ONTTYPE name="dry-val">
+<WORD name="dry" />
+<MAPPING to="wordnet" name="dry%3:00:01::" />
+<ONTTYPE name="dehydrated-val">
+<WORD name="dehydrated" />
+<MAPPING to="wordnet" name="dried-up%5:00:02:dry:01" />
+<MAPPING to="wordnet" name="dried%5:00:00:preserved:02" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="wet-val">
+<WORD name="wet" />
+<MAPPING to="wordnet" name="wet%3:00:01::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="part-whole-val">
@@ -2697,6 +2716,14 @@
 <ONTTYPE name="sticky-val">
 <WORD name="glutinous" />
 <MAPPING to="wordnet" name="gluey%5:00:00:adhesive:00" />
+</ONTTYPE>
+<ONTTYPE name="thickeness-in-texture-val">
+<ONTTYPE name="thick-texture-val">
+<MAPPING to="wordnet" name="thick%3:00:02::" />
+</ONTTYPE>
+<ONTTYPE name="thin-texture-val">
+<MAPPING to="wordnet" name="thin%3:00:02::" />
+</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -4328,21 +4355,6 @@
 <MAPPING to="wordnet" name="new%3:00:09::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="freshness-val">
-<ONTTYPE name="fresh-val">
-<WORD name="fresh" />
-<WORD name="recent" />
-<MAPPING to="wordnet" name="recent%5:00:00:new:00" />
-<MAPPING to="wordnet" name="late%5:00:00:past:00" />
-<MAPPING to="wordnet" name="new%3:00:00::" />
-<MAPPING to="wordnet" name="fresh%3:00:01::" />
-</ONTTYPE>
-<ONTTYPE name="not-fresh-val">
-<WORD name="rusty" />
-<MAPPING to="wordnet" name="stale%3:00:00::" />
-<MAPPING to="wordnet" name="hoary%5:00:00:old:01" />
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="historical-era-val">
 <ONTTYPE name="ancient-val">
 <WORD name="ancient" />
@@ -5563,147 +5575,6 @@
 <ONTTYPE name="attributive-scale">
 <WORD name="quality" />
 <MAPPING to="wordnet" name="quality%1:07:00::" />
-<ONTTYPE name="appearance-scale">
-<ONTTYPE name="olfactory-scale">
-<MAPPING to="wordnet" name="olfactory_property%1:07:00::" />
-<ONTTYPE name="negative-smell-scale">
-<WORD name="malodorousness" />
-<MAPPING to="wordnet" name="malodorousness%1:07:00::" />
-<MAPPING to="wordnet" name="rancidness%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="positive-smell-scale">
-<WORD name="sweetness" />
-<MAPPING to="wordnet" name="bouquet%1:07:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="sound-scale">
-<ONTTYPE name="sound-texture-scale">
-<ONTTYPE name="hoarseness-scale">
-<WORD name="hoarseness" />
-<MAPPING to="wordnet" name="gruffness%1:07:01::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="sound-volume-scale">
-<ONTTYPE name="loudness-scale">
-<WORD name="loudness" />
-<MAPPING to="wordnet" name="volume%1:07:02::" />
-</ONTTYPE>
-<ONTTYPE name="quietness-scale">
-<WORD name="quietness" />
-<MAPPING to="wordnet" name="quietness%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="sound-softness-scale">
-<WORD name="softness" />
-<MAPPING to="wordnet" name="softness%1:07:01::" />
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="tactile-scale">
-<ONTTYPE name="flexibility-scale">
-<WORD name="flexibility" />
-<MAPPING to="wordnet" name="flexibility%1:07:02::" />
-</ONTTYPE>
-<ONTTYPE name="tactile-hardness-scale">
-<WORD name="hardness" />
-<MAPPING to="wordnet" name="hardness%1:07:01::" />
-</ONTTYPE>
-<ONTTYPE name="tactile-softness-scale">
-<WORD name="softness" />
-<MAPPING to="wordnet" name="softness%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="texture-scale">
-<WORD name="texture" />
-<MAPPING to="wordnet" name="texture%1:07:00::" />
-<ONTTYPE name="roughness-scale">
-<WORD name="choppiness" />
-<WORD name="roughness" />
-<MAPPING to="wordnet" name="roughness%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="sharp-texture-scale">
-<WORD name="sharpness" />
-<MAPPING to="wordnet" name="sharpness%1:07:01::" />
-</ONTTYPE>
-<ONTTYPE name="smoothness-scale">
-<WORD name="smoothness" />
-<MAPPING to="wordnet" name="smoothness%1:07:00::" />
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="taste-scale">
-<ONTTYPE name="bitterness-scale">
-<WORD name="bitterness" />
-<MAPPING to="wordnet" name="bitterness%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="sourness-scale">
-<WORD name="sourness" />
-<MAPPING to="wordnet" name="sourness%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="spiciness-scale">
-<WORD name="spiciness" />
-<MAPPING to="wordnet" name="spiciness%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="sweetness-scale">
-<WORD name="sweetness" />
-<MAPPING to="wordnet" name="sweetness%1:07:00::" />
-<MAPPING to="wordnet" name="sweet%1:09:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="visual-scale">
-<ONTTYPE name="brightness-scale">
-<WORD name="brightness" />
-<MAPPING to="wordnet" name="brightness%1:07:00::" />
-<MAPPING to="wordnet" name="luminosity%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="color-quality-scale">
-<ONTTYPE name="redness-scale">
-<WORD name="redness" />
-<MAPPING to="wordnet" name="inflammation%1:26:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="light-passage-scale">
-<ONTTYPE name="opacity-scale">
-<WORD name="opacity" />
-</ONTTYPE>
-<ONTTYPE name="visual-clarity-scale">
-<WORD name="clarity" />
-<WORD name="clearness" />
-<WORD name="transparency" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="luminosity-scale">
-<MAPPING to="wordnet" name="brightness%1:07:00::" />
-<MAPPING to="wordnet" name="luminosity%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="presence-of-light-scale">
-<ONTTYPE name="darkness-scale">
-<WORD name="darkness" />
-<MAPPING to="wordnet" name="dark%1:26:00::" />
-</ONTTYPE>
-<ONTTYPE name="lightness-scale">
-<WORD name="lightness" />
-<MAPPING to="wordnet" name="light%1:07:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="visual-distinctivenss-scale">
-<ONTTYPE name="blurriness-scale">
-<WORD name="softness" />
-<MAPPING to="wordnet" name="indistinctness%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="visual-sharpness-scale">
-<WORD name="focus" />
-<WORD name="sharpness" />
-<MAPPING to="wordnet" name="distinctness%1:07:00::" />
-<MAPPING to="wordnet" name="focus%1:07:01::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="visual-dullness-scale">
-<WORD name="dimness" />
-<WORD name="softness" />
-<MAPPING to="wordnet" name="dimness%1:07:01::" />
-<MAPPING to="wordnet" name="softness%1:07:06::" />
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="behavioral-scale">
 <ONTTYPE name="aggressiveness-scale">
 <WORD name="violence" />
@@ -6092,6 +5963,206 @@
 <MAPPING to="wordnet" name="count%1:23:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="physical-property-scale">
+<ONTTYPE name="appearance-scale">
+<ONTTYPE name="olfactory-scale">
+<MAPPING to="wordnet" name="olfactory_property%1:07:00::" />
+<ONTTYPE name="negative-smell-scale">
+<WORD name="malodorousness" />
+<MAPPING to="wordnet" name="malodorousness%1:07:00::" />
+<MAPPING to="wordnet" name="rancidness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="positive-smell-scale">
+<WORD name="sweetness" />
+<MAPPING to="wordnet" name="bouquet%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="sound-scale">
+<ONTTYPE name="sound-texture-scale">
+<ONTTYPE name="hoarseness-scale">
+<WORD name="hoarseness" />
+<MAPPING to="wordnet" name="gruffness%1:07:01::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="sound-volume-scale">
+<ONTTYPE name="loudness-scale">
+<WORD name="loudness" />
+<MAPPING to="wordnet" name="volume%1:07:02::" />
+</ONTTYPE>
+<ONTTYPE name="quietness-scale">
+<WORD name="quietness" />
+<MAPPING to="wordnet" name="quietness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="sound-softness-scale">
+<WORD name="softness" />
+<MAPPING to="wordnet" name="softness%1:07:01::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="tactile-scale">
+<ONTTYPE name="flexibility-scale">
+<WORD name="flexibility" />
+<MAPPING to="wordnet" name="flexibility%1:07:02::" />
+</ONTTYPE>
+<ONTTYPE name="tactile-hardness-scale">
+<WORD name="hardness" />
+<MAPPING to="wordnet" name="hardness%1:07:01::" />
+</ONTTYPE>
+<ONTTYPE name="tactile-softness-scale">
+<WORD name="softness" />
+<MAPPING to="wordnet" name="softness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="texture-scale">
+<WORD name="texture" />
+<MAPPING to="wordnet" name="texture%1:07:00::" />
+<ONTTYPE name="roughness-scale">
+<WORD name="choppiness" />
+<WORD name="roughness" />
+<MAPPING to="wordnet" name="roughness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="sharp-texture-scale">
+<WORD name="sharpness" />
+<MAPPING to="wordnet" name="sharpness%1:07:01::" />
+</ONTTYPE>
+<ONTTYPE name="smoothness-scale">
+<WORD name="smoothness" />
+<MAPPING to="wordnet" name="smoothness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="texture-thickness-scale">
+<MAPPING to="wordnet" name="thickness%1:07:02::" />
+</ONTTYPE>
+<ONTTYPE name="texture-thinness-scale">
+<MAPPING to="wordnet" name="thinness%1:07:02::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="taste-scale">
+<ONTTYPE name="bitterness-scale">
+<WORD name="bitterness" />
+<MAPPING to="wordnet" name="bitterness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="sourness-scale">
+<WORD name="sourness" />
+<MAPPING to="wordnet" name="sourness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="spiciness-scale">
+<WORD name="spiciness" />
+<MAPPING to="wordnet" name="spiciness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="sweetness-scale">
+<WORD name="sweetness" />
+<MAPPING to="wordnet" name="sweetness%1:07:00::" />
+<MAPPING to="wordnet" name="sweet%1:09:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="visual-scale">
+<ONTTYPE name="brightness-scale">
+<WORD name="brightness" />
+<MAPPING to="wordnet" name="brightness%1:07:00::" />
+<MAPPING to="wordnet" name="luminosity%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="color-quality-scale">
+<ONTTYPE name="redness-scale">
+<WORD name="redness" />
+<MAPPING to="wordnet" name="inflammation%1:26:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="light-passage-scale">
+<ONTTYPE name="opacity-scale">
+<WORD name="opacity" />
+</ONTTYPE>
+<ONTTYPE name="visual-clarity-scale">
+<WORD name="clarity" />
+<WORD name="clearness" />
+<WORD name="transparency" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="luminosity-scale">
+<MAPPING to="wordnet" name="brightness%1:07:00::" />
+<MAPPING to="wordnet" name="luminosity%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="presence-of-light-scale">
+<ONTTYPE name="darkness-scale">
+<WORD name="darkness" />
+<MAPPING to="wordnet" name="dark%1:26:00::" />
+</ONTTYPE>
+<ONTTYPE name="lightness-scale">
+<WORD name="lightness" />
+<MAPPING to="wordnet" name="light%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="visual-distinctivenss-scale">
+<ONTTYPE name="blurriness-scale">
+<WORD name="softness" />
+<MAPPING to="wordnet" name="indistinctness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="visual-sharpness-scale">
+<WORD name="focus" />
+<WORD name="sharpness" />
+<MAPPING to="wordnet" name="distinctness%1:07:00::" />
+<MAPPING to="wordnet" name="focus%1:07:01::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="visual-dullness-scale">
+<WORD name="dimness" />
+<WORD name="softness" />
+<MAPPING to="wordnet" name="dimness%1:07:01::" />
+<MAPPING to="wordnet" name="softness%1:07:06::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="configuration-property-scale">
+<ONTTYPE name="constriction-scale">
+<ONTTYPE name="looseness-scale">
+<MAPPING to="wordnet" name="looseness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="tightness-scale">
+<MAPPING to="wordnet" name="tightness%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="moisture-content-scale">
+<ONTTYPE name="dry-scale">
+<MAPPING to="wordnet" name="dryness%1:26:00::" />
+<ONTTYPE name="dehydrated-scale">
+<MAPPING to="wordnet" name="dehydration%1:26:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="wet-scale">
+<MAPPING to="wordnet" name="wetness%1:26:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="sensory-scale">
+<ONTTYPE name="auditory-scale">
+<WORD name="audition" />
+<MAPPING to="wordnet" name="hearing%1:09:00::" />
+</ONTTYPE>
+<ONTTYPE name="sensitivity-scale">
+<WORD name="sensitivity" />
+<MAPPING to="wordnet" name="sensitivity%1:09:00::" />
+</ONTTYPE>
+<ONTTYPE name="sight-scale">
+<ONTTYPE name="invisibility-scale">
+<WORD name="invisibility" />
+<MAPPING to="wordnet" name="invisibility%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="visibility-scale">
+<WORD name="visibility" />
+<MAPPING to="wordnet" name="visibility%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="touch-scale">
+<ONTTYPE name="intangibility-scale">
+<WORD name="intangibility" />
+<MAPPING to="wordnet" name="intangibility%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="tangibility-scale">
+<WORD name="tangibility" />
+<MAPPING to="wordnet" name="tangibility%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
 <ONTTYPE name="process-property-scale">
 <ONTTYPE name="process-evaluation-scale">
 <ONTTYPE name="steadiness-scale">
@@ -6161,36 +6232,6 @@
 <MAPPING to="wordnet" name="similarity%1:07:00::" />
 <MAPPING to="wordnet" name="likeness%1:07:00::" />
 <MAPPING to="wordnet" name="comparison%1:07:00::" />
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="sensory-scale">
-<ONTTYPE name="auditory-scale">
-<WORD name="audition" />
-<MAPPING to="wordnet" name="hearing%1:09:00::" />
-</ONTTYPE>
-<ONTTYPE name="sensitivity-scale">
-<WORD name="sensitivity" />
-<MAPPING to="wordnet" name="sensitivity%1:09:00::" />
-</ONTTYPE>
-<ONTTYPE name="sight-scale">
-<ONTTYPE name="invisibility-scale">
-<WORD name="invisibility" />
-<MAPPING to="wordnet" name="invisibility%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="visibility-scale">
-<WORD name="visibility" />
-<MAPPING to="wordnet" name="visibility%1:07:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="touch-scale">
-<ONTTYPE name="intangibility-scale">
-<WORD name="intangibility" />
-<MAPPING to="wordnet" name="intangibility%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="tangibility-scale">
-<WORD name="tangibility" />
-<MAPPING to="wordnet" name="tangibility%1:07:00::" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -9456,7 +9497,9 @@
 <ONTTYPE name="herbicide">
 <MAPPING to="wordnet" name="herbicide%1:27:00::" />
 </ONTTYPE>
-<ONTTYPE name="nutrient" />
+<ONTTYPE name="nutrient">
+<MAPPING to="wordnet" name="nutrient%1:03:01::" />
+</ONTTYPE>
 <ONTTYPE name="pesticide">
 <MAPPING to="wordnet" name="pesticide%1:27:00::" />
 </ONTTYPE>
@@ -13322,6 +13365,11 @@
 <WORD name="abuse" />
 <MAPPING to="wordnet" name="mistreat%2:41:00::" />
 </ONTTYPE>
+<ONTTYPE name="advancing-status">
+<WORD name="graduate" />
+<MAPPING to="wordnet" name="graduate%2:40:01::" />
+<MAPPING to="wordnet" name="promote%2:41:00::" />
+</ONTTYPE>
 <ONTTYPE name="approve-authorize">
 <WORD name="approve" />
 <WORD name="authorize" />
@@ -13975,6 +14023,7 @@
 <WORD name="harm" />
 <WORD name="injur" />
 <WORD name="injure" />
+<WORD name="maim" />
 <WORD name="shoot" />
 <WORD name="sting" />
 <WORD name="wound" />
@@ -14212,9 +14261,140 @@
 <WORD name="freeze" />
 <WORD name="melt" />
 <WORD name="thaw" />
-<WORD name="thicken" />
 <MAPPING to="wordnet" name="change_integrity%2:30:00::" />
+<ONTTYPE name="burn">
+<WORD name="burn" />
+<WORD name="scorch" />
+<MAPPING to="wordnet" name="scorch%2:30:07::" />
+<MAPPING to="wordnet" name="burn%2:30:00::" />
+<MAPPING to="wordnet" name="erupt%2:43:00::" />
+<MAPPING to="wordnet" name="burn%2:43:02::" />
+</ONTTYPE>
+<ONTTYPE name="chemical-change">
+<MAPPING to="wordnet" name="demulsify%2:30:01::" />
+<MAPPING to="wordnet" name="demulsify%2:30:00::" />
+<MAPPING to="wordnet" name="polymerize%2:30:02::" />
+<MAPPING to="wordnet" name="polymerize%2:30:00::" />
+<MAPPING to="wordnet" name="emulsify%2:30:01::" />
+<MAPPING to="wordnet" name="emulsify%2:30:00::" />
+<ONTTYPE name="hydrolysis">
+<WORD name="hydrolyze" />
+<MAPPING to="wordnet" name="hydrolysis%1:22:00::" />
+<MAPPING to="wordnet" name="hydrolyze%2:30:00::" />
+<MAPPING to="wordnet" name="hydrolize%2:30:01::" />
+</ONTTYPE>
+<ONTTYPE name="post-translational-modification">
+<WORD name="gamma_carboxylate" />
+<WORD name="gamma_carboxylize" />
+<WORD name="post_punc-minus_translational_modification" />
+<WORD name="post_translational_modification" />
+<WORD name="posttranslational_modification" />
+<WORD name="biotinylate" />
+<WORD name="butyrylate" />
+<WORD name="carbamylate" />
+<WORD name="deamidate" />
+<WORD name="eliminylate" />
+<WORD name="glycate" />
+<WORD name="glypiate" />
+<WORD name="isgylate" />
+<WORD name="pegylate" />
+<WORD name="polysialylate" />
+<WORD name="propionylate" />
+<WORD name="ptm" />
+<WORD name="racemizate" />
+<WORD name="s-glutathionylate" />
+<WORD name="s-nitrosylate" />
+<ONTTYPE name="acetylation">
+<WORD name="acetylate" />
+</ONTTYPE>
+<ONTTYPE name="farnesylation">
+<WORD name="farnesylate" />
+</ONTTYPE>
+<ONTTYPE name="glycosylation">
+<WORD name="glycosylate" />
+</ONTTYPE>
+<ONTTYPE name="hydroxylation">
+<WORD name="hydroxylate" />
+</ONTTYPE>
+<ONTTYPE name="methylation">
+<WORD name="methylate" />
+</ONTTYPE>
+<ONTTYPE name="phosphorylation">
+<WORD name="phosphorylate" />
+</ONTTYPE>
+<ONTTYPE name="ribosylation">
+<WORD name="adp_punc-minus_ribosylate" />
+<WORD name="ribosylate" />
+</ONTTYPE>
+<ONTTYPE name="sumoylation">
+<WORD name="sumoylate" />
+</ONTTYPE>
+<ONTTYPE name="ubiquitination">
+<WORD name="ubiquinate" />
+<WORD name="ubiquitinate" />
+<WORD name="ubiquitylate" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="deteriorate">
+<WORD name="corrode" />
+<WORD name="decay" />
+<WORD name="degrade" />
+<WORD name="deteriorate" />
+<WORD name="erode" />
+<WORD name="molder" />
+<WORD name="rot" />
+<WORD name="rust" />
+<WORD name="stagnate" />
+<WORD name="tarnish" />
+<WORD name="wilt" />
+<WORD name="worsen" />
+<MAPPING to="wordnet" name="embitter%2:37:00::" />
+<MAPPING to="wordnet" name="disintegrate%2:30:01::" />
+<MAPPING to="wordnet" name="decay%2:30:00::" />
+<MAPPING to="wordnet" name="decay%2:30:02::" />
+</ONTTYPE>
+<ONTTYPE name="dissolve">
+<MAPPING to="wordnet" name="dissolve%2:30:01::" />
+<MAPPING to="wordnet" name="dissolve%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="granulate">
+<MAPPING to="wordnet" name="granulate%2:30:00::" />
+<MAPPING to="wordnet" name="granulate%2:30:01::" />
+</ONTTYPE>
+<ONTTYPE name="life-transformation">
+<WORD name="bloom" />
+<WORD name="blossom" />
+<WORD name="ferment" />
+<WORD name="flower" />
+<WORD name="germinate" />
+<WORD name="hatch" />
+<WORD name="metamorphose" />
+<WORD name="molt" />
+<WORD name="moult" />
+<WORD name="mutate" />
+<WORD name="sprout" />
+<MAPPING to="wordnet" name="fruit%2:36:01::" />
+<MAPPING to="wordnet" name="cross-fertilize%2:29:00::" />
+<MAPPING to="wordnet" name="cross-fertilize%2:29:01::" />
+<MAPPING to="wordnet" name="ferment%2:30:01::" />
+<MAPPING to="wordnet" name="sour%2:30:01::" />
+<MAPPING to="wordnet" name="ripen%2:30:01::" />
+<MAPPING to="wordnet" name="ripen%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="liquefy">
+<MAPPING to="wordnet" name="liquefy%2:30:00::" />
+<MAPPING to="wordnet" name="liquefy%2:30:01::" />
+<MAPPING to="wordnet" name="melt%2:30:01::" />
+</ONTTYPE>
+<ONTTYPE name="solidify">
 <MAPPING to="wordnet" name="clot%2:30:01::" />
+<MAPPING to="wordnet" name="freeze%2:30:02::" />
+<MAPPING to="wordnet" name="freeze%2:30:00::" />
+<MAPPING to="wordnet" name="solidify%2:30:00::" />
+<MAPPING to="wordnet" name="solidify%2:30:01::" />
+<MAPPING to="wordnet" name="crystallize%2:30:01::" />
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="change-state-action">
 <WORD name="reset" />
@@ -14268,17 +14448,28 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="closure">
-<MAPPING to="wordnet" name="open%2:35:00::" />
-<MAPPING to="wordnet" name="close%2:35:00::" />
+<ONTTYPE name="clog">
+<WORD name="build_up" />
+<WORD name="clog_up" />
+<WORD name="clog" />
+<WORD name="congest" />
+<WORD name="constipate" />
+<MAPPING to="wordnet" name="obstruct%2:35:00::" />
+<MAPPING to="wordnet" name="clog%2:35:00::" />
+</ONTTYPE>
 <ONTTYPE name="close">
 <WORD name="close" />
 <MAPPING to="wordnet" name="close_up%2:41:00::" />
+<MAPPING to="wordnet" name="close%2:35:00::" />
+<MAPPING to="wordnet" name="close%2:35:06::" />
 </ONTTYPE>
 <ONTTYPE name="open">
 <WORD name="open" />
 <WORD name="reopen" />
 <MAPPING to="wordnet" name="open%2:41:00::" />
 <MAPPING to="wordnet" name="premier%2:36:01::" />
+<MAPPING to="wordnet" name="open%2:35:06::" />
+<MAPPING to="wordnet" name="open%2:35:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="render-ineffective">
@@ -14310,6 +14501,10 @@
 <MAPPING to="wordnet" name="substitute%2:40:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="collapse">
+<MAPPING to="wordnet" name="collapse%2:38:00::" />
+<MAPPING to="wordnet" name="collapse%2:38:03::" />
+</ONTTYPE>
 <ONTTYPE name="destroy">
 <WORD name="abort" />
 <WORD name="annihilate" />
@@ -14319,19 +14514,13 @@
 <WORD name="desecrate" />
 <WORD name="destroy" />
 <WORD name="devastate" />
-<WORD name="disfigure" />
 <WORD name="efface" />
 <WORD name="eradicate" />
-<WORD name="exterminate" />
 <WORD name="extirpate" />
-<WORD name="maim" />
-<WORD name="mangle" />
-<WORD name="mutilate" />
 <WORD name="obliterate" />
 <WORD name="ravage" />
 <WORD name="raze" />
 <WORD name="ruin" />
-<WORD name="slaughter" />
 <WORD name="waste" />
 <WORD name="wreck" />
 <MAPPING to="wordnet" name="destroy%2:35:00::" />
@@ -14343,8 +14532,10 @@
 <MAPPING to="wordnet" name="denude%2:30:00::" />
 </ONTTYPE>
 <ONTTYPE name="kill">
+<WORD name="exterminate" />
 <WORD name="kill" />
 <WORD name="murder" />
+<WORD name="slaughter" />
 <MAPPING to="wordnet" name="kill%2:35:00::" />
 <MAPPING to="wordnet" name="kill%2:35:01::" />
 <MAPPING to="wordnet" name="kill%2:35:02::" />
@@ -14360,7 +14551,6 @@
 <MAPPING to="wordnet" name="detonate%2:30:01::" />
 <MAPPING to="wordnet" name="explode%2:30:01::" />
 <MAPPING to="wordnet" name="explode%2:30:00::" />
-<MAPPING to="wordnet" name="collapse%2:38:03::" />
 </ONTTYPE>
 <ONTTYPE name="reviving">
 <WORD name="bring_to" />
@@ -14371,6 +14561,7 @@
 <WORD name="revive" />
 <MAPPING to="wordnet" name="resuscitate%2:29:00::" />
 <MAPPING to="wordnet" name="stimulate%2:29:00::" />
+<MAPPING to="wordnet" name="come_to%2:29:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="fluctuate">
@@ -14400,7 +14591,6 @@
 <MAPPING to="wordnet" name="crash%2:38:04::" />
 <MAPPING to="wordnet" name="crash%2:35:01::" />
 <MAPPING to="wordnet" name="break%2:30:00::" />
-<MAPPING to="wordnet" name="damage%2:30:00::" />
 <MAPPING to="wordnet" name="break%2:30:10::" />
 <MAPPING to="wordnet" name="crack%2:30:01::" />
 <MAPPING to="wordnet" name="tear%2:35:00::" />
@@ -14456,10 +14646,6 @@
 <WORD name="shape" />
 <MAPPING to="wordnet" name="shape%2:36:00::" />
 <MAPPING to="wordnet" name="shape%2:30:00::" />
-<ONTTYPE name="sharpen-soft">
-<WORD name="sharpen" />
-<WORD name="soften" />
-</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="transformation">
@@ -14476,16 +14662,11 @@
 <WORD name="alteration" />
 <WORD name="bring" />
 <WORD name="calibrate" />
-<WORD name="compress" />
 <WORD name="decline" />
-<WORD name="deepen" />
 <WORD name="shift" />
 <WORD name="shift" />
-<WORD name="thin" />
-<WORD name="tighten" />
 <WORD name="transmute" />
 <WORD name="truncate" />
-<WORD name="widen" />
 <ONTTYPE name="add-include">
 <WORD name="bring_in" />
 <WORD name="add" />
@@ -14512,81 +14693,8 @@
 <WORD name="minimize" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="advancing">
-<WORD name="graduate" />
-</ONTTYPE>
 <ONTTYPE name="change-format">
 <WORD name="translate" />
-</ONTTYPE>
-<ONTTYPE name="change-magnitude">
-<WORD name="scale" />
-<WORD name="size" />
-<MAPPING to="wordnet" name="change_magnitude%2:30:00::" />
-<MAPPING to="wordnet" name="change_intensity%2:39:00::" />
-<ONTTYPE name="decrease">
-<WORD name="knock_down" />
-<WORD name="compress" />
-<WORD name="constrict" />
-<WORD name="cut" />
-<WORD name="decline" />
-<WORD name="decrease" />
-<WORD name="diminish" />
-<WORD name="downgrade" />
-<WORD name="lessen" />
-<WORD name="lift" />
-<WORD name="narrow" />
-<WORD name="reduce" />
-<WORD name="shorten" />
-<MAPPING to="wordnet" name="decrease%2:30:01::" />
-<MAPPING to="wordnet" name="decrease%2:30:00::" />
-<MAPPING to="wordnet" name="weaken%2:30:01::" />
-<MAPPING to="wordnet" name="extenuate%2:32:00::" />
-<ONTTYPE name="decrease-completely">
-<WORD name="deplete" />
-<MAPPING to="wordnet" name="consume%2:34:01::" />
-<MAPPING to="wordnet" name="exhaust%2:30:00::" />
-<MAPPING to="wordnet" name="decrease%1:04:00::" />
-</ONTTYPE>
-<ONTTYPE name="decrease-speed">
-<WORD name="slow" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="increase">
-<WORD name="pick_up" />
-<WORD name="boost" />
-<WORD name="enlarge" />
-<WORD name="extend" />
-<WORD name="increase" />
-<WORD name="inflate" />
-<WORD name="mount" />
-<WORD name="rise" />
-<MAPPING to="wordnet" name="increase%2:30:00::" />
-<MAPPING to="wordnet" name="lengthen%2:30:01::" />
-<ONTTYPE name="increase-number">
-<WORD name="multiply" />
-<MAPPING to="wordnet" name="multiply%2:30:00::" />
-<ONTTYPE name="double">
-<WORD name="double" />
-<MAPPING to="wordnet" name="double%2:30:00::" />
-</ONTTYPE>
-<ONTTYPE name="triple">
-<WORD name="triple" />
-<MAPPING to="wordnet" name="triple%2:30:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="increase-speed">
-<WORD name="speed_up" />
-<WORD name="hasten" />
-<WORD name="rush" />
-<MAPPING to="wordnet" name="induce%2:36:01::" />
-<MAPPING to="wordnet" name="expedite%2:41:00::" />
-<MAPPING to="wordnet" name="rush%2:38:00::" />
-<MAPPING to="wordnet" name="rush%2:30:00::" />
-</ONTTYPE>
-<ONTTYPE name="increase-time">
-<MAPPING to="wordnet" name="prolong%2:30:00::" />
-</ONTTYPE>
-</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="device-adjust">
 <WORD name="customize" />
@@ -14604,11 +14712,6 @@
 <MAPPING to="wordnet" name="exclude%2:42:00::" />
 <MAPPING to="wordnet" name="bar%2:32:00::" />
 </ONTTYPE>
-<ONTTYPE name="hydrolysis">
-<WORD name="hydrolyze" />
-<MAPPING to="wordnet" name="hydrolysis%1:22:00::" />
-<MAPPING to="wordnet" name="hydrolyze%2:30:00::" />
-</ONTTYPE>
 <ONTTYPE name="improve">
 <WORD name="brush_up" />
 <WORD name="advance" />
@@ -14621,6 +14724,7 @@
 <WORD name="improvement" />
 <WORD name="optimize" />
 <MAPPING to="wordnet" name="enhancement%1:04:00::" />
+<MAPPING to="wordnet" name="better%2:30:01::" />
 </ONTTYPE>
 <ONTTYPE name="language-adjust">
 <WORD name="abbreviate" />
@@ -14639,66 +14743,296 @@
 <WORD name="skip" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="post-translational-modification">
-<WORD name="gamma_carboxylate" />
-<WORD name="gamma_carboxylize" />
-<WORD name="post_punc-minus_translational_modification" />
-<WORD name="post_translational_modification" />
-<WORD name="posttranslational_modification" />
-<WORD name="biotinylate" />
-<WORD name="butyrylate" />
-<WORD name="carbamylate" />
-<WORD name="deamidate" />
-<WORD name="eliminylate" />
-<WORD name="glycate" />
-<WORD name="glypiate" />
-<WORD name="isgylate" />
-<WORD name="pegylate" />
-<WORD name="polysialylate" />
-<WORD name="propionylate" />
-<WORD name="ptm" />
-<WORD name="racemizate" />
-<WORD name="s-glutathionylate" />
-<WORD name="s-nitrosylate" />
-<ONTTYPE name="acetylation">
-<WORD name="acetylate" />
-</ONTTYPE>
-<ONTTYPE name="farnesylation">
-<WORD name="farnesylate" />
-</ONTTYPE>
-<ONTTYPE name="glycosylation">
-<WORD name="glycosylate" />
-</ONTTYPE>
-<ONTTYPE name="hydroxylation">
-<WORD name="hydroxylate" />
-</ONTTYPE>
-<ONTTYPE name="methylation">
-<WORD name="methylate" />
-</ONTTYPE>
-<ONTTYPE name="phosphorylation">
-<WORD name="phosphorylate" />
-</ONTTYPE>
-<ONTTYPE name="ribosylation">
-<WORD name="adp_punc-minus_ribosylate" />
-<WORD name="ribosylate" />
-</ONTTYPE>
-<ONTTYPE name="sumoylation">
-<WORD name="sumoylate" />
-</ONTTYPE>
-<ONTTYPE name="ubiquitination">
-<WORD name="ubiquinate" />
-<WORD name="ubiquitinate" />
-<WORD name="ubiquitylate" />
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="visual-adjust">
 <WORD name="blur" />
 <WORD name="focus" />
 <WORD name="sharpen" />
 <WORD name="soften" />
 <MAPPING to="wordnet" name="sharpen%2:39:00::" />
+<MAPPING to="wordnet" name="focus%2:30:01::" />
 <MAPPING to="wordnet" name="soften%2:39:00::" />
 <MAPPING to="wordnet" name="blur%2:39:00::" />
+<MAPPING to="wordnet" name="blur%2:30:01::" />
+<MAPPING to="wordnet" name="focus%2:30:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="change-in-scale">
+<ONTTYPE name="change-in-measure-scale">
+<ONTTYPE name="change-in-dimension">
+<MAPPING to="wordnet" name="grow%2:30:00::" />
+<ONTTYPE name="change-in-size">
+<ONTTYPE name="change-in-linear-extent">
+<ONTTYPE name="deepen">
+<WORD name="deepen" />
+<MAPPING to="wordnet" name="deepen%2:30:03::" />
+</ONTTYPE>
+<ONTTYPE name="extend">
+<WORD name="stretch" />
+<MAPPING to="wordnet" name="elongate%2:30:00::" />
+<MAPPING to="wordnet" name="stretch%2:30:00::" />
+<MAPPING to="wordnet" name="widen%2:30:01::" />
+<MAPPING to="wordnet" name="broaden%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="lengthen">
+<WORD name="lengthen" />
+<MAPPING to="wordnet" name="lengthen%2:30:00::" />
+<MAPPING to="wordnet" name="lengthen%2:30:01::" />
+</ONTTYPE>
+<ONTTYPE name="narrow">
+<WORD name="narrow" />
+<MAPPING to="wordnet" name="narrow%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="shorten">
+<WORD name="shorten" />
+<MAPPING to="wordnet" name="shorten%2:30:09::" />
+<MAPPING to="wordnet" name="abridge%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="widen">
+<WORD name="widen" />
+<MAPPING to="wordnet" name="widen%2:30:00::" />
+<MAPPING to="wordnet" name="widen%2:30:03::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="enlarge">
+<WORD name="enlarge" />
+<MAPPING to="wordnet" name="enlarge%2:30:00::" />
+<MAPPING to="wordnet" name="hypertrophy%2:29:00::" />
+</ONTTYPE>
+<ONTTYPE name="shrink">
+<WORD name="compress" />
+<WORD name="shrink" />
+<MAPPING to="wordnet" name="shrivel%2:30:00::" />
+<MAPPING to="wordnet" name="compress%2:35:01::" />
+<MAPPING to="wordnet" name="shrink%2:30:01::" />
+<MAPPING to="wordnet" name="shrink%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="swell">
+<WORD name="bloat_up" />
+<WORD name="plump_up" />
+<WORD name="puff_up" />
+<WORD name="swell_up" />
+<WORD name="blister" />
+<WORD name="bloat" />
+<WORD name="fatten" />
+<WORD name="plump" />
+<WORD name="puff" />
+<WORD name="swell" />
+<MAPPING to="wordnet" name="swell%2:30:00::" />
+<MAPPING to="wordnet" name="swell%2:30:01::" />
+<MAPPING to="wordnet" name="bloat%2:30:01::" />
+<MAPPING to="wordnet" name="bulge%2:30:01::" />
+<MAPPING to="wordnet" name="bulge%2:30:00::" />
+<MAPPING to="wordnet" name="rise%2:38:02::" />
+<MAPPING to="wordnet" name="raise%2:38:01::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="intensify">
+<MAPPING to="wordnet" name="augment%2:30:00::" />
+<MAPPING to="wordnet" name="intensify%2:30:01::" />
+<MAPPING to="wordnet" name="intensify%2:30:00::" />
+<MAPPING to="wordnet" name="sharpen%2:30:01::" />
+<MAPPING to="wordnet" name="sharpen%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="lessen-intensity">
+<MAPPING to="wordnet" name="de-escalate%2:30:00::" />
+<MAPPING to="wordnet" name="slake%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="lighten-weight">
+<WORD name="lighten" />
+<MAPPING to="wordnet" name="lighten%2:35:00::" />
+</ONTTYPE>
+<ONTTYPE name="strengthen">
+<MAPPING to="wordnet" name="strengthen%2:30:01::" />
+<MAPPING to="wordnet" name="strengthen%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="weaken">
+<MAPPING to="wordnet" name="weaken%2:30:00::" />
+<MAPPING to="wordnet" name="weaken%2:30:01::" />
+<MAPPING to="wordnet" name="waste%2:30:01::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="change-in-ratio">
+<ONTTYPE name="decrease-speed">
+<WORD name="slow" />
+<MAPPING to="wordnet" name="decelerate%2:30:00::" />
+<MAPPING to="wordnet" name="slow%2:30:01::" />
+</ONTTYPE>
+<ONTTYPE name="increase-speed">
+<WORD name="speed_up" />
+<WORD name="hasten" />
+<WORD name="rush" />
+<MAPPING to="wordnet" name="induce%2:36:01::" />
+<MAPPING to="wordnet" name="expedite%2:41:00::" />
+<MAPPING to="wordnet" name="rush%2:38:00::" />
+<MAPPING to="wordnet" name="rush%2:30:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="change-in-temperature">
+<ONTTYPE name="cool">
+<WORD name="chill" />
+<WORD name="cool" />
+<MAPPING to="wordnet" name="cool%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="heat">
+<WORD name="heat" />
+<WORD name="preheat" />
+<WORD name="warm" />
+<MAPPING to="wordnet" name="heat%2:30:00::" />
+<MAPPING to="wordnet" name="heat%2:30:01::" />
+<MAPPING to="wordnet" name="overheat%2:30:01::" />
+<MAPPING to="wordnet" name="overheat%2:30:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="change-in-time-measure">
+<ONTTYPE name="age">
+<WORD name="age" />
+<MAPPING to="wordnet" name="age%2:30:02::" />
+<MAPPING to="wordnet" name="senesce%2:30:00::" />
+<MAPPING to="wordnet" name="age%2:30:01::" />
+</ONTTYPE>
+<ONTTYPE name="extend-time">
+<WORD name="extend" />
+<WORD name="lengthen" />
+<MAPPING to="wordnet" name="prolong%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="shorten-time">
+<WORD name="shorten" />
+<MAPPING to="wordnet" name="shorten%2:30:01::" />
+<MAPPING to="wordnet" name="shorten%2:30:00::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="change-in-physical-property-scale">
+<ONTTYPE name="change-in-appearance">
+<ONTTYPE name="change-in-tactile-scale">
+<ONTTYPE name="harden">
+<WORD name="harden" />
+<MAPPING to="wordnet" name="harden%2:30:01::" />
+<MAPPING to="wordnet" name="harden%2:30:00::" />
+<MAPPING to="wordnet" name="stiffen%2:30:01::" />
+<MAPPING to="wordnet" name="stiffen%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="sharpen">
+<WORD name="sharpen" />
+<MAPPING to="wordnet" name="sharpen%2:35:00::" />
+<MAPPING to="wordnet" name="sharpen%2:30:08::" />
+</ONTTYPE>
+<ONTTYPE name="smoothen">
+<WORD name="smooth" />
+<MAPPING to="wordnet" name="smoothen%2:30:00::" />
+<MAPPING to="wordnet" name="smooth%2:35:00::" />
+</ONTTYPE>
+<ONTTYPE name="soften">
+<WORD name="soften" />
+<MAPPING to="wordnet" name="soften%2:30:00::" />
+<MAPPING to="wordnet" name="soften%2:30:01::" />
+</ONTTYPE>
+<ONTTYPE name="thicken">
+<WORD name="thicken" />
+<MAPPING to="wordnet" name="thicken%2:30:01::" />
+<MAPPING to="wordnet" name="thicken%2:30:00::" />
+<MAPPING to="wordnet" name="thicken%2:30:02::" />
+</ONTTYPE>
+<ONTTYPE name="thin">
+<WORD name="thin" />
+<MAPPING to="wordnet" name="thin%2:30:01::" />
+<MAPPING to="wordnet" name="thin%2:30:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="change-in-visual-scale">
+<ONTTYPE name="brighten">
+<MAPPING to="wordnet" name="brighten%2:30:01::" />
+</ONTTYPE>
+<ONTTYPE name="darken">
+<MAPPING to="wordnet" name="darken%2:30:01::" />
+<MAPPING to="wordnet" name="darken%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="lighten">
+<MAPPING to="wordnet" name="lighten%2:30:02::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="change-in-configuration">
+<ONTTYPE name="change-in-constriction">
+<ONTTYPE name="loosen">
+<WORD name="loosen" />
+<MAPPING to="wordnet" name="loosen%2:30:00::" />
+<MAPPING to="wordnet" name="loosen%2:30:01::" />
+<MAPPING to="wordnet" name="slacken%2:30:00::" />
+<MAPPING to="wordnet" name="slacken%2:30:01::" />
+</ONTTYPE>
+<ONTTYPE name="tighten">
+<WORD name="constrict" />
+<WORD name="tighten" />
+<MAPPING to="wordnet" name="tighten%2:30:00::" />
+<MAPPING to="wordnet" name="tighten%2:30:01::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="change-in-moisture-content">
+<ONTTYPE name="dampen">
+<MAPPING to="wordnet" name="wet%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="dry">
+<WORD name="dry" />
+<MAPPING to="wordnet" name="dry%2:30:00::" />
+<MAPPING to="wordnet" name="dry%2:30:01::" />
+<ONTTYPE name="dehydrate">
+<WORD name="wither" />
+<MAPPING to="wordnet" name="shrivel%2:30:00::" />
+<MAPPING to="wordnet" name="dehydrate%2:30:01::" />
+<MAPPING to="wordnet" name="exsiccate%2:30:00::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="change-magnitude">
+<WORD name="scale" />
+<WORD name="size" />
+<MAPPING to="wordnet" name="change_magnitude%2:30:00::" />
+<MAPPING to="wordnet" name="change_intensity%2:39:00::" />
+<ONTTYPE name="decrease">
+<WORD name="knock_down" />
+<WORD name="cut" />
+<WORD name="decline" />
+<WORD name="decrease" />
+<WORD name="diminish" />
+<WORD name="downgrade" />
+<WORD name="lessen" />
+<WORD name="lift" />
+<WORD name="reduce" />
+<WORD name="subside" />
+<MAPPING to="wordnet" name="decrease%2:30:01::" />
+<MAPPING to="wordnet" name="decrease%2:30:00::" />
+<MAPPING to="wordnet" name="extenuate%2:32:00::" />
+<ONTTYPE name="decrease-completely">
+<WORD name="deplete" />
+<MAPPING to="wordnet" name="consume%2:34:01::" />
+<MAPPING to="wordnet" name="exhaust%2:30:00::" />
+<MAPPING to="wordnet" name="decrease%1:04:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="increase">
+<WORD name="pick_up" />
+<WORD name="boost" />
+<WORD name="increase" />
+<WORD name="inflate" />
+<WORD name="mount" />
+<WORD name="rise" />
+<MAPPING to="wordnet" name="increase%2:30:00::" />
+<ONTTYPE name="increase-number">
+<WORD name="multiply" />
+<MAPPING to="wordnet" name="multiply%2:30:00::" />
+<ONTTYPE name="double">
+<WORD name="double" />
+<MAPPING to="wordnet" name="double%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="triple">
+<WORD name="triple" />
+<MAPPING to="wordnet" name="triple%2:30:00::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="coloring">
@@ -14719,44 +15053,9 @@
 <MAPPING to="wordnet" name="color%2:30:00::" />
 <MAPPING to="wordnet" name="varnish%2:35:00::" />
 <MAPPING to="wordnet" name="discolor%2:30:00::" />
+<MAPPING to="wordnet" name="discolor%2:30:02::" />
 </ONTTYPE>
 <ONTTYPE name="continuous-change">
-<ONTTYPE name="burn">
-<WORD name="burn" />
-<WORD name="scorch" />
-<MAPPING to="wordnet" name="scorch%2:30:07::" />
-<MAPPING to="wordnet" name="burn%2:43:02::" />
-</ONTTYPE>
-<ONTTYPE name="clog">
-<WORD name="build_up" />
-<WORD name="clog_up" />
-<WORD name="clog" />
-<WORD name="congest" />
-<WORD name="constipate" />
-<MAPPING to="wordnet" name="clog%2:35:00::" />
-</ONTTYPE>
-<ONTTYPE name="cool">
-<WORD name="chill" />
-<WORD name="cool" />
-<MAPPING to="wordnet" name="cool%2:30:00::" />
-</ONTTYPE>
-<ONTTYPE name="deteriorate">
-<WORD name="corrode" />
-<WORD name="decay" />
-<WORD name="degrade" />
-<WORD name="deteriorate" />
-<WORD name="erode" />
-<WORD name="molder" />
-<WORD name="rot" />
-<WORD name="rust" />
-<WORD name="stagnate" />
-<WORD name="tarnish" />
-<WORD name="wilt" />
-<WORD name="worsen" />
-<MAPPING to="wordnet" name="disintegrate%2:30:01::" />
-<MAPPING to="wordnet" name="decay%2:30:02::" />
-<MAPPING to="wordnet" name="embitter%2:37:00::" />
-</ONTTYPE>
 <ONTTYPE name="grow">
 <WORD name="develop" />
 <WORD name="evolve" />
@@ -14765,55 +15064,27 @@
 <WORD name="mature" />
 <WORD name="thrive" />
 <MAPPING to="wordnet" name="grow%2:30:02::" />
-<MAPPING to="wordnet" name="rear%2:41:00::" />
 <MAPPING to="wordnet" name="cultivate%2:36:00::" />
-</ONTTYPE>
-<ONTTYPE name="heat">
-<WORD name="heat" />
-<WORD name="preheat" />
-<WORD name="warm" />
-</ONTTYPE>
-<ONTTYPE name="life-transformation">
-<WORD name="bloom" />
-<WORD name="blossom" />
-<WORD name="ferment" />
-<WORD name="flower" />
-<WORD name="germinate" />
-<WORD name="hatch" />
-<WORD name="metamorphose" />
-<WORD name="molt" />
-<WORD name="moult" />
-<WORD name="mutate" />
-<WORD name="sprout" />
+<MAPPING to="wordnet" name="grow%2:30:01::" />
+<MAPPING to="wordnet" name="develop%2:30:01::" />
+<MAPPING to="wordnet" name="grow%2:30:00::" />
 <MAPPING to="wordnet" name="develop%2:30:00::" />
-<MAPPING to="wordnet" name="fruit%2:36:01::" />
-</ONTTYPE>
-<ONTTYPE name="shrink">
-<WORD name="shrink" />
-<WORD name="subside" />
-<WORD name="wither" />
-<MAPPING to="wordnet" name="shrivel%2:30:00::" />
-</ONTTYPE>
-<ONTTYPE name="swell">
-<WORD name="bloat_up" />
-<WORD name="plump_up" />
-<WORD name="puff_up" />
-<WORD name="swell_up" />
-<WORD name="blister" />
-<WORD name="bloat" />
-<WORD name="fatten" />
-<WORD name="plump" />
-<WORD name="puff" />
-<WORD name="swell" />
-<MAPPING to="wordnet" name="swell%2:30:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="damage">
+<MAPPING to="wordnet" name="damage%2:30:00::" />
 <ONTTYPE name="dent">
 <WORD name="bruise" />
 <WORD name="dent" />
 <MAPPING to="wordnet" name="indent%2:35:00::" />
 <MAPPING to="wordnet" name="bruise%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="mangle">
+<WORD name="disfigure" />
+<WORD name="mangle" />
+<WORD name="mutilate" />
+<MAPPING to="wordnet" name="mangle%2:30:01::" />
+<MAPPING to="wordnet" name="mar%2:30:00::" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -15011,6 +15282,11 @@
 <WORD name="manipulate" />
 <WORD name="set" />
 <MAPPING to="wordnet" name="operate%2:35:00::" />
+</ONTTYPE>
+<ONTTYPE name="nurturing">
+<WORD name="raise" />
+<WORD name="rear" />
+<MAPPING to="wordnet" name="rear%2:41:00::" />
 </ONTTYPE>
 <ONTTYPE name="overcome">
 <WORD name="overcome" />
@@ -15325,6 +15601,7 @@
 <WORD name="furrow" />
 <WORD name="rumple" />
 <WORD name="wrinkle" />
+<MAPPING to="wordnet" name="fold%2:35:00::" />
 </ONTTYPE>
 <ONTTYPE name="go-on">
 <WORD name="continue_on" />
@@ -16017,6 +16294,7 @@
 <MAPPING to="wordnet" name="separate%2:42:00::" />
 <MAPPING to="wordnet" name="disjoin%2:35:00::" />
 <MAPPING to="wordnet" name="separate%2:35:00::" />
+<MAPPING to="wordnet" name="separate%2:35:02::" />
 <ONTTYPE name="unattach">
 <WORD name="decouple" />
 <WORD name="detach" />
@@ -16105,7 +16383,6 @@
 <WORD name="crush" />
 <WORD name="dice" />
 <WORD name="grind" />
-<WORD name="mangle" />
 <WORD name="mash" />
 <WORD name="mince" />
 <WORD name="pulverize" />
@@ -16130,7 +16407,6 @@
 <WORD name="spritz" />
 <WORD name="spurt" />
 <WORD name="squirt" />
-<MAPPING to="wordnet" name="wet%2:30:00::" />
 <MAPPING to="wordnet" name="squirt%2:35:00::" />
 <MAPPING to="wordnet" name="squirt%2:35:10::" />
 <MAPPING to="wordnet" name="scatter%2:35:00::" />
@@ -16276,6 +16552,8 @@
 <MAPPING to="wordnet" name="percolate%2:35:02::" />
 <ONTTYPE name="boil">
 <WORD name="boil" />
+<MAPPING to="wordnet" name="boil%2:30:02::" />
+<MAPPING to="wordnet" name="boil%2:30:01::" />
 </ONTTYPE>
 <ONTTYPE name="steep">
 <WORD name="steep" />

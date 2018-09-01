@@ -343,14 +343,13 @@
  <concept name="situation" />
  <concept name="ont::change-integrity">
  <comment>
-  &quot;an AFFECTED undergoes a change of physical state, e.g., thaw. Allows but does not require an AGENT&quot;
+  &quot;an AFFECTED undergoes a change of physical or chemical state that affects its integrity, e.g., thaw. Allows but does not require an AGENT&quot;
  </comment>
  <relation label="inherit">
   ont::change-state
  </relation>
  <relation label="overlap">
   wn::|change_integrity%2:30:00::|
-  wn::|clot%2:30:01::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -376,7 +375,15 @@
   wn::|explode%2:30:01::|
   wn::|explode%2:30:00::|
   wn::|burst%2:30:09::|
-  wn::|burst%2:38:04::|
+ </relation>
+ </concept>
+ <concept name="ont::collapse">
+ <relation label="inherit">
+  ont::change-state
+ </relation>
+ <relation label="overlap">
+  wn::|collapse%2:38:00::|
+  wn::|collapse%2:38:03::|
  </relation>
  </concept>
  <concept name="ont::reviving">
@@ -392,6 +399,7 @@
   wn::|energize%2:29:00::|
   wn::|energise%2:29:00::|
   wn::|perk_up%2:29:01::|
+  wn::|revive%2:29:02::|
  </relation>
  </concept>
  <concept name="ont::destroy">

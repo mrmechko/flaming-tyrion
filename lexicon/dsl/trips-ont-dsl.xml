@@ -1003,9 +1003,13 @@
    ont::configuration-property-val
   </relation>
  </concept>
- <concept name="ont::advancing">
+ <concept name="ont::advancing-status">
   <relation label="inherit">
-   ont::adjust
+   ont::judgement
+  </relation>
+  <relation label="overlap">
+   wn::|graduate%2:40:01::|
+   wn::|promote%2:41:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::source" optional="optional">
@@ -1111,6 +1115,27 @@
   <relation label="overlap">
    wn::|before%4:02:03::|
   </relation>
+ </concept>
+ <concept name="ont::age">
+  <relation label="inherit">
+   ont::change-in-time-measure
+  </relation>
+  <relation label="overlap">
+   wn::|age%2:30:02::|
+   wn::|age%2:30:00::|
+   wn::|age%2:30:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">age-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::age-scale">
   <relation label="inherit">
@@ -1725,7 +1750,7 @@
    &quot;scales related to surface appearance of a physical entity or object preceptible through sensory input&quot;
   </comment>
   <relation label="inherit">
-   ont::attributive-scale
+   ont::physical-property-scale
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
@@ -4203,6 +4228,10 @@
   <relation label="inherit">
    ont::cooking
   </relation>
+  <relation label="overlap">
+   wn::|boil%2:30:02::|
+   wn::|boil%2:30:01::|
+  </relation>
  </concept>
  <concept name="ont::bold-val">
   <relation label="inherit">
@@ -4349,7 +4378,6 @@
    wn::|split_up%2:30:00::|
    wn::|separate%2:30:03::|
    wn::|break%2:30:00::|
-   wn::|damage%2:30:00::|
    wn::|break%2:30:10::|
    wn::|break%2:30:15::|
    wn::|check%2:30:03::|
@@ -4432,6 +4460,25 @@
    wn::|bright%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::brighten">
+  <relation label="inherit">
+   ont::change-in-visual-scale
+  </relation>
+  <relation label="overlap">
+   wn::|brighten%2:30:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">brighteness-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::brightness-scale">
   <relation label="inherit">
    ont::visual-scale
@@ -4488,13 +4535,16 @@
  </concept>
  <concept name="ont::burn">
   <relation label="inherit">
-   ont::continuous-change
+   ont::change-integrity
   </relation>
   <relation label="overlap">
    wn::|scorch%2:30:07::|
    wn::|sear%2:30:07::|
    wn::|singe%2:30:07::|
    wn::|burn%2:43:02::|
+   wn::|combust%2:30:00::|
+   wn::|combust%2:43:00::|
+   wn::|combust%2:43:02::|
   </relation>
  </concept>
  <concept name="ont::burn-out-light-up-change">
@@ -5458,16 +5508,249 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::change-in-appearance">
+  <relation label="inherit">
+   ont::change-in-physical-property-scale
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">appearance-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-configuration">
+  <relation label="inherit">
+   ont::change-in-physical-property-scale
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">configuration-property-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-constriction">
+  <relation label="inherit">
+   ont::change-in-configuration
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">constriction-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-dimension">
+  <relation label="inherit">
+   ont::change-in-measure-scale
+  </relation>
+  <relation label="overlap">
+   wn::|grow%2:30:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">dimensional-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-linear-extent">
+  <relation label="inherit">
+   ont::change-in-size
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">linear-extent-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-measure-scale">
+  <relation label="inherit">
+   ont::change-in-scale
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">measure-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-moisture-content">
+  <relation label="inherit">
+   ont::change-in-physical-property-scale
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">moisture-content-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-physical-property-scale">
+  <relation label="inherit">
+   ont::change-in-scale
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">physical-property-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-ratio">
+  <relation label="inherit">
+   ont::change-in-measure-scale
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">ratio-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-scale">
+  <relation label="inherit">
+   ont::transformation
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">domain</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-size">
+  <relation label="inherit">
+   ont::change-in-dimension
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">size-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-tactile-scale">
+  <relation label="inherit">
+   ont::change-in-appearance
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">tactile-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-temperature">
+  <relation label="inherit">
+   ont::change-in-measure-scale
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">temperature-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-time-measure">
+  <relation label="inherit">
+   ont::change-in-measure-scale
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="scale">time-measure-scale</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">time-measure-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::change-in-visual-scale">
+  <relation label="inherit">
+   ont::change-in-appearance
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="scale">visual-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::change-integrity">
   <comment>
-   &quot;an AFFECTED undergoes a change of physical state, e.g., thaw. Allows but does not require an AGENT&quot;
+   &quot;an AFFECTED undergoes a change of physical or chemical state that affects its integrity, e.g., thaw. Allows but does not require an AGENT&quot;
   </comment>
   <relation label="inherit">
    ont::change-state
   </relation>
   <relation label="overlap">
    wn::|change_integrity%2:30:00::|
-   wn::|clot%2:30:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -5483,7 +5766,7 @@
  </concept>
  <concept name="ont::change-magnitude">
   <relation label="inherit">
-   ont::adjust
+   ont::change-in-scale
   </relation>
   <relation label="overlap">
    wn::|change_magnitude%2:30:00::|
@@ -5605,6 +5888,19 @@
    wn::|chemical%1:27:00::|
    wn::|chemical_substance%1:27:00::|
    wn::|chemical_compound%1:27:00::|
+  </relation>
+ </concept>
+ <concept name="ont::chemical-change">
+  <relation label="inherit">
+   ont::change-integrity
+  </relation>
+  <relation label="overlap">
+   wn::|demulsify%2:30:01::|
+   wn::|demulsify%2:30:00::|
+   wn::|polymerize%2:30:02::|
+   wn::|polymerize%2:30:00::|
+   wn::|emulsify%2:30:01::|
+   wn::|emulsify%2:30:00::|
   </relation>
  </concept>
  <concept name="ont::chemical-val">
@@ -5944,9 +6240,10 @@
  </concept>
  <concept name="ont::clog">
   <relation label="inherit">
-   ont::continuous-change
+   ont::closure
   </relation>
   <relation label="overlap">
+   wn::|obstruct%2:35:00::|
    wn::|clog%2:35:00::|
    wn::|choke_off%2:35:00::|
    wn::|clog_up%2:35:00::|
@@ -5962,17 +6259,13 @@
   </relation>
   <relation label="overlap">
    wn::|close%2:41:00::|
+   wn::|close%2:35:00::|
+   wn::|close%2:35:06::|
   </relation>
  </concept>
  <concept name="ont::closure">
   <relation label="inherit">
    ont::change-state-action
-  </relation>
-  <relation label="overlap">
-   wn::|open_up%2:35:00::|
-   wn::|open%2:35:00::|
-   wn::|close%2:35:00::|
-   wn::|shut%2:35:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected">
@@ -6148,6 +6441,15 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::collapse">
+  <relation label="inherit">
+   ont::change-state
+  </relation>
+  <relation label="overlap">
+   wn::|collapse%2:38:00::|
+   wn::|collapse%2:38:03::|
+  </relation>
+ </concept>
  <concept name="ont::collate">
   <relation label="inherit">
    ont::arranging
@@ -6308,6 +6610,7 @@
    wn::|discolour%2:30:00::|
    wn::|colour%2:30:00::|
    wn::|color%2:30:01::|
+   wn::|discolor%2:30:02::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -7288,6 +7591,14 @@
    wn::|privacy%1:26:02::|
   </relation>
  </concept>
+ <concept name="ont::configuration-property-scale">
+  <comment>
+   &quot;scales for properties regarding the configuration, arrangement or layout of elements&quot;
+  </comment>
+  <relation label="inherit">
+   ont::physical-property-scale
+  </relation>
+ </concept>
  <concept name="ont::configuration-property-val">
   <comment>
    &quot;properties regarding the configuration, arrangement, or layout of elements&quot;
@@ -7501,6 +7812,11 @@
   </comment>
   <relation label="inherit">
    ont::configuration-property-val
+  </relation>
+ </concept>
+ <concept name="ont::constriction-scale">
+  <relation label="inherit">
+   ont::configuration-property-scale
   </relation>
  </concept>
  <concept name="ont::consume">
@@ -7917,13 +8233,24 @@
  </concept>
  <concept name="ont::cool">
   <relation label="inherit">
-   ont::continuous-change
+   ont::change-in-temperature
   </relation>
   <relation label="overlap">
    wn::|cool%2:30:00::|
    wn::|chill%2:30:00::|
    wn::|cool_down%2:30:01::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">cold-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::coordinate">
   <relation label="inherit">
@@ -8546,6 +8873,9 @@
   <relation label="inherit">
    ont::transformation
   </relation>
+  <relation label="overlap">
+   wn::|damage%2:30:00::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     situation
@@ -8571,16 +8901,22 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::dampness-val">
+ <concept name="ont::dampen">
   <relation label="inherit">
-   ont::physical-property-val
+   ont::change-in-moisture-content
+  </relation>
+  <relation label="overlap">
+   wn::|wet%2:30:00::|
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::figure">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="situation" />
-    </or>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">wet-scale</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -8617,6 +8953,26 @@
   <relation label="overlap">
    wn::|dark%3:00:01::|
   </relation>
+ </concept>
+ <concept name="ont::darken">
+  <relation label="inherit">
+   ont::change-in-visual-scale
+  </relation>
+  <relation label="overlap">
+   wn::|darken%2:30:01::|
+   wn::|darken%2:30:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">darkness-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::darkness-scale">
   <relation label="inherit">
@@ -8820,7 +9176,6 @@
    wn::|diminish%2:30:00::|
    wn::|lessen%2:30:00::|
    wn::|fall%2:30:06::|
-   wn::|weaken%2:30:01::|
    wn::|mitigate%2:32:00::|
   </relation>
  </concept>
@@ -8836,8 +9191,23 @@
  </concept>
  <concept name="ont::decrease-speed">
   <relation label="inherit">
-   ont::decrease
+   ont::change-in-ratio
   </relation>
+  <relation label="overlap">
+   wn::|slow%2:30:00::|
+   wn::|slow%2:30:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">neg</feat>
+     <feat name="scale">speed-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::deep-val">
   <relation label="inherit">
@@ -8852,6 +9222,25 @@
    </relation>
    <feat name="scale">depth-scale</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::deepen">
+  <relation label="inherit">
+   ont::change-in-linear-extent
+  </relation>
+  <relation label="overlap">
+   wn::|deepen%2:30:03::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">depth-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::defame">
   <relation label="inherit">
@@ -8984,12 +9373,45 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::dehydrated-val">
+ <concept name="ont::dehydrate">
+  <comment>
+   &quot;dehydrating process causes something that intrinsically contains moisture to be mosture-lacking (consider 'dehydrate the apples' is possible but 'dehydrate the car' is weird)&quot;
+  </comment>
   <relation label="inherit">
-   ont::medical-symptom-val
+   ont::dry
   </relation>
   <relation label="overlap">
-   wn::|dehydrated%5:00:00:unhealthy:00|
+   wn::|wither%2:30:00::|
+   wn::|dehydrate%2:30:01::|
+   wn::|dehydrate%2:30:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">dehydrated-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::dehydrated-scale">
+  <relation label="inherit">
+   ont::dry-scale
+  </relation>
+  <relation label="overlap">
+   wn::|dehydration%1:26:00::|
+  </relation>
+ </concept>
+ <concept name="ont::dehydrated-val">
+  <relation label="inherit">
+   ont::dry-val
+  </relation>
+  <relation label="overlap">
+   wn::|withered%5:00:00:dry:01|
+   wn::|dehydrated%5:00:00:preserved:02|
   </relation>
  </concept>
  <concept name="ont::delay">
@@ -9313,7 +9735,7 @@
  </concept>
  <concept name="ont::deteriorate">
   <relation label="inherit">
-   ont::continuous-change
+   ont::change-integrity
   </relation>
   <relation label="overlap">
    wn::|decompose%2:30:02::|
@@ -9321,6 +9743,9 @@
    wn::|disintegrate%2:30:01::|
    wn::|decay%2:30:02::|
    wn::|acerbate%2:37:00::|
+   wn::|decay%2:30:01::|
+   wn::|decay%2:30:00::|
+   wn::|decay%2:30:02::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::agent" optional="optional">
@@ -10101,6 +10526,15 @@
    ont::info-medium
   </relation>
  </concept>
+ <concept name="ont::dissolve">
+  <relation label="inherit">
+   ont::change-integrity
+  </relation>
+  <relation label="overlap">
+   wn::|dissolve%2:30:01::|
+   wn::|dissolve%2:30:00::|
+  </relation>
+ </concept>
  <concept name="ont::dissuade">
   <relation label="inherit">
    ont::perlocution
@@ -10471,9 +10905,40 @@
    wn::|drug%2:34:00::|
   </relation>
  </concept>
+ <concept name="ont::dry">
+  <comment>
+   &quot;simply dry, neither suggests the object undergoing the drying process is intrinsically moistured or contains moisture internally (consider 'the apples dried', 'the car dried')&quot;
+  </comment>
+  <relation label="inherit">
+   ont::change-in-moisture-content
+  </relation>
+  <relation label="overlap">
+   wn::|dry%2:30:00::|
+   wn::|dry%2:30:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">dry-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::dry-scale">
+  <relation label="inherit">
+   ont::moisture-content-scale
+  </relation>
+  <relation label="overlap">
+   wn::|dryness%1:26:00::|
+  </relation>
+ </concept>
  <concept name="ont::dry-val">
   <relation label="inherit">
-   ont::dampness-val
+   ont::moisture-content-val
   </relation>
   <relation label="overlap">
    wn::|dry%3:00:01::|
@@ -11176,6 +11641,26 @@
   <relation label="overlap">
    wn::|enjoyable%5:00:00:pleasant:00|
   </relation>
+ </concept>
+ <concept name="ont::enlarge">
+  <relation label="inherit">
+   ont::change-in-size
+  </relation>
+  <relation label="overlap">
+   wn::|enlarge%2:30:00::|
+   wn::|hypertrophy%2:29:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">size-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::enroll">
   <relation label="overlap">
@@ -12588,7 +13073,6 @@
    wn::|explode%2:30:01::|
    wn::|explode%2:30:00::|
    wn::|burst%2:30:09::|
-   wn::|burst%2:38:04::|
   </relation>
  </concept>
  <concept name="ont::expose">
@@ -12598,6 +13082,47 @@
   <relation label="overlap">
    wn::|uncover%2:35:00::|
   </relation>
+ </concept>
+ <concept name="ont::extend">
+  <relation label="inherit">
+   ont::change-in-linear-extent
+  </relation>
+  <relation label="overlap">
+   wn::|stretch%2:30:04::|
+   wn::|stretch%2:30:00::|
+   wn::|extend%2:30:01::|
+   wn::|broaden%2:30:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">area-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::extend-time">
+  <relation label="inherit">
+   ont::change-in-time-measure
+  </relation>
+  <relation label="overlap">
+   wn::|prolong%2:30:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">duration-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::extended-say">
   <comment>
@@ -13624,6 +14149,9 @@
   <relation label="inherit">
    ont::move
   </relation>
+  <relation label="overlap">
+   wn::|fold%2:35:00::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     situation
@@ -13878,7 +14406,7 @@
    &quot;relating to how recently an object was made or obtained&quot;
   </comment>
   <relation label="inherit">
-   ont::temporal-val
+   ont::evaluation-attribute-val
   </relation>
  </concept>
  <concept name="ont::freshwater-fish">
@@ -14696,6 +15224,15 @@
    wn::|cereal%1:20:00::|
   </relation>
  </concept>
+ <concept name="ont::granulate">
+  <relation label="inherit">
+   ont::change-integrity
+  </relation>
+  <relation label="overlap">
+   wn::|granulate%2:30:00::|
+   wn::|granulate%2:30:01::|
+  </relation>
+ </concept>
  <concept name="ont::graphic-symbol">
   <relation label="inherit">
    ont::symbolic-representation
@@ -14878,8 +15415,11 @@
   </relation>
   <relation label="overlap">
    wn::|grow%2:30:02::|
-   wn::|bring_up%2:41:00::|
    wn::|cultivate%2:36:00::|
+   wn::|grow%2:30:01::|
+   wn::|develop%2:30:01::|
+   wn::|grow%2:30:00::|
+   wn::|develop%2:30:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -15065,6 +15605,28 @@
    </relation>
    <feat name="scale">hardness*1--07--00</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::harden">
+  <relation label="inherit">
+   ont::change-in-tactile-scale
+  </relation>
+  <relation label="overlap">
+   wn::|harden%2:30:01::|
+   wn::|harden%2:30:00::|
+   wn::|stiffen%2:30:01::|
+   wn::|stiffen%2:30:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">tactile-hardness-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::hardness-val">
   <relation label="inherit">
@@ -15350,8 +15912,25 @@
  </concept>
  <concept name="ont::heat">
   <relation label="inherit">
-   ont::continuous-change
+   ont::change-in-temperature
   </relation>
+  <relation label="overlap">
+   wn::|heat%2:30:00::|
+   wn::|heat%2:30:01::|
+   wn::|overheat%2:30:01::|
+   wn::|overheat%2:30:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">heat-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::heat-scale">
   <relation label="inherit">
@@ -15745,12 +16324,13 @@
  </concept>
  <concept name="ont::hydrolysis">
   <relation label="inherit">
-   ont::adjust
+   ont::chemical-change
   </relation>
   <relation label="overlap">
    wn::|hydrolysis%1:22:00::|
    wn::|hydrolyze%2:30:00::|
    wn::|hydrolyse%2:30:00::|
+   wn::|hydrolize%2:30:01::|
   </relation>
  </concept>
  <concept name="ont::hydroxylation">
@@ -16011,6 +16591,7 @@
   <relation label="overlap">
    wn::|enhancement%1:04:00::|
    wn::|sweetening%1:04:02::|
+   wn::|meliorate%2:30:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -16231,7 +16812,6 @@
   </relation>
   <relation label="overlap">
    wn::|increase%2:30:00::|
-   wn::|lengthen%2:30:01::|
   </relation>
  </concept>
  <concept name="ont::increase-number">
@@ -16244,7 +16824,7 @@
  </concept>
  <concept name="ont::increase-speed">
   <relation label="inherit">
-   ont::increase
+   ont::change-in-ratio
   </relation>
   <relation label="overlap">
    wn::|hasten%2:36:00::|
@@ -16271,14 +16851,17 @@
    wn::|look_sharp%2:30:00::|
    wn::|festinate%2:30:00::|
   </relation>
- </concept>
- <concept name="ont::increase-time">
-  <relation label="inherit">
-   ont::increase
-  </relation>
-  <relation label="overlap">
-   wn::|prolong%2:30:00::|
-  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">speed-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::incremental-val">
   <relation label="inherit">
@@ -16715,6 +17298,29 @@
   <relation label="inherit">
    ont::modifier
   </relation>
+ </concept>
+ <concept name="ont::intensify">
+  <relation label="inherit">
+   ont::change-in-dimension
+  </relation>
+  <relation label="overlap">
+   wn::|augment%2:30:00::|
+   wn::|intensify%2:30:01::|
+   wn::|intensify%2:30:00::|
+   wn::|sharpen%2:30:01::|
+   wn::|sharpen%2:30:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">intensity-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::intensity-scale">
   <relation label="inherit">
@@ -17710,9 +18316,6 @@
   <relation label="inherit">
    ont::fattiness-val
   </relation>
-  <relation label="overlap">
-   wn::|lean%3:00:04::|
-  </relation>
  </concept>
  <concept name="ont::leaning">
   <comment>
@@ -17935,6 +18538,26 @@
    <feat name="scale">linear-extent-scale</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::lengthen">
+  <relation label="inherit">
+   ont::change-in-linear-extent
+  </relation>
+  <relation label="overlap">
+   wn::|lengthen%2:30:00::|
+   wn::|lengthen%2:30:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">length-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::less-than-rel">
   <relation label="inherit">
    ont::scale-relation
@@ -17954,6 +18577,26 @@
    <feat name="information">-</feat>
    <feat name="container">-</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::lessen-intensity">
+  <relation label="inherit">
+   ont::change-in-dimension
+  </relation>
+  <relation label="overlap">
+   wn::|weaken%2:30:03::|
+   wn::|slack%2:30:04::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">neg</feat>
+     <feat name="scale">intensity-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::letter-symbol">
   <relation label="inherit">
@@ -18021,11 +18664,16 @@
  </concept>
  <concept name="ont::life-transformation">
   <relation label="inherit">
-   ont::continuous-change
+   ont::change-integrity
   </relation>
   <relation label="overlap">
-   wn::|develop%2:30:00::|
    wn::|fruit%2:36:01::|
+   wn::|cross-fertilize%2:29:00::|
+   wn::|cross-fertilize%2:29:01::|
+   wn::|work%2:30:14::|
+   wn::|work%2:30:13::|
+   wn::|ripen%2:30:01::|
+   wn::|ripen%2:30:00::|
   </relation>
  </concept>
  <concept name="ont::lifecycle-stage">
@@ -18080,6 +18728,44 @@
    </relation>
    <feat name="scale">luminosity-scale</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::lighten">
+  <relation label="inherit">
+   ont::change-in-visual-scale
+  </relation>
+  <relation label="overlap">
+   wn::|lighten%2:30:02::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">lightness-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::lighten-weight">
+  <relation label="inherit">
+   ont::change-in-dimension
+  </relation>
+  <relation label="overlap">
+   wn::|lighten%2:35:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">neg</feat>
+     <feat name="scale">weight-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::lightheadedness">
   <relation label="inherit">
@@ -18250,6 +18936,16 @@
  <concept name="ont::link">
   <relation label="inherit">
    ont::symbolic-representation
+  </relation>
+ </concept>
+ <concept name="ont::liquefy">
+  <relation label="inherit">
+   ont::change-integrity
+  </relation>
+  <relation label="overlap">
+   wn::|liquefy%2:30:00::|
+   wn::|liquefy%2:30:01::|
+   wn::|melt%2:30:01::|
   </relation>
  </concept>
  <concept name="ont::liquid-substance">
@@ -18663,6 +19359,36 @@
    wn::|loose%3:00:01::|
   </relation>
  </concept>
+ <concept name="ont::loosen">
+  <relation label="inherit">
+   ont::change-in-constriction
+  </relation>
+  <relation label="overlap">
+   wn::|loosen%2:30:00::|
+   wn::|loosen%2:30:01::|
+   wn::|slacken%2:30:00::|
+   wn::|slacken%2:30:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">looseness-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::looseness-scale">
+  <relation label="inherit">
+   ont::constriction-scale
+  </relation>
+  <relation label="overlap">
+   wn::|looseness%1:07:00::|
+  </relation>
+ </concept>
  <concept name="ont::lose">
   <relation label="inherit">
    ont::relinquish
@@ -19013,6 +19739,15 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::mangle">
+  <relation label="inherit">
+   ont::damage
+  </relation>
+  <relation label="overlap">
+   wn::|mangle%2:30:01::|
+   wn::|mar%2:30:00::|
+  </relation>
  </concept>
  <concept name="ont::mania">
   <relation label="inherit">
@@ -19394,6 +20129,14 @@
  <concept name="ont::medical-condition-property-val">
   <relation label="inherit">
    ont::body-related-property-val
+  </relation>
+ </concept>
+ <concept name="ont::medical-dehydration-val">
+  <relation label="inherit">
+   ont::medical-symptom-val
+  </relation>
+  <relation label="overlap">
+   wn::|dehydrated%5:00:00:unhealthy:00|
   </relation>
  </concept>
  <concept name="ont::medical-diagnostic">
@@ -20083,6 +20826,24 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::moisture-content-scale">
+  <relation label="inherit">
+   ont::physical-property-scale
+  </relation>
+ </concept>
+ <concept name="ont::moisture-content-val">
+  <relation label="inherit">
+   ont::physical-property-val
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::molecular-domain">
   <relation label="inherit">
    ont::molecular-part
@@ -20678,6 +21439,25 @@
    wn::|designate%2:32:00::|
    wn::|denominate%2:32:00::|
   </relation>
+ </concept>
+ <concept name="ont::narrow">
+  <relation label="inherit">
+   ont::change-in-linear-extent
+  </relation>
+  <relation label="overlap">
+   wn::|narrow%2:30:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">neg</feat>
+     <feat name="scale">width-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::narrow-val">
   <relation label="inherit">
@@ -21953,12 +22733,23 @@
    ont::number-related-property-val
   </relation>
  </concept>
+ <concept name="ont::nurturing">
+  <comment>
+   &quot;to nurture, raise, or rear humans or other animate beings; take responsibility for the growth of animate beings (compare to ont::grow)&quot;
+  </comment>
+  <relation label="inherit">
+   ont::control-manage
+  </relation>
+  <relation label="overlap">
+   wn::|rear%2:41:00::|
+  </relation>
+ </concept>
  <concept name="ont::nutrient">
   <relation label="inherit">
    ont::chemical
   </relation>
   <relation label="overlap">
-   wn::|nutient%1:03:01::|
+   wn::|nutrient%1:03:01::|
   </relation>
  </concept>
  <concept name="ont::nutritional-supplement">
@@ -22456,6 +23247,9 @@
   <relation label="overlap">
    wn::|open%2:41:00::|
    wn::|premier%2:36:01::|
+   wn::|open_up%2:35:00::|
+   wn::|open%2:35:06::|
+   wn::|open%2:35:00::|
   </relation>
  </concept>
  <concept name="ont::opening">
@@ -23622,6 +24416,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::physical-property-scale">
+  <comment>
+   &quot;scales associated with properties pertaining to the attributes of physical entities or substances. Note: many properties can apply to non-physical objects.&quot;
+  </comment>
+  <relation label="inherit">
+   ont::attributive-scale
+  </relation>
+ </concept>
  <concept name="ont::physical-property-val">
   <comment>
    &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
@@ -24546,7 +25348,7 @@
  </concept>
  <concept name="ont::post-translational-modification">
   <relation label="inherit">
-   ont::adjust
+   ont::chemical-change
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::location" optional="optional">
@@ -25793,7 +26595,6 @@
    ont::apply-force
   </relation>
   <relation label="overlap">
-   wn::|wet%2:30:00::|
    wn::|squirt%2:35:00::|
    wn::|squirt%2:35:10::|
    wn::|sprinkle%2:35:01::|
@@ -27818,6 +28619,7 @@
    wn::|energize%2:29:00::|
    wn::|energise%2:29:00::|
    wn::|perk_up%2:29:01::|
+   wn::|revive%2:29:02::|
   </relation>
  </concept>
  <concept name="ont::reward">
@@ -28943,7 +29745,7 @@
    &quot;scales that deal with the quality to being perceivable through sensory input&quot;
   </comment>
   <relation label="inherit">
-   ont::attributive-scale
+   ont::physical-property-scale
   </relation>
  </concept>
  <concept name="ont::separation">
@@ -28963,6 +29765,7 @@
    wn::|divide%2:42:00::|
    wn::|disjoint%2:35:00::|
    wn::|separate%2:35:00::|
+   wn::|separate%2:35:02::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -29245,10 +30048,25 @@
    wn::|sharpness%1:07:01::|
   </relation>
  </concept>
- <concept name="ont::sharpen-soft">
+ <concept name="ont::sharpen">
   <relation label="inherit">
-   ont::shape-change
+   ont::change-in-tactile-scale
   </relation>
+  <relation label="overlap">
+   wn::|sharpen%2:35:00::|
+   wn::|sharpen%2:30:08::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">sharp-texture-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::sheet">
   <relation label="inherit">
@@ -29332,6 +30150,46 @@
    wn::|shortcut%1:06:00::|
   </relation>
  </concept>
+ <concept name="ont::shorten">
+  <relation label="inherit">
+   ont::change-in-linear-extent
+  </relation>
+  <relation label="overlap">
+   wn::|shorten%2:30:09::|
+   wn::|shorten%2:30:02::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">neg</feat>
+     <feat name="scale">length-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::shorten-time">
+  <relation label="inherit">
+   ont::change-in-time-measure
+  </relation>
+  <relation label="overlap">
+   wn::|shorten%2:30:01::|
+   wn::|shorten%2:30:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">neg</feat>
+     <feat name="scale">duration-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::should">
   <relation label="inherit">
    ont::aux
@@ -29396,14 +30254,25 @@
  </concept>
  <concept name="ont::shrink">
   <relation label="inherit">
-   ont::continuous-change
+   ont::change-in-size
   </relation>
   <relation label="overlap">
-   wn::|shrivel%2:30:00::|
-   wn::|shrivel_up%2:30:00::|
    wn::|shrink%2:30:02::|
-   wn::|wither%2:30:00::|
+   wn::|compress%2:35:01::|
+   wn::|shrink%2:30:01::|
+   wn::|shrink%2:30:00::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">neg</feat>
+     <feat name="scale">size-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::side-location">
   <relation label="inherit">
@@ -29851,6 +30720,26 @@
    <feat name="scale">smoothness*1--07--00</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::smoothen">
+  <relation label="inherit">
+   ont::change-in-tactile-scale
+  </relation>
+  <relation label="overlap">
+   wn::|smoothen%2:30:00::|
+   wn::|smooth%2:35:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">smoothness-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::smoothness-scale">
   <relation label="inherit">
    ont::texture-scale
@@ -30101,6 +30990,26 @@
    <feat name="scale">softness*1--07--00</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::soften">
+  <relation label="inherit">
+   ont::change-in-tactile-scale
+  </relation>
+  <relation label="overlap">
+   wn::|soften%2:30:00::|
+   wn::|soften%2:30:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">tactile-softness-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::software-company">
   <relation label="inherit">
    ont::company
@@ -30133,6 +31042,19 @@
    </relation>
    <feat name="form">solid</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::solidify">
+  <relation label="inherit">
+   ont::change-integrity
+  </relation>
+  <relation label="overlap">
+   wn::|clot%2:30:01::|
+   wn::|freeze%2:30:02::|
+   wn::|freeze%2:30:00::|
+   wn::|solidify%2:30:00::|
+   wn::|solidify%2:30:01::|
+   wn::|crystallize%2:30:01::|
+  </relation>
  </concept>
  <concept name="ont::solve">
   <relation label="inherit">
@@ -31158,6 +32080,26 @@
    wn::|force%1:07:00::|
   </relation>
  </concept>
+ <concept name="ont::strengthen">
+  <relation label="inherit">
+   ont::change-in-dimension
+  </relation>
+  <relation label="overlap">
+   wn::|strengthen%2:30:01::|
+   wn::|strengthen%2:30:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">strength-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::stress-scale">
   <relation label="inherit">
    ont::psychological-condition-scale
@@ -31728,7 +32670,7 @@
  </concept>
  <concept name="ont::swell">
   <relation label="inherit">
-   ont::continuous-change
+   ont::change-in-size
   </relation>
   <relation label="overlap">
    wn::|swell%2:30:00::|
@@ -31736,7 +32678,24 @@
    wn::|intumesce%2:30:00::|
    wn::|tumefy%2:30:00::|
    wn::|tumesce%2:30:00::|
+   wn::|swell%2:30:01::|
+   wn::|bloat%2:30:01::|
+   wn::|bulk%2:30:00::|
+   wn::|protrude%2:30:00::|
+   wn::|rise%2:38:02::|
+   wn::|raise%2:38:01::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">size-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::swim">
   <relation label="inherit">
@@ -32393,6 +33352,22 @@
    wn::|texture%1:07:00::|
   </relation>
  </concept>
+ <concept name="ont::texture-thickness-scale">
+  <relation label="inherit">
+   ont::texture-scale
+  </relation>
+  <relation label="overlap">
+   wn::|thickness%1:07:02::|
+  </relation>
+ </concept>
+ <concept name="ont::texture-thinness-scale">
+  <relation label="inherit">
+   ont::texture-scale
+  </relation>
+  <relation label="overlap">
+   wn::|thinness%1:07:02::|
+  </relation>
+ </concept>
  <concept name="ont::texture-val">
   <relation label="inherit">
    ont::tangibility-val
@@ -32436,6 +33411,14 @@
    ont::situation-modifier
   </relation>
  </concept>
+ <concept name="ont::thick-texture-val">
+  <relation label="inherit">
+   ont::thickeness-in-texture-val
+  </relation>
+  <relation label="overlap">
+   wn::|thick%3:00:02::|
+  </relation>
+ </concept>
  <concept name="ont::thick-val">
   <relation label="inherit">
    ont::non-vertical-val
@@ -32450,6 +33433,32 @@
    <feat name="scale">thickness-scale</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::thicken">
+  <relation label="inherit">
+   ont::change-in-tactile-scale
+  </relation>
+  <relation label="overlap">
+   wn::|thicken%2:30:01::|
+   wn::|thicken%2:30:00::|
+   wn::|thicken%2:30:02::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">texture-thickness-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::thickeness-in-texture-val">
+  <relation label="inherit">
+   ont::texture-val
+  </relation>
+ </concept>
  <concept name="ont::thickness-scale">
   <relation label="inherit">
    ont::non-vertical-scale
@@ -32463,6 +33472,34 @@
    </relation>
    <feat name="scale">thickness-scale</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::thin">
+  <relation label="inherit">
+   ont::change-in-tactile-scale
+  </relation>
+  <relation label="overlap">
+   wn::|thin%2:30:01::|
+   wn::|thin%2:30:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">texture-thiness-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::thin-texture-val">
+  <relation label="inherit">
+   ont::thickeness-in-texture-val
+  </relation>
+  <relation label="overlap">
+   wn::|thin%3:00:02::|
+  </relation>
  </concept>
  <concept name="ont::thin-val">
   <relation label="inherit">
@@ -32541,6 +33578,34 @@
    wn::|tidy%3:00:00::|
    wn::|neat%5:00:00:tidy:00|
    wn::|uncluttered%5:00:00:tidy:00|
+  </relation>
+ </concept>
+ <concept name="ont::tighten">
+  <relation label="inherit">
+   ont::change-in-constriction
+  </relation>
+  <relation label="overlap">
+   wn::|tighten%2:30:00::|
+   wn::|tighten%2:30:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">tightness-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::tightness-scale">
+  <relation label="inherit">
+   ont::constriction-scale
+  </relation>
+  <relation label="overlap">
+   wn::|tightness%1:07:00::|
   </relation>
  </concept>
  <concept name="ont::time-clock-rel">
@@ -34364,8 +35429,11 @@
   </relation>
   <relation label="overlap">
    wn::|sharpen%2:39:00::|
+   wn::|sharpen%2:30:03::|
    wn::|soften%2:39:00::|
    wn::|blur%2:39:00::|
+   wn::|blur%2:30:01::|
+   wn::|focus%2:30:00::|
   </relation>
  </concept>
  <concept name="ont::visual-clarity-scale">
@@ -34768,6 +35836,27 @@
    wn::|dull%3:00:04::|
   </relation>
  </concept>
+ <concept name="ont::weaken">
+  <relation label="inherit">
+   ont::change-in-dimension
+  </relation>
+  <relation label="overlap">
+   wn::|weaken%2:30:00::|
+   wn::|weaken%2:30:01::|
+   wn::|waste%2:30:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">strength-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::weakness-scale">
   <relation label="inherit">
    ont::feebleness-scale
@@ -34980,9 +36069,17 @@
    ont::navigational-reln
   </relation>
  </concept>
+ <concept name="ont::wet-scale">
+  <relation label="inherit">
+   ont::moisture-content-scale
+  </relation>
+  <relation label="overlap">
+   wn::|wetness%1:26:00::|
+  </relation>
+ </concept>
  <concept name="ont::wet-val">
   <relation label="inherit">
-   ont::dampness-val
+   ont::moisture-content-val
   </relation>
   <relation label="overlap">
    wn::|wet%3:00:01::|
@@ -35076,6 +36173,26 @@
    ont::pitch-unit
    abstr-obj
   </relation>
+ </concept>
+ <concept name="ont::widen">
+  <relation label="inherit">
+   ont::change-in-linear-extent
+  </relation>
+  <relation label="overlap">
+   wn::|widen%2:30:00::|
+   wn::|widen%2:30:03::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::scale">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="orientation">pos</feat>
+     <feat name="scale">width-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::width-scale">
   <relation label="inherit">

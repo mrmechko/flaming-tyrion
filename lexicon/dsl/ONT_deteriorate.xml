@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::deteriorate">
  <relation label="inherit">
-  ont::continuous-change
+  ont::change-integrity
  </relation>
  <relation label="overlap">
   wn::|decompose%2:30:02::|
@@ -12,6 +12,9 @@
   wn::|disintegrate%2:30:01::|
   wn::|decay%2:30:02::|
   wn::|acerbate%2:37:00::|
+  wn::|decay%2:30:01::|
+  wn::|decay%2:30:00::|
+  wn::|decay%2:30:02::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::agent" optional="optional">
@@ -169,26 +172,79 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::change-integrity">
+ <comment>
+  &quot;an AFFECTED undergoes a change of physical or chemical state that affects its integrity, e.g., thaw. Allows but does not require an AGENT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::change-state
+ </relation>
+ <relation label="overlap">
+  wn::|change_integrity%2:30:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+ </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::result" optional="optional">
-  <concept name="t" />
- </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
  <role-restr-map roles="ont::agent" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::affected1" optional="optional">
+ <role-restr-map roles="ont::formal">
   <or>
    <concept name="phys-obj" />
    <concept name="abstr-obj" />
+   <concept name="situation" />
   </or>
  </role-restr-map>
  </sem-frame>
+ <concept name="ont::change-state">
+ <relation label="inherit">
+  ont::change
+ </relation>
+ <relation label="overlap">
+  wn::|change%1:24:00::|
+  wn::|modification%1:11:00::|
+  wn::|alteration%1:11:00::|
+  wn::|change%1:11:00::|
+  wn::|overload%2:35:01::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">dynamic</feat>
+ <feat name="trajectory">-</feat>
  </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::result" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::change">
  <relation label="inherit">
   ont::event-of-causation
@@ -230,16 +286,15 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::continuous-change">
- <relation label="inherit">
-  ont::transformation
- </relation>
- </concept>
  <sem-frame>
- <role-restr-map roles="ont::agent" optional="optional">
-  <concept name="t" />
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
  </role-restr-map>
- <role-restr-map roles="ont::formal">
+ <role-restr-map roles="ont::affected">
   <or>
    <concept name="phys-obj" />
    <concept name="abstr-obj" />
@@ -247,36 +302,6 @@
   </or>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::transformation">
- <relation label="inherit">
-  ont::change
- </relation>
- <relation label="overlap">
-  wn::|metabolize%2:34:00::|
-  wn::|transform%2:30:00::|
-  wn::|transform%2:30:03::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;

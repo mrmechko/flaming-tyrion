@@ -230,9 +230,9 @@
  </relation>
  <semantics>
   <sem-feats>
-   <feat name="time-span">atomic</feat>
+   <feat name="scale">size-scale</feat>
+   <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
  </sense>
@@ -720,32 +720,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="constrict" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="constriction" />
-   </nom>
-  </forms>
- </morph>
- <example text="the arteries constricted">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::decrease
-  ont::affected-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="continue" remaining-words="on" />
  </morph>
  <relation label="inherit">
@@ -1146,6 +1120,32 @@
  <semantics>
   <sem-feats>
    <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="enlarge" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="enlargement" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="Fruit had brown lesions that enlarged quickly.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::enlarge
+  ont::affected-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="scale">size-scale</feat>
+   <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
   </sem-feats>
  </semantics>
@@ -3529,7 +3529,7 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::shrink
+  ont::decrease
   ont::affected-templ
  </relation>
  <relation label="overlap">
@@ -3749,19 +3749,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="thin" />
- </morph>
- <example text="his hair thinned">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::adjust
-  ont::affected-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="thrive" />
  </morph>
  <example text="the garden thrived">
@@ -3796,29 +3783,6 @@
   ont::pulse
   ont::affected-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="tighten" />
- </morph>
- <example text="the screws tightened">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::adjust
-  ont::affected-templ
- </relation>
- <relation label="overlap">
-  vn::other_cos-45.4
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
  </sense>
  <sense>
  <morph>
@@ -4078,29 +4042,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="widen" />
- </morph>
- <example text="the river widens">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::adjust
-  ont::affected-templ
- </relation>
- <relation label="overlap">
-  vn::other_cos-45.4
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="wilt" />
  </morph>
  <example text="the flowers wilted">
@@ -4162,12 +4103,13 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::shrink
+  ont::dehydrate
   ont::affected-templ
  </relation>
  <semantics>
   <sem-feats>
-   <feat name="time-span">atomic</feat>
+   <feat name="scale">dehydrated-scale</feat>
+   <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
   </sem-feats>
  </semantics>

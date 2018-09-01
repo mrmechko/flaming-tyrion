@@ -4,9 +4,10 @@
  <provenance name="TRIPS"/>
  <concept name="ont::clog">
  <relation label="inherit">
-  ont::continuous-change
+  ont::closure
  </relation>
  <relation label="overlap">
+  wn::|obstruct%2:35:00::|
   wn::|clog%2:35:00::|
   wn::|choke_off%2:35:00::|
   wn::|clog_up%2:35:00::|
@@ -160,25 +161,79 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::result" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::agent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::affected1" optional="optional">
   <or>
+   <concept name="situation" />
    <concept name="phys-obj" />
-   <concept name="abstr-obj" />
   </or>
  </role-restr-map>
  </sem-frame>
- <sem-feats>
+ <concept name="ont::change-state">
  <relation label="inherit">
-  situation
+  ont::change
  </relation>
- <feat name="aspect">dynamic</feat>
- </sem-feats>
+ <relation label="overlap">
+  wn::|change%1:24:00::|
+  wn::|modification%1:11:00::|
+  wn::|alteration%1:11:00::|
+  wn::|change%1:11:00::|
+  wn::|overload%2:35:01::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="form">object</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::change-state-action">
+ <relation label="inherit">
+  ont::change-state
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::closure">
+ <relation label="inherit">
+  ont::change-state-action
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="form">object</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::change">
  <relation label="inherit">
   ont::event-of-causation
@@ -220,41 +275,22 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::transformation">
- <relation label="inherit">
-  ont::change
- </relation>
- <relation label="overlap">
-  wn::|metabolize%2:34:00::|
-  wn::|transform%2:30:00::|
-  wn::|transform%2:30:03::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::continuous-change">
- <relation label="inherit">
-  ont::transformation
- </relation>
- </concept>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;

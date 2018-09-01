@@ -4,13 +4,24 @@
  <provenance name="TRIPS"/>
  <concept name="ont::cool">
  <relation label="inherit">
-  ont::continuous-change
+  ont::change-in-temperature
  </relation>
  <relation label="overlap">
   wn::|cool%2:30:00::|
   wn::|chill%2:30:00::|
   wn::|cool_down%2:30:01::|
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::scale">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="orientation">pos</feat>
+    <feat name="scale">cold-scale</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::root" />
  <sem-feats>
@@ -156,25 +167,121 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::result" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::affected1" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
+ <role-restr-map roles="ont::scale">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">domain</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
- <sem-feats>
+ <concept name="ont::transformation">
  <relation label="inherit">
-  situation
+  ont::change
  </relation>
- <feat name="aspect">dynamic</feat>
+ <relation label="overlap">
+  wn::|metabolize%2:34:00::|
+  wn::|transform%2:30:00::|
+  wn::|transform%2:30:03::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected1" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::change-in-temperature">
+ <relation label="inherit">
+  ont::change-in-measure-scale
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::scale">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">temperature-scale</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::scale">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">cold-scale</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::change-in-measure-scale">
+ <relation label="inherit">
+  ont::change-in-scale
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::scale">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">measure-scale</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::scale">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">temperature-scale</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::change-in-scale">
+ <relation label="inherit">
+  ont::transformation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::scale">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">domain</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::scale">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">measure-scale</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::change">
  <relation label="inherit">
   ont::event-of-causation
@@ -216,41 +323,26 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::transformation">
- <relation label="inherit">
-  ont::change
- </relation>
- <relation label="overlap">
-  wn::|metabolize%2:34:00::|
-  wn::|transform%2:30:00::|
-  wn::|transform%2:30:03::|
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected1" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::continuous-change">
- <relation label="inherit">
-  ont::transformation
- </relation>
- </concept>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
@@ -374,17 +466,38 @@
   ont::cool
  </relation>
  <syntax>
-  <template-call template="ont::agent-theme-xp-templ" />
+  <template-call template="ont::agent-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
  <semantics>
   <sem-feats>
-   <feat name="time-span">atomic</feat>
+   <feat name="scale">cold-scale</feat>
+   <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
    <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="chill" />
+ </morph>
+ <example text="The juice chilled in the cooler">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cool
+  ont::affected-unaccusative-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="scale">cold-scale</feat>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
   </sem-feats>
  </semantics>
  </sense>
@@ -408,9 +521,30 @@
  </syntax>
  <semantics>
   <sem-feats>
-   <feat name="time-span">atomic</feat>
+   <feat name="scale">cold-scale</feat>
+   <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
    <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="cool" />
+ </morph>
+ <example text="the sauce cooled quickly">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cool
+  ont::affected-unaccusative-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="scale">cold-scale</feat>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
   </sem-feats>
  </semantics>
  </sense>
