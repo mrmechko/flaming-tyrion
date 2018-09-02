@@ -9095,7 +9095,11 @@
   (OVERLAP
     WN::|disease%1:26:00::|
     WN::|ailment%1:26:00::|
-    WN::|abnormality%1:26:00::|))
+    WN::|abnormality%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (MOBILITY MOVABLE)))
 
 (CONCEPT
   ONT::DISGUSTED
@@ -11673,6 +11677,13 @@
   ONT::FAMILIARITY-VAL
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT
+  ONT::FAMILY-GROUP
+  (INHERIT
+    ONT::SOCIAL-GROUP)
+  (OVERLAP
+    WN::|family%1:14:02::|))
 
 (CONCEPT
   ONT::FAMILY-RELATION
@@ -14801,6 +14812,7 @@
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
+    (MOBILITY MOVABLE)
     (CONTAINER +)
     (INTENTIONAL -)
     (INFORMATION INFORMATION-CONTENT)))
@@ -23831,7 +23843,9 @@
 (CONCEPT
   ONT::REGULATORY-ORGANIZATION
   (INHERIT
-    ONT::ORGANIZATION))
+    ONT::ORGANIZATION)
+  (OVERLAP
+    WN::|organization%1:14:01::|))
 
 (CONCEPT
   ONT::REGULATORY-ORGANIZATION-ABSTR
@@ -27701,7 +27715,8 @@
     WN::|status%1:26:01::|
     WN::|state%1:26:02::|
     WN::|state_of_matter%1:26:00::|
-    WN::|state%1:03:00::|)
+    WN::|state%1:03:00::|
+    WN::|situation%1:26:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -29913,7 +29928,8 @@
     WN::|damage%1:11:00::|
     WN::|problem%1:09:00::|
     WN::|trouble%1:09:00::|
-    WN::|trouble%1:11:00::|)
+    WN::|trouble%1:11:00::|
+    WN::|disorder%1:26:00::|)
   (SEM-FRAME
     (ONT::ASSOC-WITH
      (CONCEPT

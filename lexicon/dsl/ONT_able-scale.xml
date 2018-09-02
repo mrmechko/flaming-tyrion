@@ -153,8 +153,30 @@
  </comment>
  <relation label="inherit">
   ont::able-scale
-  ont::mass-pred-templ
  </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'w::cp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
  </sense>
  <sense>
  <morph>
@@ -178,9 +200,9 @@
   ont::able-scale
  </relation>
  <syntax>
-  <template-call template="ont::other-reln-templ" />
+  <template-call template="ont::other-reln-templ" xp="'w::cp" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="mass">count</feat>
