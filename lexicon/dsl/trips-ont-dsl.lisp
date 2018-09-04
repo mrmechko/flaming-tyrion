@@ -1763,7 +1763,8 @@
   (OVERLAP
     WN::|field%1:15:00::|
     WN::|field%1:15:05::|
-    WN::|plot%1:15:00::|))
+    WN::|plot%1:15:00::|
+    WN::|pasture%1:15:00::|))
 
 (CONCEPT
   ONT::AREA-SCALE
@@ -2035,7 +2036,8 @@
     ONT::FUNCTION-OBJECT)
   (OVERLAP
     WN::|assets%1:21:00::|
-    WN::|resource%1:21:00::|)
+    WN::|resource%1:21:00::|
+    WN::|reserve%1:21:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -5607,7 +5609,7 @@
 (CONCEPT
   ONT::COLLECT
   (INHERIT
-    ONT::EVENT-OF-CAUSATION)
+    ONT::ACQUIRE)
   (OVERLAP
     WN::|gather%2:35:00::|
     WN::|garner%2:35:00::|
@@ -8828,6 +8830,8 @@
    "a direction = a spatial relation between the location (FIGURE) of an object and its previous location")
   (INHERIT
     ONT::POSITION-RELN)
+  (OVERLAP
+    WN::|direction%1:15:00::|)
   (SEM-FRAME
     (ONT::NOROLE
      (CONCEPT
@@ -11316,6 +11320,13 @@
      (CONCEPT
        T)
      OPTIONAL)))
+
+(CONCEPT
+  ONT::EXPENSE
+  (INHERIT
+    ONT::VALUE-COST)
+  (OVERLAP
+    WN::|cost%1:21:00::|))
 
 (CONCEPT
   ONT::EXPENSIVE-SCALE
@@ -20905,6 +20916,16 @@
     WN::|aroma%1:09:01::|))
 
 (CONCEPT
+  ONT::PERCEIVABLE-SOUND-PROPERTY
+  (INHERIT
+    ONT::PERCEIVABLE-PROPERTY)
+  (OVERLAP
+    WN::|sound%1:07:00::|
+    WN::|sound%1:09:00::|
+    WN::|sound%1:19:00::|
+    WN::|sound%1:11:00::|))
+
+(CONCEPT
   ONT::PERCEIVABLE-TASTE-PROPERTY
   (INHERIT
     ONT::PERCEIVABLE-PROPERTY)
@@ -24873,6 +24894,14 @@
          PHYS-OBJ)
        (CONCEPT
          ABSTR-OBJ)))))
+
+(CONCEPT
+  ONT::REVENUE
+  (INHERIT
+    ONT::VALUE-COST)
+  (OVERLAP
+    WN::|financial_gain%1:21:00::|
+    WN::|return%1:21:00::|))
 
 (CONCEPT
   ONT::REVERSE
@@ -29811,7 +29840,8 @@
     WN::|violate%2:42:00::|
     WN::|violate%2:41:00::|
     WN::|violate%2:41:02::|
-    WN::|violate%2:35:00::|))
+    WN::|violate%2:35:00::|
+    WN::|conflict%1:26:00::|))
 
 (CONCEPT
   ONT::TRANSLOCATE
@@ -30718,14 +30748,7 @@
   (INHERIT
     ONT::VALUE)
   (OVERLAP
-    WN::|change%1:21:02::|
-    WN::|return%1:21:00::|
-    WN::|issue%1:21:00::|
-    WN::|take%1:21:00::|
-    WN::|takings%1:21:00::|
-    WN::|proceeds%1:21:00::|
-    WN::|yield%1:21:00::|
-    WN::|payoff%1:21:02::|)
+    WN::|change%1:21:02::|)
   (SEM-FRAME
     (ONT::EXTENT
      (SEM-FEATS

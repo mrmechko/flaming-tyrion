@@ -4451,6 +4451,7 @@
 <WORD name="through" />
 <WORD name="upwind" />
 <WORD name="way" />
+<MAPPING to="wordnet" name="direction%1:15:00::" />
 <ONTTYPE name="cardinal-direction">
 <WORD name="east" />
 <WORD name="eastward" />
@@ -5431,6 +5432,7 @@
 <WORD name="until" />
 </ONTTYPE>
 <ONTTYPE name="when-while">
+<WORD name="as" />
 <WORD name="when" />
 <WORD name="while" />
 </ONTTYPE>
@@ -6523,6 +6525,7 @@
 <WORD name="wealth" />
 <MAPPING to="wordnet" name="assets%1:21:00::" />
 <MAPPING to="wordnet" name="resource%1:21:00::" />
+<MAPPING to="wordnet" name="reserve%1:21:00::" />
 </ONTTYPE>
 <ONTTYPE name="currency">
 <WORD name="currency" />
@@ -7125,6 +7128,12 @@
 <MAPPING to="wordnet" name="smell%1:09:02::" />
 <MAPPING to="wordnet" name="aroma%1:09:01::" />
 </ONTTYPE>
+<ONTTYPE name="perceivable-sound-property">
+<MAPPING to="wordnet" name="sound%1:07:00::" />
+<MAPPING to="wordnet" name="sound%1:09:00::" />
+<MAPPING to="wordnet" name="sound%1:19:00::" />
+<MAPPING to="wordnet" name="sound%1:11:00::" />
+</ONTTYPE>
 <ONTTYPE name="perceivable-taste-property">
 <WORD name="flavor" />
 <MAPPING to="wordnet" name="relish%1:09:00::" />
@@ -7431,24 +7440,18 @@
 <ONTTYPE name="value-cost">
 <WORD name="airfare" />
 <WORD name="charge" />
-<WORD name="cost" />
 <WORD name="discount" />
-<WORD name="expenditure" />
-<WORD name="expense" />
 <WORD name="fare" />
 <WORD name="fee" />
 <WORD name="interest" />
 <WORD name="payment" />
-<WORD name="profit" />
 <WORD name="rebate" />
 <WORD name="refund" />
 <WORD name="reimbursement" />
-<WORD name="revenue" />
 <WORD name="tax" />
 <WORD name="value" />
 <WORD name="worth" />
 <MAPPING to="wordnet" name="change%1:21:02::" />
-<MAPPING to="wordnet" name="return%1:21:00::" />
 <ONTTYPE name="account">
 <WORD name="account" />
 <WORD name="fund" />
@@ -7461,8 +7464,20 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="charge-per-unit" />
+<ONTTYPE name="expense">
+<WORD name="cost" />
+<WORD name="expenditure" />
+<WORD name="expense" />
+<MAPPING to="wordnet" name="cost%1:21:00::" />
+</ONTTYPE>
 <ONTTYPE name="price">
 <WORD name="price" />
+</ONTTYPE>
+<ONTTYPE name="revenue">
+<WORD name="profit" />
+<WORD name="revenue" />
+<MAPPING to="wordnet" name="financial_gain%1:21:00::" />
+<MAPPING to="wordnet" name="return%1:21:00::" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -7873,7 +7888,6 @@
 <WORD name="way_point" />
 <WORD name="angle" />
 <WORD name="campus" />
-<WORD name="direction" />
 <WORD name="here" />
 <WORD name="location" />
 <WORD name="placeholder" />
@@ -7982,6 +7996,7 @@
 <MAPPING to="wordnet" name="field%1:15:00::" />
 <MAPPING to="wordnet" name="field%1:15:05::" />
 <MAPPING to="wordnet" name="plot%1:15:00::" />
+<MAPPING to="wordnet" name="pasture%1:15:00::" />
 <ONTTYPE name="workplace">
 <MAPPING to="wordnet" name="workplace%1:06:00::" />
 <ONTTYPE name="bakery">
@@ -13562,12 +13577,10 @@
 <WORD name="acquisition" />
 <WORD name="cadge" />
 <WORD name="download" />
-<WORD name="earn" />
 <WORD name="fetch" />
 <WORD name="gain" />
 <WORD name="get" />
 <WORD name="grab" />
-<WORD name="harvest" />
 <WORD name="obtain" />
 <WORD name="procure" />
 <WORD name="procurement" />
@@ -13647,6 +13660,12 @@
 <WORD name="pile" />
 <WORD name="stockpile" />
 <MAPPING to="wordnet" name="accumulate%2:30:00::" />
+</ONTTYPE>
+<ONTTYPE name="collect">
+<WORD name="collect" />
+<WORD name="gather" />
+<WORD name="harvest" />
+<MAPPING to="wordnet" name="gather%2:35:00::" />
 </ONTTYPE>
 <ONTTYPE name="commerce">
 <ONTTYPE name="commerce-collect">
@@ -14580,9 +14599,7 @@
 <WORD name="break" />
 <WORD name="chip" />
 <WORD name="collapse" />
-<WORD name="corrupt" />
 <WORD name="crack" />
-<WORD name="damage" />
 <WORD name="fracture" />
 <WORD name="rip" />
 <WORD name="shatter" />
@@ -15077,6 +15094,8 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="damage">
+<WORD name="corrupt" />
+<WORD name="damage" />
 <MAPPING to="wordnet" name="damage%2:30:00::" />
 <ONTTYPE name="dent">
 <WORD name="bruise" />
@@ -15093,11 +15112,6 @@
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="collect">
-<WORD name="collect" />
-<WORD name="gather" />
-<MAPPING to="wordnet" name="gather%2:35:00::" />
 </ONTTYPE>
 <ONTTYPE name="combine-objects">
 <WORD name="fold_in" />
@@ -16446,6 +16460,7 @@
 <MAPPING to="wordnet" name="transgress%2:41:00::" />
 <MAPPING to="wordnet" name="desecrate%2:41:00::" />
 <MAPPING to="wordnet" name="violate%2:35:00::" />
+<MAPPING to="wordnet" name="conflict%1:26:00::" />
 <ONTTYPE name="attack">
 <WORD name="assail" />
 <WORD name="assault" />
