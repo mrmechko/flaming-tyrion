@@ -15695,7 +15695,8 @@
     WN::|kill%2:35:00::|
     WN::|kill%2:35:01::|
     WN::|kill%2:35:02::|
-    WN::|destroy%2:35:01::|)
+    WN::|destroy%2:35:01::|
+    WN::|killing%1:04:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
