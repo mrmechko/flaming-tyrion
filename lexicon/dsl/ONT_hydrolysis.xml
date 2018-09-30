@@ -68,17 +68,13 @@
   <feat name="aspect">dynamic</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::beneficiary" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
   <role-restr-map roles="ont::result" optional="optional">
    <sem-feats>
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
     <feat name="type">position-reln</feat>
+    <feat name="tangible">-</feat>
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::affected" optional="optional">
@@ -187,7 +183,12 @@
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::result" optional="optional">
-   <concept name="phys-obj" />
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">resulting-state</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -227,7 +228,12 @@
  </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::result" optional="optional">
-  <concept name="phys-obj" />
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">resulting-state</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::change">
@@ -355,17 +361,13 @@
  <feat name="aspect">dynamic</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::beneficiary" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
  <role-restr-map roles="ont::result" optional="optional">
   <sem-feats>
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
    <feat name="type">position-reln</feat>
+   <feat name="tangible">-</feat>
   </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::affected" optional="optional">

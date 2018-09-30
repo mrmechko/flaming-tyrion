@@ -3452,7 +3452,6 @@
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
-    (ORIGIN LIVING)
     (FORM LIQUID)))
 
 (CONCEPT
@@ -3585,8 +3584,7 @@
     (CONTAINER +)
     (OBJECT-FUNCTION BODY-PART)
     (FORM OBJECT)
-    (INTENTIONAL -)
-    (ORIGIN LIVING))
+    (INTENTIONAL -))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -4983,8 +4981,10 @@
     (TRAJECTORY -))
   (SEM-FRAME
     (ONT::RESULT
-     (CONCEPT
-       PHYS-OBJ)
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE RESULTING-STATE))
      OPTIONAL)))
 
 (CONCEPT
@@ -6839,13 +6839,6 @@
     (CAUSE AGENTIVE)
     (TRAJECTORY -))
   (SEM-FRAME
-    (ONT::ASSOC-WITH
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (MOBILITY MOVABLE)
-       (FORM SUBSTANCE))
-     OPTIONAL)
     (ONT::AFFECTED
      (SEM-FEATS
        (INHERIT
@@ -10601,20 +10594,12 @@
       SITUATION)
     (ASPECT DYNAMIC))
   (SEM-FRAME
-    (ONT::BENEFICIARY
-     (CONCEPT
-       PHYS-OBJ)
-     OPTIONAL)
     (ONT::RESULT
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE POSITION-RELN))
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE POSITION-RELN)
+       (TANGIBLE -))
      OPTIONAL)
     (ONT::AFFECTED
      (SEM-FEATS
@@ -20394,10 +20379,6 @@
       SITUATION)
     (ASPECT STAGE-LEVEL))
   (SEM-FRAME
-    (ONT::RESULT
-     (CONCEPT
-       PHYS-OBJ)
-     OPTIONAL)
     (ONT::NEUTRAL1
      (CONCEPT
        T)
@@ -22338,11 +22319,6 @@
          (CONCEPT
            ABSTR-OBJ))
        (INTENTIONAL -)))
-    (ONT::RESULT
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +)))
     (ONT::AGENT
      (SEM-FEATS
        (OR
