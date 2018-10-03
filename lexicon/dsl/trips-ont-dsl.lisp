@@ -9346,8 +9346,11 @@
   (COMMENT
    "these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)")
   (INHERIT
-    ONT::ABSTRACT-OBJECT
-    ABSTR-OBJ)
+    ONT::ABSTRACT-OBJECT)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE DOMAIN))
   (SEM-FRAME
     (ONT::REFSET
      (CONCEPT
@@ -18467,7 +18470,7 @@
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
-    (SCALE ?SC)))
+    (SCALE DOMAIN)))
 
 (CONCEPT
   ONT::MUSCLE-CONTRACTION
