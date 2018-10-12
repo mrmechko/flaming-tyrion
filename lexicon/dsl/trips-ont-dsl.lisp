@@ -13197,28 +13197,8 @@
 
 (CONCEPT
   ONT::GOVERNING
-  (COMMENT "control, influence, or regulate a process")
   (INHERIT
-    ONT::CONTROL-MANAGE)
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE
-        (OR
-          DEVICE
-          LOCATED-EVENT
-          MOLECULAR-PART))))
-    (ONT::AGENT
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         PHYS-OBJ)))))
+    ONT::MANAGING))
 
 (CONCEPT
   ONT::GOVERNING-PRINCIPLE

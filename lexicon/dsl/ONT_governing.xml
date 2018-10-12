@@ -3,35 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::governing">
- <comment>
-  &quot;control, influence, or regulate a process&quot;
- </comment>
  <relation label="inherit">
-  ont::control-manage
+  ont::managing
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <or>
-     <concept name="situation" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="type">
-    <or>
-     device
-     located-event
-     molecular-part
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::root" />
  <sem-feats>
@@ -116,6 +90,14 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::managing">
+ <comment>
+  &quot;take responsibility over the production of a project, a program, or a production&quot;
+ </comment>
+ <relation label="inherit">
+  ont::control-manage
+ </relation>
+ </concept>
  <concept name="ont::control-manage">
  <comment>
   &quot;an agent controls another object, typically by some manipulation (physical, adding a substance,...)&quot;
@@ -154,29 +136,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="type">
-   <or>
-    device
-    located-event
-    molecular-part
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::event-of-causation">
  <comment>
   &quot;events involving an AGENT acting on an AFFECTED&quot;
