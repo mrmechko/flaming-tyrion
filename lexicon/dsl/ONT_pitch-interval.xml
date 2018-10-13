@@ -3,16 +3,32 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::pitch-interval">
+ <relation label="inherit">
+  ont::music-composition-element
+ </relation>
  <relation label="overlap">
   wn::|musical_interval%1:10:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">pitch-interval</feat>
+ </sem-feats>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
  <relation label="inherit">
-  ont::music-composition-element
   abstr-obj
  </relation>
- </concept>
- <concept name="ont::root" />
- <concept name="abstr-obj" />
+ <feat name="type">abstract-object</feat>
+ </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -23,13 +39,22 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">function-object</feat>
+ </sem-feats>
  <concept name="ont::tangible-abstract-object">
  <comment>
   &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
@@ -42,6 +67,7 @@
    abstr-obj
   </relation>
   <feat name="tangible">+</feat>
+  <feat name="type">tangible-abstract-object</feat>
  </sem-feats>
  </concept>
  <concept name="ont::information-function-object">
@@ -60,6 +86,7 @@
   <feat name="container">+</feat>
   <feat name="intentional">-</feat>
   <feat name="information">information-content</feat>
+  <feat name="type">information-function-object</feat>
  </sem-feats>
  </concept>
  <concept name="ont::music-composition-element">
@@ -71,8 +98,15 @@
    abstr-obj
   </relation>
   <feat name="scale">-</feat>
+  <feat name="type">music-composition-element</feat>
  </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">pitch-interval</feat>
+ </sem-feats>
  <concept name="ont::music">
  <relation label="inherit">
   ont::composition
@@ -86,6 +120,7 @@
   abstr-obj
  </relation>
  <feat name="scale">-</feat>
+ <feat name="type">music-composition-element</feat>
  </sem-feats>
  <concept name="ont::composition">
  <comment>
@@ -103,8 +138,13 @@
  <concept name="ont::function-object">
  <relation label="inherit">
   ont::tangible-abstract-object
-  abstr-obj
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">function-object</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -114,38 +154,49 @@
  <feat name="container">+</feat>
  <feat name="intentional">-</feat>
  <feat name="information">information-content</feat>
+ <feat name="type">information-function-object</feat>
  </sem-feats>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
  </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
  <relation label="overlap">
   wn::|psychological_feature%1:03:00::|
   wn::|abstraction%1:03:00::|
   wn::|abstract_entity%1:03:00::|
  </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">abstract-object</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
  <feat name="tangible">+</feat>
+ <feat name="type">tangible-abstract-object</feat>
  </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
  <sense>
  <morph>
   <pos pos="n" />

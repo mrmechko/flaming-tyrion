@@ -12,25 +12,37 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
  <or>
   <concept name="phys-obj" />
   <concept name="abstr-obj" />
   <concept name="situation" />
   <concept name="proposition" />
  </or>
- </concept>
- <concept name="ont::root" />
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <or>
  <concept name="phys-obj" />
  <concept name="abstr-obj" />
  <concept name="situation" />
  <concept name="proposition" />
  </or>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
+ <concept name="ont::root" />
  <concept name="ont::phys-object">
  <comment>
   &quot;All physical objects: things that have substance&quot;
@@ -47,6 +59,7 @@
    phys-obj
   </relation>
   <feat name="tangible">+</feat>
+  <feat name="type">phys-object</feat>
  </sem-feats>
  </concept>
  <concept name="ont::situation-root">
@@ -63,21 +76,27 @@
   <feat name="container">-</feat>
   <feat name="information">mental-construct</feat>
   <feat name="intentional">-</feat>
+  <feat name="type">situation-root</feat>
  </sem-feats>
  </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
  </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
  <relation label="overlap">
   wn::|psychological_feature%1:03:00::|
   wn::|abstraction%1:03:00::|
   wn::|abstract_entity%1:03:00::|
  </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">abstract-object</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::part">
  <comment>

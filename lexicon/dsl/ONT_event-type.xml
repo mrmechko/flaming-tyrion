@@ -15,8 +15,15 @@
    situation
   </relation>
   <feat name="intentional">-</feat>
+  <feat name="type">event-type</feat>
  </sem-feats>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::root" />
  <concept name="ont::situation-root">
  <comment>
@@ -32,6 +39,7 @@
   <feat name="container">-</feat>
   <feat name="information">mental-construct</feat>
   <feat name="intentional">-</feat>
+  <feat name="type">situation-root</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -39,6 +47,7 @@
   situation
  </relation>
  <feat name="intentional">-</feat>
+ <feat name="type">event-type</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -50,12 +59,15 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -64,18 +76,22 @@
  <feat name="container">-</feat>
  <feat name="information">mental-construct</feat>
  <feat name="intentional">-</feat>
+ <feat name="type">situation-root</feat>
  </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="situation" />
  <concept name="ont::event-defined-by-activity">
  <relation label="inherit">
@@ -92,6 +108,7 @@
    situation
   </relation>
   <feat name="aspect">dynamic</feat>
+  <feat name="type">event-defined-by-activity</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -113,6 +130,7 @@
    force
   </or>
   </feat>
+  <feat name="type">caused-event</feat>
  </sem-feats>
  </concept>
  <concept name="ont::action">
@@ -125,6 +143,7 @@
   </relation>
   <feat name="aspect">dynamic</feat>
   <feat name="cause">agentive</feat>
+  <feat name="type">action</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -133,13 +152,18 @@
  </sem-frame>
  </concept>
  <concept name="ont::situation">
+ <relation label="inherit">
+  ont::event-type
+ </relation>
  <relation label="overlap">
   wn::|phenomenon%1:03:00::|
  </relation>
- <relation label="inherit">
-  ont::event-type
-  situation
- </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="type">situation</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::located-event">
  <comment>
@@ -154,6 +178,7 @@
   </relation>
   <feat name="locative">located</feat>
   <feat name="trajectory">-</feat>
+  <feat name="type">located-event</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::neutral" optional="optional">
@@ -165,13 +190,18 @@
  </sem-frame>
  </concept>
  <concept name="ont::medical-disorders-and-conditions">
+ <relation label="inherit">
+  ont::event-type
+ </relation>
  <relation label="overlap">
   wn::|disorder%1:26:03::|
  </relation>
- <relation label="inherit">
-  ont::event-type
-  situation
- </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="type">medical-disorders-and-conditions</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
    <sem-feats>
@@ -206,11 +236,10 @@
    situation
   </relation>
   <feat name="trajectory">-</feat>
-  <feat name="cause">phenomenal</feat>
-  <feat name="aspect">dynamic</feat>
+  <feat name="type">natural-event</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::agent">
+  <role-restr-map roles="ont::agent" optional="optional">
    <sem-feats>
     <relation label="inherit">
      situation

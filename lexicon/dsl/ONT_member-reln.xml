@@ -7,12 +7,19 @@
   ont::person-reln
  </relation>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::root" />
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
  <feat name="tangible">+</feat>
+ <feat name="type">phys-object</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -24,18 +31,22 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
  <feat name="origin">living</feat>
+ <feat name="type">organism</feat>
  </sem-feats>
  <concept name="ont::natural-object">
  <relation label="inherit">
@@ -55,6 +66,7 @@
   </or>
   </feat>
   <feat name="origin">natural</feat>
+  <feat name="type">natural-object</feat>
  </sem-feats>
  </concept>
  <concept name="ont::animal">
@@ -83,6 +95,7 @@
   </feat>
   <feat name="form">solid-object</feat>
   <feat name="intentional">+</feat>
+  <feat name="type">animal</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -97,6 +110,7 @@
  <feat name="origin">human</feat>
  <feat name="spatial-abstraction">spatial-point</feat>
  <feat name="form">solid-object</feat>
+ <feat name="type">person</feat>
  </sem-feats>
  <concept name="ont::mammal">
  <relation label="inherit">
@@ -141,6 +155,7 @@
   <feat name="origin">human</feat>
   <feat name="spatial-abstraction">spatial-point</feat>
   <feat name="form">solid-object</feat>
+  <feat name="type">person</feat>
  </sem-feats>
  </concept>
  <concept name="ont::person-reln">
@@ -181,6 +196,7 @@
    phys-obj
   </relation>
   <feat name="origin">living</feat>
+  <feat name="type">organism</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -196,6 +212,7 @@
  </feat>
  <feat name="form">solid-object</feat>
  <feat name="intentional">+</feat>
+ <feat name="type">animal</feat>
  </sem-feats>
  <concept name="ont::phys-object">
  <comment>
@@ -213,6 +230,7 @@
    phys-obj
   </relation>
   <feat name="tangible">+</feat>
+  <feat name="type">phys-object</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -226,18 +244,22 @@
  </or>
  </feat>
  <feat name="origin">natural</feat>
+ <feat name="type">natural-object</feat>
  </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="phys-obj" />
  <sense>
  <morph>

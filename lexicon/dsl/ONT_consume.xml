@@ -17,10 +17,8 @@
   <relation label="inherit">
    situation
   </relation>
-  <feat name="time-span">extended</feat>
-  <feat name="aspect">dynamic</feat>
-  <feat name="cause">agentive</feat>
   <feat name="trajectory">-</feat>
+  <feat name="type">consume</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::affected">
@@ -43,6 +41,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::root" />
  <sem-feats>
  <relation label="inherit">
@@ -51,6 +55,7 @@
  <feat name="container">-</feat>
  <feat name="information">mental-construct</feat>
  <feat name="intentional">-</feat>
+ <feat name="type">situation-root</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -62,15 +67,18 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::agent">
+ <role-restr-map roles="ont::agent" optional="optional">
   <or>
    <concept name="situation" />
    <concept name="abstr-obj" />
@@ -83,6 +91,7 @@
   situation
  </relation>
  <feat name="cause">force</feat>
+ <feat name="type">event-of-action</feat>
  </sem-feats>
  <concept name="ont::event-of-change">
  <comment>
@@ -96,16 +105,11 @@
    situation
   </relation>
   <feat name="aspect">dynamic</feat>
+  <feat name="type">event-of-change</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::result" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">position-reln</feat>
-    <feat name="tangible">-</feat>
-   </sem-feats>
+   <concept name="abstr-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::affected" optional="optional">
    <sem-feats>
@@ -127,7 +131,7 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::agent">
+ <role-restr-map roles="ont::agent" optional="optional">
   <sem-feats>
    <or>
     <concept name="abstr-obj" />
@@ -137,7 +141,7 @@
    <feat name="tangible">+</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::affected">
+ <role-restr-map roles="ont::affected" optional="optional">
   <sem-feats>
    <or>
     <concept name="abstr-obj" />
@@ -148,6 +152,12 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="type">event-of-causation</feat>
+ </sem-feats>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
@@ -160,9 +170,10 @@
    situation
   </relation>
   <feat name="cause">force</feat>
+  <feat name="type">event-of-action</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::agent">
+  <role-restr-map roles="ont::agent" optional="optional">
    <or>
     <concept name="situation" />
     <concept name="abstr-obj" />
@@ -195,10 +206,8 @@
  <relation label="inherit">
   situation
  </relation>
- <feat name="time-span">extended</feat>
- <feat name="aspect">dynamic</feat>
- <feat name="cause">agentive</feat>
  <feat name="trajectory">-</feat>
+ <feat name="type">consume</feat>
  </sem-feats>
  <concept name="ont::event-of-causation">
  <comment>
@@ -206,10 +215,15 @@
  </comment>
  <relation label="inherit">
   ont::event-of-action
-  situation
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="type">event-of-causation</feat>
+ </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::agent">
+  <role-restr-map roles="ont::agent" optional="optional">
    <sem-feats>
     <or>
      <concept name="abstr-obj" />
@@ -219,7 +233,7 @@
     <feat name="tangible">+</feat>
    </sem-feats>
   </role-restr-map>
-  <role-restr-map roles="ont::affected">
+  <role-restr-map roles="ont::affected" optional="optional">
    <sem-feats>
     <or>
      <concept name="abstr-obj" />
@@ -245,6 +259,7 @@
   <feat name="container">-</feat>
   <feat name="information">mental-construct</feat>
   <feat name="intentional">-</feat>
+  <feat name="type">situation-root</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -252,16 +267,11 @@
   situation
  </relation>
  <feat name="aspect">dynamic</feat>
+ <feat name="type">event-of-change</feat>
  </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::result" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">position-reln</feat>
-   <feat name="tangible">-</feat>
-  </sem-feats>
+  <concept name="abstr-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::affected" optional="optional">
   <sem-feats>
@@ -286,12 +296,15 @@
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="situation" />
  <concept name="ont::smoking">
  <relation label="inherit">

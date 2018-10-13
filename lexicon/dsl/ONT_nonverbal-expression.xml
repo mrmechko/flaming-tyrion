@@ -16,6 +16,7 @@
   </relation>
   <feat name="time-span">extended</feat>
   <feat name="cause">agentive</feat>
+  <feat name="type">nonverbal-expression</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::neutral" optional="optional">
@@ -26,7 +27,7 @@
     <feat name="type">information-function-object</feat>
    </sem-feats>
   </role-restr-map>
-  <role-restr-map roles="ont::agent">
+  <role-restr-map roles="ont::agent" optional="optional">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -41,6 +42,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::root" />
  <sem-feats>
  <relation label="inherit">
@@ -49,6 +56,7 @@
  <feat name="container">-</feat>
  <feat name="information">mental-construct</feat>
  <feat name="intentional">-</feat>
+ <feat name="type">situation-root</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -60,12 +68,15 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::event-of-action">
  <comment>
@@ -79,9 +90,10 @@
    situation
   </relation>
   <feat name="cause">force</feat>
+  <feat name="type">event-of-action</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::agent">
+  <role-restr-map roles="ont::agent" optional="optional">
    <or>
     <concept name="situation" />
     <concept name="abstr-obj" />
@@ -96,6 +108,7 @@
  </relation>
  <feat name="time-span">extended</feat>
  <feat name="cause">agentive</feat>
+ <feat name="type">nonverbal-expression</feat>
  </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::neutral" optional="optional">
@@ -106,7 +119,7 @@
    <feat name="type">information-function-object</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::agent">
+ <role-restr-map roles="ont::agent" optional="optional">
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -132,16 +145,11 @@
    situation
   </relation>
   <feat name="aspect">dynamic</feat>
+  <feat name="type">event-of-change</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::result" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">position-reln</feat>
-    <feat name="tangible">-</feat>
-   </sem-feats>
+   <concept name="abstr-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::affected" optional="optional">
    <sem-feats>
@@ -167,9 +175,10 @@
   situation
  </relation>
  <feat name="cause">force</feat>
+ <feat name="type">event-of-action</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::agent">
+ <role-restr-map roles="ont::agent" optional="optional">
   <or>
    <concept name="situation" />
    <concept name="abstr-obj" />
@@ -191,6 +200,7 @@
   <feat name="container">-</feat>
   <feat name="information">mental-construct</feat>
   <feat name="intentional">-</feat>
+  <feat name="type">situation-root</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -198,16 +208,11 @@
   situation
  </relation>
  <feat name="aspect">dynamic</feat>
+ <feat name="type">event-of-change</feat>
  </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::result" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">position-reln</feat>
-   <feat name="tangible">-</feat>
-  </sem-feats>
+  <concept name="abstr-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::affected" optional="optional">
   <sem-feats>
@@ -232,12 +237,15 @@
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="situation" />
  <sense>
  <morph>

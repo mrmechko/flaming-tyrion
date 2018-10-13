@@ -12,12 +12,19 @@
   wn::|email%1:10:00::|
  </relation>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::root" />
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
  <feat name="tangible">+</feat>
+ <feat name="type">phys-object</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -29,12 +36,15 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::formal" optional="optional">
@@ -53,21 +63,12 @@
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="spatial-abstraction">
-  <or>
-   spatial-point
-   spatial-region
-   strip
-  </or>
-  </feat>
-  <feat name="mobility">non-self-moving</feat>
-  <feat name="information">information-content</feat>
-  <feat name="container">+</feat>
   <feat name="trajectory">+</feat>
   <feat name="object-function">representation</feat>
   <feat name="intentional">-</feat>
   <feat name="origin">artifact</feat>
   <feat name="form">object</feat>
+  <feat name="type">phys-representation</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -117,27 +118,19 @@
    phys-obj
   </relation>
   <feat name="tangible">+</feat>
+  <feat name="type">phys-object</feat>
  </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="spatial-abstraction">
- <or>
-  spatial-point
-  spatial-region
-  strip
- </or>
- </feat>
- <feat name="mobility">non-self-moving</feat>
- <feat name="information">information-content</feat>
- <feat name="container">+</feat>
  <feat name="trajectory">+</feat>
  <feat name="object-function">representation</feat>
  <feat name="intentional">-</feat>
  <feat name="origin">artifact</feat>
  <feat name="form">object</feat>
+ <feat name="type">phys-representation</feat>
  </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::figure" optional="optional">
@@ -149,12 +142,15 @@
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="phys-obj" />
  <sense>
  <morph>

@@ -13,14 +13,22 @@
   <feat name="group">+</feat>
   <feat name="object-function">instrument</feat>
   <feat name="mobility">non-self-moving</feat>
+  <feat name="type">instrumentation</feat>
  </sem-feats>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::root" />
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
  <feat name="tangible">+</feat>
+ <feat name="type">phys-object</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -32,19 +40,22 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="form">solid-object</feat>
  <feat name="origin">artifact</feat>
+ <feat name="type">manufactured-object</feat>
  </sem-feats>
  <concept name="ont::phys-object">
  <comment>
@@ -62,6 +73,7 @@
    phys-obj
   </relation>
   <feat name="tangible">+</feat>
+  <feat name="type">phys-object</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -71,6 +83,7 @@
  <feat name="group">+</feat>
  <feat name="object-function">instrument</feat>
  <feat name="mobility">non-self-moving</feat>
+ <feat name="type">instrumentation</feat>
  </sem-feats>
  <concept name="ont::manufactured-object">
  <relation label="inherit">
@@ -86,8 +99,8 @@
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="form">solid-object</feat>
   <feat name="origin">artifact</feat>
+  <feat name="type">manufactured-object</feat>
  </sem-feats>
  </concept>
  <concept name="ont::any-sem">
@@ -95,11 +108,14 @@
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="phys-obj" />
 </dsl>

@@ -10,8 +10,19 @@
   ont::property-val
  </relation>
  </concept>
- <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">abstract-object</feat>
+ </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -22,12 +33,15 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::refset" optional="optional">
@@ -39,10 +53,10 @@
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::scale">
+ <role-restr-map roles="ont::scale" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::ground">
+ <role-restr-map roles="ont::ground" optional="optional">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::figure">
@@ -54,20 +68,26 @@
   abstr-obj
  </relation>
  <feat name="scale">domain</feat>
+ <feat name="type">domain-property</feat>
  </sem-feats>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
  </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
  <relation label="overlap">
   wn::|psychological_feature%1:03:00::|
   wn::|abstraction%1:03:00::|
   wn::|abstract_entity%1:03:00::|
  </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">abstract-object</feat>
+ </sem-feats>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::standard" optional="optional">
@@ -111,11 +131,10 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="orientation">-</feat>
- <feat name="intensity">-</feat>
  <feat name="intentional">-</feat>
  <feat name="information">-</feat>
  <feat name="container">-</feat>
+ <feat name="type">property-val</feat>
  </sem-feats>
  <concept name="ont::domain-property">
  <comment>
@@ -129,6 +148,7 @@
    abstr-obj
   </relation>
   <feat name="scale">domain</feat>
+  <feat name="type">domain-property</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::refset" optional="optional">
@@ -140,10 +160,10 @@
   <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::scale">
+  <role-restr-map roles="ont::scale" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::ground">
+  <role-restr-map roles="ont::ground" optional="optional">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::figure">
@@ -159,11 +179,10 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="orientation">-</feat>
-  <feat name="intensity">-</feat>
   <feat name="intentional">-</feat>
   <feat name="information">-</feat>
   <feat name="container">-</feat>
+  <feat name="type">property-val</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::standard" optional="optional">
@@ -209,12 +228,16 @@
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
  <concept name="ont::comparative-val">
  <relation label="inherit">
   ont::relational-attribute-val
@@ -258,6 +281,7 @@
    abstr-obj
   </relation>
   <feat name="gradability">-</feat>
+  <feat name="type">sequence-val</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">

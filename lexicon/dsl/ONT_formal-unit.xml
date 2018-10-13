@@ -7,8 +7,19 @@
   ont::measure-unit
  </relation>
  </concept>
- <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">abstract-object</feat>
+ </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -19,12 +30,15 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::measure-unit">
  <relation label="inherit">
@@ -42,9 +56,10 @@
   <feat name="information">-</feat>
   <feat name="container">-</feat>
   <feat name="measure-function">value</feat>
+  <feat name="type">measure-unit</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
@@ -55,8 +70,13 @@
  </comment>
  <relation label="inherit">
   ont::abstract-object
-  abstr-obj
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">unit</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -66,9 +86,10 @@
  <feat name="information">-</feat>
  <feat name="container">-</feat>
  <feat name="measure-function">value</feat>
+ <feat name="type">measure-unit</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::figure">
+ <role-restr-map roles="ont::figure" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
@@ -76,27 +97,42 @@
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
  </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
  <relation label="overlap">
   wn::|psychological_feature%1:03:00::|
   wn::|abstraction%1:03:00::|
   wn::|abstract_entity%1:03:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
  <relation label="inherit">
-  ont::referential-sem
   abstr-obj
  </relation>
- </concept>
+ <feat name="type">unit</feat>
+ </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
  <concept name="ont::power-unit">
  <relation label="inherit">
   ont::formal-unit
@@ -107,7 +143,7 @@
   wn::|emu%1:23:00::|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -125,7 +161,7 @@
   wn::|energy_unit%1:23:00::|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -148,9 +184,10 @@
    abstr-obj
   </relation>
   <feat name="scale">luminosity-scale</feat>
+  <feat name="type">luminosity-unit</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <concept name="phys-obj" />
   </role-restr-map>
  </sem-frame>
@@ -167,6 +204,7 @@
    abstr-obj
   </relation>
   <feat name="scale">sound-scale</feat>
+  <feat name="type">acoustic-unit</feat>
  </sem-feats>
  </concept>
  <concept name="ont::rate-unit">
@@ -181,9 +219,10 @@
    abstr-obj
   </relation>
   <feat name="scale">rate-scale</feat>
+  <feat name="type">rate-unit</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <or>
     <concept name="phys-obj" />
     <concept name="situation" />
@@ -203,9 +242,10 @@
    abstr-obj
   </relation>
   <feat name="scale">measure-scale</feat>
+  <feat name="type">memory-unit</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -227,9 +267,10 @@
    abstr-obj
   </relation>
   <feat name="scale">temperature-scale</feat>
+  <feat name="type">temperature-unit</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <or>
     <concept name="phys-obj" />
     <concept name="situation" />
@@ -249,9 +290,10 @@
    abstr-obj
   </relation>
   <feat name="scale">linear-extent-scale</feat>
+  <feat name="type">angle-unit</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <sem-feats>
     <relation label="inherit">
      situation
@@ -275,6 +317,7 @@
    abstr-obj
   </relation>
   <feat name="scale">percent-scale</feat>
+  <feat name="type">percent</feat>
  </sem-feats>
  </concept>
  <concept name="ont::money-unit">
@@ -290,6 +333,7 @@
    abstr-obj
   </relation>
   <feat name="scale">money-scale</feat>
+  <feat name="type">money-unit</feat>
  </sem-feats>
  </concept>
 </dsl>

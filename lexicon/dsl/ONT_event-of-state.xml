@@ -14,22 +14,29 @@
    situation
   </relation>
   <feat name="aspect">static</feat>
+  <feat name="type">event-of-state</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::formal">
+  <role-restr-map roles="ont::formal" optional="optional">
    <or>
     <concept name="situation" />
     <concept name="abstr-obj" />
    </or>
   </role-restr-map>
-  <role-restr-map roles="ont::neutral">
+  <role-restr-map roles="ont::neutral" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::root" />
  <concept name="ont::situation-root">
  <comment>
@@ -45,6 +52,7 @@
   <feat name="container">-</feat>
   <feat name="information">mental-construct</feat>
   <feat name="intentional">-</feat>
+  <feat name="type">situation-root</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -52,18 +60,19 @@
   situation
  </relation>
  <feat name="aspect">static</feat>
+ <feat name="type">event-of-state</feat>
  </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::formal">
+ <role-restr-map roles="ont::formal" optional="optional">
   <or>
    <concept name="situation" />
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
- <role-restr-map roles="ont::neutral">
+ <role-restr-map roles="ont::neutral" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
@@ -77,12 +86,15 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -91,18 +103,22 @@
  <feat name="container">-</feat>
  <feat name="information">mental-construct</feat>
  <feat name="intentional">-</feat>
+ <feat name="type">situation-root</feat>
  </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="situation" />
  <concept name="ont::event-of-experience">
  <comment>
@@ -112,7 +128,7 @@
   ont::event-of-state
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::experiencer">
+  <role-restr-map roles="ont::experiencer" optional="optional">
    <sem-feats>
     <relation label="inherit">
      phys-obj
@@ -132,6 +148,7 @@
   </relation>
   <feat name="trajectory">-</feat>
   <feat name="cause">mental</feat>
+  <feat name="type">salience</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::source" optional="optional">
@@ -161,6 +178,7 @@
   </relation>
   <feat name="trajectory">-</feat>
   <feat name="cause">-</feat>
+  <feat name="type">expensiveness</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::formal">
@@ -170,7 +188,7 @@
     <concept name="situation" />
    </or>
   </role-restr-map>
-  <role-restr-map roles="ont::extent">
+  <role-restr-map roles="ont::extent" optional="optional">
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
@@ -195,6 +213,7 @@
   <feat name="trajectory">-</feat>
   <feat name="time-span">extended</feat>
   <feat name="aspect">static</feat>
+  <feat name="type">have-property</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::formal" optional="optional">
@@ -229,9 +248,10 @@
   <feat name="trajectory">-</feat>
   <feat name="time-span">extended</feat>
   <feat name="aspect">static</feat>
+  <feat name="type">having</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::neutral1">
+  <role-restr-map roles="ont::neutral1" optional="optional">
    <sem-feats>
     <or>
      <concept name="phys-obj" />
@@ -266,6 +286,7 @@
    situation
   </relation>
   <feat name="trajectory">-</feat>
+  <feat name="type">object-compare</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::neutral1">
@@ -332,6 +353,7 @@
    situation
   </relation>
   <feat name="trajectory">-</feat>
+  <feat name="type">position</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::affected1" optional="optional">
@@ -400,6 +422,7 @@
    situation
   </relation>
   <feat name="cause">phenomenal</feat>
+  <feat name="type">happen</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::experiencer" optional="optional">
@@ -437,6 +460,7 @@
   <feat name="cause">-</feat>
   <feat name="time-span">extended</feat>
   <feat name="aspect">static</feat>
+  <feat name="type">necessity</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::neutral" optional="optional">
@@ -466,6 +490,7 @@
   <feat name="cause">-</feat>
   <feat name="time-span">extended</feat>
   <feat name="aspect">static</feat>
+  <feat name="type">sufficiency</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::neutral" optional="optional">
@@ -498,6 +523,7 @@
   <feat name="trajectory">-</feat>
   <feat name="time-span">extended</feat>
   <feat name="aspect">static</feat>
+  <feat name="type">lacking</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::neutral">
@@ -567,6 +593,7 @@
   </relation>
   <feat name="trajectory">-</feat>
   <feat name="aspect">static</feat>
+  <feat name="type">correlation</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::formal" optional="optional">
@@ -578,7 +605,7 @@
     <concept name="abstr-obj" />
    </or>
   </role-restr-map>
-  <role-restr-map roles="ont::neutral">
+  <role-restr-map roles="ont::neutral" optional="optional">
    <sem-feats>
     <or>
      <concept name="phys-obj" />
@@ -639,6 +666,7 @@
   </relation>
   <feat name="trajectory">-</feat>
   <feat name="aspect">static</feat>
+  <feat name="type">relate</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::affected" optional="optional">
@@ -689,6 +717,7 @@
   </relation>
   <feat name="trajectory">-</feat>
   <feat name="aspect">static</feat>
+  <feat name="type">refute</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::affected" optional="optional">
@@ -731,6 +760,7 @@
   </relation>
   <feat name="trajectory">-</feat>
   <feat name="cause">-</feat>
+  <feat name="type">take-time</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::neutral" optional="optional">
@@ -774,7 +804,7 @@
   wn::|admit%2:42:04::|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::neutral1">
+  <role-restr-map roles="ont::neutral1" optional="optional">
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
@@ -817,6 +847,7 @@
   </relation>
   <feat name="cause">-</feat>
   <feat name="aspect">static</feat>
+  <feat name="type">share-property</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::neutral1">
@@ -832,7 +863,7 @@
   wn::|weigh%2:42:01::|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::extent">
+  <role-restr-map roles="ont::extent" optional="optional">
    <sem-feats>
     <relation label="inherit">
      abstr-obj

@@ -18,15 +18,25 @@
    phys-obj
   </relation>
   <feat name="tangible">+</feat>
+  <feat name="type">phys-object</feat>
  </sem-feats>
  </concept>
- <concept name="ont::root" />
  <or>
  <concept name="phys-obj" />
  <concept name="abstr-obj" />
  <concept name="situation" />
  <concept name="proposition" />
  </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
+ </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -38,6 +48,7 @@
   phys-obj
  </relation>
  <feat name="tangible">+</feat>
+ <feat name="type">phys-object</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -49,12 +60,15 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::agent">
  <relation label="inherit">
@@ -66,6 +80,7 @@
   </relation>
   <feat name="intentional">+</feat>
   <feat name="information">information-content</feat>
+  <feat name="type">agent</feat>
  </sem-feats>
  </concept>
  <concept name="ont::defined-by-sequence-relationship">
@@ -96,6 +111,7 @@
   </or>
   </feat>
   <feat name="origin">natural</feat>
+  <feat name="type">natural-object</feat>
  </sem-feats>
  </concept>
  <concept name="ont::geo-object">
@@ -111,6 +127,7 @@
   </relation>
   <feat name="container">+</feat>
   <feat name="form">geographical-object</feat>
+  <feat name="type">geo-object</feat>
  </sem-feats>
  </concept>
  <concept name="ont::material">
@@ -127,6 +144,7 @@
   </relation>
   <feat name="form">substance</feat>
   <feat name="mobility">non-self-moving</feat>
+  <feat name="type">material</feat>
  </sem-feats>
  </concept>
  <concept name="ont::manufactured-object">
@@ -143,8 +161,8 @@
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="form">solid-object</feat>
   <feat name="origin">artifact</feat>
+  <feat name="type">manufactured-object</feat>
  </sem-feats>
  </concept>
  <concept name="ont::phys-representation">
@@ -159,21 +177,12 @@
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="spatial-abstraction">
-  <or>
-   spatial-point
-   spatial-region
-   strip
-  </or>
-  </feat>
-  <feat name="mobility">non-self-moving</feat>
-  <feat name="information">information-content</feat>
-  <feat name="container">+</feat>
   <feat name="trajectory">+</feat>
   <feat name="object-function">representation</feat>
   <feat name="intentional">-</feat>
   <feat name="origin">artifact</feat>
   <feat name="form">object</feat>
+  <feat name="type">phys-representation</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -193,9 +202,7 @@
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="mobility">movable</feat>
-  <feat name="form">object</feat>
-  <feat name="origin">artifact</feat>
+  <feat name="type">functional-phys-object</feat>
  </sem-feats>
  </concept>
  <concept name="ont::shape">
@@ -216,9 +223,9 @@
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="mobility">non-self-moving</feat>
   <feat name="information">-</feat>
   <feat name="intentional">-</feat>
+  <feat name="type">shape</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -245,6 +252,7 @@
    phys-obj
   </relation>
   <feat name="container">+</feat>
+  <feat name="type">group-object</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">

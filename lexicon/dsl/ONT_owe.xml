@@ -21,6 +21,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::root" />
  <sem-feats>
  <relation label="inherit">
@@ -29,6 +35,7 @@
  <feat name="container">-</feat>
  <feat name="information">mental-construct</feat>
  <feat name="intentional">-</feat>
+ <feat name="type">situation-root</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -40,12 +47,15 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::state-of-being">
  <relation label="inherit">
@@ -90,18 +100,19 @@
    situation
   </relation>
   <feat name="aspect">static</feat>
+  <feat name="type">event-of-state</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::formal">
+  <role-restr-map roles="ont::formal" optional="optional">
    <or>
     <concept name="situation" />
     <concept name="abstr-obj" />
    </or>
   </role-restr-map>
-  <role-restr-map roles="ont::neutral">
+  <role-restr-map roles="ont::neutral" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
@@ -135,6 +146,7 @@
   <feat name="container">-</feat>
   <feat name="information">mental-construct</feat>
   <feat name="intentional">-</feat>
+  <feat name="type">situation-root</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -142,18 +154,19 @@
   situation
  </relation>
  <feat name="aspect">static</feat>
+ <feat name="type">event-of-state</feat>
  </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::formal">
+ <role-restr-map roles="ont::formal" optional="optional">
   <or>
    <concept name="situation" />
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
- <role-restr-map roles="ont::neutral">
+ <role-restr-map roles="ont::neutral" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
@@ -162,12 +175,15 @@
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="situation" />
  <sense>
  <morph>

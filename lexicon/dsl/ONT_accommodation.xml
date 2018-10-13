@@ -10,12 +10,19 @@
   wn::|hotel%1:06:00::|
  </relation>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::root" />
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
  <feat name="tangible">+</feat>
+ <feat name="type">phys-object</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -27,12 +34,15 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure" optional="optional">
@@ -48,6 +58,7 @@
  </relation>
  <feat name="form">geographical-object</feat>
  <feat name="origin">non-living</feat>
+ <feat name="type">location</feat>
  </sem-feats>
  <concept name="ont::geo-object">
  <relation label="inherit">
@@ -62,6 +73,7 @@
   </relation>
   <feat name="container">+</feat>
   <feat name="form">geographical-object</feat>
+  <feat name="type">geo-object</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -69,6 +81,7 @@
   phys-obj
  </relation>
  <feat name="form">geographical-object</feat>
+ <feat name="type">geographic-region</feat>
  </sem-feats>
  <concept name="ont::specific-loc">
  <relation label="inherit">
@@ -100,6 +113,7 @@
   spatial-region
  </or>
  </feat>
+ <feat name="type">facility</feat>
  </sem-feats>
  <concept name="ont::man-made-structure">
  <relation label="inherit">
@@ -125,6 +139,7 @@
    spatial-region
   </or>
   </feat>
+  <feat name="type">facility</feat>
  </sem-feats>
  </concept>
  <concept name="ont::lodging">
@@ -146,6 +161,7 @@
    phys-obj
   </relation>
   <feat name="form">geographical-object</feat>
+  <feat name="type">geographic-region</feat>
  </sem-feats>
  </concept>
  <concept name="ont::location">
@@ -158,6 +174,7 @@
   </relation>
   <feat name="form">geographical-object</feat>
   <feat name="origin">non-living</feat>
+  <feat name="type">location</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -189,6 +206,7 @@
    phys-obj
   </relation>
   <feat name="tangible">+</feat>
+  <feat name="type">phys-object</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -197,18 +215,22 @@
  </relation>
  <feat name="container">+</feat>
  <feat name="form">geographical-object</feat>
+ <feat name="type">geo-object</feat>
  </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="phys-obj" />
  <concept name="ont::bedandbreakfast">
  <relation label="inherit">

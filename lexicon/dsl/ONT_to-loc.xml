@@ -10,7 +10,7 @@
   ont::goal-reln
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::ground">
+  <role-restr-map roles="ont::ground" optional="optional">
    <sem-feats>
     <or>
      <concept name="phys-obj" />
@@ -19,7 +19,7 @@
     <feat name="spatial-abstraction">?!sa</feat>
    </sem-feats>
   </role-restr-map>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
@@ -27,8 +27,19 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">abstract-object</feat>
+ </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -39,22 +50,25 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::ground">
+ <role-restr-map roles="ont::ground" optional="optional">
   <or>
    <concept name="phys-obj" />
    <concept name="situation" />
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
- <role-restr-map roles="ont::figure">
+ <role-restr-map roles="ont::figure" optional="optional">
   <or>
    <concept name="phys-obj" />
    <concept name="situation" />
@@ -62,6 +76,12 @@
   </or>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">path</feat>
+ </sem-feats>
  <concept name="ont::predicate">
  <comment>
   &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as)&quot;
@@ -73,41 +93,41 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="intentional">-</feat>
-  <feat name="container">-</feat>
-  <feat name="orientation">-</feat>
-  <feat name="intensity">-</feat>
-  <feat name="scale">-</feat>
-  <feat name="gradability">+</feat>
+  <feat name="type">predicate</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::ground">
+  <role-restr-map roles="ont::ground" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::figure">
+ <role-restr-map roles="ont::figure" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::path">
  <relation label="inherit">
   ont::predicate
-  abstr-obj
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">path</feat>
+ </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::ground">
+  <role-restr-map roles="ont::ground" optional="optional">
    <or>
     <concept name="phys-obj" />
     <concept name="situation" />
     <concept name="abstr-obj" />
    </or>
   </role-restr-map>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <or>
     <concept name="phys-obj" />
     <concept name="situation" />
@@ -117,7 +137,7 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::ground">
+ <role-restr-map roles="ont::ground" optional="optional">
   <sem-feats>
    <or>
     <concept name="phys-obj" />
@@ -126,7 +146,7 @@
    <feat name="spatial-abstraction">?!sa</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::figure">
+ <role-restr-map roles="ont::figure" optional="optional">
   <or>
    <concept name="phys-obj" />
    <concept name="abstr-obj" />
@@ -138,7 +158,7 @@
   ont::path
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
@@ -147,32 +167,32 @@
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
  </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
  <relation label="overlap">
   wn::|psychological_feature%1:03:00::|
   wn::|abstraction%1:03:00::|
   wn::|abstract_entity%1:03:00::|
  </relation>
- <relation label="inherit">
-  ont::referential-sem
-  abstr-obj
- </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">abstract-object</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="intentional">-</feat>
- <feat name="container">-</feat>
- <feat name="orientation">-</feat>
- <feat name="intensity">-</feat>
- <feat name="scale">-</feat>
- <feat name="gradability">+</feat>
+ <feat name="type">predicate</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::ground">
+ <role-restr-map roles="ont::ground" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::figure">
+ <role-restr-map roles="ont::figure" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
@@ -181,12 +201,16 @@
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
  <sense>
  <morph>
   <pos pos="adv" />

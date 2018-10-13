@@ -16,10 +16,16 @@
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="form">solid-object</feat>
   <feat name="origin">artifact</feat>
+  <feat name="type">manufactured-object</feat>
  </sem-feats>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::root" />
  <concept name="ont::phys-object">
  <comment>
@@ -37,14 +43,15 @@
    phys-obj
   </relation>
   <feat name="tangible">+</feat>
+  <feat name="type">phys-object</feat>
  </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="form">solid-object</feat>
  <feat name="origin">artifact</feat>
+ <feat name="type">manufactured-object</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -56,30 +63,37 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
  <feat name="tangible">+</feat>
+ <feat name="type">phys-object</feat>
  </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="phys-obj" />
  <concept name="ont::technology">
  <relation label="inherit">
@@ -90,7 +104,7 @@
   wn::|technology%1:06:00::|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
@@ -132,6 +146,7 @@
   </feat>
   <feat name="mobility">self-moving</feat>
   <feat name="object-function">vehicle</feat>
+  <feat name="type">vehicle</feat>
  </sem-feats>
  </concept>
  <concept name="ont::stretcher">
@@ -146,6 +161,7 @@
    phys-obj
   </relation>
   <feat name="container">+</feat>
+  <feat name="type">stretcher</feat>
  </sem-feats>
  </concept>
  <concept name="ont::vehicle-container">
@@ -160,6 +176,7 @@
   <feat name="object-function">container-object</feat>
   <feat name="container">+</feat>
   <feat name="mobility">non-self-moving</feat>
+  <feat name="type">vehicle-container</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::contents" optional="optional">
@@ -189,8 +206,8 @@
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="object-function">furniture</feat>
   <feat name="form">solid-object</feat>
+  <feat name="type">furnishings</feat>
  </sem-feats>
  </concept>
  <concept name="ont::wheel">
@@ -206,6 +223,7 @@
   </relation>
   <feat name="mobility">non-self-moving</feat>
   <feat name="form">solid-object</feat>
+  <feat name="type">wheel</feat>
  </sem-feats>
  </concept>
  <concept name="ont::window">
@@ -222,6 +240,7 @@
   </relation>
   <feat name="mobility">non-self-moving</feat>
   <feat name="form">solid-object</feat>
+  <feat name="type">window</feat>
  </sem-feats>
  </concept>
  <concept name="ont::device">
@@ -236,6 +255,7 @@
    phys-obj
   </relation>
   <feat name="origin">artifact</feat>
+  <feat name="type">device</feat>
  </sem-feats>
  </concept>
  <concept name="ont::fixture">
@@ -250,6 +270,7 @@
    phys-obj
   </relation>
   <feat name="origin">artifact</feat>
+  <feat name="type">fixture</feat>
  </sem-feats>
  </concept>
  <concept name="ont::equipment">
@@ -264,6 +285,7 @@
    phys-obj
   </relation>
   <feat name="origin">artifact</feat>
+  <feat name="type">equipment</feat>
  </sem-feats>
  </concept>
  <concept name="ont::instrumentation">
@@ -277,6 +299,7 @@
   <feat name="group">+</feat>
   <feat name="object-function">instrument</feat>
   <feat name="mobility">non-self-moving</feat>
+  <feat name="type">instrumentation</feat>
  </sem-feats>
  </concept>
  <concept name="ont::writing-implement">
@@ -292,6 +315,7 @@
   </relation>
   <feat name="object-function">instrument</feat>
   <feat name="mobility">non-self-moving</feat>
+  <feat name="type">writing-implement</feat>
  </sem-feats>
  </concept>
  <concept name="ont::money">
@@ -307,6 +331,7 @@
    phys-obj
   </relation>
   <feat name="object-function">currency</feat>
+  <feat name="type">money</feat>
  </sem-feats>
  </concept>
  <concept name="ont::credit-card">
@@ -324,6 +349,7 @@
    phys-obj
   </relation>
   <feat name="object-function">currency</feat>
+  <feat name="type">credit-card</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -354,6 +380,7 @@
    phys-obj
   </relation>
   <feat name="origin">artifact</feat>
+  <feat name="type">attire</feat>
  </sem-feats>
  </concept>
  <concept name="ont::flag">
@@ -364,11 +391,11 @@
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="mobility">non-self-moving</feat>
   <feat name="object-function">representation</feat>
   <feat name="information">-</feat>
   <feat name="intentional">-</feat>
   <feat name="form">object</feat>
+  <feat name="type">flag</feat>
  </sem-feats>
  </concept>
  <concept name="ont::device-component">
@@ -384,15 +411,12 @@
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="information">-</feat>
-  <feat name="mobility">non-self-moving</feat>
-  <feat name="container">-</feat>
-  <feat name="intentional">-</feat>
   <feat name="form">object</feat>
   <feat name="origin">artifact</feat>
+  <feat name="type">device-component</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
@@ -412,6 +436,7 @@
   <feat name="origin">artifact</feat>
   <feat name="form">solid-object</feat>
   <feat name="container">+</feat>
+  <feat name="type">container</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::contents" optional="optional">
@@ -435,6 +460,7 @@
   <feat name="origin">artifact</feat>
   <feat name="form">solid-object</feat>
   <feat name="container">+</feat>
+  <feat name="type">cookware</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::contents" optional="optional">
@@ -456,6 +482,7 @@
   <feat name="trajectory">-</feat>
   <feat name="origin">artifact</feat>
   <feat name="form">solid-object</feat>
+  <feat name="type">tableware</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::contents" optional="optional">

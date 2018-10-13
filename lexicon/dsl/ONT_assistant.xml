@@ -13,6 +13,12 @@
   wn::|supporter%1:18:01::|
  </relation>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::root" />
  <concept name="ont::agent">
  <relation label="inherit">
@@ -24,6 +30,7 @@
   </relation>
   <feat name="intentional">+</feat>
   <feat name="information">information-content</feat>
+  <feat name="type">agent</feat>
  </sem-feats>
  </concept>
  <concept name="ont::phys-object">
@@ -42,6 +49,7 @@
    phys-obj
   </relation>
   <feat name="tangible">+</feat>
+  <feat name="type">phys-object</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -50,6 +58,7 @@
  </relation>
  <feat name="intentional">+</feat>
  <feat name="information">information-content</feat>
+ <feat name="type">agent</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -61,30 +70,37 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
  <feat name="tangible">+</feat>
+ <feat name="type">phys-object</feat>
  </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="phys-obj" />
  <sense>
  <morph>

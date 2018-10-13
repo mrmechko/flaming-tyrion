@@ -11,8 +11,15 @@
    situation
   </relation>
   <feat name="trajectory">+</feat>
+  <feat name="type">round-trip</feat>
  </sem-feats>
  </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ <concept name="proposition" />
+ </or>
  <concept name="ont::root" />
  <sem-feats>
  <relation label="inherit">
@@ -21,6 +28,7 @@
  <feat name="container">-</feat>
  <feat name="information">mental-construct</feat>
  <feat name="intentional">-</feat>
+ <feat name="type">situation-root</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -32,12 +40,15 @@
  <relation label="overlap">
   wn::|entity%1:03:00::|
  </relation>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
-  <concept name="proposition" />
- </or>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="proposition" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure" optional="optional">
@@ -49,6 +60,7 @@
   situation
  </relation>
  <feat name="aspect">dynamic</feat>
+ <feat name="type">event-defined-by-activity</feat>
  </sem-feats>
  <concept name="ont::event-type">
  <comment>
@@ -63,6 +75,7 @@
    situation
   </relation>
   <feat name="intentional">-</feat>
+  <feat name="type">event-type</feat>
  </sem-feats>
  </concept>
  <concept name="ont::trip">
@@ -78,6 +91,7 @@
    situation
   </relation>
   <feat name="trajectory">+</feat>
+  <feat name="type">trip</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -85,6 +99,7 @@
   situation
  </relation>
  <feat name="trajectory">+</feat>
+ <feat name="type">round-trip</feat>
  </sem-feats>
  <concept name="ont::travel">
  <relation label="inherit">
@@ -95,6 +110,7 @@
    situation
   </relation>
   <feat name="trajectory">+</feat>
+  <feat name="type">travel</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -102,6 +118,7 @@
   situation
  </relation>
  <feat name="trajectory">+</feat>
+ <feat name="type">trip</feat>
  </sem-feats>
  <concept name="ont::event-defined-by-activity">
  <relation label="inherit">
@@ -118,6 +135,7 @@
    situation
   </relation>
   <feat name="aspect">dynamic</feat>
+  <feat name="type">event-defined-by-activity</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -130,6 +148,7 @@
   situation
  </relation>
  <feat name="trajectory">+</feat>
+ <feat name="type">travel</feat>
  </sem-feats>
  <concept name="ont::situation-root">
  <comment>
@@ -145,6 +164,7 @@
   <feat name="container">-</feat>
   <feat name="information">mental-construct</feat>
   <feat name="intentional">-</feat>
+  <feat name="type">situation-root</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -152,18 +172,22 @@
   situation
  </relation>
  <feat name="intentional">-</feat>
+ <feat name="type">event-type</feat>
  </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- <concept name="proposition" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+  <concept name="proposition" />
  </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
  <concept name="situation" />
  <sense>
  <morph>
