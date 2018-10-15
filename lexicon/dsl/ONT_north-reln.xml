@@ -64,28 +64,44 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::navigational-reln">
- <comment>
-  &quot;Figure is related by a cardinal directional reln to ground&quot;
- </comment>
- <relation label="inherit">
-  ont::oriented-loc-reln
- </relation>
- </concept>
- <concept name="ont::oriented-loc-reln">
- <comment>
-  &quot;FIGURE is located by a directional relationship with the GROUD&quot;
- </comment>
- <relation label="inherit">
-  ont::position-as-point-reln
- </relation>
- </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::position-as-point-reln">
  <comment>
   &quot;locating an object (FIGURE) wrt a point-like object (GROUND)&quot;
  </comment>
  <relation label="inherit">
   ont::position-reln
+ </relation>
+ </concept>
+ <concept name="ont::oriented-loc-reln">
+ <comment>
+  &quot;FIGURE is located by a directional relationship with the GROUND&quot;
+ </comment>
+ <relation label="inherit">
+  ont::position-as-point-reln
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::navigational-reln">
+ <comment>
+  &quot;Figure is related by a cardinal directional reln to ground&quot;
+ </comment>
+ <relation label="inherit">
+  ont::oriented-loc-reln
  </relation>
  </concept>
  <concept name="ont::abstract-object">

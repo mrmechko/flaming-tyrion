@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::today">
+ <relation label="inherit">
+  ont::time-loc
+ </relation>
+ <relation label="overlap">
+  wn::|today%4:02:00::|
+ </relation>
+ </concept>
+ <concept name="time" />
+ <concept name="ont::root" />
+ <concept name="ont::time-loc">
+ <relation label="inherit">
+  ont::time-object
+ </relation>
+ </concept>
+ <concept name="ont::time-object">
+ <comment>
+  &quot;objects that refer to temporal locations in some way&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-time-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">
+  <or>
+   point
+   interval
+  </or>
+  </feat>
+  <feat name="type">time-object</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::any-time-object">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">
+  <or>
+   interval
+   point
+  </or>
+  </feat>
+  <feat name="time-function">any-time-function</feat>
+  <feat name="type">any-time-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  point
+  interval
+ </or>
+ </feat>
+ <feat name="type">time-object</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  interval
+  point
+ </or>
+ </feat>
+ <feat name="time-function">any-time-function</feat>
+ <feat name="type">any-time-object</feat>
+ </sem-feats>
+</dsl>

@@ -10758,7 +10758,11 @@
   (COMMENT
    "properties which need an observer to be recognized -- subjective to the observer")
   (INHERIT
-    ONT::PROPERTY-VAL))
+    ONT::PROPERTY-VAL)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (TANGIBLE +)))))
 
 (CONCEPT
   ONT::EVALUATION-SCALE
@@ -11085,13 +11089,8 @@
          SITUATION))
      OPTIONAL)
     (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (ASPECT
-        (OR
-          DYNAMIC
-          STAGE-LEVEL)))
+     (CONCEPT
+       SITUATION)
      OPTIONAL)))
 
 (CONCEPT
@@ -11100,12 +11099,9 @@
     ONT::EVENT-TIME-REL))
 
 (CONCEPT
-  ONT::EVENT-TIME-REL-NOW
+  ONT::EVENT-TIME-WRT-NOW
   (INHERIT
-    ONT::EVENT-TIME-REL)
-  (OVERLAP
-    WN::|now%4:02:05::|
-    WN::|now%4:02:01::|))
+    ONT::EVENT-TIME-REL))
 
 (CONCEPT
   ONT::EVENT-TYPE
@@ -20201,6 +20197,15 @@
     WN::|revolutionary%5:00:00:new:00|))
 
 (CONCEPT
+  ONT::NOW
+  (INHERIT
+    ONT::EVENT-TIME-WRT-NOW)
+  (OVERLAP
+    WN::|now%4:02:05::|
+    WN::|now%4:02:01::|
+    WN::|presently%04:02:00::|))
+
+(CONCEPT
   ONT::NUCLEAR-VAL
   (INHERIT
     ONT::SUBSTANTIAL-PROPERTY-VAL)
@@ -21006,9 +21011,17 @@
 
 (CONCEPT
   ONT::ORIENTED-LOC-RELN
-  (COMMENT "FIGURE is located by a directional relationship with the GROUD")
+  (COMMENT "FIGURE is located by a directional relationship with the GROUND")
   (INHERIT
-    ONT::POSITION-AS-POINT-RELN))
+    ONT::POSITION-AS-POINT-RELN)
+  (SEM-FRAME
+    (ONT::GROUND
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::ORIENTS-TO
@@ -24248,6 +24261,14 @@
   ONT::REBOOT
   (INHERIT
     ONT::BOOT-UP))
+
+(CONCEPT
+  ONT::RECENT
+  (INHERIT
+    ONT::EVENT-TIME-WRT-NOW)
+  (OVERLAP
+    WN::|new%3:00:00::|
+    WN::|past%3:00:00::|))
 
 (CONCEPT
   ONT::RECIPE
@@ -27877,6 +27898,13 @@
     ONT::FREQUENCY))
 
 (CONCEPT
+  ONT::SOON
+  (INHERIT
+    ONT::EVENT-TIME-WRT-NOW)
+  (OVERLAP
+    WN::|soon%4:02:00::|))
+
+(CONCEPT
   ONT::SORRY
   (INHERIT
     ONT::NEG-SOFT-EMOTIONAL-VAL)
@@ -28436,6 +28464,11 @@
     (ONT::AGENT
      (CONCEPT
        T))))
+
+(CONCEPT
+  ONT::START-TIME
+  (INHERIT
+    ONT::EVENT-TIME-REL))
 
 (CONCEPT
   ONT::STARTOFF-BEGIN-COMMENCE-START
@@ -30276,6 +30309,7 @@
   (SEM-FEATS
     (INHERIT
       TIME)
+    (TANGIBLE +)
     (SCALE -)
     (TIME-SCALE INTERVAL)
     (TYPE TIME-INTERVAL))
@@ -30292,7 +30326,9 @@
        (CONCEPT
          SITUATION)
        (CONCEPT
-         ABSTR-OBJ))
+         ABSTR-OBJ)
+       (CONCEPT
+         TIME))
      OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
@@ -30506,6 +30542,13 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::TODAY
+  (INHERIT
+    ONT::TIME-LOC)
+  (OVERLAP
+    WN::|today%4:02:00::|))
+
+(CONCEPT
   ONT::TOLERABILITY-VAL
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL))
@@ -30517,6 +30560,13 @@
   (OVERLAP
     WN::|bearable%5:00:00:tolerable:00|
     WN::|tolerable%3:00:00::|))
+
+(CONCEPT
+  ONT::TOMORROW
+  (INHERIT
+    ONT::TIME-LOC)
+  (OVERLAP
+    WN::|tomorrow%4:02:00::|))
 
 (CONCEPT
   ONT::TOO-MUCH
@@ -32814,6 +32864,14 @@
       ABSTR-OBJ)
     (SCALE YELLOW*1--07--00)
     (TYPE YELLOW)))
+
+(CONCEPT
+  ONT::YESTERDAY
+  (INHERIT
+    ONT::TIME-LOC)
+  (OVERLAP
+    WN::|yesterday%4:02:00::|
+    WN::|yesterday%4:02:01::|))
 
 (CONCEPT
   ONT::YOGURT

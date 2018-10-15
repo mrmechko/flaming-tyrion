@@ -230,6 +230,16 @@
 <WORD name="today" />
 <WORD name="tonight" />
 <WORD name="yesterday" />
+<ONTTYPE name="today">
+<MAPPING to="wordnet" name="today%4:02:00::" />
+</ONTTYPE>
+<ONTTYPE name="tomorrow">
+<MAPPING to="wordnet" name="tomorrow%4:02:00::" />
+</ONTTYPE>
+<ONTTYPE name="yesterday">
+<MAPPING to="wordnet" name="yesterday%4:02:00::" />
+<MAPPING to="wordnet" name="yesterday%4:02:01::" />
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="time-point">
 <WORD name="date" />
@@ -1465,7 +1475,6 @@
 <ONTTYPE name="freshness-val">
 <ONTTYPE name="fresh-val">
 <WORD name="fresh" />
-<WORD name="recent" />
 <MAPPING to="wordnet" name="recent%5:00:00:new:00" />
 <MAPPING to="wordnet" name="late%5:00:00:past:00" />
 <MAPPING to="wordnet" name="new%3:00:00::" />
@@ -5354,7 +5363,6 @@
 <WORD name="in_progress" />
 <WORD name="in_the_meantime" />
 <WORD name="one_day" />
-<WORD name="right_away" />
 <WORD name="status_post" />
 <WORD name="anytime" />
 <WORD name="coming" />
@@ -5367,11 +5375,9 @@
 <WORD name="once" />
 <WORD name="pending" />
 <WORD name="previously" />
-<WORD name="recently" />
 <WORD name="simultaneously" />
 <WORD name="since" />
 <WORD name="sometime" />
-<WORD name="soon" />
 <WORD name="then" />
 <WORD name="till" />
 <WORD name="today" />
@@ -5413,7 +5419,8 @@
 <ONTTYPE name="event-time-rel-culmination">
 <WORD name="eventually" />
 </ONTTYPE>
-<ONTTYPE name="event-time-rel-now">
+<ONTTYPE name="event-time-wrt-now">
+<ONTTYPE name="now">
 <WORD name="at_present" />
 <WORD name="at_the_moment" />
 <WORD name="for_now" />
@@ -5424,6 +5431,18 @@
 <MAPPING to="wordnet" name="now%4:02:05::" />
 <MAPPING to="wordnet" name="immediately%4:02:00::" />
 </ONTTYPE>
+<ONTTYPE name="recent">
+<WORD name="recent" />
+<WORD name="recently" />
+<MAPPING to="wordnet" name="new%3:00:00::" />
+<MAPPING to="wordnet" name="past%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="soon">
+<WORD name="right_away" />
+<WORD name="soon" />
+<MAPPING to="wordnet" name="soon%4:02:00::" />
+</ONTTYPE>
+</ONTTYPE>
 <ONTTYPE name="immediate">
 <WORD name="as_quick_as_possible" />
 <WORD name="as_soon_as_possible" />
@@ -5433,6 +5452,9 @@
 <MAPPING to="wordnet" name="immediately%4:02:05::" />
 </ONTTYPE>
 <ONTTYPE name="implicit-overlap" />
+<ONTTYPE name="start-time">
+<WORD name="beginning" />
+</ONTTYPE>
 <ONTTYPE name="until">
 <WORD name="til" />
 <WORD name="to" />
@@ -12748,6 +12770,7 @@
 </ONTTYPE>
 <ONTTYPE name="activity-ongoing">
 <WORD name="continue_on" />
+<WORD name="follow_up" />
 <WORD name="move_on" />
 <WORD name="continue" />
 <WORD name="keep" />

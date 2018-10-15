@@ -83,12 +83,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::oriented-loc-reln">
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::position-as-point-reln">
  <comment>
-  &quot;FIGURE is located by a directional relationship with the GROUD&quot;
+  &quot;locating an object (FIGURE) wrt a point-like object (GROUND)&quot;
  </comment>
  <relation label="inherit">
-  ont::position-as-point-reln
+  ont::position-reln
  </relation>
  </concept>
  <sem-frame>
@@ -107,13 +115,21 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::position-as-point-reln">
+ <concept name="ont::oriented-loc-reln">
  <comment>
-  &quot;locating an object (FIGURE) wrt a point-like object (GROUND)&quot;
+  &quot;FIGURE is located by a directional relationship with the GROUND&quot;
  </comment>
  <relation label="inherit">
-  ont::position-reln
+  ont::position-as-point-reln
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::abstract-object">
  <comment>
