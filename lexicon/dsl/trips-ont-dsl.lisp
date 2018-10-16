@@ -11089,8 +11089,11 @@
          SITUATION))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       SITUATION)
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         TIME))
      OPTIONAL)))
 
 (CONCEPT
