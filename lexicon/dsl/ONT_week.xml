@@ -3,91 +3,66 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::week">
+ <comment>
+  &quot;time interval of a week&quot;
+ </comment>
  <relation label="inherit">
-  ont::year-stage
+  ont::time-interval
  </relation>
- <relation label="overlap">
-  wn::|week%1:28:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="time-function">time-of-year</feat>
-  <feat name="type">week</feat>
- </sem-feats>
  </concept>
  <concept name="time" />
  <concept name="ont::root" />
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-scale">
- <or>
-  point
-  interval
- </or>
- </feat>
- <feat name="type">time-object</feat>
- </sem-feats>
- <concept name="ont::any-time-object">
- <relation label="inherit">
-  ont::any-sem
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="time-scale">
-  <or>
-   interval
-   point
-  </or>
-  </feat>
-  <feat name="time-function">any-time-function</feat>
-  <feat name="type">any-time-object</feat>
- </sem-feats>
- </concept>
- <concept name="ont::year-stage">
- <relation label="inherit">
-  ont::date-object-in
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="time-function">time-of-year</feat>
-  <feat name="type">year-stage</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-function">time-of-year</feat>
- <feat name="type">week</feat>
- </sem-feats>
- <concept name="ont::date-object-in">
- <comment>
-  &quot;temporal objects that use IN - e.g., in June&quot;
- </comment>
+ <concept name="ont::time-interval">
  <relation label="inherit">
   ont::time-object
  </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  time
+ <relation label="overlap">
+  wn::|interval%1:28:00::|
+  wn::|time_interval%1:28:00::|
+  wn::|time%1:28:03::|
+  wn::|clock_time%1:28:00::|
+  wn::|time%1:28:00::|
+  wn::|time%1:28:05::|
+  wn::|time_period%1:28:00::|
  </relation>
- <feat name="time-function">time-of-year</feat>
- <feat name="type">year-stage</feat>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="scale">-</feat>
+  <feat name="time-scale">interval</feat>
+  <feat name="type">time-interval</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">duration-scale</feat>
+    <feat name="time-scale">interval</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     time
+    </relation>
+    <feat name="scale">duration-scale</feat>
+    <feat name="time-scale">interval</feat>
+    <feat name="time-function">time-frame</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::time-object">
  <comment>
   &quot;objects that refer to temporal locations in some way&quot;
@@ -113,6 +88,78 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="scale">-</feat>
+ <feat name="time-scale">interval</feat>
+ <feat name="type">time-interval</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">duration-scale</feat>
+   <feat name="time-scale">interval</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="scale">duration-scale</feat>
+   <feat name="time-scale">interval</feat>
+   <feat name="time-function">time-frame</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-time-object">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">
+  <or>
+   interval
+   point
+  </or>
+  </feat>
+  <feat name="time-function">any-time-function</feat>
+  <feat name="type">any-time-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">
+ <or>
+  point
+  interval
+ </or>
+ </feat>
+ <feat name="type">time-object</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -131,4 +178,41 @@
  <feat name="time-function">any-time-function</feat>
  <feat name="type">any-time-object</feat>
  </sem-feats>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="week" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="next week">
+ </example>
+ <relation label="inherit">
+  ont::week
+ </relation>
+ <syntax>
+  <template-call template="ont::time-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
 </dsl>

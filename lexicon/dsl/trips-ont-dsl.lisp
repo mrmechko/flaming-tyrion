@@ -12028,7 +12028,8 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (INTENTIONAL +))
+       (INTENTIONAL +)
+       (ORIGIN HUMAN))
      OPTIONAL)
     (ONT::FORMAL
      (CONCEPT
@@ -16601,9 +16602,7 @@
     ONT::TANGIBLE-UNIT)
   (OVERLAP
     WN::|linear_measure%1:23:00::|
-    WN::|linear_unit%1:23:00::|
-    WN::|week%1:28:00::|
-    WN::|hebdomad%1:28:00::|)
+    WN::|linear_unit%1:23:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -32297,20 +32296,26 @@
 
 (CONCEPT
   ONT::WEEK
+  (COMMENT "time interval of a week")
   (INHERIT
-    ONT::YEAR-STAGE)
-  (OVERLAP
-    WN::|week%1:28:00::|)
-  (SEM-FEATS
-    (INHERIT
-      TIME)
-    (TIME-FUNCTION TIME-OF-YEAR)
-    (TYPE WEEK)))
+    ONT::TIME-INTERVAL))
 
 (CONCEPT
   ONT::WEEK-DURATION
   (INHERIT
     ONT::TIME-UNIT))
+
+(CONCEPT
+  ONT::WEEK-OBJECT
+  (INHERIT
+    ONT::YEAR-STAGE)
+  (OVERLAP
+    WN::|calendar_week%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (TIME-FUNCTION TIME-OF-YEAR)
+    (TYPE WEEK-OBJECT)))
 
 (CONCEPT
   ONT::WEIGH
