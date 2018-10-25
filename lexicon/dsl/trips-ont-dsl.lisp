@@ -17173,6 +17173,7 @@
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
+    (MOBILITY FIXED)
     (FORM GEOGRAPHICAL-OBJECT)
     (ORIGIN NON-LIVING)
     (TYPE LOCATION))
@@ -17380,11 +17381,18 @@
     (TYPE LOUDNESS-VAL))
   (SEM-FRAME
     (ONT::FIGURE
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION)))))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TYPE
+        (OR
+          BODY-PART
+          MATERIAL))))))
 
 (CONCEPT
   ONT::LOW-VAL

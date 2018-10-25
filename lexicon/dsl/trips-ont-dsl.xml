@@ -19516,6 +19516,7 @@
    <relation label="inherit">
     phys-obj
    </relation>
+   <feat name="mobility">fixed</feat>
    <feat name="form">geographical-object</feat>
    <feat name="origin">non-living</feat>
    <feat name="type">location</feat>
@@ -19755,10 +19756,19 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::figure">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="situation" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+      <concept name="situation" />
+     </or>
+     <feat name="type">
+     <or>
+      body-part
+      material
+     </or>
+     </feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
