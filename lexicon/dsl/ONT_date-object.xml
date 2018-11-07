@@ -110,17 +110,31 @@
  <feat name="time-function">any-time-function</feat>
  <feat name="type">any-time-object</feat>
  </sem-feats>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="tomorrow" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
+ <concept name="ont::today">
  <relation label="inherit">
   ont::date-object
-  ont::ppword-n-templ
  </relation>
- </sense>
+ <relation label="overlap">
+  wn::|today%4:02:00::|
+  wn::|today%1:28:01::|
+ </relation>
+ </concept>
+ <concept name="ont::yesterday">
+ <relation label="inherit">
+  ont::date-object
+ </relation>
+ <relation label="overlap">
+  wn::|yesterday%4:02:00::|
+  wn::|yesterday%1:28:01::|
+ </relation>
+ </concept>
+ <concept name="ont::tomorrow">
+ <relation label="inherit">
+  ont::date-object
+ </relation>
+ <relation label="overlap">
+  wn::|tomorrow%4:02:00::|
+  wn::|tomorrow%1:28:01::|
+ </relation>
+ </concept>
 </dsl>

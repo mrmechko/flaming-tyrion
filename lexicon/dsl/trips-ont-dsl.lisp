@@ -30554,9 +30554,10 @@
 (CONCEPT
   ONT::TODAY
   (INHERIT
-    ONT::TIME-LOC)
+    ONT::DATE-OBJECT)
   (OVERLAP
-    WN::|today%4:02:00::|))
+    WN::|today%4:02:00::|
+    WN::|today%1:28:01::|))
 
 (CONCEPT
   ONT::TOLERABILITY-VAL
@@ -30574,9 +30575,10 @@
 (CONCEPT
   ONT::TOMORROW
   (INHERIT
-    ONT::TIME-LOC)
+    ONT::DATE-OBJECT)
   (OVERLAP
-    WN::|tomorrow%4:02:00::|))
+    WN::|tomorrow%4:02:00::|
+    WN::|tomorrow%1:28:01::|))
 
 (CONCEPT
   ONT::TOO-MUCH
@@ -32884,10 +32886,10 @@
 (CONCEPT
   ONT::YESTERDAY
   (INHERIT
-    ONT::TIME-LOC)
+    ONT::DATE-OBJECT)
   (OVERLAP
     WN::|yesterday%4:02:00::|
-    WN::|yesterday%4:02:01::|))
+    WN::|yesterday%1:28:01::|))
 
 (CONCEPT
   ONT::YOGURT

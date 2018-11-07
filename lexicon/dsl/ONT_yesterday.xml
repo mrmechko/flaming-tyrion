@@ -4,19 +4,34 @@
  <provenance name="TRIPS"/>
  <concept name="ont::yesterday">
  <relation label="inherit">
-  ont::time-loc
+  ont::date-object
  </relation>
  <relation label="overlap">
   wn::|yesterday%4:02:00::|
-  wn::|yesterday%4:02:01::|
+  wn::|yesterday%1:28:01::|
  </relation>
  </concept>
  <concept name="time" />
  <concept name="ont::root" />
- <concept name="ont::time-loc">
+ <concept name="ont::date-object">
+ <comment>
+  &quot;classification of time intervals with respect to some conceptual organization (e.g., calendar)&quot;
+ </comment>
  <relation label="inherit">
   ont::time-object
  </relation>
+ <relation label="overlap">
+  wn::|date%1:28:03::|
+  wn::|time%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-scale">interval</feat>
+  <feat name="time-function">time-of-year</feat>
+  <feat name="type">date-object</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::time-object">
  <comment>
@@ -43,6 +58,14 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-scale">interval</feat>
+ <feat name="time-function">time-of-year</feat>
+ <feat name="type">date-object</feat>
+ </sem-feats>
  <concept name="ont::any-time-object">
  <relation label="inherit">
   ont::any-sem
@@ -96,4 +119,17 @@
  <feat name="time-function">any-time-function</feat>
  <feat name="type">any-time-object</feat>
  </sem-feats>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="yesterday" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::yesterday
+  ont::ppword-n-templ
+ </relation>
+ </sense>
 </dsl>
