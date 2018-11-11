@@ -28498,6 +28498,10 @@
   <relation label="inherit">
    ont::frequency
   </relation>
+  <relation label="overlap">
+   wn::|repeatedly%4:02:00::|
+   wn::|over_and_over%4:02:00::|
+  </relation>
  </concept>
  <concept name="ont::repetitive-val">
   <relation label="inherit">
@@ -34353,6 +34357,21 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::time-in-rel">
+  <relation label="inherit">
+   ont::time-span-rel
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      time
+     </relation>
+     <feat name="type">date-object-in</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::time-interval">
   <relation label="inherit">
    ont::time-object
@@ -34448,7 +34467,7 @@
  </concept>
  <concept name="ont::time-on-rel">
   <relation label="inherit">
-   ont::temporal-location
+   ont::time-span-rel
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground" optional="optional">

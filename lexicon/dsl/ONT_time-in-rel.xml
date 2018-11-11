@@ -2,10 +2,20 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::when-while">
+ <concept name="ont::time-in-rel">
  <relation label="inherit">
-  ont::event-time-rel
+  ont::time-span-rel
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     time
+    </relation>
+    <feat name="type">date-object-in</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -100,16 +110,19 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground" optional="optional">
-  <or>
-   <concept name="time" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="time-function">
+   <or>
+    month-name
+    year-name
+    day-period
+   </or>
+   </feat>
+   <feat name="time-scale">interval</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::temporal-location">
@@ -126,22 +139,35 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::event-time-rel">
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="type">date-object-in</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::time-span-rel">
  <relation label="inherit">
   ont::temporal-location
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
-   <or>
-    <concept name="time" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
+   <sem-feats>
+    <relation label="inherit">
+     time
+    </relation>
+    <feat name="time-function">
+    <or>
+     month-name
+     year-name
+     day-period
+    </or>
+    </feat>
+    <feat name="time-scale">interval</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -223,71 +249,20 @@
  <sense>
  <morph>
   <pos pos="adv" />
-  <word first-word="as" />
+  <word first-word="in" />
  </morph>
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <example text="as this happens the valve closes">
+ <example text="he ran the race in June">
  </example>
  <relation label="inherit">
-  ont::when-while
-  ont::binary-constraint-s-decl-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="when" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="I saw him when he left">
- </example>
- <relation label="inherit">
-  ont::when-while
-  ont::binary-constraint-s-decl-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="when" />
- </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="buy me a monitor when buying a computer">
- </example>
- <relation label="inherit">
-  ont::when-while
-  ont::binary-constraint-s-ing-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="when" />
- </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="when hungry I like steak">
- </example>
- <relation label="inherit">
-  ont::when-while
+  ont::time-in-rel
  </relation>
  <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-pred-templ" />
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="adjp" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
    <syn-sem-map syn-arg="argument" syn-cat="(w::or
                                               s
                                               np)" sem-role="ont::figure"/>
@@ -297,30 +272,11 @@
    <or>
     pre
     post
+    pre-vp
    </or>
    </feat>
    <feat name="sort">binary-constraint</feat>
   </syn-feats>
  </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="while" />
- </morph>
- <relation label="inherit">
-  ont::when-while
-  ont::binary-constraint-s-decl-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="while" />
- </morph>
- <relation label="inherit">
-  ont::when-while
-  ont::binary-constraint-s-while-loc-templ
- </relation>
  </sense>
 </dsl>

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::time-on-rel">
  <relation label="inherit">
-  ont::temporal-location
+  ont::time-span-rel
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
@@ -78,28 +78,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::temporal-location">
- <relation label="inherit">
-  ont::temporal-modifier
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    time
-   </relation>
-   <feat name="type">date-object-on</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::temporal-modifier">
@@ -124,14 +109,68 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="time-function">
+   <or>
+    month-name
+    year-name
+    day-period
+   </or>
+   </feat>
+   <feat name="time-scale">interval</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
+ <concept name="ont::temporal-location">
+ <relation label="inherit">
+  ont::temporal-modifier
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    time
+   </relation>
+   <feat name="type">date-object-on</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::time-span-rel">
+ <relation label="inherit">
+  ont::temporal-location
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     time
+    </relation>
+    <feat name="time-function">
+    <or>
+     month-name
+     year-name
+     day-period
+    </or>
+    </feat>
+    <feat name="time-scale">interval</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::temporal-predicate">
  <relation label="inherit">
   ont::predicate

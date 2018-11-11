@@ -221,39 +221,36 @@
  <feat name="type">referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="during" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="during the last week">
- </example>
+ <concept name="ont::time-on-rel">
  <relation label="inherit">
   ont::time-span-rel
  </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or
-                                              s
-                                              np)" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-    pre-vp
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     time
+    </relation>
+    <feat name="type">date-object-on</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::time-in-rel">
+ <relation label="inherit">
+  ont::time-span-rel
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     time
+    </relation>
+    <feat name="type">date-object-in</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sense>
  <morph>
   <pos pos="adv" />
@@ -273,38 +270,5 @@
   ont::time-span-rel
   ont::pred-vp-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="in" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he ran the race in June">
- </example>
- <relation label="inherit">
-  ont::time-span-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or
-                                              s
-                                              np)" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-    pre-vp
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
  </sense>
 </dsl>
