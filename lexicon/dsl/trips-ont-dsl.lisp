@@ -20295,6 +20295,11 @@
     WN::|product%1:09:00::|))
 
 (CONCEPT
+  ONT::NUMBER-SCALE
+  (INHERIT
+    ONT::MEASURE-SCALE))
+
+(CONCEPT
   ONT::NUMBER-UNIT
   (COMMENT "words that name measurement units in scales: foot, mile, ...")
   (INHERIT
@@ -30653,7 +30658,7 @@
 (CONCEPT
   ONT::TOTAL-SCALE
   (INHERIT
-    ONT::MEASURE-SCALE)
+    ONT::NUMBER-SCALE)
   (OVERLAP
     WN::|total%1:06:00::|
     WN::|count%1:23:00::|))
