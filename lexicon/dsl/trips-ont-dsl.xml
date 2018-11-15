@@ -1160,7 +1160,7 @@
  </concept>
  <concept name="ont::age-scale">
   <relation label="inherit">
-   ont::time-measure-scale
+   ont::duration-scale
   </relation>
   <relation label="overlap">
    wn::|age%1:28:00::|
@@ -1725,12 +1725,7 @@
    <relation label="inherit">
     time
    </relation>
-   <feat name="time-scale">
-   <or>
-    interval
-    point
-   </or>
-   </feat>
+   <feat name="scale">time-loc-scale</feat>
    <feat name="time-function">any-time-function</feat>
    <feat name="type">any-time-object</feat>
   </sem-feats>
@@ -2595,6 +2590,24 @@
   <relation label="inherit">
    ont::position-as-point-reln
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="scale">
+     <or>
+      time-measure-scale
+      rate-scale
+      money-scale
+      number-scale
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::at-risk-val">
   <relation label="inherit">
@@ -9157,7 +9170,6 @@
    <relation label="inherit">
     time
    </relation>
-   <feat name="time-scale">interval</feat>
    <feat name="time-function">time-of-year</feat>
    <feat name="type">date-object</feat>
   </sem-feats>
@@ -17918,7 +17930,6 @@
      <relation label="inherit">
       time
      </relation>
-     <feat name="time-scale">interval</feat>
      <feat name="time-function">time-frame</feat>
     </sem-feats>
    </role-restr-map>
@@ -24630,7 +24641,6 @@
    <relation label="inherit">
     abstr-obj
    </relation>
-   <feat name="time-scale">interval</feat>
    <feat name="scale">time-measure-scale</feat>
    <feat name="type">persistence-val</feat>
   </sem-feats>
@@ -25613,11 +25623,14 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="scale">time-measure-scale</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure" optional="optional">
     <or>
@@ -30774,6 +30787,16 @@
    <feat name="aspect">stage-level</feat>
    <feat name="type">should-be-at</feat>
   </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::neutral" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="intentional">-</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::show">
   <relation label="inherit">
@@ -34252,7 +34275,6 @@
      <relation label="inherit">
       time
      </relation>
-     <feat name="time-scale">point</feat>
      <feat name="time-function">
      <or>
       clock-time
@@ -34395,8 +34417,6 @@
     time
    </relation>
    <feat name="tangible">+</feat>
-   <feat name="scale">-</feat>
-   <feat name="time-scale">interval</feat>
    <feat name="type">time-interval</feat>
   </sem-feats>
   <sem-frame>
@@ -34406,7 +34426,6 @@
       abstr-obj
      </relation>
      <feat name="scale">duration-scale</feat>
-     <feat name="time-scale">interval</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure" optional="optional">
@@ -34422,7 +34441,6 @@
       time
      </relation>
      <feat name="scale">duration-scale</feat>
-     <feat name="time-scale">interval</feat>
      <feat name="time-function">time-frame</feat>
     </sem-feats>
    </role-restr-map>
@@ -34431,6 +34449,11 @@
  <concept name="ont::time-loc">
   <relation label="inherit">
    ont::time-object
+  </relation>
+ </concept>
+ <concept name="ont::time-loc-scale">
+  <relation label="inherit">
+   ont::time-measure-scale
   </relation>
  </concept>
  <concept name="ont::time-measure-scale">
@@ -34452,18 +34475,6 @@
   <relation label="inherit">
    ont::any-time-object
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    time
-   </relation>
-   <feat name="time-scale">
-   <or>
-    point
-    interval
-   </or>
-   </feat>
-   <feat name="type">time-object</feat>
-  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
     <concept name="t" />
@@ -34496,13 +34507,6 @@
    wn::|point%1:28:00::|
    wn::|point_in_time%1:28:00::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    time
-   </relation>
-   <feat name="time-scale">point</feat>
-   <feat name="type">time-point</feat>
-  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
     <or>
@@ -34551,19 +34555,7 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      time
-     </relation>
-     <feat name="time-function">
-     <or>
-      month-name
-      year-name
-      day-period
-     </or>
-     </feat>
-     <feat name="time-scale">interval</feat>
-    </sem-feats>
+    <concept name="time" />
    </role-restr-map>
   </sem-frame>
  </concept>

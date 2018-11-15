@@ -1034,7 +1034,7 @@
 (CONCEPT
   ONT::AGE-SCALE
   (INHERIT
-    ONT::TIME-MEASURE-SCALE)
+    ONT::DURATION-SCALE)
   (OVERLAP
     WN::|age%1:28:00::|
     WN::|age%1:07:00::|))
@@ -1525,10 +1525,7 @@
   (SEM-FEATS
     (INHERIT
       TIME)
-    (TIME-SCALE
-     (OR
-       INTERVAL
-       POINT))
+    (SCALE TIME-LOC-SCALE)
     (TIME-FUNCTION ANY-TIME-FUNCTION)
     (TYPE ANY-TIME-OBJECT)))
 
@@ -2292,7 +2289,22 @@
   ONT::AT-LOC
   (COMMENT "prototypical locating of a FIGURE wrt a point-like GROUND")
   (INHERIT
-    ONT::POSITION-AS-POINT-RELN))
+    ONT::POSITION-AS-POINT-RELN)
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (SCALE
+        (OR
+          TIME-MEASURE-SCALE
+          RATE-SCALE
+          MONEY-SCALE
+          NUMBER-SCALE)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::AT-RISK-VAL
@@ -8094,7 +8106,6 @@
   (SEM-FEATS
     (INHERIT
       TIME)
-    (TIME-SCALE INTERVAL)
     (TIME-FUNCTION TIME-OF-YEAR)
     (TYPE DATE-OBJECT)))
 
@@ -15809,7 +15820,6 @@
      (SEM-FEATS
        (INHERIT
          TIME)
-       (TIME-SCALE INTERVAL)
        (TIME-FUNCTION TIME-FRAME))
      OPTIONAL)))
 
@@ -21666,7 +21676,6 @@
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
-    (TIME-SCALE INTERVAL)
     (SCALE TIME-MEASURE-SCALE)
     (TYPE PERSISTENCE-VAL)))
 
@@ -22528,13 +22537,15 @@
     ONT::ABSTRACT-OBJECT)
   (SEM-FRAME
     (ONT::GROUND
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ))
+       (SCALE TIME-MEASURE-SCALE))
      OPTIONAL)
     (ONT::FIGURE
      (OR
@@ -27134,7 +27145,14 @@
     (INHERIT
       SITUATION)
     (ASPECT STAGE-LEVEL)
-    (TYPE SHOULD-BE-AT)))
+    (TYPE SHOULD-BE-AT))
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL -))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::SHOW
@@ -30226,7 +30244,6 @@
      (SEM-FEATS
        (INHERIT
          TIME)
-       (TIME-SCALE POINT)
        (TIME-FUNCTION
         (OR
           CLOCK-TIME
@@ -30340,16 +30357,13 @@
     (INHERIT
       TIME)
     (TANGIBLE +)
-    (SCALE -)
-    (TIME-SCALE INTERVAL)
     (TYPE TIME-INTERVAL))
   (SEM-FRAME
     (ONT::EXTENT
      (SEM-FEATS
        (INHERIT
          ABSTR-OBJ)
-       (SCALE DURATION-SCALE)
-       (TIME-SCALE INTERVAL))
+       (SCALE DURATION-SCALE))
      OPTIONAL)
     (ONT::FIGURE
      (OR
@@ -30365,7 +30379,6 @@
        (INHERIT
          TIME)
        (SCALE DURATION-SCALE)
-       (TIME-SCALE INTERVAL)
        (TIME-FUNCTION TIME-FRAME))
      OPTIONAL)))
 
@@ -30373,6 +30386,11 @@
   ONT::TIME-LOC
   (INHERIT
     ONT::TIME-OBJECT))
+
+(CONCEPT
+  ONT::TIME-LOC-SCALE
+  (INHERIT
+    ONT::TIME-MEASURE-SCALE))
 
 (CONCEPT
   ONT::TIME-MEASURE-SCALE
@@ -30389,14 +30407,6 @@
   (COMMENT "objects that refer to temporal locations in some way")
   (INHERIT
     ONT::ANY-TIME-OBJECT)
-  (SEM-FEATS
-    (INHERIT
-      TIME)
-    (TIME-SCALE
-     (OR
-       POINT
-       INTERVAL))
-    (TYPE TIME-OBJECT))
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -30425,11 +30435,6 @@
     WN::|time%1:11:00::|
     WN::|point%1:28:00::|
     WN::|point_in_time%1:28:00::|)
-  (SEM-FEATS
-    (INHERIT
-      TIME)
-    (TIME-SCALE POINT)
-    (TYPE TIME-POINT))
   (SEM-FRAME
     (ONT::FIGURE
      (OR
@@ -30475,15 +30480,8 @@
     ONT::TEMPORAL-LOCATION)
   (SEM-FRAME
     (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         TIME)
-       (TIME-FUNCTION
-        (OR
-          MONTH-NAME
-          YEAR-NAME
-          DAY-PERIOD))
-       (TIME-SCALE INTERVAL))
+     (CONCEPT
+       TIME)
      OPTIONAL)))
 
 (CONCEPT

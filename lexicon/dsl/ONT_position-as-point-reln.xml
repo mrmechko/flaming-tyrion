@@ -45,11 +45,14 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="scale">time-measure-scale</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
   <or>
@@ -87,11 +90,14 @@
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="scale">time-measure-scale</feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
    <or>
@@ -124,6 +130,24 @@
  <relation label="inherit">
   ont::position-as-point-reln
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="scale">
+    <or>
+     time-measure-scale
+     rate-scale
+     money-scale
+     number-scale
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::pos-distance">
  <relation label="inherit">
