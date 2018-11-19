@@ -13844,7 +13844,7 @@
   (COMMENT
    "a  classification, category, variety of things. Not a set of objects!")
   (INHERIT
-    ONT::VERSION))
+    ONT::KIND))
 
 (CONCEPT
   ONT::GROW
@@ -18304,11 +18304,6 @@
   ONT::MENTAL-OBJECT
   (INHERIT
     ONT::MENTAL-CONSTRUCTION)
-  (OVERLAP
-    WN::|cognition%1:03:00::|
-    WN::|noesis%1:03:00::|
-    WN::|grounds%1:10:00::|
-    WN::|reason%1:10:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -18811,7 +18806,8 @@
   (INHERIT
     ONT::MENTAL-OBJECT)
   (OVERLAP
-    WN::|motivation%1:03:00::|))
+    WN::|motivation%1:03:00::|
+    WN::|reason%1:10:00::|))
 
 (CONCEPT
   ONT::MOUNTAIN
@@ -21041,11 +21037,13 @@
     ONT::POSITION-AS-POINT-RELN)
   (SEM-FRAME
     (ONT::GROUND
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE TIME-MEASURE-SCALE))
      OPTIONAL)))
 
 (CONCEPT

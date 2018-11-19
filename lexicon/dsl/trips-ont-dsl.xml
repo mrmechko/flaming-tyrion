@@ -15676,7 +15676,7 @@
    &quot;a  classification, category, variety of things. Not a set of objects!&quot;
   </comment>
   <relation label="inherit">
-   ont::version
+   ont::kind
   </relation>
  </concept>
  <concept name="ont::grow">
@@ -20834,12 +20834,6 @@
   <relation label="inherit">
    ont::mental-construction
   </relation>
-  <relation label="overlap">
-   wn::|cognition%1:03:00::|
-   wn::|noesis%1:03:00::|
-   wn::|grounds%1:10:00::|
-   wn::|reason%1:10:00::|
-  </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal" optional="optional">
     <concept name="situation" />
@@ -21400,6 +21394,7 @@
   </relation>
   <relation label="overlap">
    wn::|motivation%1:03:00::|
+   wn::|reason%1:10:00::|
   </relation>
  </concept>
  <concept name="ont::mountain">
@@ -23922,10 +23917,13 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="type">time-measure-scale</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>

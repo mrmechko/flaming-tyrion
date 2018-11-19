@@ -495,10 +495,15 @@
   ont::certain
  </relation>
  <syntax>
-  <template-call template="ont::central-adj-xp-templ" xp="'(w::pp w::of)" />
+  <template-call template="ont::central-adj-xp-templ" xp="'(w::pp
+                                                            (w::or
+                                                              w::of
+                                                              w::about))" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat2" syn-cat="-" sem-role="ont::norole"/>
-   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="w::of" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or
+                                                           w::of
+                                                           w::about)" sem-role="ont::ground" optional="optional"/>
    <syn-sem-map syn-arg="argument" syn-cat="np" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
