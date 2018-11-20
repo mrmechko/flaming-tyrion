@@ -15246,7 +15246,7 @@
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
-       PROP)
+       SITUATION)
      OPTIONAL)))
 
 (CONCEPT
@@ -18363,7 +18363,7 @@
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
-       PROP)
+       SITUATION)
      OPTIONAL)))
 
 (CONCEPT
