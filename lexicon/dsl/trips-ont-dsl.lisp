@@ -734,13 +734,7 @@
   ONT::ACTUALITY-VAL
   (COMMENT "existing or occuring in fact vs. imagined or supposed")
   (INHERIT
-    ONT::REAL-VS-FAKE-VAL)
-  (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PROPOSITION)
-       (INFORMATION MENTAL-CONSTRUCT)))))
+    ONT::REAL-VS-FAKE-VAL))
 
 (CONCEPT
   ONT::ADAPT
@@ -6363,9 +6357,7 @@
        (CONCEPT
          ABSTR-OBJ)
        (CONCEPT
-         SITUATION)
-       (CONCEPT
-         PROPOSITION))
+         SITUATION))
      OPTIONAL)
     (ONT::AFFECTED
      (OR
@@ -8220,8 +8212,6 @@
            PHYS-OBJ)
          (CONCEPT
            ABSTR-OBJ)
-         (CONCEPT
-           PROPOSITION)
          (CONCEPT
            SITUATION))
        (INFORMATION INFORMATION-CONTENT))
@@ -20476,9 +20466,7 @@
        (CONCEPT
          SITUATION)
        (CONCEPT
-         TIME)
-       (CONCEPT
-         PROPOSITION)))
+         TIME)))
     (ONT::NEUTRAL
      (OR
        (CONCEPT
@@ -20488,9 +20476,7 @@
        (CONCEPT
          SITUATION)
        (CONCEPT
-         TIME)
-       (CONCEPT
-         PROPOSITION)))))
+         TIME)))))
 
 (CONCEPT
   ONT::OBJECT-DEPENDENT-LOCATION
@@ -24249,7 +24235,7 @@
          (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
-           PROPOSITION))
+           SITUATION))
        (INFORMATION INFORMATION-CONTENT))
      OPTIONAL)))
 
@@ -24430,9 +24416,7 @@
       (CONCEPT
         ABSTR-OBJ)
       (CONCEPT
-        SITUATION)
-      (CONCEPT
-        PROPOSITION))
+        SITUATION))
     (TYPE REFERENTIAL-SEM)))
 
 (CONCEPT
@@ -29631,8 +29615,6 @@
          ABSTR-OBJ)
        (CONCEPT
          SITUATION)
-       (CONCEPT
-         PROPOSITION)
        (CONCEPT
          PHYS-OBJ))
      OPTIONAL)))
