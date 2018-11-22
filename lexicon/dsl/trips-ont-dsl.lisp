@@ -9735,6 +9735,20 @@
     ONT::MOVE))
 
 (CONCEPT
+  ONT::DRINK
+  (INHERIT
+    ONT::CONSUME)
+  (OVERLAP
+    WN::|drink%2:34:00::|
+    WN::|drink%2:34:12::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (FORM LIQUID)))))
+
+(CONCEPT
   ONT::DRINKING-ESTABLISHMENT
   (INHERIT
     ONT::ENTERTAINMENT-ESTABLISHMENT)
@@ -9995,6 +10009,20 @@
     ONT::TASK-COMPLEXITY-SCALE)
   (OVERLAP
     WN::|ease%1:07:00::|))
+
+(CONCEPT
+  ONT::EAT
+  (INHERIT
+    ONT::CONSUME)
+  (OVERLAP
+    WN::|eat%2:34:00::|
+    WN::|eat%2:34:02::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (FORM SOLID)))))
 
 (CONCEPT
   ONT::EATER
@@ -17249,6 +17277,15 @@
          ABSTR-OBJ)))))
 
 (CONCEPT
+  ONT::LOCOMOTE-UP
+  (INHERIT
+    ONT::SELF-LOCOMOTE)
+  (OVERLAP
+    WN::|climb%2:38:00::|
+    WN::|climb%2:38:01::|
+    WN::|ascend%2:38:02::|))
+
+(CONCEPT
   ONT::LOCUTION
   (COMMENT
    "activities that solely address the mechanics of communicating: e.g., pronounce")
@@ -18370,7 +18407,8 @@
     ONT::PS-OBJECT)
   (OVERLAP
     WN::|manner%1:07:01::|
-    WN::|method%1:09:00::|))
+    WN::|method%1:09:00::|
+    WN::|way%1:04:01::|))
 
 (CONCEPT
   ONT::METHYLATION
@@ -29527,7 +29565,10 @@
     ONT::EVENT-OF-CAUSATION)
   (OVERLAP
     WN::|absorb%2:35:00::|
-    WN::|absorb%2:43:00::|)
+    WN::|absorb%2:43:00::|
+    WN::|suck%2:34:04::|
+    WN::|suck%2:38:00::|
+    WN::|suck%2:35:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (CONCEPT
