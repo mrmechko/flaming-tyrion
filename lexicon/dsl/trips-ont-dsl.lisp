@@ -11604,10 +11604,7 @@
            ABSTR-OBJ)
          (CONCEPT
            SITUATION))
-       (TYPE
-        (OR
-          PROCEDURE
-          EVENT-OF-ACTION)))
+       (TYPE PROCEDURE))
      OPTIONAL)
     (ONT::AGENT
      (SEM-FEATS
