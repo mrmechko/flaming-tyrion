@@ -18895,6 +18895,12 @@
     (CONTAINER -)
     (TYPE MOVE))
   (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE DOMAIN))
+     OPTIONAL)
     (ONT::REASON
      (SEM-FEATS
        (INHERIT
@@ -29910,6 +29916,8 @@
   (SEM-FRAME
     (ONT::FIGURE
      (OR
+       (CONCEPT
+         PHYS-OBJ)
        (CONCEPT
          ABSTR-OBJ)
        (CONCEPT
