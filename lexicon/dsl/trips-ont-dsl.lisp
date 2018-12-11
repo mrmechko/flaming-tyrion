@@ -14987,6 +14987,21 @@
     (TYPE IN-RELATION)))
 
 (CONCEPT
+  ONT::IN-SCALE
+  (INHERIT
+    ONT::SITUATION-MODIFIER)
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE DOMAIN)))
+    (ONT::FIGURE
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::IN-TOUCH-VAL
   (INHERIT
     ONT::SOCIAL-INTERACTION-VAL))
@@ -20268,7 +20283,7 @@
   (OVERLAP
     WN::|now%4:02:05::|
     WN::|now%4:02:01::|
-    WN::|presently%04:02:00::|))
+    WN::|presently%4:02:00::|))
 
 (CONCEPT
   ONT::NUCLEAR-VAL
