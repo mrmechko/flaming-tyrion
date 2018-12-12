@@ -211,8 +211,8 @@
    </or>
    <feat name="type">
    <or>
-    in-loc
-    at-loc
+    goal-reln
+    source-reln
    </or>
    </feat>
   </sem-feats>
@@ -262,8 +262,8 @@
     </or>
     <feat name="type">
     <or>
-     in-loc
-     at-loc
+     goal-reln
+     source-reln
     </or>
     </feat>
    </sem-feats>
@@ -501,9 +501,29 @@
  </semantics>
  </sense>
  <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="increase" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="increase" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="increase the budget [to 3K]">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::increase
  </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  <semantics>
   <sem-feats>
    <feat name="time-span">atomic</feat>
@@ -511,6 +531,25 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="increase" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="increase" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="it increased in temperature">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::increase
+  ont::affected-templ
+ </relation>
  </sense>
  <sense>
  <morph>

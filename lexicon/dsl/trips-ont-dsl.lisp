@@ -5036,6 +5036,16 @@
   (INHERIT
     ONT::CHANGE-IN-SCALE)
   (SEM-FRAME
+    (ONT::RESULT
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          PATH
+          RESULTING-OBJECT
+          RESULTING-STATE)))
+     OPTIONAL)
     (ONT::SCALE
      (SEM-FEATS
        (INHERIT
@@ -5172,8 +5182,8 @@
            PHYS-OBJ))
        (TYPE
         (OR
-          IN-LOC
-          AT-LOC)))
+          GOAL-RELN
+          SOURCE-RELN)))
      OPTIONAL)
     (ONT::SCALE
      (SEM-FEATS
@@ -28989,7 +28999,8 @@
     WN::|entry%1:06:00::|
     WN::|window%1:06:00::|
     WN::|window%1:06:01::|
-    WN::|window%1:06:05::|)
+    WN::|window%1:06:05::|
+    WN::|movable_barrier%1:06:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
