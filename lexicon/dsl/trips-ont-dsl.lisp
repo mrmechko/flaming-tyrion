@@ -6365,7 +6365,9 @@
        (CONCEPT
          PHYS-OBJ)
        (CONCEPT
-         ABSTR-OBJ))
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
      OPTIONAL)
     (ONT::FORMAL
      (OR
