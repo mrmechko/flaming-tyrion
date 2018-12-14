@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::be-born">
  <relation label="inherit">
-  ont::procreate
+  ont::life-process
  </relation>
  <relation label="overlap">
   wn::|nascence%1:11:00::|
@@ -122,49 +122,18 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::life-process">
- <relation label="inherit">
-  ont::event-of-undergoing-action
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="tangible">+</feat>
-    <feat name="origin">living</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::affected-result" optional="optional">
+ <role-restr-map roles="ont::affected" optional="optional">
   <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="type">mammal</feat>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="tangible">+</feat>
+   <feat name="origin">living</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="type">be-born</feat>
- </sem-feats>
- <concept name="ont::procreate">
- <relation label="inherit">
-  ont::life-process
- </relation>
- <relation label="overlap">
-  wn::|propagate%2:29:00::|
-  wn::|propagate%2:29:01::|
-  wn::|reproduce%2:29:00::|
- </relation>
- </concept>
  <concept name="ont::event-of-undergoing-action">
  <comment>
   &quot;A small class of events that take an affected but do not allow an AGENT construction (though might be caused as in he died from the plague&quot;
@@ -195,17 +164,38 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::affected" optional="optional">
+ <role-restr-map roles="ont::affected-result" optional="optional">
   <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="tangible">+</feat>
-   <feat name="origin">living</feat>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="type">mammal</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="type">be-born</feat>
+ </sem-feats>
+ <concept name="ont::life-process">
+ <relation label="inherit">
+  ont::event-of-undergoing-action
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="tangible">+</feat>
+    <feat name="origin">living</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::situation-root">
  <comment>
   &quot;root for all events, whether verbal or nominal&quot;

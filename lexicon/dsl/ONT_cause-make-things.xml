@@ -390,6 +390,15 @@
  <feat name="type">referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::bear">
+ <relation label="inherit">
+  ont::cause-make-things
+ </relation>
+ <relation label="overlap">
+  wn::|fruit%2:36:00::|
+  wn::|flower%2:30:00::|
+ </relation>
+ </concept>
  <concept name="ont::gene-expression">
  <relation label="inherit">
   ont::cause-make-things
@@ -477,96 +486,11 @@
   ont::cause-make-things
  </relation>
  <relation label="overlap">
-  wn::|emit%2:32:00::|
-  wn::|let_out%2:32:02::|
-  wn::|let_loose%2:32:00::|
   wn::|emission%1:04:00::|
   wn::|emanation%1:04:00::|
   wn::|emit%2:43:00::|
   wn::|discharge%2:29:00::|
+  wn::|bubble%2:30:01::|
  </relation>
  </concept>
- <concept name="ont::cooking">
- <relation label="inherit">
-  ont::cause-make-things
- </relation>
- <relation label="overlap">
-  wn::|prepare%2:36:01::|
-  wn::|make%2:36:07::|
-  wn::|ready%2:36:00::|
-  wn::|fix%2:36:00::|
-  wn::|cook%2:36:00::|
-  wn::|cook%2:30:00::|
-  wn::|brew%2:36:00::|
-  wn::|steep%2:30:00::|
-  wn::|flavor%2:39:00::|
-  wn::|percolate%2:35:02::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">agentive</feat>
-  <feat name="type">cooking</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::affected-result" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="object-function">comestible</feat>
-    <feat name="type">food</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">human</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="center" />
-  <forms>
-   -VB
-   <ing>
-    <word first-word="centering" />
-   </ing>
-   <past>
-    <word first-word="centered" />
-   </past>
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="center the image within the window">
- </example>
- <relation label="inherit">
-  ont::cause-make-things
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
 </dsl>

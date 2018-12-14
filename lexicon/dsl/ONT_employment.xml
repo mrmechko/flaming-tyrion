@@ -287,9 +287,55 @@
   wn::|employ%2:41:00::|
  </relation>
  </concept>
- <concept name="ont::fire-dismiss">
+ <concept name="ont::retire">
  <relation label="inherit">
   ont::employment
  </relation>
+ <relation label="overlap">
+  wn::|pension_off%2:41:00::|
+  wn::|retire%2:41:01::|
+  wn::|retire%2:41:03::|
+ </relation>
+ </concept>
+ <concept name="ont::terminate">
+ <relation label="inherit">
+  ont::employment
+ </relation>
+ <relation label="overlap">
+  wn::|displace%2:41:04::|
+  wn::|fire%2:41:00::|
+  wn::|give_notice%2:41:00::|
+  wn::|can%2:41:00::|
+  wn::|dismiss%2:41:00::|
+  wn::|give_the_axe%2:41:00::|
+  wn::|send_away%2:41:00::|
+  wn::|sack%2:41:00::|
+  wn::|force_out%2:41:00::|
+  wn::|give_the_sack%2:41:00::|
+  wn::|terminate%2:41:01::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::effect">
+   <concept name="situation" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
 </dsl>

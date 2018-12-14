@@ -135,6 +135,7 @@
   wn::|change%2:30:02::|
   wn::|change%2:30:08::|
   wn::|change%2:30:01::|
+  wn::|transition%2:30:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -456,6 +457,41 @@
     <concept name="abstr-obj" />
     <concept name="time" />
    </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::cooking">
+ <relation label="inherit">
+  ont::transformation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">agentive</feat>
+  <feat name="type">cooking</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="object-function">comestible</feat>
+    <feat name="type">food</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">human</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>

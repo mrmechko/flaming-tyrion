@@ -42,7 +42,7 @@
   &quot;CHF-DIALOGUES&quot;
  </comment>
  <relation label="inherit">
-  ont::bodily-process
+  ont::experiencer-obj
   ont::affected-templ
  </relation>
  </sense>
@@ -131,11 +131,12 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::cooking
+  ont::create-by-cooking
   ont::affected-templ
  </relation>
  <semantics>
   <sem-feats>
+   <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
    <feat name="cause">agentive</feat>
   </sem-feats>
@@ -178,7 +179,7 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::cooking
+  ont::boil
   ont::affected-templ
  </relation>
  <semantics>
@@ -202,8 +203,11 @@
    </nom>
   </forms>
  </morph>
+ <example text="She bled profusely">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
-  ont::bodily-process
+  ont::bleed
   ont::affected-templ
  </relation>
  </sense>
@@ -233,26 +237,6 @@
    <feat name="scale">size-scale</feat>
    <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="bloom" />
- </morph>
- <example text="the flowers bloomed">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::life-transformation
-  ont::affected-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
  </sense>
@@ -437,6 +421,64 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="breathe" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="breath" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::breathe
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="breathe" remaining-words="" particle="in" />
+ </morph>
+ <relation label="inherit">
+  ont::inhale
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="breathe" remaining-words="" particle="out" />
+ </morph>
+ <relation label="inherit">
+  ont::exhale
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="bristle" />
+ </morph>
+ <example text="the hair on the back of his neck bristled">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::hair-process
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="build" remaining-words="" particle="up" />
   <forms>
    -VB
@@ -494,6 +536,19 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="catnap" />
+ </morph>
+ <relation label="inherit">
+  ont::sleep
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::snooze-40.4
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="cease" />
   <forms>
    -VB
@@ -543,6 +598,45 @@
  </relation>
  <relation label="overlap">
   vn::break-45.1
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="choke" />
+ </morph>
+ <example text="She choked with emotion as she talked about her deceased husband.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::breathe
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="choke" />
+ </morph>
+ <example text="She choked(gagged) on the fishbone.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::obstructed-breathing
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="choke" remaining-words="" particle="up" />
+ </morph>
+ <example text="She choked up with emotion as she talked about her deceased husband.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::breathe
+  ont::affected-templ
  </relation>
  </sense>
  <sense>
@@ -748,11 +842,12 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::cooking
+  ont::cook
   ont::affected-templ
  </relation>
  <semantics>
   <sem-feats>
+   <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
    <feat name="cause">agentive</feat>
   </sem-feats>
@@ -777,6 +872,29 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="cough" />
+ </morph>
+ <relation label="inherit">
+  ont::exhale-forcefully
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="cough" remaining-words="" particle="up" />
+ </morph>
+ <relation label="inherit">
+  ont::exhale-forcefully
+  ont::affected-templ
+ </relation>
  </sense>
  <sense>
  <morph>
@@ -915,6 +1033,22 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="defecate" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="defecation" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::excrete-waste
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="degrade" />
   <forms>
    -VB
@@ -1010,6 +1144,19 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="digest" />
+ </morph>
+ <example text="he digested in silence">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::digest
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="dip" />
   <forms>
    -VB
@@ -1067,6 +1214,32 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="doze" />
+ </morph>
+ <relation label="inherit">
+  ont::drowse
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::snooze-40.4
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="dribble" />
+ </morph>
+ <relation label="inherit">
+  ont::salivate
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="drift" />
  </morph>
  <relation label="inherit">
@@ -1094,6 +1267,19 @@
  </relation>
  <relation label="overlap">
   vn::roll-51.3.1
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="drowse" />
+ </morph>
+ <relation label="inherit">
+  ont::drowse
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::snooze-40.4
  </relation>
  </sense>
  <sense>
@@ -1226,6 +1412,25 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="exhale" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="exhalation" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::exhale
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="expire" />
   <forms>
    -VB
@@ -1338,6 +1543,22 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="faint" />
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <example text="he fainted">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::lose-consciousness
+  ont::affected-templ
+ </relation>
  </sense>
  <sense>
  <morph>
@@ -1469,31 +1690,24 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="flower" />
+  <word first-word="flush" />
   <forms>
    -VB
-   <past>
-    <word first-word="flowered" />
-   </past>
-   <ing>
-    <word first-word="flowering" />
-   </ing>
+   <nom>
+    <word first-word="flush" />
+   </nom>
   </forms>
  </morph>
- <example text="the plants flowered">
+ <example text="he was flushed">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::life-transformation
+  ont::change-skin-color
   ont::affected-templ
  </relation>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
  </sense>
  <sense>
  <morph>
@@ -1758,6 +1972,25 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="hibernate" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="hibernate" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::lie-dormant
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="hurt" />
   <forms>
    -VB
@@ -1775,6 +2008,22 @@
  </relation>
  <relation label="overlap">
   vn::amuse-31.1
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="hyperventilate" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="hyperventilation" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::breathe
+  ont::affected-templ
  </relation>
  </sense>
  <sense>
@@ -1844,6 +2093,25 @@
  <relation label="inherit">
   ont::increase
   ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="inhale" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="inhalation" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::inhale
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
  </relation>
  </sense>
  <sense>
@@ -2035,6 +2303,22 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="menstruate" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="menstruation" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::bleed
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="molder" />
   <forms>
    -VB
@@ -2185,7 +2469,7 @@
   <word first-word="nap" />
  </morph>
  <relation label="inherit">
-  ont::bodily-process
+  ont::sleep
   ont::affected-templ
  </relation>
  <relation label="overlap">
@@ -2235,6 +2519,25 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="oversleep" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="overslept" />
+   </past>
+  </forms>
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <relation label="inherit">
+  ont::sleep
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="palpitate" />
  </morph>
  <comment>
@@ -2245,6 +2548,28 @@
  </example>
  <relation label="inherit">
   ont::uncontrolled-body-motion
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="pee" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="peed" />
+   </past>
+   <ing>
+    <word first-word="peeing" />
+   </ing>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::excrete-waste
   ont::affected-templ
  </relation>
  </sense>
@@ -2332,7 +2657,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="pop-up" />
+  <word first-word="pop" remaining-words="punc-minus up" />
  </morph>
  <relation label="inherit">
   ont::appear
@@ -2359,7 +2684,7 @@
  <example text="his heart pounds after exercise">
  </example>
  <relation label="inherit">
-  ont::pulse
+  ont::rhythmic-motion
   ont::affected-templ
  </relation>
  </sense>
@@ -2429,7 +2754,7 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::pulse
+  ont::rhythmic-motion
   ont::affected-templ
  </relation>
  </sense>
@@ -2448,7 +2773,7 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::pulse
+  ont::rhythmic-motion
   ont::affected-templ
  </relation>
  </sense>
@@ -2783,11 +3108,12 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::cooking
+  ont::roast
   ont::affected-templ
  </relation>
  <semantics>
   <sem-feats>
+   <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
    <feat name="cause">agentive</feat>
   </sem-feats>
@@ -3137,11 +3463,12 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::cooking
+  ont::boil
   ont::affected-templ
  </relation>
  <semantics>
   <sem-feats>
+   <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
    <feat name="cause">agentive</feat>
   </sem-feats>
@@ -3181,6 +3508,28 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="sleep" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="slept" />
+   </past>
+   <nom>
+    <word first-word="sleep" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::sleep
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="slide" />
  </morph>
  <relation label="inherit">
@@ -3189,6 +3538,28 @@
  </relation>
  <relation label="overlap">
   vn::roll-51.3.1
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="slumber" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="slumbered" />
+   </past>
+   <ing>
+    <word first-word="slumbering" />
+   </ing>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::sleep
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::snooze-40.4
  </relation>
  </sense>
  <sense>
@@ -3267,6 +3638,54 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="sneeze" />
+ </morph>
+ <example text="He covered his mouth and sneezed.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::exhale-forcefully
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="snooze" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="snooze" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::sleep
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::snooze-40.4
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="snore" />
+ </morph>
+ <relation label="inherit">
+  ont::obstructed-breathing
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="soar" />
  </morph>
  <comment>
@@ -3331,6 +3750,28 @@
  </relation>
  <relation label="overlap">
   vn::roll-51.3.1
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="spit" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="spat" />
+   </past>
+   <ing>
+    <word first-word="spitting" />
+   </ing>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::expectorate
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
  </relation>
  </sense>
  <sense>
@@ -3567,28 +4008,16 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::cooking
+  ont::cook-in-steam
   ont::affected-templ
  </relation>
  <semantics>
   <sem-feats>
+   <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
    <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="steep" />
- </morph>
- <example text="the tea steeped">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::steep
-  ont::affected-templ
- </relation>
  </sense>
  <sense>
  <morph>
@@ -3702,6 +4131,19 @@
  <relation label="overlap">
   vn::body_internal_motion-49
   vn::modes_of_being_with_motion-47.3
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sweat" />
+ </morph>
+ <relation label="inherit">
+  ont::sweat
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
  </relation>
  </sense>
  <sense>
@@ -3890,7 +4332,7 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::pulse
+  ont::rhythmic-motion
   ont::affected-templ
  </relation>
  </sense>
@@ -3995,6 +4437,19 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="trip" remaining-words="out" />
+ </morph>
+ <example text="He tripped out every weekend">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::alter-consciousness
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="triple" />
  </morph>
  <example text="it tripled (in size)">
@@ -4085,6 +4540,31 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="urinate" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="urinated" />
+   </past>
+   <ing>
+    <word first-word="urinating" />
+   </ing>
+   <nom>
+    <word first-word="urination" />
+   </nom>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::excrete-waste
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="vanish" />
  </morph>
  <example text="He vanished">
@@ -4101,6 +4581,58 @@
   <sem-feats>
    <feat name="time-span">atomic</feat>
    <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="vomit" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="vomited" />
+   </past>
+   <ing>
+    <word first-word="vomiting" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="The patient vomited">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::vomit
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="wake" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="woke" />
+   </past>
+   <pastpart>
+    <word first-word="woken" />
+   </pastpart>
+   <ing>
+    <word first-word="waking" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="he woke at dawn">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::awake
+  ont::affected-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="trajectory">-</feat>
   </sem-feats>
  </semantics>
  </sense>
@@ -4132,7 +4664,7 @@
   <word first-word="wheeze" />
  </morph>
  <relation label="inherit">
-  ont::bodily-process
+  ont::obstructed-breathing
   ont::affected-templ
  </relation>
  </sense>
@@ -4260,6 +4792,22 @@
  <relation label="inherit">
   ont::deteriorate
   ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="yawn" />
+ </morph>
+ <example text="He covered his mouth and yawned..">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::inhale
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
  </relation>
  </sense>
 </dsl>

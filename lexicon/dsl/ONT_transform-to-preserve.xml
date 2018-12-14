@@ -6,6 +6,10 @@
  <relation label="inherit">
   ont::cooking
  </relation>
+ <relation label="overlap">
+  wn::|pasteurize%2:30:00::|
+  wn::|preserve%2:30:00::|
+ </relation>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -96,46 +100,75 @@
  </sem-frame>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
  <role-restr-map roles="ont::result" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="type">
-   <or>
-    phys-object
-    mental-construction
-    information-function-object
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::affected-result" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="type">
-   <or>
-    phys-object
-    mental-construction
-    information-function-object
-   </or>
-   </feat>
-  </sem-feats>
+  <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">force</feat>
+ <feat name="type">change</feat>
+ </sem-feats>
+ <concept name="ont::event-of-causation">
+ <comment>
+  &quot;events involving an AGENT acting on an AFFECTED&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-action
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="type">event-of-causation</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::result" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected1" optional="optional">
   <or>
    <concept name="phys-obj" />
    <concept name="abstr-obj" />
@@ -146,58 +179,116 @@
  <relation label="inherit">
   situation
  </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">agentive</feat>
- <feat name="type">create</feat>
+ <feat name="aspect">dynamic</feat>
+ <feat name="type">transformation</feat>
  </sem-feats>
- <concept name="ont::event-of-creation">
- <comment>
-  &quot;Events that involve creating some new object (typically the AFFECTED-RESULT)&quot;
- </comment>
+ <concept name="ont::change">
  <relation label="inherit">
-  ont::event-of-action
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|change%1:07:00::|
+  wn::|variety%1:07:01::|
+  wn::|change%1:06:01::|
+  wn::|change%2:30:00::|
+  wn::|change%1:04:00::|
+  wn::|change%1:19:00::|
+  wn::|change%2:30:02::|
+  wn::|change%2:30:08::|
+  wn::|change%2:30:01::|
+  wn::|transition%2:30:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="type">event-of-creation</feat>
+  <feat name="cause">force</feat>
+  <feat name="type">change</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::affected-result" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="tangible">+</feat>
-   </sem-feats>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="time" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
    <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
     <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::result" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="object-function">comestible</feat>
+   <feat name="type">food</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">human</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">agentive</feat>
+ <feat name="type">cooking</feat>
+ </sem-feats>
+ <concept name="ont::transformation">
+ <relation label="inherit">
+  ont::change
+ </relation>
+ <relation label="overlap">
+  wn::|metabolize%2:34:00::|
+  wn::|transform%2:30:00::|
+  wn::|transform%2:30:03::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+  <feat name="type">transformation</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected1" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
    </or>
   </role-restr-map>
  </sem-frame>
  </concept>
  <concept name="ont::cooking">
  <relation label="inherit">
-  ont::cause-make-things
- </relation>
- <relation label="overlap">
-  wn::|prepare%2:36:01::|
-  wn::|make%2:36:07::|
-  wn::|ready%2:36:00::|
-  wn::|fix%2:36:00::|
-  wn::|cook%2:36:00::|
-  wn::|cook%2:30:00::|
-  wn::|brew%2:36:00::|
-  wn::|steep%2:30:00::|
-  wn::|flavor%2:39:00::|
-  wn::|percolate%2:35:02::|
+  ont::transformation
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -208,8 +299,8 @@
   <feat name="type">cooking</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::affected-result" optional="optional">
-   <concept name="phys-obj" />
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::affected" optional="optional">
    <sem-feats>
@@ -230,138 +321,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::cause-make-things">
- <relation label="inherit">
-  ont::create
- </relation>
- <relation label="overlap">
-  wn::|create_from_raw_material%2:36:00::|
-  wn::|create_from_raw_stuff%2:36:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected-result" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">agentive</feat>
- <feat name="type">cooking</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::affected-result" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">comestible</feat>
-   <feat name="type">food</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">human</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::create">
- <relation label="inherit">
-  ont::event-of-creation
- </relation>
- <relation label="overlap">
-  wn::|make%2:36:00::|
-  wn::|create%2:36:00::|
-  wn::|create%2:36:03::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">agentive</feat>
-  <feat name="type">create</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="type">
-    <or>
-     phys-object
-     mental-construction
-     information-function-object
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected-result" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="type">
-    <or>
-     phys-object
-     mental-construction
-     information-function-object
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::affected-result" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
@@ -390,25 +349,28 @@
  <relation label="inherit">
   situation
  </relation>
- <feat name="type">event-of-creation</feat>
+ <feat name="type">event-of-causation</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::affected-result" optional="optional">
+ <role-restr-map roles="ont::agent" optional="optional">
   <sem-feats>
    <or>
-    <concept name="situation" />
     <concept name="abstr-obj" />
     <concept name="phys-obj" />
+    <concept name="situation" />
    </or>
    <feat name="tangible">+</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::situation-root">

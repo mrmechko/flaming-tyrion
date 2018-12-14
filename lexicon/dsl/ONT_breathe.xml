@@ -10,6 +10,7 @@
   wn::|breathe%2:29:00::|
   wn::|respire%2:29:00::|
   wn::|suspire%2:29:03::|
+  wn::|choke%2:29:00::|
  </relation>
  </concept>
  <or>
@@ -207,32 +208,6 @@
   wn::|body_process%1:22:00::|
   wn::|bodily_function%1:22:00::|
   wn::|activity%1:22:00::|
-  wn::|strangle%2:29:03::|
-  wn::|suffocate%2:29:01::|
-  wn::|sleep%2:29:00::|
-  wn::|sweat%2:29:00::|
-  wn::|go_to_bed%2:29:00::|
-  wn::|oversleep%2:29:00::|
-  wn::|fall_asleep%2:29:00::|
-  wn::|gag%2:29:01::|
-  wn::|idle%2:41:00::|
-  wn::|lie_dormant%2:41:00::|
-  wn::|arise%2:29:00::|
-  wn::|blur%2:39:01::|
-  wn::|metabolise%2:34:00::|
-  wn::|nod%2:29:03::|
-  wn::|rage%2:37:00::|
-  wn::|splash%2:35:02::|
-  wn::|stag%2:41:00::|
-  wn::|straddle%2:42:00::|
-  wn::|study%2:31:03::|
-  wn::|take_a_dare%2:32:01::|
-  wn::|take_orders%2:41:01::|
-  wn::|take_stage%2:41:00::|
-  wn::|take_the_floor%2:32:00::|
-  wn::|think%2:31:08::|
-  wn::|wake%2:29:00::|
-  wn::|bristle%2:38:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -328,13 +303,135 @@
  <feat name="type">referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
- <concept name="ont::wheeze">
+ <concept name="ont::obstructed-breathing">
  <relation label="inherit">
   ont::breathe
  </relation>
  <relation label="overlap">
   wn::|wheeze%2:29:00::|
   wn::|wheeze%1:04:00::|
+  wn::|suffocate%2:29:01::|
+  wn::|suffocate%2:35:01::|
+  wn::|choke%2:29:01::|
+  wn::|choke%2:29:03::|
+  wn::|pant%2:29:00::|
  </relation>
  </concept>
+ <concept name="ont::exhale">
+ <relation label="inherit">
+  ont::breathe
+ </relation>
+ <relation label="overlap">
+  wn::|exhale%2:29:00::|
+  wn::|exhalation%1:04:00::|
+ </relation>
+ </concept>
+ <concept name="ont::inhale">
+ <relation label="inherit">
+  ont::breathe
+ </relation>
+ <relation label="overlap">
+  wn::|inhale%2:29:00::|
+  wn::|intake%1:04:01::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="breathe" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="breath" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::breathe
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ <syntax>
+  <template-call template="ont::affected-affected-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="breathe" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="breath" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::breathe
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::breathe-40.1.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="breathing" />
+ </morph>
+ <comment>
+  &quot;CHF-DIALOGUES&quot;
+ </comment>
+ <relation label="inherit">
+  ont::breathe
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="choke" />
+ </morph>
+ <example text="She choked with emotion as she talked about her deceased husband.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::breathe
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="choke" remaining-words="" particle="up" />
+ </morph>
+ <example text="She choked up with emotion as she talked about her deceased husband.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::breathe
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="hyperventilate" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="hyperventilation" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::breathe
+  ont::affected-templ
+ </relation>
+ </sense>
 </dsl>

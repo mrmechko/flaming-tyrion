@@ -1,0 +1,750 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::sound-expression">
+ <relation label="inherit">
+  ont::nonverbal-expression
+ </relation>
+ <relation label="overlap">
+  wn::|laugh%2:29:00::|
+  wn::|cry%2:29:00::|
+  wn::|utter%2:32:02::|
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ <feat name="type">situation-root</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::nonverbal-expression">
+ <relation label="inherit">
+  ont::event-of-action
+ </relation>
+ <relation label="overlap">
+  wn::|express_emotion%2:37:00::|
+  wn::|express_feelings%2:37:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="cause">agentive</feat>
+  <feat name="type">nonverbal-expression</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">information-function-object</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::event-of-action">
+ <comment>
+  &quot;events that involve :agent (whether intentional or not)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+  <feat name="type">event-of-action</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="cause">agentive</feat>
+ <feat name="type">nonverbal-expression</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">information-function-object</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-change">
+ <comment>
+  &quot;Events that involve change or force: should ahve an AGENT or AFFECTED role&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+  <feat name="type">event-of-change</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="abstr-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">force</feat>
+ <feat name="type">event-of-action</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+  <feat name="type">situation-root</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">dynamic</feat>
+ <feat name="type">event-of-change</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::result" optional="optional">
+  <concept name="abstr-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">referential-sem</feat>
+ </sem-feats>
+ <concept name="situation" />
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="bark" />
+ </morph>
+ <example text="My neighbor barked angrily (at me).">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="cackle" />
+ </morph>
+ <example text="The witch cackled gleefully.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="chortle" />
+ </morph>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="chuckle" />
+ </morph>
+ <example text="He chuckled softly.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="cry" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="The baby cried loudly.">
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="gasp" />
+ </morph>
+ <example text="She gasped in surprise.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="giggle" />
+ </morph>
+ <example text="She giggled softly.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="groan" />
+ </morph>
+ <example text="He groaned loudly (at my joke).">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="growl" />
+ </morph>
+ <example text="She growled in anger.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="guffaw" />
+ </morph>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="howl" />
+ </morph>
+ <example text="She howled in pain">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="jeer" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="jeer" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="She jeered loudly.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="laugh" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="She laughed loudly.">
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="moan" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="moan" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="She moaned in pain">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="scoff" />
+ </morph>
+ <example text="She scoffed loudly and shook her head">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sigh" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="sigh" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="She sighed loudly.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="snicker" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="snickered" />
+   </past>
+   <ing>
+    <word first-word="snickering" />
+   </ing>
+   <nom>
+    <word first-word="snicker" />
+   </nom>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sniff" />
+ </morph>
+ <example text="She sniffed noisily and glared.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="snigger" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="sniggered" />
+   </past>
+   <ing>
+    <word first-word="sniggering" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="He sniggered gleefully.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="snivel" />
+ </morph>
+ <example text="He sniveled loudly.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sniveled" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sniveling" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="snort" />
+ </morph>
+ <example text="She snorted loudly and laughed.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sob" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="sob" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="She sobbed loudly.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="titter" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="tittered" />
+   </past>
+   <ing>
+    <word first-word="tittering" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="She tittered gleefully.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="weep" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="wept" />
+   </past>
+   <ing>
+    <word first-word="weeping" />
+   </ing>
+  </forms>
+ </morph>
+ <example text="She wept loudly.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="whistle" />
+ </morph>
+ <relation label="inherit">
+  ont::sound-expression
+  ont::agent-templ
+ </relation>
+ <relation label="overlap">
+  vn::nonverbal_expression-40.2
+ </relation>
+ </sense>
+</dsl>

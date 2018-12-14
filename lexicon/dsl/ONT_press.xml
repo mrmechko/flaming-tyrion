@@ -103,6 +103,51 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::push">
+ <relation label="inherit">
+  ont::apply-force
+ </relation>
+ <relation label="overlap">
+  wn::|poke%2:35:01::|
+  wn::|push%2:38:00::|
+  wn::|force%2:38:00::|
+  wn::|thrust%2:38:00::|
+  wn::|thrust%2:42:01::|
+  wn::|wedge%2:35:00::|
+  wn::|bump%2:35:00::|
+ </relation>
+ </concept>
+ <concept name="ont::apply-force">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+  <feat name="type">apply-force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">
+    <or>
+     position-reln
+     direction
+     path
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::event-of-causation">
  <comment>
   &quot;events involving an AGENT acting on an AFFECTED&quot;
@@ -139,6 +184,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">force</feat>
+ <feat name="type">apply-force</feat>
+ </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::result" optional="optional">
   <sem-feats>
@@ -158,67 +210,6 @@
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="cause">force</feat>
- <feat name="type">apply-force</feat>
- </sem-feats>
- <concept name="ont::touch">
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|touch%2:35:00::|
-  wn::|touch%1:04:00::|
- </relation>
- </concept>
- <concept name="ont::apply-force">
- <relation label="inherit">
-  ont::touch
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">force</feat>
-  <feat name="type">apply-force</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">
-    <or>
-     position-reln
-     direction
-     path
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::push">
- <relation label="inherit">
-  ont::apply-force
- </relation>
- <relation label="overlap">
-  wn::|poke%2:35:01::|
-  wn::|push%2:38:00::|
-  wn::|force%2:38:00::|
-  wn::|thrust%2:38:00::|
-  wn::|thrust%2:42:01::|
-  wn::|wedge%2:35:00::|
-  wn::|bump%2:35:00::|
- </relation>
- </concept>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;

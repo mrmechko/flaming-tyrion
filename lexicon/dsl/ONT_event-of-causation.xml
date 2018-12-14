@@ -409,6 +409,37 @@
   wn::|touch%1:04:00::|
  </relation>
  </concept>
+ <concept name="ont::apply-force">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+  <feat name="type">apply-force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">
+    <or>
+     position-reln
+     direction
+     path
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::cause-cover">
  <relation label="inherit">
   ont::event-of-causation
@@ -728,6 +759,7 @@
   wn::|change%2:30:02::|
   wn::|change%2:30:08::|
   wn::|change%2:30:01::|
+  wn::|transition%2:30:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -789,6 +821,7 @@
   wn::|reveal%2:39:00::|
   wn::|reveal%2:32:00::|
   wn::|cause_to_be_perceived%2:39:00::|
+  wn::|get_out%2:32:00::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::agent" optional="optional">
@@ -901,6 +934,7 @@
   wn::|remove%2:30:02::|
   wn::|remove%2:41:00::|
   wn::|suction%2:38:00::|
+  wn::|percolate%2:38:00::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::affected-result" optional="optional">
@@ -946,6 +980,7 @@
  <relation label="overlap">
   wn::|purify%2:30:00::|
   wn::|filter%2:35:00::|
+  wn::|distill%2:30:01::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::source" optional="optional">
@@ -966,6 +1001,9 @@
  <relation label="overlap">
   wn::|absorb%2:35:00::|
   wn::|absorb%2:43:00::|
+  wn::|intake%1:04:00::|
+  wn::|bilge%2:30:01::|
+  wn::|bilge%2:30:00::|
   wn::|suck%2:34:04::|
   wn::|suck%2:38:00::|
   wn::|suck%2:35:00::|
@@ -1161,47 +1199,6 @@
     </relation>
     <feat name="origin">human</feat>
    </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::terminate">
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|displace%2:41:04::|
-  wn::|fire%2:41:00::|
-  wn::|give_notice%2:41:00::|
-  wn::|can%2:41:00::|
-  wn::|dismiss%2:41:00::|
-  wn::|give_the_axe%2:41:00::|
-  wn::|send_away%2:41:00::|
-  wn::|sack%2:41:00::|
-  wn::|force_out%2:41:00::|
-  wn::|give_the_sack%2:41:00::|
-  wn::|terminate%2:41:01::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::effect">
-   <concept name="situation" />
   </role-restr-map>
  </sem-frame>
  </concept>
