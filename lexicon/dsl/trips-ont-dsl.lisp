@@ -9211,11 +9211,9 @@
 (CONCEPT
   ONT::DIRECT-AT
   (INHERIT
-    ONT::EVENT-OF-ACTION)
+    ONT::EVENT-OF-STATE)
   (OVERLAP
-    WN::|target%2:33:00::|
-    WN::|shine%2:43:03::|
-    WN::|orient%2:42:01::|)
+    WN::|target%2:33:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL1
      (CONCEPT
@@ -17535,7 +17533,8 @@
     WN::|reflect%2:43:00::|
     WN::|shine%2:43:00::|
     WN::|beam%2:43:03::|
-    WN::|flash%2:39:00::|)
+    WN::|flash%2:39:00::|
+    WN::|shine%2:43:03::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
