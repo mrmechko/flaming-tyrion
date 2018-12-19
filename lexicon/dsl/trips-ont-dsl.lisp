@@ -11715,7 +11715,9 @@
 (CONCEPT
   ONT::EXCLUSIVE
   (INHERIT
-    ONT::MANNER))
+    ONT::MANNER)
+  (OVERLAP
+    WN::|alone%4:02:00::|))
 
 (CONCEPT
   ONT::EXCRETE
@@ -19866,11 +19868,6 @@
     ONT::LINEAR-EXTENT-VAL))
 
 (CONCEPT
-  ONT::NON-ZERO-VAL
-  (INHERIT
-    ONT::CARDINALITY-VAL))
-
-(CONCEPT
   ONT::NONACTUAL
   (INHERIT
     ONT::ACTUALITY-VAL)
@@ -23501,7 +23498,6 @@
     WN::|personal%3:00:00::|
     WN::|private%3:00:00::|
     WN::|privy%5:00:00:private:00|
-    WN::|exclusive%3:00:00::|
     WN::|confidential%5:00:00:private:00|
     WN::|private%5:00:00:personal:00|))
 
@@ -33363,13 +33359,6 @@
     WN::|young%3:00:00::|
     WN::|immature%3:00:03::|
     WN::|new%3:00:09::|))
-
-(CONCEPT
-  ONT::ZERO-VAL
-  (INHERIT
-    ONT::CARDINALITY-VAL)
-  (OVERLAP
-    WN::|zero%5:00:00:cardinal:00|))
 
 (CONCEPT
   ONT::ZIPCODE
