@@ -8230,21 +8230,6 @@
     WN::|database%1:10:00::|))
 
 (CONCEPT
-  ONT::DATE-OBJECT
-  (COMMENT
-   "classification of time intervals with respect to some conceptual organization (e.g., calendar)")
-  (INHERIT
-    ONT::TIME-OBJECT)
-  (OVERLAP
-    WN::|date%1:28:03::|
-    WN::|time%1:03:00::|)
-  (SEM-FEATS
-    (INHERIT
-      TIME)
-    (TIME-FUNCTION TIME-OF-YEAR)
-    (TYPE DATE-OBJECT)))
-
-(CONCEPT
   ONT::DATE-OBJECT-IN
   (COMMENT "temporal objects that use IN - e.g., in June")
   (INHERIT
@@ -11711,13 +11696,6 @@
     WN::|bar%2:32:00::|
     WN::|debar%2:32:00::|
     WN::|exclude%2:32:01::|))
-
-(CONCEPT
-  ONT::EXCLUSIVE
-  (INHERIT
-    ONT::MANNER)
-  (OVERLAP
-    WN::|alone%4:02:00::|))
 
 (CONCEPT
   ONT::EXCRETE
@@ -15330,7 +15308,7 @@
 (CONCEPT
   ONT::INCLUSIVE
   (INHERIT
-    ONT::MANNER))
+    ONT::NUMERICAL-GROUPING-VAL))
 
 (CONCEPT
   ONT::INCOMING
@@ -27741,7 +27719,8 @@
     WN::|singularity%1:07:01::|
     WN::|singular%3:00:01::|
     WN::|alone%5:00:00:exclusive:00|
-    WN::|individual%3:00:00::|))
+    WN::|individual%3:00:00::|
+    WN::|alone%4:02:00::|))
 
 (CONCEPT
   ONT::SINK
@@ -30831,7 +30810,9 @@
 (CONCEPT
   ONT::TIME-LOC
   (INHERIT
-    ONT::TIME-OBJECT))
+    ONT::TIME-OBJECT)
+  (OVERLAP
+    WN::|date%1:28:03::|))
 
 (CONCEPT
   ONT::TIME-LOC-SCALE
@@ -31018,7 +30999,7 @@
 (CONCEPT
   ONT::TODAY
   (INHERIT
-    ONT::DATE-OBJECT)
+    ONT::TIME-LOC)
   (OVERLAP
     WN::|today%4:02:00::|
     WN::|today%1:28:01::|))
@@ -31039,7 +31020,7 @@
 (CONCEPT
   ONT::TOMORROW
   (INHERIT
-    ONT::DATE-OBJECT)
+    ONT::TIME-LOC)
   (OVERLAP
     WN::|tomorrow%4:02:00::|
     WN::|tomorrow%1:28:01::|))
@@ -33341,7 +33322,7 @@
 (CONCEPT
   ONT::YESTERDAY
   (INHERIT
-    ONT::DATE-OBJECT)
+    ONT::TIME-LOC)
   (OVERLAP
     WN::|yesterday%4:02:00::|
     WN::|yesterday%1:28:01::|))
