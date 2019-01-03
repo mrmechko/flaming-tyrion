@@ -18,6 +18,14 @@
   </feat>
   <feat name="type">caused-event</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -79,6 +87,14 @@
   <feat name="type">situation-root</feat>
  </sem-feats>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
@@ -130,6 +146,80 @@
   ont::caused-event
   ont::bare-pred-templ
  </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="response" />
+ </morph>
+ <comment>
+  &quot;LAM-INITIAL&quot;
+ </comment>
+ <relation label="inherit">
+  ont::caused-event
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp
+                                                        (w::or
+                                                          w::on
+                                                          w::about
+                                                          w::for))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="pp" head-word="(w::or
+                                                           w::on
+                                                           w::about
+                                                           w::for)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="response" />
+ </morph>
+ <relation label="inherit">
+  ont::caused-event
+ </relation>
+ <syntax>
+  <template-call template="ont::count-subcat-that-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="cp" sem-role="ont::formal" optional="optional"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">pred</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
  </sense>
  <sense>
  <morph>

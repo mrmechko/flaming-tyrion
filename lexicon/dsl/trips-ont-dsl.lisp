@@ -4751,7 +4751,16 @@
      (OR
        AGENTIVE
        FORCE))
-    (TYPE CAUSED-EVENT)))
+    (TYPE CAUSED-EVENT))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::CAUTIOUSNESS-SCALE
