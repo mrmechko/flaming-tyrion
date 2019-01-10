@@ -23059,6 +23059,17 @@
        (INHERIT
          PHYS-OBJ)
        (TYPE MOLECULAR-PART))
+     OPTIONAL)
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TYPE CELL-LINE))
      OPTIONAL)))
 
 (CONCEPT
