@@ -10,6 +10,13 @@
   wn::|withered%5:00:00:dry:01|
   wn::|dehydrated%5:00:00:preserved:02|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">dehydrated-scale</feat>
+  <feat name="type">dehydrated-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -124,18 +131,54 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::dry-val">
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
  <relation label="inherit">
-  ont::moisture-content-val
+  abstr-obj
  </relation>
- <relation label="overlap">
-  wn::|dry%3:00:01::|
+ <feat name="scale">moisture-content-scale</feat>
+ <feat name="type">moisture-content-val</feat>
+ </sem-feats>
+ <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">physical-property-scale</feat>
+  <feat name="type">physical-property-val</feat>
+ </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">dry-scale</feat>
+ <feat name="type">dry-val</feat>
+ </sem-feats>
  <concept name="ont::moisture-content-val">
  <relation label="inherit">
   ont::physical-property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">moisture-content-scale</feat>
+  <feat name="type">moisture-content-val</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure">
    <or>
@@ -145,22 +188,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-val">
- <comment>
-  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::property-val
+  abstr-obj
  </relation>
+ <feat name="scale">dehydrated-scale</feat>
+ <feat name="type">dehydrated-val</feat>
+ </sem-feats>
+ <concept name="ont::dry-val">
+ <relation label="inherit">
+  ont::moisture-content-val
+ </relation>
+ <relation label="overlap">
+  wn::|dry%3:00:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">dry-scale</feat>
+  <feat name="type">dry-val</feat>
+ </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -213,6 +262,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">physical-property-scale</feat>
+ <feat name="type">physical-property-val</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

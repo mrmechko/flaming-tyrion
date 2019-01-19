@@ -120,22 +120,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::information-property-val">
- <comment>
-  &quot;properties regarding the evaluation of information, knowledge, or understanding (e.g. credible, correct, consistent)&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <concept name="ont::likelihood-val">
- <comment>
-  &quot;likelihood to hold true&quot;
- </comment>
- <relation label="inherit">
-  ont::information-property-val
- </relation>
- </concept>
  <concept name="ont::likely-val">
  <relation label="inherit">
   ont::likelihood-val
@@ -144,7 +128,58 @@
   wn::|likely%3:00:04::|
   wn::|probable%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">likely-scale</feat>
+  <feat name="type">likely-val</feat>
+ </sem-feats>
  </concept>
+ <concept name="ont::likelihood-val">
+ <comment>
+  &quot;likelihood to hold true&quot;
+ </comment>
+ <relation label="inherit">
+  ont::information-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">likelihood-scale</feat>
+  <feat name="type">likelihood-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">likely-scale</feat>
+ <feat name="type">likely-val</feat>
+ </sem-feats>
+ <concept name="ont::information-property-val">
+ <comment>
+  &quot;properties regarding the evaluation of information, knowledge, or understanding (e.g. credible, correct, consistent)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">information-property-scale</feat>
+  <feat name="type">information-property-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">likelihood-scale</feat>
+ <feat name="type">likelihood-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -197,6 +232,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">information-property-scale</feat>
+ <feat name="type">information-property-val</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

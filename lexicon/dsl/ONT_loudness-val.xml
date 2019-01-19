@@ -144,6 +144,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">appearance-scale</feat>
+ <feat name="type">sensory-property-val</feat>
+ </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
   &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
@@ -151,12 +158,37 @@
  <relation label="inherit">
   ont::property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">physical-property-scale</feat>
+  <feat name="type">physical-property-val</feat>
+ </sem-feats>
  </concept>
- <concept name="ont::audible-property-val">
+ <concept name="ont::audibility-val">
  <relation label="inherit">
-  ont::sensory-property-val
+  ont::audible-property-val
  </relation>
+ <relation label="overlap">
+  wn::|audible%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">auditory-scale</feat>
+  <feat name="type">audibility-val</feat>
+ </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="measure-function">value</feat>
+ <feat name="type">loudness-val</feat>
+ </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::figure">
   <sem-feats>
@@ -174,21 +206,26 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
+ <concept name="ont::audible-property-val">
+ <relation label="inherit">
+  ont::sensory-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">sound-scale</feat>
+  <feat name="type">audible-property-val</feat>
+ </sem-feats>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="measure-function">value</feat>
- <feat name="type">loudness-val</feat>
+ <feat name="orientation">pos</feat>
+ <feat name="scale">auditory-scale</feat>
+ <feat name="type">audibility-val</feat>
  </sem-feats>
- <concept name="ont::audibility-val">
- <relation label="inherit">
-  ont::audible-property-val
- </relation>
- <relation label="overlap">
-  wn::|audible%3:00:00::|
- </relation>
- </concept>
  <concept name="ont::sensory-property-val">
  <comment>
   &quot;properties that have to do with sensory input&quot;
@@ -196,7 +233,21 @@
  <relation label="inherit">
   ont::physical-property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">appearance-scale</feat>
+  <feat name="type">sensory-property-val</feat>
+ </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">sound-scale</feat>
+ <feat name="type">audible-property-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -249,6 +300,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">physical-property-scale</feat>
+ <feat name="type">physical-property-val</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -317,6 +375,13 @@
   wn::|noisy%3:00:00::|
   wn::|loud%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">loudness-scale</feat>
+  <feat name="type">noisy</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::quiet">
  <relation label="inherit">
@@ -328,5 +393,12 @@
   wn::|quiet%5:00:00:soft:04|
   wn::|soft%3:00:04::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">quietness-scale</feat>
+  <feat name="type">quiet</feat>
+ </sem-feats>
  </concept>
 </dsl>

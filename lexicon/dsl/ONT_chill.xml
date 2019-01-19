@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::chill">
  <relation label="inherit">
-  ont::medical-symptom
+  ont::physical-sensation
  </relation>
  <relation label="overlap">
   wn::|chill%1:26:01::|
@@ -45,49 +45,19 @@
   <feat name="type">referential-sem</feat>
  </sem-feats>
  </concept>
- <concept name="ont::medical-symptom">
- <relation label="inherit">
-  ont::medical-disorders-and-conditions
- </relation>
- <relation label="overlap">
-  wn::|symptom%1:26:00::|
-  wn::|sign%1:26:00::|
-  wn::|syndrome%1:26:00::|
- </relation>
- </concept>
- <concept name="ont::medical-disorders-and-conditions">
- <relation label="inherit">
-  ont::event-type
- </relation>
- <relation label="overlap">
-  wn::|disorder%1:26:03::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="type">medical-disorders-and-conditions</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::experiencer" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::event-type">
+ <concept name="ont::event-of-state">
  <comment>
-  &quot;classification of situated events based on social or other criteria, and typically realized by nominals, i.e.,
-        they are not nominalization of verbal events&quot;
+  &quot;Events describing a state of affairs holding&quot;
  </comment>
  <relation label="inherit">
   ont::situation-root
@@ -96,31 +66,88 @@
   <relation label="inherit">
    situation
   </relation>
-  <feat name="intentional">-</feat>
-  <feat name="type">event-type</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="type">medical-disorders-and-conditions</feat>
+  <feat name="aspect">static</feat>
+  <feat name="type">event-of-state</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
    <or>
-    human
-    non-human-animal
+    <concept name="situation" />
+    <concept name="abstr-obj" />
    </or>
-   </feat>
-  </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
+ <concept name="ont::event-of-experience">
+ <comment>
+  &quot;A stative event involving a sentient being in a mental state&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-state
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::experiencer" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::perception">
+ <comment>
+  &quot;an EXPERIENCER is perceiving something (remember its stative)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-experience
+ </relation>
+ <relation label="overlap">
+  wn::|feel%2:35:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::physical-sensation">
+ <relation label="inherit">
+  ont::perception
+ </relation>
+ <relation label="overlap">
+  wn::|nauseous%3:00:00:ill:01|
+  wn::|nauseated%3:00:00:ill:01|
+  wn::|queasy%3:00:00:ill:01|
+  wn::|sickish%3:00:00:ill:01|
+  wn::|shivering%1:26:00::|
+  wn::|nausea%1:26:00::|
+ </relation>
+ </concept>
  <concept name="ont::situation-root">
  <comment>
   &quot;root for all events, whether verbal or nominal&quot;
@@ -143,9 +170,23 @@
  <relation label="inherit">
   situation
  </relation>
- <feat name="intentional">-</feat>
- <feat name="type">event-type</feat>
+ <feat name="aspect">static</feat>
+ <feat name="type">event-of-state</feat>
  </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root

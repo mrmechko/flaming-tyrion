@@ -45,6 +45,29 @@
   <feat name="type">referential-sem</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::ordered-val">
+ <comment>
+  &quot;properties that deal with ordered nature of objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relational-attribute-val
+ </relation>
+ </concept>
+ <concept name="ont::relational-attribute-val">
+ <comment>
+  &quot;properties that describe an entity with respect to another related entity, an implicit second entity always present when these properties are evoked&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">relational-property-scale</feat>
+  <feat name="type">relational-attribute-val</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -97,22 +120,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::relational-attribute-val">
- <comment>
-  &quot;properties that describe an entity with respect to another related entity, an implicit second entity always present when these properties are evoked&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::property-val
+  abstr-obj
  </relation>
- </concept>
- <concept name="ont::ordered-val">
- <comment>
-  &quot;properties that deal with ordered nature of objects&quot;
- </comment>
- <relation label="inherit">
-  ont::relational-attribute-val
- </relation>
- </concept>
+ <feat name="scale">relational-property-scale</feat>
+ <feat name="type">relational-attribute-val</feat>
+ </sem-feats>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

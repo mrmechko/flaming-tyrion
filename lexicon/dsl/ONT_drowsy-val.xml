@@ -9,6 +9,13 @@
  <relation label="overlap">
   wn::|drowsy%5:00:00:inattentive:00|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">sleepiness-scale</feat>
+  <feat name="type">drowsy-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -123,6 +130,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">body-condition-scale</feat>
+ <feat name="type">body-related-property-val</feat>
+ </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
   &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
@@ -130,30 +144,26 @@
  <relation label="inherit">
   ont::property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">physical-property-scale</feat>
+  <feat name="type">physical-property-val</feat>
+ </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::body-related-property-val">
- <comment>
-  &quot;properties having to do with human/animal body&quot;
- </comment>
+ <concept name="ont::alertness-val">
  <relation label="inherit">
-  ont::physical-property-val
+  ont::body-property-val
  </relation>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">sleepiness-scale</feat>
+ <feat name="type">drowsy-val</feat>
+ </sem-feats>
  <concept name="ont::body-property-val">
  <comment>
   &quot;properties having to do with human/animal body conditions or states&quot;
@@ -177,11 +187,36 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::alertness-val">
+ <concept name="ont::body-related-property-val">
+ <comment>
+  &quot;properties having to do with human/animal body&quot;
+ </comment>
  <relation label="inherit">
-  ont::body-property-val
+  ont::physical-property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">body-condition-scale</feat>
+  <feat name="type">body-related-property-val</feat>
+ </sem-feats>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -234,6 +269,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">physical-property-scale</feat>
+ <feat name="type">physical-property-val</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

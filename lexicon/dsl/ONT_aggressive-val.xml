@@ -4,12 +4,20 @@
  <provenance name="TRIPS"/>
  <concept name="ont::aggressive-val">
  <relation label="inherit">
-  ont::bold-val
+  ont::boldness-val
  </relation>
  <relation label="overlap">
   wn::|aggressive%3:00:00::|
   wn::|violent%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">aggressiveness-scale</feat>
+  <feat name="type">aggressive-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -124,6 +132,19 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::boldness-val">
+ <relation label="inherit">
+  ont::animal-propensity-val
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="orientation">pos</feat>
+ <feat name="scale">aggressiveness-scale</feat>
+ <feat name="type">aggressive-val</feat>
+ </sem-feats>
  <concept name="ont::animal-propensity-val">
  <comment>
   &quot;properties relating to human or animal tendencies or inclinations to behave in a particular manner&quot;
@@ -131,20 +152,13 @@
  <relation label="inherit">
   ont::property-val
  </relation>
- </concept>
- <concept name="ont::boldness-val">
- <relation label="inherit">
-  ont::animal-propensity-val
- </relation>
- </concept>
- <concept name="ont::bold-val">
- <relation label="inherit">
-  ont::boldness-val
- </relation>
- <relation label="overlap">
-  wn::|daring%5:00:00:adventurous:00|
-  wn::|bold%3:00:00::|
- </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">behavioral-scale</feat>
+  <feat name="type">animal-propensity-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -198,6 +212,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">behavioral-scale</feat>
+ <feat name="type">animal-propensity-val</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

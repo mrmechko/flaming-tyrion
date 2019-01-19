@@ -54,6 +54,30 @@
   <feat name="type">referential-sem</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::animal-propensity-val">
+ <comment>
+  &quot;properties relating to human or animal tendencies or inclinations to behave in a particular manner&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">behavioral-scale</feat>
+  <feat name="type">animal-propensity-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -106,23 +130,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::animal-propensity-val">
- <comment>
-  &quot;properties relating to human or animal tendencies or inclinations to behave in a particular manner&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::property-val
+  abstr-obj
  </relation>
- </concept>
+ <feat name="scale">behavioral-scale</feat>
+ <feat name="type">animal-propensity-val</feat>
+ </sem-feats>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
@@ -269,6 +283,13 @@
  <relation label="inherit">
   ont::social-interaction-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">responsibility-scale</feat>
+  <feat name="type">responsibility-val</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
    <concept name="t" />

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::evoke-calm">
  <relation label="inherit">
-  ont::subduing
+  ont::evoke-emotion
  </relation>
  <relation label="overlap">
   wn::|pacify%2:37:00::|
@@ -18,6 +18,7 @@
   wn::|unwind%2:29:00::|
   wn::|unwind%2:29:01::|
   wn::|rest%2:32:01::|
+  wn::|sedate%2:29:00::|
  </relation>
  </concept>
  <or>
@@ -108,27 +109,72 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::evoke-emotion">
+ <relation label="inherit">
+  ont::affect-experiencer
+ </relation>
+ <relation label="overlap">
+  wn::|arouse%2:37:00::|
+  wn::|elicit%2:37:00::|
+  wn::|enkindle%2:37:00::|
+  wn::|kindle%2:37:00::|
+  wn::|evoke%2:37:00::|
+  wn::|fire%2:37:00::|
+  wn::|raise%2:37:08::|
+  wn::|provoke%2:37:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+    <feat name="origin">living</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::affect-experiencer">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|come_to%2:39:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+  <feat name="aspect">dynamic</feat>
+  <feat name="type">affect-experiencer</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">living</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::affected">
   <sem-feats>
    <relation label="inherit">
     phys-obj
    </relation>
+   <feat name="intentional">+</feat>
    <feat name="origin">living</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <concept name="t" />
- </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="cause">agentive</feat>
- <feat name="aspect">dynamic</feat>
- <feat name="type">affect-experiencer</feat>
- </sem-feats>
  <concept name="ont::event-of-causation">
  <comment>
   &quot;events involving an AGENT acting on an AFFECTED&quot;
@@ -165,82 +211,27 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">agentive</feat>
+ <feat name="aspect">dynamic</feat>
+ <feat name="type">affect-experiencer</feat>
+ </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::affected">
   <sem-feats>
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="intentional">+</feat>
    <feat name="origin">living</feat>
   </sem-feats>
  </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <concept name="t" />
+ </role-restr-map>
  </sem-frame>
- <concept name="ont::affect-experiencer">
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|greet%2:39:00::|
-  wn::|come_to%2:39:00::|
-  wn::|craze%2:37:00::|
-  wn::|discourage%2:37:00::|
-  wn::|deafen%2:39:01::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
-  <feat name="aspect">dynamic</feat>
-  <feat name="type">affect-experiencer</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">living</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::evoke-emotion">
- <relation label="inherit">
-  ont::affect-experiencer
- </relation>
- <relation label="overlap">
-  wn::|arouse%2:37:00::|
-  wn::|elicit%2:37:00::|
-  wn::|enkindle%2:37:00::|
-  wn::|kindle%2:37:00::|
-  wn::|evoke%2:37:00::|
-  wn::|fire%2:37:00::|
-  wn::|raise%2:37:08::|
-  wn::|provoke%2:37:00::|
-  wn::|click%2:31:13::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-    <feat name="origin">living</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::subduing">
- <relation label="inherit">
-  ont::evoke-emotion
- </relation>
- </concept>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;

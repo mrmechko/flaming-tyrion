@@ -7,11 +7,9 @@
   ont::change-device-state
  </relation>
  <relation label="overlap">
-  wn::|boot%2:29:00::|
-  wn::|reboot%2:29:00::|
-  wn::|bring_up%2:29:00::|
-  wn::|trip%2:36:00::|
+  wn::|start%2:38:01::|
   wn::|start_up%2:38:00::|
+  wn::|activate%2:30:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -449,8 +447,43 @@
  </sem-feats>
  <concept name="situation" />
  <concept name="ont::boot-up">
+ <comment>
+  &quot;start a computer or software program&quot;
+ </comment>
  <relation label="inherit">
   ont::start-object
+ </relation>
+ <relation label="overlap">
+  wn::|boot%2:29:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="type">
+    <or>
+     device
+     algorithm
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::trigger-trippable-device">
+ <comment>
+  &quot;trigger trippable device like bomb, trap, alarm etc&quot;
+ </comment>
+ <relation label="inherit">
+  ont::start-object
+ </relation>
+ <relation label="overlap">
+  wn::|trip%2:36:00::|
+  wn::|trigger%2:33:00::|
+  wn::|go_off%2:30:00::|
+  wn::|go_off%2:33:00::|
  </relation>
  </concept>
  <sense>

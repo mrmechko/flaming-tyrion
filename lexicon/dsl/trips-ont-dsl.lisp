@@ -70,7 +70,12 @@
   ONT::ABILITY-VAL
   (COMMENT "evaluation of ability or capability to do something")
   (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL))
+    ONT::EVALUATION-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ABILITY-SCALE)
+    (TYPE ABILITY-VAL)))
 
 (CONCEPT
   ONT::ABLE
@@ -80,7 +85,12 @@
     WN::|capable%3:00:00::|
     WN::|able%5:00:00:capable:00|
     WN::|able%5:00:00:competent:00|
-    WN::|competent%3:00:00::|))
+    WN::|competent%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ABLE-SCALE)
+    (TYPE ABLE)))
 
 (CONCEPT
   ONT::ABLE-SCALE
@@ -185,7 +195,12 @@
   ONT::ACCEPTABILITY-VAL
   (COMMENT "properties having to do with good vs. bad")
   (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL))
+    ONT::EVALUATION-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ACCEPTABILITY-SCALE)
+    (TYPE ACCEPTABILITY-VAL)))
 
 (CONCEPT
   ONT::ACCESSIBILITY-VAL
@@ -384,8 +399,6 @@
     ONT::EVENT-OF-CAUSATION)
   (OVERLAP
     WN::|take%2:33:08::|
-    WN::|have%2:35:00::|
-    WN::|take%2:35:14::|
     WN::|take%2:40:08::|
     WN::|take%2:40:04::|
     WN::|subscribe_to%2:40:00::|
@@ -408,7 +421,6 @@
     WN::|take_in%2:35:02::|
     WN::|advance%2:33:00::|
     WN::|bring%2:40:00::|
-    WN::|bring_home_the_bacon%2:41:00::|
     WN::|win%2:33:00::|)
   (SEM-FEATS
     (INHERIT
@@ -598,11 +610,10 @@
     WN::|sense%2:39:00::|
     WN::|note%2:39:02::|
     WN::|look_on%2:39:00::|
-    WN::|look_out%2:39:00::|
     WN::|watch%2:39:00::|
     WN::|watch%2:39:03::|
     WN::|see%2:39:00::|
-    WN::|taste%2:39:02::|
+    WN::|taste%2:39:00::|
     WN::|smell%2:39:00::|)
   (SEM-FRAME
     (ONT::FORMAL
@@ -843,6 +854,8 @@
   ONT::ADJUST
   (INHERIT
     ONT::TRANSFORMATION)
+  (OVERLAP
+    WN::|adjust%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -880,6 +893,16 @@
          ABSTR-OBJ)
        (CONCEPT
          TIME)))))
+
+(CONCEPT
+  ONT::ADJUST-SURFACE
+  (COMMENT
+   "adjust surface of something to make it impervious to e.g., sound, water")
+  (INHERIT
+    ONT::TRANSFORMATION)
+  (OVERLAP
+    WN::|insulate%2:30:01::|
+    WN::|waterproof%2:35:00::|))
 
 (CONCEPT
   ONT::ADJUST-TO-EXTREME
@@ -945,11 +968,7 @@
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
   (OVERLAP
-    WN::|greet%2:39:00::|
-    WN::|come_to%2:39:00::|
-    WN::|craze%2:37:00::|
-    WN::|discourage%2:37:00::|
-    WN::|deafen%2:39:01::|)
+    WN::|come_to%2:39:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -1090,10 +1109,16 @@
 (CONCEPT
   ONT::AGGRESSIVE-VAL
   (INHERIT
-    ONT::BOLD-VAL)
+    ONT::BOLDNESS-VAL)
   (OVERLAP
     WN::|aggressive%3:00:00::|
-    WN::|violent%3:00:00::|))
+    WN::|violent%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE AGGRESSIVENESS-SCALE)
+    (TYPE AGGRESSIVE-VAL)))
 
 (CONCEPT
   ONT::AGGRESSIVENESS-SCALE
@@ -1141,7 +1166,12 @@
     WN::|ailing%5:00:00:ill:01|
     WN::|sick%3:00:01::|
     WN::|ill%3:00:01::|
-    WN::|upset%5:00:00:ill:01|))
+    WN::|upset%5:00:00:ill:01|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ILLNESS-SCALE)
+    (TYPE AILING-VAL)))
 
 (CONCEPT
   ONT::AIR
@@ -1340,7 +1370,12 @@
 (CONCEPT
   ONT::AMBITIOUSNESS-VAL
   (INHERIT
-    ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    ONT::PSYCHOLOGICAL-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE AMBITIOUSNESS-SCALE)
+    (TYPE AMBITIOUSNESS-VAL)))
 
 (CONCEPT
   ONT::AMINO-ACID
@@ -1486,7 +1521,12 @@
   (COMMENT
    "properties relating to human or animal tendencies or inclinations to behave in a particular manner")
   (INHERIT
-    ONT::PROPERTY-VAL))
+    ONT::PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE BEHAVIORAL-SCALE)
+    (TYPE ANIMAL-PROPENSITY-VAL)))
 
 (CONCEPT
   ONT::ANNOTATION
@@ -1588,7 +1628,8 @@
   (INHERIT
     ONT::HAVE-PROPERTY)
   (OVERLAP
-    WN::|sound%2:39:06::|)
+    WN::|sound%2:39:06::|
+    WN::|taste%2:39:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -2599,12 +2640,23 @@
   (INHERIT
     ONT::AUDIBLE-PROPERTY-VAL)
   (OVERLAP
-    WN::|audible%3:00:00::|))
+    WN::|audible%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE AUDITORY-SCALE)
+    (TYPE AUDIBILITY-VAL)))
 
 (CONCEPT
   ONT::AUDIBLE-PROPERTY-VAL
   (INHERIT
-    ONT::SENSORY-PROPERTY-VAL))
+    ONT::SENSORY-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE SOUND-SCALE)
+    (TYPE AUDIBLE-PROPERTY-VAL)))
 
 (CONCEPT
   ONT::AUDIO
@@ -2727,6 +2779,11 @@
   ONT::AVAILABILITY-VAL
   (INHERIT
     ONT::OBJECT-AFFORDANCES-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE AVAILABILITY-SCALE)
+    (TYPE AVAILABILITY-VAL))
   (SEM-FRAME
     (ONT::GROUND
      (OR
@@ -2863,7 +2920,12 @@
 (CONCEPT
   ONT::AWARENESS-VAL
   (INHERIT
-    ONT::ATTENTION-VAL))
+    ONT::ATTENTION-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE AWARENESS-SCALE)
+    (TYPE AWARENESS-VAL)))
 
 (CONCEPT
   ONT::AWAY
@@ -2916,13 +2978,17 @@
   (OVERLAP
     WN::|dirty%5:00:00:nasty:00|
     WN::|unacceptable%5:00:00:unsatisfactory:00|
-    WN::|atrocious%5:00:00:bad:00|
     WN::|unacceptable%3:00:00::|
     WN::|unfavorable%3:00:02::|
     WN::|icky%5:00:00:bad:00|
     WN::|unfavorable%5:00:00:bad:00|
     WN::|mediocre%5:00:00:bad:00|
-    WN::|bad%3:00:00::|))
+    WN::|bad%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE BADNESS-SCALE)
+    (TYPE BAD)))
 
 (CONCEPT
   ONT::BAD-AESTHETIC-JUDGEMENT-VAL
@@ -3168,7 +3234,12 @@
     WN::|lovely%5:00:00:beautiful:00|
     WN::|beautiful%3:00:00::|
     WN::|pretty%5:00:00:beautiful:00|
-    WN::|gorgeous%5:00:00:beautiful:00|))
+    WN::|gorgeous%5:00:00:beautiful:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE BEAUTIFUL-SCALE)
+    (TYPE BEAUTIFUL)))
 
 (CONCEPT
   ONT::BEAUTIFUL-SCALE
@@ -3188,7 +3259,12 @@
 (CONCEPT
   ONT::BEAUTY-VAL
   (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL))
+    ONT::EVALUATION-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE BEAUTY-SCALE)
+    (TYPE BEAUTY-VAL)))
 
 (CONCEPT
   ONT::BECOME
@@ -3228,7 +3304,8 @@
     WN::|comprehend%2:39:00::|
     WN::|record%2:39:00::|
     WN::|mark%2:39:00::|
-    WN::|nose_out%2:39:00::|)
+    WN::|nose_out%2:39:00::|
+    WN::|sensitize%2:30:00::|)
   (SEM-FRAME
     ((ONT::AGENT ONT::COGNIZER)
      (CONCEPT
@@ -3527,7 +3604,7 @@
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
-    (SCALE BITTER*1--07--00)
+    (SCALE BITTERNESS-SCALE)
     (TYPE BITTER-VAL)))
 
 (CONCEPT
@@ -3791,7 +3868,12 @@
   ONT::BODY-RELATED-PROPERTY-VAL
   (COMMENT "properties having to do with human/animal body")
   (INHERIT
-    ONT::PHYSICAL-PROPERTY-VAL))
+    ONT::PHYSICAL-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE BODY-CONDITION-SCALE)
+    (TYPE BODY-RELATED-PROPERTY-VAL)))
 
 (CONCEPT
   ONT::BODY-SYSTEM-VAL
@@ -3857,8 +3939,20 @@
 
 (CONCEPT
   ONT::BOOT-UP
+  (COMMENT "start a computer or software program")
   (INHERIT
-    ONT::START-OBJECT))
+    ONT::START-OBJECT)
+  (OVERLAP
+    WN::|boot%2:29:00::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE
+        (OR
+          DEVICE
+          ALGORITHM))))))
 
 (CONCEPT
   ONT::BORED
@@ -3870,6 +3964,7 @@
 
 (CONCEPT
   ONT::BORING
+  (COMMENT "boring; uninteresting as to cause weariness")
   (INHERIT
     ONT::EVOKING-NEG-EMOTION-VAL)
   (OVERLAP
@@ -4012,7 +4107,13 @@
   (INHERIT
     ONT::LUMINOSITY-VAL)
   (OVERLAP
-    WN::|bright%3:00:00::|))
+    WN::|bright%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE LUMINOSITY-SCALE)
+    (TYPE BRIGHT-VAL)))
 
 (CONCEPT
   ONT::BRIGHTEN
@@ -4243,6 +4344,11 @@
   ONT::CANCEL
   (INHERIT
     ONT::CAUSE-ACTION)
+  (OVERLAP
+    WN::|cancel%2:41:00::|
+    WN::|cancel%2:41:03::|
+    WN::|void%2:41:00::|
+    WN::|void%2:30:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (SEM-FEATS
@@ -4363,7 +4469,12 @@
 (CONCEPT
   ONT::CAREFULNESS-VAL
   (INHERIT
-    ONT::ATTENTION-VAL))
+    ONT::ATTENTION-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE CAUTIOUSNESS-SCALE)
+    (TYPE CAREFULNESS-VAL)))
 
 (CONCEPT
   ONT::CARVE-CUT
@@ -4415,8 +4526,7 @@
   (OVERLAP
     WN::|declare%2:32:04::|
     WN::|adjudge%2:32:00::|
-    WN::|hold%2:32:11::|
-    WN::|see%2:31:00::|)
+    WN::|hold%2:32:11::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -4539,12 +4649,10 @@
   (INHERIT
     ONT::ACTING)
   (OVERLAP
-    WN::|cause%2:32:00::|
     WN::|do%2:36:02::|
     WN::|make%2:36:08::|
     WN::|drive%2:35:00::|
     WN::|get%2:30:02::|
-    WN::|get%2:30:00::|
     WN::|open_up%2:30:00::|)
   (SEM-FEATS
     (INHERIT
@@ -4677,8 +4785,6 @@
   (INHERIT
     ONT::CAUSE-EFFECT)
   (OVERLAP
-    WN::|cause%2:36:00::|
-    WN::|induce%2:32:00::|
     WN::|produce%2:36:03::|
     WN::|yield%2:40:00::|
     WN::|yield%2:40:02::|)
@@ -4874,6 +4980,11 @@
   ONT::CERTAINTY-VAL
   (INHERIT
     ONT::PSYCHOLOGICAL-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE CERTAINTY-SCALE)
+    (TYPE CERTAINTY-VAL))
   (SEM-FRAME
     (ONT::GROUND
      (CONCEPT
@@ -5130,6 +5241,18 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::CHANGE-IN-SOUND-SCALE
+  (INHERIT
+    ONT::CHANGE-IN-APPEARANCE)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE SOUND-SCALE))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::CHANGE-IN-TACTILE-SCALE
   (INHERIT
     ONT::CHANGE-IN-APPEARANCE)
@@ -5360,7 +5483,7 @@
 (CONCEPT
   ONT::CHILL
   (INHERIT
-    ONT::MEDICAL-SYMPTOM)
+    ONT::PHYSICAL-SENSATION)
   (OVERLAP
     WN::|chill%1:26:01::|))
 
@@ -5556,7 +5679,12 @@
   (INHERIT
     ONT::CLEANLINESS-VAL)
   (OVERLAP
-    WN::|clean%3:00:01::|))
+    WN::|clean%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE CLEAN-SCALE)
+    (TYPE CLEAN-VAL)))
 
 (CONCEPT
   ONT::CLEANLINESS-SCALE
@@ -5566,7 +5694,12 @@
 (CONCEPT
   ONT::CLEANLINESS-VAL
   (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL))
+    ONT::EVALUATION-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE CLEANLINESS-SCALE)
+    (TYPE CLEANLINESS-VAL)))
 
 (CONCEPT
   ONT::CLEAR
@@ -5831,7 +5964,12 @@
   (OVERLAP
     WN::|cool%3:00:01::|
     WN::|cold%5:00:00:cool:03|
-    WN::|cool%3:00:03::|))
+    WN::|cool%3:00:03::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE COLD-SCALE)
+    (TYPE COLD)))
 
 (CONCEPT
   ONT::COLD-SCALE
@@ -6201,7 +6339,12 @@
 (CONCEPT
   ONT::COMFORT-VAL
   (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL))
+    ONT::EVALUATION-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE COMFORT-SCALE)
+    (TYPE COMFORT-VAL)))
 
 (CONCEPT
   ONT::COMFORTABLE
@@ -6209,7 +6352,12 @@
     ONT::COMFORT-VAL)
   (OVERLAP
     WN::|cozy%5:00:00:comfortable:00|
-    WN::|comfortable%3:00:00::|))
+    WN::|comfortable%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE COMFORTABLE-SCALE)
+    (TYPE COMFORTABLE)))
 
 (CONCEPT
   ONT::COMFORTABLE-SCALE
@@ -6513,7 +6661,12 @@
 (CONCEPT
   ONT::COMPATIBILITY-VAL
   (INHERIT
-    ONT::RELATIONAL-ATTRIBUTE-VAL))
+    ONT::RELATIONAL-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE COMPATIBILITY-SCALE)
+    (TYPE COMPATIBILITY-VAL)))
 
 (CONCEPT
   ONT::COMPATIBLE-VAL
@@ -6918,7 +7071,12 @@
   (COMMENT
    "properties regarding the configuration, arrangement, or layout of elements")
   (INHERIT
-    ONT::PHYSICAL-PROPERTY-VAL))
+    ONT::PHYSICAL-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE CONFIGURATION-PROPERTY-SCALE)
+    (TYPE CONFIGURATION-PROPERTY-VAL)))
 
 (CONCEPT
   ONT::CONFINE
@@ -6947,10 +7105,6 @@
   (INHERIT
     ONT::EVENT-OF-AWARENESS)
   (OVERLAP
-    WN::|put_off%2:37:02::|
-    WN::|disconcert%2:37:02::|
-    WN::|flurry%2:37:00::|
-    WN::|confuse%2:37:00::|
     WN::|confound%2:31:01::|
     WN::|confuse%2:31:02::|
     WN::|mix_up%2:36:00::|
@@ -7119,7 +7273,12 @@
   (COMMENT
    "describes how constricting something is with regards to another item (close-fitting vs. loose-fitting)")
   (INHERIT
-    ONT::CONFIGURATION-PROPERTY-VAL))
+    ONT::CONFIGURATION-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE CONSTRICTION-SCALE)
+    (TYPE CONSTRICTING-VAL)))
 
 (CONCEPT
   ONT::CONSTRICTION-SCALE
@@ -7340,14 +7499,25 @@
 (CONCEPT
   ONT::CONVENIENCE-VAL
   (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL))
+    ONT::EVALUATION-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE CONVENIENCE-SCALE)
+    (TYPE CONVENIENCE-VAL)))
 
 (CONCEPT
   ONT::CONVENIENT-VAL
   (INHERIT
     ONT::CONVENIENCE-VAL)
   (OVERLAP
-    WN::|convenient%3:00:00::|))
+    WN::|convenient%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE CONVENIENCE-SCALE)
+    (TYPE CONVENIENT-VAL)))
 
 (CONCEPT
   ONT::CONVENTIONAL-POSITION-RELN
@@ -7631,7 +7801,13 @@
     WN::|proper%3:00:00::|
     WN::|correct%5:00:00:proper:00|
     WN::|correct%3:00:00::|
-    WN::|accurate%5:00:00:correct:00|))
+    WN::|accurate%5:00:00:correct:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE CORRECTENESS-SCALE)
+    (TYPE CORRECT)))
 
 (CONCEPT
   ONT::CORRECTNESS-SCALE
@@ -7645,7 +7821,12 @@
   ONT::CORRECTNESS-VAL
   (COMMENT "describing the quality of being error-free or error-prone")
   (INHERIT
-    ONT::INFORMATION-PROPERTY-VAL))
+    ONT::INFORMATION-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE CORRECTENESS-SCALE)
+    (TYPE CORRECTNESS-VAL)))
 
 (CONCEPT
   ONT::CORRELATION
@@ -7719,7 +7900,12 @@
   ONT::COST-VAL
   (COMMENT "properties having to do with evaluation of cost")
   (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL))
+    ONT::EVALUATION-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE COST-SCALE)
+    (TYPE COST-VAL)))
 
 (CONCEPT
   ONT::COSTS
@@ -7995,7 +8181,7 @@
 (CONCEPT
   ONT::CRUSH
   (INHERIT
-    ONT::PUSH)
+    ONT::CHANGE-INTEGRITY)
   (OVERLAP
     WN::|squash%2:35:00::|
     WN::|crush%2:35:00::|
@@ -8194,7 +8380,12 @@
   (INHERIT
     ONT::PRESENSE-OF-LIGHT-VAL)
   (OVERLAP
-    WN::|dark%3:00:01::|))
+    WN::|dark%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE DARKNESS-SCALE)
+    (TYPE DARK-VAL)))
 
 (CONCEPT
   ONT::DARKEN
@@ -8444,7 +8635,7 @@
 (CONCEPT
   ONT::DEFECTIVE-VAL
   (COMMENT
-   "not functioning as intended but not broken permanently e.g., printer is printing only in red")
+   "not functioning as intended; malfunctioning e.g., printer is printing only in red")
   (INHERIT
     ONT::FUNCTIONALITY-VAL)
   (OVERLAP
@@ -8576,7 +8767,12 @@
     ONT::DRY-VAL)
   (OVERLAP
     WN::|withered%5:00:00:dry:01|
-    WN::|dehydrated%5:00:00:preserved:02|))
+    WN::|dehydrated%5:00:00:preserved:02|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE DEHYDRATED-SCALE)
+    (TYPE DEHYDRATED-VAL)))
 
 (CONCEPT
   ONT::DELAY
@@ -8612,10 +8808,7 @@
   (INHERIT
     ONT::TRANSFER)
   (OVERLAP
-    WN::|deliver%2:35:00::|
-    WN::|get%2:30:02::|
-    WN::|let%2:30:01::|
-    WN::|have%2:30:00::|)
+    WN::|deliver%2:35:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -9105,7 +9298,12 @@
     WN::|arduous%5:00:00:difficult:00|
     WN::|difficult%3:00:00::|
     WN::|rugged%5:00:00:difficult:00|
-    WN::|complicated%5:00:00:complex:00|))
+    WN::|complicated%5:00:00:complex:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE DIFFICULT-SCALE)
+    (TYPE DIFFICULT)))
 
 (CONCEPT
   ONT::DIFFICULT-SCALE
@@ -9152,7 +9350,13 @@
     ONT::LUMINOSITY-VAL)
   (OVERLAP
     WN::|dim%5:00:00:dark:01|
-    WN::|dim%3:00:02::|))
+    WN::|dim%3:00:02::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE LUMINOSITY-SCALE)
+    (TYPE DIM-VAL)))
 
 (CONCEPT
   ONT::DIMENSION
@@ -9425,7 +9629,12 @@
   (INHERIT
     ONT::CLEANLINESS-VAL)
   (OVERLAP
-    WN::|dirty%3:00:01::|))
+    WN::|dirty%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE UNCLEAN-SCALE)
+    (TYPE DIRTY-VAL)))
 
 (CONCEPT
   ONT::DISABILITY
@@ -9469,6 +9678,14 @@
        (CONCEPT
          ABSTR-OBJ))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::DISARM
+  (INHERIT
+    ONT::REMOVE-FROM)
+  (OVERLAP
+    WN::|disarm%2:33:00::|
+    WN::|disarm%2:33:01::|))
 
 (CONCEPT
   ONT::DISCARD
@@ -9692,7 +9909,12 @@
     WN::|troubling%5:00:00:heavy:02|
     WN::|disturbing%5:00:00:heavy:02|
     WN::|distressful%5:00:00:heavy:02|
-    WN::|worrisome%5:00:00:heavy:02|))
+    WN::|worrisome%5:00:00:heavy:02|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE DISTRESS-SCALE)
+    (TYPE DISTRESSING-VAL)))
 
 (CONCEPT
   ONT::DISTRIBUTED-POS
@@ -9962,7 +10184,12 @@
   (INHERIT
     ONT::ALERTNESS-VAL)
   (OVERLAP
-    WN::|drowsy%5:00:00:inattentive:00|))
+    WN::|drowsy%5:00:00:inattentive:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE SLEEPINESS-SCALE)
+    (TYPE DROWSY-VAL)))
 
 (CONCEPT
   ONT::DRUGGING
@@ -10001,7 +10228,12 @@
   (INHERIT
     ONT::MOISTURE-CONTENT-VAL)
   (OVERLAP
-    WN::|dry%3:00:01::|))
+    WN::|dry%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE DRY-SCALE)
+    (TYPE DRY-VAL)))
 
 (CONCEPT
   ONT::DUCK
@@ -10161,7 +10393,12 @@
   (OVERLAP
     WN::|elementary%5:00:00:easy:01|
     WN::|easy%3:00:01::|
-    WN::|simple%3:00:02::|))
+    WN::|simple%3:00:02::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE EASY-SCALE)
+    (TYPE EASY)))
 
 (CONCEPT
   ONT::EASY-SCALE
@@ -10209,10 +10446,7 @@
 (CONCEPT
   ONT::EATING-ESTABLISHMENT
   (INHERIT
-    ONT::COMMERCIAL-FACILITY)
-  (OVERLAP
-    WN::|eating_place%1:06:00::|
-    WN::|eatery%1:06:00::|))
+    ONT::COMMERCIAL-FACILITY))
 
 (CONCEPT
   ONT::EATING-PLAN
@@ -10499,6 +10733,8 @@
   ONT::ENABLE
   (INHERIT
     ONT::CAUSE-EFFECT)
+  (OVERLAP
+    WN::|enable%2:30:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (OR
@@ -10509,6 +10745,13 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::ENABLE-PROCESS
+  (INHERIT
+    ONT::ENABLE)
+  (OVERLAP
+    WN::|sensitize%2:30:01::|))
 
 (CONCEPT
   ONT::ENCODES-MESSAGE
@@ -10870,7 +11113,8 @@
     WN::|constitute%2:36:00::|
     WN::|institute%2:36:01::|
     WN::|create%2:36:02::|
-    WN::|establish%2:35:00::|)
+    WN::|establish%2:35:00::|
+    WN::|start%2:36:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -10915,7 +11159,12 @@
     WN::|euphoric%3:00:00::|
     WN::|happy%3:00:00::|
     WN::|cheerful%3:00:00::|
-    WN::|beaming%5:00:00:cheerful:00|))
+    WN::|beaming%5:00:00:cheerful:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE HAPPINESS-SCALE)
+    (TYPE EUPHORIC)))
 
 (CONCEPT
   ONT::EVACUATE
@@ -10994,10 +11243,7 @@
   (INHERIT
     ONT::EVENT-TYPE)
   (OVERLAP
-    WN::|event%1:03:00::|
-    WN::|time_period%1:28:00::|
-    WN::|period_of_time%1:28:00::|
-    WN::|period%1:28:00::|)
+    WN::|event%1:03:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -11366,7 +11612,7 @@
 (CONCEPT
   ONT::EVOKE-CALM
   (INHERIT
-    ONT::SUBDUING)
+    ONT::EVOKE-EMOTION)
   (OVERLAP
     WN::|pacify%2:37:00::|
     WN::|comfort%2:37:01::|
@@ -11378,7 +11624,8 @@
     WN::|mellow%2:30:00::|
     WN::|unwind%2:29:00::|
     WN::|unwind%2:29:01::|
-    WN::|rest%2:32:01::|))
+    WN::|rest%2:32:01::|
+    WN::|sedate%2:29:00::|))
 
 (CONCEPT
   ONT::EVOKE-CLARITY
@@ -11405,28 +11652,20 @@
     WN::|soothe%2:29:00::|))
 
 (CONCEPT
-  ONT::EVOKE-COMPLIANCE
-  (INHERIT
-    ONT::SUBDUING)
-  (OVERLAP
-    WN::|curb%2:30:01::|
-    WN::|keep_down%2:41:00::|
-    WN::|still%2:30:00::|
-    WN::|break_in%2:30:00::|
-    WN::|tame%2:30:00::|
-    WN::|sedate%2:29:00::|
-    WN::|hush%2:30:00::|
-    WN::|break%2:30:12::|))
-
-(CONCEPT
   ONT::EVOKE-CONFUSION
   (INHERIT
-    ONT::EVOKE-COGNITIVE-STATE))
+    ONT::EVOKE-COGNITIVE-STATE)
+  (OVERLAP
+    WN::|confuse%2:37:00::|
+    WN::|confuse%2:31:03::|))
 
 (CONCEPT
   ONT::EVOKE-DISCOMFORT
   (INHERIT
-    ONT::EVOKE-PHYSICAL))
+    ONT::EVOKE-PHYSICAL)
+  (OVERLAP
+    WN::|chafe%2:35:01::|
+    WN::|irritate%2:29:00::|))
 
 (CONCEPT
   ONT::EVOKE-DISGUST
@@ -11461,8 +11700,7 @@
     WN::|evoke%2:37:00::|
     WN::|fire%2:37:00::|
     WN::|raise%2:37:08::|
-    WN::|provoke%2:37:00::|
-    WN::|click%2:31:13::|)
+    WN::|provoke%2:37:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -11525,6 +11763,13 @@
     WN::|blind%2:39:01::|))
 
 (CONCEPT
+  ONT::EVOKE-INSANITY
+  (INHERIT
+    ONT::EVOKE-COGNITIVE-STATE)
+  (OVERLAP
+    WN::|madden%2:37:02::|))
+
+(CONCEPT
   ONT::EVOKE-JOY
   (INHERIT
     ONT::EVOKE-EMOTION)
@@ -11539,12 +11784,17 @@
     WN::|indulge%2:34:00::|
     WN::|indulge%2:34:12::|
     WN::|indulge%2:41:00::|
-    WN::|lighten_up%2:37:01::|))
+    WN::|lighten_up%2:37:01::|
+    WN::|greet%2:39:00::|))
 
 (CONCEPT
   ONT::EVOKE-OFFENSE
+  (COMMENT
+   "to cause feeling of offense (hurt, annoyance and resentfulness) in someone")
   (INHERIT
-    ONT::EVOKE-EMOTION))
+    ONT::EVOKE-EMOTION)
+  (OVERLAP
+    WN::|offend%2:37:00::|))
 
 (CONCEPT
   ONT::EVOKE-PAIN
@@ -11573,14 +11823,15 @@
   (INHERIT
     ONT::EVOKE-EMOTION)
   (OVERLAP
-    WN::|sadden%2:37:01::|))
+    WN::|sadden%2:37:01::|
+    WN::|discourage%2:37:00::|))
 
 (CONCEPT
   ONT::EVOKE-SENSORY-PERCEPTION
   (INHERIT
     ONT::EVOKE-PHYSICAL)
   (OVERLAP
-    WN::|sensitize%2:39:00::|))
+    WN::|sensitize%2:30:02::|))
 
 (CONCEPT
   ONT::EVOKE-SHAME
@@ -11607,8 +11858,7 @@
     WN::|beat%2:29:00::|
     WN::|tucker%2:29:00::|
     WN::|tucker_out%2:29:00::|
-    WN::|weary%2:29:00::|
-    WN::|weary%2:29:01::|))
+    WN::|weary%2:29:00::|))
 
 (CONCEPT
   ONT::EVOKE-WORRY
@@ -11645,19 +11895,18 @@
   (OVERLAP
     WN::|remarkable%5:00:00:extraordinary:00|
     WN::|exceptional%5:00:00:extraordinary:00|
-    WN::|outlandish%5:00:00:unconventional:01|
     WN::|special%5:00:00:uncommon:00|
     WN::|singular%5:00:00:extraordinary:00|
     WN::|extraordinary%3:00:00::|))
 
 (CONCEPT
   ONT::EXCHANGE
+  (COMMENT "swap or trade; two parties -- each give and receive from the other")
   (INHERIT
     ONT::ARRANGING)
   (OVERLAP
     WN::|exchange%2:40:00::|
     WN::|exchange%2:30:00::|
-    WN::|exchange%2:40:02::|
     WN::|transpose%2:30:00::|
     WN::|transpose%2:30:02::|
     WN::|transpose%2:36:00::|
@@ -11670,7 +11919,12 @@
     ONT::POS-INTENSE-EMOTIONAL-VAL)
   (OVERLAP
     WN::|excited%3:00:00::|
-    WN::|excited%5:00:00:wild:02|))
+    WN::|excited%5:00:00:wild:02|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE EXCITEMENT-SCALE)
+    (TYPE EXCITED)))
 
 (CONCEPT
   ONT::EXCITEMENT-SCALE
@@ -11906,7 +12160,12 @@
     ONT::COST-VAL)
   (OVERLAP
     WN::|expensive%3:00:00::|
-    WN::|pricy%5:00:00:expensive:00|))
+    WN::|pricy%5:00:00:expensive:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE EXPENSIVE-SCALE)
+    (TYPE EXPENSIVE-VAL)))
 
 (CONCEPT
   ONT::EXPENSIVENESS
@@ -12137,6 +12396,14 @@
   (OVERLAP
     WN::|grimace%2:29:00::|
     WN::|gape%2:39:00::|))
+
+(CONCEPT
+  ONT::FACILITATE
+  (INHERIT
+    ONT::ENABLE)
+  (OVERLAP
+    WN::|ease%2:30:00::|
+    WN::|smooth%2:40:00::|))
 
 (CONCEPT
   ONT::FACILITY
@@ -12995,7 +13262,7 @@
 (CONCEPT
   ONT::FOLD
   (INHERIT
-    ONT::MOVE)
+    ONT::SHAPE-CHANGE)
   (OVERLAP
     WN::|fold%2:35:00::|)
   (SEM-FEATS
@@ -13419,6 +13686,11 @@
    "properties relating to  whether something is functioning as intended")
   (INHERIT
     ONT::OBJECT-AFFORDANCES-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE FUNCTIONLITY-SCALE)
+    (TYPE FUNCTIONALITY-VAL))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -13684,7 +13956,6 @@
   (INHERIT
     ONT::RELINQUISH)
   (OVERLAP
-    WN::|allow%2:41:01::|
     WN::|give%2:40:00::|
     WN::|give%2:40:03::|
     WN::|giving%1:04:00::|
@@ -13828,7 +14099,12 @@
     WN::|satisfactory%3:00:00::|
     WN::|acceptable%3:00:00::|
     WN::|favorable%3:00:02::|
-    WN::|alright%5:00:00:satisfactory:00|))
+    WN::|alright%5:00:00:satisfactory:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE GOODNESS-SCALE)
+    (TYPE GOOD)))
 
 (CONCEPT
   ONT::GOOD-AESTHETIC-JUDGEMENT-VAL
@@ -14012,7 +14288,12 @@
   (OVERLAP
     WN::|heartrending%5:00:00:sorrowful:00|
     WN::|heartbreaking%5:00:00:sorrowful:00|
-    WN::|grievous%5:00:00:sorrowful:00|))
+    WN::|grievous%5:00:00:sorrowful:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE GRIEF-SCALE)
+    (TYPE GRIEVOUS-VAL)))
 
 (CONCEPT
   ONT::GROUP-CONFLICT
@@ -14387,10 +14668,8 @@
     WN::|have%2:39:06::|
     WN::|have%2:42:12::|
     WN::|have%2:30:01::|
-    WN::|have%2:40:05::|
     WN::|have%2:40:03::|
-    WN::|have%2:29:05::|
-    WN::|have%2:35:00::|)
+    WN::|have%2:29:05::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -14424,7 +14703,6 @@
   (OVERLAP
     WN::|be%2:42:03::|
     WN::|be%2:42:05::|
-    WN::|savor%2:39:02::|
     WN::|sound%2:39:03::|)
   (SEM-FEATS
     (INHERIT
@@ -14534,7 +14812,12 @@
     ONT::HEALTHINESS-VAL)
   (OVERLAP
     WN::|well%3:00:01::|
-    WN::|healthy%3:00:00::|))
+    WN::|healthy%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE HEALTH-SCALE)
+    (TYPE HEALTHY-VAL)))
 
 (CONCEPT
   ONT::HEART-ATTACK
@@ -14720,23 +15003,17 @@
   (INHERIT
     ONT::ROUTE)
   (OVERLAP
-    WN::|freeway%1:06:00::|
-    WN::|motorway%1:06:00::|
-    WN::|pike%1:06:01::|
-    WN::|state_highway%1:06:00::|
-    WN::|superhighway%1:06:00::|
-    WN::|expressway%1:06:00::|
-    WN::|highway%1:06:00::|
-    WN::|main_road%1:06:00::|))
+    WN::|highway%1:06:00::|))
 
 (CONCEPT
   ONT::HINDERING
+  (COMMENT
+   "make it difficult for an effect or event to complete; obstruct an ongoing event")
   (INHERIT
     ONT::INHIBIT-EFFECT)
   (OVERLAP
     WN::|hold_back%2:41:00::|
     WN::|keep_back%2:41:00::|
-    WN::|keep%2:41:00::|
     WN::|restrain%2:41:01::|
     WN::|keep%2:41:01::|
     WN::|throttle%2:30:01::|
@@ -14746,10 +15023,6 @@
     WN::|trammel%2:30:00::|
     WN::|restrain%2:30:00::|
     WN::|restrict%2:30:00::|
-    WN::|forbid%2:41:03::|
-    WN::|preclude%2:41:00::|
-    WN::|foreclose%2:41:00::|
-    WN::|forestall%2:41:01::|
     WN::|handicap%2:33:00::|
     WN::|hinder%2:33:00::|
     WN::|hamper%2:33:00::|
@@ -14757,7 +15030,6 @@
     WN::|obstruction%1:06:00::|
     WN::|crush%2:41:00::|
     WN::|disrupt%2:30:01::|
-    WN::|suppress%2:30:00::|
     WN::|compromise%2:32:03::|))
 
 (CONCEPT
@@ -14881,7 +15153,12 @@
   (INHERIT
     ONT::ATMOSPHERIC-VAL)
   (OVERLAP
-    WN::|humid%5:00:00:wet:01|))
+    WN::|humid%5:00:00:wet:01|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE HUMIDITY-SCALE)
+    (TYPE HUMID-VAL)))
 
 (CONCEPT
   ONT::HUMID-WARM-VAL
@@ -15141,7 +15418,12 @@
   (COMMENT
    "of primary (i.e., major, significant), secondary (i.e., minor), or no importance")
   (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL))
+    ONT::EVALUATION-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE IMPORTANCE-SCALE)
+    (TYPE IMPORTANCE-VAL)))
 
 (CONCEPT
   ONT::IMPORTANT-PART
@@ -15312,7 +15594,13 @@
   (INHERIT
     ONT::AUDIBLE-PROPERTY-VAL)
   (OVERLAP
-    WN::|inaudible%3:00:00::|))
+    WN::|inaudible%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE AUDITORY-SCALE)
+    (TYPE INAUDIBILITY-VAL)))
 
 (CONCEPT
   ONT::INCLUSIVE
@@ -15352,7 +15640,13 @@
     WN::|faulty%5:00:00:inaccurate:00|
     WN::|false%5:00:00:incorrect:00|
     WN::|incorrect%3:00:00::|
-    WN::|inaccurate%3:00:00::|))
+    WN::|inaccurate%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE CORRECTENESS-SCALE)
+    (TYPE INCORRECT)))
 
 (CONCEPT
   ONT::INCREASE
@@ -15543,7 +15837,12 @@
   (COMMENT
    "properties regarding the evaluation of information, knowledge, or understanding (e.g. credible, correct, consistent)")
   (INHERIT
-    ONT::PROPERTY-VAL))
+    ONT::PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE INFORMATION-PROPERTY-SCALE)
+    (TYPE INFORMATION-PROPERTY-VAL)))
 
 (CONCEPT
   ONT::INFORMATION-SCRUTINY
@@ -15773,7 +16072,12 @@
   (INHERIT
     ONT::TANGIBLE-PROPERTY-VAL)
   (OVERLAP
-    WN::|intangible%3:00:00::|))
+    WN::|intangible%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE TANGIBILITY-SCALE)
+    (TYPE INTANGIBILITY-VAL)))
 
 (CONCEPT
   ONT::INTELLIGENCE-VAL
@@ -15941,7 +16245,12 @@
 (CONCEPT
   ONT::INTEREST-VAL
   (INHERIT
-    ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    ONT::PSYCHOLOGICAL-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE INTEREST-SCALE)
+    (TYPE INTEREST-VAL)))
 
 (CONCEPT
   ONT::INTERESTED-SCALE
@@ -15957,7 +16266,12 @@
     ONT::INTEREST-VAL)
   (OVERLAP
     WN::|interested%3:00:00::|
-    WN::|curious%5:00:00:interested:00|))
+    WN::|curious%5:00:00:interested:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE INTERESTED-SCALE)
+    (TYPE INTERESTED-VAL)))
 
 (CONCEPT
   ONT::INTERESTING-VAL
@@ -16182,7 +16496,12 @@
   (INHERIT
     ONT::VISIBLE-PROPERTY-VAL)
   (OVERLAP
-    WN::|invisible%3:00:00::|))
+    WN::|invisible%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE INVISIBILITY-SCALE)
+    (TYPE INVISIBILITY-VAL)))
 
 (CONCEPT
   ONT::IO-DEVICE
@@ -16196,7 +16515,12 @@
   (OVERLAP
     WN::|sporadic%3:00:00::|
     WN::|irregular%5:00:00:sporadic:00|
-    WN::|casual%5:00:00:irregular:00|))
+    WN::|casual%5:00:00:irregular:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE NOT-REGULAR-SCALE)
+    (TYPE IRREGULAR)))
 
 (CONCEPT
   ONT::IS-COMPATIBLE-WITH
@@ -17065,7 +17389,7 @@
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
-    (SCALE LUMINOSITY-SCALE)
+    (SCALE LIGHTNESS-SCALE)
     (TYPE LIGHT-VAL)))
 
 (CONCEPT
@@ -17140,7 +17464,12 @@
   ONT::LIKELIHOOD-VAL
   (COMMENT "likelihood to hold true")
   (INHERIT
-    ONT::INFORMATION-PROPERTY-VAL))
+    ONT::INFORMATION-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE LIKELIHOOD-SCALE)
+    (TYPE LIKELIHOOD-VAL)))
 
 (CONCEPT
   ONT::LIKELY-SCALE
@@ -17155,7 +17484,12 @@
     ONT::LIKELIHOOD-VAL)
   (OVERLAP
     WN::|likely%3:00:04::|
-    WN::|probable%3:00:00::|))
+    WN::|probable%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE LIKELY-SCALE)
+    (TYPE LIKELY-VAL)))
 
 (CONCEPT
   ONT::LIMITED
@@ -17284,13 +17618,6 @@
      (CONCEPT
        T)
      OPTIONAL)))
-
-(CONCEPT
-  ONT::LITTLE
-  (INHERIT
-    ONT::SMALL)
-  (OVERLAP
-    WN::|little%3:00:01::|))
 
 (CONCEPT
   ONT::LIVE
@@ -17619,7 +17946,12 @@
   (INHERIT
     ONT::CONSTRICTING-VAL)
   (OVERLAP
-    WN::|loose%3:00:01::|))
+    WN::|loose%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE LOOSENESS-SCALE)
+    (TYPE LOOSE-VAL)))
 
 (CONCEPT
   ONT::LOOSEN
@@ -17675,6 +18007,22 @@
     WN::|zonk_out%2:29:01::|))
 
 (CONCEPT
+  ONT::LOUDEN
+  (INHERIT
+    ONT::CHANGE-IN-SOUND-SCALE)
+  (OVERLAP
+    WN::|louden%2:39:00::|
+    WN::|louden%2:30:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION POS)
+       (SCALE LOUDNESS-SCALE))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::LOUDNESS-SCALE
   (INHERIT
     ONT::SOUND-VOLUME-SCALE)
@@ -17723,7 +18071,12 @@
 (CONCEPT
   ONT::LUCKINESS-VAL
   (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL))
+    ONT::EVALUATION-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE LUCKINESSS-SCALE)
+    (TYPE LUCKINESS-VAL)))
 
 (CONCEPT
   ONT::LUCKY
@@ -17731,7 +18084,13 @@
     ONT::LUCKINESS-VAL)
   (OVERLAP
     WN::|fortunate%3:00:00::|
-    WN::|lucky%5:00:00:fortunate:00|))
+    WN::|lucky%5:00:00:fortunate:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE LUCKINESSS-SCALE)
+    (TYPE LUCKY)))
 
 (CONCEPT
   ONT::LUMBERYARD
@@ -17769,7 +18128,12 @@
 (CONCEPT
   ONT::LUMINOSITY-VAL
   (INHERIT
-    ONT::VISIBILITY-VAL))
+    ONT::VISIBILITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE LUMINOSITY-SCALE)
+    (TYPE LUMINOSITY-VAL)))
 
 (CONCEPT
   ONT::LYRIC
@@ -18936,6 +19300,11 @@
   ONT::MOISTURE-CONTENT-VAL
   (INHERIT
     ONT::PHYSICAL-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE MOISTURE-CONTENT-SCALE)
+    (TYPE MOISTURE-CONTENT-VAL))
   (SEM-FRAME
     (ONT::FIGURE
      (OR
@@ -19836,7 +20205,12 @@
     ONT::LOUDNESS-VAL)
   (OVERLAP
     WN::|noisy%3:00:00::|
-    WN::|loud%3:00:00::|))
+    WN::|loud%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE LOUDNESS-SCALE)
+    (TYPE NOISY)))
 
 (CONCEPT
   ONT::NOMINATE
@@ -20032,7 +20406,13 @@
     ONT::BOLDNESS-VAL)
   (OVERLAP
     WN::|timid%3:00:00::|
-    WN::|unaggressive%3:00:00::|))
+    WN::|unaggressive%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE AGGRESSIVENESS-SCALE)
+    (TYPE NOT-BOLD-VAL)))
 
 (CONCEPT
   ONT::NOT-CAREFUL-VAL
@@ -20077,7 +20457,13 @@
     ONT::CONVENIENCE-VAL)
   (OVERLAP
     WN::|inconvenient%3:00:00::|
-    WN::|awkward%5:00:00:inconvenient:00|))
+    WN::|awkward%5:00:00:inconvenient:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE CONVENIENCE-SCALE)
+    (TYPE NOT-CONVENIENT-VAL)))
 
 (CONCEPT
   ONT::NOT-CREDIBLE-VAL
@@ -20133,7 +20519,12 @@
   (INHERIT
     ONT::COST-VAL)
   (OVERLAP
-    WN::|cheap%3:00:00::|))
+    WN::|cheap%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE NOT-EXPENSIVE-SCALE)
+    (TYPE NOT-EXPENSIVE-VAL)))
 
 (CONCEPT
   ONT::NOT-FAMILIAR
@@ -20215,17 +20606,21 @@
     ONT::IMPORTANCE-VAL)
   (OVERLAP
     WN::|insignificant%3:00:00::|
-    WN::|unimportant%3:00:00::|))
+    WN::|unimportant%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE IMPORTANCE-SCALE)
+    (TYPE NOT-IMPORTANT-VAL)))
 
 (CONCEPT
   ONT::NOT-IN-WORKING-ORDER-VAL
-  (COMMENT
-   "broken/not-operational more permanently - needs fixing, not switching on")
+  (COMMENT "broken/not-operational e.g., not switching on")
   (INHERIT
     ONT::FUNCTIONALITY-VAL)
   (OVERLAP
     WN::|broken%5:00:00:damaged:00|
-    WN::|nonfunctional%3:00:03::|
     WN::|inoperative%3:00:00::|))
 
 (CONCEPT
@@ -20249,7 +20644,12 @@
     ONT::INTEREST-VAL)
   (OVERLAP
     WN::|uninterested%3:00:00::|
-    WN::|disinterested%5:00:00:impartial:00|))
+    WN::|disinterested%5:00:00:impartial:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE NOT-INTERESTED-SCALE)
+    (TYPE NOT-INTERESTED-VAL)))
 
 (CONCEPT
   ONT::NOT-LIKELY-SCALE
@@ -20264,7 +20664,12 @@
     ONT::LIKELIHOOD-VAL)
   (OVERLAP
     WN::|unlikely%3:00:04::|
-    WN::|improbable%3:00:00::|))
+    WN::|improbable%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE NOT-LIKELY-SCALE)
+    (TYPE NOT-LIKELY-VAL)))
 
 (CONCEPT
   ONT::NOT-LIMITED-VAL
@@ -20280,7 +20685,12 @@
   (OVERLAP
     WN::|snug%5:00:00:tight:01|
     WN::|tight%3:00:01::|
-    WN::|choky%5:00:00:tight:01|))
+    WN::|choky%5:00:00:tight:01|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE TIGHTNESS-SCALE)
+    (TYPE NOT-LOOSE-VAL)))
 
 (CONCEPT
   ONT::NOT-MEANINGFUL-VAL
@@ -20335,7 +20745,12 @@
   (INHERIT
     ONT::POSSIBILITY-VAL)
   (OVERLAP
-    WN::|impossible%3:00:00::|))
+    WN::|impossible%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE NOT-POSSIBLE-SCALE)
+    (TYPE NOT-POSSIBLE-VAL)))
 
 (CONCEPT
   ONT::NOT-PRECISE-VAL
@@ -20390,7 +20805,13 @@
   (INHERIT
     ONT::RESPONSIBILITY-VAL)
   (OVERLAP
-    WN::|irresponsible%3:00:00::|))
+    WN::|irresponsible%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE RESPONSIBILITY-SCALE)
+    (TYPE NOT-RESPONSIBLE-VAL)))
 
 (CONCEPT
   ONT::NOT-ROBUST-VAL
@@ -20420,7 +20841,12 @@
     ONT::SMOOTHNESS-VAL)
   (OVERLAP
     WN::|rough%3:00:00::|
-    WN::|granular%5:00:00:coarse:00|))
+    WN::|granular%5:00:00:coarse:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ROUGHNESS-SCALE)
+    (TYPE NOT-SMOOTH-VAL)))
 
 (CONCEPT
   ONT::NOT-STEADY-SCALE
@@ -20443,7 +20869,13 @@
     ONT::TASTABLE-PROPERTY-VAL)
   (OVERLAP
     WN::|bland%5:00:00:tasteless:01|
-    WN::|tasteless%3:00:01::|))
+    WN::|tasteless%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE SENSORY-SCALE)
+    (TYPE NOT-TASTEFUL-VAL)))
 
 (CONCEPT
   ONT::NOT-TOLERABLE-VAL
@@ -20536,7 +20968,6 @@
     ONT::EVENT-TIME-WRT-NOW)
   (OVERLAP
     WN::|now%4:02:05::|
-    WN::|now%4:02:01::|
     WN::|presently%4:02:00::|))
 
 (CONCEPT
@@ -20733,7 +21164,12 @@
   ONT::OBJECT-AFFORDANCES-VAL
   (COMMENT "properties pertaining to the function of an entity or an object")
   (INHERIT
-    ONT::PROPERTY-VAL))
+    ONT::PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE OBJECT-AFFORDANCES-SCALE)
+    (TYPE OBJECT-AFFORDANCES-VAL)))
 
 (CONCEPT
   ONT::OBJECT-CHANGE
@@ -20831,7 +21267,6 @@
     WN::|appeal%2:37:00::|
     WN::|keep_up%2:29:00::|
     WN::|retire%2:33:00::|
-    WN::|sensitise%2:39:00::|
     WN::|stampede%2:38:01::|
     WN::|stampede%2:41:01::|
     WN::|trip%2:38:01::|
@@ -21040,7 +21475,8 @@
   (INHERIT
     ONT::ADJUST)
   (OVERLAP
-    WN::|drop%2:31:00::|)
+    WN::|drop%2:31:00::|
+    WN::|delete%2:35:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -21122,14 +21558,24 @@
 (CONCEPT
   ONT::OPACITY-VAL
   (INHERIT
-    ONT::VISIBILITY-VAL))
+    ONT::VISIBILITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE LIGHT-PASSAGE-SCALE)
+    (TYPE OPACITY-VAL)))
 
 (CONCEPT
   ONT::OPAQUE-VAL
   (INHERIT
     ONT::OPACITY-VAL)
   (OVERLAP
-    WN::|opaque%3:00:00::|))
+    WN::|opaque%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE OPACITY-SCALE)
+    (TYPE OPAQUE-VAL)))
 
 (CONCEPT
   ONT::OPEN
@@ -21389,21 +21835,6 @@
         (OR
           CARDINAL-POINT
           OBJECT-DEPENDENT-LOCATION)))
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::ORIGIN
-  (INHERIT
-    ONT::LOCATION-BY-DESCRIPTION)
-  (OVERLAP
-    WN::|beginning%1:15:00::|
-    WN::|origin%1:15:00::|
-    WN::|root%1:15:00::|
-    WN::|source%1:15:00::|)
-  (SEM-FRAME
-    (ONT::FIGURE
-     (CONCEPT
-       PHYS-OBJ)
      OPTIONAL)))
 
 (CONCEPT
@@ -21837,6 +22268,14 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::PAY-ATTENTION
+  (INHERIT
+    ONT::COGITATION)
+  (OVERLAP
+    WN::|watch%2:39:01::|
+    WN::|attend%2:39:00::|))
+
+(CONCEPT
   ONT::PENETRATE
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
@@ -21892,10 +22331,6 @@
   ONT::PERCENT
   (INHERIT
     ONT::FORMAL-UNIT)
-  (OVERLAP
-    WN::|percent%1:24:00::|
-    WN::|per_centum%1:24:00::|
-    WN::|pct%1:24:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -22159,9 +22594,7 @@
 (CONCEPT
   ONT::PHYSICAL-ACTIVITY
   (INHERIT
-    ONT::ACTIVITY)
-  (OVERLAP
-    WN::|exercise%2:29:01::|))
+    ONT::ACTIVITY))
 
 (CONCEPT
   ONT::PHYSICAL-PHENOMENON
@@ -22175,7 +22608,6 @@
     WN::|causal_agency%1:03:00::|
     WN::|cause%1:03:00::|
     WN::|causal_agent%1:03:00::|
-    WN::|cause%1:10:00::|
     WN::|cause%1:11:00::|)
   (SEM-FEATS
     (INHERIT
@@ -22212,7 +22644,12 @@
   (COMMENT
    "properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects")
   (INHERIT
-    ONT::PROPERTY-VAL))
+    ONT::PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE PHYSICAL-PROPERTY-SCALE)
+    (TYPE PHYSICAL-PROPERTY-VAL)))
 
 (CONCEPT
   ONT::PHYSICAL-REACTION
@@ -22283,7 +22720,6 @@
     WN::|nauseated%3:00:00:ill:01|
     WN::|queasy%3:00:00:ill:01|
     WN::|sickish%3:00:00:ill:01|
-    WN::|chill%1:26:01::|
     WN::|shivering%1:26:00::|
     WN::|nausea%1:26:00::|))
 
@@ -22306,20 +22742,6 @@
     WN::|bodily%5:00:00:physical:00|)
   (SEM-FRAME
     (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::PICKUP
-  (INHERIT
-    ONT::MOTION)
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::AGENT
      (CONCEPT
        T)
      OPTIONAL)))
@@ -22553,7 +22975,12 @@
   (INHERIT
     ONT::POS-SOFT-EMOTIONAL-VAL)
   (OVERLAP
-    WN::|pleasant%3:00:00::|))
+    WN::|pleasant%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE PLEASANTNESS-SCALE)
+    (TYPE PLEASANT)))
 
 (CONCEPT
   ONT::PLEASANT-SMELLING-VAL
@@ -22563,7 +22990,12 @@
     WN::|aromatic%5:00:00:fragrant:00|
     WN::|perfumed%5:00:02:fragrant:00|
     WN::|musky%5:00:00:fragrant:00|
-    WN::|fragrant%3:00:00::|))
+    WN::|fragrant%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE POSITIVE-SMELL-SCALE)
+    (TYPE PLEASANT-SMELLING-VAL)))
 
 (CONCEPT
   ONT::PLEASANTNESS-SCALE
@@ -22602,7 +23034,12 @@
   (INHERIT
     ONT::PHYSICAL-PROPERTY-VAL)
   (OVERLAP
-    WN::|polar%5:00:00:charged:00|))
+    WN::|polar%5:00:00:charged:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE POLARITY-SCALE)
+    (TYPE POLARITY-VAL)))
 
 (CONCEPT
   ONT::POLARITY-VAL-NEGATIVE
@@ -22610,7 +23047,13 @@
     ONT::POLARITY-VAL)
   (OVERLAP
     WN::|negative%3:00:05::|
-    WN::|negatively%4:02:00::|))
+    WN::|negatively%4:02:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE POLARITY-SCALE)
+    (TYPE POLARITY-VAL-NEGATIVE)))
 
 (CONCEPT
   ONT::POLARITY-VAL-POSITIVE
@@ -22618,7 +23061,13 @@
     ONT::POLARITY-VAL)
   (OVERLAP
     WN::|positive%3:00:05::|
-    WN::|positively%4:02:02::|))
+    WN::|positively%4:02:02::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE POLARITY-SCALE)
+    (TYPE POLARITY-VAL-POSITIVE)))
 
 (CONCEPT
   ONT::POLICY
@@ -22995,7 +23444,12 @@
 (CONCEPT
   ONT::POSSIBILITY-VAL
   (INHERIT
-    ONT::INFORMATION-PROPERTY-VAL))
+    ONT::INFORMATION-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE POSSIBILITY-SCALE)
+    (TYPE POSSIBILITY-VAL)))
 
 (CONCEPT
   ONT::POSSIBLE
@@ -23003,7 +23457,12 @@
     ONT::POSSIBILITY-VAL)
   (OVERLAP
     WN::|accomplishable%5:00:00:possible:00|
-    WN::|possible%3:00:00::|))
+    WN::|possible%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE POSSIBLE-SCALE)
+    (TYPE POSSIBLE)))
 
 (CONCEPT
   ONT::POSSIBLE-SCALE
@@ -23223,7 +23682,12 @@
   ONT::PREDEFINED-MEASURE-VAL
   (COMMENT "standardized size/quantity given a predefined measure")
   (INHERIT
-    ONT::DIMENSIONAL-PROPERTY-VAL))
+    ONT::DIMENSIONAL-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE PREDEFINED-MEASURE-SCALE)
+    (TYPE PREDEFINED-MEASURE-VAL)))
 
 (CONCEPT
   ONT::PREDEFINED-SIZE-VAL
@@ -23386,7 +23850,12 @@
 (CONCEPT
   ONT::PRESENSE-OF-LIGHT-VAL
   (INHERIT
-    ONT::VISIBILITY-VAL))
+    ONT::VISIBILITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE PRESENCE-OF-LIGHT-SCALE)
+    (TYPE PRESENSE-OF-LIGHT-VAL)))
 
 (CONCEPT
   ONT::PRESENTATION
@@ -23419,6 +23888,7 @@
 
 (CONCEPT
   ONT::PREVENT
+  (COMMENT "prevent an effect or event from taking place")
   (INHERIT
     ONT::INHIBIT-EFFECT)
   (OVERLAP
@@ -23475,7 +23945,13 @@
     WN::|cardinal%5:00:00:important:00|
     WN::|basal%5:00:00:essential:00|
     WN::|crucial%3:00:00::|
-    WN::|significant%3:00:00::|))
+    WN::|significant%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE IMPORTANCE-SCALE)
+    (TYPE PRIMARY)))
 
 (CONCEPT
   ONT::PRIORITY
@@ -23546,7 +24022,12 @@
   ONT::PROCESS-EVALUATION-VAL
   (COMMENT "evaluation properties of processes")
   (INHERIT
-    ONT::PROCESS-VAL))
+    ONT::PROCESS-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE PROCESS-EVALUATION-SCALE)
+    (TYPE PROCESS-EVALUATION-VAL)))
 
 (CONCEPT
   ONT::PROCESS-PROPERTY-SCALE
@@ -23901,7 +24382,12 @@
   (INHERIT
     ONT::POS-INTENSE-EMOTIONAL-VAL)
   (OVERLAP
-    WN::|proud%3:00:00::|))
+    WN::|proud%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE PRIDE-SCALE)
+    (TYPE PROUD-VAL)))
 
 (CONCEPT
   ONT::PROVOKE
@@ -23996,7 +24482,6 @@
     WN::|draw%2:35:03::|
     WN::|pull%2:35:00::|
     WN::|pull%2:35:04::|
-    WN::|trigger%2:33:00::|
     WN::|suck%1:04:00::|
     WN::|suck%2:34:04::|)
   (SEM-FRAME
@@ -24422,7 +24907,28 @@
     WN::|hushed%5:00:00:soft:04|
     WN::|quiet%3:00:02::|
     WN::|quiet%5:00:00:soft:04|
-    WN::|soft%3:00:04::|))
+    WN::|soft%3:00:04::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE QUIETNESS-SCALE)
+    (TYPE QUIET)))
+
+(CONCEPT
+  ONT::QUIETEN
+  (INHERIT
+    ONT::CHANGE-IN-SOUND-SCALE)
+  (OVERLAP
+    WN::|deafen%2:30:01::|
+    WN::|quieten%2:39:00::|)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (ORIENTATION NEG)
+       (SCALE LOUDNESS-SCALE))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::QUIETNESS-SCALE
@@ -24732,14 +25238,19 @@
   (INHERIT
     ONT::COLOR-VAL)
   (OVERLAP
-    WN::|red%5:00:01:chromatic:00|))
+    WN::|red%5:00:01:chromatic:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE REDNESS-SCALE)
+    (TYPE RED)))
 
 (CONCEPT
   ONT::REDNESS-SCALE
   (INHERIT
     ONT::COLOR-QUALITY-SCALE)
   (OVERLAP
-    WN::|redness%1:26:00::|))
+    WN::|redness%1:07:00::|))
 
 (CONCEPT
   ONT::REFERENCE-WORK
@@ -24909,7 +25420,12 @@
     ONT::REGULARITY-VAL)
   (OVERLAP
     WN::|regular%5:00:00:steady:00|
-    WN::|regular%3:00:00::|))
+    WN::|regular%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE REGULAR-SCALE)
+    (TYPE REGULAR)))
 
 (CONCEPT
   ONT::REGULAR-SCALE
@@ -24926,7 +25442,12 @@
 (CONCEPT
   ONT::REGULARITY-VAL
   (INHERIT
-    ONT::FREQUENCY-VAL))
+    ONT::FREQUENCY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE REGULARITY-SCALE)
+    (TYPE REGULARITY-VAL)))
 
 (CONCEPT
   ONT::REGULATORY-ORGANIZATION
@@ -25058,7 +25579,12 @@
   (COMMENT
    "properties that describe an entity with respect to another related entity, an implicit second entity always present when these properties are evoked")
   (INHERIT
-    ONT::PROPERTY-VAL))
+    ONT::PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE RELATIONAL-PROPERTY-SCALE)
+    (TYPE RELATIONAL-ATTRIBUTE-VAL)))
 
 (CONCEPT
   ONT::RELATIONAL-PROPERTY-SCALE
@@ -25096,7 +25622,13 @@
     ONT::RESTLESSNESS-VAL)
   (OVERLAP
     WN::|relaxed%3:00:00::|
-    WN::|restful%3:00:00::|))
+    WN::|restful%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE RESTLESSNESS-SCALE)
+    (TYPE RELAXED-VAL)))
 
 (CONCEPT
   ONT::RELEASING
@@ -25500,14 +26032,13 @@
 
 (CONCEPT
   ONT::REPLACEMENT
+  (COMMENT
+   "agent changes an affected with another affected; switch item to a different item")
   (INHERIT
     ONT::CHANGE-STATE-ACTION)
   (OVERLAP
     WN::|change%1:06:00::|
     WN::|change%2:30:06::|
-    WN::|interchange%2:40:00::|
-    WN::|change%2:40:00::|
-    WN::|exchange%2:40:00::|
     WN::|change%2:30:03::|
     WN::|change%2:30:05::|
     WN::|shift%2:30:02::|
@@ -25802,6 +26333,11 @@
   ONT::RESPONSIBILITY-VAL
   (INHERIT
     ONT::SOCIAL-INTERACTION-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE RESPONSIBILITY-SCALE)
+    (TYPE RESPONSIBILITY-VAL))
   (SEM-FRAME
     (ONT::GROUND
      (CONCEPT
@@ -25821,7 +26357,13 @@
   (INHERIT
     ONT::RESPONSIBILITY-VAL)
   (OVERLAP
-    WN::|responsible%3:00:00::|))
+    WN::|responsible%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE RESPONSIBILITY-SCALE)
+    (TYPE RESPONSIBLE-VAL)))
 
 (CONCEPT
   ONT::RESTART
@@ -25853,7 +26395,13 @@
     WN::|edgy%5:00:00:tense:03|
     WN::|nervy%5:00:00:tense:03|
     WN::|jumpy%5:00:00:tense:03|
-    WN::|jittery%5:00:00:tense:03|))
+    WN::|jittery%5:00:00:tense:03|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE RESTLESSNESS-SCALE)
+    (TYPE RESTLESS-VAL)))
 
 (CONCEPT
   ONT::RESTLESSNESS-SCALE
@@ -25865,7 +26413,12 @@
 (CONCEPT
   ONT::RESTLESSNESS-VAL
   (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL))
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE RESTLESSNESS-SCALE)
+    (TYPE RESTLESSNESS-VAL)))
 
 (CONCEPT
   ONT::RESTRICTION
@@ -26189,8 +26742,6 @@
   ONT::ROBOT
   (INHERIT
     ONT::AUTOMATON)
-  (OVERLAP
-    WN::|robot%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -26269,8 +26820,7 @@
   (OVERLAP
     WN::|path%1:17:00::|
     WN::|track%1:17:00::|
-    WN::|course%1:17:00::|
-    WN::|route%1:06:00::|)
+    WN::|course%1:17:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -26850,7 +27400,13 @@
   (OVERLAP
     WN::|minor%3:00:06::|
     WN::|junior%3:00:00::|
-    WN::|insignificant%5:00:00:minor:06|))
+    WN::|insignificant%5:00:00:minor:06|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE IMPORTANCE-SCALE)
+    (TYPE SECONDARY)))
 
 (CONCEPT
   ONT::SECRECY-VAL
@@ -27082,7 +27638,12 @@
     ONT::SENSORY-PROPERTY-VAL)
   (OVERLAP
     WN::|sensitive%3:00:01::|
-    WN::|sensitive%3:00:04::|))
+    WN::|sensitive%3:00:04::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE SENSITIVITY-SCALE)
+    (TYPE SENSITIVITY-VAL)))
 
 (CONCEPT
   ONT::SENSOR
@@ -27107,7 +27668,12 @@
   ONT::SENSORY-PROPERTY-VAL
   (COMMENT "properties that have to do with sensory input")
   (INHERIT
-    ONT::PHYSICAL-PROPERTY-VAL))
+    ONT::PHYSICAL-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE APPEARANCE-SCALE)
+    (TYPE SENSORY-PROPERTY-VAL)))
 
 (CONCEPT
   ONT::SENSORY-SCALE
@@ -27262,6 +27828,11 @@
    "indicates relative extent or magnitude of something on a severity scale")
   (INHERIT
     ONT::DIMENSIONAL-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE SEVERITY-SCALE)
+    (TYPE SEVERITY-VAL))
   (SEM-FRAME
     (ONT::FIGURE
      (OR
@@ -27480,8 +28051,7 @@
   (INHERIT
     ONT::CHANGE-IN-LINEAR-EXTENT)
   (OVERLAP
-    WN::|shorten%2:30:09::|
-    WN::|shorten%2:30:02::|)
+    WN::|shorten%2:30:09::|)
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -27575,7 +28145,6 @@
   (INHERIT
     ONT::CHANGE-IN-SIZE)
   (OVERLAP
-    WN::|shrink%2:30:02::|
     WN::|compress%2:35:01::|
     WN::|shrink%2:30:01::|
     WN::|shrink%2:30:00::|)
@@ -27916,7 +28485,6 @@
     ONT::RELATIVE-TO-HEIGHT-VAL)
   (OVERLAP
     WN::|slim%5:00:00:thin:03|
-    WN::|skinny%5:00:00:thin:03|
     WN::|slender%5:00:00:thin:03|
     WN::|thin%3:00:03::|)
   (SEM-FEATS
@@ -27977,7 +28545,6 @@
   (INHERIT
     ONT::SIZE-VAL)
   (OVERLAP
-    WN::|bantam%5:00:00:small:00|
     WN::|small%3:00:00::|))
 
 (CONCEPT
@@ -27998,12 +28565,23 @@
 (CONCEPT
   ONT::SMELLABILITY-VAL
   (INHERIT
-    ONT::SMELLABLE-PROPERTY-VAL))
+    ONT::SMELLABLE-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE SENSORY-SCALE)
+    (TYPE SMELLABILITY-VAL)))
 
 (CONCEPT
   ONT::SMELLABLE-PROPERTY-VAL
   (INHERIT
-    ONT::SENSORY-PROPERTY-VAL))
+    ONT::SENSORY-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE OLFACTORY-SCALE)
+    (TYPE SMELLABLE-PROPERTY-VAL)))
 
 (CONCEPT
   ONT::SMOKING
@@ -28022,7 +28600,7 @@
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
-    (SCALE SMOOTHNESS*1--07--00)
+    (SCALE SMOOTHNESS-SCALE)
     (TYPE SMOOTH-VAL)))
 
 (CONCEPT
@@ -28424,7 +29002,7 @@
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
-    (SCALE SOURNESS*1--07--00)
+    (SCALE SOURNESS-SCALE)
     (TYPE SOUR-VAL)))
 
 (CONCEPT
@@ -28756,7 +29334,12 @@
     ONT::TASTEFUL-VAL)
   (OVERLAP
     WN::|spicy%5:00:01:tasty:00|
-    WN::|spicy%5:00:00:tasty:00|))
+    WN::|spicy%5:00:00:tasty:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE SPICINESS-SCALE)
+    (TYPE SPICY-VAL)))
 
 (CONCEPT
   ONT::SPLIT-VAL
@@ -28803,8 +29386,7 @@
   (INHERIT
     ONT::PUSH)
   (OVERLAP
-    WN::|squeeze%2:35:00::|
-    WN::|squeeze%2:35:05::|))
+    WN::|squeeze%2:35:00::|))
 
 (CONCEPT
   ONT::SSN
@@ -28853,27 +29435,8 @@
   (INHERIT
     ONT::CAUSE-EFFECT)
   (OVERLAP
-    WN::|take%2:41:13::|
-    WN::|start%2:36:00::|
-    WN::|initiate%2:36:01::|
-    WN::|originate%2:36:00::|
-    WN::|commence%2:30:01::|
-    WN::|start%2:30:01::|
-    WN::|lead_off%2:30:00::|
     WN::|begin%2:30:01::|
-    WN::|get_down%2:30:00::|
-    WN::|begin%2:30:00::|
-    WN::|get%2:30:12::|
-    WN::|start_out%2:30:00::|
-    WN::|start%2:30:00::|
-    WN::|set_about%2:30:00::|
-    WN::|set_out%2:30:00::|
-    WN::|commence%2:30:00::|
-    WN::|begin%2:32:04::|
-    WN::|lie_in%2:29:00::|
-    WN::|originate_in%2:42:00::|
-    WN::|activate%2:36:00::|
-    WN::|activate%2:30:00::|)
+    WN::|start%2:41:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (OR
@@ -28896,11 +29459,9 @@
   (INHERIT
     ONT::CHANGE-DEVICE-STATE)
   (OVERLAP
-    WN::|boot%2:29:00::|
-    WN::|reboot%2:29:00::|
-    WN::|bring_up%2:29:00::|
-    WN::|trip%2:36:00::|
-    WN::|start_up%2:38:00::|)
+    WN::|start%2:38:01::|
+    WN::|start_up%2:38:00::|
+    WN::|activate%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -28925,12 +29486,13 @@
   (INHERIT
     ONT::START)
   (OVERLAP
-    WN::|get_going%2:38:00::|
-    WN::|start%2:38:01::|
-    WN::|start%2:41:00::|
-    WN::|take_to%2:41:01::|
+    WN::|get_down%2:30:00::|
+    WN::|start%2:38:00::|
     WN::|start%1:11:00::|
-    WN::|start%1:28:00::|))
+    WN::|start%1:28:00::|
+    WN::|take%2:41:13::|
+    WN::|take_to%2:41:01::|
+    WN::|begin%2:32:04::|))
 
 (CONCEPT
   ONT::STARTPOINT
@@ -29051,7 +29613,8 @@
     WN::|settle%2:30:01::|
     WN::|stand_still%2:38:00::|
     WN::|stay%2:38:01::|
-    WN::|stay_in_place%2:38:00::|)
+    WN::|stay_in_place%2:38:00::|
+    WN::|live%2:42:08::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -29089,7 +29652,12 @@
 (CONCEPT
   ONT::STEADINESS-VAL
   (INHERIT
-    ONT::PROCESS-EVALUATION-VAL))
+    ONT::PROCESS-EVALUATION-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE STEADINESS-SCALE)
+    (TYPE STEADINESS-VAL)))
 
 (CONCEPT
   ONT::STEADY
@@ -29100,7 +29668,12 @@
     WN::|unchanged%3:00:04::|
     WN::|unchanged%3:00:00::|
     WN::|steady%3:00:00::|
-    WN::|steady%5:00:00:stable:00|))
+    WN::|steady%5:00:00:stable:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE STEADY-SCALE)
+    (TYPE STEADY)))
 
 (CONCEPT
   ONT::STEADY-SCALE
@@ -29424,11 +29997,6 @@
   ONT::SUBAREA-LOCATION-VAL
   (INHERIT
     ONT::SPATIAL))
-
-(CONCEPT
-  ONT::SUBDUING
-  (INHERIT
-    ONT::EVOKE-EMOTION))
 
 (CONCEPT
   ONT::SUBMIT
@@ -29818,7 +30386,7 @@
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
-    (SCALE SWEETNESS*1--07--00)
+    (SCALE SWEETNESS-SCALE)
     (TYPE SWEET-VAL)))
 
 (CONCEPT
@@ -29933,7 +30501,7 @@
 (CONCEPT
   ONT::TACTILE-HARDNESS-SCALE
   (INHERIT
-    ONT::TACTILE-SCALE)
+    ONT::TEXTURE-SCALE)
   (OVERLAP
     WN::|hardness%1:07:01::|))
 
@@ -29945,7 +30513,7 @@
 (CONCEPT
   ONT::TACTILE-SOFTNESS-SCALE
   (INHERIT
-    ONT::TACTILE-SCALE)
+    ONT::TEXTURE-SCALE)
   (OVERLAP
     WN::|softness%1:07:00::|))
 
@@ -30095,6 +30663,19 @@
     (TYPE TALL-VAL)))
 
 (CONCEPT
+  ONT::TAME
+  (INHERIT
+    ONT::MANAGING)
+  (OVERLAP
+    WN::|curb%2:30:01::|
+    WN::|keep_down%2:41:00::|
+    WN::|break_in%2:30:00::|
+    WN::|tame%2:30:00::|
+    WN::|hush%2:30:00::|
+    WN::|break%2:30:12::|
+    WN::|quieten%2:30:00::|))
+
+(CONCEPT
   ONT::TAME-VAL
   (INHERIT
     ONT::TAMENESS-VAL)
@@ -30127,7 +30708,12 @@
   (OVERLAP
     WN::|palpable%3:00:00::|
     WN::|tangible%3:00:04::|
-    WN::|tangible%3:00:00::|))
+    WN::|tangible%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE INTANGIBILITY-SCALE)
+    (TYPE TANGIBILITY-VAL)))
 
 (CONCEPT
   ONT::TANGIBLE-ABSTRACT-OBJECT
@@ -30144,7 +30730,12 @@
 (CONCEPT
   ONT::TANGIBLE-PROPERTY-VAL
   (INHERIT
-    ONT::SENSORY-PROPERTY-VAL))
+    ONT::SENSORY-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE TACTILE-SCALE)
+    (TYPE TANGIBLE-PROPERTY-VAL)))
 
 (CONCEPT
   ONT::TANGIBLE-UNIT
@@ -30175,6 +30766,11 @@
   ONT::TASK-COMPLEXITY-VAL
   (INHERIT
     ONT::PROCESS-EVALUATION-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE TASK-COMPLEXITY-SCALE)
+    (TYPE TASK-COMPLEXITY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (OR
@@ -30194,6 +30790,11 @@
   ONT::TASTABLE-PROPERTY-VAL
   (INHERIT
     ONT::SENSORY-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE TASTE-SCALE)
+    (TYPE TASTABLE-PROPERTY-VAL))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -30210,7 +30811,13 @@
 (CONCEPT
   ONT::TASTEFUL-VAL
   (INHERIT
-    ONT::TASTABLE-PROPERTY-VAL))
+    ONT::TASTABLE-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE SENSORY-SCALE)
+    (TYPE TASTEFUL-VAL)))
 
 (CONCEPT
   ONT::TASTY-VAL
@@ -30235,7 +30842,8 @@
     WN::|train%2:41:02::|
     WN::|train%2:41:00::|
     WN::|train%2:41:01::|
-    WN::|train%2:32:00::|))
+    WN::|train%2:32:00::|
+    WN::|sensitize%2:39:00::|))
 
 (CONCEPT
   ONT::TEAS-COCKTAILS-BLENDS
@@ -30364,7 +30972,12 @@
 (CONCEPT
   ONT::TEMPORAL-OCCURRENCE-VAL
   (INHERIT
-    ONT::PROCESS-VAL))
+    ONT::PROCESS-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE TEMPORAL-OCCURENCE-SCALE)
+    (TYPE TEMPORAL-OCCURRENCE-VAL)))
 
 (CONCEPT
   ONT::TEMPORAL-PREDICATE
@@ -30517,7 +31130,12 @@
   (INHERIT
     ONT::THICKENESS-IN-TEXTURE-VAL)
   (OVERLAP
-    WN::|thick%3:00:02::|))
+    WN::|thick%3:00:02::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE TEXTURE-THICKNESS-SCALE)
+    (TYPE THICK-TEXTURE-VAL)))
 
 (CONCEPT
   ONT::THICK-VAL
@@ -30586,7 +31204,12 @@
   (INHERIT
     ONT::THICKENESS-IN-TEXTURE-VAL)
   (OVERLAP
-    WN::|thin%3:00:02::|))
+    WN::|thin%3:00:02::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE TEXTURE-THINNESS-SCALE)
+    (TYPE THIN-TEXTURE-VAL)))
 
 (CONCEPT
   ONT::THIN-VAL
@@ -30643,8 +31266,6 @@
   (INHERIT
     ONT::HIGHWAY)
   (OVERLAP
-    WN::|throughway%1:06:00::|
-    WN::|thruway%1:06:00::|
     WN::|throughway%1:06:00::|))
 
 (CONCEPT
@@ -30962,14 +31583,6 @@
     WN::|bitty%5:00:00:small:00|))
 
 (CONCEPT
-  ONT::TIRESOME-VAL
-  (INHERIT
-    ONT::EVOKING-NEG-EMOTION-VAL)
-  (OVERLAP
-    WN::|wearisome%5:00:00:uninteresting:00|
-    WN::|tiresome%5:00:00:uninteresting:00|))
-
-(CONCEPT
   ONT::TITLE
   (INHERIT
     ONT::NAME)
@@ -31184,7 +31797,6 @@
   (INHERIT
     ONT::CHANGE)
   (OVERLAP
-    WN::|metabolize%2:34:00::|
     WN::|transform%2:30:00::|
     WN::|transform%2:30:03::|)
   (SEM-FEATS
@@ -31246,7 +31858,12 @@
   (INHERIT
     ONT::OPACITY-VAL)
   (OVERLAP
-    WN::|transparent%5:00:00:clear:02|))
+    WN::|transparent%5:00:00:clear:02|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE VISUAL-CLARITY-SCALE)
+    (TYPE TRANSPARENT-VAL)))
 
 (CONCEPT
   ONT::TRANSPORT
@@ -31314,6 +31931,17 @@
   ONT::TRI-VAL
   (INHERIT
     ONT::NUM-PREFIX-VAL))
+
+(CONCEPT
+  ONT::TRIGGER-TRIPPABLE-DEVICE
+  (COMMENT "trigger trippable device like bomb, trap, alarm etc")
+  (INHERIT
+    ONT::START-OBJECT)
+  (OVERLAP
+    WN::|trip%2:36:00::|
+    WN::|trigger%2:33:00::|
+    WN::|go_off%2:30:00::|
+    WN::|go_off%2:33:00::|))
 
 (CONCEPT
   ONT::TRIP
@@ -31401,7 +32029,12 @@
 (CONCEPT
   ONT::TRUTH-VALUE-VAL
   (INHERIT
-    ONT::INFORMATION-PROPERTY-VAL))
+    ONT::INFORMATION-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE TRUTH-SCALE)
+    (TYPE TRUTH-VALUE-VAL)))
 
 (CONCEPT
   ONT::TRY
@@ -31545,7 +32178,12 @@
   (INHERIT
     ONT::BEAUTY-VAL)
   (OVERLAP
-    WN::|ugly%3:00:00::|))
+    WN::|ugly%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE UGLY-SCALE)
+    (TYPE UGLY-VAL)))
 
 (CONCEPT
   ONT::UNABLE
@@ -31554,7 +32192,12 @@
   (OVERLAP
     WN::|incompetent%3:00:00::|
     WN::|incapable%3:00:00::|
-    WN::|unable%5:00:00:incapable:00|))
+    WN::|unable%5:00:00:incapable:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE NOT-ABLE-SCALE)
+    (TYPE UNABLE)))
 
 (CONCEPT
   ONT::UNADORNED
@@ -31622,7 +32265,12 @@
   (OVERLAP
     WN::|uncomfortable%3:00:00::|
     WN::|awkward%5:00:00:uncomfortable:01|
-    WN::|uncomfortable%3:00:01::|))
+    WN::|uncomfortable%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE NOT-COMFORTABLE-SCALE)
+    (TYPE UNCOMFORTABLE)))
 
 (CONCEPT
   ONT::UNCONTROLLED-BODY-MOTION
@@ -31747,7 +32395,12 @@
     WN::|sad%3:00:00::|
     WN::|gloomy%5:00:00:dejected:00|
     WN::|melancholy%5:00:00:sad:00|
-    WN::|miserable%5:00:00:unhappy:00|))
+    WN::|miserable%5:00:00:unhappy:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE SADNESS-SCALE)
+    (TYPE UNHAPPY)))
 
 (CONCEPT
   ONT::UNIQUENESS-VAL
@@ -31771,13 +32424,7 @@
   (OVERLAP
     WN::|offload%2:35:00::|
     WN::|unlade%2:35:00::|
-    WN::|unload%2:35:00::|
-    WN::|drop%2:35:00::|
-    WN::|drop_off%2:35:00::|
-    WN::|set_down%2:35:00::|
-    WN::|put_down%2:35:01::|
-    WN::|unload%2:35:02::|
-    WN::|discharge%2:35:06::|)
+    WN::|unload%2:35:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -31792,7 +32439,13 @@
     ONT::LUCKINESS-VAL)
   (OVERLAP
     WN::|unfortunate%3:00:00::|
-    WN::|doomed%5:00:00:unfortunate:00|))
+    WN::|doomed%5:00:00:unfortunate:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE LUCKINESSS-SCALE)
+    (TYPE UNLUCKY)))
 
 (CONCEPT
   ONT::UNMANAGEABLE
@@ -31830,7 +32483,12 @@
     ONT::SMELLABILITY-VAL)
   (OVERLAP
     WN::|smelly%5:00:00:malodorous:00|
-    WN::|stinky%3:00:00::|))
+    WN::|stinky%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE NEGATIVE-SMELL-SCALE)
+    (TYPE UNPLEASANT-SMELLING-VAL)))
 
 (CONCEPT
   ONT::UNRELIABLE
@@ -31852,7 +32510,13 @@
   (INHERIT
     ONT::SMELLABLE-PROPERTY-VAL)
   (OVERLAP
-    WN::|odorless%3:00:00::|))
+    WN::|odorless%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE SENSORY-SCALE)
+    (TYPE UNSMELLABILITY-VAL)))
 
 (CONCEPT
   ONT::UNSTEADY
@@ -31862,7 +32526,12 @@
     WN::|unsteady%3:00:00::|
     WN::|volatile%3:00:00::|
     WN::|unstable%3:00:00::|
-    WN::|shaky%5:00:00:unsteady:00|))
+    WN::|shaky%5:00:00:unsteady:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE NOT-STEADY-SCALE)
+    (TYPE UNSTEADY)))
 
 (CONCEPT
   ONT::UNSTEADY-MOVE
@@ -31936,7 +32605,12 @@
 (CONCEPT
   ONT::USABILITY-VAL
   (INHERIT
-    ONT::OBJECT-AFFORDANCES-VAL))
+    ONT::OBJECT-AFFORDANCES-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE USABILITY-SCALE)
+    (TYPE USABILITY-VAL)))
 
 (CONCEPT
   ONT::USABLE-VAL
@@ -32299,12 +32973,22 @@
   (INHERIT
     ONT::VISIBLE-PROPERTY-VAL)
   (OVERLAP
-    WN::|visible%3:00:00::|))
+    WN::|visible%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE VISIBILITY-SCALE)
+    (TYPE VISIBILITY-VAL)))
 
 (CONCEPT
   ONT::VISIBLE-PROPERTY-VAL
   (INHERIT
-    ONT::SENSORY-PROPERTY-VAL))
+    ONT::SENSORY-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE VISUAL-SCALE)
+    (TYPE VISIBLE-PROPERTY-VAL)))
 
 (CONCEPT
   ONT::VISUAL-ADJUST
@@ -32331,7 +33015,6 @@
   (OVERLAP
     WN::|expose%2:39:00::|
     WN::|bring_on%2:36:01::|
-    WN::|expose%2:35:00::|
     WN::|project%2:39:01::|
     WN::|confront%2:32:03::|
     WN::|flash%2:30:03::|))
@@ -32503,9 +33186,7 @@
   (INHERIT
     ONT::INTENTIONALLY-ACT)
   (OVERLAP
-    WN::|wait%2:42:00::|
-    WN::|wait%2:42:01::|
-    WN::|watch%2:39:01::|)
+    WN::|wait%2:42:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -32587,7 +33268,12 @@
   (OVERLAP
     WN::|warm%3:00:01::|
     WN::|hot%5:00:00:warm:03|
-    WN::|warm%3:00:03::|))
+    WN::|warm%3:00:03::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE HEAT-SCALE)
+    (TYPE WARM)))
 
 (CONCEPT
   ONT::WARN
@@ -32630,7 +33316,7 @@
 (CONCEPT
   ONT::WATER-IRRIGATE
   (INHERIT
-    ONT::APPLY-FORCE)
+    ONT::PUT)
   (OVERLAP
     WN::|water%2:30:00::|
     WN::|irrigation%1:04:00::|))
@@ -32891,7 +33577,12 @@
   (INHERIT
     ONT::MOISTURE-CONTENT-VAL)
   (OVERLAP
-    WN::|wet%3:00:01::|))
+    WN::|wet%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE WET-SCALE)
+    (TYPE WET-VAL)))
 
 (CONCEPT
   ONT::WH-LOCATION
@@ -33161,7 +33852,8 @@
     ONT::INTENTIONALLY-ACT)
   (OVERLAP
     WN::|work%2:41:05::|
-    WN::|work%2:41:02::|)
+    WN::|work%2:41:02::|
+    WN::|toil%2:41:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)

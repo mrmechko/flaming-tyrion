@@ -144,14 +144,27 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-val">
+ <concept name="ont::configuration-property-val">
  <comment>
-  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+  &quot;properties regarding the configuration, arrangement, or layout of elements&quot;
  </comment>
  <relation label="inherit">
-  ont::property-val
+  ont::physical-property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">configuration-property-scale</feat>
+  <feat name="type">configuration-property-val</feat>
+ </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">flow-val</feat>
+ </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::figure">
   <sem-feats>
@@ -167,20 +180,28 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
+ <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">physical-property-scale</feat>
+  <feat name="type">physical-property-val</feat>
+ </sem-feats>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="type">flow-val</feat>
+ <feat name="scale">configuration-property-scale</feat>
+ <feat name="type">configuration-property-val</feat>
  </sem-feats>
- <concept name="ont::configuration-property-val">
- <comment>
-  &quot;properties regarding the configuration, arrangement, or layout of elements&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -233,6 +254,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">physical-property-scale</feat>
+ <feat name="type">physical-property-val</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::fold">
  <relation label="inherit">
-  ont::move
+  ont::shape-change
  </relation>
  <relation label="overlap">
   wn::|fold%2:35:00::|
@@ -106,61 +106,30 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">quantity</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::agent" optional="optional">
   <or>
    <concept name="phys-obj" />
-   <concept name="situation" />
    <concept name="abstr-obj" />
+   <concept name="situation" />
   </or>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">
-   <or>
-    position-reln
-    path
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::source" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
-   <feat name="mobility">movable</feat>
-  </sem-feats>
  </role-restr-map>
  </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">dynamic</feat>
- <feat name="cause">
- <or>
-  force
-  -
- </or>
- </feat>
- <feat name="type">motion</feat>
+ <feat name="cause">force</feat>
+ <feat name="type">change</feat>
  </sem-feats>
  <concept name="ont::event-of-causation">
  <comment>
@@ -198,98 +167,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::scale" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">domain</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::reason" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
+ <concept name="ont::shape-change">
  <relation label="inherit">
-  situation
+  ont::object-change
  </relation>
- <feat name="trajectory">+</feat>
- <feat name="locative">-</feat>
- <feat name="container">-</feat>
- <feat name="type">move</feat>
- </sem-feats>
- <concept name="ont::motion">
- <comment>
-  &quot;events of motion through some space (physical or abstract). Even though many motion verbs express simply undergoing motion, all these verbs allow to possibiliity of an AGENT&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-causation
+ <relation label="overlap">
+  wn::|forge%2:36:03::|
+  wn::|mould%2:36:01::|
+  wn::|mold%2:36:01::|
+  wn::|work%2:36:12::|
+  wn::|form%2:36:00::|
+  wn::|shape%2:36:00::|
+  wn::|shape%2:30:00::|
+  wn::|form%2:30:01::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
-  <feat name="cause">
-  <or>
-   force
-   -
-  </or>
-  </feat>
-  <feat name="type">motion</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">quantity</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">
-    <or>
-     position-reln
-     path
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::source" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-     <concept name="time" />
-    </or>
-    <feat name="mobility">movable</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -298,61 +189,114 @@
  <feat name="aspect">dynamic</feat>
  <feat name="type">fold</feat>
  </sem-feats>
- <concept name="ont::move">
+ <concept name="ont::object-change">
  <relation label="inherit">
-  ont::motion
- </relation>
- <relation label="overlap">
-  wn::|make%2:38:05::|
-  wn::|take%2:38:05::|
-  wn::|travel%2:38:00::|
-  wn::|go%2:38:00::|
-  wn::|move%2:38:03::|
-  wn::|move%2:38:01::|
-  wn::|locomote%2:38:00::|
-  wn::|ascend%2:38:10::|
-  wn::|be_active%2:29:00::|
-  wn::|draw%2:35:13::|
-  wn::|go%2:42:06::|
-  wn::|jaunt%2:38:00::|
-  wn::|move%2:38:00::|
-  wn::|move%2:38:02::|
-  wn::|move_out%2:41:00::|
-  wn::|wreathe%2:38:00::|
-  wn::|mobilize%2:30:00::|
-  wn::|go%2:33:00::|
-  wn::|transport%1:04:01::|
-  wn::|relocation%1:04:00::|
+  ont::change
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="trajectory">+</feat>
-  <feat name="locative">-</feat>
-  <feat name="container">-</feat>
-  <feat name="type">move</feat>
+  <feat name="type">object-change</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::scale" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="scale">domain</feat>
-   </sem-feats>
+  <role-restr-map roles="ont::affected-result" optional="optional">
+   <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::reason" optional="optional">
+  <role-restr-map roles="ont::source" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected1" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
    <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
-    <feat name="aspect">dynamic</feat>
-    <feat name="cause">agentive</feat>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="intentional">-</feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::change">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|change%1:07:00::|
+  wn::|variety%1:07:01::|
+  wn::|change%1:06:01::|
+  wn::|change%2:30:00::|
+  wn::|change%1:04:00::|
+  wn::|change%1:19:00::|
+  wn::|change%2:30:02::|
+  wn::|change%2:30:08::|
+  wn::|change%2:30:01::|
+  wn::|transition%2:30:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+  <feat name="type">change</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="type">object-change</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::affected-result" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::source" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected1" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+   <feat name="intentional">-</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;

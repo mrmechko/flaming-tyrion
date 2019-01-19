@@ -9,6 +9,13 @@
  <relation label="overlap">
   wn::|thick%3:00:02::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">texture-thickness-scale</feat>
+  <feat name="type">thick-texture-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -123,6 +130,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">appearance-scale</feat>
+ <feat name="type">sensory-property-val</feat>
+ </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
   &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
@@ -130,29 +144,45 @@
  <relation label="inherit">
   ont::property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">physical-property-scale</feat>
+  <feat name="type">physical-property-val</feat>
+ </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">intangibility-scale</feat>
+ <feat name="type">tangibility-val</feat>
+ </sem-feats>
  <concept name="ont::tangible-property-val">
  <relation label="inherit">
   ont::sensory-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">tactile-scale</feat>
+  <feat name="type">tangible-property-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::thickeness-in-texture-val">
+ <relation label="inherit">
+  ont::texture-val
  </relation>
  </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="measure-function">value</feat>
- <feat name="type">texture-val</feat>
+ <feat name="scale">texture-thickness-scale</feat>
+ <feat name="type">thick-texture-val</feat>
  </sem-feats>
- <concept name="ont::tangibility-val">
- <relation label="inherit">
-  ont::tangible-property-val
- </relation>
- <relation label="overlap">
-  wn::|palpable%3:00:00::|
-  wn::|tangible%3:00:04::|
-  wn::|tangible%3:00:00::|
- </relation>
- </concept>
  <concept name="ont::texture-val">
  <relation label="inherit">
   ont::tangibility-val
@@ -165,11 +195,30 @@
   <feat name="type">texture-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::thickeness-in-texture-val">
+ <concept name="ont::tangibility-val">
  <relation label="inherit">
-  ont::texture-val
+  ont::tangible-property-val
  </relation>
+ <relation label="overlap">
+  wn::|palpable%3:00:00::|
+  wn::|tangible%3:00:04::|
+  wn::|tangible%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">intangibility-scale</feat>
+  <feat name="type">tangibility-val</feat>
+ </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="measure-function">value</feat>
+ <feat name="type">texture-val</feat>
+ </sem-feats>
  <concept name="ont::sensory-property-val">
  <comment>
   &quot;properties that have to do with sensory input&quot;
@@ -177,7 +226,21 @@
  <relation label="inherit">
   ont::physical-property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">appearance-scale</feat>
+  <feat name="type">sensory-property-val</feat>
+ </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">tactile-scale</feat>
+ <feat name="type">tangible-property-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -230,6 +293,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">physical-property-scale</feat>
+ <feat name="type">physical-property-val</feat>
+ </sem-feats>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

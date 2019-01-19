@@ -123,6 +123,23 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::continuous-val">
+ <relation label="inherit">
+  ont::temporal-occurrence-val
+ </relation>
+ </concept>
+ <concept name="ont::temporal-occurrence-val">
+ <relation label="inherit">
+  ont::process-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">temporal-occurence-scale</feat>
+  <feat name="type">temporal-occurrence-val</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::process-val">
  <comment>
   &quot;properties that describe processes&quot;
@@ -131,16 +148,13 @@
   ont::property-val
  </relation>
  </concept>
- <concept name="ont::temporal-occurrence-val">
+ <sem-feats>
  <relation label="inherit">
-  ont::process-val
+  abstr-obj
  </relation>
- </concept>
- <concept name="ont::continuous-val">
- <relation label="inherit">
-  ont::temporal-occurrence-val
- </relation>
- </concept>
+ <feat name="scale">temporal-occurence-scale</feat>
+ <feat name="type">temporal-occurrence-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property

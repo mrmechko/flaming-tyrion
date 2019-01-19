@@ -10,6 +10,14 @@
   wn::|unfortunate%3:00:00::|
   wn::|doomed%5:00:00:unfortunate:00|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">luckinesss-scale</feat>
+  <feat name="type">unlucky</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -124,13 +132,48 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::luckiness-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">luckinesss-scale</feat>
+  <feat name="type">luckiness-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="orientation">neg</feat>
+ <feat name="scale">luckinesss-scale</feat>
+ <feat name="type">unlucky</feat>
+ </sem-feats>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
  <sem-frame>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <feat name="tangible">+</feat>
-  </sem-feats>
- </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
  </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">luckinesss-scale</feat>
+ <feat name="type">luckiness-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -183,26 +226,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evaluation-attribute-val">
- <comment>
-  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <feat name="tangible">+</feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::luckiness-val">
- <relation label="inherit">
-  ont::evaluation-attribute-val
- </relation>
- </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
