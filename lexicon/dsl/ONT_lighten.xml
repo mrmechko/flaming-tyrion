@@ -9,6 +9,14 @@
  <relation label="overlap">
   wn::|lighten%2:30:02::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">bounded</feat>
+  <feat name="type">lighten</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::scale" optional="optional">
    <sem-feats>
@@ -286,6 +294,14 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">bounded</feat>
+ <feat name="type">lighten</feat>
+ </sem-feats>
  <concept name="ont::change-in-visual-scale">
  <relation label="inherit">
   ont::change-in-appearance
@@ -517,4 +533,23 @@
  <feat name="type">referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="lighten" />
+ </morph>
+ <example text="The moon lightened the road.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::lighten
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
 </dsl>

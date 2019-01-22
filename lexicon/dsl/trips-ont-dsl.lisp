@@ -4121,6 +4121,12 @@
     ONT::CHANGE-IN-VISUAL-SCALE)
   (OVERLAP
     WN::|brighten%2:30:01::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN EXTENDED)
+    (ASPECT BOUNDED)
+    (TYPE BRIGHTEN))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -8394,6 +8400,12 @@
   (OVERLAP
     WN::|darken%2:30:01::|
     WN::|darken%2:30:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN EXTENDED)
+    (ASPECT BOUNDED)
+    (TYPE DARKEN))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -16118,6 +16130,12 @@
     WN::|intensify%2:30:00::|
     WN::|sharpen%2:30:01::|
     WN::|sharpen%2:30:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN EXTENDED)
+    (ASPECT BOUNDED)
+    (TYPE INTENSIFY))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -16140,7 +16158,12 @@
   (COMMENT
    "indicates relative extent or magnitude of something on an intensity scale")
   (INHERIT
-    ONT::DIMENSIONAL-PROPERTY-VAL))
+    ONT::DIMENSIONAL-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE INTENSITY-SCALE)
+    (TYPE INTENSITY-VAL)))
 
 (CONCEPT
   ONT::INTENTION
@@ -17260,6 +17283,12 @@
   (OVERLAP
     WN::|weaken%2:30:03::|
     WN::|slack%2:30:04::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN EXTENDED)
+    (ASPECT BOUNDED)
+    (TYPE LESSEN-INTENSITY))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -17398,6 +17427,12 @@
     ONT::CHANGE-IN-VISUAL-SCALE)
   (OVERLAP
     WN::|lighten%2:30:02::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN EXTENDED)
+    (ASPECT BOUNDED)
+    (TYPE LIGHTEN))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -18013,6 +18048,12 @@
   (OVERLAP
     WN::|louden%2:39:00::|
     WN::|louden%2:30:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN ATOMIC)
+    (ASPECT BOUNDED)
+    (TYPE LOUDEN))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -24921,6 +24962,12 @@
   (OVERLAP
     WN::|deafen%2:30:01::|
     WN::|quieten%2:39:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN ATOMIC)
+    (ASPECT BOUNDED)
+    (TYPE QUIETEN))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -29874,6 +29921,12 @@
   (OVERLAP
     WN::|strengthen%2:30:01::|
     WN::|strengthen%2:30:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN EXTENDED)
+    (ASPECT BOUNDED)
+    (TYPE STRENGTHEN))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -33363,6 +33416,12 @@
     WN::|weaken%2:30:00::|
     WN::|weaken%2:30:01::|
     WN::|waste%2:30:01::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN EXTENDED)
+    (ASPECT BOUNDED)
+    (TYPE WEAKEN))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
