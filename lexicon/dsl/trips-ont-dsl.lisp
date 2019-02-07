@@ -4624,8 +4624,11 @@
     WN::|percolate%2:38:00::|)
   (SEM-FRAME
     (ONT::AFFECTED-RESULT
-     (CONCEPT
-       PHYS-OBJ)
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
      OPTIONAL)
     (ONT::SOURCE
      (CONCEPT
@@ -10728,8 +10731,13 @@
        T)
      OPTIONAL)
     (ONT::AFFECTED-RESULT
-     (CONCEPT
-       PHYS-OBJ)
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (CONTAINER +))
      OPTIONAL)
     (ONT::AGENT
      (CONCEPT

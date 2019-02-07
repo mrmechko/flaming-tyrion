@@ -18,7 +18,10 @@
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::affected-result" optional="optional">
-   <concept name="phys-obj" />
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::source">
    <concept name="t" />
@@ -170,7 +173,10 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::affected-result" optional="optional">
-  <concept name="phys-obj" />
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::source">
   <concept name="t" />
@@ -386,7 +392,13 @@
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::affected-result" optional="optional">
-   <concept name="phys-obj" />
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="container">+</feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
    <concept name="t" />
