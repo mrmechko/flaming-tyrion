@@ -283,6 +283,40 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="appear" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="appearance" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="He participated in/at the meeting">
+ </example>
+ <relation label="inherit">
+  ont::participate-attend
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" xp="'(w::pp
+                                                              (w::or
+                                                                w::in
+                                                                w::at
+                                                                w::for))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="(w::or
+                                                         w::in
+                                                         w::at
+                                                         w::for)" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="attend" />
   <forms>
    -VB
@@ -322,16 +356,21 @@
    </ing>
   </forms>
  </morph>
- <example text="He participated in the meeting">
+ <example text="He participated in/at the meeting">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::participate-attend
  </relation>
  <syntax>
-  <template-call template="ont::agent-neutral-xp-templ" xp="'(w::pp w::in)" />
+  <template-call template="ont::agent-neutral-xp-templ" xp="'(w::pp
+                                                              (w::or
+                                                                w::in
+                                                                w::at))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::in" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="(w::or
+                                                         w::in
+                                                         w::at)" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
