@@ -13112,7 +13112,7 @@
   (INHERIT
     ONT::COOKING)
   (OVERLAP
-    WN::|flavor%2:35:00::|
+    WN::|flavor%2:39:00::|
     WN::|change_taste%2:39:00::|))
 
 (CONCEPT
