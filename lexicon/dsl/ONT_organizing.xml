@@ -105,14 +105,76 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::managing">
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent ont::cause">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-causation">
  <comment>
-  &quot;take responsibility over the production of a project, a program, or a production&quot;
+  &quot;events involving an AGENT acting on an AFFECTED&quot;
  </comment>
  <relation label="inherit">
-  ont::control-manage
+  ont::event-of-action
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="type">event-of-causation</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::control-manage">
  <comment>
   &quot;an agent controls another object, typically by some manipulation (physical, adding a substance,...)&quot;
@@ -151,65 +213,25 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::event-of-causation">
+ <concept name="ont::managing">
  <comment>
-  &quot;events involving an AGENT acting on an AFFECTED&quot;
+  &quot;take responsibility over the production of a project, a program, or a production&quot;
  </comment>
  <relation label="inherit">
-  ont::event-of-action
+  ont::control-manage
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="type">event-of-causation</feat>
- </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::agent" optional="optional">
    <sem-feats>
     <or>
-     <concept name="abstr-obj" />
      <concept name="phys-obj" />
-     <concept name="situation" />
-    </or>
-    <feat name="tangible">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <sem-feats>
-    <or>
      <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-     <concept name="situation" />
     </or>
-    <feat name="tangible">+</feat>
+    <feat name="intentional">+</feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent ont::cause">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;

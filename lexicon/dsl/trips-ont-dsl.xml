@@ -9329,6 +9329,15 @@
    <feat name="type">criticize</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::crop">
+  <relation label="inherit">
+   ont::commodity
+  </relation>
+  <relation label="overlap">
+   wn::|crop%1:20:00::|
+   wn::|crop%1:06:01::|
+  </relation>
+ </concept>
  <concept name="ont::crush">
   <relation label="inherit">
    ont::change-integrity
@@ -10144,7 +10153,10 @@
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::neutral" optional="optional">
-    <concept name="t" />
+    <or>
+     <concept name="phys-obj" />
+     <concept name="event-type" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -16204,7 +16216,6 @@
    ont::plant
   </relation>
   <relation label="overlap">
-   wn::|grain%1:20:00::|
    wn::|cereal%1:20:00::|
   </relation>
  </concept>
@@ -16220,6 +16231,14 @@
  <concept name="ont::graphic-symbol">
   <relation label="inherit">
    ont::symbolic-representation
+  </relation>
+ </concept>
+ <concept name="ont::grass">
+  <relation label="inherit">
+   ont::herbaceous-plant
+  </relation>
+  <relation label="overlap">
+   wn::|grass%1:20:00::|
   </relation>
  </concept>
  <concept name="ont::grateful">
@@ -16351,18 +16370,14 @@
   </sem-frame>
  </concept>
  <concept name="ont::group-object">
+  <comment>
+   &quot;a collection of objects considered as a unit&quot;
+  </comment>
   <relation label="inherit">
    ont::phys-object
   </relation>
   <relation label="overlap">
-   wn::|mathematical_group%1:09:00::|
-   wn::|group%1:09:00::|
-   wn::|chemical_group%1:27:00::|
-   wn::|radical%1:27:00::|
-   wn::|group%1:27:00::|
-   wn::|group%1:03:00::|
    wn::|grouping%1:03:00::|
-   wn::|union%1:14:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -16378,17 +16393,14 @@
   </sem-frame>
  </concept>
  <concept name="ont::group-object-abstr">
+  <comment>
+   &quot;a formal concept of a group of objects, e.g., mathematical&quot;
+  </comment>
   <relation label="inherit">
    ont::abstract-object-nontemporal
   </relation>
   <relation label="overlap">
    wn::|mathematical_group%1:09:00::|
-   wn::|group%1:09:00::|
-   wn::|chemical_group%1:27:00::|
-   wn::|radical%1:27:00::|
-   wn::|group%1:27:00::|
-   wn::|group%1:03:00::|
-   wn::|grouping%1:03:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
@@ -16792,7 +16804,17 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::formal" optional="optional">
-    <concept name="abstr-obj" />
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="type">
+     <or>
+      domain-property
+      position-reln
+     </or>
+     </feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::neutral">
     <concept name="t" />
@@ -17016,6 +17038,14 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::herbaceous-plant">
+  <relation label="inherit">
+   ont::plant
+  </relation>
+  <relation label="overlap">
+   wn::|herb%1:20:00::|
+  </relation>
  </concept>
  <concept name="ont::herbicide">
   <relation label="inherit">
@@ -21001,6 +21031,17 @@
   <relation label="inherit">
    ont::control-manage
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::agent" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="intentional">+</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::managing-resources">
   <comment>
@@ -22171,6 +22212,9 @@
  <concept name="ont::molecular-part">
   <relation label="inherit">
    ont::natural-object
+  </relation>
+  <relation label="overlap">
+   wn::|chemical_group%1:27:00::|
   </relation>
  </concept>
  <concept name="ont::molecular-site">
@@ -24923,7 +24967,6 @@
   </relation>
   <relation label="overlap">
    wn::|organization%1:14:00::|
-   wn::|organisation%1:14:00::|
   </relation>
  </concept>
  <concept name="ont::organization-abstr">
@@ -25369,10 +25412,7 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::neutral">
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-    </or>
+    <concept name="situation" />
    </role-restr-map>
    <role-restr-map roles="ont::agent">
     <sem-feats>
@@ -26286,11 +26326,7 @@
    ont::organism
   </relation>
   <relation label="overlap">
-   wn::|tracheophyte%1:20:00::|
-   wn::|vascular_plant%1:20:00::|
    wn::|plant%1:03:00::|
-   wn::|flora%1:03:00::|
-   wn::|plant_life%1:03:00::|
    wn::|cultivar%1:20:00::|
   </relation>
   <sem-feats>
@@ -32211,6 +32247,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::shrub">
+  <relation label="inherit">
+   ont::plant
+  </relation>
+  <relation label="overlap">
+   wn::|shrub%1:20:00::|
+  </relation>
+ </concept>
  <concept name="ont::side-location">
   <relation label="inherit">
    ont::object-dependent-location
@@ -36498,6 +36542,14 @@
    wn::|traveller%1:18:00::|
   </relation>
  </concept>
+ <concept name="ont::tree">
+  <relation label="inherit">
+   ont::plant
+  </relation>
+  <relation label="overlap">
+   wn::|tree%1:20:00::|
+  </relation>
+ </concept>
  <concept name="ont::tri-val">
   <relation label="inherit">
    ont::num-prefix-val
@@ -37673,6 +37725,14 @@
    <feat name="scale">vertical-scale</feat>
    <feat name="type">vertical-val</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::vine">
+  <relation label="inherit">
+   ont::plant
+  </relation>
+  <relation label="overlap">
+   wn::|vine%1:20:00::|
+  </relation>
  </concept>
  <concept name="ont::virus">
   <relation label="inherit">

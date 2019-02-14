@@ -8188,6 +8188,14 @@
     (TYPE CRITICIZE)))
 
 (CONCEPT
+  ONT::CROP
+  (INHERIT
+    ONT::COMMODITY)
+  (OVERLAP
+    WN::|crop%1:20:00::|
+    WN::|crop%1:06:01::|))
+
+(CONCEPT
   ONT::CRUSH
   (INHERIT
     ONT::CHANGE-INTEGRITY)
@@ -8900,8 +8908,11 @@
        T)
      OPTIONAL)
     (ONT::NEUTRAL
-     (CONCEPT
-       T)
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         EVENT-TYPE))
      OPTIONAL)))
 
 (CONCEPT
@@ -14216,7 +14227,6 @@
   (INHERIT
     ONT::PLANT)
   (OVERLAP
-    WN::|grain%1:20:00::|
     WN::|cereal%1:20:00::|))
 
 (CONCEPT
@@ -14231,6 +14241,13 @@
   ONT::GRAPHIC-SYMBOL
   (INHERIT
     ONT::SYMBOLIC-REPRESENTATION))
+
+(CONCEPT
+  ONT::GRASS
+  (INHERIT
+    ONT::HERBACEOUS-PLANT)
+  (OVERLAP
+    WN::|grass%1:20:00::|))
 
 (CONCEPT
   ONT::GRATEFUL
@@ -14344,17 +14361,11 @@
 
 (CONCEPT
   ONT::GROUP-OBJECT
+  (COMMENT "a collection of objects considered as a unit")
   (INHERIT
     ONT::PHYS-OBJECT)
   (OVERLAP
-    WN::|mathematical_group%1:09:00::|
-    WN::|group%1:09:00::|
-    WN::|chemical_group%1:27:00::|
-    WN::|radical%1:27:00::|
-    WN::|group%1:27:00::|
-    WN::|group%1:03:00::|
-    WN::|grouping%1:03:00::|
-    WN::|union%1:14:01::|)
+    WN::|grouping%1:03:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -14368,16 +14379,11 @@
 
 (CONCEPT
   ONT::GROUP-OBJECT-ABSTR
+  (COMMENT "a formal concept of a group of objects, e.g., mathematical")
   (INHERIT
     ONT::ABSTRACT-OBJECT-NONTEMPORAL)
   (OVERLAP
-    WN::|mathematical_group%1:09:00::|
-    WN::|group%1:09:00::|
-    WN::|chemical_group%1:27:00::|
-    WN::|radical%1:27:00::|
-    WN::|group%1:27:00::|
-    WN::|group%1:03:00::|
-    WN::|grouping%1:03:00::|)
+    WN::|mathematical_group%1:09:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -14733,8 +14739,13 @@
     (TYPE HAVE-PROPERTY))
   (SEM-FRAME
     (ONT::FORMAL
-     (CONCEPT
-       ABSTR-OBJ)
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          DOMAIN-PROPERTY
+          POSITION-RELN)))
      OPTIONAL)
     (ONT::NEUTRAL
      (CONCEPT
@@ -14927,6 +14938,13 @@
        (CONCEPT
          ABSTR-OBJ))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::HERBACEOUS-PLANT
+  (INHERIT
+    ONT::PLANT)
+  (OVERLAP
+    WN::|herb%1:20:00::|))
 
 (CONCEPT
   ONT::HERBICIDE
@@ -18346,7 +18364,17 @@
   (COMMENT
    "take responsibility over the production of a project, a program, or a production")
   (INHERIT
-    ONT::CONTROL-MANAGE))
+    ONT::CONTROL-MANAGE)
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (INTENTIONAL +))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::MANAGING-RESOURCES
@@ -19370,7 +19398,9 @@
 (CONCEPT
   ONT::MOLECULAR-PART
   (INHERIT
-    ONT::NATURAL-OBJECT))
+    ONT::NATURAL-OBJECT)
+  (OVERLAP
+    WN::|chemical_group%1:27:00::|))
 
 (CONCEPT
   ONT::MOLECULAR-SITE
@@ -21774,8 +21804,7 @@
   (INHERIT
     ONT::SOCIAL-GROUP)
   (OVERLAP
-    WN::|organization%1:14:00::|
-    WN::|organisation%1:14:00::|))
+    WN::|organization%1:14:00::|))
 
 (CONCEPT
   ONT::ORGANIZATION-ABSTR
@@ -22170,11 +22199,8 @@
     WN::|participate%2:41:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (CONCEPT
+       SITUATION))
     (ONT::AGENT
      (SEM-FEATS
        (INHERIT
@@ -22974,11 +23000,7 @@
   (INHERIT
     ONT::ORGANISM)
   (OVERLAP
-    WN::|tracheophyte%1:20:00::|
-    WN::|vascular_plant%1:20:00::|
     WN::|plant%1:03:00::|
-    WN::|flora%1:03:00::|
-    WN::|plant_life%1:03:00::|
     WN::|cultivar%1:20:00::|)
   (SEM-FEATS
     (INHERIT
@@ -28213,6 +28235,13 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::SHRUB
+  (INHERIT
+    ONT::PLANT)
+  (OVERLAP
+    WN::|shrub%1:20:00::|))
+
+(CONCEPT
   ONT::SIDE-LOCATION
   (INHERIT
     ONT::OBJECT-DEPENDENT-LOCATION)
@@ -31989,6 +32018,13 @@
     WN::|traveller%1:18:00::|))
 
 (CONCEPT
+  ONT::TREE
+  (INHERIT
+    ONT::PLANT)
+  (OVERLAP
+    WN::|tree%1:20:00::|))
+
+(CONCEPT
   ONT::TRI-VAL
   (INHERIT
     ONT::NUM-PREFIX-VAL))
@@ -33014,6 +33050,13 @@
       ABSTR-OBJ)
     (SCALE VERTICAL-SCALE)
     (TYPE VERTICAL-VAL)))
+
+(CONCEPT
+  ONT::VINE
+  (INHERIT
+    ONT::PLANT)
+  (OVERLAP
+    WN::|vine%1:20:00::|))
 
 (CONCEPT
   ONT::VIRUS
