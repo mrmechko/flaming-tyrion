@@ -1683,12 +1683,7 @@
     WN::|plaster%2:35:00::|
     WN::|smear%2:35:03::|
     WN::|smudge%2:35:00::|
-    WN::|spatter%2:35:00::|
-    WN::|splash%2:35:00::|
-    WN::|splash%2:35:04::|
-    WN::|splatter%2:35:01::|
     WN::|spread%2:35:13::|
-    WN::|swab%2:35:01::|
     WN::|scent%2:39:02::|)
   (SEM-FEATS
     (INHERIT
@@ -11605,14 +11600,14 @@
 (CONCEPT
   ONT::EVOKE-ATTENTION
   (INHERIT
-    ONT::EVOKE-RELATION)
+    ONT::EVOKE-COGNITIVE-STATE)
   (OVERLAP
     WN::|interest%2:37:00::|))
 
 (CONCEPT
   ONT::EVOKE-ATTRACTION
   (INHERIT
-    ONT::EVOKE-RELATION)
+    ONT::EVOKE-COGNITIVE-STATE)
   (OVERLAP
     WN::|capture%2:37:00::|
     WN::|enamour%2:37:00::|
@@ -11836,18 +11831,6 @@
   ONT::EVOKE-PHYSICAL
   (INHERIT
     ONT::AFFECT-EXPERIENCER))
-
-(CONCEPT
-  ONT::EVOKE-RELATION
-  (INHERIT
-    ONT::AFFECT-EXPERIENCER)
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +)
-       (ORIGIN LIVING)))))
 
 (CONCEPT
   ONT::EVOKE-SADNESS
@@ -22344,10 +22327,10 @@
 
 (CONCEPT
   ONT::PAY-ATTENTION
+  (COMMENT "focus attention on something")
   (INHERIT
     ONT::COGITATION)
   (OVERLAP
-    WN::|watch%2:39:01::|
     WN::|attend%2:39:00::|))
 
 (CONCEPT
@@ -24737,7 +24720,9 @@
     WN::|squirt%2:35:00::|
     WN::|squirt%2:35:10::|
     WN::|sprinkle%2:35:01::|
-    WN::|spray%2:35:03::|))
+    WN::|spray%2:35:03::|
+    WN::|splash%2:35:04::|
+    WN::|splash%2:35:00::|))
 
 (CONCEPT
   ONT::PUSH-OUT-OF
@@ -25209,11 +25194,6 @@
   ONT::REASON-INFORMAL
   (INHERIT
     ONT::REASON))
-
-(CONCEPT
-  ONT::REBOOT
-  (INHERIT
-    ONT::BOOT-UP))
 
 (CONCEPT
   ONT::RECENT
@@ -26443,20 +26423,6 @@
     (TYPE RESPONSIBLE-VAL)))
 
 (CONCEPT
-  ONT::RESTART
-  (INHERIT
-    ONT::START)
-  (OVERLAP
-    WN::|restart%2:30:00::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (TIME-SPAN ATOMIC)
-    (TRAJECTORY -)
-    (CAUSE AGENTIVE)
-    (TYPE RESTART)))
-
-(CONCEPT
   ONT::RESTAURANT
   (INHERIT
     ONT::EATING-ESTABLISHMENT)
@@ -26552,6 +26518,20 @@
    "adjectives that describe the resulting states of the verb that it pertains to")
   (INHERIT
     ONT::PROPERTY-VAL))
+
+(CONCEPT
+  ONT::RESUME
+  (INHERIT
+    ONT::START)
+  (OVERLAP
+    WN::|restart%2:30:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN ATOMIC)
+    (TRAJECTORY -)
+    (CAUSE AGENTIVE)
+    (TYPE RESUME)))
 
 (CONCEPT
   ONT::RETAIN
@@ -26973,7 +26953,8 @@
     WN::|rub%2:35:00::|
     WN::|rub%2:39:00::|
     WN::|stroke%2:35:00::|
-    WN::|smooth%2:40:00::|))
+    WN::|smooth%2:40:00::|
+    WN::|swab%2:35:01::|))
 
 (CONCEPT
   ONT::RURAL-VAL
@@ -29520,7 +29501,14 @@
     ONT::CAUSE-EFFECT)
   (OVERLAP
     WN::|begin%2:30:01::|
-    WN::|start%2:41:00::|)
+    WN::|start%2:41:00::|
+    WN::|get_down%2:30:00::|
+    WN::|start%2:38:00::|
+    WN::|start%1:11:00::|
+    WN::|start%1:28:00::|
+    WN::|take%2:41:13::|
+    WN::|take_to%2:41:01::|
+    WN::|begin%2:32:04::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (OR
@@ -29541,11 +29529,15 @@
 (CONCEPT
   ONT::START-OBJECT
   (INHERIT
-    ONT::CHANGE-DEVICE-STATE)
+    ONT::START)
   (OVERLAP
     WN::|start%2:38:01::|
     WN::|start_up%2:38:00::|
-    WN::|activate%2:30:00::|)
+    WN::|activate%2:30:00::|
+    WN::|trip%2:36:00::|
+    WN::|trigger%2:33:00::|
+    WN::|go_off%2:30:00::|
+    WN::|go_off%2:33:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -29564,19 +29556,6 @@
   ONT::START-TIME
   (INHERIT
     ONT::EVENT-TIME-REL))
-
-(CONCEPT
-  ONT::STARTOFF-BEGIN-COMMENCE-START
-  (INHERIT
-    ONT::START)
-  (OVERLAP
-    WN::|get_down%2:30:00::|
-    WN::|start%2:38:00::|
-    WN::|start%1:11:00::|
-    WN::|start%1:28:00::|
-    WN::|take%2:41:13::|
-    WN::|take_to%2:41:01::|
-    WN::|begin%2:32:04::|))
 
 (CONCEPT
   ONT::STARTPOINT
@@ -32030,17 +32009,6 @@
     ONT::NUM-PREFIX-VAL))
 
 (CONCEPT
-  ONT::TRIGGER-TRIPPABLE-DEVICE
-  (COMMENT "trigger trippable device like bomb, trap, alarm etc")
-  (INHERIT
-    ONT::START-OBJECT)
-  (OVERLAP
-    WN::|trip%2:36:00::|
-    WN::|trigger%2:33:00::|
-    WN::|go_off%2:30:00::|
-    WN::|go_off%2:33:00::|))
-
-(CONCEPT
   ONT::TRIP
   (INHERIT
     ONT::TRAVEL)
@@ -33286,30 +33254,13 @@
 
 (CONCEPT
   ONT::WAIT-WATCH
-  (COMMENT "action of being attentive so as to notice something")
+  (COMMENT "action of being attentive so as to notice something; stay vigilant")
   (INHERIT
-    ONT::INTENTIONALLY-ACT)
+    ONT::PAY-ATTENTION)
   (OVERLAP
-    WN::|wait%2:42:00::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (CAUSE AGENTIVE)
-    (TYPE WAIT-WATCH))
-  (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)))
+    WN::|wait%2:42:00::|
+    WN::|expect%2:31:01::|
+    WN::|watch%2:39:01::|))
 
 (CONCEPT
   ONT::WALKING

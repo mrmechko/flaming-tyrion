@@ -1917,12 +1917,7 @@
    wn::|plaster%2:35:00::|
    wn::|smear%2:35:03::|
    wn::|smudge%2:35:00::|
-   wn::|spatter%2:35:00::|
-   wn::|splash%2:35:00::|
-   wn::|splash%2:35:04::|
-   wn::|splatter%2:35:01::|
    wn::|spread%2:35:13::|
-   wn::|swab%2:35:01::|
    wn::|scent%2:39:02::|
   </relation>
   <sem-feats>
@@ -13201,7 +13196,7 @@
  </concept>
  <concept name="ont::evoke-attention">
   <relation label="inherit">
-   ont::evoke-relation
+   ont::evoke-cognitive-state
   </relation>
   <relation label="overlap">
    wn::|interest%2:37:00::|
@@ -13209,7 +13204,7 @@
  </concept>
  <concept name="ont::evoke-attraction">
   <relation label="inherit">
-   ont::evoke-relation
+   ont::evoke-cognitive-state
   </relation>
   <relation label="overlap">
    wn::|capture%2:37:00::|
@@ -13459,22 +13454,6 @@
   <relation label="inherit">
    ont::affect-experiencer
   </relation>
- </concept>
- <concept name="ont::evoke-relation">
-  <relation label="inherit">
-   ont::affect-experiencer
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::affected">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="intentional">+</feat>
-     <feat name="origin">living</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::evoke-sadness">
   <relation label="inherit">
@@ -25576,11 +25555,13 @@
   </sem-frame>
  </concept>
  <concept name="ont::pay-attention">
+  <comment>
+   &quot;focus attention on something&quot;
+  </comment>
   <relation label="inherit">
    ont::cogitation
   </relation>
   <relation label="overlap">
-   wn::|watch%2:39:01::|
    wn::|attend%2:39:00::|
   </relation>
  </concept>
@@ -28304,6 +28285,8 @@
    wn::|squirt%2:35:10::|
    wn::|sprinkle%2:35:01::|
    wn::|spray%2:35:03::|
+   wn::|splash%2:35:04::|
+   wn::|splash%2:35:00::|
   </relation>
  </concept>
  <concept name="ont::push-out-of">
@@ -28839,11 +28822,6 @@
  <concept name="ont::reason-informal">
   <relation label="inherit">
    ont::reason
-  </relation>
- </concept>
- <concept name="ont::reboot">
-  <relation label="inherit">
-   ont::boot-up
   </relation>
  </concept>
  <concept name="ont::recent">
@@ -30223,23 +30201,6 @@
    <feat name="type">responsible-val</feat>
   </sem-feats>
  </concept>
- <concept name="ont::restart">
-  <relation label="inherit">
-   ont::start
-  </relation>
-  <relation label="overlap">
-   wn::|restart%2:30:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="time-span">atomic</feat>
-   <feat name="trajectory">-</feat>
-   <feat name="cause">agentive</feat>
-   <feat name="type">restart</feat>
-  </sem-feats>
- </concept>
  <concept name="ont::restaurant">
   <relation label="inherit">
    ont::eating-establishment
@@ -30349,6 +30310,23 @@
   <relation label="inherit">
    ont::property-val
   </relation>
+ </concept>
+ <concept name="ont::resume">
+  <relation label="inherit">
+   ont::start
+  </relation>
+  <relation label="overlap">
+   wn::|restart%2:30:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="time-span">atomic</feat>
+   <feat name="trajectory">-</feat>
+   <feat name="cause">agentive</feat>
+   <feat name="type">resume</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::retain">
   <relation label="inherit">
@@ -30834,6 +30812,7 @@
    wn::|rub%2:39:00::|
    wn::|stroke%2:35:00::|
    wn::|smooth%2:40:00::|
+   wn::|swab%2:35:01::|
   </relation>
  </concept>
  <concept name="ont::rural-val">
@@ -33701,6 +33680,13 @@
   <relation label="overlap">
    wn::|begin%2:30:01::|
    wn::|start%2:41:00::|
+   wn::|get_down%2:30:00::|
+   wn::|start%2:38:00::|
+   wn::|start%1:11:00::|
+   wn::|start%1:28:00::|
+   wn::|take%2:41:13::|
+   wn::|take_to%2:41:01::|
+   wn::|begin%2:32:04::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::neutral" optional="optional">
@@ -33722,12 +33708,16 @@
  </concept>
  <concept name="ont::start-object">
   <relation label="inherit">
-   ont::change-device-state
+   ont::start
   </relation>
   <relation label="overlap">
    wn::|start%2:38:01::|
    wn::|start_up%2:38:00::|
    wn::|activate%2:30:00::|
+   wn::|trip%2:36:00::|
+   wn::|trigger%2:33:00::|
+   wn::|go_off%2:30:00::|
+   wn::|go_off%2:33:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -33748,20 +33738,6 @@
  <concept name="ont::start-time">
   <relation label="inherit">
    ont::event-time-rel
-  </relation>
- </concept>
- <concept name="ont::startoff-begin-commence-start">
-  <relation label="inherit">
-   ont::start
-  </relation>
-  <relation label="overlap">
-   wn::|get_down%2:30:00::|
-   wn::|start%2:38:00::|
-   wn::|start%1:11:00::|
-   wn::|start%1:28:00::|
-   wn::|take%2:41:13::|
-   wn::|take_to%2:41:01::|
-   wn::|begin%2:32:04::|
   </relation>
  </concept>
  <concept name="ont::startpoint">
@@ -36555,20 +36531,6 @@
    ont::num-prefix-val
   </relation>
  </concept>
- <concept name="ont::trigger-trippable-device">
-  <comment>
-   &quot;trigger trippable device like bomb, trap, alarm etc&quot;
-  </comment>
-  <relation label="inherit">
-   ont::start-object
-  </relation>
-  <relation label="overlap">
-   wn::|trip%2:36:00::|
-   wn::|trigger%2:33:00::|
-   wn::|go_off%2:30:00::|
-   wn::|go_off%2:33:00::|
-  </relation>
- </concept>
  <concept name="ont::trip">
   <relation label="inherit">
    ont::travel
@@ -37999,33 +37961,16 @@
  </concept>
  <concept name="ont::wait-watch">
   <comment>
-   &quot;action of being attentive so as to notice something&quot;
+   &quot;action of being attentive so as to notice something; stay vigilant&quot;
   </comment>
   <relation label="inherit">
-   ont::intentionally-act
+   ont::pay-attention
   </relation>
   <relation label="overlap">
    wn::|wait%2:42:00::|
+   wn::|expect%2:31:01::|
+   wn::|watch%2:39:01::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="cause">agentive</feat>
-   <feat name="type">wait-watch</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::formal" optional="optional">
-    <concept name="situation" />
-   </role-restr-map>
-   <role-restr-map roles="ont::neutral" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::walking">
   <relation label="inherit">

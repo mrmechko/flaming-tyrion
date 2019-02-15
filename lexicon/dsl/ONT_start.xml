@@ -9,6 +9,13 @@
  <relation label="overlap">
   wn::|begin%2:30:01::|
   wn::|start%2:41:00::|
+  wn::|get_down%2:30:00::|
+  wn::|start%2:38:00::|
+  wn::|start%1:11:00::|
+  wn::|start%1:28:00::|
+  wn::|take%2:41:13::|
+  wn::|take_to%2:41:01::|
+  wn::|begin%2:32:04::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::neutral" optional="optional">
@@ -333,21 +340,36 @@
  <feat name="type">referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
- <concept name="ont::startoff-begin-commence-start">
+ <concept name="ont::start-object">
  <relation label="inherit">
   ont::start
  </relation>
  <relation label="overlap">
-  wn::|get_down%2:30:00::|
-  wn::|start%2:38:00::|
-  wn::|start%1:11:00::|
-  wn::|start%1:28:00::|
-  wn::|take%2:41:13::|
-  wn::|take_to%2:41:01::|
-  wn::|begin%2:32:04::|
+  wn::|start%2:38:01::|
+  wn::|start_up%2:38:00::|
+  wn::|activate%2:30:00::|
+  wn::|trip%2:36:00::|
+  wn::|trigger%2:33:00::|
+  wn::|go_off%2:30:00::|
+  wn::|go_off%2:33:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+  <feat name="type">start-object</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <concept name="ont::restart">
+ <concept name="ont::resume">
  <relation label="inherit">
   ont::start
  </relation>
@@ -361,7 +383,7 @@
   <feat name="time-span">atomic</feat>
   <feat name="trajectory">-</feat>
   <feat name="cause">agentive</feat>
-  <feat name="type">restart</feat>
+  <feat name="type">resume</feat>
  </sem-feats>
  </concept>
  <sense>
@@ -378,7 +400,7 @@
    </agentnom>
   </forms>
  </morph>
- <example text="activate all alerting">
+ <example text="activate the alert systems">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
@@ -412,7 +434,7 @@
    </agentnom>
   </forms>
  </morph>
- <example text="The army activates">
+ <example text="The army activated.">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
@@ -423,6 +445,85 @@
   <sem-feats>
    <feat name="time-span">atomic</feat>
    <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="begin" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="began" />
+   </past>
+   <pastpart>
+    <word first-word="begun" />
+   </pastpart>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="He started to eat">
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <relation label="overlap">
+  vn::begin-55.1-1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="begin" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="began" />
+   </past>
+   <pastpart>
+    <word first-word="begun" />
+   </pastpart>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the managers began working">
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <relation label="overlap">
+  vn::begin-55.1-1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-subjcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
  </sense>
@@ -462,6 +563,302 @@
    <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="begin" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="began" />
+   </past>
+   <pastpart>
+    <word first-word="begun" />
+   </pastpart>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="when can you begin">
+ </example>
+ <relation label="inherit">
+  ont::start
+  ont::agent-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="commence" />
+ </morph>
+ <example text="he commenced to eat">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <relation label="overlap">
+  vn::begin-55.1-1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="commence" />
+ </morph>
+ <example text="the managers commenced working">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <relation label="overlap">
+  vn::begin-55.1-1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-subjcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="commence" />
+ </morph>
+ <example text="the computers commenced to work">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <relation label="overlap">
+  vn::begin-55.1-1
+ </relation>
+ <syntax>
+  <template-call template="ont::affected-theme-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="commence" />
+ </morph>
+ <example text="commence the festivities">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="commence" />
+ </morph>
+ <example text="the party commenced">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::start
+  ont::affected-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="commence" />
+ </morph>
+ <comment>
+  &quot;FRUITCARTS-11-3&quot;
+ </comment>
+ <example text="commence with the triangle">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-xp-templ" xp="'(w::pp w::with)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::with" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="go" />
+  <forms>
+   -VB
+   <third-singular>
+    <word first-word="goes" />
+   </third-singular>
+   <past>
+    <word first-word="went" />
+   </past>
+   <pastpart>
+    <word first-word="gone" />
+   </pastpart>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="go to/and fix the power lines">
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="go" />
+  <forms>
+   -VB
+   <third-singular>
+    <word first-word="goes" />
+   </third-singular>
+   <past>
+    <word first-word="went" />
+   </past>
+   <pastpart>
+    <word first-word="gone" />
+   </pastpart>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="Go find it">
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-subjcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="go" remaining-words="off" />
+  <forms>
+   -VB
+   <third-singular>
+    <word first-word="goes" />
+   </third-singular>
+   <past>
+    <word first-word="went" />
+   </past>
+   <pastpart>
+    <word first-word="gone" />
+   </pastpart>
+  </forms>
+ </morph>
+ <comment>
+  &quot;PILOT2&quot;
+ </comment>
+ <example text="the alarm went off">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::start
+  ont::affected-templ
+ </relation>
  </sense>
  <sense>
  <morph>
@@ -616,6 +1013,201 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="start" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="start" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he started to eat">
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <relation label="overlap">
+  vn::begin-55.1-1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="start" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="start" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the managers started working">
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <relation label="overlap">
+  vn::begin-55.1-1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-subjcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="start" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="start" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="start the visitors working">
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-affected-objcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="start" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="start" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="start the action">
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="start" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="start" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="when can you start">
+ </example>
+ <relation label="inherit">
+  ont::start
+  ont::agent-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="start" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="start" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he started the truck">
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="start" remaining-words="" particle="off" />
  </morph>
  <comment>
@@ -644,39 +1236,16 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="trigger" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="trigger" />
-   </nom>
-  </forms>
+  <word first-word="start" remaining-words="" particle="off" />
  </morph>
+ <example text="he started off the discussion">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::start
  </relation>
- <syntax>
-  <template-call template="ont::agent-effect-affected-objcontrol-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="trigger" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="trigger" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::start
+ <relation label="overlap">
+  vn::begin-55.1-1
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-xp-templ" />
@@ -689,9 +1258,41 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="unblock" />
+  <word first-word="start" remaining-words="" particle="off" />
  </morph>
- <example text="he unblocked the signal">
+ <example text="the managers started off working">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::start
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-effect-subjcontrol-templ" xp="'w::vp" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="vp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+   <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="trigger" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="trigger" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="The rain triggered the migration of mice toward the building.">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
@@ -704,12 +1305,5 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">phenomenal</feat>
-  </sem-feats>
- </semantics>
  </sense>
 </dsl>

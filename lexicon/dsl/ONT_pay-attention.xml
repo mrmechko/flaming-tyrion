@@ -3,11 +3,13 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::pay-attention">
+ <comment>
+  &quot;focus attention on something&quot;
+ </comment>
  <relation label="inherit">
   ont::cogitation
  </relation>
  <relation label="overlap">
-  wn::|watch%2:39:01::|
   wn::|attend%2:39:00::|
  </relation>
  </concept>
@@ -303,6 +305,19 @@
  <feat name="type">referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::wait-watch">
+ <comment>
+  &quot;action of being attentive so as to notice something; stay vigilant&quot;
+ </comment>
+ <relation label="inherit">
+  ont::pay-attention
+ </relation>
+ <relation label="overlap">
+  wn::|wait%2:42:00::|
+  wn::|expect%2:31:01::|
+  wn::|watch%2:39:01::|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="v" />
@@ -327,6 +342,59 @@
   <template-call template="ont::agent-neutral-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="watch" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he is watching his weight">
+ </example>
+ <relation label="inherit">
+  ont::pay-attention
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="watch" remaining-words="out" />
+ </morph>
+ <example text="Watch out!">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::pay-attention
+  ont::agent-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="watch" remaining-words="out" />
+ </morph>
+ <example text="Watch out for the boat!">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::pay-attention
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::for" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

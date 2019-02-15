@@ -533,4 +533,36 @@
  <feat name="type">referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="brighten" />
+ </morph>
+ <example text="This paint will brighten the room.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::brighten
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="brighten" />
+ </morph>
+ <example text="The room brightened.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::brighten
+  ont::affected-unaccusative-templ
+ </relation>
+ </sense>
 </dsl>
