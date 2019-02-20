@@ -7310,7 +7310,6 @@
        (INHERIT
          PHYS-OBJ)
        (OBJECT-FUNCTION COMESTIBLE)
-       (FORM SUBSTANCE)
        (MOBILITY MOVABLE)))
     (ONT::AGENT
      (SEM-FEATS
@@ -8798,28 +8797,6 @@
     ONT::HINDERING)
   (OVERLAP
     WN::|hold_off%2:42:00::|))
-
-(CONCEPT
-  ONT::DELIMIT-RELN
-  (COMMENT
-   "the FIGURE has a value in a rnage that is delimited by the GROUND, e.g., within five dollars of the estimate, within five miles of starbucks")
-  (INHERIT
-    ONT::POS-WRT-CONTAINMENT-RELN)
-  (SEM-FRAME
-    (ONT::GROUND
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)
-    (ONT::FIGURE
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)))
 
 (CONCEPT
   ONT::DELIVER
@@ -10440,7 +10417,10 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM SOLID)))))
+       (FORM
+        (OR
+          SOLID
+          SOLID-OBJECT))))))
 
 (CONCEPT
   ONT::EATER
@@ -18347,17 +18327,7 @@
   (COMMENT
    "take responsibility over the production of a project, a program, or a production")
   (INHERIT
-    ONT::CONTROL-MANAGE)
-  (SEM-FRAME
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
-       (INTENTIONAL +))
-     OPTIONAL)))
+    ONT::CONTROL-MANAGE))
 
 (CONCEPT
   ONT::MANAGING-RESOURCES
@@ -23285,7 +23255,7 @@
 (CONCEPT
   ONT::POS-WRT-CONTAINMENT-RELN
   (COMMENT
-   "locating an object (typically rthe FIGURE) within an extended object (typically the GROUND)")
+   "locating an object (typically the FIGURE) within an extended object (typically the GROUND)")
   (INHERIT
     ONT::POSITION-RELN))
 

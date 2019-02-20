@@ -8316,7 +8316,6 @@
       phys-obj
      </relation>
      <feat name="object-function">comestible</feat>
-     <feat name="form">substance</feat>
      <feat name="mobility">movable</feat>
     </sem-feats>
    </role-restr-map>
@@ -10036,28 +10035,6 @@
   <relation label="overlap">
    wn::|hold_off%2:42:00::|
   </relation>
- </concept>
- <concept name="ont::delimit-reln">
-  <comment>
-   &quot;the FIGURE has a value in a rnage that is delimited by the GROUND, e.g., within five dollars of the estimate, within five miles of starbucks&quot;
-  </comment>
-  <relation label="inherit">
-   ont::pos-wrt-containment-reln
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-   </role-restr-map>
-   <role-restr-map roles="ont::figure" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::deliver">
   <relation label="inherit">
@@ -11900,7 +11877,12 @@
      <relation label="inherit">
       phys-obj
      </relation>
-     <feat name="form">solid</feat>
+     <feat name="form">
+     <or>
+      solid
+      solid-object
+     </or>
+     </feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -21010,17 +20992,6 @@
   <relation label="inherit">
    ont::control-manage
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::agent" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::managing-resources">
   <comment>
@@ -26661,7 +26632,7 @@
  </concept>
  <concept name="ont::pos-wrt-containment-reln">
   <comment>
-   &quot;locating an object (typically rthe FIGURE) within an extended object (typically the GROUND)&quot;
+   &quot;locating an object (typically the FIGURE) within an extended object (typically the GROUND)&quot;
   </comment>
   <relation label="inherit">
    ont::position-reln
