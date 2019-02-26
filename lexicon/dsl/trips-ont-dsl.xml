@@ -4337,7 +4337,6 @@
   </relation>
   <relation label="overlap">
    wn::|body_part%1:08:00::|
-   wn::|organ%1:08:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -5712,7 +5711,6 @@
   </relation>
   <relation label="overlap">
    wn::|change%1:07:00::|
-   wn::|variety%1:07:01::|
    wn::|change%1:06:01::|
    wn::|change%2:30:00::|
    wn::|change%1:04:00::|
@@ -9783,6 +9781,7 @@
    wn::|lessen%2:30:00::|
    wn::|fall%2:30:06::|
    wn::|mitigate%2:32:00::|
+   wn::|decrease%1:11:00::|
   </relation>
  </concept>
  <concept name="ont::decrease-completely">
@@ -12614,6 +12613,7 @@
   </relation>
   <relation label="overlap">
    wn::|equipment%1:06:00::|
+   wn::|instrumentality%1:06:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -14112,6 +14112,10 @@
   <relation label="inherit">
    ont::man-made-structure
   </relation>
+  <relation label="overlap">
+   wn::|facility%1:04:01::|
+   wn::|facility%1:06:00::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -14829,6 +14833,9 @@
   <relation label="inherit">
    ont::manufactured-object
   </relation>
+  <relation label="overlap">
+   wn::|flag%1:06:00::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -15014,6 +15021,7 @@
   </relation>
   <relation label="overlap">
    wn::|fluctuate%2:30:00::|
+   wn::|fluctuation%1:110:01::|
   </relation>
  </concept>
  <concept name="ont::fluidic-motion">
@@ -17873,6 +17881,7 @@
   </relation>
   <relation label="overlap">
    wn::|increase%2:30:00::|
+   wn::|increase%1:11:00::|
   </relation>
  </concept>
  <concept name="ont::increase-number">
@@ -21155,8 +21164,6 @@
    ont::phys-object
   </relation>
   <relation label="overlap">
-   wn::|instrumentation%1:06:00::|
-   wn::|instrumentality%1:06:00::|
    wn::|artifact%1:03:00::|
    wn::|artefact%1:03:00::|
   </relation>
@@ -33554,6 +33561,15 @@
    wn::|divided%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::spoil">
+  <relation label="inherit">
+   ont::damage
+  </relation>
+  <relation label="overlap">
+   wn::|adulteration%1:04:00::|
+   wn::|spoil%2:30:01::|
+  </relation>
+ </concept>
  <concept name="ont::spoon">
   <relation label="inherit">
    ont::cutlery
@@ -35145,12 +35161,18 @@
  </concept>
  <concept name="ont::tank">
   <relation label="inherit">
-   ont::vehicle-container
+   ont::vessel
+  </relation>
+  <relation label="overlap">
+   wn::|tank%1:06:00::|
   </relation>
  </concept>
  <concept name="ont::tanker">
   <relation label="inherit">
    ont::vehicle-container
+  </relation>
+  <relation label="overlap">
+   wn::|tank%1:06:02::|
   </relation>
  </concept>
  <concept name="ont::task-complexity-scale">
@@ -37558,15 +37580,12 @@
  </concept>
  <concept name="ont::vehicle-container">
   <relation label="inherit">
-   ont::manufactured-object
+   ont::vessel
   </relation>
   <sem-feats>
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="form">enclosure</feat>
-   <feat name="object-function">container-object</feat>
-   <feat name="container">+</feat>
    <feat name="mobility">non-self-moving</feat>
    <feat name="type">vehicle-container</feat>
   </sem-feats>
@@ -37657,6 +37676,26 @@
    </relation>
    <feat name="scale">vertical-scale</feat>
    <feat name="type">vertical-val</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::vessel">
+  <comment>
+   &quot;an object designed to hold something&quot;
+  </comment>
+  <relation label="inherit">
+   ont::manufactured-object
+  </relation>
+  <relation label="overlap">
+   wn::|vessel%1:06:01::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="form">enclosure</feat>
+   <feat name="object-function">container-object</feat>
+   <feat name="container">+</feat>
+   <feat name="type">vessel</feat>
   </sem-feats>
  </concept>
  <concept name="ont::vine">

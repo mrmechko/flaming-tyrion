@@ -3796,8 +3796,7 @@
   (INHERIT
     ONT::ANATOMY)
   (OVERLAP
-    WN::|body_part%1:08:00::|
-    WN::|organ%1:08:00::|)
+    WN::|body_part%1:08:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -5001,7 +5000,6 @@
     ONT::EVENT-OF-CAUSATION)
   (OVERLAP
     WN::|change%1:07:00::|
-    WN::|variety%1:07:01::|
     WN::|change%1:06:01::|
     WN::|change%2:30:00::|
     WN::|change%1:04:00::|
@@ -8580,7 +8578,8 @@
     WN::|diminish%2:30:00::|
     WN::|lessen%2:30:00::|
     WN::|fall%2:30:06::|
-    WN::|mitigate%2:32:00::|))
+    WN::|mitigate%2:32:00::|
+    WN::|decrease%1:11:00::|))
 
 (CONCEPT
   ONT::DECREASE-COMPLETELY
@@ -11065,7 +11064,8 @@
   (INHERIT
     ONT::MANUFACTURED-OBJECT)
   (OVERLAP
-    WN::|equipment%1:06:00::|)
+    WN::|equipment%1:06:00::|
+    WN::|instrumentality%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -12403,6 +12403,9 @@
   ONT::FACILITY
   (INHERIT
     ONT::MAN-MADE-STRUCTURE)
+  (OVERLAP
+    WN::|facility%1:04:01::|
+    WN::|facility%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -13042,6 +13045,8 @@
   ONT::FLAG
   (INHERIT
     ONT::MANUFACTURED-OBJECT)
+  (OVERLAP
+    WN::|flag%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -13195,7 +13200,8 @@
   (INHERIT
     ONT::CHANGE)
   (OVERLAP
-    WN::|fluctuate%2:30:00::|))
+    WN::|fluctuate%2:30:00::|
+    WN::|fluctuation%1:110:01::|))
 
 (CONCEPT
   ONT::FLUIDIC-MOTION
@@ -15654,7 +15660,8 @@
   (INHERIT
     ONT::CHANGE-MAGNITUDE)
   (OVERLAP
-    WN::|increase%2:30:00::|))
+    WN::|increase%2:30:00::|
+    WN::|increase%1:11:00::|))
 
 (CONCEPT
   ONT::INCREASE-NUMBER
@@ -18476,8 +18483,6 @@
   (INHERIT
     ONT::PHYS-OBJECT)
   (OVERLAP
-    WN::|instrumentation%1:06:00::|
-    WN::|instrumentality%1:06:00::|
     WN::|artifact%1:03:00::|
     WN::|artefact%1:03:00::|)
   (SEM-FEATS
@@ -29386,6 +29391,14 @@
     WN::|divided%3:00:00::|))
 
 (CONCEPT
+  ONT::SPOIL
+  (INHERIT
+    ONT::DAMAGE)
+  (OVERLAP
+    WN::|adulteration%1:04:00::|
+    WN::|spoil%2:30:01::|))
+
+(CONCEPT
   ONT::SPOON
   (INHERIT
     ONT::CUTLERY)
@@ -30789,12 +30802,16 @@
 (CONCEPT
   ONT::TANK
   (INHERIT
-    ONT::VEHICLE-CONTAINER))
+    ONT::VESSEL)
+  (OVERLAP
+    WN::|tank%1:06:00::|))
 
 (CONCEPT
   ONT::TANKER
   (INHERIT
-    ONT::VEHICLE-CONTAINER))
+    ONT::VEHICLE-CONTAINER)
+  (OVERLAP
+    WN::|tank%1:06:02::|))
 
 (CONCEPT
   ONT::TASK-COMPLEXITY-SCALE
@@ -32902,13 +32919,10 @@
 (CONCEPT
   ONT::VEHICLE-CONTAINER
   (INHERIT
-    ONT::MANUFACTURED-OBJECT)
+    ONT::VESSEL)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
-    (FORM ENCLOSURE)
-    (OBJECT-FUNCTION CONTAINER-OBJECT)
-    (CONTAINER +)
     (MOBILITY NON-SELF-MOVING)
     (TYPE VEHICLE-CONTAINER))
   (SEM-FRAME
@@ -32988,6 +33002,21 @@
       ABSTR-OBJ)
     (SCALE VERTICAL-SCALE)
     (TYPE VERTICAL-VAL)))
+
+(CONCEPT
+  ONT::VESSEL
+  (COMMENT "an object designed to hold something")
+  (INHERIT
+    ONT::MANUFACTURED-OBJECT)
+  (OVERLAP
+    WN::|vessel%1:06:01::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (FORM ENCLOSURE)
+    (OBJECT-FUNCTION CONTAINER-OBJECT)
+    (CONTAINER +)
+    (TYPE VESSEL)))
 
 (CONCEPT
   ONT::VINE
