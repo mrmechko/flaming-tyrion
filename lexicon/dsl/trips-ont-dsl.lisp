@@ -3888,9 +3888,12 @@
   (INHERIT
     ONT::COOK-IN-LIQUID)
   (OVERLAP
+    WN::|blanch%2:30:00::|
     WN::|boil%2:30:02::|
     WN::|boil%2:30:01::|
-    WN::|boil%2:30:00::|))
+    WN::|boil%2:30:00::|
+    WN::|coddle%2:30:00::|
+    WN::|poach%2:30:00::|))
 
 (CONCEPT
   ONT::BOLD-VAL
@@ -5080,23 +5083,6 @@
          PHYS-OBJ)
        (ORIGIN ARTIFACT)
        (FORM OBJECT)))))
-
-(CONCEPT
-  ONT::CHANGE-FORMAT
-  (INHERIT
-    ONT::ADJUST)
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           SITUATION))
-       (INFORMATION INFORMATION-CONTENT))
-     OPTIONAL)))
 
 (CONCEPT
   ONT::CHANGE-IN-APPEARANCE
@@ -7617,7 +7603,10 @@
 (CONCEPT
   ONT::COOK-IN-LIQUID
   (INHERIT
-    ONT::COOK))
+    ONT::COOK)
+  (OVERLAP
+    WN::|fricassee%2:30:00::|
+    WN::|souse%2:30:00::|))
 
 (CONCEPT
   ONT::COOK-IN-MICROWAVE
@@ -10893,6 +10882,7 @@
     ONT::CHANGE-IN-SIZE)
   (OVERLAP
     WN::|enlarge%2:30:00::|
+    WN::|enlarge%2:30:03::|
     WN::|hypertrophy%2:29:00::|)
   (SEM-FRAME
     (ONT::SCALE
@@ -14152,6 +14142,8 @@
   (INHERIT
     ONT::SOCIAL-CONTRACT)
   (OVERLAP
+    WN::|injustice%1:07:00::|
+    WN::|justice%1:07:00::|
     WN::|morality%1:07:00::|
     WN::|morality%1:16:00::|
     WN::|ethic%1:09:00::|
@@ -14459,6 +14451,8 @@
   ONT::HABITUAL
   (INHERIT
     ONT::AUX)
+  (OVERLAP
+    WN::|use%2:41:03::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -16671,8 +16665,6 @@
   (INHERIT
     ONT::SOCIAL-JUDGEMENT)
   (OVERLAP
-    WN::|justice%1:07:00::|
-    WN::|injustice%1:07:00::|
     WN::|moral%3:00:00::|
     WN::|immoral%3:00:00::|
     WN::|immoral%3:00:00:wrong:01|))
@@ -17375,6 +17367,8 @@
   ONT::LIFECYCLE-STAGE
   (INHERIT
     ONT::DOMAIN-PROPERTY)
+  (OVERLAP
+    WN::|time_of_life%1:28:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -28729,6 +28723,8 @@
   ONT::SOCIAL-CONTRACT
   (INHERIT
     ONT::MENTAL-CONSTRUCTION)
+  (OVERLAP
+    WN::|social_contract%1:26:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -31893,6 +31889,27 @@
     WN::|violate%2:41:02::|
     WN::|violate%2:35:00::|
     WN::|conflict%1:26:00::|))
+
+(CONCEPT
+  ONT::TRANSLATE
+  (INHERIT
+    ONT::ADJUST)
+  (OVERLAP
+    WN::|translate%2:32:00::|
+    WN::|translate%2:30:01::|
+    WN::|translate%2:32:06::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (INFORMATION INFORMATION-CONTENT))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::TRANSLOCATE

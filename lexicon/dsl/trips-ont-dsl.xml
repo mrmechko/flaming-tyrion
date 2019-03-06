@@ -4456,9 +4456,12 @@
    ont::cook-in-liquid
   </relation>
   <relation label="overlap">
+   wn::|blanch%2:30:00::|
    wn::|boil%2:30:02::|
    wn::|boil%2:30:01::|
    wn::|boil%2:30:00::|
+   wn::|coddle%2:30:00::|
+   wn::|poach%2:30:00::|
   </relation>
  </concept>
  <concept name="ont::bold-val">
@@ -5792,23 +5795,6 @@
      </relation>
      <feat name="origin">artifact</feat>
      <feat name="form">object</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::change-format">
-  <relation label="inherit">
-   ont::adjust
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::affected" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-      <concept name="situation" />
-     </or>
-     <feat name="information">information-content</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -8662,6 +8648,10 @@
  <concept name="ont::cook-in-liquid">
   <relation label="inherit">
    ont::cook
+  </relation>
+  <relation label="overlap">
+   wn::|fricassee%2:30:00::|
+   wn::|souse%2:30:00::|
   </relation>
  </concept>
  <concept name="ont::cook-in-microwave">
@@ -12417,6 +12407,7 @@
   </relation>
   <relation label="overlap">
    wn::|enlarge%2:30:00::|
+   wn::|enlarge%2:30:03::|
    wn::|hypertrophy%2:29:00::|
   </relation>
   <sem-frame>
@@ -16133,6 +16124,8 @@
    ont::social-contract
   </relation>
   <relation label="overlap">
+   wn::|injustice%1:07:00::|
+   wn::|justice%1:07:00::|
    wn::|morality%1:07:00::|
    wn::|morality%1:16:00::|
    wn::|ethic%1:09:00::|
@@ -16483,6 +16476,9 @@
  <concept name="ont::habitual">
   <relation label="inherit">
    ont::aux
+  </relation>
+  <relation label="overlap">
+   wn::|use%2:41:03::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -19041,8 +19037,6 @@
    ont::social-judgement
   </relation>
   <relation label="overlap">
-   wn::|justice%1:07:00::|
-   wn::|injustice%1:07:00::|
    wn::|moral%3:00:00::|
    wn::|immoral%3:00:00::|
    wn::|immoral%3:00:00:wrong:01|
@@ -19860,6 +19854,9 @@
  <concept name="ont::lifecycle-stage">
   <relation label="inherit">
    ont::domain-property
+  </relation>
+  <relation label="overlap">
+   wn::|time_of_life%1:28:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
@@ -32811,6 +32808,9 @@
   <relation label="inherit">
    ont::mental-construction
   </relation>
+  <relation label="overlap">
+   wn::|social_contract%1:26:00::|
+  </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
     <concept name="situation" />
@@ -36407,6 +36407,28 @@
    wn::|violate%2:35:00::|
    wn::|conflict%1:26:00::|
   </relation>
+ </concept>
+ <concept name="ont::translate">
+  <relation label="inherit">
+   ont::adjust
+  </relation>
+  <relation label="overlap">
+   wn::|translate%2:32:00::|
+   wn::|translate%2:30:01::|
+   wn::|translate%2:32:06::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+      <concept name="situation" />
+     </or>
+     <feat name="information">information-content</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::translocate">
   <relation label="inherit">
