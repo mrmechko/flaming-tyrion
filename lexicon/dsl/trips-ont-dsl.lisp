@@ -14193,7 +14193,8 @@
   (INHERIT
     ONT::PLANT)
   (OVERLAP
-    WN::|cereal%1:20:00::|))
+    WN::|cereal%1:20:00::|
+    WN::|teff%1:20:00::|))
 
 (CONCEPT
   ONT::GRANULATE
