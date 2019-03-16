@@ -8939,31 +8939,6 @@
        T))))
 
 (CONCEPT
-  ONT::DESELECT
-  (INHERIT
-    ONT::CAUSE-COME-FROM)
-  (SEM-FRAME
-    (ONT::FORMAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         TIME))
-     OPTIONAL)
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
-       (INTENTIONAL +)))))
-
-(CONCEPT
   ONT::DESIRABLE-VAL
   (INHERIT
     ONT::EVOKING-POS-EMOTION-VAL)
@@ -13196,7 +13171,7 @@
     ONT::CHANGE)
   (OVERLAP
     WN::|fluctuate%2:30:00::|
-    WN::|fluctuation%1:110:01::|))
+    WN::|fluctuation%1:11:01::|))
 
 (CONCEPT
   ONT::FLUIDIC-MOTION
@@ -14369,12 +14344,12 @@
   (INHERIT
     ONT::CONTINUOUS-CHANGE)
   (OVERLAP
-    WN::|grow%2:30:02::|
     WN::|cultivate%2:36:00::|
-    WN::|grow%2:30:01::|
+    WN::|develop%2:30:00::|
     WN::|develop%2:30:01::|
     WN::|grow%2:30:00::|
-    WN::|develop%2:30:00::|)
+    WN::|grow%2:30:01::|
+    WN::|grow%2:30:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -19766,6 +19741,8 @@
   ONT::MUSIC-COMPOSITION-ELEMENT
   (INHERIT
     ONT::MUSIC)
+  (OVERLAP
+    WN::|musical_notation%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -22841,6 +22818,8 @@
   ONT::PITCH-UNIT
   (INHERIT
     ONT::SOUND-UNIT)
+  (OVERLAP
+    WN::|musical_interval%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
