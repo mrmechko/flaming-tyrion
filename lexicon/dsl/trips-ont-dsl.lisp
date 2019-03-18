@@ -5416,7 +5416,8 @@
   (INHERIT
     ONT::DIRECT-REPRESENTATION)
   (OVERLAP
-    WN::|chart%1:10:00::|)
+    WN::|chart%1:10:00::|
+    WN::|table%1:14:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -24208,7 +24209,8 @@
   (INHERIT
     ONT::INHIBIT-EFFECT)
   (OVERLAP
-    WN::|abolish%2:41:00::|))
+    WN::|abolish%2:41:00::|
+    WN::|forbid%2:32:00::|))
 
 (CONCEPT
   ONT::PROJECTOR
