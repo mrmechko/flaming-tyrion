@@ -3991,6 +3991,17 @@
     WN::|bottom%3:00:00::|))
 
 (CONCEPT
+  ONT::BOUNCE-REFLECT
+  (INHERIT
+    ONT::MOVE)
+  (OVERLAP
+    WN::|bounce%2:35:03::|
+    WN::|bounce%2:38:00::|
+    WN::|bounce%2:38:02::|
+    WN::|reflect%2:39:00::|
+    WN::|reflect%2:43:00::|))
+
+(CONCEPT
   ONT::BOX
   (INHERIT
     ONT::SMALL-CONTAINER)
@@ -15636,8 +15647,9 @@
   (INHERIT
     ONT::CHANGE-MAGNITUDE)
   (OVERLAP
+    WN::|increase%1:11:00::|
     WN::|increase%2:30:00::|
-    WN::|increase%1:11:00::|))
+    WN::|rise%2:37:00::|))
 
 (CONCEPT
   ONT::INCREASE-NUMBER
@@ -15721,8 +15733,9 @@
   (INHERIT
     ONT::ACCUSE)
   (OVERLAP
+    WN::|accuse%2:32:01::|
     WN::|charge%2:32:02::|
-    WN::|accuse%2:32:01::|))
+    WN::|prosecute%2:41:00::|))
 
 (CONCEPT
   ONT::INDUSTRIAL-VAL
@@ -16659,7 +16672,7 @@
 (CONCEPT
   ONT::JUMP
   (INHERIT
-    ONT::MOVE-UP-AND-DOWN)
+    ONT::BOUNCE-REFLECT)
   (OVERLAP
     WN::|jump%2:38:01::|))
 
@@ -17634,9 +17647,10 @@
     WN::|exist%2:42:01::|
     WN::|live%2:42:06::|
     WN::|live%2:42:07::|
+    WN::|outlast%2:42:00::|
+    WN::|survive%2:42:00::|
     WN::|survive%2:42:01::|
-    WN::|survive%2:42:02::|
-    WN::|survive%2:42:00::|)
+    WN::|survive%2:42:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -19669,11 +19683,6 @@
      (CONCEPT
        T)
      OPTIONAL)))
-
-(CONCEPT
-  ONT::MOVE-UP-AND-DOWN
-  (INHERIT
-    ONT::MOVE))
 
 (CONCEPT
   ONT::MOVE-UPSIDE-DOWN
@@ -30442,17 +30451,19 @@
   (INHERIT
     ONT::CHANGE-IN-SIZE)
   (OVERLAP
-    WN::|swell%2:30:00::|
-    WN::|swell_up%2:30:00::|
-    WN::|intumesce%2:30:00::|
-    WN::|tumefy%2:30:00::|
-    WN::|tumesce%2:30:00::|
-    WN::|swell%2:30:01::|
     WN::|bloat%2:30:01::|
     WN::|bulk%2:30:00::|
+    WN::|intumesce%2:30:00::|
     WN::|protrude%2:30:00::|
+    WN::|protuberate%2:42:00::|
+    WN::|protuberate%2:42:01::|
+    WN::|raise%2:38:01::|
     WN::|rise%2:38:02::|
-    WN::|raise%2:38:01::|)
+    WN::|swell%2:30:00::|
+    WN::|swell%2:30:01::|
+    WN::|swell_up%2:30:00::|
+    WN::|tumefy%2:30:00::|
+    WN::|tumesce%2:30:00::|)
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS

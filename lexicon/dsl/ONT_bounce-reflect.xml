@@ -2,9 +2,16 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::move-up-and-down">
+ <concept name="ont::bounce-reflect">
  <relation label="inherit">
   ont::move
+ </relation>
+ <relation label="overlap">
+  wn::|bounce%2:35:03::|
+  wn::|bounce%2:38:00::|
+  wn::|bounce%2:38:02::|
+  wn::|reflect%2:39:00::|
+  wn::|reflect%2:43:00::|
  </relation>
  </concept>
  <or>
@@ -451,7 +458,7 @@
  <concept name="situation" />
  <concept name="ont::jump">
  <relation label="inherit">
-  ont::move-up-and-down
+  ont::bounce-reflect
  </relation>
  <relation label="overlap">
   wn::|jump%2:38:01::|
@@ -469,8 +476,8 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::move-up-and-down
-  ont::affected-templ
+  ont::bounce-reflect
+  ont::affected-unaccusative-templ
  </relation>
  <relation label="overlap">
   vn::roll-51.3.1
@@ -481,5 +488,68 @@
    <feat name="aspect">bounded</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="bounce" />
+ </morph>
+ <example text="he bounced the ball">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bounce-reflect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="reflect" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="reflection" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="sound is reflected well in this auditorium.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bounce-reflect
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="reflect" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="reflection" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="The light reflected.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::bounce-reflect
+  ont::affected-templ
+ </relation>
  </sense>
 </dsl>
