@@ -19213,7 +19213,9 @@
 (CONCEPT
   ONT::MISS
   (INHERIT
-    ONT::ACTING)
+    ONT::FAIL)
+  (OVERLAP
+    WN::|miss%2:35:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (CONCEPT
