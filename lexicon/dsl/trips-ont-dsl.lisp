@@ -9048,14 +9048,13 @@
   (INHERIT
     ONT::CHANGE-INTEGRITY)
   (OVERLAP
-    WN::|decompose%2:30:02::|
-    WN::|decay%2:30:01::|
-    WN::|disintegrate%2:30:01::|
-    WN::|decay%2:30:02::|
     WN::|acerbate%2:37:00::|
-    WN::|decay%2:30:01::|
     WN::|decay%2:30:00::|
-    WN::|decay%2:30:02::|)
+    WN::|decay%2:30:01::|
+    WN::|decay%2:30:02::|
+    WN::|decompose%2:30:02::|
+    WN::|degrade%2:35:00::|
+    WN::|disintegrate%2:30:01::|)
   (SEM-FRAME
     (ONT::AGENT
      (CONCEPT
