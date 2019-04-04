@@ -49,7 +49,7 @@
  <feat name="container">-</feat>
  <feat name="information">mental-construct</feat>
  <feat name="intentional">-</feat>
- <feat name="type">situation-root</feat>
+ <feat name="type">ont::situation-root</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -67,7 +67,7 @@
    <concept name="abstr-obj" />
    <concept name="situation" />
   </or>
-  <feat name="type">referential-sem</feat>
+  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
  <sem-frame>
@@ -84,7 +84,7 @@
   situation
  </relation>
  <feat name="cause">force</feat>
- <feat name="type">event-of-action</feat>
+ <feat name="type">ont::event-of-action</feat>
  </sem-feats>
  <concept name="ont::event-of-change">
  <comment>
@@ -98,7 +98,7 @@
    situation
   </relation>
   <feat name="aspect">dynamic</feat>
-  <feat name="type">event-of-change</feat>
+  <feat name="type">ont::event-of-change</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::result" optional="optional">
@@ -147,7 +147,7 @@
    situation
   </relation>
   <feat name="cause">force</feat>
-  <feat name="type">event-of-action</feat>
+  <feat name="type">ont::event-of-action</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::agent" optional="optional">
@@ -211,7 +211,7 @@
   <feat name="container">-</feat>
   <feat name="information">mental-construct</feat>
   <feat name="intentional">-</feat>
-  <feat name="type">situation-root</feat>
+  <feat name="type">ont::situation-root</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -219,7 +219,7 @@
   situation
  </relation>
  <feat name="aspect">dynamic</feat>
- <feat name="type">event-of-change</feat>
+ <feat name="type">ont::event-of-change</feat>
  </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::result" optional="optional">
@@ -254,7 +254,7 @@
   <concept name="abstr-obj" />
   <concept name="situation" />
  </or>
- <feat name="type">referential-sem</feat>
+ <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
  <concept name="ont::miss">
@@ -293,8 +293,8 @@
  <syntax>
   <template-call template="ont::agent-effect-subjcontrol-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -328,8 +328,8 @@
  <syntax>
   <template-call template="ont::agent-neutral-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -385,15 +385,15 @@
  </relation>
  <syntax>
   <template-call template="ont::agent-effect-affected-objcontrol-templ" xp="'(w::cp
-                                                                              (w::or
+                                                                              (or
                                                                                 w::at
                                                                                 w::in))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="cp" head-word="(w::or
-                                                          w::at
-                                                          w::in)" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::norole"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::cp" head-word="(or
+                                                                      w::at
+                                                                      w::in)" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -423,14 +423,14 @@
  </relation>
  <syntax>
   <template-call template="ont::agent-effect-subjcontrol-templ" xp="'(w::cp
-                                                                      (w::or
+                                                                      (or
                                                                         w::at
                                                                         w::in))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="cp" head-word="(w::or
-                                                          w::at
-                                                          w::in)" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::cp" head-word="(or
+                                                                      w::at
+                                                                      w::in)" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -458,8 +458,8 @@
  <syntax>
   <template-call template="ont::agent-effect-subjcontrol-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="cp" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -487,8 +487,8 @@
  <syntax>
   <template-call template="ont::agent-neutral-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::neutral"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
  <semantics>

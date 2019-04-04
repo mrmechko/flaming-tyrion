@@ -18,10 +18,10 @@
     </or>
     <feat name="scale">
     <or>
-     time-measure-scale
-     rate-scale
-     money-scale
-     number-scale
+     ont::time-measure-scale
+     ont::rate-scale
+     ont::money-scale
+     ont::number-scale
     </or>
     </feat>
    </sem-feats>
@@ -38,7 +38,7 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="type">abstract-object</feat>
+ <feat name="type">ont::abstract-object</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -56,7 +56,7 @@
    <concept name="abstr-obj" />
    <concept name="situation" />
   </or>
-  <feat name="type">referential-sem</feat>
+  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
  <concept name="ont::position-reln">
@@ -74,7 +74,7 @@
      <concept name="situation" />
      <concept name="abstr-obj" />
     </or>
-    <feat name="scale">time-measure-scale</feat>
+    <feat name="scale">ont::time-measure-scale</feat>
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -95,10 +95,10 @@
    </or>
    <feat name="scale">
    <or>
-    time-measure-scale
-    rate-scale
-    money-scale
-    number-scale
+    ont::time-measure-scale
+    ont::rate-scale
+    ont::money-scale
+    ont::number-scale
    </or>
    </feat>
   </sem-feats>
@@ -128,7 +128,7 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="type">abstract-object</feat>
+  <feat name="type">ont::abstract-object</feat>
  </sem-feats>
  </concept>
  <sem-frame>
@@ -139,7 +139,7 @@
     <concept name="situation" />
     <concept name="abstr-obj" />
    </or>
-   <feat name="scale">time-measure-scale</feat>
+   <feat name="scale">ont::time-measure-scale</feat>
   </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
@@ -161,7 +161,7 @@
   <concept name="abstr-obj" />
   <concept name="situation" />
  </or>
- <feat name="type">referential-sem</feat>
+ <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
  <sense>
@@ -178,10 +178,10 @@
  <syntax>
   <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or
-                                              s
-                                              np)" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(or
+                                              deepsemlex::s
+                                              deepsemlex::np)" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
@@ -227,11 +227,11 @@
  <syntax>
   <template-call template="ont::ppword-adv-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="t" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(w::or
-                                              s
-                                              np
-                                              vp)" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="common-lisp:t" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(or
+                                              deepsemlex::s
+                                              deepsemlex::np
+                                              deepsemlex::vp)" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">

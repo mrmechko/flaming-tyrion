@@ -38,7 +38,7 @@
  <feat name="container">-</feat>
  <feat name="information">mental-construct</feat>
  <feat name="intentional">-</feat>
- <feat name="type">situation-root</feat>
+ <feat name="type">ont::situation-root</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -56,7 +56,7 @@
    <concept name="abstr-obj" />
    <concept name="situation" />
   </or>
-  <feat name="type">referential-sem</feat>
+  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
  <concept name="ont::event-of-undergoing-action">
@@ -70,7 +70,7 @@
   <relation label="inherit">
    situation
   </relation>
-  <feat name="type">event-of-undergoing-action</feat>
+  <feat name="type">ont::event-of-undergoing-action</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::agent" optional="optional">
@@ -111,7 +111,7 @@
    situation
   </relation>
   <feat name="aspect">dynamic</feat>
-  <feat name="type">event-of-change</feat>
+  <feat name="type">ont::event-of-change</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::result" optional="optional">
@@ -140,7 +140,7 @@
  <relation label="inherit">
   situation
  </relation>
- <feat name="type">event-of-undergoing-action</feat>
+ <feat name="type">ont::event-of-undergoing-action</feat>
  </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::agent" optional="optional">
@@ -172,7 +172,7 @@
   <feat name="container">-</feat>
   <feat name="information">mental-construct</feat>
   <feat name="intentional">-</feat>
-  <feat name="type">situation-root</feat>
+  <feat name="type">ont::situation-root</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -180,7 +180,7 @@
   situation
  </relation>
  <feat name="aspect">dynamic</feat>
- <feat name="type">event-of-change</feat>
+ <feat name="type">ont::event-of-change</feat>
  </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::result" optional="optional">
@@ -215,9 +215,29 @@
   <concept name="abstr-obj" />
   <concept name="situation" />
  </or>
- <feat name="type">referential-sem</feat>
+ <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::receive-punishment">
+ <relation label="inherit">
+  ont::incur-inherit-receive
+ </relation>
+ <relation label="overlap">
+  wn::|catch_it%2:41:00::|
+  wn::|get_it%2:41:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::source" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sense>
  <morph>
   <pos pos="v" />
@@ -238,8 +258,8 @@
  <syntax>
   <template-call template="ont::affected-affected-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -280,8 +300,8 @@
  <syntax>
   <template-call template="ont::affected-affected-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  </sense>
@@ -311,8 +331,8 @@
  <syntax>
   <template-call template="ont::affected1-affected-templ" xp="'(w::pp w::to)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="pp" head-word="w::to" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected1"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::pp" head-word="w::to" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::affected1"/>
   </syn-sem>
  </syntax>
  </sense>
@@ -345,8 +365,8 @@
  <syntax>
   <template-call template="ont::affected-affected-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -382,8 +402,8 @@
  <syntax>
   <template-call template="ont::affected-affected-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  </sense>
@@ -401,8 +421,8 @@
  <syntax>
   <template-call template="ont::affected-affected-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  <semantics>

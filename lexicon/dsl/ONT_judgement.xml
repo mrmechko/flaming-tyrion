@@ -11,7 +11,7 @@
    situation
   </relation>
   <feat name="cause">agentive</feat>
-  <feat name="type">judgement</feat>
+  <feat name="type">ont::judgement</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::formal" optional="optional">
@@ -36,7 +36,7 @@
  <feat name="container">-</feat>
  <feat name="information">mental-construct</feat>
  <feat name="intentional">-</feat>
- <feat name="type">situation-root</feat>
+ <feat name="type">ont::situation-root</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -54,7 +54,7 @@
    <concept name="abstr-obj" />
    <concept name="situation" />
   </or>
-  <feat name="type">referential-sem</feat>
+  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
  <sem-frame>
@@ -71,7 +71,7 @@
   situation
  </relation>
  <feat name="cause">force</feat>
- <feat name="type">event-of-action</feat>
+ <feat name="type">ont::event-of-action</feat>
  </sem-feats>
  <concept name="ont::event-of-change">
  <comment>
@@ -85,7 +85,7 @@
    situation
   </relation>
   <feat name="aspect">dynamic</feat>
-  <feat name="type">event-of-change</feat>
+  <feat name="type">ont::event-of-change</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::result" optional="optional">
@@ -142,7 +142,7 @@
    situation
   </relation>
   <feat name="cause">force</feat>
-  <feat name="type">event-of-action</feat>
+  <feat name="type">ont::event-of-action</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::agent" optional="optional">
@@ -167,7 +167,7 @@
   situation
  </relation>
  <feat name="cause">agentive</feat>
- <feat name="type">judgement</feat>
+ <feat name="type">ont::judgement</feat>
  </sem-feats>
  <concept name="ont::agent-interaction">
  <comment>
@@ -215,7 +215,7 @@
   <feat name="container">-</feat>
   <feat name="information">mental-construct</feat>
   <feat name="intentional">-</feat>
-  <feat name="type">situation-root</feat>
+  <feat name="type">ont::situation-root</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -223,7 +223,7 @@
   situation
  </relation>
  <feat name="aspect">dynamic</feat>
- <feat name="type">event-of-change</feat>
+ <feat name="type">ont::event-of-change</feat>
  </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::result" optional="optional">
@@ -258,7 +258,7 @@
   <concept name="abstr-obj" />
   <concept name="situation" />
  </or>
- <feat name="type">referential-sem</feat>
+ <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
  <concept name="ont::advancing-status">
@@ -291,6 +291,7 @@
   wn::|approve%2:31:00::|
   wn::|authorize%2:32:00::|
   wn::|authorize%2:41:00::|
+  wn::|clear%2:40:07::|
   wn::|condone%2:32:00::|
  </relation>
  <sem-frame>
@@ -389,15 +390,15 @@
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-theme-objcontrol-templ" xp="'(w::cp
-                                                                             (w::or
+                                                                             (or
                                                                                w::for
                                                                                w::with))" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="cp" head-word="(w::or
-                                                          w::for
-                                                          w::with)" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="np" sem-role="ont::agent"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::cp" head-word="(or
+                                                                      w::for
+                                                                      w::with)" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
  </sense>
