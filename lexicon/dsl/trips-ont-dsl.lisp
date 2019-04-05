@@ -965,6 +965,7 @@
 
 (CONCEPT
   ONT::AFFECT-EXPERIENCER
+  (COMMENT "cause an experience on an cognitive agent")
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
   (OVERLAP
@@ -1030,7 +1031,8 @@
   (INHERIT
     ONT::EVENT-TIME-REL)
   (OVERLAP
-    WN::|before%4:02:03::|))
+    WN::|after%4:02:00::|
+    WN::|after%4:02:01::|))
 
 (CONCEPT
   ONT::AGE
@@ -1715,7 +1717,8 @@
     WN::|enjoy%2:37:00::|
     WN::|appreciate%2:37:00::|
     WN::|like%2:37:04::|
-    WN::|love%2:37:00::|)
+    WN::|love%2:37:00::|
+    WN::|like%2:37:05::|)
   (SEM-FRAME
     (ONT::NEUTRAL1
      (CONCEPT
@@ -3370,8 +3373,7 @@
   (INHERIT
     ONT::EVENT-TIME-REL)
   (OVERLAP
-    WN::|after%4:02:00::|
-    WN::|after%4:02:01::|))
+    WN::|before%4:02:03::|))
 
 (CONCEPT
   ONT::BEHAVIORAL-SCALE
@@ -7844,9 +7846,6 @@
   (OVERLAP
     WN::|indicate%2:32:02::|
     WN::|argue%2:32:01::|
-    WN::|imply%2:32:01::|
-    WN::|entail%2:42:01::|
-    WN::|imply%2:42:00::|
     WN::|mean%2:42:00::|
     WN::|affirm%2:31:00::|
     WN::|read%2:32:02::|
@@ -8303,6 +8302,19 @@
     (ORIGIN ARTIFACT)
     (FORM SOLID-OBJECT)
     (TYPE ONT::CUTLERY)))
+
+(CONCEPT
+  ONT::CUTTING-TOOL
+  (COMMENT "tools that assist in cutting material")
+  (INHERIT
+    ONT::TOOL)
+  (OVERLAP
+    WN::|cutting_implement%1:06:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (OBJECT-FUNCTION INSTRUMENT)
+    (TYPE ONT::CUTTING-TOOL)))
 
 (CONCEPT
   ONT::CYTOPLASM
@@ -10002,16 +10014,23 @@
        T)
      OPTIONAL)
     (ONT::COMPAR
-     (CONCEPT
-       T)
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
      OPTIONAL)
     (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
     (ONT::SCALE
-     (CONCEPT
-       T)
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::GROUND
      (CONCEPT
@@ -10092,6 +10111,19 @@
   ONT::DRIFT
   (INHERIT
     ONT::MOVE))
+
+(CONCEPT
+  ONT::DRILLING-TOOL
+  (COMMENT "tools that are used to create holes in material")
+  (INHERIT
+    ONT::TOOL)
+  (OVERLAP
+    WN::|drill%1:06:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (OBJECT-FUNCTION INSTRUMENT)
+    (TYPE ONT::DRILLING-TOOL)))
 
 (CONCEPT
   ONT::DRINK
@@ -10263,6 +10295,12 @@
   ONT::DURATION-SCALE
   (INHERIT
     ONT::TIME-MEASURE-SCALE))
+
+(CONCEPT
+  ONT::DURING
+  (COMMENT "DURING, STARTS or ENDS in ITL")
+  (INHERIT
+    ONT::EVENT-TIME-REL))
 
 (CONCEPT
   ONT::DUST
@@ -11049,6 +11087,7 @@
 
 (CONCEPT
   ONT::EQUIPMENT
+  (COMMENT "manufactured objects that assist in ior perform some function")
   (INHERIT
     ONT::MANUFACTURED-OBJECT)
   (OVERLAP
@@ -11361,7 +11400,7 @@
 (CONCEPT
   ONT::EVENT-OF-CHANGE
   (COMMENT
-   "Events that involve change or force: should ahve an AGENT or AFFECTED role")
+   "Events that involve change or force: should have an AGENT or AFFECTED role")
   (INHERIT
     ONT::SITUATION-ROOT)
   (SEM-FEATS
@@ -11549,6 +11588,7 @@
 
 (CONCEPT
   ONT::EVOKE-ANGER
+  (COMMENT "cause to be angry")
   (INHERIT
     ONT::EVOKE-EMOTION)
   (OVERLAP
@@ -11684,6 +11724,7 @@
 
 (CONCEPT
   ONT::EVOKE-EMOTION
+  (COMMENT "actions the cause some emotion in an agent")
   (INHERIT
     ONT::AFFECT-EXPERIENCER)
   (OVERLAP
@@ -14294,6 +14335,20 @@
     (TYPE ONT::GRIEVOUS-VAL)))
 
 (CONCEPT
+  ONT::GRIPPING-TOOL
+  (COMMENT "tools that are used to hit things")
+  (INHERIT
+    ONT::TOOL)
+  (OVERLAP
+    WN::|plyers%1:06:00::|
+    WN::|holding_device%1:06:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (OBJECT-FUNCTION INSTRUMENT)
+    (TYPE ONT::GRIPPING-TOOL)))
+
+(CONCEPT
   ONT::GROUP-CONFLICT
   (INHERIT
     ONT::TRANSGRESS)
@@ -14503,6 +14558,19 @@
     (INHERIT
       ABSTR-OBJ)
     (TYPE ONT::HALF-STEP)))
+
+(CONCEPT
+  ONT::HAMMER-TOOL
+  (COMMENT "tools that are used to hit things")
+  (INHERIT
+    ONT::TOOL)
+  (OVERLAP
+    WN::|hammer%1:06:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (OBJECT-FUNCTION INSTRUMENT)
+    (TYPE ONT::HAMMER-TOOL)))
 
 (CONCEPT
   ONT::HAPPEN
@@ -15407,6 +15475,15 @@
     WN::|implicit%3:00:00::|))
 
 (CONCEPT
+  ONT::IMPLY
+  (COMMENT "an entailment relation holds netween NEUTRAL and NEUTRAL1")
+  (INHERIT
+    ONT::CORRELATION)
+  (OVERLAP
+    WN::|imply%2:32:01::|
+    WN::|entail%2:42:01::|))
+
+(CONCEPT
   ONT::IMPORTANCE-SCALE
   (INHERIT
     ONT::EVALUATION-SCALE)
@@ -15464,6 +15541,13 @@
          PHYS-OBJ)))))
 
 (CONCEPT
+  ONT::IN-FUTURE
+  (INHERIT
+    ONT::EVENT-TIME-WRT-NOW)
+  (OVERLAP
+    WN::|future%3:00:00::|))
+
+(CONCEPT
   ONT::IN-LOC
   (COMMENT "FIGURE is within or inside the GROUND")
   (INHERIT
@@ -15479,6 +15563,13 @@
        (CONTAINER +)
        (INTENTIONAL -))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::IN-PAST
+  (INHERIT
+    ONT::EVENT-TIME-WRT-NOW)
+  (OVERLAP
+    WN::|past%3:00:00::|))
 
 (CONCEPT
   ONT::IN-RELATION
@@ -21002,7 +21093,9 @@
     ONT::EVENT-TIME-WRT-NOW)
   (OVERLAP
     WN::|now%4:02:05::|
-    WN::|presently%4:02:00::|))
+    WN::|presently%4:02:00::|
+    WN::|current%3:00:00::|
+    WN::|present%3:00:01::|))
 
 (CONCEPT
   ONT::NUCLEAR-VAL
@@ -21377,6 +21470,13 @@
     WN::|rare%5:00:00:infrequent:00|
     WN::|infrequent%3:00:00::|
     WN::|occasional%5:00:00:infrequent:00|))
+
+(CONCEPT
+  ONT::OCCURING-NOW
+  (INHERIT
+    ONT::EVENT-TIME-WRT-NOW)
+  (OVERLAP
+    WN::|current%3:00:00::|))
 
 (CONCEPT
   ONT::OCCURRING
@@ -25194,8 +25294,7 @@
   (INHERIT
     ONT::EVENT-TIME-WRT-NOW)
   (OVERLAP
-    WN::|new%3:00:00::|
-    WN::|past%3:00:00::|))
+    WN::|new%3:00:00::|))
 
 (CONCEPT
   ONT::RECIPE
@@ -28353,6 +28452,12 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::SIMULTANEOUS
+  (COMMENT "EQUAL in ITL")
+  (INHERIT
+    ONT::EVENT-TIME-REL))
+
+(CONCEPT
   ONT::SING
   (INHERIT
     ONT::SAY)
@@ -28982,7 +29087,8 @@
   (INHERIT
     ONT::EVENT-TIME-WRT-NOW)
   (OVERLAP
-    WN::|soon%4:02:00::|))
+    WN::|soon%4:02:00::|
+    WN::|imminent%3:00:00::|))
 
 (CONCEPT
   ONT::SORRY
@@ -31751,6 +31857,8 @@
 
 (CONCEPT
   ONT::TOOL
+  (COMMENT
+   "a piece of equipment typically controlled manually (whether powered or not)")
   (INHERIT
     ONT::EQUIPMENT)
   (OVERLAP

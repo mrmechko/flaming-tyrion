@@ -226,6 +226,8 @@
  <relation label="overlap">
   wn::|now%4:02:05::|
   wn::|presently%4:02:00::|
+  wn::|current%3:00:00::|
+  wn::|present%3:00:01::|
  </relation>
  </concept>
  <concept name="ont::recent">
@@ -234,6 +236,21 @@
  </relation>
  <relation label="overlap">
   wn::|new%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::in-future">
+ <relation label="inherit">
+  ont::event-time-wrt-now
+ </relation>
+ <relation label="overlap">
+  wn::|future%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::in-past">
+ <relation label="inherit">
+  ont::event-time-wrt-now
+ </relation>
+ <relation label="overlap">
   wn::|past%3:00:00::|
  </relation>
  </concept>
@@ -243,6 +260,15 @@
  </relation>
  <relation label="overlap">
   wn::|soon%4:02:00::|
+  wn::|imminent%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::occuring-now">
+ <relation label="inherit">
+  ont::event-time-wrt-now
+ </relation>
+ <relation label="overlap">
+  wn::|current%3:00:00::|
  </relation>
  </concept>
 </dsl>

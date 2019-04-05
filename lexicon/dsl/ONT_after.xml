@@ -7,7 +7,8 @@
   ont::event-time-rel
  </relation>
  <relation label="overlap">
-  wn::|before%4:02:03::|
+  wn::|after%4:02:00::|
+  wn::|after%4:02:01::|
  </relation>
  </concept>
  <or>
@@ -306,6 +307,37 @@
  <sense>
  <morph>
   <pos pos="adv" />
+  <word first-word="following" />
+ </morph>
+ <example text="following the meeting she checked her watch">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::after
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(or
+                                              deepsemlex::s
+                                              deepsemlex::np)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+    pre-vp
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
   <word first-word="later" />
  </morph>
  <relation label="inherit">
@@ -350,6 +382,60 @@
  <relation label="inherit">
   ont::after
   ont::adj-operator-prefix-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="since" />
+ </morph>
+ <comment>
+  &quot;HPI-ACN-4&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="show me arrivals since 5 pm / he left">
+ </example>
+ <relation label="inherit">
+  ont::after
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(or
+                                              deepsemlex::s
+                                              deepsemlex::np)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+    pre-vp
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="since" />
+ </morph>
+ <comment>
+  &quot;HPI-ACN-1&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he has had no problems since">
+ </example>
+ <relation label="inherit">
+  ont::after
+  ont::binary-constraint-s-implicit-templ
  </relation>
  </sense>
 </dsl>

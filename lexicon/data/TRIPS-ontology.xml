@@ -5350,27 +5350,16 @@
 <WORD name="in_progress" />
 <WORD name="in_the_meantime" />
 <WORD name="one_day" />
-<WORD name="status_post" />
 <WORD name="anytime" />
-<WORD name="coming" />
-<WORD name="during" />
-<WORD name="following" />
-<WORD name="forthcoming" />
 <WORD name="late" />
 <WORD name="midday" />
 <WORD name="nowadays" />
 <WORD name="once" />
 <WORD name="pending" />
-<WORD name="previously" />
-<WORD name="simultaneously" />
-<WORD name="since" />
 <WORD name="sometime" />
 <WORD name="then" />
-<WORD name="till" />
 <WORD name="today" />
 <WORD name="tonight" />
-<WORD name="underway" />
-<WORD name="upcoming" />
 <WORD name="when" />
 <WORD name="when" />
 <WORD name="whenever" />
@@ -5379,10 +5368,13 @@
 <WORD name="after" />
 <WORD name="afterward" />
 <WORD name="afterwards" />
+<WORD name="following" />
 <WORD name="later" />
 <WORD name="post-" />
 <WORD name="post-" />
-<MAPPING to="wordnet" name="earlier%4:02:00::" />
+<WORD name="since" />
+<MAPPING to="wordnet" name="after%4:02:00::" />
+<MAPPING to="wordnet" name="subsequently%4:02:00::" />
 </ONTTYPE>
 <ONTTYPE name="before">
 <WORD name="prior_to" />
@@ -5392,8 +5384,10 @@
 <WORD name="early" />
 <WORD name="pre-" />
 <WORD name="pre-" />
-<MAPPING to="wordnet" name="after%4:02:00::" />
-<MAPPING to="wordnet" name="subsequently%4:02:00::" />
+<MAPPING to="wordnet" name="earlier%4:02:00::" />
+</ONTTYPE>
+<ONTTYPE name="during">
+<WORD name="during" />
 </ONTTYPE>
 <ONTTYPE name="event-event-time">
 <WORD name="upon" />
@@ -5405,6 +5399,19 @@
 <WORD name="eventually" />
 </ONTTYPE>
 <ONTTYPE name="event-time-wrt-now">
+<ONTTYPE name="in-future">
+<WORD name="coming" />
+<WORD name="forthcoming" />
+<WORD name="upcoming" />
+<MAPPING to="wordnet" name="future%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="in-past">
+<WORD name="status_post" />
+<WORD name="past" />
+<WORD name="previously" />
+<WORD name="prior" />
+<MAPPING to="wordnet" name="past%3:00:00::" />
+</ONTTYPE>
 <ONTTYPE name="now">
 <WORD name="at_present" />
 <WORD name="at_the_moment" />
@@ -5415,17 +5422,23 @@
 <WORD name="presently" />
 <MAPPING to="wordnet" name="now%4:02:05::" />
 <MAPPING to="wordnet" name="presently%4:02:00::" />
+<MAPPING to="wordnet" name="current%3:00:00::" />
+<MAPPING to="wordnet" name="present%3:00:01::" />
+</ONTTYPE>
+<ONTTYPE name="occuring-now">
+<WORD name="underway" />
+<MAPPING to="wordnet" name="current%3:00:00::" />
 </ONTTYPE>
 <ONTTYPE name="recent">
 <WORD name="recent" />
 <WORD name="recently" />
 <MAPPING to="wordnet" name="new%3:00:00::" />
-<MAPPING to="wordnet" name="past%3:00:00::" />
 </ONTTYPE>
 <ONTTYPE name="soon">
 <WORD name="right_away" />
 <WORD name="soon" />
 <MAPPING to="wordnet" name="soon%4:02:00::" />
+<MAPPING to="wordnet" name="at_hand%5:00:01:close:01" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="immediate">
@@ -5438,12 +5451,16 @@
 <MAPPING to="wordnet" name="immediately%4:02:05::" />
 </ONTTYPE>
 <ONTTYPE name="implicit-overlap" />
+<ONTTYPE name="simultaneous">
+<WORD name="simultaneously" />
+</ONTTYPE>
 <ONTTYPE name="start-time">
 <WORD name="beginning" />
 <WORD name="from" />
 </ONTTYPE>
 <ONTTYPE name="until">
 <WORD name="til" />
+<WORD name="till" />
 <WORD name="to" />
 <WORD name="until" />
 </ONTTYPE>
@@ -9252,6 +9269,19 @@
 <WORD name="trowel" />
 <WORD name="wrench" />
 <MAPPING to="wordnet" name="tool%1:06:00::" />
+<ONTTYPE name="cutting-tool">
+<MAPPING to="wordnet" name="cutting_implement%1:06:00::" />
+</ONTTYPE>
+<ONTTYPE name="drilling-tool">
+<MAPPING to="wordnet" name="drill%1:06:00::" />
+</ONTTYPE>
+<ONTTYPE name="gripping-tool">
+<MAPPING to="wordnet" name="pliers%1:06:00::" />
+<MAPPING to="wordnet" name="holding_device%1:06:00::" />
+</ONTTYPE>
+<ONTTYPE name="hammer-tool">
+<MAPPING to="wordnet" name="hammer%1:06:00::" />
+</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="fixture">
@@ -17788,11 +17818,14 @@
 <WORD name="suggest" />
 <WORD name="support" />
 <MAPPING to="wordnet" name="argue%2:32:01::" />
-<MAPPING to="wordnet" name="imply%2:32:01::" />
 <MAPPING to="wordnet" name="entail%2:42:01::" />
 <MAPPING to="wordnet" name="confirm%2:31:00::" />
 <MAPPING to="wordnet" name="read%2:32:02::" />
 <MAPPING to="wordnet" name="underlie%2:42:00::" />
+<ONTTYPE name="imply">
+<MAPPING to="wordnet" name="imply%2:32:01::" />
+<MAPPING to="wordnet" name="entail%2:42:01::" />
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="direct-at">
 <WORD name="aim" />
@@ -17970,6 +18003,7 @@
 <MAPPING to="wordnet" name="appreciate%2:37:00::" />
 <MAPPING to="wordnet" name="like%2:37:04::" />
 <MAPPING to="wordnet" name="love%2:37:00::" />
+<MAPPING to="wordnet" name="like%2:37:05::" />
 </ONTTYPE>
 <ONTTYPE name="care">
 <WORD name="primary_care" />

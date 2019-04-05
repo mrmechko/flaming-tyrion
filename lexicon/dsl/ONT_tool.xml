@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::tool">
+ <comment>
+  &quot;a piece of equipment typically controlled manually (whether powered or not)&quot;
+ </comment>
  <relation label="inherit">
   ont::equipment
  </relation>
@@ -50,6 +53,9 @@
  </sem-feats>
  </concept>
  <concept name="ont::equipment">
+ <comment>
+  &quot;manufactured objects that assist in ior perform some function&quot;
+ </comment>
  <relation label="inherit">
   ont::manufactured-object
  </relation>
@@ -135,6 +141,79 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="phys-obj" />
+ <concept name="ont::cutting-tool">
+ <comment>
+  &quot;tools that assist in cutting material&quot;
+ </comment>
+ <relation label="inherit">
+  ont::tool
+ </relation>
+ <relation label="overlap">
+  wn::|cutting_implement%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">instrument</feat>
+  <feat name="type">ont::cutting-tool</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::drilling-tool">
+ <comment>
+  &quot;tools that are used to create holes in material&quot;
+ </comment>
+ <relation label="inherit">
+  ont::tool
+ </relation>
+ <relation label="overlap">
+  wn::|drill%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">instrument</feat>
+  <feat name="type">ont::drilling-tool</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::hammer-tool">
+ <comment>
+  &quot;tools that are used to hit things&quot;
+ </comment>
+ <relation label="inherit">
+  ont::tool
+ </relation>
+ <relation label="overlap">
+  wn::|hammer%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">instrument</feat>
+  <feat name="type">ont::hammer-tool</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::gripping-tool">
+ <comment>
+  &quot;tools that are used to hit things&quot;
+ </comment>
+ <relation label="inherit">
+  ont::tool
+ </relation>
+ <relation label="overlap">
+  wn::|plyers%1:06:00::|
+  wn::|holding_device%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">instrument</feat>
+  <feat name="type">ont::gripping-tool</feat>
+ </sem-feats>
+ </concept>
  <sense>
  <morph>
   <pos pos="n" />

@@ -1081,6 +1081,9 @@
   </relation>
  </concept>
  <concept name="ont::affect-experiencer">
+  <comment>
+   &quot;cause an experience on an cognitive agent&quot;
+  </comment>
   <relation label="inherit">
    ont::event-of-causation
   </relation>
@@ -1157,7 +1160,8 @@
    ont::event-time-rel
   </relation>
   <relation label="overlap">
-   wn::|before%4:02:03::|
+   wn::|after%4:02:00::|
+   wn::|after%4:02:01::|
   </relation>
  </concept>
  <concept name="ont::age">
@@ -1957,6 +1961,7 @@
    wn::|appreciate%2:37:00::|
    wn::|like%2:37:04::|
    wn::|love%2:37:00::|
+   wn::|like%2:37:05::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::neutral1" optional="optional">
@@ -3817,8 +3822,7 @@
    ont::event-time-rel
   </relation>
   <relation label="overlap">
-   wn::|after%4:02:00::|
-   wn::|after%4:02:01::|
+   wn::|before%4:02:03::|
   </relation>
  </concept>
  <concept name="ont::behavioral-scale">
@@ -8932,9 +8936,6 @@
   <relation label="overlap">
    wn::|indicate%2:32:02::|
    wn::|argue%2:32:01::|
-   wn::|imply%2:32:01::|
-   wn::|entail%2:42:01::|
-   wn::|imply%2:42:00::|
    wn::|mean%2:42:00::|
    wn::|affirm%2:31:00::|
    wn::|read%2:32:02::|
@@ -9459,6 +9460,24 @@
    <feat name="origin">artifact</feat>
    <feat name="form">solid-object</feat>
    <feat name="type">ont::cutlery</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::cutting-tool">
+  <comment>
+   &quot;tools that assist in cutting material&quot;
+  </comment>
+  <relation label="inherit">
+   ont::tool
+  </relation>
+  <relation label="overlap">
+   wn::|cutting_implement%1:06:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="object-function">instrument</feat>
+   <feat name="type">ont::cutting-tool</feat>
   </sem-feats>
  </concept>
  <concept name="ont::cytoplasm">
@@ -11403,13 +11422,24 @@
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::compar" optional="optional">
-    <concept name="t" />
+    <sem-feats>
+     <or>
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+     </or>
+     <feat name="type">ont::number</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::norole" optional="optional">
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::scale" optional="optional">
-    <concept name="t" />
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="type">ont::domain</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::ground" optional="optional">
     <concept name="t" />
@@ -11501,6 +11531,24 @@
   <relation label="inherit">
    ont::move
   </relation>
+ </concept>
+ <concept name="ont::drilling-tool">
+  <comment>
+   &quot;tools that are used to create holes in material&quot;
+  </comment>
+  <relation label="inherit">
+   ont::tool
+  </relation>
+  <relation label="overlap">
+   wn::|drill%1:06:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="object-function">instrument</feat>
+   <feat name="type">ont::drilling-tool</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::drink">
   <relation label="inherit">
@@ -11706,6 +11754,14 @@
  <concept name="ont::duration-scale">
   <relation label="inherit">
    ont::time-measure-scale
+  </relation>
+ </concept>
+ <concept name="ont::during">
+  <comment>
+   &quot;DURING, STARTS or ENDS in ITL&quot;
+  </comment>
+  <relation label="inherit">
+   ont::event-time-rel
   </relation>
  </concept>
  <concept name="ont::dust">
@@ -12599,6 +12655,9 @@
   </relation>
  </concept>
  <concept name="ont::equipment">
+  <comment>
+   &quot;manufactured objects that assist in ior perform some function&quot;
+  </comment>
   <relation label="inherit">
    ont::manufactured-object
   </relation>
@@ -12948,7 +13007,7 @@
  </concept>
  <concept name="ont::event-of-change">
   <comment>
-   &quot;Events that involve change or force: should ahve an AGENT or AFFECTED role&quot;
+   &quot;Events that involve change or force: should have an AGENT or AFFECTED role&quot;
   </comment>
   <relation label="inherit">
    ont::situation-root
@@ -13148,6 +13207,9 @@
   </sem-feats>
  </concept>
  <concept name="ont::evoke-anger">
+  <comment>
+   &quot;cause to be angry&quot;
+  </comment>
   <relation label="inherit">
    ont::evoke-emotion
   </relation>
@@ -13297,6 +13359,9 @@
   </relation>
  </concept>
  <concept name="ont::evoke-emotion">
+  <comment>
+   &quot;actions the cause some emotion in an agent&quot;
+  </comment>
   <relation label="inherit">
    ont::affect-experiencer
   </relation>
@@ -16301,6 +16366,25 @@
    <feat name="type">ont::grievous-val</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::gripping-tool">
+  <comment>
+   &quot;tools that are used to hit things&quot;
+  </comment>
+  <relation label="inherit">
+   ont::tool
+  </relation>
+  <relation label="overlap">
+   wn::|plyers%1:06:00::|
+   wn::|holding_device%1:06:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="object-function">instrument</feat>
+   <feat name="type">ont::gripping-tool</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::group-conflict">
   <relation label="inherit">
    ont::transgress
@@ -16537,6 +16621,24 @@
     abstr-obj
    </relation>
    <feat name="type">ont::half-step</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::hammer-tool">
+  <comment>
+   &quot;tools that are used to hit things&quot;
+  </comment>
+  <relation label="inherit">
+   ont::tool
+  </relation>
+  <relation label="overlap">
+   wn::|hammer%1:06:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="object-function">instrument</feat>
+   <feat name="type">ont::hammer-tool</feat>
   </sem-feats>
  </concept>
  <concept name="ont::happen">
@@ -17578,6 +17680,18 @@
    wn::|implicit%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::imply">
+  <comment>
+   &quot;an entailment relation holds netween NEUTRAL and NEUTRAL1&quot;
+  </comment>
+  <relation label="inherit">
+   ont::correlation
+  </relation>
+  <relation label="overlap">
+   wn::|imply%2:32:01::|
+   wn::|entail%2:42:01::|
+  </relation>
+ </concept>
  <concept name="ont::importance-scale">
   <relation label="inherit">
    ont::evaluation-scale
@@ -17643,6 +17757,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::in-future">
+  <relation label="inherit">
+   ont::event-time-wrt-now
+  </relation>
+  <relation label="overlap">
+   wn::|future%3:00:00::|
+  </relation>
+ </concept>
  <concept name="ont::in-loc">
   <comment>
    &quot;FIGURE is within or inside the GROUND&quot;
@@ -17662,6 +17784,14 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::in-past">
+  <relation label="inherit">
+   ont::event-time-wrt-now
+  </relation>
+  <relation label="overlap">
+   wn::|past%3:00:00::|
+  </relation>
  </concept>
  <concept name="ont::in-relation">
   <relation label="inherit">
@@ -24072,6 +24202,8 @@
   <relation label="overlap">
    wn::|now%4:02:05::|
    wn::|presently%4:02:00::|
+   wn::|current%3:00:00::|
+   wn::|present%3:00:01::|
   </relation>
  </concept>
  <concept name="ont::nuclear-val">
@@ -24490,6 +24622,14 @@
    wn::|rare%5:00:00:infrequent:00|
    wn::|infrequent%3:00:00::|
    wn::|occasional%5:00:00:infrequent:00|
+  </relation>
+ </concept>
+ <concept name="ont::occuring-now">
+  <relation label="inherit">
+   ont::event-time-wrt-now
+  </relation>
+  <relation label="overlap">
+   wn::|current%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::occurring">
@@ -28836,7 +28976,6 @@
   </relation>
   <relation label="overlap">
    wn::|new%3:00:00::|
-   wn::|past%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::recipe">
@@ -32382,6 +32521,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::simultaneous">
+  <comment>
+   &quot;EQUAL in ITL&quot;
+  </comment>
+  <relation label="inherit">
+   ont::event-time-rel
+  </relation>
+ </concept>
  <concept name="ont::sing">
   <relation label="inherit">
    ont::say
@@ -33105,6 +33252,7 @@
   </relation>
   <relation label="overlap">
    wn::|soon%4:02:00::|
+   wn::|imminent%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::sorry">
@@ -36255,6 +36403,9 @@
   </sem-feats>
  </concept>
  <concept name="ont::tool">
+  <comment>
+   &quot;a piece of equipment typically controlled manually (whether powered or not)&quot;
+  </comment>
   <relation label="inherit">
    ont::equipment
   </relation>

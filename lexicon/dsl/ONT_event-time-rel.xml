@@ -224,8 +224,7 @@
   ont::event-time-rel
  </relation>
  <relation label="overlap">
-  wn::|after%4:02:00::|
-  wn::|after%4:02:01::|
+  wn::|before%4:02:03::|
  </relation>
  </concept>
  <concept name="ont::after">
@@ -233,7 +232,24 @@
   ont::event-time-rel
  </relation>
  <relation label="overlap">
-  wn::|before%4:02:03::|
+  wn::|after%4:02:00::|
+  wn::|after%4:02:01::|
+ </relation>
+ </concept>
+ <concept name="ont::during">
+ <comment>
+  &quot;DURING, STARTS or ENDS in ITL&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-time-rel
+ </relation>
+ </concept>
+ <concept name="ont::simultaneous">
+ <comment>
+  &quot;EQUAL in ITL&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-time-rel
  </relation>
  </concept>
  <concept name="ont::immediate">
@@ -324,90 +340,6 @@
    <feat name="wh">-</feat>
   </syn-feats>
  </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="coming" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="during" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="during the last week">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(or
-                                              deepsemlex::s
-                                              deepsemlex::np)" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-    pre-vp
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="following" />
- </morph>
- <example text="following the meeting she checked her watch">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(or
-                                              deepsemlex::s
-                                              deepsemlex::np)" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-    pre-vp
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="forthcoming" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::central-adj-templ
- </relation>
  </sense>
  <sense>
  <morph>
@@ -566,80 +498,6 @@
  <sense>
  <morph>
   <pos pos="adv" />
-  <word first-word="previously" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::pred-s-vp-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="simultaneously" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::pred-vp-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="since" />
- </morph>
- <comment>
-  &quot;HPI-ACN-4&quot;
- </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="show me arrivals since 5 pm / he left">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(or
-                                              deepsemlex::s
-                                              deepsemlex::np)" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-    pre-vp
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="since" />
- </morph>
- <comment>
-  &quot;HPI-ACN-1&quot;
- </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="he has had no problems since">
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-implicit-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
   <word first-word="sometime" />
  </morph>
  <provenance name="TRIPS">
@@ -672,35 +530,6 @@
  <sense>
  <morph>
   <pos pos="adv" />
-  <word first-word="status" remaining-words="post" />
- </morph>
- <example text="status post surgery">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    post
-    pre
-    pre-vp
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
   <word first-word="then" />
  </morph>
  <provenance name="TRIPS">
@@ -727,47 +556,6 @@
    </feat>
    <feat name="sort">pp-word</feat>
    <feat name="wh">-</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="till" />
- </morph>
- <example text="wait till he leaves">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::binary-constraint-s-decl-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="till" />
- </morph>
- <example text="wait till 5">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::s" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
   </syn-feats>
  </syntax>
  </sense>
@@ -834,34 +622,6 @@
    <feat name="wh">-</feat>
   </syn-feats>
  </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="underway" />
- </morph>
- <example text="the process is well underway">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::predicative-only-adj-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="upcoming" />
- </morph>
- <relation label="inherit">
-  ont::event-time-rel
-  ont::central-adj-templ
- </relation>
  </sense>
  <sense>
  <morph>
