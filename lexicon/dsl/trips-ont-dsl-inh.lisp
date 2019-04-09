@@ -97616,7 +97616,8 @@
     ONT::MOVE)
   (OVERLAP
     WN::|back%2:38:01::|
-    WN::|move_back%2:38:00::|)
+    WN::|move_back%2:38:00::|
+    WN::|retrograde%2:38:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -114711,6 +114712,7 @@
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
   (OVERLAP
+    WN::|appear%2:41:03::|
     WN::|attend%2:42:00::|
     WN::|participate%2:41:00::|)
   (SEM-FRAME
@@ -114730,8 +114732,10 @@
        ABSTR-OBJ)
      OPTIONAL)
     (ONT::NEUTRAL
-     (CONCEPT
-       SITUATION))
+     (SEM-FEATS
+       (INHERIT
+         SITUATION)
+       (TYPE ONT::GATHERING-EVENT)))
     (ONT::AGENT
      (SEM-FEATS
        (INHERIT
