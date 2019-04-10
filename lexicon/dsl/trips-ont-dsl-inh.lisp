@@ -11950,10 +11950,13 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (SCALE ONT::TIME-MEASURE-SCALE))
+       (SCALE ONT::TIME-MEASURE-SCALE)
+       (TANGIBLE +))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -22441,7 +22444,9 @@
          (CONCEPT
            PHYS-OBJ)
          (CONCEPT
-           ABSTR-OBJ))
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
        (INTENTIONAL -))
      OPTIONAL)
     (ONT::FORMAL
@@ -31510,7 +31515,8 @@
   (OVERLAP
     WN::|egress%1:04:01::|
     WN::|egression%1:04:00::|
-    WN::|emergence%1:04:00::|)
+    WN::|emergence%1:04:00::|
+    WN::|leak%2:30:04::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -52486,11 +52492,12 @@
   (INHERIT
     ONT::CAUSE-MAKE-THINGS)
   (OVERLAP
-    WN::|emission%1:04:00::|
-    WN::|emanation%1:04:00::|
-    WN::|emit%2:43:00::|
+    WN::|bubble%2:30:01::|
     WN::|discharge%2:29:00::|
-    WN::|bubble%2:30:01::|)
+    WN::|emanation%1:04:00::|
+    WN::|emission%1:04:00::|
+    WN::|emit%2:43:00::|
+    WN::|leak%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -59519,7 +59526,6 @@
   (INHERIT
     ONT::EVENT-OF-EXPERIENCE)
   (OVERLAP
-    WN::|like%2:37:05::|
     WN::|experience%2:37:00::|
     WN::|feel%2:37:00::|)
   (SEM-FEATS
@@ -133104,6 +133110,86 @@
     (INTENTIONAL -)
     (CAUSE F::FORCE)
     (TYPE ONT::CHANGE)))
+
+(CONCEPT
+  ONT::RENEGE
+  (INHERIT
+    ONT::CANCEL)
+  (OVERLAP
+    WN::|renege%2:32:00::|
+    WN::|retreat%2:32:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (TRAJECTORY -)
+    (ASPECT F::DYNAMIC)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (INTENTIONAL -)
+    (CAUSE F::AGENTIVE)
+    (TYPE ONT::CAUSE-ACTION))
+  (SEM-FRAME
+    (ONT::EFFECT
+     (SEM-FEATS
+       (INHERIT
+         SITUATION)
+       (ASPECT F::DYNAMIC)
+       (CAUSE F::AGENTIVE)))
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::AGENT
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (INTENTIONAL -))
+     OPTIONAL)
+    (ONT::FORMAL
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          ONT::SITUATION-ROOT
+          ONT::PROPERTY-VAL))
+       (INTENTIONAL -))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::REPAIR

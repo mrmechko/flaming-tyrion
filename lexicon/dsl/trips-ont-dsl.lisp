@@ -2347,13 +2347,16 @@
          (CONCEPT
            PHYS-OBJ)
          (CONCEPT
-           ABSTR-OBJ))
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
        (SCALE
         (OR
           ONT::TIME-MEASURE-SCALE
           ONT::RATE-SCALE
           ONT::MONEY-SCALE
-          ONT::NUMBER-SCALE)))
+          ONT::NUMBER-SCALE))
+       (TANGIBLE +))
      OPTIONAL)))
 
 (CONCEPT
@@ -4377,7 +4380,9 @@
          (CONCEPT
            PHYS-OBJ)
          (CONCEPT
-           ABSTR-OBJ))
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
        (INTENTIONAL -))
      OPTIONAL)
     (ONT::FORMAL
@@ -6303,7 +6308,8 @@
   (OVERLAP
     WN::|egress%1:04:01::|
     WN::|egression%1:04:00::|
-    WN::|emergence%1:04:00::|)
+    WN::|emergence%1:04:00::|
+    WN::|leak%2:30:04::|)
   (SEM-FRAME
     (ONT::AGENT
      (CONCEPT
@@ -10660,11 +10666,12 @@
   (INHERIT
     ONT::CAUSE-MAKE-THINGS)
   (OVERLAP
-    WN::|emission%1:04:00::|
-    WN::|emanation%1:04:00::|
-    WN::|emit%2:43:00::|
+    WN::|bubble%2:30:01::|
     WN::|discharge%2:29:00::|
-    WN::|bubble%2:30:01::|))
+    WN::|emanation%1:04:00::|
+    WN::|emission%1:04:00::|
+    WN::|emit%2:43:00::|
+    WN::|leak%2:30:00::|))
 
 (CONCEPT
   ONT::EMOTION-SCALE
@@ -12222,7 +12229,6 @@
   (INHERIT
     ONT::EVENT-OF-EXPERIENCE)
   (OVERLAP
-    WN::|like%2:37:05::|
     WN::|experience%2:37:00::|
     WN::|feel%2:37:00::|)
   (SEM-FEATS
@@ -26106,6 +26112,14 @@
          SITUATION)
        (CONCEPT
          ABSTR-OBJ)))))
+
+(CONCEPT
+  ONT::RENEGE
+  (INHERIT
+    ONT::CANCEL)
+  (OVERLAP
+    WN::|renege%2:32:00::|
+    WN::|retreat%2:32:00::|))
 
 (CONCEPT
   ONT::REPAIR
