@@ -11632,14 +11632,6 @@
    <feat name="type">ont::drought</feat>
   </sem-feats>
  </concept>
- <concept name="ont::drowse">
-  <relation label="inherit">
-   ont::sleep
-  </relation>
-  <relation label="overlap">
-   wn::|nod%2:29:03::|
-  </relation>
- </concept>
  <concept name="ont::drowsy-val">
   <relation label="inherit">
    ont::alertness-val
@@ -14123,6 +14115,8 @@
    ont::body-part
   </relation>
   <relation label="overlap">
+   wn::|external-body-part%1:08:00::|
+   wn::|skin%1:08:00::|
    wn::|animal_skin%1:27:00::|
   </relation>
   <sem-feats>
@@ -14265,6 +14259,15 @@
  <concept name="ont::fall">
   <relation label="inherit">
    ont::move-downward
+  </relation>
+ </concept>
+ <concept name="ont::fall-asleep">
+  <relation label="inherit">
+   ont::processes-of-consciousness
+  </relation>
+  <relation label="overlap">
+   wn::|go_to_bed%2:29:00::|
+   wn::|fall_asleep%2:29:00::|
   </relation>
  </concept>
  <concept name="ont::false-val">
@@ -16928,6 +16931,21 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::head">
+  <relation label="inherit">
+   ont::external-body-part
+  </relation>
+  <relation label="overlap">
+   wn::|head%1:08:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">-</feat>
+   <feat name="type">ont::head</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::headache">
   <relation label="inherit">
@@ -23315,6 +23333,14 @@
    wn::|free%5:00:00:unpaid:00|
   </relation>
  </concept>
+ <concept name="ont::nod">
+  <relation label="inherit">
+   ont::bodily-process
+  </relation>
+  <relation label="overlap">
+   wn::|nod%2:29:03::|
+  </relation>
+ </concept>
  <concept name="ont::noisy">
   <relation label="inherit">
    ont::loudness-val
@@ -27825,6 +27851,7 @@
   <relation label="overlap">
    wn::|professional%1:18:00::|
    wn::|professional_person%1:18:00::|
+   wn::|skilled_worker%1:18:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -32807,8 +32834,9 @@
   <relation label="overlap">
    wn::|sleep%2:29:00::|
    wn::|oversleep%2:29:00::|
-   wn::|go_to_bed%2:29:00::|
-   wn::|fall_asleep%2:29:00::|
+   wn::|sleep%1:26:00::|
+   wn::|sleep%1:26:02::|
+   wn::|nap%1:28:00::|
   </relation>
  </concept>
  <concept name="ont::sleepiness-scale">

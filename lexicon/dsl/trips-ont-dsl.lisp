@@ -10195,13 +10195,6 @@
     (TYPE ONT::DROUGHT)))
 
 (CONCEPT
-  ONT::DROWSE
-  (INHERIT
-    ONT::SLEEP)
-  (OVERLAP
-    WN::|nod%2:29:03::|))
-
-(CONCEPT
   ONT::DROWSY-VAL
   (INHERIT
     ONT::ALERTNESS-VAL)
@@ -12397,6 +12390,8 @@
   (INHERIT
     ONT::BODY-PART)
   (OVERLAP
+    WN::|external-body-part%1:08:00::|
+    WN::|skin%1:08:00::|
     WN::|animal_skin%1:27:00::|)
   (SEM-FEATS
     (INHERIT
@@ -12523,6 +12518,14 @@
   ONT::FALL
   (INHERIT
     ONT::MOVE-DOWNWARD))
+
+(CONCEPT
+  ONT::FALL-ASLEEP
+  (INHERIT
+    ONT::PROCESSES-OF-CONSCIOUSNESS)
+  (OVERLAP
+    WN::|go_to_bed%2:29:00::|
+    WN::|fall_asleep%2:29:00::|))
 
 (CONCEPT
   ONT::FALSE-VAL
@@ -14819,6 +14822,18 @@
          (CONCEPT
            SITUATION))
        (TANGIBLE +)))))
+
+(CONCEPT
+  ONT::HEAD
+  (INHERIT
+    ONT::EXTERNAL-BODY-PART)
+  (OVERLAP
+    WN::|head%1:08:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (INTENTIONAL -)
+    (TYPE ONT::HEAD)))
 
 (CONCEPT
   ONT::HEADACHE
@@ -20332,6 +20347,13 @@
     WN::|free%5:00:00:unpaid:00|))
 
 (CONCEPT
+  ONT::NOD
+  (INHERIT
+    ONT::BODILY-PROCESS)
+  (OVERLAP
+    WN::|nod%2:29:03::|))
+
+(CONCEPT
   ONT::NOISY
   (INHERIT
     ONT::LOUDNESS-VAL)
@@ -24271,7 +24293,8 @@
     ONT::PERSON)
   (OVERLAP
     WN::|professional%1:18:00::|
-    WN::|professional_person%1:18:00::|)
+    WN::|professional_person%1:18:00::|
+    WN::|skilled_worker%1:18:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -28703,8 +28726,9 @@
   (OVERLAP
     WN::|sleep%2:29:00::|
     WN::|oversleep%2:29:00::|
-    WN::|go_to_bed%2:29:00::|
-    WN::|fall_asleep%2:29:00::|))
+    WN::|sleep%1:26:00::|
+    WN::|sleep%1:26:02::|
+    WN::|nap%1:28:00::|))
 
 (CONCEPT
   ONT::SLEEPINESS-SCALE

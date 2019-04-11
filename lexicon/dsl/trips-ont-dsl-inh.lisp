@@ -49841,53 +49841,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::DROWSE
-  (INHERIT
-    ONT::SLEEP)
-  (OVERLAP
-    WN::|nod%2:29:03::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (KR-TYPE ANY-KR-TYPE)
-    (CAUSE ANY-CAUSE)
-    (TIME-SPAN ANY-TIME-SPAN)
-    (TRAJECTORY -)
-    (LOCATIVE -)
-    (ORIGIN ANY-ORIGIN)
-    (IOBJ -)
-    (ASPECT F::DYNAMIC)
-    (TANGIBLE +)
-    (CONTAINER -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
-    (INTENTIONAL -)
-    (TYPE ONT::BODILY-PROCESS))
-  (SEM-FRAME
-    (ONT::RESULT
-     (CONCEPT
-       ABSTR-OBJ)
-     OPTIONAL)
-    (ONT::AFFECTED1
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (FORM F::SUBSTANCE))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::PHYS-OBJECT)
-       (ORIGIN F::LIVING)))
-    (ONT::AGENT
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::ORGANISM)
-       (ORIGIN F::LIVING)))))
-
-(CONCEPT
   ONT::DROWSY-VAL
   (INHERIT
     ONT::ALERTNESS-VAL)
@@ -60408,6 +60361,8 @@
   (INHERIT
     ONT::BODY-PART)
   (OVERLAP
+    WN::|external-body-part%1:08:00::|
+    WN::|skin%1:08:00::|
     WN::|animal_skin%1:27:00::|)
   (SEM-FEATS
     (INHERIT
@@ -60995,6 +60950,54 @@
        (ASPECT F::DYNAMIC)
        (CAUSE F::AGENTIVE))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::FALL-ASLEEP
+  (INHERIT
+    ONT::PROCESSES-OF-CONSCIOUSNESS)
+  (OVERLAP
+    WN::|go_to_bed%2:29:00::|
+    WN::|fall_asleep%2:29:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (CAUSE ANY-CAUSE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (ASPECT F::DYNAMIC)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (INTENTIONAL -)
+    (TYPE ONT::BODILY-PROCESS))
+  (SEM-FRAME
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AFFECTED1
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (FORM F::SUBSTANCE))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TANGIBLE +)
+       (TYPE ONT::PHYS-OBJECT)
+       (ORIGIN F::LIVING)))
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::ORGANISM)
+       (ORIGIN F::LIVING)))))
 
 (CONCEPT
   ONT::FALSE-VAL
@@ -72457,6 +72460,40 @@
          (CONCEPT
            PHYS-OBJ))
        (TANGIBLE +)))))
+
+(CONCEPT
+  ONT::HEAD
+  (INHERIT
+    ONT::EXTERNAL-BODY-PART)
+  (OVERLAP
+    WN::|head%1:08:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (ORIGIN F::NATURAL)
+    (SPATIAL-ABSTRACTION
+     (OR
+       F::SPATIAL-POINT
+       F::SPATIAL-REGION))
+    (TANGIBLE +)
+    (CONTAINER +)
+    (OBJECT-FUNCTION F::BODY-PART)
+    (FORM F::OBJECT)
+    (INTENTIONAL -)
+    (TYPE ONT::HEAD))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (FORM F::OBJECT)
+       (ORIGIN F::LIVING))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::HEADACHE
@@ -101902,6 +101939,53 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::NOD
+  (INHERIT
+    ONT::BODILY-PROCESS)
+  (OVERLAP
+    WN::|nod%2:29:03::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (CAUSE ANY-CAUSE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (ASPECT F::DYNAMIC)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (INTENTIONAL -)
+    (TYPE ONT::BODILY-PROCESS))
+  (SEM-FRAME
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AFFECTED1
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (FORM F::SUBSTANCE))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TANGIBLE +)
+       (TYPE ONT::PHYS-OBJECT)
+       (ORIGIN F::LIVING)))
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::ORGANISM)
+       (ORIGIN F::LIVING)))))
+
+(CONCEPT
   ONT::NOISY
   (INHERIT
     ONT::LOUDNESS-VAL)
@@ -124855,7 +124939,8 @@
     ONT::PERSON)
   (OVERLAP
     WN::|professional%1:18:00::|
-    WN::|professional_person%1:18:00::|)
+    WN::|professional_person%1:18:00::|
+    WN::|skilled_worker%1:18:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -145271,8 +145356,9 @@
   (OVERLAP
     WN::|sleep%2:29:00::|
     WN::|oversleep%2:29:00::|
-    WN::|go_to_bed%2:29:00::|
-    WN::|fall_asleep%2:29:00::|)
+    WN::|sleep%1:26:00::|
+    WN::|sleep%1:26:02::|
+    WN::|nap%1:28:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
