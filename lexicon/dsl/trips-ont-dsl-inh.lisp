@@ -94703,7 +94703,7 @@
   (INHERIT
     ONT::BODILY-PROCESS)
   (OVERLAP
-    WN::|metabolise%2:34:00::|)
+    WN::|metabolism%1:22:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -162559,7 +162559,8 @@
     ONT::CHANGE)
   (OVERLAP
     WN::|transform%2:30:00::|
-    WN::|transform%2:30:03::|)
+    WN::|transform%2:30:03::|
+    WN::|metabolize%2:34:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
