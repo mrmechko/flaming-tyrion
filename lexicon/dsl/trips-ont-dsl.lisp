@@ -4679,9 +4679,9 @@
     ONT::ACTING)
   (OVERLAP
     WN::|do%2:36:02::|
-    WN::|make%2:36:08::|
     WN::|drive%2:35:00::|
     WN::|get%2:30:02::|
+    WN::|make%2:36:08::|
     WN::|open_up%2:30:00::|)
   (SEM-FEATS
     (INHERIT
@@ -5743,6 +5743,9 @@
   ONT::CLICK
   (INHERIT
     ONT::APPLY-FORCE)
+  (OVERLAP
+    WN::|click%2:38:00::|
+    WN::|click%1:04:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (CONCEPT
@@ -20369,7 +20372,9 @@
 (CONCEPT
   ONT::NOMINATE
   (INHERIT
-    ONT::CONVENTIONAL-SPEECH-ACT))
+    ONT::CONVENTIONAL-SPEECH-ACT)
+  (OVERLAP
+    WN::|nominate%2:41:02::|))
 
 (CONCEPT
   ONT::NON-VERTICAL-SCALE
@@ -20679,11 +20684,6 @@
       ABSTR-OBJ)
     (SCALE ONT::NOT-EXPENSIVE-SCALE)
     (TYPE ONT::NOT-EXPENSIVE-VAL)))
-
-(CONCEPT
-  ONT::NOT-FAMILIAR
-  (INHERIT
-    ONT::SALIENCE))
 
 (CONCEPT
   ONT::NOT-FAVORABLE-CONDITION
@@ -23958,6 +23958,8 @@
   ONT::PRESCRIBING
   (INHERIT
     ONT::GIVING)
+  (OVERLAP
+    WN::|prescribe%2:32:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)

@@ -23725,9 +23725,9 @@
     ONT::ACTING)
   (OVERLAP
     WN::|do%2:36:02::|
-    WN::|make%2:36:08::|
     WN::|drive%2:35:00::|
     WN::|get%2:30:02::|
+    WN::|make%2:36:08::|
     WN::|open_up%2:30:00::|)
   (SEM-FEATS
     (INHERIT
@@ -29034,6 +29034,9 @@
   ONT::CLICK
   (INHERIT
     ONT::APPLY-FORCE)
+  (OVERLAP
+    WN::|click%2:38:00::|
+    WN::|click%1:04:00::|)
   (SEM-FRAME
     (ONT::AGENT
      (SEM-FEATS
@@ -102093,6 +102096,8 @@
   ONT::NOMINATE
   (INHERIT
     ONT::CONVENTIONAL-SPEECH-ACT)
+  (OVERLAP
+    WN::|nominate%2:41:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -104755,51 +104760,6 @@
        (INHERIT
          T)
        (TANGIBLE +)))))
-
-(CONCEPT
-  ONT::NOT-FAMILIAR
-  (INHERIT
-    ONT::SALIENCE)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (KR-TYPE ANY-KR-TYPE)
-    (TIME-SPAN ANY-TIME-SPAN)
-    (LOCATIVE -)
-    (ORIGIN ANY-ORIGIN)
-    (IOBJ -)
-    (ASPECT F::STATIC)
-    (TANGIBLE +)
-    (CONTAINER -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
-    (INTENTIONAL -)
-    (TRAJECTORY -)
-    (CAUSE F::MENTAL)
-    (TYPE ONT::SALIENCE))
-  (SEM-FRAME
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SOURCE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (INTENTIONAL +))
-     OPTIONAL)
-    (ONT::FORMAL
-     (OR
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION)))))
 
 (CONCEPT
   ONT::NOT-FAVORABLE-CONDITION
@@ -123110,6 +123070,8 @@
   ONT::PRESCRIBING
   (INHERIT
     ONT::GIVING)
+  (OVERLAP
+    WN::|prescribe%2:32:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
