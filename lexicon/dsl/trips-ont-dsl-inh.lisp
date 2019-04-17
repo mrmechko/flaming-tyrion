@@ -73353,6 +73353,10 @@
   ONT::HERD
   (INHERIT
     ONT::CAUSE-TO-MOVE)
+  (OVERLAP
+    WN::|herd%2:38:00::|
+    WN::|herd%2:38:01::|
+    WN::|herd%2:42:00::|)
   (SEM-FRAME
     (ONT::EXTENT
      (SEM-FEATS
@@ -138370,6 +138374,8 @@
   ONT::SAMPLING
   (INHERIT
     ONT::CHOOSING)
+  (OVERLAP
+    WN::|sample%2:34:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
