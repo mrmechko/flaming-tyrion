@@ -3110,6 +3110,21 @@
     WN::|equal%2:42:01::|))
 
 (CONCEPT
+  ONT::BE-AHEAD
+  (INHERIT
+    ONT::IN-RELATION)
+  (OVERLAP
+    WN::|lead%2:42:01::|)
+  (SEM-FRAME
+    (ONT::NEUTRAL1
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::BE-AT
   (INHERIT
     ONT::POSITION)
@@ -3157,6 +3172,22 @@
     (ONT::NEUTRAL
      (CONCEPT
        PHYS-OBJ)
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::BE-BEHIND
+  (INHERIT
+    ONT::IN-RELATION)
+  (OVERLAP
+    WN::|lag%2:38:00::|
+    WN::|trail%2:38:02::|)
+  (SEM-FRAME
+    (ONT::NEUTRAL1
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
      OPTIONAL)))
 
 (CONCEPT

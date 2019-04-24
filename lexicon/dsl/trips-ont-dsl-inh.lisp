@@ -16129,6 +16129,58 @@
          PHYS-OBJ)))))
 
 (CONCEPT
+  ONT::BE-AHEAD
+  (INHERIT
+    ONT::IN-RELATION)
+  (OVERLAP
+    WN::|lead%2:42:01::|)
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         TIME)
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ)))
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL))
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (CAUSE ANY-CAUSE)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (TRAJECTORY -)
+    (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (TIME-SPAN F::EXTENDED)
+    (ASPECT F::STATIC)
+    (TYPE ONT::IN-RELATION)))
+
+(CONCEPT
   ONT::BE-AT
   (INHERIT
     ONT::POSITION)
@@ -16279,6 +16331,59 @@
          PHYS-OBJ)
        (TYPE ONT::PHYS-OBJECT))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::BE-BEHIND
+  (INHERIT
+    ONT::IN-RELATION)
+  (OVERLAP
+    WN::|lag%2:38:00::|
+    WN::|trail%2:38:02::|)
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         TIME)
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ)))
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL))
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (CAUSE ANY-CAUSE)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (TRAJECTORY -)
+    (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (TIME-SPAN F::EXTENDED)
+    (ASPECT F::STATIC)
+    (TYPE ONT::IN-RELATION)))
 
 (CONCEPT
   ONT::BE-BORN
