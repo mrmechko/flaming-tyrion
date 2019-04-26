@@ -20,6 +20,9 @@
   <feat name="type">ont::group-object</feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::contents" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
    <concept name="t" />
   </role-restr-map>
@@ -58,6 +61,9 @@
  <feat name="type">ont::group-object</feat>
  </sem-feats>
  <sem-frame>
+ <role-restr-map roles="ont::contents" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
   <concept name="t" />
  </role-restr-map>
@@ -102,6 +108,55 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="phys-obj" />
+ <concept name="ont::collection">
+ <relation label="inherit">
+  ont::group-object
+ </relation>
+ <relation label="overlap">
+  wn::|collection%1:14:00::|
+  wn::|array%1:14:00::|
+  wn::|array%1:10:00::|
+  wn::|series%1:14:01::|
+ </relation>
+ </concept>
+ <concept name="ont::natural-group">
+ <comment>
+  &quot;An group defined by a classification of living things&quot;
+ </comment>
+ <relation label="inherit">
+  ont::group-object
+ </relation>
+ <relation label="overlap">
+  wn::|kingdom%1:14:00::|
+  wn::|biological_group%1:14:00::|
+  wn::|association%1:14:01::|
+ </relation>
+ </concept>
+ <concept name="ont::animal-group">
+ <comment>
+  &quot;An group defined by a classification of animals&quot;
+ </comment>
+ <relation label="inherit">
+  ont::group-object
+ </relation>
+ <relation label="overlap">
+  wn::|animal_group%1:14:00::|
+ </relation>
+ </concept>
+ <concept name="ont::people-subgroup">
+ <comment>
+  &quot;a group of persons defined by origin or race&quot;
+ </comment>
+ <relation label="inherit">
+  ont::group-object
+ </relation>
+ <relation label="overlap">
+  wn::|ethnic_group%1:14:00::|
+  wn::|race%1:14:00::|
+  wn::|sainthood%1:14:00::|
+  wn::|varna%1:14:00::|
+ </relation>
+ </concept>
  <concept name="ont::system">
  <comment>
   &quot;An interconnected group of objects, abstract or physical&quot;
@@ -110,7 +165,7 @@
   ont::group-object
  </relation>
  <relation label="overlap">
-  wn::|system%1:06:00::|
+  wn::|system%1:14:00::|
   wn::|system%1:14:00::|
  </relation>
  </concept>
@@ -142,19 +197,6 @@
    </or>
   </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::collection">
- <relation label="inherit">
-  ont::group-object
- </relation>
- <relation label="overlap">
-  wn::|collection%1:14:00::|
-  wn::|aggregation%1:14:00::|
-  wn::|accumulation%1:14:00::|
-  wn::|assemblage%1:14:01::|
-  wn::|array%1:14:00::|
-  wn::|array%1:10:00::|
- </relation>
  </concept>
  <concept name="ont::surplus">
  <relation label="inherit">

@@ -1742,6 +1742,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -3774,29 +3778,14 @@
     ONT::EVENT-OF-ACTION)
   (OVERLAP
     WN::|maintain%2:40:10::|
-    WN::|keep%2:40:10::|
     WN::|save%2:40:03::|
-    WN::|keep%2:40:09::|
-    WN::|hold_open%2:40:00::|
-    WN::|keep_open%2:40:00::|
     WN::|maintain%2:34:00::|
-    WN::|keep%2:34:00::|
-    WN::|sustain%2:34:00::|
     WN::|keep_on%2:41:00::|
-    WN::|keep%2:41:02::|
-    WN::|continue%2:41:00::|
     WN::|retain%2:41:01::|
     WN::|maintain%2:31:00::|
-    WN::|keep%2:31:00::|
-    WN::|observe%2:31:00::|
     WN::|hold%2:42:00::|
     WN::|maintain%2:42:00::|
-    WN::|keep%2:42:00::|
     WN::|continue%2:42:01::|
-    WN::|go_on%2:42:00::|
-    WN::|proceed%2:42:00::|
-    WN::|go_along%2:42:00::|
-    WN::|keep%2:42:07::|
     WN::|persist%2:42:01::|
     WN::|welter%2:31:00::|
     WN::|sustain%2:42:01::|
@@ -5473,6 +5462,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -6732,6 +6725,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -8573,6 +8570,42 @@
     (TYPE ONT::ANIMAL)))
 
 (CONCEPT
+  ONT::ANIMAL-GROUP
+  (COMMENT "An group defined by a classification of animals")
+  (INHERIT
+    ONT::GROUP-OBJECT)
+  (OVERLAP
+    WN::|animal_group%1:14:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (INTENTIONAL -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (TANGIBLE +)
+    (CONTAINER +)
+    (TYPE ONT::GROUP-OBJECT))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::ANIMAL-PROPENSITY-VAL
   (COMMENT
    "properties relating to human or animal tendencies or inclinations to behave in a particular manner")
@@ -10079,6 +10112,44 @@
            PHYS-OBJ))
        (TANGIBLE +)
        (INTENTIONAL +)))))
+
+(CONCEPT
+  ONT::ARRANGEMENT-CONFIGURATION
+  (COMMENT "An group of objects organized in some way")
+  (INHERIT
+    ONT::COLLECTION)
+  (OVERLAP
+    WN::|arrangement%1:14:00::|
+    WN::|straggle%1:14:00::|
+    WN::|configuration%1:09:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (INTENTIONAL -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (TANGIBLE +)
+    (CONTAINER +)
+    (TYPE ONT::GROUP-OBJECT))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::ARRANGING
@@ -15013,6 +15084,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -22847,6 +22919,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -29324,6 +29397,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -30662,11 +30736,9 @@
     ONT::GROUP-OBJECT)
   (OVERLAP
     WN::|collection%1:14:00::|
-    WN::|aggregation%1:14:00::|
-    WN::|accumulation%1:14:00::|
-    WN::|assemblage%1:14:01::|
     WN::|array%1:14:00::|
-    WN::|array%1:10:00::|)
+    WN::|array%1:10:00::|
+    WN::|series%1:14:01::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -30687,6 +30759,10 @@
     (CONTAINER +)
     (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -31262,6 +31338,10 @@
     WN::|column%1:14:00::|
     WN::|column%1:25:02::|)
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
@@ -31379,6 +31459,10 @@
     (CONTAINER +)
     (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -32972,6 +33056,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -39308,6 +39396,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -40110,6 +40199,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -44480,7 +44573,8 @@
   (OVERLAP
     WN::|destroy%2:35:00::|
     WN::|destroy%2:36:00::|
-    WN::|down%2:38:00::|)
+    WN::|down%2:38:00::|
+    WN::|knock_out%2:30:00::|)
   (SEM-FRAME
     (ONT::AGENT
      (SEM-FEATS
@@ -46436,6 +46530,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL))
   (SEM-FEATS
@@ -46499,6 +46594,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -46544,6 +46640,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -46571,7 +46668,8 @@
            SITUATION)
          (CONCEPT
            PHYS-OBJ))
-       (MOBILITY F::MOVABLE))
+       (MOBILITY F::MOVABLE)
+       (ASPECT F::DYNAMIC))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -46634,6 +46732,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -46678,6 +46777,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -46724,6 +46824,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -46768,6 +46869,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -46814,6 +46916,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -46858,6 +46961,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -46903,6 +47007,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -46930,7 +47035,8 @@
            SITUATION)
          (CONCEPT
            PHYS-OBJ))
-       (MOBILITY F::MOVABLE))
+       (MOBILITY F::MOVABLE)
+       (ASPECT F::DYNAMIC))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -47092,6 +47198,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -47137,6 +47244,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -47182,6 +47290,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -51610,6 +51719,10 @@
     (CONTAINER +)
     (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -51713,7 +51826,7 @@
 
 (CONCEPT
   ONT::ECOSYSTEM
-  (COMMENT "An interconnected group of] entities fo5ming an ecosystem")
+  (COMMENT "An interconnected group of entities forming an ecosystem")
   (INHERIT
     ONT::SYSTEM)
   (OVERLAP
@@ -51740,6 +51853,10 @@
     (CONTAINER +)
     (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -52379,6 +52496,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -54433,6 +54554,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -61570,6 +61695,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -62514,6 +62643,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -63392,6 +63525,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -63453,6 +63590,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -66091,6 +66232,10 @@
     (CONTAINER +)
     (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -71042,6 +71187,10 @@
     (CONTAINER +)
     (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -74392,7 +74541,7 @@
   (COMMENT
    "an agent comes into contact with force with another object, typically harming the other object")
   (INHERIT
-    ONT::MOTION)
+    ONT::APPLY-FORCE)
   (OVERLAP
     WN::|beat%2:35:01::|
     WN::|hit%2:35:03::|
@@ -74406,17 +74555,24 @@
     (ORIGIN ANY-ORIGIN)
     (IOBJ -)
     (CAUSE F::FORCE)
-    (ASPECT F::DYNAMIC)
     (INTENTIONAL -)
     (INFORMATION F::MENTAL-CONSTRUCT)
     (CONTAINER -)
     (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
     (TRAJECTORY -)
     (TYPE ONT::HITTING))
   (SEM-FRAME
-    (ONT::SOURCE
-     (CONCEPT
-       T)
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::RESULT
      (SEM-FEATS
@@ -74425,49 +74581,14 @@
        (TYPE
         (OR
           ONT::POSITION-RELN
+          ONT::DIRECTION
           ONT::PATH)))
-     OPTIONAL)
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ))
-       (TANGIBLE +))
-     OPTIONAL)
-    (ONT::EXTENT
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::QUANTITY))
      OPTIONAL)
     (ONT::AFFECTED
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE
-        (OR
-          ONT::COMMODITY
-          ONT::COOKWARE
-          ONT::WRITING-IMPLEMENT
-          ONT::INSTRUMENTATION
-          ONT::COMPUTER-PART
-          ONT::COMPUTER
-          ONT::PROJECTOR
-          ONT::MUSICAL-INSTRUMENT
-          ONT::WEAPON
-          ONT::SENSOR
-          ONT::WINDOW
-          ONT::WHEEL
-          ONT::VEHICLE-CONTAINER
-          ONT::VEHICLE
-          ONT::MATERIAL
-          ONT::SUPERNATURAL-BEING
-          ONT::PERSON))
-       (MOBILITY F::MOVABLE)
+       (TYPE ONT::PHYS-OBJECT)
        (TANGIBLE +)))))
 
 (CONCEPT
@@ -80377,6 +80498,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -82275,6 +82400,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -84006,18 +84135,25 @@
     (LOCATIVE -)
     (ORIGIN ANY-ORIGIN)
     (IOBJ -)
+    (ASPECT F::DYNAMIC)
     (TANGIBLE +)
     (CONTAINER -)
     (INFORMATION F::MENTAL-CONSTRUCT)
     (INTENTIONAL -)
-    (ASPECT F::DYNAMIC)
     (CAUSE F::FORCE)
     (TRAJECTORY -)
     (TYPE ONT::KICKING))
   (SEM-FRAME
-    (ONT::SOURCE
-     (CONCEPT
-       T)
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::RESULT
      (SEM-FEATS
@@ -84026,49 +84162,14 @@
        (TYPE
         (OR
           ONT::POSITION-RELN
+          ONT::DIRECTION
           ONT::PATH)))
-     OPTIONAL)
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ))
-       (TANGIBLE +))
-     OPTIONAL)
-    (ONT::EXTENT
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::QUANTITY))
      OPTIONAL)
     (ONT::AFFECTED
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE
-        (OR
-          ONT::COMMODITY
-          ONT::COOKWARE
-          ONT::WRITING-IMPLEMENT
-          ONT::INSTRUMENTATION
-          ONT::COMPUTER-PART
-          ONT::COMPUTER
-          ONT::PROJECTOR
-          ONT::MUSICAL-INSTRUMENT
-          ONT::WEAPON
-          ONT::SENSOR
-          ONT::WINDOW
-          ONT::WHEEL
-          ONT::VEHICLE-CONTAINER
-          ONT::VEHICLE
-          ONT::MATERIAL
-          ONT::SUPERNATURAL-BEING
-          ONT::PERSON))
-       (MOBILITY F::MOVABLE)
+       (TYPE ONT::PHYS-OBJECT)
        (TANGIBLE +)))))
 
 (CONCEPT
@@ -84137,6 +84238,8 @@
   ONT::KIND
   (INHERIT
     ONT::ABSTRACT-OBJECT-NONTEMPORAL)
+  (OVERLAP
+    WN::|kind%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -85727,6 +85830,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -87623,6 +87730,10 @@
     (CONTAINER +)
     (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -90986,6 +91097,74 @@
     (ONT::FORMAL
      (CONCEPT
        T)
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::MAINTAIN-KEEP
+  (COMMENT "causing some activity to continue")
+  (INHERIT
+    ONT::CAUSE-EFFECT)
+  (OVERLAP
+    WN::|maintain%2:42:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
+    (TRAJECTORY -)
+    (CAUSE
+     (OR
+       F::AGENTIVE
+       F::FORCE))
+    (TYPE ONT::CAUSE-EFFECT))
+  (SEM-FRAME
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::FORMAL
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE
+        (OR
+          ONT::SITUATION-ROOT
+          ONT::PROPERTY-VAL)))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::AGENT
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
      OPTIONAL)))
 
 (CONCEPT
@@ -95497,6 +95676,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -97207,6 +97390,8 @@
    "events of motion through some space (physical or abstract). Even though many motion verbs express simply undergoing motion, all these verbs allow to possibiliity of an AGENT")
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
+  (OVERLAP
+    WN::|movement%1:04:04::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -100345,6 +100530,44 @@
     (TYPE ONT::NATURAL-GAS-SUBSTANCE)))
 
 (CONCEPT
+  ONT::NATURAL-GROUP
+  (COMMENT "An group defined by a classification of living things")
+  (INHERIT
+    ONT::GROUP-OBJECT)
+  (OVERLAP
+    WN::|kingdom%1:14:00::|
+    WN::|biological_group%1:14:00::|
+    WN::|association%1:14:01::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (INTENTIONAL -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (TANGIBLE +)
+    (CONTAINER +)
+    (TYPE ONT::GROUP-OBJECT))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::NATURAL-LIQUID-SUBSTANCE
   (INHERIT
     ONT::LIQUID-SUBSTANCE)
@@ -100373,7 +100596,9 @@
   (INHERIT
     ONT::PHYS-OBJECT)
   (OVERLAP
-    WN::|natural_object%1:03:00::|)
+    WN::|natural_object%1:03:00::|
+    WN::|actinoid%1:27:00::|
+    WN::|rare_earth%1:27:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -111309,6 +111534,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -113057,6 +113286,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -115285,6 +115518,7 @@
 
 (CONCEPT
   ONT::PATH
+  (COMMENT "constrains the location of an object undergoing motion")
   (INHERIT
     ONT::PREDICATE)
   (SEM-FEATS
@@ -115590,6 +115824,83 @@
     (TANGIBLE +)
     (ASPECT F::DYNAMIC)
     (TYPE ONT::EVENT-OF-CAUSATION)))
+
+(CONCEPT
+  ONT::PEOPLE
+  (COMMENT "a group of persons")
+  (INHERIT
+    ONT::ANIMAL-GROUP)
+  (OVERLAP
+    WN::|people%1:14:00::|
+    WN::|people%1:14:01::|
+    WN::|masses%1:14:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (INTENTIONAL -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (TANGIBLE +)
+    (CONTAINER +)
+    (TYPE ONT::GROUP-OBJECT))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::PEOPLE-SUBGROUP
+  (COMMENT "a group of persons defined by origin or race")
+  (INHERIT
+    ONT::GROUP-OBJECT)
+  (OVERLAP
+    WN::|ethnic_group%1:14:00::|
+    WN::|race%1:14:00::|
+    WN::|sainthood%1:14:00::|
+    WN::|varna%1:14:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (INTENTIONAL -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (TANGIBLE +)
+    (CONTAINER +)
+    (TYPE ONT::GROUP-OBJECT))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::PERCEIVABLE-PROPERTY
@@ -117526,6 +117837,35 @@
     (TYPE ONT::PROPERTY-VAL)))
 
 (CONCEPT
+  ONT::PHYSICS-OBJECT
+  (COMMENT "objects developed in physics of natural world")
+  (INHERIT
+    ONT::NATURAL-OBJECT)
+  (OVERLAP
+    WN::|electron_shell%1:14:00::|
+    WN::|particle%1:17:00::|
+    WN::|halogen%1:27:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (INTENTIONAL -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (SPATIAL-ABSTRACTION
+     (OR
+       F::SPATIAL-POINT
+       F::SPATIAL-REGION))
+    (ORIGIN F::NATURAL)
+    (TYPE ONT::NATURAL-OBJECT)))
+
+(CONCEPT
   ONT::PIGEON
   (INHERIT
     ONT::POULTRY)
@@ -119213,6 +119553,8 @@
   ONT::POLITICAL-REGION
   (INHERIT
     ONT::GEOGRAPHIC-REGION)
+  (OVERLAP
+    WN::|circuit%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -125065,6 +125407,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -127866,6 +128212,10 @@
     WN::|quantity%1:03:00::|
     WN::|amount%1:03:00::|)
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -130786,6 +131136,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -134513,6 +134867,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -137418,7 +137776,8 @@
   (OVERLAP
     WN::|path%1:17:00::|
     WN::|track%1:17:00::|
-    WN::|course%1:17:00::|)
+    WN::|course%1:17:00::|
+    WN::|route%1:15:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -137567,6 +137926,10 @@
     WN::|row%1:14:00::|
     WN::|row%1:17:00::|)
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
@@ -141445,6 +141808,10 @@
     (CONTAINER +)
     (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -142781,6 +143148,10 @@
     (CONTAINER +)
     (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -142836,6 +143207,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -146610,6 +146985,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -147181,6 +147560,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -153090,6 +153473,10 @@
     (CONTAINER +)
     (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -154713,6 +155100,10 @@
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -155038,6 +155429,10 @@
     (CONTAINER +)
     (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -155931,7 +156326,7 @@
   (INHERIT
     ONT::GROUP-OBJECT)
   (OVERLAP
-    WN::|system%1:06:00::|
+    WN::|system%1:14:00::|
     WN::|system%1:14:00::|)
   (SEM-FEATS
     (INHERIT
@@ -155953,6 +156348,10 @@
     (CONTAINER +)
     (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -162439,6 +162838,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (ASPECT F::DYNAMIC)
        (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
@@ -169346,6 +169746,9 @@
   ONT::VERSION
   (INHERIT
     ONT::KIND)
+  (OVERLAP
+    WN::|version%1:09:01::|
+    WN::|edition%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)

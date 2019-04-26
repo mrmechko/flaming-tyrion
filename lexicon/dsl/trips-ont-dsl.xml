@@ -765,29 +765,14 @@
   </relation>
   <relation label="overlap">
    wn::|maintain%2:40:10::|
-   wn::|keep%2:40:10::|
    wn::|save%2:40:03::|
-   wn::|keep%2:40:09::|
-   wn::|hold_open%2:40:00::|
-   wn::|keep_open%2:40:00::|
    wn::|maintain%2:34:00::|
-   wn::|keep%2:34:00::|
-   wn::|sustain%2:34:00::|
    wn::|keep_on%2:41:00::|
-   wn::|keep%2:41:02::|
-   wn::|continue%2:41:00::|
    wn::|retain%2:41:01::|
    wn::|maintain%2:31:00::|
-   wn::|keep%2:31:00::|
-   wn::|observe%2:31:00::|
    wn::|hold%2:42:00::|
    wn::|maintain%2:42:00::|
-   wn::|keep%2:42:00::|
    wn::|continue%2:42:01::|
-   wn::|go_on%2:42:00::|
-   wn::|proceed%2:42:00::|
-   wn::|go_along%2:42:00::|
-   wn::|keep%2:42:07::|
    wn::|persist%2:42:01::|
    wn::|welter%2:31:00::|
    wn::|sustain%2:42:01::|
@@ -1726,6 +1711,17 @@
    <feat name="type">ont::animal</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::animal-group">
+  <comment>
+   &quot;An group defined by a classification of animals&quot;
+  </comment>
+  <relation label="inherit">
+   ont::group-object
+  </relation>
+  <relation label="overlap">
+   wn::|animal_group%1:14:00::|
+  </relation>
+ </concept>
  <concept name="ont::animal-propensity-val">
   <comment>
    &quot;properties relating to human or animal tendencies or inclinations to behave in a particular manner&quot;
@@ -2180,6 +2176,19 @@
  <concept name="ont::arrange-text">
   <relation label="inherit">
    ont::arranging
+  </relation>
+ </concept>
+ <concept name="ont::arrangement-configuration">
+  <comment>
+   &quot;An group of objects organized in some way&quot;
+  </comment>
+  <relation label="inherit">
+   ont::collection
+  </relation>
+  <relation label="overlap">
+   wn::|arrangement%1:14:00::|
+   wn::|straggle%1:14:00::|
+   wn::|configuration%1:09:00::|
   </relation>
  </concept>
  <concept name="ont::arranging">
@@ -6927,11 +6936,9 @@
   </relation>
   <relation label="overlap">
    wn::|collection%1:14:00::|
-   wn::|aggregation%1:14:00::|
-   wn::|accumulation%1:14:00::|
-   wn::|assemblage%1:14:01::|
    wn::|array%1:14:00::|
    wn::|array%1:10:00::|
+   wn::|series%1:14:01::|
   </relation>
  </concept>
  <concept name="ont::collection-abstr">
@@ -10348,6 +10355,7 @@
    wn::|destroy%2:35:00::|
    wn::|destroy%2:36:00::|
    wn::|down%2:38:00::|
+   wn::|knock_out%2:30:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected">
@@ -10838,6 +10846,7 @@
       <concept name="abstr-obj" />
       <concept name="situation" />
      </or>
+     <feat name="aspect">dynamic</feat>
      <feat name="mobility">movable</feat>
     </sem-feats>
    </role-restr-map>
@@ -12038,7 +12047,7 @@
  </concept>
  <concept name="ont::ecosystem">
   <comment>
-   &quot;An interconnected group of] entities fo5ming an ecosystem&quot;
+   &quot;An interconnected group of entities forming an ecosystem&quot;
   </comment>
   <relation label="inherit">
    ont::system
@@ -16479,6 +16488,9 @@
    <feat name="type">ont::group-object</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::contents" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::figure" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -17339,7 +17351,7 @@
    &quot;an agent comes into contact with force with another object, typically harming the other object&quot;
   </comment>
   <relation label="inherit">
-   ont::motion
+   ont::apply-force
   </relation>
   <relation label="overlap">
    wn::|beat%2:35:01::|
@@ -19388,6 +19400,9 @@
   <relation label="inherit">
    ont::abstract-object-nontemporal
   </relation>
+  <relation label="overlap">
+   wn::|kind%1:09:00::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     abstr-obj
@@ -21085,6 +21100,17 @@
    wn::|mail%1:10:00::|
   </relation>
  </concept>
+ <concept name="ont::maintain-keep">
+  <comment>
+   &quot;causing some activity to continue&quot;
+  </comment>
+  <relation label="inherit">
+   ont::cause-effect
+  </relation>
+  <relation label="overlap">
+   wn::|maintain%2:42:00::|
+  </relation>
+ </concept>
  <concept name="ont::make-it-so">
   <relation label="inherit">
    ont::cause-effect
@@ -22484,6 +22510,9 @@
   <relation label="inherit">
    ont::event-of-causation
   </relation>
+  <relation label="overlap">
+   wn::|movement%1:04:04::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     situation
@@ -23117,6 +23146,19 @@
    <feat name="type">ont::natural-gas-substance</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::natural-group">
+  <comment>
+   &quot;An group defined by a classification of living things&quot;
+  </comment>
+  <relation label="inherit">
+   ont::group-object
+  </relation>
+  <relation label="overlap">
+   wn::|kingdom%1:14:00::|
+   wn::|biological_group%1:14:00::|
+   wn::|association%1:14:01::|
+  </relation>
+ </concept>
  <concept name="ont::natural-liquid-substance">
   <relation label="inherit">
    ont::liquid-substance
@@ -23136,6 +23178,8 @@
   </relation>
   <relation label="overlap">
    wn::|natural_object%1:03:00::|
+   wn::|actinoid%1:27:00::|
+   wn::|rare_earth%1:27:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -25695,6 +25739,9 @@
   </relation>
  </concept>
  <concept name="ont::path">
+  <comment>
+   &quot;constrains the location of an object undergoing motion&quot;
+  </comment>
   <relation label="inherit">
    ont::predicate
   </relation>
@@ -25791,6 +25838,33 @@
     <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::people">
+  <comment>
+   &quot;a group of persons&quot;
+  </comment>
+  <relation label="inherit">
+   ont::animal-group
+  </relation>
+  <relation label="overlap">
+   wn::|people%1:14:00::|
+   wn::|people%1:14:01::|
+   wn::|masses%1:14:00::|
+  </relation>
+ </concept>
+ <concept name="ont::people-subgroup">
+  <comment>
+   &quot;a group of persons defined by origin or race&quot;
+  </comment>
+  <relation label="inherit">
+   ont::group-object
+  </relation>
+  <relation label="overlap">
+   wn::|ethnic_group%1:14:00::|
+   wn::|race%1:14:00::|
+   wn::|sainthood%1:14:00::|
+   wn::|varna%1:14:00::|
+  </relation>
  </concept>
  <concept name="ont::perceivable-property">
   <relation label="inherit">
@@ -26299,6 +26373,19 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::physics-object">
+  <comment>
+   &quot;objects developed in physics of natural world&quot;
+  </comment>
+  <relation label="inherit">
+   ont::natural-object
+  </relation>
+  <relation label="overlap">
+   wn::|electron_shell%1:14:00::|
+   wn::|particle%1:17:00::|
+   wn::|halogen%1:27:00::|
+  </relation>
+ </concept>
  <concept name="ont::pigeon">
   <relation label="inherit">
    ont::poultry
@@ -26704,6 +26791,9 @@
  <concept name="ont::political-region">
   <relation label="inherit">
    ont::geographic-region
+  </relation>
+  <relation label="overlap">
+   wn::|circuit%1:14:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -30955,6 +31045,7 @@
    wn::|path%1:17:00::|
    wn::|track%1:17:00::|
    wn::|course%1:17:00::|
+   wn::|route%1:15:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -35102,7 +35193,7 @@
    ont::group-object
   </relation>
   <relation label="overlap">
-   wn::|system%1:06:00::|
+   wn::|system%1:14:00::|
    wn::|system%1:14:00::|
   </relation>
  </concept>
@@ -37937,6 +38028,10 @@
  <concept name="ont::version">
   <relation label="inherit">
    ont::kind
+  </relation>
+  <relation label="overlap">
+   wn::|version%1:09:01::|
+   wn::|edition%1:14:00::|
   </relation>
  </concept>
  <concept name="ont::vertebrate">
