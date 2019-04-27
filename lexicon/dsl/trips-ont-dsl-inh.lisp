@@ -60594,7 +60594,7 @@
   (INHERIT
     ONT::BODY-PART)
   (OVERLAP
-    WN::|external-body-part%1:08:00::|
+    WN::|external_body_part%1:08:00::|
     WN::|skin%1:08:00::|
     WN::|animal_skin%1:27:00::|)
   (SEM-FEATS

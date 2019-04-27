@@ -346,12 +346,20 @@
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <example text="it takes 5 hours to  complete the plan">
+ <example text="it took (me) 5 hours to  complete the plan">
  </example>
  <relation label="inherit">
   ont::take-time
-  ont::theme-duration-expletive-templ
  </relation>
+ <syntax>
+  <template-call template="ont::theme-duration-expletive-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::extent"/>
+   <syn-sem-map syn-arg="liobj" syn-cat="deepsemlex::np" sem-role="ont::neutral" optional="optional"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+ </syntax>
  <semantics>
   <sem-feats>
    <feat name="aspect">stage-level</feat>
@@ -378,7 +386,7 @@
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <example text="he took 5 hour to work">
+ <example text="he took 5 hours to work">
  </example>
  <relation label="inherit">
   ont::take-time
