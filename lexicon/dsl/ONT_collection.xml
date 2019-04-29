@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::collection">
+ <comment>
+  &quot;This type contains concepts that explicitly denotethe group (rather than the members of the grop), e.g., group, herd, collection,...&quot;
+ </comment>
  <relation label="inherit">
   ont::group-object
  </relation>
@@ -81,7 +84,7 @@
  </concept>
  <concept name="ont::group-object">
  <comment>
-  &quot;a collection of objects considered as a unit&quot;
+  &quot;a collection of objects considered as a unit. So there are many things but grammatically is a singular noun&quot;
  </comment>
  <relation label="inherit">
   ont::phys-object
@@ -131,6 +134,32 @@
   wn::|straggle%1:14:00::|
   wn::|configuration%1:09:00::|
  </relation>
+ </concept>
+ <concept name="ont::system">
+ <comment>
+  &quot;An interconnected group of objects, abstract or physical&quot;
+ </comment>
+ <relation label="inherit">
+  ont::collection
+ </relation>
+ <relation label="overlap">
+  wn::|system%1:14:00::|
+  wn::|system%1:14:00::|
+ </relation>
+ </concept>
+ <concept name="ont::row-formation">
+ <relation label="inherit">
+  ont::collection
+ </relation>
+ <relation label="overlap">
+  wn::|row%1:14:00::|
+  wn::|row%1:17:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sense>
  <morph>

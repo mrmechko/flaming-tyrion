@@ -1716,11 +1716,18 @@
    &quot;An group defined by a classification of animals&quot;
   </comment>
   <relation label="inherit">
-   ont::group-object
+   ont::implicit-group
   </relation>
   <relation label="overlap">
    wn::|animal_group%1:14:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+   <feat name="type">ont::animal-group</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::animal-propensity-val">
   <comment>
@@ -5776,6 +5783,9 @@
   </sem-frame>
  </concept>
  <concept name="ont::change">
+  <comment>
+   &quot;an event involving some change in an object&quot;
+  </comment>
   <relation label="inherit">
    ont::event-of-causation
   </relation>
@@ -6931,6 +6941,9 @@
   </sem-frame>
  </concept>
  <concept name="ont::collection">
+  <comment>
+   &quot;This type contains concepts that explicitly denotethe group (rather than the members of the grop), e.g., group, herd, collection,...&quot;
+  </comment>
   <relation label="inherit">
    ont::group-object
   </relation>
@@ -9558,6 +9571,9 @@
   </relation>
   <relation label="overlap">
    wn::|damage%2:30:00::|
+   wn::|damage%2:30:01::|
+   wn::|damage%1:11:00::|
+   wn::|damage%1:04:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -9878,6 +9894,7 @@
   <relation label="overlap">
    wn::|slow%2:30:00::|
    wn::|slow%2:30:01::|
+   wn::|deceleration%1:07:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::scale" optional="optional">
@@ -11981,6 +11998,9 @@
   <relation label="overlap">
    wn::|eater%1:18:00::|
    wn::|feeder%1:18:00::|
+   wn::|people%1:14:00::|
+   wn::|people%1:14:01::|
+   wn::|masses%1:14:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -13568,6 +13588,7 @@
   </relation>
   <relation label="overlap">
    wn::|surprise%2:31:00::|
+   wn::|surprise%1:11:00::|
   </relation>
  </concept>
  <concept name="ont::evoke-tiredness">
@@ -15132,6 +15153,7 @@
   <relation label="overlap">
    wn::|fluctuate%2:30:00::|
    wn::|fluctuation%1:11:01::|
+   wn::|fluctuation%1:11:00::|
   </relation>
  </concept>
  <concept name="ont::fluidic-motion">
@@ -15211,6 +15233,7 @@
   </relation>
   <relation label="overlap">
    wn::|fold%2:35:00::|
+   wn::|deformation%1:11:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -16472,7 +16495,7 @@
  </concept>
  <concept name="ont::group-object">
   <comment>
-   &quot;a collection of objects considered as a unit&quot;
+   &quot;a collection of objects considered as a unit. So there are many things but grammatically is a singular noun&quot;
   </comment>
   <relation label="inherit">
    ont::phys-object
@@ -17637,6 +17660,9 @@
   <relation label="inherit">
    ont::person-reln
   </relation>
+  <relation label="overlap">
+   wn::|inhabitant%1:18:00::|
+  </relation>
  </concept>
  <concept name="ont::identity-val">
   <relation label="inherit">
@@ -17739,6 +17765,15 @@
    wn::|imperceptible%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::implicit-group">
+  <comment>
+   &quot;This type contains concepts that denote a group via a common characteristic of the elements, e.g., kingdom, &quot;
+  </comment>
+  <relation label="inherit">
+   ont::group-object
+  </relation>
+ </concept>
+ <concept name="ont::implicit-object" />
  <concept name="ont::implicit-overlap">
   <comment>
    &quot;this is the implicit relation between the events in sentences like He walked down the street whistling a tune&quot;
@@ -17814,6 +17849,7 @@
    wn::|enhancement%1:04:00::|
    wn::|sweetening%1:04:02::|
    wn::|meliorate%2:30:01::|
+   wn::|improvement%1:04:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -18103,29 +18139,8 @@
    ont::change-in-ratio
   </relation>
   <relation label="overlap">
-   wn::|hasten%2:36:00::|
-   wn::|rush%2:36:00::|
-   wn::|stimulate%2:36:00::|
-   wn::|induce%2:36:01::|
    wn::|hasten%2:41:00::|
-   wn::|expedite%2:41:00::|
-   wn::|step_on_it%2:38:00::|
-   wn::|belt_along%2:38:00::|
-   wn::|bucket_along%2:38:00::|
-   wn::|cannonball_along%2:38:00::|
-   wn::|rush_along%2:38:00::|
-   wn::|pelt_along%2:38:00::|
-   wn::|race%2:38:00::|
-   wn::|speed%2:38:03::|
-   wn::|hie%2:38:00::|
-   wn::|hasten%2:38:00::|
-   wn::|hotfoot%2:38:00::|
-   wn::|rush%2:38:00::|
-   wn::|rush%2:30:00::|
-   wn::|hasten%2:30:00::|
-   wn::|hurry%2:30:00::|
-   wn::|look_sharp%2:30:00::|
-   wn::|festinate%2:30:00::|
+   wn::|acceleration%1:07:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::scale" optional="optional">
@@ -20063,6 +20078,7 @@
    wn::|work%2:30:13::|
    wn::|ripen%2:30:01::|
    wn::|ripen%2:30:00::|
+   wn::|mutation%1:11:01::|
   </relation>
  </concept>
  <concept name="ont::lifecycle-stage">
@@ -20678,6 +20694,8 @@
    wn::|beam%2:43:03::|
    wn::|flash%2:39:00::|
    wn::|shine%2:43:03::|
+   wn::|twinkle%1:11:00::|
+   wn::|shimmer%1:11:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -20856,6 +20874,7 @@
   </relation>
   <relation label="overlap">
    wn::|zonk_out%2:29:01::|
+   wn::|loss_of_consciousness%1:11:00::|
   </relation>
  </concept>
  <concept name="ont::louden">
@@ -22762,6 +22781,9 @@
   <relation label="overlap">
    wn::|run%2:38:00::|
    wn::|hurry%2:38:00::|
+   wn::|rush%2:38:00::|
+   wn::|rush%2:30:00::|
+   wn::|hasten%2:36:00::|
   </relation>
  </concept>
  <concept name="ont::move-slowly">
@@ -23076,19 +23098,6 @@
    wn::|internal%5:00:00:domestic:00|
   </relation>
  </concept>
- <concept name="ont::nationality">
-  <relation label="inherit">
-   ont::identity-and-origin
-  </relation>
-  <relation label="overlap">
-   wn::|american%1:18:00::|
-   wn::|british%1:18:00::|
-   wn::|chinese%1:10:00::|
-   wn::|danish%1:10:00::|
-   wn::|dutch%1:18:00::|
-   wn::|russian%1:18:00::|
-  </relation>
- </concept>
  <concept name="ont::nationality-val">
   <relation label="inherit">
    ont::national-identity-val
@@ -23151,13 +23160,21 @@
    &quot;An group defined by a classification of living things&quot;
   </comment>
   <relation label="inherit">
-   ont::group-object
+   ont::implicit-group
   </relation>
   <relation label="overlap">
    wn::|kingdom%1:14:00::|
    wn::|biological_group%1:14:00::|
    wn::|association%1:14:01::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">living</feat>
+   <feat name="form">solid-object</feat>
+   <feat name="type">ont::natural-group</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::natural-liquid-substance">
   <relation label="inherit">
@@ -25577,12 +25594,8 @@
   <relation label="overlap">
    wn::|part%1:24:00::|
    wn::|part%1:09:00::|
-   wn::|portion%1:24:00::|
-   wn::|component_part%1:24:00::|
-   wn::|component%1:24:00::|
-   wn::|constituent%1:24:00::|
    wn::|part%1:17:00::|
-   wn::|piece%1:17:00::|
+   wn::|part%1:21:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
@@ -25846,21 +25859,15 @@
   <relation label="inherit">
    ont::animal-group
   </relation>
-  <relation label="overlap">
-   wn::|people%1:14:00::|
-   wn::|people%1:14:01::|
-   wn::|masses%1:14:00::|
-  </relation>
  </concept>
  <concept name="ont::people-subgroup">
   <comment>
    &quot;a group of persons defined by origin or race&quot;
   </comment>
   <relation label="inherit">
-   ont::group-object
+   ont::implicit-group
   </relation>
   <relation label="overlap">
-   wn::|ethnic_group%1:14:00::|
    wn::|race%1:14:00::|
    wn::|sainthood%1:14:00::|
    wn::|varna%1:14:00::|
@@ -26038,11 +26045,6 @@
   </relation>
   <relation label="overlap">
    wn::|person%1:03:00::|
-   wn::|individual%1:03:00::|
-   wn::|someone%1:03:00::|
-   wn::|somebody%1:03:00::|
-   wn::|mortal%1:03:00::|
-   wn::|soul%1:03:00::|
    wn::|imaginary_being%1:18:00::|
   </relation>
   <sem-feats>
@@ -26060,6 +26062,18 @@
    <feat name="type">ont::person</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::person-of-nationality">
+  <comment>
+   &quot;A person classified by their nationality&quot;
+  </comment>
+  <relation label="inherit">
+   ont::identity-and-origin
+  </relation>
+  <relation label="overlap">
+   wn::|nation%1:14:01::|
+   wn::|ethnic_group%1:14:00::|
+  </relation>
+ </concept>
  <concept name="ont::person-reln">
   <relation label="inherit">
    ont::person
@@ -26073,6 +26087,11 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::persons-of-nationality">
+  <relation label="inherit">
+   ont::person-of-nationality
+  </relation>
  </concept>
  <concept name="ont::pesticide">
   <relation label="inherit">
@@ -29299,6 +29318,9 @@
   <relation label="inherit">
    ont::person
   </relation>
+  <relation label="overlap">
+   wn::|self%1:18:00::|
+  </relation>
  </concept>
  <concept name="ont::referential-sem">
   <comment>
@@ -31103,7 +31125,7 @@
  </concept>
  <concept name="ont::row-formation">
   <relation label="inherit">
-   ont::formation
+   ont::collection
   </relation>
   <relation label="overlap">
    wn::|row%1:14:00::|
@@ -32016,6 +32038,7 @@
    wn::|disjoint%2:35:00::|
    wn::|separate%2:35:00::|
    wn::|separate%2:35:02::|
+   wn::|separation%1:11:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -32339,7 +32362,7 @@
  </concept>
  <concept name="ont::sheet">
   <relation label="inherit">
-   ont::group-object
+   ont::phys-object
   </relation>
  </concept>
  <concept name="ont::sheet-abstr">
@@ -33193,7 +33216,7 @@
  </concept>
  <concept name="ont::social-group">
   <relation label="inherit">
-   ont::group-object
+   ont::implicit-object
   </relation>
   <relation label="overlap">
    wn::|social_group%1:14:00::|
@@ -35190,7 +35213,7 @@
    &quot;An interconnected group of objects, abstract or physical&quot;
   </comment>
   <relation label="inherit">
-   ont::group-object
+   ont::collection
   </relation>
   <relation label="overlap">
    wn::|system%1:14:00::|

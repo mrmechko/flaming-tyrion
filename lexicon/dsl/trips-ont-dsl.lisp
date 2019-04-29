@@ -1507,9 +1507,14 @@
   ONT::ANIMAL-GROUP
   (COMMENT "An group defined by a classification of animals")
   (INHERIT
-    ONT::GROUP-OBJECT)
+    ONT::IMPLICIT-GROUP)
   (OVERLAP
-    WN::|animal_group%1:14:00::|))
+    WN::|animal_group%1:14:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (INTENTIONAL +)
+    (TYPE ONT::ANIMAL-GROUP)))
 
 (CONCEPT
   ONT::ANIMAL-PROPENSITY-VAL
@@ -5057,6 +5062,7 @@
 
 (CONCEPT
   ONT::CHANGE
+  (COMMENT "an event involving some change in an object")
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
   (OVERLAP
@@ -6073,6 +6079,8 @@
 
 (CONCEPT
   ONT::COLLECTION
+  (COMMENT
+   "This type contains concepts that explicitly denotethe group (rather than the members of the grop), e.g., group, herd, collection,...")
   (INHERIT
     ONT::GROUP-OBJECT)
   (OVERLAP
@@ -8383,7 +8391,10 @@
   (INHERIT
     ONT::TRANSFORMATION)
   (OVERLAP
-    WN::|damage%2:30:00::|)
+    WN::|damage%2:30:00::|
+    WN::|damage%2:30:01::|
+    WN::|damage%1:11:00::|
+    WN::|damage%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -8657,7 +8668,8 @@
     ONT::CHANGE-IN-RATIO)
   (OVERLAP
     WN::|slow%2:30:00::|
-    WN::|slow%2:30:01::|)
+    WN::|slow%2:30:01::|
+    WN::|deceleration%1:07:00::|)
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -10488,7 +10500,10 @@
     ONT::ORGANISM)
   (OVERLAP
     WN::|eater%1:18:00::|
-    WN::|feeder%1:18:00::|)
+    WN::|feeder%1:18:00::|
+    WN::|people%1:14:00::|
+    WN::|people%1:14:01::|
+    WN::|masses%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -11906,7 +11921,8 @@
   (INHERIT
     ONT::EVOKE-EMOTION)
   (OVERLAP
-    WN::|surprise%2:31:00::|))
+    WN::|surprise%2:31:00::|
+    WN::|surprise%1:11:00::|))
 
 (CONCEPT
   ONT::EVOKE-TIREDNESS
@@ -13277,7 +13293,8 @@
     ONT::CHANGE)
   (OVERLAP
     WN::|fluctuate%2:30:00::|
-    WN::|fluctuation%1:11:01::|))
+    WN::|fluctuation%1:11:01::|
+    WN::|fluctuation%1:11:00::|))
 
 (CONCEPT
   ONT::FLUIDIC-MOTION
@@ -13340,7 +13357,8 @@
   (INHERIT
     ONT::SHAPE-CHANGE)
   (OVERLAP
-    WN::|fold%2:35:00::|)
+    WN::|fold%2:35:00::|
+    WN::|deformation%1:11:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -14423,7 +14441,8 @@
 
 (CONCEPT
   ONT::GROUP-OBJECT
-  (COMMENT "a collection of objects considered as a unit")
+  (COMMENT
+   "a collection of objects considered as a unit. So there are many things but grammatically is a singular noun")
   (INHERIT
     ONT::PHYS-OBJECT)
   (OVERLAP
@@ -15433,7 +15452,9 @@
 (CONCEPT
   ONT::IDENTITY-AND-ORIGIN
   (INHERIT
-    ONT::PERSON-RELN))
+    ONT::PERSON-RELN)
+  (OVERLAP
+    WN::|inhabitant%1:18:00::|))
 
 (CONCEPT
   ONT::IDENTITY-VAL
@@ -15526,6 +15547,16 @@
     WN::|imperceptible%3:00:00::|))
 
 (CONCEPT
+  ONT::IMPLICIT-GROUP
+  (COMMENT
+   "This type contains concepts that denote a group via a common characteristic of the elements, e.g., kingdom, ")
+  (INHERIT
+    ONT::GROUP-OBJECT))
+
+(CONCEPT
+  ONT::IMPLICIT-OBJECT)
+
+(CONCEPT
   ONT::IMPLICIT-OVERLAP
   (COMMENT
    "this is the implicit relation between the events in sentences like He walked down the street whistling a tune")
@@ -15589,7 +15620,8 @@
   (OVERLAP
     WN::|enhancement%1:04:00::|
     WN::|sweetening%1:04:02::|
-    WN::|meliorate%2:30:01::|)
+    WN::|meliorate%2:30:01::|
+    WN::|improvement%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -15828,29 +15860,8 @@
   (INHERIT
     ONT::CHANGE-IN-RATIO)
   (OVERLAP
-    WN::|hasten%2:36:00::|
-    WN::|rush%2:36:00::|
-    WN::|stimulate%2:36:00::|
-    WN::|induce%2:36:01::|
     WN::|hasten%2:41:00::|
-    WN::|expedite%2:41:00::|
-    WN::|step_on_it%2:38:00::|
-    WN::|belt_along%2:38:00::|
-    WN::|bucket_along%2:38:00::|
-    WN::|cannonball_along%2:38:00::|
-    WN::|rush_along%2:38:00::|
-    WN::|pelt_along%2:38:00::|
-    WN::|race%2:38:00::|
-    WN::|speed%2:38:03::|
-    WN::|hie%2:38:00::|
-    WN::|hasten%2:38:00::|
-    WN::|hotfoot%2:38:00::|
-    WN::|rush%2:38:00::|
-    WN::|rush%2:30:00::|
-    WN::|hasten%2:30:00::|
-    WN::|hurry%2:30:00::|
-    WN::|look_sharp%2:30:00::|
-    WN::|festinate%2:30:00::|)
+    WN::|acceleration%1:07:00::|)
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -17523,7 +17534,8 @@
     WN::|work%2:30:14::|
     WN::|work%2:30:13::|
     WN::|ripen%2:30:01::|
-    WN::|ripen%2:30:00::|))
+    WN::|ripen%2:30:00::|
+    WN::|mutation%1:11:01::|))
 
 (CONCEPT
   ONT::LIFECYCLE-STAGE
@@ -18038,7 +18050,9 @@
     WN::|shine%2:43:00::|
     WN::|beam%2:43:03::|
     WN::|flash%2:39:00::|
-    WN::|shine%2:43:03::|)
+    WN::|shine%2:43:03::|
+    WN::|twinkle%1:11:00::|
+    WN::|shimmer%1:11:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -18192,7 +18206,8 @@
   (INHERIT
     ONT::PROCESSES-OF-CONSCIOUSNESS)
   (OVERLAP
-    WN::|zonk_out%2:29:01::|))
+    WN::|zonk_out%2:29:01::|
+    WN::|loss_of_consciousness%1:11:00::|))
 
 (CONCEPT
   ONT::LOUDEN
@@ -19841,7 +19856,10 @@
     ONT::SELF-LOCOMOTE)
   (OVERLAP
     WN::|run%2:38:00::|
-    WN::|hurry%2:38:00::|))
+    WN::|hurry%2:38:00::|
+    WN::|rush%2:38:00::|
+    WN::|rush%2:30:00::|
+    WN::|hasten%2:36:00::|))
 
 (CONCEPT
   ONT::MOVE-SLOWLY
@@ -20108,18 +20126,6 @@
     WN::|internal%5:00:00:domestic:00|))
 
 (CONCEPT
-  ONT::NATIONALITY
-  (INHERIT
-    ONT::IDENTITY-AND-ORIGIN)
-  (OVERLAP
-    WN::|american%1:18:00::|
-    WN::|british%1:18:00::|
-    WN::|chinese%1:10:00::|
-    WN::|danish%1:10:00::|
-    WN::|dutch%1:18:00::|
-    WN::|russian%1:18:00::|))
-
-(CONCEPT
   ONT::NATIONALITY-VAL
   (INHERIT
     ONT::NATIONAL-IDENTITY-VAL))
@@ -20172,11 +20178,17 @@
   ONT::NATURAL-GROUP
   (COMMENT "An group defined by a classification of living things")
   (INHERIT
-    ONT::GROUP-OBJECT)
+    ONT::IMPLICIT-GROUP)
   (OVERLAP
     WN::|kingdom%1:14:00::|
     WN::|biological_group%1:14:00::|
-    WN::|association%1:14:01::|))
+    WN::|association%1:14:01::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (ORIGIN LIVING)
+    (FORM SOLID-OBJECT)
+    (TYPE ONT::NATURAL-GROUP)))
 
 (CONCEPT
   ONT::NATURAL-LIQUID-SUBSTANCE
@@ -22304,12 +22316,8 @@
   (OVERLAP
     WN::|part%1:24:00::|
     WN::|part%1:09:00::|
-    WN::|portion%1:24:00::|
-    WN::|component_part%1:24:00::|
-    WN::|component%1:24:00::|
-    WN::|constituent%1:24:00::|
     WN::|part%1:17:00::|
-    WN::|piece%1:17:00::|)
+    WN::|part%1:21:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -22530,19 +22538,14 @@
   ONT::PEOPLE
   (COMMENT "a group of persons")
   (INHERIT
-    ONT::ANIMAL-GROUP)
-  (OVERLAP
-    WN::|people%1:14:00::|
-    WN::|people%1:14:01::|
-    WN::|masses%1:14:00::|))
+    ONT::ANIMAL-GROUP))
 
 (CONCEPT
   ONT::PEOPLE-SUBGROUP
   (COMMENT "a group of persons defined by origin or race")
   (INHERIT
-    ONT::GROUP-OBJECT)
+    ONT::IMPLICIT-GROUP)
   (OVERLAP
-    WN::|ethnic_group%1:14:00::|
     WN::|race%1:14:00::|
     WN::|sainthood%1:14:00::|
     WN::|varna%1:14:00::|))
@@ -22703,11 +22706,6 @@
     ONT::MAMMAL)
   (OVERLAP
     WN::|person%1:03:00::|
-    WN::|individual%1:03:00::|
-    WN::|someone%1:03:00::|
-    WN::|somebody%1:03:00::|
-    WN::|mortal%1:03:00::|
-    WN::|soul%1:03:00::|
     WN::|imaginary_being%1:18:00::|)
   (SEM-FEATS
     (INHERIT
@@ -22723,6 +22721,15 @@
     (TYPE ONT::PERSON)))
 
 (CONCEPT
+  ONT::PERSON-OF-NATIONALITY
+  (COMMENT "A person classified by their nationality")
+  (INHERIT
+    ONT::IDENTITY-AND-ORIGIN)
+  (OVERLAP
+    WN::|nation%1:14:01::|
+    WN::|ethnic_group%1:14:00::|))
+
+(CONCEPT
   ONT::PERSON-RELN
   (INHERIT
     ONT::PERSON)
@@ -22735,6 +22742,11 @@
          ABSTR-OBJ)
        (CONCEPT
          SITUATION)))))
+
+(CONCEPT
+  ONT::PERSONS-OF-NATIONALITY
+  (INHERIT
+    ONT::PERSON-OF-NATIONALITY))
 
 (CONCEPT
   ONT::PESTICIDE
@@ -25555,7 +25567,9 @@
 (CONCEPT
   ONT::REFERENTIAL-PERSON
   (INHERIT
-    ONT::PERSON))
+    ONT::PERSON)
+  (OVERLAP
+    WN::|self%1:18:00::|))
 
 (CONCEPT
   ONT::REFERENTIAL-SEM
@@ -27159,7 +27173,7 @@
 (CONCEPT
   ONT::ROW-FORMATION
   (INHERIT
-    ONT::FORMATION)
+    ONT::COLLECTION)
   (OVERLAP
     WN::|row%1:14:00::|
     WN::|row%1:17:00::|)
@@ -27994,7 +28008,8 @@
     WN::|divide%2:42:00::|
     WN::|disjoint%2:35:00::|
     WN::|separate%2:35:00::|
-    WN::|separate%2:35:02::|)
+    WN::|separate%2:35:02::|
+    WN::|separation%1:11:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -28277,7 +28292,7 @@
 (CONCEPT
   ONT::SHEET
   (INHERIT
-    ONT::GROUP-OBJECT))
+    ONT::PHYS-OBJECT))
 
 (CONCEPT
   ONT::SHEET-ABSTR
@@ -29020,7 +29035,7 @@
 (CONCEPT
   ONT::SOCIAL-GROUP
   (INHERIT
-    ONT::GROUP-OBJECT)
+    ONT::IMPLICIT-OBJECT)
   (OVERLAP
     WN::|social_group%1:14:00::|)
   (SEM-FEATS
@@ -30786,7 +30801,7 @@
   ONT::SYSTEM
   (COMMENT "An interconnected group of objects, abstract or physical")
   (INHERIT
-    ONT::GROUP-OBJECT)
+    ONT::COLLECTION)
   (OVERLAP
     WN::|system%1:14:00::|
     WN::|system%1:14:00::|))

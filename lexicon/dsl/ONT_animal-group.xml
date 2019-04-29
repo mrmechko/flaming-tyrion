@@ -7,11 +7,18 @@
   &quot;An group defined by a classification of animals&quot;
  </comment>
  <relation label="inherit">
-  ont::group-object
+  ont::implicit-group
  </relation>
  <relation label="overlap">
   wn::|animal_group%1:14:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">+</feat>
+  <feat name="type">ont::animal-group</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -45,43 +52,24 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::contents" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
+ <concept name="ont::implicit-group">
+ <comment>
+  &quot;This type contains concepts that denote a group via a common characteristic of the elements, e.g., kingdom, &quot;
+ </comment>
+ <relation label="inherit">
+  ont::group-object
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="container">+</feat>
- <feat name="type">ont::group-object</feat>
+ <feat name="intentional">+</feat>
+ <feat name="type">ont::animal-group</feat>
  </sem-feats>
- <concept name="ont::phys-object">
- <comment>
-  &quot;All physical objects: things that have substance&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <relation label="overlap">
-  wn::|object%1:03:00::|
-  wn::|physical_object%1:03:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::phys-object</feat>
- </sem-feats>
- </concept>
  <concept name="ont::group-object">
  <comment>
-  &quot;a collection of objects considered as a unit&quot;
+  &quot;a collection of objects considered as a unit. So there are many things but grammatically is a singular noun&quot;
  </comment>
  <relation label="inherit">
   ont::phys-object
@@ -105,6 +93,40 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="type">ont::group-object</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::contents" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -125,11 +147,6 @@
  </comment>
  <relation label="inherit">
   ont::animal-group
- </relation>
- <relation label="overlap">
-  wn::|people%1:14:00::|
-  wn::|people%1:14:01::|
-  wn::|masses%1:14:00::|
  </relation>
  </concept>
  <sense>

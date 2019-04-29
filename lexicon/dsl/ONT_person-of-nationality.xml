@@ -2,17 +2,16 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::nationality">
+ <concept name="ont::person-of-nationality">
+ <comment>
+  &quot;A person classified by their nationality&quot;
+ </comment>
  <relation label="inherit">
   ont::identity-and-origin
  </relation>
  <relation label="overlap">
-  wn::|american%1:18:00::|
-  wn::|british%1:18:00::|
-  wn::|chinese%1:10:00::|
-  wn::|danish%1:10:00::|
-  wn::|dutch%1:18:00::|
-  wn::|russian%1:18:00::|
+  wn::|nation%1:14:01::|
+  wn::|ethnic_group%1:14:00::|
  </relation>
  </concept>
  <or>
@@ -144,11 +143,6 @@
  </relation>
  <relation label="overlap">
   wn::|person%1:03:00::|
-  wn::|individual%1:03:00::|
-  wn::|someone%1:03:00::|
-  wn::|somebody%1:03:00::|
-  wn::|mortal%1:03:00::|
-  wn::|soul%1:03:00::|
   wn::|imaginary_being%1:18:00::|
  </relation>
  <sem-feats>
@@ -183,6 +177,9 @@
  <concept name="ont::identity-and-origin">
  <relation label="inherit">
   ont::person-reln
+ </relation>
+ <relation label="overlap">
+  wn::|inhabitant%1:18:00::|
  </relation>
  </concept>
  <concept name="ont::vertebrate">
@@ -273,6 +270,11 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="phys-obj" />
+ <concept name="ont::persons-of-nationality">
+ <relation label="inherit">
+  ont::person-of-nationality
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="n" />
@@ -282,7 +284,7 @@
   &quot;CALOY3&quot;
  </comment>
  <relation label="inherit">
-  ont::nationality
+  ont::person-of-nationality
   ont::count-pred-templ
  </relation>
  </sense>
@@ -295,7 +297,7 @@
   &quot;CALOY3&quot;
  </comment>
  <relation label="inherit">
-  ont::nationality
+  ont::person-of-nationality
   ont::count-pred-templ
  </relation>
  </sense>
@@ -305,18 +307,18 @@
   <word first-word="british" />
  </morph>
  <relation label="inherit">
-  ont::nationality
-  ont::count-pred-templ
+  ont::person-of-nationality
+  ont::count-pred-3p-templ
  </relation>
  </sense>
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="chinese" remaining-words="cabbage" />
+  <word first-word="chinese" />
  </morph>
  <relation label="inherit">
-  ont::nationality
-  ont::count-pred-templ
+  ont::person-of-nationality
+  ont::count-pred-3p-templ
  </relation>
  </sense>
  <sense>
@@ -325,8 +327,8 @@
   <word first-word="danish" />
  </morph>
  <relation label="inherit">
-  ont::nationality
-  ont::count-pred-templ
+  ont::person-of-nationality
+  ont::count-pred-3p-templ
  </relation>
  </sense>
  <sense>
@@ -335,8 +337,8 @@
   <word first-word="dutch" />
  </morph>
  <relation label="inherit">
-  ont::nationality
-  ont::count-pred-templ
+  ont::person-of-nationality
+  ont::count-pred-3p-templ
  </relation>
  </sense>
  <sense>
@@ -345,8 +347,8 @@
   <word first-word="french" />
  </morph>
  <relation label="inherit">
-  ont::nationality
-  ont::count-pred-templ
+  ont::person-of-nationality
+  ont::count-pred-3p-templ
  </relation>
  </sense>
  <sense>
@@ -358,7 +360,7 @@
   &quot;CALOY3&quot;
  </comment>
  <relation label="inherit">
-  ont::nationality
+  ont::person-of-nationality
   ont::count-pred-templ
  </relation>
  </sense>
@@ -371,7 +373,7 @@
   &quot;CALOY3&quot;
  </comment>
  <relation label="inherit">
-  ont::nationality
+  ont::person-of-nationality
   ont::count-pred-templ
  </relation>
  </sense>
@@ -381,8 +383,8 @@
   <word first-word="irish" />
  </morph>
  <relation label="inherit">
-  ont::nationality
-  ont::count-pred-templ
+  ont::person-of-nationality
+  ont::count-pred-3p-templ
  </relation>
  </sense>
  <sense>
@@ -394,7 +396,7 @@
   &quot;CALOY3&quot;
  </comment>
  <relation label="inherit">
-  ont::nationality
+  ont::person-of-nationality
   ont::count-pred-templ
  </relation>
  </sense>
@@ -407,7 +409,7 @@
   &quot;CALOY3&quot;
  </comment>
  <relation label="inherit">
-  ont::nationality
+  ont::person-of-nationality
   ont::count-pred-templ
  </relation>
  </sense>
@@ -417,7 +419,7 @@
   <word first-word="norwegian" />
  </morph>
  <relation label="inherit">
-  ont::nationality
+  ont::person-of-nationality
   ont::count-pred-templ
  </relation>
  </sense>
@@ -430,7 +432,7 @@
   &quot;CALOY3&quot;
  </comment>
  <relation label="inherit">
-  ont::nationality
+  ont::person-of-nationality
   ont::count-pred-templ
  </relation>
  </sense>
@@ -440,8 +442,8 @@
   <word first-word="portuguese" />
  </morph>
  <relation label="inherit">
-  ont::nationality
-  ont::count-pred-templ
+  ont::person-of-nationality
+  ont::count-pred-3p-templ
  </relation>
  </sense>
  <sense>
@@ -453,7 +455,7 @@
   &quot;CALOY3&quot;
  </comment>
  <relation label="inherit">
-  ont::nationality
+  ont::person-of-nationality
   ont::count-pred-templ
  </relation>
  </sense>
@@ -463,8 +465,8 @@
   <word first-word="scottish" />
  </morph>
  <relation label="inherit">
-  ont::nationality
-  ont::count-pred-templ
+  ont::person-of-nationality
+  ont::count-pred-3p-templ
  </relation>
  </sense>
  <sense>
@@ -476,7 +478,7 @@
   &quot;CALOY3&quot;
  </comment>
  <relation label="inherit">
-  ont::nationality
+  ont::person-of-nationality
   ont::count-pred-templ
  </relation>
  </sense>
@@ -486,8 +488,8 @@
   <word first-word="spanish" />
  </morph>
  <relation label="inherit">
-  ont::nationality
-  ont::count-pred-templ
+  ont::person-of-nationality
+  ont::count-pred-3p-templ
  </relation>
  </sense>
  <sense>
@@ -496,8 +498,8 @@
   <word first-word="swedish" />
  </morph>
  <relation label="inherit">
-  ont::nationality
-  ont::count-pred-templ
+  ont::person-of-nationality
+  ont::count-pred-3p-templ
  </relation>
  </sense>
  <sense>
@@ -506,8 +508,8 @@
   <word first-word="turkish" />
  </morph>
  <relation label="inherit">
-  ont::nationality
-  ont::count-pred-templ
+  ont::person-of-nationality
+  ont::count-pred-3p-templ
  </relation>
  </sense>
 </dsl>
