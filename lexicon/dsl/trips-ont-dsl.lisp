@@ -1509,7 +1509,9 @@
   (INHERIT
     ONT::IMPLICIT-GROUP)
   (OVERLAP
-    WN::|animal_group%1:14:00::|)
+    WN::|animal_group%1:14:00::|
+    WN::|bateria_order%1:05:00::|
+    WN::|menagerie%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -1921,6 +1923,7 @@
     ONT::COLLECTION)
   (OVERLAP
     WN::|arrangement%1:14:00::|
+    WN::|array%1:14:00::|
     WN::|straggle%1:14:00::|
     WN::|configuration%1:09:00::|))
 
@@ -4240,6 +4243,13 @@
     WN::|budget%1:21:03::|))
 
 (CONCEPT
+  ONT::BUILDING
+  (INHERIT
+    ONT::MAN-MADE-STRUCTURE)
+  (OVERLAP
+    WN::|building%1:06:00::|))
+
+(CONCEPT
   ONT::BURN
   (INHERIT
     ONT::CHANGE-INTEGRITY)
@@ -6087,7 +6097,9 @@
     WN::|collection%1:14:00::|
     WN::|array%1:14:00::|
     WN::|array%1:10:00::|
-    WN::|series%1:14:01::|))
+    WN::|series%1:14:01::|
+    WN::|trinketry%1:14:00::|
+    WN::|population%1:14:01::|))
 
 (CONCEPT
   ONT::COLLECTION-ABSTR
@@ -6228,6 +6240,7 @@
   (OVERLAP
     WN::|pile%1:14:00::|
     WN::|column%1:14:00::|
+    WN::|column%1:14:01::|
     WN::|column%1:25:02::|)
   (SEM-FRAME
     (ONT::FIGURE
@@ -8498,6 +8511,14 @@
     WN::|darkness%1:26:00::|))
 
 (CONCEPT
+  ONT::DATA
+  (COMMENT "A group of information organized in some way")
+  (INHERIT
+    ONT::COLLECTION)
+  (OVERLAP
+    WN::|data%1:14:00::|))
+
+(CONCEPT
   ONT::DATA-STORAGE-MEDIUM
   (INHERIT
     ONT::INFO-MEDIUM))
@@ -9480,6 +9501,7 @@
 
 (CONCEPT
   ONT::DIRECT-REPRESENTATION
+  (COMMENT "a physical object that conatins information (e.g., text, graphics)")
   (INHERIT
     ONT::INFO-HOLDER))
 
@@ -10567,7 +10589,8 @@
   (OVERLAP
     WN::|biotic_community%1:14:00::|
     WN::|ecosystem%1:14:00::|
-    WN::|biosphere%1:15:00::|))
+    WN::|biosphere%1:15:00::|
+    WN::|biota%1:14:00::|))
 
 (CONCEPT
   ONT::EDEMA
@@ -12137,6 +12160,13 @@
     WN::|cough%2:29:00::|))
 
 (CONCEPT
+  ONT::EXHIBITION
+  (INHERIT
+    ONT::GATHERING-EVENT)
+  (OVERLAP
+    WN::|exhibition%1:14:00::|))
+
+(CONCEPT
   ONT::EXISTS
   (INHERIT
     ONT::BE)
@@ -12488,7 +12518,8 @@
     ONT::MAN-MADE-STRUCTURE)
   (OVERLAP
     WN::|facility%1:04:01::|
-    WN::|facility%1:06:00::|)
+    WN::|facility%1:06:00::|
+    WN::|museum%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -13856,6 +13887,15 @@
     WN::|game%1:04:00::|))
 
 (CONCEPT
+  ONT::GARDEN-GROUNDS
+  (INHERIT
+    ONT::AREA-DEF-BY-USE)
+  (OVERLAP
+    WN::|garden%1:06:00::|
+    WN::|grounds%1:06:00::|
+    WN::|plot%1:15:00::|))
+
+(CONCEPT
   ONT::GAS-SUBSTANCE
   (INHERIT
     ONT::SUBSTANCE)
@@ -13870,7 +13910,9 @@
 (CONCEPT
   ONT::GATHERING-EVENT
   (INHERIT
-    ONT::LOCATED-EVENT))
+    ONT::LOCATED-EVENT)
+  (OVERLAP
+    WN::|ceremony%1:04:00::|))
 
 (CONCEPT
   ONT::GENDER-SCALE
@@ -13962,7 +14004,11 @@
 (CONCEPT
   ONT::GENERAL-STRUCTURE
   (INHERIT
-    ONT::MAN-MADE-STRUCTURE))
+    ONT::MAN-MADE-STRUCTURE)
+  (OVERLAP
+    WN::|structure%1:06:00::|
+    WN::|petting_zoo%1:14:00::|
+    WN::|herbarium%1:14:00::|))
 
 (CONCEPT
   ONT::GENERAL-VAL
@@ -13974,6 +14020,13 @@
     WN::|nonspecific%3:00:00::|))
 
 (CONCEPT
+  ONT::GENOME
+  (INHERIT
+    ONT::CELL-PART)
+  (OVERLAP
+    WN::|genome%1:14:00::|))
+
+(CONCEPT
   ONT::GEO-FEATURE-VAL
   (INHERIT
     ONT::SPATIAL))
@@ -13983,7 +14036,8 @@
   (INHERIT
     ONT::GEO-OBJECT)
   (OVERLAP
-    WN::|formation%1:17:00::|)
+    WN::|formation%1:17:00::|
+    WN::|world%1:05:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -14022,6 +14076,12 @@
   ONT::GEOGRAPHIC-REGION
   (INHERIT
     ONT::SPECIFIC-LOC)
+  (OVERLAP
+    WN::|north_america%1:14:00::|
+    WN::|south_america%1:14:00::|
+    WN::|central_america%1:14:00::|
+    WN::|asia%1:14:00::|
+    WN::|europe%1:14:01::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -14251,7 +14311,13 @@
     WN::|morality%1:07:00::|
     WN::|morality%1:16:00::|
     WN::|ethic%1:09:00::|
-    WN::|ethic%1:10:00::|))
+    WN::|ethic%1:10:00::|
+    WN::|rule%1:10:00::|
+    WN::|law%1:09:00::|
+    WN::|law%1:09:01::|
+    WN::|principle%1:09:03::|
+    WN::|principle%1:09:01::|
+    WN::|generally_accepted_accounting_principles%1:14:00::|))
 
 (CONCEPT
   ONT::GRACEFUL-VAL
@@ -16895,6 +16961,14 @@
     WN::|junior-grade%5:00:00:junior:00|))
 
 (CONCEPT
+  ONT::JUNK-REJECT
+  (COMMENT "a functional device that does not perform its function")
+  (INHERIT
+    ONT::COMMODITY)
+  (OVERLAP
+    WN::|reject%1:09:00::|))
+
+(CONCEPT
   ONT::KETTLE
   (INHERIT
     ONT::COOKWARE)
@@ -17458,6 +17532,14 @@
        (ORIENTATION NEG)
        (SCALE ONT::INTENSITY-SCALE))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::LETTER-MAIL
+  (INHERIT
+    ONT::DIRECT-REPRESENTATION)
+  (OVERLAP
+    WN::|letter%1:10:00::|
+    WN::|missive%1:10:00::|))
 
 (CONCEPT
   ONT::LETTER-SYMBOL
@@ -18400,13 +18482,11 @@
 
 (CONCEPT
   ONT::MAIL
+  (COMMENT "A set of letters")
   (INHERIT
-    ONT::DIRECT-REPRESENTATION)
+    ONT::IMPLICIT-GROUP)
   (OVERLAP
-    WN::|letter%1:10:00::|
-    WN::|missive%1:10:00::|
-    WN::|mail%1:10:01::|
-    WN::|mail%1:10:00::|))
+    WN::|mail%1:10:01::|))
 
 (CONCEPT
   ONT::MAINTAIN-KEEP
@@ -20182,7 +20262,9 @@
   (OVERLAP
     WN::|kingdom%1:14:00::|
     WN::|biological_group%1:14:00::|
-    WN::|association%1:14:01::|)
+    WN::|association%1:14:01::|
+    WN::|class%1:14:00::|
+    WN::|vegetation%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -20208,7 +20290,10 @@
   (OVERLAP
     WN::|natural_object%1:03:00::|
     WN::|actinoid%1:27:00::|
-    WN::|rare_earth%1:27:00::|)
+    WN::|rare_earth%1:27:00::|
+    WN::|galaxy%1:14:00::|
+    WN::|galaxy%1:14:01::|
+    WN::|oort_cloud%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -22535,10 +22620,12 @@
        PHYS-OBJ))))
 
 (CONCEPT
-  ONT::PEOPLE
+  ONT::PEOPLE-GROUP
   (COMMENT "a group of persons")
   (INHERIT
-    ONT::ANIMAL-GROUP))
+    ONT::ANIMAL-GROUP)
+  (OVERLAP
+    WN::|population%1:14:00::|))
 
 (CONCEPT
   ONT::PEOPLE-SUBGROUP
@@ -22548,7 +22635,9 @@
   (OVERLAP
     WN::|race%1:14:00::|
     WN::|sainthood%1:14:00::|
-    WN::|varna%1:14:00::|))
+    WN::|varna%1:14:00::|
+    WN::|congregation%1:14:01::|
+    WN::|tenantry%1:14:00::|))
 
 (CONCEPT
   ONT::PERCEIVABLE-PROPERTY
@@ -23286,6 +23375,20 @@
     WN::|delightful%5:00:00:pleasing:00|))
 
 (CONCEPT
+  ONT::PLOT-DIAGRAM-DRAWING
+  (INHERIT
+    ONT::DIRECT-REPRESENTATION)
+  (OVERLAP
+    WN::|plot%1:10:01::|
+    WN::|spectrum%1:19:00::|
+    WN::|diagram%1:06:00::|)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INFORMATION INFORMATION-CONTENT))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::PNEUMONIA
   (INHERIT
     ONT::BREATHING-DISORDER)
@@ -23366,7 +23469,9 @@
   (INHERIT
     ONT::GEOGRAPHIC-REGION)
   (OVERLAP
-    WN::|circuit%1:14:00::|)
+    WN::|circuit%1:14:00::|
+    WN::|free_word%1:14:00::|
+    WN::|third_word%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -23408,7 +23513,7 @@
 (CONCEPT
   ONT::POPULATION-SCALE
   (INHERIT
-    ONT::MEASURE-SCALE)
+    ONT::TOTAL-SCALE)
   (OVERLAP
     WN::|population%1:23:00::|)
   (SEM-FEATS
@@ -24134,7 +24239,11 @@
 (CONCEPT
   ONT::PRESENTATION
   (INHERIT
-    ONT::GATHERING-EVENT))
+    ONT::GATHERING-EVENT)
+  (OVERLAP
+    WN::|presentation%1:10:00::|
+    WN::|presentation%1:10:02::|
+    WN::|show%1:04:00::|))
 
 (CONCEPT
   ONT::PRESERVATIVES
@@ -24723,7 +24832,17 @@
   ONT::PSYCHOLOGICAL-PROPERTY-VAL
   (COMMENT "properties pertaining to psychological, mental or emotional states")
   (INHERIT
-    ONT::PROPERTY-VAL))
+    ONT::PROPERTY-VAL)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          HUMAN
+          NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::PUBLIC-SERVICE-FACILITY
@@ -27173,9 +27292,10 @@
 (CONCEPT
   ONT::ROW-FORMATION
   (INHERIT
-    ONT::COLLECTION)
+    ONT::FORMATION)
   (OVERLAP
     WN::|row%1:14:00::|
+    WN::|row%1:14:01::|
     WN::|row%1:17:00::|)
   (SEM-FRAME
     (ONT::FIGURE
@@ -30652,7 +30772,7 @@
 (CONCEPT
   ONT::SURPLUS
   (INHERIT
-    ONT::GROUP-OBJECT)
+    ONT::QUANTITY)
   (OVERLAP
     WN::|surplus%1:07:00::|))
 

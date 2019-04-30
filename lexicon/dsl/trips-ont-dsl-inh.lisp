@@ -5613,15 +5613,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -5639,7 +5662,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -5648,45 +5671,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -6207,15 +6208,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -6233,7 +6257,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -6242,45 +6266,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -7504,38 +7506,15 @@
     (SCALE ONT::AMBITIOUSNESS-SCALE)
     (TYPE ONT::AMBITIOUSNESS-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -7553,7 +7532,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -7562,17 +7541,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::AMBITIOUSNESS-SCALE
@@ -7630,38 +7638,15 @@
     (SCALE ONT::AMBITIOUSNESS-SCALE)
     (TYPE ONT::AMBITIOUSNESS-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -7679,7 +7664,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -7688,17 +7673,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::AMINO-ACID
@@ -7843,15 +7857,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -7869,7 +7906,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -7878,45 +7915,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -8371,15 +8386,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -8397,7 +8435,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -8406,45 +8444,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -8488,7 +8504,9 @@
   (INHERIT
     ONT::IMPLICIT-GROUP)
   (OVERLAP
-    WN::|animal_group%1:14:00::|)
+    WN::|animal_group%1:14:00::|
+    WN::|bateria_order%1:05:00::|
+    WN::|menagerie%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -10033,6 +10051,7 @@
     ONT::COLLECTION)
   (OVERLAP
     WN::|arrangement%1:14:00::|
+    WN::|array%1:14:00::|
     WN::|straggle%1:14:00::|
     WN::|configuration%1:09:00::|)
   (SEM-FEATS
@@ -12524,38 +12543,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -12573,7 +12569,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -12582,17 +12578,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::ATTENTION-WORTHY-VAL
@@ -12711,38 +12736,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -12760,7 +12762,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -12769,17 +12771,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::ATTENTIVENESS-VAL
@@ -12802,38 +12833,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -12851,7 +12859,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -12860,17 +12868,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::ATTIRE
@@ -14710,38 +14747,15 @@
     (SCALE ONT::AWARENESS-SCALE)
     (TYPE ONT::AWARENESS-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -14759,7 +14773,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -14768,17 +14782,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::AWARENESS
@@ -14889,38 +14932,15 @@
     (SCALE ONT::AWARENESS-SCALE)
     (TYPE ONT::AWARENESS-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -14938,7 +14958,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -14947,17 +14967,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::AWAY
@@ -20046,6 +20095,108 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)
+       (ORIGIN
+        (OR
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::BORING
+  (COMMENT "boring; uninteresting as to cause weariness")
+  (INHERIT
+    ONT::EVOKING-NEG-EMOTION-VAL)
+  (OVERLAP
+    WN::|uninteresting%3:00:00::|
+    WN::|boring%5:00:00:uninteresting:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (SCALE ONT::DOMAIN)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (TYPE ONT::PROPERTY-VAL))
+  (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
        SITUATION)
@@ -20119,103 +20270,8 @@
        (ORIGIN
         (OR
           F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::BORING
-  (COMMENT "boring; uninteresting as to cause weariness")
-  (INHERIT
-    ONT::EVOKING-NEG-EMOTION-VAL)
-  (OVERLAP
-    WN::|uninteresting%3:00:00::|
-    WN::|boring%5:00:00:uninteresting:00|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (SCALE ONT::DOMAIN)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (TYPE ONT::PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::BORROW
@@ -21453,6 +21509,44 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::BUILDING
+  (INHERIT
+    ONT::MAN-MADE-STRUCTURE)
+  (OVERLAP
+    WN::|building%1:06:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (INTENTIONAL -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (ORIGIN F::NON-LIVING)
+    (MOBILITY F::FIXED)
+    (TANGIBLE +)
+    (CONTAINER +)
+    (FORM F::GEOGRAPHICAL-OBJECT)
+    (TYPE ONT::GEOGRAPHIC-REGION))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::BURN
   (INHERIT
     ONT::CHANGE-INTEGRITY)
@@ -22240,6 +22334,108 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)
+       (ORIGIN
+        (OR
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::CALMING-VAL
+  (INHERIT
+    ONT::EVOKING-POS-EMOTION-VAL)
+  (OVERLAP
+    WN::|soothing%5:00:00:reassuring:00|
+    WN::|reassuring%3:00:00::|
+    WN::|assuasive%5:00:00:reassuring:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (SCALE ONT::DOMAIN)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (TYPE ONT::PROPERTY-VAL))
+  (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
        SITUATION)
@@ -22313,103 +22509,8 @@
        (ORIGIN
         (OR
           F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::CALMING-VAL
-  (INHERIT
-    ONT::EVOKING-POS-EMOTION-VAL)
-  (OVERLAP
-    WN::|soothing%5:00:00:reassuring:00|
-    WN::|reassuring%3:00:00::|
-    WN::|assuasive%5:00:00:reassuring:00|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (SCALE ONT::DOMAIN)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (TYPE ONT::PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::CAN-BE-DONE-VAL
@@ -23138,38 +23239,15 @@
     (SCALE ONT::CAUTIOUSNESS-SCALE)
     (TYPE ONT::CAREFULNESS-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -23187,7 +23265,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -23196,17 +23274,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::CAREFULNESS-VAL
@@ -23229,38 +23336,15 @@
     (SCALE ONT::CAUTIOUSNESS-SCALE)
     (TYPE ONT::CAREFULNESS-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -23278,7 +23362,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -23287,17 +23371,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::CARVE-CUT
@@ -24899,17 +25012,42 @@
     (TYPE ONT::CERTAINTY-VAL))
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       T))
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -24927,7 +25065,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -24936,32 +25074,13 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::GROUND
      (CONCEPT
@@ -25059,17 +25178,42 @@
     (TYPE ONT::CERTAINTY-VAL))
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       T))
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -25087,7 +25231,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -25096,32 +25240,13 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::GROUND
      (CONCEPT
@@ -29074,38 +29199,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -29123,7 +29225,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -29132,17 +29234,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::CLICK
@@ -30679,7 +30810,9 @@
     WN::|collection%1:14:00::|
     WN::|array%1:14:00::|
     WN::|array%1:10:00::|
-    WN::|series%1:14:01::|)
+    WN::|series%1:14:01::|
+    WN::|trinketry%1:14:00::|
+    WN::|population%1:14:01::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -31277,6 +31410,7 @@
   (OVERLAP
     WN::|pile%1:14:00::|
     WN::|column%1:14:00::|
+    WN::|column%1:14:01::|
     WN::|column%1:25:02::|)
   (SEM-FRAME
     (ONT::CONTENTS
@@ -35348,38 +35482,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -35397,7 +35508,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -35406,17 +35517,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::CONFUSION-SCALE
@@ -41414,6 +41554,42 @@
        (TYPE ONT::PHYS-OBJECT)))))
 
 (CONCEPT
+  ONT::DATA
+  (COMMENT "A group of information organized in some way")
+  (INHERIT
+    ONT::COLLECTION)
+  (OVERLAP
+    WN::|data%1:14:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (INTENTIONAL -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (TANGIBLE +)
+    (CONTAINER +)
+    (TYPE ONT::GROUP-OBJECT))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::DATA-STORAGE-MEDIUM
   (INHERIT
     ONT::INFO-MEDIUM)
@@ -44174,123 +44350,6 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
-
-(CONCEPT
-  ONT::DESIRE
-  (INHERIT
-    ONT::MENTAL-CONSTRUCTION)
-  (OVERLAP
-    WN::|desire%1:07:00::|
-    WN::|appetite%1:12:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE +)
-    (INFORMATION F::MENTAL-CONSTRUCT)
-    (TYPE ONT::MENTAL-CONSTRUCTION)))
-
-(CONCEPT
-  ONT::DESIROUS
-  (INHERIT
-    ONT::POS-INTENSE-EMOTIONAL-VAL)
-  (OVERLAP
-    WN::|desirous%3:00:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (SCALE ONT::DOMAIN)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (TYPE ONT::PROPERTY-VAL))
-  (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
        SITUATION)
@@ -44364,7 +44423,131 @@
        (ORIGIN
         (OR
           F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
+
+(CONCEPT
+  ONT::DESIRE
+  (INHERIT
+    ONT::MENTAL-CONSTRUCTION)
+  (OVERLAP
+    WN::|desire%1:07:00::|
+    WN::|appetite%1:12:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (TYPE ONT::MENTAL-CONSTRUCTION)))
+
+(CONCEPT
+  ONT::DESIROUS
+  (INHERIT
+    ONT::POS-INTENSE-EMOTIONAL-VAL)
+  (OVERLAP
+    WN::|desirous%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (SCALE ONT::DOMAIN)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (TYPE ONT::PROPERTY-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)
+       (ORIGIN
+        (OR
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -46281,6 +46464,7 @@
 
 (CONCEPT
   ONT::DIRECT-REPRESENTATION
+  (COMMENT "a physical object that conatins information (e.g., text, graphics)")
   (INHERIT
     ONT::INFO-HOLDER)
   (SEM-FEATS
@@ -47920,15 +48104,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -47946,7 +48153,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -47955,45 +48162,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -48621,38 +48806,15 @@
     (SCALE ONT::DISTRESS-SCALE)
     (TYPE ONT::DISTRESSING-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -48670,7 +48832,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -48679,17 +48841,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::DISTRIBUTED-POS
@@ -50912,38 +51103,15 @@
     (SCALE ONT::INTERESTED-SCALE)
     (TYPE ONT::INTERESTED-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -50961,7 +51129,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -50970,17 +51138,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::EARNING
@@ -51733,7 +51930,8 @@
   (OVERLAP
     WN::|biotic_community%1:14:00::|
     WN::|ecosystem%1:14:00::|
-    WN::|biosphere%1:15:00::|)
+    WN::|biosphere%1:15:00::|
+    WN::|biota%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -52469,27 +52667,27 @@
     (INHERIT
       PHYS-OBJ)
     (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
     (MOBILITY ANY-MOBILITY)
     (GROUP -)
     (SPATIAL-ABSTRACTION
      (OR
        SPATIAL-POINT
        SPATIAL-REGION))
-    (INFORMATION -)
-    (CONTAINER -)
-    (TANGIBLE +)
-    (TRAJECTORY +)
-    (OBJECT-FUNCTION F::REPRESENTATION)
     (INTENTIONAL -)
-    (ORIGIN F::ARTIFACT)
-    (FORM F::OBJECT)
-    (TYPE ONT::PHYS-REPRESENTATION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (TANGIBLE +)
+    (CONTAINER +)
+    (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
-    (ONT::FIGURE
+    (ONT::CONTENTS
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::FIGURE
      (CONCEPT
        T)
      OPTIONAL)))
@@ -52649,15 +52847,38 @@
   (INHERIT
     ONT::PSYCHOLOGICAL-PROPERTY-VAL)
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -52675,7 +52896,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -52684,45 +52905,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -53939,38 +54138,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -53988,7 +54164,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -53997,17 +54173,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::ENLARGE
@@ -54518,15 +54723,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -54544,7 +54772,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -54553,45 +54781,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -55280,15 +55486,38 @@
     (SCALE ONT::HAPPINESS-SCALE)
     (TYPE ONT::EUPHORIC))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -55306,7 +55535,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -55315,45 +55544,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -57952,38 +58159,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -58001,7 +58185,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -58010,17 +58194,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::EVOKING-NEG-EMOTION-VAL
@@ -58043,38 +58256,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -58092,7 +58282,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -58101,17 +58291,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::EVOKING-POS-EMOTION-VAL
@@ -58134,38 +58353,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -58183,7 +58379,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -58192,17 +58388,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::EXAMPLE
@@ -58432,15 +58657,38 @@
     (SCALE ONT::EXCITEMENT-SCALE)
     (TYPE ONT::EXCITED))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -58458,7 +58706,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -58467,45 +58715,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -59054,6 +59280,38 @@
           ONT::NATURAL-GROUP
           ONT::ORGANISM))
        (ORIGIN F::LIVING)))))
+
+(CONCEPT
+  ONT::EXHIBITION
+  (INHERIT
+    ONT::GATHERING-EVENT)
+  (OVERLAP
+    WN::|exhibition%1:14:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (ASPECT ANY-ASPECT)
+    (CAUSE ANY-CAUSE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (INTENTIONAL -)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (LOCATIVE F::LOCATED)
+    (TRAJECTORY -)
+    (TYPE ONT::LOCATED-EVENT))
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::EXISTS
@@ -60775,7 +61033,8 @@
     ONT::MAN-MADE-STRUCTURE)
   (OVERLAP
     WN::|facility%1:04:01::|
-    WN::|facility%1:06:00::|)
+    WN::|facility%1:06:00::|
+    WN::|museum%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -66120,15 +66379,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -66146,7 +66428,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -66155,45 +66437,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -67094,38 +67354,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -67143,7 +67380,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -67152,17 +67389,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::FROM
@@ -68099,6 +68365,42 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::GARDEN-GROUNDS
+  (INHERIT
+    ONT::AREA-DEF-BY-USE)
+  (OVERLAP
+    WN::|garden%1:06:00::|
+    WN::|grounds%1:06:00::|
+    WN::|plot%1:15:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (INTENTIONAL -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (MOBILITY F::FIXED)
+    (FORM F::GEOGRAPHICAL-OBJECT)
+    (ORIGIN F::NON-LIVING)
+    (TYPE ONT::LOCATION))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::GAS-SUBSTANCE
   (INHERIT
     ONT::SUBSTANCE)
@@ -68128,6 +68430,8 @@
   ONT::GATHERING-EVENT
   (INHERIT
     ONT::LOCATED-EVENT)
+  (OVERLAP
+    WN::|ceremony%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -68405,6 +68709,10 @@
   ONT::GENERAL-STRUCTURE
   (INHERIT
     ONT::MAN-MADE-STRUCTURE)
+  (OVERLAP
+    WN::|structure%1:06:00::|
+    WN::|petting_zoo%1:14:00::|
+    WN::|herbarium%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -68535,6 +68843,40 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::GENOME
+  (INHERIT
+    ONT::CELL-PART)
+  (OVERLAP
+    WN::|genome%1:14:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (FORM F::OBJECT)
+    (OBJECT-FUNCTION F::BODY-PART)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (SPATIAL-ABSTRACTION
+     (OR
+       F::SPATIAL-POINT
+       F::SPATIAL-REGION))
+    (ORIGIN F::NATURAL)
+    (INTENTIONAL -)
+    (TYPE ONT::INTERNAL-BODY-PART))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (FORM F::OBJECT)
+       (ORIGIN F::LIVING))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::GEO-FEATURE-VAL
   (INHERIT
     ONT::SPATIAL)
@@ -68641,7 +68983,8 @@
   (INHERIT
     ONT::GEO-OBJECT)
   (OVERLAP
-    WN::|formation%1:17:00::|)
+    WN::|formation%1:17:00::|
+    WN::|world%1:05:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -68725,6 +69068,12 @@
   ONT::GEOGRAPHIC-REGION
   (INHERIT
     ONT::SPECIFIC-LOC)
+  (OVERLAP
+    WN::|north_america%1:14:00::|
+    WN::|south_america%1:14:00::|
+    WN::|central_america%1:14:00::|
+    WN::|asia%1:14:00::|
+    WN::|europe%1:14:01::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -69787,7 +70136,13 @@
     WN::|morality%1:07:00::|
     WN::|morality%1:16:00::|
     WN::|ethic%1:09:00::|
-    WN::|ethic%1:10:00::|)
+    WN::|ethic%1:10:00::|
+    WN::|rule%1:10:00::|
+    WN::|law%1:09:00::|
+    WN::|law%1:09:01::|
+    WN::|principle%1:09:03::|
+    WN::|principle%1:09:01::|
+    WN::|generally_accepted_accounting_principles%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -70304,15 +70659,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -70330,7 +70708,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -70339,45 +70717,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -70839,38 +71195,15 @@
     (SCALE ONT::GRIEF-SCALE)
     (TYPE ONT::GRIEVOUS-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -70888,7 +71221,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -70897,17 +71230,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::GRIPPING-TOOL
@@ -71177,15 +71539,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -71203,7 +71588,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -71212,45 +71597,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -80040,38 +80403,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -80089,7 +80429,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -80098,17 +80438,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::INSANITY
@@ -80697,38 +81066,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -80746,7 +81092,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -80755,17 +81101,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::INTENSE
@@ -81230,38 +81605,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -81279,7 +81631,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -81288,17 +81640,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::INTENTIONALITY-VAL
@@ -81321,38 +81702,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -81370,7 +81728,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -81379,17 +81737,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::INTENTIONALLY-ACT
@@ -81546,38 +81933,15 @@
     (SCALE ONT::INTEREST-SCALE)
     (TYPE ONT::INTEREST-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -81595,7 +81959,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -81604,17 +81968,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::INTERESTED-SCALE
@@ -81676,38 +82069,15 @@
     (SCALE ONT::INTERESTED-SCALE)
     (TYPE ONT::INTERESTED-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -81725,7 +82095,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -81734,17 +82104,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::INTERESTING-VAL
@@ -81770,38 +82169,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -81819,7 +82195,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -81828,17 +82204,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::INTERFERENCE-VAL
@@ -83830,6 +84235,33 @@
        (INHERIT
          T)
        (TANGIBLE +)))))
+
+(CONCEPT
+  ONT::JUNK-REJECT
+  (COMMENT "a functional device that does not perform its function")
+  (INHERIT
+    ONT::COMMODITY)
+  (OVERLAP
+    WN::|reject%1:09:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (ORIGIN ANY-ORIGIN)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (INTENTIONAL -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (FORM FORM)
+    (MOBILITY F::MOVABLE)
+    (TYPE ONT::COMMODITY)))
 
 (CONCEPT
   ONT::KETTLE
@@ -86067,6 +86499,42 @@
           ONT::RATIO))
        (ORIENTATION F::NEG)
        (SCALE ONT::INTENSITY-SCALE))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::LETTER-MAIL
+  (INHERIT
+    ONT::DIRECT-REPRESENTATION)
+  (OVERLAP
+    WN::|letter%1:10:00::|
+    WN::|missive%1:10:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (INFORMATION -)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (TRAJECTORY +)
+    (OBJECT-FUNCTION F::REPRESENTATION)
+    (INTENTIONAL -)
+    (ORIGIN F::ARTIFACT)
+    (FORM F::OBJECT)
+    (TYPE ONT::PHYS-REPRESENTATION))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       T)
      OPTIONAL)))
 
 (CONCEPT
@@ -90839,38 +91307,36 @@
 
 (CONCEPT
   ONT::MAIL
+  (COMMENT "A set of letters")
   (INHERIT
-    ONT::DIRECT-REPRESENTATION)
+    ONT::IMPLICIT-GROUP)
   (OVERLAP
-    WN::|letter%1:10:00::|
-    WN::|missive%1:10:00::|
-    WN::|mail%1:10:01::|
-    WN::|mail%1:10:00::|)
+    WN::|mail%1:10:01::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
     (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
     (MOBILITY ANY-MOBILITY)
     (GROUP -)
     (SPATIAL-ABSTRACTION
      (OR
        SPATIAL-POINT
        SPATIAL-REGION))
-    (INFORMATION -)
-    (CONTAINER -)
-    (TANGIBLE +)
-    (TRAJECTORY +)
-    (OBJECT-FUNCTION F::REPRESENTATION)
     (INTENTIONAL -)
-    (ORIGIN F::ARTIFACT)
-    (FORM F::OBJECT)
-    (TYPE ONT::PHYS-REPRESENTATION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (TANGIBLE +)
+    (CONTAINER +)
+    (TYPE ONT::GROUP-OBJECT))
   (SEM-FRAME
-    (ONT::FIGURE
+    (ONT::CONTENTS
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::FIGURE
      (CONCEPT
        T)
      OPTIONAL)))
@@ -100254,7 +100720,9 @@
   (OVERLAP
     WN::|kingdom%1:14:00::|
     WN::|biological_group%1:14:00::|
-    WN::|association%1:14:01::|)
+    WN::|association%1:14:01::|
+    WN::|class%1:14:00::|
+    WN::|vegetation%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -100315,7 +100783,10 @@
   (OVERLAP
     WN::|natural_object%1:03:00::|
     WN::|actinoid%1:27:00::|
-    WN::|rare_earth%1:27:00::|)
+    WN::|rare_earth%1:27:00::|
+    WN::|galaxy%1:14:00::|
+    WN::|galaxy%1:14:01::|
+    WN::|oort_cloud%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -101042,15 +101513,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -101068,7 +101562,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -101077,45 +101571,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -101139,15 +101611,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -101165,7 +101660,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -101174,45 +101669,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -101236,15 +101709,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -101262,7 +101758,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -101271,45 +101767,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -101769,15 +102243,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -101795,7 +102292,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -101804,45 +102301,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -103094,38 +103569,15 @@
     (SCALE ONT::AMBITIOUSNESS-SCALE)
     (TYPE ONT::AMBITIOUSNESS-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -103143,7 +103595,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -103152,17 +103604,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::NOT-APPROPRIATE-VAL
@@ -103284,38 +103765,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -103333,7 +103791,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -103342,17 +103800,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::NOT-ATTRACTIVE-SCALE
@@ -103510,38 +103997,15 @@
     (SCALE ONT::AWARENESS-SCALE)
     (TYPE ONT::AWARENESS-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -103559,7 +104023,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -103568,17 +104032,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::NOT-BOLD-VAL
@@ -103697,38 +104190,15 @@
     (SCALE ONT::CAUTIOUSNESS-SCALE)
     (TYPE ONT::CAREFULNESS-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -103746,7 +104216,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -103755,17 +104225,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::NOT-CERTAIN-SCALE
@@ -105261,15 +105760,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -105287,7 +105809,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -105296,45 +105818,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -105745,38 +106245,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -105794,7 +106271,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -105803,17 +106280,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::NOT-INTERESTED-SCALE
@@ -105874,38 +106380,15 @@
     (SCALE ONT::NOT-INTERESTED-SCALE)
     (TYPE ONT::NOT-INTERESTED-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -105923,7 +106406,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -105932,17 +106415,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::NOT-LIKELY-SCALE
@@ -106670,38 +107182,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -106719,7 +107208,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -106728,17 +107217,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::NOT-POSSIBLE-SCALE
@@ -107082,38 +107600,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -107131,7 +107626,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -107140,17 +107635,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::NOT-REGULAR-SCALE
@@ -107688,38 +108212,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -107737,7 +108238,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -107746,17 +108247,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::NOT-SMOOTH-VAL
@@ -115486,10 +116016,12 @@
     (TYPE ONT::EVENT-OF-CAUSATION)))
 
 (CONCEPT
-  ONT::PEOPLE
+  ONT::PEOPLE-GROUP
   (COMMENT "a group of persons")
   (INHERIT
     ONT::ANIMAL-GROUP)
+  (OVERLAP
+    WN::|population%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -115527,7 +116059,9 @@
   (OVERLAP
     WN::|race%1:14:00::|
     WN::|sainthood%1:14:00::|
-    WN::|varna%1:14:00::|)
+    WN::|varna%1:14:00::|
+    WN::|congregation%1:14:01::|
+    WN::|tenantry%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -118450,15 +118984,38 @@
     (SCALE ONT::PLEASANTNESS-SCALE)
     (TYPE ONT::PLEASANT))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -118476,7 +119033,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -118485,45 +119042,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -118684,38 +119219,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -118733,7 +119245,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -118742,17 +119254,85 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
+
+(CONCEPT
+  ONT::PLOT-DIAGRAM-DRAWING
+  (INHERIT
+    ONT::DIRECT-REPRESENTATION)
+  (OVERLAP
+    WN::|plot%1:10:01::|
+    WN::|spectrum%1:19:00::|
+    WN::|diagram%1:06:00::|)
+  (SEM-FRAME
+    (ONT::FORMAL
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (INFORMATION F::INFORMATION-CONTENT))
+     OPTIONAL))
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (INFORMATION -)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (TRAJECTORY +)
+    (OBJECT-FUNCTION F::REPRESENTATION)
+    (INTENTIONAL -)
+    (ORIGIN F::ARTIFACT)
+    (FORM F::OBJECT)
+    (TYPE ONT::PHYS-REPRESENTATION)))
 
 (CONCEPT
   ONT::PNEUMONIA
@@ -119268,7 +119848,9 @@
   (INHERIT
     ONT::GEOGRAPHIC-REGION)
   (OVERLAP
-    WN::|circuit%1:14:00::|)
+    WN::|circuit%1:14:00::|
+    WN::|free_word%1:14:00::|
+    WN::|third_word%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -119516,7 +120098,7 @@
 (CONCEPT
   ONT::POPULATION-SCALE
   (INHERIT
-    ONT::MEASURE-SCALE)
+    ONT::TOTAL-SCALE)
   (OVERLAP
     WN::|population%1:23:00::|)
   (SEM-FEATS
@@ -119983,15 +120565,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -120009,7 +120614,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -120018,45 +120623,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -120119,15 +120702,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -120145,7 +120751,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -120154,45 +120760,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -120255,15 +120839,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -120281,7 +120888,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -120290,45 +120897,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -122978,38 +123563,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -123027,7 +123589,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -123036,17 +123598,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::PREMEDITATION-VAL
@@ -123070,38 +123661,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -123119,7 +123687,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -123128,17 +123696,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::PREPARE
@@ -123457,6 +124054,10 @@
   ONT::PRESENTATION
   (INHERIT
     ONT::GATHERING-EVENT)
+  (OVERLAP
+    WN::|presentation%1:10:00::|
+    WN::|presentation%1:10:02::|
+    WN::|show%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -125937,15 +126538,38 @@
     (SCALE ONT::PRIDE-SCALE)
     (TYPE ONT::PROUD-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -125963,7 +126587,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -125972,45 +126596,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -126197,55 +126799,16 @@
   (COMMENT "properties pertaining to psychological, mental or emotional states")
   (INHERIT
     ONT::PROPERTY-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (SCALE ONT::DOMAIN)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -126263,7 +126826,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -126272,17 +126835,62 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +))))
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (SCALE ONT::DOMAIN)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (TYPE ONT::PROPERTY-VAL)))
 
 (CONCEPT
   ONT::PUBLIC-SERVICE-FACILITY
@@ -127511,38 +128119,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -127560,7 +128145,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -127569,17 +128154,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::PUZZLEMENT-VAL
@@ -127602,38 +128216,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -127651,7 +128242,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -127660,17 +128251,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::QMODIFIER
@@ -128099,17 +128719,42 @@
     (TYPE ONT::CERTAINTY-VAL))
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       T))
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -128127,7 +128772,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -128136,32 +128781,13 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::GROUND
      (CONCEPT
@@ -137550,9 +138176,10 @@
 (CONCEPT
   ONT::ROW-FORMATION
   (INHERIT
-    ONT::COLLECTION)
+    ONT::FORMATION)
   (OVERLAP
     WN::|row%1:14:00::|
+    WN::|row%1:14:01::|
     WN::|row%1:17:00::|)
   (SEM-FRAME
     (ONT::CONTENTS
@@ -140757,38 +141384,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -140806,7 +141410,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -140815,17 +141419,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::SENSIBLE-VAL
@@ -140852,38 +141485,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -140901,7 +141511,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -140910,17 +141520,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::SENSITIVITY
@@ -145068,17 +145707,42 @@
     (TYPE ONT::CERTAINTY-VAL))
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       T))
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -145096,7 +145760,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -145105,32 +145769,13 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::GROUND
      (CONCEPT
@@ -145728,38 +146373,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -145777,7 +146399,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -145786,17 +146408,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::SMELLABILITY-VAL
@@ -147494,15 +148145,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -147520,7 +148194,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -147529,45 +148203,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -153150,38 +153802,15 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -153199,7 +153828,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -153208,17 +153837,46 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::STANDARD
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (CONCEPT
-       T))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::SUBAREA-LOCATION-VAL
@@ -154941,7 +155599,7 @@
 (CONCEPT
   ONT::SURPLUS
   (INHERIT
-    ONT::GROUP-OBJECT)
+    ONT::QUANTITY)
   (OVERLAP
     WN::|surplus%1:07:00::|)
   (SEM-FEATS
@@ -154996,15 +155654,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -155022,7 +155703,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -155031,45 +155712,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -159224,15 +159883,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -159250,7 +159932,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -159259,45 +159941,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -164974,17 +165634,42 @@
     (TYPE ONT::CERTAINTY-VAL))
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       T))
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -165002,7 +165687,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -165011,32 +165696,13 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::GROUND
      (CONCEPT
@@ -165812,15 +166478,38 @@
     (CONTAINER -)
     (TYPE ONT::PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -165838,7 +166527,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -165847,45 +166536,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -166126,15 +166793,38 @@
     (SCALE ONT::SADNESS-SCALE)
     (TYPE ONT::UNHAPPY))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -166152,7 +166842,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -166161,45 +166851,23 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT

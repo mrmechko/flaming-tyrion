@@ -2,13 +2,22 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::people">
- <comment>
-  &quot;a group of persons&quot;
- </comment>
+ <concept name="ont::plot-diagram-drawing">
  <relation label="inherit">
-  ont::animal-group
+  ont::direct-representation
  </relation>
+ <relation label="overlap">
+  wn::|plot%1:10:01::|
+  wn::|spectrum%1:19:00::|
+  wn::|diagram%1:06:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <feat name="information">information-content</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -42,64 +51,60 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <concept name="ont::group-object">
- <comment>
-  &quot;a collection of objects considered as a unit. So there are many things but grammatically is a singular noun&quot;
- </comment>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::phys-representation">
  <relation label="inherit">
   ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|grouping%1:03:00::|
+  wn::|representation%1:06:00::|
+  wn::|representation%1:04:01::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="container">+</feat>
-  <feat name="type">ont::group-object</feat>
+  <feat name="trajectory">+</feat>
+  <feat name="object-function">representation</feat>
+  <feat name="intentional">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">object</feat>
+  <feat name="type">ont::phys-representation</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::contents" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="intentional">+</feat>
- <feat name="type">ont::animal-group</feat>
- </sem-feats>
- <concept name="ont::implicit-group">
+ <concept name="ont::direct-representation">
  <comment>
-  &quot;This type contains concepts that denote a group via a common characteristic of the elements, e.g., kingdom, &quot;
+  &quot;a physical object that conatins information (e.g., text, graphics)&quot;
  </comment>
  <relation label="inherit">
-  ont::group-object
+  ont::info-holder
  </relation>
  </concept>
- <concept name="ont::animal-group">
- <comment>
-  &quot;An group defined by a classification of animals&quot;
- </comment>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <feat name="information">information-content</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::info-holder">
  <relation label="inherit">
-  ont::implicit-group
+  ont::phys-representation
  </relation>
- <relation label="overlap">
-  wn::|animal_group%1:14:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="intentional">+</feat>
-  <feat name="type">ont::animal-group</feat>
- </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::phys-object">
  <comment>
@@ -124,13 +129,14 @@
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="container">+</feat>
- <feat name="type">ont::group-object</feat>
+ <feat name="trajectory">+</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ <feat name="type">ont::phys-representation</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::contents" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
   <concept name="t" />
  </role-restr-map>

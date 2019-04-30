@@ -3,14 +3,14 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::mail">
+ <comment>
+  &quot;A set of letters&quot;
+ </comment>
  <relation label="inherit">
-  ont::direct-representation
+  ont::implicit-group
  </relation>
  <relation label="overlap">
-  wn::|letter%1:10:00::|
-  wn::|missive%1:10:00::|
   wn::|mail%1:10:01::|
-  wn::|mail%1:10:00::|
  </relation>
  </concept>
  <or>
@@ -45,51 +45,21 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <concept name="ont::direct-representation">
- <relation label="inherit">
-  ont::info-holder
- </relation>
- </concept>
- <concept name="ont::info-holder">
- <relation label="inherit">
-  ont::phys-representation
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::phys-representation">
- <relation label="inherit">
-  ont::phys-object
- </relation>
- <relation label="overlap">
-  wn::|representation%1:06:00::|
-  wn::|representation%1:04:01::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="trajectory">+</feat>
-  <feat name="object-function">representation</feat>
-  <feat name="intentional">-</feat>
-  <feat name="origin">artifact</feat>
-  <feat name="form">object</feat>
-  <feat name="type">ont::phys-representation</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
+ <role-restr-map roles="ont::contents" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="type">ont::group-object</feat>
+ </sem-feats>
  <concept name="ont::phys-object">
  <comment>
   &quot;All physical objects: things that have substance&quot;
@@ -109,22 +79,40 @@
   <feat name="type">ont::phys-object</feat>
  </sem-feats>
  </concept>
- <sem-feats>
+ <concept name="ont::group-object">
+ <comment>
+  &quot;a collection of objects considered as a unit. So there are many things but grammatically is a singular noun&quot;
+ </comment>
  <relation label="inherit">
-  phys-obj
+  ont::phys-object
  </relation>
- <feat name="trajectory">+</feat>
- <feat name="object-function">representation</feat>
- <feat name="intentional">-</feat>
- <feat name="origin">artifact</feat>
- <feat name="form">object</feat>
- <feat name="type">ont::phys-representation</feat>
+ <relation label="overlap">
+  wn::|grouping%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="type">ont::group-object</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
+  <role-restr-map roles="ont::contents" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::implicit-group">
+ <comment>
+  &quot;This type contains concepts that denote a group via a common characteristic of the elements, e.g., kingdom, &quot;
+ </comment>
+ <relation label="inherit">
+  ont::group-object
+ </relation>
+ </concept>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -149,19 +137,6 @@
   wn::|email%1:10:00::|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="junk" />
- </morph>
- <example text="Too much of my legitimate email is getting marked as junk">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::mail
-  ont::count-pred-templ
- </relation>
- </sense>
  <sense>
  <morph>
   <pos pos="n" />

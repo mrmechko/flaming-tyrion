@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::surplus">
  <relation label="inherit">
-  ont::group-object
+  ont::quantity
  </relation>
  <relation label="overlap">
   wn::|surplus%1:07:00::|
@@ -76,6 +76,11 @@
   <feat name="type">ont::phys-object</feat>
  </sem-feats>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::group-object">
  <comment>
   &quot;a collection of objects considered as a unit. So there are many things but grammatically is a singular noun&quot;
@@ -97,6 +102,21 @@
   <role-restr-map roles="ont::contents" optional="optional">
    <concept name="t" />
   </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::quantity">
+ <relation label="inherit">
+  ont::group-object
+ </relation>
+ <relation label="overlap">
+  wn::|measure%1:03:00::|
+  wn::|quantity%1:03:00::|
+  wn::|amount%1:03:00::|
+ </relation>
+ <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
    <concept name="t" />
   </role-restr-map>
