@@ -159,7 +159,7 @@
  </relation>
  <relation label="overlap">
   wn::|animal_group%1:14:00::|
-  wn::|bateria_order%1:05:00::|
+  wn::|bacteria_order%1:05:00::|
   wn::|menagerie%1:14:00::|
  </relation>
  <sem-feats>
@@ -184,5 +184,29 @@
   wn::|congregation%1:14:01::|
   wn::|tenantry%1:14:00::|
  </relation>
+ </concept>
+ <concept name="ont::social-group">
+ <relation label="inherit">
+  ont::implicit-group
+ </relation>
+ <relation label="overlap">
+  wn::|social_group%1:14:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">occupation</feat>
+  <feat name="intentional">+</feat>
+  <feat name="type">ont::social-group</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
  </concept>
 </dsl>

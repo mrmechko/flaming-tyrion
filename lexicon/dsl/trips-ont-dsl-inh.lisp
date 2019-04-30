@@ -1721,7 +1721,38 @@
 (CONCEPT
   ONT::ACADEMIC-INSTITUTION
   (INHERIT
-    ONT::RESEARCH-INSTITUTION))
+    ONT::RESEARCH-INSTITUTION)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::ACADEMIC-INSTITUTION-ABSTR
@@ -5413,7 +5444,38 @@
 (CONCEPT
   ONT::AFFILIATE
   (INHERIT
-    ONT::COMPANY))
+    ONT::COMPANY)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::AFFILIATE-ABSTR
@@ -6647,7 +6709,38 @@
 (CONCEPT
   ONT::AIRLINE
   (INHERIT
-    ONT::ENTERPRISE))
+    ONT::ENTERPRISE)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::AIRLINE-ABSTR
@@ -8505,7 +8598,7 @@
     ONT::IMPLICIT-GROUP)
   (OVERLAP
     WN::|animal_group%1:14:00::|
-    WN::|bateria_order%1:05:00::|
+    WN::|bacteria_order%1:05:00::|
     WN::|menagerie%1:14:00::|)
   (SEM-FEATS
     (INHERIT
@@ -9253,6 +9346,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -18975,6 +19069,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -20389,6 +20484,7 @@
           ONT::NATURAL-GROUP
           ONT::PHYS-SHAPE
           ONT::SHAPE-OBJECT
+          ONT::REPOSITORY
           ONT::PHYS-REPRESENTATION
           ONT::TABLEWARE
           ONT::COOKWARE
@@ -23613,6 +23709,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -29531,6 +29628,7 @@
           ONT::NATURAL-GROUP
           ONT::PHYS-SHAPE
           ONT::SHAPE-OBJECT
+          ONT::REPOSITORY
           ONT::PHYS-REPRESENTATION
           ONT::TABLEWARE
           ONT::COOKWARE
@@ -29610,6 +29708,7 @@
           ONT::NATURAL-GROUP
           ONT::PHYS-SHAPE
           ONT::SHAPE-OBJECT
+          ONT::REPOSITORY
           ONT::PHYS-REPRESENTATION
           ONT::TABLEWARE
           ONT::COOKWARE
@@ -29669,6 +29768,7 @@
           ONT::NATURAL-GROUP
           ONT::PHYS-SHAPE
           ONT::SHAPE-OBJECT
+          ONT::REPOSITORY
           ONT::PHYS-REPRESENTATION
           ONT::TABLEWARE
           ONT::COOKWARE
@@ -33110,7 +33210,38 @@
 (CONCEPT
   ONT::COMPANY
   (INHERIT
-    ONT::INSTITUTION))
+    ONT::INSTITUTION)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::COMPANY-ABSTR
@@ -40231,7 +40362,38 @@
 (CONCEPT
   ONT::CREW-PHYS
   (INHERIT
-    ONT::SOCIAL-GROUP))
+    ONT::SOCIAL-GROUP)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::CRIMINAL-ACTIVITY
@@ -52574,7 +52736,38 @@
 (CONCEPT
   ONT::ELECTRONICS-COMPANY
   (INHERIT
-    ONT::COMPANY))
+    ONT::COMPANY)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::ELECTRONICS-COMPANY-ABSTR
@@ -54608,7 +54801,38 @@
 (CONCEPT
   ONT::ENTERPRISE
   (INHERIT
-    ONT::ORGANIZATION))
+    ONT::ORGANIZATION)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::ENTERPRISE-ABSTR
@@ -61884,7 +62108,38 @@
   (INHERIT
     ONT::SOCIAL-GROUP)
   (OVERLAP
-    WN::|family%1:14:02::|))
+    WN::|family%1:14:02::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::FAMILY-RELATION
@@ -62801,7 +63056,38 @@
   (OVERLAP
     WN::|government%1:14:00::|
     WN::|authorities%1:14:00::|
-    WN::|regime%1:14:00::|))
+    WN::|regime%1:14:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::FEDERAL-ORGANIZATION-ABSTR
@@ -63652,7 +63938,38 @@
 (CONCEPT
   ONT::FINANCIAL-INSTITUTION
   (INHERIT
-    ONT::INSTITUTION))
+    ONT::INSTITUTION)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::FINANCIAL-INSTITUTION-ABSTR
@@ -63686,7 +64003,38 @@
 (CONCEPT
   ONT::FINANCIAL-ORGANIZATION
   (INHERIT
-    ONT::ORGANIZATION))
+    ONT::ORGANIZATION)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::FINANCIAL-ORGANIZATION-ABSTR
@@ -69521,6 +69869,7 @@
        (TYPE
         (OR
           ONT::GROUP-OBJECT
+          ONT::REPOSITORY
           ONT::GLASS
           ONT::MUG
           ONT::CUP
@@ -76908,9 +77257,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::IMPLICIT-OBJECT)
-
-(CONCEPT
   ONT::IMPLICIT-OVERLAP
   (COMMENT
    "this is the implicit relation between the events in sentences like He walked down the street whistling a tune")
@@ -80702,7 +81048,38 @@
 (CONCEPT
   ONT::INSTITUTION
   (INHERIT
-    ONT::ORGANIZATION))
+    ONT::ORGANIZATION)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::INSTITUTION-ABSTR
@@ -82609,7 +82986,38 @@
 (CONCEPT
   ONT::INTERNET-ORGANIZATION
   (INHERIT
-    ONT::ORGANIZATION))
+    ONT::ORGANIZATION)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::INTERNET-ORGANIZATION-ABSTR
@@ -83196,6 +83604,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -84568,6 +84977,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -85565,6 +85975,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -85579,6 +85990,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -86035,7 +86447,38 @@
 (CONCEPT
   ONT::LEGAL-ORGANIZATION
   (INHERIT
-    ONT::ORGANIZATION))
+    ONT::ORGANIZATION)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::LEGAL-ORGANIZATION-ABSTR
@@ -91947,6 +92390,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -94651,6 +95095,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -94721,6 +95166,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -94735,6 +95181,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -95903,7 +96350,38 @@
     WN::|military_unit%1:14:00::|
     WN::|military_force%1:14:00::|
     WN::|military_group%1:14:00::|
-    WN::|force%1:14:01::|))
+    WN::|force%1:14:01::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::MILITARY-GROUP-ABSTR
@@ -110378,6 +110856,7 @@
           ONT::NATURAL-GROUP
           ONT::PHYS-SHAPE
           ONT::SHAPE-OBJECT
+          ONT::REPOSITORY
           ONT::PHYS-REPRESENTATION
           ONT::TABLEWARE
           ONT::COOKWARE
@@ -110778,6 +111257,7 @@
           ONT::NATURAL-GROUP
           ONT::PHYS-SHAPE
           ONT::SHAPE-OBJECT
+          ONT::REPOSITORY
           ONT::PHYS-REPRESENTATION
           ONT::TABLEWARE
           ONT::COOKWARE
@@ -111768,7 +112248,38 @@
 (CONCEPT
   ONT::OFFICE-SUPPLY-COMPANY
   (INHERIT
-    ONT::COMPANY))
+    ONT::COMPANY)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::OFFICE-SUPPLY-COMPANY-ABSTR
@@ -112659,6 +113170,7 @@
           ONT::NATURAL-GROUP
           ONT::PHYS-SHAPE
           ONT::SHAPE-OBJECT
+          ONT::REPOSITORY
           ONT::PHYS-REPRESENTATION
           ONT::TABLEWARE
           ONT::COOKWARE
@@ -113490,7 +114002,38 @@
   (INHERIT
     ONT::SOCIAL-GROUP)
   (OVERLAP
-    WN::|organization%1:14:00::|))
+    WN::|organization%1:14:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::ORGANIZATION-ABSTR
@@ -113927,6 +114470,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -115325,6 +115869,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -119849,8 +120394,8 @@
     ONT::GEOGRAPHIC-REGION)
   (OVERLAP
     WN::|circuit%1:14:00::|
-    WN::|free_word%1:14:00::|
-    WN::|third_word%1:14:00::|)
+    WN::|free_world%1:14:00::|
+    WN::|third_world%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -121488,6 +122033,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -125704,7 +126250,38 @@
 (CONCEPT
   ONT::PROFESSIONAL-ORGANIZATION
   (INHERIT
-    ONT::ORGANIZATION))
+    ONT::ORGANIZATION)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::PROFESSIONAL-ORGANIZATION-ABSTR
@@ -126371,6 +126948,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -128086,6 +128664,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -131114,6 +131693,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -131432,7 +132012,38 @@
   (INHERIT
     ONT::ORGANIZATION)
   (OVERLAP
-    WN::|organization%1:14:01::|))
+    WN::|organization%1:14:01::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::REGULATORY-ORGANIZATION-ABSTR
@@ -134049,6 +134660,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -134575,7 +135187,6 @@
     (KR-TYPE ANY-KR-TYPE)
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (ORIGIN ANY-ORIGIN)
-    (FORM ANY-FORM)
     (MOBILITY ANY-MOBILITY)
     (GROUP -)
     (SPATIAL-ABSTRACTION
@@ -134585,9 +135196,10 @@
     (INTENTIONAL -)
     (TRAJECTORY -)
     (INFORMATION -)
-    (CONTAINER -)
     (TANGIBLE +)
-    (TYPE ONT::FUNCTIONAL-PHYS-OBJECT)))
+    (CONTAINER +)
+    (FORM F::SOLID-OBJECT)
+    (TYPE ONT::REPOSITORY)))
 
 (CONCEPT
   ONT::REPRESENT
@@ -135132,7 +135744,38 @@
 (CONCEPT
   ONT::RESEARCH-INSTITUTION
   (INHERIT
-    ONT::COMPANY))
+    ONT::COMPANY)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::RESEARCH-INSTITUTION-ABSTR
@@ -136284,6 +136927,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -137058,6 +137702,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -143449,7 +144094,38 @@
 (CONCEPT
   ONT::SHIPPING-COMPANY
   (INHERIT
-    ONT::COMPANY))
+    ONT::COMPANY)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::SHIPPING-COMPANY-ABSTR
@@ -144291,6 +144967,7 @@
           ONT::NATURAL-GROUP
           ONT::PHYS-SHAPE
           ONT::SHAPE-OBJECT
+          ONT::REPOSITORY
           ONT::PHYS-REPRESENTATION
           ONT::TABLEWARE
           ONT::COOKWARE
@@ -147213,7 +147890,7 @@
 (CONCEPT
   ONT::SOCIAL-GROUP
   (INHERIT
-    ONT::IMPLICIT-OBJECT)
+    ONT::IMPLICIT-GROUP)
   (OVERLAP
     WN::|social_group%1:14:00::|)
   (SEM-FEATS
@@ -147230,18 +147907,22 @@
        SPATIAL-REGION))
     (TRAJECTORY -)
     (INFORMATION -)
-    (CONTAINER -)
+    (CONTAINER +)
     (TANGIBLE +)
-    (OBJECT-FUNCTION OCCUPATION)
+    (OBJECT-FUNCTION F::OCCUPATION)
     (INTENTIONAL +)
     (TYPE ONT::SOCIAL-GROUP))
   (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
-         PHYS-OBJ)
+         ABSTR-OBJ)
        (CONCEPT
-         ABSTR-OBJ))
+         PHYS-OBJ))
      OPTIONAL)))
 
 (CONCEPT
@@ -147786,7 +148467,38 @@
 (CONCEPT
   ONT::SOFTWARE-COMPANY
   (INHERIT
-    ONT::COMPANY))
+    ONT::COMPANY)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::SOFTWARE-COMPANY-ABSTR
@@ -155302,7 +156014,38 @@
 (CONCEPT
   ONT::SUPPLIER
   (INHERIT
-    ONT::COMPANY))
+    ONT::COMPANY)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER +)
+    (TANGIBLE +)
+    (OBJECT-FUNCTION F::OCCUPATION)
+    (INTENTIONAL +)
+    (TYPE ONT::SOCIAL-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::SUPPLIER-ABSTR
@@ -155575,6 +156318,7 @@
           ONT::NATURAL-GROUP
           ONT::PHYS-SHAPE
           ONT::SHAPE-OBJECT
+          ONT::REPOSITORY
           ONT::PHYS-REPRESENTATION
           ONT::TABLEWARE
           ONT::COOKWARE
@@ -162638,6 +163382,7 @@
           ONT::NATURAL-GROUP
           ONT::PHYS-SHAPE
           ONT::SHAPE-OBJECT
+          ONT::REPOSITORY
           ONT::PHYS-REPRESENTATION
           ONT::TABLEWARE
           ONT::COOKWARE
@@ -172722,6 +173467,7 @@
        (TYPE
         (OR
           ONT::AGENT
+          ONT::SOCIAL-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING

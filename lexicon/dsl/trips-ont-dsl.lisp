@@ -1510,7 +1510,7 @@
     ONT::IMPLICIT-GROUP)
   (OVERLAP
     WN::|animal_group%1:14:00::|
-    WN::|bateria_order%1:05:00::|
+    WN::|bacteria_order%1:05:00::|
     WN::|menagerie%1:14:00::|)
   (SEM-FEATS
     (INHERIT
@@ -15620,9 +15620,6 @@
     ONT::GROUP-OBJECT))
 
 (CONCEPT
-  ONT::IMPLICIT-OBJECT)
-
-(CONCEPT
   ONT::IMPLICIT-OVERLAP
   (COMMENT
    "this is the implicit relation between the events in sentences like He walked down the street whistling a tune")
@@ -23470,8 +23467,8 @@
     ONT::GEOGRAPHIC-REGION)
   (OVERLAP
     WN::|circuit%1:14:00::|
-    WN::|free_word%1:14:00::|
-    WN::|third_word%1:14:00::|)
+    WN::|free_world%1:14:00::|
+    WN::|third_world%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -26505,7 +26502,13 @@
     WN::|depository%1:06:00::|
     WN::|deposit%1:06:00::|
     WN::|depositary%1:06:00::|
-    WN::|repository%1:06:00::|))
+    WN::|repository%1:06:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (CONTAINER +)
+    (FORM SOLID-OBJECT)
+    (TYPE ONT::REPOSITORY)))
 
 (CONCEPT
   ONT::REPRESENT
@@ -29155,7 +29158,7 @@
 (CONCEPT
   ONT::SOCIAL-GROUP
   (INHERIT
-    ONT::IMPLICIT-OBJECT)
+    ONT::IMPLICIT-GROUP)
   (OVERLAP
     WN::|social_group%1:14:00::|)
   (SEM-FEATS
