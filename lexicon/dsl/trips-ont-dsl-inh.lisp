@@ -23984,11 +23984,30 @@
 (CONCEPT
   ONT::CAUSE-COVER
   (INHERIT
-    ONT::EVENT-OF-CAUSATION)
+    ONT::CAUSE-POSITION)
   (OVERLAP
+    WN::|cover%2:35:00::|
+    WN::|cover%2:35:14::|
+    WN::|cover%2:35:01::|
     WN::|impregnate%2:30:00::|
     WN::|saturate%2:30:04::|
     WN::|spread%2:35:13::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (CAUSE F::FORCE)
+    (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
+    (TYPE ONT::EVENT-OF-CAUSATION))
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -24019,23 +24038,7 @@
     (ONT::AFFECTED-RESULT
      (CONCEPT
        T)
-     OPTIONAL))
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (KR-TYPE ANY-KR-TYPE)
-    (TIME-SPAN ANY-TIME-SPAN)
-    (TRAJECTORY -)
-    (LOCATIVE -)
-    (ORIGIN ANY-ORIGIN)
-    (IOBJ -)
-    (CAUSE F::FORCE)
-    (INTENTIONAL -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
-    (CONTAINER -)
-    (TANGIBLE +)
-    (ASPECT F::DYNAMIC)
-    (TYPE ONT::EVENT-OF-CAUSATION)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::CAUSE-EFFECT
@@ -24456,6 +24459,58 @@
          (CONCEPT
            SITUATION))
        (TANGIBLE +)))))
+
+(CONCEPT
+  ONT::CAUSE-POSITION
+  (INHERIT
+    ONT::EVENT-OF-CAUSATION)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AFFECTED-RESULT
+     (CONCEPT
+       T)
+     OPTIONAL))
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (CAUSE F::FORCE)
+    (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
+    (TYPE ONT::EVENT-OF-CAUSATION)))
 
 (CONCEPT
   ONT::CAUSE-PRODUCE-REPRODUCE
@@ -36798,6 +36853,11 @@
   ONT::CONTEST-DENY-OPPOSE-PROTEST
   (INHERIT
     ONT::CONTEST)
+  (OVERLAP
+    WN::|opposition%1:04:01::|
+    WN::|oppose%2:32:01::|
+    WN::|oppose%2:32:00::|
+    WN::|oppose%2:33:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -39783,8 +39843,8 @@
     ONT::POSITION)
   (OVERLAP
     WN::|arch_over%2:38:00::|
-    WN::|cover%2:35:00::|
-    WN::|cover%2:35:14::|)
+    WN::|cover%2:35:13::|
+    WN::|cover%2:29:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -114132,78 +114192,63 @@
 
 (CONCEPT
   ONT::ORIENT
+  (COMMENT "cause an AFFECTED to be oriented in some direction")
   (INHERIT
-    ONT::POSITION)
+    ONT::CAUSE-POSITION)
   (OVERLAP
     WN::|direct%2:33:00::|
     WN::|take_aim%2:33:00::|
     WN::|train%2:33:00::|
-    WN::|take%2:33:09::|
-    WN::|aim%2:33:00::|
-    WN::|point%2:42:00::|
-    WN::|orient%2:42:00::|
-    WN::|orient%2:42:01::|)
+    WN::|point%2:32:00::|
+    WN::|point%2:33:02::|
+    WN::|point%2:33:10::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
     (KR-TYPE ANY-KR-TYPE)
-    (CAUSE ANY-CAUSE)
     (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
     (LOCATIVE -)
     (ORIGIN ANY-ORIGIN)
     (IOBJ -)
-    (TRAJECTORY -)
+    (CAUSE F::FORCE)
     (INTENTIONAL -)
     (INFORMATION F::MENTAL-CONSTRUCT)
     (CONTAINER -)
     (TANGIBLE +)
-    (ASPECT F::STAGE-LEVEL)
-    (TYPE ONT::ORIENT))
+    (ASPECT F::DYNAMIC)
+    (TYPE ONT::EVENT-OF-CAUSATION))
   (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TANGIBLE +))
+     OPTIONAL)
     (ONT::AGENT
      (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TANGIBLE +))
      OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
      OPTIONAL)
-    (ONT::AFFECTED1
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)
-    (ONT::NOROLE
+    (ONT::AFFECTED-RESULT
      (CONCEPT
        T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (OR
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ)))))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::ORIENTATION
@@ -119912,6 +119957,75 @@
           F::HUMAN
           F::NON-HUMAN-ANIMAL)))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::POINTING-TO
+  (INHERIT
+    ONT::POSITION)
+  (OVERLAP
+    WN::|point%2:42:00::|
+    WN::|orient%2:42:01::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (CAUSE ANY-CAUSE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (TRAJECTORY -)
+    (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::STAGE-LEVEL)
+    (TYPE ONT::POINTING-TO))
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::AFFECTED1
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ)))))
 
 (CONCEPT
   ONT::POLARITY-SCALE
@@ -156491,8 +156605,7 @@
     WN::|submit%2:33:00::|
     WN::|surrender%2:40:00::|
     WN::|yield%2:33:00::|
-    WN::|yield%2:40:01::|
-    WN::|yield%2:38:00::|)
+    WN::|yield%2:40:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)

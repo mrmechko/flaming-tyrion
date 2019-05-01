@@ -4709,16 +4709,14 @@
 (CONCEPT
   ONT::CAUSE-COVER
   (INHERIT
-    ONT::EVENT-OF-CAUSATION)
+    ONT::CAUSE-POSITION)
   (OVERLAP
+    WN::|cover%2:35:00::|
+    WN::|cover%2:35:14::|
+    WN::|cover%2:35:01::|
     WN::|impregnate%2:30:00::|
     WN::|saturate%2:30:04::|
-    WN::|spread%2:35:13::|)
-  (SEM-FRAME
-    (ONT::AFFECTED-RESULT
-     (CONCEPT
-       T)
-     OPTIONAL)))
+    WN::|spread%2:35:13::|))
 
 (CONCEPT
   ONT::CAUSE-EFFECT
@@ -4856,6 +4854,16 @@
     WN::|take_out%2:35:09::|
     WN::|draw_out%2:35:05::|
     WN::|purge%2:29:00::|))
+
+(CONCEPT
+  ONT::CAUSE-POSITION
+  (INHERIT
+    ONT::EVENT-OF-CAUSATION)
+  (SEM-FRAME
+    (ONT::AFFECTED-RESULT
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::CAUSE-PRODUCE-REPRODUCE
@@ -7486,7 +7494,12 @@
 (CONCEPT
   ONT::CONTEST-DENY-OPPOSE-PROTEST
   (INHERIT
-    ONT::CONTEST))
+    ONT::CONTEST)
+  (OVERLAP
+    WN::|opposition%1:04:01::|
+    WN::|oppose%2:32:01::|
+    WN::|oppose%2:32:00::|
+    WN::|oppose%2:33:01::|))
 
 (CONCEPT
   ONT::CONTINUOUS
@@ -8050,8 +8063,8 @@
     ONT::POSITION)
   (OVERLAP
     WN::|arch_over%2:38:00::|
-    WN::|cover%2:35:00::|
-    WN::|cover%2:35:14::|)
+    WN::|cover%2:35:13::|
+    WN::|cover%2:29:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -22073,35 +22086,16 @@
 
 (CONCEPT
   ONT::ORIENT
+  (COMMENT "cause an AFFECTED to be oriented in some direction")
   (INHERIT
-    ONT::POSITION)
+    ONT::CAUSE-POSITION)
   (OVERLAP
     WN::|direct%2:33:00::|
     WN::|take_aim%2:33:00::|
     WN::|train%2:33:00::|
-    WN::|take%2:33:09::|
-    WN::|aim%2:33:00::|
-    WN::|point%2:42:00::|
-    WN::|orient%2:42:00::|
-    WN::|orient%2:42:01::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (ASPECT STAGE-LEVEL)
-    (TYPE ONT::ORIENT))
-  (SEM-FRAME
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION)))))
+    WN::|point%2:32:00::|
+    WN::|point%2:33:02::|
+    WN::|point%2:33:10::|))
 
 (CONCEPT
   ONT::ORIENTATION
@@ -23391,6 +23385,32 @@
     ONT::BREATHING-DISORDER)
   (OVERLAP
     WN::|pneumonia%1:26:00::|))
+
+(CONCEPT
+  ONT::POINTING-TO
+  (INHERIT
+    ONT::POSITION)
+  (OVERLAP
+    WN::|point%2:42:00::|
+    WN::|orient%2:42:01::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (ASPECT STAGE-LEVEL)
+    (TYPE ONT::POINTING-TO))
+  (SEM-FRAME
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION)))))
 
 (CONCEPT
   ONT::POLARITY-SCALE
@@ -30802,8 +30822,7 @@
     WN::|submit%2:33:00::|
     WN::|surrender%2:40:00::|
     WN::|yield%2:33:00::|
-    WN::|yield%2:40:01::|
-    WN::|yield%2:38:00::|))
+    WN::|yield%2:40:01::|))
 
 (CONCEPT
   ONT::SURROUND

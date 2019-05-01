@@ -5394,18 +5394,16 @@
  </concept>
  <concept name="ont::cause-cover">
   <relation label="inherit">
-   ont::event-of-causation
+   ont::cause-position
   </relation>
   <relation label="overlap">
+   wn::|cover%2:35:00::|
+   wn::|cover%2:35:14::|
+   wn::|cover%2:35:01::|
    wn::|impregnate%2:30:00::|
    wn::|saturate%2:30:04::|
    wn::|spread%2:35:13::|
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::affected-result" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::cause-effect">
   <comment>
@@ -5554,6 +5552,16 @@
    wn::|draw_out%2:35:05::|
    wn::|purge%2:29:00::|
   </relation>
+ </concept>
+ <concept name="ont::cause-position">
+  <relation label="inherit">
+   ont::event-of-causation
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected-result" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::cause-produce-reproduce">
   <comment>
@@ -8527,6 +8535,12 @@
   <relation label="inherit">
    ont::contest
   </relation>
+  <relation label="overlap">
+   wn::|opposition%1:04:01::|
+   wn::|oppose%2:32:01::|
+   wn::|oppose%2:32:00::|
+   wn::|oppose%2:33:01::|
+  </relation>
  </concept>
  <concept name="ont::continuous">
   <relation label="inherit">
@@ -9174,8 +9188,8 @@
   </relation>
   <relation label="overlap">
    wn::|arch_over%2:38:00::|
-   wn::|cover%2:35:00::|
-   wn::|cover%2:35:14::|
+   wn::|cover%2:35:13::|
+   wn::|cover%2:29:02::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -25329,38 +25343,20 @@
   </relation>
  </concept>
  <concept name="ont::orient">
+  <comment>
+   &quot;cause an AFFECTED to be oriented in some direction&quot;
+  </comment>
   <relation label="inherit">
-   ont::position
+   ont::cause-position
   </relation>
   <relation label="overlap">
    wn::|direct%2:33:00::|
    wn::|take_aim%2:33:00::|
    wn::|train%2:33:00::|
-   wn::|take%2:33:09::|
-   wn::|aim%2:33:00::|
-   wn::|point%2:42:00::|
-   wn::|orient%2:42:00::|
-   wn::|orient%2:42:01::|
+   wn::|point%2:32:00::|
+   wn::|point%2:33:02::|
+   wn::|point%2:33:10::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">stage-level</feat>
-   <feat name="type">ont::orient</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::neutral1" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::neutral">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::orientation">
   <relation label="inherit">
@@ -26850,6 +26846,34 @@
   <relation label="overlap">
    wn::|pneumonia%1:26:00::|
   </relation>
+ </concept>
+ <concept name="ont::pointing-to">
+  <relation label="inherit">
+   ont::position
+  </relation>
+  <relation label="overlap">
+   wn::|point%2:42:00::|
+   wn::|orient%2:42:01::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">stage-level</feat>
+   <feat name="type">ont::pointing-to</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::neutral1" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::neutral">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::polarity-scale">
   <relation label="inherit">
@@ -35230,7 +35254,6 @@
    wn::|surrender%2:40:00::|
    wn::|yield%2:33:00::|
    wn::|yield%2:40:01::|
-   wn::|yield%2:38:00::|
   </relation>
  </concept>
  <concept name="ont::surround">

@@ -3,38 +3,20 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::orient">
+ <comment>
+  &quot;cause an AFFECTED to be oriented in some direction&quot;
+ </comment>
  <relation label="inherit">
-  ont::position
+  ont::cause-position
  </relation>
  <relation label="overlap">
   wn::|direct%2:33:00::|
   wn::|take_aim%2:33:00::|
   wn::|train%2:33:00::|
-  wn::|take%2:33:09::|
-  wn::|aim%2:33:00::|
-  wn::|point%2:42:00::|
-  wn::|orient%2:42:00::|
-  wn::|orient%2:42:01::|
+  wn::|point%2:32:00::|
+  wn::|point%2:33:02::|
+  wn::|point%2:33:10::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">stage-level</feat>
-  <feat name="type">ont::orient</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -71,77 +53,25 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <concept name="ont::position">
- <comment>
-  &quot;These are stative predicates indicating the position of an object with respect to another. They also typically allow a causal variant where an agent causes this position (see ONT::CAUSE-POSITION)&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-state
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="type">ont::position</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::affected1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
  </sem-frame>
- </concept>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">stage-level</feat>
- <feat name="type">ont::orient</feat>
+ <feat name="cause">force</feat>
+ <feat name="type">ont::event-of-action</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::event-of-state">
+ <concept name="ont::event-of-change">
  <comment>
-  &quot;Events describing a state of affairs holding&quot;
+  &quot;Events that involve change or force: should have an AGENT or AFFECTED role&quot;
  </comment>
  <relation label="inherit">
   ont::situation-root
@@ -150,65 +80,135 @@
   <relation label="inherit">
    situation
   </relation>
-  <feat name="aspect">static</feat>
-  <feat name="type">ont::event-of-state</feat>
+  <feat name="aspect">dynamic</feat>
+  <feat name="type">ont::event-of-change</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="abstr-obj" />
   </role-restr-map>
-  <role-restr-map roles="ont::formal" optional="optional">
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
    <or>
     <concept name="situation" />
     <concept name="abstr-obj" />
+    <concept name="phys-obj" />
    </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="trajectory">-</feat>
- <feat name="type">ont::position</feat>
+ <feat name="type">ont::event-of-causation</feat>
+ </sem-feats>
+ <concept name="ont::event-of-action">
+ <comment>
+  &quot;events that involve :agent (whether intentional or not)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+  <feat name="type">ont::event-of-action</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::affected1" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected-result" optional="optional">
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
+ <concept name="ont::event-of-causation">
+ <comment>
+  &quot;events involving an AGENT acting on an AFFECTED&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-action
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="type">ont::event-of-causation</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::cause-position">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected-result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::situation-root">
  <comment>
   &quot;root for all events, whether verbal or nominal&quot;
@@ -231,21 +231,29 @@
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">static</feat>
- <feat name="type">ont::event-of-state</feat>
+ <feat name="aspect">dynamic</feat>
+ <feat name="type">ont::event-of-change</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
+ <role-restr-map roles="ont::result" optional="optional">
+  <concept name="abstr-obj" />
  </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
+ <role-restr-map roles="ont::affected" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
   <or>
    <concept name="situation" />
    <concept name="abstr-obj" />
+   <concept name="phys-obj" />
   </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::any-sem">
@@ -262,39 +270,6 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="aim" />
- </morph>
- <comment>
-  &quot;ORIENT&quot;
- </comment>
- <example text="the triangle aims towards the square">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::orient
- </relation>
- <syntax>
-  <template-call template="ont::neutral-neutral-xp-templ" xp="'(w::pp
-                                                                (or
-                                                                  w::toward
-                                                                  w::towards))" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::pp" head-word="(or
-                                                                     w::toward
-                                                                     w::towards)" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">stage-level</feat>
-  </sem-feats>
- </semantics>
- </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -320,69 +295,7 @@
  <semantics>
   <sem-feats>
    <feat name="time-span">extended</feat>
-   <feat name="aspect">stage-level</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="face" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="the triangle faces the square">
- </example>
- <relation label="inherit">
-  ont::orient
- </relation>
- <syntax>
-  <template-call template="ont::neutral-neutral-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">stage-level</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="face" />
- </morph>
- <comment>
-  &quot;ORIENT&quot;
- </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="the triangle faces towards the square">
- </example>
- <relation label="inherit">
-  ont::orient
- </relation>
- <syntax>
-  <template-call template="ont::neutral-neutral-xp-templ" xp="'(w::pp
-                                                                (or
-                                                                  w::toward
-                                                                  w::towards))" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::pp" head-word="(or
-                                                                     w::toward
-                                                                     w::towards)" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">stage-level</feat>
+   <feat name="aspect">dynamic</feat>
   </sem-feats>
  </semantics>
  </sense>
@@ -413,31 +326,6 @@
                                                                       w::towards)" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">stage-level</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="mirror" />
- </morph>
- <example text="the bananas  mirror each other">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::orient
- </relation>
- <syntax>
-  <template-call template="ont::neutral-neutral-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
   </syn-sem>
  </syntax>
  <semantics>
@@ -492,55 +380,14 @@
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <example text="the triangle points towards the square">
- </example>
- <relation label="inherit">
-  ont::orient
- </relation>
- <syntax>
-  <template-call template="ont::neutral-neutral-xp-templ" xp="'(w::pp
-                                                                (or
-                                                                  w::toward
-                                                                  w::towards))" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::pp" head-word="(or
-                                                                     w::toward
-                                                                     w::towards)" sem-role="ont::neutral1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">stage-level</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="point" />
- </morph>
- <comment>
-  &quot;ORIENT&quot;
- </comment>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
  <example text="orient the triangle (towards the square)">
  </example>
  <relation label="inherit">
   ont::orient
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-goal-optional-templ" xp="'(w::pp
-                                                                          (or
-                                                                            w::toward
-                                                                            w::towards))" />
+  <template-call template="ont::agent-affected-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="(or
-                                                                      w::toward
-                                                                      w::towards)" sem-role="ont::result" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
@@ -548,7 +395,7 @@
  <semantics>
   <sem-feats>
    <feat name="time-span">extended</feat>
-   <feat name="aspect">stage-level</feat>
+   <feat name="aspect">dynamic</feat>
   </sem-feats>
  </semantics>
  </sense>
