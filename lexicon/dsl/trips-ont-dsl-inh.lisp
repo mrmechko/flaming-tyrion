@@ -2389,6 +2389,8 @@
          PHYS-OBJ)
        (TYPE
         (OR
+          ONT::PLANT-GROUP
+          ONT::ANIMAL-GROUP
           ONT::SUPERNATURAL-BEING
           ONT::ANIMAL))
        (INTENTIONAL +)
@@ -8595,7 +8597,7 @@
   ONT::ANIMAL-GROUP
   (COMMENT "An group defined by a classification of animals")
   (INHERIT
-    ONT::IMPLICIT-GROUP)
+    ONT::NATURAL-GROUP)
   (OVERLAP
     WN::|animal_group%1:14:00::|
     WN::|bacteria_order%1:05:00::|
@@ -8605,8 +8607,6 @@
       PHYS-OBJ)
     (KR-TYPE ANY-KR-TYPE)
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (ORIGIN ANY-ORIGIN)
-    (FORM ANY-FORM)
     (MOBILITY ANY-MOBILITY)
     (GROUP -)
     (SPATIAL-ABSTRACTION
@@ -8615,8 +8615,10 @@
        SPATIAL-REGION))
     (TRAJECTORY -)
     (INFORMATION -)
-    (CONTAINER +)
+    (FORM F::SOLID-OBJECT)
+    (ORIGIN F::LIVING)
     (TANGIBLE +)
+    (CONTAINER +)
     (INTENTIONAL +)
     (TYPE ONT::ANIMAL-GROUP))
   (SEM-FRAME
@@ -9347,6 +9349,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -19070,6 +19073,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -23710,6 +23714,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -40420,42 +40425,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::CREW-PHYS
-  (INHERIT
-    ONT::SOCIAL-GROUP)
-  (SEM-FEATS
-    (INHERIT
-      PHYS-OBJ)
-    (KR-TYPE ANY-KR-TYPE)
-    (ORIGIN ANY-ORIGIN)
-    (FORM ANY-FORM)
-    (MOBILITY ANY-MOBILITY)
-    (GROUP -)
-    (SPATIAL-ABSTRACTION
-     (OR
-       SPATIAL-POINT
-       SPATIAL-REGION))
-    (TRAJECTORY -)
-    (INFORMATION -)
-    (CONTAINER +)
-    (TANGIBLE +)
-    (OBJECT-FUNCTION F::OCCUPATION)
-    (INTENTIONAL +)
-    (TYPE ONT::SOCIAL-GROUP))
-  (SEM-FRAME
-    (ONT::CONTENTS
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (OR
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ))
-     OPTIONAL)))
-
-(CONCEPT
   ONT::CRIMINAL-ACTIVITY
   (INHERIT
     ONT::GOVERNING-PRINCIPLE)
@@ -50793,66 +50762,6 @@
          SITUATION)
        (TYPE ONT::SITUATION-ROOT))
      OPTIONAL)))
-
-(CONCEPT
-  ONT::DUNK
-  (INHERIT
-    ONT::IMMERSE)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (KR-TYPE ANY-KR-TYPE)
-    (TIME-SPAN ANY-TIME-SPAN)
-    (LOCATIVE -)
-    (ORIGIN ANY-ORIGIN)
-    (IOBJ -)
-    (ASPECT F::DYNAMIC)
-    (TANGIBLE +)
-    (CONTAINER -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
-    (INTENTIONAL -)
-    (CAUSE F::FORCE)
-    (TRAJECTORY +)
-    (TYPE ONT::PUT))
-  (SEM-FRAME
-    (ONT::RESULT
-     (CONCEPT
-       ABSTR-OBJ)
-     OPTIONAL)
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (MOBILITY F::MOVABLE)
-       (TANGIBLE +)
-       (TYPE
-        (OR
-          ONT::COMMODITY
-          ONT::COOKWARE
-          ONT::WRITING-IMPLEMENT
-          ONT::INSTRUMENTATION
-          ONT::COMPUTER-PART
-          ONT::COMPUTER
-          ONT::PROJECTOR
-          ONT::MUSICAL-INSTRUMENT
-          ONT::WEAPON
-          ONT::SENSOR
-          ONT::WINDOW
-          ONT::WHEEL
-          ONT::VEHICLE-CONTAINER
-          ONT::VEHICLE
-          ONT::MATERIAL
-          ONT::SUPERNATURAL-BEING
-          ONT::PERSON))))
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TANGIBLE +)
-       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::DUPLICATE
@@ -68871,7 +68780,7 @@
   (INHERIT
     ONT::UNORDERED-DOMAIN)
   (OVERLAP
-    WN::|gender%1:07:00::|)
+    WN::|sex%1:14:00::|)
   (SEM-FRAME
     (ONT::GROUND
      (CONCEPT
@@ -70926,6 +70835,32 @@
        F::SPATIAL-REGION))
     (ORIGIN F::PLANT)
     (TYPE ONT::PLANT)))
+
+(CONCEPT
+  ONT::GRAMMATICAL-CATEGORY
+  (INHERIT
+    ONT::LINGUISTIC-OBJECT)
+  (OVERLAP
+    WN::|grammatical_category%1:10:00::|
+    WN::|declension%1:14:00::|
+    WN::|conjugation%1:14:01::|
+    WN::|linguistic_relation%1:24:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (TYPE ONT::MENTAL-CONSTRUCTION)))
 
 (CONCEPT
   ONT::GRANULATE
@@ -77131,7 +77066,8 @@
   (OVERLAP
     WN::|immerse%2:35:00::|
     WN::|plunge%2:35:01::|
-    WN::|immerse%2:31:01::|)
+    WN::|immerse%2:31:01::|
+    WN::|drown%2:35:00::|)
   (SEM-FRAME
     (ONT::RESULT
      (CONCEPT
@@ -83665,6 +83601,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -85038,6 +84975,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -86036,6 +85974,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -86051,6 +85990,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -92451,6 +92391,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -95156,6 +95097,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -95227,6 +95169,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -95242,6 +95185,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -100190,7 +100134,10 @@
     ONT::DEVICE)
   (OVERLAP
     WN::|musical_instrument%1:06:00::|
-    WN::|instrument%1:06:01::|)
+    WN::|instrument%1:06:01::|
+    WN::|brass_family%1:14:00::|
+    WN::|violin_family%1:14:00::|
+    WN::|woodwind_family%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -101259,8 +101206,7 @@
     WN::|kingdom%1:14:00::|
     WN::|biological_group%1:14:00::|
     WN::|association%1:14:01::|
-    WN::|class%1:14:00::|
-    WN::|vegetation%1:14:00::|)
+    WN::|class%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -112734,6 +112680,8 @@
          PHYS-OBJ)
        (TYPE
         (OR
+          ONT::PLANT-GROUP
+          ONT::ANIMAL-GROUP
           ONT::SUPERNATURAL-BEING
           ONT::ANIMAL))
        (INTENTIONAL +)
@@ -114516,6 +114464,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -115915,6 +115864,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -116617,8 +116567,6 @@
       PHYS-OBJ)
     (KR-TYPE ANY-KR-TYPE)
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (ORIGIN ANY-ORIGIN)
-    (FORM ANY-FORM)
     (MOBILITY ANY-MOBILITY)
     (GROUP -)
     (SPATIAL-ABSTRACTION
@@ -116627,8 +116575,10 @@
        SPATIAL-REGION))
     (TRAJECTORY -)
     (INFORMATION -)
-    (CONTAINER +)
+    (FORM F::SOLID-OBJECT)
+    (ORIGIN F::LIVING)
     (TANGIBLE +)
+    (CONTAINER +)
     (INTENTIONAL +)
     (TYPE ONT::ANIMAL-GROUP))
   (SEM-FRAME
@@ -116650,7 +116600,6 @@
     WN::|race%1:14:00::|
     WN::|sainthood%1:14:00::|
     WN::|varna%1:14:00::|
-    WN::|congregation%1:14:01::|
     WN::|tenantry%1:14:00::|)
   (SEM-FEATS
     (INHERIT
@@ -119403,6 +119352,42 @@
     (TYPE ONT::PLANT)))
 
 (CONCEPT
+  ONT::PLANT-GROUP
+  (COMMENT "An group defined by a classification of animals")
+  (INHERIT
+    ONT::NATURAL-GROUP)
+  (OVERLAP
+    WN::|vegetation%1:14:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (FORM F::SOLID-OBJECT)
+    (ORIGIN F::LIVING)
+    (TANGIBLE +)
+    (CONTAINER +)
+    (INTENTIONAL +)
+    (TYPE ONT::PLANT-GROUP))
+  (SEM-FRAME
+    (ONT::CONTENTS
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::PLANT-PART
   (INHERIT
     ONT::PLANT)
@@ -122148,6 +122133,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -127063,6 +127049,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -128779,6 +128766,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -131808,6 +131796,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -134775,6 +134764,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -137042,6 +137032,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -137817,6 +137808,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING
@@ -148006,7 +147998,8 @@
   (INHERIT
     ONT::IMPLICIT-GROUP)
   (OVERLAP
-    WN::|social_group%1:14:00::|)
+    WN::|social_group%1:14:00::|
+    WN::|congregation%1:14:01::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -173581,6 +173574,7 @@
         (OR
           ONT::AGENT
           ONT::SOCIAL-GROUP
+          ONT::PLANT-GROUP
           ONT::ANIMAL-GROUP
           ONT::ROBOT
           ONT::SUPERNATURAL-BEING

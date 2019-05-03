@@ -1507,7 +1507,7 @@
   ONT::ANIMAL-GROUP
   (COMMENT "An group defined by a classification of animals")
   (INHERIT
-    ONT::IMPLICIT-GROUP)
+    ONT::NATURAL-GROUP)
   (OVERLAP
     WN::|animal_group%1:14:00::|
     WN::|bacteria_order%1:05:00::|
@@ -8235,11 +8235,6 @@
     ONT::SOCIAL-GROUP-ABSTR))
 
 (CONCEPT
-  ONT::CREW-PHYS
-  (INHERIT
-    ONT::SOCIAL-GROUP))
-
-(CONCEPT
   ONT::CRIMINAL-ACTIVITY
   (INHERIT
     ONT::GOVERNING-PRINCIPLE)
@@ -10343,11 +10338,6 @@
   ONT::DUE-TO
   (INHERIT
     ONT::REASON))
-
-(CONCEPT
-  ONT::DUNK
-  (INHERIT
-    ONT::IMMERSE))
 
 (CONCEPT
   ONT::DUPLICATE
@@ -13932,7 +13922,7 @@
   (INHERIT
     ONT::UNORDERED-DOMAIN)
   (OVERLAP
-    WN::|gender%1:07:00::|)
+    WN::|sex%1:14:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -14373,6 +14363,16 @@
   (OVERLAP
     WN::|cereal%1:20:00::|
     WN::|teff%1:20:00::|))
+
+(CONCEPT
+  ONT::GRAMMATICAL-CATEGORY
+  (INHERIT
+    ONT::LINGUISTIC-OBJECT)
+  (OVERLAP
+    WN::|grammatical_category%1:10:00::|
+    WN::|declension%1:14:00::|
+    WN::|conjugation%1:14:01::|
+    WN::|linguistic_relation%1:24:00::|))
 
 (CONCEPT
   ONT::GRANULATE
@@ -15604,7 +15604,8 @@
   (OVERLAP
     WN::|immerse%2:35:00::|
     WN::|plunge%2:35:01::|
-    WN::|immerse%2:31:01::|)
+    WN::|immerse%2:31:01::|
+    WN::|drown%2:35:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (CONCEPT
@@ -20094,7 +20095,10 @@
     ONT::DEVICE)
   (OVERLAP
     WN::|musical_instrument%1:06:00::|
-    WN::|instrument%1:06:01::|)
+    WN::|instrument%1:06:01::|
+    WN::|brass_family%1:14:00::|
+    WN::|violin_family%1:14:00::|
+    WN::|woodwind_family%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -20273,8 +20277,7 @@
     WN::|kingdom%1:14:00::|
     WN::|biological_group%1:14:00::|
     WN::|association%1:14:01::|
-    WN::|class%1:14:00::|
-    WN::|vegetation%1:14:00::|)
+    WN::|class%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -22627,7 +22630,6 @@
     WN::|race%1:14:00::|
     WN::|sainthood%1:14:00::|
     WN::|varna%1:14:00::|
-    WN::|congregation%1:14:01::|
     WN::|tenantry%1:14:00::|))
 
 (CONCEPT
@@ -23286,6 +23288,19 @@
       PHYS-OBJ)
     (ORIGIN PLANT)
     (TYPE ONT::PLANT)))
+
+(CONCEPT
+  ONT::PLANT-GROUP
+  (COMMENT "An group defined by a classification of animals")
+  (INHERIT
+    ONT::NATURAL-GROUP)
+  (OVERLAP
+    WN::|vegetation%1:14:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (INTENTIONAL +)
+    (TYPE ONT::PLANT-GROUP)))
 
 (CONCEPT
   ONT::PLANT-PART
@@ -29180,7 +29195,8 @@
   (INHERIT
     ONT::IMPLICIT-GROUP)
   (OVERLAP
-    WN::|social_group%1:14:00::|)
+    WN::|social_group%1:14:00::|
+    WN::|congregation%1:14:01::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
