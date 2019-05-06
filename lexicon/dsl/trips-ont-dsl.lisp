@@ -9539,15 +9539,10 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           SITUATION))
-       (ASPECT DYNAMIC)
-       (MOBILITY MOVABLE))
+       (INHERIT
+         SITUATION)
+       (TRAJECTORY +)
+       (ASPECT DYNAMIC))
      OPTIONAL)))
 
 (CONCEPT
