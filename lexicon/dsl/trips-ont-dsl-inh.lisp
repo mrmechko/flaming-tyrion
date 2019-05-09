@@ -15139,29 +15139,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -23059,29 +23044,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -29642,29 +29612,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -39680,29 +39635,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -46846,29 +46786,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -46924,29 +46849,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -46984,29 +46894,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -47028,29 +46923,12 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (ASPECT F::DYNAMIC)
-       (TRAJECTORY +)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE)))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -47106,29 +46984,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -47165,29 +47028,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -47226,29 +47074,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -47285,29 +47118,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -47346,29 +47164,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -47405,29 +47208,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -47465,29 +47253,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -47509,29 +47282,12 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (ASPECT F::DYNAMIC)
-       (TRAJECTORY +)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE)))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -47686,29 +47442,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -47746,29 +47487,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -47806,29 +47532,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -164151,29 +163862,14 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::TRAVEL
-          ONT::COME-FROM
-          ONT::KISSING
-          ONT::COMBINE-OBJECTS
-          ONT::COALESCE
-          ONT::SENDCOPY
-          ONT::SEND
-          ONT::GUIDING
-          ONT::PUT
-          ONT::BODY-MOVEMENT
-          ONT::FLUIDIC-MOTION
-          ONT::MOVE
-          ONT::TRANSPORT
-          ONT::CATCH
-          ONT::PURSUE
-          ONT::FOLLOW-PATH
-          ONT::CAUSE-TO-MOVE))
-       (TRAJECTORY +)
-       (ASPECT F::DYNAMIC))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
