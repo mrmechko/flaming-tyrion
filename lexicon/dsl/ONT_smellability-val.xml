@@ -4,14 +4,13 @@
  <provenance name="TRIPS"/>
  <concept name="ont::smellability-val">
  <relation label="inherit">
-  ont::smellable-property-val
+  ont::sensory-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="orientation">pos</feat>
-  <feat name="scale">ont::sensory-scale</feat>
+  <feat name="scale">ont::olfactory-scale</feat>
   <feat name="type">ont::smellability-val</feat>
  </sem-feats>
  </concept>
@@ -139,12 +138,27 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::sensory-property-val">
+ <comment>
+  &quot;properties relating to the ability to receive sensory input (compare to ont::appearance-property-val)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::sensory-scale</feat>
+  <feat name="type">ont::sensory-property-val</feat>
+ </sem-feats>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::appearance-scale</feat>
- <feat name="type">ont::sensory-property-val</feat>
+ <feat name="scale">ont::olfactory-scale</feat>
+ <feat name="type">ont::smellability-val</feat>
  </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
@@ -165,44 +179,9 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::olfactory-scale</feat>
- <feat name="type">ont::smellable-property-val</feat>
- </sem-feats>
- <concept name="ont::sensory-property-val">
- <comment>
-  &quot;properties that have to do with sensory input&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::appearance-scale</feat>
-  <feat name="type">ont::sensory-property-val</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="orientation">pos</feat>
  <feat name="scale">ont::sensory-scale</feat>
- <feat name="type">ont::smellability-val</feat>
+ <feat name="type">ont::sensory-property-val</feat>
  </sem-feats>
- <concept name="ont::smellable-property-val">
- <relation label="inherit">
-  ont::sensory-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::olfactory-scale</feat>
-  <feat name="type">ont::smellable-property-val</feat>
- </sem-feats>
- </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -333,51 +312,33 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
- <concept name="ont::pleasant-smelling-val">
+ <concept name="ont::smellable-val">
  <relation label="inherit">
   ont::smellability-val
- </relation>
- <relation label="overlap">
-  wn::|aromatic%5:00:00:fragrant:00|
-  wn::|perfumed%5:00:02:fragrant:00|
-  wn::|musky%5:00:00:fragrant:00|
-  wn::|fragrant%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::positive-smell-scale</feat>
-  <feat name="type">ont::pleasant-smelling-val</feat>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::olfactory-scale</feat>
+  <feat name="type">ont::smellable-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::unpleasant-smelling-val">
+ <concept name="ont::unsmellable-val">
  <relation label="inherit">
   ont::smellability-val
  </relation>
  <relation label="overlap">
-  wn::|smelly%5:00:00:malodorous:00|
-  wn::|stinky%3:00:00::|
+  wn::|odorless%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::negative-smell-scale</feat>
-  <feat name="type">ont::unpleasant-smelling-val</feat>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::olfactory-scale</feat>
+  <feat name="type">ont::unsmellable-val</feat>
  </sem-feats>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="smellable" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::smellability-val
-  ont::central-adj-templ
- </relation>
- </sense>
 </dsl>

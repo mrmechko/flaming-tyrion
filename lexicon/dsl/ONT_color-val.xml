@@ -4,7 +4,11 @@
  <provenance name="TRIPS"/>
  <concept name="ont::color-val">
  <relation label="inherit">
-  ont::visible-property-val
+  ont::visual-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|chromatic%3:00:00::|
+  wn::|achromatic%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -149,7 +153,7 @@
   abstr-obj
  </relation>
  <feat name="scale">ont::appearance-scale</feat>
- <feat name="type">ont::sensory-property-val</feat>
+ <feat name="type">ont::appearance-property-val</feat>
  </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
@@ -171,11 +175,11 @@
   abstr-obj
  </relation>
  <feat name="scale">ont::visual-scale</feat>
- <feat name="type">ont::visible-property-val</feat>
+ <feat name="type">ont::visual-property-val</feat>
  </sem-feats>
- <concept name="ont::sensory-property-val">
+ <concept name="ont::appearance-property-val">
  <comment>
-  &quot;properties that have to do with sensory input&quot;
+  &quot;subjective chracteristics on HOW something is perceived through sensory input (compare to ont::sensory-property-val)&quot;
  </comment>
  <relation label="inherit">
   ont::physical-property-val
@@ -185,7 +189,7 @@
    abstr-obj
   </relation>
   <feat name="scale">ont::appearance-scale</feat>
-  <feat name="type">ont::sensory-property-val</feat>
+  <feat name="type">ont::appearance-property-val</feat>
  </sem-feats>
  </concept>
  <sem-frame>
@@ -201,16 +205,19 @@
  <feat name="measure-function">value</feat>
  <feat name="type">ont::color-val</feat>
  </sem-feats>
- <concept name="ont::visible-property-val">
+ <concept name="ont::visual-property-val">
+ <comment>
+  &quot;subjective characteristics of an item perceived through visual input&quot;
+ </comment>
  <relation label="inherit">
-  ont::sensory-property-val
+  ont::appearance-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
   <feat name="scale">ont::visual-scale</feat>
-  <feat name="type">ont::visible-property-val</feat>
+  <feat name="type">ont::visual-property-val</feat>
  </sem-feats>
  </concept>
  <concept name="ont::property-val">
@@ -343,6 +350,29 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <concept name="ont::bronze">
+ <relation label="inherit">
+  ont::color-val
+ </relation>
+ <relation label="overlap">
+  wn::|bronze%5:00:00:chromatic:00|
+ </relation>
+ </concept>
+ <concept name="ont::copper">
+ <relation label="inherit">
+  ont::color-val
+ </relation>
+ <relation label="overlap">
+  wn::|coppery%5:00:00:chromatic:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::copper-scale</feat>
+  <feat name="type">ont::copper</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::red">
  <relation label="inherit">
   ont::color-val
@@ -354,7 +384,7 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::redness-scale</feat>
+  <feat name="scale">ont::red-scale</feat>
   <feat name="type">ont::red</feat>
  </sem-feats>
  </concept>
@@ -365,6 +395,13 @@
  <relation label="overlap">
   wn::|blue%5:00:00:chromatic:00|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::blue-scale</feat>
+  <feat name="type">ont::blue</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::green">
  <relation label="inherit">
@@ -377,7 +414,7 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::green*1--07--00</feat>
+  <feat name="scale">ont::green-scale</feat>
   <feat name="type">ont::green</feat>
  </sem-feats>
  </concept>
@@ -392,7 +429,7 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::yellow*1--07--00</feat>
+  <feat name="scale">ont::yellow-scale</feat>
   <feat name="type">ont::yellow</feat>
  </sem-feats>
  </concept>
@@ -407,7 +444,7 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::orange*1--07--00</feat>
+  <feat name="scale">ont::orange-scale</feat>
   <feat name="type">ont::orange</feat>
  </sem-feats>
  </concept>
@@ -422,23 +459,8 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::purple*1--07--00</feat>
+  <feat name="scale">ont::purple-scale</feat>
   <feat name="type">ont::purple</feat>
- </sem-feats>
- </concept>
- <concept name="ont::black">
- <relation label="inherit">
-  ont::color-val
- </relation>
- <relation label="overlap">
-  wn::|black%3:00:01::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::blackness*1--07--00</feat>
-  <feat name="type">ont::black</feat>
  </sem-feats>
  </concept>
  <concept name="ont::brown">
@@ -452,23 +474,8 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::brownness*1--07--00</feat>
+  <feat name="scale">ont::brown-scale</feat>
   <feat name="type">ont::brown</feat>
- </sem-feats>
- </concept>
- <concept name="ont::white">
- <relation label="inherit">
-  ont::color-val
- </relation>
- <relation label="overlap">
-  wn::|white%3:00:01::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::white*1--07--00</feat>
-  <feat name="type">ont::white</feat>
  </sem-feats>
  </concept>
  <concept name="ont::gold">
@@ -482,7 +489,7 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::gold*1--07--00</feat>
+  <feat name="scale">ont::gold-scale</feat>
   <feat name="type">ont::gold</feat>
  </sem-feats>
  </concept>
@@ -497,7 +504,7 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::silver*1--07--00</feat>
+  <feat name="scale">ont::silver-scale</feat>
   <feat name="type">ont::silver</feat>
  </sem-feats>
  </concept>
@@ -512,7 +519,7 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::magenta*1--07--00</feat>
+  <feat name="scale">ont::magenta-scale</feat>
   <feat name="type">ont::magenta</feat>
  </sem-feats>
  </concept>
@@ -527,7 +534,7 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::pink*1--07--00</feat>
+  <feat name="scale">ont::pink-scale</feat>
   <feat name="type">ont::pink</feat>
  </sem-feats>
  </concept>
@@ -538,6 +545,43 @@
  <relation label="overlap">
   wn::|tan%5:00:00:chromatic:00|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::tan-scale</feat>
+  <feat name="type">ont::tan</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::black">
+ <relation label="inherit">
+  ont::color-val
+ </relation>
+ <relation label="overlap">
+  wn::|black%3:00:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::black-scale</feat>
+  <feat name="type">ont::black</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::white">
+ <relation label="inherit">
+  ont::color-val
+ </relation>
+ <relation label="overlap">
+  wn::|white%3:00:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::white-scale</feat>
+  <feat name="type">ont::white</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::gray">
  <relation label="inherit">
@@ -550,7 +594,7 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::greyness*1--07--00</feat>
+  <feat name="scale">ont::grey-scale</feat>
   <feat name="type">ont::gray</feat>
  </sem-feats>
  </concept>

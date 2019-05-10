@@ -331,25 +331,6 @@
   <feat name="type">ont::atmospheric-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::living-val">
- <comment>
-  &quot;dead vs. alive&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="type">ont::organism</feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::temperature-val">
  <comment>
   &quot;having to do with temperature&quot;
@@ -385,9 +366,9 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::sensory-property-val">
+ <concept name="ont::appearance-property-val">
  <comment>
-  &quot;properties that have to do with sensory input&quot;
+  &quot;subjective chracteristics on HOW something is perceived through sensory input (compare to ont::sensory-property-val)&quot;
  </comment>
  <relation label="inherit">
   ont::physical-property-val
@@ -397,6 +378,21 @@
    abstr-obj
   </relation>
   <feat name="scale">ont::appearance-scale</feat>
+  <feat name="type">ont::appearance-property-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::sensory-property-val">
+ <comment>
+  &quot;properties relating to the ability to receive sensory input (compare to ont::appearance-property-val)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::sensory-scale</feat>
   <feat name="type">ont::sensory-property-val</feat>
  </sem-feats>
  </concept>
@@ -424,7 +420,7 @@
   ont::physical-property-val
  </relation>
  <relation label="overlap">
-  wn::|polar%5:00:00:charged:00|
+  wn::|charged%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -434,9 +430,9 @@
   <feat name="type">ont::polarity-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::body-related-property-val">
+ <concept name="ont::body-condition-property-val">
  <comment>
-  &quot;properties having to do with human/animal body&quot;
+  &quot;properties having to do with with conditions of the human/animal body; note, these adjectives are general purpose. for medical usages see ont::medical-condition-property-val&quot;
  </comment>
  <relation label="inherit">
   ont::physical-property-val
@@ -446,7 +442,27 @@
    abstr-obj
   </relation>
   <feat name="scale">ont::body-condition-scale</feat>
-  <feat name="type">ont::body-related-property-val</feat>
+  <feat name="type">ont::body-condition-property-val</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::medical-condition-property-val">
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
  </concept>
 </dsl>

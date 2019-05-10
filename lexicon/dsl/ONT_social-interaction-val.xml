@@ -4,14 +4,10 @@
  <provenance name="TRIPS"/>
  <concept name="ont::social-interaction-val">
  <comment>
-  &quot;properties of human behavior having to do with social interaction, e.g. friendly, kind, mean&quot;
+  &quot;properties of human behavior having to do with social interaction, e.g. friendly, kind, mean.)&quot;
  </comment>
  <relation label="inherit">
   ont::animal-propensity-val
- </relation>
- <relation label="overlap">
-  wn::|social%3:01:00::|
-  wn::|social%3:00:00::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure">
@@ -301,6 +297,32 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <concept name="ont::social-val">
+ <relation label="inherit">
+  ont::social-interaction-val
+ </relation>
+ <relation label="overlap">
+  wn::|social%3:01:00::|
+  wn::|social%3:00:00::|
+  wn::|gregarious%3:00:00::|
+  wn::|sociable%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::not-social-val">
+ <relation label="inherit">
+  ont::social-interaction-val
+ </relation>
+ <relation label="overlap">
+  wn::|ungregarious%3:00:00::|
+  wn::|unsociable%3:00:00::|
+  wn::|unsocial%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::in-touch-val">
+ <relation label="inherit">
+  ont::social-interaction-val
+ </relation>
+ </concept>
  <concept name="ont::responsibility-val">
  <relation label="inherit">
   ont::social-interaction-val
@@ -325,22 +347,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::reliability-val">
- <relation label="inherit">
-  ont::social-interaction-val
- </relation>
- </concept>
  <concept name="ont::willingness-val">
  <relation label="inherit">
   ont::social-interaction-val
  </relation>
  </concept>
- <concept name="ont::friendliness-val">
- <relation label="inherit">
-  ont::social-interaction-val
- </relation>
- </concept>
- <concept name="ont::in-touch-val">
+ <concept name="ont::affection-val">
  <relation label="inherit">
   ont::social-interaction-val
  </relation>

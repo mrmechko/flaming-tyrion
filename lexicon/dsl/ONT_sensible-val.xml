@@ -3,14 +3,25 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::sensible-val">
+ <comment>
+  &quot;sensible, reasonable&quot;
+ </comment>
  <relation label="inherit">
   ont::sensibility-val
  </relation>
  <relation label="overlap">
   wn::|sensible%3:00:04::|
+  wn::|sane%5:00:00:rational:00|
   wn::|sane%3:00:00::|
   wn::|in_his_right_mind%5:00:00:sane:00|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::rational-scale</feat>
+  <feat name="type">ont::sensible-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -136,22 +147,66 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::sensibility-val">
+ <comment>
+  &quot;describing mental ability or sensitivity to respond to emotional influences&quot;
+ </comment>
+ <relation label="inherit">
+  ont::psychological-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::rationality-scale</feat>
+  <feat name="type">ont::sensibility-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::rational-scale</feat>
+ <feat name="type">ont::sensible-val</feat>
+ </sem-feats>
+ <concept name="ont::psychological-property-val">
+ <comment>
+  &quot;properties pertaining to psychological, mental or emotional states&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::psychological-condition-scale</feat>
+  <feat name="type">ont::psychological-property-val</feat>
+ </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
  </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::rationality-scale</feat>
+ <feat name="type">ont::sensibility-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -204,38 +259,29 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::psychological-property-val">
- <comment>
-  &quot;properties pertaining to psychological, mental or emotional states&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::property-val
+  abstr-obj
  </relation>
+ <feat name="scale">ont::psychological-condition-scale</feat>
+ <feat name="type">ont::psychological-property-val</feat>
+ </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::sensibility-val">
- <comment>
-  &quot;describing mental ability or sensitivity to respond to emotional influences&quot;
- </comment>
- <relation label="inherit">
-  ont::psychological-property-val
- </relation>
- </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -323,56 +369,7 @@
  </example>
  <relation label="inherit">
   ont::sensible-val
-  ont::central-adj-content-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="reasonable" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <example text="reasonable person">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::sensible-val
-  ont::central-adj-experiencer-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="gradability">+</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="sane" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <example text="he is a sane person">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::sensible-val
-  ont::central-adj-experiencer-templ
+  ont::central-adj-templ
  </relation>
  <semantics>
   <sem-feats>
@@ -397,7 +394,7 @@
  </example>
  <relation label="inherit">
   ont::sensible-val
-  ont::central-adj-content-templ
+  ont::central-adj-templ
  </relation>
  <semantics>
   <sem-feats>

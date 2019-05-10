@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::diagonal-val">
  <relation label="inherit">
-  ont::orientation-val
+  ont::at-an-angle-val
  </relation>
  <relation label="overlap">
   wn::|diagonal%5:00:00:inclined:01|
@@ -135,6 +135,15 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::at-an-angle-val">
+ <relation label="inherit">
+  ont::orientation-val
+ </relation>
+ <relation label="overlap">
+  wn::|oblique%3:00:00::|
+  wn::|inclined%3:00:01::|
+ </relation>
+ </concept>
  <concept name="ont::orientation-val">
  <relation label="inherit">
   ont::spatial
@@ -155,6 +164,13 @@
  <relation label="overlap">
   wn::|spatial%3:01:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::spatial-scale</feat>
+  <feat name="type">ont::spatial</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
    <or>
@@ -229,6 +245,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::spatial-scale</feat>
+ <feat name="type">ont::spatial</feat>
+ </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::ground" optional="optional">
   <or>

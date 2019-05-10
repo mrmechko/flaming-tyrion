@@ -3,17 +3,16 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::evoke-excitement">
+ <comment>
+  &quot;stir strong feelings&quot;
+ </comment>
  <relation label="inherit">
-  ont::evoke-emotion
+  ont::neutral-experience
  </relation>
  <relation label="overlap">
   wn::|agitate%2:37:00::|
-  wn::|rouse%2:37:04::|
-  wn::|turn_on%2:37:02::|
-  wn::|charge%2:37:05::|
-  wn::|commove%2:37:00::|
-  wn::|excite%2:37:03::|
-  wn::|charge_up%2:37:00::|
+  wn::|overwhelm%2:37:00::|
+  wn::|stir%2:37:01::|
  </relation>
  </concept>
  <or>
@@ -104,34 +103,10 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evoke-emotion">
- <comment>
-  &quot;actions the cause some emotion in an agent&quot;
- </comment>
+ <concept name="ont::neutral-experience">
  <relation label="inherit">
   ont::affect-experiencer
  </relation>
- <relation label="overlap">
-  wn::|arouse%2:37:00::|
-  wn::|elicit%2:37:00::|
-  wn::|enkindle%2:37:00::|
-  wn::|kindle%2:37:00::|
-  wn::|evoke%2:37:00::|
-  wn::|fire%2:37:00::|
-  wn::|raise%2:37:08::|
-  wn::|provoke%2:37:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-    <feat name="origin">living</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::affect-experiencer">
  <comment>
@@ -165,17 +140,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="intentional">+</feat>
-   <feat name="origin">living</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::event-of-causation">
  <comment>
   &quot;events involving an AGENT acting on an AFFECTED&quot;
@@ -374,50 +338,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="demolish" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="demolition" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::evoke-excitement
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="devastate" />
- </morph>
- <relation label="inherit">
-  ont::evoke-excitement
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="energize" />
  </morph>
  <comment>
@@ -487,111 +407,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="overawe" />
- </morph>
- <relation label="inherit">
-  ont::evoke-excitement
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="overwhelm" />
- </morph>
- <relation label="inherit">
-  ont::evoke-excitement
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="recharge" />
- </morph>
- <example text="the pep talk recharged him">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::evoke-excitement
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="refresh" />
- </morph>
- <relation label="inherit">
-  ont::evoke-excitement
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="rejuvenate" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="rejuvenation" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::evoke-excitement
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="roil" />
  </morph>
  <relation label="inherit">
   ont::evoke-excitement
@@ -669,7 +485,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="wow" />
+  <word first-word="titillate" />
  </morph>
  <relation label="inherit">
   ont::evoke-excitement

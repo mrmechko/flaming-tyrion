@@ -137,43 +137,29 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::psychological-property-val">
- <comment>
-  &quot;properties pertaining to psychological, mental or emotional states&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::evoking-emotion-val">
- <comment>
-  &quot;attributes that indicate the evocation of a particular emotion&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::psychological-property-val
+  abstr-obj
  </relation>
- </concept>
- <concept name="ont::evoking-pos-emotion-val">
- <relation label="inherit">
-  ont::evoking-emotion-val
- </relation>
- </concept>
+ <feat name="scale">ont::psychological-condition-scale</feat>
+ <feat name="type">ont::psychological-property-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -226,22 +212,50 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::evoking-pos-emotion-val">
+ <relation label="inherit">
+  ont::evoking-emotion-val
+ </relation>
+ </concept>
+ <concept name="ont::evoking-emotion-val">
+ <comment>
+  &quot;attributes that indicate the evocation of a particular emotion&quot;
+ </comment>
+ <relation label="inherit">
+  ont::psychological-property-val
+ </relation>
+ </concept>
+ <concept name="ont::psychological-property-val">
+ <comment>
+  &quot;properties pertaining to psychological, mental or emotional states&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::psychological-condition-scale</feat>
+  <feat name="type">ont::psychological-property-val</feat>
+ </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
  </sem-frame>
+ </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -357,7 +371,7 @@
   ont::pleasing-val
  </relation>
  <syntax>
-  <template-call template="ont::adj-purpose-implicit-xp-templ" />
+  <template-call template="ont::adj-purpose-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
    <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::reason"/>

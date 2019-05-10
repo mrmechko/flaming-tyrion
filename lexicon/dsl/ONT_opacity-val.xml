@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::opacity-val">
  <relation label="inherit">
-  ont::visibility-val
+  ont::visual-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -143,7 +143,7 @@
   abstr-obj
  </relation>
  <feat name="scale">ont::appearance-scale</feat>
- <feat name="type">ont::sensory-property-val</feat>
+ <feat name="type">ont::appearance-property-val</feat>
  </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
@@ -160,50 +160,16 @@
   <feat name="type">ont::physical-property-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::visibility-val">
- <relation label="inherit">
-  ont::visible-property-val
- </relation>
- <relation label="overlap">
-  wn::|visible%3:00:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::visibility-scale</feat>
-  <feat name="type">ont::visibility-val</feat>
- </sem-feats>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::light-passage-scale</feat>
- <feat name="type">ont::opacity-val</feat>
+ <feat name="scale">ont::visual-scale</feat>
+ <feat name="type">ont::visual-property-val</feat>
  </sem-feats>
- <concept name="ont::visible-property-val">
- <relation label="inherit">
-  ont::sensory-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::visual-scale</feat>
-  <feat name="type">ont::visible-property-val</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::visibility-scale</feat>
- <feat name="type">ont::visibility-val</feat>
- </sem-feats>
- <concept name="ont::sensory-property-val">
+ <concept name="ont::appearance-property-val">
  <comment>
-  &quot;properties that have to do with sensory input&quot;
+  &quot;subjective chracteristics on HOW something is perceived through sensory input (compare to ont::sensory-property-val)&quot;
  </comment>
  <relation label="inherit">
   ont::physical-property-val
@@ -213,16 +179,31 @@
    abstr-obj
   </relation>
   <feat name="scale">ont::appearance-scale</feat>
-  <feat name="type">ont::sensory-property-val</feat>
+  <feat name="type">ont::appearance-property-val</feat>
  </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::visual-scale</feat>
- <feat name="type">ont::visible-property-val</feat>
+ <feat name="scale">ont::light-passage-scale</feat>
+ <feat name="type">ont::opacity-val</feat>
  </sem-feats>
+ <concept name="ont::visual-property-val">
+ <comment>
+  &quot;subjective characteristics of an item perceived through visual input&quot;
+ </comment>
+ <relation label="inherit">
+  ont::appearance-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::visual-scale</feat>
+  <feat name="type">ont::visual-property-val</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -373,7 +354,7 @@
   ont::opacity-val
  </relation>
  <relation label="overlap">
-  wn::|transparent%5:00:00:clear:02|
+  wn::|clear%3:00:02::|
  </relation>
  <sem-feats>
   <relation label="inherit">

@@ -9,6 +9,8 @@
  <relation label="overlap">
   wn::|normality%1:07:00::|
   wn::|normality%1:07:01::|
+  wn::|normality%1:26:00::|
+  wn::|ordinariness%1:07:00::|
  </relation>
  </concept>
  <or>
@@ -73,19 +75,20 @@
   ont::domain
  </relation>
  </concept>
- <concept name="ont::typicality-scale">
- <relation label="inherit">
-  ont::state-of-affairs-scale
- </relation>
- </concept>
- <concept name="ont::state-of-affairs-scale">
- <relation label="inherit">
-  ont::stage-scale
- </relation>
- </concept>
- <concept name="ont::stage-scale">
+ <concept name="ont::evaluation-scale">
+ <comment>
+  &quot;scales relating to subjective evaluation of an entity or a situation&quot;
+ </comment>
  <relation label="inherit">
   ont::ordered-domain
+ </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:02::|
+ </relation>
+ </concept>
+ <concept name="ont::typicality-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
  </relation>
  </concept>
  <concept name="ont::domain">

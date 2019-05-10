@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::positive-smell-scale">
  <relation label="inherit">
-  ont::olfactory-scale
+  ont::smell-scale
  </relation>
  <relation label="overlap">
   wn::|sweetness%1:07:01::|
@@ -72,12 +72,17 @@
   ont::domain
  </relation>
  </concept>
- <concept name="ont::olfactory-scale">
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::physical-property-scale">
+ <comment>
+  &quot;scales associated with properties pertaining to the attributes of physical entities or substances. Note: many properties can apply to non-physical objects.&quot;
+ </comment>
  <relation label="inherit">
-  ont::appearance-scale
- </relation>
- <relation label="overlap">
-  wn::|smell%1:07:00::|
+  ont::ordered-domain
  </relation>
  </concept>
  <concept name="ont::appearance-scale">
@@ -93,28 +98,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-scale">
- <comment>
-  &quot;scales associated with properties pertaining to the attributes of physical entities or substances. Note: many properties can apply to non-physical objects.&quot;
- </comment>
+ <concept name="ont::smell-scale">
  <relation label="inherit">
-  ont::attributive-scale
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <concept name="phys-obj" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::attributive-scale">
- <comment>
-  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
- </comment>
- <relation label="inherit">
-  ont::ordered-domain
+  ont::appearance-scale
  </relation>
  <relation label="overlap">
-  wn::|quality%1:07:00::|
+  wn::|smell%1:07:00::|
  </relation>
  </concept>
  <concept name="ont::domain">

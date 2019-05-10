@@ -3,11 +3,15 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::evoke-injury">
+ <comment>
+  &quot;verbs that specifically deal with physical hurt&quot;
+ </comment>
  <relation label="inherit">
-  ont::evoke-physical
+  ont::evoke-hurt
  </relation>
  <relation label="overlap">
-  wn::|hurt%2:29:01::|
+  wn::|injure%2:29:00::|
+  wn::|maim%2:29:00::|
   wn::|blind%2:39:01::|
  </relation>
  </concept>
@@ -99,11 +103,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evoke-physical">
- <relation label="inherit">
-  ont::affect-experiencer
- </relation>
- </concept>
  <concept name="ont::affect-experiencer">
  <comment>
   &quot;cause an experience on an cognitive agent&quot;
@@ -135,6 +134,24 @@
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::worsen-experience">
+ <relation label="inherit">
+  ont::affect-experiencer
+ </relation>
+ </concept>
+ <concept name="ont::evoke-hurt">
+ <comment>
+  &quot;cause hurt or suffering&quot;
+ </comment>
+ <relation label="inherit">
+  ont::worsen-experience
+ </relation>
+ <relation label="overlap">
+  wn::|hurt%2:29:01::|
+  wn::|hurt%2:39:01::|
+  wn::|hurt%2:37:01::|
+ </relation>
  </concept>
  <concept name="ont::event-of-causation">
  <comment>
@@ -309,42 +326,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="cut" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="cut" />
-   </past>
-   <ing>
-    <word first-word="cutting" />
-   </ing>
-   <nom>
-    <word first-word="cut" />
-   </nom>
-  </forms>
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="the criticism cut him deeply">
- </example>
- <relation label="inherit">
-  ont::evoke-injury
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="harm" />
  </morph>
  <relation label="inherit">
@@ -455,47 +436,6 @@
  </morph>
  <relation label="inherit">
   ont::evoke-injury
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="sting" />
- </morph>
- <relation label="inherit">
-  ont::evoke-injury
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="wound" />
-  <forms>
-   -VB
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::evoke-injury
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-xp-templ" />

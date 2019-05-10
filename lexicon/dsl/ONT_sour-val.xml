@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::sour-val">
  <relation label="inherit">
-  ont::tasteful-val
+  ont::taste-property-val
  </relation>
  <relation label="overlap">
   wn::|sour%5:00:00:tasty:00|
@@ -146,7 +146,7 @@
   abstr-obj
  </relation>
  <feat name="scale">ont::appearance-scale</feat>
- <feat name="type">ont::sensory-property-val</feat>
+ <feat name="type">ont::appearance-property-val</feat>
  </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
@@ -163,17 +163,36 @@
   <feat name="type">ont::physical-property-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::tasteful-val">
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="object-function">comestible</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
  <relation label="inherit">
-  ont::tastable-property-val
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::taste-scale</feat>
+ <feat name="type">ont::taste-property-val</feat>
+ </sem-feats>
+ <concept name="ont::appearance-property-val">
+ <comment>
+  &quot;subjective chracteristics on HOW something is perceived through sensory input (compare to ont::sensory-property-val)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="orientation">pos</feat>
-  <feat name="scale">ont::sensory-scale</feat>
-  <feat name="type">ont::tasteful-val</feat>
+  <feat name="scale">ont::appearance-scale</feat>
+  <feat name="type">ont::appearance-property-val</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -183,16 +202,19 @@
  <feat name="scale">ont::sourness-scale</feat>
  <feat name="type">ont::sour-val</feat>
  </sem-feats>
- <concept name="ont::tastable-property-val">
+ <concept name="ont::taste-property-val">
+ <comment>
+  &quot;subjective characteristics of an item perceived through gustatory input&quot;
+ </comment>
  <relation label="inherit">
-  ont::sensory-property-val
+  ont::appearance-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
   <feat name="scale">ont::taste-scale</feat>
-  <feat name="type">ont::tastable-property-val</feat>
+  <feat name="type">ont::taste-property-val</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -205,46 +227,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="orientation">pos</feat>
- <feat name="scale">ont::sensory-scale</feat>
- <feat name="type">ont::tasteful-val</feat>
- </sem-feats>
- <concept name="ont::sensory-property-val">
- <comment>
-  &quot;properties that have to do with sensory input&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::appearance-scale</feat>
-  <feat name="type">ont::sensory-property-val</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::taste-scale</feat>
- <feat name="type">ont::tastable-property-val</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="object-function">comestible</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property

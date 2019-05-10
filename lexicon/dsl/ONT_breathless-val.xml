@@ -134,13 +134,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::body-condition-scale</feat>
- <feat name="type">ont::body-related-property-val</feat>
- </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
   &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
@@ -156,30 +149,15 @@
   <feat name="type">ont::physical-property-val</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::medical-condition-property-val">
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
+ </concept>
  <concept name="ont::medical-symptom-val">
  <relation label="inherit">
   ont::medical-condition-property-val
  </relation>
- </concept>
- <concept name="ont::medical-condition-property-val">
- <relation label="inherit">
-  ont::body-related-property-val
- </relation>
- </concept>
- <concept name="ont::body-related-property-val">
- <comment>
-  &quot;properties having to do with human/animal body&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::body-condition-scale</feat>
-  <feat name="type">ont::body-related-property-val</feat>
- </sem-feats>
  </concept>
  <concept name="ont::property-val">
  <relation label="inherit">

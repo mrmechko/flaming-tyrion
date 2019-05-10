@@ -73,9 +73,20 @@
   ont::domain
  </relation>
  </concept>
- <concept name="ont::duration-scale">
+ <sem-feats>
  <relation label="inherit">
-  ont::time-measure-scale
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::time-measure-scale</feat>
+ <feat name="type">ont::time-measure-scale</feat>
+ </sem-feats>
+ <concept name="ont::measure-scale">
+ <relation label="inherit">
+  ont::ordered-domain
+ </relation>
+ <relation label="overlap">
+  wn::|quantity%1:03:00::|
+  wn::|measurement%1:04:00::|
  </relation>
  </concept>
  <concept name="ont::time-measure-scale">
@@ -90,31 +101,9 @@
   <feat name="type">ont::time-measure-scale</feat>
  </sem-feats>
  </concept>
- <concept name="ont::measure-scale">
+ <concept name="ont::duration-scale">
  <relation label="inherit">
-  ont::attributive-scale
- </relation>
- <relation label="overlap">
-  wn::|quantity%1:03:00::|
-  wn::|measurement%1:04:00::|
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::time-measure-scale</feat>
- <feat name="type">ont::time-measure-scale</feat>
- </sem-feats>
- <concept name="ont::attributive-scale">
- <comment>
-  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
- </comment>
- <relation label="inherit">
-  ont::ordered-domain
- </relation>
- <relation label="overlap">
-  wn::|quality%1:07:00::|
+  ont::time-measure-scale
  </relation>
  </concept>
  <concept name="ont::domain">

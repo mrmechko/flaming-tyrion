@@ -4,16 +4,15 @@
  <provenance name="TRIPS"/>
  <concept name="ont::evoke-comfort">
  <comment>
-  &quot;relieve of physical pain or discomfort&quot;
+  &quot;verbs dealing specifically with the relief of physical pain or discomfort&quot;
  </comment>
  <relation label="inherit">
-  ont::evoke-physical
+  ont::evoke-relief
  </relation>
  <relation label="overlap">
-  wn::|alleviate%2:29:00::|
-  wn::|numb%2:39:00::|
-  wn::|ease%2:29:00::|
-  wn::|soothe%2:29:00::|
+  wn::|relax%2:29:00::|
+  wn::|relax%2:29:01::|
+  wn::|rest%2:32:01::|
  </relation>
  </concept>
  <or>
@@ -104,11 +103,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evoke-physical">
- <relation label="inherit">
-  ont::affect-experiencer
- </relation>
- </concept>
  <concept name="ont::affect-experiencer">
  <comment>
   &quot;cause an experience on an cognitive agent&quot;
@@ -140,6 +134,20 @@
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::improve-experience">
+ <relation label="inherit">
+  ont::affect-experiencer
+ </relation>
+ </concept>
+ <concept name="ont::evoke-relief">
+ <relation label="inherit">
+  ont::improve-experience
+ </relation>
+ <relation label="overlap">
+  wn::|still%2:37:01::|
+  wn::|comfort%2:37:01::|
+ </relation>
  </concept>
  <concept name="ont::event-of-causation">
  <comment>
@@ -314,9 +322,9 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="alleviate" />
+  <word first-word="relax" />
  </morph>
- <example text="alleviate the pain in your legs">
+ <example text="a massage will relax him">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
@@ -329,105 +337,11 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="ease" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="Ease the pain in your legs">
- </example>
- <relation label="inherit">
-  ont::evoke-comfort
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="numb" />
- </morph>
- <example text="It might numb your pain in your hand">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::evoke-comfort
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="relieve" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="relief" />
-   </nom>
-  </forms>
- </morph>
- <example text="This pill will relieve your headaches">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::evoke-comfort
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="satiate" />
- </morph>
- <relation label="inherit">
-  ont::evoke-comfort
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="soothe" />
- </morph>
- <example text="This pill will soothe your headache">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::evoke-comfort
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
  </sense>
 </dsl>

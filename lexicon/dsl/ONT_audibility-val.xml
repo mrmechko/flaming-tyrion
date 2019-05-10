@@ -4,16 +4,12 @@
  <provenance name="TRIPS"/>
  <concept name="ont::audibility-val">
  <relation label="inherit">
-  ont::audible-property-val
- </relation>
- <relation label="overlap">
-  wn::|audible%3:00:00::|
+  ont::sensory-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="orientation">pos</feat>
   <feat name="scale">ont::auditory-scale</feat>
   <feat name="type">ont::audibility-val</feat>
  </sem-feats>
@@ -142,12 +138,27 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::sensory-property-val">
+ <comment>
+  &quot;properties relating to the ability to receive sensory input (compare to ont::appearance-property-val)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::sensory-scale</feat>
+  <feat name="type">ont::sensory-property-val</feat>
+ </sem-feats>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::appearance-scale</feat>
- <feat name="type">ont::sensory-property-val</feat>
+ <feat name="scale">ont::auditory-scale</feat>
+ <feat name="type">ont::audibility-val</feat>
  </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
@@ -168,44 +179,9 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::sound-scale</feat>
- <feat name="type">ont::audible-property-val</feat>
+ <feat name="scale">ont::sensory-scale</feat>
+ <feat name="type">ont::sensory-property-val</feat>
  </sem-feats>
- <concept name="ont::sensory-property-val">
- <comment>
-  &quot;properties that have to do with sensory input&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::appearance-scale</feat>
-  <feat name="type">ont::sensory-property-val</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="orientation">pos</feat>
- <feat name="scale">ont::auditory-scale</feat>
- <feat name="type">ont::audibility-val</feat>
- </sem-feats>
- <concept name="ont::audible-property-val">
- <relation label="inherit">
-  ont::sensory-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::sound-scale</feat>
-  <feat name="type">ont::audible-property-val</feat>
- </sem-feats>
- </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -336,46 +312,36 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
- <concept name="ont::loudness-val">
+ <concept name="ont::audible-val">
  <relation label="inherit">
   ont::audibility-val
+ </relation>
+ <relation label="overlap">
+  wn::|audible%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="measure-function">value</feat>
-  <feat name="type">ont::loudness-val</feat>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::auditory-scale</feat>
+  <feat name="type">ont::audible-val</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
-    <feat name="type">
-    <or>
-     ont::body-part
-     ont::material
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="audible" />
- </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
+ <concept name="ont::inaudible-val">
  <relation label="inherit">
   ont::audibility-val
-  ont::central-adj-templ
  </relation>
- </sense>
+ <relation label="overlap">
+  wn::|inaudible%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::auditory-scale</feat>
+  <feat name="type">ont::inaudible-val</feat>
+ </sem-feats>
+ </concept>
 </dsl>

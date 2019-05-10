@@ -6,11 +6,6 @@
  <relation label="inherit">
   ont::evaluation-scale
  </relation>
- <relation label="overlap">
-  wn::|significance%1:07:00::|
-  wn::|importance%1:07:00::|
-  wn::|importance%1:26:00::|
- </relation>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -69,31 +64,20 @@
   <feat name="type">ont::tangible-abstract-object</feat>
  </sem-feats>
  </concept>
- <concept name="ont::ordered-domain">
- <relation label="inherit">
-  ont::domain
- </relation>
- </concept>
- <concept name="ont::attributive-scale">
- <comment>
-  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
- </comment>
- <relation label="inherit">
-  ont::ordered-domain
- </relation>
- <relation label="overlap">
-  wn::|quality%1:07:00::|
- </relation>
- </concept>
  <concept name="ont::evaluation-scale">
  <comment>
   &quot;scales relating to subjective evaluation of an entity or a situation&quot;
  </comment>
  <relation label="inherit">
-  ont::attributive-scale
+  ont::ordered-domain
  </relation>
  <relation label="overlap">
   wn::|quality%1:07:02::|
+ </relation>
+ </concept>
+ <concept name="ont::ordered-domain">
+ <relation label="inherit">
+  ont::domain
  </relation>
  </concept>
  <concept name="ont::domain">
@@ -158,74 +142,22 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="importance" />
- </morph>
- <example text="rate the to do items in terms of importance">
-  <provenance name="TRIPS"/>
- </example>
+ <concept name="ont::important-scale">
  <relation label="inherit">
   ont::importance-scale
  </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="priority" />
- </morph>
- <example text="change the priority of the calendar item">
-  <provenance name="TRIPS"/>
- </example>
+ <relation label="overlap">
+  wn::|significance%1:07:00::|
+  wn::|importance%1:07:00::|
+  wn::|importance%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::not-important-scale">
  <relation label="inherit">
   ont::importance-scale
  </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
+ <relation label="overlap">
+  wn::|unimportance%1:07:00::|
+ </relation>
+ </concept>
 </dsl>

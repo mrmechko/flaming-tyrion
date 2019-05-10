@@ -10,6 +10,7 @@
   wn::|worthwhile%5:00:00:worthy:00|
   wn::|worthy%3:00:00::|
   wn::|valuable%5:00:00:worthy:00|
+  wn::|worthy%5:00:00:fit:02|
  </relation>
  </concept>
  <or>
@@ -143,6 +144,13 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -202,6 +210,13 @@
  <relation label="inherit">
   ont::property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure">
    <sem-feats>
@@ -337,34 +352,6 @@
  </relation>
  <syntax>
   <template-call template="ont::adj-purpose-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::reason"/>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="worthwhile" />
- </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
- <example text="a drug suitable for cancer">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::worthy-val
- </relation>
- <syntax>
-  <template-call template="ont::adj-purpose-implicit-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
    <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::reason"/>

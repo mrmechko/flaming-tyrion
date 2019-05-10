@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::ailing-val">
+ <comment>
+  &quot;unhealthy, unwell or ailing&quot;
+ </comment>
  <relation label="inherit">
   ont::healthiness-val
  </relation>
@@ -145,12 +148,27 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
  <feat name="scale">ont::body-condition-scale</feat>
- <feat name="type">ont::body-related-property-val</feat>
+ <feat name="type">ont::body-condition-property-val</feat>
  </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
@@ -182,9 +200,9 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::body-related-property-val">
+ <concept name="ont::body-condition-property-val">
  <comment>
-  &quot;properties having to do with human/animal body&quot;
+  &quot;properties having to do with with conditions of the human/animal body; note, these adjectives are general purpose. for medical usages see ont::medical-condition-property-val&quot;
  </comment>
  <relation label="inherit">
   ont::physical-property-val
@@ -194,8 +212,23 @@
    abstr-obj
   </relation>
   <feat name="scale">ont::body-condition-scale</feat>
-  <feat name="type">ont::body-related-property-val</feat>
+  <feat name="type">ont::body-condition-property-val</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -206,7 +239,7 @@
  </sem-feats>
  <concept name="ont::healthiness-val">
  <relation label="inherit">
-  ont::body-related-property-val
+  ont::body-condition-property-val
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">

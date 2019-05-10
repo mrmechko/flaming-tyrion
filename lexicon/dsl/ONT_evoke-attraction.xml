@@ -4,22 +4,12 @@
  <provenance name="TRIPS"/>
  <concept name="ont::evoke-attraction">
  <relation label="inherit">
-  ont::evoke-cognitive-state
+  ont::evoke-attention
  </relation>
  <relation label="overlap">
   wn::|capture%2:37:00::|
-  wn::|enamour%2:37:00::|
-  wn::|trance%2:37:00::|
-  wn::|catch%2:37:05::|
-  wn::|becharm%2:37:00::|
-  wn::|enamor%2:37:00::|
-  wn::|captivate%2:37:00::|
-  wn::|beguile%2:37:00::|
-  wn::|charm%2:37:00::|
-  wn::|fascinate%2:37:01::|
-  wn::|bewitch%2:37:00::|
-  wn::|entrance%2:37:00::|
-  wn::|enchant%2:37:01::|
+  wn::|touch%2:37:00::|
+  wn::|disarm%2:37:00::|
  </relation>
  </concept>
  <or>
@@ -110,11 +100,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evoke-cognitive-state">
- <relation label="inherit">
-  ont::affect-experiencer
- </relation>
- </concept>
  <concept name="ont::affect-experiencer">
  <comment>
   &quot;cause an experience on an cognitive agent&quot;
@@ -146,6 +131,21 @@
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::neutral-experience">
+ <relation label="inherit">
+  ont::affect-experiencer
+ </relation>
+ </concept>
+ <concept name="ont::evoke-attention">
+ <relation label="inherit">
+  ont::neutral-experience
+ </relation>
+ <relation label="overlap">
+  wn::|interest%2:37:00::|
+  wn::|preoccupy%2:37:00::|
+  wn::|intrigue%2:42:00::|
+ </relation>
  </concept>
  <concept name="ont::event-of-causation">
  <comment>
@@ -396,7 +396,48 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="titillate" />
+  <word first-word="entrance" />
+ </morph>
+ <relation label="inherit">
+  ont::evoke-attraction
+ </relation>
+ <relation label="overlap">
+  vn::amuse-31.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="hypnotize" />
+ </morph>
+ <example text="She is totally hypnotized by the rain.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evoke-attraction
+ </relation>
+ <relation label="overlap">
+  vn::amuse-31.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="mesmerize" />
  </morph>
  <relation label="inherit">
   ont::evoke-attraction

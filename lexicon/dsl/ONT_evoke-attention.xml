@@ -4,10 +4,12 @@
  <provenance name="TRIPS"/>
  <concept name="ont::evoke-attention">
  <relation label="inherit">
-  ont::evoke-cognitive-state
+  ont::neutral-experience
  </relation>
  <relation label="overlap">
   wn::|interest%2:37:00::|
+  wn::|preoccupy%2:37:00::|
+  wn::|intrigue%2:42:00::|
  </relation>
  </concept>
  <or>
@@ -98,7 +100,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evoke-cognitive-state">
+ <concept name="ont::neutral-experience">
  <relation label="inherit">
   ont::affect-experiencer
  </relation>
@@ -305,6 +307,24 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::evoke-curiosity">
+ <relation label="inherit">
+  ont::evoke-attention
+ </relation>
+ <relation label="overlap">
+  wn::|intrigue%2:42:00::|
+ </relation>
+ </concept>
+ <concept name="ont::evoke-attraction">
+ <relation label="inherit">
+  ont::evoke-attention
+ </relation>
+ <relation label="overlap">
+  wn::|capture%2:37:00::|
+  wn::|touch%2:37:00::|
+  wn::|disarm%2:37:00::|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="v" />
@@ -347,25 +367,6 @@
  <morph>
   <pos pos="v" />
   <word first-word="engross" />
- </morph>
- <relation label="inherit">
-  ont::evoke-attention
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="entrance" />
  </morph>
  <relation label="inherit">
   ont::evoke-attention
@@ -479,25 +480,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="mesmerize" />
- </morph>
- <relation label="inherit">
-  ont::evoke-attention
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="occupy" />
  </morph>
  <relation label="inherit">
@@ -577,6 +559,34 @@
  </relation>
  <relation label="overlap">
   vn::hurt-40.8.3-2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="spellbind" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="spellbound" />
+   </past>
+   <ing>
+    <word first-word="spellbinding" />
+   </ing>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::evoke-attention
+ </relation>
+ <relation label="overlap">
+  vn::amuse-31.1
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-xp-templ" />

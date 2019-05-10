@@ -3,15 +3,17 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::evoke-distress">
+ <comment>
+  &quot;put a stressor on tranquility&quot;
+ </comment>
  <relation label="inherit">
-  ont::evoke-emotion
+  ont::evoke-upset
  </relation>
  <relation label="overlap">
-  wn::|disturb%2:37:00::|
-  wn::|upset%2:37:00::|
-  wn::|trouble%2:37:01::|
-  wn::|tense_up%2:29:00::|
-  wn::|tense_up%2:29:01::|
+  wn::|tense%2:29:00::|
+  wn::|tense%2:29:01::|
+  wn::|jar%2:37:00::|
+  wn::|unnerve%2:37:00::|
  </relation>
  </concept>
  <or>
@@ -102,78 +104,27 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evoke-emotion">
- <comment>
-  &quot;actions the cause some emotion in an agent&quot;
- </comment>
- <relation label="inherit">
-  ont::affect-experiencer
- </relation>
- <relation label="overlap">
-  wn::|arouse%2:37:00::|
-  wn::|elicit%2:37:00::|
-  wn::|enkindle%2:37:00::|
-  wn::|kindle%2:37:00::|
-  wn::|evoke%2:37:00::|
-  wn::|fire%2:37:00::|
-  wn::|raise%2:37:08::|
-  wn::|provoke%2:37:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-    <feat name="origin">living</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::affect-experiencer">
- <comment>
-  &quot;cause an experience on an cognitive agent&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|come_to%2:39:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
-  <feat name="aspect">dynamic</feat>
-  <feat name="type">ont::affect-experiencer</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">living</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
  <sem-frame>
  <role-restr-map roles="ont::affected">
   <sem-feats>
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="intentional">+</feat>
    <feat name="origin">living</feat>
   </sem-feats>
  </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <concept name="t" />
+ </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">agentive</feat>
+ <feat name="aspect">dynamic</feat>
+ <feat name="type">ont::affect-experiencer</feat>
+ </sem-feats>
  <concept name="ont::event-of-causation">
  <comment>
   &quot;events involving an AGENT acting on an AFFECTED&quot;
@@ -210,27 +161,61 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
+ <concept name="ont::worsen-experience">
  <relation label="inherit">
-  situation
+  ont::affect-experiencer
  </relation>
- <feat name="cause">agentive</feat>
- <feat name="aspect">dynamic</feat>
- <feat name="type">ont::affect-experiencer</feat>
+ </concept>
+ <concept name="ont::evoke-bother">
+ <relation label="inherit">
+  ont::worsen-experience
+ </relation>
+ <relation label="overlap">
+  wn::|bother%2:38:00::|
+  wn::|bother%2:41:01::|
+ </relation>
+ </concept>
+ <concept name="ont::evoke-upset">
+ <relation label="inherit">
+  ont::evoke-bother
+ </relation>
+ <relation label="overlap">
+  wn::|upset%2:37:01::|
+  wn::|disturb%2:37:00::|
+ </relation>
+ </concept>
+ <concept name="ont::affect-experiencer">
+ <comment>
+  &quot;cause an experience on an cognitive agent&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|come_to%2:39:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+  <feat name="aspect">dynamic</feat>
+  <feat name="type">ont::affect-experiencer</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">living</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <concept name="t" />
- </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">living</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <concept name="t" />
+  </role-restr-map>
  </sem-frame>
+ </concept>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
@@ -344,170 +329,14 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
- <concept name="ont::evoke-worry">
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  wn::|worry%2:37:01::|
- </relation>
- </concept>
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="afflict" />
+  <word first-word="crush" />
  </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="aggrieve" />
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="alienate" />
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="appall" />
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="chagrin" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="chagrined" />
-   </past>
-   <ing>
-    <word first-word="chagrining" />
-   </ing>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="discomfit" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="discomfited" />
-   </past>
-   <ing>
-    <word first-word="discomfiting" />
-   </ing>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="discompose" />
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="disconcert" />
- </morph>
+ <example text="His refusal crushed him completely">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::evoke-distress
  </relation>
@@ -563,64 +392,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="disturb" />
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="grieve" />
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="harass" />
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="haunt" />
+  <word first-word="faze" />
  </morph>
  <relation label="inherit">
   ont::evoke-distress
@@ -658,69 +430,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="molest" />
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="pain" />
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="persecute" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="persecution" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::judgement-33
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="perturb" />
   <forms>
    -VB
@@ -746,50 +455,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="plague" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="plague" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="ruffle" />
- </morph>
- <relation label="inherit">
-  ont::evoke-distress
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="scandalize" />
  </morph>
  <relation label="inherit">
@@ -797,6 +462,44 @@
  </relation>
  <relation label="overlap">
   vn::amuse-31.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="stress" />
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <relation label="inherit">
+  ont::evoke-distress
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="stress" remaining-words="" particle="out" />
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <relation label="inherit">
+  ont::evoke-distress
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-xp-templ" />
@@ -847,17 +550,57 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="upset" />
+  <word first-word="try" />
   <forms>
    -VB
-   <past>
-    <word first-word="upset" />
-   </past>
+   <nom>
+    <word first-word="try" />
+   </nom>
   </forms>
  </morph>
- <example text="The horror movie upset me">
-  <provenance name="TRIPS"/>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="the strenuous trial tried his patience">
  </example>
+ <relation label="inherit">
+  ont::evoke-distress
+ </relation>
+ <relation label="overlap">
+  vn::amuse-31.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="unnerve" />
+ </morph>
+ <relation label="inherit">
+  ont::evoke-distress
+ </relation>
+ <relation label="overlap">
+  vn::amuse-31.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="unsettle" />
+ </morph>
  <relation label="inherit">
   ont::evoke-distress
  </relation>

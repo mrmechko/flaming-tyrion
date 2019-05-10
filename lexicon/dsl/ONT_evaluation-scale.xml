@@ -7,7 +7,7 @@
   &quot;scales relating to subjective evaluation of an entity or a situation&quot;
  </comment>
  <relation label="inherit">
-  ont::attributive-scale
+  ont::ordered-domain
  </relation>
  <relation label="overlap">
   wn::|quality%1:07:02::|
@@ -44,43 +44,6 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::tangible-abstract-object">
- <comment>
-  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
- </comment>
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::tangible-abstract-object</feat>
- </sem-feats>
- </concept>
- <concept name="ont::attributive-scale">
- <comment>
-  &quot;scales dealing with quality or property of something or someone(e.g. smoothness or kindness) and are (relatively) permanent in nature. These are distinguished from ont::stage-scale types that describes scales dealing with temporary stages or states in which an entity is found (a state of being; e.g. healthiness or sleepiness).&quot;
- </comment>
- <relation label="inherit">
-  ont::ordered-domain
- </relation>
- <relation label="overlap">
-  wn::|quality%1:07:00::|
- </relation>
- </concept>
  <concept name="ont::ordered-domain">
  <relation label="inherit">
   ont::domain
@@ -108,6 +71,32 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::tangible-abstract-object">
+ <comment>
+  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::tangible-abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -148,6 +137,45 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <concept name="ont::necessity-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|necessity%1:17:00::|
+ </relation>
+ </concept>
+ <concept name="ont::typicality-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ </concept>
+ <concept name="ont::comfort-scale">
+ <comment>
+  &quot;deals with ease and comfort&quot;
+ </comment>
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ </concept>
+ <concept name="ont::conventionality-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ </concept>
+ <concept name="ont::cleanliness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ </concept>
+ <concept name="ont::luckiness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|luck%1:26:00::|
+ </relation>
+ </concept>
  <concept name="ont::cost-scale">
  <relation label="inherit">
   ont::evaluation-scale
@@ -173,14 +201,6 @@
   ont::evaluation-scale
  </relation>
  </concept>
- <concept name="ont::convenience-scale">
- <relation label="inherit">
-  ont::evaluation-scale
- </relation>
- <relation label="overlap">
-  wn::|convenience%1:07:00::|
- </relation>
- </concept>
  <concept name="ont::adaptability-scale">
  <relation label="inherit">
   ont::evaluation-scale
@@ -194,11 +214,6 @@
  <concept name="ont::importance-scale">
  <relation label="inherit">
   ont::evaluation-scale
- </relation>
- <relation label="overlap">
-  wn::|significance%1:07:00::|
-  wn::|importance%1:07:00::|
-  wn::|importance%1:26:00::|
  </relation>
  </concept>
  <concept name="ont::reliability-scale">
@@ -215,13 +230,14 @@
   ont::evaluation-scale
  </relation>
  </concept>
- <concept name="ont::suitability-scale">
+ <concept name="ont::appropriateness-scale">
  <relation label="inherit">
   ont::evaluation-scale
  </relation>
- <relation label="overlap">
-  wn::|suitability%1:07:00::|
-  wn::|fitness%1:07:00::|
+ </concept>
+ <concept name="ont::convenience-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
  </relation>
  </concept>
  <sense>

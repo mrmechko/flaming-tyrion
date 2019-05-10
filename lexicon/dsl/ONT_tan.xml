@@ -9,6 +9,13 @@
  <relation label="overlap">
   wn::|tan%5:00:00:chromatic:00|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::tan-scale</feat>
+  <feat name="type">ont::tan</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -139,7 +146,7 @@
   abstr-obj
  </relation>
  <feat name="scale">ont::appearance-scale</feat>
- <feat name="type">ont::sensory-property-val</feat>
+ <feat name="type">ont::appearance-property-val</feat>
  </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
@@ -158,7 +165,11 @@
  </concept>
  <concept name="ont::color-val">
  <relation label="inherit">
-  ont::visible-property-val
+  ont::visual-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|chromatic%3:00:00::|
+  wn::|achromatic%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -174,16 +185,26 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::visible-property-val">
+ <sem-feats>
  <relation label="inherit">
-  ont::sensory-property-val
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::tan-scale</feat>
+ <feat name="type">ont::tan</feat>
+ </sem-feats>
+ <concept name="ont::visual-property-val">
+ <comment>
+  &quot;subjective characteristics of an item perceived through visual input&quot;
+ </comment>
+ <relation label="inherit">
+  ont::appearance-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
   <feat name="scale">ont::visual-scale</feat>
-  <feat name="type">ont::visible-property-val</feat>
+  <feat name="type">ont::visual-property-val</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -199,9 +220,9 @@
   <concept name="phys-obj" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::sensory-property-val">
+ <concept name="ont::appearance-property-val">
  <comment>
-  &quot;properties that have to do with sensory input&quot;
+  &quot;subjective chracteristics on HOW something is perceived through sensory input (compare to ont::sensory-property-val)&quot;
  </comment>
  <relation label="inherit">
   ont::physical-property-val
@@ -211,7 +232,7 @@
    abstr-obj
   </relation>
   <feat name="scale">ont::appearance-scale</feat>
-  <feat name="type">ont::sensory-property-val</feat>
+  <feat name="type">ont::appearance-property-val</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -219,7 +240,7 @@
   abstr-obj
  </relation>
  <feat name="scale">ont::visual-scale</feat>
- <feat name="type">ont::visible-property-val</feat>
+ <feat name="type">ont::visual-property-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">

@@ -11,6 +11,14 @@
   wn::|dependable%5:00:00:trustworthy:00|
   wn::|reliable%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::reliability-scale</feat>
+  <feat name="type">ont::reliable</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -138,33 +146,20 @@
  </concept>
  <concept name="ont::reliability-val">
  <relation label="inherit">
-  ont::social-interaction-val
+  ont::evaluation-attribute-val
  </relation>
  </concept>
- <concept name="ont::social-interaction-val">
- <comment>
-  &quot;properties of human behavior having to do with social interaction, e.g. friendly, kind, mean&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::animal-propensity-val
+  abstr-obj
  </relation>
- <relation label="overlap">
-  wn::|social%3:01:00::|
-  wn::|social%3:00:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::animal-propensity-val">
+ <feat name="orientation">pos</feat>
+ <feat name="scale">ont::reliability-scale</feat>
+ <feat name="type">ont::reliable</feat>
+ </sem-feats>
+ <concept name="ont::evaluation-attribute-val">
  <comment>
-  &quot;properties relating to human or animal tendencies or inclinations to behave in a particular manner&quot;
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
  </comment>
  <relation label="inherit">
   ont::property-val
@@ -173,19 +168,17 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::behavioral-scale</feat>
-  <feat name="type">ont::animal-propensity-val</feat>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
  </sem-feats>
- </concept>
  <sem-frame>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
  </sem-frame>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -242,9 +235,16 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::behavioral-scale</feat>
- <feat name="type">ont::animal-propensity-val</feat>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-attribute-val</feat>
  </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

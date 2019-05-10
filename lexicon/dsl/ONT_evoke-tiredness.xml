@@ -4,15 +4,11 @@
  <provenance name="TRIPS"/>
  <concept name="ont::evoke-tiredness">
  <relation label="inherit">
-  ont::evoke-physical
+  ont::evoke-discomfort
  </relation>
  <relation label="overlap">
   wn::|exhaust%2:29:00::|
-  wn::|wash_up%2:29:01::|
-  wn::|beat%2:29:00::|
-  wn::|tucker%2:29:00::|
-  wn::|tucker_out%2:29:00::|
-  wn::|weary%2:29:00::|
+  wn::|tire%2:29:01::|
  </relation>
  </concept>
  <or>
@@ -103,11 +99,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evoke-physical">
- <relation label="inherit">
-  ont::affect-experiencer
- </relation>
- </concept>
  <concept name="ont::affect-experiencer">
  <comment>
   &quot;cause an experience on an cognitive agent&quot;
@@ -139,6 +130,19 @@
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::worsen-experience">
+ <relation label="inherit">
+  ont::affect-experiencer
+ </relation>
+ </concept>
+ <concept name="ont::evoke-discomfort">
+ <comment>
+  &quot;to cause physical discomfort that are not related to irration/bother&quot;
+ </comment>
+ <relation label="inherit">
+  ont::worsen-experience
+ </relation>
  </concept>
  <concept name="ont::event-of-causation">
  <comment>
@@ -310,25 +314,6 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="crush" />
- </morph>
- <relation label="inherit">
-  ont::evoke-tiredness
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
  <sense>
  <morph>
   <pos pos="v" />

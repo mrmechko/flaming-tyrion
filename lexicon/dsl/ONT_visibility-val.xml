@@ -4,16 +4,13 @@
  <provenance name="TRIPS"/>
  <concept name="ont::visibility-val">
  <relation label="inherit">
-  ont::visible-property-val
- </relation>
- <relation label="overlap">
-  wn::|visible%3:00:00::|
+  ont::sensory-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::visibility-scale</feat>
+  <feat name="scale">ont::sight-scale</feat>
   <feat name="type">ont::visibility-val</feat>
  </sem-feats>
  </concept>
@@ -141,12 +138,27 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::sensory-property-val">
+ <comment>
+  &quot;properties relating to the ability to receive sensory input (compare to ont::appearance-property-val)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::sensory-scale</feat>
+  <feat name="type">ont::sensory-property-val</feat>
+ </sem-feats>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::appearance-scale</feat>
- <feat name="type">ont::sensory-property-val</feat>
+ <feat name="scale">ont::sight-scale</feat>
+ <feat name="type">ont::visibility-val</feat>
  </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
@@ -167,43 +179,9 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::visual-scale</feat>
- <feat name="type">ont::visible-property-val</feat>
+ <feat name="scale">ont::sensory-scale</feat>
+ <feat name="type">ont::sensory-property-val</feat>
  </sem-feats>
- <concept name="ont::sensory-property-val">
- <comment>
-  &quot;properties that have to do with sensory input&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::appearance-scale</feat>
-  <feat name="type">ont::sensory-property-val</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::visibility-scale</feat>
- <feat name="type">ont::visibility-val</feat>
- </sem-feats>
- <concept name="ont::visible-property-val">
- <relation label="inherit">
-  ont::sensory-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::visual-scale</feat>
-  <feat name="type">ont::visible-property-val</feat>
- </sem-feats>
- </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -334,61 +312,34 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
- <concept name="ont::color-saturation-val">
+ <concept name="ont::visible-val">
  <relation label="inherit">
   ont::visibility-val
  </relation>
- </concept>
- <concept name="ont::presense-of-light-val">
- <relation label="inherit">
-  ont::visibility-val
+ <relation label="overlap">
+  wn::|visible%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::presence-of-light-scale</feat>
-  <feat name="type">ont::presense-of-light-val</feat>
+  <feat name="scale">ont::visibility-scale</feat>
+  <feat name="type">ont::visible-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::luminosity-val">
+ <concept name="ont::invisible-val">
  <relation label="inherit">
   ont::visibility-val
+ </relation>
+ <relation label="overlap">
+  wn::|invisible%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::luminosity-scale</feat>
-  <feat name="type">ont::luminosity-val</feat>
+  <feat name="scale">ont::invisibility-scale</feat>
+  <feat name="type">ont::invisible-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::opacity-val">
- <relation label="inherit">
-  ont::visibility-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::light-passage-scale</feat>
-  <feat name="type">ont::opacity-val</feat>
- </sem-feats>
- </concept>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="visible" />
-  <forms>
-   -LY
-  </forms>
- </morph>
- <example text="set when the To Do items are visible">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::visibility-val
-  ont::central-adj-templ
- </relation>
- </sense>
 </dsl>

@@ -4,13 +4,10 @@
  <provenance name="TRIPS"/>
  <concept name="ont::evoke-fear">
  <relation label="inherit">
-  ont::evoke-emotion
+  ont::worsen-experience
  </relation>
  <relation label="overlap">
   wn::|frighten%2:37:00::|
-  wn::|fright%2:37:00::|
-  wn::|scare%2:37:00::|
-  wn::|affright%2:37:00::|
  </relation>
  </concept>
  <or>
@@ -101,34 +98,10 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evoke-emotion">
- <comment>
-  &quot;actions the cause some emotion in an agent&quot;
- </comment>
+ <concept name="ont::worsen-experience">
  <relation label="inherit">
   ont::affect-experiencer
  </relation>
- <relation label="overlap">
-  wn::|arouse%2:37:00::|
-  wn::|elicit%2:37:00::|
-  wn::|enkindle%2:37:00::|
-  wn::|kindle%2:37:00::|
-  wn::|evoke%2:37:00::|
-  wn::|fire%2:37:00::|
-  wn::|raise%2:37:08::|
-  wn::|provoke%2:37:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-    <feat name="origin">living</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::affect-experiencer">
  <comment>
@@ -162,17 +135,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="intentional">+</feat>
-   <feat name="origin">living</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::event-of-causation">
  <comment>
   &quot;events involving an AGENT acting on an AFFECTED&quot;
@@ -346,25 +308,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="alarm" />
- </morph>
- <relation label="inherit">
-  ont::evoke-fear
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="cow" />
  </morph>
  <provenance name="TRIPS">
@@ -416,88 +359,6 @@
     <word first-word="frightening" />
    </ing>
   </forms>
- </morph>
- <relation label="inherit">
-  ont::evoke-fear
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="intimidate" />
- </morph>
- <relation label="inherit">
-  ont::evoke-fear
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="menace" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="menace" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::evoke-fear
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="repel" />
- </morph>
- <relation label="inherit">
-  ont::evoke-fear
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="repulse" />
  </morph>
  <relation label="inherit">
   ont::evoke-fear
@@ -574,34 +435,6 @@
  <morph>
   <pos pos="v" />
   <word first-word="terrorize" />
- </morph>
- <relation label="inherit">
-  ont::evoke-fear
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="threaten" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="threatened" />
-   </past>
-   <ing>
-    <word first-word="threatening" />
-   </ing>
-  </forms>
  </morph>
  <relation label="inherit">
   ont::evoke-fear

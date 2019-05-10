@@ -141,12 +141,27 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
  <feat name="scale">ont::body-condition-scale</feat>
- <feat name="type">ont::body-related-property-val</feat>
+ <feat name="type">ont::body-condition-property-val</feat>
  </sem-feats>
  <concept name="ont::physical-property-val">
  <comment>
@@ -163,25 +178,20 @@
   <feat name="type">ont::physical-property-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::alertness-val">
- <relation label="inherit">
-  ont::body-property-val
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::sleepiness-scale</feat>
- <feat name="type">ont::drowsy-val</feat>
- </sem-feats>
- <concept name="ont::body-property-val">
+ <concept name="ont::body-condition-property-val">
  <comment>
-  &quot;properties having to do with human/animal body conditions or states&quot;
+  &quot;properties having to do with with conditions of the human/animal body; note, these adjectives are general purpose. for medical usages see ont::medical-condition-property-val&quot;
  </comment>
  <relation label="inherit">
-  ont::body-related-property-val
+  ont::physical-property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::body-condition-scale</feat>
+  <feat name="type">ont::body-condition-property-val</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
    <sem-feats>
@@ -198,36 +208,18 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::body-related-property-val">
- <comment>
-  &quot;properties having to do with human/animal body&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::body-condition-scale</feat>
-  <feat name="type">ont::body-related-property-val</feat>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::sleepiness-scale</feat>
+ <feat name="type">ont::drowsy-val</feat>
  </sem-feats>
+ <concept name="ont::alertness-val">
+ <relation label="inherit">
+  ont::body-condition-property-val
+ </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -372,7 +364,7 @@
  </comment>
  <relation label="inherit">
   ont::drowsy-val
-  ont::central-adj-experiencer-templ
+  ont::central-adj-templ
  </relation>
  </sense>
  <sense>
@@ -389,7 +381,7 @@
  </comment>
  <relation label="inherit">
   ont::drowsy-val
-  ont::central-adj-experiencer-templ
+  ont::central-adj-templ
  </relation>
  </sense>
 </dsl>

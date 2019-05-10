@@ -4,10 +4,11 @@
  <provenance name="TRIPS"/>
  <concept name="ont::prepare">
  <relation label="inherit">
-  ont::cause-effect
+  ont::enable
  </relation>
  <relation label="overlap">
   wn::|arm%2:33:00::|
+  wn::|sensitize%2:30:01::|
  </relation>
  </concept>
  <or>
@@ -98,6 +99,23 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::enable">
+ <relation label="inherit">
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|enable%2:30:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::cause-effect">
  <comment>
   &quot;an AGENT causes some event to occur or proposition to become true. Usually the verbs that fall under this category are very general causal verbs that take other events as their arguments and are positive causes- i.e., events are caused to happen as opposed to negative causes as in an event is prevented.&quot;
@@ -156,6 +174,15 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::acting">
  <comment>
   &quot;abstract event of doing something: behave, activity, ...&quot;

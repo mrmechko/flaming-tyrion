@@ -256,6 +256,13 @@
  <relation label="inherit">
   ont::property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure">
    <sem-feats>
@@ -294,6 +301,14 @@
   <feat name="type">ont::physical-property-val</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::life-process-val">
+ <comment>
+  &quot;properties that describe life processes&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
  <concept name="ont::process-val">
  <comment>
   &quot;properties that describe processes&quot;
@@ -328,7 +343,7 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::dimensional-scale</feat>
+  <feat name="scale">ont::measure-scale</feat>
   <feat name="type">ont::dimensional-property-val</feat>
  </sem-feats>
  </concept>
@@ -390,6 +405,13 @@
  <relation label="inherit">
   ont::property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::psychological-condition-scale</feat>
+  <feat name="type">ont::psychological-property-val</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure">
    <sem-feats>
@@ -433,6 +455,13 @@
  <relation label="overlap">
   wn::|spatial%3:01:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::spatial-scale</feat>
+  <feat name="type">ont::spatial</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
    <or>
@@ -453,6 +482,9 @@
  <concept name="ont::quantity-related-property-val">
  <relation label="inherit">
   ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|quantitative%3:00:00::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::standard" optional="optional">

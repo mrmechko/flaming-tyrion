@@ -4,13 +4,13 @@
  <provenance name="TRIPS"/>
  <concept name="ont::evoke-disgust">
  <relation label="inherit">
-  ont::evoke-emotion
+  ont::evoke-upset
  </relation>
  <relation label="overlap">
   wn::|disgust%2:39:00::|
-  wn::|gross_out%2:39:00::|
-  wn::|revolt%2:39:00::|
-  wn::|repel%2:39:00::|
+  wn::|repel%2:37:00::|
+  wn::|horrify%2:37:01::|
+  wn::|nauseate%2:37:00::|
  </relation>
  </concept>
  <or>
@@ -101,78 +101,27 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evoke-emotion">
- <comment>
-  &quot;actions the cause some emotion in an agent&quot;
- </comment>
- <relation label="inherit">
-  ont::affect-experiencer
- </relation>
- <relation label="overlap">
-  wn::|arouse%2:37:00::|
-  wn::|elicit%2:37:00::|
-  wn::|enkindle%2:37:00::|
-  wn::|kindle%2:37:00::|
-  wn::|evoke%2:37:00::|
-  wn::|fire%2:37:00::|
-  wn::|raise%2:37:08::|
-  wn::|provoke%2:37:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-    <feat name="origin">living</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::affect-experiencer">
- <comment>
-  &quot;cause an experience on an cognitive agent&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|come_to%2:39:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
-  <feat name="aspect">dynamic</feat>
-  <feat name="type">ont::affect-experiencer</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">living</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
  <sem-frame>
  <role-restr-map roles="ont::affected">
   <sem-feats>
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="intentional">+</feat>
    <feat name="origin">living</feat>
   </sem-feats>
  </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <concept name="t" />
+ </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="cause">agentive</feat>
+ <feat name="aspect">dynamic</feat>
+ <feat name="type">ont::affect-experiencer</feat>
+ </sem-feats>
  <concept name="ont::event-of-causation">
  <comment>
   &quot;events involving an AGENT acting on an AFFECTED&quot;
@@ -209,27 +158,61 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
+ <concept name="ont::worsen-experience">
  <relation label="inherit">
-  situation
+  ont::affect-experiencer
  </relation>
- <feat name="cause">agentive</feat>
- <feat name="aspect">dynamic</feat>
- <feat name="type">ont::affect-experiencer</feat>
+ </concept>
+ <concept name="ont::evoke-bother">
+ <relation label="inherit">
+  ont::worsen-experience
+ </relation>
+ <relation label="overlap">
+  wn::|bother%2:38:00::|
+  wn::|bother%2:41:01::|
+ </relation>
+ </concept>
+ <concept name="ont::evoke-upset">
+ <relation label="inherit">
+  ont::evoke-bother
+ </relation>
+ <relation label="overlap">
+  wn::|upset%2:37:01::|
+  wn::|disturb%2:37:00::|
+ </relation>
+ </concept>
+ <concept name="ont::affect-experiencer">
+ <comment>
+  &quot;cause an experience on an cognitive agent&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|come_to%2:39:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+  <feat name="aspect">dynamic</feat>
+  <feat name="type">ont::affect-experiencer</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">living</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <concept name="t" />
- </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">living</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <concept name="t" />
+  </role-restr-map>
  </sem-frame>
+ </concept>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
@@ -343,6 +326,36 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::evoke-ill-being">
+ <comment>
+  &quot;includes physical feeling of nausea&quot;
+ </comment>
+ <relation label="inherit">
+  ont::evoke-disgust
+ </relation>
+ <relation label="overlap">
+  wn::|nauseate%2:39:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="appall" />
+ </morph>
+ <relation label="inherit">
+  ont::evoke-disgust
+ </relation>
+ <relation label="overlap">
+  vn::amuse-31.1
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -374,25 +387,6 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="displease" />
- </morph>
- <relation label="inherit">
-  ont::evoke-disgust
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
   <word first-word="horrify" />
  </morph>
  <relation label="inherit">
@@ -412,7 +406,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="mortify" />
+  <word first-word="repel" />
  </morph>
  <relation label="inherit">
   ont::evoke-disgust
@@ -431,7 +425,7 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="nauseate" />
+  <word first-word="repulse" />
  </morph>
  <relation label="inherit">
   ont::evoke-disgust
@@ -451,34 +445,6 @@
  <morph>
   <pos pos="v" />
   <word first-word="revolt" />
- </morph>
- <relation label="inherit">
-  ont::evoke-disgust
- </relation>
- <relation label="overlap">
-  vn::amuse-31.1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="sicken" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="sickened" />
-   </past>
-   <ing>
-    <word first-word="sickening" />
-   </ing>
-  </forms>
  </morph>
  <relation label="inherit">
   ont::evoke-disgust

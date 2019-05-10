@@ -334,11 +334,12 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
- <concept name="ont::enable-process">
+ <concept name="ont::prepare">
  <relation label="inherit">
   ont::enable
  </relation>
  <relation label="overlap">
+  wn::|arm%2:33:00::|
   wn::|sensitize%2:30:01::|
  </relation>
  </concept>
@@ -420,9 +421,9 @@
   ont::enable
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-templ" />
+  <template-call template="ont::agent-formal-xp-templ" xp="'w::np" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -454,11 +455,9 @@
   ont::enable
  </relation>
  <syntax>
-  <template-call template="ont::agent-recipient-affected-templ" xp="'(w::pp
-                                                                      w::with)" />
+  <template-call template="ont::agent-formal-xp-templ" xp="'(w::pp w::with)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::with" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected-result"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::with" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

@@ -3,8 +3,11 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::comfort-scale">
+ <comment>
+  &quot;deals with ease and comfort&quot;
+ </comment>
  <relation label="inherit">
-  ont::psychological-condition-scale
+  ont::evaluation-scale
  </relation>
  </concept>
  <or>
@@ -64,19 +67,20 @@
   <feat name="type">ont::tangible-abstract-object</feat>
  </sem-feats>
  </concept>
- <concept name="ont::ordered-domain">
- <relation label="inherit">
-  ont::domain
- </relation>
- </concept>
- <concept name="ont::stage-scale">
+ <concept name="ont::evaluation-scale">
+ <comment>
+  &quot;scales relating to subjective evaluation of an entity or a situation&quot;
+ </comment>
  <relation label="inherit">
   ont::ordered-domain
  </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:02::|
+ </relation>
  </concept>
- <concept name="ont::psychological-condition-scale">
+ <concept name="ont::ordered-domain">
  <relation label="inherit">
-  ont::stage-scale
+  ont::domain
  </relation>
  </concept>
  <concept name="ont::domain">
@@ -158,20 +162,4 @@
   wn::|discomfort%1:26:00::|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="convenience" />
- </morph>
- <comment>
-  &quot;PROJECTOR-PURCHASING&quot;
- </comment>
- <example text="come at your convenience">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::comfort-scale
-  ont::count-pred-templ
- </relation>
- </sense>
 </dsl>

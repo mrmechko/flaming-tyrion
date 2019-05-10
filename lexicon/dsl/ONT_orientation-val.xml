@@ -152,6 +152,13 @@
   </or>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::spatial-scale</feat>
+ <feat name="type">ont::spatial</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -219,6 +226,13 @@
  <relation label="overlap">
   wn::|spatial%3:01:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::spatial-scale</feat>
+  <feat name="type">ont::spatial</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
    <or>
@@ -332,13 +346,13 @@
   wn::|parallel%3:00:00::|
  </relation>
  </concept>
- <concept name="ont::diagonal-val">
+ <concept name="ont::at-an-angle-val">
  <relation label="inherit">
   ont::orientation-val
  </relation>
  <relation label="overlap">
-  wn::|diagonal%5:00:00:inclined:01|
-  wn::|diagonal%5:00:02:oblique:00|
+  wn::|oblique%3:00:00::|
+  wn::|inclined%3:00:01::|
  </relation>
  </concept>
  <concept name="ont::inverted-val">
@@ -347,6 +361,16 @@
  </relation>
  <relation label="overlap">
   wn::|inverted%5:00:00:turned:00|
+  wn::|turned%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::inside-out-val">
+ <relation label="inherit">
+  ont::orientation-val
+ </relation>
+ <relation label="overlap">
+  wn::|inside-out%5:00:00:turned:00|
+  wn::|reversed%5:00:00:turned:00|
  </relation>
  </concept>
  <concept name="ont::2d-orientation-val">
