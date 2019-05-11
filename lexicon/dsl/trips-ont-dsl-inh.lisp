@@ -24832,10 +24832,6 @@
          SITUATION)
        (ASPECT F::DYNAMIC)
        (CAUSE F::AGENTIVE)))
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::RESULT
      (CONCEPT
        ABSTR-OBJ)
@@ -24844,12 +24840,16 @@
      (SEM-FEATS
        (OR
          (CONCEPT
-           PHYS-OBJ)
+           SITUATION)
          (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
-           SITUATION))
+           PHYS-OBJ))
        (TANGIBLE +))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
      OPTIONAL)
     (ONT::AGENT
      (OR
@@ -24858,8 +24858,7 @@
        (CONCEPT
          ABSTR-OBJ)
        (CONCEPT
-         PHYS-OBJ))
-     OPTIONAL)
+         PHYS-OBJ)))
     (ONT::NEUTRAL
      (SEM-FEATS
        (OR
@@ -24873,12 +24872,11 @@
      OPTIONAL)
     (ONT::FORMAL
      (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE
-        (OR
-          ONT::SITUATION-ROOT
-          ONT::PROPERTY-VAL))
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
        (INTENTIONAL -))
      OPTIONAL))
   (SEM-FEATS
@@ -24886,15 +24884,15 @@
       SITUATION)
     (KR-TYPE ANY-KR-TYPE)
     (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
     (LOCATIVE -)
     (ORIGIN ANY-ORIGIN)
     (IOBJ -)
-    (TRAJECTORY -)
-    (ASPECT F::DYNAMIC)
-    (TANGIBLE +)
-    (CONTAINER -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
     (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
     (CAUSE F::AGENTIVE)
     (TYPE ONT::CAUSE-ACTION)))
 
@@ -25920,21 +25918,21 @@
 (CONCEPT
   ONT::CAUSE-ACTION
   (INHERIT
-    ONT::CAUSE-EFFECT)
+    ONT::ACTING)
   (SEM-FEATS
     (INHERIT
       SITUATION)
     (KR-TYPE ANY-KR-TYPE)
     (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
     (LOCATIVE -)
     (ORIGIN ANY-ORIGIN)
     (IOBJ -)
-    (TRAJECTORY -)
-    (ASPECT F::DYNAMIC)
-    (TANGIBLE +)
-    (CONTAINER -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
     (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
     (CAUSE F::AGENTIVE)
     (TYPE ONT::CAUSE-ACTION))
   (SEM-FRAME
@@ -25945,38 +25943,25 @@
        (CONCEPT
          ABSTR-OBJ)
        (CONCEPT
-         PHYS-OBJ))
+         PHYS-OBJ)))
+    (ONT::NOROLE
+     (CONCEPT
+       T)
      OPTIONAL)
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
          (CONCEPT
-           PHYS-OBJ)
+           SITUATION)
          (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
-           SITUATION))
+           PHYS-OBJ))
        (TANGIBLE +))
-     OPTIONAL)
-    (ONT::FORMAL
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ))
-       (TYPE
-        (OR
-          ONT::SITUATION-ROOT
-          ONT::PROPERTY-VAL)))
      OPTIONAL)
     (ONT::RESULT
      (CONCEPT
        ABSTR-OBJ)
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
      OPTIONAL)
     (ONT::EFFECT
      (SEM-FEATS
@@ -141688,15 +141673,15 @@
       SITUATION)
     (KR-TYPE ANY-KR-TYPE)
     (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
     (LOCATIVE -)
     (ORIGIN ANY-ORIGIN)
     (IOBJ -)
-    (TRAJECTORY -)
-    (ASPECT F::DYNAMIC)
-    (TANGIBLE +)
-    (CONTAINER -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
     (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
     (CAUSE F::AGENTIVE)
     (TYPE ONT::CAUSE-ACTION))
   (SEM-FRAME
@@ -141706,10 +141691,6 @@
          SITUATION)
        (ASPECT F::DYNAMIC)
        (CAUSE F::AGENTIVE)))
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::RESULT
      (CONCEPT
        ABSTR-OBJ)
@@ -141718,12 +141699,16 @@
      (SEM-FEATS
        (OR
          (CONCEPT
-           PHYS-OBJ)
+           SITUATION)
          (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
-           SITUATION))
+           PHYS-OBJ))
        (TANGIBLE +))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
      OPTIONAL)
     (ONT::AGENT
      (OR
@@ -141732,8 +141717,7 @@
        (CONCEPT
          ABSTR-OBJ)
        (CONCEPT
-         PHYS-OBJ))
-     OPTIONAL)
+         PHYS-OBJ)))
     (ONT::NEUTRAL
      (SEM-FEATS
        (OR
@@ -141747,12 +141731,11 @@
      OPTIONAL)
     (ONT::FORMAL
      (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE
-        (OR
-          ONT::SITUATION-ROOT
-          ONT::PROPERTY-VAL))
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
        (INTENTIONAL -))
      OPTIONAL)))
 
@@ -175343,15 +175326,15 @@
       SITUATION)
     (KR-TYPE ANY-KR-TYPE)
     (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
     (LOCATIVE -)
     (ORIGIN ANY-ORIGIN)
     (IOBJ -)
-    (TRAJECTORY -)
-    (ASPECT F::DYNAMIC)
-    (TANGIBLE +)
-    (CONTAINER -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
     (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
     (CAUSE F::AGENTIVE)
     (TYPE ONT::CAUSE-ACTION))
   (SEM-FRAME
@@ -175362,38 +175345,25 @@
        (CONCEPT
          ABSTR-OBJ)
        (CONCEPT
-         PHYS-OBJ))
+         PHYS-OBJ)))
+    (ONT::NOROLE
+     (CONCEPT
+       T)
      OPTIONAL)
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
          (CONCEPT
-           PHYS-OBJ)
+           SITUATION)
          (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
-           SITUATION))
+           PHYS-OBJ))
        (TANGIBLE +))
-     OPTIONAL)
-    (ONT::FORMAL
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ))
-       (TYPE
-        (OR
-          ONT::SITUATION-ROOT
-          ONT::PROPERTY-VAL)))
      OPTIONAL)
     (ONT::RESULT
      (CONCEPT
        ABSTR-OBJ)
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
      OPTIONAL)
     (ONT::EFFECT
      (SEM-FEATS
