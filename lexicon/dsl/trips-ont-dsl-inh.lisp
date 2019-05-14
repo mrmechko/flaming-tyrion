@@ -4990,7 +4990,8 @@
     ONT::ENROLL)
   (OVERLAP
     WN::|accept%2:40:03::|
-    WN::|admit%2:41:00::|)
+    WN::|admit%2:41:00::|
+    WN::|invite%2:35:12::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -50842,7 +50843,7 @@
     ONT::RELINQUISH)
   (OVERLAP
     WN::|eliminate%2:31:00::|
-    WN::|eliminate%2:31:01::|
+    WN::|eliminate%2:30:01::|
     WN::|eliminate%2:42:01::|
     WN::|get_rid_of%2:40:01::|)
   (SEM-FRAME
@@ -56376,8 +56377,9 @@
   (INHERIT
     ONT::EVENT-OF-STATE)
   (OVERLAP
-    WN::|read%2:42:00::|
     WN::|go%2:42:02::|
+    WN::|intend%2:32:02::|
+    WN::|read%2:42:00::|
     WN::|represent%2:36:01::|)
   (SEM-FRAME
     (ONT::FORMAL
@@ -88142,6 +88144,56 @@
     (TYPE ONT::COMMODITY)))
 
 (CONCEPT
+  ONT::KEEP-DOWN-VOMIT
+  (INHERIT
+    ONT::EXCRETE)
+  (OVERLAP
+    WN::|keep_down%2:29:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (CAUSE ANY-CAUSE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (ASPECT F::DYNAMIC)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (INTENTIONAL -)
+    (TYPE ONT::BODILY-PROCESS))
+  (SEM-FRAME
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AFFECTED1
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (FORM F::SUBSTANCE))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TANGIBLE +)
+       (TYPE ONT::PHYS-OBJECT)
+       (ORIGIN F::LIVING)))
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE
+        (OR
+          ONT::NATURAL-GROUP
+          ONT::ORGANISM))
+       (ORIGIN F::LIVING)))))
+
+(CONCEPT
   ONT::KETTLE
   (INHERIT
     ONT::COOKWARE)
@@ -117461,23 +117513,25 @@
   (INHERIT
     ONT::SITUATION-ROOT)
   (OVERLAP
-    WN::|happen%2:30:00::|
     WN::|come%2:30:01::|
-    WN::|take_place%2:30:00::|
+    WN::|come%2:42:13::|
     WN::|come_about%2:30:00::|
     WN::|fall_out%2:30:00::|
-    WN::|pass%2:30:00::|
-    WN::|occur%2:30:00::|
-    WN::|pass_off%2:30:00::|
+    WN::|go%2:42:03::|
+    WN::|go%2:42:12::|
     WN::|go_on%2:30:00::|
     WN::|hap%2:30:00::|
     WN::|happen%2:30:00::|
     WN::|happening%1:11:00::|
+    WN::|natural_event%1:11:00::|
+    WN::|occur%2:30:00::|
     WN::|occurrence%1:11:00::|
     WN::|occurrent%1:11:00::|
-    WN::|natural_event%1:11:00::|
-    WN::|come%2:42:13::|
-    WN::|set_in%2:30:00::|)
+    WN::|pass%2:30:00::|
+    WN::|pass_off%2:30:00::|
+    WN::|play%2:42:00::|
+    WN::|set_in%2:30:00::|
+    WN::|take_place%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -142988,9 +143042,10 @@
   (INHERIT
     ONT::DIRECTIVE)
   (OVERLAP
-    WN::|request%2:32:01::|
+    WN::|call%2:41:04::|
+    WN::|insist%2:32:00::|
     WN::|request%1:10:00::|
-    WN::|call%2:41:04::|)
+    WN::|request%2:32:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)

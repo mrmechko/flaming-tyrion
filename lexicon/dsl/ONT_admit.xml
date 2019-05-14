@@ -9,6 +9,7 @@
  <relation label="overlap">
   wn::|accept%2:40:03::|
   wn::|admit%2:41:00::|
+  wn::|invite%2:35:12::|
  </relation>
  </concept>
  <or>
@@ -444,5 +445,30 @@
    <feat name="aspect">bounded</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="invite" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="invitation" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="The community warmly invites the refugees.">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::admit
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
 </dsl>
