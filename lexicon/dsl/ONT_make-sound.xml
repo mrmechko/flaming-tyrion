@@ -12,6 +12,11 @@
   wn::|tinkle%2:39:00::|
   wn::|sound%2:39:00::|
   wn::|ring%2:39:00::|
+  wn::|play%2:36:00::|
+  wn::|play%2:36:11::|
+  wn::|play%2:36:05::|
+  wn::|sound%2:39:01::|
+  wn::|ring%2:39:01::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::effect" optional="optional">
@@ -427,19 +432,33 @@
  <concept name="situation" />
  <sense>
  <morph>
-  <pos pos="n" />
-  <word first-word="noise" />
+  <pos pos="v" />
+  <word first-word="play" />
  </morph>
  <comment>
-  &quot;CALOY2&quot;
+  &quot;ASMA&quot;
  </comment>
- <example text="there is noise in the signal">
-  <provenance name="TRIPS"/>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="play the voice note">
  </example>
  <relation label="inherit">
   ont::make-sound
-  ont::count-pred-templ
  </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
  </sense>
  <sense>
  <morph>
@@ -460,13 +479,29 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="ring" />
+ </morph>
+ <comment>
+  &quot;WF-MISSING-MAPPINGS&quot;
+ </comment>
+ <example text="Joe rang the bell">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::make-sound
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="sound" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="sound" />
-   </nom>
-  </forms>
  </morph>
  <comment>
   &quot;WF-MISSING-MAPPINGS&quot;
@@ -480,5 +515,29 @@
   ont::make-sound
   ont::agent-templ
  </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="sound" />
+ </morph>
+ <comment>
+  &quot;WF-MISSING-MAPPINGS&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="he sounded the alarm">
+ </example>
+ <relation label="inherit">
+  ont::make-sound
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
 </dsl>

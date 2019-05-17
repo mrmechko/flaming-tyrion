@@ -95811,7 +95811,12 @@
     WN::|clink%2:39:00::|
     WN::|tinkle%2:39:00::|
     WN::|sound%2:39:00::|
-    WN::|ring%2:39:00::|)
+    WN::|ring%2:39:00::|
+    WN::|play%2:36:00::|
+    WN::|play%2:36:11::|
+    WN::|play%2:36:05::|
+    WN::|sound%2:39:01::|
+    WN::|ring%2:39:01::|)
   (SEM-FRAME
     (ONT::RESULT
      (SEM-FEATS
@@ -125763,13 +125768,11 @@
 (CONCEPT
   ONT::PLAY
   (INHERIT
-    ONT::EXECUTE)
+    ONT::EVENT-OF-ACTION)
   (OVERLAP
     WN::|play%2:33:00::|
     WN::|play%2:41:03::|
-    WN::|play%2:41:00::|
-    WN::|sound%2:39:01::|
-    WN::|ring%2:39:01::|)
+    WN::|play%2:41:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -125779,18 +125782,14 @@
     (LOCATIVE -)
     (ORIGIN ANY-ORIGIN)
     (IOBJ -)
-    (CAUSE F::FORCE)
-    (INTENTIONAL -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
-    (CONTAINER -)
-    (TANGIBLE +)
     (ASPECT F::DYNAMIC)
-    (TYPE ONT::EXECUTE))
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (INTENTIONAL -)
+    (CAUSE F::FORCE)
+    (TYPE ONT::EVENT-OF-ACTION))
   (SEM-FRAME
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -125802,43 +125801,18 @@
            PHYS-OBJ))
        (TANGIBLE +))
      OPTIONAL)
-    (ONT::FORMAL
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ))
-       (TYPE
-        (OR
-          ONT::SITUATION-ROOT
-          ONT::PROPERTY-VAL)))
-     OPTIONAL)
     (ONT::RESULT
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::ABSTRACT-OBJECT))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           SITUATION))
-       (TYPE ONT::PROCEDURE))
+     (CONCEPT
+       ABSTR-OBJ)
      OPTIONAL)
     (ONT::AGENT
-     (SEM-FEATS
-       (INHERIT
+     (OR
+       (CONCEPT
          PHYS-OBJ)
-       (TYPE
-        (OR
-          ONT::SUPERNATURAL-BEING
-          ONT::PERSON))
-       (ORIGIN F::HUMAN)
-       (INTENTIONAL +))
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
      OPTIONAL)))
 
 (CONCEPT

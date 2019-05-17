@@ -19082,7 +19082,12 @@
     WN::|clink%2:39:00::|
     WN::|tinkle%2:39:00::|
     WN::|sound%2:39:00::|
-    WN::|ring%2:39:00::|)
+    WN::|ring%2:39:00::|
+    WN::|play%2:36:00::|
+    WN::|play%2:36:11::|
+    WN::|play%2:36:05::|
+    WN::|sound%2:39:01::|
+    WN::|ring%2:39:01::|)
   (SEM-FRAME
     (ONT::EFFECT
      (CONCEPT
@@ -24194,13 +24199,11 @@
 (CONCEPT
   ONT::PLAY
   (INHERIT
-    ONT::EXECUTE)
+    ONT::EVENT-OF-ACTION)
   (OVERLAP
     WN::|play%2:33:00::|
     WN::|play%2:41:03::|
-    WN::|play%2:41:00::|
-    WN::|sound%2:39:01::|
-    WN::|ring%2:39:01::|))
+    WN::|play%2:41:00::|))
 
 (CONCEPT
   ONT::PLEASANT
