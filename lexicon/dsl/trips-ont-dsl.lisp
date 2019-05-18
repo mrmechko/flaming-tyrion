@@ -21457,6 +21457,8 @@
 
 (CONCEPT
   ONT::NOT-COMPREHENSIBLE-VAL
+  (INHERIT
+    ONT::COMPREHENSIBILITY-VAL)
   (OVERLAP
     WN::|incomprehensible%3:00:00::|
     WN::|incomprehensible%3:00:04::|

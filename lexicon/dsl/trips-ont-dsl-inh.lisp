@@ -109740,10 +109740,98 @@
 
 (CONCEPT
   ONT::NOT-COMPREHENSIBLE-VAL
+  (INHERIT
+    ONT::COMPREHENSIBILITY-VAL)
   (OVERLAP
     WN::|incomprehensible%3:00:00::|
     WN::|incomprehensible%3:00:04::|
-    WN::|unfriendly%3:00:02::|))
+    WN::|unfriendly%3:00:02::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
+    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::NOT-CONVENIENT-SCALE
