@@ -15348,7 +15348,8 @@
        (TYPE
         (OR
           ONT::DOMAIN-PROPERTY
-          ONT::POSITION-RELN)))
+          ONT::POSITION-RELN
+          ONT::PREDICATE)))
      OPTIONAL)
     (ONT::NEUTRAL
      (CONCEPT
