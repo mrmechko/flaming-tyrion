@@ -10679,6 +10679,10 @@
            PHYS-OBJ))
        (INTENTIONAL +))
      OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -16531,7 +16535,8 @@
   (OVERLAP
     WN::|think%2:31:00::|
     WN::|cogitate%2:31:00::|
-    WN::|cerebrate%2:31:00::|)
+    WN::|cerebrate%2:31:00::|
+    WN::|attention%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -26138,6 +26143,10 @@
      (CONCEPT
        ABSTR-OBJ)
      OPTIONAL)
+    (ONT::AFFECTED1
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::AFFECTED-RESULT
      (CONCEPT
        T)
@@ -26593,6 +26602,10 @@
     (ONT::RESULT
      (CONCEPT
        ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AFFECTED1
+     (CONCEPT
+       T)
      OPTIONAL)
     (ONT::AFFECTED-RESULT
      (CONCEPT
@@ -31716,24 +31729,7 @@
     (ONT::FIGURE
      (CONCEPT
        T)
-     OPTIONAL))
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE +)
-    (MOBILITY F::MOVABLE)
-    (CONTAINER +)
-    (INTENTIONAL -)
-    (INFORMATION F::INFORMATION-CONTENT)
-    (TYPE ONT::INFORMATION-FUNCTION-OBJECT)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::CLOCK-SPEED-SCALE
@@ -33103,7 +33099,9 @@
     WN::|gather%2:35:00::|
     WN::|garner%2:35:00::|
     WN::|collect%2:35:00::|
-    WN::|pull_together%2:35:00::|)
+    WN::|pull_together%2:35:00::|
+    WN::|assemble%2:41:03::|
+    WN::|gather%2:35:04::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -36177,7 +36175,10 @@
     WN::|carry_to_term%2:29:00::|
     WN::|hold_one's_own%2:42:00::|
     WN::|succeed%2:41:00::|
-    WN::|excel%2:42:00::|)
+    WN::|excel%2:42:00::|
+    WN::|success%1:11:00::|
+    WN::|success%1:04:00::|
+    WN::|completion%1:04:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -41341,16 +41342,14 @@
 (CONCEPT
   ONT::COPE-DEAL
   (INHERIT
-    ONT::ACTIVE-PERCEPTION)
+    ONT::COMPLETE)
   (OVERLAP
     WN::|dispense_with%2:41:00::|
-    WN::|empathise%2:31:00::|
     WN::|cope%2:41:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
     (KR-TYPE ANY-KR-TYPE)
-    (CAUSE ANY-CAUSE)
     (TIME-SPAN ANY-TIME-SPAN)
     (TRAJECTORY -)
     (LOCATIVE -)
@@ -41360,42 +41359,40 @@
     (INFORMATION F::MENTAL-CONSTRUCT)
     (CONTAINER -)
     (TANGIBLE +)
-    (ASPECT F::STATIC)
-    (TYPE ONT::EVENT-OF-STATE))
+    (ASPECT F::DYNAMIC)
+    (CAUSE F::AGENTIVE)
+    (TYPE ONT::COMPLETE))
   (SEM-FRAME
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
+    (ONT::AGENT
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ)))
     (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::EXPERIENCER
+    (ONT::AFFECTED
      (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +))
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
      OPTIONAL)
     (ONT::FORMAL
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         PHYS-OBJ))
-     OPTIONAL)
-    (ONT::AGENT
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +))
+     (CONCEPT
+       T)
      OPTIONAL)))
 
 (CONCEPT
@@ -56012,6 +56009,57 @@
     (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL)))
 
 (CONCEPT
+  ONT::EMPATHIZE
+  (INHERIT
+    ONT::CARE)
+  (OVERLAP
+    WN::|empathise%2:31:00::|
+    WN::|sympathize%2:37:01::|
+    WN::|sympathize%2:37:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (ASPECT F::STATIC)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (INTENTIONAL -)
+    (CAUSE F::MENTAL)
+    (TYPE ONT::EXPERIENCER-EMOTION))
+  (SEM-FRAME
+    (ONT::EXPERIENCER
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::EMPIRICAL-VAL
   (INHERIT
     ONT::BASIS-OF-EVIDENCE-VAL)
@@ -59263,6 +59311,8 @@
   (COMMENT "A stative event involving a sentient being in a mental state")
   (INHERIT
     ONT::EVENT-OF-STATE)
+  (OVERLAP
+    WN::|basic_cognitive_process%1:09:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (CONCEPT
@@ -59749,6 +59799,35 @@
     WN::|interest%2:37:00::|
     WN::|preoccupy%2:37:00::|
     WN::|intrigue%2:42:00::|)
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)))
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE
+        (OR
+          ONT::NATURAL-GROUP
+          ONT::ORGANISM))
+       (TANGIBLE +)
+       (ORIGIN F::LIVING)))
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL))
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -59764,32 +59843,7 @@
     (INTENTIONAL -)
     (CAUSE F::AGENTIVE)
     (ASPECT F::DYNAMIC)
-    (TYPE ONT::AFFECT-EXPERIENCER))
-  (SEM-FRAME
-    (ONT::RESULT
-     (CONCEPT
-       ABSTR-OBJ)
-     OPTIONAL)
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE
-        (OR
-          ONT::NATURAL-GROUP
-          ONT::ORGANISM))
-       (TANGIBLE +)
-       (ORIGIN F::LIVING)))
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           SITUATION))
-       (TANGIBLE +)))))
+    (TYPE ONT::AFFECT-EXPERIENCER)))
 
 (CONCEPT
   ONT::EVOKE-ATTRACTION
@@ -59816,10 +59870,16 @@
     (ASPECT F::DYNAMIC)
     (TYPE ONT::AFFECT-EXPERIENCER))
   (SEM-FRAME
-    (ONT::RESULT
-     (CONCEPT
-       ABSTR-OBJ)
-     OPTIONAL)
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)))
     (ONT::AFFECTED
      (SEM-FEATS
        (INHERIT
@@ -59830,16 +59890,14 @@
           ONT::ORGANISM))
        (TANGIBLE +)
        (ORIGIN F::LIVING)))
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           SITUATION))
-       (TANGIBLE +)))))
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::EVOKE-BOREDOM
@@ -60170,10 +60228,16 @@
     (ASPECT F::DYNAMIC)
     (TYPE ONT::AFFECT-EXPERIENCER))
   (SEM-FRAME
-    (ONT::RESULT
-     (CONCEPT
-       ABSTR-OBJ)
-     OPTIONAL)
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)))
     (ONT::AFFECTED
      (SEM-FEATS
        (INHERIT
@@ -60184,16 +60248,14 @@
           ONT::ORGANISM))
        (TANGIBLE +)
        (ORIGIN F::LIVING)))
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           SITUATION))
-       (TANGIBLE +)))))
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::EVOKE-DISCOMFORT
@@ -66530,7 +66592,8 @@
     WN::|worry%1:09:00::|
     WN::|sorrow%1:09:00::|
     WN::|distress%1:12:02::|
-    WN::|restlessness%1:12:00::|)
+    WN::|restlessness%1:12:00::|
+    WN::|mercy%1:07:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -71756,7 +71819,8 @@
   (INHERIT
     ONT::LOCATED-EVENT)
   (OVERLAP
-    WN::|ceremony%1:04:00::|)
+    WN::|ceremony%1:04:00::|
+    WN::|gathering%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -86464,8 +86528,6 @@
   (OVERLAP
     WN::|cross%2:38:03::|
     WN::|intersect%2:38:00::|
-    WN::|meet%2:41:01::|
-    WN::|get_together%2:41:01::|
     WN::|hold%2:35:01::|
     WN::|coexist%2:42:00::|)
   (SEM-FEATS
@@ -88148,7 +88210,7 @@
 (CONCEPT
   ONT::KEEP-DOWN-VOMIT
   (INHERIT
-    ONT::EXCRETE)
+    ONT::BODILY-PROCESS)
   (OVERLAP
     WN::|keep_down%2:29:00::|)
   (SEM-FEATS
@@ -95753,7 +95815,8 @@
     WN::|have%2:36:00::|
     WN::|have%2:32:00::|
     WN::|have%2:40:02::|
-    WN::|have%2:29:00::|)
+    WN::|have%2:29:00::|
+    WN::|make%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -96187,6 +96250,8 @@
    "take responsibility over the production of a project, a program, or a production")
   (INHERIT
     ONT::CONTROL-MANAGE)
+  (OVERLAP
+    WN::|management%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -96398,7 +96463,8 @@
     ONT::CONTROL-MANAGE)
   (OVERLAP
     WN::|operate%2:35:00::|
-    WN::|control%2:35:00::|)
+    WN::|control%2:35:00::|
+    WN::|manipulate%2:35:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -98812,10 +98878,10 @@
     WN::|assemble%2:41:00::|
     WN::|forgather%2:41:00::|
     WN::|foregather%2:41:00::|
-    WN::|assemble%2:41:03::|
     WN::|come_across%2:38:00::|
     WN::|encounter%2:33:00::|
-    WN::|meet%2:41:03::|)
+    WN::|meet%2:41:03::|
+    WN::|meet%2:41:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -120272,6 +120338,10 @@
      (CONCEPT
        ABSTR-OBJ)
      OPTIONAL)
+    (ONT::AFFECTED1
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::AFFECTED-RESULT
      (CONCEPT
        T)
@@ -120824,6 +120894,8 @@
   ONT::OUTCOME
   (INHERIT
     ONT::INFORMATION-FUNCTION-OBJECT)
+  (OVERLAP
+    WN::|result%1:11:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -125286,6 +125358,55 @@
        (INHERIT
          ABSTR-OBJ)
        (TYPE ONT::ABSTRACT-OBJECT))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::PITY
+  (INHERIT
+    ONT::CARE)
+  (OVERLAP
+    WN::|pity%2:37:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (ASPECT F::STATIC)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (INTENTIONAL -)
+    (CAUSE F::MENTAL)
+    (TYPE ONT::EXPERIENCER-EMOTION))
+  (SEM-FRAME
+    (ONT::EXPERIENCER
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (CONCEPT
+       T)
      OPTIONAL)))
 
 (CONCEPT
@@ -135267,13 +135388,8 @@
      OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           SITUATION))
+       (INHERIT
+         SITUATION)
        (SCALE -)
        (INTENTIONAL -)))
     (ONT::FIGURE
@@ -144239,31 +144355,7 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::RESULT
-  (INHERIT
-    ONT::OUTCOME)
-  (SEM-FRAME
-    (ONT::FIGURE
-     (CONCEPT
-       T)
-     OPTIONAL))
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE +)
-    (MOBILITY F::MOVABLE)
-    (CONTAINER +)
-    (INTENTIONAL -)
-    (INFORMATION F::INFORMATION-CONTENT)
-    (TYPE ONT::INFORMATION-FUNCTION-OBJECT)))
+  ONT::RESULT)
 
 (CONCEPT
   ONT::RESULTING-OBJECT
@@ -145510,6 +145602,35 @@
            PHYS-OBJ))
        (SCALE ONT::TIME-MEASURE-SCALE)
        (TYPE ONT::TIME-MEASURE-SCALE))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::RIGHT-PERMISSION
+  (INHERIT
+    ONT::SOCIAL-CONTRACT)
+  (OVERLAP
+    WN::|right%1:07:00::|
+    WN::|permission%1:10:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (TYPE ONT::MENTAL-CONSTRUCTION))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       SITUATION)
      OPTIONAL)))
 
 (CONCEPT
@@ -177760,19 +177881,12 @@
     WN::|economic_consumption%1:22:00::|
     WN::|consumption%1:22:00::|
     WN::|use%1:07:02::|
-    WN::|exercise%1:04:03::|
-    WN::|employment%1:04:01::|
-    WN::|utilisation%1:04:00::|
-    WN::|utilization%1:04:00::|
-    WN::|usage%1:04:00::|
     WN::|use%1:04:00::|
     WN::|practical_application%1:04:00::|
     WN::|application%1:04:02::|
     WN::|use%2:41:03::|
     WN::|use%2:41:04::|
-    WN::|apply%2:41:01::|
     WN::|practice%2:41:01::|
-    WN::|use%2:41:14::|
     WN::|expend%2:34:00::|
     WN::|use%2:34:00::|
     WN::|habituate%2:34:00::|
@@ -184130,7 +184244,9 @@
   (OVERLAP
     WN::|work%2:41:05::|
     WN::|work%2:41:02::|
-    WN::|toil%2:41:00::|)
+    WN::|toil%2:41:00::|
+    WN::|practice%1:04:03::|
+    WN::|practice%2:41:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)

@@ -1925,6 +1925,10 @@
     WN::|clear%2:40:07::|
     WN::|condone%2:32:00::|)
   (SEM-FRAME
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::AFFECTED
      (OR
        (CONCEPT
@@ -3074,7 +3078,8 @@
   (OVERLAP
     WN::|think%2:31:00::|
     WN::|cogitate%2:31:00::|
-    WN::|cerebrate%2:31:00::|)
+    WN::|cerebrate%2:31:00::|
+    WN::|attention%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -5094,6 +5099,10 @@
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
   (SEM-FRAME
+    (ONT::AFFECTED1
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::AFFECTED-RESULT
      (CONCEPT
        T)
@@ -6338,7 +6347,9 @@
     WN::|gather%2:35:00::|
     WN::|garner%2:35:00::|
     WN::|collect%2:35:00::|
-    WN::|pull_together%2:35:00::|)
+    WN::|pull_together%2:35:00::|
+    WN::|assemble%2:41:03::|
+    WN::|gather%2:35:04::|)
   (SEM-FRAME
     (ONT::AGENT
      (CONCEPT
@@ -7049,7 +7060,10 @@
     WN::|carry_to_term%2:29:00::|
     WN::|hold_one's_own%2:42:00::|
     WN::|succeed%2:41:00::|
-    WN::|excel%2:42:00::|)
+    WN::|excel%2:42:00::|
+    WN::|success%1:11:00::|
+    WN::|success%1:04:00::|
+    WN::|completion%1:04:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -8132,10 +8146,9 @@
 (CONCEPT
   ONT::COPE-DEAL
   (INHERIT
-    ONT::ACTIVE-PERCEPTION)
+    ONT::COMPLETE)
   (OVERLAP
     WN::|dispense_with%2:41:00::|
-    WN::|empathise%2:31:00::|
     WN::|cope%2:41:00::|))
 
 (CONCEPT
@@ -11117,6 +11130,15 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::EMPATHIZE
+  (INHERIT
+    ONT::CARE)
+  (OVERLAP
+    WN::|empathise%2:31:00::|
+    WN::|sympathize%2:37:01::|
+    WN::|sympathize%2:37:00::|))
+
+(CONCEPT
   ONT::EMPIRICAL-VAL
   (INHERIT
     ONT::BASIS-OF-EVIDENCE-VAL)
@@ -11901,6 +11923,8 @@
   (COMMENT "A stative event involving a sentient being in a mental state")
   (INHERIT
     ONT::EVENT-OF-STATE)
+  (OVERLAP
+    WN::|basic_cognitive_process%1:09:00::|)
   (SEM-FRAME
     (ONT::EXPERIENCER
      (SEM-FEATS
@@ -12054,7 +12078,12 @@
   (OVERLAP
     WN::|interest%2:37:00::|
     WN::|preoccupy%2:37:00::|
-    WN::|intrigue%2:42:00::|))
+    WN::|intrigue%2:42:00::|)
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::EVOKE-ATTRACTION
@@ -13286,7 +13315,8 @@
     WN::|worry%1:09:00::|
     WN::|sorrow%1:09:00::|
     WN::|distress%1:12:02::|
-    WN::|restlessness%1:12:00::|)
+    WN::|restlessness%1:12:00::|
+    WN::|mercy%1:07:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -14313,7 +14343,8 @@
   (INHERIT
     ONT::LOCATED-EVENT)
   (OVERLAP
-    WN::|ceremony%1:04:00::|))
+    WN::|ceremony%1:04:00::|
+    WN::|gathering%1:14:00::|))
 
 (CONCEPT
   ONT::GENDER-SCALE
@@ -17074,8 +17105,6 @@
   (OVERLAP
     WN::|cross%2:38:03::|
     WN::|intersect%2:38:00::|
-    WN::|meet%2:41:01::|
-    WN::|get_together%2:41:01::|
     WN::|hold%2:35:01::|
     WN::|coexist%2:42:00::|)
   (SEM-FEATS
@@ -17433,7 +17462,7 @@
 (CONCEPT
   ONT::KEEP-DOWN-VOMIT
   (INHERIT
-    ONT::EXCRETE)
+    ONT::BODILY-PROCESS)
   (OVERLAP
     WN::|keep_down%2:29:00::|))
 
@@ -19047,7 +19076,8 @@
     WN::|have%2:36:00::|
     WN::|have%2:32:00::|
     WN::|have%2:40:02::|
-    WN::|have%2:29:00::|)
+    WN::|have%2:29:00::|
+    WN::|make%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -19141,7 +19171,9 @@
   (COMMENT
    "take responsibility over the production of a project, a program, or a production")
   (INHERIT
-    ONT::CONTROL-MANAGE))
+    ONT::CONTROL-MANAGE)
+  (OVERLAP
+    WN::|management%1:04:00::|))
 
 (CONCEPT
   ONT::MANAGING-RESOURCES
@@ -19195,7 +19227,8 @@
     ONT::CONTROL-MANAGE)
   (OVERLAP
     WN::|operate%2:35:00::|
-    WN::|control%2:35:00::|)
+    WN::|control%2:35:00::|
+    WN::|manipulate%2:35:00::|)
   (SEM-FRAME
     (ONT::AGENT
      (OR
@@ -19697,10 +19730,10 @@
     WN::|assemble%2:41:00::|
     WN::|forgather%2:41:00::|
     WN::|foregather%2:41:00::|
-    WN::|assemble%2:41:03::|
     WN::|come_across%2:38:00::|
     WN::|encounter%2:33:00::|
-    WN::|meet%2:41:03::|)
+    WN::|meet%2:41:03::|
+    WN::|meet%2:41:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -23087,6 +23120,8 @@
   ONT::OUTCOME
   (INHERIT
     ONT::INFORMATION-FUNCTION-OBJECT)
+  (OVERLAP
+    WN::|result%1:11:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -24044,6 +24079,13 @@
       ABSTR-OBJ)
     (SCALE ONT::PITCH-SCALE)
     (TYPE ONT::PITCH-UNIT)))
+
+(CONCEPT
+  ONT::PITY
+  (INHERIT
+    ONT::CARE)
+  (OVERLAP
+    WN::|pity%2:37:00::|))
 
 (CONCEPT
   ONT::PIVOT
@@ -25976,13 +26018,8 @@
      OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         SITUATION)
        (SCALE -)
        (INTENTIONAL -)))
     (ONT::FIGURE
@@ -27876,14 +27913,7 @@
     ONT::PREDICATE))
 
 (CONCEPT
-  ONT::RESULT
-  (INHERIT
-    ONT::OUTCOME)
-  (SEM-FRAME
-    (ONT::FIGURE
-     (CONCEPT
-       T)
-     OPTIONAL)))
+  ONT::RESULT)
 
 (CONCEPT
   ONT::RESULTING-OBJECT
@@ -28157,6 +28187,14 @@
   ONT::RIGHT-OF
   (INHERIT
     ONT::ORIENTED-LOC-RELN))
+
+(CONCEPT
+  ONT::RIGHT-PERMISSION
+  (INHERIT
+    ONT::SOCIAL-CONTRACT)
+  (OVERLAP
+    WN::|right%1:07:00::|
+    WN::|permission%1:10:00::|))
 
 (CONCEPT
   ONT::RISE
@@ -34358,19 +34396,12 @@
     WN::|economic_consumption%1:22:00::|
     WN::|consumption%1:22:00::|
     WN::|use%1:07:02::|
-    WN::|exercise%1:04:03::|
-    WN::|employment%1:04:01::|
-    WN::|utilisation%1:04:00::|
-    WN::|utilization%1:04:00::|
-    WN::|usage%1:04:00::|
     WN::|use%1:04:00::|
     WN::|practical_application%1:04:00::|
     WN::|application%1:04:02::|
     WN::|use%2:41:03::|
     WN::|use%2:41:04::|
-    WN::|apply%2:41:01::|
     WN::|practice%2:41:01::|
-    WN::|use%2:41:14::|
     WN::|expend%2:34:00::|
     WN::|use%2:34:00::|
     WN::|habituate%2:34:00::|
@@ -35622,7 +35653,9 @@
   (OVERLAP
     WN::|work%2:41:05::|
     WN::|work%2:41:02::|
-    WN::|toil%2:41:00::|)
+    WN::|toil%2:41:00::|
+    WN::|practice%1:04:03::|
+    WN::|practice%2:41:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)

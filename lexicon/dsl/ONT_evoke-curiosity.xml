@@ -98,53 +98,27 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::affect-experiencer">
- <comment>
-  &quot;cause an experience on an cognitive agent&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|come_to%2:39:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
-  <feat name="aspect">dynamic</feat>
-  <feat name="type">ont::affect-experiencer</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">living</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <concept name="t" />
-  </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">living</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <concept name="t" />
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::neutral-experience">
+ <sem-feats>
  <relation label="inherit">
-  ont::affect-experiencer
+  situation
  </relation>
- </concept>
- <concept name="ont::evoke-attention">
- <relation label="inherit">
-  ont::neutral-experience
- </relation>
- <relation label="overlap">
-  wn::|interest%2:37:00::|
-  wn::|preoccupy%2:37:00::|
-  wn::|intrigue%2:42:00::|
- </relation>
- </concept>
+ <feat name="cause">agentive</feat>
+ <feat name="aspect">dynamic</feat>
+ <feat name="type">ont::affect-experiencer</feat>
+ </sem-feats>
  <concept name="ont::event-of-causation">
  <comment>
   &quot;events involving an AGENT acting on an AFFECTED&quot;
@@ -181,27 +155,63 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
+ <concept name="ont::evoke-attention">
  <relation label="inherit">
-  situation
+  ont::neutral-experience
  </relation>
- <feat name="cause">agentive</feat>
- <feat name="aspect">dynamic</feat>
- <feat name="type">ont::affect-experiencer</feat>
- </sem-feats>
+ <relation label="overlap">
+  wn::|interest%2:37:00::|
+  wn::|preoccupy%2:37:00::|
+  wn::|intrigue%2:42:00::|
+ </relation>
  <sem-frame>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">living</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <concept name="t" />
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::neutral-experience">
+ <relation label="inherit">
+  ont::affect-experiencer
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
  </role-restr-map>
  </sem-frame>
+ <concept name="ont::affect-experiencer">
+ <comment>
+  &quot;cause an experience on an cognitive agent&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|come_to%2:39:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+  <feat name="aspect">dynamic</feat>
+  <feat name="type">ont::affect-experiencer</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">living</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
