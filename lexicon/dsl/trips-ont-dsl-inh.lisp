@@ -6285,6 +6285,60 @@
        T))))
 
 (CONCEPT
+  ONT::AGAIN
+  (INHERIT
+    ONT::FREQUENCY)
+  (OVERLAP
+    WN::|again%4:02:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (TYPE ONT::TEMPORAL-PREDICATE))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         TIME)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)
+    (ONT::SCALE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          ONT::EVENT-DURATION-MODIFIER
+          ONT::AGE-VAL
+          ONT::TIME-UNIT))
+       (SCALE ONT::DURATION-SCALE))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::AGE
   (INHERIT
     ONT::CHANGE-IN-TIME-MEASURE)
@@ -7952,6 +8006,12 @@
   ONT::ALWAYS
   (INHERIT
     ONT::FREQUENCY)
+  (OVERLAP
+    WN::|always%4:02:00::|
+    WN::|always%4:02:01::|
+    WN::|always%4:02:02::|
+    WN::|always%4:02:03::|
+    WN::|always%4:02:04::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -27087,14 +27147,14 @@
     (INTENTIONAL -)
     (TRAJECTORY -)
     (INFORMATION -)
-    (CONTAINER -)
-    (TANGIBLE +)
+    (ORIGIN F::NATURAL)
     (SPATIAL-ABSTRACTION
      (OR
        F::SPATIAL-POINT
        F::SPATIAL-REGION))
-    (ORIGIN F::NATURAL)
-    (TYPE ONT::NATURAL-OBJECT)))
+    (TANGIBLE +)
+    (CONTAINER +)
+    (TYPE ONT::CELL-LINE)))
 
 (CONCEPT
   ONT::CELL-PART
@@ -31724,12 +31784,29 @@
 (CONCEPT
   ONT::CLINICAL-FINDING
   (INHERIT
-    ONT::RESULT)
+    ONT::OUTCOME)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
        T)
-     OPTIONAL)))
+     OPTIONAL))
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (MOBILITY F::MOVABLE)
+    (CONTAINER +)
+    (INTENTIONAL -)
+    (INFORMATION F::INFORMATION-CONTENT)
+    (TYPE ONT::INFORMATION-FUNCTION-OBJECT)))
 
 (CONCEPT
   ONT::CLOCK-SPEED-SCALE
@@ -72923,7 +73000,8 @@
           ONT::VEHICLE
           ONT::GEO-OBJECT
           ONT::BODY-PART
-          ONT::MACROMOLECULAR-COMPLEX))
+          ONT::MACROMOLECULAR-COMPLEX
+          ONT::CELL-LINE))
        (CONTAINER +)))
     (ONT::FIGURE
      (OR
@@ -107277,6 +107355,9 @@
   ONT::NEVER
   (INHERIT
     ONT::FREQUENCY)
+  (OVERLAP
+    WN::|never%4:02:00::|
+    WN::|never%4:02:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -118461,6 +118542,9 @@
   ONT::OFTEN
   (INHERIT
     ONT::FREQUENCY)
+  (OVERLAP
+    WN::|often%4:02:0o::|
+    WN::|often%4:02:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -135388,8 +135472,13 @@
      OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
        (SCALE -)
        (INTENTIONAL -)))
     (ONT::FIGURE
@@ -144355,9 +144444,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::RESULT)
-
-(CONCEPT
   ONT::RESULTING-OBJECT
   (INHERIT
     ONT::PREDICATE)
@@ -149129,6 +149215,8 @@
   ONT::SELDOM
   (INHERIT
     ONT::FREQUENCY)
+  (OVERLAP
+    WN::|seldom%4:02:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -156787,6 +156875,8 @@
   ONT::SOMETIMES
   (INHERIT
     ONT::FREQUENCY)
+  (OVERLAP
+    WN::|sometimes%4:02:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -178484,6 +178574,60 @@
     (INTENTIONAL -)
     (INFORMATION F::INFORMATION-CONTENT)
     (TYPE ONT::INFORMATION-FUNCTION-OBJECT)))
+
+(CONCEPT
+  ONT::USUALLY
+  (INHERIT
+    ONT::FREQUENCY)
+  (OVERLAP
+    WN::|usually%4:02:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (TYPE ONT::TEMPORAL-PREDICATE))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         TIME)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         PHYS-OBJ))
+     OPTIONAL)
+    (ONT::SCALE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          ONT::EVENT-DURATION-MODIFIER
+          ONT::AGE-VAL
+          ONT::TIME-UNIT))
+       (SCALE ONT::DURATION-SCALE))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::UTILITY

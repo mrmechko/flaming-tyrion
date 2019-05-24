@@ -1058,6 +1058,13 @@
     WN::|postmortem%5:00:00:succeeding:00|))
 
 (CONCEPT
+  ONT::AGAIN
+  (INHERIT
+    ONT::FREQUENCY)
+  (OVERLAP
+    WN::|again%4:02:00::|))
+
+(CONCEPT
   ONT::AGE
   (INHERIT
     ONT::CHANGE-IN-TIME-MEASURE)
@@ -1368,7 +1375,13 @@
 (CONCEPT
   ONT::ALWAYS
   (INHERIT
-    ONT::FREQUENCY))
+    ONT::FREQUENCY)
+  (OVERLAP
+    WN::|always%4:02:00::|
+    WN::|always%4:02:01::|
+    WN::|always%4:02:02::|
+    WN::|always%4:02:03::|
+    WN::|always%4:02:04::|))
 
 (CONCEPT
   ONT::AMASS
@@ -5229,7 +5242,12 @@
 (CONCEPT
   ONT::CELL-LINE
   (INHERIT
-    ONT::NATURAL-OBJECT))
+    ONT::NATURAL-OBJECT)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (CONTAINER +)
+    (TYPE ONT::CELL-LINE)))
 
 (CONCEPT
   ONT::CELL-PART
@@ -6084,7 +6102,7 @@
 (CONCEPT
   ONT::CLINICAL-FINDING
   (INHERIT
-    ONT::RESULT)
+    ONT::OUTCOME)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -21160,7 +21178,10 @@
 (CONCEPT
   ONT::NEVER
   (INHERIT
-    ONT::FREQUENCY))
+    ONT::FREQUENCY)
+  (OVERLAP
+    WN::|never%4:02:00::|
+    WN::|never%4:02:01::|))
 
 (CONCEPT
   ONT::NO-COST-VAL
@@ -22670,7 +22691,10 @@
 (CONCEPT
   ONT::OFTEN
   (INHERIT
-    ONT::FREQUENCY))
+    ONT::FREQUENCY)
+  (OVERLAP
+    WN::|often%4:02:0o::|
+    WN::|often%4:02:01::|))
 
 (CONCEPT
   ONT::OLD-VAL
@@ -26018,8 +26042,13 @@
      OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
        (SCALE -)
        (INTENTIONAL -)))
     (ONT::FIGURE
@@ -27913,9 +27942,6 @@
     ONT::PREDICATE))
 
 (CONCEPT
-  ONT::RESULT)
-
-(CONCEPT
   ONT::RESULTING-OBJECT
   (INHERIT
     ONT::PREDICATE)
@@ -28959,7 +28985,9 @@
 (CONCEPT
   ONT::SELDOM
   (INHERIT
-    ONT::FREQUENCY))
+    ONT::FREQUENCY)
+  (OVERLAP
+    WN::|seldom%4:02:00::|))
 
 (CONCEPT
   ONT::SELECT
@@ -30508,7 +30536,9 @@
 (CONCEPT
   ONT::SOMETIMES
   (INHERIT
-    ONT::FREQUENCY))
+    ONT::FREQUENCY)
+  (OVERLAP
+    WN::|sometimes%4:02:01::|))
 
 (CONCEPT
   ONT::SOON
@@ -34512,6 +34542,13 @@
        (CONCEPT
          ABSTR-OBJ))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::USUALLY
+  (INHERIT
+    ONT::FREQUENCY)
+  (OVERLAP
+    WN::|usually%4:02:00::|))
 
 (CONCEPT
   ONT::UTILITY

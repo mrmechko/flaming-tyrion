@@ -1190,6 +1190,14 @@
    wn::|postmortem%5:00:00:succeeding:00|
   </relation>
  </concept>
+ <concept name="ont::again">
+  <relation label="inherit">
+   ont::frequency
+  </relation>
+  <relation label="overlap">
+   wn::|again%4:02:00::|
+  </relation>
+ </concept>
  <concept name="ont::age">
   <relation label="inherit">
    ont::change-in-time-measure
@@ -1553,6 +1561,13 @@
  <concept name="ont::always">
   <relation label="inherit">
    ont::frequency
+  </relation>
+  <relation label="overlap">
+   wn::|always%4:02:00::|
+   wn::|always%4:02:01::|
+   wn::|always%4:02:02::|
+   wn::|always%4:02:03::|
+   wn::|always%4:02:04::|
   </relation>
  </concept>
  <concept name="ont::amass">
@@ -5977,6 +5992,13 @@
   <relation label="inherit">
    ont::natural-object
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="container">+</feat>
+   <feat name="type">ont::cell-line</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::cell-part">
   <relation label="inherit">
@@ -6962,7 +6984,7 @@
  </concept>
  <concept name="ont::clinical-finding">
   <relation label="inherit">
-   ont::result
+   ont::outcome
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
@@ -24313,6 +24335,10 @@
   <relation label="inherit">
    ont::frequency
   </relation>
+  <relation label="overlap">
+   wn::|never%4:02:00::|
+   wn::|never%4:02:01::|
+  </relation>
  </concept>
  <concept name="ont::no-cost-val">
   <relation label="inherit">
@@ -26049,6 +26075,10 @@
  <concept name="ont::often">
   <relation label="inherit">
    ont::frequency
+  </relation>
+  <relation label="overlap">
+   wn::|often%4:02:0o::|
+   wn::|often%4:02:01::|
   </relation>
  </concept>
  <concept name="ont::old-val">
@@ -29893,9 +29923,11 @@
    </role-restr-map>
    <role-restr-map roles="ont::ground">
     <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+     </or>
      <feat name="scale">-</feat>
      <feat name="intentional">-</feat>
     </sem-feats>
@@ -32034,7 +32066,6 @@
    ont::predicate
   </relation>
  </concept>
- <concept name="ont::result" />
  <concept name="ont::resulting-object">
   <relation label="inherit">
    ont::predicate
@@ -33198,6 +33229,9 @@
  <concept name="ont::seldom">
   <relation label="inherit">
    ont::frequency
+  </relation>
+  <relation label="overlap">
+   wn::|seldom%4:02:00::|
   </relation>
  </concept>
  <concept name="ont::select">
@@ -34970,6 +35004,9 @@
  <concept name="ont::sometimes">
   <relation label="inherit">
    ont::frequency
+  </relation>
+  <relation label="overlap">
+   wn::|sometimes%4:02:01::|
   </relation>
  </concept>
  <concept name="ont::soon">
@@ -39534,6 +39571,14 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::usually">
+  <relation label="inherit">
+   ont::frequency
+  </relation>
+  <relation label="overlap">
+   wn::|usually%4:02:00::|
+  </relation>
  </concept>
  <concept name="ont::utility">
   <relation label="inherit">
