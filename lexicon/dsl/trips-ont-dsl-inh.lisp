@@ -118543,7 +118543,7 @@
   (INHERIT
     ONT::FREQUENCY)
   (OVERLAP
-    WN::|often%4:02:0o::|
+    WN::|often%4:02:00::|
     WN::|often%4:02:01::|)
   (SEM-FEATS
     (INHERIT
