@@ -470,16 +470,16 @@
  <comment>
   &quot;Y1-VARIATIONS&quot;
  </comment>
- <example text="bill it to my account">
+ <example text="bill the trip to my account">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::commerce-collect
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-source-templ" xp="'(w::pp w::to)" />
+  <template-call template="ont::agent-affected-ar-to-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::to" sem-role="ont::source"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::to" sem-role="ont::affected-result"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
@@ -499,16 +499,17 @@
  <comment>
   &quot;Y1-VARIATIONS&quot;
  </comment>
- <example text="bill my account">
+ <example text="bill my account (for the trip)">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::commerce-collect
  </relation>
  <syntax>
-  <template-call template="ont::agent-source-templ" />
+  <template-call template="ont::agent-goal-affected-templ" xp="'(w::pp w::for)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::source"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected-result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

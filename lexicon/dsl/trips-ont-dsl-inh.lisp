@@ -10331,7 +10331,8 @@
     WN::|appreciate%2:37:00::|
     WN::|like%2:37:04::|
     WN::|love%2:37:00::|
-    WN::|like%2:37:05::|)
+    WN::|like%2:37:05::|
+    WN::|appeal%2:37:00::|)
   (SEM-FRAME
     (ONT::NOROLE
      (CONCEPT
@@ -117212,7 +117213,6 @@
     ONT::EVENT-OF-CAUSATION)
   (OVERLAP
     WN::|force%1:07:01::|
-    WN::|appeal%2:37:00::|
     WN::|keep_up%2:29:00::|
     WN::|retire%2:33:00::|
     WN::|stampede%2:38:01::|
@@ -136885,7 +136885,9 @@
     ONT::CHANGE-IN-SOUND-SCALE)
   (OVERLAP
     WN::|deafen%2:30:01::|
-    WN::|quieten%2:39:00::|)
+    WN::|quieten%2:39:00::|
+    WN::|hush%2:30:00::|
+    WN::|hush%2:30:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -166292,9 +166294,7 @@
     WN::|keep_down%2:41:00::|
     WN::|break_in%2:30:00::|
     WN::|tame%2:30:00::|
-    WN::|hush%2:30:00::|
-    WN::|break%2:30:12::|
-    WN::|quieten%2:30:00::|)
+    WN::|break%2:30:12::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
