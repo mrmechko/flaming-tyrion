@@ -852,6 +852,9 @@
   </relation>
  </concept>
  <concept name="ont::add-include">
+  <comment>
+   &quot;asymettric composition: one object becomes part of another&quot;
+  </comment>
   <relation label="inherit">
    ont::adjust
   </relation>
@@ -7505,7 +7508,7 @@
  </concept>
  <concept name="ont::combine-objects">
   <comment>
-   &quot;symmetric combination of objects, abstract or physical: e.g., X combines with y = y combines with x = x and y combine&quot;
+   &quot;symmetric combination of objects, abstract or physical: e.g., X combines with y = y combines with x = x and y combine;  the result is a new combination where the original objects cannot be separated&quot;
   </comment>
   <relation label="inherit">
    ont::event-of-causation
@@ -7538,6 +7541,15 @@
    <feat name="cause">agentive</feat>
    <feat name="type">ont::combine-objects</feat>
   </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::affected1" optional="optional">
+    <or>
+     <concept name="situation" />
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::come">
   <relation label="inherit">

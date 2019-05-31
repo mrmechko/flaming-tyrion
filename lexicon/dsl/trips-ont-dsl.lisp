@@ -748,6 +748,7 @@
 
 (CONCEPT
   ONT::ADD-INCLUDE
+  (COMMENT "asymettric composition: one object becomes part of another")
   (INHERIT
     ONT::ADJUST)
   (OVERLAP
@@ -6570,7 +6571,7 @@
 (CONCEPT
   ONT::COMBINE-OBJECTS
   (COMMENT
-   "symmetric combination of objects, abstract or physical: e.g., X combines with y = y combines with x = x and y combine")
+   "symmetric combination of objects, abstract or physical: e.g., X combines with y = y combines with x = x and y combine;  the result is a new combination where the original objects cannot be separated")
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
   (OVERLAP
@@ -6597,7 +6598,17 @@
       SITUATION)
     (TRAJECTORY +)
     (CAUSE AGENTIVE)
-    (TYPE ONT::COMBINE-OBJECTS)))
+    (TYPE ONT::COMBINE-OBJECTS))
+  (SEM-FRAME
+    (ONT::AFFECTED1
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::COME
