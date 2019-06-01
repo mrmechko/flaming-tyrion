@@ -46133,6 +46133,10 @@
      (CONCEPT
        T)
      OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -46161,6 +46165,10 @@
   (INHERIT
     ONT::DEGREE-MODIFIER)
   (SEM-FRAME
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
@@ -46192,6 +46200,10 @@
   (INHERIT
     ONT::DEGREE-MODIFIER)
   (SEM-FRAME
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
@@ -46243,6 +46255,10 @@
      (CONCEPT
        T)
      OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -46272,6 +46288,10 @@
     (TYPE ONT::MODIFIER))
   (SEM-FRAME
     (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
@@ -46307,6 +46327,10 @@
      (CONCEPT
        T)
      OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -46336,6 +46360,10 @@
     (TYPE ONT::MODIFIER))
   (SEM-FRAME
     (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
@@ -58819,6 +58847,10 @@
      (CONCEPT
        T)
      OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
@@ -60701,7 +60733,7 @@
     ONT::WORSEN-EXPERIENCE)
   (OVERLAP
     WN::|hurt%2:29:01::|
-    WN::|hurt%2:39:01::|
+    WN::|hurt%2:39:00::|
     WN::|hurt%2:37:01::|)
   (SEM-FEATS
     (INHERIT
@@ -61005,7 +61037,8 @@
   (OVERLAP
     WN::|irritate%2:29:00::|
     WN::|chafe%2:39:00::|
-    WN::|rub%2:35:01::|)
+    WN::|rub%2:35:01::|
+    WN::|itch%2:39:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -63395,9 +63428,6 @@
   ONT::EXPERIENCER-OBJ
   (INHERIT
     ONT::EVENT-OF-UNDERGOING-ACTION)
-  (OVERLAP
-    WN::|itch%2:39:02::|
-    WN::|ache%2:39:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -73877,6 +73907,10 @@
   (INHERIT
     ONT::MODIFIER)
   (SEM-FRAME
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
        (INHERIT
@@ -85212,6 +85246,10 @@
      (CONCEPT
        T)
      OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
@@ -89897,6 +89935,10 @@
     (TYPE ONT::MODIFIER))
   (SEM-FRAME
     (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
@@ -101557,6 +101599,10 @@
     (TYPE ONT::MODIFIER))
   (SEM-FRAME
     (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
@@ -124977,7 +125023,9 @@
     WN::|queasy%3:00:00:ill:01|
     WN::|sickish%3:00:00:ill:01|
     WN::|shivering%1:26:00::|
-    WN::|nausea%1:26:00::|)
+    WN::|nausea%1:26:00::|
+    WN::|itch%2:39:00::|
+    WN::|ache%2:39:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -136191,6 +136239,10 @@
     (TYPE ONT::MODIFIER))
   (SEM-FRAME
     (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
@@ -149352,7 +149404,11 @@
   (INHERIT
     ONT::MOVE)
   (OVERLAP
-    WN::|splash%2:35:02::|)
+    WN::|splash%2:35:02::|
+    WN::|walk%2:38:00::|
+    WN::|walk%2:38:02::|
+    WN::|walk%2:38:04::|
+    WN::|walk%2:38:03::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -181070,10 +181126,7 @@
   (INHERIT
     ONT::CAUSE-MOVE)
   (OVERLAP
-    WN::|walk%2:38:05::|
-    WN::|walk%2:38:00::|
-    WN::|walk%2:38:02::|
-    WN::|walk%2:38:04::|)
+    WN::|walk%2:38:05::|)
   (SEM-FRAME
     (ONT::REASON
      (SEM-FEATS
