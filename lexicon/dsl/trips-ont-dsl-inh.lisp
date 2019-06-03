@@ -47733,6 +47733,7 @@
     WN::|destroy%2:36:00::|
     WN::|down%2:38:00::|
     WN::|knock_out%2:30:00::|
+    WN::|knock_out%2:30:01::|
     WN::|abortion%1:04:00::|)
   (SEM-FRAME
     (ONT::AGENT
