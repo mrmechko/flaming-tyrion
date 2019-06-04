@@ -913,7 +913,8 @@
   (OVERLAP
     WN::|accept%2:40:03::|
     WN::|admit%2:41:00::|
-    WN::|invite%2:35:12::|))
+    WN::|invite%2:35:12::|
+    WN::|admit%2:41:01::|))
 
 (CONCEPT
   ONT::ADORNED-VAL
@@ -6100,16 +6101,6 @@
       PHYS-OBJ)
     (ORIGIN NON-LIVING)
     (TYPE ONT::CLIMATE)))
-
-(CONCEPT
-  ONT::CLINICAL-FINDING
-  (INHERIT
-    ONT::OUTCOME)
-  (SEM-FRAME
-    (ONT::FIGURE
-     (CONCEPT
-       T)
-     OPTIONAL)))
 
 (CONCEPT
   ONT::CLOCK-SPEED-SCALE
@@ -30451,7 +30442,8 @@
     WN::|banishment%1:04:00::|
     WN::|expel%2:41:01::|
     WN::|expel%2:41:00::|
-    WN::|ouster%1:04:00::|)
+    WN::|ouster%1:04:00::|
+    WN::|repatriate%2:41:01::|)
   (SEM-FRAME
     (ONT::FORMAL
      (SEM-FEATS

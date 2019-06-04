@@ -4992,7 +4992,8 @@
   (OVERLAP
     WN::|accept%2:40:03::|
     WN::|admit%2:41:00::|
-    WN::|invite%2:35:12::|)
+    WN::|invite%2:35:12::|
+    WN::|admit%2:41:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -31782,33 +31783,6 @@
        F::SPATIAL-REGION))
     (ORIGIN F::NON-LIVING)
     (TYPE ONT::CLIMATE)))
-
-(CONCEPT
-  ONT::CLINICAL-FINDING
-  (INHERIT
-    ONT::OUTCOME)
-  (SEM-FRAME
-    (ONT::FIGURE
-     (CONCEPT
-       T)
-     OPTIONAL))
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE +)
-    (MOBILITY F::MOVABLE)
-    (CONTAINER +)
-    (INTENTIONAL -)
-    (INFORMATION F::INFORMATION-CONTENT)
-    (TYPE ONT::INFORMATION-FUNCTION-OBJECT)))
 
 (CONCEPT
   ONT::CLOCK-SPEED-SCALE
@@ -156398,7 +156372,8 @@
     WN::|banishment%1:04:00::|
     WN::|expel%2:41:01::|
     WN::|expel%2:41:00::|
-    WN::|ouster%1:04:00::|)
+    WN::|ouster%1:04:00::|
+    WN::|repatriate%2:41:01::|)
   (SEM-FRAME
     (ONT::AGENT
      (SEM-FEATS
