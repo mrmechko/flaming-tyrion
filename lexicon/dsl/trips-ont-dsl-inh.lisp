@@ -59608,7 +59608,7 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::EVENT-TIME
+  ONT::EVENT-TIME-INITIALLY
   (INHERIT
     ONT::EVENT-TIME-REL)
   (SEM-FRAME
@@ -91186,63 +91186,32 @@
 (CONCEPT
   ONT::LIFECYCLE-STAGE
   (INHERIT
-    ONT::DOMAIN-PROPERTY)
+    ONT::EVENT-TYPE)
   (OVERLAP
     WN::|time_of_life%1:28:00::|)
   (SEM-FRAME
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE
-        (OR
-          ONT::NATURAL-GROUP
-          ONT::ORGANISM))
        (ORIGIN F::LIVING))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+      SITUATION)
     (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
+    (ASPECT ANY-ASPECT)
+    (CAUSE ANY-CAUSE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
     (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (SCALE ONT::DOMAIN)
-    (TYPE ONT::DOMAIN-PROPERTY)))
+    (IOBJ -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (INTENTIONAL -)
+    (TYPE ONT::EVENT-TYPE)))
 
 (CONCEPT
   ONT::LIGHT
@@ -171078,24 +171047,22 @@
 (CONCEPT
   ONT::TIME-REL-SO-FAR
   (INHERIT
-    ONT::EVENT-DURATION-MODIFIER)
+    ONT::EVENT-TIME-WRT-NOW)
   (OVERLAP
     WN::|so_far%4:02:00::|)
   (SEM-FRAME
     (ONT::GROUND
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           ABSTR-OBJ))
-       (SCALE ONT::DURATION-SCALE))
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         TIME))
      OPTIONAL)
-    (ONT::STANDARD
+    (ONT::SCALE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::SCALE
+    (ONT::STANDARD
      (CONCEPT
        T)
      OPTIONAL)
@@ -171117,10 +171084,10 @@
     (INFORMATION -)
     (CONTAINER -)
     (MEASURE-FUNCTION -)
+    (SCALE -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (SCALE ONT::DURATION-SCALE)
-    (TYPE ONT::EVENT-DURATION-MODIFIER)))
+    (TYPE ONT::TEMPORAL-PREDICATE)))
 
 (CONCEPT
   ONT::TIME-SPAN

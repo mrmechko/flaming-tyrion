@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::lifecycle-stage">
  <relation label="inherit">
-  ont::domain-property
+  ont::event-type
  </relation>
  <relation label="overlap">
   wn::|time_of_life%1:28:00::|
@@ -28,9 +28,13 @@
  <concept name="ont::root" />
  <sem-feats>
  <relation label="inherit">
-  abstr-obj
+  situation
  </relation>
- <feat name="type">ont::abstract-object</feat>
+ <feat name="tangible">+</feat>
+ <feat name="container">-</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="intentional">-</feat>
+ <feat name="type">ont::situation-root</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -51,61 +55,29 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::refset" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::compar" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="type">ont::number</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::scale" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">ont::domain</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
-  abstr-obj
+  situation
  </relation>
- <feat name="scale">ont::domain</feat>
- <feat name="type">ont::domain-property</feat>
+ <feat name="intentional">-</feat>
+ <feat name="type">ont::event-type</feat>
  </sem-feats>
- <concept name="ont::abstract-object">
+ <concept name="ont::situation-root">
  <comment>
-  &quot;abstract objects, mental constructions, with no physical realization&quot;
+  &quot;root for all events, whether verbal or nominal&quot;
  </comment>
  <relation label="inherit">
   ont::referential-sem
  </relation>
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00::|
-  wn::|abstraction%1:03:00::|
-  wn::|abstract_entity%1:03:00::|
- </relation>
  <sem-feats>
   <relation label="inherit">
-   abstr-obj
+   situation
   </relation>
-  <feat name="type">ont::abstract-object</feat>
+  <feat name="tangible">+</feat>
+  <feat name="container">-</feat>
+  <feat name="information">mental-construct</feat>
+  <feat name="intentional">-</feat>
+  <feat name="type">ont::situation-root</feat>
  </sem-feats>
  </concept>
  <sem-frame>
@@ -118,51 +90,21 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::domain-property">
+ <concept name="ont::event-type">
  <comment>
-  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+  &quot;classification of situated events based on social or other criteria, and typically realized by nominals, i.e.,
+        they are not nominalization of verbal events&quot;
  </comment>
  <relation label="inherit">
-  ont::abstract-object
+  ont::situation-root
  </relation>
  <sem-feats>
   <relation label="inherit">
-   abstr-obj
+   situation
   </relation>
-  <feat name="scale">ont::domain</feat>
-  <feat name="type">ont::domain-property</feat>
+  <feat name="intentional">-</feat>
+  <feat name="type">ont::event-type</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::refset" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::compar" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="type">ont::number</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::scale" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">ont::domain</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::any-sem">
  <relation label="inherit">
@@ -177,7 +119,7 @@
  </or>
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
- <concept name="abstr-obj" />
+ <concept name="situation" />
  <sense>
  <morph>
   <pos pos="n" />
