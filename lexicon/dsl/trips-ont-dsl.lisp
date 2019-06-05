@@ -2611,7 +2611,9 @@
   (INHERIT
     ONT::NATURAL-PHENOMENON)
   (OVERLAP
-    WN::|atmospheric_phenomenon%1:19:00::|)
+    WN::|atmospheric_phenomenon%1:19:00::|
+    WN::|cloud%1:19:01::|
+    WN::|smoke%1:22:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -11129,6 +11131,20 @@
     WN::|emission%1:04:00::|
     WN::|emit%2:43:00::|
     WN::|leak%2:30:00::|))
+
+(CONCEPT
+  ONT::EMIT-VAPOR
+  (INHERIT
+    ONT::EMIT-GIVEOFF-DISCHARGE)
+  (OVERLAP
+    WN::|smoke%2:43:00::|
+    WN::|steam%2:43:00::|)
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL -)))))
 
 (CONCEPT
   ONT::EMOTION-SCALE
@@ -30205,7 +30221,15 @@
   (INHERIT
     ONT::CONSUME)
   (OVERLAP
-    WN::|smoke%2:34:00::|))
+    WN::|smoke%2:34:00::|
+    WN::|smoking%1:04:00::|)
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)
+       (ORIGIN LIVING)))))
 
 (CONCEPT
   ONT::SMOOTH-VAL

@@ -14049,7 +14049,9 @@
   (INHERIT
     ONT::NATURAL-PHENOMENON)
   (OVERLAP
-    WN::|atmospheric_phenomenon%1:19:00::|)
+    WN::|atmospheric_phenomenon%1:19:00::|
+    WN::|cloud%1:19:01::|
+    WN::|smoke%1:22:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -55966,6 +55968,78 @@
        (INTENTIONAL -)
        (TYPE ONT::ABSTRACT-OBJECT))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::EMIT-VAPOR
+  (INHERIT
+    ONT::EMIT-GIVEOFF-DISCHARGE)
+  (OVERLAP
+    WN::|smoke%2:43:00::|
+    WN::|steam%2:43:00::|)
+  (SEM-FRAME
+    (ONT::RESULT
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (INTENTIONAL -)
+       (TYPE ONT::ABSTRACT-OBJECT))
+     OPTIONAL)
+    (ONT::AFFECTED-RESULT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE
+        (OR
+          ONT::PHYS-OBJECT
+          ONT::MENTAL-CONSTRUCTION
+          ONT::INFORMATION-FUNCTION-OBJECT))
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::PHYS-OBJECT
+          ONT::MENTAL-CONSTRUCTION
+          ONT::INFORMATION-FUNCTION-OBJECT)))
+     OPTIONAL)
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE
+        (OR
+          ONT::SHAPE
+          ONT::PHYS-REPRESENTATION
+          ONT::FLAG
+          ONT::AUDIO
+          ONT::BODY-PART))
+       (INTENTIONAL -))))
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (ASPECT F::DYNAMIC)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (INTENTIONAL -)
+    (TRAJECTORY -)
+    (CAUSE F::AGENTIVE)
+    (TYPE ONT::CREATE)))
 
 (CONCEPT
   ONT::EMOTION-SCALE
@@ -155293,7 +155367,36 @@
   (INHERIT
     ONT::CONSUME)
   (OVERLAP
-    WN::|smoke%2:34:00::|)
+    WN::|smoke%2:34:00::|
+    WN::|smoking%1:04:00::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE
+        (OR
+          ONT::FOOD
+          ONT::WATER
+          ONT::MEDICATION))
+       (TANGIBLE +)
+       (OBJECT-FUNCTION F::COMESTIBLE)
+       (MOBILITY F::MOVABLE)))
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::NATURAL-GROUP
+          ONT::ORGANISM))
+       (INTENTIONAL +)
+       (ORIGIN F::LIVING))))
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -155309,34 +155412,7 @@
     (INTENTIONAL -)
     (CAUSE F::FORCE)
     (TRAJECTORY -)
-    (TYPE ONT::CONSUME))
-  (SEM-FRAME
-    (ONT::RESULT
-     (CONCEPT
-       ABSTR-OBJ)
-     OPTIONAL)
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE
-        (OR
-          ONT::FOOD
-          ONT::WATER
-          ONT::MEDICATION))
-       (TANGIBLE +)
-       (OBJECT-FUNCTION F::COMESTIBLE)
-       (MOBILITY F::MOVABLE)))
-    (ONT::AGENT
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE
-        (OR
-          ONT::NATURAL-GROUP
-          ONT::ORGANISM))
-       (TANGIBLE +)
-       (ORIGIN F::LIVING)))))
+    (TYPE ONT::CONSUME)))
 
 (CONCEPT
   ONT::SMOOTH-VAL
