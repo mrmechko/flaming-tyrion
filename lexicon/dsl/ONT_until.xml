@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::until">
  <relation label="inherit">
-  ont::event-time-rel
+  ont::since-until
  </relation>
  </concept>
  <or>
@@ -144,6 +144,11 @@
    </or>
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::since-until">
+ <relation label="inherit">
+  ont::event-time-rel
+ </relation>
  </concept>
  <concept name="ont::temporal-predicate">
  <relation label="inherit">
@@ -422,6 +427,81 @@
  <morph>
   <pos pos="adv" />
   <word first-word="up" remaining-words="to" />
+ </morph>
+ <relation label="inherit">
+  ont::until
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::s" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="up" remaining-words="till" />
+ </morph>
+ <relation label="inherit">
+  ont::until
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::s" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="up" remaining-words="until" />
+ </morph>
+ <relation label="inherit">
+  ont::until
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::s" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="upto" />
  </morph>
  <relation label="inherit">
   ont::until

@@ -153726,6 +153726,94 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::SINCE
+  (INHERIT
+    ONT::SINCE-UNTIL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (TYPE ONT::TEMPORAL-PREDICATE))
+  (SEM-FRAME
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         TIME))
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         TIME)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::SINCE-UNTIL
+  (INHERIT
+    ONT::EVENT-TIME-REL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (TYPE ONT::TEMPORAL-PREDICATE))
+  (SEM-FRAME
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         TIME))
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         TIME)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::SING
   (INHERIT
     ONT::SAY)
@@ -177368,7 +177456,7 @@
 (CONCEPT
   ONT::UNTIL
   (INHERIT
-    ONT::EVENT-TIME-REL)
+    ONT::SINCE-UNTIL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
