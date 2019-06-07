@@ -14144,6 +14144,7 @@
            PHYS-OBJ)
          (CONCEPT
            ABSTR-OBJ))
+       (MOBILITY MOVABLE)
        (SPATIAL-ABSTRACTION ?!SA))
      OPTIONAL)
     (ONT::FIGURE
@@ -30709,6 +30710,12 @@
   (INHERIT
     ONT::FROM)
   (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (MOBILITY MOVABLE))
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        PHYS-OBJ)
