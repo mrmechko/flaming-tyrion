@@ -10,11 +10,7 @@
   ont::date-object-in
  </relation>
  <relation label="overlap">
-  wn::|morning%1:28:00::|
-  wn::|evening%1:28:00::|
-  wn::|night%1:28:00::|
   wn::|twilight%1:28:00::|
-  wn::|afternoon%1:28:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -85,46 +81,62 @@
  <feat name="time-function">any-time-function</feat>
  <feat name="type">ont::any-time-object</feat>
  </sem-feats>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="afternoon" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
+ <concept name="ont::morning-am">
  <relation label="inherit">
   ont::day-stage
  </relation>
- <syntax>
-  <template-call template="ont::time-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-function">day-period</feat>
-  </sem-feats>
- </semantics>
- </sense>
+ <relation label="overlap">
+  wn::|morning%1:28:00::|
+ </relation>
+ </concept>
+ <concept name="ont::dat-stage-pm">
+ <relation label="inherit">
+  ont::day-stage
+ </relation>
+ <relation label="overlap">
+  wn::|morning%1:28:00::|
+ </relation>
+ </concept>
+ <concept name="ont::afternoon">
+ <relation label="inherit">
+  ont::day-stage
+ </relation>
+ <relation label="overlap">
+  wn::|afternoon%1:28:00::|
+ </relation>
+ </concept>
+ <concept name="ont::noon">
+ <relation label="inherit">
+  ont::day-stage
+ </relation>
+ <relation label="overlap">
+  wn::|noon%1:28:00::|
+ </relation>
+ </concept>
+ <concept name="ont::evening">
+ <relation label="inherit">
+  ont::day-stage
+ </relation>
+ <relation label="overlap">
+  wn::|evening%1:28:00::|
+ </relation>
+ </concept>
+ <concept name="ont::night">
+ <relation label="inherit">
+  ont::day-stage
+ </relation>
+ <relation label="overlap">
+  wn::|night%1:28:00::|
+ </relation>
+ </concept>
+ <concept name="ont::midnight">
+ <relation label="inherit">
+  ont::day-stage
+ </relation>
+ <relation label="overlap">
+  wn::|midnight%1:28:00::|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="n" />
@@ -167,123 +179,6 @@
     day-period
    </or>
    </feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="evening" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <relation label="inherit">
-  ont::day-stage
- </relation>
- <syntax>
-  <template-call template="ont::time-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-function">day-period</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="morn" />
- </morph>
- <relation label="inherit">
-  ont::day-stage
- </relation>
- <syntax>
-  <template-call template="ont::time-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-function">day-period</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="morning" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <relation label="inherit">
-  ont::day-stage
- </relation>
- <syntax>
-  <template-call template="ont::time-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-function">day-period</feat>
   </sem-feats>
  </semantics>
  </sense>

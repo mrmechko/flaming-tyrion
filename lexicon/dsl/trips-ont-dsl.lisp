@@ -1060,6 +1060,13 @@
     WN::|postmortem%5:00:00:succeeding:00|))
 
 (CONCEPT
+  ONT::AFTERNOON
+  (INHERIT
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|afternoon%1:28:00::|))
+
+(CONCEPT
   ONT::AGAIN
   (INHERIT
     ONT::FREQUENCY)
@@ -4728,7 +4735,7 @@
 (CONCEPT
   ONT::CARD
   (INHERIT
-    ONT::FUNCTIONAL-PHYS-OBJECT)
+    ONT::MANUFACTURED-OBJECT)
   (OVERLAP
     WN::|card%1:06:00::|))
 
@@ -5027,6 +5034,32 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::CAUSE-IN
+  (INHERIT
+    ONT::EVENT-OF-CAUSATION)
+  (OVERLAP
+    WN::|inject%2:29:00::|
+    WN::|inject%2:35:00::|
+    WN::|inject%2:34:01::|
+    WN::|insert%2:35:00::|
+    WN::|insert%2:30:00::|
+    WN::|insert%2:35:01::|)
+  (SEM-FRAME
+    (ONT::AFFECTED-RESULT
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::SOURCE
+     (CONCEPT
+       T))
+    (ONT::AGENT
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::CAUSE-INTERACT
@@ -8885,6 +8918,13 @@
     WN::|darkness%1:26:00::|))
 
 (CONCEPT
+  ONT::DAT-STAGE-PM
+  (INHERIT
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|morning%1:28:00::|))
+
+(CONCEPT
   ONT::DATA
   (COMMENT "A group of information organized in some way")
   (INHERIT
@@ -8964,16 +9004,18 @@
   (INHERIT
     ONT::DATE-OBJECT-IN)
   (OVERLAP
-    WN::|morning%1:28:00::|
-    WN::|evening%1:28:00::|
-    WN::|night%1:28:00::|
-    WN::|twilight%1:28:00::|
-    WN::|afternoon%1:28:00::|)
+    WN::|twilight%1:28:00::|)
   (SEM-FEATS
     (INHERIT
       TIME)
     (TIME-FUNCTION DAY-PERIOD)
     (TYPE ONT::DAY-STAGE)))
+
+(CONCEPT
+  ONT::DAY-STAGE-SUNRISE)
+
+(CONCEPT
+  ONT::DAY-STAGE-SUNSET)
 
 (CONCEPT
   ONT::DAZED-VAL
@@ -10816,6 +10858,14 @@
     WN::|enthusiastic%3:00:00::|))
 
 (CONCEPT
+  ONT::EARLY-IN-PROCESS
+  (INHERIT
+    ONT::SCHEDULED-TIME-MODIFIER)
+  (OVERLAP
+    WN::|early%3:02:02::|
+    WN::|early%4:02:00::|))
+
+(CONCEPT
   ONT::EARNING
   (INHERIT
     ONT::ACQUIRE)
@@ -11734,32 +11784,11 @@
     WN::|quality%1:07:02::|))
 
 (CONCEPT
-  ONT::EVALUATION-VAL
+  ONT::EVENING
   (INHERIT
-    ONT::RELATION)
-  (SEM-FRAME
-    (ONT::NEUTRAL1
-     (OR
-       (CONCEPT
-         TIME)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         TIME)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)))
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|evening%1:28:00::|))
 
 (CONCEPT
   ONT::EVENT-DEFINED-BY-ACTIVITY
@@ -14251,6 +14280,8 @@
 
 (CONCEPT
   ONT::FUNCTIONAL-PHYS-OBJECT
+  (COMMENT
+   "These are objects that are described by their function in an activity- and have other physical descriptions: e.g., the things you are travelling with is LUGGAGE")
   (INHERIT
     ONT::PHYS-OBJECT)
   (OVERLAP
@@ -17824,6 +17855,14 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::LATE-IN-PROCESS
+  (INHERIT
+    ONT::SCHEDULED-TIME-MODIFIER)
+  (OVERLAP
+    WN::|late%3:02:02::|
+    WN::|late%4:02:00::|))
+
+(CONCEPT
   ONT::LEAN-VAL
   (INHERIT
     ONT::FATTINESS-VAL))
@@ -19187,6 +19226,8 @@
 
 (CONCEPT
   ONT::MAN-MADE-STRUCTURE
+  (COMMENT
+   "man made structures that are attached to the earther and thus act like locations")
   (INHERIT
     ONT::FUNCTIONAL-REGION))
 
@@ -20009,6 +20050,13 @@
     WN::|intermediate%3:00:00::|))
 
 (CONCEPT
+  ONT::MIDNIGHT
+  (INHERIT
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|midnight%1:28:00::|))
+
+(CONCEPT
   ONT::MIGRATION
   (INHERIT
     ONT::TRIP))
@@ -20361,6 +20409,13 @@
     (INFORMATION -)
     (CONTAINER -)
     (TYPE ONT::MORE-VAL)))
+
+(CONCEPT
+  ONT::MORNING-AM
+  (INHERIT
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|morning%1:28:00::|))
 
 (CONCEPT
   ONT::MOTION
@@ -21207,6 +21262,13 @@
     WN::|never%4:02:01::|))
 
 (CONCEPT
+  ONT::NIGHT
+  (INHERIT
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|night%1:28:00::|))
+
+(CONCEPT
   ONT::NO-COST-VAL
   (INHERIT
     ONT::COST-VAL)
@@ -21329,6 +21391,13 @@
      (CONCEPT
        T)
      OPTIONAL)))
+
+(CONCEPT
+  ONT::NOON
+  (INHERIT
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|noon%1:28:00::|))
 
 (CONCEPT
   ONT::NORTH
@@ -31663,6 +31732,7 @@
 
 (CONCEPT
   ONT::STRUCTURAL-OPENING
+  (COMMENT "part of a structure that can open to allow access")
   (INHERIT
     ONT::GENERAL-STRUCTURE)
   (OVERLAP
@@ -31918,6 +31988,24 @@
   ONT::SUNNY-VAL
   (INHERIT
     ONT::ATMOSPHERIC-VAL))
+
+(CONCEPT
+  ONT::SUNRISE
+  (INHERIT
+    ONT::DAY-STAGE-SUNRISE)
+  (OVERLAP
+    WN::|dawn%1:28:00::|
+    WN::|sunrise%1:11:00::|
+    WN::|sunrise%1:19:00::|))
+
+(CONCEPT
+  ONT::SUNSET
+  (INHERIT
+    ONT::DAY-STAGE-SUNSET)
+  (OVERLAP
+    WN::|sunset%1:28:00::|
+    WN::|sunset%1:11:00::|
+    WN::|sunset%1:19:00::|))
 
 (CONCEPT
   ONT::SUPERIOR-VAL

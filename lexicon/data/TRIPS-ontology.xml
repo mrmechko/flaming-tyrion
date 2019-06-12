@@ -8,9 +8,6 @@
 <WORD name="a.m." />
 <WORD name="p_m" />
 <WORD name="p.m." />
-<WORD name="am" />
-<WORD name="midnight" />
-<WORD name="pm" />
 <WORD name="time" />
 <ONTTYPE name="date-object-in">
 <ONTTYPE name="century">
@@ -18,18 +15,39 @@
 <MAPPING to="wordnet" name="century%1:28:00::" />
 </ONTTYPE>
 <ONTTYPE name="day-stage">
-<WORD name="afternoon" />
 <WORD name="daytime" />
-<WORD name="evening" />
-<WORD name="morn" />
-<WORD name="morning" />
 <WORD name="nighttime" />
 <WORD name="twilight" />
-<MAPPING to="wordnet" name="morning%1:28:00::" />
-<MAPPING to="wordnet" name="evening%1:28:00::" />
-<MAPPING to="wordnet" name="night%1:28:00::" />
 <MAPPING to="wordnet" name="twilight%1:28:00::" />
+<ONTTYPE name="afternoon">
+<WORD name="afternoon" />
 <MAPPING to="wordnet" name="afternoon%1:28:00::" />
+</ONTTYPE>
+<ONTTYPE name="dat-stage-pm">
+<MAPPING to="wordnet" name="morning%1:28:00::" />
+</ONTTYPE>
+<ONTTYPE name="evening">
+<WORD name="eve" />
+<MAPPING to="wordnet" name="evening%1:28:00::" />
+</ONTTYPE>
+<ONTTYPE name="midnight">
+<WORD name="midnight" />
+<MAPPING to="wordnet" name="midnight%1:28:00::" />
+</ONTTYPE>
+<ONTTYPE name="morning-am">
+<WORD name="am" />
+<WORD name="morn" />
+<WORD name="morning" />
+<MAPPING to="wordnet" name="morning%1:28:00::" />
+</ONTTYPE>
+<ONTTYPE name="night">
+<WORD name="night" />
+<MAPPING to="wordnet" name="night%1:28:00::" />
+</ONTTYPE>
+<ONTTYPE name="noon">
+<WORD name="noon" />
+<MAPPING to="wordnet" name="noon%1:28:00::" />
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="era">
 <WORD name="a_c_e" />
@@ -199,12 +217,9 @@
 <WORD name="meal_time" />
 <WORD name="bedtime" />
 <WORD name="breakfasttime" />
-<WORD name="dawn" />
 <WORD name="dinnertime" />
 <WORD name="lunchtime" />
 <WORD name="mealtime" />
-<WORD name="night" />
-<WORD name="noon" />
 </ONTTYPE>
 <ONTTYPE name="time-defined-by-duration">
 <WORD name="hour" />
@@ -5749,8 +5764,16 @@
 <ONTTYPE name="scheduled-time-modifier">
 <WORD name="on_time" />
 <WORD name="due" />
+<ONTTYPE name="early-in-process">
 <WORD name="early" />
+<WORD name="early" />
+<MAPPING to="wordnet" name="early%4:02:00::" />
+</ONTTYPE>
+<ONTTYPE name="late-in-process">
 <WORD name="late" />
+<WORD name="late" />
+<MAPPING to="wordnet" name="late%4:02:00::" />
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="temporal-location">
 <WORD name="so_far" />
@@ -5759,7 +5782,6 @@
 <WORD name="in_the_meantime" />
 <WORD name="one_day" />
 <WORD name="anytime" />
-<WORD name="late" />
 <WORD name="midday" />
 <WORD name="nowadays" />
 <WORD name="pending" />
@@ -5788,7 +5810,6 @@
 <WORD name="before" />
 <WORD name="by" />
 <WORD name="earlier" />
-<WORD name="early" />
 <WORD name="pre-" />
 <WORD name="pre-" />
 <MAPPING to="wordnet" name="earlier%4:02:00::" />
@@ -5963,7 +5984,6 @@
 <WORD name="reverse" />
 <MAPPING to="wordnet" name="relation%1:03:00::" />
 <MAPPING to="wordnet" name="amount%2:42:03::" />
-<ONTTYPE name="evaluation-val" />
 <ONTTYPE name="favorite">
 <WORD name="favorite" />
 <MAPPING to="wordnet" name="favorite%1:09:00::" />
@@ -8392,10 +8412,6 @@
 <WORD name="luggage" />
 <WORD name="pole" />
 <MAPPING to="wordnet" name="instrumentality%1:06:00::" />
-<ONTTYPE name="card">
-<WORD name="card" />
-<MAPPING to="wordnet" name="card%1:06:00::" />
-</ONTTYPE>
 <ONTTYPE name="commodity">
 <WORD name="cargo" />
 <WORD name="commodity" />
@@ -9403,6 +9419,10 @@
 <ONTTYPE name="block">
 <WORD name="block" />
 <MAPPING to="wordnet" name="block%1:06:00::" />
+</ONTTYPE>
+<ONTTYPE name="card">
+<WORD name="card" />
+<MAPPING to="wordnet" name="card%1:06:00::" />
 </ONTTYPE>
 <ONTTYPE name="container">
 <WORD name="container" />
@@ -15145,6 +15165,15 @@
 <MAPPING to="wordnet" name="undress%2:29:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="cause-in">
+<WORD name="insert" />
+<MAPPING to="wordnet" name="inject%2:29:00::" />
+<MAPPING to="wordnet" name="inject%2:35:00::" />
+<MAPPING to="wordnet" name="inject%2:34:01::" />
+<MAPPING to="wordnet" name="insert%2:35:00::" />
+<MAPPING to="wordnet" name="insert%2:30:00::" />
+<MAPPING to="wordnet" name="tuck%2:35:00::" />
+</ONTTYPE>
 <ONTTYPE name="cause-position">
 <ONTTYPE name="cause-cover">
 <WORD name="cover" />
@@ -15624,7 +15653,6 @@
 <WORD name="augment" />
 <WORD name="include" />
 <WORD name="incorporate" />
-<WORD name="insert" />
 <WORD name="integrate" />
 <WORD name="supplement" />
 <MAPPING to="wordnet" name="include%2:30:00::" />
@@ -19980,10 +20008,7 @@
 <MAPPING to="wordnet" name="flood%2:30:01::" />
 <MAPPING to="wordnet" name="flush%2:30:03::" />
 </ONTTYPE>
-<ONTTYPE name="nychthemeron-event">
-<WORD name="sunrise" />
-<WORD name="sunset" />
-</ONTTYPE>
+<ONTTYPE name="nychthemeron-event" />
 </ONTTYPE>
 <ONTTYPE name="situation">
 <WORD name="case" />

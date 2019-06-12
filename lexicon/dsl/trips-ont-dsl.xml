@@ -1194,6 +1194,14 @@
    wn::|postmortem%5:00:00:succeeding:00|
   </relation>
  </concept>
+ <concept name="ont::afternoon">
+  <relation label="inherit">
+   ont::day-stage
+  </relation>
+  <relation label="overlap">
+   wn::|afternoon%1:28:00::|
+  </relation>
+ </concept>
  <concept name="ont::again">
   <relation label="inherit">
    ont::frequency
@@ -5427,7 +5435,7 @@
  </concept>
  <concept name="ont::card">
   <relation label="inherit">
-   ont::functional-phys-object
+   ont::manufactured-object
   </relation>
   <relation label="overlap">
    wn::|card%1:06:00::|
@@ -5759,6 +5767,33 @@
      <concept name="abstr-obj" />
      <concept name="situation" />
     </or>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::cause-in">
+  <relation label="inherit">
+   ont::event-of-causation
+  </relation>
+  <relation label="overlap">
+   wn::|inject%2:29:00::|
+   wn::|inject%2:35:00::|
+   wn::|inject%2:34:01::|
+   wn::|insert%2:35:00::|
+   wn::|insert%2:30:00::|
+   wn::|insert%2:35:01::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected-result" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+   <role-restr-map roles="ont::source">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::agent">
+    <concept name="t" />
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -10153,6 +10188,14 @@
    wn::|darkness%1:26:00::|
   </relation>
  </concept>
+ <concept name="ont::dat-stage-pm">
+  <relation label="inherit">
+   ont::day-stage
+  </relation>
+  <relation label="overlap">
+   wn::|morning%1:28:00::|
+  </relation>
+ </concept>
  <concept name="ont::data">
   <comment>
    &quot;A group of information organized in some way&quot;
@@ -10248,11 +10291,7 @@
    ont::date-object-in
   </relation>
   <relation label="overlap">
-   wn::|morning%1:28:00::|
-   wn::|evening%1:28:00::|
-   wn::|night%1:28:00::|
    wn::|twilight%1:28:00::|
-   wn::|afternoon%1:28:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -10262,6 +10301,8 @@
    <feat name="type">ont::day-stage</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::day-stage-sunrise" />
+ <concept name="ont::day-stage-sunset" />
  <concept name="ont::dazed-val">
   <relation label="inherit">
    ont::not-energized-val
@@ -12369,6 +12410,15 @@
    wn::|enthusiastic%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::early-in-process">
+  <relation label="inherit">
+   ont::scheduled-time-modifier
+  </relation>
+  <relation label="overlap">
+   wn::|early%3:02:02::|
+   wn::|early%4:02:00::|
+  </relation>
+ </concept>
  <concept name="ont::earning">
   <relation label="inherit">
    ont::acquire
@@ -13424,28 +13474,13 @@
    wn::|quality%1:07:02::|
   </relation>
  </concept>
- <concept name="ont::evaluation-val">
+ <concept name="ont::evening">
   <relation label="inherit">
-   ont::relation
+   ont::day-stage
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::neutral1" optional="optional">
-    <or>
-     <concept name="time" />
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-     <concept name="situation" />
-    </or>
-   </role-restr-map>
-   <role-restr-map roles="ont::neutral" optional="optional">
-    <or>
-     <concept name="time" />
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-     <concept name="situation" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
+  <relation label="overlap">
+   wn::|evening%1:28:00::|
+  </relation>
  </concept>
  <concept name="ont::event-defined-by-activity">
   <relation label="inherit">
@@ -16292,6 +16327,9 @@
   </sem-feats>
  </concept>
  <concept name="ont::functional-phys-object">
+  <comment>
+   &quot;These are objects that are described by their function in an activity- and have other physical descriptions: e.g., the things you are travelling with is LUGGAGE&quot;
+  </comment>
   <relation label="inherit">
    ont::phys-object
   </relation>
@@ -20447,6 +20485,15 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::late-in-process">
+  <relation label="inherit">
+   ont::scheduled-time-modifier
+  </relation>
+  <relation label="overlap">
+   wn::|late%3:02:02::|
+   wn::|late%4:02:00::|
+  </relation>
+ </concept>
  <concept name="ont::lean-val">
   <relation label="inherit">
    ont::fattiness-val
@@ -22051,6 +22098,9 @@
   </relation>
  </concept>
  <concept name="ont::man-made-structure">
+  <comment>
+   &quot;man made structures that are attached to the earther and thus act like locations&quot;
+  </comment>
   <relation label="inherit">
    ont::functional-region
   </relation>
@@ -23001,6 +23051,14 @@
    wn::|intermediate%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::midnight">
+  <relation label="inherit">
+   ont::day-stage
+  </relation>
+  <relation label="overlap">
+   wn::|midnight%1:28:00::|
+  </relation>
+ </concept>
  <concept name="ont::migration">
   <relation label="inherit">
    ont::trip
@@ -23395,6 +23453,14 @@
    <feat name="container">-</feat>
    <feat name="type">ont::more-val</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::morning-am">
+  <relation label="inherit">
+   ont::day-stage
+  </relation>
+  <relation label="overlap">
+   wn::|morning%1:28:00::|
+  </relation>
  </concept>
  <concept name="ont::motion">
   <comment>
@@ -24367,6 +24433,14 @@
    wn::|never%4:02:01::|
   </relation>
  </concept>
+ <concept name="ont::night">
+  <relation label="inherit">
+   ont::day-stage
+  </relation>
+  <relation label="overlap">
+   wn::|night%1:28:00::|
+  </relation>
+ </concept>
  <concept name="ont::no-cost-val">
   <relation label="inherit">
    ont::cost-val
@@ -24515,6 +24589,14 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::noon">
+  <relation label="inherit">
+   ont::day-stage
+  </relation>
+  <relation label="overlap">
+   wn::|noon%1:28:00::|
+  </relation>
  </concept>
  <concept name="ont::north">
   <comment>
@@ -36282,6 +36364,9 @@
   </sem-frame>
  </concept>
  <concept name="ont::structural-opening">
+  <comment>
+   &quot;part of a structure that can open to allow access&quot;
+  </comment>
   <relation label="inherit">
    ont::general-structure
   </relation>
@@ -36567,6 +36652,26 @@
  <concept name="ont::sunny-val">
   <relation label="inherit">
    ont::atmospheric-val
+  </relation>
+ </concept>
+ <concept name="ont::sunrise">
+  <relation label="inherit">
+   ont::day-stage-sunrise
+  </relation>
+  <relation label="overlap">
+   wn::|dawn%1:28:00::|
+   wn::|sunrise%1:11:00::|
+   wn::|sunrise%1:19:00::|
+  </relation>
+ </concept>
+ <concept name="ont::sunset">
+  <relation label="inherit">
+   ont::day-stage-sunset
+  </relation>
+  <relation label="overlap">
+   wn::|sunset%1:28:00::|
+   wn::|sunset%1:11:00::|
+   wn::|sunset%1:19:00::|
   </relation>
  </concept>
  <concept name="ont::superior-val">

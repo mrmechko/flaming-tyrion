@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::noon">
+ <relation label="inherit">
+  ont::day-stage
+ </relation>
+ <relation label="overlap">
+  wn::|noon%1:28:00::|
+ </relation>
+ </concept>
+ <concept name="time" />
+ <concept name="ont::root" />
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-time-object">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="scale">ont::time-loc-scale</feat>
+  <feat name="time-function">any-time-function</feat>
+  <feat name="type">ont::any-time-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::day-stage">
+ <comment>
+  &quot;a regular part of the day&quot;
+ </comment>
+ <relation label="inherit">
+  ont::date-object-in
+ </relation>
+ <relation label="overlap">
+  wn::|twilight%1:28:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="time-function">day-period</feat>
+  <feat name="type">ont::day-stage</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::date-object-in">
+ <comment>
+  &quot;temporal objects that use IN - e.g., in June&quot;
+ </comment>
+ <relation label="inherit">
+  ont::time-object
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-function">day-period</feat>
+ <feat name="type">ont::day-stage</feat>
+ </sem-feats>
+ <concept name="ont::time-object">
+ <comment>
+  &quot;objects that refer to temporal locations in some way&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-time-object
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="scale">ont::time-loc-scale</feat>
+ <feat name="time-function">any-time-function</feat>
+ <feat name="type">ont::any-time-object</feat>
+ </sem-feats>
+ <sense>
+ <morph>
+  <pos pos="pro" />
+  <word first-word="noon" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::noon
+  ont::pronoun-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-function">day-point</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::sunrise">
+ <relation label="inherit">
+  ont::day-stage-sunrise
+ </relation>
+ <relation label="overlap">
+  wn::|dawn%1:28:00::|
+  wn::|sunrise%1:11:00::|
+  wn::|sunrise%1:19:00::|
+ </relation>
+ </concept>
+ <concept name="ont::day-stage-sunrise" />
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="dawn" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::sunrise
+ </relation>
+ <syntax>
+  <template-call template="ont::time-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-function">
+   <or>
+    day-period
+    day-point
+   </or>
+   </feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="sunrise" />
+ </morph>
+ <comment>
+  &quot;SPEECHTEST-VOCAB&quot;
+ </comment>
+ <example text="it was a beautiful sunrise">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sunrise
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

@@ -6432,6 +6432,25 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::AFTERNOON
+  (INHERIT
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|afternoon%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (KR-TYPE ANY-KR-TYPE)
+    (SCALE ONT::TIME-LOC-SCALE)
+    (TIME-FUNCTION F::DAY-PERIOD)
+    (TYPE ONT::DAY-STAGE))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::AGAIN
   (INHERIT
     ONT::FREQUENCY)
@@ -25662,7 +25681,7 @@
 (CONCEPT
   ONT::CARD
   (INHERIT
-    ONT::FUNCTIONAL-PHYS-OBJECT)
+    ONT::MANUFACTURED-OBJECT)
   (OVERLAP
     WN::|card%1:06:00::|)
   (SEM-FEATS
@@ -25670,7 +25689,6 @@
       PHYS-OBJ)
     (KR-TYPE ANY-KR-TYPE)
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (ORIGIN ANY-ORIGIN)
     (FORM ANY-FORM)
     (MOBILITY ANY-MOBILITY)
     (GROUP -)
@@ -25683,7 +25701,8 @@
     (INFORMATION -)
     (CONTAINER -)
     (TANGIBLE +)
-    (TYPE ONT::FUNCTIONAL-PHYS-OBJECT)))
+    (ORIGIN F::ARTIFACT)
+    (TYPE ONT::MANUFACTURED-OBJECT)))
 
 (CONCEPT
   ONT::CARDIAC-VAL
@@ -26895,6 +26914,72 @@
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::CAUSE-IN
+  (INHERIT
+    ONT::EVENT-OF-CAUSATION)
+  (OVERLAP
+    WN::|inject%2:29:00::|
+    WN::|inject%2:35:00::|
+    WN::|inject%2:34:01::|
+    WN::|insert%2:35:00::|
+    WN::|insert%2:30:00::|
+    WN::|insert%2:35:01::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AFFECTED-RESULT
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::SOURCE
+     (CONCEPT
+       T))
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM))))
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (CAUSE F::FORCE)
+    (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
+    (TYPE ONT::EVENT-OF-CAUSATION)))
 
 (CONCEPT
   ONT::CAUSE-INTERACT
@@ -45513,6 +45598,25 @@
        (TYPE ONT::PHYS-OBJECT)))))
 
 (CONCEPT
+  ONT::DAT-STAGE-PM
+  (INHERIT
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|morning%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (KR-TYPE ANY-KR-TYPE)
+    (SCALE ONT::TIME-LOC-SCALE)
+    (TIME-FUNCTION F::DAY-PERIOD)
+    (TYPE ONT::DAY-STAGE))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::DATA
   (COMMENT "A group of information organized in some way")
   (INHERIT
@@ -45790,11 +45894,7 @@
   (INHERIT
     ONT::DATE-OBJECT-IN)
   (OVERLAP
-    WN::|morning%1:28:00::|
-    WN::|evening%1:28:00::|
-    WN::|night%1:28:00::|
-    WN::|twilight%1:28:00::|
-    WN::|afternoon%1:28:00::|)
+    WN::|twilight%1:28:00::|)
   (SEM-FEATS
     (INHERIT
       TIME)
@@ -45807,6 +45907,12 @@
      (CONCEPT
        T)
      OPTIONAL)))
+
+(CONCEPT
+  ONT::DAY-STAGE-SUNRISE)
+
+(CONCEPT
+  ONT::DAY-STAGE-SUNSET)
 
 (CONCEPT
   ONT::DAZED-VAL
@@ -55531,6 +55637,52 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::EARLY-IN-PROCESS
+  (INHERIT
+    ONT::SCHEDULED-TIME-MODIFIER)
+  (OVERLAP
+    WN::|early%3:02:02::|
+    WN::|early%4:02:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (TYPE ONT::TEMPORAL-PREDICATE))
+  (SEM-FRAME
+    (ONT::SCALE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::EARNING
   (INHERIT
     ONT::ACQUIRE)
@@ -60390,70 +60542,23 @@
        T))))
 
 (CONCEPT
-  ONT::EVALUATION-VAL
+  ONT::EVENING
   (INHERIT
-    ONT::RELATION)
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|evening%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (KR-TYPE ANY-KR-TYPE)
+    (SCALE ONT::TIME-LOC-SCALE)
+    (TIME-FUNCTION F::DAY-PERIOD)
+    (TYPE ONT::DAY-STAGE))
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
-       T))
-    (ONT::GROUND
-     (CONCEPT
-       T))
-    (ONT::NOROLE
-     (CONCEPT
        T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           TIME))
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           TIME))
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL))
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (TYPE ONT::RELATION)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::EVENT-DEFINED-BY-ACTIVITY
@@ -72990,6 +73095,8 @@
 
 (CONCEPT
   ONT::FUNCTIONAL-PHYS-OBJECT
+  (COMMENT
+   "These are objects that are described by their function in an activity- and have other physical descriptions: e.g., the things you are travelling with is LUGGAGE")
   (INHERIT
     ONT::PHYS-OBJECT)
   (OVERLAP
@@ -91536,6 +91643,52 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::LATE-IN-PROCESS
+  (INHERIT
+    ONT::SCHEDULED-TIME-MODIFIER)
+  (OVERLAP
+    WN::|late%3:02:02::|
+    WN::|late%4:02:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (TYPE ONT::TEMPORAL-PREDICATE))
+  (SEM-FRAME
+    (ONT::SCALE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::LEAN-VAL
   (INHERIT
     ONT::FATTINESS-VAL)
@@ -98227,6 +98380,8 @@
 
 (CONCEPT
   ONT::MAN-MADE-STRUCTURE
+  (COMMENT
+   "man made structures that are attached to the earther and thus act like locations")
   (INHERIT
     ONT::FUNCTIONAL-REGION)
   (SEM-FEATS
@@ -102332,6 +102487,25 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::MIDNIGHT
+  (INHERIT
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|midnight%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (KR-TYPE ANY-KR-TYPE)
+    (SCALE ONT::TIME-LOC-SCALE)
+    (TIME-FUNCTION F::DAY-PERIOD)
+    (TYPE ONT::DAY-STAGE))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::MIGRATION
   (INHERIT
     ONT::TRIP)
@@ -104609,6 +104783,25 @@
     (ONT::FIGURE
      (CONCEPT
        T))))
+
+(CONCEPT
+  ONT::MORNING-AM
+  (INHERIT
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|morning%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (KR-TYPE ANY-KR-TYPE)
+    (SCALE ONT::TIME-LOC-SCALE)
+    (TIME-FUNCTION F::DAY-PERIOD)
+    (TYPE ONT::DAY-STAGE))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::MOTION
@@ -109826,6 +110019,25 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::NIGHT
+  (INHERIT
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|night%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (KR-TYPE ANY-KR-TYPE)
+    (SCALE ONT::TIME-LOC-SCALE)
+    (TIME-FUNCTION F::DAY-PERIOD)
+    (TYPE ONT::DAY-STAGE))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::NO-COST-VAL
   (INHERIT
     ONT::COST-VAL)
@@ -110604,6 +110816,25 @@
     (INTENTIONAL -)
     (CAUSE F::AGENTIVE)
     (TYPE ONT::SAY)))
+
+(CONCEPT
+  ONT::NOON
+  (INHERIT
+    ONT::DAY-STAGE)
+  (OVERLAP
+    WN::|noon%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (KR-TYPE ANY-KR-TYPE)
+    (SCALE ONT::TIME-LOC-SCALE)
+    (TIME-FUNCTION F::DAY-PERIOD)
+    (TYPE ONT::DAY-STAGE))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::NORTH
@@ -166580,6 +166811,7 @@
 
 (CONCEPT
   ONT::STRUCTURAL-OPENING
+  (COMMENT "part of a structure that can open to allow access")
   (INHERIT
     ONT::GENERAL-STRUCTURE)
   (OVERLAP
@@ -168056,6 +168288,24 @@
        (INHERIT
          T)
        (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
+  ONT::SUNRISE
+  (INHERIT
+    ONT::DAY-STAGE-SUNRISE)
+  (OVERLAP
+    WN::|dawn%1:28:00::|
+    WN::|sunrise%1:11:00::|
+    WN::|sunrise%1:19:00::|))
+
+(CONCEPT
+  ONT::SUNSET
+  (INHERIT
+    ONT::DAY-STAGE-SUNSET)
+  (OVERLAP
+    WN::|sunset%1:28:00::|
+    WN::|sunset%1:11:00::|
+    WN::|sunset%1:19:00::|))
 
 (CONCEPT
   ONT::SUPERIOR-VAL
