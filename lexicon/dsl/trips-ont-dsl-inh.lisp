@@ -55641,7 +55641,7 @@
   (INHERIT
     ONT::SCHEDULED-TIME-MODIFIER)
   (OVERLAP
-    WN::|early%3:02:02::|
+    WN::|early%3:00:02::|
     WN::|early%4:02:00::|)
   (SEM-FEATS
     (INHERIT
@@ -91647,7 +91647,7 @@
   (INHERIT
     ONT::SCHEDULED-TIME-MODIFIER)
   (OVERLAP
-    WN::|late%3:02:02::|
+    WN::|late%3:00:02::|
     WN::|late%4:02:00::|)
   (SEM-FEATS
     (INHERIT
