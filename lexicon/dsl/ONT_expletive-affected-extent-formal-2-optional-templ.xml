@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::expletive-affected-extent-formal-2-optional-templ">
+ <template-call template="ont::expletive-affected-extent-formal-2-optional-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::cp" sem-role="ont::formal"/>
+  <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::extent"/>
+  <syn-sem-map syn-arg="liobj" syn-cat="deepsemlex::np" sem-role="ont::affected" optional="optional"/>
+  <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+ </syn-sem>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="leave" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="left" />
+   </past>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it leaves us 5 hours to complete the plan">
+ </example>
+ <relation label="inherit">
+  ont::leave-time
+  ont::expletive-affected-extent-formal-2-optional-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="aspect">stage-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

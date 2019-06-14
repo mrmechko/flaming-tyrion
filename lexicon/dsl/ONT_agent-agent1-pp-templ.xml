@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::agent-agent1-pp-templ">
+ <template-call template="ont::agent-agent1-pp-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::pp" head-word="(or
+                                                                    w::to
+                                                                    w::with)" sem-role="ont::agent1"/>
+  <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+ </syn-sem>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="appeal" />
+ </morph>
+ <example text="Abrams appealed to Browne to hire Chiang">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::appeal-apply-demand
+  ont::agent-agent1-pp-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">unbounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::agent-affected-formal-adj-objcontrol-templ">
+ <template-call template="ont::agent-affected-formal-adj-objcontrol-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::adjp" sem-role="ont::formal"/>
+  <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+  <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+ </syn-sem>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="drive" />
+  <forms>
+   -VB
+   <past>
+    <word first-word="drove" />
+   </past>
+   <pastpart>
+    <word first-word="driven" />
+   </pastpart>
+   <nom>
+    <word first-word="drive" />
+   </nom>
+   <agentnom>
+    <word first-word="driver" />
+   </agentnom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it drove him crazy">
+ </example>
+ <relation label="inherit">
+  ont::cause-effect
+  ont::agent-affected-formal-adj-objcontrol-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

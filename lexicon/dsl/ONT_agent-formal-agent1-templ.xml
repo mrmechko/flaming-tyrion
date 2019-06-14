@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <syntax name="ont::agent-formal-agent1-templ">
+ <template-call template="ont::agent-formal-agent1-templ" />
+ <syn-sem>
+  <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::to" sem-role="ont::agent1"/>
+  <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::formal"/>
+  <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+ </syn-sem>
+ </syntax>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="claim" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="claim" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="he claimed his innocence to me">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::assert
+  ont::agent-formal-agent1-templ
+ </relation>
+ <relation label="overlap">
+  vn::say-37.7
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="mention" />
+ </morph>
+ <example text="mention it to him">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::say
+  ont::agent-formal-agent1-templ
+ </relation>
+ <relation label="overlap">
+  vn::say-37.7
+ </relation>
+ </sense>
+</dsl>
