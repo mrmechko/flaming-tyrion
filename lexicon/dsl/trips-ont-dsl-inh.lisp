@@ -45909,12 +45909,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::DAY-STAGE-SUNRISE)
-
-(CONCEPT
-  ONT::DAY-STAGE-SUNSET)
-
-(CONCEPT
   ONT::DAZED-VAL
   (INHERIT
     ONT::NOT-ENERGIZED-VAL)
@@ -168292,20 +168286,44 @@
 (CONCEPT
   ONT::SUNRISE
   (INHERIT
-    ONT::DAY-STAGE-SUNRISE)
+    ONT::DAY-STAGE)
   (OVERLAP
     WN::|dawn%1:28:00::|
     WN::|sunrise%1:11:00::|
-    WN::|sunrise%1:19:00::|))
+    WN::|sunrise%1:19:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (KR-TYPE ANY-KR-TYPE)
+    (SCALE ONT::TIME-LOC-SCALE)
+    (TIME-FUNCTION F::DAY-PERIOD)
+    (TYPE ONT::DAY-STAGE))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::SUNSET
   (INHERIT
-    ONT::DAY-STAGE-SUNSET)
+    ONT::DAY-STAGE)
   (OVERLAP
     WN::|sunset%1:28:00::|
     WN::|sunset%1:11:00::|
-    WN::|sunset%1:19:00::|))
+    WN::|sunset%1:19:00::|)
+  (SEM-FEATS
+    (INHERIT
+      TIME)
+    (KR-TYPE ANY-KR-TYPE)
+    (SCALE ONT::TIME-LOC-SCALE)
+    (TIME-FUNCTION F::DAY-PERIOD)
+    (TYPE ONT::DAY-STAGE))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::SUPERIOR-VAL
