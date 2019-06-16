@@ -5699,6 +5699,24 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::cause-contact">
+  <relation label="inherit">
+   ont::event-of-causation
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::agent">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="mobility">movable</feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::affected">
+    <concept name="phys-obj" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::cause-cover">
   <relation label="inherit">
    ont::cause-position
@@ -7373,10 +7391,20 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::affected1" optional="optional">
-    <concept name="phys-obj" />
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="mobility">movable</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::affected">
-    <concept name="phys-obj" />
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="mobility">movable</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -18101,7 +18129,7 @@
    &quot;an agent comes into contact with force with another object, typically harming the other object&quot;
   </comment>
   <relation label="inherit">
-   ont::apply-force
+   ont::cause-contact
   </relation>
   <relation label="overlap">
    wn::|beat%2:35:01::|
@@ -18115,11 +18143,6 @@
    <feat name="trajectory">-</feat>
    <feat name="type">ont::hitting</feat>
   </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::affected">
-    <concept name="phys-obj" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::hives">
   <relation label="inherit">
@@ -19702,6 +19725,7 @@
       spatial-region
      </or>
      </feat>
+     <feat name="mobility">fixed</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::neutral">
@@ -19716,6 +19740,7 @@
       spatial-region
      </or>
      </feat>
+     <feat name="mobility">fixed</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -19935,7 +19960,7 @@
    &quot;abstract, social, or physical connection of objects such that the objects retain their original make-up/identity (whereas COMBINE-OBJECTS are not un-combinable anymore)&quot;
   </comment>
   <relation label="inherit">
-   ont::event-of-causation
+   ont::cause-contact
   </relation>
   <relation label="overlap">
    wn::|conjoin%2:35:00::|
@@ -38457,7 +38482,7 @@
  </concept>
  <concept name="ont::touch">
   <relation label="inherit">
-   ont::event-of-causation
+   ont::cause-contact
   </relation>
   <relation label="overlap">
    wn::|touch%2:35:00::|

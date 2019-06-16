@@ -5114,8 +5114,9 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (MOBILITY F::MOVABLE)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AGENT1
      (CONCEPT
@@ -5125,8 +5126,8 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AFFECTED1
      (SEM-FEATS
@@ -12788,8 +12789,8 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AGENT1
      (CONCEPT
@@ -12799,8 +12800,9 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (MOBILITY F::MOVABLE)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)))
 
 (CONCEPT
@@ -14600,8 +14602,8 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AFFECTED1
      (SEM-FEATS
@@ -14628,8 +14630,9 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)
        (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (MOBILITY F::MOVABLE)
        (ORIGIN F::NATURAL)))))
 
 (CONCEPT
@@ -20475,6 +20478,7 @@
        (INHERIT
          PHYS-OBJ)
        (ORIGIN F::NATURAL)
+       (MOBILITY F::MOVABLE)
        (TANGIBLE +)
        (TYPE ONT::MOLECULAR-PART)))))
 
@@ -26755,6 +26759,45 @@
            PHYS-OBJ)
          (CONCEPT
            SITUATION))
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM))))
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (CAUSE F::FORCE)
+    (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
+    (TYPE ONT::EVENT-OF-CAUSATION)))
+
+(CONCEPT
+  ONT::CAUSE-CONTACT
+  (INHERIT
+    ONT::EVENT-OF-CAUSATION)
+  (SEM-FRAME
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (MOBILITY F::MOVABLE)))
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
        (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM))))
   (SEM-FEATS
@@ -34227,16 +34270,18 @@
        (TYPE ONT::QUANTITY))
      OPTIONAL)
     (ONT::AFFECTED1
-     (CONCEPT
-       PHYS-OBJ)
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (MOBILITY F::MOVABLE))
      OPTIONAL)
     (ONT::AFFECTED
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (MOBILITY F::MOVABLE)
        (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
+       (TANGIBLE +)
+       (MOBILITY F::MOVABLE)))))
 
 (CONCEPT
   ONT::COLOR-SATURATION-VAL
@@ -59016,8 +59061,9 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (MOBILITY F::MOVABLE)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AGENT1
      (CONCEPT
@@ -59027,8 +59073,8 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AFFECTED1
      (SEM-FEATS
@@ -69571,8 +69617,8 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AGENT1
      (CONCEPT
@@ -69582,8 +69628,9 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (MOBILITY F::MOVABLE)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)))
 
 (CONCEPT
@@ -80205,7 +80252,7 @@
   (COMMENT
    "an agent comes into contact with force with another object, typically harming the other object")
   (INHERIT
-    ONT::APPLY-FORCE)
+    ONT::CAUSE-CONTACT)
   (OVERLAP
     WN::|beat%2:35:01::|
     WN::|hit%2:35:03::|
@@ -80218,37 +80265,26 @@
     (LOCATIVE -)
     (ORIGIN ANY-ORIGIN)
     (IOBJ -)
-    (CAUSE F::FORCE)
-    (INTENTIONAL -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
-    (CONTAINER -)
-    (TANGIBLE +)
     (ASPECT F::DYNAMIC)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (INTENTIONAL -)
+    (CAUSE F::FORCE)
     (TRAJECTORY -)
     (TYPE ONT::HITTING))
   (SEM-FRAME
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
     (ONT::AGENT
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           SITUATION))
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::RESULT
-     (SEM-FEATS
        (INHERIT
-         ABSTR-OBJ)
-       (TYPE
-        (OR
-          ONT::POSITION-RELN
-          ONT::DIRECTION
-          ONT::PATH)))
-     OPTIONAL)
+         PHYS-OBJ)
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (MOBILITY F::MOVABLE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (INHERIT
@@ -88742,13 +88778,13 @@
           ONT::EDGE
           ONT::ROUTE
           ONT::FACILITY
-          ONT::POLITICAL-REGION
-          ONT::NATURAL-OBJECT))
+          ONT::POLITICAL-REGION))
        (SPATIAL-ABSTRACTION
         (OR
           F::LINE
           F::STRIP
-          F::SPATIAL-REGION))))
+          F::SPATIAL-REGION))
+       (MOBILITY F::FIXED)))
     (ONT::NEUTRAL
      (SEM-FEATS
        (INHERIT
@@ -88758,7 +88794,8 @@
         (OR
           F::LINE
           F::STRIP
-          F::SPATIAL-REGION))))))
+          F::SPATIAL-REGION))
+       (MOBILITY F::FIXED)))))
 
 (CONCEPT
   ONT::INTERSECTING-VAL
@@ -89794,7 +89831,7 @@
   (COMMENT
    "abstract, social, or physical connection of objects such that the objects retain their original make-up/identity (whereas COMBINE-OBJECTS are not un-combinable anymore)")
   (INHERIT
-    ONT::EVENT-OF-CAUSATION)
+    ONT::CAUSE-CONTACT)
   (OVERLAP
     WN::|conjoin%2:35:00::|
     WN::|join%2:35:00::|)
@@ -89840,8 +89877,8 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AGENT1
      (CONCEPT
@@ -89851,8 +89888,9 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (MOBILITY F::MOVABLE)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)))
 
 (CONCEPT
@@ -90521,37 +90559,26 @@
     (LOCATIVE -)
     (ORIGIN ANY-ORIGIN)
     (IOBJ -)
-    (ASPECT F::DYNAMIC)
-    (TANGIBLE +)
-    (CONTAINER -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
-    (INTENTIONAL -)
     (CAUSE F::FORCE)
+    (INTENTIONAL -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
     (TRAJECTORY -)
     (TYPE ONT::KICKING))
   (SEM-FRAME
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
     (ONT::AGENT
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           SITUATION))
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::RESULT
-     (SEM-FEATS
        (INHERIT
-         ABSTR-OBJ)
-       (TYPE
-        (OR
-          ONT::POSITION-RELN
-          ONT::DIRECTION
-          ONT::PATH)))
-     OPTIONAL)
+         PHYS-OBJ)
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (MOBILITY F::MOVABLE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (INHERIT
@@ -99303,8 +99330,8 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AGENT1
      (CONCEPT
@@ -99314,8 +99341,9 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (MOBILITY F::MOVABLE)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)))
 
 (CONCEPT
@@ -176331,7 +176359,7 @@
 (CONCEPT
   ONT::TOUCH
   (INHERIT
-    ONT::EVENT-OF-CAUSATION)
+    ONT::CAUSE-CONTACT)
   (OVERLAP
     WN::|touch%2:35:00::|
     WN::|touch%1:04:00::|)
@@ -176358,28 +176386,17 @@
      OPTIONAL)
     (ONT::AGENT
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
+       (INHERIT
+         PHYS-OBJ)
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +))
-     OPTIONAL)
+       (MOBILITY F::MOVABLE)))
     (ONT::AFFECTED
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +))
-     OPTIONAL)))
+       (INHERIT
+         PHYS-OBJ)
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
   ONT::TOUCH-PROPERTY-VAL

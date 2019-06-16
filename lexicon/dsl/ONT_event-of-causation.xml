@@ -401,14 +401,23 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::touch">
+ <concept name="ont::cause-contact">
  <relation label="inherit">
   ont::event-of-causation
  </relation>
- <relation label="overlap">
-  wn::|touch%2:35:00::|
-  wn::|touch%1:04:00::|
- </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="mobility">movable</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::apply-force">
  <relation label="inherit">
@@ -1151,65 +1160,6 @@
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
    <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::joining">
- <comment>
-  &quot;abstract, social, or physical connection of objects such that the objects retain their original make-up/identity (whereas COMBINE-OBJECTS are not un-combinable anymore)&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|conjoin%2:35:00::|
-  wn::|join%2:35:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="type">ont::joining</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::location" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">
-    <or>
-     ont::predicate
-     ont::position-reln
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected1" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent1" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="phys-obj" />
   </role-restr-map>
  </sem-frame>
  </concept>

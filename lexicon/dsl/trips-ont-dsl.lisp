@@ -4971,6 +4971,20 @@
        T))))
 
 (CONCEPT
+  ONT::CAUSE-CONTACT
+  (INHERIT
+    ONT::EVENT-OF-CAUSATION)
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (MOBILITY MOVABLE)))
+    (ONT::AFFECTED
+     (CONCEPT
+       PHYS-OBJ))))
+
+(CONCEPT
   ONT::CAUSE-COVER
   (INHERIT
     ONT::CAUSE-POSITION)
@@ -6453,12 +6467,16 @@
     (TYPE ONT::COLLIDE))
   (SEM-FRAME
     (ONT::AFFECTED1
-     (CONCEPT
-       PHYS-OBJ)
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (MOBILITY MOVABLE))
      OPTIONAL)
     (ONT::AFFECTED
-     (CONCEPT
-       PHYS-OBJ))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (MOBILITY MOVABLE)))))
 
 (CONCEPT
   ONT::COLOR-SATURATION-VAL
@@ -15800,7 +15818,7 @@
   (COMMENT
    "an agent comes into contact with force with another object, typically harming the other object")
   (INHERIT
-    ONT::APPLY-FORCE)
+    ONT::CAUSE-CONTACT)
   (OVERLAP
     WN::|beat%2:35:01::|
     WN::|hit%2:35:03::|
@@ -15809,11 +15827,7 @@
     (INHERIT
       SITUATION)
     (TRAJECTORY -)
-    (TYPE ONT::HITTING))
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (CONCEPT
-       PHYS-OBJ))))
+    (TYPE ONT::HITTING)))
 
 (CONCEPT
   ONT::HIVES
@@ -17188,7 +17202,8 @@
         (OR
           LINE
           STRIP
-          SPATIAL-REGION))))
+          SPATIAL-REGION))
+       (MOBILITY FIXED)))
     (ONT::NEUTRAL
      (SEM-FEATS
        (INHERIT
@@ -17197,7 +17212,8 @@
         (OR
           LINE
           STRIP
-          SPATIAL-REGION))))))
+          SPATIAL-REGION))
+       (MOBILITY FIXED)))))
 
 (CONCEPT
   ONT::INTERSECTING-VAL
@@ -17384,7 +17400,7 @@
   (COMMENT
    "abstract, social, or physical connection of objects such that the objects retain their original make-up/identity (whereas COMBINE-OBJECTS are not un-combinable anymore)")
   (INHERIT
-    ONT::EVENT-OF-CAUSATION)
+    ONT::CAUSE-CONTACT)
   (OVERLAP
     WN::|conjoin%2:35:00::|
     WN::|join%2:35:00::|)
@@ -33555,7 +33571,7 @@
 (CONCEPT
   ONT::TOUCH
   (INHERIT
-    ONT::EVENT-OF-CAUSATION)
+    ONT::CAUSE-CONTACT)
   (OVERLAP
     WN::|touch%2:35:00::|
     WN::|touch%1:04:00::|))
