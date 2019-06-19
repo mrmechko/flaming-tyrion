@@ -10323,7 +10323,8 @@
         (OR
           ONT::DOMAIN-PROPERTY
           ONT::POSITION-RELN
-          ONT::PREDICATE)))
+          ONT::PREDICATE
+          ONT::RELATION)))
      OPTIONAL)
     (ONT::NEUTRAL
      (SEM-FEATS
@@ -34215,7 +34216,7 @@
   (COMMENT
    "two objects comes into contact with force with another, typically both being negatively affected - also supports the plural subject that cincludes both objects")
   (INHERIT
-    ONT::MOTION)
+    ONT::CAUSE-CONTACT)
   (OVERLAP
     WN::|collide%2:35:01::|
     WN::|collide%2:35:00::|
@@ -34229,45 +34230,25 @@
     (LOCATIVE -)
     (ORIGIN ANY-ORIGIN)
     (IOBJ -)
-    (CAUSE F::FORCE)
     (ASPECT F::DYNAMIC)
-    (INTENTIONAL -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
-    (CONTAINER -)
     (TANGIBLE +)
+    (CONTAINER -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (INTENTIONAL -)
+    (CAUSE F::FORCE)
     (TRAJECTORY -)
     (TYPE ONT::COLLIDE))
   (SEM-FRAME
-    (ONT::SOURCE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::RESULT
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE
-        (OR
-          ONT::POSITION-RELN
-          ONT::PATH)))
-     OPTIONAL)
     (ONT::AGENT
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ))
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::EXTENT
-     (SEM-FEATS
        (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::QUANTITY))
+         PHYS-OBJ)
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (MOBILITY F::MOVABLE)))
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
      OPTIONAL)
     (ONT::AFFECTED1
      (SEM-FEATS
@@ -78347,7 +78328,8 @@
         (OR
           ONT::DOMAIN-PROPERTY
           ONT::POSITION-RELN
-          ONT::PREDICATE)))
+          ONT::PREDICATE
+          ONT::RELATION)))
      OPTIONAL)
     (ONT::NEUTRAL
      (SEM-FEATS
@@ -137971,7 +137953,7 @@
   (INHERIT
     ONT::ORDERED-DOMAIN)
   (OVERLAP
-    WN::|pyschological_state%1:26:00::|)
+    WN::|psychological_state%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)

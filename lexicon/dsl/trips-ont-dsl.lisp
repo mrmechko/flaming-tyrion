@@ -6454,7 +6454,7 @@
   (COMMENT
    "two objects comes into contact with force with another, typically both being negatively affected - also supports the plural subject that cincludes both objects")
   (INHERIT
-    ONT::MOTION)
+    ONT::CAUSE-CONTACT)
   (OVERLAP
     WN::|collide%2:35:01::|
     WN::|collide%2:35:00::|
@@ -15460,7 +15460,8 @@
         (OR
           ONT::DOMAIN-PROPERTY
           ONT::POSITION-RELN
-          ONT::PREDICATE)))
+          ONT::PREDICATE
+          ONT::RELATION)))
      OPTIONAL)
     (ONT::NEUTRAL
      (CONCEPT
@@ -25958,7 +25959,7 @@
   (INHERIT
     ONT::ORDERED-DOMAIN)
   (OVERLAP
-    WN::|pyschological_state%1:26:00::|))
+    WN::|psychological_state%1:26:00::|))
 
 (CONCEPT
   ONT::PSYCHOLOGICAL-PROPERTY-VAL
