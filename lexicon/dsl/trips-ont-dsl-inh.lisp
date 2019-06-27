@@ -6639,17 +6639,25 @@
     (SCALE ONT::TIME-MEASURE-SCALE)
     (TYPE ONT::TIME-MEASURE-SCALE))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::AGE-VAL
@@ -11198,11 +11206,8 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (SEM-FEATS
@@ -19205,8 +19210,10 @@
        ABSTR-OBJ)
      OPTIONAL)
     (ONT::FORMAL
-     (CONCEPT
-       T)
+     (SEM-FEATS
+       (INHERIT
+         SITUATION)
+       (TYPE ONT::PROPERTY-VAL))
      OPTIONAL)
     (ONT::AFFECTED
      (SEM-FEATS
@@ -20798,17 +20805,25 @@
     (SCALE ONT::RATE-SCALE)
     (TYPE ONT::RATE-SCALE))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::BITTER-VAL
@@ -32652,11 +32667,11 @@
   (INHERIT
     ONT::RATE-SCALE)
   (SEM-FRAME
-    (ONT::GROUND
+    (ONT::EXTENT
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::EXTENT
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
@@ -32664,14 +32679,7 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE
-        (OR
-          ONT::SHAPE-OBJECT
-          ONT::PHYS-REPRESENTATION
-          ONT::MANUFACTURED-OBJECT
-          ONT::FACILITY
-          ONT::INTERNAL-ENCLOSURE
-          ONT::POLITICAL-REGION))
+       (TYPE ONT::REFERENTIAL-SEM)
        (ORIGIN F::ARTIFACT))))
   (SEM-FEATS
     (INHERIT
@@ -40220,6 +40228,10 @@
     (ONT::FORMAL
      (CONCEPT
        SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T)
      OPTIONAL)))
 
 (CONCEPT
@@ -44320,7 +44332,8 @@
     WN::|squash%2:35:00::|
     WN::|crush%2:35:00::|
     WN::|squelch%2:35:00::|
-    WN::|mash%2:35:00::|)
+    WN::|mash%2:35:00::|
+    WN::|grind%2:35:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -47958,11 +47971,11 @@
     WN::|concentration%1:07:02::|
     WN::|concentration%1:07:03::|)
   (SEM-FRAME
-    (ONT::GROUND
+    (ONT::EXTENT
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::EXTENT
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
@@ -47970,7 +47983,7 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE ONT::PHYS-OBJECT))))
+       (TYPE ONT::REFERENTIAL-SEM))))
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -48429,11 +48442,8 @@
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
@@ -50732,17 +50742,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::DIRECT-AT
@@ -53043,27 +53061,6 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
-
-(CONCEPT
-  ONT::DISTANCE-SCALE
-  (INHERIT
-    ONT::MEASURE-SCALE)
-  (OVERLAP
-    WN::|distance%1:07:00::|
-    WN::|interval%1:07:00::|
-    WN::|way%1:07:02::|)
-  (SEM-FRAME
     (ONT::GROUND
      (CONCEPT
        T)
@@ -53074,9 +53071,38 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::DISTANCE-SCALE
+  (INHERIT
+    ONT::MEASURE-SCALE)
+  (OVERLAP
+    WN::|distance%1:07:00::|
+    WN::|interval%1:07:00::|
+    WN::|way%1:07:02::|)
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE ONT::PHYS-OBJECT))
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)
     (ONT::NEUTRAL1
      (CONCEPT
@@ -55270,17 +55296,25 @@
     (SCALE ONT::TIME-MEASURE-SCALE)
     (TYPE ONT::TIME-MEASURE-SCALE))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::DURING
@@ -57016,17 +57050,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::ELECTRICAL
@@ -57874,7 +57916,10 @@
     ONT::CAUSE-COME-FROM)
   (OVERLAP
     WN::|empty%2:30:01::|
-    WN::|empty%2:30:00::|)
+    WN::|empty%2:30:00::|
+    WN::|evacuate%2:38:01::|
+    WN::|evacuate%2:30:00::|
+    WN::|evacuate%2:38:00::|)
   (SEM-FRAME
     (ONT::SOURCE
      (CONCEPT
@@ -60330,68 +60375,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::EVACUATE
-  (INHERIT
-    ONT::RESCUE)
-  (OVERLAP
-    WN::|evacuate%2:38:00::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (KR-TYPE ANY-KR-TYPE)
-    (TIME-SPAN ANY-TIME-SPAN)
-    (LOCATIVE -)
-    (ORIGIN ANY-ORIGIN)
-    (IOBJ -)
-    (INTENTIONAL -)
-    (INFORMATION F::MENTAL-CONSTRUCT)
-    (CONTAINER -)
-    (TANGIBLE +)
-    (TRAJECTORY -)
-    (ASPECT F::DYNAMIC)
-    (CAUSE F::AGENTIVE)
-    (TYPE ONT::EVACUATE))
-  (SEM-FRAME
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::FORMAL
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ))
-       (TYPE
-        (OR
-          ONT::SITUATION-ROOT
-          ONT::PROPERTY-VAL)))
-     OPTIONAL)
-    (ONT::RESULT
-     (CONCEPT
-       ABSTR-OBJ)
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (FORM F::GEOGRAPHICAL-OBJECT)))))
-
-(CONCEPT
   ONT::EVAL-WRT-EXPECTATION
   (INHERIT
     ONT::MODIFIER)
@@ -62698,7 +62681,8 @@
     WN::|indulge%2:41:01::|
     WN::|indulge%2:34:00::|
     WN::|indulge%2:34:12::|
-    WN::|indulge%2:41:00::|)
+    WN::|indulge%2:41:00::|
+    WN::|satisfaction%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -67398,11 +67382,8 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
@@ -79142,11 +79123,8 @@
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
@@ -85588,6 +85566,10 @@
     (ONT::FORMAL
      (CONCEPT
        SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T)
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -87388,17 +87370,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::INTENSITY-VAL
@@ -92537,11 +92527,8 @@
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
@@ -94314,11 +94301,8 @@
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
@@ -100026,6 +100010,26 @@
   (OVERLAP
     WN::|quantity%1:03:00::|
     WN::|measurement%1:04:00::|)
+  (SEM-FRAME
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL))
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -100041,19 +100045,7 @@
     (SCALE -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE +)
-    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
-  (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT)))
 
 (CONCEPT
   ONT::MEASURE-UNIT
@@ -102756,11 +102748,11 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::GROUND
+    (ONT::EXTENT
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::EXTENT
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
@@ -102768,7 +102760,7 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE ONT::PHYS-OBJECT))
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)
     (ONT::NEUTRAL1
      (CONCEPT
@@ -104295,17 +104287,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::MONEY-UNIT
@@ -110399,11 +110399,8 @@
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
@@ -119257,17 +119254,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::NUMBER-UNIT
@@ -126191,17 +126196,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::PERCEPTIBILITY-VAL
@@ -128536,8 +128549,16 @@
     (TYPE ONT::PITCH-SCALE))
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       T))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
@@ -130515,11 +130536,11 @@
     (MEASURE-FUNCTION F::TERM)
     (TYPE ONT::POPULATION-SCALE))
   (SEM-FRAME
-    (ONT::GROUND
+    (ONT::EXTENT
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::EXTENT
+    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
@@ -130527,7 +130548,7 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE ONT::GEO-OBJECT)
+       (TYPE ONT::REFERENTIAL-SEM)
        (FORM F::GEOGRAPHICAL-OBJECT)))))
 
 (CONCEPT
@@ -133284,17 +133305,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::PREDEFINED-MEASURE-VAL
@@ -134989,17 +135018,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::PREVENT
@@ -139753,8 +139790,13 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         T)
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL))
   (SEM-FEATS
@@ -140784,17 +140826,25 @@
     (SCALE ONT::RATE-SCALE)
     (TYPE ONT::RATE-SCALE))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::RATE-UNIT
@@ -140899,17 +140949,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::RATIONAL-SCALE
@@ -143703,11 +143761,8 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
@@ -147360,8 +147415,16 @@
     WN::|resolution%1:19:01::|)
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       T))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
     (ONT::EXTENT
      (CONCEPT
        T)
@@ -154841,17 +154904,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::SEVERITY-VAL
@@ -158054,11 +158125,8 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
@@ -158337,11 +158405,8 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
@@ -162969,17 +163034,25 @@
     (SCALE ONT::RATE-SCALE)
     (TYPE ONT::RATE-SCALE))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::SPEED-UNIT
@@ -166513,17 +166586,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::STRENGTHEN
@@ -167855,6 +167936,71 @@
     (TYPE ONT::PREDICATE)))
 
 (CONCEPT
+  ONT::SUCK
+  (INHERIT
+    ONT::PULL)
+  (OVERLAP
+    WN::|suck%1:04:00::|
+    WN::|suck%2:34:04::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (ASPECT F::DYNAMIC)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INFORMATION F::MENTAL-CONSTRUCT)
+    (INTENTIONAL -)
+    (CAUSE F::FORCE)
+    (TYPE ONT::APPLY-FORCE))
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::RESULT
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          ONT::POSITION-RELN
+          ONT::DIRECTION
+          ONT::PATH)))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::SOURCE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::SOURCE-RELN))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::SUFFICIENCY
   (INHERIT
     ONT::EVENT-OF-STATE)
@@ -168929,8 +169075,13 @@
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (INHERIT
-         T)
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
 
@@ -173866,11 +174017,8 @@
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
@@ -174195,11 +174343,8 @@
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
@@ -175220,17 +175365,25 @@
     (SCALE ONT::TIME-MEASURE-SCALE)
     (TYPE ONT::TIME-MEASURE-SCALE))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::TIME-MEASURE-SCALE
@@ -175253,17 +175406,25 @@
     (SCALE ONT::TIME-MEASURE-SCALE)
     (TYPE ONT::TIME-MEASURE-SCALE))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::TIME-OBJECT
@@ -176328,17 +176489,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::TOUCH
@@ -184342,11 +184511,8 @@
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
@@ -185277,17 +185443,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::VOLUME-MEASURE-UNIT
@@ -185346,11 +185520,8 @@
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::EXTENT
      (SEM-FEATS
@@ -187077,8 +187248,16 @@
     (TYPE ONT::WEIGHT-SCALE))
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       T))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
     (ONT::EXTENT
      (CONCEPT
        T)
@@ -188176,11 +188355,8 @@
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           TIME)
-         (CONCEPT
-           PHYS-OBJ))
+       (INHERIT
+         PHYS-OBJ)
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT

@@ -4018,7 +4018,12 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::formal" optional="optional">
-    <concept name="t" />
+    <sem-feats>
+     <relation label="inherit">
+      situation
+     </relation>
+     <feat name="type">ont::property-val</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::affected" optional="optional">
     <concept name="t" />
@@ -9910,6 +9915,7 @@
    wn::|crush%2:35:00::|
    wn::|squelch%2:35:00::|
    wn::|mash%2:35:00::|
+   wn::|grind%2:35:00::|
   </relation>
  </concept>
  <concept name="ont::crustaceans">
@@ -12921,6 +12927,9 @@
   <relation label="overlap">
    wn::|empty%2:30:01::|
    wn::|empty%2:30:00::|
+   wn::|evacuate%2:38:01::|
+   wn::|evacuate%2:30:00::|
+   wn::|evacuate%2:38:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected" optional="optional">
@@ -13435,32 +13444,6 @@
    <feat name="scale">ont::happiness-scale</feat>
    <feat name="type">ont::euphoric</feat>
   </sem-feats>
- </concept>
- <concept name="ont::evacuate">
-  <relation label="inherit">
-   ont::rescue
-  </relation>
-  <relation label="overlap">
-   wn::|evacuate%2:38:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
-   <feat name="cause">agentive</feat>
-   <feat name="type">ont::evacuate</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::affected">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="form">geographical-object</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::eval-wrt-expectation">
   <relation label="inherit">
@@ -14189,6 +14172,7 @@
    wn::|indulge%2:34:00::|
    wn::|indulge%2:34:12::|
    wn::|indulge%2:41:00::|
+   wn::|satisfaction%1:04:00::|
   </relation>
  </concept>
  <concept name="ont::evoke-sensory-perception">
@@ -19049,6 +19033,9 @@
    <role-restr-map roles="ont::formal" optional="optional">
     <concept name="situation" />
    </role-restr-map>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
   </sem-frame>
  </concept>
  <concept name="ont::information-function-object">
@@ -22521,6 +22508,15 @@
    wn::|quantity%1:03:00::|
    wn::|measurement%1:04:00::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::measure-unit">
   <relation label="inherit">
@@ -30304,7 +30300,11 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
-    <concept name="t" />
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -36590,6 +36590,15 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::suck">
+  <relation label="inherit">
+   ont::pull
+  </relation>
+  <relation label="overlap">
+   wn::|suck%1:04:00::|
+   wn::|suck%2:34:04::|
+  </relation>
  </concept>
  <concept name="ont::sufficiency">
   <relation label="inherit">

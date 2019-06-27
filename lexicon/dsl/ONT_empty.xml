@@ -9,6 +9,9 @@
  <relation label="overlap">
   wn::|empty%2:30:01::|
   wn::|empty%2:30:00::|
+  wn::|evacuate%2:38:01::|
+  wn::|evacuate%2:30:00::|
+  wn::|evacuate%2:38:00::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::affected" optional="optional">
@@ -417,9 +420,9 @@
   ont::empty
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-source-xp-templ" />
+  <template-call template="ont::agent-affected-source-xp-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::advbl" sem-role="ont::source"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::advbl" sem-role="ont::source" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
@@ -487,16 +490,17 @@
   <pos pos="v" />
   <word first-word="evacuate" />
  </morph>
- <example text="evacuate delta">
+ <example text="evacuate the building (of people)">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::empty
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-np-templ" />
+  <template-call template="ont::agent-affectedr-affected-xp-pp-of-optional-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected-result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -529,6 +533,25 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="evacuate" />
+ </morph>
+ <example text="The people evacuated">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::empty
+  ont::agent-templ
+ </relation>
  <semantics>
   <sem-feats>
    <feat name="time-span">extended</feat>

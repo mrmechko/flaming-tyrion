@@ -3534,8 +3534,10 @@
     (TYPE ONT::BECOME))
   (SEM-FRAME
     (ONT::FORMAL
-     (CONCEPT
-       T)
+     (SEM-FEATS
+       (INHERIT
+         SITUATION)
+       (TYPE ONT::PROPERTY-VAL))
      OPTIONAL)
     (ONT::AFFECTED
      (CONCEPT
@@ -8674,7 +8676,8 @@
     WN::|squash%2:35:00::|
     WN::|crush%2:35:00::|
     WN::|squelch%2:35:00::|
-    WN::|mash%2:35:00::|))
+    WN::|mash%2:35:00::|
+    WN::|grind%2:35:00::|))
 
 (CONCEPT
   ONT::CRUSTACEANS
@@ -11285,7 +11288,10 @@
     ONT::CAUSE-COME-FROM)
   (OVERLAP
     WN::|empty%2:30:01::|
-    WN::|empty%2:30:00::|)
+    WN::|empty%2:30:00::|
+    WN::|evacuate%2:38:01::|
+    WN::|evacuate%2:30:00::|
+    WN::|evacuate%2:38:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (CONCEPT
@@ -11745,25 +11751,6 @@
       ABSTR-OBJ)
     (SCALE ONT::HAPPINESS-SCALE)
     (TYPE ONT::EUPHORIC)))
-
-(CONCEPT
-  ONT::EVACUATE
-  (INHERIT
-    ONT::RESCUE)
-  (OVERLAP
-    WN::|evacuate%2:38:00::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (ASPECT DYNAMIC)
-    (CAUSE AGENTIVE)
-    (TYPE ONT::EVACUATE))
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (FORM GEOGRAPHICAL-OBJECT)))))
 
 (CONCEPT
   ONT::EVAL-WRT-EXPECTATION
@@ -12402,7 +12389,8 @@
     WN::|indulge%2:41:01::|
     WN::|indulge%2:34:00::|
     WN::|indulge%2:34:12::|
-    WN::|indulge%2:41:00::|))
+    WN::|indulge%2:41:00::|
+    WN::|satisfaction%1:04:00::|))
 
 (CONCEPT
   ONT::EVOKE-SENSORY-PERCEPTION
@@ -16609,6 +16597,10 @@
     (ONT::FORMAL
      (CONCEPT
        SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T)
      OPTIONAL)))
 
 (CONCEPT
@@ -19583,7 +19575,17 @@
     ONT::ORDERED-DOMAIN)
   (OVERLAP
     WN::|quantity%1:03:00::|
-    WN::|measurement%1:04:00::|))
+    WN::|measurement%1:04:00::|)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::MEASURE-UNIT
@@ -26362,8 +26364,13 @@
     WN::|amount%1:03:00::|)
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       T)
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
      OPTIONAL)))
 
 (CONCEPT
@@ -31919,6 +31926,14 @@
      (CONCEPT
        T)
      OPTIONAL)))
+
+(CONCEPT
+  ONT::SUCK
+  (INHERIT
+    ONT::PULL)
+  (OVERLAP
+    WN::|suck%1:04:00::|
+    WN::|suck%2:34:04::|))
 
 (CONCEPT
   ONT::SUFFICIENCY
