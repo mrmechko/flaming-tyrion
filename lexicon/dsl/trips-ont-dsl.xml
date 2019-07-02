@@ -2980,8 +2980,6 @@
   </relation>
   <relation label="overlap">
    wn::|atmospheric_phenomenon%1:19:00::|
-   wn::|cloud%1:19:01::|
-   wn::|smoke%1:22:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -7120,9 +7118,13 @@
    ont::configuration-property-val
   </relation>
  </concept>
- <concept name="ont::cloud-object">
+ <concept name="ont::cloud-like-object">
   <relation label="inherit">
    ont::atmospheric-phenomenon
+  </relation>
+  <relation label="overlap">
+   wn::|cloud%1:19:01::|
+   wn::|smoke%1:22:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -7130,7 +7132,7 @@
    </relation>
    <feat name="form">substance</feat>
    <feat name="origin">non-living</feat>
-   <feat name="type">ont::cloud-object</feat>
+   <feat name="type">ont::cloud-like-object</feat>
   </sem-feats>
  </concept>
  <concept name="ont::cloudy">
@@ -8820,6 +8822,7 @@
    wn::|take_in%2:34:00::|
    wn::|take%2:34:00::|
    wn::|have%2:34:00::|
+   wn::|sample%2:34:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -16197,11 +16200,17 @@
   </relation>
  </concept>
  <concept name="ont::from">
+  <comment>
+   &quot;This is the initial state of a change - not an initial locaition, which is FROM-LOC&quot;
+  </comment>
   <relation label="inherit">
    ont::source-reln
   </relation>
  </concept>
  <concept name="ont::from-loc">
+  <comment>
+   &quot;This indicates an initial location of an object&quot;
+  </comment>
   <relation label="inherit">
    ont::source-reln
   </relation>
@@ -16212,15 +16221,17 @@
       <concept name="phys-obj" />
       <concept name="abstr-obj" />
      </or>
-     <feat name="mobility">movable</feat>
      <feat name="spatial-abstraction">?!sa</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::figure" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="mobility">movable</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -26632,6 +26643,9 @@
      </feat>
     </sem-feats>
    </role-restr-map>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="phys-obj" />
+   </role-restr-map>
   </sem-frame>
  </concept>
  <concept name="ont::original-material">
@@ -32917,9 +32931,6 @@
   <relation label="inherit">
    ont::choosing
   </relation>
-  <relation label="overlap">
-   wn::|sample%2:34:00::|
-  </relation>
  </concept>
  <concept name="ont::satedness-val">
   <relation label="inherit">
@@ -33158,6 +33169,7 @@
     <or>
      <concept name="phys-obj" />
      <concept name="situation" />
+     <concept name="time" />
     </or>
    </role-restr-map>
   </sem-frame>
@@ -38949,7 +38961,6 @@
    wn::|taste%2:34:00::|
    wn::|try_out%2:34:00::|
    wn::|try%2:34:00::|
-   wn::|sample%2:34:00::|
    wn::|essay%2:41:01::|
    wn::|examine%2:41:00::|
    wn::|try_out%2:41:00::|

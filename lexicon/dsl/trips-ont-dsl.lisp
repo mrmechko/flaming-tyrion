@@ -2618,9 +2618,7 @@
   (INHERIT
     ONT::NATURAL-PHENOMENON)
   (OVERLAP
-    WN::|atmospheric_phenomenon%1:19:00::|
-    WN::|cloud%1:19:01::|
-    WN::|smoke%1:22:00::|)
+    WN::|atmospheric_phenomenon%1:19:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -6216,15 +6214,18 @@
     ONT::CONFIGURATION-PROPERTY-VAL))
 
 (CONCEPT
-  ONT::CLOUD-OBJECT
+  ONT::CLOUD-LIKE-OBJECT
   (INHERIT
     ONT::ATMOSPHERIC-PHENOMENON)
+  (OVERLAP
+    WN::|cloud%1:19:01::|
+    WN::|smoke%1:22:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
     (FORM SUBSTANCE)
     (ORIGIN NON-LIVING)
-    (TYPE ONT::CLOUD-OBJECT)))
+    (TYPE ONT::CLOUD-LIKE-OBJECT)))
 
 (CONCEPT
   ONT::CLOUDY
@@ -7733,7 +7734,8 @@
     WN::|ingest%2:34:00::|
     WN::|take_in%2:34:00::|
     WN::|take%2:34:00::|
-    WN::|have%2:34:00::|)
+    WN::|have%2:34:00::|
+    WN::|sample%2:34:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -14158,11 +14160,14 @@
 
 (CONCEPT
   ONT::FROM
+  (COMMENT
+   "This is the initial state of a change - not an initial locaition, which is FROM-LOC")
   (INHERIT
     ONT::SOURCE-RELN))
 
 (CONCEPT
   ONT::FROM-LOC
+  (COMMENT "This indicates an initial location of an object")
   (INHERIT
     ONT::SOURCE-RELN)
   (SEM-FRAME
@@ -14173,15 +14178,16 @@
            PHYS-OBJ)
          (CONCEPT
            ABSTR-OBJ))
-       (MOBILITY MOVABLE)
        (SPATIAL-ABSTRACTION ?!SA))
      OPTIONAL)
     (ONT::FIGURE
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (MOBILITY MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -23167,6 +23173,10 @@
         (OR
           ONT::CARDINAL-POINT
           ONT::OBJECT-DEPENDENT-LOCATION)))
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       PHYS-OBJ)
      OPTIONAL)))
 
 (CONCEPT
@@ -28677,9 +28687,7 @@
 (CONCEPT
   ONT::SAMPLING
   (INHERIT
-    ONT::CHOOSING)
-  (OVERLAP
-    WN::|sample%2:34:00::|))
+    ONT::CHOOSING))
 
 (CONCEPT
   ONT::SATEDNESS-VAL
@@ -28909,7 +28917,9 @@
        (CONCEPT
          PHYS-OBJ)
        (CONCEPT
-         SITUATION))
+         SITUATION)
+       (CONCEPT
+         TIME))
      OPTIONAL)))
 
 (CONCEPT
@@ -33985,7 +33995,6 @@
     WN::|taste%2:34:00::|
     WN::|try_out%2:34:00::|
     WN::|try%2:34:00::|
-    WN::|sample%2:34:00::|
     WN::|essay%2:41:01::|
     WN::|examine%2:41:00::|
     WN::|try_out%2:41:00::|

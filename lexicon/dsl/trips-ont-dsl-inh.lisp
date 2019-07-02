@@ -14418,9 +14418,7 @@
   (INHERIT
     ONT::NATURAL-PHENOMENON)
   (OVERLAP
-    WN::|atmospheric_phenomenon%1:19:00::|
-    WN::|cloud%1:19:01::|
-    WN::|smoke%1:22:00::|)
+    WN::|atmospheric_phenomenon%1:19:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -33111,9 +33109,12 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
-  ONT::CLOUD-OBJECT
+  ONT::CLOUD-LIKE-OBJECT
   (INHERIT
     ONT::ATMOSPHERIC-PHENOMENON)
+  (OVERLAP
+    WN::|cloud%1:19:01::|
+    WN::|smoke%1:22:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -33132,7 +33133,7 @@
        F::SPATIAL-REGION))
     (FORM F::SUBSTANCE)
     (ORIGIN F::NON-LIVING)
-    (TYPE ONT::CLOUD-OBJECT)))
+    (TYPE ONT::CLOUD-LIKE-OBJECT)))
 
 (CONCEPT
   ONT::CLOUDY
@@ -39974,7 +39975,8 @@
     WN::|ingest%2:34:00::|
     WN::|take_in%2:34:00::|
     WN::|take%2:34:00::|
-    WN::|have%2:34:00::|)
+    WN::|have%2:34:00::|
+    WN::|sample%2:34:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -55730,6 +55732,8 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           TIME)
+         (CONCEPT
            SITUATION)
          (CONCEPT
            PHYS-OBJ))
@@ -58632,7 +58636,7 @@
        (TYPE
         (OR
           ONT::MATERIAL
-          ONT::CLOUD-OBJECT
+          ONT::CLOUD-LIKE-OBJECT
           ONT::STORM
           ONT::PRECIPITATION))
        (FORM F::SUBSTANCE))
@@ -71117,7 +71121,7 @@
        (TYPE
         (OR
           ONT::MATERIAL
-          ONT::CLOUD-OBJECT
+          ONT::CLOUD-LIKE-OBJECT
           ONT::STORM
           ONT::PRECIPITATION))
        (FORM F::SUBSTANCE))
@@ -72629,6 +72633,8 @@
 
 (CONCEPT
   ONT::FROM
+  (COMMENT
+   "This is the initial state of a change - not an initial locaition, which is FROM-LOC")
   (INHERIT
     ONT::SOURCE-RELN)
   (SEM-FEATS
@@ -72673,6 +72679,7 @@
 
 (CONCEPT
   ONT::FROM-LOC
+  (COMMENT "This indicates an initial location of an object")
   (INHERIT
     ONT::SOURCE-RELN)
   (SEM-FRAME
@@ -72684,7 +72691,6 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
-       (MOBILITY F::MOVABLE)
        (SPATIAL-ABSTRACTION
         (OR
           F::SPATIAL-REGION
@@ -72699,7 +72705,8 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (MOBILITY F::MOVABLE))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -91674,6 +91681,8 @@
     (ONT::FIGURE
      (SEM-FEATS
        (OR
+         (CONCEPT
+           TIME)
          (CONCEPT
            SITUATION)
          (CONCEPT
@@ -121837,7 +121846,7 @@
        (TYPE
         (OR
           ONT::MATERIAL
-          ONT::CLOUD-OBJECT
+          ONT::CLOUD-LIKE-OBJECT
           ONT::STORM
           ONT::PRECIPITATION))
        (FORM F::SUBSTANCE)))
@@ -123618,15 +123627,6 @@
   (INHERIT
     ONT::ORIENTED-LOC-RELN)
   (SEM-FRAME
-    (ONT::FIGURE
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
        (OR
@@ -123639,6 +123639,12 @@
         (OR
           ONT::CARDINAL-POINT
           ONT::OBJECT-DEPENDENT-LOCATION)))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::PHYS-OBJECT))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -132645,7 +132651,7 @@
        (TYPE
         (OR
           ONT::MATERIAL
-          ONT::CLOUD-OBJECT
+          ONT::CLOUD-LIKE-OBJECT
           ONT::STORM
           ONT::PRECIPITATION))
        (FORM F::SUBSTANCE))
@@ -151337,8 +151343,6 @@
   ONT::SAMPLING
   (INHERIT
     ONT::CHOOSING)
-  (OVERLAP
-    WN::|sample%2:34:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -152030,6 +152034,8 @@
     (ONT::FIGURE
      (SEM-FEATS
        (OR
+         (CONCEPT
+           TIME)
          (CONCEPT
            SITUATION)
          (CONCEPT
@@ -178468,7 +178474,6 @@
     WN::|taste%2:34:00::|
     WN::|try_out%2:34:00::|
     WN::|try%2:34:00::|
-    WN::|sample%2:34:00::|
     WN::|essay%2:41:01::|
     WN::|examine%2:41:00::|
     WN::|try_out%2:41:00::|
