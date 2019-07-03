@@ -5076,37 +5076,6 @@
        T))))
 
 (CONCEPT
-  ONT::CAUSE-INTERACT
-  (COMMENT "an AGENT causes some interaction with another agent")
-  (INHERIT
-    ONT::CAUSE-EFFECT)
-  (OVERLAP
-    WN::|interact%2:41:00::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (TRAJECTORY -)
-    (TYPE ONT::CAUSE-INTERACT))
-  (SEM-FRAME
-    (ONT::AGENT1
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)
-    (ONT::AGENT
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))))
-
-(CONCEPT
   ONT::CAUSE-MAKE-THINGS
   (INHERIT
     ONT::CREATE)
@@ -7735,7 +7704,8 @@
     WN::|take_in%2:34:00::|
     WN::|take%2:34:00::|
     WN::|have%2:34:00::|
-    WN::|sample%2:34:00::|)
+    WN::|sample%2:34:00::|
+    WN::|swallow%2:34:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -15418,11 +15388,9 @@
 
 (CONCEPT
   ONT::HAVE-INFLUENCE
-  (COMMENT "an AGENT causes some interaction with another agent")
+  (COMMENT "an AGENT causes some influence another agent")
   (INHERIT
     ONT::CAUSE-EFFECT)
-  (OVERLAP
-    WN::|interact%2:41:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (SEM-FEATS
@@ -18518,7 +18486,8 @@
   (INHERIT
     ONT::SUBSTANCE)
   (OVERLAP
-    WN::|liquid%1:27:00::|)
+    WN::|liquid%1:27:00::|
+    WN::|Fluid%1:27:02::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -20168,7 +20137,9 @@
   (INHERIT
     ONT::REPRESENTATIVE)
   (OVERLAP
-    WN::|misinform%2:32:00::|))
+    WN::|misinform%2:32:00::|
+    WN::|deceive%2:41:00::|
+    WN::|misrepresent%2:31:00::|))
 
 (CONCEPT
   ONT::MISS
@@ -30130,7 +30101,6 @@
       SITUATION)
     (TANGIBLE +)
     (CONTAINER -)
-    (INFORMATION MENTAL-CONSTRUCT)
     (INTENTIONAL -)
     (TYPE ONT::SITUATION-ROOT)))
 
@@ -31257,7 +31227,8 @@
     WN::|start%1:28:00::|
     WN::|take%2:41:13::|
     WN::|take_to%2:41:01::|
-    WN::|begin%2:32:04::|)
+    WN::|begin%2:32:04::|
+    WN::|originate_in%2:42:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (OR

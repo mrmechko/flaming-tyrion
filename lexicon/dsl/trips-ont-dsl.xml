@@ -5818,40 +5818,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::cause-interact">
-  <comment>
-   &quot;an AGENT causes some interaction with another agent&quot;
-  </comment>
-  <relation label="inherit">
-   ont::cause-effect
-  </relation>
-  <relation label="overlap">
-   wn::|interact%2:41:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="trajectory">-</feat>
-   <feat name="type">ont::cause-interact</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::agent1" optional="optional">
-    <or>
-     <concept name="situation" />
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-   </role-restr-map>
-   <role-restr-map roles="ont::agent">
-    <or>
-     <concept name="situation" />
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::cause-make-things">
   <relation label="inherit">
    ont::create
@@ -8823,6 +8789,7 @@
    wn::|take%2:34:00::|
    wn::|have%2:34:00::|
    wn::|sample%2:34:00::|
+   wn::|swallow%2:34:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -17663,13 +17630,10 @@
  </concept>
  <concept name="ont::have-influence">
   <comment>
-   &quot;an AGENT causes some interaction with another agent&quot;
+   &quot;an AGENT causes some influence another agent&quot;
   </comment>
   <relation label="inherit">
    ont::cause-effect
-  </relation>
-  <relation label="overlap">
-   wn::|interact%2:41:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal">
@@ -21276,6 +21240,7 @@
   </relation>
   <relation label="overlap">
    wn::|liquid%1:27:00::|
+   wn::|fluid%1:27:02::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -23193,6 +23158,8 @@
   </relation>
   <relation label="overlap">
    wn::|misinform%2:32:00::|
+   wn::|deceive%2:41:00::|
+   wn::|misrepresent%2:31:00::|
   </relation>
  </concept>
  <concept name="ont::miss">
@@ -34539,7 +34506,6 @@
    </relation>
    <feat name="tangible">+</feat>
    <feat name="container">-</feat>
-   <feat name="information">mental-construct</feat>
    <feat name="intentional">-</feat>
    <feat name="type">ont::situation-root</feat>
   </sem-feats>
@@ -35837,6 +35803,7 @@
    wn::|take%2:41:13::|
    wn::|take_to%2:41:01::|
    wn::|begin%2:32:04::|
+   wn::|originate_in%2:42:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::neutral" optional="optional">
