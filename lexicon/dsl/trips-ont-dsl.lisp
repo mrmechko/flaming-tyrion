@@ -1135,6 +1135,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -1144,6 +1145,7 @@
            PHYS-OBJ)
          (CONCEPT
            ABSTR-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)))
 
@@ -20139,7 +20141,7 @@
   (OVERLAP
     WN::|misinform%2:32:00::|
     WN::|deceive%2:41:00::|
-    WN::|misrepresent%2:31:00::|))
+    WN::|misrepresent%2:32:00::|))
 
 (CONCEPT
   ONT::MISS

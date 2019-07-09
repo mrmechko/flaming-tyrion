@@ -1699,6 +1699,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -1708,6 +1709,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -1837,6 +1839,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -1846,6 +1849,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -2569,6 +2573,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -2578,6 +2583,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -2785,6 +2791,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -2794,6 +2801,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -5393,6 +5401,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -5403,6 +5412,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::SOURCE
@@ -5460,6 +5470,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -5469,6 +5480,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -6809,6 +6821,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -6819,6 +6832,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL))
   (SEM-FEATS
@@ -9819,6 +9833,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -9828,6 +9843,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -9971,6 +9987,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -9980,6 +9997,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -10056,6 +10074,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -10065,6 +10084,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -10992,6 +11012,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -11002,6 +11023,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::NOROLE
@@ -11324,6 +11346,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -11333,6 +11356,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)))
@@ -12193,6 +12217,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -12202,6 +12227,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -12278,6 +12304,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -12287,6 +12314,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -12466,6 +12494,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -12475,6 +12504,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -21130,6 +21160,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -21139,6 +21170,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -33719,6 +33751,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AFFECTED
@@ -33744,6 +33777,7 @@
          (CONCEPT
            ABSTR-OBJ))
        (INTENTIONAL +)
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::FORMAL
      (CONCEPT
@@ -35342,6 +35376,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -35351,6 +35386,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -36008,6 +36044,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -36017,6 +36054,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -36163,6 +36201,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -36172,6 +36211,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -36832,6 +36872,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -36841,6 +36882,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -36909,6 +36951,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -36919,6 +36962,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)))
 
@@ -36986,6 +37030,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -36995,6 +37040,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -38787,6 +38833,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -38796,6 +38843,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -39185,6 +39233,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -39194,6 +39243,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -40192,6 +40242,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -40201,6 +40252,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -40279,6 +40331,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -40288,6 +40341,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -41066,6 +41120,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -41075,6 +41130,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -41427,6 +41483,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -41436,6 +41493,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)))
@@ -41474,6 +41532,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -41483,6 +41542,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -44168,6 +44228,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -44177,6 +44238,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -46245,6 +46307,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -46254,6 +46317,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -46877,6 +46941,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -46886,6 +46951,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -48430,6 +48496,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -48440,6 +48507,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::NEUTRAL
@@ -50847,6 +50915,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -50856,6 +50925,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -51784,6 +51854,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -51793,6 +51864,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -52429,6 +52501,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -52438,6 +52511,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)))
@@ -52867,6 +52941,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -52876,6 +52951,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -57750,6 +57826,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -57773,6 +57850,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +)))
     (ONT::EFFECT
@@ -57791,6 +57869,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -57814,6 +57893,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +)))
     (ONT::EFFECT
@@ -60110,6 +60190,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -60119,6 +60200,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -63669,6 +63751,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -63678,6 +63761,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -64945,6 +65029,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -64954,6 +65039,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -65234,6 +65320,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -65243,6 +65330,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)))
@@ -65516,6 +65604,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -65531,6 +65620,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)
@@ -66193,6 +66283,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -66202,6 +66293,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -68472,6 +68564,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -68481,6 +68574,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AFFECTED
@@ -69746,6 +69840,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -69755,6 +69850,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -71533,6 +71629,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -71542,6 +71639,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -75668,6 +75766,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -75677,6 +75776,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -76373,6 +76473,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -76382,6 +76483,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -79824,6 +79926,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -79833,6 +79936,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)))
@@ -79985,6 +80089,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -79994,6 +80099,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -81950,6 +82056,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -81959,6 +82066,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -82769,6 +82877,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -82778,6 +82887,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -85091,6 +85201,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -85100,6 +85211,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -86733,6 +86845,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -86742,6 +86855,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -87778,7 +87892,8 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
-       (INTENTIONAL +))
+       (INTENTIONAL +)
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AGENT
      (SEM-FEATS
@@ -87788,6 +87903,7 @@
          (CONCEPT
            PHYS-OBJ))
        (INTENTIONAL +)
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
@@ -88875,6 +88991,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -88884,6 +89001,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -89823,6 +89941,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -89832,6 +89951,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -89905,6 +90025,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -89914,6 +90035,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -94915,6 +95037,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -94925,6 +95048,7 @@
          (CONCEPT
            ABSTR-OBJ))
        (INTENTIONAL +)
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
 
@@ -95300,6 +95424,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -95309,6 +95434,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -96257,6 +96383,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -96266,6 +96393,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -96928,6 +97056,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -96938,6 +97067,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)))
 
@@ -98912,6 +99042,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)
@@ -98928,6 +99059,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::LOCATION
@@ -101277,6 +101409,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -101287,6 +101420,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)))
 
@@ -103020,7 +103154,7 @@
   (OVERLAP
     WN::|misinform%2:32:00::|
     WN::|deceive%2:41:00::|
-    WN::|misrepresent%2:31:00::|)
+    WN::|misrepresent%2:32:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -103046,6 +103180,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -103055,6 +103190,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -107231,6 +107367,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -107240,6 +107377,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -109395,6 +109533,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)
@@ -109406,6 +109545,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::LOCATION
@@ -110255,6 +110395,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -110264,6 +110405,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -110685,6 +110827,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)
@@ -110701,6 +110844,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::LOCATION
@@ -119703,6 +119847,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -119712,6 +119857,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -121304,6 +121450,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -121314,6 +121461,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -124868,6 +125016,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -124878,6 +125027,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AFFECTED
@@ -125444,6 +125594,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -125453,6 +125604,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -126763,6 +126915,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -126772,6 +126925,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -132701,6 +132855,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -132710,6 +132865,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -136883,6 +137039,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -136892,6 +137049,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -138517,6 +138675,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -138526,6 +138685,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -140071,6 +140231,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -140081,6 +140242,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::FORMAL
@@ -143021,6 +143183,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -143030,6 +143193,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -144996,6 +145160,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -145005,6 +145170,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -145881,6 +146047,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)
@@ -145897,6 +146064,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::LOCATION
@@ -146510,6 +146678,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -146519,6 +146688,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -146596,6 +146766,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -146605,6 +146776,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -146906,6 +147078,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -146915,6 +147088,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -147416,6 +147590,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -147425,6 +147600,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -148389,6 +148565,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -148412,6 +148589,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +)))
     (ONT::EFFECT
@@ -148911,6 +149089,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -148920,6 +149099,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -149430,6 +149610,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -149439,6 +149620,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -151627,6 +151809,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -151642,6 +151825,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)
@@ -152013,6 +152197,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)
@@ -152024,6 +152209,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -152216,6 +152402,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -152231,6 +152418,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)
@@ -155356,6 +155544,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -155365,6 +155554,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -156298,6 +156488,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -156307,6 +156498,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL))
@@ -157657,6 +157849,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -157672,6 +157865,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)
@@ -168029,6 +168223,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -168038,6 +168233,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -169283,6 +169479,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -169292,6 +169489,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -170550,6 +170748,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)
@@ -170561,6 +170760,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -171916,6 +172116,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -171925,6 +172126,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)))
@@ -172019,6 +172221,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -172028,6 +172231,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -172844,6 +173048,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AFFECTED
@@ -172864,6 +173069,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +)))
     (ONT::EFFECT
      (SEM-FEATS
@@ -173211,6 +173417,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -173220,6 +173427,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -174465,6 +174673,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -174474,6 +174683,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -185043,6 +185253,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -185052,6 +185263,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
      OPTIONAL)))
@@ -186094,6 +186306,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -186103,6 +186316,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -187365,6 +187579,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT1
@@ -187374,6 +187589,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::RESULT
@@ -188696,6 +188912,7 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)
     (ONT::AGENT
@@ -188706,6 +188923,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
        (INTENTIONAL +))
      OPTIONAL)))
 
