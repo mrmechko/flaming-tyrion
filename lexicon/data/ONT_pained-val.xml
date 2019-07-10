@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../style/onttype.xsl"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
-<ONTTYPE name="pained-val" parent="medical-symptom-val" modified="Wed Jul  3 01:43:35 2019">
+<ONTTYPE name="pained-val" parent="negative-body-condition-property-val" modified="Wed Jul 10 01:43:36 2019">
 <SEM fltype="abstr-obj">
-<FEATURES type="pained-val" scale="physical-property-scale" intentional="-" information="-" container="-" />
+<FEATURES type="pained-val" scale="pain-scale" intentional="-" information="-" container="-" />
 </SEM>
 <ARGUMENT role="refset" optionality="optional" fltype="?!type" />
 <ARGUMENT role="compar" optionality="optional" fltype="(? ty437 abstr-obj phys-obj)">
@@ -13,7 +13,6 @@
 <ARGUMENT role="scale" optionality="essential" fltype="(? scale436 abstr-obj)">
 <FEATURES type="domain" />
 </ARGUMENT>
-<ARGUMENT role="figure" optionality="required" fltype="?!type" />
 <ARGUMENT role="formal" optionality="optional" fltype="situation" />
 <ARGUMENT role="neutral1" optionality="optional" fltype="?!type" />
 <ARGUMENT role="neutral" optionality="optional" fltype="(? pvt633 phys-obj abstr-obj situation)" />
@@ -21,6 +20,9 @@
 <ARGUMENT role="reason" optionality="optional" fltype="(? pi635 phys-obj abstr-obj situation)" />
 <ARGUMENT role="ground" optionality="optional" fltype="?!type" />
 <ARGUMENT role="standard" optionality="optional" fltype="?!type" />
+<ARGUMENT role="figure" optionality="essential" fltype="phys-obj">
+<FEATURES origin="(? org646 human non-human-animal)" />
+</ARGUMENT>
 <WORD name="in_pain" />
 <WORD name="achey" />
 <WORD name="achy" />

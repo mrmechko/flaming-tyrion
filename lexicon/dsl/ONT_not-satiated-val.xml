@@ -4,13 +4,20 @@
  <provenance name="TRIPS"/>
  <concept name="ont::not-satiated-val">
  <relation label="inherit">
-  ont::satedness-val
+  ont::negative-body-condition-property-val
  </relation>
  <relation label="overlap">
   wn::|unsatiated%5:00:00:insatiate:00|
   wn::|unsated%5:00:00:insatiate:00|
   wn::|insatiate%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::not-satiated-scale</feat>
+  <feat name="type">ont::not-satiated-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -136,10 +143,42 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::satedness-val">
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
  <relation label="inherit">
-  ont::body-condition-property-val
+  abstr-obj
  </relation>
+ <feat name="scale">ont::body-condition-scale</feat>
+ <feat name="type">ont::body-condition-property-val</feat>
+ </sem-feats>
+ <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::physical-property-scale</feat>
+  <feat name="type">ont::physical-property-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::body-condition-property-val">
  <comment>
@@ -171,43 +210,18 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-val">
- <comment>
-  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::physical-property-scale</feat>
-  <feat name="type">ont::physical-property-val</feat>
- </sem-feats>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::body-condition-scale</feat>
- <feat name="type">ont::body-condition-property-val</feat>
+ <feat name="scale">ont::not-satiated-scale</feat>
+ <feat name="type">ont::not-satiated-val</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
+ <concept name="ont::negative-body-condition-property-val">
+ <relation label="inherit">
+  ont::body-condition-property-val
+ </relation>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -354,6 +368,14 @@
   wn::|famished%5:00:00:hungry:00|
   wn::|peckish%5:00:00:hungry:00|
   wn::|hungry%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::dehydration-val">
+ <relation label="inherit">
+  ont::not-satiated-val
+ </relation>
+ <relation label="overlap">
+  wn::|dehydrated%5:00:00:unhealthy:00|
  </relation>
  </concept>
  <sense>

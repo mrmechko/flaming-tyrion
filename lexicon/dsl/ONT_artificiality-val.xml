@@ -9,6 +9,13 @@
  <relation label="inherit">
   ont::real-vs-fake-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::artificiality-scale</feat>
+  <feat name="type">ont::artificiality-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -134,19 +141,53 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <feat name="tangible">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
+ <concept name="ont::real-vs-fake-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::real-vs-fake-scale</feat>
+  <feat name="type">ont::real-vs-fake-val</feat>
+ </sem-feats>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::evaluation-scale</feat>
- <feat name="type">ont::evaluation-attribute-val</feat>
+ <feat name="scale">ont::artificiality-scale</feat>
+ <feat name="type">ont::artificiality-val</feat>
+ </sem-feats>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::real-vs-fake-scale</feat>
+ <feat name="type">ont::real-vs-fake-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -200,33 +241,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evaluation-attribute-val">
- <comment>
-  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::evaluation-scale</feat>
-  <feat name="type">ont::evaluation-attribute-val</feat>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-attribute-val</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <feat name="tangible">+</feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::real-vs-fake-val">
- <relation label="inherit">
-  ont::evaluation-attribute-val
- </relation>
- </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -314,6 +342,13 @@
   wn::|affected%3:00:01::|
   wn::|unnatural%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::artificial-scale</feat>
+  <feat name="type">ont::artificial</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::natural">
  <relation label="inherit">
@@ -322,6 +357,13 @@
  <relation label="overlap">
   wn::|natural%3:00:02::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::natural-scale</feat>
+  <feat name="type">ont::natural</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure">
    <or>

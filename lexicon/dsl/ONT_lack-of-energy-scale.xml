@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::lack-of-energy-scale">
+ <relation label="inherit">
+  ont::negative-body-condition-scale
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::tangible-abstract-object">
+ <comment>
+  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::tangible-abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::ordered-domain">
+ <relation label="inherit">
+  ont::domain
+ </relation>
+ </concept>
+ <concept name="ont::negative-body-condition-scale">
+ <relation label="inherit">
+  ont::body-condition-scale
+ </relation>
+ </concept>
+ <concept name="ont::body-condition-scale">
+ <relation label="inherit">
+  ont::physical-property-scale
+ </relation>
+ </concept>
+ <concept name="ont::physical-property-scale">
+ <comment>
+  &quot;scales associated with properties pertaining to the attributes of physical entities or substances. Note: many properties can apply to non-physical objects.&quot;
+ </comment>
+ <relation label="inherit">
+  ont::ordered-domain
+ </relation>
+ </concept>
+ <concept name="ont::domain">
+ <comment>
+  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::tangible-abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|attribute%1:03:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::tangible-abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
+ <concept name="ont::lethargy-scale">
+ <relation label="inherit">
+  ont::lack-of-energy-scale
+ </relation>
+ <relation label="overlap">
+  wn::|lethargy%1:26:00::|
+  wn::|lethargy%1:07:00::|
+ </relation>
+ </concept>
+ <concept name="ont::fatigue-scale">
+ <relation label="inherit">
+  ont::lack-of-energy-scale
+ </relation>
+ <relation label="overlap">
+  wn::|exhaustion%1:26:00::|
+  wn::|fatigue%1:26:00::|
+  wn::|tiredness%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::neutral-body-condition-scale">
+ <relation label="inherit">
+  ont::lack-of-energy-scale
+ </relation>
+ </concept>
+</dsl>

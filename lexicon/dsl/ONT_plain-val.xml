@@ -3,13 +3,24 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::plain-val">
+ <comment>
+  &quot;inelaborate, simple and plain&quot;
+ </comment>
  <relation label="inherit">
-  ont::plainness-val
+  ont::basicness-val
  </relation>
  <relation label="overlap">
   wn::|plain%3:00:01::|
   wn::|stark%5:00:00:plain:01|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::plain-scale</feat>
+  <feat name="type">ont::plain-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -135,20 +146,41 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <feat name="tangible">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
+ <concept name="ont::basicness-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::evaluation-scale</feat>
- <feat name="type">ont::evaluation-attribute-val</feat>
+ <feat name="orientation">pos</feat>
+ <feat name="scale">ont::plain-scale</feat>
+ <feat name="type">ont::plain-val</feat>
  </sem-feats>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -201,36 +233,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evaluation-attribute-val">
- <comment>
-  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::evaluation-scale</feat>
-  <feat name="type">ont::evaluation-attribute-val</feat>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-attribute-val</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <feat name="tangible">+</feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::plainness-val">
- <comment>
-  &quot;evaluation attributes dealing with plainess or elaborateness of something&quot;
- </comment>
- <relation label="inherit">
-  ont::evaluation-attribute-val
- </relation>
- </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -302,6 +318,17 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <concept name="ont::mere-val">
+ <comment>
+  &quot;being nothing other than what's specified&quot;
+ </comment>
+ <relation label="inherit">
+  ont::plain-val
+ </relation>
+ <relation label="overlap">
+  wn::|mere%5:00:00:specified:00|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="adj" />
@@ -315,6 +342,25 @@
   <provenance name="BASE500"/>
  </provenance>
  <example text="plain food">
+ </example>
+ <relation label="inherit">
+  ont::plain-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="unadorned" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <example text="the unadorned truth">
+  <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::plain-val

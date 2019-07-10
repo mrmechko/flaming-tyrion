@@ -4,13 +4,20 @@
  <provenance name="TRIPS"/>
  <concept name="ont::not-grateful-val">
  <relation label="inherit">
-  ont::thankfulness-val
+  ont::neg-experiencer-property-val
  </relation>
  <relation label="overlap">
   wn::|ungrateful%3:00:00::|
   wn::|thankless%3:00:00::|
   wn::|unthankful%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::gratitude-scale</feat>
+  <feat name="type">ont::not-grateful-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -136,34 +143,21 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::thankfulness-val">
- <relation label="inherit">
-  ont::emotional-val
- </relation>
- </concept>
- <concept name="ont::emotional-val">
- <comment>
-  &quot;state of having a particular emotion&quot;
- </comment>
- <relation label="inherit">
-  ont::psychological-property-val
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
  <concept name="ont::psychological-property-val">
  <comment>
   &quot;properties pertaining to psychological, mental or emotional states&quot;
@@ -195,21 +189,44 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::experiencer-property-val">
+ <comment>
+  &quot;state of experiencing a particular emotion or cognitive state&quot;
+ </comment>
+ <relation label="inherit">
+  ont::psychological-property-val
+ </relation>
  <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
  </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::gratitude-scale</feat>
+ <feat name="type">ont::not-grateful-val</feat>
+ </sem-feats>
+ <concept name="ont::neg-experiencer-property-val">
+ <comment>
+  &quot;experiencing negative experiences&quot;
+ </comment>
+ <relation label="inherit">
+  ont::experiencer-property-val
+ </relation>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property

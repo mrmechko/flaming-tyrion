@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::social-interaction-val">
  <comment>
-  &quot;properties of human behavior having to do with social interaction, e.g. friendly, kind, mean.)&quot;
+  &quot;sociability&quot;
  </comment>
  <relation label="inherit">
   ont::animal-propensity-val
@@ -307,6 +307,14 @@
   wn::|gregarious%3:00:00::|
   wn::|sociable%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::sociability-scale</feat>
+  <feat name="type">ont::social-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::not-social-val">
  <relation label="inherit">
@@ -317,50 +325,14 @@
   wn::|unsociable%3:00:00::|
   wn::|unsocial%3:00:00::|
  </relation>
- </concept>
- <concept name="ont::in-touch-val">
- <relation label="inherit">
-  ont::social-interaction-val
- </relation>
- </concept>
- <concept name="ont::responsibility-val">
- <relation label="inherit">
-  ont::social-interaction-val
- </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::responsibility-scale</feat>
-  <feat name="type">ont::responsibility-val</feat>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::sociability-scale</feat>
+  <feat name="type">ont::not-social-val</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::willingness-val">
- <relation label="inherit">
-  ont::social-interaction-val
- </relation>
- </concept>
- <concept name="ont::affection-val">
- <relation label="inherit">
-  ont::social-interaction-val
- </relation>
- </concept>
- <concept name="ont::tameness-val">
- <relation label="inherit">
-  ont::social-interaction-val
- </relation>
  </concept>
  <sense>
  <morph>

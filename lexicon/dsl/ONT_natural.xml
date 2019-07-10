@@ -9,6 +9,13 @@
  <relation label="overlap">
   wn::|natural%3:00:02::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::natural-scale</feat>
+  <feat name="type">ont::natural</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure">
    <or>
@@ -143,6 +150,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::real-vs-fake-scale</feat>
+ <feat name="type">ont::real-vs-fake-val</feat>
+ </sem-feats>
  <concept name="ont::evaluation-attribute-val">
  <comment>
   &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
@@ -165,13 +179,24 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::artificiality-val">
- <comment>
-  &quot;artificial vs. natural&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::real-vs-fake-val
+  abstr-obj
  </relation>
+ <feat name="scale">ont::artificiality-scale</feat>
+ <feat name="type">ont::artificiality-val</feat>
+ </sem-feats>
+ <concept name="ont::real-vs-fake-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::real-vs-fake-scale</feat>
+  <feat name="type">ont::real-vs-fake-val</feat>
+ </sem-feats>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
@@ -182,10 +207,27 @@
   </or>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::real-vs-fake-val">
+ <sem-feats>
  <relation label="inherit">
-  ont::evaluation-attribute-val
+  abstr-obj
  </relation>
+ <feat name="scale">ont::natural-scale</feat>
+ <feat name="type">ont::natural</feat>
+ </sem-feats>
+ <concept name="ont::artificiality-val">
+ <comment>
+  &quot;artificial vs. natural&quot;
+ </comment>
+ <relation label="inherit">
+  ont::real-vs-fake-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::artificiality-scale</feat>
+  <feat name="type">ont::artificiality-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::property-val">
  <relation label="inherit">

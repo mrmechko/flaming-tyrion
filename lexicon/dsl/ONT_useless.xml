@@ -10,6 +10,14 @@
   wn::|impractical%3:00:00::|
   wn::|useless%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::utility-scale</feat>
+  <feat name="type">ont::useless</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -135,11 +143,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::usefulness-val">
+ <sem-feats>
  <relation label="inherit">
-  ont::process-evaluation-val
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::process-evaluation-scale</feat>
+ <feat name="type">ont::process-evaluation-val</feat>
+ </sem-feats>
+ <concept name="ont::process-val">
+ <comment>
+  &quot;properties that describe processes&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
  </relation>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::utility-scale</feat>
+ <feat name="type">ont::usefulness-val</feat>
+ </sem-feats>
  <concept name="ont::process-evaluation-val">
  <comment>
   &quot;evaluation properties of processes&quot;
@@ -155,21 +180,26 @@
   <feat name="type">ont::process-evaluation-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::process-val">
- <comment>
-  &quot;properties that describe processes&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::process-evaluation-scale</feat>
- <feat name="type">ont::process-evaluation-val</feat>
+ <feat name="orientation">neg</feat>
+ <feat name="scale">ont::utility-scale</feat>
+ <feat name="type">ont::useless</feat>
  </sem-feats>
+ <concept name="ont::usefulness-val">
+ <relation label="inherit">
+  ont::process-evaluation-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::utility-scale</feat>
+  <feat name="type">ont::usefulness-val</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property

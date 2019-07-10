@@ -3,15 +3,16 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::unhappy">
+ <comment>
+  &quot;not happy, dissatisfied or displeased&quot;
+ </comment>
  <relation label="inherit">
-  ont::neg-soft-emotional-val
+  ont::neg-experiencer-property-val
  </relation>
  <relation label="overlap">
   wn::|dysphoric%3:00:00::|
   wn::|unhappy%3:00:00::|
-  wn::|sad%3:00:00::|
   wn::|gloomy%5:00:00:dejected:00|
-  wn::|melancholy%5:00:00:sad:00|
   wn::|miserable%5:00:00:unhappy:00|
   wn::|dejected%3:00:00::|
  </relation>
@@ -19,7 +20,8 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::sadness-scale</feat>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::happiness-scale</feat>
   <feat name="type">ont::unhappy</feat>
  </sem-feats>
  </concept>
@@ -193,26 +195,9 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::neg-soft-emotional-val">
- <relation label="inherit">
-  ont::neg-emotional-val
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::sadness-scale</feat>
- <feat name="type">ont::unhappy</feat>
- </sem-feats>
- <concept name="ont::neg-emotional-val">
- <relation label="inherit">
-  ont::emotional-val
- </relation>
- </concept>
- <concept name="ont::emotional-val">
+ <concept name="ont::experiencer-property-val">
  <comment>
-  &quot;state of having a particular emotion&quot;
+  &quot;state of experiencing a particular emotion or cognitive state&quot;
  </comment>
  <relation label="inherit">
   ont::psychological-property-val
@@ -232,6 +217,22 @@
    </sem-feats>
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="orientation">neg</feat>
+ <feat name="scale">ont::happiness-scale</feat>
+ <feat name="type">ont::unhappy</feat>
+ </sem-feats>
+ <concept name="ont::neg-experiencer-property-val">
+ <comment>
+  &quot;experiencing negative experiences&quot;
+ </comment>
+ <relation label="inherit">
+  ont::experiencer-property-val
+ </relation>
  </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -478,55 +479,6 @@
  <sense>
  <morph>
   <pos pos="adj" />
-  <word first-word="melancholy" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <example text="a melancholy outlook">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::unhappy
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="melancholy" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <example text="I am melancholy about it">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::unhappy
- </relation>
- <syntax>
-  <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp w::about)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::about" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
   <word first-word="miserable" />
   <forms>
    -LY
@@ -562,57 +514,6 @@
   <syn-sem>
    <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
    <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::about" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="sad" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <example text="a sad day">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::unhappy
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="sad" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <example text="I am happy for her">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::unhappy
- </relation>
- <syntax>
-  <template-call template="ont::adj-theme-xp-templ" xp="'(w::pp
-                                                          (or
-                                                            w::for
-                                                            w::about))" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="(or
-                                                                       w::for
-                                                                       w::about)" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>

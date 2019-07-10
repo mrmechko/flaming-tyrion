@@ -4,19 +4,19 @@
  <provenance name="TRIPS"/>
  <concept name="ont::euphoric">
  <relation label="inherit">
-  ont::pos-intense-emotional-val
+  ont::happy-val
  </relation>
  <relation label="overlap">
   wn::|euphoric%3:00:00::|
-  wn::|happy%3:00:00::|
   wn::|cheerful%3:00:00::|
   wn::|beaming%5:00:00:cheerful:00|
-  wn::|pleased%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
+  <feat name="intensity">ont::hi</feat>
+  <feat name="orientation">pos</feat>
   <feat name="scale">ont::happiness-scale</feat>
   <feat name="type">ont::euphoric</feat>
  </sem-feats>
@@ -191,26 +191,51 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::pos-intense-emotional-val">
+ <concept name="ont::happy-val">
  <relation label="inherit">
-  ont::pos-emotional-val
+  ont::pos-experiencer-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|happy%3:00:00::|
+  wn::|pleased%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::happiness-scale</feat>
+  <feat name="type">ont::happy-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intensity">ont::hi</feat>
+ <feat name="orientation">pos</feat>
+ <feat name="scale">ont::happiness-scale</feat>
+ <feat name="type">ont::euphoric</feat>
+ </sem-feats>
+ <concept name="ont::pos-experiencer-property-val">
+ <comment>
+  &quot;experiencing positive experiences&quot;
+ </comment>
+ <relation label="inherit">
+  ont::experiencer-property-val
  </relation>
  </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
+ <feat name="orientation">pos</feat>
  <feat name="scale">ont::happiness-scale</feat>
- <feat name="type">ont::euphoric</feat>
+ <feat name="type">ont::happy-val</feat>
  </sem-feats>
- <concept name="ont::pos-emotional-val">
- <relation label="inherit">
-  ont::emotional-val
- </relation>
- </concept>
- <concept name="ont::emotional-val">
+ <concept name="ont::experiencer-property-val">
  <comment>
-  &quot;state of having a particular emotion&quot;
+  &quot;state of experiencing a particular emotion or cognitive state&quot;
  </comment>
  <relation label="inherit">
   ont::psychological-property-val
@@ -497,52 +522,6 @@
    <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
    <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::formal"/>
    <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="allow-deleted-comp">-</feat>
-   <feat name="atype">central</feat>
-   <feat name="sort">pred</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="happy" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <example text="the news is happy / happy news">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::euphoric
-  ont::central-adj-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="adj" />
-  <word first-word="happy" />
-  <forms>
-   -ER
-   -LY
-  </forms>
- </morph>
- <example text="I am happy for her">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::euphoric
- </relation>
- <syntax>
-  <template-call template="ont::adj-theme-xp-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
   </syn-sem>
   <syn-feats>
    <feat name="allow-deleted-comp">-</feat>

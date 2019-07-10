@@ -287,11 +287,18 @@
  <concept name="abstr-obj" />
  <concept name="ont::freshness-val">
  <comment>
-  &quot;relating to how recently an object was made or obtained&quot;
+  &quot;property of items made or obtained recently/a while back&quot;
  </comment>
  <relation label="inherit">
   ont::evaluation-attribute-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::freshness-scale</feat>
+  <feat name="type">ont::freshness-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::cost-val">
  <comment>
@@ -327,6 +334,28 @@
  <relation label="inherit">
   ont::evaluation-attribute-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::tolerability-scale</feat>
+  <feat name="type">ont::tolerability-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::recommendable-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ <relation label="overlap">
+  wn::|advisable%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::recommendability-scale</feat>
+  <feat name="type">ont::recommendable-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::preference-val">
  <relation label="inherit">
@@ -420,6 +449,13 @@
  <relation label="inherit">
   ont::evaluation-attribute-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::harmfulness-scale</feat>
+  <feat name="type">ont::harmfulness-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::safety-val">
  <comment>
@@ -440,6 +476,13 @@
  <relation label="inherit">
   ont::evaluation-attribute-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::noticeability-scale</feat>
+  <feat name="type">ont::attention-worthy-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::importance-val">
  <comment>
@@ -489,6 +532,13 @@
  <relation label="inherit">
   ont::evaluation-attribute-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::familiarity-scale</feat>
+  <feat name="type">ont::familiarity-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::typicality-val">
  <comment>
@@ -505,18 +555,34 @@
   <feat name="type">ont::typicality-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::fundamental-val">
- <comment>
-  &quot;forming a necessary base or core&quot;
- </comment>
+ <concept name="ont::basicness-val">
  <relation label="inherit">
   ont::evaluation-attribute-val
  </relation>
+ </concept>
+ <concept name="ont::explicitness-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::explicitness-scale</feat>
+  <feat name="type">ont::explicitness-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::quality-val">
  <relation label="inherit">
   ont::evaluation-attribute-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::quality-level-scale</feat>
+  <feat name="type">ont::quality-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::reliability-val">
  <relation label="inherit">
@@ -530,14 +596,13 @@
  <relation label="inherit">
   ont::evaluation-attribute-val
  </relation>
- </concept>
- <concept name="ont::plainness-val">
- <comment>
-  &quot;evaluation attributes dealing with plainess or elaborateness of something&quot;
- </comment>
- <relation label="inherit">
-  ont::evaluation-attribute-val
- </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::worthiness-scale</feat>
+  <feat name="type">ont::worthiness-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::judgement-val">
  <relation label="inherit">
@@ -560,18 +625,27 @@
  <relation label="inherit">
   ont::evaluation-attribute-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::offensiveness-scale</feat>
+  <feat name="type">ont::offensiveness-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::orderliness-val">
  <relation label="inherit">
   ont::evaluation-attribute-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::orderliness-scale</feat>
+  <feat name="type">ont::orderliness-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::freedom-val">
- <relation label="inherit">
-  ont::evaluation-attribute-val
- </relation>
- </concept>
- <concept name="ont::recommendability-val">
  <relation label="inherit">
   ont::evaluation-attribute-val
  </relation>
@@ -580,5 +654,12 @@
  <relation label="inherit">
   ont::evaluation-attribute-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::real-vs-fake-scale</feat>
+  <feat name="type">ont::real-vs-fake-val</feat>
+ </sem-feats>
  </concept>
 </dsl>

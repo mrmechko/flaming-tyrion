@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::in-touch-val">
  <relation label="inherit">
-  ont::social-interaction-val
+  ont::social-val
  </relation>
  </concept>
  <or>
@@ -131,9 +131,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::social-val">
+ <relation label="inherit">
+  ont::social-interaction-val
+ </relation>
+ <relation label="overlap">
+  wn::|social%3:01:00::|
+  wn::|social%3:00:00::|
+  wn::|gregarious%3:00:00::|
+  wn::|sociable%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::sociability-scale</feat>
+  <feat name="type">ont::social-val</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::social-interaction-val">
  <comment>
-  &quot;properties of human behavior having to do with social interaction, e.g. friendly, kind, mean.)&quot;
+  &quot;sociability&quot;
  </comment>
  <relation label="inherit">
   ont::animal-propensity-val
@@ -148,6 +167,14 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="orientation">pos</feat>
+ <feat name="scale">ont::sociability-scale</feat>
+ <feat name="type">ont::social-val</feat>
+ </sem-feats>
  <concept name="ont::animal-propensity-val">
  <comment>
   &quot;properties relating to human or animal tendencies or inclinations to behave in a particular manner&quot;

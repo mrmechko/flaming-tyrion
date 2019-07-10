@@ -10,6 +10,14 @@
   wn::|interchangeable%5:00:00:replaceable:00|
   wn::|replaceable%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::replaceability-scale</feat>
+  <feat name="type">ont::replaceable-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -135,11 +143,26 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::replaceability-val">
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::process-val">
+ <comment>
+  &quot;properties that describe processes&quot;
+ </comment>
  <relation label="inherit">
-  ont::can-be-done-val
+  ont::property-val
  </relation>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::replaceability-scale</feat>
+ <feat name="type">ont::replaceability-val</feat>
+ </sem-feats>
  <concept name="ont::can-be-done-val">
  <relation label="inherit">
   ont::process-val
@@ -150,19 +173,26 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::process-val">
- <comment>
-  &quot;properties that describe processes&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::property-val
+  abstr-obj
  </relation>
+ <feat name="orientation">pos</feat>
+ <feat name="scale">ont::replaceability-scale</feat>
+ <feat name="type">ont::replaceable-val</feat>
+ </sem-feats>
+ <concept name="ont::replaceability-val">
+ <relation label="inherit">
+  ont::can-be-done-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::replaceability-scale</feat>
+  <feat name="type">ont::replaceability-val</feat>
+ </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property

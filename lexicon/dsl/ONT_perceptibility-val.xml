@@ -6,6 +6,13 @@
  <relation label="inherit">
   ont::sensory-property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::perceptibility-scale</feat>
+  <feat name="type">ont::perceptibility-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -131,12 +138,49 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::sensory-property-val">
+ <comment>
+  &quot;properties relating to the ability to receive sensory input (compare to ont::appearance-property-val)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::sensory-scale</feat>
+  <feat name="type">ont::sensory-property-val</feat>
+ </sem-feats>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::physical-property-scale</feat>
- <feat name="type">ont::physical-property-val</feat>
+ <feat name="scale">ont::perceptibility-scale</feat>
+ <feat name="type">ont::perceptibility-val</feat>
+ </sem-feats>
+ <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::physical-property-scale</feat>
+  <feat name="type">ont::physical-property-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::sensory-scale</feat>
+ <feat name="type">ont::sensory-property-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -194,39 +238,9 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::sensory-scale</feat>
- <feat name="type">ont::sensory-property-val</feat>
+ <feat name="scale">ont::physical-property-scale</feat>
+ <feat name="type">ont::physical-property-val</feat>
  </sem-feats>
- <concept name="ont::physical-property-val">
- <comment>
-  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::physical-property-scale</feat>
-  <feat name="type">ont::physical-property-val</feat>
- </sem-feats>
- </concept>
- <concept name="ont::sensory-property-val">
- <comment>
-  &quot;properties relating to the ability to receive sensory input (compare to ont::appearance-property-val)&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::sensory-scale</feat>
-  <feat name="type">ont::sensory-property-val</feat>
- </sem-feats>
- </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -305,6 +319,14 @@
  <relation label="overlap">
   wn::|perceptible%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::perceptibility-scale</feat>
+  <feat name="type">ont::perceptible-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::imperceptible-val">
  <relation label="inherit">
@@ -313,5 +335,13 @@
  <relation label="overlap">
   wn::|imperceptible%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::perceptibility-scale</feat>
+  <feat name="type">ont::imperceptible-val</feat>
+ </sem-feats>
  </concept>
 </dsl>

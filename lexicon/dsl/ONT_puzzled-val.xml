@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::puzzled-val">
  <relation label="inherit">
-  ont::puzzlement-val
+  ont::neg-experiencer-property-val
  </relation>
  <relation label="overlap">
   wn::|perplexed%3:00:00::|
@@ -12,6 +12,13 @@
   wn::|puzzled%5:00:00:perplexed:00|
   wn::|stuck%5:00:00:perplexed:00|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::confusion-scale</feat>
+  <feat name="type">ont::puzzled-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -138,7 +145,7 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::figure">
+ <role-restr-map roles="ont::figure" optional="optional">
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -149,17 +156,78 @@
     non-human-animal
    </or>
    </feat>
-   <feat name="intentional">+</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
+ <concept name="ont::psychological-property-val">
+ <comment>
+  &quot;properties pertaining to psychological, mental or emotional states&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::psychological-condition-scale</feat>
+  <feat name="type">ont::psychological-property-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::experiencer-property-val">
+ <comment>
+  &quot;state of experiencing a particular emotion or cognitive state&quot;
+ </comment>
+ <relation label="inherit">
+  ont::psychological-property-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::psychological-condition-scale</feat>
- <feat name="type">ont::psychological-property-val</feat>
+ <feat name="scale">ont::confusion-scale</feat>
+ <feat name="type">ont::puzzled-val</feat>
  </sem-feats>
+ <concept name="ont::neg-experiencer-property-val">
+ <comment>
+  &quot;experiencing negative experiences&quot;
+ </comment>
+ <relation label="inherit">
+  ont::experiencer-property-val
+ </relation>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -212,42 +280,29 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::psychological-property-val">
- <comment>
-  &quot;properties pertaining to psychological, mental or emotional states&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::psychological-condition-scale</feat>
-  <feat name="type">ont::psychological-property-val</feat>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::psychological-condition-scale</feat>
+ <feat name="type">ont::psychological-property-val</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::puzzlement-val">
- <relation label="inherit">
-  ont::psychological-property-val
- </relation>
- </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

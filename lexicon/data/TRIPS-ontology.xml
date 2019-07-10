@@ -392,17 +392,13 @@
 <ONTTYPE name="social-group-abstr">
 <MAPPING to="wordnet" name="social_group%1:14:00::" />
 <ONTTYPE name="crew-abstr" />
-<ONTTYPE name="military-group-abstr">
-<MAPPING to="wordnet" name="military_unit%1:14:00::" />
-</ONTTYPE>
+<ONTTYPE name="military-group-abstr" />
 <ONTTYPE name="organization-abstr">
 <MAPPING to="wordnet" name="organization%1:14:00::" />
 <ONTTYPE name="enterprise-abstr">
 <ONTTYPE name="airline-abstr" />
 </ONTTYPE>
-<ONTTYPE name="federal-organization-abstr">
-<MAPPING to="wordnet" name="government%1:14:00::" />
-</ONTTYPE>
+<ONTTYPE name="federal-organization-abstr" />
 <ONTTYPE name="financial-organization-abstr" />
 <ONTTYPE name="institution-abstr">
 <ONTTYPE name="company-abstr">
@@ -575,6 +571,23 @@
 <ONTTYPE name="property-val">
 <WORD name="transcriptional" />
 <ONTTYPE name="animal-propensity-val">
+<ONTTYPE name="affection-val">
+<ONTTYPE name="affectionate-val">
+<WORD name="affectionate" />
+<WORD name="friendly" />
+<WORD name="warm" />
+<MAPPING to="wordnet" name="amicable%3:00:00::" />
+<MAPPING to="wordnet" name="warm%3:00:02::" />
+<MAPPING to="wordnet" name="friendly%3:00:01::" />
+<MAPPING to="wordnet" name="loving%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="not-affectionate-val">
+<WORD name="unfriendly" />
+<MAPPING to="wordnet" name="unfriendly%3:00:01::" />
+<MAPPING to="wordnet" name="hostile%3:00:01::" />
+<MAPPING to="wordnet" name="hostile%5:00:00:irreconcilable:00" />
+</ONTTYPE>
+</ONTTYPE>
 <ONTTYPE name="animal-disposition-val">
 <ONTTYPE name="negative-disposition-val">
 <MAPPING to="wordnet" name="ill-natured%3:00:00::" />
@@ -607,6 +620,14 @@
 <MAPPING to="wordnet" name="meek%5:00:00:docile:00" />
 <MAPPING to="wordnet" name="docile%3:00:00::" />
 </ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="courage-val">
+<ONTTYPE name="courageous-val">
+<MAPPING to="wordnet" name="brave%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="cowardly-val">
+<MAPPING to="wordnet" name="cowardly%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="gracefulness-val">
@@ -647,33 +668,6 @@
 <MAPPING to="wordnet" name="retiring%5:00:00:modest:02" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="social-interaction-val">
-<WORD name="inter-personal" />
-<ONTTYPE name="affection-val">
-<ONTTYPE name="affectionate-val">
-<WORD name="affectionate" />
-<WORD name="friendly" />
-<WORD name="warm" />
-<MAPPING to="wordnet" name="amicable%3:00:00::" />
-<MAPPING to="wordnet" name="warm%3:00:02::" />
-<MAPPING to="wordnet" name="friendly%3:00:01::" />
-<MAPPING to="wordnet" name="loving%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="not-affectionate-val">
-<WORD name="unfriendly" />
-<MAPPING to="wordnet" name="unfriendly%3:00:01::" />
-<MAPPING to="wordnet" name="hostile%3:00:01::" />
-<MAPPING to="wordnet" name="hostile%5:00:00:irreconcilable:00" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="in-touch-val">
-<WORD name="in_touch" />
-</ONTTYPE>
-<ONTTYPE name="not-social-val">
-<MAPPING to="wordnet" name="ungregarious%3:00:00::" />
-<MAPPING to="wordnet" name="unsociable%3:00:00::" />
-<MAPPING to="wordnet" name="unsocial%3:00:00::" />
-</ONTTYPE>
 <ONTTYPE name="responsibility-val">
 <ONTTYPE name="not-responsible-val">
 <WORD name="irresponsible" />
@@ -684,11 +678,25 @@
 <MAPPING to="wordnet" name="responsible%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="skillful-val">
+<MAPPING to="wordnet" name="skilled%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="social-interaction-val">
+<WORD name="inter-personal" />
+<ONTTYPE name="not-social-val">
+<MAPPING to="wordnet" name="ungregarious%3:00:00::" />
+<MAPPING to="wordnet" name="unsociable%3:00:00::" />
+<MAPPING to="wordnet" name="unsocial%3:00:00::" />
+</ONTTYPE>
 <ONTTYPE name="social-val">
 <MAPPING to="wordnet" name="social%3:01:00::" />
 <MAPPING to="wordnet" name="social%3:00:00::" />
 <MAPPING to="wordnet" name="gregarious%3:00:00::" />
 <MAPPING to="wordnet" name="sociable%3:00:00::" />
+<ONTTYPE name="in-touch-val">
+<WORD name="in_touch" />
+</ONTTYPE>
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="tameness-val">
 <ONTTYPE name="tame-val">
@@ -713,7 +721,6 @@
 <WORD name="voluntary" />
 <WORD name="willing" />
 <MAPPING to="wordnet" name="willing%3:00:00::" />
-</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="wiseness-val">
@@ -1013,7 +1020,6 @@
 <WORD name="sharp" />
 <WORD name="strong" />
 <WORD name="vigorous" />
-<MAPPING to="wordnet" name="strong%3:00:00::" />
 <MAPPING to="wordnet" name="potent%5:00:00:powerful:00" />
 <MAPPING to="wordnet" name="acute%5:00:00:sharp:04" />
 <MAPPING to="wordnet" name="shrill%5:00:00:high:03" />
@@ -1032,9 +1038,21 @@
 <WORD name="shallow" />
 <WORD name="weak" />
 <MAPPING to="wordnet" name="shallow%3:00:02::" />
-<MAPPING to="wordnet" name="faint%5:00:00:weak:00" />
-<MAPPING to="wordnet" name="weak%3:00:00::" />
 <MAPPING to="wordnet" name="dull%3:00:04::" />
+<MAPPING to="wordnet" name="faint%5:00:00:perceptible:00" />
+<MAPPING to="wordnet" name="watery%5:00:00:diluted:00" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="physical-strength-val">
+<ONTTYPE name="strong-val">
+<WORD name="hardy" />
+<WORD name="robust" />
+<WORD name="strong" />
+<MAPPING to="wordnet" name="strong%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="weak-in-strength-val">
+<WORD name="weak" />
+<MAPPING to="wordnet" name="weak%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="position-on-dimension-scale-val">
@@ -1080,18 +1098,6 @@
 <ONTTYPE name="lean-val">
 <WORD name="lean" />
 </ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="robustness-val">
-<ONTTYPE name="not-robust-val">
-<WORD name="frail" />
-<MAPPING to="wordnet" name="frail%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="robust-val">
-<WORD name="hardy" />
-<WORD name="robust" />
-<MAPPING to="wordnet" name="robust%3:00:00::" />
-<MAPPING to="wordnet" name="hardy%5:00:00:robust:00" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="severity-val">
@@ -1347,6 +1353,10 @@
 <MAPPING to="wordnet" name="acceptable%3:00:00::" />
 <MAPPING to="wordnet" name="favorable%3:00:02::" />
 <MAPPING to="wordnet" name="alright%5:00:00:satisfactory:00" />
+<ONTTYPE name="favorite-val">
+<WORD name="favorite" />
+<MAPPING to="wordnet" name="favorite%5:00:00:popular:00" />
+</ONTTYPE>
 <ONTTYPE name="great-val">
 <WORD name="amazing" />
 <WORD name="amazingly" />
@@ -1442,6 +1452,44 @@
 <MAPPING to="wordnet" name="unobtrusive%3:00:00::" />
 <MAPPING to="wordnet" name="obscure%5:00:00:inconspicuous:00" />
 <MAPPING to="wordnet" name="inconspicuous%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="basicness-val">
+<ONTTYPE name="basic-val">
+<WORD name="bare_bones" />
+<WORD name="bare" />
+<WORD name="basic" />
+<WORD name="elementary" />
+<WORD name="fundamental" />
+<WORD name="naked" />
+<WORD name="rudimentary" />
+<MAPPING to="wordnet" name="basic%3:00:00::" />
+<MAPPING to="wordnet" name="fundamental%5:00:00:basic:00" />
+<MAPPING to="wordnet" name="elementary%5:00:00:basic:00" />
+<MAPPING to="wordnet" name="essential%5:00:00:necessary:00" />
+</ONTTYPE>
+<ONTTYPE name="intrinsic-val">
+<WORD name="built_in" />
+<WORD name="built-in" />
+<WORD name="inherent" />
+<MAPPING to="wordnet" name="built-in%5:00:00:intrinsic:00" />
+<MAPPING to="wordnet" name="intrinsic%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="not-plain-val">
+<WORD name="fancy" />
+<MAPPING to="wordnet" name="fanciful%5:00:00:fancy:00" />
+<MAPPING to="wordnet" name="fancy%3:00:00::" />
+<MAPPING to="wordnet" name="elaborate%5:00:00:fancy:00" />
+</ONTTYPE>
+<ONTTYPE name="plain-val">
+<WORD name="plain" />
+<WORD name="unadorned" />
+<MAPPING to="wordnet" name="plain%3:00:01::" />
+<MAPPING to="wordnet" name="austere%5:00:00:plain:01" />
+<ONTTYPE name="mere-val">
+<WORD name="mere" />
+<MAPPING to="wordnet" name="mere%5:00:00:specified:00" />
+</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="beauty-val">
@@ -1542,6 +1590,16 @@
 <MAPPING to="wordnet" name="cheap%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="explicitness-val">
+<ONTTYPE name="explicit-val">
+<MAPPING to="wordnet" name="explicit%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="implicit-val">
+<WORD name="underlying" />
+<MAPPING to="wordnet" name="implicit_in%5:00:00:implicit:00" />
+<MAPPING to="wordnet" name="implicit%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
 <ONTTYPE name="familiarity-val">
 <ONTTYPE name="familiar-val">
 <WORD name="familiar" />
@@ -1577,41 +1635,12 @@
 <ONTTYPE name="freshness-val">
 <ONTTYPE name="fresh-val">
 <WORD name="fresh" />
-<MAPPING to="wordnet" name="recent%5:00:00:new:00" />
-<MAPPING to="wordnet" name="late%5:00:00:past:00" />
-<MAPPING to="wordnet" name="new%3:00:00::" />
 <MAPPING to="wordnet" name="fresh%3:00:01::" />
 <MAPPING to="wordnet" name="fresh%3:00:02::" />
 </ONTTYPE>
 <ONTTYPE name="not-fresh-val">
 <WORD name="rusty" />
 <MAPPING to="wordnet" name="stale%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="fundamental-val">
-<ONTTYPE name="basic-val">
-<WORD name="bare_bones" />
-<WORD name="bare" />
-<WORD name="basic" />
-<WORD name="elementary" />
-<WORD name="fundamental" />
-<WORD name="rudimentary" />
-<MAPPING to="wordnet" name="basic%3:00:00::" />
-<MAPPING to="wordnet" name="fundamental%5:00:00:basic:00" />
-<MAPPING to="wordnet" name="elementary%5:00:00:basic:00" />
-<MAPPING to="wordnet" name="essential%5:00:00:necessary:00" />
-</ONTTYPE>
-<ONTTYPE name="implicit-val">
-<WORD name="underlying" />
-<MAPPING to="wordnet" name="implicit_in%5:00:00:implicit:00" />
-<MAPPING to="wordnet" name="implicit%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="intrinsic-val">
-<WORD name="built_in" />
-<WORD name="built-in" />
-<WORD name="inherent" />
-<MAPPING to="wordnet" name="built-in%5:00:00:intrinsic:00" />
-<MAPPING to="wordnet" name="intrinsic%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="harmfulness-val">
@@ -1795,23 +1824,6 @@
 <MAPPING to="wordnet" name="groomed%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="plainness-val">
-<ONTTYPE name="mere-val">
-<WORD name="mere" />
-<MAPPING to="wordnet" name="mere%5:00:00:specified:00" />
-</ONTTYPE>
-<ONTTYPE name="not-plain-val">
-<WORD name="fancy" />
-<MAPPING to="wordnet" name="fanciful%5:00:00:fancy:00" />
-<MAPPING to="wordnet" name="fancy%3:00:00::" />
-<MAPPING to="wordnet" name="elaborate%5:00:00:fancy:00" />
-</ONTTYPE>
-<ONTTYPE name="plain-val">
-<WORD name="plain" />
-<MAPPING to="wordnet" name="plain%3:00:01::" />
-<MAPPING to="wordnet" name="austere%5:00:00:plain:01" />
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="preference-val">
 <ONTTYPE name="preferred-val">
 <WORD name="preferably" />
@@ -1904,11 +1916,9 @@
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="recommendability-val">
 <ONTTYPE name="recommendable-val">
 <WORD name="advisable" />
 <MAPPING to="wordnet" name="advisable%3:00:00::" />
-</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="reliability-val">
 <ONTTYPE name="reliable">
@@ -2312,11 +2322,13 @@
 <ONTTYPE name="not-verifiable-val">
 <WORD name="unverifiable" />
 <MAPPING to="wordnet" name="unobjective%5:00:00:subjective:00" />
+<MAPPING to="wordnet" name="unreproducible%3:00:00::" />
 </ONTTYPE>
 <ONTTYPE name="verifiable-val">
 <WORD name="verifiable" />
 <MAPPING to="wordnet" name="verifiable%5:00:00:objective:00" />
 <MAPPING to="wordnet" name="demonstrable%5:00:00:obvious:00" />
+<MAPPING to="wordnet" name="reproducible%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -2779,18 +2791,72 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="body-condition-property-val">
-<ONTTYPE name="alertness-val">
-<ONTTYPE name="alert-val">
-<WORD name="alert" />
-<MAPPING to="wordnet" name="alert%5:00:00:aware:00" />
-<MAPPING to="wordnet" name="alert%5:00:00:energetic:00" />
+<ONTTYPE name="negative-body-condition-property-val">
+<ONTTYPE name="ailing-val">
+<WORD name="ill" />
+<WORD name="sick" />
+<WORD name="unwell" />
+<WORD name="upset" />
+<MAPPING to="wordnet" name="ailing%5:00:00:ill:01" />
+<MAPPING to="wordnet" name="ill%3:00:01::" />
+<MAPPING to="wordnet" name="upset%5:00:00:ill:01" />
 </ONTTYPE>
-<ONTTYPE name="drowsy-val">
-<WORD name="drowsy" />
-<WORD name="sleepy" />
-<MAPPING to="wordnet" name="drowsy%5:00:00:inattentive:00" />
+<ONTTYPE name="feeble-val">
+<WORD name="frail" />
+<MAPPING to="wordnet" name="frail%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="lack-of-energy-val">
+<ONTTYPE name="dazed-val">
+<WORD name="groggy" />
+<WORD name="muzzy" />
+<MAPPING to="wordnet" name="dazed%5:00:00:lethargic:00" />
+</ONTTYPE>
+<ONTTYPE name="fatigued-val">
+<WORD name="exhausted" />
+<WORD name="fatigued" />
+<WORD name="tired" />
+<WORD name="weary" />
+<MAPPING to="wordnet" name="tired%3:00:00::" />
+<MAPPING to="wordnet" name="exhausted%5:00:00:tired:00" />
+<MAPPING to="wordnet" name="aweary%5:00:00:tired:00" />
+</ONTTYPE>
+<ONTTYPE name="lethargic-val">
+<WORD name="lethargic" />
+<MAPPING to="wordnet" name="lethargic%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="not-satiated-val">
+<WORD name="unsatiated" />
+<MAPPING to="wordnet" name="unsated%5:00:00:insatiate:00" />
+<MAPPING to="wordnet" name="insatiate%3:00:00::" />
+<ONTTYPE name="dehydration-val">
+<WORD name="dehydrated" />
+<MAPPING to="wordnet" name="dehydrated%5:00:00:unhealthy:00" />
+</ONTTYPE>
+<ONTTYPE name="hungry">
+<WORD name="hungry" />
+<WORD name="peckish" />
+<MAPPING to="wordnet" name="famished%5:00:00:hungry:00" />
+<MAPPING to="wordnet" name="peckish%5:00:00:hungry:00" />
+<MAPPING to="wordnet" name="hungry%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="thirsty-val">
+<WORD name="thirsty" />
+<MAPPING to="wordnet" name="thirsty%5:00:00:dry:01" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="pained-val">
+<WORD name="in_pain" />
+<WORD name="achey" />
+<WORD name="achy" />
+<WORD name="crampy" />
+<WORD name="painful" />
+<WORD name="sore" />
+<MAPPING to="wordnet" name="aching%5:00:00:painful:00" />
+<MAPPING to="wordnet" name="painful%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="neutral-body-condition-property-val">
 <ONTTYPE name="awakeness-val">
 <ONTTYPE name="asleep-val">
 <WORD name="asleep" />
@@ -2801,7 +2867,24 @@
 <MAPPING to="wordnet" name="awake%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="energy-supply-val">
+<ONTTYPE name="drowsy-val">
+<WORD name="drowsy" />
+<WORD name="sleepy" />
+<MAPPING to="wordnet" name="drowsy%5:00:00:inattentive:00" />
+<MAPPING to="wordnet" name="drowsy%5:00:00:asleep:00" />
+</ONTTYPE>
+<ONTTYPE name="sweaty-val">
+<WORD name="clammy" />
+<WORD name="sweaty" />
+<MAPPING to="wordnet" name="clammy%5:00:00:wet:01" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="positive-body-condition-property-val">
+<ONTTYPE name="alert-val">
+<WORD name="alert" />
+<MAPPING to="wordnet" name="alert%5:00:00:aware:00" />
+<MAPPING to="wordnet" name="alert%5:00:00:energetic:00" />
+</ONTTYPE>
 <ONTTYPE name="energized-val">
 <WORD name="energized" />
 <MAPPING to="wordnet" name="energetic%3:00:00::" />
@@ -2816,40 +2899,18 @@
 <MAPPING to="wordnet" name="hyperactive%5:00:00:active:01" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="not-energized-val">
-<ONTTYPE name="dazed-val">
-<WORD name="groggy" />
-<WORD name="lethargic" />
-<WORD name="muzzy" />
-<MAPPING to="wordnet" name="lethargic%3:00:00::" />
-<MAPPING to="wordnet" name="dazed%5:00:00:lethargic:00" />
-</ONTTYPE>
-<ONTTYPE name="fatigued-val">
-<WORD name="exhausted" />
-<WORD name="fatigued" />
-<WORD name="tired" />
-<WORD name="weary" />
-<MAPPING to="wordnet" name="tired%3:00:00::" />
-<MAPPING to="wordnet" name="exhausted%5:00:00:tired:00" />
-<MAPPING to="wordnet" name="aweary%5:00:00:tired:00" />
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="healthiness-val">
-<ONTTYPE name="ailing-val">
-<WORD name="ill" />
-<WORD name="sick" />
-<WORD name="unwell" />
-<WORD name="upset" />
-<MAPPING to="wordnet" name="ailing%5:00:00:ill:01" />
-<MAPPING to="wordnet" name="ill%3:00:01::" />
-<MAPPING to="wordnet" name="upset%5:00:00:ill:01" />
+<ONTTYPE name="fit-healthy-val">
+<MAPPING to="wordnet" name="fit%3:00:01::" />
 </ONTTYPE>
 <ONTTYPE name="healthy-val">
 <WORD name="healthy" />
 <WORD name="well" />
 <MAPPING to="wordnet" name="well%3:00:01::" />
 <MAPPING to="wordnet" name="healthy%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="satiated-val">
+<WORD name="satiated" />
+<MAPPING to="wordnet" name="satiate%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="restlessness-val">
@@ -2870,49 +2931,8 @@
 <MAPPING to="wordnet" name="antsy%5:00:00:tense:03" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="satedness-val">
-<ONTTYPE name="not-satiated-val">
-<WORD name="unsatiated" />
-<MAPPING to="wordnet" name="unsated%5:00:00:insatiate:00" />
-<MAPPING to="wordnet" name="insatiate%3:00:00::" />
-<ONTTYPE name="hungry">
-<WORD name="hungry" />
-<WORD name="peckish" />
-<MAPPING to="wordnet" name="famished%5:00:00:hungry:00" />
-<MAPPING to="wordnet" name="peckish%5:00:00:hungry:00" />
-<MAPPING to="wordnet" name="hungry%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="thirsty-val">
-<WORD name="thirsty" />
-<MAPPING to="wordnet" name="thirsty%5:00:00:dry:01" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="satiated-val">
-<WORD name="satiated" />
-<MAPPING to="wordnet" name="satiate%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="sweaty-val">
-<WORD name="clammy" />
-<WORD name="sweaty" />
-<MAPPING to="wordnet" name="clammy%5:00:00:wet:01" />
-</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="configuration-property-val">
-<ONTTYPE name="adornment-val">
-<ONTTYPE name="adorned-val">
-<WORD name="adorned" />
-<MAPPING to="wordnet" name="adorned%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="unadorned">
-<WORD name="bare" />
-<WORD name="plain" />
-<WORD name="unadorned" />
-<MAPPING to="wordnet" name="plain%5:00:00:unadorned:00" />
-<MAPPING to="wordnet" name="unadorned%3:00:00::" />
-<MAPPING to="wordnet" name="bare%5:00:00:unclothed:00" />
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="binding-val">
 <WORD name="tight" />
 <ONTTYPE name="affixed-val">
@@ -2925,17 +2945,23 @@
 <MAPPING to="wordnet" name="unaffixed%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="clothedness-val">
+<ONTTYPE name="clothedness-adornment-val">
+<ONTTYPE name="adorned-val">
+<WORD name="adorned" />
+<MAPPING to="wordnet" name="adorned%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="bare-val">
+<WORD name="bare" />
+<WORD name="naked" />
+<MAPPING to="wordnet" name="unclothed%3:00:00::" />
+<MAPPING to="wordnet" name="naked%5:00:00:bare:00" />
+<MAPPING to="wordnet" name="plain%5:00:00:unadorned:00" />
+<MAPPING to="wordnet" name="unadorned%3:00:00::" />
+<MAPPING to="wordnet" name="bare%5:00:00:unclothed:00" />
+</ONTTYPE>
 <ONTTYPE name="clothed-val">
 <WORD name="clothed" />
 <MAPPING to="wordnet" name="clothed%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="not-clothed-val">
-<WORD name="bare" />
-<WORD name="naked" />
-<MAPPING to="wordnet" name="bare%5:00:00:unclothed:00" />
-<MAPPING to="wordnet" name="unclothed%3:00:00::" />
-<MAPPING to="wordnet" name="naked%5:00:00:bare:00" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="constricting-val">
@@ -3050,20 +3076,6 @@
 <WORD name="feverish" />
 <MAPPING to="wordnet" name="feverish%5:00:00:ill:01" />
 <MAPPING to="wordnet" name="febrile%3:01:00::" />
-</ONTTYPE>
-<ONTTYPE name="medical-dehydration-val">
-<WORD name="dehydrated" />
-<MAPPING to="wordnet" name="dehydrated%5:00:00:unhealthy:00" />
-</ONTTYPE>
-<ONTTYPE name="pained-val">
-<WORD name="in_pain" />
-<WORD name="achey" />
-<WORD name="achy" />
-<WORD name="crampy" />
-<WORD name="painful" />
-<WORD name="sore" />
-<MAPPING to="wordnet" name="aching%5:00:00:painful:00" />
-<MAPPING to="wordnet" name="painful%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -3765,148 +3777,8 @@
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="emotional-val">
-<ONTTYPE name="neg-emotional-val">
-<ONTTYPE name="neg-intense-emotional-val">
-<ONTTYPE name="afraid">
-<WORD name="afraid" />
-<MAPPING to="wordnet" name="afraid%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="agitated">
-<WORD name="cranky" />
-<MAPPING to="wordnet" name="agitated%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="angry">
-<WORD name="angry" />
-<WORD name="furious" />
-<WORD name="mad" />
-<MAPPING to="wordnet" name="angry%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="disgusted">
-<WORD name="disgusted" />
-<MAPPING to="wordnet" name="disgusted%5:00:00:displeased:00" />
-</ONTTYPE>
-<ONTTYPE name="envious">
-<WORD name="envious" />
-<MAPPING to="wordnet" name="covetous%5:00:00:desirous:00" />
-</ONTTYPE>
-<ONTTYPE name="frantic-val">
-<WORD name="hectic" />
-<MAPPING to="wordnet" name="feverish%5:00:00:agitated:00" />
-<MAPPING to="wordnet" name="frantic%5:00:00:agitated:00" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="neg-soft-emotional-val">
-<ONTTYPE name="bored">
-<WORD name="bored" />
-<MAPPING to="wordnet" name="bored%5:00:00:tired:00" />
-<MAPPING to="wordnet" name="blase%5:00:00:uninterested:00" />
-</ONTTYPE>
-<ONTTYPE name="grumpy-val">
-<WORD name="grumpy" />
-<MAPPING to="wordnet" name="crabbed%5:00:00:ill-natured:00" />
-<MAPPING to="wordnet" name="disagreeable%5:00:00:ill-natured:00" />
-<MAPPING to="wordnet" name="huffish%5:00:00:ill-natured:00" />
-<MAPPING to="wordnet" name="cranky%5:00:00:ill-natured:00" />
-</ONTTYPE>
-<ONTTYPE name="sorry">
-<WORD name="morose" />
-<WORD name="sorry" />
-<MAPPING to="wordnet" name="regretful%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="uneasy">
-<WORD name="anxious" />
-<WORD name="nervous" />
-<WORD name="tense" />
-<MAPPING to="wordnet" name="anxious%5:00:00:troubled:00" />
-<MAPPING to="wordnet" name="uneasy%3:00:00::" />
-<MAPPING to="wordnet" name="troubled%3:00:00::" />
-<MAPPING to="wordnet" name="tense%3:00:03::" />
-</ONTTYPE>
-<ONTTYPE name="unhappy">
-<WORD name="gloomy" />
-<WORD name="glum" />
-<WORD name="melancholy" />
-<WORD name="miserable" />
-<WORD name="sad" />
-<WORD name="unhappy" />
-<MAPPING to="wordnet" name="dysphoric%3:00:00::" />
-<MAPPING to="wordnet" name="unhappy%3:00:00::" />
-<MAPPING to="wordnet" name="sad%3:00:00::" />
-<MAPPING to="wordnet" name="gloomy%5:00:00:dejected:00" />
-<MAPPING to="wordnet" name="melancholy%5:00:00:sad:00" />
-<MAPPING to="wordnet" name="miserable%5:00:00:unhappy:00" />
-<MAPPING to="wordnet" name="dejected%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="neutral-emotional-val" />
-<ONTTYPE name="pos-emotional-val">
-<ONTTYPE name="pos-intense-emotional-val">
-<ONTTYPE name="desirous">
-<WORD name="in_need" />
-<WORD name="desirous" />
-<MAPPING to="wordnet" name="desirous%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="euphoric">
-<WORD name="cheerful" />
-<WORD name="ecstatic" />
-<WORD name="euphoric" />
-<WORD name="happy" />
-<MAPPING to="wordnet" name="euphoric%3:00:00::" />
-<MAPPING to="wordnet" name="happy%3:00:00::" />
-<MAPPING to="wordnet" name="cheerful%3:00:00::" />
-<MAPPING to="wordnet" name="beaming%5:00:00:cheerful:00" />
-<MAPPING to="wordnet" name="pleased%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="excited">
-<WORD name="excited" />
-<MAPPING to="wordnet" name="aroused%5:00:00:agitated:00" />
-<MAPPING to="wordnet" name="delirious%5:00:00:wild:02" />
-<MAPPING to="wordnet" name="pumped-up%5:00:00:tense:03" />
-</ONTTYPE>
-<ONTTYPE name="proud-val">
-<WORD name="proud" />
-<MAPPING to="wordnet" name="proud%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="pos-soft-emotional-val">
-<ONTTYPE name="amused">
-<WORD name="amused" />
-<MAPPING to="wordnet" name="amused%5:00:00:pleased:00" />
-</ONTTYPE>
-<ONTTYPE name="calm">
-<WORD name="calm" />
-<MAPPING to="wordnet" name="calm%5:00:00:composed:00" />
-<MAPPING to="wordnet" name="composed%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="pleasant">
-<WORD name="pleasant" />
-<MAPPING to="wordnet" name="pleasant%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="surprised">
-<WORD name="surprised" />
-<MAPPING to="wordnet" name="surprised%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="thankfulness-val">
-<ONTTYPE name="grateful">
-<WORD name="glad" />
-<WORD name="grateful" />
-<WORD name="thankful" />
-<MAPPING to="wordnet" name="glad%5:00:00:grateful:00" />
-<MAPPING to="wordnet" name="glad%3:00:00::" />
-<MAPPING to="wordnet" name="grateful%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="not-grateful-val">
-<WORD name="ungrateful" />
-<MAPPING to="wordnet" name="ungrateful%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="evoking-emotion-val">
-<ONTTYPE name="evoking-neg-emotion-val">
+<ONTTYPE name="evoking-experience-property-val">
+<ONTTYPE name="evoking-neg-experience-property-val">
 <ONTTYPE name="boring">
 <WORD name="boring" />
 <WORD name="dull" />
@@ -3914,11 +3786,15 @@
 <MAPPING to="wordnet" name="uninteresting%3:00:00::" />
 <MAPPING to="wordnet" name="boring%5:00:00:uninteresting:00" />
 </ONTTYPE>
+<ONTTYPE name="concerned-val">
+<MAPPING to="wordnet" name="concerned%3:00:00::" />
+</ONTTYPE>
 <ONTTYPE name="confusing-val">
 <WORD name="confusing" />
 <MAPPING to="wordnet" name="confusing%5:00:00:disorienting:00" />
 </ONTTYPE>
 <ONTTYPE name="distressing-val">
+<WORD name="hectic" />
 <WORD name="stressful" />
 <WORD name="troublesome" />
 <WORD name="worrisome" />
@@ -3939,7 +3815,6 @@
 <ONTTYPE name="grievous-val">
 <WORD name="heartbreaking" />
 <MAPPING to="wordnet" name="grievous%5:00:00:sorrowful:00" />
-<MAPPING to="wordnet" name="sorrowful%3:00:00::" />
 </ONTTYPE>
 <ONTTYPE name="not-pleasing-val">
 <WORD name="disagreeable" />
@@ -3952,7 +3827,7 @@
 <MAPPING to="wordnet" name="displeasing%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="evoking-pos-emotion-val">
+<ONTTYPE name="evoking-pos-experience-property-val">
 <ONTTYPE name="calming-val">
 <WORD name="calming" />
 <WORD name="soothing" />
@@ -3976,11 +3851,164 @@
 <ONTTYPE name="pleasing-val">
 <WORD name="agreeable" />
 <WORD name="delightful" />
+<WORD name="pleasant" />
 <WORD name="welcome" />
 <MAPPING to="wordnet" name="pleasing%3:00:00::" />
 <MAPPING to="wordnet" name="welcome%3:00:00::" />
 <MAPPING to="wordnet" name="agreeable%3:00:00::" />
 <MAPPING to="wordnet" name="delightful%5:00:00:pleasing:00" />
+<MAPPING to="wordnet" name="pleasant%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="experiencer-property-val">
+<ONTTYPE name="neg-experiencer-property-val">
+<ONTTYPE name="afraid">
+<WORD name="afraid" />
+<MAPPING to="wordnet" name="afraid%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="agitated">
+<WORD name="cranky" />
+<MAPPING to="wordnet" name="agitated%3:00:00::" />
+<MAPPING to="wordnet" name="feverish%5:00:00:agitated:00" />
+<MAPPING to="wordnet" name="frantic%5:00:00:agitated:00" />
+</ONTTYPE>
+<ONTTYPE name="angry">
+<WORD name="angry" />
+<WORD name="furious" />
+<WORD name="mad" />
+<MAPPING to="wordnet" name="angry%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="annoyed-val">
+<WORD name="grumpy" />
+<MAPPING to="wordnet" name="crabbed%5:00:00:ill-natured:00" />
+<MAPPING to="wordnet" name="cranky%5:00:00:ill-natured:00" />
+</ONTTYPE>
+<ONTTYPE name="bored">
+<WORD name="bored" />
+<MAPPING to="wordnet" name="bored%5:00:00:tired:00" />
+<MAPPING to="wordnet" name="blase%5:00:00:uninterested:00" />
+</ONTTYPE>
+<ONTTYPE name="disgusted">
+<WORD name="disgusted" />
+<MAPPING to="wordnet" name="disgusted%5:00:00:displeased:00" />
+</ONTTYPE>
+<ONTTYPE name="envious">
+<WORD name="envious" />
+<MAPPING to="wordnet" name="covetous%5:00:00:desirous:00" />
+</ONTTYPE>
+<ONTTYPE name="not-grateful-val">
+<WORD name="ungrateful" />
+<MAPPING to="wordnet" name="ungrateful%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="not-interested-val">
+<WORD name="disinterested" />
+<MAPPING to="wordnet" name="uninterested%3:00:00::" />
+<MAPPING to="wordnet" name="disinterested%5:00:00:impartial:00" />
+</ONTTYPE>
+<ONTTYPE name="puzzled-val">
+<WORD name="mixed_up" />
+<WORD name="baffled" />
+<WORD name="puzzled" />
+<MAPPING to="wordnet" name="perplexed%3:00:00::" />
+<MAPPING to="wordnet" name="baffled%5:00:00:perplexed:00" />
+<MAPPING to="wordnet" name="at_a_loss%5:00:00:perplexed:00" />
+<MAPPING to="wordnet" name="stuck%5:00:00:perplexed:00" />
+</ONTTYPE>
+<ONTTYPE name="sad-val">
+<WORD name="melancholy" />
+<WORD name="sad" />
+<MAPPING to="wordnet" name="sad%3:00:00::" />
+<MAPPING to="wordnet" name="melancholy%5:00:00:sad:00" />
+<MAPPING to="wordnet" name="sorrowful%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="sorry">
+<WORD name="morose" />
+<WORD name="sorry" />
+<MAPPING to="wordnet" name="regretful%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="uneasy">
+<WORD name="anxious" />
+<WORD name="nervous" />
+<WORD name="tense" />
+<MAPPING to="wordnet" name="anxious%5:00:00:troubled:00" />
+<MAPPING to="wordnet" name="uneasy%3:00:00::" />
+<MAPPING to="wordnet" name="troubled%3:00:00::" />
+<MAPPING to="wordnet" name="tense%3:00:03::" />
+</ONTTYPE>
+<ONTTYPE name="unhappy">
+<WORD name="gloomy" />
+<WORD name="glum" />
+<WORD name="miserable" />
+<WORD name="unhappy" />
+<MAPPING to="wordnet" name="dysphoric%3:00:00::" />
+<MAPPING to="wordnet" name="unhappy%3:00:00::" />
+<MAPPING to="wordnet" name="gloomy%5:00:00:dejected:00" />
+<MAPPING to="wordnet" name="miserable%5:00:00:unhappy:00" />
+<MAPPING to="wordnet" name="dejected%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="neutral-experiencer-property-val">
+<ONTTYPE name="surprised">
+<WORD name="surprised" />
+<MAPPING to="wordnet" name="surprised%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="pos-experiencer-property-val">
+<ONTTYPE name="amused">
+<WORD name="amused" />
+<MAPPING to="wordnet" name="amused%5:00:00:pleased:00" />
+</ONTTYPE>
+<ONTTYPE name="calm">
+<WORD name="calm" />
+<MAPPING to="wordnet" name="calm%5:00:00:composed:00" />
+<MAPPING to="wordnet" name="composed%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="desirous">
+<WORD name="in_need" />
+<WORD name="desirous" />
+<MAPPING to="wordnet" name="desirous%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="eager-val">
+<WORD name="enthusiastic" />
+<MAPPING to="wordnet" name="eager%3:00:00::" />
+<MAPPING to="wordnet" name="enthusiastic%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="excited">
+<WORD name="excited" />
+<MAPPING to="wordnet" name="aroused%5:00:00:agitated:00" />
+<MAPPING to="wordnet" name="delirious%5:00:00:wild:02" />
+<MAPPING to="wordnet" name="pumped-up%5:00:00:tense:03" />
+</ONTTYPE>
+<ONTTYPE name="grateful">
+<WORD name="glad" />
+<WORD name="grateful" />
+<WORD name="thankful" />
+<MAPPING to="wordnet" name="glad%5:00:00:grateful:00" />
+<MAPPING to="wordnet" name="glad%3:00:00::" />
+<MAPPING to="wordnet" name="grateful%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="happy-val">
+<WORD name="happy" />
+<MAPPING to="wordnet" name="happy%3:00:00::" />
+<MAPPING to="wordnet" name="pleased%3:00:00::" />
+<ONTTYPE name="euphoric">
+<WORD name="cheerful" />
+<WORD name="ecstatic" />
+<WORD name="euphoric" />
+<MAPPING to="wordnet" name="euphoric%3:00:00::" />
+<MAPPING to="wordnet" name="cheerful%3:00:00::" />
+<MAPPING to="wordnet" name="beaming%5:00:00:cheerful:00" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="interested-val">
+<WORD name="curious" />
+<MAPPING to="wordnet" name="interested%3:00:00::" />
+<MAPPING to="wordnet" name="curious%5:00:00:interested:00" />
+</ONTTYPE>
+<ONTTYPE name="proud-val">
+<WORD name="proud" />
+<MAPPING to="wordnet" name="proud%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -4023,23 +4051,6 @@
 <MAPPING to="wordnet" name="unintended%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="interest-val">
-<ONTTYPE name="interested-val">
-<WORD name="curious" />
-<MAPPING to="wordnet" name="interested%3:00:00::" />
-<MAPPING to="wordnet" name="curious%5:00:00:interested:00" />
-<ONTTYPE name="eager-val">
-<WORD name="enthusiastic" />
-<MAPPING to="wordnet" name="eager%3:00:00::" />
-<MAPPING to="wordnet" name="enthusiastic%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="not-interested-val">
-<WORD name="disinterested" />
-<MAPPING to="wordnet" name="uninterested%3:00:00::" />
-<MAPPING to="wordnet" name="disinterested%5:00:00:impartial:00" />
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="premeditation-val">
 <ONTTYPE name="not-premeditated-val">
 <WORD name="ad_hoc" />
@@ -4057,17 +4068,6 @@
 <WORD name="premeditated" />
 <MAPPING to="wordnet" name="planned%3:00:00::" />
 <MAPPING to="wordnet" name="premeditated%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="puzzlement-val">
-<ONTTYPE name="puzzled-val">
-<WORD name="mixed_up" />
-<WORD name="baffled" />
-<WORD name="puzzled" />
-<MAPPING to="wordnet" name="perplexed%3:00:00::" />
-<MAPPING to="wordnet" name="baffled%5:00:00:perplexed:00" />
-<MAPPING to="wordnet" name="at_a_loss%5:00:00:perplexed:00" />
-<MAPPING to="wordnet" name="stuck%5:00:00:perplexed:00" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="sensibility-val">
@@ -4310,7 +4310,6 @@
 <WORD name="middle" />
 <WORD name="midway" />
 <MAPPING to="wordnet" name="halfway%5:00:00:intermediate:00" />
-<MAPPING to="wordnet" name="in-between%5:00:00:intermediate:00" />
 <MAPPING to="wordnet" name="intermediate%3:00:00::" />
 </ONTTYPE>
 <ONTTYPE name="one-before-last-val">
@@ -4471,7 +4470,6 @@
 <WORD name="left" />
 <WORD name="lefthand" />
 <MAPPING to="wordnet" name="left%3:00:00::" />
-<MAPPING to="wordnet" name="center%5:00:00:central:01" />
 <MAPPING to="wordnet" name="leftmost%5:00:00:left:00" />
 </ONTTYPE>
 <ONTTYPE name="middle-location-val">
@@ -4796,20 +4794,10 @@
 <MAPPING to="wordnet" name="prehistoric%5:00:00:past:00" />
 <MAPPING to="wordnet" name="prehistoric%3:01:00::" />
 </ONTTYPE>
-<ONTTYPE name="current-val">
-<WORD name="contemporary" />
-<WORD name="current" />
-<MAPPING to="wordnet" name="contemporary%5:00:00:current:00" />
-<MAPPING to="wordnet" name="current%3:00:00::" />
-</ONTTYPE>
 <ONTTYPE name="modern-val">
 <WORD name="modern" />
 <MAPPING to="wordnet" name="modern%3:00:00::" />
 <MAPPING to="wordnet" name="contemporary%5:00:00:modern:00" />
-</ONTTYPE>
-<ONTTYPE name="not-current-val">
-<WORD name="old_fashioned" />
-<MAPPING to="wordnet" name="antique%5:00:00:unfashionable:00" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -5868,7 +5856,6 @@
 <WORD name="presently" />
 <MAPPING to="wordnet" name="now%4:02:05::" />
 <MAPPING to="wordnet" name="presently%4:02:00::" />
-<MAPPING to="wordnet" name="current%3:00:00::" />
 <MAPPING to="wordnet" name="present%3:00:01::" />
 </ONTTYPE>
 <ONTTYPE name="occuring-now">
@@ -5999,7 +5986,6 @@
 <ONTTYPE name="favorite">
 <WORD name="favorite" />
 <MAPPING to="wordnet" name="favorite%1:09:00::" />
-<MAPPING to="wordnet" name="favorite%5:00:00:popular:00" />
 </ONTTYPE>
 <ONTTYPE name="own">
 <WORD name="own" />
@@ -6072,13 +6058,28 @@
 <MAPPING to="wordnet" name="attribute%1:03:00::" />
 <ONTTYPE name="ordered-domain">
 <ONTTYPE name="behavioral-scale">
+<ONTTYPE name="affection-scale">
+<MAPPING to="wordnet" name="affection%1:12:00::" />
+</ONTTYPE>
 <ONTTYPE name="aggressiveness-scale">
 <WORD name="violence" />
 <MAPPING to="wordnet" name="aggression%1:12:00::" />
 </ONTTYPE>
+<ONTTYPE name="boldness-scale">
+<MAPPING to="wordnet" name="boldness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="courage-scale">
+<MAPPING to="wordnet" name="courage%1:07:00::" />
+</ONTTYPE>
 <ONTTYPE name="endurance-scale">
 <WORD name="endurance" />
 <MAPPING to="wordnet" name="endurance%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="gracefulness-scale">
+<MAPPING to="wordnet" name="gracefulness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="honesty-scale">
+<MAPPING to="wordnet" name="honesty%1:07:00::" />
 </ONTTYPE>
 <ONTTYPE name="kindness-scale">
 <WORD name="kindness" />
@@ -6086,6 +6087,9 @@
 <MAPPING to="wordnet" name="kindness%1:07:00::" />
 <MAPPING to="wordnet" name="forgivingness%1:07:00::" />
 <MAPPING to="wordnet" name="tenderness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="modesty-scale">
+<MAPPING to="wordnet" name="modesty%1:07:00::" />
 </ONTTYPE>
 <ONTTYPE name="responsibility-scale">
 <WORD name="responsibility" />
@@ -6097,6 +6101,28 @@
 <MAPPING to="wordnet" name="skillfulness%1:09:00::" />
 <MAPPING to="wordnet" name="skill%1:09:01::" />
 <MAPPING to="wordnet" name="expertness%1:09:00::" />
+</ONTTYPE>
+<ONTTYPE name="sociability-scale">
+<MAPPING to="wordnet" name="sociality%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="tameness-scale">
+<ONTTYPE name="tame-scale">
+<MAPPING to="wordnet" name="tameness%1:07:01::" />
+</ONTTYPE>
+<ONTTYPE name="wild-scale">
+<MAPPING to="wordnet" name="wildness%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="willingness-scale">
+<MAPPING to="wordnet" name="willingness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="wiseness-scale">
+<ONTTYPE name="folly-scale">
+<MAPPING to="wordnet" name="folly%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="wisdom-scale">
+<MAPPING to="wordnet" name="wisdom%1:07:00::" />
+</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="evaluation-scale">
@@ -6138,6 +6164,9 @@
 <MAPPING to="wordnet" name="adaptability%1:07:00::" />
 <MAPPING to="wordnet" name="pliability%1:07:01::" />
 </ONTTYPE>
+<ONTTYPE name="aesthetic-tastefulness-scale">
+<MAPPING to="wordnet" name="chic%1:07:00::" />
+</ONTTYPE>
 <ONTTYPE name="appropriateness-scale">
 <ONTTYPE name="appropriate-scale">
 <WORD name="fitness" />
@@ -6156,9 +6185,11 @@
 </ONTTYPE>
 <ONTTYPE name="not-attractive-scale">
 <WORD name="disgust" />
-<MAPPING to="wordnet" name="disgust%1:12:00::" />
 <MAPPING to="wordnet" name="repugnance%1:12:00::" />
 </ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="basic-scale">
+<MAPPING to="wordnet" name="basis%1:09:00::" />
 </ONTTYPE>
 <ONTTYPE name="beauty-scale">
 <ONTTYPE name="beautiful-scale">
@@ -6223,6 +6254,33 @@
 <MAPPING to="wordnet" name="bargain_rate%1:07:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="explicitness-scale">
+<ONTTYPE name="explicit-scale">
+<MAPPING to="wordnet" name="explicitness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="implicit-scale">
+<MAPPING to="wordnet" name="inexplicitness%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="familiarity-scale">
+<ONTTYPE name="familiar-scale">
+<MAPPING to="wordnet" name="familiarity%1:07:01::" />
+</ONTTYPE>
+<ONTTYPE name="not-familiar-scale">
+<MAPPING to="wordnet" name="unfamiliarity%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="freshness-scale">
+<ONTTYPE name="fresh-scale">
+<MAPPING to="wordnet" name="freshness%1:07:01::" />
+</ONTTYPE>
+<ONTTYPE name="not-fresh-scale">
+<MAPPING to="wordnet" name="staleness%1:07:01::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="harmfulness-scale">
+<MAPPING to="wordnet" name="harmfulness%1:07:00::" />
+</ONTTYPE>
 <ONTTYPE name="importance-scale">
 <ONTTYPE name="important-scale">
 <WORD name="importance" />
@@ -6239,9 +6297,66 @@
 <WORD name="luck" />
 <MAPPING to="wordnet" name="fortune%1:26:00::" />
 </ONTTYPE>
+<ONTTYPE name="morality-scale">
+<MAPPING to="wordnet" name="morality%1:07:00::" />
+</ONTTYPE>
 <ONTTYPE name="necessity-scale">
 <WORD name="need" />
 <MAPPING to="wordnet" name="necessity%1:17:00::" />
+</ONTTYPE>
+<ONTTYPE name="noticeability-scale">
+<MAPPING to="wordnet" name="conspicuousness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="offensiveness-scale">
+<MAPPING to="wordnet" name="offensiveness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="orderliness-scale">
+<ONTTYPE name="messy-scale">
+<MAPPING to="wordnet" name="disorderliness%1:26:00::" />
+<MAPPING to="wordnet" name="untidiness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="tidy-scale">
+<MAPPING to="wordnet" name="orderliness%1:26:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="partiality-scale">
+<MAPPING to="wordnet" name="partiality%1:09:00::" />
+</ONTTYPE>
+<ONTTYPE name="plain-scale">
+<MAPPING to="wordnet" name="plainness%1:26:00::" />
+</ONTTYPE>
+<ONTTYPE name="quality-level-scale">
+<ONTTYPE name="inferiority-scale">
+<MAPPING to="wordnet" name="inferiority%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="superiority-scale">
+<MAPPING to="wordnet" name="superiority%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="real-vs-fake-scale">
+<ONTTYPE name="actuality-scale">
+<ONTTYPE name="actual-scale">
+<MAPPING to="wordnet" name="actuality%1:26:00::" />
+</ONTTYPE>
+<ONTTYPE name="non-actual-scale">
+<MAPPING to="wordnet" name="unreality%1:26:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="artificiality-scale">
+<ONTTYPE name="artificial-scale">
+<MAPPING to="wordnet" name="affectedness%1:07:00::" />
+<MAPPING to="wordnet" name="artificiality%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="natural-scale">
+<MAPPING to="wordnet" name="unnaturalness%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="authenticity-scale">
+<MAPPING to="wordnet" name="authenticity%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="recommendability-scale">
+<MAPPING to="wordnet" name="advisability%1:07:00::" />
 </ONTTYPE>
 <ONTTYPE name="reliability-scale">
 <WORD name="reliability" />
@@ -6256,6 +6371,17 @@
 <ONTTYPE name="unsafe-scale">
 <MAPPING to="wordnet" name="insecurity%1:26:00::" />
 </ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="specificity-scale">
+<ONTTYPE name="general-scale">
+<MAPPING to="wordnet" name="generality%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="specific-scale">
+<MAPPING to="wordnet" name="particularity%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="tolerability-scale">
+<MAPPING to="wordnet" name="tolerance%1:07:03::" />
 </ONTTYPE>
 <ONTTYPE name="typicality-scale">
 <ONTTYPE name="not-typical-scale">
@@ -6275,12 +6401,25 @@
 <MAPPING to="wordnet" name="ordinariness%1:07:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="worthiness-scale">
+<MAPPING to="wordnet" name="worthiness%1:07:00::" />
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="information-property-scale">
+<ONTTYPE name="comprehensibility-scale">
+<MAPPING to="wordnet" name="comprehensibility%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="consistency-scale">
+<MAPPING to="wordnet" name="coherence%1:26:00::" />
+<MAPPING to="wordnet" name="consistency%1:07:01::" />
+</ONTTYPE>
 <ONTTYPE name="correctness-scale">
 <WORD name="accuracy" />
 <MAPPING to="wordnet" name="accuracy%1:07:02::" />
 <MAPPING to="wordnet" name="correctness%1:07:01::" />
+</ONTTYPE>
+<ONTTYPE name="credibility-scale">
+<MAPPING to="wordnet" name="credibility%1:07:00::" />
 </ONTTYPE>
 <ONTTYPE name="likelihood-scale">
 <ONTTYPE name="likely-scale">
@@ -6294,6 +6433,9 @@
 <MAPPING to="wordnet" name="improbability%1:07:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="meaningfulness-scale">
+<MAPPING to="wordnet" name="meaningfulness%1:07:00::" />
+</ONTTYPE>
 <ONTTYPE name="possibility-scale">
 <ONTTYPE name="not-possible-scale">
 <WORD name="impossibility" />
@@ -6304,6 +6446,18 @@
 <MAPPING to="wordnet" name="possibility%1:26:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="precision-scale">
+<MAPPING to="wordnet" name="preciseness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="predictability-scale">
+<MAPPING to="wordnet" name="predictability%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="relevance-scale">
+<MAPPING to="wordnet" name="relevance%1:24:00::" />
+</ONTTYPE>
+<ONTTYPE name="reproducibility-scale">
+<MAPPING to="wordnet" name="reproducibility%1:07:00::" />
+</ONTTYPE>
 <ONTTYPE name="trueness-scale">
 <ONTTYPE name="false-scale">
 <MAPPING to="wordnet" name="falsity%1:26:00::" />
@@ -6312,16 +6466,31 @@
 <MAPPING to="wordnet" name="truth%1:26:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="validity-scale">
+<MAPPING to="wordnet" name="cogency%1:07:00::" />
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="measure-scale">
 <WORD name="measurement" />
 <WORD name="quantity" />
-<MAPPING to="wordnet" name="measure%1:03:00::" />
 <MAPPING to="wordnet" name="measurement%1:04:00::" />
 <ONTTYPE name="dimensional-scale">
 <WORD name="dimension" />
-<MAPPING to="wordnet" name="dimension%1:07:00::" />
 <MAPPING to="wordnet" name="proportion%1:07:00::" />
+<ONTTYPE name="physical-strength-scale">
+<ONTTYPE name="strength-scale">
+<WORD name="force" />
+<WORD name="strength" />
+<MAPPING to="wordnet" name="strength%1:07:00::" />
+<MAPPING to="wordnet" name="vigor%1:07:00::" />
+<MAPPING to="wordnet" name="might%1:07:00::" />
+<MAPPING to="wordnet" name="force%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="weakness-scale">
+<WORD name="weakness" />
+<MAPPING to="wordnet" name="weakness%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
 <ONTTYPE name="size-scale">
 <WORD name="magnitude" />
 <WORD name="size" />
@@ -6387,16 +6556,6 @@
 <WORD name="volume" />
 <MAPPING to="wordnet" name="volume%1:23:00::" />
 </ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="strength-scale">
-<WORD name="force" />
-<WORD name="strength" />
-<WORD name="vigor" />
-<WORD name="vim" />
-<MAPPING to="wordnet" name="strength%1:07:00::" />
-<MAPPING to="wordnet" name="vigor%1:07:00::" />
-<MAPPING to="wordnet" name="might%1:07:00::" />
-<MAPPING to="wordnet" name="force%1:07:00::" />
 </ONTTYPE>
 <ONTTYPE name="weight-scale">
 <WORD name="heaviness" />
@@ -6527,10 +6686,6 @@
 <WORD name="usability" />
 <MAPPING to="wordnet" name="serviceability%1:07:00::" />
 </ONTTYPE>
-<ONTTYPE name="utility-scale">
-<WORD name="utility" />
-<MAPPING to="wordnet" name="utility%1:07:00::" />
-</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="physical-property-scale">
 <ONTTYPE name="appearance-scale">
@@ -6626,11 +6781,6 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="visual-scale">
-<ONTTYPE name="brightness-scale">
-<WORD name="brightness" />
-<MAPPING to="wordnet" name="brightness%1:07:00::" />
-<MAPPING to="wordnet" name="luminosity%1:07:00::" />
-</ONTTYPE>
 <ONTTYPE name="color-scale">
 <WORD name="color" />
 <WORD name="colour" />
@@ -6741,16 +6891,7 @@
 <ONTTYPE name="feebleness-scale">
 <WORD name="feebleness" />
 <MAPPING to="wordnet" name="infirmity%1:26:00::" />
-<ONTTYPE name="fatigue-scale">
-<WORD name="fatigue" />
-<WORD name="tiredness" />
-<MAPPING to="wordnet" name="exhaustion%1:26:00::" />
-<MAPPING to="wordnet" name="fatigue%1:26:00::" />
-</ONTTYPE>
-<ONTTYPE name="weakness-scale">
-<WORD name="weakness" />
-<MAPPING to="wordnet" name="weakness%1:07:00::" />
-</ONTTYPE>
+<MAPPING to="wordnet" name="helplessness%1:07:00::" />
 </ONTTYPE>
 <ONTTYPE name="illness-scale">
 <WORD name="illness" />
@@ -6758,7 +6899,26 @@
 <MAPPING to="wordnet" name="ill_health%1:26:00::" />
 <MAPPING to="wordnet" name="illness%1:26:00::" />
 </ONTTYPE>
-<ONTTYPE name="not-well-nourished-scale">
+<ONTTYPE name="lack-of-energy-scale">
+<ONTTYPE name="fatigue-scale">
+<WORD name="fatigue" />
+<WORD name="tiredness" />
+<MAPPING to="wordnet" name="exhaustion%1:26:00::" />
+<MAPPING to="wordnet" name="fatigue%1:26:00::" />
+</ONTTYPE>
+<ONTTYPE name="lethargy-scale">
+<MAPPING to="wordnet" name="lethargy%1:26:00::" />
+<MAPPING to="wordnet" name="inanition%1:07:02::" />
+</ONTTYPE>
+<ONTTYPE name="neutral-body-condition-scale">
+<ONTTYPE name="sleepiness-scale">
+<WORD name="drowsiness" />
+<WORD name="sleepiness" />
+<MAPPING to="wordnet" name="sleepiness%1:26:00::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="not-satiated-scale">
 <MAPPING to="wordnet" name="hunger%1:26:00::" />
 <MAPPING to="wordnet" name="thirst%1:26:00::" />
 </ONTTYPE>
@@ -6771,16 +6931,20 @@
 <ONTTYPE name="restlessness-scale">
 <WORD name="restlessness" />
 <MAPPING to="wordnet" name="restlessness%1:07:01::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="neutral-body-condition-scale">
-<ONTTYPE name="sleepiness-scale">
-<WORD name="drowsiness" />
-<WORD name="sleepiness" />
-<MAPPING to="wordnet" name="sleepiness%1:26:00::" />
+<MAPPING to="wordnet" name="fidget%1:12:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="positive-body-condition-scale">
+<ONTTYPE name="alertness-scale">
+<MAPPING to="wordnet" name="watchfulness%1:09:00::" />
+</ONTTYPE>
+<ONTTYPE name="body-energy-scale">
+<WORD name="vigor" />
+<WORD name="vim" />
+<MAPPING to="wordnet" name="vigor%1:07:00::" />
+<MAPPING to="wordnet" name="energy%1:26:00::" />
+<MAPPING to="wordnet" name="energy%1:07:01::" />
+</ONTTYPE>
 <ONTTYPE name="fitness-scale">
 <WORD name="fitness" />
 <MAPPING to="wordnet" name="fitness%1:26:00::" />
@@ -6794,6 +6958,17 @@
 <MAPPING to="wordnet" name="good_health%1:26:00::" />
 <MAPPING to="wordnet" name="condition%1:26:02::" />
 </ONTTYPE>
+<ONTTYPE name="satiated-scale">
+<MAPPING to="wordnet" name="repletion%1:26:00::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="completeness-scale">
+<ONTTYPE name="complete-scale">
+<MAPPING to="wordnet" name="completeness%1:26:00::" />
+</ONTTYPE>
+<ONTTYPE name="incomplete-scale">
+<MAPPING to="wordnet" name="incompleteness%1:26:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="configuration-property-scale">
@@ -6827,6 +7002,9 @@
 <MAPPING to="wordnet" name="hearing%1:09:00::" />
 </ONTTYPE>
 <ONTTYPE name="olfactory-scale" />
+<ONTTYPE name="perceptibility-scale">
+<MAPPING to="wordnet" name="perceptibility%1:07:00::" />
+</ONTTYPE>
 <ONTTYPE name="sensitivity-scale">
 <WORD name="sensitivity" />
 <MAPPING to="wordnet" name="sensitivity%1:09:00::" />
@@ -6869,7 +7047,33 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="process-property-scale">
+<ONTTYPE name="can-be-done-scale">
+<ONTTYPE name="changeability-scale">
+<MAPPING to="wordnet" name="changeableness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="manageability-scale">
+<MAPPING to="wordnet" name="manageability%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="mobility-scale">
+<MAPPING to="wordnet" name="mobility%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="portability-scale">
+<MAPPING to="wordnet" name="portability%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="replaceability-scale">
+<MAPPING to="wordnet" name="replaceability%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
 <ONTTYPE name="process-evaluation-scale">
+<ONTTYPE name="effectiveness-scale">
+<MAPPING to="wordnet" name="effectiveness%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="efficiency-scale">
+<MAPPING to="wordnet" name="efficiency%1:09:00::" />
+</ONTTYPE>
+<ONTTYPE name="productivity-scale">
+<MAPPING to="wordnet" name="productiveness%1:07:01::" />
+</ONTTYPE>
 <ONTTYPE name="steadiness-scale">
 <ONTTYPE name="not-steady-scale">
 <WORD name="instability" />
@@ -6882,6 +7086,14 @@
 <MAPPING to="wordnet" name="stability%1:07:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="successfulness-scale">
+<ONTTYPE name="failure-scale">
+<MAPPING to="wordnet" name="failure%1:26:00::" />
+</ONTTYPE>
+<ONTTYPE name="successful-scale">
+<MAPPING to="wordnet" name="prosperity%1:26:00::" />
+</ONTTYPE>
+</ONTTYPE>
 <ONTTYPE name="task-complexity-scale">
 <ONTTYPE name="difficult-scale">
 <WORD name="difficulty" />
@@ -6892,7 +7104,12 @@
 <MAPPING to="wordnet" name="ease%1:07:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="utility-scale">
+<WORD name="utility" />
+<MAPPING to="wordnet" name="utility%1:07:00::" />
 </ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="process-status-scale" />
 <ONTTYPE name="temporal-occurrence-scale">
 <WORD name="frequency" />
 <ONTTYPE name="regularity-scale">
@@ -6914,6 +7131,9 @@
 <WORD name="ambition" />
 <MAPPING to="wordnet" name="ambition%1:07:00::" />
 </ONTTYPE>
+<ONTTYPE name="attentiveness-scale">
+<MAPPING to="wordnet" name="attentiveness%1:07:01::" />
+</ONTTYPE>
 <ONTTYPE name="awareness-scale">
 <WORD name="awareness" />
 <WORD name="consciousness" />
@@ -6928,11 +7148,26 @@
 <WORD name="certainty" />
 <MAPPING to="wordnet" name="certainty%1:09:00::" />
 <MAPPING to="wordnet" name="assurance%1:09:00::" />
+<MAPPING to="wordnet" name="certainty%1:07:00::" />
 </ONTTYPE>
 <ONTTYPE name="not-certain-scale">
 <WORD name="uncertainty" />
 <MAPPING to="wordnet" name="doubt%1:09:00::" />
 </ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="experiencer-condition-scale">
+<ONTTYPE name="anger-scale">
+<MAPPING to="wordnet" name="anger%1:26:00::" />
+<MAPPING to="wordnet" name="anger%1:12:00::" />
+</ONTTYPE>
+<ONTTYPE name="apathy-scale">
+<MAPPING to="wordnet" name="apathy%1:07:01::" />
+</ONTTYPE>
+<ONTTYPE name="bother-scale">
+<MAPPING to="wordnet" name="annoyance%1:09:00::" />
+</ONTTYPE>
+<ONTTYPE name="calmness-scale">
+<MAPPING to="wordnet" name="calmness%1:12:00::" />
 </ONTTYPE>
 <ONTTYPE name="confidence-scale">
 <WORD name="authority" />
@@ -6948,18 +7183,39 @@
 <MAPPING to="wordnet" name="confusion%1:09:00::" />
 <MAPPING to="wordnet" name="confusion%1:12:00::" />
 </ONTTYPE>
+<ONTTYPE name="desire-scale">
+<MAPPING to="wordnet" name="desire%1:26:00::" />
+</ONTTYPE>
+<ONTTYPE name="disgust-scale">
+<MAPPING to="wordnet" name="disgust%1:12:00::" />
+</ONTTYPE>
 <ONTTYPE name="distress-scale">
 <WORD name="distress" />
 <MAPPING to="wordnet" name="distress%1:26:00::" />
 <MAPPING to="wordnet" name="distress%1:12:02::" />
 </ONTTYPE>
-<ONTTYPE name="emotion-scale">
-<ONTTYPE name="negative-emotion-scale">
-<ONTTYPE name="grief-scale">
-<WORD name="heartache" />
-<WORD name="heartbreak" />
-<MAPPING to="wordnet" name="grief%1:12:00::" />
-<MAPPING to="wordnet" name="sorrow%1:12:00::" />
+<ONTTYPE name="envy-scale">
+<MAPPING to="wordnet" name="envy%1:12:00::" />
+</ONTTYPE>
+<ONTTYPE name="excitement-scale">
+<WORD name="enthusiasm" />
+<WORD name="excitement" />
+<MAPPING to="wordnet" name="exhilaration%1:12:00::" />
+</ONTTYPE>
+<ONTTYPE name="fear-scale">
+<MAPPING to="wordnet" name="fear%1:12:00::" />
+</ONTTYPE>
+<ONTTYPE name="gratitude-scale">
+<MAPPING to="wordnet" name="gratitude%1:12:00::" />
+</ONTTYPE>
+<ONTTYPE name="happiness-scale">
+<WORD name="happiness" />
+<MAPPING to="wordnet" name="happiness%1:26:00::" />
+<MAPPING to="wordnet" name="happiness%1:12:00::" />
+</ONTTYPE>
+<ONTTYPE name="interest-scale">
+<MAPPING to="wordnet" name="interest%1:09:00::" />
+<MAPPING to="wordnet" name="enthusiasm%1:09:00::" />
 </ONTTYPE>
 <ONTTYPE name="loneliness-scale">
 <WORD name="loneliness" />
@@ -6971,43 +7227,47 @@
 <MAPPING to="wordnet" name="jitteriness%1:12:00::" />
 <MAPPING to="wordnet" name="anxiety%1:12:00::" />
 </ONTTYPE>
-<ONTTYPE name="sadness-scale">
-<WORD name="sadness" />
-<MAPPING to="wordnet" name="sadness%1:12:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="positive-emotion-scale">
-<ONTTYPE name="excitement-scale">
-<WORD name="enthusiasm" />
-<WORD name="excitement" />
-<MAPPING to="wordnet" name="exhilaration%1:12:00::" />
-</ONTTYPE>
-<ONTTYPE name="happiness-scale">
-<WORD name="happiness" />
-<MAPPING to="wordnet" name="happiness%1:26:00::" />
-<MAPPING to="wordnet" name="happiness%1:12:00::" />
-</ONTTYPE>
 <ONTTYPE name="pleasantness-scale">
 <WORD name="amenity" />
 <MAPPING to="wordnet" name="agreeableness%1:07:00::" />
 <MAPPING to="wordnet" name="pleasantness%1:07:00::" />
 </ONTTYPE>
+<ONTTYPE name="pleasurability-scale">
+<MAPPING to="wordnet" name="pleasure%1:12:00::" />
+</ONTTYPE>
 <ONTTYPE name="pride-scale">
 <WORD name="pride" />
 <MAPPING to="wordnet" name="pride%1:12:00::" />
 </ONTTYPE>
+<ONTTYPE name="sadness-scale">
+<WORD name="sadness" />
+<MAPPING to="wordnet" name="sadness%1:12:00::" />
+<MAPPING to="wordnet" name="grief%1:12:00::" />
+<MAPPING to="wordnet" name="sorrow%1:12:00::" />
+<MAPPING to="wordnet" name="grief%1:09:00::" />
+<ONTTYPE name="regret-scale">
+<MAPPING to="wordnet" name="sorrow%1:12:01::" />
 </ONTTYPE>
 </ONTTYPE>
-<ONTTYPE name="interest-scale">
-<ONTTYPE name="interested-scale">
-<WORD name="enthusiasm" />
-<MAPPING to="wordnet" name="interest%1:09:00::" />
-<MAPPING to="wordnet" name="enthusiasm%1:09:00::" />
+<ONTTYPE name="stress-scale">
+<WORD name="stress" />
+<MAPPING to="wordnet" name="tension%1:26:03::" />
 </ONTTYPE>
-<ONTTYPE name="not-interested-scale">
-<WORD name="apathy" />
-<MAPPING to="wordnet" name="apathy%1:07:01::" />
+<ONTTYPE name="surprise-scale">
+<MAPPING to="wordnet" name="surprise%1:12:00::" />
 </ONTTYPE>
+<ONTTYPE name="worry-concern-scale">
+<MAPPING to="wordnet" name="concern%1:09:01::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="intelligence-scale">
+<MAPPING to="wordnet" name="intelligence%1:09:00::" />
+</ONTTYPE>
+<ONTTYPE name="intentionality-scale">
+<MAPPING to="wordnet" name="deliberation%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="premeditation-scale">
+<MAPPING to="wordnet" name="planning%1:09:00::" />
 </ONTTYPE>
 <ONTTYPE name="rationality-scale">
 <ONTTYPE name="not-rational-scale">
@@ -7022,10 +7282,6 @@
 <MAPPING to="wordnet" name="sanity%1:26:00::" />
 <MAPPING to="wordnet" name="rationality%1:26:00::" />
 </ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="stress-scale">
-<WORD name="stress" />
-<MAPPING to="wordnet" name="tension%1:26:03::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="relational-property-scale">
@@ -7421,7 +7677,7 @@
 <WORD name="function" />
 <WORD name="purpose" />
 <WORD name="role" />
-<MAPPING to="wordnet" name="utility%1:07:00::" />
+<MAPPING to="wordnet" name="function%1:07:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="mental-construction">
@@ -7452,17 +7708,11 @@
 <WORD name="feeling" />
 <WORD name="mood" />
 <MAPPING to="wordnet" name="feeling%1:03:00::" />
-<MAPPING to="wordnet" name="annoyance%1:09:00::" />
-<MAPPING to="wordnet" name="concern%1:09:01::" />
-<MAPPING to="wordnet" name="grief%1:09:00::" />
-<MAPPING to="wordnet" name="distress%1:12:02::" />
-<MAPPING to="wordnet" name="fidget%1:12:00::" />
 <MAPPING to="wordnet" name="mercifulness%1:07:00::" />
 </ONTTYPE>
 <ONTTYPE name="knowledge-belief">
 <WORD name="knowledge" />
 <MAPPING to="wordnet" name="cognition%1:03:00::" />
-<MAPPING to="wordnet" name="wisdom%1:07:00::" />
 <ONTTYPE name="doctrine">
 <WORD name="doctrine" />
 <MAPPING to="wordnet" name="doctrine%1:09:00::" />
@@ -7984,7 +8234,6 @@
 <ONTTYPE name="governing-principle">
 <MAPPING to="wordnet" name="injustice%1:07:00::" />
 <MAPPING to="wordnet" name="justice%1:07:00::" />
-<MAPPING to="wordnet" name="morality%1:07:00::" />
 <MAPPING to="wordnet" name="ethical_motive%1:16:00::" />
 <MAPPING to="wordnet" name="ethic%1:09:00::" />
 <MAPPING to="wordnet" name="ethic%1:10:00::" />
@@ -8030,7 +8279,7 @@
 <ONTTYPE name="essential-contract">
 <MAPPING to="wordnet" name="right%1:07:00::" />
 <MAPPING to="wordnet" name="absolute%1:09:00::" />
-<MAPPING to="wordnet" name="absolute%3:00:00::" />
+<MAPPING to="wordnet" name="absolute%5:00:00:inalienable:00" />
 </ONTTYPE>
 <ONTTYPE name="nonessential-contract">
 <MAPPING to="wordnet" name="freedom%1:26:00::" />
@@ -8179,7 +8428,6 @@
 <WORD name="mpg" />
 <WORD name="mph" />
 <WORD name="rpm" />
-<MAPPING to="wordnet" name="rate%1:28:00::" />
 <ONTTYPE name="speed-unit">
 <WORD name="ghz" />
 <WORD name="gigahertz" />
@@ -8208,7 +8456,6 @@
 <MAPPING to="wordnet" name="whole_note%1:10:00::" />
 </ONTTYPE>
 <ONTTYPE name="pitch-unit">
-<MAPPING to="wordnet" name="interval%1:10:00::" />
 <ONTTYPE name="half-step">
 <WORD name="half_step" />
 <WORD name="semitone" />
@@ -8446,7 +8693,6 @@
 </ONTTYPE>
 <ONTTYPE name="product">
 <WORD name="product" />
-<MAPPING to="wordnet" name="card%1:06:00::" />
 <MAPPING to="wordnet" name="merchandise%1:06:00::" />
 </ONTTYPE>
 </ONTTYPE>
@@ -8626,7 +8872,6 @@
 <WORD name="zone" />
 <MAPPING to="wordnet" name="field%1:15:00::" />
 <MAPPING to="wordnet" name="field%1:15:05::" />
-<MAPPING to="wordnet" name="plot%1:15:00::" />
 <MAPPING to="wordnet" name="pasture%1:15:00::" />
 <ONTTYPE name="garden-grounds">
 <MAPPING to="wordnet" name="garden%1:06:00::" />
@@ -8966,7 +9211,6 @@
 <WORD name="peephole" />
 <WORD name="window" />
 <MAPPING to="wordnet" name="entrance%1:06:00::" />
-<MAPPING to="wordnet" name="window%1:06:00::" />
 <MAPPING to="wordnet" name="window%1:06:01::" />
 <MAPPING to="wordnet" name="window%1:06:05::" />
 <MAPPING to="wordnet" name="movable_barrier%1:06:00::" />
@@ -9110,7 +9354,6 @@
 <WORD name="collection" />
 <WORD name="ensemble" />
 <MAPPING to="wordnet" name="collection%1:14:00::" />
-<MAPPING to="wordnet" name="array%1:14:00::" />
 <MAPPING to="wordnet" name="array%1:10:00::" />
 <MAPPING to="wordnet" name="series%1:14:01::" />
 <MAPPING to="wordnet" name="trinketry%1:14:00::" />
@@ -9872,8 +10115,6 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="operating-switch">
-<MAPPING to="wordnet" name="base%1:06:00::" />
-<MAPPING to="wordnet" name="support%1:06:00::" />
 <ONTTYPE name="button">
 <WORD name="button" />
 </ONTTYPE>
@@ -9906,7 +10147,6 @@
 <WORD name="digger" />
 <WORD name="hardware" />
 <MAPPING to="wordnet" name="equipment%1:06:00::" />
-<MAPPING to="wordnet" name="instrumentality%1:06:00::" />
 <ONTTYPE name="tool">
 <WORD name="hammer" />
 <WORD name="needle" />
@@ -9983,7 +10223,6 @@
 <MAPPING to="wordnet" name="pillow%1:06:00::" />
 </ONTTYPE>
 <ONTTYPE name="furnishings-component">
-<MAPPING to="wordnet" name="drawer%1:06:00::" />
 <ONTTYPE name="drawer">
 <WORD name="drawer" />
 <MAPPING to="wordnet" name="drawer%1:06:00::" />
@@ -10085,7 +10324,6 @@
 <WORD name="hoverboard" />
 <WORD name="shuttle" />
 <WORD name="taxi" />
-<MAPPING to="wordnet" name="truck%1:06:00::" />
 <MAPPING to="wordnet" name="car%1:06:00::" />
 <MAPPING to="wordnet" name="train%1:06:00::" />
 <MAPPING to="wordnet" name="wheeled_vehicle%1:06:00::" />
@@ -10132,7 +10370,6 @@
 </ONTTYPE>
 <ONTTYPE name="window">
 <MAPPING to="wordnet" name="window%1:06:00::" />
-<MAPPING to="wordnet" name="window%1:06:01::" />
 </ONTTYPE>
 <ONTTYPE name="writing-implement">
 <WORD name="chalk" />
@@ -10240,7 +10477,6 @@
 <MAPPING to="wordnet" name="pesticide%1:27:00::" />
 </ONTTYPE>
 <ONTTYPE name="pharmacologic-substance">
-<MAPPING to="wordnet" name="drug%1:06:00::" />
 <ONTTYPE name="medication">
 <WORD name="sleeping_pill" />
 <WORD name="antacid" />
@@ -11854,7 +12090,6 @@
 <WORD name="compression" />
 <WORD name="force" />
 <WORD name="pressure" />
-<MAPPING to="wordnet" name="force%1:07:00::" />
 <MAPPING to="wordnet" name="force%1:19:00::" />
 <MAPPING to="wordnet" name="causal_agent%1:03:00::" />
 <MAPPING to="wordnet" name="cause%1:11:00::" />
@@ -12158,7 +12393,6 @@
 <MAPPING to="wordnet" name="friend%1:18:00::" />
 </ONTTYPE>
 <ONTTYPE name="identity-and-origin">
-<MAPPING to="wordnet" name="inhabitant%1:18:00::" />
 <ONTTYPE name="foreigner">
 <WORD name="foreigner" />
 <MAPPING to="wordnet" name="foreigner%1:18:00::" />
@@ -13012,13 +13246,8 @@
 <WORD name="make" />
 <WORD name="serve" />
 <MAPPING to="wordnet" name="force%2:35:02::" />
-<MAPPING to="wordnet" name="get%2:30:02::" />
 <MAPPING to="wordnet" name="cause%2:36:00::" />
 <MAPPING to="wordnet" name="open%2:30:00::" />
-<ONTTYPE name="achieve">
-<WORD name="manage" />
-<MAPPING to="wordnet" name="pull_off%2:41:00::" />
-</ONTTYPE>
 <ONTTYPE name="allow">
 <WORD name="allow" />
 <WORD name="let" />
@@ -13034,7 +13263,6 @@
 <WORD name="reproduce" />
 <WORD name="result" />
 <WORD name="yield" />
-<MAPPING to="wordnet" name="produce%2:39:00::" />
 <MAPPING to="wordnet" name="produce%2:36:03::" />
 <MAPPING to="wordnet" name="yield%2:40:00::" />
 <MAPPING to="wordnet" name="yield%2:40:02::" />
@@ -13048,9 +13276,7 @@
 <WORD name="promote" />
 <WORD name="stimulate" />
 <WORD name="upregulate" />
-<MAPPING to="wordnet" name="persuade%2:32:00::" />
-<MAPPING to="wordnet" name="impel%2:36:00::" />
-<MAPPING to="wordnet" name="coerce%2:41:00::" />
+<MAPPING to="wordnet" name="fuel%2:37:00::" />
 <ONTTYPE name="catalyze">
 <WORD name="catalyze" />
 <MAPPING to="wordnet" name="catalyze%2:30:00::" />
@@ -13110,7 +13336,6 @@
 <WORD name="get" />
 <WORD name="have" />
 <MAPPING to="wordnet" name="get%2:30:02::" />
-<MAPPING to="wordnet" name="hold%2:36:00::" />
 <MAPPING to="wordnet" name="induce%2:32:00::" />
 <MAPPING to="wordnet" name="have%2:40:02::" />
 <MAPPING to="wordnet" name="give_birth%2:29:00::" />
@@ -13122,7 +13347,6 @@
 <WORD name="coerce" />
 <WORD name="compel" />
 <WORD name="dare" />
-<WORD name="electrify" />
 <WORD name="embolden" />
 <WORD name="entice" />
 <WORD name="force" />
@@ -13132,7 +13356,6 @@
 <WORD name="inflame" />
 <WORD name="inspire" />
 <WORD name="inveigle" />
-<WORD name="invigorate" />
 <WORD name="jolt" />
 <WORD name="lull" />
 <WORD name="mislead" />
@@ -13146,12 +13369,9 @@
 <WORD name="provoke" />
 <WORD name="push" />
 <WORD name="rouse" />
-<WORD name="shock" />
 <WORD name="spur" />
-<WORD name="startle" />
 <WORD name="tantalize" />
 <WORD name="taunt" />
-<WORD name="tease" />
 <WORD name="tempt" />
 <MAPPING to="wordnet" name="persuade%2:32:00::" />
 <MAPPING to="wordnet" name="impel%2:36:00::" />
@@ -13240,6 +13460,10 @@
 <WORD name="deal" />
 <MAPPING to="wordnet" name="waive%2:41:00::" />
 <MAPPING to="wordnet" name="cope%2:41:00::" />
+</ONTTYPE>
+<ONTTYPE name="manage-to-complete">
+<WORD name="manage" />
+<MAPPING to="wordnet" name="pull_off%2:41:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="execute">
@@ -13394,7 +13618,6 @@
 <WORD name="stop" />
 <WORD name="terminate" />
 <MAPPING to="wordnet" name="discontinue%2:42:00::" />
-<MAPPING to="wordnet" name="end%2:42:00::" />
 <MAPPING to="wordnet" name="run_out%2:42:00::" />
 <MAPPING to="wordnet" name="snuff_out%2:43:00::" />
 <MAPPING to="wordnet" name="mire%2:38:01::" />
@@ -13423,7 +13646,6 @@
 <MAPPING to="wordnet" name="use%1:07:02::" />
 <MAPPING to="wordnet" name="use%1:04:00::" />
 <MAPPING to="wordnet" name="application%1:04:02::" />
-<MAPPING to="wordnet" name="use%2:41:03::" />
 <MAPPING to="wordnet" name="practice%2:41:01::" />
 <MAPPING to="wordnet" name="use%2:34:00::" />
 <MAPPING to="wordnet" name="use%2:34:02::" />
@@ -13524,7 +13746,6 @@
 <MAPPING to="wordnet" name="sustain%2:34:00::" />
 <MAPPING to="wordnet" name="retain%2:41:01::" />
 <MAPPING to="wordnet" name="observe%2:31:00::" />
-<MAPPING to="wordnet" name="keep%2:42:00::" />
 <MAPPING to="wordnet" name="continue%2:42:01::" />
 <MAPPING to="wordnet" name="persist%2:42:01::" />
 <MAPPING to="wordnet" name="welter%2:31:00::" />
@@ -14289,7 +14510,6 @@
 </ONTTYPE>
 <ONTTYPE name="share">
 <WORD name="share" />
-<MAPPING to="wordnet" name="share%2:40:02::" />
 <MAPPING to="wordnet" name="partake%2:40:00::" />
 <MAPPING to="wordnet" name="share%2:40:00::" />
 </ONTTYPE>
@@ -14416,7 +14636,6 @@
 <MAPPING to="wordnet" name="take_in%2:35:02::" />
 <MAPPING to="wordnet" name="gain%2:33:00::" />
 <MAPPING to="wordnet" name="fetch%2:40:00::" />
-<MAPPING to="wordnet" name="win%2:33:00::" />
 <ONTTYPE name="acquire-by-action">
 <ONTTYPE name="appropriate">
 <WORD name="take_on" />
@@ -14563,7 +14782,6 @@
 <MAPPING to="wordnet" name="lighten%2:37:01::" />
 <MAPPING to="wordnet" name="enchant%2:37:00::" />
 <MAPPING to="wordnet" name="elate%2:37:00::" />
-<MAPPING to="wordnet" name="enliven%2:30:00::" />
 <MAPPING to="wordnet" name="cheer%2:32:03::" />
 <MAPPING to="wordnet" name="thrill%2:37:02::" />
 <ONTTYPE name="evoke-amusement">
@@ -14588,6 +14806,15 @@
 <MAPPING to="wordnet" name="pamper%2:41:00::" />
 <MAPPING to="wordnet" name="satisfaction%1:04:00::" />
 </ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="evoke-liveliness">
+<WORD name="perk_up" />
+<WORD name="animate" />
+<WORD name="energize" />
+<WORD name="enliven" />
+<WORD name="invigorate" />
+<MAPPING to="wordnet" name="stimulate%2:29:00::" />
+<MAPPING to="wordnet" name="enliven%2:30:00::" />
 </ONTTYPE>
 <ONTTYPE name="evoke-relief">
 <WORD name="calm_down" />
@@ -14660,8 +14887,7 @@
 </ONTTYPE>
 <ONTTYPE name="evoke-excitement">
 <WORD name="agitate" />
-<WORD name="energize" />
-<WORD name="enliven" />
+<WORD name="electrify" />
 <WORD name="excite" />
 <WORD name="overwhelm" />
 <WORD name="shake" />
@@ -14686,6 +14912,8 @@
 <WORD name="astound" />
 <WORD name="awe" />
 <WORD name="floor" />
+<WORD name="shock" />
+<WORD name="startle" />
 <WORD name="stun" />
 <WORD name="surprise" />
 <MAPPING to="wordnet" name="surprise%2:31:00::" />
@@ -14725,6 +14953,7 @@
 <WORD name="rile" />
 <WORD name="roil" />
 <WORD name="ruffle" />
+<WORD name="tease" />
 <WORD name="vex" />
 <MAPPING to="wordnet" name="annoy%2:37:00::" />
 <MAPPING to="wordnet" name="dissatisfy%2:37:00::" />
@@ -15010,7 +15239,6 @@
 <MAPPING to="wordnet" name="rub%2:35:00::" />
 <MAPPING to="wordnet" name="rub%2:39:00::" />
 <MAPPING to="wordnet" name="stroke%2:35:00::" />
-<MAPPING to="wordnet" name="smooth%2:40:00::" />
 <MAPPING to="wordnet" name="dab%2:35:01::" />
 </ONTTYPE>
 </ONTTYPE>
@@ -15314,7 +15542,6 @@
 <MAPPING to="wordnet" name="overlay%2:35:00::" />
 <MAPPING to="wordnet" name="cover%2:35:01::" />
 <MAPPING to="wordnet" name="impregnate%2:30:00::" />
-<MAPPING to="wordnet" name="spread%2:35:13::" />
 </ONTTYPE>
 <ONTTYPE name="orient">
 <WORD name="aim" />
@@ -15324,7 +15551,6 @@
 <MAPPING to="wordnet" name="aim%2:33:00::" />
 <MAPPING to="wordnet" name="indicate%2:32:03::" />
 <MAPPING to="wordnet" name="point%2:33:02::" />
-<MAPPING to="wordnet" name="target%2:33:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="change">
@@ -15651,15 +15877,12 @@
 <ONTTYPE name="reviving">
 <WORD name="bring_to" />
 <WORD name="come_to" />
-<WORD name="perk_up" />
-<WORD name="animate" />
 <WORD name="recharge" />
 <WORD name="refresh" />
 <WORD name="rejuvenate" />
 <WORD name="resuscitate" />
 <WORD name="revive" />
 <MAPPING to="wordnet" name="resuscitate%2:29:00::" />
-<MAPPING to="wordnet" name="stimulate%2:29:00::" />
 <MAPPING to="wordnet" name="come_to%2:29:00::" />
 </ONTTYPE>
 </ONTTYPE>
@@ -16220,7 +16443,6 @@
 <MAPPING to="wordnet" name="cultivate%2:36:00::" />
 <MAPPING to="wordnet" name="develop%2:30:00::" />
 <MAPPING to="wordnet" name="develop%2:30:01::" />
-<MAPPING to="wordnet" name="grow%2:30:00::" />
 <MAPPING to="wordnet" name="grow%2:30:01::" />
 <MAPPING to="wordnet" name="grow%2:30:02::" />
 </ONTTYPE>
@@ -16360,7 +16582,6 @@
 <WORD name="damage" />
 <MAPPING to="wordnet" name="damage%2:30:00::" />
 <MAPPING to="wordnet" name="damage%2:30:01::" />
-<MAPPING to="wordnet" name="damage%1:11:00::" />
 <MAPPING to="wordnet" name="damage%1:04:00::" />
 <ONTTYPE name="dent">
 <WORD name="bruise" />
@@ -16416,7 +16637,6 @@
 <WORD name="swallow" />
 <WORD name="take" />
 <MAPPING to="wordnet" name="consume%2:34:00::" />
-<MAPPING to="wordnet" name="sample%2:34:00::" />
 <MAPPING to="wordnet" name="swallow%2:34:00::" />
 <ONTTYPE name="drink">
 <WORD name="drink" />
@@ -16452,7 +16672,6 @@
 <MAPPING to="wordnet" name="control%1:04:00::" />
 <MAPPING to="wordnet" name="control%2:41:00::" />
 <MAPPING to="wordnet" name="fire%2:33:00::" />
-<MAPPING to="wordnet" name="direct%2:41:00::" />
 <ONTTYPE name="arranging">
 <WORD name="align" />
 <WORD name="alternate" />
@@ -16521,6 +16740,7 @@
 <ONTTYPE name="managing">
 <WORD name="manage" />
 <MAPPING to="wordnet" name="management%1:04:00::" />
+<MAPPING to="wordnet" name="hold%2:36:00::" />
 <ONTTYPE name="governing">
 <WORD name="govern" />
 <WORD name="modulate" />
@@ -16799,6 +17019,7 @@
 </ONTTYPE>
 <ONTTYPE name="float">
 <WORD name="float" />
+<MAPPING to="wordnet" name="levitate%2:38:00::" />
 </ONTTYPE>
 <ONTTYPE name="flutter">
 <WORD name="flutter" />
@@ -17133,6 +17354,8 @@
 <MAPPING to="wordnet" name="trip%2:38:01::" />
 <MAPPING to="wordnet" name="unbalance%2:42:00::" />
 <MAPPING to="wordnet" name="unmake%2:36:00::" />
+<MAPPING to="wordnet" name="affect%2:29:00::" />
+<MAPPING to="wordnet" name="affect%2:30:00::" />
 </ONTTYPE>
 <ONTTYPE name="participate-attend">
 <WORD name="appear" />
@@ -17388,28 +17611,22 @@
 <MAPPING to="wordnet" name="transmit%2:35:00::" />
 <MAPPING to="wordnet" name="pass%2:38:04::" />
 <MAPPING to="wordnet" name="bundle_off%2:38:00::" />
-<ONTTYPE name="transmit">
-<MAPPING to="wordnet" name="air%2:32:02::" />
-<MAPPING to="wordnet" name="air%2:32:01::" />
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="sendcopy">
 <WORD name="b_c_c" />
 <WORD name="c_c" />
 <WORD name="bcc" />
 <WORD name="cc" />
 <WORD name="copy" />
-<MAPPING to="wordnet" name="mail%2:32:00::" />
-<MAPPING to="wordnet" name="transport%2:38:01::" />
-<MAPPING to="wordnet" name="transmit%2:35:00::" />
+</ONTTYPE>
+<ONTTYPE name="transmit">
 <MAPPING to="wordnet" name="air%2:32:02::" />
-<MAPPING to="wordnet" name="pass%2:38:04::" />
+<MAPPING to="wordnet" name="air%2:32:01::" />
+</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="lose">
 <WORD name="lose" />
-<MAPPING to="wordnet" name="lose%2:33:00::" />
 <MAPPING to="wordnet" name="lose%2:39:00::" />
 <MAPPING to="wordnet" name="miss%2:39:00::" />
 <MAPPING to="wordnet" name="lose%2:40:00::" />
@@ -17449,7 +17666,6 @@
 <MAPPING to="wordnet" name="rid%2:40:00::" />
 <ONTTYPE name="disarm">
 <WORD name="disarm" />
-<MAPPING to="wordnet" name="disarm%2:33:00::" />
 <MAPPING to="wordnet" name="disarm%2:33:01::" />
 </ONTTYPE>
 </ONTTYPE>
@@ -17465,7 +17681,6 @@
 <MAPPING to="wordnet" name="uncover%2:39:00::" />
 <MAPPING to="wordnet" name="unwrap%2:32:00::" />
 <MAPPING to="wordnet" name="cause_to_be_perceived%2:39:00::" />
-<MAPPING to="wordnet" name="break%2:32:05::" />
 </ONTTYPE>
 <ONTTYPE name="rotate">
 <WORD name="flip_over" />
@@ -17561,7 +17776,6 @@
 <MAPPING to="wordnet" name="consumption%1:04:01::" />
 <MAPPING to="wordnet" name="bilge%2:30:01::" />
 <MAPPING to="wordnet" name="bilge%2:30:00::" />
-<MAPPING to="wordnet" name="suck%2:34:04::" />
 <MAPPING to="wordnet" name="suck%2:38:00::" />
 <MAPPING to="wordnet" name="absorb%2:35:00::" />
 </ONTTYPE>
@@ -17667,7 +17881,6 @@
 <WORD name="glow" />
 <WORD name="shine" />
 <WORD name="sparkle" />
-<MAPPING to="wordnet" name="reflect%2:43:00::" />
 <MAPPING to="wordnet" name="shine%2:43:00::" />
 <MAPPING to="wordnet" name="flash%2:39:00::" />
 <MAPPING to="wordnet" name="shine%2:43:03::" />
@@ -17740,7 +17953,6 @@
 <WORD name="stamp" />
 <WORD name="tattoo" />
 <MAPPING to="wordnet" name="create_verbally%2:36:00::" />
-<MAPPING to="wordnet" name="write%2:32:00::" />
 <ONTTYPE name="author-write-burn-print_reprint_type_retype_mistype">
 <WORD name="author" />
 <WORD name="burn" />
@@ -17799,6 +18011,13 @@
 <MAPPING to="wordnet" name="avoid%2:41:03::" />
 <MAPPING to="wordnet" name="keep_off%2:34:00::" />
 <MAPPING to="wordnet" name="refrain%2:42:00::" />
+<ONTTYPE name="procrastinate">
+<WORD name="dally" />
+<WORD name="dawdle" />
+<WORD name="procrastinate" />
+<WORD name="tarry" />
+<MAPPING to="wordnet" name="procrastinate%2:42:00::" />
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="choosing">
 <ONTTYPE name="sampling">
@@ -17836,6 +18055,10 @@
 <MAPPING to="wordnet" name="abandon%2:31:01::" />
 <MAPPING to="wordnet" name="abandon%2:40:01::" />
 </ONTTYPE>
+<ONTTYPE name="unfocused-activity">
+<WORD name="potter" />
+<MAPPING to="wordnet" name="putter%2:35:01::" />
+</ONTTYPE>
 <ONTTYPE name="working">
 <WORD name="chore" />
 <WORD name="job" />
@@ -17864,6 +18087,14 @@
 <MAPPING to="wordnet" name="confinement%1:04:00::" />
 <MAPPING to="wordnet" name="restriction%1:04:01::" />
 </ONTTYPE>
+<ONTTYPE name="hang-out">
+<WORD name="hang_out" />
+<WORD name="hover" />
+<WORD name="linger" />
+<WORD name="loaf" />
+<WORD name="loiter" />
+<MAPPING to="wordnet" name="idle%2:41:00::" />
+</ONTTYPE>
 <ONTTYPE name="retain">
 <WORD name="hold_onto" />
 <WORD name="conserve" />
@@ -17891,21 +18122,6 @@
 <MAPPING to="wordnet" name="stay%2:38:01::" />
 <MAPPING to="wordnet" name="stay_in_place%2:38:00::" />
 <MAPPING to="wordnet" name="populate%2:42:00::" />
-</ONTTYPE>
-<ONTTYPE name="wait">
-<WORD name="hang_out" />
-<WORD name="dally" />
-<WORD name="dawdle" />
-<WORD name="hover" />
-<WORD name="linger" />
-<WORD name="loaf" />
-<WORD name="loiter" />
-<WORD name="potter" />
-<WORD name="procrastinate" />
-<WORD name="tarry" />
-<MAPPING to="wordnet" name="wait%2:42:00::" />
-<MAPPING to="wordnet" name="expect%2:31:01::" />
-<MAPPING to="wordnet" name="idle%2:41:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="nonverbal-expression">
@@ -18107,7 +18323,6 @@
 <WORD name="wait" />
 <WORD name="watch" />
 <MAPPING to="wordnet" name="wait%2:42:00::" />
-<MAPPING to="wordnet" name="expect%2:31:01::" />
 <MAPPING to="wordnet" name="watch%2:39:01::" />
 </ONTTYPE>
 </ONTTYPE>
@@ -18615,8 +18830,6 @@
 <WORD name="undergo" />
 <MAPPING to="wordnet" name="go_down%2:42:00::" />
 <MAPPING to="wordnet" name="go_into%2:42:00::" />
-<MAPPING to="wordnet" name="hesitate%2:42:00::" />
-<MAPPING to="wordnet" name="levitate%2:38:00::" />
 <MAPPING to="wordnet" name="photograph%2:42:00::" />
 </ONTTYPE>
 </ONTTYPE>
@@ -18650,7 +18863,6 @@
 <WORD name="suggest" />
 <WORD name="support" />
 <MAPPING to="wordnet" name="argue%2:32:01::" />
-<MAPPING to="wordnet" name="entail%2:42:01::" />
 <MAPPING to="wordnet" name="confirm%2:31:00::" />
 <MAPPING to="wordnet" name="read%2:32:02::" />
 <MAPPING to="wordnet" name="underlie%2:42:00::" />
@@ -18726,6 +18938,7 @@
 <WORD name="foresee" />
 <WORD name="suspect" />
 <MAPPING to="wordnet" name="expect%2:31:00::" />
+<MAPPING to="wordnet" name="expect%2:31:01::" />
 <ONTTYPE name="assume">
 <WORD name="assume" />
 <WORD name="posit" />
@@ -18799,9 +19012,6 @@
 <ONTTYPE name="understand">
 <WORD name="see" />
 <WORD name="understand" />
-<MAPPING to="wordnet" name="know%2:31:02::" />
-<MAPPING to="wordnet" name="know%2:31:03::" />
-<MAPPING to="wordnet" name="know%2:31:01::" />
 <MAPPING to="wordnet" name="understand%2:31:00::" />
 </ONTTYPE>
 </ONTTYPE>
@@ -18991,8 +19201,6 @@
 <WORD name="tingle" />
 <MAPPING to="wordnet" name="nauseating%5:00:00:unwholesome:00" />
 <MAPPING to="wordnet" name="nauseated%5:00:00:ill:01" />
-<MAPPING to="wordnet" name="chill%1:26:01::" />
-<MAPPING to="wordnet" name="nausea%1:26:00::" />
 <MAPPING to="wordnet" name="itch%2:39:00::" />
 <MAPPING to="wordnet" name="hurt%2:39:01::" />
 <ONTTYPE name="chill">
@@ -19021,7 +19229,6 @@
 <WORD name="operate" />
 <WORD name="run" />
 <WORD name="work" />
-<MAPPING to="wordnet" name="fire%2:33:02::" />
 <MAPPING to="wordnet" name="do%2:41:03::" />
 <MAPPING to="wordnet" name="drive%2:42:00::" />
 <MAPPING to="wordnet" name="function%2:35:00::" />
@@ -19163,7 +19370,6 @@
 <ONTTYPE name="differ">
 <WORD name="differ" />
 <MAPPING to="wordnet" name="differ%2:42:00::" />
-<MAPPING to="wordnet" name="difference%1:07:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="resemble">
@@ -19199,7 +19405,6 @@
 <MAPPING to="wordnet" name="hang%2:35:05::" />
 <MAPPING to="wordnet" name="hang%2:35:06::" />
 <MAPPING to="wordnet" name="hang%2:42:01::" />
-<MAPPING to="wordnet" name="confine%2:41:00::" />
 <MAPPING to="wordnet" name="lie%2:35:00::" />
 <MAPPING to="wordnet" name="trail%2:35:05::" />
 <MAPPING to="wordnet" name="lie%2:42:00::" />
@@ -19337,7 +19542,7 @@
 </ONTTYPE>
 <ONTTYPE name="share-property">
 <WORD name="share" />
-<MAPPING to="wordnet" name="share%2:40:00::" />
+<MAPPING to="wordnet" name="share%2:40:02::" />
 </ONTTYPE>
 <ONTTYPE name="state-of-being">
 <ONTTYPE name="is-compatible-with">
@@ -19774,7 +19979,6 @@
 <WORD name="pathology" />
 <WORD name="stenosis" />
 <MAPPING to="wordnet" name="condition%1:26:05::" />
-<MAPPING to="wordnet" name="sign%1:26:00::" />
 <MAPPING to="wordnet" name="deformity%1:26:00::" />
 <MAPPING to="wordnet" name="pathology%1:26:00::" />
 <ONTTYPE name="anesthesia">

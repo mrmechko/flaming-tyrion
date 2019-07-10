@@ -11,6 +11,14 @@
   wn::|effective%5:00:00:efficacious:00|
   wn::|efficacious%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::effectiveness-scale</feat>
+  <feat name="type">ont::effective-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -136,14 +144,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::effectiveness-val">
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::process-evaluation-scale</feat>
+ <feat name="type">ont::process-evaluation-val</feat>
+ </sem-feats>
+ <concept name="ont::process-val">
  <comment>
-  &quot;evaluation attributes dealing with the effectiveness or efficacy of something&quot;
+  &quot;properties that describe processes&quot;
  </comment>
  <relation label="inherit">
-  ont::process-evaluation-val
+  ont::property-val
  </relation>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::effectiveness-scale</feat>
+ <feat name="type">ont::effectiveness-val</feat>
+ </sem-feats>
  <concept name="ont::process-evaluation-val">
  <comment>
   &quot;evaluation properties of processes&quot;
@@ -159,21 +181,29 @@
   <feat name="type">ont::process-evaluation-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::process-val">
- <comment>
-  &quot;properties that describe processes&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::process-evaluation-scale</feat>
- <feat name="type">ont::process-evaluation-val</feat>
+ <feat name="orientation">pos</feat>
+ <feat name="scale">ont::effectiveness-scale</feat>
+ <feat name="type">ont::effective-val</feat>
  </sem-feats>
+ <concept name="ont::effectiveness-val">
+ <comment>
+  &quot;evaluation attributes dealing with the effectiveness or efficacy of something&quot;
+ </comment>
+ <relation label="inherit">
+  ont::process-evaluation-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::effectiveness-scale</feat>
+  <feat name="type">ont::effectiveness-val</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property

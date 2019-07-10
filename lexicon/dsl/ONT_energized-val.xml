@@ -3,13 +3,23 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::energized-val">
+ <comment>
+  &quot;characterized by being full of energy and activity&quot;
+ </comment>
  <relation label="inherit">
-  ont::energy-supply-val
+  ont::positive-body-condition-property-val
  </relation>
  <relation label="overlap">
   wn::|energetic%3:00:00::|
   wn::|active%3:00:01::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::body-energy-scale</feat>
+  <feat name="type">ont::energized-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -135,10 +145,42 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::energy-supply-val">
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
  <relation label="inherit">
-  ont::body-condition-property-val
+  abstr-obj
  </relation>
+ <feat name="scale">ont::body-condition-scale</feat>
+ <feat name="type">ont::body-condition-property-val</feat>
+ </sem-feats>
+ <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::physical-property-scale</feat>
+  <feat name="type">ont::physical-property-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::body-condition-property-val">
  <comment>
@@ -170,43 +212,18 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::physical-property-val">
- <comment>
-  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::physical-property-scale</feat>
-  <feat name="type">ont::physical-property-val</feat>
- </sem-feats>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::body-condition-scale</feat>
- <feat name="type">ont::body-condition-property-val</feat>
+ <feat name="scale">ont::body-energy-scale</feat>
+ <feat name="type">ont::energized-val</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
+ <concept name="ont::positive-body-condition-property-val">
+ <relation label="inherit">
+  ont::body-condition-property-val
+ </relation>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property

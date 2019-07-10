@@ -4,10 +4,13 @@
  <provenance name="TRIPS"/>
  <concept name="ont::sadness-scale">
  <relation label="inherit">
-  ont::negative-emotion-scale
+  ont::experiencer-condition-scale
  </relation>
  <relation label="overlap">
   wn::|sadness%1:12:00::|
+  wn::|grief%1:12:00::|
+  wn::|sorrow%1:12:00::|
+  wn::|sorrow%1:09:00::|
  </relation>
  </concept>
  <or>
@@ -72,22 +75,17 @@
   ont::domain
  </relation>
  </concept>
- <concept name="ont::negative-emotion-scale">
- <relation label="inherit">
-  ont::emotion-scale
- </relation>
- </concept>
- <concept name="ont::emotion-scale">
- <relation label="inherit">
-  ont::psychological-condition-scale
- </relation>
- </concept>
  <concept name="ont::psychological-condition-scale">
  <relation label="inherit">
   ont::ordered-domain
  </relation>
  <relation label="overlap">
   wn::|psychological_state%1:26:00::|
+ </relation>
+ </concept>
+ <concept name="ont::experiencer-condition-scale">
+ <relation label="inherit">
+  ont::psychological-condition-scale
  </relation>
  </concept>
  <concept name="ont::domain">
@@ -152,6 +150,14 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <concept name="ont::regret-scale">
+ <relation label="inherit">
+  ont::sadness-scale
+ </relation>
+ <relation label="overlap">
+  wn::|regret%1:12:00::|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="n" />

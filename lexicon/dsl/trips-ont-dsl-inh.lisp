@@ -2689,80 +2689,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::ACHIEVE
-  (INHERIT
-    ONT::CAUSE-EFFECT)
-  (OVERLAP
-    WN::|pull_off%2:41:00::|
-    WN::|negociate%2:41:02::|
-    WN::|bring_off%2:41:00::|
-    WN::|carry_off%2:41:00::|
-    WN::|manage%2:41:09::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (KR-TYPE ANY-KR-TYPE)
-    (INFORMATION MENTAL-CONSTRUCT)
-    (TIME-SPAN ANY-TIME-SPAN)
-    (LOCATIVE -)
-    (ORIGIN ANY-ORIGIN)
-    (IOBJ -)
-    (INTENTIONAL -)
-    (CONTAINER -)
-    (TANGIBLE +)
-    (ASPECT F::DYNAMIC)
-    (TRAJECTORY -)
-    (CAUSE
-     (OR
-       F::AGENTIVE
-       F::FORCE))
-    (TYPE ONT::CAUSE-EFFECT))
-  (SEM-FRAME
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::RESULT
-     (CONCEPT
-       ABSTR-OBJ)
-     OPTIONAL)
-    (ONT::FORMAL
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ))
-       (TYPE
-        (OR
-          ONT::SITUATION-ROOT
-          ONT::PROPERTY-VAL)))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           SITUATION))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +))
-     OPTIONAL)
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)))
-
-(CONCEPT
   ONT::ACKNOWLEDGE
   (INHERIT
     ONT::RESPONSE)
@@ -2930,8 +2856,7 @@
     WN::|take_up%2:35:01::|
     WN::|take_in%2:35:02::|
     WN::|advance%2:33:00::|
-    WN::|bring%2:40:00::|
-    WN::|win%2:33:00::|)
+    WN::|bring%2:40:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -3849,8 +3774,6 @@
     WN::|keep_on%2:41:00::|
     WN::|retain%2:41:01::|
     WN::|maintain%2:31:00::|
-    WN::|hold%2:42:00::|
-    WN::|maintain%2:42:00::|
     WN::|continue%2:42:01::|
     WN::|persist%2:42:01::|
     WN::|welter%2:31:00::|
@@ -4023,11 +3946,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::ACTUAL-SCALE)
+    (TYPE ONT::ACTUAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -4105,6 +4028,74 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::ACTUAL-SCALE
+  (INHERIT
+    ONT::ACTUALITY-SCALE)
+  (OVERLAP
+    WN::|actuality%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
+  ONT::ACTUALITY-SCALE
+  (INHERIT
+    ONT::REAL-VS-FAKE-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::ACTUALITY-VAL
   (COMMENT "existing or occuring in fact vs. imagined or supposed")
   (INHERIT
@@ -4123,8 +4114,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (SCALE ONT::ACTUALITY-SCALE)
+    (TYPE ONT::ACTUALITY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -5176,105 +5167,9 @@
 (CONCEPT
   ONT::ADORNED-VAL
   (INHERIT
-    ONT::ADORNMENT-VAL)
+    ONT::CLOTHEDNESS-ADORNMENT-VAL)
   (OVERLAP
     WN::|adorned%3:00:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (SCALE ONT::CONFIGURATION-PROPERTY-SCALE)
-    (TYPE ONT::CONFIGURATION-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)))))
-
-(CONCEPT
-  ONT::ADORNMENT-VAL
-  (COMMENT "having or missing adornment")
-  (INHERIT
-    ONT::CONFIGURATION-PROPERTY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -5540,11 +5435,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::AESTHETIC-TASTEFULNESS-SCALE)
+    (TYPE ONT::AESTHETIC-JUDGEMENT-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -5622,6 +5517,41 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::AESTHETIC-TASTEFULNESS-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|stylishness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::AFFECT-EXPERIENCER
   (COMMENT "cause an experience on an cognitive agent")
   (INHERIT
@@ -5669,9 +5599,44 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::AFFECTION-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|affection%1:12:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::AFFECTION-VAL
   (INHERIT
-    ONT::SOCIAL-INTERACTION-VAL)
+    ONT::ANIMAL-PROPENSITY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -5683,21 +5648,46 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::AFFECTION-SCALE)
+    (TYPE ONT::AFFECTION-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -5715,7 +5705,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -5724,48 +5714,18 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
+       (INHERIT
+         T)
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
@@ -5783,7 +5743,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -5791,18 +5750,44 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::AFFECTION-SCALE)
+    (TYPE ONT::AFFECTIONATE-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -5820,7 +5805,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -5829,48 +5814,18 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
+       (INHERIT
+         T)
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
@@ -6097,7 +6052,7 @@
 (CONCEPT
   ONT::AFRAID
   (INHERIT
-    ONT::NEG-INTENSE-EMOTIONAL-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|afraid%3:00:00::|)
   (SEM-FEATS
@@ -6111,11 +6066,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::FEAR-SCALE)
+    (TYPE ONT::AFRAID))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -6989,9 +6944,11 @@
 (CONCEPT
   ONT::AGITATED
   (INHERIT
-    ONT::NEG-INTENSE-EMOTIONAL-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
-    WN::|agitated%3:00:00::|)
+    WN::|agitated%3:00:00::|
+    WN::|hectic%5:00:00:agitated:00|
+    WN::|frantic%5:00:00:agitated:00|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -7003,11 +6960,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::DISTRESS-SCALE)
+    (TYPE ONT::AGITATED))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -7244,7 +7201,7 @@
   ONT::AILING-VAL
   (COMMENT "unhealthy, unwell or ailing")
   (INHERIT
-    ONT::HEALTHINESS-VAL)
+    ONT::NEGATIVE-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
     WN::|unwell%5:00:01:ill:01|
     WN::|ailing%5:00:00:ill:01|
@@ -7268,40 +7225,15 @@
     (SCALE ONT::ILLNESS-SCALE)
     (TYPE ONT::AILING-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -7319,7 +7251,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -7328,13 +7260,38 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::REFSET
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
@@ -7343,8 +7300,8 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (ORIGIN
         (OR
-          F::NON-HUMAN-ANIMAL
-          F::HUMAN)))
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL)))
      OPTIONAL)))
 
 (CONCEPT
@@ -7599,7 +7556,7 @@
 (CONCEPT
   ONT::ALERT-VAL
   (INHERIT
-    ONT::ALERTNESS-VAL)
+    ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
     WN::|alert%5:00:00:aware:00|
     WN::|alert%5:00:00:energetic:00|)
@@ -7614,11 +7571,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::ALERTNESS-SCALE)
+    (TYPE ONT::ALERT-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -7700,9 +7657,11 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::ALERTNESS-VAL
+  ONT::ALERTNESS-SCALE
   (INHERIT
-    ONT::BODY-CONDITION-PROPERTY-VAL)
+    ONT::POSITIVE-BODY-CONDITION-SCALE)
+  (OVERLAP
+    WN::|alertness%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -7711,93 +7670,26 @@
     (GRADABILITY -)
     (ORIENTATION -)
     (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
     (INTENTIONAL -)
     (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::EXTENT
      (CONCEPT
        T)
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
      OPTIONAL)
     (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
      (CONCEPT
        T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
-     OPTIONAL)))
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::ALGA
@@ -8716,7 +8608,7 @@
 (CONCEPT
   ONT::AMUSED
   (INHERIT
-    ONT::POS-SOFT-EMOTIONAL-VAL)
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|amused%5:00:00:pleased:00|)
   (SEM-FEATS
@@ -8730,11 +8622,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::PLEASURABILITY-SCALE)
+    (TYPE ONT::AMUSED))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -9139,6 +9031,42 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::ANGER-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|anger%1:26:00::|
+    WN::|anger%1:12:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::ANGINA
   (INHERIT
     ONT::MEDICAL-CONDITION)
@@ -9238,7 +9166,6 @@
           ONT::KISSING
           ONT::COMBINE-OBJECTS
           ONT::COALESCE
-          ONT::SENDCOPY
           ONT::SEND
           ONT::GUIDING
           ONT::PUT
@@ -9256,7 +9183,7 @@
 (CONCEPT
   ONT::ANGRY
   (INHERIT
-    ONT::NEG-INTENSE-EMOTIONAL-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|angry%3:00:00::|)
   (SEM-FEATS
@@ -9270,11 +9197,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::ANGER-SCALE)
+    (TYPE ONT::ANGRY))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -9801,6 +9728,110 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::ANNOYED-VAL
+  (INHERIT
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|grumpy%5:00:00:ill-natured:00|
+    WN::|irritable%5:00:00:ill-natured:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::BOTHER-SCALE)
+    (TYPE ONT::ANNOYED-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::ANSWER
   (INHERIT
     ONT::RESPONSE)
@@ -9954,6 +9985,41 @@
     (SCALE ONT::TIME-LOC-SCALE)
     (TIME-FUNCTION TIME-FUNCTION)
     (TYPE ONT::ANY-TIME-OBJECT)))
+
+(CONCEPT
+  ONT::APATHY-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|apathy%1:07:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::APOLOGIZE
@@ -11164,7 +11230,6 @@
   (OVERLAP
     WN::|field%1:15:00::|
     WN::|field%1:15:05::|
-    WN::|plot%1:15:00::|
     WN::|pasture%1:15:00::|)
   (SEM-FEATS
     (INHERIT
@@ -11706,7 +11771,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -11714,8 +11778,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::MODESTY-SCALE)
+    (TYPE ONT::ARROGANT-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -11923,11 +11988,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::ARTIFICIAL-SCALE)
+    (TYPE ONT::ARTIFICIAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -12005,6 +12070,75 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::ARTIFICIAL-SCALE
+  (INHERIT
+    ONT::ARTIFICIALITY-SCALE)
+  (OVERLAP
+    WN::|affectedness%1:07:00::|
+    WN::|artificiality%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
+  ONT::ARTIFICIALITY-SCALE
+  (INHERIT
+    ONT::REAL-VS-FAKE-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::ARTIFICIALITY-VAL
   (COMMENT "artificial vs. natural")
   (INHERIT
@@ -12023,8 +12157,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (SCALE ONT::ARTIFICIALITY-SCALE)
+    (TYPE ONT::ARTIFICIALITY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -14316,11 +14450,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::BODY-ENERGY-SCALE)
+    (TYPE ONT::ENERGIZED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -14841,11 +14975,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::NOTICEABILITY-SCALE)
+    (TYPE ONT::ATTENTION-WORTHY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -14935,7 +15069,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -14943,8 +15076,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::ATTENTIVENESS-SCALE)
+    (TYPE ONT::ATTENTIVE-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -15026,6 +15160,41 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::ATTENTIVENESS-SCALE
+  (INHERIT
+    ONT::PSYCHOLOGICAL-CONDITION-SCALE)
+  (OVERLAP
+    WN::|attentiveness%1:07:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::ATTENTIVENESS-VAL
   (INHERIT
     ONT::ATTENTION-VAL)
@@ -15040,11 +15209,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::ATTENTIVENESS-SCALE)
+    (TYPE ONT::ATTENTIVENESS-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -15860,16 +16029,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::POS)
+    (SCALE ONT::AUTHENTICITY-SCALE)
+    (TYPE ONT::AUTHENTIC-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -15947,6 +16116,41 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::AUTHENTICITY-SCALE
+  (INHERIT
+    ONT::REAL-VS-FAKE-SCALE)
+  (OVERLAP
+    WN::|authenticity%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::AUTHENTICITY-VAL
   (COMMENT "truly what it is said to be vs. made as imitation")
   (INHERIT
@@ -15965,8 +16169,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (SCALE ONT::AUTHENTICITY-SCALE)
+    (TYPE ONT::AUTHENTICITY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -16856,7 +17060,7 @@
 (CONCEPT
   ONT::AWAKENESS-VAL
   (INHERIT
-    ONT::BODY-CONDITION-PROPERTY-VAL)
+    ONT::NEUTRAL-BODY-CONDITION-PROPERTY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -17410,7 +17614,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -17418,8 +17621,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::GRACEFULNESS-SCALE)
+    (TYPE ONT::AWKWARD-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -17716,7 +17920,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -17724,8 +17927,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::AESTHETIC-TASTEFULNESS-SCALE)
+    (TYPE ONT::BAD-AESTHETIC-JUDGEMENT-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -18081,6 +18285,108 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::BARE-VAL
+  (INHERIT
+    ONT::CLOTHEDNESS-ADORNMENT-VAL)
+  (OVERLAP
+    WN::|bare%5:00:00:unclothed:00|
+    WN::|unclothed%3:00:00::|
+    WN::|naked%5:00:00:bare:00|
+    WN::|bare%5:00:00:unadorned:00|
+    WN::|unadorned%3:00:00::|
+    WN::|bare%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::CONFIGURATION-PROPERTY-SCALE)
+    (TYPE ONT::CONFIGURATION-PROPERTY-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
   ONT::BASE
   (INHERIT
     ONT::KETTLE-BASE)
@@ -18110,14 +18416,146 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::BASIC-VAL
+  ONT::BASIC-SCALE
   (INHERIT
-    ONT::FUNDAMENTAL-VAL)
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|foundation%1:09:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
+  ONT::BASIC-VAL
+  (COMMENT "Having to do with the fundamentals or the essentials")
+  (INHERIT
+    ONT::BASICNESS-VAL)
   (OVERLAP
     WN::|basic%3:00:00::|
     WN::|fundamental%5:00:00:basic:00|
     WN::|elementary%5:00:00:basic:00|
     WN::|essential%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::BASIC-SCALE)
+    (TYPE ONT::BASIC-VAL))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)))))
+
+(CONCEPT
+  ONT::BASICNESS-VAL
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -18572,7 +19010,6 @@
     WN::|hang%2:35:05::|
     WN::|hang%2:35:06::|
     WN::|hang%2:42:01::|
-    WN::|confine%2:41:00::|
     WN::|lie%2:35:00::|
     WN::|trail%2:35:05::|
     WN::|lie%2:42:00::|)
@@ -19977,7 +20414,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -19985,8 +20421,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::HARMFULNESS-SCALE)
+    (TYPE ONT::BENIGN-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -20210,11 +20647,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::PARTIALITY-SCALE)
+    (TYPE ONT::BIAS-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -20304,7 +20741,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -20312,8 +20748,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::PARTIALITY-SCALE)
+    (TYPE ONT::BIASED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -21751,6 +22188,43 @@
        T))))
 
 (CONCEPT
+  ONT::BODY-ENERGY-SCALE
+  (INHERIT
+    ONT::POSITIVE-BODY-CONDITION-SCALE)
+  (OVERLAP
+    WN::|vigor%1:07:00::|
+    WN::|energy%1:26:00::|
+    WN::|energy%1:07:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::BODY-MANIPULATION
   (COMMENT "and AGENT grasps something to manipulate it")
   (INHERIT
@@ -22403,16 +22877,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::POS)
+    (SCALE ONT::BOLDNESS-SCALE)
+    (TYPE ONT::BOLD-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -22489,7 +22963,44 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::BOLDNESS-SCALE
+  (COMMENT "bold and daring; forceful approach to challenge")
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|daring%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::BOLDNESS-VAL
+  (COMMENT "foreceful approach to situations or challenge")
   (INHERIT
     ONT::ANIMAL-PROPENSITY-VAL)
   (SEM-FEATS
@@ -22726,7 +23237,7 @@
 (CONCEPT
   ONT::BORED
   (INHERIT
-    ONT::NEG-SOFT-EMOTIONAL-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|bored%5:00:00:tired:00|
     WN::|bored%5:00:00:uninterested:00|)
@@ -22736,16 +23247,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::NEG)
+    (SCALE ONT::INTEREST-SCALE)
+    (TYPE ONT::BORED))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -22830,7 +23341,7 @@
 (CONCEPT
   ONT::BORING
   (INHERIT
-    ONT::EVOKING-NEG-EMOTION-VAL)
+    ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
     WN::|uninteresting%3:00:00::|
     WN::|boring%5:00:00:uninteresting:00|
@@ -22842,16 +23353,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::NEG)
+    (SCALE ONT::INTEREST-SCALE)
+    (TYPE ONT::BORING))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -23015,6 +23526,41 @@
          ABSTR-OBJ)
        (SCALE ONT::MONEY-SCALE))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::BOTHER-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|bother%1:09:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::BOTTOM-LOCATION
@@ -23986,46 +24532,8 @@
           ONT::COLOR-SCALE
           ONT::TEMPERATURE-SCALE))
        (ORIENTATION F::POS)
-       (SCALE ONT::BRIGHTNESS-SCALE))
+       (SCALE ONT::LUMINOSITY-SCALE))
      OPTIONAL)))
-
-(CONCEPT
-  ONT::BRIGHTNESS-SCALE
-  (INHERIT
-    ONT::VISUAL-SCALE)
-  (OVERLAP
-    WN::|brightness%1:07:00::|
-    WN::|brightness%1:07:02::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE +)
-    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
-  (SEM-FRAME
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::PHYS-OBJECT)))))
 
 (CONCEPT
   ONT::BROAD
@@ -25236,7 +25744,7 @@
 (CONCEPT
   ONT::CALM
   (INHERIT
-    ONT::POS-SOFT-EMOTIONAL-VAL)
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|calm%5:00:00:composed:00|
     WN::|composed%3:00:00::|)
@@ -25251,11 +25759,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::CALMNESS-SCALE)
+    (TYPE ONT::CALM))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -25340,7 +25848,7 @@
 (CONCEPT
   ONT::CALMING-VAL
   (INHERIT
-    ONT::EVOKING-POS-EMOTION-VAL)
+    ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
     WN::|soothing%5:00:00:reassuring:00|
     WN::|reassuring%3:00:00::|
@@ -25356,11 +25864,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::CALMNESS-SCALE)
+    (TYPE ONT::CALMING-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -25440,6 +25948,74 @@
           F::HUMAN
           F::NON-HUMAN-ANIMAL))
        (INTENTIONAL +)))))
+
+(CONCEPT
+  ONT::CALMNESS-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|calmness%1:12:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
+  ONT::CAN-BE-DONE-SCALE
+  (INHERIT
+    ONT::PROCESS-PROPERTY-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::CAN-BE-DONE-VAL
@@ -26872,8 +27448,7 @@
     WN::|cover%2:35:14::|
     WN::|cover%2:35:01::|
     WN::|impregnate%2:30:00::|
-    WN::|saturate%2:30:04::|
-    WN::|spread%2:35:13::|)
+    WN::|saturate%2:30:04::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -26937,7 +27512,6 @@
   (OVERLAP
     WN::|do%2:36:02::|
     WN::|drive%2:35:00::|
-    WN::|get%2:30:02::|
     WN::|make%2:36:08::|
     WN::|open_up%2:30:00::|)
   (SEM-FEATS
@@ -27413,7 +27987,6 @@
   (INHERIT
     ONT::CAUSE-EFFECT)
   (OVERLAP
-    WN::|bring_on%2:39:00::|
     WN::|produce%2:36:03::|
     WN::|yield%2:40:00::|
     WN::|yield%2:40:02::|)
@@ -27495,9 +28068,7 @@
   (INHERIT
     ONT::CAUSE-EFFECT)
   (OVERLAP
-    WN::|persuade%2:32:00::|
-    WN::|force%2:36:00::|
-    WN::|coerce%2:41:00::|)
+    WN::|fuel%2:37:00::|)
   (SEM-FRAME
     (ONT::AGENT
      (SEM-FEATS
@@ -28252,7 +28823,8 @@
     ONT::CERTAINTY-SCALE)
   (OVERLAP
     WN::|certainty%1:09:00::|
-    WN::|assurance%1:09:00::|)
+    WN::|assurance%1:09:00::|
+    WN::|certainty%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -30195,6 +30767,7 @@
        (TYPE
         (OR
           ONT::LEVEL
+          ONT::SIMILARITY-VAL
           ONT::COST-RELATION
           ONT::EVENT-DURATION-MODIFIER
           ONT::DOMAIN-PROPERTY
@@ -30425,6 +30998,41 @@
     (INTENTIONAL -)
     (CAUSE F::FORCE)
     (TYPE ONT::CHANGE)))
+
+(CONCEPT
+  ONT::CHANGEABILITY-SCALE
+  (INHERIT
+    ONT::CAN-BE-DONE-SCALE)
+  (OVERLAP
+    WN::|changeability%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::CHARGE-PER-UNIT
@@ -32443,7 +33051,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -32451,8 +33058,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::INTELLIGENCE-SCALE)
+    (TYPE ONT::SMART))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -32872,7 +33480,7 @@
 (CONCEPT
   ONT::CLOTHED-VAL
   (INHERIT
-    ONT::CLOTHEDNESS-VAL)
+    ONT::CLOTHEDNESS-ADORNMENT-VAL)
   (OVERLAP
     WN::|clothed%3:00:00::|)
   (SEM-FEATS
@@ -32967,7 +33575,7 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
-  ONT::CLOTHEDNESS-VAL
+  ONT::CLOTHEDNESS-ADORNMENT-VAL
   (INHERIT
     ONT::CONFIGURATION-PROPERTY-VAL)
   (SEM-FEATS
@@ -34009,7 +34617,6 @@
     ONT::GROUP-OBJECT)
   (OVERLAP
     WN::|collection%1:14:00::|
-    WN::|array%1:14:00::|
     WN::|array%1:10:00::|
     WN::|series%1:14:01::|
     WN::|trinketry%1:14:00::|
@@ -37151,6 +37758,41 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::COMPLETE-SCALE
+  (INHERIT
+    ONT::COMPLETENESS-SCALE)
+  (OVERLAP
+    WN::|completeness%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::COMPLETELY
   (INHERIT
     ONT::PREDICATE)
@@ -37191,6 +37833,39 @@
     (TYPE ONT::PREDICATE)))
 
 (CONCEPT
+  ONT::COMPLETENESS-SCALE
+  (INHERIT
+    ONT::PHYSICAL-PROPERTY-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::COMPLETENESS-VAL
   (COMMENT "having or not having all the necessary parts")
   (INHERIT
@@ -37206,11 +37881,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (SCALE ONT::PHYSICAL-PROPERTY-SCALE)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (TYPE ONT::PART-WHOLE-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::COMPLETENESS-SCALE)
+    (TYPE ONT::COMPLETENESS-VAL))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -37511,6 +38186,41 @@
     (TYPE ONT::INFORMATION-FUNCTION-OBJECT)))
 
 (CONCEPT
+  ONT::COMPREHENSIBILITY-SCALE
+  (INHERIT
+    ONT::INFORMATION-PROPERTY-SCALE)
+  (OVERLAP
+    WN::|comprehensibility%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::COMPREHENSIBILITY-VAL
   (COMMENT
    "able to be grasped or understood (different from ont::clarity-val e.g., an explanation might be clear but it still may not be understandable because of external reasons")
@@ -37527,11 +38237,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::COMPREHENSIBILITY-SCALE)
+    (TYPE ONT::COMPREHENSIBILITY-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -37620,7 +38330,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -37628,8 +38337,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::COMPREHENSIBILITY-SCALE)
+    (TYPE ONT::COMPREHENSIBLE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -38382,6 +39092,108 @@
     (TYPE ONT::MENTAL-CONSTRUCTION)))
 
 (CONCEPT
+  ONT::CONCERNED-VAL
+  (INHERIT
+    ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
+  (OVERLAP
+    WN::|concerned%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::WORRY-CONCERN-SCALE)
+    (TYPE ONT::CONCERNED-VAL))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL))
+       (INTENTIONAL +)))))
+
+(CONCEPT
   ONT::CONDIMENTS
   (INHERIT
     ONT::INGREDIENTS)
@@ -38536,7 +39348,7 @@
 (CONCEPT
   ONT::CONFIDENCE-SCALE
   (INHERIT
-    ONT::PSYCHOLOGICAL-CONDITION-SCALE)
+    ONT::EXPERIENCER-CONDITION-SCALE)
   (OVERLAP
     WN::|trust%1:26:00::|
     WN::|authority%1:07:00::|
@@ -38969,7 +39781,7 @@
 (CONCEPT
   ONT::CONFUSING-VAL
   (INHERIT
-    ONT::EVOKING-NEG-EMOTION-VAL)
+    ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
     WN::|confusing%5:00:00:disorienting:00|)
   (SEM-FEATS
@@ -39071,7 +39883,7 @@
 (CONCEPT
   ONT::CONFUSION-SCALE
   (INHERIT
-    ONT::PSYCHOLOGICAL-CONDITION-SCALE)
+    ONT::EXPERIENCER-CONDITION-SCALE)
   (OVERLAP
     WN::|confusion%1:09:00::|
     WN::|confusion%1:12:00::|)
@@ -39537,6 +40349,42 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::CONSISTENCY-SCALE
+  (INHERIT
+    ONT::INFORMATION-PROPERTY-SCALE)
+  (OVERLAP
+    WN::|cohesiveness%1:26:00::|
+    WN::|consistency%1:07:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::CONSISTENT
   (INHERIT
     ONT::CONSISTENT-VAL)
@@ -39549,7 +40397,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -39557,8 +40404,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::CONSISTENCY-SCALE)
+    (TYPE ONT::CONSISTENT))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -39645,6 +40493,22 @@
    "marked by a (il)logical or (dis)orderly consistent relation of parts")
   (INHERIT
     ONT::INFORMATION-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::CONSISTENCY-SCALE)
+    (TYPE ONT::CONSISTENT-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -39723,23 +40587,7 @@
            SITUATION)
          (CONCEPT
            ABSTR-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM))))
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL)))
+       (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
   ONT::CONSTIPATION
@@ -39947,7 +40795,6 @@
     WN::|take_in%2:34:00::|
     WN::|take%2:34:00::|
     WN::|have%2:34:00::|
-    WN::|sample%2:34:00::|
     WN::|swallow%2:34:00::|)
   (SEM-FEATS
     (INHERIT
@@ -40695,8 +41542,7 @@
     WN::|control%2:41:00::|
     WN::|control%1:04:00::|
     WN::|command%2:41:00::|
-    WN::|discharge%2:33:01::|
-    WN::|direct%2:41:00::|)
+    WN::|discharge%2:33:01::|)
   (SEM-FRAME
     (ONT::RESULT
      (CONCEPT
@@ -42965,7 +43811,6 @@
   (OVERLAP
     WN::|indicate%2:32:02::|
     WN::|argue%2:32:01::|
-    WN::|mean%2:42:00::|
     WN::|affirm%2:31:00::|
     WN::|read%2:32:02::|
     WN::|underlie%2:42:00::|)
@@ -43549,6 +44394,235 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::COURAGE-SCALE
+  (COMMENT "positive strength against fear")
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|courage%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
+  ONT::COURAGE-VAL
+  (COMMENT "strength in face of fear or tribulation")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::BEHAVIORAL-SCALE)
+    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
+  ONT::COURAGEOUS-VAL
+  (INHERIT
+    ONT::COURAGE-VAL)
+  (OVERLAP
+    WN::|courageous%3:00:04::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::POS)
+    (SCALE ONT::COURAGE-SCALE)
+    (TYPE ONT::COURAGEOUS-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
   ONT::COURT-GAME
   (INHERIT
     ONT::ATHLETIC-GAME)
@@ -43678,6 +44752,103 @@
      (CONCEPT
        T)
      OPTIONAL)))
+
+(CONCEPT
+  ONT::COWARDLY-VAL
+  (INHERIT
+    ONT::COURAGE-VAL)
+  (OVERLAP
+    WN::|cowardly%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::NEG)
+    (SCALE ONT::COURAGE-SCALE)
+    (TYPE ONT::COWARDLY-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
   ONT::CRACKERS
@@ -43906,6 +45077,41 @@
        (ORIGIN F::HUMAN)))))
 
 (CONCEPT
+  ONT::CREDIBILITY-SCALE
+  (INHERIT
+    ONT::INFORMATION-PROPERTY-SCALE)
+  (OVERLAP
+    WN::|credibility%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::CREDIBILITY-VAL
   (INHERIT
     ONT::INFORMATION-PROPERTY-VAL)
@@ -43920,11 +45126,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::CREDIBILITY-SCALE)
+    (TYPE ONT::CREDIBILITY-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -44013,7 +45219,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -44021,8 +45226,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::CREDIBILITY-SCALE)
+    (TYPE ONT::CREDIBLE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -44635,104 +45841,6 @@
     (TYPE ONT::CURRENCY)))
 
 (CONCEPT
-  ONT::CURRENT-VAL
-  (INHERIT
-    ONT::HISTORICAL-ERA-VAL)
-  (OVERLAP
-    WN::|contemporary%5:00:00:current:00|
-    WN::|current%3:00:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (SCALE ONT::DOMAIN)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (TYPE ONT::PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)))))
-
-(CONCEPT
   ONT::CUT
   (INHERIT
     ONT::BREAK-OBJECT)
@@ -44964,7 +46072,6 @@
   (OVERLAP
     WN::|damage%2:30:00::|
     WN::|damage%2:30:01::|
-    WN::|damage%1:11:00::|
     WN::|damage%1:04:00::|)
   (SEM-FEATS
     (INHERIT
@@ -45936,9 +47043,8 @@
 (CONCEPT
   ONT::DAZED-VAL
   (INHERIT
-    ONT::NOT-ENERGIZED-VAL)
+    ONT::LACK-OF-ENERGY-VAL)
   (OVERLAP
-    WN::|lethargic%3:00:00::|
     WN::|dazed%5:00:00:lethargic:00|
     WN::|groggy%5:00:00:lethargic:00|)
   (SEM-FEATS
@@ -45952,11 +47058,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::LACK-OF-ENERGY-SCALE)
+    (TYPE ONT::LACK-OF-ENERGY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -46436,6 +47542,7 @@
        (TYPE
         (OR
           ONT::LEVEL
+          ONT::SIMILARITY-VAL
           ONT::COST-RELATION
           ONT::EVENT-DURATION-MODIFIER
           ONT::DOMAIN-PROPERTY
@@ -46549,6 +47656,7 @@
        (TYPE
         (OR
           ONT::LEVEL
+          ONT::SIMILARITY-VAL
           ONT::COST-RELATION
           ONT::EVENT-DURATION-MODIFIER
           ONT::DOMAIN-PROPERTY
@@ -47728,6 +48836,108 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::DEHYDRATION-VAL
+  (INHERIT
+    ONT::NOT-SATIATED-VAL)
+  (OVERLAP
+    WN::|dehydrated%5:00:00:unhealthy:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::NOT-SATIATED-SCALE)
+    (TYPE ONT::NOT-SATIATED-VAL))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL)))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::DELAY
   (INHERIT
     ONT::HINDERING)
@@ -48540,7 +49750,7 @@
 (CONCEPT
   ONT::DESIRABLE-VAL
   (INHERIT
-    ONT::EVOKING-POS-EMOTION-VAL)
+    ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
     WN::|desirable%3:00:00::|)
   (SEM-FEATS
@@ -48554,11 +49764,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::DESIRE-SCALE)
+    (TYPE ONT::DESIRABLE-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -48664,9 +49874,44 @@
     (TYPE ONT::MENTAL-CONSTRUCTION)))
 
 (CONCEPT
+  ONT::DESIRE-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|desire%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::DESIROUS
   (INHERIT
-    ONT::POS-INTENSE-EMOTIONAL-VAL)
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|desirous%3:00:00::|)
   (SEM-FEATS
@@ -48680,11 +49925,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::DESIRE-SCALE)
+    (TYPE ONT::DESIROUS))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -49844,8 +51089,7 @@
   (INHERIT
     ONT::IN-RELATION)
   (OVERLAP
-    WN::|differ%2:42:00::|
-    WN::|difference%1:07:00::|)
+    WN::|differ%2:42:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL1
      (OR
@@ -49929,10 +51173,10 @@
     (INFORMATION -)
     (CONTAINER -)
     (MEASURE-FUNCTION -)
-    (SCALE -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (TYPE ONT::RELATION))
+    (SCALE ONT::DIFFERENT-SCALE)
+    (TYPE ONT::DIFFERENT))
   (SEM-FRAME
     (ONT::NOROLE
      (CONCEPT
@@ -50715,7 +51959,6 @@
   (INHERIT
     ONT::MEASURE-SCALE)
   (OVERLAP
-    WN::|dimension%1:07:00::|
     WN::|dimension%1:07:01::|)
   (SEM-FEATS
     (INHERIT
@@ -52153,7 +53396,6 @@
   (INHERIT
     ONT::REMOVE-FROM)
   (OVERLAP
-    WN::|disarm%2:33:00::|
     WN::|disarm%2:33:01::|)
   (SEM-FEATS
     (INHERIT
@@ -52553,9 +53795,44 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::DISGUST-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|disgust%1:12:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::DISGUSTED
   (INHERIT
-    ONT::NEG-INTENSE-EMOTIONAL-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|disgusted%5:00:00:displeased:00|)
   (SEM-FEATS
@@ -52569,11 +53846,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::DISGUST-SCALE)
+    (TYPE ONT::DISGUSTED))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -53245,7 +54522,7 @@
 (CONCEPT
   ONT::DISTRESS-SCALE
   (INHERIT
-    ONT::PSYCHOLOGICAL-CONDITION-SCALE)
+    ONT::EXPERIENCER-CONDITION-SCALE)
   (OVERLAP
     WN::|distress%1:26:00::|
     WN::|distress%1:12:02::|)
@@ -53281,7 +54558,7 @@
 (CONCEPT
   ONT::DISTRESSING-VAL
   (INHERIT
-    ONT::EVOKING-NEG-EMOTION-VAL)
+    ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
     WN::|worrying%5:00:00:heavy:02|
     WN::|distressing%5:00:00:heavy:02|
@@ -54066,6 +55343,7 @@
        (TYPE
         (OR
           ONT::LEVEL
+          ONT::SIMILARITY-VAL
           ONT::COST-RELATION
           ONT::EVENT-DURATION-MODIFIER
           ONT::DOMAIN-PROPERTY
@@ -54676,9 +55954,10 @@
 (CONCEPT
   ONT::DROWSY-VAL
   (INHERIT
-    ONT::ALERTNESS-VAL)
+    ONT::NEUTRAL-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
-    WN::|drowsy%5:00:00:inattentive:00|)
+    WN::|drowsy%5:00:00:inattentive:00|
+    WN::|drowsy%3:00:00:asleep:00|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -55590,7 +56869,7 @@
 (CONCEPT
   ONT::EAGER-VAL
   (INHERIT
-    ONT::INTERESTED-VAL)
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|eager%3:00:00::|
     WN::|enthusiastic%3:00:00::|)
@@ -55605,21 +56884,46 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INTERESTED-SCALE)
-    (TYPE ONT::INTERESTED-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::DESIRE-SCALE)
+    (TYPE ONT::EAGER-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -55637,7 +56941,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -55646,49 +56950,25 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (TYPE ONT::REFERENTIAL-SEM)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL))
-       (INTENTIONAL +)))))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::EARLY-IN-PROCESS
@@ -56652,7 +57932,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -56660,8 +57939,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::EFFECTIVENESS-SCALE)
+    (TYPE ONT::EFFECTIVE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -56736,6 +58016,41 @@
        (INHERIT
          T)
        (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
+  ONT::EFFECTIVENESS-SCALE
+  (INHERIT
+    ONT::PROCESS-EVALUATION-SCALE)
+  (OVERLAP
+    WN::|effectiveness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::EFFECTIVENESS-VAL
@@ -56754,11 +58069,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::EFFECTIVENESS-SCALE)
+    (TYPE ONT::EFFECTIVENESS-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -56835,6 +58150,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::EFFICIENCY-SCALE
+  (INHERIT
+    ONT::PROCESS-EVALUATION-SCALE)
+  (OVERLAP
+    WN::|efficiency%1:09:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::EFFICIENCY-VAL
   (INHERIT
     ONT::PROCESS-EVALUATION-VAL)
@@ -56849,11 +58199,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::EFFICIENCY-SCALE)
+    (TYPE ONT::EFFICIENCY-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -56941,7 +58291,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -56949,8 +58298,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::EFFICIENCY-SCALE)
+    (TYPE ONT::EFFICIENT-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -57506,141 +58856,6 @@
     (TRAJECTORY -)
     (CAUSE F::AGENTIVE)
     (TYPE ONT::CREATE)))
-
-(CONCEPT
-  ONT::EMOTION-SCALE
-  (INHERIT
-    ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE +)
-    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
-  (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
-
-(CONCEPT
-  ONT::EMOTIONAL-VAL
-  (COMMENT "state of having a particular emotion")
-  (INHERIT
-    ONT::PSYCHOLOGICAL-PROPERTY-VAL)
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::NON-HUMAN-ANIMAL
-          F::HUMAN)))
-     OPTIONAL))
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL)))
 
 (CONCEPT
   ONT::EMPATHIZE
@@ -58423,8 +59638,9 @@
 
 (CONCEPT
   ONT::ENERGIZED-VAL
+  (COMMENT "characterized by being full of energy and activity")
   (INHERIT
-    ONT::ENERGY-SUPPLY-VAL)
+    ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
     WN::|energetic%3:00:00::|
     WN::|active%3:00:01::|)
@@ -58439,111 +59655,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::ENERGY-SUPPLY-VAL
-  (INHERIT
-    ONT::BODY-CONDITION-PROPERTY-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (INTENTIONAL -)
     (INFORMATION -)
-    (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+    (INTENTIONAL -)
+    (SCALE ONT::BODY-ENERGY-SCALE)
+    (TYPE ONT::ENERGIZED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -58855,7 +59971,7 @@
 (CONCEPT
   ONT::ENJOYABLE-VAL
   (INHERIT
-    ONT::EVOKING-POS-EMOTION-VAL)
+    ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
     WN::|enjoyable%5:00:00:pleasant:00|)
   (SEM-FEATS
@@ -58869,11 +59985,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::PLEASURABILITY-SCALE)
+    (TYPE ONT::ENJOYABLE-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -59485,7 +60601,7 @@
 (CONCEPT
   ONT::ENVIOUS
   (INHERIT
-    ONT::NEG-INTENSE-EMOTIONAL-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|envious%5:00:00:desirous:00|)
   (SEM-FEATS
@@ -59499,11 +60615,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::ENVY-SCALE)
+    (TYPE ONT::ENVIOUS))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -59584,6 +60700,41 @@
           F::NON-HUMAN-ANIMAL
           F::HUMAN)))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::ENVY-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|envy%1:12:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::ENVYING
@@ -59693,10 +60844,10 @@
     (INFORMATION -)
     (CONTAINER -)
     (MEASURE-FUNCTION -)
-    (SCALE -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (TYPE ONT::RELATION))
+    (SCALE ONT::EQUAL-SCALE)
+    (TYPE ONT::EQUAL))
   (SEM-FRAME
     (ONT::NOROLE
      (CONCEPT
@@ -59896,8 +61047,7 @@
   (INHERIT
     ONT::MANUFACTURED-OBJECT)
   (OVERLAP
-    WN::|equipment%1:06:00::|
-    WN::|instrumentality%1:06:00::|)
+    WN::|equipment%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -60045,7 +61195,7 @@
   (OVERLAP
     WN::|right%1:07:00::|
     WN::|absolute%1:09:00::|
-    WN::|absolute%3:00:00:inalienable:00|)
+    WN::|absolute%5:00:00:inalienable:00|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -60278,27 +61428,25 @@
 (CONCEPT
   ONT::EUPHORIC
   (INHERIT
-    ONT::POS-INTENSE-EMOTIONAL-VAL)
+    ONT::HAPPY-VAL)
   (OVERLAP
     WN::|euphoric%3:00:00::|
-    WN::|happy%3:00:00::|
     WN::|cheerful%3:00:00::|
-    WN::|beaming%5:00:00:cheerful:00|
-    WN::|pleased%3:00:00::|)
+    WN::|beaming%5:00:00:cheerful:00|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (INTENSITY ONT::HI)
+    (ORIENTATION F::POS)
     (SCALE ONT::HAPPINESS-SCALE)
     (TYPE ONT::EUPHORIC))
   (SEM-FRAME
@@ -62392,9 +63540,55 @@
     WN::|lighten%2:37:01::|
     WN::|enchant%2:37:00::|
     WN::|elate%2:37:00::|
-    WN::|enliven%2:30:00::|
     WN::|cheer%2:32:03::|
     WN::|thrill%2:37:02::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (INFORMATION MENTAL-CONSTRUCT)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INTENTIONAL -)
+    (CAUSE F::AGENTIVE)
+    (ASPECT F::DYNAMIC)
+    (TYPE ONT::AFFECT-EXPERIENCER))
+  (SEM-FRAME
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN F::LIVING)))
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
+  ONT::EVOKE-LIVELINESS
+  (INHERIT
+    ONT::IMPROVE-EXPERIENCE)
+  (OVERLAP
+    WN::|energize%2:29:00::|
+    WN::|enliven%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -63069,7 +64263,7 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
-  ONT::EVOKING-EMOTION-VAL
+  ONT::EVOKING-EXPERIENCE-PROPERTY-VAL
   (COMMENT "attributes that indicate the evocation of a particular emotion")
   (INHERIT
     ONT::PSYCHOLOGICAL-PROPERTY-VAL)
@@ -63170,9 +64364,9 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
-  ONT::EVOKING-NEG-EMOTION-VAL
+  ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL
   (INHERIT
-    ONT::EVOKING-EMOTION-VAL)
+    ONT::EVOKING-EXPERIENCE-PROPERTY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -63270,9 +64464,9 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
-  ONT::EVOKING-POS-EMOTION-VAL
+  ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL
   (INHERIT
-    ONT::EVOKING-EMOTION-VAL)
+    ONT::EVOKING-EXPERIENCE-PROPERTY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -63583,7 +64777,7 @@
 (CONCEPT
   ONT::EXCITED
   (INHERIT
-    ONT::POS-INTENSE-EMOTIONAL-VAL)
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|excited%3:00:00::|
     WN::|excited%5:00:00:wild:02|
@@ -63688,7 +64882,7 @@
 (CONCEPT
   ONT::EXCITEMENT-SCALE
   (INHERIT
-    ONT::POSITIVE-EMOTION-SCALE)
+    ONT::EXPERIENCER-CONDITION-SCALE)
   (OVERLAP
     WN::|excitement%1:12:00::|)
   (SEM-FEATS
@@ -64089,10 +65283,10 @@
     (INFORMATION -)
     (CONTAINER -)
     (MEASURE-FUNCTION -)
-    (SCALE -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (TYPE ONT::RELATION))
+    (SCALE ONT::SIMILARITY-SCALE)
+    (TYPE ONT::SIMILARITY-VAL))
   (SEM-FRAME
     (ONT::NOROLE
      (CONCEPT
@@ -64564,7 +65758,8 @@
     ONT::ATTITUDE-OF-BELIEF)
   (OVERLAP
     WN::|expect%2:31:00::|
-    WN::|anticipate%2:31:00::|)
+    WN::|anticipate%2:31:00::|
+    WN::|expect%2:31:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -64895,6 +66090,39 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::EXPERIENCER-CONDITION-SCALE
+  (INHERIT
+    ONT::PSYCHOLOGICAL-CONDITION-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::EXPERIENCER-EMOTION
   (INHERIT
     ONT::EVENT-OF-EXPERIENCE)
@@ -64997,6 +66225,108 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::EXPERIENCER-PROPERTY-VAL
+  (COMMENT "state of experiencing a particular emotion or cognitive state")
+  (INHERIT
+    ONT::PSYCHOLOGICAL-PROPERTY-VAL)
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
+     OPTIONAL))
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
+    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL)))
+
+(CONCEPT
   ONT::EXPLAIN
   (COMMENT "a representative speech act that explains some situation")
   (INHERIT
@@ -65083,6 +66413,268 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (TANGIBLE +))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::EXPLICIT-SCALE
+  (INHERIT
+    ONT::EXPLICITNESS-SCALE)
+  (OVERLAP
+    WN::|explicitness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
+  ONT::EXPLICIT-VAL
+  (INHERIT
+    ONT::EXPLICITNESS-VAL)
+  (OVERLAP
+    WN::|explicit%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::EXPLICIT-SCALE)
+    (TYPE ONT::EXPLICIT-VAL))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)))))
+
+(CONCEPT
+  ONT::EXPLICITNESS-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
+  ONT::EXPLICITNESS-VAL
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::EXPLICITNESS-SCALE)
+    (TYPE ONT::EXPLICITNESS-VAL))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)))))
 
 (CONCEPT
   ONT::EXPLODE
@@ -65707,6 +67299,7 @@
        (TYPE
         (OR
           ONT::LEVEL
+          ONT::SIMILARITY-VAL
           ONT::COST-RELATION
           ONT::EVENT-DURATION-MODIFIER
           ONT::DOMAIN-PROPERTY
@@ -66318,6 +67911,41 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::FAILURE-SCALE
+  (INHERIT
+    ONT::SUCCESSFULNESS-SCALE)
+  (OVERLAP
+    WN::|failure%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::FAKE-VAL
   (INHERIT
     ONT::AUTHENTICITY-VAL)
@@ -66331,16 +67959,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::NEG)
+    (SCALE ONT::AUTHENTICITY-SCALE)
+    (TYPE ONT::FAKE-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -66837,6 +68465,41 @@
     (TYPE ONT::AWARENESS)))
 
 (CONCEPT
+  ONT::FAMILIAR-SCALE
+  (INHERIT
+    ONT::FAMILIARITY-SCALE)
+  (OVERLAP
+    WN::|familiarity%1:07:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::FAMILIAR-VAL
   (INHERIT
     ONT::FAMILIARITY-VAL)
@@ -66858,8 +68521,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (SCALE ONT::FAMILIAR-SCALE)
+    (TYPE ONT::FAMILIAR-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -66937,6 +68600,39 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::FAMILIARITY-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::FAMILIARITY-VAL
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL)
@@ -66951,11 +68647,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::FAMILIARITY-SCALE)
+    (TYPE ONT::FAMILIARITY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -67506,7 +69202,7 @@
 (CONCEPT
   ONT::FATIGUE-SCALE
   (INHERIT
-    ONT::FEEBLENESS-SCALE)
+    ONT::LACK-OF-ENERGY-SCALE)
   (OVERLAP
     WN::|exhaustion%1:26:00::|
     WN::|fatigue%1:26:00::|
@@ -67543,7 +69239,7 @@
 (CONCEPT
   ONT::FATIGUED-VAL
   (INHERIT
-    ONT::NOT-ENERGIZED-VAL)
+    ONT::LACK-OF-ENERGY-VAL)
   (OVERLAP
     WN::|tired%3:00:00::|
     WN::|exhausted%5:00:00:tired:00|
@@ -67562,8 +69258,8 @@
     (INTENTIONAL -)
     (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+    (SCALE ONT::FATIGUE-SCALE)
+    (TYPE ONT::FATIGUED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -67901,9 +69597,7 @@
   (INHERIT
     ONT::RELATION)
   (OVERLAP
-    WN::|favorite%1:09:00::|
-    WN::|favourite%3:00:00:popular:00|
-    WN::|favourite%3:00:00:loved:00|)
+    WN::|favorite%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -67944,6 +69638,140 @@
     (ONT::GROUND
      (CONCEPT
        T))
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
+  ONT::FAVORITE-VAL
+  (INHERIT
+    ONT::GOOD)
+  (OVERLAP
+    WN::|favourite%3:00:00:popular:00|
+    WN::|favourite%3:00:00:loved:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::GOODNESS-SCALE)
+    (TYPE ONT::GOOD))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)))))
+
+(CONCEPT
+  ONT::FEAR-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|fear%1:12:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T))))
@@ -68050,10 +69878,6 @@
   ONT::FEDERAL-ORGANIZATION-ABSTR
   (INHERIT
     ONT::ORGANIZATION-ABSTR)
-  (OVERLAP
-    WN::|government%1:14:00::|
-    WN::|authorities%1:14:00::|
-    WN::|regime%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -68180,11 +70004,115 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::FEEBLE-VAL
+  (COMMENT "frail, feeble or weak in body")
+  (INHERIT
+    ONT::NEGATIVE-BODY-CONDITION-PROPERTY-VAL)
+  (OVERLAP
+    WN::|frail%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::FEEBLENESS-SCALE)
+    (TYPE ONT::FEEBLE-VAL))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL)))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::FEEBLENESS-SCALE
   (INHERIT
     ONT::NEGATIVE-BODY-CONDITION-SCALE)
   (OVERLAP
-    WN::|feebleness%1:26:00::|)
+    WN::|feebleness%1:26:00::|
+    WN::|weakness%1:07:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -68312,11 +70240,6 @@
     ONT::MENTAL-CONSTRUCTION)
   (OVERLAP
     WN::|feeling%1:03:00::|
-    WN::|bother%1:09:00::|
-    WN::|worry%1:09:00::|
-    WN::|sorrow%1:09:00::|
-    WN::|distress%1:12:02::|
-    WN::|restlessness%1:12:00::|
     WN::|mercy%1:07:00::|)
   (SEM-FRAME
     (ONT::FIGURE
@@ -69616,6 +71539,108 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::FIT-HEALTHY-VAL
+  (INHERIT
+    ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL)
+  (OVERLAP
+    WN::|fit%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::FITNESS-SCALE)
+    (TYPE ONT::FIT-HEALTHY-VAL))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL)))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::FITNESS-SCALE
   (INHERIT
     ONT::POSITIVE-BODY-CONDITION-SCALE)
@@ -70218,6 +72243,8 @@
   ONT::FLOAT
   (INHERIT
     ONT::MOVE)
+  (OVERLAP
+    WN::|hover%2:38:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -71040,6 +73067,41 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::FOLLY-SCALE
+  (INHERIT
+    ONT::WISENESS-SCALE)
+  (OVERLAP
+    WN::|folly%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::FONT
   (INHERIT
     ONT::TEXT-REPRESENTATION)
@@ -71312,8 +73374,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (SCALE ONT::FOLLY-SCALE)
+    (TYPE ONT::FOOLISH-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -71746,110 +73808,6 @@
     (ONT::FIGURE
      (CONCEPT
        T)
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::FRANTIC-VAL
-  (INHERIT
-    ONT::NEG-INTENSE-EMOTIONAL-VAL)
-  (OVERLAP
-    WN::|hectic%5:00:00:agitated:00|
-    WN::|frantic%5:00:00:agitated:00|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::NON-HUMAN-ANIMAL
-          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -72295,13 +74253,45 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::FRESH-SCALE
+  (INHERIT
+    ONT::FRESHNESS-SCALE)
+  (OVERLAP
+    WN::|freshness%1:07:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::FRESH-VAL
   (INHERIT
     ONT::FRESHNESS-VAL)
   (OVERLAP
-    WN::|recent%5:00:00:new:00|
-    WN::|recent%5:00:00:past:00|
-    WN::|new%3:00:00::|
     WN::|fresh%3:00:01::|
     WN::|fresh%3:00:02::|)
   (SEM-FEATS
@@ -72318,8 +74308,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (SCALE ONT::FRESH-SCALE)
+    (TYPE ONT::FRESH-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -72397,8 +74387,41 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::FRESHNESS-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::FRESHNESS-VAL
-  (COMMENT "relating to how recently an object was made or obtained")
+  (COMMENT "property of items made or obtained recently/a while back")
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL)
   (SEM-FEATS
@@ -72412,11 +74435,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::FRESHNESS-SCALE)
+    (TYPE ONT::FRESHNESS-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -72552,7 +74575,7 @@
 (CONCEPT
   ONT::FRIGHTENING-VAL
   (INHERIT
-    ONT::EVOKING-NEG-EMOTION-VAL)
+    ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
     WN::|alarming%3:00:00::|)
   (SEM-FEATS
@@ -72566,11 +74589,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::FEAR-SCALE)
+    (TYPE ONT::FRIGHTENING-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -72973,7 +74996,6 @@
   (INHERIT
     ONT::EVENT-OF-STATE)
   (OVERLAP
-    WN::|discharge%2:33:02::|
     WN::|do%2:41:03::|
     WN::|drive%2:42:00::|
     WN::|function%2:35:00::|
@@ -73324,103 +75346,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::FUNDAMENTAL-VAL
-  (COMMENT "forming a necessary base or core")
-  (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
-  (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
-
-(CONCEPT
   ONT::FUNGUS
   (INHERIT
     ONT::ORGANISM)
@@ -73480,8 +75405,6 @@
   (COMMENT "parts typically of furnishings: e.g., drawer")
   (INHERIT
     ONT::FURNISHINGS)
-  (OVERLAP
-    WN::|drawer%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -73962,6 +75885,41 @@
     (TRAJECTORY -)
     (CAUSE F::AGENTIVE)
     (TYPE ONT::CREATE)))
+
+(CONCEPT
+  ONT::GENERAL-SCALE
+  (INHERIT
+    ONT::SPECIFICITY-SCALE)
+  (OVERLAP
+    WN::|generality%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::GENERAL-STRUCTURE
@@ -75203,7 +77161,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -75211,8 +77168,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::AESTHETIC-TASTEFULNESS-SCALE)
+    (TYPE ONT::GOOD-AESTHETIC-JUDGEMENT-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -75456,7 +77414,6 @@
   (OVERLAP
     WN::|injustice%1:07:00::|
     WN::|justice%1:07:00::|
-    WN::|morality%1:07:00::|
     WN::|morality%1:16:00::|
     WN::|ethic%1:09:00::|
     WN::|ethic%1:10:00::|
@@ -75500,7 +77457,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -75508,8 +77464,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::GRACEFULNESS-SCALE)
+    (TYPE ONT::GRACEFUL-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -75586,6 +77543,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::GRACEFULNESS-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|gracefulness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::GRACEFULNESS-VAL
   (INHERIT
     ONT::ANIMAL-PROPENSITY-VAL)
@@ -75600,11 +77592,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::GRACEFULNESS-SCALE)
+    (TYPE ONT::GRACEFULNESS-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -75973,7 +77965,7 @@
 (CONCEPT
   ONT::GRATEFUL
   (INHERIT
-    ONT::THANKFULNESS-VAL)
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|glad%5:00:00:grateful:00|
     WN::|grateful%3:00:00::|
@@ -75990,11 +77982,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::GRATITUDE-SCALE)
+    (TYPE ONT::GRATEFUL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -76075,6 +78067,41 @@
           F::NON-HUMAN-ANIMAL
           F::HUMAN)))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::GRATITUDE-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|gratitude%1:12:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::GRAY
@@ -76197,11 +78224,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
     (SCALE ONT::GOODNESS-SCALE)
-    (TYPE ONT::GOOD))
+    (TYPE ONT::GREAT-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -76571,50 +78598,13 @@
        (SCALE ONT::COLOR-SCALE)))))
 
 (CONCEPT
-  ONT::GRIEF-SCALE
-  (INHERIT
-    ONT::NEGATIVE-EMOTION-SCALE)
-  (OVERLAP
-    WN::|grief%1:12:00::|
-    WN::|sorrow%1:12:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE +)
-    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
-  (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
-
-(CONCEPT
   ONT::GRIEVOUS-VAL
   (INHERIT
-    ONT::EVOKING-NEG-EMOTION-VAL)
+    ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
     WN::|heartrending%5:00:00:sorrowful:00|
     WN::|heartbreaking%5:00:00:sorrowful:00|
-    WN::|grievous%5:00:00:sorrowful:00|
-    WN::|sorrowful%3:00:00::|)
+    WN::|grievous%5:00:00:sorrowful:00|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -76629,7 +78619,7 @@
     (INTENTIONAL -)
     (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::GRIEF-SCALE)
+    (SCALE ONT::SADNESS-SCALE)
     (TYPE ONT::GRIEVOUS-VAL))
   (SEM-FRAME
     (ONT::FORMAL
@@ -76894,7 +78884,6 @@
     WN::|cultivate%2:36:00::|
     WN::|develop%2:30:00::|
     WN::|develop%2:30:01::|
-    WN::|grow%2:30:00::|
     WN::|grow%2:30:01::|
     WN::|grow%2:30:02::|)
   (SEM-FEATS
@@ -76957,112 +78946,6 @@
        (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM)
        (INTENTIONAL +))
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::GRUMPY-VAL
-  (INHERIT
-    ONT::NEG-SOFT-EMOTIONAL-VAL)
-  (OVERLAP
-    WN::|grumpy%5:00:00:ill-natured:00|
-    WN::|disagreeable%5:00:00:ill-natured:00|
-    WN::|sulky%5:00:00:ill-natured:00|
-    WN::|irritable%5:00:00:ill-natured:00|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::NON-HUMAN-ANIMAL
-          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -77379,6 +79262,75 @@
     (TYPE ONT::HAMMER-TOOL)))
 
 (CONCEPT
+  ONT::HANG-OUT
+  (COMMENT "to linger in a place or location")
+  (INHERIT
+    ONT::LOCATED-MOVE-STATE)
+  (OVERLAP
+    WN::|idle%2:41:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (INFORMATION MENTAL-CONSTRUCT)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (TRAJECTORY -)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INTENTIONAL -)
+    (TIME-SPAN F::EXTENDED)
+    (CAUSE F::FORCE)
+    (ASPECT F::UNBOUNDED)
+    (TYPE ONT::HANG-OUT))
+  (SEM-FRAME
+    (ONT::LOCATION
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (OBJECT-FUNCTION F::PLACE))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::EFFECT
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FORMAL
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::PHYS-OBJECT))
+     OPTIONAL)
+    (ONT::EXTENT
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE ONT::DURATION-SCALE))
+     OPTIONAL)
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (MOBILITY F::MOVABLE))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::HAPPEN
   (INHERIT
     ONT::EVENT-OF-STATE)
@@ -77431,7 +79383,7 @@
 (CONCEPT
   ONT::HAPPINESS-SCALE
   (INHERIT
-    ONT::POSITIVE-EMOTION-SCALE)
+    ONT::EXPERIENCER-CONDITION-SCALE)
   (OVERLAP
     WN::|happiness%1:26:00::|
     WN::|happiness%1:12:00::|)
@@ -77463,6 +79415,110 @@
     (ONT::FIGURE
      (CONCEPT
        T))))
+
+(CONCEPT
+  ONT::HAPPY-VAL
+  (INHERIT
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|happy%3:00:00::|
+    WN::|pleased%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::POS)
+    (SCALE ONT::HAPPINESS-SCALE)
+    (TYPE ONT::HAPPY-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::HARD-VAL
@@ -77789,7 +79845,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -77797,8 +79852,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::HARMFULNESS-SCALE)
+    (TYPE ONT::HARMFUL-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -77876,6 +79932,41 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::HARMFULNESS-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|harmfulness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::HARMFULNESS-VAL
   (COMMENT
    "regarding capability of harm or injury (compare to ont::safety-val)")
@@ -77892,11 +79983,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::HARMFULNESS-SCALE)
+    (TYPE ONT::HARMFULNESS-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -78587,109 +80678,9 @@
        T))))
 
 (CONCEPT
-  ONT::HEALTHINESS-VAL
-  (INHERIT
-    ONT::BODY-CONDITION-PROPERTY-VAL)
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::NON-HUMAN-ANIMAL
-          F::HUMAN)))
-     OPTIONAL))
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL)))
-
-(CONCEPT
   ONT::HEALTHY-VAL
   (INHERIT
-    ONT::HEALTHINESS-VAL)
+    ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
     WN::|well%3:00:01::|
     WN::|healthy%3:00:00::|)
@@ -78710,40 +80701,15 @@
     (SCALE ONT::HEALTH-SCALE)
     (TYPE ONT::HEALTHY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -78761,7 +80727,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -78770,13 +80736,38 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::REFSET
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
@@ -78785,8 +80776,8 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (ORIGIN
         (OR
-          F::NON-HUMAN-ANIMAL
-          F::HUMAN)))
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL)))
      OPTIONAL)))
 
 (CONCEPT
@@ -80605,7 +82596,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -80613,8 +82603,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::HONESTY-SCALE)
+    (TYPE ONT::HONEST-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -80691,6 +82682,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::HONESTY-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|honesty%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::HONESTY-VAL
   (INHERIT
     ONT::ANIMAL-PROPENSITY-VAL)
@@ -80705,11 +82731,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::HONESTY-SCALE)
+    (TYPE ONT::HONESTY-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -81306,11 +83332,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::NOT-SATIATED-SCALE)
+    (TYPE ONT::NOT-SATIATED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -81532,11 +83558,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::BODY-ENERGY-SCALE)
+    (TYPE ONT::ENERGIZED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -81899,8 +83925,6 @@
   ONT::IDENTITY-AND-ORIGIN
   (INHERIT
     ONT::PERSON-RELN)
-  (OVERLAP
-    WN::|inhabitant%1:18:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -81943,10 +83967,10 @@
     (INFORMATION -)
     (CONTAINER -)
     (MEASURE-FUNCTION -)
-    (SCALE -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (TYPE ONT::RELATION))
+    (SCALE ONT::SIMILARITY-SCALE)
+    (TYPE ONT::SIMILARITY-VAL))
   (SEM-FRAME
     (ONT::NOROLE
      (CONCEPT
@@ -82336,7 +84360,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -82344,8 +84367,9 @@
     (INTENTIONAL -)
     (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::SENSORY-SCALE)
-    (TYPE ONT::SENSORY-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::PERCEPTIBILITY-SCALE)
+    (TYPE ONT::IMPERCEPTIBLE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -82507,9 +84531,44 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::IMPLICIT-SCALE
+  (INHERIT
+    ONT::EXPLICITNESS-SCALE)
+  (OVERLAP
+    WN::|inexplicitness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::IMPLICIT-VAL
   (INHERIT
-    ONT::FUNDAMENTAL-VAL)
+    ONT::EXPLICITNESS-VAL)
   (OVERLAP
     WN::|underlying%5:00:00:implicit:00|
     WN::|implicit%3:00:00::|)
@@ -82527,8 +84586,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (SCALE ONT::IMPLICIT-SCALE)
+    (TYPE ONT::IMPLICIT-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -83271,23 +85330,23 @@
 (CONCEPT
   ONT::IN-TOUCH-VAL
   (INHERIT
-    ONT::SOCIAL-INTERACTION-VAL)
+    ONT::SOCIAL-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::POS)
+    (SCALE ONT::SOCIABILITY-SCALE)
+    (TYPE ONT::SOCIAL-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -84377,6 +86436,41 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::INCOMPLETE-SCALE
+  (INHERIT
+    ONT::COMPLETENESS-SCALE)
+  (OVERLAP
+    WN::|incompleteness%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::INCONSISTENT
   (INHERIT
     ONT::CONSISTENT-VAL)
@@ -84389,7 +86483,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -84397,8 +86490,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::CONSISTENCY-SCALE)
+    (TYPE ONT::INCONSISTENT))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -84648,6 +86742,7 @@
        (TYPE
         (OR
           ONT::LEVEL
+          ONT::SIMILARITY-VAL
           ONT::COST-RELATION
           ONT::EVENT-DURATION-MODIFIER
           ONT::DOMAIN-PROPERTY
@@ -84759,6 +86854,7 @@
        (TYPE
         (OR
           ONT::LEVEL
+          ONT::SIMILARITY-VAL
           ONT::COST-RELATION
           ONT::EVENT-DURATION-MODIFIER
           ONT::DOMAIN-PROPERTY
@@ -85486,6 +87582,41 @@
           F::HUMAN
           F::NON-HUMAN-ANIMAL)))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::INFERIORITY-SCALE
+  (INHERIT
+    ONT::QUALITY-LEVEL-SCALE)
+  (OVERLAP
+    WN::|inferiority%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::INFLAMMATION
@@ -87033,6 +89164,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::INTELLIGENCE-SCALE
+  (INHERIT
+    ONT::PSYCHOLOGICAL-CONDITION-SCALE)
+  (OVERLAP
+    WN::|intelligence%1:09:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::INTELLIGENCE-VAL
   (INHERIT
     ONT::PSYCHOLOGICAL-PROPERTY-VAL)
@@ -87047,11 +89213,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::INTELLIGENCE-SCALE)
+    (TYPE ONT::INTELLIGENCE-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -87138,7 +89304,6 @@
     ONT::INTENSITY-VAL)
   (OVERLAP
     WN::|potent%5:00:00:powerful:00|
-    WN::|strong%3:00:00::|
     WN::|acute%5:00:00:sharp:04|
     WN::|strong%5:00:00:powerful:00|
     WN::|intense%5:00:00:sharp:04|
@@ -87610,7 +89775,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -87618,8 +89782,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::INTENTIONALITY-SCALE)
+    (TYPE ONT::INTENTIONAL-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -87701,6 +89866,41 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::INTENTIONALITY-SCALE
+  (INHERIT
+    ONT::PSYCHOLOGICAL-CONDITION-SCALE)
+  (OVERLAP
+    WN::|deliberation%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::INTENTIONALITY-VAL
   (INHERIT
     ONT::PSYCHOLOGICAL-PROPERTY-VAL)
@@ -87715,11 +89915,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::INTENTIONALITY-SCALE)
+    (TYPE ONT::INTENTIONALITY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -87909,140 +90109,7 @@
 (CONCEPT
   ONT::INTEREST-SCALE
   (INHERIT
-    ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE +)
-    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
-  (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
-
-(CONCEPT
-  ONT::INTEREST-VAL
-  (INHERIT
-    ONT::PSYCHOLOGICAL-PROPERTY-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (SCALE ONT::INTEREST-SCALE)
-    (TYPE ONT::INTEREST-VAL))
-  (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL))
-       (INTENTIONAL +)))))
-
-(CONCEPT
-  ONT::INTERESTED-SCALE
-  (INHERIT
-    ONT::INTEREST-SCALE)
+    ONT::EXPERIENCER-CONDITION-SCALE)
   (OVERLAP
     WN::|interest%1:09:00::|
     WN::|enthusiasm%1:09:00::|)
@@ -88078,7 +90145,7 @@
 (CONCEPT
   ONT::INTERESTED-VAL
   (INHERIT
-    ONT::INTEREST-VAL)
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|interested%3:00:00::|
     WN::|curious%5:00:00:interested:00|)
@@ -88093,21 +90160,46 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INTERESTED-SCALE)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::INTEREST-SCALE)
     (TYPE ONT::INTERESTED-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -88125,7 +90217,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -88134,54 +90226,30 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (TYPE ONT::REFERENTIAL-SEM)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL))
-       (INTENTIONAL +)))))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::INTERESTING-VAL
   (INHERIT
-    ONT::EVOKING-POS-EMOTION-VAL)
+    ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
     WN::|fascinating%5:00:00:interesting:00|
     WN::|interesting%3:00:00::|)
@@ -88196,11 +90264,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::INTEREST-SCALE)
+    (TYPE ONT::INTERESTING-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -89049,7 +91117,7 @@
 (CONCEPT
   ONT::INTRINSIC-VAL
   (INHERIT
-    ONT::FUNDAMENTAL-VAL)
+    ONT::BASICNESS-VAL)
   (OVERLAP
     WN::|built-in%5:00:00:intrinsic:00|
     WN::|intrinsic%3:00:00::|)
@@ -89157,7 +91225,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -89165,8 +91232,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::VALIDITY-SCALE)
+    (TYPE ONT::INVALID-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -90892,8 +92960,7 @@
   (INHERIT
     ONT::MENTAL-CONSTRUCTION)
   (OVERLAP
-    WN::|knowledge%1:03:00::|
-    WN::|wisdom%1:07:00::|)
+    WN::|knowledge%1:03:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -90947,6 +93014,139 @@
     (TANGIBLE +)
     (CONTAINER -)
     (TYPE ONT::SITUATION)))
+
+(CONCEPT
+  ONT::LACK-OF-ENERGY-SCALE
+  (INHERIT
+    ONT::NEGATIVE-BODY-CONDITION-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
+  ONT::LACK-OF-ENERGY-VAL
+  (INHERIT
+    ONT::NEGATIVE-BODY-CONDITION-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::LACK-OF-ENERGY-SCALE)
+    (TYPE ONT::LACK-OF-ENERGY-VAL))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::LACKING
@@ -91086,8 +93286,6 @@
   (INHERIT
     ONT::VEHICLE)
   (OVERLAP
-    WN::|motortruck%1:06:00::|
-    WN::|truck%1:06:00::|
     WN::|motorcar%1:06:00::|
     WN::|machine%1:06:01::|
     WN::|automobile%1:06:00::|
@@ -92248,7 +94446,6 @@
     ONT::LOCATION-VAL)
   (OVERLAP
     WN::|left%3:00:00::|
-    WN::|center%3:00:00::|
     WN::|leftmost%5:00:00:left:00|)
   (SEM-FEATS
     (INHERIT
@@ -92926,6 +95123,144 @@
        (ORIENTATION F::NEG)
        (SCALE ONT::INTENSITY-SCALE))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::LETHARGIC-VAL
+  (INHERIT
+    ONT::LACK-OF-ENERGY-VAL)
+  (OVERLAP
+    WN::|lethargic%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::LETHARGY-SCALE)
+    (TYPE ONT::LETHARGIC-VAL))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL)))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::LETHARGY-SCALE
+  (INHERIT
+    ONT::LACK-OF-ENERGY-SCALE)
+  (OVERLAP
+    WN::|lethargy%1:26:00::|
+    WN::|lethargy%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::LETTER-MAIL
@@ -96085,8 +98420,6 @@
   (INHERIT
     ONT::EMIT-GIVEOFF-DISCHARGE)
   (OVERLAP
-    WN::|shine%2:43:01::|
-    WN::|reflect%2:43:00::|
     WN::|shine%2:43:00::|
     WN::|beam%2:43:03::|
     WN::|flash%2:39:00::|
@@ -96481,7 +98814,7 @@
 (CONCEPT
   ONT::LONELINESS-SCALE
   (INHERIT
-    ONT::NEGATIVE-EMOTION-SCALE)
+    ONT::EXPERIENCER-CONDITION-SCALE)
   (OVERLAP
     WN::|loneliness%1:26:00::|
     WN::|loneliness%1:12:00::|)
@@ -96959,7 +99292,6 @@
   (INHERIT
     ONT::RELINQUISH)
   (OVERLAP
-    WN::|lose%2:33:00::|
     WN::|lose%2:39:00::|
     WN::|lose%2:39:01::|
     WN::|lose%2:40:00::|
@@ -97713,6 +100045,7 @@
 
 (CONCEPT
   ONT::LUMINOSITY-SCALE
+  (COMMENT "quality of giving out or reflecting light")
   (INHERIT
     ONT::VISUAL-SCALE)
   (OVERLAP
@@ -98210,7 +100543,6 @@
     ONT::CAUSE-EFFECT)
   (OVERLAP
     WN::|have%2:30:00::|
-    WN::|have%2:36:00::|
     WN::|have%2:32:00::|
     WN::|have%2:40:02::|
     WN::|have%2:29:00::|
@@ -98464,6 +100796,98 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::MANAGE-TO-COMPLETE
+  (INHERIT
+    ONT::COMPLETE)
+  (OVERLAP
+    WN::|pull_off%2:41:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (INFORMATION MENTAL-CONSTRUCT)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (INTENTIONAL -)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
+    (CAUSE F::AGENTIVE)
+    (TYPE ONT::COMPLETE))
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM)))
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::MANAGEABILITY-SCALE
+  (INHERIT
+    ONT::CAN-BE-DONE-SCALE)
+  (OVERLAP
+    WN::|manageability%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::MANAGEABILITY-VAL
   (INHERIT
     ONT::CAN-BE-DONE-VAL)
@@ -98571,16 +100995,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (SCALE ONT::DOMAIN)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (TYPE ONT::PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (ORIENTATION F::POS)
+    (SCALE ONT::MANAGEABILITY-SCALE)
+    (TYPE ONT::MANAGEABLE))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -98663,7 +101087,8 @@
   (INHERIT
     ONT::CONTROL-MANAGE)
   (OVERLAP
-    WN::|management%1:04:00::|)
+    WN::|management%1:04:00::|
+    WN::|hold%2:36:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -99725,7 +102150,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -99733,8 +102157,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::MEANINGFULNESS-SCALE)
+    (TYPE ONT::MEANINGFUL-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -99811,6 +102236,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::MEANINGFULNESS-SCALE
+  (INHERIT
+    ONT::INFORMATION-PROPERTY-SCALE)
+  (OVERLAP
+    WN::|meaningfulness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::MEANINGFULNESS-VAL
   (INHERIT
     ONT::INFORMATION-PROPERTY-VAL)
@@ -99825,11 +102285,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::MEANINGFULNESS-SCALE)
+    (TYPE ONT::MEANINGFULNESS-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -100070,7 +102530,6 @@
   (INHERIT
     ONT::ORDERED-DOMAIN)
   (OVERLAP
-    WN::|quantity%1:03:00::|
     WN::|measurement%1:04:00::|)
   (SEM-FRAME
     (ONT::GROUND
@@ -100344,7 +102803,6 @@
     ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
   (OVERLAP
     WN::|condition%1:26:05::|
-    WN::|sign%1:26:00::|
     WN::|malformation%1:26:00::|
     WN::|pathology%1:26:00::|)
   (SEM-FEATS
@@ -100378,103 +102836,6 @@
   ONT::MEDICAL-CONDITION-PROPERTY-VAL
   (INHERIT
     ONT::PHYSICAL-PROPERTY-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::PHYSICAL-PROPERTY-SCALE)
-    (TYPE ONT::PHYSICAL-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)))))
-
-(CONCEPT
-  ONT::MEDICAL-DEHYDRATION-VAL
-  (INHERIT
-    ONT::MEDICAL-SYMPTOM-VAL)
-  (OVERLAP
-    WN::|dehydrated%5:00:00:unhealthy:00|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -101918,7 +104279,7 @@
   ONT::MERE-VAL
   (COMMENT "being nothing other than what's specified")
   (INHERIT
-    ONT::PLAINNESS-VAL)
+    ONT::PLAIN-VAL)
   (OVERLAP
     WN::|mere%5:00:00:specified:00|)
   (SEM-FEATS
@@ -101927,16 +104288,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::POS)
+    (SCALE ONT::PLAIN-SCALE)
+    (TYPE ONT::PLAIN-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -102043,6 +104404,42 @@
     (TYPE ONT::INFORMATION-FUNCTION-OBJECT)))
 
 (CONCEPT
+  ONT::MESSY-SCALE
+  (INHERIT
+    ONT::ORDERLINESS-SCALE)
+  (OVERLAP
+    WN::|disorderliness%1:26:00::|
+    WN::|messiness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::MESSY-VAL
   (INHERIT
     ONT::ORDERLINESS-VAL)
@@ -102063,8 +104460,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (SCALE ONT::MESSY-SCALE)
+    (TYPE ONT::MESSY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -102453,7 +104850,6 @@
     ONT::SEQUENCE-VAL)
   (OVERLAP
     WN::|halfway%5:00:00:intermediate:00|
-    WN::|middle%5:00:00:intermediate:00|
     WN::|intermediate%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -102881,11 +105277,6 @@
   ONT::MILITARY-GROUP-ABSTR
   (INHERIT
     ONT::SOCIAL-GROUP-ABSTR)
-  (OVERLAP
-    WN::|military_unit%1:14:00::|
-    WN::|military_force%1:14:00::|
-    WN::|military_group%1:14:00::|
-    WN::|force%1:14:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -103433,6 +105824,41 @@
     (TYPE ONT::COGITATION)))
 
 (CONCEPT
+  ONT::MOBILITY-SCALE
+  (INHERIT
+    ONT::CAN-BE-DONE-SCALE)
+  (OVERLAP
+    WN::|mobility%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::MODE
   (COMMENT "means of representation (c.f. ont::medium)")
   (INHERIT
@@ -103836,7 +106262,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -103844,8 +106269,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::MODESTY-SCALE)
+    (TYPE ONT::MODEST-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -103922,6 +106348,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::MODESTY-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|modesty%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::MODESTY-VAL
   (INHERIT
     ONT::ANIMAL-PROPENSITY-VAL)
@@ -103936,11 +106397,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::MODESTY-SCALE)
+    (TYPE ONT::MODESTY-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -104582,7 +107043,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -104590,8 +107050,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::MORALITY-SCALE)
+    (TYPE ONT::MORAL-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -104669,6 +107130,41 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::MORALITY-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|morality%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::MORALITY-VAL
   (COMMENT
    "characterized by morality, righteousness, virtuousness, and principle")
@@ -104685,11 +107181,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::MORALITY-SCALE)
+    (TYPE ONT::MORALITY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -108022,6 +110518,22 @@
     ONT::ARTIFICIALITY-VAL)
   (OVERLAP
     WN::|natural%3:00:02::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::NATURAL-SCALE)
+    (TYPE ONT::NATURAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -108101,23 +110613,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))))
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL)))
+       (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
   ONT::NATURAL-EVENT
@@ -108288,6 +110784,41 @@
        F::SPATIAL-REGION))
     (ORIGIN F::NATURAL)
     (TYPE ONT::NATURAL-OBJECT)))
+
+(CONCEPT
+  ONT::NATURAL-SCALE
+  (INHERIT
+    ONT::ARTIFICIALITY-SCALE)
+  (OVERLAP
+    WN::|unnaturalness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::NATURAL-SUBSTANCE
@@ -109012,9 +111543,10 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::NEG-EMOTIONAL-VAL
+  ONT::NEG-EXPERIENCER-PROPERTY-VAL
+  (COMMENT "experiencing negative experiences")
   (INHERIT
-    ONT::EMOTIONAL-VAL)
+    ONT::EXPERIENCER-PROPERTY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -109113,9 +111645,9 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::NEG-INTENSE-EMOTIONAL-VAL
+  ONT::NEGATIVE-BODY-CONDITION-PROPERTY-VAL
   (INHERIT
-    ONT::NEG-EMOTIONAL-VAL)
+    ONT::BODY-CONDITION-PROPERTY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -109127,46 +111659,21 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::BODY-CONDITION-SCALE)
+    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -109184,7 +111691,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -109193,54 +111700,17 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::NON-HUMAN-ANIMAL
-          F::HUMAN)))
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::NEG-SOFT-EMOTIONAL-VAL
-  (INHERIT
-    ONT::NEG-EMOTIONAL-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
+    (ONT::REFSET
      (CONCEPT
        T)
      OPTIONAL)
@@ -109253,65 +111723,25 @@
            PHYS-OBJ))
        (TYPE ONT::NUMBER))
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
+    (ONT::SCALE
      (SEM-FEATS
        (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
          ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (INTENTIONAL +)
        (TYPE ONT::REFERENTIAL-SEM)
        (ORIGIN
         (OR
-          F::NON-HUMAN-ANIMAL
-          F::HUMAN)))
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL)))
      OPTIONAL)))
 
 (CONCEPT
@@ -109443,39 +111873,6 @@
        (INHERIT
          T)
        (TYPE ONT::REFERENTIAL-SEM)))))
-
-(CONCEPT
-  ONT::NEGATIVE-EMOTION-SCALE
-  (INHERIT
-    ONT::EMOTION-SCALE)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE +)
-    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
-  (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
 
 (CONCEPT
   ONT::NEGATIVE-SMELL-SCALE
@@ -109635,7 +112032,7 @@
 (CONCEPT
   ONT::NERVOUSNESS-SCALE
   (INHERIT
-    ONT::NEGATIVE-EMOTION-SCALE)
+    ONT::EXPERIENCER-CONDITION-SCALE)
   (OVERLAP
     WN::|nervousness%1:12:00::|
     WN::|anxiety%1:12:00::|)
@@ -109860,9 +112257,109 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::NEUTRAL-BODY-CONDITION-PROPERTY-VAL
+  (INHERIT
+    ONT::BODY-CONDITION-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::BODY-CONDITION-SCALE)
+    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL)))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::NEUTRAL-BODY-CONDITION-SCALE
   (INHERIT
-    ONT::BODY-CONDITION-SCALE)
+    ONT::LACK-OF-ENERGY-SCALE)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -109893,9 +112390,54 @@
        T))))
 
 (CONCEPT
-  ONT::NEUTRAL-EMOTIONAL-VAL
+  ONT::NEUTRAL-EXPERIENCE
   (INHERIT
-    ONT::EMOTIONAL-VAL)
+    ONT::AFFECT-EXPERIENCER)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (INFORMATION MENTAL-CONSTRUCT)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INTENTIONAL -)
+    (CAUSE F::AGENTIVE)
+    (ASPECT F::DYNAMIC)
+    (TYPE ONT::AFFECT-EXPERIENCER))
+  (SEM-FRAME
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN F::LIVING)))
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
+  ONT::NEUTRAL-EXPERIENCER-PROPERTY-VAL
+  (COMMENT "experiencing experiences that are neither positive nor negative")
+  (INHERIT
+    ONT::EXPERIENCER-PROPERTY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -109992,50 +112534,6 @@
           F::NON-HUMAN-ANIMAL
           F::HUMAN)))
      OPTIONAL)))
-
-(CONCEPT
-  ONT::NEUTRAL-EXPERIENCE
-  (INHERIT
-    ONT::AFFECT-EXPERIENCER)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (KR-TYPE ANY-KR-TYPE)
-    (INFORMATION MENTAL-CONSTRUCT)
-    (TIME-SPAN ANY-TIME-SPAN)
-    (TRAJECTORY -)
-    (LOCATIVE -)
-    (ORIGIN ANY-ORIGIN)
-    (IOBJ -)
-    (TANGIBLE +)
-    (CONTAINER -)
-    (INTENTIONAL -)
-    (CAUSE F::AGENTIVE)
-    (ASPECT F::DYNAMIC)
-    (TYPE ONT::AFFECT-EXPERIENCER))
-  (SEM-FRAME
-    (ONT::RESULT
-     (CONCEPT
-       ABSTR-OBJ)
-     OPTIONAL)
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN F::LIVING)))
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           SITUATION))
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
   ONT::NEVER
@@ -110451,6 +112949,41 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::NON-ACTUAL-SCALE
+  (INHERIT
+    ONT::ACTUALITY-SCALE)
+  (OVERLAP
+    WN::|unreality%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::NON-VERTICAL-SCALE
   (INHERIT
     ONT::LINEAR-EXTENT-SCALE)
@@ -110607,11 +113140,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::NON-ACTUAL-SCALE)
+    (TYPE ONT::NONACTUAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -111248,7 +113781,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -111256,18 +113788,44 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::AFFECTION-SCALE)
+    (TYPE ONT::NOT-AFFECTIONATE-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -111285,7 +113843,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -111294,48 +113852,18 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
+       (INHERIT
+         T)
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
@@ -111685,7 +114213,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -111693,8 +114220,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::ATTENTIVENESS-SCALE)
+    (TYPE ONT::NOT-ATTENTIVE-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -111780,7 +114308,6 @@
   (INHERIT
     ONT::ATTRACTION-SCALE)
   (OVERLAP
-    WN::|disgust%1:12:00::|
     WN::|repugnance%1:12:00::|)
   (SEM-FEATS
     (INHERIT
@@ -112030,7 +114557,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -112038,8 +114564,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::PARTIALITY-SCALE)
+    (TYPE ONT::NOT-BIASED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -112449,105 +114976,6 @@
        T))))
 
 (CONCEPT
-  ONT::NOT-CLOTHED-VAL
-  (INHERIT
-    ONT::CLOTHEDNESS-VAL)
-  (OVERLAP
-    WN::|bare%5:00:00:unclothed:00|
-    WN::|unclothed%3:00:00::|
-    WN::|naked%5:00:00:bare:00|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (SCALE ONT::CONFIGURATION-PROPERTY-SCALE)
-    (TYPE ONT::CONFIGURATION-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)))))
-
-(CONCEPT
   ONT::NOT-COMFORTABLE-SCALE
   (INHERIT
     ONT::COMFORT-SCALE)
@@ -112694,7 +115122,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -112702,8 +115129,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::COMPREHENSIBILITY-SCALE)
+    (TYPE ONT::NOT-COMPREHENSIBLE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -112961,7 +115389,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -112969,105 +115396,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)))))
-
-(CONCEPT
-  ONT::NOT-CURRENT-VAL
-  (INHERIT
-    ONT::HISTORICAL-ERA-VAL)
-  (OVERLAP
-    WN::|old-fashioned%5:00:00:unfashionable:00|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (SCALE ONT::DOMAIN)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (TYPE ONT::PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::CREDIBILITY-SCALE)
+    (TYPE ONT::NOT-CREDIBLE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -113156,7 +115487,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -113164,8 +115494,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::EFFECTIVENESS-SCALE)
+    (TYPE ONT::NOT-EFFECTIVE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -113253,7 +115584,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -113261,8 +115591,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::EFFICIENCY-SCALE)
+    (TYPE ONT::NOT-EFFICIENT-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -113337,106 +115668,6 @@
        (INHERIT
          T)
        (TYPE ONT::REFERENTIAL-SEM)))))
-
-(CONCEPT
-  ONT::NOT-ENERGIZED-VAL
-  (INHERIT
-    ONT::ENERGY-SUPPLY-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
-     OPTIONAL)))
 
 (CONCEPT
   ONT::NOT-ENFORCEABLE-VAL
@@ -113667,6 +115898,41 @@
          T)
        (TYPE ONT::REFERENTIAL-SEM)
        (TANGIBLE +)))))
+
+(CONCEPT
+  ONT::NOT-FAMILIAR-SCALE
+  (INHERIT
+    ONT::FAMILIARITY-SCALE)
+  (OVERLAP
+    WN::|unfamiliarity%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::NOT-FAVORABLE-CONDITION
@@ -113904,6 +116170,41 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::NOT-FRESH-SCALE
+  (INHERIT
+    ONT::FRESHNESS-SCALE)
+  (OVERLAP
+    WN::|staleness%1:07:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::NOT-FRESH-VAL
   (INHERIT
     ONT::FRESHNESS-VAL)
@@ -113923,8 +116224,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (SCALE ONT::NOT-FRESH-SCALE)
+    (TYPE ONT::NOT-FRESH-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -114004,7 +116305,7 @@
 (CONCEPT
   ONT::NOT-GRATEFUL-VAL
   (INHERIT
-    ONT::THANKFULNESS-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|ungrateful%3:00:00::|
     WN::|thankless%3:00:00::|
@@ -114020,11 +116321,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::GRATITUDE-SCALE)
+    (TYPE ONT::NOT-GRATEFUL-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -114216,7 +116517,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -114224,8 +116524,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::HONESTY-SCALE)
+    (TYPE ONT::NOT-HONEST-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -114552,7 +116853,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -114560,8 +116860,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::INTENTIONALITY-SCALE)
+    (TYPE ONT::NOT-INTENTIONAL-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -114643,44 +116944,9 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
-  ONT::NOT-INTERESTED-SCALE
-  (INHERIT
-    ONT::INTEREST-SCALE)
-  (OVERLAP
-    WN::|apathy%1:07:01::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE +)
-    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
-  (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
-
-(CONCEPT
   ONT::NOT-INTERESTED-VAL
   (INHERIT
-    ONT::INTEREST-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|uninterested%3:00:00::|
     WN::|disinterested%5:00:00:impartial:00|)
@@ -114695,21 +116961,46 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::NOT-INTERESTED-SCALE)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::APATHY-SCALE)
     (TYPE ONT::NOT-INTERESTED-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -114727,7 +117018,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -114736,49 +117027,25 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (TYPE ONT::REFERENTIAL-SEM)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL))
-       (INTENTIONAL +)))))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::NOT-LIKELY-SCALE
@@ -115223,7 +117490,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -115231,8 +117497,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::MEANINGFULNESS-SCALE)
+    (TYPE ONT::NOT-MEANINGFUL-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -115332,7 +117599,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -115340,8 +117606,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::MORALITY-SCALE)
+    (TYPE ONT::NOT-MORAL-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -115528,7 +117795,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -115536,8 +117802,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::OFFENSIVENESS-SCALE)
+    (TYPE ONT::NOT-OFFENSIVE-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -115617,7 +117884,7 @@
 (CONCEPT
   ONT::NOT-PLAIN-VAL
   (INHERIT
-    ONT::PLAINNESS-VAL)
+    ONT::BASICNESS-VAL)
   (OVERLAP
     WN::|fanciful%5:00:00:fancy:00|
     WN::|fancy%3:00:00::|
@@ -115628,16 +117895,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::NEG)
+    (SCALE ONT::PLAIN-SCALE)
+    (TYPE ONT::NOT-PLAIN-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -115717,7 +117984,7 @@
 (CONCEPT
   ONT::NOT-PLEASING-VAL
   (INHERIT
-    ONT::EVOKING-NEG-EMOTION-VAL)
+    ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
     WN::|unwelcome%3:00:00::|
     WN::|disagreeable%5:00:00:uncongenial:00|
@@ -115730,16 +117997,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::NEG)
+    (SCALE ONT::PLEASANTNESS-SCALE)
+    (TYPE ONT::NOT-PLEASING-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -115965,7 +118232,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -115973,8 +118239,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::PRECISION-SCALE)
+    (TYPE ONT::NOT-PRECISE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -116063,7 +118330,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -116071,8 +118337,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::PREDICTABILITY-SCALE)
+    (TYPE ONT::NOT-PREDICTABLE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -116166,7 +118433,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -116174,8 +118440,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::PREMEDITATION-SCALE)
+    (TYPE ONT::NOT-PREMEDITATED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -116728,7 +118995,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -116736,8 +119002,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::RELEVANCE-SCALE)
+    (TYPE ONT::NOT-RELEVANT-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -117033,34 +119300,15 @@
     (SCALE ONT::RESPONSIBILITY-SCALE)
     (TYPE ONT::NOT-RESPONSIBLE-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -117078,7 +119326,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -117087,13 +119335,32 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::STANDARD
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::REFSET
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
@@ -117113,11 +119380,12 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
-  ONT::NOT-ROBUST-VAL
+  ONT::NOT-SATIATED-SCALE
   (INHERIT
-    ONT::ROBUSTNESS-VAL)
+    ONT::NEGATIVE-BODY-CONDITION-SCALE)
   (OVERLAP
-    WN::|frail%3:00:00::|)
+    WN::|hunger%1:26:00::|
+    WN::|thirst%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -117126,93 +119394,31 @@
     (GRADABILITY -)
     (ORIENTATION -)
     (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::MEASURE-SCALE)
-    (TYPE ONT::DIMENSIONAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
+    (ONT::EXTENT
      (CONCEPT
        T)
      OPTIONAL)
     (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
     (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)))))
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::NOT-SATIATED-VAL
   (INHERIT
-    ONT::SATEDNESS-VAL)
+    ONT::NEGATIVE-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
     WN::|unsatiated%5:00:00:insatiate:00|
     WN::|unsated%5:00:00:insatiate:00|
@@ -117228,11 +119434,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::NOT-SATIATED-SCALE)
+    (TYPE ONT::NOT-SATIATED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -117529,16 +119735,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::NEG)
+    (SCALE ONT::SOCIABILITY-SCALE)
+    (TYPE ONT::NOT-SOCIAL-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -117675,8 +119881,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (SCALE ONT::FAILURE-SCALE)
+    (TYPE ONT::NOT-SUCCESSFUL-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -117866,7 +120072,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -117874,8 +120079,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::TOLERABILITY-SCALE)
+    (TYPE ONT::NOT-TOLERABLE-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -118189,14 +120395,14 @@
   (INHERIT
     ONT::VERIFIABILITY-VAL)
   (OVERLAP
-    WN::|unverifiable%5:00:00:subjective:00|)
+    WN::|unverifiable%5:00:00:subjective:00|
+    WN::|unreproducible%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -118204,8 +120410,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::REPRODUCIBILITY-SCALE)
+    (TYPE ONT::NOT-VERIFIABLE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -118380,42 +120587,6 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
-  ONT::NOT-WELL-NOURISHED-SCALE
-  (INHERIT
-    ONT::NEGATIVE-BODY-CONDITION-SCALE)
-  (OVERLAP
-    WN::|hunger%1:26:00::|
-    WN::|thirst%1:26:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE +)
-    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
-  (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
-
-(CONCEPT
   ONT::NOT-WORTHY-VAL
   (INHERIT
     ONT::WORTHINESS-VAL)
@@ -118428,7 +120599,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -118436,8 +120606,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::WORTHINESS-SCALE)
+    (TYPE ONT::NOT-WORTHY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -118545,6 +120716,41 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::NOTICEABILITY-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|conspicuousness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::NOTICEABLE
   (INHERIT
     ONT::ATTENTION-WORTHY-VAL)
@@ -118561,7 +120767,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -118569,8 +120774,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::NOTICEABILITY-SCALE)
+    (TYPE ONT::NOTICEABLE))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -118758,7 +120964,6 @@
   (OVERLAP
     WN::|now%4:02:05::|
     WN::|presently%4:02:00::|
-    WN::|current%3:00:00::|
     WN::|present%3:00:01::|)
   (SEM-FEATS
     (INHERIT
@@ -120234,7 +122439,9 @@
     WN::|stampede%2:41:01::|
     WN::|trip%2:38:01::|
     WN::|unbalance%2:42:00::|
-    WN::|undo%2:36:00::|)
+    WN::|undo%2:36:00::|
+    WN::|affect%2:29:00::|
+    WN::|affect%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -121219,7 +123426,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -121227,8 +123433,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::OFFENSIVENESS-SCALE)
+    (TYPE ONT::OFFENSIVE-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -121306,6 +123513,41 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::OFFENSIVENESS-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|offensiveness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::OFFENSIVENESS-VAL
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL)
@@ -121320,11 +123562,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::OFFENSIVENESS-SCALE)
+    (TYPE ONT::OFFENSIVENESS-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -122477,10 +124719,6 @@
   ONT::OPERATING-SWITCH
   (INHERIT
     ONT::DEVICE-COMPONENT)
-  (OVERLAP
-    WN::|pedestal%1:06:00::|
-    WN::|stand%1:06:00::|
-    WN::|support%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -123088,6 +125326,39 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::ORDERLINESS-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::ORDERLINESS-VAL
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL)
@@ -123102,11 +125373,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::ORDERLINESS-SCALE)
+    (TYPE ONT::ORDERLINESS-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -123460,8 +125731,7 @@
     WN::|take_aim%2:33:00::|
     WN::|train%2:33:00::|
     WN::|point%2:32:00::|
-    WN::|point%2:33:02::|
-    WN::|point%2:33:10::|)
+    WN::|point%2:33:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -124025,10 +126295,10 @@
     (INFORMATION -)
     (CONTAINER -)
     (MEASURE-FUNCTION -)
-    (SCALE -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (TYPE ONT::RELATION))
+    (SCALE ONT::SIMILARITY-SCALE)
+    (TYPE ONT::SIMILARITY-VAL))
   (SEM-FRAME
     (ONT::NOROLE
      (CONCEPT
@@ -124739,7 +127009,7 @@
 (CONCEPT
   ONT::PAINED-VAL
   (INHERIT
-    ONT::MEDICAL-SYMPTOM-VAL)
+    ONT::NEGATIVE-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
     WN::|aching%5:00:00:painful:00|
     WN::|achy%5:00:00:painful:00|
@@ -124758,43 +127028,18 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PHYSICAL-PROPERTY-SCALE)
-    (TYPE ONT::PHYSICAL-PROPERTY-VAL))
+    (SCALE ONT::PAIN-SCALE)
+    (TYPE ONT::PAINED-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -124812,7 +127057,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -124821,19 +127066,49 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::REFSET
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)))))
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::PALPITATION
@@ -125215,11 +127490,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (SCALE ONT::PHYSICAL-PROPERTY-SCALE)
     (INTENTIONAL -)
     (INFORMATION -)
     (CONTAINER -)
-    (TYPE ONT::PART-WHOLE-VAL))
+    (SCALE ONT::INCOMPLETE-SCALE)
+    (TYPE ONT::PARTIAL-INCOMPLETE))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -125294,6 +127569,41 @@
          T)
        (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::PARTIALITY-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|partiality%1:09:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::PARTICIPATE-ATTEND
@@ -126298,6 +128608,41 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::PERCEPTIBILITY-SCALE
+  (INHERIT
+    ONT::SENSORY-SCALE)
+  (OVERLAP
+    WN::|perceptibility%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::PERCEPTIBILITY-VAL
   (INHERIT
     ONT::SENSORY-PROPERTY-VAL)
@@ -126312,11 +128657,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::SENSORY-SCALE)
-    (TYPE ONT::SENSORY-PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::PERCEPTIBILITY-SCALE)
+    (TYPE ONT::PERCEPTIBILITY-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -126404,7 +128749,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -126412,8 +128756,9 @@
     (INTENTIONAL -)
     (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::SENSORY-SCALE)
-    (TYPE ONT::SENSORY-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::PERCEPTIBILITY-SCALE)
+    (TYPE ONT::PERCEPTIBLE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -127408,8 +129753,6 @@
   ONT::PHARMACOLOGIC-SUBSTANCE
   (INHERIT
     ONT::CHEMICAL)
-  (OVERLAP
-    WN::|drug%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -127817,9 +130160,6 @@
   (INHERIT
     ONT::NATURAL-PHENOMENON)
   (OVERLAP
-    WN::|strength%1:07:06::|
-    WN::|forcefulness%1:07:00::|
-    WN::|force%1:07:00::|
     WN::|force%1:19:00::|
     WN::|causal_agency%1:03:00::|
     WN::|cause%1:03:00::|
@@ -128187,8 +130527,6 @@
     WN::|nauseated%3:00:00:ill:01|
     WN::|queasy%3:00:00:ill:01|
     WN::|sickish%3:00:00:ill:01|
-    WN::|shivering%1:26:00::|
-    WN::|nausea%1:26:00::|
     WN::|itch%2:39:00::|
     WN::|ache%2:39:01::|)
   (SEM-FEATS
@@ -128237,6 +130575,142 @@
          T)
        (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::PHYSICAL-STRENGTH-SCALE
+  (INHERIT
+    ONT::DIMENSIONAL-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::PHYSICAL-STRENGTH-VAL
+  (INHERIT
+    ONT::DIMENSIONAL-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::PHYSICAL-STRENGTH-SCALE)
+    (TYPE ONT::PHYSICAL-STRENGTH-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
   ONT::PHYSICAL-SYMPTOM-MANNER
@@ -128659,8 +131133,6 @@
   ONT::PITCH-UNIT
   (INHERIT
     ONT::SOUND-UNIT)
-  (OVERLAP
-    WN::|musical_interval%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -128870,9 +131342,45 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::PLAIN-VAL
+  ONT::PLAIN-SCALE
   (INHERIT
-    ONT::PLAINNESS-VAL)
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|plainness%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
+  ONT::PLAIN-VAL
+  (COMMENT "inelaborate, simple and plain")
+  (INHERIT
+    ONT::BASICNESS-VAL)
   (OVERLAP
     WN::|plain%3:00:01::|
     WN::|stark%5:00:00:plain:01|)
@@ -128882,114 +131390,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
-  (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
-
-(CONCEPT
-  ONT::PLAINNESS-VAL
-  (COMMENT
-   "evaluation attributes dealing with plainess or elaborateness of something")
-  (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
     (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (CONTAINER -)
+    (ORIENTATION F::POS)
+    (SCALE ONT::PLAIN-SCALE)
+    (TYPE ONT::PLAIN-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -129351,109 +131761,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::PLEASANT
-  (INHERIT
-    ONT::POS-SOFT-EMOTIONAL-VAL)
-  (OVERLAP
-    WN::|pleasant%3:00:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (SCALE ONT::PLEASANTNESS-SCALE)
-    (TYPE ONT::PLEASANT))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::NON-HUMAN-ANIMAL
-          F::HUMAN)))
-     OPTIONAL)))
-
-(CONCEPT
   ONT::PLEASANT-SMELLING-VAL
   (INHERIT
     ONT::SMELL-PROPERTY-VAL)
@@ -129556,7 +131863,7 @@
 (CONCEPT
   ONT::PLEASANTNESS-SCALE
   (INHERIT
-    ONT::POSITIVE-EMOTION-SCALE)
+    ONT::EXPERIENCER-CONDITION-SCALE)
   (OVERLAP
     WN::|agreeableness%1:07:00::|
     WN::|pleasantness%1:07:00::|)
@@ -129592,12 +131899,13 @@
 (CONCEPT
   ONT::PLEASING-VAL
   (INHERIT
-    ONT::EVOKING-POS-EMOTION-VAL)
+    ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
     WN::|pleasing%3:00:00::|
     WN::|welcome%3:00:00::|
     WN::|agreeable%3:00:00::|
-    WN::|delightful%5:00:00:pleasing:00|)
+    WN::|delightful%5:00:00:pleasing:00|
+    WN::|pleasant%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -129609,11 +131917,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::PLEASANTNESS-SCALE)
+    (TYPE ONT::PLEASING-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -129693,6 +132001,41 @@
           F::HUMAN
           F::NON-HUMAN-ANIMAL))
        (INTENTIONAL +)))))
+
+(CONCEPT
+  ONT::PLEASURABILITY-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|pleasure%1:12:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::PLOT-DIAGRAM-DRAWING
@@ -130659,6 +133002,41 @@
     (TYPE ONT::FOOD)))
 
 (CONCEPT
+  ONT::PORTABILITY-SCALE
+  (INHERIT
+    ONT::CAN-BE-DONE-SCALE)
+  (OVERLAP
+    WN::|portability%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::PORTABLE-VAL
   (INHERIT
     ONT::MOVABLE-VAL)
@@ -130677,11 +133055,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (SCALE ONT::DOMAIN)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (TYPE ONT::PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::PORTABILITY-SCALE)
+    (TYPE ONT::PORTABLE-VAL))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -131060,9 +133438,10 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::POS-EMOTIONAL-VAL
+  ONT::POS-EXPERIENCER-PROPERTY-VAL
+  (COMMENT "experiencing positive experiences")
   (INHERIT
-    ONT::EMOTIONAL-VAL)
+    ONT::EXPERIENCER-PROPERTY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -131202,107 +133581,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::POS-INTENSE-EMOTIONAL-VAL
-  (INHERIT
-    ONT::POS-EMOTIONAL-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::NON-HUMAN-ANIMAL
-          F::HUMAN)))
-     OPTIONAL)))
-
-(CONCEPT
   ONT::POS-RELATIVE-WRT-TRAJECTORY
   (COMMENT
    "FIGURE is located along a linear area wrt some other object (GROUND)")
@@ -131341,107 +133619,6 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::POS-SOFT-EMOTIONAL-VAL
-  (INHERIT
-    ONT::POS-EMOTIONAL-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::NON-HUMAN-ANIMAL
-          F::HUMAN)))
      OPTIONAL)))
 
 (CONCEPT
@@ -131870,6 +134047,106 @@
     (TYPE ONT::ABSTRACT-OBJECT)))
 
 (CONCEPT
+  ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL
+  (INHERIT
+    ONT::BODY-CONDITION-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::BODY-CONDITION-SCALE)
+    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::HUMAN
+          F::NON-HUMAN-ANIMAL)))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::POSITIVE-BODY-CONDITION-SCALE
   (INHERIT
     ONT::BODY-CONDITION-SCALE)
@@ -131998,39 +134275,6 @@
        (INHERIT
          T)
        (TYPE ONT::REFERENTIAL-SEM)))))
-
-(CONCEPT
-  ONT::POSITIVE-EMOTION-SCALE
-  (INHERIT
-    ONT::EMOTION-SCALE)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE +)
-    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
-  (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
 
 (CONCEPT
   ONT::POSITIVE-SMELL-SCALE
@@ -133159,7 +135403,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -133167,8 +135410,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::PRECISION-SCALE)
+    (TYPE ONT::PRECISE))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -133245,6 +135489,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::PRECISION-SCALE
+  (INHERIT
+    ONT::INFORMATION-PROPERTY-SCALE)
+  (OVERLAP
+    WN::|precision%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::PRECISION-VAL
   (INHERIT
     ONT::INFORMATION-PROPERTY-VAL)
@@ -133259,11 +135538,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::PRECISION-SCALE)
+    (TYPE ONT::PRECISION-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -133719,6 +135998,41 @@
     (TYPE ONT::COGITATION)))
 
 (CONCEPT
+  ONT::PREDICTABILITY-SCALE
+  (INHERIT
+    ONT::INFORMATION-PROPERTY-SCALE)
+  (OVERLAP
+    WN::|predictability%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::PREDICTABILITY-VAL
   (INHERIT
     ONT::INFORMATION-PROPERTY-VAL)
@@ -133733,11 +136047,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::PREDICTABILITY-SCALE)
+    (TYPE ONT::PREDICTABILITY-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -133826,7 +136140,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -133834,8 +136147,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::PREDICTABILITY-SCALE)
+    (TYPE ONT::PREDICTABLE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -134152,7 +136466,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -134160,8 +136473,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::PARTIALITY-SCALE)
+    (TYPE ONT::BIASED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -134251,7 +136565,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -134259,8 +136572,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::PREMEDITATION-SCALE)
+    (TYPE ONT::PREMEDITATED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -134342,6 +136656,41 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::PREMEDITATION-SCALE
+  (INHERIT
+    ONT::PSYCHOLOGICAL-CONDITION-SCALE)
+  (OVERLAP
+    WN::|planning%1:09:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::PREMEDITATION-VAL
   (COMMENT "is the process planned (careful forethought and planning)?")
   (INHERIT
@@ -134357,11 +136706,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::PREMEDITATION-SCALE)
+    (TYPE ONT::PREMEDITATION-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -135334,7 +137683,7 @@
 (CONCEPT
   ONT::PRIDE-SCALE
   (INHERIT
-    ONT::POSITIVE-EMOTION-SCALE)
+    ONT::EXPERIENCER-CONDITION-SCALE)
   (OVERLAP
     WN::|pride%1:12:00::|)
   (SEM-FEATS
@@ -135996,6 +138345,39 @@
        T))))
 
 (CONCEPT
+  ONT::PROCESS-STATUS-SCALE
+  (INHERIT
+    ONT::PROCESS-PROPERTY-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::PROCESS-STATUS-VAL
   (COMMENT "properties relating to status of processes")
   (INHERIT
@@ -136332,6 +138714,69 @@
        (ORIGIN F::LIVING)))))
 
 (CONCEPT
+  ONT::PROCRASTINATE
+  (COMMENT
+   "waste time and delay what needs to be done. avoid by engaging something other than what one should be doing")
+  (INHERIT
+    ONT::AVOIDING)
+  (OVERLAP
+    WN::|drag_one's_feet%2:42:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (INFORMATION MENTAL-CONSTRUCT)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (INTENTIONAL -)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
+    (CAUSE F::AGENTIVE)
+    (TYPE ONT::AVOIDING))
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (INTENTIONAL +)))
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::PROCREATE
   (INHERIT
     ONT::BEAR)
@@ -136432,7 +138877,6 @@
   (INHERIT
     ONT::COMMODITY)
   (OVERLAP
-    WN::|card%1:06:00::|
     WN::|ware%1:06:01::|
     WN::|product%1:06:01::|)
   (SEM-FEATS
@@ -136543,7 +138987,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -136551,8 +138994,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::PRODUCTIVITY-SCALE)
+    (TYPE ONT::PRODUCTIVE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -136629,6 +139073,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::PRODUCTIVITY-SCALE
+  (INHERIT
+    ONT::PROCESS-EVALUATION-SCALE)
+  (OVERLAP
+    WN::|productivity%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::PRODUCTIVITY-VAL
   (INHERIT
     ONT::PROCESS-EVALUATION-VAL)
@@ -136643,11 +139122,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::PRODUCTIVITY-SCALE)
+    (TYPE ONT::PRODUCTIVITY-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -137822,7 +140301,7 @@
 (CONCEPT
   ONT::PROUD-VAL
   (INHERIT
-    ONT::POS-INTENSE-EMOTIONAL-VAL)
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|proud%3:00:00::|)
   (SEM-FEATS
@@ -139433,7 +141912,7 @@
 (CONCEPT
   ONT::PUZZLED-VAL
   (INHERIT
-    ONT::PUZZLEMENT-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|perplexed%3:00:00::|
     WN::|baffled%5:00:00:perplexed:00|
@@ -139450,21 +141929,46 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::CONFUSION-SCALE)
+    (TYPE ONT::PUZZLED-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -139482,88 +141986,6 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL))
-       (INTENTIONAL +)))))
-
-(CONCEPT
-  ONT::PUZZLEMENT-VAL
-  (INHERIT
-    ONT::PSYCHOLOGICAL-PROPERTY-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::NEUTRAL
      (OR
        (CONCEPT
@@ -139573,67 +141995,25 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (INTENTIONAL +)
        (TYPE ONT::REFERENTIAL-SEM)
        (ORIGIN
         (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL))
-       (INTENTIONAL +)))))
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::QMODIFIER
@@ -139726,6 +142106,39 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::QUALITY-LEVEL-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::QUALITY-VAL
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL)
@@ -139740,11 +142153,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::QUALITY-LEVEL-SCALE)
+    (TYPE ONT::QUALITY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -140941,8 +143354,6 @@
   ONT::RATE-UNIT
   (INHERIT
     ONT::FORMAL-UNIT)
-  (OVERLAP
-    WN::|rate%1:28:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -141270,6 +143681,39 @@
     (TYPE ONT::COGITATION)))
 
 (CONCEPT
+  ONT::REAL-VS-FAKE-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::REAL-VS-FAKE-VAL
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL)
@@ -141284,11 +143728,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::REAL-VS-FAKE-SCALE)
+    (TYPE ONT::REAL-VS-FAKE-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -141645,9 +144089,12 @@
     (TYPE ONT::PERSON)))
 
 (CONCEPT
-  ONT::RECOMMENDABILITY-VAL
+  ONT::RECOMMENDABILITY-SCALE
+  (COMMENT "worthy of recommendation and advice; wise or prudent")
   (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL)
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|advisability%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -141656,94 +144103,31 @@
     (GRADABILITY -)
     (ORIENTATION -)
     (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::EXTENT
      (CONCEPT
        T)
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
      OPTIONAL)
     (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
      (CONCEPT
        T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::RECOMMENDABLE-VAL
   (INHERIT
-    ONT::RECOMMENDABILITY-VAL)
+    ONT::EVALUATION-ATTRIBUTE-VAL)
   (OVERLAP
     WN::|advisable%3:00:00::|)
   (SEM-FEATS
@@ -141757,11 +144141,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::RECOMMENDABILITY-SCALE)
+    (TYPE ONT::RECOMMENDABLE-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -142755,6 +145139,41 @@
           ONT::ANIMAL))
        (INTENTIONAL +))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::REGRET-SCALE
+  (INHERIT
+    ONT::SADNESS-SCALE)
+  (OVERLAP
+    WN::|regret%1:12:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::REGRETTING
@@ -144123,6 +146542,41 @@
     (TYPE ONT::EVENT-OF-CAUSATION)))
 
 (CONCEPT
+  ONT::RELEVANCE-SCALE
+  (INHERIT
+    ONT::INFORMATION-PROPERTY-SCALE)
+  (OVERLAP
+    WN::|relevance%1:24:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::RELEVANCE-VAL
   (INHERIT
     ONT::INFORMATION-PROPERTY-VAL)
@@ -144137,11 +146591,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::RELEVANCE-SCALE)
+    (TYPE ONT::RELEVANCE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -144231,7 +146685,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -144239,8 +146692,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::RELEVANCE-SCALE)
+    (TYPE ONT::RELEVANT))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -146269,6 +148723,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::REPLACEABILITY-SCALE
+  (INHERIT
+    ONT::CAN-BE-DONE-SCALE)
+  (OVERLAP
+    WN::|replaceability%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::REPLACEABILITY-VAL
   (INHERIT
     ONT::CAN-BE-DONE-VAL)
@@ -146283,11 +148772,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (SCALE ONT::DOMAIN)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (TYPE ONT::PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::REPLACEABILITY-SCALE)
+    (TYPE ONT::REPLACEABILITY-VAL))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -146376,16 +148865,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (SCALE ONT::DOMAIN)
     (INTENTIONAL -)
     (INFORMATION -)
     (CONTAINER -)
-    (TYPE ONT::PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::REPLACEABILITY-SCALE)
+    (TYPE ONT::REPLACEABLE-VAL))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -146820,6 +149309,41 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (TANGIBLE +))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::REPRODUCIBILITY-SCALE
+  (INHERIT
+    ONT::INFORMATION-PROPERTY-SCALE)
+  (OVERLAP
+    WN::|reproducibility%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::REPTILE
@@ -147716,7 +150240,7 @@
 (CONCEPT
   ONT::RESPONSIBILITY-VAL
   (INHERIT
-    ONT::SOCIAL-INTERACTION-VAL)
+    ONT::ANIMAL-PROPENSITY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -147734,34 +150258,15 @@
     (SCALE ONT::RESPONSIBILITY-SCALE)
     (TYPE ONT::RESPONSIBILITY-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -147779,7 +150284,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -147788,13 +150293,32 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::STANDARD
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::REFSET
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
@@ -147836,34 +150360,15 @@
     (SCALE ONT::RESPONSIBILITY-SCALE)
     (TYPE ONT::RESPONSIBLE-VAL))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -147881,7 +150386,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -147890,13 +150395,32 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::STANDARD
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::REFSET
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
@@ -148065,7 +150589,8 @@
   (INHERIT
     ONT::NEGATIVE-BODY-CONDITION-SCALE)
   (OVERLAP
-    WN::|restlessness%1:07:01::|)
+    WN::|restlessness%1:07:01::|
+    WN::|restlessness%1:12:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -148747,8 +151272,7 @@
   (OVERLAP
     WN::|reveal%2:39:00::|
     WN::|reveal%2:32:00::|
-    WN::|cause_to_be_perceived%2:39:00::|
-    WN::|get_out%2:32:00::|)
+    WN::|cause_to_be_perceived%2:39:00::|)
   (SEM-FRAME
     (ONT::RESULT
      (CONCEPT
@@ -148994,12 +151518,6 @@
   (OVERLAP
     WN::|revive%2:29:01::|
     WN::|resuscitate%2:29:00::|
-    WN::|stimulate%2:29:00::|
-    WN::|arouse%2:29:00::|
-    WN::|brace%2:29:00::|
-    WN::|energize%2:29:00::|
-    WN::|energise%2:29:00::|
-    WN::|perk_up%2:29:01::|
     WN::|revive%2:29:02::|)
   (SEM-FEATS
     (INHERIT
@@ -149817,200 +152335,6 @@
     (TYPE ONT::ROBOT)))
 
 (CONCEPT
-  ONT::ROBUST-VAL
-  (INHERIT
-    ONT::ROBUSTNESS-VAL)
-  (OVERLAP
-    WN::|robust%3:00:00::|
-    WN::|hardy%5:00:00:robust:00|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::MEASURE-SCALE)
-    (TYPE ONT::DIMENSIONAL-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)))))
-
-(CONCEPT
-  ONT::ROBUSTNESS-VAL
-  (COMMENT "indicates relative extent on a robustness scale")
-  (INHERIT
-    ONT::DIMENSIONAL-PROPERTY-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::MEASURE-SCALE)
-    (TYPE ONT::DIMENSIONAL-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)))))
-
-(CONCEPT
   ONT::ROLL
   (INHERIT
     ONT::MOVE)
@@ -150576,7 +152900,6 @@
     WN::|rub%2:35:00::|
     WN::|rub%2:39:00::|
     WN::|stroke%2:35:00::|
-    WN::|smooth%2:40:00::|
     WN::|swab%2:35:01::|)
   (SEM-FEATS
     (INHERIT
@@ -150824,11 +153147,121 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::SAD-VAL
+  (COMMENT
+   "feeling sorrow and sadness from misfortune, disappointment or regret")
+  (INHERIT
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|sad%3:00:00::|
+    WN::|melancholy%5:00:00:sad:00|
+    WN::|sorrowful%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::SADNESS-SCALE)
+    (TYPE ONT::SAD-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (ORIGIN
+        (OR
+          F::NON-HUMAN-ANIMAL
+          F::HUMAN)))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::SADNESS-SCALE
   (INHERIT
-    ONT::NEGATIVE-EMOTION-SCALE)
+    ONT::EXPERIENCER-CONDITION-SCALE)
   (OVERLAP
-    WN::|sadness%1:12:00::|)
+    WN::|sadness%1:12:00::|
+    WN::|grief%1:12:00::|
+    WN::|sorrow%1:12:00::|
+    WN::|sorrow%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -151362,10 +153795,10 @@
     (INFORMATION -)
     (CONTAINER -)
     (MEASURE-FUNCTION -)
-    (SCALE -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (TYPE ONT::RELATION))
+    (SCALE ONT::SAME-SCALE)
+    (TYPE ONT::SAME))
   (SEM-FRAME
     (ONT::NOROLE
      (CONCEPT
@@ -151500,9 +153933,11 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::SATEDNESS-VAL
+  ONT::SATIATED-SCALE
   (INHERIT
-    ONT::BODY-CONDITION-PROPERTY-VAL)
+    ONT::POSITIVE-BODY-CONDITION-SCALE)
+  (OVERLAP
+    WN::|satiation%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -151511,98 +153946,31 @@
     (GRADABILITY -)
     (ORIENTATION -)
     (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
     (INTENTIONAL -)
     (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::EXTENT
      (CONCEPT
        T)
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
      OPTIONAL)
     (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
      (CONCEPT
        T)
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::HUMAN
-          F::NON-HUMAN-ANIMAL)))
-     OPTIONAL)))
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::SATIATED-VAL
   (INHERIT
-    ONT::SATEDNESS-VAL)
+    ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
     WN::|satiated%3:00:00::|)
   (SEM-FEATS
@@ -151616,11 +153984,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::SATIATED-SCALE)
+    (TYPE ONT::SATIATED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -153412,22 +155780,7 @@
 (CONCEPT
   ONT::SENDCOPY
   (INHERIT
-    ONT::TRANSFER)
-  (OVERLAP
-    WN::|send%2:32:00::|
-    WN::|post%2:32:02::|
-    WN::|mail%2:32:00::|
-    WN::|ship%2:38:00::|
-    WN::|send%2:38:00::|
-    WN::|transport%2:38:01::|
-    WN::|transmit%2:35:00::|
-    WN::|transfer%2:35:00::|
-    WN::|transport%2:35:01::|
-    WN::|channel%2:35:00::|
-    WN::|channelize%2:35:00::|
-    WN::|channelise%2:35:00::|
-    WN::|air%2:32:02::|
-    WN::|make_pass%2:38:00::|)
+    ONT::SEND)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -153436,15 +155789,21 @@
     (TIME-SPAN ANY-TIME-SPAN)
     (LOCATIVE -)
     (ORIGIN ANY-ORIGIN)
-    (CAUSE F::AGENTIVE)
-    (INTENTIONAL -)
-    (CONTAINER -)
-    (TANGIBLE +)
     (IOBJ F::RECIPIENT)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INTENTIONAL -)
+    (CAUSE F::AGENTIVE)
     (TRAJECTORY +)
     (ASPECT F::DYNAMIC)
     (TYPE ONT::SENDCOPY))
   (SEM-FRAME
+    (ONT::AFFECTED-RESULT
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -153454,21 +155813,15 @@
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
        (TANGIBLE +)))
-    (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
     ((ONT::DONOR ONT::AGENT)
      (SEM-FEATS
        (OR
          (CONCEPT
-           PHYS-OBJ)
+           ABSTR-OBJ)
          (CONCEPT
-           ABSTR-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +))
+           PHYS-OBJ))
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)
     (ONT::RESULT
      (SEM-FEATS
@@ -155532,7 +157885,6 @@
   (INHERIT
     ONT::AGENT-INTERACTION)
   (OVERLAP
-    WN::|share%2:40:02::|
     WN::|share%2:40:01::|
     WN::|share%2:40:00::|)
   (SEM-FRAME
@@ -155594,7 +157946,7 @@
   (INHERIT
     ONT::EVENT-OF-STATE)
   (OVERLAP
-    WN::|share%2:40:00::|)
+    WN::|share%2:40:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -157195,8 +159547,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (SCALE ONT::FOLLY-SCALE)
+    (TYPE ONT::FOOLISH-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -157439,10 +159791,10 @@
     (INFORMATION -)
     (CONTAINER -)
     (MEASURE-FUNCTION -)
-    (SCALE -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (TYPE ONT::RELATION))
+    (SCALE ONT::SIMILAR-SCALE)
+    (TYPE ONT::SIMILAR))
   (SEM-FRAME
     (ONT::NOROLE
      (CONCEPT
@@ -157595,6 +159947,22 @@
   ONT::SIMILARITY-VAL
   (INHERIT
     ONT::RELATION)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (SCALE ONT::SIMILARITY-SCALE)
+    (TYPE ONT::SIMILARITY-VAL))
   (SEM-FRAME
     (ONT::NOROLE
      (CONCEPT
@@ -157635,23 +160003,7 @@
        (INHERIT
          T)
        (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL))
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (TYPE ONT::RELATION)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::SIMULTANEOUS
@@ -158454,6 +160806,103 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::SKILLFUL-VAL
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (OVERLAP
+    WN::|skilled%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::SKILLFULNESS-SCALE)
+    (TYPE ONT::SKILLFUL-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
   ONT::SKILLFULNESS-SCALE
   (INHERIT
     ONT::BEHAVIORAL-SCALE)
@@ -159045,7 +161494,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -159053,8 +161501,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::INTELLIGENCE-SCALE)
+    (TYPE ONT::SMART))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -159836,7 +162285,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -159844,8 +162292,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::HONESTY-SCALE)
+    (TYPE ONT::NOT-HONEST-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -160030,6 +162479,41 @@
        (INHERIT
          ABSTR-OBJ)
        (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
+  ONT::SOCIABILITY-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|sociality%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
      OPTIONAL)
     (ONT::GROUND
      (CONCEPT
@@ -160250,8 +162734,7 @@
 
 (CONCEPT
   ONT::SOCIAL-INTERACTION-VAL
-  (COMMENT
-   "properties of human behavior having to do with social interaction, e.g. friendly, kind, mean.)")
+  (COMMENT "sociability")
   (INHERIT
     ONT::ANIMAL-PROPENSITY-VAL)
   (SEM-FRAME
@@ -160470,16 +162953,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (ORIENTATION F::POS)
+    (SCALE ONT::SOCIABILITY-SCALE)
+    (TYPE ONT::SOCIAL-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -161241,7 +163724,7 @@
 (CONCEPT
   ONT::SORRY
   (INHERIT
-    ONT::NEG-SOFT-EMOTIONAL-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|sorry%3:00:02::|)
   (SEM-FEATS
@@ -161255,11 +163738,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::REGRET-SCALE)
+    (TYPE ONT::SORRY))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -162633,6 +165116,7 @@
        (TYPE
         (OR
           ONT::LEVEL
+          ONT::SIMILARITY-VAL
           ONT::COST-RELATION
           ONT::EVENT-DURATION-MODIFIER
           ONT::DOMAIN-PROPERTY
@@ -162828,6 +165312,41 @@
     (TYPE ONT::LOCATION)))
 
 (CONCEPT
+  ONT::SPECIFIC-SCALE
+  (INHERIT
+    ONT::SPECIFICITY-SCALE)
+  (OVERLAP
+    WN::|specialness%1:07:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::SPECIFIC-VAL
   (INHERIT
     ONT::SPECIFICITY-VAL)
@@ -162926,6 +165445,39 @@
          T)
        (TYPE ONT::REFERENTIAL-SEM)
        (TANGIBLE +)))))
+
+(CONCEPT
+  ONT::SPECIFICITY-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::SPECIFICITY-VAL
@@ -166261,12 +168813,7 @@
     WN::|cease%2:42:00::|
     WN::|stop%2:42:00::|
     WN::|discontinue%2:42:00::|
-    WN::|cease%2:42:13::|
-    WN::|terminate%2:42:00::|
     WN::|terminate%2:30:01::|
-    WN::|finish%2:42:00::|
-    WN::|stop%2:42:13::|
-    WN::|end%2:42:00::|
     WN::|run_out%2:42:00::|
     WN::|expire%2:42:00::|
     WN::|blow_out%2:43:00::|
@@ -166687,7 +169234,7 @@
 (CONCEPT
   ONT::STRENGTH-SCALE
   (INHERIT
-    ONT::DIMENSIONAL-SCALE)
+    ONT::PHYSICAL-STRENGTH-SCALE)
   (OVERLAP
     WN::|strength%1:07:00::|
     WN::|vigor%1:07:00::|
@@ -166839,7 +169386,7 @@
 (CONCEPT
   ONT::STRESS-SCALE
   (INHERIT
-    ONT::PSYCHOLOGICAL-CONDITION-SCALE)
+    ONT::EXPERIENCER-CONDITION-SCALE)
   (OVERLAP
     WN::|stress%1:26:01::|)
   (SEM-FEATS
@@ -166981,6 +169528,103 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::STRONG-VAL
+  (INHERIT
+    ONT::PHYSICAL-STRENGTH-VAL)
+  (OVERLAP
+    WN::|strong%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::STRENGTH-SCALE)
+    (TYPE ONT::STRONG-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
   ONT::STRUCTURAL-COMPONENT
   (INHERIT
     ONT::GENERAL-STRUCTURE)
@@ -167030,7 +169674,6 @@
     WN::|entranceway%1:06:00::|
     WN::|entryway%1:06:00::|
     WN::|entry%1:06:00::|
-    WN::|window%1:06:00::|
     WN::|window%1:06:01::|
     WN::|window%1:06:05::|
     WN::|movable_barrier%1:06:00::|)
@@ -167193,7 +169836,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -167201,8 +169843,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::INTELLIGENCE-SCALE)
+    (TYPE ONT::STUPID))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -167527,8 +170170,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (SCALE ONT::INFERIORITY-SCALE)
+    (TYPE ONT::SUBSTANDARD-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -167816,11 +170459,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::SUCCESSFULNESS-SCALE)
+    (TYPE ONT::SUCCESS-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -167897,6 +170540,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::SUCCESSFUL-SCALE
+  (INHERIT
+    ONT::SUCCESSFULNESS-SCALE)
+  (OVERLAP
+    WN::|successfulness%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::SUCCESSFUL-VAL
   (INHERIT
     ONT::SUCCESS-VAL)
@@ -167916,8 +170594,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (SCALE ONT::SUCCESSFUL-SCALE)
+    (TYPE ONT::SUCCESSFUL-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -167992,6 +170670,39 @@
        (INHERIT
          T)
        (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
+  ONT::SUCCESSFULNESS-SCALE
+  (INHERIT
+    ONT::PROCESS-EVALUATION-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::SUCCESSOR
@@ -168632,8 +171343,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (SCALE ONT::SUPERIORITY-SCALE)
+    (TYPE ONT::SUPERIOR-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -168709,6 +171420,41 @@
          T)
        (TYPE ONT::REFERENTIAL-SEM)
        (TANGIBLE +)))))
+
+(CONCEPT
+  ONT::SUPERIORITY-SCALE
+  (INHERIT
+    ONT::QUALITY-LEVEL-SCALE)
+  (OVERLAP
+    WN::|superiority%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::SUPERNATURAL-BEING
@@ -169212,9 +171958,44 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::SURPRISE-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|surprise%1:12:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::SURPRISED
   (INHERIT
-    ONT::EMOTIONAL-VAL)
+    ONT::NEUTRAL-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|surprised%3:00:00::|)
   (SEM-FEATS
@@ -169228,11 +172009,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::SURPRISE-SCALE)
+    (TYPE ONT::SURPRISED))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -169584,7 +172365,7 @@
 (CONCEPT
   ONT::SWEATY-VAL
   (INHERIT
-    ONT::BODY-CONDITION-PROPERTY-VAL)
+    ONT::NEUTRAL-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
     WN::|clammy%5:00:00:wet:01|)
   (SEM-FEATS
@@ -170485,7 +173266,6 @@
     WN::|intake%1:04:00::|
     WN::|bilge%2:30:01::|
     WN::|bilge%2:30:00::|
-    WN::|suck%2:34:04::|
     WN::|suck%2:38:00::|
     WN::|suck%2:35:00::|)
   (SEM-FRAME
@@ -170968,6 +173748,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::TAME-SCALE
+  (INHERIT
+    ONT::TAMENESS-SCALE)
+  (OVERLAP
+    WN::|tameness%1:07:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::TAME-VAL
   (INHERIT
     ONT::TAMENESS-VAL)
@@ -170987,18 +173802,43 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (SCALE ONT::TAME-SCALE)
+    (TYPE ONT::TAME-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -171016,7 +173856,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -171025,54 +173865,57 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
+       (INHERIT
+         T)
        (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
+  ONT::TAMENESS-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::TAMENESS-VAL
   (INHERIT
-    ONT::SOCIAL-INTERACTION-VAL)
+    ONT::ANIMAL-PROPENSITY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -171084,21 +173927,46 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::TAMENESS-SCALE)
+    (TYPE ONT::TAMENESS-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -171116,7 +173984,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -171125,48 +173993,18 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
+       (INHERIT
+         T)
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
@@ -173473,107 +176311,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::THANKFULNESS-VAL
-  (INHERIT
-    ONT::EMOTIONAL-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (INTENTIONAL +)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (ORIGIN
-        (OR
-          F::NON-HUMAN-ANIMAL
-          F::HUMAN)))
-     OPTIONAL)))
-
-(CONCEPT
   ONT::THEORETICAL-VAL
   (INHERIT
     ONT::BASIS-OF-EVIDENCE-VAL)
@@ -174514,11 +177251,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::BODY-CONDITION-SCALE)
-    (TYPE ONT::BODY-CONDITION-PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::NOT-SATIATED-SCALE)
+    (TYPE ONT::NOT-SATIATED-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -174839,6 +177576,41 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::TIDY-SCALE
+  (INHERIT
+    ONT::ORDERLINESS-SCALE)
+  (OVERLAP
+    WN::|orderliness%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::TIDY-VAL
   (INHERIT
     ONT::ORDERLINESS-VAL)
@@ -174862,8 +177634,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (SCALE ONT::TIDY-SCALE)
+    (TYPE ONT::TIDY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -176083,6 +178855,41 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::TOLERABILITY-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|tolerance%1:07:03::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::TOLERABILITY-VAL
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL)
@@ -176097,11 +178904,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::TOLERABILITY-SCALE)
+    (TYPE ONT::TOLERABILITY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -176191,7 +178998,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -176199,8 +179005,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::TOLERABILITY-SCALE)
+    (TYPE ONT::TOLERABLE-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -178132,6 +180939,7 @@
        (TYPE
         (OR
           ONT::LEVEL
+          ONT::SIMILARITY-VAL
           ONT::COST-RELATION
           ONT::EVENT-DURATION-MODIFIER
           ONT::DOMAIN-PROPERTY
@@ -179589,106 +182397,6 @@
        (TANGIBLE +)))))
 
 (CONCEPT
-  ONT::UNADORNED
-  (INHERIT
-    ONT::ADORNMENT-VAL)
-  (OVERLAP
-    WN::|bare%5:00:00:unadorned:00|
-    WN::|plain%5:00:00:unadorned:00|
-    WN::|unadorned%3:00:00::|
-    WN::|bare%3:00:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (SCALE ONT::CONFIGURATION-PROPERTY-SCALE)
-    (TYPE ONT::CONFIGURATION-PROPERTY-VAL))
-  (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
-     OPTIONAL)
-    (ONT::NEUTRAL1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM)))))
-
-(CONCEPT
   ONT::UNATTACH
   (INHERIT
     ONT::SEPARATION)
@@ -180249,8 +182957,6 @@
   (OVERLAP
     WN::|go_down%2:42:00::|
     WN::|go_into%2:42:00::|
-    WN::|hesitate%2:42:00::|
-    WN::|hover%2:38:01::|
     WN::|photograph%2:42:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
@@ -180306,11 +183012,6 @@
   (INHERIT
     ONT::AWARENESS)
   (OVERLAP
-    WN::|know%2:31:02::|
-    WN::|know%2:31:03::|
-    WN::|know%2:31:01::|
-    WN::|cognize%2:31:00::|
-    WN::|cognise%2:31:00::|
     WN::|understand%2:31:00::|)
   (SEM-FEATS
     (INHERIT
@@ -180619,7 +183320,7 @@
 (CONCEPT
   ONT::UNEASY
   (INHERIT
-    ONT::NEG-SOFT-EMOTIONAL-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|anxious%5:00:00:troubled:00|
     WN::|uneasy%3:00:00::|
@@ -180636,11 +183337,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PSYCHOLOGICAL-CONDITION-SCALE)
-    (TYPE ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::NERVOUSNESS-SCALE)
+    (TYPE ONT::UNEASY))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -180743,8 +183444,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (SCALE ONT::NOT-FAMILIAR-SCALE)
+    (TYPE ONT::UNFAMILIAR-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -180919,6 +183620,55 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::UNFOCUSED-ACTIVITY
+  (COMMENT "engage in menial or unfocused activity; muck about, mess around")
+  (INHERIT
+    ONT::INTENTIONALLY-ACT)
+  (OVERLAP
+    WN::|potter%2:35:01::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (INFORMATION MENTAL-CONSTRUCT)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (ASPECT F::DYNAMIC)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INTENTIONAL -)
+    (CAUSE F::FORCE)
+    (TYPE ONT::EVENT-OF-ACTION))
+  (SEM-FRAME
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (INTENTIONAL +)))))
+
+(CONCEPT
   ONT::UNFORTUNATE
   (INHERIT
     ONT::PERSON)
@@ -180941,14 +183691,13 @@
 
 (CONCEPT
   ONT::UNHAPPY
+  (COMMENT "not happy, dissatisfied or displeased")
   (INHERIT
-    ONT::NEG-SOFT-EMOTIONAL-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|dysphoric%3:00:00::|
     WN::|unhappy%3:00:00::|
-    WN::|sad%3:00:00::|
     WN::|gloomy%5:00:00:dejected:00|
-    WN::|melancholy%5:00:00:sad:00|
     WN::|miserable%5:00:00:unhappy:00|
     WN::|dejected%3:00:00::|)
   (SEM-FEATS
@@ -180957,7 +183706,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -180965,7 +183713,8 @@
     (INTENTIONAL -)
     (INFORMATION -)
     (CONTAINER -)
-    (SCALE ONT::SADNESS-SCALE)
+    (ORIENTATION F::NEG)
+    (SCALE ONT::HAPPINESS-SCALE)
     (TYPE ONT::UNHAPPY))
   (SEM-FRAME
     (ONT::SCALE
@@ -181345,16 +184094,16 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (SCALE ONT::DOMAIN)
-    (INTENTIONAL -)
-    (INFORMATION -)
     (CONTAINER -)
-    (TYPE ONT::PROPERTY-VAL))
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (ORIENTATION F::NEG)
+    (SCALE ONT::MANAGEABILITY-SCALE)
+    (TYPE ONT::UNMANAGEABLE))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -181444,7 +184193,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -181452,8 +184200,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::NOTICEABILITY-SCALE)
+    (TYPE ONT::UNNOTICEABLE))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -182228,41 +184977,32 @@
     WN::|unwilling%3:00:00::|
     WN::|unwilling%5:00:00:involuntary:01|
     WN::|involuntary%3:00:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (ORIENTATION F::NEG)
+    (SCALE ONT::WILLINGNESS-SCALE)
+    (TYPE ONT::UNWILLING))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -182280,7 +185020,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -182289,13 +185029,38 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::REFSET
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
@@ -182305,23 +185070,7 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
-       (INTENTIONAL +))))
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL)))
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::UP
@@ -182888,7 +185637,6 @@
     WN::|use%1:04:00::|
     WN::|practical_application%1:04:00::|
     WN::|application%1:04:02::|
-    WN::|use%2:41:03::|
     WN::|use%2:41:04::|
     WN::|practice%2:41:01::|
     WN::|expend%2:34:00::|
@@ -183181,7 +185929,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -183189,8 +185936,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::UTILITY-SCALE)
+    (TYPE ONT::USEFUL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -183281,11 +186029,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::UTILITY-SCALE)
+    (TYPE ONT::USEFULNESS-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -183374,7 +186122,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -183382,8 +186129,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::PROCESS-EVALUATION-SCALE)
-    (TYPE ONT::PROCESS-EVALUATION-VAL))
+    (ORIENTATION F::NEG)
+    (SCALE ONT::UTILITY-SCALE)
+    (TYPE ONT::USELESS))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -183575,7 +186323,7 @@
   (INHERIT
     ONT::FUNCTION-OBJECT)
   (OVERLAP
-    WN::|utility%1:07:00::|)
+    WN::|role%1:07:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -183601,7 +186349,7 @@
   ONT::UTILITY-SCALE
   (COMMENT "useful function (e.g. grep - high utility, low usability)")
   (INHERIT
-    ONT::OBJECT-AFFORDANCES-SCALE)
+    ONT::PROCESS-EVALUATION-SCALE)
   (OVERLAP
     WN::|utility%1:07:00::|)
   (SEM-FEATS
@@ -183673,7 +186421,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -183681,8 +186428,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::VALIDITY-SCALE)
+    (TYPE ONT::VALID-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -183759,6 +186507,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::VALIDITY-SCALE
+  (INHERIT
+    ONT::INFORMATION-PROPERTY-SCALE)
+  (OVERLAP
+    WN::|validity%1:07:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::VALIDITY-VAL
   (INHERIT
     ONT::INFORMATION-PROPERTY-VAL)
@@ -183773,11 +186556,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::VALIDITY-SCALE)
+    (TYPE ONT::VALIDITY-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -184092,11 +186875,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::REPRODUCIBILITY-SCALE)
+    (TYPE ONT::VERIFIABILITY-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -184178,14 +186961,14 @@
     ONT::VERIFIABILITY-VAL)
   (OVERLAP
     WN::|verifiable%5:00:00:objective:00|
-    WN::|provable%5:00:00:obvious:00|)
+    WN::|provable%5:00:00:obvious:00|
+    WN::|reproducible%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -184193,8 +186976,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::INFORMATION-PROPERTY-SCALE)
-    (TYPE ONT::INFORMATION-PROPERTY-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::REPRODUCIBILITY-SCALE)
+    (TYPE ONT::VERIFIABLE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -185889,84 +188673,12 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::WAIT
-  (COMMENT "events involving waiting about, loitering, etc")
-  (INHERIT
-    ONT::LOCATED-MOVE-STATE)
-  (OVERLAP
-    WN::|wait%2:42:00::|
-    WN::|await%2:31:00::|
-    WN::|idle%2:41:00::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (KR-TYPE ANY-KR-TYPE)
-    (INFORMATION MENTAL-CONSTRUCT)
-    (LOCATIVE -)
-    (ORIGIN ANY-ORIGIN)
-    (IOBJ -)
-    (TRAJECTORY -)
-    (TANGIBLE +)
-    (CONTAINER -)
-    (INTENTIONAL -)
-    (TIME-SPAN F::EXTENDED)
-    (CAUSE F::FORCE)
-    (ASPECT F::UNBOUNDED)
-    (TYPE ONT::WAIT))
-  (SEM-FRAME
-    (ONT::LOCATION
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (OBJECT-FUNCTION F::PLACE))
-     OPTIONAL)
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TANGIBLE +))
-     OPTIONAL)
-    (ONT::RESULT
-     (CONCEPT
-       ABSTR-OBJ)
-     OPTIONAL)
-    (ONT::EFFECT
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::FORMAL
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::PHYS-OBJECT))
-     OPTIONAL)
-    (ONT::EXTENT
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (SCALE ONT::DURATION-SCALE))
-     OPTIONAL)
-    (ONT::AGENT
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (MOBILITY F::MOVABLE))
-     OPTIONAL)))
-
-(CONCEPT
   ONT::WAIT-WATCH
   (COMMENT "action of being attentive so as to notice something; stay vigilant")
   (INHERIT
     ONT::PAY-ATTENTION)
   (OVERLAP
     WN::|wait%2:42:00::|
-    WN::|expect%2:31:01::|
     WN::|watch%2:39:01::|)
   (SEM-FEATS
     (INHERIT
@@ -186583,9 +189295,9 @@
     ONT::INTENSITY-VAL)
   (OVERLAP
     WN::|shallow%3:00:02::|
-    WN::|faint%5:00:00:weak:00|
-    WN::|weak%3:00:00::|
-    WN::|dull%3:00:04::|)
+    WN::|dull%3:00:04::|
+    WN::|weak%5:00:00:perceptible:00|
+    WN::|weak%5:00:00:diluted:00|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -186602,6 +189314,103 @@
     (CONTAINER -)
     (SCALE ONT::INTENSITY-SCALE)
     (TYPE ONT::INTENSITY-VAL))
+  (SEM-FRAME
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
+  ONT::WEAK-IN-STRENGTH-VAL
+  (INHERIT
+    ONT::PHYSICAL-STRENGTH-VAL)
+  (OVERLAP
+    WN::|weak%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (SCALE ONT::WEAKNESS-SCALE)
+    (TYPE ONT::WEAK-IN-STRENGTH-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -186787,7 +189596,7 @@
 (CONCEPT
   ONT::WEAKNESS-SCALE
   (INHERIT
-    ONT::FEEBLENESS-SCALE)
+    ONT::PHYSICAL-STRENGTH-SCALE)
   (OVERLAP
     WN::|weakness%1:07:00::|)
   (SEM-FEATS
@@ -186807,17 +189616,25 @@
     (TANGIBLE +)
     (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
   (SEM-FRAME
-    (ONT::EXTENT
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FIGURE
+    (ONT::EXTENT
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::WEALTHINESS-VAL
@@ -188259,11 +191076,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (SCALE ONT::PHYSICAL-PROPERTY-SCALE)
     (INTENTIONAL -)
     (INFORMATION -)
     (CONTAINER -)
-    (TYPE ONT::PART-WHOLE-VAL))
+    (SCALE ONT::COMPLETE-SCALE)
+    (TYPE ONT::WHOLE-COMPLETE))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -188541,6 +191358,41 @@
     (TYPE ONT::FOOD)))
 
 (CONCEPT
+  ONT::WILD-SCALE
+  (INHERIT
+    ONT::TAMENESS-SCALE)
+  (OVERLAP
+    WN::|wildness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::WILD-VAL
   (INHERIT
     ONT::TAMENESS-VAL)
@@ -188560,18 +191412,43 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (SCALE ONT::WILD-SCALE)
+    (TYPE ONT::WILD-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -188589,7 +191466,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -188598,48 +191475,18 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
+       (INHERIT
+         T)
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
@@ -188672,41 +191519,32 @@
     ONT::WILLINGNESS-VAL)
   (OVERLAP
     WN::|willing%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (INTENSITY -)
+    (MEASURE-FUNCTION -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (CONTAINER -)
+    (INFORMATION -)
+    (INTENTIONAL -)
+    (ORIENTATION F::POS)
+    (SCALE ONT::WILLINGNESS-SCALE)
+    (TYPE ONT::WILLING))
   (SEM-FRAME
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+    (ONT::FORMAL
+     (CONCEPT
+       SITUATION)
      OPTIONAL)
-    (ONT::NOROLE
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::STANDARD
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -188724,7 +191562,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -188733,13 +191571,38 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::STANDARD
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::FORMAL
+    (ONT::REFSET
      (CONCEPT
-       SITUATION)
+       T)
+     OPTIONAL)
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
@@ -188749,7 +191612,14 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
-       (INTENTIONAL +))))
+       (INTENTIONAL +)))))
+
+(CONCEPT
+  ONT::WILLINGNESS-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|willingness%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -188758,19 +191628,31 @@
     (GRADABILITY -)
     (ORIENTATION -)
     (INTENSITY -)
-    (MEASURE-FUNCTION -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL)))
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::WILLINGNESS-VAL
   (INHERIT
-    ONT::SOCIAL-INTERACTION-VAL)
+    ONT::ANIMAL-PROPENSITY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -188782,21 +191664,46 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::WILLINGNESS-SCALE)
+    (TYPE ONT::WILLINGNESS-VAL))
   (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
+    (ONT::SCALE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::DOMAIN))
      OPTIONAL)
-    (ONT::NEUTRAL1
+    (ONT::NOROLE
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::NEUTRAL
+    (ONT::COMPAR
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::NUMBER))
+     OPTIONAL)
+    (ONT::REFSET
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::STANDARD
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         T)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::REASON
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -188814,7 +191721,7 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::REASON
+    (ONT::NEUTRAL
      (OR
        (CONCEPT
          PHYS-OBJ)
@@ -188823,48 +191730,18 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         T)
-       (TYPE ONT::REFERENTIAL-SEM))
-     OPTIONAL)
-    (ONT::STANDARD
+    (ONT::NEUTRAL1
      (CONCEPT
        T)
      OPTIONAL)
-    (ONT::REFSET
+    (ONT::FORMAL
      (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::COMPAR
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::NUMBER))
-     OPTIONAL)
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::SCALE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::DOMAIN))
+       SITUATION)
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
+       (INHERIT
+         T)
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
@@ -188932,8 +191809,7 @@
   (INHERIT
     ONT::MANUFACTURED-OBJECT)
   (OVERLAP
-    WN::|window%1:06:00::|
-    WN::|window%1:06:01::|)
+    WN::|window%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -189124,6 +192000,41 @@
     (TYPE ONT::COMPUTER-PART)))
 
 (CONCEPT
+  ONT::WISDOM-SCALE
+  (INHERIT
+    ONT::WISENESS-SCALE)
+  (OVERLAP
+    WN::|wiseness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::WISE-VAL
   (INHERIT
     ONT::WISENESS-VAL)
@@ -189143,8 +192054,8 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (SCALE ONT::WISDOM-SCALE)
+    (TYPE ONT::WISE-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -189221,6 +192132,39 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::WISENESS-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::WISENESS-VAL
   (INHERIT
     ONT::ANIMAL-PROPENSITY-VAL)
@@ -189235,11 +192179,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::BEHAVIORAL-SCALE)
-    (TYPE ONT::ANIMAL-PROPENSITY-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::WISENESS-SCALE)
+    (TYPE ONT::WISENESS-VAL))
   (SEM-FRAME
     (ONT::SCALE
      (SEM-FEATS
@@ -189610,6 +192554,41 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::WORRY-CONCERN-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|worry%1:09:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::WORSEN-EXPERIENCE
   (INHERIT
     ONT::AFFECT-EXPERIENCER)
@@ -189654,6 +192633,41 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::WORTHINESS-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|worthiness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE +)
+    (TYPE ONT::TANGIBLE-ABSTRACT-OBJECT))
+  (SEM-FRAME
+    (ONT::EXTENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::WORTHINESS-VAL
   (COMMENT "evaluation attributes dealing with the value or worth of something")
   (INHERIT
@@ -189669,11 +192683,11 @@
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
     (TANGIBLE -)
-    (CONTAINER -)
-    (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (INFORMATION -)
+    (CONTAINER -)
+    (SCALE ONT::WORTHINESS-SCALE)
+    (TYPE ONT::WORTHINESS-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -189765,7 +192779,6 @@
     (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
     (KR-TYPE ANY-KR-TYPE)
     (GRADABILITY -)
-    (ORIENTATION -)
     (INTENSITY -)
     (MEASURE-FUNCTION -)
     (ORIGIN ANY-ORIGIN)
@@ -189773,8 +192786,9 @@
     (CONTAINER -)
     (INFORMATION -)
     (INTENTIONAL -)
-    (SCALE ONT::EVALUATION-SCALE)
-    (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
+    (ORIENTATION F::POS)
+    (SCALE ONT::WORTHINESS-SCALE)
+    (TYPE ONT::WORTHY-VAL))
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -189891,8 +192905,7 @@
   (INHERIT
     ONT::CREATE)
   (OVERLAP
-    WN::|create_verbally%2:36:00::|
-    WN::|write%2:32:00::|)
+    WN::|create_verbally%2:36:00::|)
   (SEM-FRAME
     (ONT::AGENT
      (SEM-FEATS
