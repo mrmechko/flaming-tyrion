@@ -3724,7 +3724,8 @@
     WN::|become%2:30:00::|
     WN::|go%2:30:04::|
     WN::|get%2:30:00::|
-    WN::|open_up%2:30:01::|)
+    WN::|open_up%2:30:01::|
+    WN::|turn%2:30:04::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -9590,6 +9591,8 @@
   ONT::DEGREE-MODIFIER-HIGH
   (INHERIT
     ONT::DEGREE-MODIFIER)
+  (OVERLAP
+    WN::|very%4:02:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -9601,6 +9604,8 @@
   ONT::DEGREE-MODIFIER-HIGH-EVENT
   (INHERIT
     ONT::DEGREE-MODIFIER)
+  (OVERLAP
+    WN::|so%4:02:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -9611,7 +9616,18 @@
 (CONCEPT
   ONT::DEGREE-MODIFIER-LOW
   (INHERIT
-    ONT::DEGREE-MODIFIER))
+    ONT::DEGREE-MODIFIER)
+  (OVERLAP
+    WN::|almost%4:02:00::|
+    WN::|barely%4:02:00::|
+    WN::|barely%4:02:02::|
+    WN::|barely%4:02:03::|
+    WN::|comparatively%4:02:00::|
+    WN::|relatively%4:02:00::|
+    WN::|slightly%4:02:01::|
+    WN::|slightly%4:02:02::|
+    WN::|somewhat%4:02:01::|
+    WN::|slightly%4:02:00::|))
 
 (CONCEPT
   ONT::DEGREE-MODIFIER-MED
@@ -9621,7 +9637,16 @@
 (CONCEPT
   ONT::DEGREE-MODIFIER-VERYHIGH
   (INHERIT
-    ONT::DEGREE-MODIFIER))
+    ONT::DEGREE-MODIFIER)
+  (OVERLAP
+    WN::|absolutely%4:02:00::|
+    WN::|absolutely%4:02:01::|
+    WN::|completely%4:02:04::|
+    WN::|completely%4:02:03::|
+    WN::|extremely%4:02:00::|
+    WN::|extremely%4:02:02::|
+    WN::|fully%4:02:02::|
+    WN::|truly%4:02:04::|))
 
 (CONCEPT
   ONT::DEGREE-MODIFIER-VERYLOW
@@ -11037,7 +11062,11 @@
 (CONCEPT
   ONT::DRIFT
   (INHERIT
-    ONT::MOVE))
+    ONT::MOVE)
+  (OVERLAP
+    WN::|drift%2:38:02::|
+    WN::|drift%2:38:04::|
+    WN::|drift%2:38:01::|))
 
 (CONCEPT
   ONT::DRILLING-TOOL
@@ -13617,7 +13646,10 @@
 (CONCEPT
   ONT::FALL
   (INHERIT
-    ONT::MOVE-DOWNWARD))
+    ONT::MOVE-DOWNWARD)
+  (OVERLAP
+    WN::|fall%2:38:03::|
+    WN::|fall%2:38:00::|))
 
 (CONCEPT
   ONT::FALL-ASLEEP
