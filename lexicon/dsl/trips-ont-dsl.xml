@@ -3893,6 +3893,9 @@
   <relation label="inherit">
    ont::baked-goods
   </relation>
+  <relation label="overlap">
+   wn::|bun%1:13:00::|
+  </relation>
  </concept>
  <concept name="ont::bake">
   <comment>
@@ -3909,6 +3912,9 @@
  <concept name="ont::baked-goods">
   <relation label="inherit">
    ont::prepared
+  </relation>
+  <relation label="overlap">
+   wn::|baked_goods%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::bakery">
@@ -4126,6 +4132,7 @@
    wn::|nascency%1:11:00::|
    wn::|nativity%1:11:00::|
    wn::|birth%1:11:00::|
+   wn::|bear%2:29:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -4275,7 +4282,7 @@
    <role-restr-map roles="ont::formal" optional="optional">
     <sem-feats>
      <relation label="inherit">
-      situation
+      abstr-obj
      </relation>
      <feat name="type">ont::property-val</feat>
     </sem-feats>
@@ -4363,6 +4370,9 @@
  <concept name="ont::beef">
   <relation label="inherit">
    ont::meat
+  </relation>
+  <relation label="overlap">
+   wn::|beef%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::before">
@@ -5010,7 +5020,7 @@
     phys-obj
    </relation>
    <feat name="container">+</feat>
-   <feat name="object-function">body-part</feat>
+   <feat name="object-function">comestible</feat>
    <feat name="form">object</feat>
    <feat name="intentional">-</feat>
    <feat name="type">ont::body-part</feat>
@@ -5021,8 +5031,19 @@
      <relation label="inherit">
       phys-obj
      </relation>
-     <feat name="form">object</feat>
-     <feat name="origin">living</feat>
+     <feat name="form">
+     <or>
+      object
+      substance
+     </or>
+     </feat>
+     <feat name="type">
+     <or>
+      ont::animal
+      ont::meat
+     </or>
+     </feat>
+     <feat name="origin">natural</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -5304,6 +5325,9 @@
  <concept name="ont::bread">
   <relation label="inherit">
    ont::baked-goods
+  </relation>
+  <relation label="overlap">
+   wn::|bread%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::break-object">
@@ -5592,6 +5616,10 @@
  <concept name="ont::cake-pie">
   <relation label="inherit">
    ont::baked-goods
+  </relation>
+  <relation label="overlap">
+   wn::|cake%1:13:00::|
+   wn::|pie%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::calc-add">
@@ -6438,6 +6466,9 @@
  <concept name="ont::cereals">
   <relation label="inherit">
    ont::prepared
+  </relation>
+  <relation label="overlap">
+   wn::|cereal%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::ceremony">
@@ -9666,6 +9697,9 @@
   <relation label="inherit">
    ont::baked-goods
   </relation>
+  <relation label="overlap">
+   wn::|cookie%1:13:00::|
+  </relation>
  </concept>
  <concept name="ont::cooking">
   <relation label="inherit">
@@ -10159,6 +10193,9 @@
  <concept name="ont::crackers">
   <relation label="inherit">
    ont::baked-goods
+  </relation>
+  <relation label="overlap">
+   wn::|cracker%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::crater">
@@ -11074,7 +11111,6 @@
    wn::|slightly%4:02:01::|
    wn::|slightly%4:02:02::|
    wn::|somewhat%4:02:01::|
-   wn::|slightly%4:02:00::|
   </relation>
  </concept>
  <concept name="ont::degree-modifier-med">
@@ -12885,6 +12921,9 @@
   <relation label="inherit">
    ont::poultry
   </relation>
+  <relation label="overlap">
+   wn::|duck%1:13:00::|
+  </relation>
  </concept>
  <concept name="ont::due-to">
   <relation label="inherit">
@@ -13102,6 +13141,7 @@
   <relation label="overlap">
    wn::|eat%2:34:00::|
    wn::|eat%2:34:02::|
+   wn::|taste%2:34:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected">
@@ -13109,6 +13149,12 @@
      <relation label="inherit">
       phys-obj
      </relation>
+     <feat name="type">
+     <or>
+      ont::food
+      ont::organism
+     </or>
+     </feat>
      <feat name="form">
      <or>
       solid
@@ -15930,6 +15976,9 @@
   <relation label="inherit">
    ont::ingredients
   </relation>
+  <relation label="overlap">
+   wn::|vegetable_oil%1:13:01::|
+  </relation>
  </concept>
  <concept name="ont::fattiness-val">
   <comment>
@@ -16992,6 +17041,9 @@
   <relation label="inherit">
    ont::seafood
   </relation>
+  <relation label="overlap">
+   wn::|freshwater_fish%1:13:00::|
+  </relation>
  </concept>
  <concept name="ont::friend">
   <relation label="inherit">
@@ -17781,6 +17833,9 @@
  <concept name="ont::goose">
   <relation label="inherit">
    ont::poultry
+  </relation>
+  <relation label="overlap">
+   wn::|goose%1:05:00::|
   </relation>
  </concept>
  <concept name="ont::gout">
@@ -21390,6 +21445,10 @@
   <relation label="inherit">
    ont::meat
   </relation>
+  <relation label="overlap">
+   wn::|lamb%1:13:00::|
+   wn::|mutton%1:13:00::|
+  </relation>
  </concept>
  <concept name="ont::land">
   <relation label="inherit">
@@ -23646,6 +23705,9 @@
  <concept name="ont::meat">
   <relation label="inherit">
    ont::food
+  </relation>
+  <relation label="overlap">
+   wn::|meat%1:13:01::|
   </relation>
  </concept>
  <concept name="ont::meat-other">
@@ -28131,6 +28193,9 @@
   <relation label="inherit">
    ont::poultry
   </relation>
+  <relation label="overlap">
+   wn::|ostrich%1:05:00::|
+  </relation>
  </concept>
  <concept name="ont::other">
   <relation label="inherit">
@@ -28512,7 +28577,10 @@
  </concept>
  <concept name="ont::pasta">
   <relation label="inherit">
-   ont::baked-goods
+   ont::food
+  </relation>
+  <relation label="overlap">
+   wn::|pasta%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::path">
@@ -28920,6 +28988,9 @@
   <relation label="inherit">
    ont::poultry
   </relation>
+  <relation label="overlap">
+   wn::|pheasant%1:05:00::|
+  </relation>
  </concept>
  <concept name="ont::phobia">
   <relation label="inherit">
@@ -29216,6 +29287,9 @@
  <concept name="ont::pigeon">
   <relation label="inherit">
    ont::poultry
+  </relation>
+  <relation label="overlap">
+   wn::|pigeon%1:05:00::|
   </relation>
  </concept>
  <concept name="ont::pink">
@@ -29787,6 +29861,9 @@
   <relation label="inherit">
    ont::meat
   </relation>
+  <relation label="overlap">
+   wn::|pork%1:13:00::|
+  </relation>
  </concept>
  <concept name="ont::portability-scale">
   <relation label="inherit">
@@ -30241,6 +30318,9 @@
  <concept name="ont::poultry">
   <relation label="inherit">
    ont::meat
+  </relation>
+  <relation label="overlap">
+   wn::|bird%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::poverty">
@@ -34577,6 +34657,9 @@
   <relation label="inherit">
    ont::seafood
   </relation>
+  <relation label="overlap">
+   wn::|saltwater_fish%1:13:00::|
+  </relation>
  </concept>
  <concept name="ont::salty-val">
   <relation label="inherit">
@@ -35005,6 +35088,9 @@
  <concept name="ont::seafood">
   <relation label="inherit">
    ont::food
+  </relation>
+  <relation label="overlap">
+   wn::|seafood%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::season">
@@ -38449,6 +38535,9 @@
   <relation label="inherit">
    ont::ingredients
   </relation>
+  <relation label="overlap">
+   wn::|sugar%1:13:00::|
+  </relation>
  </concept>
  <concept name="ont::suggest">
   <relation label="inherit">
@@ -38791,6 +38880,9 @@
   <relation label="inherit">
    ont::prepared
   </relation>
+  <relation label="overlap">
+   wn::|sweet%1:13:00::|
+  </relation>
  </concept>
  <concept name="ont::swell">
   <relation label="inherit">
@@ -38971,6 +39063,7 @@
    wn::|bilge%2:30:00::|
    wn::|suck%2:38:00::|
    wn::|suck%2:35:00::|
+   wn::|take_up%2:34:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected">
@@ -40900,6 +40993,9 @@
   <relation label="inherit">
    ont::poultry
   </relation>
+  <relation label="overlap">
+   wn::|turkey%1:05:00::|
+  </relation>
  </concept>
  <concept name="ont::turn-off">
   <relation label="inherit">
@@ -42179,6 +42275,9 @@
   <relation label="inherit">
    ont::vitamins-minerals
   </relation>
+  <relation label="overlap">
+   wn::|vitamin%1:13:00::|
+  </relation>
  </concept>
  <concept name="ont::vitamins-minerals">
   <relation label="inherit">
@@ -42904,6 +43003,9 @@
  <concept name="ont::wild-game">
   <relation label="inherit">
    ont::meat
+  </relation>
+  <relation label="overlap">
+   wn::|game%1:05:00::|
   </relation>
  </concept>
  <concept name="ont::wild-scale">

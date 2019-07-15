@@ -3402,7 +3402,9 @@
 (CONCEPT
   ONT::BAGELS-BISCUITS
   (INHERIT
-    ONT::BAKED-GOODS))
+    ONT::BAKED-GOODS)
+  (OVERLAP
+    WN::|bun%1:13:00::|))
 
 (CONCEPT
   ONT::BAKE
@@ -3416,7 +3418,9 @@
 (CONCEPT
   ONT::BAKED-GOODS
   (INHERIT
-    ONT::PREPARED))
+    ONT::PREPARED)
+  (OVERLAP
+    WN::|baked_goods%1:13:00::|))
 
 (CONCEPT
   ONT::BAKERY
@@ -3609,7 +3613,8 @@
     WN::|nascence%1:11:00::|
     WN::|nascency%1:11:00::|
     WN::|nativity%1:11:00::|
-    WN::|birth%1:11:00::|)
+    WN::|birth%1:11:00::|
+    WN::|bear%2:29:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -3736,7 +3741,7 @@
     (ONT::FORMAL
      (SEM-FEATS
        (INHERIT
-         SITUATION)
+         ABSTR-OBJ)
        (TYPE ONT::PROPERTY-VAL))
      OPTIONAL)
     (ONT::AFFECTED
@@ -3814,7 +3819,9 @@
 (CONCEPT
   ONT::BEEF
   (INHERIT
-    ONT::MEAT))
+    ONT::MEAT)
+  (OVERLAP
+    WN::|beef%1:13:00::|))
 
 (CONCEPT
   ONT::BEFORE
@@ -4343,7 +4350,7 @@
     (INHERIT
       PHYS-OBJ)
     (CONTAINER +)
-    (OBJECT-FUNCTION BODY-PART)
+    (OBJECT-FUNCTION COMESTIBLE)
     (FORM OBJECT)
     (INTENTIONAL -)
     (TYPE ONT::BODY-PART))
@@ -4352,8 +4359,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM OBJECT)
-       (ORIGIN LIVING))
+       (FORM
+        (OR
+          OBJECT
+          SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -4581,7 +4595,9 @@
 (CONCEPT
   ONT::BREAD
   (INHERIT
-    ONT::BAKED-GOODS))
+    ONT::BAKED-GOODS)
+  (OVERLAP
+    WN::|bread%1:13:00::|))
 
 (CONCEPT
   ONT::BREAK-OBJECT
@@ -4831,7 +4847,10 @@
 (CONCEPT
   ONT::CAKE-PIE
   (INHERIT
-    ONT::BAKED-GOODS))
+    ONT::BAKED-GOODS)
+  (OVERLAP
+    WN::|cake%1:13:00::|
+    WN::|pie%1:13:00::|))
 
 (CONCEPT
   ONT::CALC-ADD
@@ -5591,7 +5610,9 @@
 (CONCEPT
   ONT::CEREALS
   (INHERIT
-    ONT::PREPARED))
+    ONT::PREPARED)
+  (OVERLAP
+    WN::|cereal%1:13:00::|))
 
 (CONCEPT
   ONT::CEREMONY
@@ -8431,7 +8452,9 @@
 (CONCEPT
   ONT::COOKIES
   (INHERIT
-    ONT::BAKED-GOODS))
+    ONT::BAKED-GOODS)
+  (OVERLAP
+    WN::|cookie%1:13:00::|))
 
 (CONCEPT
   ONT::COOKING
@@ -8847,7 +8870,9 @@
 (CONCEPT
   ONT::CRACKERS
   (INHERIT
-    ONT::BAKED-GOODS))
+    ONT::BAKED-GOODS)
+  (OVERLAP
+    WN::|cracker%1:13:00::|))
 
 (CONCEPT
   ONT::CRATER
@@ -9626,8 +9651,7 @@
     WN::|relatively%4:02:00::|
     WN::|slightly%4:02:01::|
     WN::|slightly%4:02:02::|
-    WN::|somewhat%4:02:01::|
-    WN::|slightly%4:02:00::|))
+    WN::|somewhat%4:02:01::|))
 
 (CONCEPT
   ONT::DEGREE-MODIFIER-MED
@@ -11204,7 +11228,9 @@
 (CONCEPT
   ONT::DUCK
   (INHERIT
-    ONT::POULTRY))
+    ONT::POULTRY)
+  (OVERLAP
+    WN::|duck%1:13:00::|))
 
 (CONCEPT
   ONT::DUE-TO
@@ -11393,12 +11419,17 @@
     ONT::CONSUME)
   (OVERLAP
     WN::|eat%2:34:00::|
-    WN::|eat%2:34:02::|)
+    WN::|eat%2:34:02::|
+    WN::|taste%2:34:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (TYPE
+        (OR
+          ONT::FOOD
+          ONT::ORGANISM))
        (FORM
         (OR
           SOLID
@@ -13854,7 +13885,9 @@
 (CONCEPT
   ONT::FATS-OILS
   (INHERIT
-    ONT::INGREDIENTS))
+    ONT::INGREDIENTS)
+  (OVERLAP
+    WN::|vegetable_oil%1:13:01::|))
 
 (CONCEPT
   ONT::FATTINESS-VAL
@@ -14771,7 +14804,9 @@
 (CONCEPT
   ONT::FRESHWATER-FISH
   (INHERIT
-    ONT::SEAFOOD))
+    ONT::SEAFOOD)
+  (OVERLAP
+    WN::|freshwater_fish%1:13:00::|))
 
 (CONCEPT
   ONT::FRIEND
@@ -15440,7 +15475,9 @@
 (CONCEPT
   ONT::GOOSE
   (INHERIT
-    ONT::POULTRY))
+    ONT::POULTRY)
+  (OVERLAP
+    WN::|goose%1:05:00::|))
 
 (CONCEPT
   ONT::GOUT
@@ -18537,7 +18574,10 @@
 (CONCEPT
   ONT::LAMB
   (INHERIT
-    ONT::MEAT))
+    ONT::MEAT)
+  (OVERLAP
+    WN::|lamb%1:13:00::|
+    WN::|mutton%1:13:00::|))
 
 (CONCEPT
   ONT::LAND
@@ -20466,7 +20506,9 @@
 (CONCEPT
   ONT::MEAT
   (INHERIT
-    ONT::FOOD))
+    ONT::FOOD)
+  (OVERLAP
+    WN::|meat%1:13:01::|))
 
 (CONCEPT
   ONT::MEAT-OTHER
@@ -24326,7 +24368,9 @@
 (CONCEPT
   ONT::OSTRICH
   (INHERIT
-    ONT::POULTRY))
+    ONT::POULTRY)
+  (OVERLAP
+    WN::|ostrich%1:05:00::|))
 
 (CONCEPT
   ONT::OTHER
@@ -24658,7 +24702,9 @@
 (CONCEPT
   ONT::PASTA
   (INHERIT
-    ONT::BAKED-GOODS))
+    ONT::FOOD)
+  (OVERLAP
+    WN::|pasta%1:13:00::|))
 
 (CONCEPT
   ONT::PATH
@@ -25014,7 +25060,9 @@
 (CONCEPT
   ONT::PHEASANT
   (INHERIT
-    ONT::POULTRY))
+    ONT::POULTRY)
+  (OVERLAP
+    WN::|pheasant%1:05:00::|))
 
 (CONCEPT
   ONT::PHOBIA
@@ -25271,7 +25319,9 @@
 (CONCEPT
   ONT::PIGEON
   (INHERIT
-    ONT::POULTRY))
+    ONT::POULTRY)
+  (OVERLAP
+    WN::|pigeon%1:05:00::|))
 
 (CONCEPT
   ONT::PINK
@@ -25751,7 +25801,9 @@
 (CONCEPT
   ONT::PORK
   (INHERIT
-    ONT::MEAT))
+    ONT::MEAT)
+  (OVERLAP
+    WN::|pork%1:13:00::|))
 
 (CONCEPT
   ONT::PORTABILITY-SCALE
@@ -26153,7 +26205,9 @@
 (CONCEPT
   ONT::POULTRY
   (INHERIT
-    ONT::MEAT))
+    ONT::MEAT)
+  (OVERLAP
+    WN::|bird%1:13:00::|))
 
 (CONCEPT
   ONT::POVERTY
@@ -29950,7 +30004,9 @@
 (CONCEPT
   ONT::SALTWATER-FISH
   (INHERIT
-    ONT::SEAFOOD))
+    ONT::SEAFOOD)
+  (OVERLAP
+    WN::|saltwater_fish%1:13:00::|))
 
 (CONCEPT
   ONT::SALTY-VAL
@@ -30352,7 +30408,9 @@
 (CONCEPT
   ONT::SEAFOOD
   (INHERIT
-    ONT::FOOD))
+    ONT::FOOD)
+  (OVERLAP
+    WN::|seafood%1:13:00::|))
 
 (CONCEPT
   ONT::SEASON
@@ -33361,7 +33419,9 @@
 (CONCEPT
   ONT::SUGAR
   (INHERIT
-    ONT::INGREDIENTS))
+    ONT::INGREDIENTS)
+  (OVERLAP
+    WN::|sugar%1:13:00::|))
 
 (CONCEPT
   ONT::SUGGEST
@@ -33658,7 +33718,9 @@
 (CONCEPT
   ONT::SWEETS
   (INHERIT
-    ONT::PREPARED))
+    ONT::PREPARED)
+  (OVERLAP
+    WN::|sweet%1:13:00::|))
 
 (CONCEPT
   ONT::SWELL
@@ -33817,7 +33879,8 @@
     WN::|bilge%2:30:01::|
     WN::|bilge%2:30:00::|
     WN::|suck%2:38:00::|
-    WN::|suck%2:35:00::|)
+    WN::|suck%2:35:00::|
+    WN::|take_up%2:34:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (CONCEPT
@@ -35493,7 +35556,9 @@
 (CONCEPT
   ONT::TURKEY
   (INHERIT
-    ONT::POULTRY))
+    ONT::POULTRY)
+  (OVERLAP
+    WN::|turkey%1:05:00::|))
 
 (CONCEPT
   ONT::TURN-OFF
@@ -36586,7 +36651,9 @@
 (CONCEPT
   ONT::VITAMINS
   (INHERIT
-    ONT::VITAMINS-MINERALS))
+    ONT::VITAMINS-MINERALS)
+  (OVERLAP
+    WN::|vitamin%1:13:00::|))
 
 (CONCEPT
   ONT::VITAMINS-MINERALS
@@ -37202,7 +37269,9 @@
 (CONCEPT
   ONT::WILD-GAME
   (INHERIT
-    ONT::MEAT))
+    ONT::MEAT)
+  (OVERLAP
+    WN::|game%1:05:00::|))
 
 (CONCEPT
   ONT::WILD-SCALE

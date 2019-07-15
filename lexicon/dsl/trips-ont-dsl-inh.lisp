@@ -18076,6 +18076,8 @@
   ONT::BAGELS-BISCUITS
   (INHERIT
     ONT::BAKED-GOODS)
+  (OVERLAP
+    WN::|bun%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -18163,6 +18165,8 @@
   ONT::BAKED-GOODS
   (INHERIT
     ONT::PREPARED)
+  (OVERLAP
+    WN::|baked_goods%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -19143,7 +19147,8 @@
     WN::|nascence%1:11:00::|
     WN::|nascency%1:11:00::|
     WN::|nativity%1:11:00::|
-    WN::|birth%1:11:00::|)
+    WN::|birth%1:11:00::|
+    WN::|bear%2:29:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -19678,7 +19683,7 @@
     (ONT::FORMAL
      (SEM-FEATS
        (INHERIT
-         SITUATION)
+         ABSTR-OBJ)
        (TYPE ONT::PROPERTY-VAL))
      OPTIONAL)
     (ONT::AFFECTED
@@ -19939,6 +19944,8 @@
   ONT::BEEF
   (INHERIT
     ONT::MEAT)
+  (OVERLAP
+    WN::|beef%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -22482,7 +22489,7 @@
        F::SPATIAL-REGION))
     (TANGIBLE +)
     (CONTAINER +)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (FORM F::OBJECT)
     (INTENTIONAL -)
     (TYPE ONT::BODY-PART))
@@ -22491,8 +22498,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -24011,6 +24025,8 @@
   ONT::BREAD
   (INHERIT
     ONT::BAKED-GOODS)
+  (OVERLAP
+    WN::|bread%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -25312,6 +25328,9 @@
   ONT::CAKE-PIE
   (INHERIT
     ONT::BAKED-GOODS)
+  (OVERLAP
+    WN::|cake%1:13:00::|
+    WN::|pie%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -28382,7 +28401,7 @@
     (TRAJECTORY -)
     (INFORMATION -)
     (FORM F::OBJECT)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (CONTAINER +)
     (TANGIBLE +)
     (SPATIAL-ABSTRACTION
@@ -28397,8 +28416,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -28416,7 +28442,7 @@
     (TRAJECTORY -)
     (INFORMATION -)
     (FORM F::OBJECT)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (CONTAINER +)
     (TANGIBLE +)
     (SPATIAL-ABSTRACTION
@@ -28431,8 +28457,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -28472,7 +28505,7 @@
     (TRAJECTORY -)
     (INFORMATION -)
     (FORM F::OBJECT)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (CONTAINER +)
     (TANGIBLE +)
     (SPATIAL-ABSTRACTION
@@ -28487,8 +28520,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -28661,6 +28701,8 @@
   ONT::CEREALS
   (INHERIT
     ONT::PREPARED)
+  (OVERLAP
+    WN::|cereal%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -42868,6 +42910,8 @@
   ONT::COOKIES
   (INHERIT
     ONT::BAKED-GOODS)
+  (OVERLAP
+    WN::|cookie%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -44855,6 +44899,8 @@
   ONT::CRACKERS
   (INHERIT
     ONT::BAKED-GOODS)
+  (OVERLAP
+    WN::|cracker%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -45987,7 +46033,7 @@
     (TRAJECTORY -)
     (INFORMATION -)
     (FORM F::OBJECT)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (CONTAINER +)
     (TANGIBLE +)
     (SPATIAL-ABSTRACTION
@@ -46002,8 +46048,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -46021,7 +46074,7 @@
     (TRAJECTORY -)
     (INFORMATION -)
     (FORM F::OBJECT)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (CONTAINER +)
     (TANGIBLE +)
     (SPATIAL-ABSTRACTION
@@ -46036,8 +46089,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -48426,8 +48486,7 @@
     WN::|relatively%4:02:00::|
     WN::|slightly%4:02:01::|
     WN::|slightly%4:02:02::|
-    WN::|somewhat%4:02:01::|
-    WN::|slightly%4:02:00::|)
+    WN::|somewhat%4:02:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -56368,6 +56427,8 @@
   ONT::DUCK
   (INHERIT
     ONT::POULTRY)
+  (OVERLAP
+    WN::|duck%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -57436,7 +57497,8 @@
     ONT::CONSUME)
   (OVERLAP
     WN::|eat%2:34:00::|
-    WN::|eat%2:34:02::|)
+    WN::|eat%2:34:02::|
+    WN::|taste%2:34:00::|)
   (SEM-FRAME
     (ONT::AGENT
      (SEM-FEATS
@@ -57455,8 +57517,11 @@
          PHYS-OBJ)
        (MOBILITY F::MOVABLE)
        (OBJECT-FUNCTION F::COMESTIBLE)
-       (TYPE ONT::REFERENTIAL-SEM)
        (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::ORGANISM
+          ONT::FOOD))
        (FORM
         (OR
           F::SOLID
@@ -67539,7 +67604,7 @@
     (TRAJECTORY -)
     (INFORMATION -)
     (FORM F::OBJECT)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (CONTAINER +)
     (TANGIBLE +)
     (SPATIAL-ABSTRACTION
@@ -67554,8 +67619,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -69376,6 +69448,8 @@
   ONT::FATS-OILS
   (INHERIT
     ONT::INGREDIENTS)
+  (OVERLAP
+    WN::|vegetable_oil%1:13:01::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -74552,6 +74626,8 @@
   ONT::FRESHWATER-FISH
   (INHERIT
     ONT::SEAFOOD)
+  (OVERLAP
+    WN::|freshwater_fish%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -76108,7 +76184,7 @@
     (TRAJECTORY -)
     (INFORMATION -)
     (FORM F::OBJECT)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (CONTAINER +)
     (TANGIBLE +)
     (SPATIAL-ABSTRACTION
@@ -76123,8 +76199,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -77328,6 +77411,8 @@
   ONT::GOOSE
   (INHERIT
     ONT::POULTRY)
+  (OVERLAP
+    WN::|goose%1:05:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -80544,7 +80629,7 @@
        F::SPATIAL-REGION))
     (TANGIBLE +)
     (CONTAINER +)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (FORM F::OBJECT)
     (INTENTIONAL -)
     (TYPE ONT::HEAD))
@@ -80553,8 +80638,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -90663,7 +90755,7 @@
     (TRAJECTORY -)
     (INFORMATION -)
     (FORM F::OBJECT)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (CONTAINER +)
     (TANGIBLE +)
     (SPATIAL-ABSTRACTION
@@ -90678,8 +90770,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -93239,6 +93338,9 @@
   ONT::LAMB
   (INHERIT
     ONT::MEAT)
+  (OVERLAP
+    WN::|lamb%1:13:00::|
+    WN::|mutton%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -102633,6 +102735,8 @@
   ONT::MEAT
   (INHERIT
     ONT::FOOD)
+  (OVERLAP
+    WN::|meat%1:13:01::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -121154,7 +121258,7 @@
     (TRAJECTORY -)
     (INFORMATION -)
     (FORM F::OBJECT)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (CONTAINER +)
     (TANGIBLE +)
     (SPATIAL-ABSTRACTION
@@ -121169,8 +121273,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -121190,7 +121301,7 @@
     (TRAJECTORY -)
     (INFORMATION -)
     (FORM F::OBJECT)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (CONTAINER +)
     (TANGIBLE +)
     (SPATIAL-ABSTRACTION
@@ -121205,8 +121316,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -126288,6 +126406,8 @@
   ONT::OSTRICH
   (INHERIT
     ONT::POULTRY)
+  (OVERLAP
+    WN::|ostrich%1:05:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -128038,7 +128158,9 @@
 (CONCEPT
   ONT::PASTA
   (INHERIT
-    ONT::BAKED-GOODS)
+    ONT::FOOD)
+  (OVERLAP
+    WN::|pasta%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -129848,6 +129970,8 @@
   ONT::PHEASANT
   (INHERIT
     ONT::POULTRY)
+  (OVERLAP
+    WN::|pheasant%1:05:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -130907,6 +131031,8 @@
   ONT::PIGEON
   (INHERIT
     ONT::POULTRY)
+  (OVERLAP
+    WN::|pigeon%1:05:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -131721,7 +131847,7 @@
     (TRAJECTORY -)
     (INFORMATION -)
     (FORM F::OBJECT)
-    (OBJECT-FUNCTION F::BODY-PART)
+    (OBJECT-FUNCTION F::COMESTIBLE)
     (CONTAINER +)
     (TANGIBLE +)
     (SPATIAL-ABSTRACTION
@@ -131736,8 +131862,15 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (FORM F::OBJECT)
-       (ORIGIN F::LIVING))
+       (FORM
+        (OR
+          F::OBJECT
+          F::SUBSTANCE))
+       (TYPE
+        (OR
+          ONT::ANIMAL
+          ONT::MEAT))
+       (ORIGIN F::NATURAL))
      OPTIONAL)))
 
 (CONCEPT
@@ -133013,6 +133146,8 @@
   ONT::PORK
   (INHERIT
     ONT::MEAT)
+  (OVERLAP
+    WN::|pork%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -134909,6 +135044,8 @@
   ONT::POULTRY
   (INHERIT
     ONT::MEAT)
+  (OVERLAP
+    WN::|bird%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -153687,6 +153824,8 @@
   ONT::SALTWATER-FISH
   (INHERIT
     ONT::SEAFOOD)
+  (OVERLAP
+    WN::|saltwater_fish%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -155036,6 +155175,8 @@
   ONT::SEAFOOD
   (INHERIT
     ONT::FOOD)
+  (OVERLAP
+    WN::|seafood%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -170918,6 +171059,8 @@
   ONT::SUGAR
   (INHERIT
     ONT::INGREDIENTS)
+  (OVERLAP
+    WN::|sugar%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -172642,6 +172785,8 @@
   ONT::SWEETS
   (INHERIT
     ONT::PREPARED)
+  (OVERLAP
+    WN::|sweet%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -173304,7 +173449,8 @@
     WN::|bilge%2:30:01::|
     WN::|bilge%2:30:00::|
     WN::|suck%2:38:00::|
-    WN::|suck%2:35:00::|)
+    WN::|suck%2:35:00::|
+    WN::|take_up%2:34:00::|)
   (SEM-FRAME
     (ONT::RESULT
      (CONCEPT
@@ -181686,6 +181832,8 @@
   ONT::TURKEY
   (INHERIT
     ONT::POULTRY)
+  (OVERLAP
+    WN::|turkey%1:05:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -188336,6 +188484,8 @@
   ONT::VITAMINS
   (INHERIT
     ONT::VITAMINS-MINERALS)
+  (OVERLAP
+    WN::|vitamin%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -191374,6 +191524,8 @@
   ONT::WILD-GAME
   (INHERIT
     ONT::MEAT)
+  (OVERLAP
+    WN::|game%1:05:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
