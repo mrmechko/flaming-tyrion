@@ -13887,7 +13887,7 @@
   (INHERIT
     ONT::INGREDIENTS)
   (OVERLAP
-    WN::|vegetable_oil%1:13:01::|))
+    WN::|vegetable_oil%1:13:00::|))
 
 (CONCEPT
   ONT::FATTINESS-VAL
@@ -23516,7 +23516,7 @@
   (INHERIT
     ONT::FOOD)
   (OVERLAP
-    WN::|vitamin%1:27:00::|))
+    WN::|dietary_supplement%1:13:00::|))
 
 (CONCEPT
   ONT::NUTRITIONAL-VAL
@@ -36653,7 +36653,7 @@
   (INHERIT
     ONT::VITAMINS-MINERALS)
   (OVERLAP
-    WN::|vitamin%1:13:00::|))
+    WN::|vitamin%1:27:00::|))
 
 (CONCEPT
   ONT::VITAMINS-MINERALS
