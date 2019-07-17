@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::from">
  <comment>
-  &quot;This is the initial state of a change - not an initial locaition, which is FROM-LOC&quot;
+  &quot;This is the initial state of a change - not an initial location, which is FROM-LOC&quot;
  </comment>
  <relation label="inherit">
   ont::source-reln
@@ -168,20 +168,23 @@
  </sem-feats>
  <concept name="abstr-obj" />
  <concept name="ont::source-as-loc">
+ <comment>
+  &quot;a relation that indicates where an object was in the past: the person from Italy&quot;
+ </comment>
  <relation label="inherit">
   ont::from
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
    <sem-feats>
     <relation label="inherit">
      phys-obj
     </relation>
     <feat name="mobility">movable</feat>
    </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="phys-obj" />
   </role-restr-map>
  </sem-frame>
  </concept>

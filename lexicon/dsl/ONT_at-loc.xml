@@ -168,6 +168,25 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <concept name="ont::at-loc-rel">
+ <comment>
+  &quot;A subclass of AT-LOC for relative clause relations, e.g., a place where it never rains&quot;
+ </comment>
+ <relation label="inherit">
+  ont::at-loc
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="type">ont::location</feat>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sense>
  <morph>
   <pos pos="adv" />
@@ -370,6 +389,8 @@
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
+ <example text="Where did you put the cake?">
+ </example>
  <relation label="inherit">
   ont::at-loc
   ont::ppword-question-adv-pred-templ
@@ -379,38 +400,6 @@
    <feat name="information">information-content</feat>
   </sem-feats>
  </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="where" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <relation label="inherit">
-  ont::at-loc
- </relation>
- <syntax>
-  <template-call template="ont::ppword-adv-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="common-lisp:t" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(or
-                                              deepsemlex::s
-                                              deepsemlex::np
-                                              deepsemlex::vp)" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-   </or>
-   </feat>
-   <feat name="sort">pp-word</feat>
-   <feat name="wh">-</feat>
-  </syn-feats>
- </syntax>
  </sense>
  <sense>
  <morph>

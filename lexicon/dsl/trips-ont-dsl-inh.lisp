@@ -7401,9 +7401,9 @@
     (KR-TYPE ANY-KR-TYPE)
     (GROUP -)
     (INTENTIONAL -)
-    (TRAJECTORY -)
     (INFORMATION -)
     (OBJECT-FUNCTION F::VEHICLE)
+    (TRAJECTORY +)
     (CONTAINER
      (OR
        +
@@ -14183,6 +14183,50 @@
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)
        (SCALE ONT::TIME-MEASURE-SCALE)
+       (TANGIBLE +))
+     OPTIONAL))
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (TYPE ONT::ABSTRACT-OBJECT)))
+
+(CONCEPT
+  ONT::AT-LOC-REL
+  (COMMENT
+   "A subclass of AT-LOC for relative clause relations, e.g., a place where it never rains")
+  (INHERIT
+    ONT::AT-LOC)
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (SCALE ONT::TIME-MEASURE-SCALE)
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::LOCATION)
        (TANGIBLE +))
      OPTIONAL))
   (SEM-FEATS
@@ -50139,10 +50183,12 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE ONT::VEHICLE)
-       (CONTAINER +)
-       (MOBILITY F::SELF-MOVING)
-       (OBJECT-FUNCTION F::VEHICLE))
+       (TYPE
+        (OR
+          ONT::PHYS-REPRESENTATION
+          ONT::VEHICLE
+          ONT::ROUTE))
+       (TRAJECTORY +))
      OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
@@ -71342,9 +71388,9 @@
     (KR-TYPE ANY-KR-TYPE)
     (GROUP -)
     (INTENTIONAL -)
-    (TRAJECTORY -)
     (INFORMATION -)
     (OBJECT-FUNCTION F::VEHICLE)
+    (TRAJECTORY +)
     (CONTAINER
      (OR
        +
@@ -74785,7 +74831,7 @@
 (CONCEPT
   ONT::FROM
   (COMMENT
-   "This is the initial state of a change - not an initial locaition, which is FROM-LOC")
+   "This is the initial state of a change - not an initial location, which is FROM-LOC")
   (INHERIT
     ONT::SOURCE-RELN)
   (SEM-FEATS
@@ -74853,11 +74899,12 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (MOBILITY F::MOVABLE))
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -85304,6 +85351,48 @@
     (TYPE ONT::ABSTRACT-OBJECT)))
 
 (CONCEPT
+  ONT::IN-LOC-REL
+  (COMMENT "FIGURE is part of the GROUND")
+  (INHERIT
+    ONT::IN-LOC)
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (SCALE ONT::TIME-MEASURE-SCALE)
+       (CONTAINER +)
+       (INTENTIONAL -))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::MENTAL-CONSTRUCTION)
+       (TANGIBLE +))
+     OPTIONAL))
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (TYPE ONT::ABSTRACT-OBJECT)))
+
+(CONCEPT
   ONT::IN-PAST
   (INHERIT
     ONT::EVENT-TIME-WRT-NOW)
@@ -93434,9 +93523,9 @@
     (KR-TYPE ANY-KR-TYPE)
     (GROUP -)
     (INTENTIONAL -)
-    (TRAJECTORY -)
     (INFORMATION -)
     (OBJECT-FUNCTION F::VEHICLE)
+    (TRAJECTORY +)
     (CONTAINER
      (OR
        +
@@ -164555,6 +164644,8 @@
 
 (CONCEPT
   ONT::SOURCE-AS-LOC
+  (COMMENT
+   "a relation that indicates where an object was in the past: the person from Italy")
   (INHERIT
     ONT::FROM)
   (SEM-FRAME
@@ -164562,14 +164653,14 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (MOBILITY F::MOVABLE))
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)
     (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (MOBILITY F::MOVABLE))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -178971,8 +179062,7 @@
 
 (CONCEPT
   ONT::TO-LOC
-  (COMMENT
-   "the generic goal role: might be a physical object (as possessor) or a resulting state")
+  (COMMENT "the ending location of an object undergoing motion")
   (INHERIT
     ONT::GOAL-RELN)
   (SEM-FRAME
@@ -178998,7 +179088,8 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (MOBILITY F::MOVABLE))
      OPTIONAL))
   (SEM-FEATS
     (INHERIT
@@ -179852,9 +179943,9 @@
     (KR-TYPE ANY-KR-TYPE)
     (GROUP -)
     (INTENTIONAL -)
-    (TRAJECTORY -)
     (INFORMATION -)
     (OBJECT-FUNCTION F::VEHICLE)
+    (TRAJECTORY +)
     (CONTAINER
      (OR
        +
@@ -181214,9 +181305,9 @@
     (KR-TYPE ANY-KR-TYPE)
     (GROUP -)
     (INTENTIONAL -)
-    (TRAJECTORY -)
     (INFORMATION -)
     (OBJECT-FUNCTION F::VEHICLE)
+    (TRAJECTORY +)
     (CONTAINER
      (OR
        +
@@ -186974,7 +187065,6 @@
        SPATIAL-POINT
        SPATIAL-REGION))
     (INTENTIONAL -)
-    (TRAJECTORY -)
     (INFORMATION -)
     (ORIGIN F::ARTIFACT)
     (TANGIBLE +)
@@ -186982,6 +187072,7 @@
      (OR
        +
        -))
+    (TRAJECTORY +)
     (MOBILITY F::SELF-MOVING)
     (OBJECT-FUNCTION F::VEHICLE)
     (TYPE ONT::VEHICLE)))
@@ -187033,7 +187124,6 @@
        SPATIAL-POINT
        SPATIAL-REGION))
     (INTENTIONAL -)
-    (TRAJECTORY -)
     (INFORMATION -)
     (ORIGIN F::ARTIFACT)
     (TANGIBLE +)
@@ -187041,6 +187131,7 @@
      (OR
        +
        -))
+    (TRAJECTORY +)
     (MOBILITY F::SELF-MOVING)
     (OBJECT-FUNCTION F::VEHICLE)
     (TYPE ONT::VEHICLE)))

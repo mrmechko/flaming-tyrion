@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::to-loc">
  <comment>
-  &quot;the generic goal role: might be a physical object (as possessor) or a resulting state&quot;
+  &quot;the ending location of an object undergoing motion&quot;
  </comment>
  <relation label="inherit">
   ont::goal-reln
@@ -20,10 +20,13 @@
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="mobility">movable</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -148,10 +151,13 @@
   </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
+  <sem-feats>
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="mobility">movable</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::goal-reln">
@@ -248,10 +254,8 @@
   <pos pos="adv" />
   <word first-word="to" />
  </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
  <example text="go to the building">
+  <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
   ont::to-loc

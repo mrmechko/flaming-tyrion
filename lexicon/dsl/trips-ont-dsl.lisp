@@ -2671,6 +2671,21 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::AT-LOC-REL
+  (COMMENT
+   "A subclass of AT-LOC for relative clause relations, e.g., a place where it never rains")
+  (INHERIT
+    ONT::AT-LOC)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::LOCATION)
+       (TANGIBLE +))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::AT-RISK-VAL
   (INHERIT
     ONT::LIKELY-VAL))
@@ -9954,9 +9969,7 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (CONTAINER +)
-       (MOBILITY SELF-MOVING)
-       (OBJECT-FUNCTION VEHICLE))
+       (TRAJECTORY +))
      OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
@@ -14830,7 +14843,7 @@
 (CONCEPT
   ONT::FROM
   (COMMENT
-   "This is the initial state of a change - not an initial locaition, which is FROM-LOC")
+   "This is the initial state of a change - not an initial location, which is FROM-LOC")
   (INHERIT
     ONT::SOURCE-RELN))
 
@@ -14850,13 +14863,13 @@
        (SPATIAL-ABSTRACTION ?!SA))
      OPTIONAL)
     (ONT::FIGURE
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
-       (MOBILITY MOVABLE))
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
      OPTIONAL)))
 
 (CONCEPT
@@ -17047,6 +17060,20 @@
            ABSTR-OBJ))
        (CONTAINER +)
        (INTENTIONAL -))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::IN-LOC-REL
+  (COMMENT "FIGURE is part of the GROUND")
+  (INHERIT
+    ONT::IN-LOC)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::MENTAL-CONSTRUCTION)
+       (TANGIBLE +))
      OPTIONAL)))
 
 (CONCEPT
@@ -32197,18 +32224,20 @@
 
 (CONCEPT
   ONT::SOURCE-AS-LOC
+  (COMMENT
+   "a relation that indicates where an object was in the past: the person from Italy")
   (INHERIT
     ONT::FROM)
   (SEM-FRAME
     (ONT::GROUND
+     (CONCEPT
+       PHYS-OBJ)
+     OPTIONAL)
+    (ONT::FIGURE
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
        (MOBILITY MOVABLE))
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       PHYS-OBJ)
      OPTIONAL)))
 
 (CONCEPT
@@ -34980,8 +35009,7 @@
 
 (CONCEPT
   ONT::TO-LOC
-  (COMMENT
-   "the generic goal role: might be a physical object (as possessor) or a resulting state")
+  (COMMENT "the ending location of an object undergoing motion")
   (INHERIT
     ONT::GOAL-RELN)
   (SEM-FRAME
@@ -34995,11 +35023,13 @@
        (SPATIAL-ABSTRACTION ?!SA))
      OPTIONAL)
     (ONT::FIGURE
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (MOBILITY MOVABLE))
      OPTIONAL)))
 
 (CONCEPT
@@ -36416,6 +36446,7 @@
      (OR
        +
        -))
+    (TRAJECTORY +)
     (MOBILITY SELF-MOVING)
     (OBJECT-FUNCTION VEHICLE)
     (TYPE ONT::VEHICLE)))
