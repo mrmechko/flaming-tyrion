@@ -14203,50 +14203,6 @@
     (TYPE ONT::ABSTRACT-OBJECT)))
 
 (CONCEPT
-  ONT::AT-LOC-REL
-  (COMMENT
-   "A subclass of AT-LOC for relative clause relations, e.g., a place where it never rains")
-  (INHERIT
-    ONT::AT-LOC)
-  (SEM-FRAME
-    (ONT::GROUND
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (SCALE ONT::TIME-MEASURE-SCALE)
-       (TANGIBLE +))
-     OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::LOCATION)
-       (TANGIBLE +))
-     OPTIONAL))
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
-    (KR-TYPE ANY-KR-TYPE)
-    (GRADABILITY -)
-    (ORIENTATION -)
-    (INTENSITY -)
-    (INTENTIONAL -)
-    (INFORMATION -)
-    (CONTAINER -)
-    (MEASURE-FUNCTION -)
-    (SCALE -)
-    (ORIGIN ANY-ORIGIN)
-    (TANGIBLE -)
-    (TYPE ONT::ABSTRACT-OBJECT)))
-
-(CONCEPT
   ONT::AT-RISK-VAL
   (INHERIT
     ONT::LIKELY-VAL)
@@ -98239,6 +98195,54 @@
        (CONCEPT
          PHYS-OBJ))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::LOC-WHERE-REL
+  (COMMENT
+   "A subclass of AT-LOC for relative clause relations, e.g., a place where it never rains")
+  (INHERIT
+    ONT::POSITION-AS-POINT-RELN)
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ))
+       (SCALE ONT::TIME-MEASURE-SCALE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE
+        (OR
+          ONT::LOCATION
+          ONT::MENTAL-CONSTRUCTION))
+       (TANGIBLE +))
+     OPTIONAL))
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (KR-TYPE ANY-KR-TYPE)
+    (GRADABILITY -)
+    (ORIENTATION -)
+    (INTENSITY -)
+    (INTENTIONAL -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (MEASURE-FUNCTION -)
+    (SCALE -)
+    (ORIGIN ANY-ORIGIN)
+    (TANGIBLE -)
+    (TYPE ONT::ABSTRACT-OBJECT)))
 
 (CONCEPT
   ONT::LOC-WRT-GROUND-AS-SPATIAL-OBJ

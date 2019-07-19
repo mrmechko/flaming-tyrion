@@ -148,6 +148,31 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::loc-where-rel">
+ <comment>
+  &quot;A subclass of AT-LOC for relative clause relations, e.g., a place where it never rains&quot;
+ </comment>
+ <relation label="inherit">
+  ont::position-as-point-reln
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="type">
+    <or>
+     ont::location
+     ont::mental-construction
+    </or>
+    </feat>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::pos-distance">
  <relation label="inherit">
   ont::position-as-point-reln

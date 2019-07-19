@@ -2,20 +2,26 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::at-loc-rel">
+ <concept name="ont::loc-where-rel">
  <comment>
   &quot;A subclass of AT-LOC for relative clause relations, e.g., a place where it never rains&quot;
  </comment>
  <relation label="inherit">
-  ont::at-loc
+  ont::position-as-point-reln
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
    <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="type">ont::location</feat>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="type">
+    <or>
+     ont::location
+     ont::mental-construction
+    </or>
+    </feat>
     <feat name="tangible">+</feat>
    </sem-feats>
   </role-restr-map>
@@ -80,19 +86,16 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
+ <role-restr-map roles="ont::figure" optional="optional">
   <sem-feats>
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
-    <concept name="situation" />
    </or>
-   <feat name="scale">
+   <feat name="type">
    <or>
-    ont::time-measure-scale
-    ont::rate-scale
-    ont::money-scale
-    ont::number-scale
+    ont::location
+    ont::mental-construction
    </or>
    </feat>
    <feat name="tangible">+</feat>
@@ -106,45 +109,6 @@
  <relation label="inherit">
   ont::position-reln
  </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="type">ont::location</feat>
-   <feat name="tangible">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::at-loc">
- <comment>
-  &quot;prototypical locating of a FIGURE wrt a point-like GROUND&quot;
- </comment>
- <relation label="inherit">
-  ont::position-as-point-reln
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
-    <feat name="scale">
-    <or>
-     ont::time-measure-scale
-     ont::rate-scale
-     ont::money-scale
-     ont::number-scale
-    </or>
-    </feat>
-    <feat name="tangible">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::abstract-object">
  <comment>
@@ -206,10 +170,10 @@
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <example text="The place where it never rains">
+ <example text="The model where it never rains; The place where it never rains">
  </example>
  <relation label="inherit">
-  ont::at-loc-rel
+  ont::loc-where-rel
  </relation>
  <syntax>
   <template-call template="ont::ppword-adv-templ" />

@@ -2671,21 +2671,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::AT-LOC-REL
-  (COMMENT
-   "A subclass of AT-LOC for relative clause relations, e.g., a place where it never rains")
-  (INHERIT
-    ONT::AT-LOC)
-  (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::LOCATION)
-       (TANGIBLE +))
-     OPTIONAL)))
-
-(CONCEPT
   ONT::AT-RISK-VAL
   (INHERIT
     ONT::LIKELY-VAL))
@@ -19531,6 +19516,27 @@
     WN::|spot%1:07:00::|
     WN::|spot%1:07:01::|
     WN::|spot%1:10:02::|))
+
+(CONCEPT
+  ONT::LOC-WHERE-REL
+  (COMMENT
+   "A subclass of AT-LOC for relative clause relations, e.g., a place where it never rains")
+  (INHERIT
+    ONT::POSITION-AS-POINT-RELN)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE
+        (OR
+          ONT::LOCATION
+          ONT::MENTAL-CONSTRUCTION))
+       (TANGIBLE +))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::LOC-WRT-GROUND-AS-SPATIAL-OBJ
