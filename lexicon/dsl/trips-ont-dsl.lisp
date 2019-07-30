@@ -5441,6 +5441,7 @@
   (INHERIT
     ONT::CAUSE-EFFECT)
   (OVERLAP
+    WN::|bring_on%2:39:00::|
     WN::|produce%2:36:03::|
     WN::|yield%2:40:00::|
     WN::|yield%2:40:02::|)
