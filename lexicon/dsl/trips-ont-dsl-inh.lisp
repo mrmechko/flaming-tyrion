@@ -1,5 +1,28 @@
 
 
+
+inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
+                                                        :TYPE F::PHYS-OBJ
+                                                        :FEATURES NIL
+                                                        :DEFAULTS NIL) and #S(FEATURE-LIST
+                                                                              :TYPE (?
+                                                                                     ONT::AT461
+                                                                                     F::ABSTR-OBJ
+                                                                                     F::SITUATION)
+                                                                              :FEATURES ((F::INTENTIONAL
+                                                                                          -))
+                                                                              :DEFAULTS NIL)
+inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
+                                                        :TYPE F::PHYS-OBJ
+                                                        :FEATURES NIL
+                                                        :DEFAULTS NIL) and #S(FEATURE-LIST
+                                                                              :TYPE (?
+                                                                                     ONT::AT461
+                                                                                     F::ABSTR-OBJ
+                                                                                     F::SITUATION)
+                                                                              :FEATURES ((F::INTENTIONAL
+                                                                                          -))
+                                                                              :DEFAULTS NIL)
 (PROVENANCE
   (NAME TRIPS))
 
@@ -11283,6 +11306,12 @@
     (SCALE ONT::AREA-SCALE)
     (TYPE ONT::AREA-SCALE))
   (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
     (ONT::EXTENT
      (SEM-FEATS
        (INHERIT
@@ -11291,11 +11320,6 @@
        (MEASURE-FUNCTION F::VALUE)
        (SCALE ONT::LINEAR-EXTENT-SCALE))
      OPTIONAL)
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (SEM-FEATS
        (INHERIT
@@ -12806,9 +12830,15 @@
          (CONCEPT
            PHYS-OBJ)
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ))
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AFFECTED1
      (SEM-FEATS
@@ -14181,8 +14211,12 @@
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
        (SCALE ONT::TIME-MEASURE-SCALE)
+       (TYPE
+        (OR
+          ONT::PHYS-OBJECT
+          ONT::TANGIBLE-ABSTRACT-OBJECT
+          ONT::EVENT-TYPE))
        (TANGIBLE +))
      OPTIONAL))
   (SEM-FEATS
@@ -19009,7 +19043,6 @@
     WN::|sit%2:35:00::|
     WN::|sit_down%2:35:03::|
     WN::|settle%2:30:00::|
-    WN::|fall%2:35:00::|
     WN::|hang%2:35:03::|
     WN::|hang%2:35:05::|
     WN::|hang%2:35:06::|
@@ -28161,7 +28194,8 @@
     ONT::MOTION)
   (OVERLAP
     WN::|drive%2:35:01::|
-    WN::|drive%2:41:02::|)
+    WN::|drive%2:41:02::|
+    WN::|move%2:38:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -36278,11 +36312,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))
     (ONT::AFFECTED-RESULT
      (OR
        (CONCEPT
@@ -36373,11 +36413,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))))
 
 (CONCEPT
   ONT::COMMERCE-VAL
@@ -41540,7 +41586,7 @@
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
-  ONT::CONTRA
+  ONT::CONTRA-FORCE
   (INHERIT
     ONT::SITUATION-MODIFIER)
   (SEM-FRAME
@@ -41550,8 +41596,13 @@
      OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
-       (INHERIT
-         SITUATION)
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION))
        (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::FIGURE
      (SEM-FEATS
@@ -48272,11 +48323,13 @@
 (CONCEPT
   ONT::DEFINED-BY-SEQUENCE-RELATIONSHIP
   (INHERIT
-    ONT::PHYS-OBJECT)
+    ONT::OBJECT-DEFINED-BY-RELATIONSHIP)
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       PHYS-OBJ)))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::PHYS-OBJECT))))
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -49109,11 +49162,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))
     (ONT::AFFECTED-RESULT
      (OR
        (CONCEPT
@@ -49725,11 +49784,6 @@
     (SCALE ONT::DEPTH-SCALE)
     (TYPE ONT::DEPTH-SCALE))
   (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
        T)
@@ -49741,6 +49795,12 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (MEASURE-FUNCTION F::VALUE)
        (SCALE ONT::LINEAR-EXTENT-SCALE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
 
 (CONCEPT
@@ -49998,7 +50058,8 @@
   (INHERIT
     ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
-    WN::|desirous%3:00:00::|)
+    WN::|desirous%3:00:00::|
+    WN::|avariciously%4:02:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -54879,11 +54940,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))))
 
 (CONCEPT
   ONT::DIZZY-VAL
@@ -55325,11 +55392,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))))
 
 (CONCEPT
   ONT::DOSE
@@ -56193,11 +56266,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))))
 
 (CONCEPT
   ONT::DRY
@@ -70337,11 +70416,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))))
 
 (CONCEPT
   ONT::FEELING
@@ -72813,7 +72898,10 @@
     WN::|flux%2:38:00::|
     WN::|flow%2:38:02::|
     WN::|pour%2:38:03::|
-    WN::|flow%1:11:00::|)
+    WN::|flow%1:11:00::|
+    WN::|flowe%2:42:00::|
+    WN::|flow%2:30:00::|
+    WN::|flow%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -75616,11 +75704,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))))
 
 (CONCEPT
   ONT::GAME
@@ -76642,11 +76736,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))))
 
 (CONCEPT
   ONT::GLASS
@@ -78333,7 +78433,9 @@
     WN::|phenomenal%5:00:00:extraordinary:00|
     WN::|fantastic%5:00:00:extraordinary:00|
     WN::|ideal%3:00:00:perfect:00|
-    WN::|perfect%3:00:00::|)
+    WN::|perfect%3:00:00::|
+    WN::|opulent%3:00:0:rich:03|
+    WN::|opulently%4:02:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -81269,11 +81371,6 @@
     (SCALE ONT::HEIGHT-SCALE)
     (TYPE ONT::HEIGHT-SCALE))
   (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
        T)
@@ -81285,6 +81382,12 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (MEASURE-FUNCTION F::VALUE)
        (SCALE ONT::LINEAR-EXTENT-SCALE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
 
 (CONCEPT
@@ -84884,6 +84987,9 @@
    "of primary (i.e., major, significant), secondary (i.e., minor), or no importance")
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL)
+  (OVERLAP
+    WN::|immodest%3:00:02::|
+    WN::|immodestly%4:02:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -89485,7 +89591,10 @@
     WN::|high%3:00:03::|
     WN::|deep%5:00:00:intense:00|
     WN::|intensive%5:00:00:intense:00|
-    WN::|forceful%3:00:00::|)
+    WN::|forceful%3:00:00::|
+    WN::|hearty%3:00:00::|
+    WN::|heartily%4:02:03::|
+    WN::|heartily%4:02:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -94924,11 +95033,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))))
 
 (CONCEPT
   ONT::LENGTH-SCALE
@@ -94953,11 +95068,6 @@
     (SCALE ONT::LINEAR-EXTENT-SCALE)
     (TYPE ONT::LINEAR-EXTENT-SCALE))
   (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
        T)
@@ -94969,6 +95079,12 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (MEASURE-FUNCTION F::VALUE)
        (SCALE ONT::LINEAR-EXTENT-SCALE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
 
 (CONCEPT
@@ -96865,11 +96981,6 @@
     (SCALE ONT::LINEAR-EXTENT-SCALE)
     (TYPE ONT::LINEAR-EXTENT-SCALE))
   (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
        T)
@@ -96881,6 +96992,12 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (MEASURE-FUNCTION F::VALUE)
        (SCALE ONT::LINEAR-EXTENT-SCALE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
 
 (CONCEPT
@@ -97914,6 +98031,9 @@
    "speech act that expresses the speakers belief with a particular purpose (e.g., accuse, complain)")
   (INHERIT
     ONT::REPRESENTATIVE)
+  (OVERLAP
+    WN::|case%1:04:00::|
+    WN::|complain%2:32:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -98547,6 +98667,79 @@
          SITUATION)
        (CONCEPT
          PHYS-OBJ))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::LOCATION-AS-MOTION
+  (COMMENT "relations that locate in terms of some motion")
+  (INHERIT
+    ONT::BE-AT)
+  (OVERLAP
+    WN::|range%2:42:00::|
+    WN::|flow%2:35:04::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (INFORMATION MENTAL-CONSTRUCT)
+    (CAUSE ANY-CAUSE)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (TIME-SPAN F::EXTENDED)
+    (CONTAINER -)
+    (LOCATIVE F::LOCATED)
+    (TRAJECTORY -)
+    (TANGIBLE +)
+    (INTENTIONAL -)
+    (ASPECT F::STAGE-LEVEL)
+    (TYPE ONT::LOCATION-AS-MOTION))
+  (SEM-FRAME
+    (ONT::LOCATION
+     (CONCEPT
+       T))
+    (ONT::FORMAL
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::AFFECTED1
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +))
+     OPTIONAL)
+    (ONT::NEUTRAL1
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
 
 (CONCEPT
@@ -101594,8 +101787,6 @@
     (ONT::GROUND
      (SEM-FEATS
        (OR
-         (CONCEPT
-           PHYS-OBJ)
          (CONCEPT
            SITUATION)
          (CONCEPT
@@ -113234,11 +113425,6 @@
     (SCALE ONT::LINEAR-EXTENT-SCALE)
     (TYPE ONT::LINEAR-EXTENT-SCALE))
   (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
        T)
@@ -113250,6 +113436,12 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (MEASURE-FUNCTION F::VALUE)
        (SCALE ONT::LINEAR-EXTENT-SCALE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
 
 (CONCEPT
@@ -114337,7 +114529,10 @@
     ONT::APPROPRIATENESS-VAL)
   (OVERLAP
     WN::|inappropriate%3:00:00::|
-    WN::|improper%5:00:00:inappropriate:00|)
+    WN::|improper%5:00:00:inappropriate:00|
+    WN::|immoderate%3:00:00::|
+    WN::|immoderately%04:02:00::|
+    WN::|immoderately%04:02:02::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -122270,7 +122465,8 @@
   (INHERIT
     ONT::CONTEST)
   (OVERLAP
-    WN::|object%2:42:00::|)
+    WN::|object%2:42:00::|
+    WN::|objection%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -122610,6 +122806,36 @@
          (CONCEPT
            PHYS-OBJ))
        (TYPE ONT::REFERENTIAL-SEM)))))
+
+(CONCEPT
+  ONT::OBJECT-DEFINED-BY-RELATIONSHIP
+  (INHERIT
+    ONT::PHYS-OBJECT)
+  (OVERLAP
+    WN::|possession%1:03:00::|)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       PHYS-OBJ)))
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (KR-TYPE ANY-KR-TYPE)
+    (OBJECT-FUNCTION ANY-OBJECT-FUNCTION)
+    (ORIGIN ANY-ORIGIN)
+    (FORM ANY-FORM)
+    (MOBILITY ANY-MOBILITY)
+    (GROUP -)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (INTENTIONAL -)
+    (TRAJECTORY -)
+    (INFORMATION -)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (TYPE ONT::PHYS-OBJECT)))
 
 (CONCEPT
   ONT::OBJECT-DEPENDENT-LOCATION
@@ -127973,7 +128199,7 @@
     (TYPE ONT::EVENT-OF-CAUSATION)))
 
 (CONCEPT
-  ONT::PASS
+  ONT::PASS-ACROSS
   (INHERIT
     ONT::CO-MOTION)
   (OVERLAP
@@ -127995,7 +128221,7 @@
     (CONTAINER -)
     (TANGIBLE +)
     (TRAJECTORY -)
-    (TYPE ONT::PASS))
+    (TYPE ONT::PASS-ACROSS))
   (SEM-FRAME
     (ONT::SOURCE
      (CONCEPT
@@ -134583,7 +134809,10 @@
     WN::|have%2:40:04::|
     WN::|possess%2:40:00::|
     WN::|belong%2:40:00::|
-    WN::|possession%1:03:00::|)
+    WN::|possession%1:03:00::|
+    WN::|possession%1:04:00::|
+    WN::|ownership%1:21:00::|
+    WN::|ownership%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -135908,8 +136137,10 @@
     (TYPE ONT::PHYS-OBJECT))
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       PHYS-OBJ))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::PHYS-OBJECT)))))
 
 (CONCEPT
   ONT::PREDEFINED-MEASURE-SCALE
@@ -137370,11 +137601,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))
     (ONT::AFFECTED-RESULT
      (OR
        (CONCEPT
@@ -140674,7 +140911,8 @@
     WN::|coerce%2:41:00::|
     WN::|subject%2:39:03::|
     WN::|oblige%2:41:00::|
-    WN::|arouse%2:37:00::|)
+    WN::|arouse%2:37:00::|
+    WN::|provoke%2:32:00::|)
   (SEM-FRAME
     (ONT::AGENT
      (SEM-FEATS
@@ -142544,10 +142782,6 @@
   ONT::QUANTITY
   (INHERIT
     ONT::GROUP-OBJECT)
-  (OVERLAP
-    WN::|measure%1:03:00::|
-    WN::|quantity%1:03:00::|
-    WN::|amount%1:03:00::|)
   (SEM-FRAME
     (ONT::CONTENTS
      (CONCEPT
@@ -142591,7 +142825,10 @@
   (OVERLAP
     WN::|measure%1:03:00::|
     WN::|quantity%1:03:00::|
-    WN::|amount%1:03:00::|)
+    WN::|amount%1:03:00::|
+    WN::|quantity%1:09:01::|
+    WN::|amount%1:21:00::|
+    WN::|amount%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -156016,11 +156253,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))
     (ONT::AFFECTED-RESULT
      (OR
        (CONCEPT
@@ -156075,11 +156318,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))
     ((ONT::DONOR ONT::AGENT)
      (SEM-FEATS
        (OR
@@ -159002,9 +159251,6 @@
     (ASPECT F::STAGE-LEVEL)
     (TYPE ONT::SHOULD-BE-AT))
   (SEM-FRAME
-    (ONT::LOCATION
-     (CONCEPT
-       T))
     (ONT::FORMAL
      (OR
        (CONCEPT
@@ -159042,6 +159288,17 @@
          PHYS-OBJ)
        (CONCEPT
          ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::LOCATION
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          ONT::LOC-WHERE-REL
+          ONT::ORIENTED-LOC-RELN
+          ONT::POS-DISTANCE
+          ONT::POS-WRT-SPEAKER-RELN)))
      OPTIONAL)
     (ONT::NEUTRAL
      (SEM-FEATS
@@ -166151,7 +166408,9 @@
     WN::|rapid%5:00:00:fast:01|
     WN::|rapid%5:00:02:fast:01|
     WN::|fast%3:00:01::|
-    WN::|quick%5:00:00:fast:01|)
+    WN::|quick%5:00:00:fast:01|
+    WN::|hurried%3:00:00::|
+    WN::|hastily%4:02:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -170355,11 +170614,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
        (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM)))))
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::INFO-HOLDER))))))
 
 (CONCEPT
   ONT::SUBSTANCE
@@ -171007,8 +171272,10 @@
     (TYPE ONT::PHYS-OBJECT))
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       PHYS-OBJ))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::PHYS-OBJECT)))))
 
 (CONCEPT
   ONT::SUCH
@@ -171946,8 +172213,12 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM))
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))
+       (TANGIBLE +))
      OPTIONAL)
     ((ONT::DONOR ONT::AGENT)
      (SEM-FEATS
@@ -177169,11 +177440,6 @@
     (SCALE ONT::THICKNESS-SCALE)
     (TYPE ONT::THICKNESS-SCALE))
   (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
        T)
@@ -177185,6 +177451,12 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (MEASURE-FUNCTION F::VALUE)
        (SCALE ONT::LINEAR-EXTENT-SCALE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
 
 (CONCEPT
@@ -177495,11 +177767,6 @@
     (SCALE ONT::LINEAR-EXTENT-SCALE)
     (TYPE ONT::LINEAR-EXTENT-SCALE))
   (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
        T)
@@ -177511,6 +177778,12 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (MEASURE-FUNCTION F::VALUE)
        (SCALE ONT::LINEAR-EXTENT-SCALE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
 
 (CONCEPT
@@ -180097,11 +180370,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))))
 
 (CONCEPT
   ONT::TRANSFER-EVENT
@@ -180506,11 +180785,17 @@
      (SEM-FEATS
        (OR
          (CONCEPT
+           SITUATION)
+         (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +)))
+       (TANGIBLE +)
+       (TYPE
+        (OR
+          ONT::MENTAL-CONSTRUCTION
+          ONT::LOADED-CLAIM
+          ONT::PHYS-OBJECT))))
     (ONT::AFFECTED-RESULT
      (OR
        (CONCEPT
@@ -185544,7 +185829,10 @@
     WN::|urgent%5:00:00:imperative:00|
     WN::|serious%5:00:00:critical:03|
     WN::|critical%3:00:03::|
-    WN::|desperate%5:00:00:imperative:00|)
+    WN::|desperate%5:00:00:imperative:00|
+    WN::|seriously%4:02:00::|
+    WN::|urgently%4:02:00::|
+    WN::|desparately%4:02:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -187713,11 +188001,6 @@
     (SCALE ONT::LINEAR-EXTENT-SCALE)
     (TYPE ONT::LINEAR-EXTENT-SCALE))
   (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
        T)
@@ -187729,6 +188012,12 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (MEASURE-FUNCTION F::VALUE)
        (SCALE ONT::LINEAR-EXTENT-SCALE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
 
 (CONCEPT
@@ -191598,11 +191887,6 @@
     (SCALE ONT::WIDTH-SCALE)
     (TYPE ONT::WIDTH-SCALE))
   (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::REFERENTIAL-SEM)))
     (ONT::GROUND
      (CONCEPT
        T)
@@ -191614,6 +191898,12 @@
        (TYPE ONT::REFERENTIAL-SEM)
        (MEASURE-FUNCTION F::VALUE)
        (SCALE ONT::LINEAR-EXTENT-SCALE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
 
 (CONCEPT

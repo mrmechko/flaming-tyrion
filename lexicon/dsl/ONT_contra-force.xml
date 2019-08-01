@@ -2,13 +2,17 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::contra">
+ <concept name="ont::contra-force">
  <relation label="inherit">
   ont::situation-modifier
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground">
-   <concept name="situation" />
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
    <concept name="situation" />
@@ -114,7 +118,11 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground">
-  <concept name="situation" />
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
   <concept name="situation" />
@@ -191,10 +199,10 @@
  <provenance name="TRIPS">
   <provenance name="BASE500"/>
  </provenance>
- <example text="he fought against the proposal">
+ <example text="he fought against the proposal/enemy; he pushed against the wall">
  </example>
  <relation label="inherit">
-  ont::contra
+  ont::contra-force
  </relation>
  <syntax>
   <template-call template="ont::binary-constraint-s-or-np-templ" />

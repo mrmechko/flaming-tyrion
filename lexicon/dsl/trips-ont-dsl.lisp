@@ -2667,6 +2667,11 @@
           ONT::RATE-SCALE
           ONT::MONEY-SCALE
           ONT::NUMBER-SCALE))
+       (TYPE
+        (OR
+          ONT::PHYS-OBJECT
+          ONT::TANGIBLE-ABSTRACT-OBJECT
+          ONT::EVENT-TYPE))
        (TANGIBLE +))
      OPTIONAL)))
 
@@ -3570,7 +3575,6 @@
     WN::|sit%2:35:00::|
     WN::|sit_down%2:35:03::|
     WN::|settle%2:30:00::|
-    WN::|fall%2:35:00::|
     WN::|hang%2:35:03::|
     WN::|hang%2:35:05::|
     WN::|hang%2:35:06::|
@@ -5481,7 +5485,8 @@
     ONT::MOTION)
   (OVERLAP
     WN::|drive%2:35:01::|
-    WN::|drive%2:41:02::|)
+    WN::|drive%2:41:02::|
+    WN::|move%2:38:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -8218,13 +8223,18 @@
     ONT::TEMPORAL-OCCURRENCE-VAL))
 
 (CONCEPT
-  ONT::CONTRA
+  ONT::CONTRA-FORCE
   (INHERIT
     ONT::SITUATION-MODIFIER)
   (SEM-FRAME
     (ONT::GROUND
-     (CONCEPT
-       SITUATION))
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)))
     (ONT::FIGURE
      (CONCEPT
        SITUATION)
@@ -9575,7 +9585,7 @@
 (CONCEPT
   ONT::DEFINED-BY-SEQUENCE-RELATIONSHIP
   (INHERIT
-    ONT::PHYS-OBJECT)
+    ONT::OBJECT-DEFINED-BY-RELATIONSHIP)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -9925,7 +9935,8 @@
   (INHERIT
     ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
-    WN::|desirous%3:00:00::|)
+    WN::|desirous%3:00:00::|
+    WN::|avariciously%4:02:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -14494,7 +14505,10 @@
     WN::|flux%2:38:00::|
     WN::|flow%2:38:02::|
     WN::|pour%2:38:03::|
-    WN::|flow%1:11:00::|)
+    WN::|flow%1:11:00::|
+    WN::|flowe%2:42:00::|
+    WN::|flow%2:30:00::|
+    WN::|flow%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -15311,11 +15325,19 @@
        (CONCEPT
          ABSTR-OBJ)))
     (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TYPE
+        (OR
+          ONT::PHYS-OBJECT
+          ONT::LOADED-CLAIM
+          ONT::MENTAL-CONSTRUCTION))))))
 
 (CONCEPT
   ONT::GLASS
@@ -15642,7 +15664,9 @@
     WN::|phenomenal%5:00:00:extraordinary:00|
     WN::|fantastic%5:00:00:extraordinary:00|
     WN::|ideal%3:00:00:perfect:00|
-    WN::|perfect%3:00:00::|)
+    WN::|perfect%3:00:00::|
+    WN::|opulent%3:00:0:rich:03|
+    WN::|opulently%4:02:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -16966,6 +16990,9 @@
    "of primary (i.e., major, significant), secondary (i.e., minor), or no importance")
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL)
+  (OVERLAP
+    WN::|immodest%3:00:02::|
+    WN::|immodestly%4:02:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -17728,7 +17755,10 @@
     WN::|high%3:00:03::|
     WN::|deep%5:00:00:intense:00|
     WN::|intensive%5:00:00:intense:00|
-    WN::|forceful%3:00:00::|))
+    WN::|forceful%3:00:00::|
+    WN::|hearty%3:00:00::|
+    WN::|heartily%4:02:03::|
+    WN::|heartily%4:02:01::|))
 
 (CONCEPT
   ONT::INTENSIFIER
@@ -19264,6 +19294,10 @@
          ABSTR-OBJ)
        (MEASURE-FUNCTION VALUE)
        (SCALE ONT::LINEAR-EXTENT-SCALE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (CONCEPT
+       PHYS-OBJ)
      OPTIONAL)))
 
 (CONCEPT
@@ -19475,7 +19509,10 @@
   (COMMENT
    "speech act that expresses the speakers belief with a particular purpose (e.g., accuse, complain)")
   (INHERIT
-    ONT::REPRESENTATIVE))
+    ONT::REPRESENTATIVE)
+  (OVERLAP
+    WN::|case%1:04:00::|
+    WN::|complain%2:32:01::|))
 
 (CONCEPT
   ONT::LOC-AS-AREA
@@ -19623,6 +19660,25 @@
          SITUATION)
        (CONCEPT
          PHYS-OBJ))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::LOCATION-AS-MOTION
+  (COMMENT "relations that locate in terms of some motion")
+  (INHERIT
+    ONT::BE-AT)
+  (OVERLAP
+    WN::|range%2:42:00::|
+    WN::|flow%2:35:04::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (ASPECT STAGE-LEVEL)
+    (TYPE ONT::LOCATION-AS-MOTION))
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (CONCEPT
+       PHYS-OBJ)
      OPTIONAL)))
 
 (CONCEPT
@@ -20250,9 +20306,7 @@
          (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
-           SITUATION)
-         (CONCEPT
-           PHYS-OBJ))
+           SITUATION))
        (INTENTIONAL -)))
     (ONT::FIGURE
      (SEM-FEATS
@@ -22497,7 +22551,10 @@
     ONT::APPROPRIATENESS-VAL)
   (OVERLAP
     WN::|inappropriate%3:00:00::|
-    WN::|improper%5:00:00:inappropriate:00|)
+    WN::|improper%5:00:00:inappropriate:00|
+    WN::|immoderate%3:00:00::|
+    WN::|immoderately%04:02:00::|
+    WN::|immoderately%04:02:02::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -23600,7 +23657,8 @@
   (INHERIT
     ONT::CONTEST)
   (OVERLAP
-    WN::|object%2:42:00::|))
+    WN::|object%2:42:00::|
+    WN::|objection%1:10:00::|))
 
 (CONCEPT
   ONT::OBJECT-AFFORDANCES-SCALE
@@ -23687,6 +23745,17 @@
          SITUATION)
        (CONCEPT
          TIME)))))
+
+(CONCEPT
+  ONT::OBJECT-DEFINED-BY-RELATIONSHIP
+  (INHERIT
+    ONT::PHYS-OBJECT)
+  (OVERLAP
+    WN::|possession%1:03:00::|)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       PHYS-OBJ))))
 
 (CONCEPT
   ONT::OBJECT-DEPENDENT-LOCATION
@@ -24676,7 +24745,7 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::PASS
+  ONT::PASS-ACROSS
   (INHERIT
     ONT::CO-MOTION)
   (OVERLAP
@@ -24687,7 +24756,7 @@
     (INHERIT
       SITUATION)
     (TRAJECTORY -)
-    (TYPE ONT::PASS)))
+    (TYPE ONT::PASS-ACROSS)))
 
 (CONCEPT
   ONT::PASS-BY
@@ -26098,7 +26167,10 @@
     WN::|have%2:40:04::|
     WN::|possess%2:40:00::|
     WN::|belong%2:40:00::|
-    WN::|possession%1:03:00::|)
+    WN::|possession%1:03:00::|
+    WN::|possession%1:04:00::|
+    WN::|ownership%1:21:00::|
+    WN::|ownership%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -27233,7 +27305,8 @@
     WN::|coerce%2:41:00::|
     WN::|subject%2:39:03::|
     WN::|oblige%2:41:00::|
-    WN::|arouse%2:37:00::|)
+    WN::|arouse%2:37:00::|
+    WN::|provoke%2:32:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -27685,10 +27758,6 @@
   ONT::QUANTITY
   (INHERIT
     ONT::GROUP-OBJECT)
-  (OVERLAP
-    WN::|measure%1:03:00::|
-    WN::|quantity%1:03:00::|
-    WN::|amount%1:03:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (OR
@@ -27707,7 +27776,10 @@
   (OVERLAP
     WN::|measure%1:03:00::|
     WN::|quantity%1:03:00::|
-    WN::|amount%1:03:00::|)
+    WN::|amount%1:03:00::|
+    WN::|quantity%1:09:01::|
+    WN::|amount%1:21:00::|
+    WN::|amount%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -31176,6 +31248,17 @@
     (ASPECT STAGE-LEVEL)
     (TYPE ONT::SHOULD-BE-AT))
   (SEM-FRAME
+    (ONT::LOCATION
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          ONT::LOC-WHERE-REL
+          ONT::ORIENTED-LOC-RELN
+          ONT::POS-DISTANCE
+          ONT::POS-WRT-SPEAKER-RELN)))
+     OPTIONAL)
     (ONT::NEUTRAL
      (SEM-FEATS
        (INHERIT
@@ -32520,7 +32603,9 @@
     WN::|rapid%5:00:00:fast:01|
     WN::|rapid%5:00:02:fast:01|
     WN::|fast%3:00:01::|
-    WN::|quick%5:00:00:fast:01|))
+    WN::|quick%5:00:00:fast:01|
+    WN::|hurried%3:00:00::|
+    WN::|hastily%4:02:00::|))
 
 (CONCEPT
   ONT::SPEND-TIME
@@ -33298,11 +33383,19 @@
      (CONCEPT
        T))
     (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TYPE
+        (OR
+          ONT::INFO-HOLDER
+          ONT::LOADED-CLAIM
+          ONT::MENTAL-CONSTRUCTION))))))
 
 (CONCEPT
   ONT::SUBSTANCE
@@ -36134,7 +36227,10 @@
     WN::|urgent%5:00:00:imperative:00|
     WN::|serious%5:00:00:critical:03|
     WN::|critical%3:00:03::|
-    WN::|desperate%5:00:00:imperative:00|))
+    WN::|desperate%5:00:00:imperative:00|
+    WN::|seriously%4:02:00::|
+    WN::|urgently%4:02:00::|
+    WN::|desparately%4:02:01::|))
 
 (CONCEPT
   ONT::US-STATE

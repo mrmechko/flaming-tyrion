@@ -42,6 +42,29 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::defined-by-sequence-relationship">
+ <relation label="inherit">
+  ont::object-defined-by-relationship
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::object-defined-by-relationship">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|possession%1:03:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
   <concept name="phys-obj" />
@@ -66,16 +89,11 @@
   <feat name="type">ont::phys-object</feat>
  </sem-feats>
  </concept>
- <concept name="ont::defined-by-sequence-relationship">
- <relation label="inherit">
-  ont::phys-object
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <concept name="phys-obj" />
-  </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="phys-obj" />
+ </role-restr-map>
  </sem-frame>
- </concept>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root

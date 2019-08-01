@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::defined-by-sequence-relationship">
  <relation label="inherit">
-  ont::phys-object
+  ont::object-defined-by-relationship
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure">
@@ -18,6 +18,37 @@
  <concept name="situation" />
  </or>
  <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::phys-object">
  <comment>
   &quot;All physical objects: things that have substance&quot;
@@ -42,32 +73,19 @@
   <concept name="phys-obj" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::referential-sem">
- <comment>
-  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
- </comment>
+ <concept name="ont::object-defined-by-relationship">
  <relation label="inherit">
-  ont::any-sem
+  ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|entity%1:03:00::|
+  wn::|possession%1:03:00::|
  </relation>
- <sem-feats>
-  <or>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
    <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
-  <feat name="type">ont::referential-sem</feat>
- </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="tangible">+</feat>
- <feat name="type">ont::phys-object</feat>
- </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root

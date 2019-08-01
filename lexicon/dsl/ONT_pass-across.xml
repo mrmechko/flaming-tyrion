@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::pass">
+ <concept name="ont::pass-across">
  <relation label="inherit">
   ont::co-motion
  </relation>
@@ -16,7 +16,7 @@
    situation
   </relation>
   <feat name="trajectory">-</feat>
-  <feat name="type">ont::pass</feat>
+  <feat name="type">ont::pass-across</feat>
  </sem-feats>
  </concept>
  <or>
@@ -283,7 +283,7 @@
   situation
  </relation>
  <feat name="trajectory">-</feat>
- <feat name="type">ont::pass</feat>
+ <feat name="type">ont::pass-across</feat>
  </sem-feats>
  <concept name="ont::co-motion">
  <relation label="inherit">
@@ -413,4 +413,29 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="cross" />
+  <forms>
+   -VB
+   <third-singular>
+    <word first-word="crosses" />
+   </third-singular>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::pass-across
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
 </dsl>
