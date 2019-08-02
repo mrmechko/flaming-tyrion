@@ -1028,6 +1028,11 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
      OPTIONAL)))
 
 (CONCEPT
+  ONT::A
+  (INHERIT
+    ONT::INDEFINITEQ))
+
+(CONCEPT
   ONT::ABILITY
   (INHERIT
     ONT::AUX)
@@ -18321,6 +18326,11 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
        (CONCEPT
          ABSTR-OBJ))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::BARE
+  (INHERIT
+    ONT::INDEFINITEQ))
 
 (CONCEPT
   ONT::BARE-VAL
@@ -48351,6 +48361,21 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
     (TYPE ONT::PHYS-OBJECT)))
 
 (CONCEPT
+  ONT::DEFINITE
+  (INHERIT
+    ONT::DEFINITEQ))
+
+(CONCEPT
+  ONT::DEFINITENESS
+  (INHERIT
+    ONT::ANY-SEM))
+
+(CONCEPT
+  ONT::DEFINITEQ
+  (INHERIT
+    ONT::DEFINITENESS))
+
+(CONCEPT
   ONT::DEFINITION
   (INHERIT
     ONT::INFORMATION-FUNCTION-OBJECT)
@@ -72899,7 +72924,7 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
     WN::|flow%2:38:02::|
     WN::|pour%2:38:03::|
     WN::|flow%1:11:00::|
-    WN::|flowe%2:42:00::|
+    WN::|flow%2:42:00::|
     WN::|flow%2:30:00::|
     WN::|flow%1:04:00::|)
   (SEM-FEATS
@@ -78434,7 +78459,7 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
     WN::|fantastic%5:00:00:extraordinary:00|
     WN::|ideal%3:00:00:perfect:00|
     WN::|perfect%3:00:00::|
-    WN::|opulent%3:00:0:rich:03|
+    WN::|opulent%5:00:00:rich:03|
     WN::|opulently%4:02:00::|)
   (SEM-FEATS
     (INHERIT
@@ -84896,6 +84921,11 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::IMPLICITQ
+  (INHERIT
+    ONT::DEFINITENESS))
+
+(CONCEPT
   ONT::IMPLY
   (COMMENT "an entailment relation holds netween NEUTRAL and NEUTRAL1")
   (INHERIT
@@ -85203,6 +85233,16 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
        (TYPE ONT::REFERENTIAL-SEM)
        (TANGIBLE +))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::IMPRO
+  (INHERIT
+    ONT::IMPLICITQ))
+
+(CONCEPT
+  ONT::IMPRO-SET
+  (INHERIT
+    ONT::IMPLICITQ))
 
 (CONCEPT
   ONT::IMPROVE
@@ -87439,6 +87479,21 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
     (CONTAINER -)
     (INTENTIONAL -)
     (TYPE ONT::EVENT-OF-UNDERGOING-ACTION)))
+
+(CONCEPT
+  ONT::INDEF-SET
+  (INHERIT
+    ONT::INDEFINITEQ))
+
+(CONCEPT
+  ONT::INDEFINITE
+  (INHERIT
+    ONT::DEFINITENESS))
+
+(CONCEPT
+  ONT::INDEFINITEQ
+  (INHERIT
+    ONT::INDEFINITE))
 
 (CONCEPT
   ONT::INDEPENDENT
@@ -114531,8 +114586,8 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
     WN::|inappropriate%3:00:00::|
     WN::|improper%5:00:00:inappropriate:00|
     WN::|immoderate%3:00:00::|
-    WN::|immoderately%04:02:00::|
-    WN::|immoderately%04:02:02::|)
+    WN::|immoderately%4:02:00::|
+    WN::|immoderately%4:02:02::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -138578,6 +138633,16 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
      OPTIONAL)))
 
 (CONCEPT
+  ONT::PRO
+  (INHERIT
+    ONT::DEFINITEQ))
+
+(CONCEPT
+  ONT::PRO-SET
+  (INHERIT
+    ONT::DEFINITEQ))
+
+(CONCEPT
   ONT::PROBLEM
   (INHERIT
     ONT::PS-OBJECT)
@@ -142734,6 +142799,11 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
          T)
        (TYPE ONT::REFERENTIAL-SEM)
        (TANGIBLE +)))))
+
+(CONCEPT
+  ONT::QUANTIFIER
+  (INHERIT
+    ONT::INDEFINITEQ))
 
 (CONCEPT
   ONT::QUANTITATIVE-RELATION
@@ -161882,6 +161952,11 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::SM
+  (INHERIT
+    ONT::INDEFINITEQ))
+
+(CONCEPT
   ONT::SMALL
   (COMMENT "negative orientation on a size scale")
   (INHERIT
@@ -176861,6 +176936,16 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
      OPTIONAL)))
 
 (CONCEPT
+  ONT::THE
+  (INHERIT
+    ONT::DEFINITEQ))
+
+(CONCEPT
+  ONT::THE-SET
+  (INHERIT
+    ONT::DEFINITEQ))
+
+(CONCEPT
   ONT::THEORETICAL-VAL
   (INHERIT
     ONT::BASIS-OF-EVIDENCE-VAL)
@@ -185832,7 +185917,7 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
     WN::|desperate%5:00:00:imperative:00|
     WN::|seriously%4:02:00::|
     WN::|urgently%4:02:00::|
-    WN::|desparately%4:02:01::|)
+    WN::|desperately%4:02:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -191309,6 +191394,11 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
        (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
+  ONT::WH
+  (INHERIT
+    ONT::DEFINITEQ))
+
+(CONCEPT
   ONT::WH-LOCATION
   (INHERIT
     ONT::LOCATION)
@@ -191343,6 +191433,11 @@ inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
     (FORM F::GEOGRAPHICAL-OBJECT)
     (ORIGIN F::NON-LIVING)
     (TYPE ONT::LOCATION)))
+
+(CONCEPT
+  ONT::WH-TERM
+  (INHERIT
+    ONT::DEFINITEQ))
 
 (CONCEPT
   ONT::WHEEL
