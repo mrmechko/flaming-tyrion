@@ -1,28 +1,5 @@
 
 
-
-inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
-                                                        :TYPE F::PHYS-OBJ
-                                                        :FEATURES NIL
-                                                        :DEFAULTS NIL) and #S(FEATURE-LIST
-                                                                              :TYPE (?
-                                                                                     ONT::AT461
-                                                                                     F::ABSTR-OBJ
-                                                                                     F::SITUATION)
-                                                                              :FEATURES ((F::INTENTIONAL
-                                                                                          -))
-                                                                              :DEFAULTS NIL)
-inconsistent-feat-spec in merge-typed-feature-lists: #S(FEATURE-LIST
-                                                        :TYPE F::PHYS-OBJ
-                                                        :FEATURES NIL
-                                                        :DEFAULTS NIL) and #S(FEATURE-LIST
-                                                                              :TYPE (?
-                                                                                     ONT::AT461
-                                                                                     F::ABSTR-OBJ
-                                                                                     F::SITUATION)
-                                                                              :FEATURES ((F::INTENTIONAL
-                                                                                          -))
-                                                                              :DEFAULTS NIL)
 (PROVENANCE
   (NAME TRIPS))
 
