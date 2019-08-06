@@ -71219,17 +71219,17 @@
   (INHERIT
     ONT::ACQUIRE)
   (OVERLAP
-    WN::|find%2:40:01::|
-    WN::|come_up%2:40:00::|
-    WN::|get_hold%2:40:00::|
-    WN::|line_up%2:40:00::|
-    WN::|regain%2:40:01::|
-    WN::|find%2:40:00::|
-    WN::|find%2:40:02::|
-    WN::|happen%2:40:12::|
-    WN::|chance%2:40:12::|
     WN::|bump%2:40:12::|
-    WN::|encounter%2:40:00::|)
+    WN::|chance%2:40:12::|
+    WN::|come_up%2:40:00::|
+    WN::|encounter%2:40:00::|
+    WN::|find%2:40:00::|
+    WN::|find%2:40:01::|
+    WN::|find%2:40:02::|
+    WN::|get_hold%2:40:00::|
+    WN::|happen%2:40:12::|
+    WN::|line_up%2:40:00::|
+    WN::|regain%2:40:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -84245,6 +84245,68 @@
          T)
        (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::IGNORE
+  (INHERIT
+    ONT::INTENTIONALLY-ACT)
+  (OVERLAP
+    WN::|disregard%2:31:00::|
+    WN::|ignore%2:31:01::|
+    WN::|ignore%2:32:00::|
+    WN::|ignore%2:32:02::|
+    WN::|ignore%2:39:00::|
+    WN::|neglect%2:31:05::|)
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM)
+       (INTENTIONAL +)))
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL))
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (INFORMATION MENTAL-CONSTRUCT)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (TRAJECTORY -)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (ASPECT F::DYNAMIC)
+    (TANGIBLE +)
+    (CONTAINER -)
+    (INTENTIONAL -)
+    (CAUSE F::FORCE)
+    (TYPE ONT::EVENT-OF-ACTION)))
 
 (CONCEPT
   ONT::ILLNESS-SCALE
