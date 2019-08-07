@@ -9,6 +9,7 @@
  <relation label="overlap">
   wn::|be%2:42:03::|
   wn::|be%2:42:05::|
+  wn::|mean%2:42:03::|
   wn::|sound%2:39:03::|
  </relation>
  <sem-feats>
@@ -185,6 +186,14 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::be-inactive">
+ <relation label="inherit">
+  ont::have-property
+ </relation>
+ <relation label="overlap">
+  wn::|rest%2:41:00::|
+ </relation>
+ </concept>
  <concept name="ont::appears-to-have-property">
  <relation label="inherit">
   ont::have-property
@@ -201,6 +210,25 @@
   <feat name="aspect">stage-level</feat>
   <feat name="type">ont::appears-to-have-property</feat>
  </sem-feats>
+ </concept>
+ <concept name="ont::be-inclined">
+ <relation label="inherit">
+  ont::have-property
+ </relation>
+ <relation label="overlap">
+  wn::|tend%2:42:01::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal">
+   <sem-feats>
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">-</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sense>
  <morph>
@@ -469,6 +497,11 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
   </syn-sem>
  </syntax>
+ </sense>
+ <sense>
+ <relation label="inherit">
+  ont::have-property
+ </relation>
  </sense>
  <sense>
  <morph>

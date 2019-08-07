@@ -3527,17 +3527,16 @@
 
 (CONCEPT
   ONT::BE
+  (COMMENT "Object is defined in terms of another (including equality)")
   (INHERIT
-    ONT::IN-RELATION)
+    ONT::OBJECT-COMPARE)
   (OVERLAP
-    WN::|be%2:42:06::|
-    WN::|be%2:42:07::|
     WN::|be%2:41:00::|
     WN::|be%2:42:02::|
+    WN::|be%2:42:06::|
+    WN::|be%2:42:07::|
     WN::|be_full%2:34:00::|
     WN::|be_quiet%2:32:00::|
-    WN::|mean%2:42:03::|
-    WN::|rest%2:41:00::|
     WN::|equal%2:42:01::|))
 
 (CONCEPT
@@ -3642,9 +3641,16 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::BE-INACTIVE
+  (INHERIT
+    ONT::HAVE-PROPERTY)
+  (OVERLAP
+    WN::|rest%2:41:00::|))
+
+(CONCEPT
   ONT::BE-INCLINED
   (INHERIT
-    ONT::EVENT-OF-STATE)
+    ONT::HAVE-PROPERTY)
   (OVERLAP
     WN::|tend%2:42:01::|)
   (SEM-FRAME
@@ -3744,7 +3750,8 @@
     WN::|go%2:30:04::|
     WN::|get%2:30:00::|
     WN::|open_up%2:30:01::|
-    WN::|turn%2:30:04::|)
+    WN::|turn%2:30:04::|
+    WN::|become%2:42:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -8798,7 +8805,10 @@
 (CONCEPT
   ONT::COUNTRY
   (INHERIT
-    ONT::POLITICAL-REGION))
+    ONT::POLITICAL-REGION)
+  (OVERLAP
+    WN::|country%1:15:00::|
+    WN::|country%1:14:00::|))
 
 (CONCEPT
   ONT::COUNTRY-RELATED-VAL
@@ -9844,7 +9854,8 @@
     ONT::EVENT-OF-ACTION)
   (OVERLAP
     WN::|depart%2:38:01::|
-    WN::|leave%2:38:01::|)
+    WN::|leave%2:38:01::|
+    WN::|leave%2:38:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -9862,7 +9873,7 @@
        (CONCEPT
          PHYS-OBJ)
        (CONCEPT
-         EVENT-TYPE))
+         SITUATION))
      OPTIONAL)))
 
 (CONCEPT
@@ -12153,7 +12164,8 @@
   (OVERLAP
     WN::|equal%3:00:00::|
     WN::|equivalent%5:00:00:equal:00|
-    WN::|equal%3:00:00::|)
+    WN::|even%5:00:01:equal:00|
+    WN::|even%5:00:02:equal:00|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -12292,6 +12304,23 @@
   ONT::EVAL-WRT-EXPECTATION
   (INHERIT
     ONT::MODIFIER))
+
+(CONCEPT
+  ONT::EVALUATE
+  (INHERIT
+    ONT::SCRUTINY)
+  (OVERLAP
+    WN::|evaluate%2:31:01::|
+    WN::|contrast%2:31:00::|)
+  (SEM-FRAME
+    (ONT::NEUTRAL1
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION)))))
 
 (CONCEPT
   ONT::EVALUATION-ATTRIBUTE-VAL
@@ -13203,7 +13232,7 @@
 (CONCEPT
   ONT::EXISTS
   (INHERIT
-    ONT::BE)
+    ONT::EVENT-OF-STATE)
   (OVERLAP
     WN::|be%2:42:00::|
     WN::|exist%2:42:00::|
@@ -16240,6 +16269,7 @@
   (OVERLAP
     WN::|be%2:42:03::|
     WN::|be%2:42:05::|
+    WN::|mean%2:42:03::|
     WN::|sound%2:39:03::|)
   (SEM-FEATS
     (INHERIT
@@ -17414,12 +17444,12 @@
 (CONCEPT
   ONT::INDEFINITE
   (INHERIT
-    ONT::DEFINITENESS))
+    ONT::INDEFINITEQ))
 
 (CONCEPT
   ONT::INDEFINITEQ
   (INHERIT
-    ONT::INDEFINITE))
+    ONT::DEFINITENESS))
 
 (CONCEPT
   ONT::INDEPENDENT
@@ -20383,7 +20413,9 @@
          (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
-           SITUATION))
+           SITUATION)
+         (CONCEPT
+           PHYS-OBJ))
        (INTENTIONAL -)))
     (ONT::FIGURE
      (SEM-FEATS
@@ -21641,7 +21673,6 @@
     WN::|travel%2:38:00::|
     WN::|go%2:38:00::|
     WN::|move%2:38:03::|
-    WN::|move%2:38:01::|
     WN::|locomote%2:38:00::|
     WN::|ascend%2:38:10::|
     WN::|be_active%2:29:00::|
@@ -21728,7 +21759,9 @@
 (CONCEPT
   ONT::MOVE-DOWNWARD
   (INHERIT
-    ONT::MOVE))
+    ONT::MOVE)
+  (OVERLAP
+    WN::|drop%2:38:01::|))
 
 (CONCEPT
   ONT::MOVE-FLUIDLY
@@ -26321,7 +26354,7 @@
 (CONCEPT
   ONT::POSSIBLY-EXISTS
   (INHERIT
-    ONT::BE)
+    ONT::EXISTS)
   (OVERLAP
     WN::|look%2:39:01::|
     WN::|appear%2:39:00::|
@@ -29430,6 +29463,7 @@
   (INHERIT
     ONT::OBJECT-COMPARE)
   (OVERLAP
+    WN::|conform%2:42:06::|
     WN::|resemble%2:42:00::|)
   (SEM-FEATS
     (INHERIT
@@ -30218,10 +30252,10 @@
   (INHERIT
     ONT::IDENTITY-VAL)
   (OVERLAP
-    WN::|same%3:00:02::|
-    WN::|same%3:00:02::|
+    WN::|even%3:00:01:equal:00|
     WN::|identical%5:00:00:same:02|
-    WN::|same%3:00:00::|)
+    WN::|same%3:00:00::|
+    WN::|same%3:00:02::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -32952,16 +32986,9 @@
   (INHERIT
     ONT::POLITICAL-REGION)
   (OVERLAP
-    WN::|land%1:15:02::|
-    WN::|state%1:15:00::|
-    WN::|country%1:15:00::|
     WN::|body_politic%1:14:00::|
     WN::|res_publica%1:14:00::|
     WN::|commonwealth%1:14:00::|
-    WN::|land%1:14:00::|
-    WN::|country%1:14:00::|
-    WN::|nation%1:14:00::|
-    WN::|state%1:14:00::|
     WN::|state%1:15:01::|
     WN::|province%1:15:00::|))
 
@@ -32997,6 +33024,21 @@
   (OVERLAP
     WN::|worry%2:37:00::|
     WN::|concern%2:42:01::|))
+
+(CONCEPT
+  ONT::STATE-RESULTING-FROM
+  (COMMENT
+   "relates an event to the object changed by that event (e.g., eventually
+               we could map this to a property based on ontological/commonsense knowledge")
+  (INHERIT
+    ONT::PROPERTY-VAL)
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         SITUATION)
+       (TYPE ONT::EVENT-OF-CHANGE))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::STATIC-VAL
@@ -33213,25 +33255,24 @@
   (INHERIT
     ONT::INHIBIT-EFFECT)
   (OVERLAP
-    WN::|lay_off%2:42:00::|
-    WN::|quit%2:42:04::|
-    WN::|give_up%2:42:00::|
-    WN::|cease%2:42:00::|
-    WN::|stop%2:42:00::|
-    WN::|discontinue%2:42:00::|
-    WN::|terminate%2:30:01::|
-    WN::|run_out%2:42:00::|
-    WN::|expire%2:42:00::|
+    WN::|abort%2:29:00::|
     WN::|blow_out%2:43:00::|
     WN::|bog_down%2:38:01::|
     WN::|break%2:42:04::|
+    WN::|cease%2:42:00::|
+    WN::|discontinue%2:42:00::|
+    WN::|expire%2:42:00::|
     WN::|get_off%2:41:00::|
+    WN::|give_up%2:42:00::|
     WN::|halt%2:38:01::|
+    WN::|lay_off%2:42:00::|
+    WN::|quit%2:42:04::|
+    WN::|run_out%2:42:00::|
     WN::|stop%2:38:01::|
-    WN::|abort%2:29:00::|
-    WN::|terminate%2:30:01::|
+    WN::|stop%2:42:00::|
     WN::|strand%2:38:02::|
-    WN::|strand%2:38:03::|))
+    WN::|strand%2:38:03::|
+    WN::|terminate%2:30:01::|))
 
 (CONCEPT
   ONT::STORAGE-FACILITY

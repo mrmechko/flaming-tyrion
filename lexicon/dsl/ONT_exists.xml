@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::exists">
  <relation label="inherit">
-  ont::be
+  ont::event-of-state
  </relation>
  <relation label="overlap">
   wn::|be%2:42:00::|
@@ -70,21 +70,46 @@
  </sem-feats>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::neutral1">
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
   <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
    <concept name="situation" />
-   <concept name="time" />
+   <concept name="abstr-obj" />
   </or>
  </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">static</feat>
+ <feat name="type">ont::event-of-state</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="container">-</feat>
+  <feat name="intentional">-</feat>
+  <feat name="type">ont::situation-root</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
  <role-restr-map roles="ont::neutral">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <sem-feats>
@@ -92,7 +117,11 @@
   situation
  </relation>
  <feat name="trajectory">-</feat>
- <feat name="type">ont::object-compare</feat>
+ <feat name="locative">located</feat>
+ <feat name="cause">-</feat>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">stage-level</feat>
+ <feat name="type">ont::exists</feat>
  </sem-feats>
  <concept name="ont::event-of-state">
  <comment>
@@ -123,138 +152,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::in-relation">
- <relation label="inherit">
-  ont::object-compare
- </relation>
- <relation label="overlap">
-  wn::|diverge%2:42:00::|
-  wn::|dominate%2:42:00::|
-  wn::|go_by%2:32:00::|
-  wn::|exceed%2:42:01::|
-  wn::|follow%2:42:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="time-span">extended</feat>
-  <feat name="aspect">static</feat>
-  <feat name="type">ont::in-relation</feat>
- </sem-feats>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::neutral">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="locative">located</feat>
- <feat name="cause">-</feat>
- <feat name="time-span">extended</feat>
- <feat name="aspect">stage-level</feat>
- <feat name="type">ont::exists</feat>
- </sem-feats>
- <concept name="ont::be">
- <relation label="inherit">
-  ont::in-relation
- </relation>
- <relation label="overlap">
-  wn::|be%2:42:06::|
-  wn::|be%2:42:07::|
-  wn::|be%2:41:00::|
-  wn::|be%2:42:02::|
-  wn::|be_full%2:34:00::|
-  wn::|be_quiet%2:32:00::|
-  wn::|mean%2:42:03::|
-  wn::|rest%2:41:00::|
-  wn::|equal%2:42:01::|
- </relation>
- </concept>
- <concept name="ont::object-compare">
- <relation label="inherit">
-  ont::event-of-state
- </relation>
- <relation label="overlap">
-  wn::|match%2:42:00::|
-  wn::|coordinate%2:30:01::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="type">ont::object-compare</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::neutral1">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="time-span">extended</feat>
- <feat name="aspect">static</feat>
- <feat name="type">ont::in-relation</feat>
- </sem-feats>
- <concept name="ont::situation-root">
- <comment>
-  &quot;root for all events, whether verbal or nominal&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="container">-</feat>
-  <feat name="intentional">-</feat>
-  <feat name="type">ont::situation-root</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">static</feat>
- <feat name="type">ont::event-of-state</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -269,6 +166,32 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::possibly-exists">
+ <relation label="inherit">
+  ont::exists
+ </relation>
+ <relation label="overlap">
+  wn::|look%2:39:01::|
+  wn::|appear%2:39:00::|
+  wn::|seem%2:39:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="locative">located</feat>
+  <feat name="cause">-</feat>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">stage-level</feat>
+  <feat name="type">ont::possibly-exists</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral">
+   <concept name="situation" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sense>
  <morph>
   <pos pos="v" />
