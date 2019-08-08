@@ -10391,6 +10391,10 @@
   (INHERIT
     ONT::HAVE-PROPERTY)
   (OVERLAP
+    WN::|look%2:39:01::|
+    WN::|seem%2:39:01::|
+    WN::|seem%2:39:02::|
+    WN::|seem%2:42:00::|
     WN::|sound%2:39:06::|
     WN::|taste%2:39:02::|)
   (SEM-FEATS
@@ -135414,10 +135418,6 @@
   ONT::POSSIBLY-EXISTS
   (INHERIT
     ONT::EXISTS)
-  (OVERLAP
-    WN::|look%2:39:01::|
-    WN::|appear%2:39:00::|
-    WN::|seem%2:39:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -135456,8 +135456,6 @@
   ONT::POSSIBLY-TRUE
   (INHERIT
     ONT::EVENT-OF-STATE)
-  (OVERLAP
-    WN::|seem%2:39:01::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (CONCEPT
@@ -171777,9 +171775,10 @@
   (INHERIT
     ONT::DIRECTIVE)
   (OVERLAP
+    WN::|advise%2:32:02::|
+    WN::|proposal%1:10:00::|
     WN::|propose%2:32:00::|
-    WN::|suggest%2:32:00::|
-    WN::|advise%2:32:02::|)
+    WN::|suggest%2:32:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
