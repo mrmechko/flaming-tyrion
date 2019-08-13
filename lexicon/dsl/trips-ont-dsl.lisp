@@ -3357,6 +3357,20 @@
     WN::|backache%1:26:00::|))
 
 (CONCEPT
+  ONT::BACKUP-SUPPORT
+  (INHERIT
+    ONT::HELP)
+  (OVERLAP
+    WN::|back_up%2:41:00::|
+    WN::|support%2:41:01::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)))))
+
+(CONCEPT
   ONT::BACTERIUM
   (INHERIT
     ONT::MICROORGANISM)
@@ -8693,9 +8707,9 @@
   (INHERIT
     ONT::EVENT-OF-STATE)
   (OVERLAP
-    WN::|indicate%2:32:02::|
-    WN::|argue%2:32:01::|
     WN::|affirm%2:31:00::|
+    WN::|argue%2:32:01::|
+    WN::|indicate%2:32:02::|
     WN::|read%2:32:02::|
     WN::|underlie%2:42:00::|)
   (SEM-FEATS
@@ -26354,24 +26368,6 @@
     ONT::POSSIBILITY-SCALE)
   (OVERLAP
     WN::|possibility%1:26:00::|))
-
-(CONCEPT
-  ONT::POSSIBLY-EXISTS
-  (INHERIT
-    ONT::EXISTS)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (TRAJECTORY -)
-    (LOCATIVE LOCATED)
-    (CAUSE -)
-    (TIME-SPAN EXTENDED)
-    (ASPECT STAGE-LEVEL)
-    (TYPE ONT::POSSIBLY-EXISTS))
-  (SEM-FRAME
-    (ONT::NEUTRAL
-     (CONCEPT
-       SITUATION))))
 
 (CONCEPT
   ONT::POSSIBLY-TRUE

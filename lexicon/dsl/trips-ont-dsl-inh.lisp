@@ -17794,6 +17794,72 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::BACKUP-SUPPORT
+  (INHERIT
+    ONT::HELP)
+  (OVERLAP
+    WN::|back_up%2:41:00::|
+    WN::|support%2:41:01::|)
+  (SEM-FRAME
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::FORMAL
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE
+        (OR
+          ONT::SITUATION-ROOT
+          ONT::PROPERTY-VAL)))
+     OPTIONAL)
+    (ONT::AGENT
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TYPE ONT::REFERENTIAL-SEM))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
+       (INTENTIONAL +))))
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (KR-TYPE ANY-KR-TYPE)
+    (INFORMATION MENTAL-CONSTRUCT)
+    (TIME-SPAN ANY-TIME-SPAN)
+    (LOCATIVE -)
+    (ORIGIN ANY-ORIGIN)
+    (IOBJ -)
+    (INTENTIONAL -)
+    (CONTAINER -)
+    (TANGIBLE +)
+    (ASPECT F::DYNAMIC)
+    (TRAJECTORY -)
+    (CAUSE
+     (OR
+       F::AGENTIVE
+       F::FORCE))
+    (TYPE ONT::CAUSE-EFFECT)))
+
+(CONCEPT
   ONT::BACTERIUM
   (INHERIT
     ONT::MICROORGANISM)
@@ -43944,9 +44010,9 @@
   (INHERIT
     ONT::EVENT-OF-STATE)
   (OVERLAP
-    WN::|indicate%2:32:02::|
-    WN::|argue%2:32:01::|
     WN::|affirm%2:31:00::|
+    WN::|argue%2:32:01::|
+    WN::|indicate%2:32:02::|
     WN::|read%2:32:02::|
     WN::|underlie%2:42:00::|)
   (SEM-FEATS
@@ -135413,44 +135479,6 @@
     (ONT::FIGURE
      (CONCEPT
        T))))
-
-(CONCEPT
-  ONT::POSSIBLY-EXISTS
-  (INHERIT
-    ONT::EXISTS)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (KR-TYPE ANY-KR-TYPE)
-    (INFORMATION MENTAL-CONSTRUCT)
-    (ORIGIN ANY-ORIGIN)
-    (IOBJ -)
-    (INTENTIONAL -)
-    (CONTAINER -)
-    (TANGIBLE +)
-    (TRAJECTORY -)
-    (LOCATIVE F::LOCATED)
-    (CAUSE -)
-    (TIME-SPAN F::EXTENDED)
-    (ASPECT F::STAGE-LEVEL)
-    (TYPE ONT::POSSIBLY-EXISTS))
-  (SEM-FRAME
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FORMAL
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE ONT::REFERENTIAL-SEM)))))
 
 (CONCEPT
   ONT::POSSIBLY-TRUE
