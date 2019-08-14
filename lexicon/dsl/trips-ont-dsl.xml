@@ -4614,6 +4614,7 @@
    wn::|drink%1:13:00::|
    wn::|drinkable%1:13:00::|
    wn::|potable%1:13:00::|
+   wn::|milkshake%1:13:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -10711,6 +10712,8 @@
   <relation label="overlap">
    wn::|dance%2:38:01::|
    wn::|dance%2:38:02::|
+   wn::|dance%2:36:00::|
+   wn::|dancing%1:04:00::|
   </relation>
  </concept>
  <concept name="ont::dangerous">
@@ -11653,6 +11656,7 @@
   </relation>
   <relation label="overlap">
    wn::|device%1:06:00::|
+   wn::|buoy%1:10:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -12696,7 +12700,7 @@
    &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
   </comment>
   <relation label="inherit">
-   ont::abstract-object
+   ont::relation
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -12850,6 +12854,8 @@
   <relation label="overlap">
    wn::|drink%2:34:00::|
    wn::|drink%2:34:12::|
+   wn::|drinking%1:04:01::|
+   wn::|drink%2:34:02::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected">
@@ -12868,7 +12874,6 @@
   </relation>
   <relation label="overlap">
    wn::|barroom%1:06:00::|
-   wn::|bar%1:06:00::|
    wn::|saloon%1:06:00::|
    wn::|ginmill%1:06:00::|
    wn::|taproom%1:06:00::|
@@ -16919,6 +16924,10 @@
   <relation label="inherit">
    ont::measure-unit
   </relation>
+  <relation label="overlap">
+   wn::|drink%1:04:00::|
+   wn::|serving%1:13:00::|
+  </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
     <sem-feats>
@@ -19561,6 +19570,26 @@
     <concept name="phys-obj" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::imaginary-being">
+  <relation label="inherit">
+   ont::organism
+  </relation>
+  <relation label="overlap">
+   wn::|imaginary_being%1:18:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="information">-</feat>
+   <feat name="intentional">+</feat>
+   <feat name="container">-</feat>
+   <feat name="mobility">self-moving</feat>
+   <feat name="spatial-abstraction">spatial-point</feat>
+   <feat name="form">solid-object</feat>
+   <feat name="type">ont::imaginary-being</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::imitate-simulate">
   <relation label="inherit">
@@ -22874,6 +22903,30 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::location-as-orientation">
+  <comment>
+   &quot;relations that locate in terms of orientation&quot;
+  </comment>
+  <relation label="inherit">
+   ont::be-at
+  </relation>
+  <relation label="overlap">
+   wn::|slope%2:38:00::|
+   wn::|ascend%2:38:10::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">stage-level</feat>
+   <feat name="type">ont::location-as-orientation</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::neutral" optional="optional">
+    <concept name="phys-obj" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::location-by-description">
   <relation label="inherit">
    ont::location
@@ -25064,7 +25117,6 @@
    wn::|go%2:38:00::|
    wn::|move%2:38:03::|
    wn::|locomote%2:38:00::|
-   wn::|ascend%2:38:10::|
    wn::|be_active%2:29:00::|
    wn::|draw%2:35:13::|
    wn::|go%2:42:06::|
@@ -29170,7 +29222,6 @@
   </relation>
   <relation label="overlap">
    wn::|person%1:03:00::|
-   wn::|imaginary_being%1:18:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -30306,7 +30357,7 @@
    &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
   </comment>
   <relation label="inherit">
-   ont::abstract-object
+   ont::relation
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground" optional="optional">
@@ -30754,7 +30805,7 @@
    &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as)&quot;
   </comment>
   <relation label="inherit">
-   ont::abstract-object
+   ont::relation
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -33156,6 +33207,9 @@
   </relation>
  </concept>
  <concept name="ont::relation">
+  <comment>
+   &quot;All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier&quot;
+  </comment>
   <relation label="inherit">
    ont::abstract-object
   </relation>
@@ -33170,9 +33224,6 @@
    <feat name="type">ont::relation</feat>
   </sem-feats>
   <sem-frame>
-   <role-restr-map roles="ont::refset" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
    <role-restr-map roles="ont::compar" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -35929,6 +35980,9 @@
   <relation label="inherit">
    ont::shape
   </relation>
+  <relation label="overlap">
+   wn::|shape%1:03:00::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -37602,6 +37656,22 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::spatial-divide">
+  <relation label="inherit">
+   ont::position
+  </relation>
+  <relation label="overlap">
+   wn::|divide%2:42:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">stage-level</feat>
+   <feat name="type">ont::spatial-divide</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::spatial-scale">
   <comment>
    &quot;scales relating to the properties of space&quot;
@@ -38939,6 +39009,9 @@
  <concept name="ont::supernatural-being">
   <relation label="inherit">
    ont::organism
+  </relation>
+  <relation label="overlap">
+   wn::|supernatural_being%1:18:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">

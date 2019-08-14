@@ -52,38 +52,31 @@
  </sem-feats>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::standard" optional="optional">
+ <role-restr-map roles="ont::refset" optional="optional">
   <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">ont::number</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::scale" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">ont::domain</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::ground" optional="optional">
   <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::reason" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
  </role-restr-map>
  <role-restr-map roles="ont::figure">
   <concept name="t" />
@@ -93,50 +86,40 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="intentional">-</feat>
- <feat name="information">-</feat>
- <feat name="container">-</feat>
- <feat name="type">ont::property-val</feat>
+ <feat name="scale">ont::domain</feat>
+ <feat name="type">ont::domain-property</feat>
  </sem-feats>
- <concept name="ont::domain-property">
+ <concept name="ont::relation">
  <comment>
-  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+  &quot;All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|relation%1:03:00::|
+  wn::|amount%2:42:03::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::domain</feat>
-  <feat name="type">ont::domain-property</feat>
+  <feat name="type">ont::relation</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::refset" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::compar" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="type">ont::number</feat>
-   </sem-feats>
+   <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::scale" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">ont::domain</feat>
-   </sem-feats>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::figure">
@@ -148,91 +131,8 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::appearance-scale</feat>
- <feat name="type">ont::appearance-property-val</feat>
- </sem-feats>
- <concept name="ont::physical-property-val">
- <comment>
-  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::physical-property-scale</feat>
-  <feat name="type">ont::physical-property-val</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="measure-function">value</feat>
- <feat name="type">ont::texture-val</feat>
- </sem-feats>
- <concept name="ont::touch-property-val">
- <comment>
-  &quot;subjective characteristics of an item perceived through tactile input&quot;
- </comment>
- <relation label="inherit">
-  ont::appearance-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::touch-scale</feat>
-  <feat name="type">ont::touch-property-val</feat>
- </sem-feats>
- </concept>
- <concept name="ont::texture-val">
- <relation label="inherit">
-  ont::touch-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="measure-function">value</feat>
-  <feat name="type">ont::texture-val</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::hardness*1--07--00</feat>
- <feat name="type">ont::hard-val</feat>
- </sem-feats>
- <concept name="ont::hardness-val">
- <relation label="inherit">
-  ont::texture-val
- </relation>
- </concept>
- <concept name="ont::appearance-property-val">
- <comment>
-  &quot;subjective chracteristics on HOW something is perceived through sensory input (compare to ont::sensory-property-val)&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::appearance-scale</feat>
-  <feat name="type">ont::appearance-property-val</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::touch-scale</feat>
- <feat name="type">ont::touch-property-val</feat>
+ <feat name="scale">ont::physical-property-scale</feat>
+ <feat name="type">ont::physical-property-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -290,9 +190,185 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::physical-property-scale</feat>
- <feat name="type">ont::physical-property-val</feat>
+ <feat name="scale">ont::touch-scale</feat>
+ <feat name="type">ont::touch-property-val</feat>
  </sem-feats>
+ <concept name="ont::appearance-property-val">
+ <comment>
+  &quot;subjective chracteristics on HOW something is perceived through sensory input (compare to ont::sensory-property-val)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::appearance-scale</feat>
+  <feat name="type">ont::appearance-property-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::hardness-val">
+ <relation label="inherit">
+  ont::texture-val
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::hardness*1--07--00</feat>
+ <feat name="type">ont::hard-val</feat>
+ </sem-feats>
+ <concept name="ont::texture-val">
+ <relation label="inherit">
+  ont::touch-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="measure-function">value</feat>
+  <feat name="type">ont::texture-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::touch-property-val">
+ <comment>
+  &quot;subjective characteristics of an item perceived through tactile input&quot;
+ </comment>
+ <relation label="inherit">
+  ont::appearance-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::touch-scale</feat>
+  <feat name="type">ont::touch-property-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="measure-function">value</feat>
+ <feat name="type">ont::texture-val</feat>
+ </sem-feats>
+ <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::physical-property-scale</feat>
+  <feat name="type">ont::physical-property-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::appearance-scale</feat>
+ <feat name="type">ont::appearance-property-val</feat>
+ </sem-feats>
+ <concept name="ont::domain-property">
+ <comment>
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">ont::number</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::scale" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">ont::domain</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::standard" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::reason" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -316,34 +392,22 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::domain</feat>
- <feat name="type">ont::domain-property</feat>
+ <feat name="type">ont::relation</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::refset" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::compar" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="type">ont::number</feat>
-  </sem-feats>
+  <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::scale" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">ont::domain</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::figure">

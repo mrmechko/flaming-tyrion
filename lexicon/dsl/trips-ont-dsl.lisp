@@ -4021,7 +4021,8 @@
     WN::|beverage%1:13:00::|
     WN::|drink%1:13:00::|
     WN::|drinkable%1:13:00::|
-    WN::|potable%1:13:00::|)
+    WN::|potable%1:13:00::|
+    WN::|milkshake%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -9311,7 +9312,9 @@
     ONT::SELF-LOCOMOTE)
   (OVERLAP
     WN::|dance%2:38:01::|
-    WN::|dance%2:38:02::|))
+    WN::|dance%2:38:02::|
+    WN::|dance%2:36:00::|
+    WN::|dancing%1:04:00::|))
 
 (CONCEPT
   ONT::DANGEROUS
@@ -10132,7 +10135,8 @@
   (INHERIT
     ONT::MANUFACTURED-OBJECT)
   (OVERLAP
-    WN::|device%1:06:00::|)
+    WN::|device%1:06:00::|
+    WN::|buoy%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -11042,7 +11046,7 @@
   (COMMENT
    "these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)")
   (INHERIT
-    ONT::ABSTRACT-OBJECT)
+    ONT::RELATION)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -11175,7 +11179,9 @@
     ONT::CONSUME)
   (OVERLAP
     WN::|drink%2:34:00::|
-    WN::|drink%2:34:12::|)
+    WN::|drink%2:34:12::|
+    WN::|drinking%1:04:01::|
+    WN::|drink%2:34:02::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -11189,7 +11195,6 @@
     ONT::ENTERTAINMENT-ESTABLISHMENT)
   (OVERLAP
     WN::|barroom%1:06:00::|
-    WN::|bar%1:06:00::|
     WN::|saloon%1:06:00::|
     WN::|ginmill%1:06:00::|
     WN::|taproom%1:06:00::|))
@@ -14699,6 +14704,9 @@
   ONT::FOOD-MEASURE-UNIT
   (INHERIT
     ONT::MEASURE-UNIT)
+  (OVERLAP
+    WN::|drink%1:04:00::|
+    WN::|serving%1:13:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -16973,6 +16981,23 @@
      (CONCEPT
        PHYS-OBJ)
      OPTIONAL)))
+
+(CONCEPT
+  ONT::IMAGINARY-BEING
+  (INHERIT
+    ONT::ORGANISM)
+  (OVERLAP
+    WN::|imaginary_being%1:18:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (INFORMATION -)
+    (INTENTIONAL +)
+    (CONTAINER -)
+    (MOBILITY SELF-MOVING)
+    (SPATIAL-ABSTRACTION SPATIAL-POINT)
+    (FORM SOLID-OBJECT)
+    (TYPE ONT::IMAGINARY-BEING)))
 
 (CONCEPT
   ONT::IMITATE-SIMULATE
@@ -19807,6 +19832,25 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::LOCATION-AS-ORIENTATION
+  (COMMENT "relations that locate in terms of orientation")
+  (INHERIT
+    ONT::BE-AT)
+  (OVERLAP
+    WN::|slope%2:38:00::|
+    WN::|ascend%2:38:10::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (ASPECT STAGE-LEVEL)
+    (TYPE ONT::LOCATION-AS-ORIENTATION))
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (CONCEPT
+       PHYS-OBJ)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::LOCATION-BY-DESCRIPTION
   (INHERIT
     ONT::LOCATION))
@@ -21692,7 +21736,6 @@
     WN::|go%2:38:00::|
     WN::|move%2:38:03::|
     WN::|locomote%2:38:00::|
-    WN::|ascend%2:38:10::|
     WN::|be_active%2:29:00::|
     WN::|draw%2:35:13::|
     WN::|go%2:42:06::|
@@ -25222,8 +25265,7 @@
   (INHERIT
     ONT::MAMMAL)
   (OVERLAP
-    WN::|person%1:03:00::|
-    WN::|imaginary_being%1:18:00::|)
+    WN::|person%1:03:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -26195,7 +26237,7 @@
   (COMMENT
    "Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit")
   (INHERIT
-    ONT::ABSTRACT-OBJECT)
+    ONT::RELATION)
   (SEM-FRAME
     (ONT::GROUND
      (SEM-FEATS
@@ -26588,7 +26630,7 @@
   (COMMENT
    "predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as)")
   (INHERIT
-    ONT::ABSTRACT-OBJECT)
+    ONT::RELATION)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -28687,6 +28729,8 @@
 
 (CONCEPT
   ONT::RELATION
+  (COMMENT
+   "All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier")
   (INHERIT
     ONT::ABSTRACT-OBJECT)
   (OVERLAP
@@ -28697,10 +28741,6 @@
       ABSTR-OBJ)
     (TYPE ONT::RELATION))
   (SEM-FRAME
-    (ONT::REFSET
-     (CONCEPT
-       T)
-     OPTIONAL)
     (ONT::COMPAR
      (CONCEPT
        T)
@@ -31157,6 +31197,8 @@
   ONT::SHAPE-OBJECT
   (INHERIT
     ONT::SHAPE)
+  (OVERLAP
+    WN::|shape%1:03:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -32601,6 +32643,19 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::SPATIAL-DIVIDE
+  (INHERIT
+    ONT::POSITION)
+  (OVERLAP
+    WN::|divide%2:42:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN EXTENDED)
+    (ASPECT STAGE-LEVEL)
+    (TYPE ONT::SPATIAL-DIVIDE)))
+
+(CONCEPT
   ONT::SPATIAL-SCALE
   (COMMENT "scales relating to the properties of space")
   (INHERIT
@@ -33778,6 +33833,8 @@
   ONT::SUPERNATURAL-BEING
   (INHERIT
     ONT::ORGANISM)
+  (OVERLAP
+    WN::|supernatural_being%1:18:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
