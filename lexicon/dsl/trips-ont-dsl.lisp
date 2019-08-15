@@ -87,6 +87,8 @@
   (INHERIT
     ONT::ABILITY-VAL)
   (OVERLAP
+    WN::|capable%3:00:02::|
+    WN::|able%3:00:00::|
     WN::|capable%3:00:00::|
     WN::|able%5:00:00:capable:00|
     WN::|able%5:00:00:competent:00|
@@ -119,6 +121,9 @@
   (INHERIT
     ONT::ASSOCIATED-WITH-VAL)
   (OVERLAP
+    WN::|high-tech%3:00:00::|
+    WN::|hi-tech%3:00:00::|
+    WN::|low-tech%3:00:00::|
     WN::|technical%3:00:00::|
     WN::|technical%3:01:00::|)
   (SEM-FEATS
@@ -157,6 +162,15 @@
     (TYPE ONT::ABSTRACT-OBJECT-NONTEMPORAL)))
 
 (CONCEPT
+  ONT::ABUNDANT-VAL
+  (COMMENT "(abundant)")
+  (INHERIT
+    ONT::ADEQUACY-VAL)
+  (OVERLAP
+    WN::|abundant%3:00:00::|
+    WN::|ample%3:00:00::|))
+
+(CONCEPT
   ONT::ABUSE
   (INHERIT
     ONT::JUDGEMENT)
@@ -167,6 +181,70 @@
     WN::|ill-use%2:41:00::|
     WN::|step%2:41:00::|
     WN::|ill-treat%2:41:00::|))
+
+(CONCEPT
+  ONT::ACADEMIC-DISCIPLINE-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-ACADEMICS-VAL)
+  (OVERLAP
+    WN::|eschatological%3:01:00::|
+    WN::|sociological%3:01:00::|
+    WN::|metrological%3:01:00::|
+    WN::|anthropological%3:01:00::|
+    WN::|jurisprudential%3:01:00::|
+    WN::|cryptanalytic%3:01:00::|
+    WN::|cryptographic%3:01:00::|
+    WN::|cryptographical%3:01:00::|
+    WN::|cryptologic%3:01:00::|
+    WN::|cryptological%3:01:00::|
+    WN::|epistemic%3:01:00::|
+    WN::|epistemological%3:01:00::|
+    WN::|allometric%3:01:00::|
+    WN::|bionic%3:01:00::|
+    WN::|biosystematic%3:01:00::|
+    WN::|agrologic%3:01:00::|
+    WN::|agrological%3:01:00::|
+    WN::|historical%3:01:00::|
+    WN::|cybernetic%3:01:00::|
+    WN::|ergonomic%3:01:00::|
+    WN::|hermeneutic%3:01:00::|
+    WN::|metallurgical%3:01:00::|
+    WN::|metallurgic%3:01:00::|
+    WN::|philosophic%3:01:00::|
+    WN::|philosophical%3:01:00::|
+    WN::|casuistic%3:01:00::|
+    WN::|casuistical%3:01:00::|
+    WN::|classical%3:01:00::|
+    WN::|dialectic%3:01:00::|
+    WN::|dialectical%3:01:00::|
+    WN::|axiological%3:01:00::|
+    WN::|bibliotic%3:01:00::|
+    WN::|aesthetic%3:01:00::|
+    WN::|esthetic%3:01:00::|
+    WN::|etiological%3:01:01::|
+    WN::|etiologic%3:01:01::|
+    WN::|aetiological%3:01:01::|
+    WN::|aetiologic%3:01:01::|
+    WN::|tectonic%3:01:01::|
+    WN::|architectonic%3:01:00::|
+    WN::|disciplinary%3:01:01::|
+    WN::|agronomic%3:01:00::|
+    WN::|agronomical%3:01:00::|
+    WN::|disciplinary%3:01:00::|
+    WN::|technical%3:01:03::|
+    WN::|technological%3:01:00::|
+    WN::|juridical%3:01:02::|
+    WN::|juridic%3:01:02::|
+    WN::|numerological%3:01:00::|
+    WN::|interdisciplinary%3:01:00::|
+    WN::|eudemonic%3:01:00::|
+    WN::|eudaemonic%3:01:00::|
+    WN::|ethical%3:01:00::|
+    WN::|glottochronological%3:01:00::|
+    WN::|humanist%3:01:00::|
+    WN::|humanistic%3:01:00::|
+    WN::|humane%3:01:01::|
+    WN::|transcendental%3:01:00::|))
 
 (CONCEPT
   ONT::ACADEMIC-INSTITUTION
@@ -366,6 +444,19 @@
     ONT::RESPONSE))
 
 (CONCEPT
+  ONT::ACKNOWLEDGED-VAL
+  (COMMENT "openly and publicly acknowledged (confirmed)")
+  (INHERIT
+    ONT::OPEN-ACKNOWLEDGEMENT-VAL)
+  (OVERLAP
+    WN::|established%3:00:00::|
+    WN::|constituted%3:00:00::|
+    WN::|declared%3:00:00::|
+    WN::|acknowledged%3:00:00::|
+    WN::|legitimate%3:00:00::|
+    WN::|confirmed%3:00:00::|))
+
+(CONCEPT
   ONT::ACOUSTIC-DEVICE
   (INHERIT
     ONT::DEVICE)
@@ -557,6 +648,13 @@
   (INHERIT
     ONT::ACTIVITY-VAL)
   (OVERLAP
+    WN::|active%3:00:07::|
+    WN::|occupied%3:00:00::|
+    WN::|live%3:00:01::|
+    WN::|active%3:00:05::|
+    WN::|live%3:00:02::|
+    WN::|unrecorded%3:00:04::|
+    WN::|active%3:00:04::|
     WN::|busy%5:00:01:active:06|
     WN::|active%3:00:06::|
     WN::|active%3:00:03::|
@@ -700,7 +798,7 @@
   (COMMENT
    "properties relating to whether something is operating/active as intended")
   (INHERIT
-    ONT::OBJECT-AFFORDANCES-VAL)
+    ONT::PROCESS-VAL)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -713,6 +811,9 @@
   (INHERIT
     ONT::ACTUALITY-VAL)
   (OVERLAP
+    WN::|realistic%3:00:00::|
+    WN::|actual%3:00:00::|
+    WN::|existent%3:00:04::|
     WN::|real%3:00:00::|
     WN::|actual%5:00:00:real:00|
     WN::|concrete%3:00:00::|)
@@ -758,6 +859,22 @@
     WN::|flexibility%1:07:01::|
     WN::|adaptability%1:07:00::|
     WN::|pliability%1:07:01::|))
+
+(CONCEPT
+  ONT::ADAPTABILITY-VAL
+  (COMMENT "(adaptable)")
+  (INHERIT
+    ONT::CAN-BE-DONE-VAL))
+
+(CONCEPT
+  ONT::ADAPTABLE-VAL
+  (COMMENT "(adaptable)")
+  (INHERIT
+    ONT::ADAPTABILITY-VAL)
+  (OVERLAP
+    WN::|adaptable%3:00:00::|
+    WN::|inelastic%3:00:00::|
+    WN::|flexible%3:00:02::|))
 
 (CONCEPT
   ONT::ADD-INCLUDE
@@ -829,6 +946,8 @@
   (INHERIT
     ONT::ADEQUACY-VAL)
   (OVERLAP
+    WN::|adequate%3:00:00::|
+    WN::|equal%3:00:03::|
     WN::|sufficient%3:00:00::|
     WN::|adequate%5:00:00:sufficient:00|))
 
@@ -844,6 +963,7 @@
   (INHERIT
     ONT::NEAR-RELN)
   (OVERLAP
+    WN::|subjacent%3:00:00::|
     WN::|adjacent%5:00:00:close:01|)
   (SEM-FRAME
     (ONT::GROUND
@@ -934,6 +1054,9 @@
   (INHERIT
     ONT::CLOTHEDNESS-ADORNMENT-VAL)
   (OVERLAP
+    WN::|bordered%3:00:00::|
+    WN::|unglazed%3:00:00::|
+    WN::|painted%3:00:01::|
     WN::|adorned%3:00:00::|))
 
 (CONCEPT
@@ -1000,6 +1123,17 @@
        T))))
 
 (CONCEPT
+  ONT::AFFECTED-VAL
+  (COMMENT "(affected)")
+  (INHERIT
+    ONT::NEUTRAL-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|affected%3:00:00::|
+    WN::|awed%3:00:00::|
+    WN::|awestruck%3:00:00::|
+    WN::|awestricken%3:00:00::|))
+
+(CONCEPT
   ONT::AFFECTION-SCALE
   (INHERIT
     ONT::BEHAVIORAL-SCALE)
@@ -1009,7 +1143,7 @@
 (CONCEPT
   ONT::AFFECTION-VAL
   (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL)
+    ONT::SOCIAL-INTERACTION-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -1021,6 +1155,11 @@
   (INHERIT
     ONT::AFFECTION-VAL)
   (OVERLAP
+    WN::|tender%3:00:03::|
+    WN::|soft%3:00:02::|
+    WN::|softhearted%3:00:00::|
+    WN::|soft-boiled%3:00:00::|
+    WN::|warmhearted%3:00:00::|
     WN::|amicable%3:00:00::|
     WN::|warm%3:00:02::|
     WN::|friendly%3:00:01::|
@@ -1090,6 +1229,7 @@
   (INHERIT
     ONT::OF-BIRTH-VAL)
   (OVERLAP
+    WN::|nidicolous%3:00:00::|
     WN::|postnatal%3:00:00::|
     WN::|neonatal%3:01:00::|))
 
@@ -1100,6 +1240,16 @@
   (OVERLAP
     WN::|postmortem%3:00:00::|
     WN::|postmortem%5:00:00:succeeding:00|))
+
+(CONCEPT
+  ONT::AFTER-EXPECTED-TIME-VAL
+  (COMMENT "(late)")
+  (INHERIT
+    ONT::TIMELINESS-VAL)
+  (OVERLAP
+    WN::|unpunctual%3:00:00::|
+    WN::|late%3:00:00::|
+    WN::|retrospective%3:00:00::|))
 
 (CONCEPT
   ONT::AFTERNOON
@@ -1131,6 +1281,13 @@
        (ORIENTATION POS)
        (SCALE ONT::AGE-SCALE))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::AGE-GROUP-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-PERSON-VAL)
+  (OVERLAP
+    WN::|generational%3:01:00::|))
 
 (CONCEPT
   ONT::AGE-SCALE
@@ -1196,6 +1353,10 @@
   (INHERIT
     ONT::BOLDNESS-VAL)
   (OVERLAP
+    WN::|domineering%3:00:00::|
+    WN::|assertive%3:00:00::|
+    WN::|self-asserting%3:00:00::|
+    WN::|self-assertive%3:00:00::|
     WN::|aggressive%3:00:00::|
     WN::|violent%3:00:00::|
     WN::|strident%5:00:00:imperative:00|)
@@ -1352,6 +1513,9 @@
   (INHERIT
     ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
+    WN::|clearheaded%3:00:00::|
+    WN::|clear-thinking%3:00:00::|
+    WN::|wary%3:00:00::|
     WN::|alert%5:00:00:aware:00|
     WN::|alert%5:00:00:energetic:00|)
   (SEM-FEATS
@@ -1429,7 +1593,10 @@
 (CONCEPT
   ONT::ALLOWS-DOING-VAL
   (INHERIT
-    ONT::PERMISSION-RELATED-VAL))
+    ONT::PERMISSION-RELATED-VAL)
+  (OVERLAP
+    WN::|nonspeaking%3:00:00::|
+    WN::|walk-on%3:00:00::|))
 
 (CONCEPT
   ONT::ALTER-CONSCIOUSNESS
@@ -1438,6 +1605,18 @@
   (OVERLAP
     WN::|trip%2:34:00::|
     WN::|hallucinate%2:39:00::|))
+
+(CONCEPT
+  ONT::ALTERING-CONSCIOUSNESS-VAL
+  (COMMENT "(intoxicated)")
+  (INHERIT
+    ONT::NOT-SENSIBLE-VAL)
+  (OVERLAP
+    WN::|intoxicated%3:00:00::|
+    WN::|drunk%3:00:00::|
+    WN::|inebriated%3:00:00::|
+    WN::|psychoactive%3:00:00::|
+    WN::|psychotropic%3:00:00::|))
 
 (CONCEPT
   ONT::ALWAYS
@@ -1461,6 +1640,16 @@
     WN::|pile_up%2:30:00::|
     WN::|gather%2:30:00::|
     WN::|amass%2:30:00::|))
+
+(CONCEPT
+  ONT::AMBIGUOUS-VAL
+  (COMMENT "(ambiguous)")
+  (INHERIT
+    ONT::CLARITY-VAL)
+  (OVERLAP
+    WN::|ambiguous%3:00:00::|
+    WN::|equivocal%3:00:00::|
+    WN::|ambiguous%3:00:04::|))
 
 (CONCEPT
   ONT::AMBITIOUS-VAL
@@ -1547,6 +1736,10 @@
   (INHERIT
     ONT::HISTORICAL-ERA-VAL)
   (OVERLAP
+    WN::|nonmodern%3:00:00::|
+    WN::|early%3:00:00::|
+    WN::|classical%3:00:00::|
+    WN::|classic%3:00:00::|
     WN::|ancient%5:00:00:past:00|
     WN::|prehistoric%5:00:00:past:00|
     WN::|prehistoric%3:01:00::|))
@@ -1630,6 +1823,8 @@
   (INHERIT
     ONT::SHAPE-VAL)
   (OVERLAP
+    WN::|re-entrant%3:00:00::|
+    WN::|reentrant%3:00:00::|
     WN::|angular%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -1689,11 +1884,25 @@
     (TYPE ONT::ANIMAL-GROUP)))
 
 (CONCEPT
+  ONT::ANIMAL-MATERIAL-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-BODY-VAL)
+  (OVERLAP
+    WN::|osseous%3:01:00::|
+    WN::|osteal%3:01:00::|
+    WN::|bony%3:01:00::|
+    WN::|nacreous%3:01:00::|
+    WN::|butyraceous%3:01:00::|))
+
+(CONCEPT
   ONT::ANIMAL-PROPENSITY-VAL
   (COMMENT
    "properties relating to human or animal tendencies or inclinations to behave in a particular manner")
   (INHERIT
     ONT::PROPERTY-VAL)
+  (OVERLAP
+    WN::|diligent%3:00:00::|
+    WN::|enterprising%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -2011,6 +2220,7 @@
   (INHERIT
     ONT::APPROPRIATENESS-VAL)
   (OVERLAP
+    WN::|apropos%3:00:00::|
     WN::|appropriate%3:00:00::|
     WN::|pat%5:00:00:appropriate:00|
     WN::|proper%5:00:00:appropriate:00|
@@ -2078,6 +2288,30 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::ARCHITECTURAL-PROPERTY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-ARCHITECTURE-VAL)
+  (OVERLAP
+    WN::|detached%3:00:00::|
+    WN::|megalithic%3:01:00::|
+    WN::|arched%3:01:00::|
+    WN::|bistroic%3:01:00::|
+    WN::|fenestral%3:01:00::|
+    WN::|basilican%3:01:00::|
+    WN::|multilevel%3:01:00::|
+    WN::|attached%3:00:02::|
+    WN::|amphitheatric%3:01:00::|
+    WN::|amphitheatrical%3:01:00::|
+    WN::|architectural%3:01:00::|
+    WN::|monumental%3:01:00::|
+    WN::|oxonian%3:01:01::|
+    WN::|locker-room%3:01:00::|
+    WN::|domestic%3:01:00::|
+    WN::|mural%3:01:00::|
+    WN::|domiciliary%3:01:00::|
+    WN::|bungaloid%3:01:00::|))
 
 (CONCEPT
   ONT::ARCHIVE
@@ -2309,6 +2543,91 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::ARTICULATE-VAL
+  (COMMENT "able to talk (articulate)")
+  (INHERIT
+    ONT::ABLE)
+  (OVERLAP
+    WN::|articulate%3:00:00::|))
+
+(CONCEPT
+  ONT::ARTIFACT-PROPERTY-VAL
+  (INHERIT
+    ONT::PHYSICS-VAL)
+  (OVERLAP
+    WN::|electrolytic%3:01:00::|
+    WN::|axial%3:01:00::|
+    WN::|telegraphic%3:01:00::|
+    WN::|forcipate%3:01:00::|
+    WN::|antisatellite%3:01:00::|
+    WN::|asat%3:01:00::|
+    WN::|paramagnetic%3:01:00::|
+    WN::|archival%3:01:00::|
+    WN::|closed-circuit%3:01:00::|
+    WN::|artifactual%3:01:00::|
+    WN::|artefactual%3:01:00::|
+    WN::|viscometric%3:01:00::|
+    WN::|viscosimetric%3:01:00::|
+    WN::|stereoscopic%3:01:01::|
+    WN::|tiered%3:01:00::|
+    WN::|prismatic%3:01:00::|
+    WN::|audiovisual%3:01:00::|
+    WN::|spring-loaded%3:01:00::|
+    WN::|ceramic%3:01:00::|
+    WN::|catapultic%3:01:00::|
+    WN::|catapultian%3:01:00::|
+    WN::|textile%3:01:00::|
+    WN::|interstitial%3:01:00::|
+    WN::|anodic%3:01:00::|
+    WN::|anodal%3:01:00::|
+    WN::|antiquarian%3:01:00::|
+    WN::|funicular%3:01:00::|
+    WN::|spermicidal%3:01:00::|
+    WN::|gyroscopic%3:01:00::|
+    WN::|woolen%3:01:00::|
+    WN::|woollen%3:01:00::|
+    WN::|bladed%3:01:01::|
+    WN::|electromechanical%3:01:00::|
+    WN::|mechanical%3:01:01::|
+    WN::|mechanically_skillful%3:01:00::|
+    WN::|anastigmatic%3:01:00::|
+    WN::|stigmatic%3:01:00::|
+    WN::|three-wheel%3:01:00::|
+    WN::|three-wheeled%3:01:00::|
+    WN::|fisheye%3:01:00::|
+    WN::|wide-angle%3:01:00::|
+    WN::|valved%3:01:00::|
+    WN::|servomechanical%3:01:00::|
+    WN::|servo%3:01:00::|
+    WN::|journalistic%3:01:00::|
+    WN::|mud-brick%3:01:00::|
+    WN::|ropy%3:01:00::|
+    WN::|ropey%3:01:00::|
+    WN::|vehicular%3:01:00::|
+    WN::|coin-operated%3:01:00::|
+    WN::|prosthetic%3:01:00::|
+    WN::|tegular%3:01:00::|
+    WN::|valvular%3:01:00::|
+    WN::|two-wheel%3:01:00::|
+    WN::|two-wheeled%3:01:00::|
+    WN::|four-wheel%3:01:00::|
+    WN::|four-wheeled%3:01:00::|
+    WN::|calico%3:01:00::|
+    WN::|threaded%3:01:00::|
+    WN::|barometric%3:01:00::|
+    WN::|barometrical%3:01:00::|
+    WN::|robotic%3:01:00::|
+    WN::|broadband%3:01:01::|
+    WN::|cathodic%3:01:00::|
+    WN::|cinematic%3:01:00::|
+    WN::|life-support%3:01:00::|
+    WN::|cementitious%3:01:00::|
+    WN::|muzzle-loading%3:01:00::|
+    WN::|biedermeier%3:01:00::|
+    WN::|bolometric%3:01:00::|
+    WN::|vestiary%3:01:00::|))
+
+(CONCEPT
   ONT::ARTIFICIAL
   (INHERIT
     ONT::ARTIFICIALITY-VAL)
@@ -2354,6 +2673,73 @@
     (TYPE ONT::ARTIFICIALITY-VAL)))
 
 (CONCEPT
+  ONT::ARTIST-CRAFTSMAN-VAL
+  (INHERIT
+    ONT::FAMOUS-PERSON-VAL)
+  (OVERLAP
+    WN::|palladian%3:01:00::|
+    WN::|rembrandtesque%3:01:00::|
+    WN::|ambrosian%3:01:00::|
+    WN::|stravinskyan%3:01:00::|
+    WN::|stravinskian%3:01:00::|
+    WN::|mozartian%3:01:00::|
+    WN::|mozartean%3:01:00::|
+    WN::|handelian%3:01:00::|
+    WN::|pre-raphaelite%3:01:00::|
+    WN::|beethovenian%3:01:00::|
+    WN::|gauguinesque%3:01:00::|
+    WN::|michelangelesque%3:01:00::|
+    WN::|chippendale%3:01:00::|
+    WN::|wagnerian%3:01:00::|))
+
+(CONCEPT
+  ONT::ARTISTIC-PROPERTY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-ARTS-VAL)
+  (OVERLAP
+    WN::|aesthetic%3:00:00::|
+    WN::|esthetic%3:00:00::|
+    WN::|aesthetical%3:00:00::|
+    WN::|esthetical%3:00:00::|
+    WN::|inaesthetic%3:00:00::|
+    WN::|unaesthetic%3:00:00::|
+    WN::|nonrepresentational%3:00:00::|
+    WN::|postmodernist%3:01:00::|
+    WN::|postmodern%3:01:00::|
+    WN::|impressionist%3:01:00::|
+    WN::|impressionistic%3:01:00::|
+    WN::|statuary%3:01:00::|
+    WN::|short-handled%3:01:00::|
+    WN::|sculptural%3:01:00::|
+    WN::|expressionist%3:01:00::|
+    WN::|expressionistic%3:01:00::|
+    WN::|futuristic%3:01:00::|
+    WN::|futurist%3:01:00::|
+    WN::|doric%3:01:00::|
+    WN::|homiletic%3:01:00::|
+    WN::|homiletical%3:01:00::|
+    WN::|choreographic%3:01:00::|
+    WN::|romantic%3:01:00::|
+    WN::|romanticist%3:01:00::|
+    WN::|romanticistic%3:01:00::|
+    WN::|cubist%3:01:00::|
+    WN::|cubistic%3:01:00::|
+    WN::|anaglyphic%3:01:00::|
+    WN::|anaglyphical%3:01:00::|
+    WN::|anaglyptic%3:01:00::|
+    WN::|anaglyptical%3:01:00::|
+    WN::|corinthian%3:01:02::|
+    WN::|ionic%3:01:02::|
+    WN::|classicistic%3:01:00::|
+    WN::|minimalist%3:01:00::|
+    WN::|iconic%3:01:00::|
+    WN::|graphic%3:01:01::|
+    WN::|sphingine%3:01:00::|
+    WN::|neoclassicist%3:01:00::|
+    WN::|neoclassicistic%3:01:00::|
+    WN::|pyrographic%3:01:00::|))
+
+(CONCEPT
   ONT::AS-MUCH-AS
   (INHERIT
     ONT::DOMAIN-PROPERTY)
@@ -2396,6 +2782,10 @@
   (INHERIT
     ONT::AWAKENESS-VAL)
   (OVERLAP
+    WN::|asleep%3:00:00::|
+    WN::|unawakened%3:00:00::|
+    WN::|dormant%3:00:00::|
+    WN::|inactive%3:00:05::|
     WN::|asleep%4:02:00::|))
 
 (CONCEPT
@@ -2562,19 +2952,39 @@
        T))))
 
 (CONCEPT
+  ONT::ASSOCIATED-WITH-ACADEMICS-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL))
+
+(CONCEPT
+  ONT::ASSOCIATED-WITH-ARCHITECTURE-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL))
+
+(CONCEPT
+  ONT::ASSOCIATED-WITH-ARTS-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL))
+
+(CONCEPT
+  ONT::ASSOCIATED-WITH-BELIEF-SYSTEMS-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL))
+
+(CONCEPT
   ONT::ASSOCIATED-WITH-BODY-VAL
   (INHERIT
     ONT::ASSOCIATED-WITH-VAL))
 
 (CONCEPT
-  ONT::ASSOCIATED-WITH-CULTURE-VAL
-  (COMMENT "associated with culture, people, nation, or language")
+  ONT::ASSOCIATED-WITH-COMMUNICATION-VAL
   (INHERIT
-    ONT::ASSOCIATED-WITH-VAL)
-  (OVERLAP
-    WN::|transcultural%3:01:00::|
-    WN::|cross-cultural%3:01:00::|
-    WN::|multicultural%3:01:00::|))
+    ONT::ASSOCIATED-WITH-VAL))
+
+(CONCEPT
+  ONT::ASSOCIATED-WITH-ENTERTAINMENT-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL))
 
 (CONCEPT
   ONT::ASSOCIATED-WITH-FOOD-VAL
@@ -2584,6 +2994,60 @@
 (CONCEPT
   ONT::ASSOCIATED-WITH-LANGUAGES-VAL
   (INHERIT
+    ONT::ASSOCIATED-WITH-VAL)
+  (OVERLAP
+    WN::|linguistic%3:01:00::|
+    WN::|intralinguistic%3:01:00::|))
+
+(CONCEPT
+  ONT::ASSOCIATED-WITH-LAW-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL))
+
+(CONCEPT
+  ONT::ASSOCIATED-WITH-LOCATION-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL)
+  (OVERLAP
+    WN::|outdoor%3:00:00::|
+    WN::|out-of-door%3:00:00::|
+    WN::|outside%3:00:04::|))
+
+(CONCEPT
+  ONT::ASSOCIATED-WITH-MILITARY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL)
+  (OVERLAP
+    WN::|military%3:00:01::|
+    WN::|military%3:00:02::|
+    WN::|unmilitary%3:00:00::|
+    WN::|nonmilitary%3:00:00::|
+    WN::|irregular%3:00:02::|
+    WN::|armored%3:00:01::|
+    WN::|armoured%3:00:01::|
+    WN::|unarmed%3:00:01::|
+    WN::|operational%3:00:00::|
+    WN::|regular%3:00:02::|
+    WN::|marine%3:01:01::|
+    WN::|paramilitary%3:01:00::|
+    WN::|naval%3:01:00::|
+    WN::|divisional%3:01:00::|
+    WN::|unarmored%3:00:01::|
+    WN::|unarmoured%3:00:01::|
+    WN::|nonoperational%3:00:00::|
+    WN::|inactive%3:00:00::|
+    WN::|regimental%3:01:00::|
+    WN::|tactical%3:01:00::|
+    WN::|military%3:01:00::|))
+
+(CONCEPT
+  ONT::ASSOCIATED-WITH-MUSIC-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL))
+
+(CONCEPT
+  ONT::ASSOCIATED-WITH-PERSON-VAL
+  (INHERIT
     ONT::ASSOCIATED-WITH-VAL))
 
 (CONCEPT
@@ -2592,18 +3056,20 @@
     ONT::ASSOCIATED-WITH-VAL))
 
 (CONCEPT
-  ONT::ASSOCIATED-WITH-RACE-VAL
-  (INHERIT
-    ONT::ASSOCIATED-WITH-VAL))
-
-(CONCEPT
-  ONT::ASSOCIATED-WITH-RELIGION-VAL
-  (COMMENT "having to do with religion")
-  (INHERIT
-    ONT::ASSOCIATED-WITH-VAL))
-
-(CONCEPT
   ONT::ASSOCIATED-WITH-SCIENCE-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL)
+  (OVERLAP
+    WN::|unscientific%3:00:00::|
+    WN::|scientific%3:00:00::|))
+
+(CONCEPT
+  ONT::ASSOCIATED-WITH-SOCIETY-AND-CULTURE-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL))
+
+(CONCEPT
+  ONT::ASSOCIATED-WITH-SPIRITUALITY-VAL
   (INHERIT
     ONT::ASSOCIATED-WITH-VAL))
 
@@ -2641,6 +3107,42 @@
     (TYPE ONT::ASSUME)))
 
 (CONCEPT
+  ONT::ASTRONOMICAL-PROPERTY-VAL
+  (INHERIT
+    ONT::ASTRONOMY-VAL)
+  (OVERLAP
+    WN::|stellar%3:01:00::|
+    WN::|astral%3:01:00::|
+    WN::|interstellar%3:01:00::|
+    WN::|sublunar%3:01:00::|
+    WN::|sublunary%3:01:00::|
+    WN::|cislunar%3:01:00::|
+    WN::|extraterrestrial%3:01:00::|
+    WN::|canicular%3:01:00::|
+    WN::|asteroidal%3:01:00::|
+    WN::|interplanetary%3:01:00::|
+    WN::|martian%3:01:00::|
+    WN::|intergalactic%3:01:00::|
+    WN::|apogean%3:01:00::|
+    WN::|lunisolar%3:01:00::|
+    WN::|zenithal%3:01:00::|
+    WN::|planetal%3:01:00::|
+    WN::|planetary%3:01:00::|
+    WN::|planetary%3:01:02::|
+    WN::|terrestrial%3:01:02::|
+    WN::|galactic%3:01:00::|
+    WN::|jovian%3:01:02::|
+    WN::|translunar%3:01:00::|
+    WN::|translunary%3:01:00::|
+    WN::|superlunar%3:01:00::|
+    WN::|superlunary%3:01:00::|
+    WN::|solar%3:01:00::|
+    WN::|mercurial%3:01:02::|
+    WN::|extragalactic%3:01:00::|
+    WN::|heliacal%3:01:00::|
+    WN::|heliac%3:01:00::|))
+
+(CONCEPT
   ONT::ASTRONOMY-VAL
   (INHERIT
     ONT::ASSOCIATED-WITH-SCIENCE-VAL)
@@ -2652,8 +3154,25 @@
   (INHERIT
     ONT::ORIENTATION-VAL)
   (OVERLAP
+    WN::|hipped%3:00:02::|
     WN::|oblique%3:00:00::|
     WN::|inclined%3:00:01::|))
+
+(CONCEPT
+  ONT::AT-CONVENIENT-TIME-VAL
+  (COMMENT "(opportune)")
+  (INHERIT
+    ONT::TIMELINESS-VAL)
+  (OVERLAP
+    WN::|opportune%3:00:00::|))
+
+(CONCEPT
+  ONT::AT-INCONVENIENT-TIME-VAL
+  (COMMENT "(inopportune)")
+  (INHERIT
+    ONT::TIMELINESS-VAL)
+  (OVERLAP
+    WN::|inopportune%3:00:00::|))
 
 (CONCEPT
   ONT::AT-LOC
@@ -2760,6 +3279,22 @@
     (TYPE ONT::ATMOSPHERIC-PHENOMENON)))
 
 (CONCEPT
+  ONT::ATMOSPHERIC-PHENOMENON-VAL
+  (COMMENT "(boreal, auroral, cyclonic)")
+  (INHERIT
+    ONT::ATMOSPHERIC-VAL)
+  (OVERLAP
+    WN::|auroral%3:01:02::|
+    WN::|boreal%3:01:01::|
+    WN::|cyclonic%3:01:00::|
+    WN::|cyclonal%3:01:00::|
+    WN::|cyclonical%3:01:00::|
+    WN::|greenhouse%3:01:00::|
+    WN::|diluvian%3:01:00::|
+    WN::|diluvial%3:01:00::|
+    WN::|elemental%3:01:02::|))
+
+(CONCEPT
   ONT::ATMOSPHERIC-SCALE
   (INHERIT
     ONT::PHYSICAL-PROPERTY-SCALE))
@@ -2832,6 +3367,8 @@
   (INHERIT
     ONT::ATTENTIVENESS-VAL)
   (OVERLAP
+    WN::|alert%3:00:00::|
+    WN::|watchful%3:00:00::|
     WN::|attentive%3:00:00::|
     WN::|attentive%3:00:04::|)
   (SEM-FEATS
@@ -2921,6 +3458,27 @@
     WN::|attractiveness%1:07:00::|))
 
 (CONCEPT
+  ONT::ATTRACTIVE-VAL
+  (COMMENT "(attractive)")
+  (INHERIT
+    ONT::ATTRACTIVENESS-VAL)
+  (OVERLAP
+    WN::|sexy%3:00:00::|
+    WN::|attractive%3:00:01::|
+    WN::|seductive%3:00:00::|
+    WN::|inviting%3:00:00::|
+    WN::|irresistible%3:00:00::|
+    WN::|resistless%3:00:04::|
+    WN::|appetizing%3:00:00::|
+    WN::|appetising%3:00:00::|))
+
+(CONCEPT
+  ONT::ATTRACTIVENESS-VAL
+  (COMMENT "(attractive)")
+  (INHERIT
+    ONT::EVOKING-NEUTRAL-EXPERIENCE-PROPERTY-VAL))
+
+(CONCEPT
   ONT::ATTRIBUTE
   (INHERIT
     ONT::ABSTRACT-OBJECT-NONTEMPORAL)
@@ -2981,6 +3539,9 @@
   (INHERIT
     ONT::TYPICALITY-VAL)
   (OVERLAP
+    WN::|supernatural%3:00:00::|
+    WN::|nonstandard%3:00:00::|
+    WN::|unorthodox%3:00:00::|
     WN::|uncommon%3:00:00::|
     WN::|unconventional%3:00:01::|
     WN::|unorthodox%5:00:00:unconventional:00|
@@ -3110,6 +3671,10 @@
   ONT::AUTOMATIC
   (INHERIT
     ONT::MODE-OF-CONTROL-VAL)
+  (OVERLAP
+    WN::|automatic%3:00:00::|
+    WN::|unmanned%3:00:00::|
+    WN::|remote-controlled%3:00:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (OR
@@ -3201,6 +3766,23 @@
        T))))
 
 (CONCEPT
+  ONT::AVOIDABILITY-VAL
+  (COMMENT "(evitable)")
+  (INHERIT
+    ONT::CAN-BE-DONE-VAL))
+
+(CONCEPT
+  ONT::AVOIDABLE-VAL
+  (COMMENT "(evitable)")
+  (INHERIT
+    ONT::AVOIDABILITY-VAL)
+  (OVERLAP
+    WN::|evitable%3:00:00::|
+    WN::|avoidable%3:00:00::|
+    WN::|avertible%3:00:00::|
+    WN::|avertable%3:00:00::|))
+
+(CONCEPT
   ONT::AVOIDING
   (INHERIT
     ONT::INTENTIONALLY-ACT)
@@ -3256,6 +3838,9 @@
   (INHERIT
     ONT::AWARENESS-VAL)
   (OVERLAP
+    WN::|conscious%3:00:00::|
+    WN::|conscientious%3:00:00::|
+    WN::|witting%3:00:00::|
     WN::|aware%3:00:00::|
     WN::|mindful%3:00:00::|
     WN::|aware%3:00:04::|)
@@ -3321,6 +3906,23 @@
     ONT::DIRECTION-WRT-ENTITY))
 
 (CONCEPT
+  ONT::AWAY-FROM-CENTER-VAL
+  (COMMENT "(decentralizing)")
+  (INHERIT
+    ONT::LOCATION-VAL)
+  (OVERLAP
+    WN::|decentralized%3:00:00::|
+    WN::|decentralised%3:00:00::|
+    WN::|decentralizing%3:00:00::|
+    WN::|decentralising%3:00:00::|))
+
+(CONCEPT
+  ONT::AWE-INSPIRATION-VAL
+  (COMMENT "(impressive)")
+  (INHERIT
+    ONT::EVOKING-NEUTRAL-EXPERIENCE-PROPERTY-VAL))
+
+(CONCEPT
   ONT::AWFUL-VAL
   (INHERIT
     ONT::BAD)
@@ -3371,6 +3973,14 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::BACKWARD-VAL
+  (COMMENT "(backward)")
+  (INHERIT
+    ONT::LOCATION-VAL)
+  (OVERLAP
+    WN::|backward%3:00:01::|))
+
+(CONCEPT
   ONT::BACTERIUM
   (INHERIT
     ONT::MICROORGANISM)
@@ -3383,6 +3993,8 @@
   (INHERIT
     ONT::ACCEPTABILITY-VAL)
   (OVERLAP
+    WN::|unsound%3:00:00::|
+    WN::|unpropitious%3:00:00::|
     WN::|dirty%5:00:00:nasty:00|
     WN::|unacceptable%5:00:00:unsatisfactory:00|
     WN::|unacceptable%3:00:00::|
@@ -3403,6 +4015,8 @@
   (INHERIT
     ONT::AESTHETIC-JUDGEMENT-VAL)
   (OVERLAP
+    WN::|unrefined%3:00:01::|
+    WN::|inelegant%3:00:00::|
     WN::|unstylish%3:00:00::|
     WN::|tasteless%3:00:02::|
     WN::|unfashionable%3:00:00::|)
@@ -3412,6 +4026,18 @@
     (ORIENTATION NEG)
     (SCALE ONT::AESTHETIC-TASTEFULNESS-SCALE)
     (TYPE ONT::BAD-AESTHETIC-JUDGEMENT-VAL)))
+
+(CONCEPT
+  ONT::BAD-FOR-HEALTH-VAL
+  (COMMENT "(unhealthful)")
+  (INHERIT
+    ONT::NOT-HELPFUL-VAL)
+  (OVERLAP
+    WN::|unwholesome%3:00:00::|
+    WN::|unhealthful%3:00:00::|
+    WN::|unsanitary%3:00:00::|
+    WN::|insanitary%3:00:00::|
+    WN::|unhealthful%3:00:02::|))
 
 (CONCEPT
   ONT::BADNESS-SCALE
@@ -3493,6 +4119,9 @@
   (INHERIT
     ONT::CLOTHEDNESS-ADORNMENT-VAL)
   (OVERLAP
+    WN::|unpainted%3:00:01::|
+    WN::|unpainted%3:00:00::|
+    WN::|unbordered%3:00:00::|
     WN::|bare%5:00:00:unclothed:00|
     WN::|unclothed%3:00:00::|
     WN::|naked%5:00:00:bare:00|
@@ -3518,6 +4147,7 @@
   (INHERIT
     ONT::BASICNESS-VAL)
   (OVERLAP
+    WN::|underived%3:00:00::|
     WN::|basic%3:00:00::|
     WN::|fundamental%5:00:00:basic:00|
     WN::|elementary%5:00:00:basic:00|
@@ -3874,6 +4504,8 @@
   (INHERIT
     ONT::OF-BIRTH-VAL)
   (OVERLAP
+    WN::|unborn%3:00:00::|
+    WN::|pregnant%3:00:00::|
     WN::|prenatal%3:00:00::|))
 
 (CONCEPT
@@ -3891,6 +4523,64 @@
     ONT::BELIEVE)
   (OVERLAP
     WN::|view%2:31:00::|))
+
+(CONCEPT
+  ONT::BELIEF-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-BELIEF-SYSTEMS-VAL)
+  (OVERLAP
+    WN::|pragmatic%3:01:00::|
+    WN::|pragmatical%3:01:00::|
+    WN::|sacerdotal%3:01:02::|
+    WN::|nativist%3:01:00::|
+    WN::|nativistic%3:01:00::|
+    WN::|political%3:01:01::|
+    WN::|rationalist%3:01:00::|
+    WN::|dualistic%3:01:00::|
+    WN::|manichaean%3:01:01::|
+    WN::|ideal%3:01:00::|
+    WN::|idealistic%3:01:00::|
+    WN::|deconstructionist%3:01:00::|
+    WN::|platonistic%3:01:00::|
+    WN::|animist%3:01:00::|
+    WN::|animistic%3:01:00::|
+    WN::|secular%3:01:00::|
+    WN::|humanitarian%3:01:00::|
+    WN::|existentialist%3:01:00::|
+    WN::|stoic%3:01:00::|
+    WN::|scholastic%3:01:01::|
+    WN::|millenary%3:01:01::|
+    WN::|realistic%3:01:00::|
+    WN::|conceptualistic%3:01:00::|
+    WN::|dogmatic%3:01:01::|
+    WN::|teleological%3:01:00::|
+    WN::|existential%3:01:01::|
+    WN::|confucian%3:01:00::|
+    WN::|doctrinal%3:01:00::|
+    WN::|monistic%3:01:00::|
+    WN::|humanist%3:01:02::|
+    WN::|humanistic%3:01:02::|
+    WN::|animalistic%3:01:00::|
+    WN::|semiotic%3:01:00::|
+    WN::|semiotical%3:01:00::|
+    WN::|autotelic%3:01:00::|
+    WN::|operationalist%3:01:00::|
+    WN::|mechanistic%3:01:00::|
+    WN::|rationalistic%3:01:00::|
+    WN::|pluralistic%3:01:00::|
+    WN::|intuitionist%3:01:00::|
+    WN::|taoist%3:01:01::|
+    WN::|supernaturalist%3:01:00::|
+    WN::|supernaturalistic%3:01:00::|
+    WN::|gymnosophical%3:01:00::|
+    WN::|relativistic%3:01:01::|
+    WN::|totemic%3:01:00::|
+    WN::|expansionist%3:01:00::|
+    WN::|nominalistic%3:01:00::|
+    WN::|postmillennial%3:01:00::|
+    WN::|spiritualistic%3:01:00::|
+    WN::|spiritualist%3:01:00::|
+    WN::|nihilistic%3:01:00::|))
 
 (CONCEPT
   ONT::BELIEVE
@@ -3979,6 +4669,11 @@
   (INHERIT
     ONT::HARMFULNESS-VAL)
   (OVERLAP
+    WN::|nontoxic%3:00:00::|
+    WN::|atoxic%3:00:00::|
+    WN::|innocuous%3:00:00::|
+    WN::|benign%3:00:00::|
+    WN::|benignant%3:00:04::|
     WN::|harmless%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -4046,6 +4741,9 @@
   (INHERIT
     ONT::BIAS-VAL)
   (OVERLAP
+    WN::|unjust%3:00:00::|
+    WN::|unfair%3:00:00::|
+    WN::|unjust%3:00:04::|
     WN::|subjective%3:00:00::|
     WN::|partial%3:00:01::|)
   (SEM-FEATS
@@ -4096,13 +4794,6 @@
     ONT::CONFIGURATION-PROPERTY-VAL))
 
 (CONCEPT
-  ONT::BIOLOGICAL
-  (INHERIT
-    ONT::ASSOCIATED-WITH-SCIENCE-VAL)
-  (OVERLAP
-    WN::|biological%3:01:00::|))
-
-(CONCEPT
   ONT::BIOLOGICAL-PROCESS
   (INHERIT
     ONT::PHYSICAL-PROCESS)
@@ -4111,9 +4802,419 @@
     WN::|organic_process%1:22:00::|))
 
 (CONCEPT
+  ONT::BIOLOGICAL-PROPERTY-VAL
+  (INHERIT
+    ONT::BIOLOGY-VAL)
+  (OVERLAP
+    WN::|lymphatic%3:01:00::|
+    WN::|zymotic%3:01:00::|
+    WN::|homosexual%3:00:00::|
+    WN::|androgynous%3:00:00::|
+    WN::|male%3:00:00::|
+    WN::|cellular%3:00:00::|
+    WN::|asexual%3:00:00::|
+    WN::|nonsexual%3:00:00::|
+    WN::|crossbred%3:00:00::|
+    WN::|female%3:00:00::|
+    WN::|sexual%3:00:00::|
+    WN::|insectivorous%3:00:00::|
+    WN::|mesial%3:00:00::|
+    WN::|oral%3:00:00::|
+    WN::|actinomorphic%3:00:00::|
+    WN::|actinomorphous%3:00:00::|
+    WN::|polyploid%3:00:00::|
+    WN::|mesomorphic%3:00:00::|
+    WN::|muscular%3:00:04::|
+    WN::|heterosexual%3:00:00::|
+    WN::|multiparous%3:00:00::|
+    WN::|stomatous%3:00:00::|
+    WN::|distal%3:00:02::|
+    WN::|caducous%3:00:00::|
+    WN::|shed%3:00:00::|
+    WN::|retrorse%3:00:00::|
+    WN::|homologous%3:00:02::|
+    WN::|hemiparasitic%3:01:00::|
+    WN::|arawakan%3:01:00::|
+    WN::|botanic%3:01:00::|
+    WN::|botanical%3:01:00::|
+    WN::|acrogenic%3:01:00::|
+    WN::|acrogenous%3:01:00::|
+    WN::|sericultural%3:01:00::|
+    WN::|neural%3:01:00::|
+    WN::|neuronal%3:01:00::|
+    WN::|neuronic%3:01:00::|
+    WN::|discomycetous%3:01:00::|
+    WN::|hemodynamic%3:01:00::|
+    WN::|anamorphic%3:01:02::|
+    WN::|democratic%3:01:00::|
+    WN::|binucleate%3:00:00::|
+    WN::|binuclear%3:00:00::|
+    WN::|binucleated%3:00:00::|
+    WN::|autolytic%3:01:00::|
+    WN::|amitotic%3:01:00::|
+    WN::|pneumococcal%3:01:00::|
+    WN::|antiquarian%3:01:01::|
+    WN::|organismal%3:01:00::|
+    WN::|organismic%3:01:00::|
+    WN::|basophilic%3:01:00::|
+    WN::|basidiomycetous%3:01:00::|
+    WN::|prokaryotic%3:01:00::|
+    WN::|procaryotic%3:01:00::|
+    WN::|hebraic%3:01:01::|
+    WN::|hebraical%3:01:01::|
+    WN::|hebrew%3:01:01::|
+    WN::|bacteriophagic%3:01:00::|
+    WN::|bacteriophagous%3:01:00::|
+    WN::|suppurative%3:01:00::|
+    WN::|bacteriolytic%3:01:00::|
+    WN::|evolutionary%3:01:00::|
+    WN::|ancestral%3:01:00::|
+    WN::|biogeographic%3:01:00::|
+    WN::|biogeographical%3:01:00::|
+    WN::|cellular%3:01:00::|
+    WN::|astronautic%3:01:00::|
+    WN::|astronautical%3:01:00::|
+    WN::|saprophytic%3:01:00::|
+    WN::|commensal%3:01:00::|
+    WN::|mitotic%3:01:00::|
+    WN::|rickettsial%3:01:00::|
+    WN::|corpuscular%3:01:00::|
+    WN::|autotrophic%3:01:00::|
+    WN::|autophytic%3:01:00::|
+    WN::|bacteroidal%3:01:00::|
+    WN::|bacteroid%3:01:00::|
+    WN::|bacterioidal%3:01:00::|
+    WN::|bacterioid%3:01:00::|
+    WN::|pharaonic%3:01:00::|
+    WN::|artistic%3:01:00::|
+    WN::|dysgenic%3:01:00::|
+    WN::|cacogenic%3:01:00::|
+    WN::|leonardesque%3:01:00::|
+    WN::|postmenopausal%3:01:00::|
+    WN::|myrmecophytic%3:01:00::|
+    WN::|totipotent%3:01:00::|
+    WN::|psychomotor%3:01:00::|
+    WN::|coital%3:01:00::|
+    WN::|copulatory%3:01:00::|
+    WN::|propagandist%3:01:00::|
+    WN::|propagandistic%3:01:00::|
+    WN::|physiological%3:01:00::|
+    WN::|bacteriostatic%3:01:00::|
+    WN::|metabolic%3:01:00::|
+    WN::|childbearing%3:01:00::|
+    WN::|abaxial%3:00:00::|
+    WN::|dorsal%3:00:04::|
+    WN::|plutocratic%3:01:00::|
+    WN::|plutocratical%3:01:00::|
+    WN::|menopausal%3:01:00::|
+    WN::|ascomycetous%3:01:00::|
+    WN::|penicillin-resistant%3:01:00::|
+    WN::|accusatorial%3:01:00::|
+    WN::|mononuclear%3:00:00::|
+    WN::|mononucleate%3:00:00::|
+    WN::|macerative%3:01:00::|
+    WN::|megakaryocytic%3:01:00::|
+    WN::|growing%3:01:00::|
+    WN::|eugenic%3:01:00::|
+    WN::|alchemistic%3:01:00::|
+    WN::|alchemistical%3:01:00::|
+    WN::|expiratory%3:01:00::|
+    WN::|premenopausal%3:01:00::|
+    WN::|self%3:01:00::|
+    WN::|epiphytic%3:01:00::|
+    WN::|gladiatorial%3:01:00::|
+    WN::|bryophytic%3:01:00::|
+    WN::|menstrual%3:01:00::|
+    WN::|catamenial%3:01:00::|
+    WN::|bacterial%3:01:00::|
+    WN::|autoimmune%3:01:00::|
+    WN::|saxicolous%3:01:00::|
+    WN::|saxatile%3:01:00::|
+    WN::|saxicoline%3:01:00::|
+    WN::|genetic%3:01:00::|
+    WN::|genetical%3:01:00::|
+    WN::|congeneric%3:01:00::|
+    WN::|congenerical%3:01:00::|
+    WN::|congenerous%3:01:00::|
+    WN::|blastomeric%3:01:00::|
+    WN::|galilean%3:01:00::|
+    WN::|galilaean%3:01:00::|
+    WN::|endoparasitic%3:01:00::|
+    WN::|anglo-jewish%3:01:00::|
+    WN::|morphologic%3:01:00::|
+    WN::|morphological%3:01:00::|
+    WN::|structural%3:01:02::|
+    WN::|katharobic%3:01:00::|
+    WN::|eukaryotic%3:01:00::|
+    WN::|eucaryotic%3:01:00::|
+    WN::|allopatric%3:00:00::|
+    WN::|catabolic%3:01:00::|
+    WN::|katabolic%3:01:00::|
+    WN::|antibacterial%3:01:00::|
+    WN::|fungal%3:01:00::|
+    WN::|fungous%3:01:00::|
+    WN::|adaxial%3:00:00::|
+    WN::|ventral%3:00:04::|
+    WN::|indian%3:01:01::|
+    WN::|amerind%3:01:00::|
+    WN::|amerindic%3:01:00::|
+    WN::|native_american%3:01:00::|
+    WN::|field-crop%3:01:00::|
+    WN::|agnostic%3:01:00::|
+    WN::|zionist%3:01:00::|
+    WN::|neurophysiological%3:01:00::|
+    WN::|unicellular%3:01:00::|
+    WN::|lacrimatory%3:01:00::|
+    WN::|lachrymatory%3:01:00::|
+    WN::|analogous%3:00:00::|
+    WN::|inspiratory%3:01:00::|
+    WN::|semiparasitic%3:01:00::|
+    WN::|phagocytic%3:01:00::|
+    WN::|specialistic%3:01:00::|
+    WN::|photoemissive%3:01:00::|
+    WN::|planktonic%3:01:00::|
+    WN::|biogenous%3:01:00::|
+    WN::|isomorphous%3:01:00::|
+    WN::|isomorphic%3:01:00::|
+    WN::|pteridological%3:01:00::|
+    WN::|streptococcal%3:01:00::|
+    WN::|streptococcic%3:01:00::|
+    WN::|strep%3:01:00::|
+    WN::|epizoan%3:01:00::|
+    WN::|ectozoan%3:01:00::|
+    WN::|ontogenetic%3:01:00::|
+    WN::|parasitic%3:01:01::|
+    WN::|parasitical%3:01:00::|
+    WN::|actinal%3:00:00::|
+    WN::|chlamydial%3:01:00::|
+    WN::|palingenetic%3:01:00::|
+    WN::|antrorse%3:00:00::|
+    WN::|air-breathing%3:01:00::|
+    WN::|necrotic%3:01:00::|
+    WN::|dictatorial%3:01:00::|
+    WN::|in_vivo%3:00:00::|
+    WN::|zygotic%3:01:00::|
+    WN::|intracellular%3:01:00::|
+    WN::|antibiotic%3:01:00::|
+    WN::|monoclonal%3:01:00::|
+    WN::|urceolate%3:01:00::|
+    WN::|bantu%3:01:00::|
+    WN::|territorial%3:00:01::|
+    WN::|dendritic%3:01:00::|
+    WN::|civil%3:01:00::|
+    WN::|civic%3:01:02::|
+    WN::|erythroid%3:01:00::|
+    WN::|nigerian%3:01:00::|
+    WN::|nigerien%3:01:00::|
+    WN::|uniparous%3:00:00::|
+    WN::|trinucleate%3:00:00::|
+    WN::|trinuclear%3:00:00::|
+    WN::|trinucleated%3:00:00::|
+    WN::|advective%3:01:00::|
+    WN::|parturient%3:01:00::|
+    WN::|sex-linked%3:01:00::|
+    WN::|time-release%3:01:00::|
+    WN::|puerperal%3:01:00::|
+    WN::|psychogenetic%3:01:01::|
+    WN::|psychogenic%3:01:00::|
+    WN::|peptic%3:01:00::|
+    WN::|lacrimal%3:01:00::|
+    WN::|lachrymal%3:01:00::|
+    WN::|fastidious%3:00:02::|
+    WN::|exacting%3:00:00::|
+    WN::|facultative%3:00:00::|
+    WN::|phrenological%3:01:00::|
+    WN::|persistent%3:00:00::|
+    WN::|lasting%3:00:06::|
+    WN::|abiogenetic%3:01:00::|
+    WN::|microbial%3:01:00::|
+    WN::|microbic%3:01:00::|
+    WN::|heterologous%3:00:02::|
+    WN::|heterologic%3:00:00::|
+    WN::|heterological%3:00:00::|
+    WN::|osmotic%3:01:00::|
+    WN::|spousal%3:01:00::|
+    WN::|nonsuppurative%3:01:00::|
+    WN::|indo-european%3:01:00::|
+    WN::|indo-aryan%3:01:00::|
+    WN::|aryan%3:01:00::|
+    WN::|semite%3:01:00::|
+    WN::|semitic%3:01:00::|
+    WN::|essene%3:01:00::|
+    WN::|algoid%3:01:00::|
+    WN::|lithophytic%3:01:00::|
+    WN::|coccal%3:01:00::|
+    WN::|extracellular%3:01:00::|
+    WN::|authorial%3:01:00::|
+    WN::|auctorial%3:01:00::|
+    WN::|sympatric%3:00:00::|
+    WN::|excretory%3:01:00::|
+    WN::|thallophytic%3:01:00::|
+    WN::|ebionite%3:01:00::|
+    WN::|sociobiologic%3:01:00::|
+    WN::|sociobiological%3:01:00::|
+    WN::|cryptogamic%3:01:00::|
+    WN::|cryptogamous%3:01:00::|
+    WN::|cytokinetic%3:01:00::|
+    WN::|autogenetic%3:01:00::|
+    WN::|filial%3:01:00::|
+    WN::|monocarpic%3:01:00::|
+    WN::|plantal%3:01:00::|
+    WN::|meiotic%3:01:00::|
+    WN::|mortuary%3:01:01::|
+    WN::|propagative%3:01:00::|
+    WN::|judicial%3:01:02::|
+    WN::|philistine%3:01:00::|
+    WN::|nazarene%3:01:00::|
+    WN::|nocturnal%3:00:00::|
+    WN::|adnate%3:00:00::|
+    WN::|ergotic%3:01:00::|
+    WN::|bacillar%3:01:00::|
+    WN::|bacillary%3:01:00::|
+    WN::|intercellular%3:01:00::|
+    WN::|saprobic%3:01:00::|
+    WN::|hittite%3:01:00::|
+    WN::|psychogenetic%3:01:00::|
+    WN::|staphylococcal%3:01:00::|
+    WN::|phylogenetic%3:01:00::|
+    WN::|phyletic%3:01:00::|
+    WN::|obligate%3:00:00::|
+    WN::|algal%3:01:00::|
+    WN::|hematopoietic%3:01:00::|
+    WN::|haematopoietic%3:01:00::|
+    WN::|hemopoietic%3:01:00::|
+    WN::|haemopoietic%3:01:00::|
+    WN::|hematogenic%3:01:00::|
+    WN::|haematogenic%3:01:00::|
+    WN::|dominical%3:01:01::|
+    WN::|inhalant%3:01:00::|
+    WN::|geophytic%3:01:00::|
+    WN::|biogenetic%3:01:00::|
+    WN::|entozoan%3:01:00::|
+    WN::|endozoan%3:01:00::|
+    WN::|archesporial%3:01:00::|
+    WN::|axonal%3:01:00::|
+    WN::|biogenic%3:01:00::|
+    WN::|connate%3:00:00::|
+    WN::|sensorimotor%3:01:00::|
+    WN::|viral%3:01:00::|
+    WN::|diaphoretic%3:01:00::|
+    WN::|sudorific%3:01:00::|
+    WN::|mozambican%3:01:00::|
+    WN::|zygomorphic%3:00:00::|
+    WN::|bilaterally_symmetrical%3:00:00::|
+    WN::|zygomorphous%3:00:00::|
+    WN::|auxetic%3:01:00::|
+    WN::|serbian%3:01:00::|
+    WN::|respiratory%3:01:00::|
+    WN::|metastatic%3:01:00::|
+    WN::|agrobiologic%3:01:00::|
+    WN::|agrobiological%3:01:00::|
+    WN::|pleomorphic%3:01:00::|
+    WN::|metamorphic%3:01:00::|
+    WN::|metamorphous%3:01:00::|
+    WN::|apomictic%3:01:00::|
+    WN::|apomictical%3:01:00::|
+    WN::|spermous%3:01:00::|
+    WN::|spermatic%3:01:00::|
+    WN::|maturational%3:01:00::|
+    WN::|cytolytic%3:01:00::|
+    WN::|ecological%3:01:00::|
+    WN::|ecologic%3:01:00::|
+    WN::|bionomical%3:01:00::|
+    WN::|bionomic%3:01:00::|
+    WN::|environmental%3:01:00::|
+    WN::|digestive%3:01:00::|
+    WN::|erythropoietic%3:01:00::|
+    WN::|anthropogenetic%3:01:00::|
+    WN::|anthropogenic%3:01:00::|
+    WN::|taxonomic%3:01:00::|
+    WN::|taxonomical%3:01:00::|
+    WN::|systematic%3:01:00::|
+    WN::|astrocytic%3:01:00::|
+    WN::|unfastidious%3:00:02::|
+    WN::|sessile%3:00:02::|
+    WN::|trophic%3:01:00::|
+    WN::|anabolic%3:01:00::|
+    WN::|botulinal%3:01:00::|
+    WN::|pedunculate%3:00:00::|
+    WN::|stalked%3:00:00::|
+    WN::|premenstrual%3:01:00::|
+    WN::|developmental%3:01:00::|
+    WN::|eutrophic%3:01:00::|
+    WN::|colonial%3:01:01::|
+    WN::|nazarene%3:01:01::|
+    WN::|clonal%3:01:00::|
+    WN::|jewish%3:01:01::|
+    WN::|judaic%3:01:01::|
+    WN::|electrophoretic%3:01:00::|
+    WN::|cataphoretic%3:01:00::|
+    WN::|lysogenic%3:01:00::|
+    WN::|biotic%3:01:00::|
+    WN::|cryonic%3:01:00::|
+    WN::|anisogamic%3:01:00::|
+    WN::|anisogamous%3:01:00::|
+    WN::|anisogametic%3:01:00::|
+    WN::|diurnal%3:00:00::|
+    WN::|cenogenetic%3:01:00::|
+    WN::|neurobiological%3:01:00::|
+    WN::|autodidactic%3:01:00::|
+    WN::|suctorial%3:01:00::|
+    WN::|ascetic%3:01:00::|
+    WN::|ascetical%3:01:00::|
+    WN::|nonterritorial%3:00:00::|
+    WN::|karyokinetic%3:01:00::|
+    WN::|choragic%3:01:00::|
+    WN::|pugilistic%3:01:00::|
+    WN::|blastogenetic%3:01:00::|
+    WN::|actinomycetal%3:01:00::|
+    WN::|actinomycetous%3:01:00::|
+    WN::|polymorphic%3:01:00::|
+    WN::|polymorphous%3:01:00::|
+    WN::|septic%3:01:00::|
+    WN::|evaporative%3:01:00::|
+    WN::|blastemal%3:01:00::|
+    WN::|blastematic%3:01:00::|
+    WN::|blastemic%3:01:00::|
+    WN::|macrobiotic%3:01:00::|
+    WN::|chromatographic%3:01:00::|
+    WN::|chromatographical%3:01:00::|
+    WN::|slav%3:01:00::|
+    WN::|sadducean%3:01:00::|
+    WN::|arthrosporic%3:01:00::|
+    WN::|arthrosporous%3:01:00::|
+    WN::|nitrogen-fixing%3:01:00::|
+    WN::|royal%3:01:00::|
+    WN::|hemolytic%3:01:00::|
+    WN::|haemolytic%3:01:00::|
+    WN::|biotypic%3:01:00::|
+    WN::|mandaean%3:01:00::|
+    WN::|mandean%3:01:00::|
+    WN::|ovular%3:01:01::|))
+
+(CONCEPT
   ONT::BIOLOGICAL-ROLE
   (INHERIT
     ONT::MOLECULAR-PART))
+
+(CONCEPT
+  ONT::BIOLOGICAL-THEORY-VAL
+  (INHERIT
+    ONT::BIOLOGY-VAL)
+  (OVERLAP
+    WN::|lamarckian%3:01:00::|
+    WN::|organicistic%3:01:00::|
+    WN::|darwinian%3:01:00::|
+    WN::|neo-darwinian%3:01:00::|
+    WN::|neo-lamarckian%3:01:00::|))
+
+(CONCEPT
+  ONT::BIOLOGY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SCIENCE-VAL)
+  (OVERLAP
+    WN::|biological%3:00:00::|
+    WN::|biological%3:01:00::|))
 
 (CONCEPT
   ONT::BIRD
@@ -4132,8 +5233,9 @@
 (CONCEPT
   ONT::BITTER-VAL
   (INHERIT
-    ONT::TASTE-PROPERTY-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
+    WN::|resentful%3:00:00::|
     WN::|bitter%5:00:00:tasty:00|)
   (SEM-FEATS
     (INHERIT
@@ -4381,6 +5483,11 @@
     (TYPE ONT::BODY-OF-WATER)))
 
 (CONCEPT
+  ONT::BODY-OF-WATER-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-LOCATION-VAL))
+
+(CONCEPT
   ONT::BODY-PART
   (INHERIT
     ONT::ANATOMY)
@@ -4414,7 +5521,483 @@
   ONT::BODY-PART-VAL
   (COMMENT "adjectives having to do with body parts")
   (INHERIT
-    ONT::ASSOCIATED-WITH-BODY-VAL))
+    ONT::ASSOCIATED-WITH-BODY-VAL)
+  (OVERLAP
+    WN::|atheromatous%3:01:00::|
+    WN::|atheromatic%3:01:00::|
+    WN::|vesicular%3:01:00::|
+    WN::|ocular%3:01:00::|
+    WN::|optic%3:01:00::|
+    WN::|optical%3:01:00::|
+    WN::|opthalmic%3:01:00::|
+    WN::|rectal%3:01:00::|
+    WN::|intervertebral%3:01:00::|
+    WN::|intracerebral%3:01:00::|
+    WN::|bursal%3:01:00::|
+    WN::|sacral%3:01:00::|
+    WN::|sternal%3:01:00::|
+    WN::|maxillodental%3:01:00::|
+    WN::|glottal%3:01:00::|
+    WN::|follicular%3:01:00::|
+    WN::|acrocentric%3:01:00::|
+    WN::|arteriovenous%3:01:00::|
+    WN::|abdominovesical%3:01:00::|
+    WN::|iridic%3:01:00::|
+    WN::|ectopic%3:01:00::|
+    WN::|phallic%3:01:00::|
+    WN::|exocrine%3:01:00::|
+    WN::|aboral%3:00:00::|
+    WN::|bregmatic%3:01:00::|
+    WN::|tubercular%3:01:01::|
+    WN::|hymenal%3:01:00::|
+    WN::|pneumogastric%3:01:00::|
+    WN::|gastric%3:01:00::|
+    WN::|stomachic%3:01:00::|
+    WN::|stomachal%3:01:00::|
+    WN::|palatoglossal%3:01:00::|
+    WN::|chiasmal%3:01:00::|
+    WN::|chiasmic%3:01:00::|
+    WN::|chiasmatic%3:01:00::|
+    WN::|enteric%3:01:00::|
+    WN::|enteral%3:01:00::|
+    WN::|genial%3:01:00::|
+    WN::|mental%3:01:04::|
+    WN::|glomerular%3:01:00::|
+    WN::|labyrinthine%3:01:00::|
+    WN::|operculate%3:01:00::|
+    WN::|operculated%3:01:00::|
+    WN::|hypothalamic%3:01:00::|
+    WN::|adnexal%3:01:00::|
+    WN::|annexal%3:01:00::|
+    WN::|hypophyseal%3:01:00::|
+    WN::|hypophysial%3:01:00::|
+    WN::|epithelial%3:01:00::|
+    WN::|tomentose%3:01:00::|
+    WN::|ventricular%3:01:01::|
+    WN::|genital%3:01:00::|
+    WN::|venereal%3:01:00::|
+    WN::|colonic%3:01:00::|
+    WN::|iritic%3:01:00::|
+    WN::|tendinous%3:01:00::|
+    WN::|sinewy%3:01:00::|
+    WN::|alveolar%3:01:00::|
+    WN::|vascular%3:01:00::|
+    WN::|pneumonic%3:01:00::|
+    WN::|pulmonary%3:01:00::|
+    WN::|pulmonic%3:01:00::|
+    WN::|cerebrospinal%3:01:00::|
+    WN::|guttural%3:01:00::|
+    WN::|bronchial%3:01:00::|
+    WN::|gastroduodenal%3:01:00::|
+    WN::|tentacular%3:01:00::|
+    WN::|side-to-side%3:01:00::|
+    WN::|coeliac%3:01:00::|
+    WN::|celiac%3:01:00::|
+    WN::|natal%3:01:01::|
+    WN::|papillate%3:01:00::|
+    WN::|condylar%3:01:00::|
+    WN::|myeloid%3:01:01::|
+    WN::|intercostal%3:01:00::|
+    WN::|alveolar%3:01:02::|
+    WN::|anoperineal%3:01:00::|
+    WN::|fanged%3:01:00::|
+    WN::|lobar%3:01:00::|
+    WN::|mastoid%3:01:00::|
+    WN::|mastoidal%3:01:01::|
+    WN::|mammary%3:01:00::|
+    WN::|bicipital%3:01:00::|
+    WN::|epiphyseal%3:01:00::|
+    WN::|epiphysial%3:01:00::|
+    WN::|neurogenic%3:01:00::|
+    WN::|pouched%3:01:00::|
+    WN::|diaphyseal%3:01:00::|
+    WN::|diaphysial%3:01:00::|
+    WN::|laryngeal%3:01:00::|
+    WN::|biliary%3:01:00::|
+    WN::|turbinate%3:01:00::|
+    WN::|glossopharyngeal%3:01:00::|
+    WN::|neuroglial%3:01:00::|
+    WN::|bubonic%3:01:00::|
+    WN::|transdermal%3:01:00::|
+    WN::|transdermic%3:01:00::|
+    WN::|percutaneous%3:01:00::|
+    WN::|transcutaneous%3:01:00::|
+    WN::|plantar%3:01:00::|
+    WN::|thyroid%3:01:01::|
+    WN::|thyroidal%3:01:00::|
+    WN::|nephritic%3:01:00::|
+    WN::|renal%3:01:00::|
+    WN::|occipital%3:01:00::|
+    WN::|cytological%3:01:00::|
+    WN::|cytologic%3:01:00::|
+    WN::|carotid%3:01:00::|
+    WN::|luteal%3:01:00::|
+    WN::|cranial%3:01:00::|
+    WN::|uninucleate%3:01:00::|
+    WN::|skinny%3:01:00::|
+    WN::|exuvial%3:01:00::|
+    WN::|pituitary%3:01:00::|
+    WN::|carinal%3:01:00::|
+    WN::|uterine%3:01:00::|
+    WN::|subclavian%3:01:00::|
+    WN::|areolar%3:01:00::|
+    WN::|areolate%3:01:00::|
+    WN::|orbital%3:01:02::|
+    WN::|duodenal%3:01:00::|
+    WN::|vesical%3:01:00::|
+    WN::|gastrointestinal%3:01:00::|
+    WN::|gi%3:01:00::|
+    WN::|conjunctival%3:01:00::|
+    WN::|vacuolate%3:01:00::|
+    WN::|vacuolated%3:01:00::|
+    WN::|branchial%3:01:00::|
+    WN::|temporal%3:01:00::|
+    WN::|cystic%3:01:01::|
+    WN::|mesenteric%3:01:00::|
+    WN::|cartilaginous%3:01:00::|
+    WN::|cerebrovascular%3:01:00::|
+    WN::|sartorial%3:01:01::|
+    WN::|pineal%3:01:00::|
+    WN::|nuclear%3:01:02::|
+    WN::|cardiovascular%3:01:00::|
+    WN::|perianal%3:01:00::|
+    WN::|maxillary%3:01:00::|
+    WN::|tarsal%3:01:00::|
+    WN::|capsular%3:01:02::|
+    WN::|perinasal%3:01:00::|
+    WN::|perirhinal%3:01:00::|
+    WN::|intradermal%3:01:00::|
+    WN::|intradermic%3:01:00::|
+    WN::|intracutaneous%3:01:00::|
+    WN::|crural%3:01:00::|
+    WN::|lobate%3:01:00::|
+    WN::|lobated%3:01:00::|
+    WN::|retinal%3:01:00::|
+    WN::|ciliary%3:01:01::|
+    WN::|ciliate%3:01:01::|
+    WN::|cilial%3:01:00::|
+    WN::|calycular%3:01:00::|
+    WN::|calicular%3:01:00::|
+    WN::|fistulous%3:01:00::|
+    WN::|metacarpal%3:01:00::|
+    WN::|paranasal%3:01:00::|
+    WN::|stomatal%3:01:02::|
+    WN::|stomatous%3:01:02::|
+    WN::|alvine%3:01:00::|
+    WN::|sublingual%3:01:00::|
+    WN::|abomasal%3:01:00::|
+    WN::|urethral%3:01:00::|
+    WN::|otic%3:01:00::|
+    WN::|auricular%3:01:00::|
+    WN::|cheliceral%3:01:00::|
+    WN::|chelicerate%3:01:00::|
+    WN::|perithelial%3:01:00::|
+    WN::|auricular%3:01:02::|
+    WN::|maxillomandibular%3:01:00::|
+    WN::|cardiopulmonary%3:01:00::|
+    WN::|cardiorespiratory%3:01:00::|
+    WN::|multinucleate%3:01:00::|
+    WN::|intraventricular%3:01:00::|
+    WN::|vulvar%3:01:00::|
+    WN::|vulval%3:01:00::|
+    WN::|hemal%3:01:00::|
+    WN::|haemal%3:01:00::|
+    WN::|hematal%3:01:00::|
+    WN::|haematal%3:01:00::|
+    WN::|aponeurotic%3:01:00::|
+    WN::|coccygeal%3:01:00::|
+    WN::|zonal%3:01:00::|
+    WN::|zonary%3:01:00::|
+    WN::|clitoral%3:01:00::|
+    WN::|clitoric%3:01:00::|
+    WN::|ovarian%3:01:00::|
+    WN::|polydactyl%3:01:00::|
+    WN::|polydactylous%3:01:00::|
+    WN::|femoral%3:01:00::|
+    WN::|lobular%3:01:00::|
+    WN::|precordial%3:01:00::|
+    WN::|hyoid%3:01:00::|
+    WN::|gluteal%3:01:00::|
+    WN::|undescended%3:01:00::|
+    WN::|centromeric%3:01:00::|
+    WN::|carunculate%3:01:00::|
+    WN::|carunculated%3:01:00::|
+    WN::|calyculate%3:01:00::|
+    WN::|calycled%3:01:00::|
+    WN::|cochlear%3:01:00::|
+    WN::|caudal%3:01:00::|
+    WN::|nucleated%3:01:00::|
+    WN::|nucleate%3:01:00::|
+    WN::|endometrial%3:01:00::|
+    WN::|dural%3:01:00::|
+    WN::|amniotic%3:01:00::|
+    WN::|amnionic%3:01:00::|
+    WN::|amnic%3:01:00::|
+    WN::|coronary%3:01:00::|
+    WN::|pectoral%3:01:00::|
+    WN::|thoracic%3:01:00::|
+    WN::|supraorbital%3:01:00::|
+    WN::|supraocular%3:01:00::|
+    WN::|myeloid%3:01:00::|
+    WN::|fleshy%3:01:00::|
+    WN::|sarcoid%3:01:00::|
+    WN::|ophthalmic%3:01:01::|
+    WN::|ciliary%3:01:02::|
+    WN::|ciliate%3:01:00::|
+    WN::|hypodermic%3:01:00::|
+    WN::|subcutaneous%3:01:00::|
+    WN::|telocentric%3:01:00::|
+    WN::|bodily%3:01:01::|
+    WN::|membranous%3:01:00::|
+    WN::|mesoblastic%3:01:00::|
+    WN::|mesodermal%3:01:00::|
+    WN::|palmar%3:01:00::|
+    WN::|volar%3:01:00::|
+    WN::|venous%3:01:00::|
+    WN::|agonadal%3:01:00::|
+    WN::|ciliary%3:01:00::|
+    WN::|pericardial%3:01:00::|
+    WN::|pericardiac%3:01:00::|
+    WN::|postganglionic%3:01:00::|
+    WN::|lumbar%3:01:00::|
+    WN::|canalicular%3:01:00::|
+    WN::|acinar%3:01:01::|
+    WN::|acinous%3:01:00::|
+    WN::|acinose%3:01:00::|
+    WN::|acinic%3:01:00::|
+    WN::|subdural%3:01:00::|
+    WN::|anorectal%3:01:00::|
+    WN::|arthromeric%3:01:00::|
+    WN::|ampullar%3:01:00::|
+    WN::|ampullary%3:01:00::|
+    WN::|endermic%3:01:00::|
+    WN::|endermatic%3:01:00::|
+    WN::|meningeal%3:01:00::|
+    WN::|glial%3:01:00::|
+    WN::|papillary%3:01:00::|
+    WN::|papillose%3:01:00::|
+    WN::|narial%3:01:00::|
+    WN::|adrenal%3:01:00::|
+    WN::|splenic%3:01:00::|
+    WN::|splenetic%3:01:00::|
+    WN::|lienal%3:01:00::|
+    WN::|shouldered%3:01:00::|
+    WN::|ectodermal%3:01:00::|
+    WN::|ectodermic%3:01:00::|
+    WN::|subcortical%3:01:00::|
+    WN::|tracheal%3:01:00::|
+    WN::|palpebrate%3:01:00::|
+    WN::|mandibular%3:01:00::|
+    WN::|inframaxillary%3:01:00::|
+    WN::|glabellar%3:01:00::|
+    WN::|pancreatic%3:01:00::|
+    WN::|paleocortical%3:01:00::|
+    WN::|pleural%3:01:00::|
+    WN::|glandular%3:01:00::|
+    WN::|fenestral%3:01:01::|
+    WN::|mucocutaneous%3:01:00::|
+    WN::|ossicular%3:01:00::|
+    WN::|ossiculate%3:01:00::|
+    WN::|proximal%3:00:00::|
+    WN::|intimal%3:01:00::|
+    WN::|auricular%3:01:01::|
+    WN::|binocular%3:01:00::|
+    WN::|arterial%3:01:00::|
+    WN::|chelate%3:01:01::|
+    WN::|peritoneal%3:01:00::|
+    WN::|canine%3:01:02::|
+    WN::|laniary%3:01:00::|
+    WN::|testicular%3:01:00::|
+    WN::|epidural%3:01:00::|
+    WN::|extradural%3:01:00::|
+    WN::|septal%3:01:00::|
+    WN::|septate%3:01:00::|
+    WN::|intestinal%3:01:00::|
+    WN::|enteric%3:01:01::|
+    WN::|enteral%3:01:01::|
+    WN::|pyloric%3:01:00::|
+    WN::|oral%3:01:00::|
+    WN::|aural%3:01:01::|
+    WN::|mental%3:01:03::|
+    WN::|tentacled%3:01:00::|
+    WN::|adenoidal%3:01:00::|
+    WN::|marsupial%3:01:00::|
+    WN::|costal%3:01:00::|
+    WN::|penile%3:01:00::|
+    WN::|penial%3:01:00::|
+    WN::|cutaneous%3:01:00::|
+    WN::|cutaneal%3:01:00::|
+    WN::|dermal%3:01:02::|
+    WN::|acentric%3:01:00::|
+    WN::|mastoid%3:01:01::|
+    WN::|sacculated%3:01:00::|
+    WN::|sacculate%3:01:00::|
+    WN::|blastodermatic%3:01:00::|
+    WN::|blastodermic%3:01:00::|
+    WN::|tympanic%3:01:00::|
+    WN::|antennal%3:01:00::|
+    WN::|antennary%3:01:00::|
+    WN::|adventitial%3:01:00::|
+    WN::|cervical%3:01:01::|
+    WN::|caruncular%3:01:00::|
+    WN::|carunculous%3:01:00::|
+    WN::|pharyngeal%3:01:00::|
+    WN::|neocortical%3:01:00::|
+    WN::|apophyseal%3:01:01::|
+    WN::|patellar%3:01:00::|
+    WN::|preanal%3:01:00::|
+    WN::|uveal%3:01:00::|
+    WN::|uveous%3:01:00::|
+    WN::|zygomatic%3:01:00::|
+    WN::|vertebral%3:01:00::|
+    WN::|labial%3:01:01::|
+    WN::|pudendal%3:01:00::|
+    WN::|endothelial%3:01:00::|
+    WN::|buccal%3:01:00::|
+    WN::|carnal%3:01:00::|
+    WN::|abdominal%3:01:00::|
+    WN::|cerebral%3:01:00::|
+    WN::|bulbar%3:01:00::|
+    WN::|myelic%3:01:00::|
+    WN::|pubic%3:01:00::|
+    WN::|chemoreceptive%3:01:00::|
+    WN::|lingual%3:01:01::|
+    WN::|endocrine%3:01:00::|
+    WN::|endocrinal%3:01:00::|
+    WN::|hypodermal%3:01:00::|
+    WN::|chorionic%3:01:00::|
+    WN::|metacentric%3:01:00::|
+    WN::|cortical%3:01:00::|
+    WN::|mandibulofacial%3:01:00::|
+    WN::|scapulohumeral%3:01:00::|
+    WN::|intramuscular%3:01:00::|
+    WN::|cerebellar%3:01:00::|
+    WN::|anatomic%3:01:00::|
+    WN::|anatomical%3:01:00::|
+    WN::|corneal%3:01:00::|
+    WN::|adrenal%3:01:01::|
+    WN::|limbic%3:01:00::|
+    WN::|adrenocortical%3:01:00::|
+    WN::|atrial%3:01:00::|
+    WN::|mucosal%3:01:00::|
+    WN::|parietal%3:01:00::|
+    WN::|osteal%3:01:01::|
+    WN::|sclerotic%3:01:00::|
+    WN::|iliac%3:01:00::|
+    WN::|sarcosomal%3:01:00::|
+    WN::|gingival%3:01:00::|
+    WN::|papilliform%3:01:00::|
+    WN::|phalangeal%3:01:00::|
+    WN::|tuberculate%3:01:00::|
+    WN::|faucal%3:01:00::|
+    WN::|appendicular%3:01:00::|
+    WN::|gonadal%3:01:00::|
+    WN::|pectineal%3:01:00::|
+    WN::|jugular%3:01:00::|
+    WN::|scalene%3:01:01::|
+    WN::|cervical%3:01:00::|
+    WN::|axillary%3:01:01::|
+    WN::|sarcolemmal%3:01:00::|
+    WN::|manual%3:01:00::|
+    WN::|cytogenetic%3:01:00::|
+    WN::|cytogenetical%3:01:00::|
+    WN::|digital%3:01:00::|
+    WN::|myoid%3:01:00::|
+    WN::|blastocoelic%3:01:00::|
+    WN::|dental%3:01:00::|
+    WN::|medullary%3:01:00::|
+    WN::|lacrimal%3:01:01::|
+    WN::|lachrymal%3:01:01::|
+    WN::|muscular%3:01:00::|
+    WN::|distal%3:00:01::|
+    WN::|allantoic%3:01:00::|
+    WN::|suborbital%3:01:02::|
+    WN::|subocular%3:01:00::|
+    WN::|genitourinary%3:01:00::|
+    WN::|gu%3:01:00::|
+    WN::|vaginal%3:01:00::|
+    WN::|spinal%3:01:00::|
+    WN::|neuroanatomic%3:01:00::|
+    WN::|neuroanatomical%3:01:00::|
+    WN::|scapular%3:01:00::|
+    WN::|atrioventricular%3:01:00::|
+    WN::|auriculoventricular%3:01:00::|
+    WN::|labial%3:01:00::|
+    WN::|prostate%3:01:00::|
+    WN::|prostatic%3:01:00::|
+    WN::|aculeate%3:01:00::|
+    WN::|aculeated%3:01:00::|
+    WN::|trabecular%3:01:00::|
+    WN::|trabeculate%3:01:00::|
+    WN::|chelicerous%3:01:00::|
+    WN::|astragalar%3:01:00::|
+    WN::|laryngopharyngeal%3:01:00::|
+    WN::|brachial%3:01:00::|
+    WN::|neuromuscular%3:01:00::|
+    WN::|anatomic%3:01:01::|
+    WN::|anatomical%3:01:01::|
+    WN::|nasopharyngeal%3:01:00::|
+    WN::|perineal%3:01:00::|
+    WN::|mandibulate%3:01:00::|
+    WN::|uvular%3:01:00::|
+    WN::|intravenous%3:01:00::|
+    WN::|endovenous%3:01:00::|
+    WN::|sarcolemmic%3:01:00::|
+    WN::|sarcolemnous%3:01:00::|
+    WN::|ossiferous%3:01:00::|
+    WN::|cecal%3:01:00::|
+    WN::|caecal%3:01:00::|
+    WN::|rectosigmoid%3:01:00::|
+    WN::|metatarsal%3:01:00::|
+    WN::|pelvic%3:01:00::|
+    WN::|capillary%3:01:00::|
+    WN::|cephalic%3:01:00::|
+    WN::|pilar%3:01:00::|
+    WN::|tubal%3:01:00::|
+    WN::|scrotal%3:01:00::|
+    WN::|hepatic%3:01:00::|
+    WN::|intrapulmonary%3:01:00::|
+    WN::|molar%3:01:03::|
+    WN::|cheliferous%3:01:00::|
+    WN::|facial%3:01:00::|
+    WN::|epitheliod%3:01:00::|
+    WN::|visceral%3:01:00::|
+    WN::|splanchnic%3:01:00::|
+    WN::|maxillofacial%3:01:00::|
+    WN::|adenoid%3:01:00::|
+    WN::|calcaneal%3:01:00::|
+    WN::|anal%3:01:00::|
+    WN::|aortal%3:01:00::|
+    WN::|aortic%3:01:00::|
+    WN::|sulcate%3:01:00::|
+    WN::|thenal%3:01:00::|
+    WN::|thenar%3:01:00::|
+    WN::|hemispheric%3:01:00::|
+    WN::|bronchiolar%3:01:00::|
+    WN::|trophoblastic%3:01:00::|
+    WN::|medullary%3:01:01::|
+    WN::|articular%3:01:00::|
+    WN::|articulary%3:01:00::|
+    WN::|histological%3:01:00::|
+    WN::|histologic%3:01:00::|
+    WN::|velar%3:01:00::|
+    WN::|hilar%3:01:00::|
+    WN::|rhinal%3:01:00::|
+    WN::|nasal%3:01:00::|
+    WN::|thyroid%3:01:00::|
+    WN::|blastoporal%3:01:00::|
+    WN::|blastoporic%3:01:00::|
+    WN::|epigastric%3:01:00::|
+    WN::|arteriolar%3:01:00::|
+    WN::|oropharyngeal%3:01:00::|
+    WN::|parenteral%3:01:00::|
+    WN::|myocardial%3:01:00::|
+    WN::|fibrocartilaginous%3:01:00::|
+    WN::|colorectal%3:01:00::|
+    WN::|cuneiform%3:01:00::|
+    WN::|gyral%3:01:00::|
+    WN::|medullary%3:01:02::|
+    WN::|inguinal%3:01:00::|))
 
 (CONCEPT
   ONT::BODY-PROCESS-EVENT
@@ -4438,10 +6021,76 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::BODY-SUBSTANCE-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-BODY-VAL)
+  (OVERLAP
+    WN::|ichorous%3:01:00::|
+    WN::|sanious%3:01:00::|
+    WN::|lymphoid%3:01:00::|
+    WN::|bilious%3:01:00::|
+    WN::|biliary%3:01:02::|
+    WN::|mucous%3:01:00::|
+    WN::|mucose%3:01:00::|
+    WN::|seminal%3:01:00::|
+    WN::|humoral%3:01:00::|
+    WN::|mucopurulent%3:01:00::|
+    WN::|chylific%3:01:00::|
+    WN::|chylifactive%3:01:00::|
+    WN::|chylifactory%3:01:00::|
+    WN::|synovial%3:01:00::|
+    WN::|autacoidal%3:01:00::|
+    WN::|nectar-rich%3:01:00::|
+    WN::|uricosuric%3:01:00::|
+    WN::|vitreous%3:01:01::|
+    WN::|hidrotic%3:01:00::|
+    WN::|hormonal%3:01:00::|
+    WN::|steroidal%3:01:00::|
+    WN::|hemic%3:01:00::|
+    WN::|haemic%3:01:00::|
+    WN::|hematic%3:01:00::|
+    WN::|haematic%3:01:00::|
+    WN::|uric%3:01:00::|
+    WN::|milch%3:01:00::|
+    WN::|secretory%3:01:00::|
+    WN::|mucoid%3:01:00::|
+    WN::|mucoidal%3:01:00::|
+    WN::|lacteal%3:01:00::|
+    WN::|chylaceous%3:01:00::|
+    WN::|chylous%3:01:00::|
+    WN::|muciferous%3:01:00::|
+    WN::|serous%3:01:00::|
+    WN::|chyliferous%3:01:00::|
+    WN::|salivary%3:01:00::|
+    WN::|gonadotropic%3:01:00::|
+    WN::|gonadotrophic%3:01:00::|
+    WN::|urinary%3:01:00::|
+    WN::|seminiferous%3:01:00::|))
+
+(CONCEPT
   ONT::BODY-SYSTEM-VAL
   (COMMENT "adjective having to do with body systems")
   (INHERIT
-    ONT::ASSOCIATED-WITH-BODY-VAL))
+    ONT::ASSOCIATED-WITH-BODY-VAL)
+  (OVERLAP
+    WN::|ergotropic%3:01:00::|
+    WN::|lucifugous%3:01:00::|
+    WN::|lucifugal%3:01:00::|
+    WN::|circulatory%3:01:01::|
+    WN::|parasympathetic%3:01:00::|
+    WN::|skeletal%3:01:00::|
+    WN::|nervous%3:01:00::|
+    WN::|neural%3:01:01::|
+    WN::|phrenic%3:01:00::|
+    WN::|trophotropic%3:01:00::|
+    WN::|parasympathomimetic%3:01:00::|
+    WN::|neuroendocrine%3:01:00::|
+    WN::|urogenital%3:01:00::|
+    WN::|musculoskeletal%3:01:00::|
+    WN::|sympathetic%3:01:00::|
+    WN::|esophageal%3:01:00::|
+    WN::|urinary%3:01:01::|
+    WN::|gastroesophageal%3:01:00::|))
 
 (CONCEPT
   ONT::BODY-TIGHTNESS
@@ -4468,6 +6117,10 @@
   (INHERIT
     ONT::BOLDNESS-VAL)
   (OVERLAP
+    WN::|forward%3:00:02::|
+    WN::|gutsy%3:00:00::|
+    WN::|plucky%3:00:00::|
+    WN::|confident%3:00:00::|
     WN::|bold%3:00:00::|
     WN::|adventurous%3:00:00::|
     WN::|peremptory%5:00:02:imperative:00|)
@@ -4554,6 +6207,10 @@
   (INHERIT
     ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
+    WN::|humorless%3:00:00::|
+    WN::|humourless%3:00:00::|
+    WN::|unhumorous%3:00:00::|
+    WN::|dull%3:00:03::|
     WN::|uninteresting%3:00:00::|
     WN::|boring%5:00:00:uninteresting:00|
     WN::|wearisome%5:00:00:uninteresting:00|
@@ -4571,6 +6228,172 @@
     ONT::COMMERCE-COLLECT)
   (OVERLAP
     WN::|borrow%2:40:00::|))
+
+(CONCEPT
+  ONT::BOTANICAL-PROPERTY-VAL
+  (INHERIT
+    ONT::BIOLOGY-VAL)
+  (OVERLAP
+    WN::|simple%3:00:01::|
+    WN::|unsubdivided%3:00:00::|
+    WN::|compound%3:00:00::|
+    WN::|rough%3:00:02::|
+    WN::|caulescent%3:00:00::|
+    WN::|cauline%3:00:04::|
+    WN::|stemmed%3:00:04::|
+    WN::|branchy%3:00:00::|
+    WN::|smooth%3:00:02::|
+    WN::|carnivorous%3:00:00::|
+    WN::|evergreen%3:00:00::|
+    WN::|determinate%3:00:02::|
+    WN::|autogamous%3:00:00::|
+    WN::|autogamic%3:00:00::|
+    WN::|monoclinous%3:00:00::|
+    WN::|aerial%3:00:00::|
+    WN::|gregarious%3:00:01::|
+    WN::|acid-loving%3:00:00::|
+    WN::|ungregarious%3:00:01::|
+    WN::|deciduous%3:00:00::|
+    WN::|indeterminate%3:00:02::|
+    WN::|cyclic%3:00:03::|
+    WN::|chlamydeous%3:00:00::|
+    WN::|floral%3:01:00::|
+    WN::|self-pollinating%3:01:00::|
+    WN::|alternate%3:00:00::|
+    WN::|archegonial%3:01:00::|
+    WN::|archegoniate%3:01:00::|
+    WN::|monocotyledonous%3:00:00::|
+    WN::|floral%3:01:01::|
+    WN::|cambial%3:01:00::|
+    WN::|single%3:00:04::|
+    WN::|achenial%3:01:00::|
+    WN::|balsamic%3:01:00::|
+    WN::|balsamy%3:01:00::|
+    WN::|bulbaceous%3:01:00::|
+    WN::|axile%3:01:00::|
+    WN::|axial%3:01:02::|
+    WN::|heterotrophic%3:01:00::|
+    WN::|basiscopic%3:00:00::|
+    WN::|tendril-climbing%3:01:00::|
+    WN::|spicate%3:01:00::|
+    WN::|uniovular%3:01:00::|
+    WN::|uniovulate%3:01:00::|
+    WN::|perennial%3:00:00::|
+    WN::|carpellary%3:01:00::|
+    WN::|acyclic%3:00:01::|
+    WN::|double%3:00:04::|
+    WN::|paniculate%3:01:00::|
+    WN::|bicapsular%3:01:00::|
+    WN::|bulbed%3:01:00::|
+    WN::|flowery%3:01:00::|
+    WN::|acroscopic%3:00:00::|
+    WN::|apothecial%3:01:00::|
+    WN::|carposporous%3:01:00::|
+    WN::|capsular%3:01:00::|
+    WN::|homostylous%3:01:00::|
+    WN::|homostylic%3:01:00::|
+    WN::|homostyled%3:01:00::|
+    WN::|cereal%3:01:00::|
+    WN::|botryoid%3:01:00::|
+    WN::|botryoidal%3:01:00::|
+    WN::|boytrose%3:01:00::|
+    WN::|involucrate%3:01:00::|
+    WN::|carpellate%3:00:00::|
+    WN::|pistillate%3:00:02::|
+    WN::|acinar%3:01:00::|
+    WN::|foliate%3:01:02::|
+    WN::|foliated%3:01:00::|
+    WN::|amaranthine%3:01:00::|
+    WN::|leguminous%3:01:00::|
+    WN::|dicotyledonous%3:00:00::|
+    WN::|amygdaline%3:01:00::|
+    WN::|unmown%3:00:00::|
+    WN::|uncut%3:00:04::|
+    WN::|basipetal%3:00:00::|
+    WN::|orthotropous%3:00:00::|
+    WN::|exogamous%3:00:02::|
+    WN::|exogamic%3:00:02::|
+    WN::|achlamydeous%3:00:00::|
+    WN::|antheridial%3:01:00::|
+    WN::|umbellate%3:01:00::|
+    WN::|umbellar%3:01:00::|
+    WN::|acarpelous%3:00:00::|
+    WN::|acarpellous%3:00:00::|
+    WN::|acervate%3:01:00::|
+    WN::|ascocarpous%3:01:00::|
+    WN::|phyllodial%3:01:00::|
+    WN::|calyptrate%3:01:01::|
+    WN::|tuberous%3:01:00::|
+    WN::|veinal%3:01:00::|
+    WN::|foliaceous%3:01:00::|
+    WN::|stoloniferous%3:01:00::|
+    WN::|bladed%3:01:02::|
+    WN::|thalloid%3:01:00::|
+    WN::|semi-tuberous%3:01:00::|
+    WN::|cormous%3:01:00::|
+    WN::|cormose%3:01:00::|
+    WN::|arborical%3:01:00::|
+    WN::|arboreal%3:01:00::|
+    WN::|arborary%3:01:00::|
+    WN::|arborous%3:01:00::|
+    WN::|gemmiferous%3:01:00::|
+    WN::|campylotropous%3:00:00::|
+    WN::|endogenous%3:01:00::|
+    WN::|sepaloid%3:01:00::|
+    WN::|sepaline%3:01:00::|
+    WN::|amphitropous%3:00:00::|
+    WN::|alliaceous%3:01:00::|
+    WN::|carposporic%3:01:00::|
+    WN::|basidial%3:01:00::|
+    WN::|sporogenous%3:01:00::|
+    WN::|corymbose%3:01:00::|
+    WN::|alkaline-loving%3:00:00::|
+    WN::|annual%3:00:00::|
+    WN::|one-year%3:00:04::|
+    WN::|cauline%3:00:00::|
+    WN::|apogamic%3:01:00::|
+    WN::|apogametic%3:01:00::|
+    WN::|apogamous%3:01:00::|
+    WN::|angiocarpic%3:01:00::|
+    WN::|angiocarpous%3:01:00::|
+    WN::|ascosporic%3:01:00::|
+    WN::|ascosporous%3:01:00::|
+    WN::|radical%3:00:00::|
+    WN::|basal%3:00:02::|
+    WN::|rhizomatous%3:01:00::|
+    WN::|acropetal%3:00:00::|
+    WN::|apocarpous%3:00:00::|
+    WN::|syncarpous%3:00:00::|
+    WN::|petaloid%3:01:00::|
+    WN::|testaceous%3:01:00::|
+    WN::|calyceal%3:01:00::|
+    WN::|calycine%3:01:00::|
+    WN::|calycinal%3:01:00::|
+    WN::|panicled%3:01:00::|
+    WN::|axillary%3:01:02::|
+    WN::|alar%3:01:00::|
+    WN::|endogamous%3:00:02::|
+    WN::|endogamic%3:00:02::|
+    WN::|diclinous%3:00:00::|
+    WN::|umbelliform%3:01:00::|
+    WN::|opposite%3:00:00::|
+    WN::|paired%3:00:02::|
+    WN::|anatropous%3:00:00::|
+    WN::|inverted%3:00:04::|
+    WN::|catkinate%3:01:00::|
+    WN::|drupaceous%3:01:00::|
+    WN::|aecial%3:01:00::|
+    WN::|nectariferous%3:01:00::|
+    WN::|angiospermous%3:01:00::|
+    WN::|shrubby%3:01:00::|
+    WN::|fruticose%3:01:00::|
+    WN::|fruticulose%3:01:00::|
+    WN::|basidiosporous%3:01:00::|
+    WN::|perigonal%3:01:00::|
+    WN::|citrous%3:01:00::|
+    WN::|biennial%3:00:00::|
+    WN::|two-year%3:00:04::|
+    WN::|ovular%3:01:02::|))
 
 (CONCEPT
   ONT::BOTHER-SCALE
@@ -4961,6 +6784,12 @@
   (INHERIT
     ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
+    WN::|discomposed%3:00:00::|
+    WN::|unhurried%3:00:00::|
+    WN::|secure%3:00:01::|
+    WN::|unafraid%3:00:02::|
+    WN::|untroubled%3:00:02::|
+    WN::|easy%3:00:02::|
     WN::|calm%5:00:00:composed:00|
     WN::|composed%3:00:00::|)
   (SEM-FEATS
@@ -4998,7 +6827,290 @@
 (CONCEPT
   ONT::CAN-BE-DONE-VAL
   (INHERIT
-    ONT::PROCESS-VAL)
+    ONT::PROPERTY-VAL)
+  (OVERLAP
+    WN::|inheritable%3:00:00::|
+    WN::|heritable%3:00:00::|
+    WN::|excitable%3:00:00::|
+    WN::|noninheritable%3:00:00::|
+    WN::|nonheritable%3:00:00::|
+    WN::|noncombustible%3:00:00::|
+    WN::|incombustible%3:00:00::|
+    WN::|unprofitable%3:00:00::|
+    WN::|profitable%3:00:00::|
+    WN::|passable%3:00:00::|
+    WN::|digestible%3:00:00::|
+    WN::|edible%3:00:00::|
+    WN::|comestible%3:00:00::|
+    WN::|eatable%3:00:00::|
+    WN::|nontaxable%3:00:00::|
+    WN::|exempt%3:00:02::|
+    WN::|impassable%3:00:00::|
+    WN::|unpassable%3:00:00::|
+    WN::|corrigible%3:00:00::|
+    WN::|attachable%3:00:00::|
+    WN::|unforgettable%3:00:00::|
+    WN::|incalculable%3:00:00::|
+    WN::|unpardonable%3:00:00::|
+    WN::|inevitable%3:00:00::|
+    WN::|determinable%3:00:00::|
+    WN::|expressible%3:00:00::|
+    WN::|pardonable%3:00:00::|
+    WN::|contestable%3:00:00::|
+    WN::|thinkable%3:00:00::|
+    WN::|indivisible%3:00:00::|
+    WN::|disposable%3:00:02::|
+    WN::|indeterminable%3:00:00::|
+    WN::|undeterminable%3:00:00::|
+    WN::|collapsible%3:00:00::|
+    WN::|collapsable%3:00:00::|
+    WN::|reversible%3:00:00::|
+    WN::|commutable%3:00:00::|
+    WN::|perishable%3:00:00::|
+    WN::|salable%3:00:00::|
+    WN::|saleable%3:00:00::|
+    WN::|infallible%3:00:00::|
+    WN::|undeniable%3:00:00::|
+    WN::|calculable%3:00:00::|
+    WN::|imperishable%3:00:00::|
+    WN::|incorrigible%3:00:00::|
+    WN::|undatable%3:00:00::|
+    WN::|soluble%3:00:02::|
+    WN::|unalterable%3:00:00::|
+    WN::|inalterable%3:00:00::|
+    WN::|deniable%3:00:00::|
+    WN::|revocable%3:00:00::|
+    WN::|revokable%3:00:00::|
+    WN::|placable%3:00:00::|
+    WN::|distinguishable%3:00:00::|
+    WN::|recoverable%3:00:00::|
+    WN::|incommutable%3:00:00::|
+    WN::|unrecoverable%3:00:00::|
+    WN::|irrecoverable%3:00:00::|
+    WN::|unsalable%3:00:00::|
+    WN::|unsaleable%3:00:00::|
+    WN::|immeasurable%3:00:00::|
+    WN::|unmeasurable%3:00:00::|
+    WN::|immensurable%3:00:00::|
+    WN::|unmeasured%3:00:00::|
+    WN::|extensile%3:00:00::|
+    WN::|extensible%3:00:00::|
+    WN::|indeterminate%3:00:01::|
+    WN::|undetermined%3:00:04::|
+    WN::|expendable%3:00:00::|
+    WN::|implacable%3:00:00::|
+    WN::|inexhaustible%3:00:00::|
+    WN::|inexcusable%3:00:00::|
+    WN::|forgettable%3:00:00::|
+    WN::|detachable%3:00:00::|
+    WN::|indefeasible%3:00:00::|
+    WN::|returnable%3:00:00::|
+    WN::|exchangeable%3:00:00::|
+    WN::|unexchangeable%3:00:00::|
+    WN::|inconsolable%3:00:00::|
+    WN::|disconsolate%3:00:04::|
+    WN::|unconsolable%3:00:00::|
+    WN::|livable%3:00:00::|
+    WN::|liveable%3:00:00::|
+    WN::|excusable%3:00:00::|
+    WN::|nondisposable%3:00:02::|
+    WN::|unlivable%3:00:00::|
+    WN::|unliveable%3:00:00::|
+    WN::|disposable%3:00:01::|
+    WN::|exportable%3:00:00::|
+    WN::|compressible%3:00:00::|
+    WN::|washable%3:00:00::|
+    WN::|scalable%3:00:00::|
+    WN::|explicable%3:00:00::|
+    WN::|inviolable%3:00:00::|
+    WN::|reversible%3:00:02::|
+    WN::|two-sided%3:00:02::|
+    WN::|noncollapsible%3:00:00::|
+    WN::|noncollapsable%3:00:00::|
+    WN::|inedible%3:00:00::|
+    WN::|uneatable%3:00:00::|
+    WN::|indigestible%3:00:00::|
+    WN::|exhaustible%3:00:00::|
+    WN::|inexpressible%3:00:00::|
+    WN::|unexpressible%3:00:00::|
+    WN::|unexcitable%3:00:00::|
+    WN::|stoppable%3:00:00::|
+    WN::|ponderable%3:00:00::|
+    WN::|irreversible%3:00:00::|
+    WN::|retractile%3:00:00::|
+    WN::|nonreflective%3:00:00::|
+    WN::|nonreflecting%3:00:00::|
+    WN::|irrevocable%3:00:00::|
+    WN::|irrevokable%3:00:00::|
+    WN::|unstoppable%3:00:00::|
+    WN::|pronounceable%3:00:00::|
+    WN::|unintelligible%3:00:00::|
+    WN::|unrenewable%3:00:00::|
+    WN::|nonrenewable%3:00:00::|
+    WN::|nonadsorbent%3:00:00::|
+    WN::|nonadsorptive%3:00:00::|
+    WN::|rentable%3:00:00::|
+    WN::|unpreventable%3:00:00::|
+    WN::|unshrinkable%3:00:00::|
+    WN::|extricable%3:00:00::|
+    WN::|unexportable%3:00:00::|
+    WN::|datable%3:00:00::|
+    WN::|dateable%3:00:00::|
+    WN::|operable%3:00:00::|
+    WN::|unexpendable%3:00:00::|
+    WN::|submersible%3:00:00::|
+    WN::|submergible%3:00:00::|
+    WN::|unreportable%3:00:00::|
+    WN::|unportable%3:00:00::|
+    WN::|nonretractile%3:00:00::|
+    WN::|nonretractable%3:00:00::|
+    WN::|nonextensile%3:00:00::|
+    WN::|inextensible%3:00:00::|
+    WN::|nonprotractile%3:00:00::|
+    WN::|shockable%3:00:00::|
+    WN::|narrow-minded%3:00:04::|
+    WN::|unactable%3:00:00::|
+    WN::|indistinguishable%3:00:00::|
+    WN::|undistinguishable%3:00:00::|
+    WN::|incurable%3:00:00::|
+    WN::|playable%3:00:00::|
+    WN::|alterable%3:00:00::|
+    WN::|nondisposable%3:00:01::|
+    WN::|invertible%3:00:00::|
+    WN::|unemployable%3:00:00::|
+    WN::|unappealable%3:00:00::|
+    WN::|traceable%3:00:00::|
+    WN::|trackable%3:00:00::|
+    WN::|incompressible%3:00:00::|
+    WN::|adsorbable%3:00:00::|
+    WN::|adsorbate%3:00:00::|
+    WN::|nonsubmersible%3:00:00::|
+    WN::|nonsubmergible%3:00:00::|
+    WN::|repeatable%3:00:00::|
+    WN::|quotable%3:00:00::|
+    WN::|actable%3:00:00::|
+    WN::|nonwashable%3:00:00::|
+    WN::|bridgeable%3:00:00::|
+    WN::|wearable%3:00:00::|
+    WN::|nonvolatile%3:00:00::|
+    WN::|nonvolatilizable%3:00:00::|
+    WN::|nonvolatilisable%3:00:00::|
+    WN::|knowable%3:00:00::|
+    WN::|cognizable%3:00:00::|
+    WN::|cognisable%3:00:00::|
+    WN::|cognoscible%3:00:00::|
+    WN::|unscalable%3:00:00::|
+    WN::|unclimbable%3:00:00::|
+    WN::|puncturable%3:00:00::|
+    WN::|imponderable%3:00:00::|
+    WN::|preventable%3:00:00::|
+    WN::|resistible%3:00:00::|
+    WN::|nonreversible%3:00:00::|
+    WN::|one-sided%3:00:02::|
+    WN::|consolable%3:00:00::|
+    WN::|non-invertible%3:00:00::|
+    WN::|paintable%3:00:00::|
+    WN::|printable%3:00:00::|
+    WN::|unpronounceable%3:00:00::|
+    WN::|employable%3:00:00::|
+    WN::|unopposable%3:00:00::|
+    WN::|unpublishable%3:00:00::|
+    WN::|irreducible%3:00:00::|
+    WN::|publishable%3:00:00::|
+    WN::|undrinkable%3:00:00::|
+    WN::|unsinkable%3:00:00::|
+    WN::|translatable%3:00:00::|
+    WN::|nondeductible%3:00:00::|
+    WN::|adoptable%3:00:00::|
+    WN::|seasonable%3:00:00::|
+    WN::|drinkable%3:00:00::|
+    WN::|potable%3:00:00::|
+    WN::|unrentable%3:00:00::|
+    WN::|inoperable%3:00:00::|
+    WN::|appealable%3:00:00::|
+    WN::|unshockable%3:00:00::|
+    WN::|broad-minded%3:00:04::|
+    WN::|irreplaceable%3:00:00::|
+    WN::|unreplaceable%3:00:00::|
+    WN::|inextinguishable%3:00:00::|
+    WN::|unseasonable%3:00:00::|
+    WN::|unadoptable%3:00:00::|
+    WN::|nonreturnable%3:00:00::|
+    WN::|opposable%3:00:00::|
+    WN::|apposable%3:00:00::|
+    WN::|reportable%3:00:00::|
+    WN::|sinkable%3:00:00::|
+    WN::|unrepeatable%3:00:00::|
+    WN::|unquotable%3:00:00::|
+    WN::|reducible%3:00:00::|
+    WN::|untraceable%3:00:00::|
+    WN::|nonarbitrable%3:00:00::|
+    WN::|absorbable%3:00:00::|
+    WN::|unpaintable%3:00:00::|
+    WN::|curable%3:00:00::|
+    WN::|unbridgeable%3:00:00::|
+    WN::|shrinkable%3:00:00::|
+    WN::|defeasible%3:00:00::|
+    WN::|unprintable%3:00:00::|
+    WN::|untranslatable%3:00:00::|
+    WN::|extinguishable%3:00:00::|
+    WN::|arbitrable%3:00:00::|
+    WN::|unwearable%3:00:00::|
+    WN::|violable%3:00:00::|
+    WN::|renewable%3:00:00::|
+    WN::|unplayable%3:00:00::|
+    WN::|breakable%3:00:00::|
+    WN::|unchangeable%3:00:00::|
+    WN::|intractable%3:00:00::|
+    WN::|admissible%3:00:00::|
+    WN::|attributable%3:00:00::|
+    WN::|destructible%3:00:00::|
+    WN::|deductible%3:00:00::|
+    WN::|inconvertible%3:00:00::|
+    WN::|unconvertible%3:00:00::|
+    WN::|unexchangeable%3:00:04::|
+    WN::|indispensable%3:00:00::|
+    WN::|inadmissible%3:00:00::|
+    WN::|nonabsorbent%3:00:00::|
+    WN::|nonabsorptive%3:00:00::|
+    WN::|indestructible%3:00:00::|
+    WN::|convertible%3:00:00::|
+    WN::|exchangeable%3:00:04::|
+    WN::|sympathetic%3:00:02::|
+    WN::|appealing%3:00:02::|
+    WN::|likeable%3:00:02::|
+    WN::|likable%3:00:02::|
+    WN::|charitable%3:01:00::|
+    WN::|unattributable%3:00:00::|
+    WN::|unascribable%3:00:00::|
+    WN::|dispensable%3:00:00::|
+    WN::|inhospitable%3:00:02::|
+    WN::|machine_readable%3:01:00::|
+    WN::|computer_readable%3:01:00::|
+    WN::|differentiable%3:01:00::|
+    WN::|hydrolyzable%3:01:00::|
+    WN::|packable%3:01:00::|
+    WN::|fermentable%3:01:00::|
+    WN::|positionable%3:01:00::|
+    WN::|nonfissionable%3:00:00::|
+    WN::|unsympathetic%3:00:02::|
+    WN::|unappealing%3:00:02::|
+    WN::|unlikeable%3:00:02::|
+    WN::|unlikable%3:00:02::|
+    WN::|deliverable%3:01:00::|
+    WN::|metastable%3:01:00::|
+    WN::|stainable%3:01:00::|
+    WN::|sustainable%3:01:00::|
+    WN::|diagonalizable%3:01:00::|
+    WN::|fissionable%3:00:00::|
+    WN::|fissile%3:00:02::|
+    WN::|uninjectable%3:00:00::|
+    WN::|injectable%3:00:00::|
+    WN::|measurable%3:00:00::|
+    WN::|mensurable%3:00:00::|
+    WN::|mensural%3:01:00::|
+    WN::|measured%3:01:00::|
+    WN::|mensurable%3:01:00::|)
   (SEM-FRAME
     (ONT::GROUND
      (CONCEPT
@@ -5101,7 +7213,9 @@
 (CONCEPT
   ONT::CARDINALITY-VAL
   (INHERIT
-    ONT::NUMBER-RELATED-PROPERTY-VAL))
+    ONT::NUMBER-RELATED-PROPERTY-VAL)
+  (OVERLAP
+    WN::|cardinal%3:00:00::|))
 
 (CONCEPT
   ONT::CARDIOPULMONARY-EXERCISE
@@ -5130,6 +7244,12 @@
   (INHERIT
     ONT::CAREFULNESS-VAL)
   (OVERLAP
+    WN::|fastidious%3:00:00::|
+    WN::|cautious%3:00:00::|
+    WN::|prudent%3:00:00::|
+    WN::|hard%3:00:02::|
+    WN::|critical%3:00:02::|
+    WN::|discreet%3:00:00::|
     WN::|careful%3:00:00::|
     WN::|careful%5:00:00:mindful:00|
     WN::|heedful%5:00:00:mindful:00|)
@@ -5149,6 +7269,16 @@
       ABSTR-OBJ)
     (SCALE ONT::CAUTIOUSNESS-SCALE)
     (TYPE ONT::CAREFULNESS-VAL)))
+
+(CONCEPT
+  ONT::CARING-VAL
+  (COMMENT "(caring, supportive)")
+  (INHERIT
+    ONT::SOCIAL-CARE-AND-SUPPORT-VAL)
+  (OVERLAP
+    WN::|supportive%3:00:00::|
+    WN::|sympathetic%3:00:00::|
+    WN::|compassionate%3:00:00::|))
 
 (CONCEPT
   ONT::CARVE-CUT
@@ -5638,6 +7768,17 @@
     WN::|central%3:00:01::|))
 
 (CONCEPT
+  ONT::CENTRIC-VAL
+  (COMMENT "(centric)")
+  (INHERIT
+    ONT::SPATIAL-ARRANGEMENT-VAL)
+  (OVERLAP
+    WN::|eccentric%3:00:00::|
+    WN::|nonconcentric%3:00:00::|
+    WN::|heliocentric%3:00:00::|
+    WN::|geocentric%3:00:00::|))
+
+(CONCEPT
   ONT::CENTURY
   (INHERIT
     ONT::DATE-OBJECT-IN)
@@ -5666,6 +7807,12 @@
   (INHERIT
     ONT::CERTAINTY-VAL)
   (OVERLAP
+    WN::|incontestable%3:00:00::|
+    WN::|incontestible%3:00:00::|
+    WN::|certain%3:00:03::|
+    WN::|sure%3:00:04::|
+    WN::|definite%3:00:00::|
+    WN::|unquestionable%3:00:00::|
     WN::|definite%5:00:00:certain:01|
     WN::|certain%3:00:01::|
     WN::|certain%3:00:02::|
@@ -5696,7 +7843,7 @@
 (CONCEPT
   ONT::CERTAINTY-VAL
   (INHERIT
-    ONT::PSYCHOLOGICAL-PROPERTY-VAL)
+    ONT::INFORMATION-PROPERTY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -6116,6 +8263,26 @@
     WN::|changeability%1:07:00::|))
 
 (CONCEPT
+  ONT::CHANGEABILITY-VAL
+  (COMMENT "(modifiable, changeable)")
+  (INHERIT
+    ONT::CAN-BE-DONE-VAL))
+
+(CONCEPT
+  ONT::CHANGEABLE-VAL
+  (COMMENT "(modifiable, changeable)")
+  (INHERIT
+    ONT::CHANGEABILITY-VAL)
+  (OVERLAP
+    WN::|variable%3:00:00::|
+    WN::|mutable%3:00:00::|
+    WN::|changeable%3:00:04::|
+    WN::|modifiable%3:00:00::|
+    WN::|unmodifiable%3:00:00::|
+    WN::|changeable%3:00:00::|
+    WN::|changeful%3:00:00::|))
+
+(CONCEPT
   ONT::CHARGE-PER-UNIT
   (INHERIT
     ONT::VALUE-COST))
@@ -6172,9 +8339,264 @@
 (CONCEPT
   ONT::CHEMICAL-VAL
   (INHERIT
-    ONT::ASSOCIATED-WITH-SCIENCE-VAL)
+    ONT::CHEMISTRY-VAL)
   (OVERLAP
     WN::|chemical%3:01:00::|))
+
+(CONCEPT
+  ONT::CHEMISTRY-PROPERTY-VAL
+  (INHERIT
+    ONT::CHEMISTRY-VAL)
+  (OVERLAP
+    WN::|membered%3:00:00::|
+    WN::|impure%3:00:02::|
+    WN::|reactive%3:00:00::|
+    WN::|alkaline%3:00:00::|
+    WN::|alkalic%3:00:00::|
+    WN::|unreactive%3:00:00::|
+    WN::|cyclic%3:00:02::|
+    WN::|unsaturated%3:00:00::|
+    WN::|acidic%3:00:00::|
+    WN::|bound%3:00:03::|
+    WN::|oleophilic%3:00:00::|
+    WN::|acyclic%3:00:02::|
+    WN::|open-chain%3:00:00::|
+    WN::|critical%3:00:04::|
+    WN::|hydrophilic%3:00:00::|
+    WN::|adamantine%3:01:00::|
+    WN::|monometallic%3:01:00::|
+    WN::|acidimetric%3:01:00::|
+    WN::|calciferous%3:01:00::|
+    WN::|dicarboxylic%3:01:00::|
+    WN::|boric%3:01:00::|
+    WN::|boracic%3:01:00::|
+    WN::|benzylic%3:01:00::|
+    WN::|bituminoid%3:01:00::|
+    WN::|bitumenoid%3:01:00::|
+    WN::|light%3:00:07::|
+    WN::|mesonic%3:01:00::|
+    WN::|mesic%3:01:00::|
+    WN::|argentic%3:01:00::|
+    WN::|camphoraceous%3:01:00::|
+    WN::|sulphuric%3:01:00::|
+    WN::|sulfuric%3:01:00::|
+    WN::|ammino%3:01:00::|
+    WN::|phosphorous%3:01:00::|
+    WN::|phosphoric%3:01:00::|
+    WN::|valent%3:01:00::|
+    WN::|ferric%3:01:00::|
+    WN::|ferrous%3:01:00::|
+    WN::|colorimetric%3:01:00::|
+    WN::|colorimetrical%3:01:00::|
+    WN::|endergonic%3:00:00::|
+    WN::|ceric%3:01:00::|
+    WN::|dimorphic%3:01:00::|
+    WN::|dimorphous%3:01:00::|
+    WN::|spectroscopic%3:01:00::|
+    WN::|spectroscopical%3:01:00::|
+    WN::|carbolated%3:01:00::|
+    WN::|ammoniac%3:01:00::|
+    WN::|ammoniacal%3:01:00::|
+    WN::|aurous%3:01:00::|
+    WN::|auric%3:01:00::|
+    WN::|stearic%3:01:00::|
+    WN::|nonenzymatic%3:01:00::|
+    WN::|arsenious%3:01:00::|
+    WN::|anhydrous%3:00:00::|
+    WN::|camphoric%3:01:00::|
+    WN::|achlorhydric%3:01:00::|
+    WN::|proteinaceous%3:01:00::|
+    WN::|polymorphous%3:01:01::|
+    WN::|polymorphic%3:01:01::|
+    WN::|iodinated%3:01:00::|
+    WN::|iodized%3:01:00::|
+    WN::|iodised%3:01:00::|
+    WN::|polyvalent%3:00:01::|
+    WN::|multivalent%3:00:04::|
+    WN::|biosynthetic%3:01:00::|
+    WN::|nonsteroidal%3:01:00::|
+    WN::|saturated%3:00:00::|
+    WN::|proteolytic%3:01:00::|
+    WN::|pectic%3:01:00::|
+    WN::|azotic%3:01:00::|
+    WN::|nitric%3:01:00::|
+    WN::|nitrous%3:01:00::|
+    WN::|mentholated%3:01:00::|
+    WN::|exergonic%3:00:00::|
+    WN::|calcareous%3:01:00::|
+    WN::|chalky%3:01:00::|
+    WN::|trihydroxy%3:01:00::|
+    WN::|autocatalytic%3:01:00::|
+    WN::|unmyelinated%3:01:00::|
+    WN::|photosynthetic%3:01:00::|
+    WN::|diamantine%3:01:00::|
+    WN::|aquatic%3:01:00::|
+    WN::|argentous%3:01:00::|
+    WN::|trivalent%3:01:00::|
+    WN::|electronic%3:01:01::|
+    WN::|carbonyl%3:01:00::|
+    WN::|carbonylic%3:01:00::|
+    WN::|antimonic%3:01:00::|
+    WN::|antimonious%3:01:00::|
+    WN::|phreatic%3:01:00::|
+    WN::|allylic%3:01:00::|
+    WN::|macromolecular%3:01:00::|
+    WN::|waxen%3:01:00::|
+    WN::|waxy%3:01:00::|
+    WN::|hydroxy%3:01:00::|
+    WN::|photochemical%3:01:00::|
+    WN::|zymotic%3:01:01::|
+    WN::|zymolytic%3:01:00::|
+    WN::|catalatic%3:01:00::|
+    WN::|bismuthal%3:01:00::|
+    WN::|benzenoid%3:01:00::|
+    WN::|nonphotosynthetic%3:01:00::|
+    WN::|biochemical%3:01:00::|
+    WN::|stannic%3:01:00::|
+    WN::|stannous%3:01:00::|
+    WN::|bichromated%3:01:00::|
+    WN::|chalybeate%3:01:00::|
+    WN::|noncritical%3:00:02::|
+    WN::|bivalent%3:01:01::|
+    WN::|divalent%3:01:00::|
+    WN::|azido%3:01:00::|
+    WN::|telluric%3:01:01::|
+    WN::|nitrogenous%3:01:00::|
+    WN::|nitrogen-bearing%3:01:00::|
+    WN::|hydrous%3:00:00::|
+    WN::|hydrated%3:00:00::|
+    WN::|acetonic%3:01:00::|
+    WN::|cherty%3:01:00::|
+    WN::|bismuthic%3:01:00::|
+    WN::|acetic%3:01:00::|
+    WN::|polymeric%3:01:00::|
+    WN::|caffeinic%3:01:00::|
+    WN::|bromic%3:01:00::|
+    WN::|molecular%3:01:00::|
+    WN::|transuranic%3:01:00::|
+    WN::|cacodylic%3:01:00::|
+    WN::|aleuronic%3:01:00::|
+    WN::|succinic%3:01:00::|
+    WN::|siliceous%3:01:00::|
+    WN::|silicious%3:01:00::|
+    WN::|tinny%3:01:00::|
+    WN::|carbocyclic%3:01:00::|
+    WN::|ethereal%3:01:00::|
+    WN::|benzoic%3:01:00::|
+    WN::|ceruminous%3:01:00::|
+    WN::|saponaceous%3:01:00::|
+    WN::|soapy%3:01:00::|
+    WN::|citric%3:01:00::|
+    WN::|bimolecular%3:01:00::|
+    WN::|monovalent%3:00:01::|
+    WN::|univalent%3:00:04::|
+    WN::|plumbic%3:01:00::|
+    WN::|plumbous%3:01:00::|
+    WN::|inorganic%3:00:01::|
+    WN::|amino%3:01:00::|
+    WN::|aminic%3:01:00::|
+    WN::|boronic%3:01:00::|
+    WN::|ionic%3:01:00::|
+    WN::|iodinating%3:00:00::|
+    WN::|ammoniated%3:01:00::|
+    WN::|albuminous%3:01:00::|
+    WN::|amphoteric%3:00:00::|
+    WN::|amphiprotic%3:00:00::|
+    WN::|amylolytic%3:01:00::|
+    WN::|acetylenic%3:01:00::|
+    WN::|allotropic%3:01:00::|
+    WN::|allotropical%3:01:00::|
+    WN::|adrenergic%3:01:00::|
+    WN::|sympathomimetic%3:01:00::|
+    WN::|physicochemical%3:01:00::|
+    WN::|leaden%3:01:00::|
+    WN::|iridic%3:01:01::|
+    WN::|pyrochemical%3:01:00::|
+    WN::|mercurial%3:01:00::|
+    WN::|fibrinous%3:01:00::|
+    WN::|hydraulic%3:01:01::|
+    WN::|resinated%3:01:00::|
+    WN::|flinty%3:01:00::|
+    WN::|aldehydic%3:01:00::|
+    WN::|formic%3:01:00::|
+    WN::|electrochemical%3:01:00::|
+    WN::|calcic%3:01:00::|
+    WN::|lithic%3:01:01::|
+    WN::|immunochemical%3:01:00::|
+    WN::|mass_spectroscopic%3:01:00::|
+    WN::|arsenical%3:01:00::|
+    WN::|recombinant%3:01:00::|
+    WN::|myelinated%3:01:00::|
+    WN::|medullated%3:01:00::|
+    WN::|zymoid%3:01:00::|
+    WN::|tannic%3:01:00::|
+    WN::|insecticidal%3:01:00::|
+    WN::|cupric%3:01:00::|
+    WN::|cuprous%3:01:00::|
+    WN::|heavy%3:00:07::|
+    WN::|catalytic%3:01:00::|
+    WN::|tetravalent%3:01:00::|
+    WN::|azo%3:01:00::|
+    WN::|chemical%3:01:01::|
+    WN::|sulphuretted%3:01:00::|
+    WN::|sulfurized%3:01:01::|
+    WN::|sulfuretted%3:01:00::|
+    WN::|enolic%3:01:00::|
+    WN::|myelinic%3:01:00::|
+    WN::|aluminous%3:01:00::|
+    WN::|glycogenic%3:01:00::|
+    WN::|sternutatory%3:01:00::|
+    WN::|intramolecular%3:01:00::|
+    WN::|aqueous%3:01:00::|
+    WN::|antiadrenergic%3:01:00::|
+    WN::|thermionic%3:01:00::|
+    WN::|pyrogallic%3:01:00::|
+    WN::|elemental%3:01:00::|
+    WN::|barytic%3:01:00::|
+    WN::|polarographic%3:01:00::|
+    WN::|nonionic%3:01:00::|
+    WN::|nonpolar%3:01:00::|
+    WN::|sulfurous%3:01:00::|
+    WN::|sulphurous%3:01:00::|
+    WN::|enzymatic%3:01:00::|
+    WN::|alkylic%3:01:00::|
+    WN::|de-iodinating%3:00:00::|
+    WN::|baric%3:01:00::|
+    WN::|acetylic%3:01:00::|
+    WN::|rich%3:00:04::|
+    WN::|bituminous%3:01:00::|
+    WN::|intermolecular%3:01:00::|
+    WN::|qualitative%3:01:00::|
+    WN::|pentavalent%3:01:00::|
+    WN::|hydrophobic%3:00:00::|
+    WN::|chelate%3:01:02::|
+    WN::|chelated%3:01:00::|
+    WN::|electrolytic%3:01:01::|
+    WN::|anionic%3:01:00::|
+    WN::|diazo%3:01:00::|
+    WN::|monocarboxylic%3:01:00::|
+    WN::|aromatic%3:01:00::|
+    WN::|tartaric%3:01:00::|
+    WN::|transactinide%3:01:00::|
+    WN::|cerous%3:01:00::|
+    WN::|spectrometric%3:01:00::|
+    WN::|cationic%3:01:00::|
+    WN::|carbonaceous%3:01:00::|
+    WN::|carbonous%3:01:00::|
+    WN::|carbonic%3:01:00::|
+    WN::|carboniferous%3:01:00::|
+    WN::|alkaloidal%3:01:00::|
+    WN::|mercuric%3:01:00::|
+    WN::|mercurous%3:01:00::|
+    WN::|chitinous%3:01:00::|
+    WN::|cellulosid%3:01:00::|
+    WN::|carboxyl%3:01:00::|
+    WN::|carboxylic%3:01:00::|))
+
+(CONCEPT
+  ONT::CHEMISTRY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SCIENCE-VAL))
 
 (CONCEPT
   ONT::CHICKEN
@@ -6298,6 +8720,116 @@
     WN::|civic%3:01:00::|))
 
 (CONCEPT
+  ONT::CITY-STATE-DISTRICT-VAL
+  (INHERIT
+    ONT::GEO-LOCATION-VAL)
+  (OVERLAP
+    WN::|singaporean%3:01:01::|
+    WN::|roman%3:01:01::|
+    WN::|romanic%3:01:00::|
+    WN::|venetian%3:01:00::|
+    WN::|sarawakian%3:01:00::|
+    WN::|ephesian%3:01:00::|
+    WN::|damascene%3:01:00::|
+    WN::|athenian%3:01:00::|
+    WN::|low-tension%3:00:00::|
+    WN::|low-voltage%3:00:00::|
+    WN::|kuwaiti%3:01:00::|
+    WN::|milanese%3:01:00::|
+    WN::|nicaean%3:01:00::|
+    WN::|nicene%3:01:00::|
+    WN::|inductive%3:01:00::|
+    WN::|palestinian%3:01:00::|
+    WN::|tyrolean%3:01:00::|
+    WN::|tyrolese%3:01:00::|
+    WN::|alternating%3:00:00::|
+    WN::|sicilian%3:01:00::|
+    WN::|viennese%3:01:00::|
+    WN::|territorial%3:01:00::|
+    WN::|electrostatic%3:01:00::|
+    WN::|static%3:01:00::|
+    WN::|piezoelectric%3:01:00::|
+    WN::|florentine%3:01:00::|
+    WN::|tuscan%3:01:00::|
+    WN::|quebecois%3:01:00::|
+    WN::|cornish%3:01:00::|
+    WN::|tunisian%3:01:02::|
+    WN::|texan%3:01:00::|
+    WN::|national%3:01:00::|
+    WN::|pyroelectric%3:01:00::|
+    WN::|pyroelectrical%3:01:00::|
+    WN::|genoese%3:01:00::|
+    WN::|genovese%3:01:00::|
+    WN::|thermoelectric%3:01:00::|
+    WN::|thermoelectrical%3:01:00::|
+    WN::|oxonian%3:01:00::|
+    WN::|photoelectric%3:01:00::|
+    WN::|photoelectrical%3:01:00::|
+    WN::|suburban%3:01:00::|
+    WN::|aberdonian%3:01:00::|
+    WN::|noncyclic%3:00:00::|
+    WN::|noncyclical%3:00:00::|
+    WN::|neapolitan%3:01:00::|
+    WN::|myotonic%3:01:00::|
+    WN::|glaswegian%3:01:00::|
+    WN::|californian%3:01:00::|
+    WN::|hydroelectric%3:01:00::|
+    WN::|sabahan%3:01:00::|
+    WN::|lancastrian%3:01:02::|
+    WN::|babylonian%3:01:00::|
+    WN::|atonic%3:01:00::|
+    WN::|prefectural%3:01:00::|
+    WN::|bavarian%3:01:00::|
+    WN::|abkhaz%3:01:00::|
+    WN::|abkhazian%3:01:00::|
+    WN::|mancunian%3:01:00::|
+    WN::|mycenaean%3:01:00::|
+    WN::|corinthian%3:01:00::|
+    WN::|boeotian%3:01:00::|
+    WN::|liverpudlian%3:01:00::|
+    WN::|archdiocesan%3:01:00::|
+    WN::|washingtonian%3:01:01::|
+    WN::|tonic%3:01:02::|
+    WN::|theban%3:01:01::|
+    WN::|communal%3:01:02::|
+    WN::|latin%3:01:01::|
+    WN::|hawaiian%3:01:00::|
+    WN::|civil%3:01:01::|
+    WN::|sardinian%3:01:00::|
+    WN::|voltaic%3:01:00::|
+    WN::|galvanic%3:01:00::|
+    WN::|metropolitan%3:01:00::|
+    WN::|direct%3:00:01::|
+    WN::|galwegian%3:01:00::|
+    WN::|frisian%3:01:00::|
+    WN::|washingtonian%3:01:00::|
+    WN::|spartan%3:01:00::|
+    WN::|parisian%3:01:00::|
+    WN::|luxemburger%3:01:02::|
+    WN::|georgian%3:01:04::|
+    WN::|attic%3:01:00::|
+    WN::|delphic%3:01:00::|
+    WN::|delphian%3:01:00::|
+    WN::|theban%3:01:00::|
+    WN::|trojan%3:01:00::|
+    WN::|carthaginian%3:01:00::|
+    WN::|punic%3:01:00::|
+    WN::|calcuttan%3:01:00::|
+    WN::|argive%3:01:00::|
+    WN::|eparchial%3:01:00::|
+    WN::|electrical%3:01:00::|
+    WN::|parochial%3:01:00::|
+    WN::|electric%3:01:00::|
+    WN::|electrical%3:01:01::|
+    WN::|assamese%3:01:00::|
+    WN::|tasmanian%3:01:00::|
+    WN::|diocesan%3:01:00::|
+    WN::|catalan%3:01:01::|
+    WN::|ionian%3:01:00::|
+    WN::|cantonal%3:01:00::|
+    WN::|provincial%3:01:00::|))
+
+(CONCEPT
   ONT::CLARITY-VAL
   (COMMENT "clear, obvious vs. unclear, obscure")
   (INHERIT
@@ -6414,6 +8946,10 @@
   (INHERIT
     ONT::CLARITY-VAL)
   (OVERLAP
+    WN::|unequivocal%3:00:00::|
+    WN::|univocal%3:00:00::|
+    WN::|unambiguous%3:00:04::|
+    WN::|unambiguous%3:00:00::|
     WN::|apparent%5:00:00:obvious:00|
     WN::|obvious%3:00:00::|
     WN::|clear%3:00:00::|))
@@ -6423,6 +8959,7 @@
   (INHERIT
     ONT::ATMOSPHERIC-VAL)
   (OVERLAP
+    WN::|calm%3:00:00::|
     WN::|clear%3:00:03::|
     WN::|fair%5:00:00:clear:03|
     WN::|liquid%5:00:00:clear:02|))
@@ -6432,6 +8969,7 @@
   (INHERIT
     ONT::SMART)
   (OVERLAP
+    WN::|politic%3:00:00::|
     WN::|cunning%5:00:00:adroit:00|
     WN::|clever%5:00:00:adroit:00|
     WN::|ingenious%5:00:00:adroit:00|
@@ -6474,9 +9012,23 @@
        (ORIGIN ARTIFACT)))))
 
 (CONCEPT
+  ONT::CLOCK-TIME-VAL
+  (COMMENT "(noon)")
+  (INHERIT
+    ONT::TEMPORAL-VAL)
+  (OVERLAP
+    WN::|postmeridian%3:00:00::|
+    WN::|antemeridian%3:00:00::|
+    WN::|auroral%3:01:01::|
+    WN::|aurorean%3:01:00::|
+    WN::|meridian%3:01:00::|))
+
+(CONCEPT
   ONT::CLOCKWISE
   (INHERIT
-    ONT::DIRECTION-ROTATION))
+    ONT::DIRECTION-ROTATION)
+  (OVERLAP
+    WN::|clockwise%3:00:00::|))
 
 (CONCEPT
   ONT::CLOG
@@ -6502,6 +9054,19 @@
     WN::|close%2:35:06::|))
 
 (CONCEPT
+  ONT::CLOSED-VAL
+  (COMMENT "(closed)")
+  (INHERIT
+    ONT::CLOSURE-VAL)
+  (OVERLAP
+    WN::|closed%3:00:03::|
+    WN::|shut%3:00:02::|
+    WN::|shuttered%3:00:00::|
+    WN::|shut%3:00:00::|
+    WN::|unopen%3:00:04::|
+    WN::|closed%3:00:04::|))
+
+(CONCEPT
   ONT::CLOSURE
   (INHERIT
     ONT::CHANGE-STATE-ACTION)
@@ -6513,10 +9078,22 @@
        (FORM OBJECT)))))
 
 (CONCEPT
+  ONT::CLOSURE-VAL
+  (COMMENT "(open)")
+  (INHERIT
+    ONT::CONFIGURATION-PROPERTY-VAL))
+
+(CONCEPT
   ONT::CLOTHED-VAL
   (INHERIT
     ONT::CLOTHEDNESS-ADORNMENT-VAL)
   (OVERLAP
+    WN::|crowned%3:00:00::|
+    WN::|shod%3:00:00::|
+    WN::|shodden%3:00:00::|
+    WN::|shoed%3:00:00::|
+    WN::|gloved%3:00:00::|
+    WN::|wigged%3:00:00::|
     WN::|clothed%3:00:00::|))
 
 (CONCEPT
@@ -6543,6 +9120,7 @@
   (INHERIT
     ONT::ATMOSPHERIC-VAL)
   (OVERLAP
+    WN::|smoky%3:00:00::|
     WN::|cloud-covered%5:00:00:cloudy:00|
     WN::|cloudy%3:00:00::|
     WN::|brumous%5:00:00:cloudy:00|
@@ -6657,6 +9235,24 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::COGNITIVE-PROCESS-VAL
+  (INHERIT
+    ONT::PSYCHOLOGY-VAL)
+  (OVERLAP
+    WN::|cultural%3:01:01::|
+    WN::|inferential%3:01:00::|
+    WN::|illative%3:01:00::|
+    WN::|optative%3:01:01::|
+    WN::|omissive%3:01:00::|
+    WN::|anamnestic%3:01:00::|
+    WN::|mystic%3:01:01::|
+    WN::|mystical%3:01:01::|
+    WN::|oneiric%3:01:00::|
+    WN::|deductive%3:01:00::|
+    WN::|animatistic%3:01:00::|
+    WN::|facultative%3:01:00::|))
+
+(CONCEPT
   ONT::COHERE
   (INHERIT
     ONT::OBJECT-COMPARE)
@@ -6669,6 +9265,7 @@
   (INHERIT
     ONT::TEMPERATURE-VAL)
   (OVERLAP
+    WN::|cold%3:00:01::|
     WN::|cool%3:00:01::|
     WN::|cold%5:00:00:cool:03|
     WN::|cool%3:00:03::|)
@@ -6824,6 +9421,18 @@
   (INHERIT
     ONT::VISUAL-PROPERTY-VAL)
   (OVERLAP
+    WN::|colored%3:00:00::|
+    WN::|coloured%3:00:00::|
+    WN::|colorful%3:00:02::|
+    WN::|colorful%3:00:00::|
+    WN::|colourful%3:00:00::|
+    WN::|brunet%3:00:00::|
+    WN::|brunette%3:00:00::|
+    WN::|blond%3:00:00::|
+    WN::|blonde%3:00:00::|
+    WN::|light-haired%3:00:00::|
+    WN::|bistered%3:01:00::|
+    WN::|bistred%3:01:00::|
     WN::|chromatic%3:00:00::|
     WN::|achromatic%3:00:00::|)
   (SEM-FEATS
@@ -7074,6 +9683,7 @@
   (INHERIT
     ONT::COMFORT-VAL)
   (OVERLAP
+    WN::|comfortable%3:00:01::|
     WN::|cozy%5:00:00:comfortable:00|
     WN::|comfortable%3:00:00::|)
   (SEM-FEATS
@@ -7242,6 +9852,26 @@
     WN::|shop%1:06:00::|))
 
 (CONCEPT
+  ONT::COMMERCIAL-PROPERTY-VAL
+  (INHERIT
+    ONT::COMMERCIAL-ENTERPRISE-VAL)
+  (OVERLAP
+    WN::|noncommercial%3:00:00::|
+    WN::|tangible%3:00:02::|
+    WN::|corporate%3:01:00::|
+    WN::|piscatorial%3:01:00::|
+    WN::|piscatory%3:01:00::|
+    WN::|nonfinancial%3:01:00::|
+    WN::|hollywood%3:01:00::|
+    WN::|intangible%3:00:02::|
+    WN::|commercial%3:01:00::|
+    WN::|nautical%3:01:02::|
+    WN::|maritime%3:01:00::|
+    WN::|marine%3:01:02::|
+    WN::|apicultural%3:01:00::|
+    WN::|cultural%3:01:02::|))
+
+(CONCEPT
   ONT::COMMISSIVE
   (COMMENT
    "speech act that expresses the speakers commitment to future acts (cf. Searle)")
@@ -7336,6 +9966,21 @@
     ONT::PERSON-RELN)
   (OVERLAP
     WN::|communicator%1:18:00::|))
+
+(CONCEPT
+  ONT::COMMUNICATIVE-VAL
+  (COMMENT "(communicative)")
+  (INHERIT
+    ONT::COMMUNICATIVENESS-VAL)
+  (OVERLAP
+    WN::|communicative%3:00:00::|
+    WN::|communicatory%3:00:00::|))
+
+(CONCEPT
+  ONT::COMMUNICATIVENESS-VAL
+  (COMMENT "(communicative)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL))
 
 (CONCEPT
   ONT::COMPANY
@@ -7595,6 +10240,7 @@
   (INHERIT
     ONT::COMPREHENSIBILITY-VAL)
   (OVERLAP
+    WN::|intelligible%3:00:00::|
     WN::|friendly%3:00:03::|
     WN::|comprehensible%3:00:00::|)
   (SEM-FEATS
@@ -7616,6 +10262,23 @@
     (TIME-SPAN EXTENDED)
     (ASPECT STATIC)
     (TYPE ONT::COMPRISE)))
+
+(CONCEPT
+  ONT::COMPSCI-PROPERTY-VAL
+  (INHERIT
+    ONT::COMPUTER-SCIENCE-VAL)
+  (OVERLAP
+    WN::|on-line%3:00:00::|
+    WN::|online%3:00:00::|
+    WN::|stored-program%3:01:00::|
+    WN::|incompatible%3:00:02::|
+    WN::|real-time%3:01:00::|
+    WN::|off-line%3:00:00::|
+    WN::|wysiwyg%3:01:00::|
+    WN::|client-server%3:01:00::|
+    WN::|open-source%3:01:00::|
+    WN::|computational%3:01:00::|
+    WN::|stovepiped%3:01:00::|))
 
 (CONCEPT
   ONT::COMPUTER
@@ -7735,6 +10398,11 @@
     WN::|computer_programme%1:10:00::|))
 
 (CONCEPT
+  ONT::COMPUTER-SCIENCE-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SCIENCE-VAL))
+
+(CONCEPT
   ONT::COMPUTER-SOFTWARE
   (INHERIT
     ONT::REPRESENTATION)
@@ -7749,6 +10417,16 @@
   ONT::COMPUTER-TYPE
   (INHERIT
     ONT::COMPUTER))
+
+(CONCEPT
+  ONT::CONCENTRATED-VAL
+  (COMMENT "(concentrated, saturated)")
+  (INHERIT
+    ONT::DISPERSION-VAL)
+  (OVERLAP
+    WN::|concentrated%3:00:00::|
+    WN::|saturated%3:00:01::|
+    WN::|concentrated%3:00:02::|))
 
 (CONCEPT
   ONT::CONCENTRIC-VAL
@@ -7776,7 +10454,7 @@
 (CONCEPT
   ONT::CONCERNED-VAL
   (INHERIT
-    ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
     WN::|concerned%3:00:00::|)
   (SEM-FEATS
@@ -7940,6 +10618,7 @@
   (INHERIT
     ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
+    WN::|disorienting%3:00:00::|
     WN::|confusing%5:00:00:disorienting:00|))
 
 (CONCEPT
@@ -7999,6 +10678,14 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::CONNECTING-VAL
+  (COMMENT "(connecting, conjunctive)")
+  (INHERIT
+    ONT::SERVING-AS-CONNECTION-VAL)
+  (OVERLAP
+    WN::|conjunctive%3:00:00::|))
+
+(CONCEPT
   ONT::CONNECTIVITY-SCALE
   (INHERIT
     ONT::STATE-OF-AFFAIRS-SCALE)
@@ -8012,6 +10699,21 @@
     ONT::RESULTING-STATE-VAL)
   (OVERLAP
     WN::|preserved%3:00:01::|))
+
+(CONCEPT
+  ONT::CONSIDERATE-VAL
+  (COMMENT "to be thoughtful, tactful (thoughtful, considerate)")
+  (INHERIT
+    ONT::CONSIDERATION-VAL)
+  (OVERLAP
+    WN::|thoughtful%3:00:00::|
+    WN::|considerate%3:00:00::|))
+
+(CONCEPT
+  ONT::CONSIDERATION-VAL
+  (COMMENT "to be thoughtful, tactful (thoughtful, considerate)")
+  (INHERIT
+    ONT::SOCIAL-INTERACTION-VAL))
 
 (CONCEPT
   ONT::CONSISTENCY-SCALE
@@ -8178,6 +10880,28 @@
     ONT::VOLUME-UNIT))
 
 (CONCEPT
+  ONT::CONTAINING-SUBSTANCE-VAL
+  (COMMENT "(crystalline, alcoholic)")
+  (INHERIT
+    ONT::SUBSTANTIAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|metallic%3:00:00::|
+    WN::|metal%3:00:00::|
+    WN::|crystalline%3:00:00::|
+    WN::|noncrystalline%3:00:00::|
+    WN::|unleaded%3:00:00::|
+    WN::|leadless%3:00:00::|
+    WN::|leaded%3:00:00::|
+    WN::|starchy%3:00:00::|
+    WN::|nonmetallic%3:00:00::|
+    WN::|nonmetal%3:00:00::|
+    WN::|alcoholic%3:00:00::|
+    WN::|wet%3:00:04::|
+    WN::|vegetal%3:00:00::|
+    WN::|vegetational%3:00:00::|
+    WN::|vegetative%3:00:00::|))
+
+(CONCEPT
   ONT::CONTAINMENT
   (INHERIT
     ONT::EVENT-OF-STATE)
@@ -8205,6 +10929,16 @@
          (CONCEPT
            ABSTR-OBJ))
        (CONTAINER +)))))
+
+(CONCEPT
+  ONT::CONTEMPORANEOUS-VAL
+  (COMMENT "(contemporary, synchronous)")
+  (INHERIT
+    ONT::TEMPORAL-RELATION-VAL)
+  (OVERLAP
+    WN::|synchronous%3:00:00::|
+    WN::|synchronal%3:00:00::|
+    WN::|synchronic%3:00:04::|))
 
 (CONCEPT
   ONT::CONTENT
@@ -8244,6 +10978,7 @@
   (INHERIT
     ONT::CONTINUOUS-VAL)
   (OVERLAP
+    WN::|unbroken%3:00:02::|
     WN::|perpetual%5:00:00:continuous:01|
     WN::|continuous%3:00:01::|
     WN::|uninterrupted%3:00:00::|))
@@ -8256,7 +10991,9 @@
 (CONCEPT
   ONT::CONTINUOUS-VAL
   (INHERIT
-    ONT::TEMPORAL-OCCURRENCE-VAL))
+    ONT::TEMPORAL-OCCURRENCE-VAL)
+  (OVERLAP
+    WN::|continued%3:00:00::|))
 
 (CONCEPT
   ONT::CONTRA-FORCE
@@ -8313,6 +11050,23 @@
          PHYS-OBJ)
        (CONCEPT
          ABSTR-OBJ)))))
+
+(CONCEPT
+  ONT::CONTROL-VAL
+  (COMMENT "controlled or controllable by a human entity (controlled, guided)")
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT
+  ONT::CONTROLLED-VAL
+  (COMMENT "controlled or controllable by a human entity (controlled, guided)")
+  (INHERIT
+    ONT::CONTROL-VAL)
+  (OVERLAP
+    WN::|uncontrolled%3:00:00::|
+    WN::|controlled%3:00:00::|
+    WN::|guided%3:00:00::|
+    WN::|manned%3:00:00::|))
 
 (CONCEPT
   ONT::CONVENIENCE-SCALE
@@ -8372,6 +11126,7 @@
   (INHERIT
     ONT::CONVENTIONALITY-VAL)
   (OVERLAP
+    WN::|traditional%3:00:00::|
     WN::|conventional%5:00:00:orthodox:00|
     WN::|orthodox%3:00:00::|
     WN::|conventional%3:00:00::|
@@ -8590,6 +11345,16 @@
        T))))
 
 (CONCEPT
+  ONT::COORDINATE-SYSTEM-VAL
+  (COMMENT "(longitudinal)")
+  (INHERIT
+    ONT::SPATIAL-VAL)
+  (OVERLAP
+    WN::|latitudinal%3:01:00::|
+    WN::|longitudinal%3:01:00::|
+    WN::|altitudinal%3:01:00::|))
+
+(CONCEPT
   ONT::COORDINATING
   (INHERIT
     ONT::ARRANGING)
@@ -8673,6 +11438,9 @@
   (INHERIT
     ONT::CORRECTNESS-VAL)
   (OVERLAP
+    WN::|accurate%3:00:00::|
+    WN::|right%3:00:04::|
+    WN::|correct%3:00:04::|
     WN::|proper%3:00:00::|
     WN::|correct%5:00:00:proper:00|
     WN::|correct%3:00:00::|
@@ -8740,6 +11508,23 @@
            ABSTR-OBJ))
        (INTENTIONAL -))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::CORRESPONDENCE-VAL
+  (COMMENT "(commesurate, congruous)")
+  (INHERIT
+    ONT::RELATIONAL-ATTRIBUTE-VAL))
+
+(CONCEPT
+  ONT::CORRESPONDING-VAL
+  (COMMENT "(commesurate, congruous)")
+  (INHERIT
+    ONT::CORRESPONDENCE-VAL)
+  (OVERLAP
+    WN::|commensurate%3:00:00::|
+    WN::|congruous%3:00:00::|
+    WN::|congruent%3:00:04::|
+    WN::|homologous%3:00:01::|))
 
 (CONCEPT
   ONT::COST-RELATION
@@ -8819,7 +11604,11 @@
 (CONCEPT
   ONT::COUNTERCLOCKWISE
   (INHERIT
-    ONT::DIRECTION-ROTATION))
+    ONT::DIRECTION-ROTATION)
+  (OVERLAP
+    WN::|counterclockwise%3:00:00::|
+    WN::|anticlockwise%3:00:00::|
+    WN::|contraclockwise%3:00:00::|))
 
 (CONCEPT
   ONT::COUNTRY
@@ -8828,6 +11617,212 @@
   (OVERLAP
     WN::|country%1:15:00::|
     WN::|country%1:14:00::|))
+
+(CONCEPT
+  ONT::COUNTRY-NATION-VAL
+  (INHERIT
+    ONT::GEO-LOCATION-VAL)
+  (OVERLAP
+    WN::|nigerian%3:01:01::|
+    WN::|mexican%3:01:00::|
+    WN::|bangladeshi%3:01:00::|
+    WN::|east_pakistani%3:01:00::|
+    WN::|colombian%3:01:00::|
+    WN::|togolese%3:01:00::|
+    WN::|laotian%3:01:00::|
+    WN::|ethiopian%3:01:00::|
+    WN::|portuguese%3:01:00::|
+    WN::|lusitanian%3:01:01::|
+    WN::|sierra_leonean%3:01:00::|
+    WN::|mozambican%3:01:01::|
+    WN::|bulgarian%3:01:00::|
+    WN::|brazilian%3:01:00::|
+    WN::|qatari%3:01:00::|
+    WN::|katari%3:01:00::|
+    WN::|anglo-indian%3:01:00::|
+    WN::|algerian%3:01:00::|
+    WN::|tibetan%3:01:00::|
+    WN::|cambodian%3:01:00::|
+    WN::|kampuchean%3:01:00::|
+    WN::|bhutanese%3:01:00::|
+    WN::|andorran%3:01:00::|
+    WN::|south_korean%3:01:00::|
+    WN::|rhodesian%3:01:00::|
+    WN::|bolivian%3:01:00::|
+    WN::|american%3:01:01::|
+    WN::|samoan%3:01:00::|
+    WN::|finnish%3:01:00::|
+    WN::|bahamian%3:01:00::|
+    WN::|pakistani%3:01:00::|
+    WN::|monacan%3:01:00::|
+    WN::|monegasque%3:01:00::|
+    WN::|georgian%3:01:05::|
+    WN::|slovakian%3:01:00::|
+    WN::|malawian%3:01:00::|
+    WN::|norwegian%3:01:00::|
+    WN::|norse%3:01:00::|
+    WN::|grenadian%3:01:00::|
+    WN::|guatemalan%3:01:00::|
+    WN::|east_german%3:01:00::|
+    WN::|madagascan%3:01:00::|
+    WN::|libyan%3:01:00::|
+    WN::|german%3:01:00::|
+    WN::|austrian%3:01:00::|
+    WN::|botswanan%3:01:00::|
+    WN::|zimbabwean%3:01:00::|
+    WN::|rwandan%3:01:00::|
+    WN::|ruandan%3:01:00::|
+    WN::|namibian%3:01:00::|
+    WN::|liberian%3:01:00::|
+    WN::|malaysian%3:01:00::|
+    WN::|malayan%3:01:01::|
+    WN::|russian%3:01:00::|
+    WN::|costa_rican%3:01:00::|
+    WN::|scots%3:01:00::|
+    WN::|scottish%3:01:00::|
+    WN::|scotch%3:01:00::|
+    WN::|gabonese%3:01:00::|
+    WN::|guyanese%3:01:00::|
+    WN::|dominican%3:01:01::|
+    WN::|romanian%3:01:00::|
+    WN::|rumanian%3:01:00::|
+    WN::|roumanian%3:01:00::|
+    WN::|flemish%3:01:00::|
+    WN::|hungarian%3:01:00::|
+    WN::|magyar%3:01:00::|
+    WN::|kazakhstani%3:01:00::|
+    WN::|albanian%3:01:00::|
+    WN::|salvadoran%3:01:00::|
+    WN::|salvadorean%3:01:00::|
+    WN::|iranian%3:01:00::|
+    WN::|persian%3:01:00::|
+    WN::|britannic%3:01:00::|
+    WN::|chadian%3:01:00::|
+    WN::|indonesian%3:01:00::|
+    WN::|canadian%3:01:00::|
+    WN::|beninese%3:01:00::|
+    WN::|mongolian%3:01:02::|
+    WN::|venezuelan%3:01:00::|
+    WN::|croatian%3:01:00::|
+    WN::|sudanese%3:01:00::|
+    WN::|lebanese%3:01:00::|
+    WN::|nepalese%3:01:00::|
+    WN::|nepali%3:01:00::|
+    WN::|armenian%3:01:00::|
+    WN::|slovenian%3:01:00::|
+    WN::|thai%3:01:00::|
+    WN::|tai%3:01:00::|
+    WN::|siamese%3:01:00::|
+    WN::|swazi%3:01:02::|
+    WN::|tajikistani%3:01:00::|
+    WN::|ukrainian%3:01:00::|
+    WN::|soviet%3:01:00::|
+    WN::|macedonian%3:01:00::|
+    WN::|zambian%3:01:00::|
+    WN::|swedish%3:01:00::|
+    WN::|pro-american%3:01:00::|
+    WN::|burmese%3:01:00::|
+    WN::|burundi%3:01:00::|
+    WN::|burundian%3:01:00::|
+    WN::|tanzanian%3:01:00::|
+    WN::|ghanaian%3:01:00::|
+    WN::|ghanese%3:01:00::|
+    WN::|ghanian%3:01:00::|
+    WN::|cameroonian%3:01:00::|
+    WN::|tongan%3:01:01::|
+    WN::|djiboutian%3:01:00::|
+    WN::|anti-american%3:01:00::|
+    WN::|greek%3:01:01::|
+    WN::|grecian%3:01:00::|
+    WN::|hellenic%3:01:01::|
+    WN::|maltese%3:01:00::|
+    WN::|luxembourgian%3:01:00::|
+    WN::|indian%3:01:00::|
+    WN::|icelandic%3:01:00::|
+    WN::|bruneian%3:01:00::|
+    WN::|polish%3:01:00::|
+    WN::|panamanian%3:01:00::|
+    WN::|japanese%3:01:00::|
+    WN::|nipponese%3:01:00::|
+    WN::|belgian%3:01:00::|
+    WN::|kyrgyzstani%3:01:00::|
+    WN::|french%3:01:00::|
+    WN::|gallic%3:01:01::|
+    WN::|malian%3:01:00::|
+    WN::|omani%3:01:00::|
+    WN::|bosnian%3:01:00::|
+    WN::|turkmen%3:01:00::|
+    WN::|ecuadorian%3:01:00::|
+    WN::|azerbaijani%3:01:00::|
+    WN::|iraqi%3:01:00::|
+    WN::|iraki%3:01:00::|
+    WN::|nauruan%3:01:00::|
+    WN::|san_marinese%3:01:00::|
+    WN::|dutch%3:01:00::|
+    WN::|zairean%3:01:00::|
+    WN::|zairese%3:01:00::|
+    WN::|yemeni%3:01:00::|
+    WN::|senegalese%3:01:00::|
+    WN::|north_korean%3:01:00::|
+    WN::|seychellois%3:01:00::|
+    WN::|moroccan%3:01:00::|
+    WN::|maroc%3:01:00::|
+    WN::|angolan%3:01:00::|
+    WN::|cuban%3:01:00::|
+    WN::|congolese%3:01:00::|
+    WN::|saudi-arabian%3:01:00::|
+    WN::|saudi%3:01:00::|
+    WN::|nicaraguan%3:01:00::|
+    WN::|guinean%3:01:00::|
+    WN::|uruguayan%3:01:00::|
+    WN::|liechtensteiner%3:01:00::|
+    WN::|singaporean%3:01:02::|
+    WN::|argentine%3:01:00::|
+    WN::|argentinian%3:01:00::|
+    WN::|eritrean%3:01:00::|
+    WN::|north_vietnamese%3:01:00::|
+    WN::|ugandan%3:01:00::|
+    WN::|fijian%3:01:00::|
+    WN::|filipino%3:01:00::|
+    WN::|philippine%3:01:00::|
+    WN::|egyptian%3:01:00::|
+    WN::|aramean%3:01:00::|
+    WN::|aramaean%3:01:00::|
+    WN::|tunisian%3:01:01::|
+    WN::|gambian%3:01:00::|
+    WN::|luxemburger%3:01:00::|
+    WN::|turkish%3:01:00::|
+    WN::|haitian%3:01:00::|
+    WN::|mauritanian%3:01:00::|
+    WN::|mauritian%3:01:01::|
+    WN::|israeli%3:01:00::|
+    WN::|kuwaiti%3:01:01::|
+    WN::|italian%3:01:00::|
+    WN::|romaic%3:01:00::|
+    WN::|jamaican%3:01:00::|
+    WN::|afghani%3:01:00::|
+    WN::|afghan%3:01:00::|
+    WN::|afghanistani%3:01:00::|
+    WN::|south_african%3:01:00::|
+    WN::|syrian%3:01:00::|
+    WN::|uzbekistani%3:01:00::|
+    WN::|paraguayan%3:01:00::|
+    WN::|peruvian%3:01:00::|
+    WN::|english%3:01:00::|
+    WN::|spanish%3:01:00::|
+    WN::|moldovan%3:01:00::|
+    WN::|jordanian%3:01:00::|
+    WN::|chilean%3:01:00::|
+    WN::|danish%3:01:00::|
+    WN::|belarusian%3:01:00::|
+    WN::|honduran%3:01:00::|
+    WN::|kenyan%3:01:00::|
+    WN::|afrikaans%3:01:00::|
+    WN::|afrikaner%3:01:00::|
+    WN::|national%3:01:02::|
+    WN::|swiss%3:01:00::|
+    WN::|yugoslavian%3:01:00::|
+    WN::|yugoslav%3:01:00::|))
 
 (CONCEPT
   ONT::COUNTRY-RELATED-VAL
@@ -8874,6 +11869,28 @@
   ONT::COURT-GAME
   (INHERIT
     ONT::ATHLETIC-GAME))
+
+(CONCEPT
+  ONT::COURTEOUS-VAL
+  (COMMENT "to be pleasant, gracious, kind (courteous, gracious, polite)")
+  (INHERIT
+    ONT::COURTESY-POLITENESS-VAL)
+  (OVERLAP
+    WN::|gracious%3:00:00::|
+    WN::|kind%3:00:00::|
+    WN::|polite%3:00:00::|
+    WN::|courteous%3:00:00::|
+    WN::|generous%3:00:02::|
+    WN::|diplomatic%3:00:00::|
+    WN::|diplomatical%3:00:00::|
+    WN::|tactful%3:00:00::|
+    WN::|decorous%3:00:00::|))
+
+(CONCEPT
+  ONT::COURTESY-POLITENESS-VAL
+  (COMMENT "to be pleasant, gracious, kind (courteous, gracious, polite)")
+  (INHERIT
+    ONT::SOCIAL-INTERACTION-VAL))
 
 (CONCEPT
   ONT::COVER
@@ -9026,6 +12043,21 @@
        (ORIGIN HUMAN)))))
 
 (CONCEPT
+  ONT::CREATIVE-VAL
+  (COMMENT "(creative)")
+  (INHERIT
+    ONT::CREATIVITY-VAL)
+  (OVERLAP
+    WN::|creative%3:00:00::|
+    WN::|originative%3:00:00::|))
+
+(CONCEPT
+  ONT::CREATIVITY-VAL
+  (COMMENT "(creative)")
+  (INHERIT
+    ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+
+(CONCEPT
   ONT::CREDIBILITY-SCALE
   (INHERIT
     ONT::INFORMATION-PROPERTY-SCALE)
@@ -9047,6 +12079,8 @@
   (INHERIT
     ONT::CREDIBILITY-VAL)
   (OVERLAP
+    WN::|convincing%3:00:00::|
+    WN::|credulous%3:00:00::|
     WN::|credible%3:00:00::|
     WN::|believable%3:00:04::|)
   (SEM-FEATS
@@ -9131,14 +12165,48 @@
     ONT::SEAFOOD))
 
 (CONCEPT
+  ONT::CULPABLE-VAL
+  (COMMENT "(guilty)")
+  (INHERIT
+    ONT::LEGAL-CULPABILITY-VAL)
+  (OVERLAP
+    WN::|guilty%3:00:00::|))
+
+(CONCEPT
+  ONT::CULTURAL-PROPERTY-VAL
+  (INHERIT
+    ONT::CULTURE-VAL)
+  (OVERLAP
+    WN::|noncivilized%3:00:00::|
+    WN::|noncivilised%3:00:00::|
+    WN::|civilized%3:00:00::|
+    WN::|civilised%3:00:00::|))
+
+(CONCEPT
   ONT::CULTURE-SPECIFIC-VAL
   (COMMENT "associated specifically with culture or peole")
   (INHERIT
-    ONT::ASSOCIATED-WITH-CULTURE-VAL)
+    ONT::CULTURE-VAL)
   (OVERLAP
+    WN::|aegean%3:01:01::|
+    WN::|minoan%3:01:00::|
+    WN::|aleutian%3:01:00::|
+    WN::|incan%3:01:00::|
     WN::|sinitic%3:01:00::|
     WN::|siouan%3:01:00::|
     WN::|somalian%3:01:00::|))
+
+(CONCEPT
+  ONT::CULTURE-VAL
+  (COMMENT "associated with culture, people, nation, or language")
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SOCIETY-AND-CULTURE-VAL)
+  (OVERLAP
+    WN::|sociocultural%3:01:00::|
+    WN::|cultural%3:01:00::|
+    WN::|transcultural%3:01:00::|
+    WN::|cross-cultural%3:01:00::|
+    WN::|multicultural%3:01:00::|))
 
 (CONCEPT
   ONT::CUP
@@ -9292,6 +12360,16 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::DAMAGED-VAL
+  (COMMENT "(damaged)")
+  (INHERIT
+    ONT::FUNCTIONALITY-VAL)
+  (OVERLAP
+    WN::|damaged%3:00:00::|
+    WN::|worn%3:00:00::|
+    WN::|unsound%3:00:01::|))
+
+(CONCEPT
   ONT::DAMPEN
   (INHERIT
     ONT::CHANGE-IN-MOISTURE-CONTENT)
@@ -9341,6 +12419,7 @@
   (INHERIT
     ONT::PRESENSE-OF-LIGHT-VAL)
   (OVERLAP
+    WN::|shaded%3:00:01::|
     WN::|dark%3:00:01::|)
   (SEM-FEATS
     (INHERIT
@@ -9524,6 +12603,20 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::DECISIVE-VAL
+  (COMMENT "(decisive)")
+  (INHERIT
+    ONT::DECISIVENESS-VAL)
+  (OVERLAP
+    WN::|resolute%3:00:00::|))
+
+(CONCEPT
+  ONT::DECISIVENESS-VAL
+  (COMMENT "(decisive)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL))
+
+(CONCEPT
   ONT::DECLARE-PERFORMATIVE
   (INHERIT
     ONT::CONVENTIONAL-SPEECH-ACT)
@@ -9620,6 +12713,9 @@
   (INHERIT
     ONT::FUNCTIONALITY-VAL)
   (OVERLAP
+    WN::|impaired%3:00:00::|
+    WN::|maladaptive%3:00:00::|
+    WN::|imperfect%3:00:00::|
     WN::|malfunctioning%3:00:00::|
     WN::|defective%5:00:00:malfunctioning:00|))
 
@@ -9870,6 +12966,14 @@
     WN::|bruise%2:30:00::|))
 
 (CONCEPT
+  ONT::DENTAL-PROPERTY-VAL
+  (INHERIT
+    ONT::MEDICAL-VAL)
+  (OVERLAP
+    WN::|uncrowned%3:00:02::|
+    WN::|crowned%3:00:02::|))
+
+(CONCEPT
   ONT::DEPART
   (INHERIT
     ONT::EVENT-OF-ACTION)
@@ -9920,6 +13024,16 @@
     WN::|conditional%3:00:00::|))
 
 (CONCEPT
+  ONT::DEPRESSING-VAL
+  (COMMENT "(depressing)")
+  (INHERIT
+    ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
+  (OVERLAP
+    WN::|depressing%3:00:00::|
+    WN::|cheerless%3:00:00::|
+    WN::|uncheerful%3:00:04::|))
+
+(CONCEPT
   ONT::DEPRESSION
   (INHERIT
     ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER)
@@ -9961,6 +13075,12 @@
        T))))
 
 (CONCEPT
+  ONT::DESIGNED-TO-DEMAND-VAL
+  (COMMENT "(heavy-duty)")
+  (INHERIT
+    ONT::TASK-COMPLEXITY-VAL))
+
+(CONCEPT
   ONT::DESIRABLE-VAL
   (INHERIT
     ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
@@ -9992,6 +13112,7 @@
   (INHERIT
     ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
+    WN::|wanted%3:00:00::|
     WN::|desirous%3:00:00::|
     WN::|avariciously%4:02:00::|)
   (SEM-FEATS
@@ -10280,6 +13401,10 @@
   (INHERIT
     ONT::SIMILARITY-VAL)
   (OVERLAP
+    WN::|inequitable%3:00:00::|
+    WN::|unjust%3:00:02::|
+    WN::|unlike%3:00:02::|
+    WN::|unequal%3:00:00::|
     WN::|unlike%3:00:00::|
     WN::|unlike%3:00:00::|
     WN::|discrete%5:00:00:separate:00|
@@ -10305,6 +13430,10 @@
   (INHERIT
     ONT::DIFFICULTY-VAL)
   (OVERLAP
+    WN::|effortful%3:00:00::|
+    WN::|tough%3:00:03::|
+    WN::|unwieldy%3:00:00::|
+    WN::|unmanageable%3:00:04::|
     WN::|catchy%5:00:00:difficult:00|
     WN::|complex%3:00:00::|
     WN::|ambitious%5:00:00:difficult:00|
@@ -10358,10 +13487,25 @@
     ONT::SIGNAL-REPRESENTATION-VAL))
 
 (CONCEPT
+  ONT::DIGNIFIED-VAL
+  (COMMENT "(dignified)")
+  (INHERIT
+    ONT::DIGNITY-VAL)
+  (OVERLAP
+    WN::|dignified%3:00:00::|))
+
+(CONCEPT
+  ONT::DIGNITY-VAL
+  (COMMENT "(dignified)")
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT
   ONT::DIM-VAL
   (INHERIT
     ONT::LUMINOSITY-VAL)
   (OVERLAP
+    WN::|dull%3:00:02::|
     WN::|dim%5:00:00:dark:01|
     WN::|dim%3:00:02::|)
   (SEM-FEATS
@@ -10417,6 +13561,23 @@
     ONT::MEASURE-SCALE)
   (OVERLAP
     WN::|dimension%1:07:01::|))
+
+(CONCEPT
+  ONT::DIMENSIONALITY-VAL
+  (COMMENT "(unidimensional)")
+  (INHERIT
+    ONT::SPATIAL-VAL)
+  (OVERLAP
+    WN::|multidimensional%3:00:00::|
+    WN::|cubic%3:00:00::|
+    WN::|three-dimensional%3:00:02::|
+    WN::|dimensional%3:01:00::|
+    WN::|planar%3:00:00::|
+    WN::|two-dimensional%3:00:02::|
+    WN::|linear%3:00:01::|
+    WN::|one-dimensional%3:00:00::|
+    WN::|unidimensional%3:00:00::|
+    WN::|one-dimensional%3:00:02::|))
 
 (CONCEPT
   ONT::DIRECT-AT
@@ -10594,7 +13755,10 @@
 (CONCEPT
   ONT::DIRECTION-VAL
   (INHERIT
-    ONT::SPATIAL))
+    ONT::SPATIAL-VAL)
+  (OVERLAP
+    WN::|unidirectional%3:00:00::|
+    WN::|bidirectional%3:00:00::|))
 
 (CONCEPT
   ONT::DIRECTION-WRT-CONTAINMENT
@@ -10715,6 +13879,21 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::DISCERNING-VAL
+  (COMMENT "(discerning, discriminate)")
+  (INHERIT
+    ONT::DISCERNMENT-VAL)
+  (OVERLAP
+    WN::|discerning%3:00:00::|
+    WN::|discriminate%3:00:00::|))
+
+(CONCEPT
+  ONT::DISCERNMENT-VAL
+  (COMMENT "(discerning, discriminate)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL))
+
+(CONCEPT
   ONT::DISCIPLINE
   (INHERIT
     ONT::FUNCTION-OBJECT)
@@ -10741,7 +13920,17 @@
   (INHERIT
     ONT::CONTINUOUS-VAL)
   (OVERLAP
+    WN::|broken%3:00:02::|
     WN::|discontinuous%3:00:01::|))
+
+(CONCEPT
+  ONT::DISCOURAGING-VAL
+  (COMMENT "(discouraging)")
+  (INHERIT
+    ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
+  (OVERLAP
+    WN::|discouraging%3:00:00::|
+    WN::|dissuasive%3:00:00::|))
 
 (CONCEPT
   ONT::DISCRETE-COLOR-SCALE
@@ -10769,6 +13958,121 @@
       SITUATION)
     (MOBILITY MOVABLE)
     (TYPE ONT::DISEASE)))
+
+(CONCEPT
+  ONT::DISEASE-INFECTION-VAL
+  (COMMENT "(septic)")
+  (INHERIT
+    ONT::MEDICAL-CONDITION-PROPERTY-VAL))
+
+(CONCEPT
+  ONT::DISEASE-PROPERTY-VAL
+  (INHERIT
+    ONT::DISEASE-INFECTION-VAL)
+  (OVERLAP
+    WN::|tubercular%3:01:00::|
+    WN::|acidotic%3:01:00::|
+    WN::|syphilitic%3:01:00::|
+    WN::|myopathic%3:01:00::|
+    WN::|anticancer%3:01:00::|
+    WN::|antineoplastic%3:01:00::|
+    WN::|antitumor%3:01:00::|
+    WN::|antitumour%3:01:00::|
+    WN::|anginal%3:01:00::|
+    WN::|anginose%3:01:00::|
+    WN::|anginous%3:01:00::|
+    WN::|paralytic%3:01:00::|
+    WN::|paralytical%3:01:00::|
+    WN::|haemophilic%3:01:00::|
+    WN::|hemophilic%3:01:00::|
+    WN::|carcinogenic%3:01:00::|
+    WN::|pyogenic%3:01:00::|
+    WN::|varicelliform%3:01:00::|
+    WN::|acneiform%3:01:00::|
+    WN::|cachectic%3:01:00::|
+    WN::|chancrous%3:01:00::|
+    WN::|thyrotoxic%3:01:00::|
+    WN::|vitiliginous%3:01:00::|
+    WN::|morbilliform%3:01:00::|
+    WN::|arteriosclerotic%3:01:00::|
+    WN::|zoonotic%3:01:00::|
+    WN::|variolar%3:01:00::|
+    WN::|variolic%3:01:00::|
+    WN::|variolous%3:01:00::|
+    WN::|emphysematous%3:01:00::|
+    WN::|pyemic%3:01:00::|
+    WN::|pyaemic%3:01:00::|
+    WN::|leprous%3:01:00::|
+    WN::|bacteremic%3:01:00::|
+    WN::|encysted%3:01:00::|
+    WN::|pyknotic%3:01:00::|
+    WN::|pycnotic%3:01:00::|
+    WN::|ulcerative%3:01:00::|
+    WN::|asynergic%3:01:00::|
+    WN::|tetanic%3:01:00::|
+    WN::|excrescent%3:01:00::|
+    WN::|celiac%3:01:01::|
+    WN::|hemorrhagic%3:01:00::|
+    WN::|haemorrhagic%3:01:00::|
+    WN::|anuretic%3:01:00::|
+    WN::|anuric%3:01:00::|
+    WN::|malarial%3:01:00::|
+    WN::|actinomycotic%3:01:00::|
+    WN::|pneumonic%3:01:01::|
+    WN::|blastomycotic%3:01:00::|
+    WN::|angiomatous%3:01:00::|
+    WN::|sclerotic%3:01:01::|
+    WN::|sclerosed%3:01:00::|
+    WN::|cystic%3:01:00::|
+    WN::|azotemic%3:01:00::|
+    WN::|uremic%3:01:00::|
+    WN::|uraemic%3:01:00::|
+    WN::|acanthotic%3:01:00::|
+    WN::|traumatic%3:01:00::|
+    WN::|anoxemic%3:01:00::|
+    WN::|hypovolemic%3:01:00::|
+    WN::|hypovolaemic%3:01:00::|
+    WN::|ascitic%3:01:00::|
+    WN::|scorbutic%3:01:00::|
+    WN::|avitaminotic%3:01:00::|
+    WN::|rabid%3:01:00::|
+    WN::|ankylotic%3:01:00::|
+    WN::|croupy%3:01:00::|
+    WN::|precancerous%3:01:00::|
+    WN::|idiopathic%3:01:00::|
+    WN::|pemphigous%3:01:00::|
+    WN::|neoplastic%3:01:00::|
+    WN::|adenocarcinomatous%3:01:00::|
+    WN::|aneurysmal%3:01:00::|
+    WN::|aneurismal%3:01:00::|
+    WN::|aneurysmatic%3:01:00::|
+    WN::|aneurismatic%3:01:00::|
+    WN::|choleraic%3:01:00::|
+    WN::|tuberculoid%3:01:00::|
+    WN::|nephritic%3:01:01::|
+    WN::|chlorotic%3:01:00::|
+    WN::|greensick%3:01:00::|
+    WN::|anemic%3:01:00::|
+    WN::|anaemic%3:01:00::|
+    WN::|impetiginous%3:01:00::|
+    WN::|ischemic%3:01:00::|
+    WN::|ischaemic%3:01:00::|
+    WN::|infectious%3:01:00::|
+    WN::|tubercular%3:01:02::|
+    WN::|agranulocytic%3:01:00::|
+    WN::|cancroid%3:01:00::|
+    WN::|erythematous%3:01:00::|
+    WN::|carcinomatous%3:01:00::|
+    WN::|alkalotic%3:01:00::|))
+
+(CONCEPT
+  ONT::DISEASED-VAL
+  (COMMENT "(septic)")
+  (INHERIT
+    ONT::DISEASE-INFECTION-VAL)
+  (OVERLAP
+    WN::|septic%3:00:00::|
+    WN::|infected%3:00:00::|))
 
 (CONCEPT
   ONT::DISGUST-SCALE
@@ -10839,6 +14143,21 @@
          SITUATION)))))
 
 (CONCEPT
+  ONT::DISPERSED-VAL
+  (COMMENT "(distributed)")
+  (INHERIT
+    ONT::DISPERSION-VAL)
+  (OVERLAP
+    WN::|distributed%3:00:00::|
+    WN::|unsaturated%3:00:01::|))
+
+(CONCEPT
+  ONT::DISPERSION-VAL
+  (COMMENT "(concentrated, saturated)")
+  (INHERIT
+    ONT::CONFIGURATION-PROPERTY-VAL))
+
+(CONCEPT
   ONT::DISPLAY
   (INHERIT
     ONT::INFO-MEDIUM))
@@ -10894,7 +14213,7 @@
 (CONCEPT
   ONT::DISTANCE-VAL
   (INHERIT
-    ONT::SPATIAL)
+    ONT::SPATIAL-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -10932,6 +14251,7 @@
   (INHERIT
     ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
+    WN::|unpeaceful%3:00:00::|
     WN::|worrying%5:00:00:heavy:02|
     WN::|distressing%5:00:00:heavy:02|
     WN::|perturbing%5:00:00:heavy:02|
@@ -11001,6 +14321,10 @@
   (INHERIT
     ONT::NOT-BOLD-VAL)
   (OVERLAP
+    WN::|tame%3:00:01::|
+    WN::|tamed%3:00:04::|
+    WN::|tractable%3:00:00::|
+    WN::|manipulable%3:00:00::|
     WN::|meek%5:00:00:docile:00|
     WN::|docile%3:00:00::|))
 
@@ -11287,6 +14611,7 @@
   (INHERIT
     ONT::MOISTURE-CONTENT-VAL)
   (OVERLAP
+    WN::|xeric%3:00:00::|
     WN::|dry%3:00:01::|)
   (SEM-FEATS
     (INHERIT
@@ -11305,6 +14630,14 @@
   ONT::DUE-TO
   (INHERIT
     ONT::REASON))
+
+(CONCEPT
+  ONT::DULL-VAL
+  (COMMENT "(dull)")
+  (INHERIT
+    ONT::SHARP-TEXTURE-VAL)
+  (OVERLAP
+    WN::|dull%3:00:01::|))
 
 (CONCEPT
   ONT::DUPLICATE
@@ -11350,10 +14683,16 @@
     WN::|particulate%1:27:00::|))
 
 (CONCEPT
-  ONT::DYNAMIC-VAL
+  ONT::DYNAMIC-MOVING-VAL
   (INHERIT
     ONT::MOTION-VAL)
   (OVERLAP
+    WN::|standing%3:00:02::|
+    WN::|moving%3:00:02::|
+    WN::|running%3:00:02::|
+    WN::|moving%3:00:03::|
+    WN::|dynamic%3:00:00::|
+    WN::|dynamical%3:00:00::|
     WN::|dynamic%3:00:04::|))
 
 (CONCEPT
@@ -11409,6 +14748,14 @@
     WN::|early%4:02:00::|))
 
 (CONCEPT
+  ONT::EARNEST-VAL
+  (COMMENT "(earnest, serious)")
+  (INHERIT
+    ONT::HONEST-VAL)
+  (OVERLAP
+    WN::|serious%3:00:00::|))
+
+(CONCEPT
   ONT::EARNING
   (INHERIT
     ONT::ACQUIRE)
@@ -11440,6 +14787,40 @@
        (TYPE ONT::MONEY)))))
 
 (CONCEPT
+  ONT::EARTH-SCIENCE-PROPERPTY-VAL
+  (INHERIT
+    ONT::EARTH-SCIENCE-VAL)
+  (OVERLAP
+    WN::|anabatic%3:00:00::|
+    WN::|cyclonic%3:01:01::|
+    WN::|cyclonal%3:01:01::|
+    WN::|cyclonical%3:01:01::|
+    WN::|aerological%3:01:00::|
+    WN::|hydrographic%3:01:00::|
+    WN::|hydrographical%3:01:00::|
+    WN::|paleontological%3:01:00::|
+    WN::|palaeontological%3:01:00::|
+    WN::|katabatic%3:00:00::|
+    WN::|catabatic%3:00:00::|
+    WN::|geographic%3:01:00::|
+    WN::|geographical%3:01:00::|
+    WN::|bioclimatic%3:01:00::|
+    WN::|paleoanthropological%3:01:00::|
+    WN::|meteorologic%3:01:00::|
+    WN::|meteorological%3:01:00::|
+    WN::|meteoric%3:01:02::|
+    WN::|anticyclonic%3:01:00::|
+    WN::|topographical%3:01:00::|
+    WN::|topographic%3:01:00::|
+    WN::|frontal%3:01:02::|
+    WN::|limnological%3:01:00::|))
+
+(CONCEPT
+  ONT::EARTH-SCIENCE-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SCIENCE-VAL))
+
+(CONCEPT
   ONT::EARTH-SUBSTANCE
   (INHERIT
     ONT::NATURAL-SUBSTANCE)
@@ -11466,6 +14847,8 @@
   (INHERIT
     ONT::DIFFICULTY-VAL)
   (OVERLAP
+    WN::|undemanding%3:00:01::|
+    WN::|effortless%3:00:00::|
     WN::|elementary%5:00:00:easy:01|
     WN::|easy%3:00:01::|
     WN::|simple%3:00:02::|)
@@ -11570,6 +14953,35 @@
     WN::|fiscal%3:01:00::|))
 
 (CONCEPT
+  ONT::ECONOMICS-PROPERTY-VAL
+  (INHERIT
+    ONT::ECONOMICS-VAL)
+  (OVERLAP
+    WN::|mercantile%3:01:00::|
+    WN::|microeconomic%3:01:00::|
+    WN::|bolshevik%3:01:00::|
+    WN::|bolshevist%3:01:00::|
+    WN::|bolshevistic%3:01:00::|
+    WN::|macroeconomic%3:01:00::|
+    WN::|national_socialist%3:01:00::|
+    WN::|nazi%3:01:00::|
+    WN::|capitalist%3:01:00::|
+    WN::|capitalistic%3:01:00::|
+    WN::|nazi%3:01:02::|
+    WN::|nominal%3:00:00::|
+    WN::|real%3:00:01::|
+    WN::|deflationary%3:00:00::|
+    WN::|econometric%3:01:00::|
+    WN::|recessionary%3:01:00::|
+    WN::|recessive%3:01:00::|
+    WN::|inflationary%3:00:00::|))
+
+(CONCEPT
+  ONT::ECONOMICS-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL))
+
+(CONCEPT
   ONT::ECOSYSTEM
   (COMMENT "An interconnected group of entities forming an ecosystem")
   (INHERIT
@@ -11617,6 +15029,23 @@
     WN::|school%1:06:00::|
     WN::|university%1:06:00::|
     WN::|college%1:06:00::|))
+
+(CONCEPT
+  ONT::EDUCATION-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-ACADEMICS-VAL)
+  (OVERLAP
+    WN::|catechetical%3:01:00::|
+    WN::|catechetic%3:01:01::|
+    WN::|instructional%3:01:00::|
+    WN::|pedagogical%3:01:00::|
+    WN::|pedagogic%3:01:00::|
+    WN::|academic%3:01:00::|
+    WN::|curricular%3:01:00::|
+    WN::|acculturational%3:01:00::|
+    WN::|acculturative%3:01:00::|
+    WN::|educational%3:01:00::|
+    WN::|phonic%3:01:02::|))
 
 (CONCEPT
   ONT::EFFECTIVE-VAL
@@ -11781,6 +15210,21 @@
        (INTENTIONAL -)))))
 
 (CONCEPT
+  ONT::EMOTIONAL-VAL
+  (COMMENT "(emotional)")
+  (INHERIT
+    ONT::EMOTIONALITY-VAL)
+  (OVERLAP
+    WN::|emotional%3:00:00::|
+    WN::|moving%3:00:01::|))
+
+(CONCEPT
+  ONT::EMOTIONALITY-VAL
+  (COMMENT "(emotional)")
+  (INHERIT
+    ONT::EVOKING-NEUTRAL-EXPERIENCE-PROPERTY-VAL))
+
+(CONCEPT
   ONT::EMPATHIZE
   (INHERIT
     ONT::CARE)
@@ -11829,6 +15273,32 @@
     (ONT::EFFECT
      (CONCEPT
        SITUATION))))
+
+(CONCEPT
+  ONT::EMPLOYMENT-CLASS-VAL
+  (COMMENT "(blue-collar)")
+  (INHERIT
+    ONT::EMPLOYMENT-STATUS-VAL)
+  (OVERLAP
+    WN::|blue-collar%3:00:00::|
+    WN::|white-collar%3:00:00::|))
+
+(CONCEPT
+  ONT::EMPLOYMENT-STATUS-VAL
+  (COMMENT "(blue-collar)")
+  (INHERIT
+    ONT::STATUS-VAL)
+  (OVERLAP
+    WN::|part-time%3:00:00::|
+    WN::|parttime%3:00:00::|
+    WN::|employed%3:00:00::|
+    WN::|nonunion%3:00:00::|
+    WN::|unemployed%3:00:00::|
+    WN::|union%3:00:00::|
+    WN::|inactive%3:00:08::|
+    WN::|active%3:00:08::|
+    WN::|full-time%3:00:00::|
+    WN::|salaried%3:00:00::|))
 
 (CONCEPT
   ONT::EMPTY
@@ -11882,6 +15352,28 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::ENCHANTED-VAL
+  (COMMENT "(enchanted)")
+  (INHERIT
+    ONT::NEUTRAL-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|enchanted%3:00:00::|))
+
+(CONCEPT
+  ONT::ENCLOSED-VAL
+  (COMMENT "(enclosed)")
+  (INHERIT
+    ONT::ENCLOSURE-VAL)
+  (OVERLAP
+    WN::|enclosed%3:00:00::|))
+
+(CONCEPT
+  ONT::ENCLOSURE-VAL
+  (COMMENT "(enclosed)")
+  (INHERIT
+    ONT::CONFIGURATION-PROPERTY-VAL))
+
+(CONCEPT
   ONT::ENCODES-MESSAGE
   (COMMENT "some artifact conveys some message")
   (INHERIT
@@ -11924,6 +15416,16 @@
        (CONCEPT
          ABSTR-OBJ))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::ENCOURAGING-VAL
+  (COMMENT "(encouraging)")
+  (INHERIT
+    ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
+  (OVERLAP
+    WN::|encouraging%3:00:00::|
+    WN::|edifying%3:00:00::|
+    WN::|enlightening%3:00:04::|))
 
 (CONCEPT
   ONT::END-AT-LOC
@@ -11972,6 +15474,10 @@
   (INHERIT
     ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
+    WN::|animated%3:00:00::|
+    WN::|alive%3:00:04::|
+    WN::|spirited%3:00:00::|
+    WN::|lively%3:00:00::|
     WN::|energetic%3:00:00::|
     WN::|active%3:00:01::|)
   (SEM-FEATS
@@ -12131,6 +15637,14 @@
   ONT::ENTERPRISE-ABSTR
   (INHERIT
     ONT::ORGANIZATION-ABSTR))
+
+(CONCEPT
+  ONT::ENTERTAINER-VAL
+  (INHERIT
+    ONT::FAMOUS-PERSON-VAL)
+  (OVERLAP
+    WN::|bogartian%3:01:00::|
+    WN::|rabelaisian%3:01:00::|))
 
 (CONCEPT
   ONT::ENTERTAINMENT-ESTABLISHMENT
@@ -12312,6 +15826,8 @@
   (INHERIT
     ONT::HAPPY-VAL)
   (OVERLAP
+    WN::|elated%3:00:00::|
+    WN::|joyous%3:00:00::|
     WN::|euphoric%3:00:00::|
     WN::|cheerful%3:00:00::|
     WN::|beaming%5:00:00:cheerful:00|)
@@ -12351,6 +15867,9 @@
    "properties which need an observer to be recognized -- subjective to the observer")
   (INHERIT
     ONT::PROPERTY-VAL)
+  (OVERLAP
+    WN::|disadvantageous%3:00:00::|
+    WN::|poor%3:00:02::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -13063,9 +16582,21 @@
     ONT::EVOKING-EXPERIENCE-PROPERTY-VAL))
 
 (CONCEPT
+  ONT::EVOKING-NEUTRAL-EXPERIENCE-PROPERTY-VAL
+  (COMMENT "(impressive)")
+  (INHERIT
+    ONT::EVOKING-EXPERIENCE-PROPERTY-VAL))
+
+(CONCEPT
   ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL
   (INHERIT
     ONT::EVOKING-EXPERIENCE-PROPERTY-VAL))
+
+(CONCEPT
+  ONT::EVOKING-SURPRISE-VAL
+  (COMMENT "(surprising)")
+  (INHERIT
+    ONT::EVOKING-NEUTRAL-EXPERIENCE-PROPERTY-VAL))
 
 (CONCEPT
   ONT::EXAMPLE
@@ -13077,6 +16608,8 @@
   (INHERIT
     ONT::ATYPICAL-VAL)
   (OVERLAP
+    WN::|superhuman%3:00:00::|
+    WN::|precocious%3:00:00::|
     WN::|remarkable%5:00:00:extraordinary:00|
     WN::|exceptional%5:00:00:extraordinary:00|
     WN::|special%5:00:00:uncommon:00|
@@ -13102,6 +16635,11 @@
   (INHERIT
     ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
+    WN::|passionate%3:00:00::|
+    WN::|moved%3:00:00::|
+    WN::|affected%3:00:02::|
+    WN::|stirred%3:00:00::|
+    WN::|touched%3:00:01::|
     WN::|excited%3:00:00::|
     WN::|excited%5:00:00:wild:02|
     WN::|pumped-up%5:00:00:tense:03|)
@@ -13354,6 +16892,7 @@
   (INHERIT
     ONT::COST-VAL)
   (OVERLAP
+    WN::|upmarket%3:00:00::|
     WN::|expensive%3:00:00::|
     WN::|pricy%5:00:00:expensive:00|)
   (SEM-FEATS
@@ -13440,6 +16979,17 @@
   (COMMENT "state of experiencing a particular emotion or cognitive state")
   (INHERIT
     ONT::PSYCHOLOGICAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|appetitive%3:01:00::|
+    WN::|algolagnic%3:01:00::|
+    WN::|technophobic%3:01:00::|
+    WN::|anglophilic%3:01:00::|
+    WN::|aversive%3:01:00::|
+    WN::|technophilic%3:01:00::|
+    WN::|libidinal%3:01:00::|
+    WN::|emotional%3:01:00::|
+    WN::|anglophobic%3:01:00::|
+    WN::|agonal%3:01:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -13646,6 +17196,18 @@
        PHYS-OBJ))))
 
 (CONCEPT
+  ONT::EXTRA-SENSORY-PROPERTY-VAL
+  (COMMENT "(extrasensory)")
+  (INHERIT
+    ONT::SENSORY-PROPERTY-VAL)
+  (OVERLAP
+    WN::|extrasensory%3:00:00::|
+    WN::|paranormal%3:00:02::|
+    WN::|prophetic%3:00:00::|
+    WN::|prophetical%3:00:00::|
+    WN::|unprophetic%3:00:00::|))
+
+(CONCEPT
   ONT::FACIAL-EXPRESSION
   (INHERIT
     ONT::NONVERBAL-EXPRESSION)
@@ -13745,6 +17307,22 @@
     ONT::SUCCESSFULNESS-SCALE)
   (OVERLAP
     WN::|failure%1:26:00::|))
+
+(CONCEPT
+  ONT::FAITHFUL-VAL
+  (COMMENT "faithful, dedicated, devoted to something (faithful)")
+  (INHERIT
+    ONT::FAITHFULNESS-VAL)
+  (OVERLAP
+    WN::|dedicated%3:00:00::|
+    WN::|faithful%3:00:01::|
+    WN::|faithful%3:00:00::|))
+
+(CONCEPT
+  ONT::FAITHFULNESS-VAL
+  (COMMENT "faithful, dedicated, devoted to something (faithful)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL))
 
 (CONCEPT
   ONT::FAKE-VAL
@@ -13893,6 +17471,15 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::FAMOUS-PERSON-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-PERSON-VAL)
+  (OVERLAP
+    WN::|columbian%3:01:00::|
+    WN::|jacobinic%3:01:00::|
+    WN::|jacobinical%3:01:00::|))
+
+(CONCEPT
   ONT::FAR-RELN
   (INHERIT
     ONT::DISTAL-RELN))
@@ -13991,6 +17578,12 @@
     WN::|fat%3:00:02::|))
 
 (CONCEPT
+  ONT::FAVORABILITY-TO-LIFE-VAL
+  (COMMENT "(hospitable)")
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT
   ONT::FAVORABLE-CONDITION
   (INHERIT
     ONT::CONDITION-FAVORABILITY)
@@ -14051,6 +17644,7 @@
   (INHERIT
     ONT::NATIONAL-VAL)
   (OVERLAP
+    WN::|federal%3:00:00::|
     WN::|federal%5:00:00:national:01|
     WN::|federal%3:01:02::|))
 
@@ -14195,6 +17789,14 @@
     WN::|settled%3:00:02::|))
 
 (CONCEPT
+  ONT::FINANCIAL-BEHAVIOR-VAL
+  (COMMENT "(thrifty)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (OVERLAP
+    WN::|thrifty%3:00:00::|))
+
+(CONCEPT
   ONT::FINANCIAL-CONDITION
   (INHERIT
     ONT::STATUS)
@@ -14225,6 +17827,13 @@
   ONT::FINANCIAL-ORGANIZATION-ABSTR
   (INHERIT
     ONT::ORGANIZATION-ABSTR))
+
+(CONCEPT
+  ONT::FINANCIAL-PROPERTY-VAL
+  (INHERIT
+    ONT::ECONOMICS-VAL)
+  (OVERLAP
+    WN::|denominational%3:01:01::|))
 
 (CONCEPT
   ONT::FINANCIAL-STATEMENT
@@ -14324,6 +17933,7 @@
   (INHERIT
     ONT::SEQUENCE-VAL)
   (OVERLAP
+    WN::|opening%3:00:00::|
     WN::|original%5:00:01:first:00|
     WN::|first%3:00:00::|
     WN::|initial%5:00:00:first:00|))
@@ -14376,7 +17986,7 @@
 (CONCEPT
   ONT::FIT-HEALTHY-VAL
   (INHERIT
-    ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL)
+    ONT::NOT-AILING-VAL)
   (OVERLAP
     WN::|fit%3:00:01::|)
   (SEM-FEATS
@@ -14474,6 +18084,7 @@
   (INHERIT
     ONT::FLEXIBILITY-VAL)
   (OVERLAP
+    WN::|elastic%3:00:00::|
     WN::|flexible%3:00:01::|
     WN::|pliant%5:00:00:flexible:01|))
 
@@ -14520,12 +18131,18 @@
 (CONCEPT
   ONT::FLOOR-ABOVE
   (INHERIT
-    ONT::FLOOR-REL))
+    ONT::FLOOR-REL)
+  (OVERLAP
+    WN::|upstairs%3:00:00::|
+    WN::|upstair%3:00:00::|))
 
 (CONCEPT
   ONT::FLOOR-BELOW
   (INHERIT
-    ONT::FLOOR-REL))
+    ONT::FLOOR-REL)
+  (OVERLAP
+    WN::|downstairs%3:00:00::|
+    WN::|downstair%3:00:00::|))
 
 (CONCEPT
   ONT::FLOOR-REL
@@ -14658,6 +18275,43 @@
     (TYPE ONT::FOLLOW-PATH)))
 
 (CONCEPT
+  ONT::FOLLOWER-OF-DOCTRINE-VAL
+  (INHERIT
+    ONT::RELIGION-SPECIFIC-VAL)
+  (OVERLAP
+    WN::|carmelite%3:01:00::|
+    WN::|protestant%3:01:00::|
+    WN::|moorish%3:01:00::|
+    WN::|moresque%3:01:00::|
+    WN::|dominican%3:01:00::|
+    WN::|messianic%3:01:00::|
+    WN::|coptic%3:01:00::|
+    WN::|benedictine%3:01:00::|
+    WN::|cenobitic%3:01:00::|
+    WN::|coenobitic%3:01:00::|
+    WN::|cenobitical%3:01:00::|
+    WN::|coenobitical%3:01:00::|
+    WN::|mosaic%3:01:00::|
+    WN::|eremitic%3:01:00::|
+    WN::|eremitical%3:01:00::|
+    WN::|marian%3:01:00::|
+    WN::|jesuitical%3:01:00::|
+    WN::|jesuitic%3:01:00::|
+    WN::|jesuit%3:01:00::|
+    WN::|sufi%3:01:00::|
+    WN::|apostolic%3:01:00::|
+    WN::|apostolical%3:01:00::|
+    WN::|erasmian%3:01:00::|
+    WN::|puritanical%3:01:00::|
+    WN::|muhammadan%3:01:00::|
+    WN::|mohammedan%3:01:00::|
+    WN::|benedictine%3:01:01::|
+    WN::|pauline%3:01:00::|
+    WN::|gentile%3:01:00::|
+    WN::|zoroastrian%3:01:00::|
+    WN::|lutheran%3:01:00::|))
+
+(CONCEPT
   ONT::FOLLY-SCALE
   (INHERIT
     ONT::WISENESS-SCALE)
@@ -14723,7 +18377,26 @@
 (CONCEPT
   ONT::FOOD-PREPARATION
   (INHERIT
-    ONT::SUBSTANTIAL-PROPERTY-VAL))
+    ONT::SUBSTANTIAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|boneless%3:00:00::|))
+
+(CONCEPT
+  ONT::FOOD-PROPERTY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-FOOD-VAL)
+  (OVERLAP
+    WN::|vinous%3:01:00::|
+    WN::|vinaceous%3:01:00::|
+    WN::|alimentative%3:01:00::|
+    WN::|carroty%3:01:00::|
+    WN::|vanilla%3:01:00::|
+    WN::|wheaten%3:01:00::|
+    WN::|whole-wheat%3:01:00::|
+    WN::|wholemeal%3:01:00::|
+    WN::|herbal%3:01:00::|
+    WN::|garlicky%3:01:00::|
+    WN::|oaten%3:01:00::|))
 
 (CONCEPT
   ONT::FOOLISH-VAL
@@ -14742,8 +18415,11 @@
 (CONCEPT
   ONT::FOREIGN-VAL
   (INHERIT
-    ONT::COUNTRY-RELATED-VAL)
+    ONT::ORIGIN-RELATED-VAL)
   (OVERLAP
+    WN::|nonnative%3:00:00::|
+    WN::|foreign%3:00:01::|
+    WN::|strange%3:00:01::|
     WN::|foreign%3:00:02::|
     WN::|outside%5:00:00:foreign:02|
     WN::|international%5:00:00:foreign:02|
@@ -14798,6 +18474,22 @@
     WN::|forgive%2:32:00::|))
 
 (CONCEPT
+  ONT::FORGIVENESS-VAL
+  (COMMENT "(forgiving)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL))
+
+(CONCEPT
+  ONT::FORGIVING-VAL
+  (COMMENT "(forgiving)")
+  (INHERIT
+    ONT::FORGIVENESS-VAL)
+  (OVERLAP
+    WN::|forgiving%3:00:00::|
+    WN::|clement%3:00:01::|
+    WN::|merciful%3:00:00::|))
+
+(CONCEPT
   ONT::FORMAL-UNIT
   (INHERIT
     ONT::MEASURE-UNIT))
@@ -14813,10 +18505,38 @@
     ONT::GROUP-OBJECT-ABSTR))
 
 (CONCEPT
+  ONT::FORWARD-VAL
+  (COMMENT "(forward)")
+  (INHERIT
+    ONT::LOCATION-VAL)
+  (OVERLAP
+    WN::|forward%3:00:01::|
+    WN::|forward%3:00:03::|))
+
+(CONCEPT
+  ONT::FRANK-VAL
+  (COMMENT "direct, blunt (frank, blunt)")
+  (INHERIT
+    ONT::FRANKNESS-VAL))
+
+(CONCEPT
+  ONT::FRANKNESS-VAL
+  (COMMENT "direct, blunt (frank, blunt)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL))
+
+(CONCEPT
   ONT::FREE-VAL
   (INHERIT
     ONT::FREEDOM-VAL)
   (OVERLAP
+    WN::|uncommitted%3:00:00::|
+    WN::|unencumbered%3:00:00::|
+    WN::|disenchanted%3:00:00::|
+    WN::|unconfined%3:00:00::|
+    WN::|unattached%3:00:00::|
+    WN::|uncommitted%3:00:04::|
+    WN::|unstuck%3:00:00::|
     WN::|free%3:00:01::|
     WN::|loose%5:00:01:free:00|
     WN::|free%3:00:00::|))
@@ -14870,6 +18590,7 @@
   (INHERIT
     ONT::FRESHNESS-VAL)
   (OVERLAP
+    WN::|unsoured%3:00:00::|
     WN::|fresh%3:00:01::|
     WN::|fresh%3:00:02::|)
   (SEM-FEATS
@@ -15185,6 +18906,13 @@
        PHYS-OBJ))))
 
 (CONCEPT
+  ONT::GENDER-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-PERSON-VAL)
+  (OVERLAP
+    WN::|unwomanly%3:00:00::|))
+
+(CONCEPT
   ONT::GENE
   (INHERIT
     ONT::GENE-PROTEIN)
@@ -15281,9 +19009,50 @@
   (INHERIT
     ONT::SPECIFICITY-VAL)
   (OVERLAP
+    WN::|gross%3:00:00::|
     WN::|general%3:00:00::|
     WN::|overall%5:00:00:general:00|
     WN::|nonspecific%3:00:00::|))
+
+(CONCEPT
+  ONT::GENEROSITY-VAL
+  (COMMENT "(charitable, generous)")
+  (INHERIT
+    ONT::SOCIAL-INTERACTION-VAL))
+
+(CONCEPT
+  ONT::GENEROUS-VAL
+  (COMMENT "(charitable, generous)")
+  (INHERIT
+    ONT::GENEROSITY-VAL)
+  (OVERLAP
+    WN::|generous%3:00:01::|
+    WN::|hospitable%3:00:02::|
+    WN::|charitable%3:00:00::|))
+
+(CONCEPT
+  ONT::GENETIC-PROPERTY-VAL
+  (INHERIT
+    ONT::BIOLOGY-VAL)
+  (OVERLAP
+    WN::|diabetic%3:01:00::|
+    WN::|parental%3:01:00::|
+    WN::|autosomal%3:01:00::|
+    WN::|dominant%3:00:02::|
+    WN::|bivalent%3:00:02::|
+    WN::|double%3:00:00::|
+    WN::|recessive%3:00:00::|
+    WN::|x-linked%3:01:00::|
+    WN::|haploid%3:00:00::|
+    WN::|haploidic%3:00:00::|
+    WN::|monoploid%3:00:00::|
+    WN::|homozygous%3:00:00::|
+    WN::|univalent%3:00:02::|
+    WN::|chromosomal%3:01:00::|
+    WN::|multivalent%3:00:00::|
+    WN::|diploid%3:00:00::|
+    WN::|heterozygous%3:00:00::|
+    WN::|achondroplastic%3:01:00::|))
 
 (CONCEPT
   ONT::GENOME
@@ -15293,9 +19062,39 @@
     WN::|genome%1:14:00::|))
 
 (CONCEPT
+  ONT::GENTLE-VAL
+  (COMMENT "(gentle)")
+  (INHERIT
+    ONT::BOLDNESS-VAL)
+  (OVERLAP
+    WN::|nonviolent%3:00:00::|))
+
+(CONCEPT
+  ONT::GEO-DIRECTION-VAL
+  (INHERIT
+    ONT::GEO-LOCATION-VAL)
+  (OVERLAP
+    WN::|eastern%3:00:02::|
+    WN::|western%3:00:02::|
+    WN::|northern%3:00:01::|
+    WN::|southern%3:00:01::|
+    WN::|southern%3:00:02::|
+    WN::|eastern%3:00:01::|
+    WN::|western%3:00:01::|
+    WN::|northern%3:00:02::|))
+
+(CONCEPT
   ONT::GEO-FEATURE-VAL
   (INHERIT
-    ONT::SPATIAL))
+    ONT::GEO-LOCATION-VAL)
+  (OVERLAP
+    WN::|coastal%3:00:00::|
+    WN::|upland%3:00:00::|
+    WN::|highland%3:00:04::|
+    WN::|inland%3:00:00::|
+    WN::|lowland%3:00:00::|
+    WN::|offshore%3:00:00::|
+    WN::|seaward%3:00:00::|))
 
 (CONCEPT
   ONT::GEO-FORMATION
@@ -15310,6 +19109,146 @@
     (TRAJECTORY -)
     (ORIGIN NATURAL)
     (TYPE ONT::GEO-FORMATION)))
+
+(CONCEPT
+  ONT::GEO-LOCATION-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-LOCATION-VAL)
+  (OVERLAP
+    WN::|polar%3:00:00::|
+    WN::|continental%3:00:00::|
+    WN::|equatorial%3:00:00::|
+    WN::|intercontinental%3:00:00::|
+    WN::|pilosebaceous%3:01:00::|
+    WN::|bengali%3:01:00::|
+    WN::|sumerian%3:01:00::|
+    WN::|latvian%3:01:00::|
+    WN::|new_zealander%3:01:00::|
+    WN::|west_african%3:01:00::|
+    WN::|andalusian%3:01:00::|
+    WN::|irish%3:01:00::|
+    WN::|manchurian%3:01:00::|
+    WN::|barbadian%3:01:00::|
+    WN::|levantine%3:01:00::|
+    WN::|african%3:01:00::|
+    WN::|thracian%3:01:00::|
+    WN::|corsican%3:01:00::|
+    WN::|ionic%3:01:01::|
+    WN::|chian%3:01:00::|
+    WN::|ottoman%3:01:00::|
+    WN::|arabian%3:01:01::|
+    WN::|south_american%3:01:00::|
+    WN::|alsatian%3:01:00::|
+    WN::|sri_lankan%3:01:00::|
+    WN::|ceylonese%3:01:00::|
+    WN::|siberian%3:01:00::|
+    WN::|afro-asian%3:01:00::|
+    WN::|mongoloid%3:01:01::|
+    WN::|eurafrican%3:01:00::|
+    WN::|timorese%3:01:00::|
+    WN::|olympian%3:01:01::|
+    WN::|olympic%3:01:01::|
+    WN::|continental%3:01:00::|
+    WN::|north_american%3:01:00::|
+    WN::|lithuanian%3:01:00::|
+    WN::|manx%3:01:00::|
+    WN::|saharan%3:01:00::|
+    WN::|archipelagic%3:01:00::|
+    WN::|bahraini%3:01:00::|
+    WN::|insular%3:01:00::|
+    WN::|central_american%3:01:00::|
+    WN::|australian%3:01:00::|
+    WN::|phoenician%3:01:00::|
+    WN::|cappadocian%3:01:00::|
+    WN::|bohemian%3:01:00::|
+    WN::|scandinavian%3:01:02::|
+    WN::|norse%3:01:01::|
+    WN::|chaldean%3:01:00::|
+    WN::|chaldaean%3:01:00::|
+    WN::|chaldee%3:01:00::|
+    WN::|edwardian%3:01:00::|
+    WN::|nordic%3:01:00::|
+    WN::|european%3:01:00::|
+    WN::|caucasian%3:01:00::|
+    WN::|caucasic%3:01:00::|
+    WN::|korean%3:01:00::|
+    WN::|moravian%3:01:00::|
+    WN::|eurasian%3:01:00::|
+    WN::|eurasiatic%3:01:00::|
+    WN::|australasian%3:01:00::|
+    WN::|hindustani%3:01:00::|
+    WN::|semiterrestrial%3:01:00::|
+    WN::|hebridean%3:01:00::|
+    WN::|chechen%3:01:00::|
+    WN::|chinese%3:01:00::|
+    WN::|trinidadian%3:01:00::|
+    WN::|continental%3:01:02::|
+    WN::|austronesian%3:01:00::|
+    WN::|latin-american%3:01:00::|
+    WN::|jacobean%3:01:00::|
+    WN::|anguillan%3:01:01::|
+    WN::|gallic%3:01:00::|
+    WN::|east_indian%3:01:00::|
+    WN::|antiguan%3:01:01::|
+    WN::|polynesian%3:01:00::|
+    WN::|subtropical%3:01:00::|
+    WN::|subtropic%3:01:00::|
+    WN::|semitropical%3:01:00::|
+    WN::|semitropic%3:01:00::|
+    WN::|peloponnesian%3:01:00::|
+    WN::|transpolar%3:01:00::|
+    WN::|kashmiri%3:01:00::|
+    WN::|norman%3:01:01::|
+    WN::|isthmian%3:01:00::|
+    WN::|mongol%3:01:00::|
+    WN::|mongolian%3:01:01::|
+    WN::|iberian%3:01:00::|
+    WN::|lusitanian%3:01:00::|
+    WN::|parotid%3:01:00::|
+    WN::|parthian%3:01:00::|
+    WN::|bermudan%3:01:00::|
+    WN::|dalmatian%3:01:00::|
+    WN::|tellurian%3:01:00::|
+    WN::|telluric%3:01:00::|
+    WN::|terrestrial%3:01:00::|
+    WN::|terrene%3:01:00::|
+    WN::|peninsular%3:01:00::|
+    WN::|baltic%3:01:01::|
+    WN::|polar%3:01:00::|
+    WN::|prussian%3:01:00::|
+    WN::|middle_eastern%3:01:00::|
+    WN::|cyprian%3:01:00::|
+    WN::|cypriote%3:01:00::|
+    WN::|cypriot%3:01:00::|
+    WN::|kurdish%3:01:00::|
+    WN::|dumpy%3:01:00::|
+    WN::|east_african%3:01:00::|
+    WN::|asian%3:01:00::|
+    WN::|asiatic%3:01:00::|
+    WN::|appalachian%3:01:00::|
+    WN::|continental%3:01:01::|
+    WN::|sub-saharan%3:01:00::|
+    WN::|british%3:01:00::|
+    WN::|estonian%3:01:00::|
+    WN::|sumatran%3:01:00::|
+    WN::|greenside%3:01:00::|
+    WN::|new_caledonian%3:01:00::|
+    WN::|javanese%3:01:00::|
+    WN::|javan%3:01:00::|
+    WN::|georgian%3:01:06::|
+    WN::|provencal%3:01:00::|
+    WN::|north_african%3:01:00::|
+    WN::|tahitian%3:01:00::|
+    WN::|taiwanese%3:01:00::|
+    WN::|chinese%3:01:01::|
+    WN::|formosan%3:01:00::|
+    WN::|tobagonian%3:01:00::|
+    WN::|hispaniolan%3:01:00::|
+    WN::|american%3:01:00::|
+    WN::|melanesian%3:01:00::|
+    WN::|byzantine%3:01:00::|
+    WN::|czech%3:01:00::|
+    WN::|czechoslovakian%3:01:00::|))
 
 (CONCEPT
   ONT::GEO-OBJECT
@@ -15355,13 +19294,79 @@
     (TYPE ONT::GEOGRAPHIC-REGION)))
 
 (CONCEPT
+  ONT::GEOLOGICAL-PROPERTY-VAL
+  (INHERIT
+    ONT::GEOLOGY-VAL)
+  (OVERLAP
+    WN::|stratified%3:00:00::|
+    WN::|bedded%3:00:04::|
+    WN::|intrusive%3:00:03::|
+    WN::|extrusive%3:00:00::|
+    WN::|riparian%3:01:00::|
+    WN::|basinal%3:01:00::|
+    WN::|montane%3:01:00::|
+    WN::|jurassic%3:01:00::|
+    WN::|eonian%3:01:00::|
+    WN::|aeonian%3:01:00::|
+    WN::|igneous%3:00:00::|
+    WN::|eruptive%3:00:00::|
+    WN::|pre-jurassic%3:01:00::|
+    WN::|cataclinal%3:00:00::|
+    WN::|coastal%3:01:00::|
+    WN::|littoral%3:01:00::|
+    WN::|thermal%3:01:01::|
+    WN::|unstratified%3:00:00::|
+    WN::|cenozoic%3:01:00::|
+    WN::|synclinal%3:00:00::|
+    WN::|alpine%3:01:00::|
+    WN::|mesozoic%3:01:00::|
+    WN::|aquiferous%3:01:00::|
+    WN::|carboniferous%3:01:02::|
+    WN::|anaclinal%3:00:00::|
+    WN::|cretaceous%3:01:00::|
+    WN::|himalayan%3:01:00::|
+    WN::|alpine%3:01:01::|
+    WN::|volcanic%3:01:00::|
+    WN::|anticlinal%3:00:00::|
+    WN::|postdiluvian%3:01:00::|
+    WN::|andean%3:01:00::|
+    WN::|aqueous%3:00:00::|
+    WN::|sedimentary%3:00:00::|
+    WN::|aeolian%3:01:01::|
+    WN::|gibraltarian%3:01:00::|
+    WN::|intertidal%3:01:00::|
+    WN::|glacial%3:01:00::|
+    WN::|paleozoic%3:01:00::|
+    WN::|hadal%3:01:00::|
+    WN::|geological%3:01:00::|
+    WN::|geologic%3:01:00::|
+    WN::|triassic%3:01:00::|
+    WN::|postglacial%3:01:00::|
+    WN::|batholithic%3:01:00::|
+    WN::|batholitic%3:01:00::|))
+
+(CONCEPT
+  ONT::GEOLOGY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SCIENCE-VAL))
+
+(CONCEPT
   ONT::GEOMETRIC-RELATIONSHIP-VAL
   (INHERIT
-    ONT::SPATIAL)
+    ONT::SPATIAL-VAL)
   (OVERLAP
+    WN::|asymmetrical%3:00:00::|
+    WN::|asymmetric%3:00:00::|
     WN::|symmetric%3:00:00::|
     WN::|perpendicular%3:00:00::|
     WN::|asymmetrical%5:00:00:irregular:00|))
+
+(CONCEPT
+  ONT::GEOMETRICAL-PROPERTY-VAL
+  (INHERIT
+    ONT::MATHEMATICS-VAL)
+  (OVERLAP
+    WN::|congruent%3:00:00::|))
 
 (CONCEPT
   ONT::GIST
@@ -15526,6 +19531,15 @@
   (INHERIT
     ONT::ACCEPTABILITY-VAL)
   (OVERLAP
+    WN::|advantageous%3:00:00::|
+    WN::|savory%3:00:00::|
+    WN::|savoury%3:00:04::|
+    WN::|palatable%3:00:00::|
+    WN::|toothsome%3:00:00::|
+    WN::|propitious%3:00:00::|
+    WN::|auspicious%3:00:00::|
+    WN::|inauspicious%3:00:00::|
+    WN::|unfortunate%3:00:04::|
     WN::|adequate%5:00:00:satisfactory:00|
     WN::|nice%3:00:00::|
     WN::|good%3:00:01::|
@@ -15547,6 +19561,7 @@
   (INHERIT
     ONT::AESTHETIC-JUDGEMENT-VAL)
   (OVERLAP
+    WN::|refined%3:00:01::|
     WN::|chic%5:00:00:stylish:00|
     WN::|classy%5:00:00:stylish:00|
     WN::|stylish%3:00:00::|
@@ -15559,6 +19574,17 @@
     (ORIENTATION POS)
     (SCALE ONT::AESTHETIC-TASTEFULNESS-SCALE)
     (TYPE ONT::GOOD-AESTHETIC-JUDGEMENT-VAL)))
+
+(CONCEPT
+  ONT::GOOD-FOR-HEALTH-VAL
+  (COMMENT "(healthful)")
+  (INHERIT
+    ONT::HELPFUL-VAL)
+  (OVERLAP
+    WN::|healthful%3:00:00::|
+    WN::|wholesome%3:00:00::|
+    WN::|sanitary%3:00:00::|
+    WN::|healthful%3:00:02::|))
 
 (CONCEPT
   ONT::GOODBYE
@@ -15738,6 +19764,7 @@
   (INHERIT
     ONT::GOOD)
   (OVERLAP
+    WN::|glorious%3:00:00::|
     WN::|superb%5:00:00:good:01|
     WN::|bang-up%5:00:00:good:01|
     WN::|great%5:00:01:extraordinary:00|
@@ -15799,6 +19826,7 @@
   (INHERIT
     ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
+    WN::|tearful%3:00:00::|
     WN::|heartrending%5:00:00:sorrowful:00|
     WN::|heartbreaking%5:00:00:sorrowful:00|
     WN::|grievous%5:00:00:sorrowful:00|)
@@ -16118,6 +20146,10 @@
   (INHERIT
     ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
+    WN::|contented%3:00:00::|
+    WN::|content%3:00:00::|
+    WN::|joyful%3:00:00::|
+    WN::|light%3:00:02::|
     WN::|happy%3:00:00::|
     WN::|pleased%3:00:00::|)
   (SEM-FEATS
@@ -16175,6 +20207,9 @@
   (INHERIT
     ONT::HARMFULNESS-VAL)
   (OVERLAP
+    WN::|destructive%3:00:00::|
+    WN::|toxic%3:00:00::|
+    WN::|noxious%3:00:00::|
     WN::|damaging%5:00:00:harmful:00|
     WN::|harmful%3:00:00::|
     WN::|ruinous%5:00:00:harmful:00|)
@@ -16209,6 +20244,84 @@
   (INHERIT
     ONT::MEDICAL-CONDITION-PROPERTY-VAL)
   (OVERLAP
+    WN::|neurotic%3:00:00::|
+    WN::|psychoneurotic%3:00:00::|
+    WN::|brachycephalic%3:00:00::|
+    WN::|brachycranial%3:00:00::|
+    WN::|brachycranic%3:00:00::|
+    WN::|incontinent%3:00:00::|
+    WN::|anastigmatic%3:00:00::|
+    WN::|stigmatic%3:00:00::|
+    WN::|astigmatic%3:00:00::|
+    WN::|hypertensive%3:00:00::|
+    WN::|mongoloid%3:01:00::|
+    WN::|narcoleptic%3:01:00::|
+    WN::|monochromatic%3:01:00::|
+    WN::|aneuploid%3:01:00::|
+    WN::|dyslexic%3:01:00::|
+    WN::|alexic%3:01:00::|
+    WN::|word-blind%3:01:00::|
+    WN::|cataleptic%3:01:00::|
+    WN::|anencephalic%3:01:00::|
+    WN::|anencephalous%3:01:00::|
+    WN::|bipolar%3:01:01::|
+    WN::|aphasic%3:01:00::|
+    WN::|agraphic%3:01:00::|
+    WN::|aniseikonic%3:01:00::|
+    WN::|acapnic%3:01:00::|
+    WN::|acapnial%3:01:00::|
+    WN::|acapnotic%3:01:00::|
+    WN::|amaurotic%3:01:00::|
+    WN::|immunosuppressed%3:01:00::|
+    WN::|aphakic%3:01:00::|
+    WN::|macrocephalic%3:01:00::|
+    WN::|macrocephalous%3:01:00::|
+    WN::|anosmic%3:01:00::|
+    WN::|anosmatic%3:01:00::|
+    WN::|hydrocephalic%3:01:00::|
+    WN::|amblyopic%3:01:00::|
+    WN::|macrencephalic%3:01:00::|
+    WN::|macrencephalous%3:01:00::|
+    WN::|hyperthermal%3:01:00::|
+    WN::|albinal%3:01:00::|
+    WN::|albinotic%3:01:00::|
+    WN::|albinic%3:01:00::|
+    WN::|albinistic%3:01:00::|
+    WN::|dysplastic%3:01:00::|
+    WN::|immunosuppressive%3:01:00::|
+    WN::|anoxic%3:01:00::|
+    WN::|squint-eyed%3:01:00::|
+    WN::|ateleiotic%3:01:00::|
+    WN::|anabiotic%3:01:00::|
+    WN::|tympanitic%3:01:00::|
+    WN::|anaesthetic%3:01:00::|
+    WN::|anesthetic%3:01:00::|
+    WN::|parous%3:01:00::|
+    WN::|immunocompromised%3:01:00::|
+    WN::|ataxic%3:01:00::|
+    WN::|atactic%3:01:00::|
+    WN::|adactylous%3:01:00::|
+    WN::|epileptic%3:01:00::|
+    WN::|dichromatic%3:01:00::|
+    WN::|microcephalic%3:01:00::|
+    WN::|microcephalous%3:01:00::|
+    WN::|nanocephalic%3:01:00::|
+    WN::|hypothermic%3:01:00::|
+    WN::|scotomatous%3:01:00::|
+    WN::|cyclothymic%3:01:00::|
+    WN::|anestrous%3:01:00::|
+    WN::|anestric%3:01:00::|
+    WN::|anoestrous%3:01:00::|
+    WN::|cryptobiotic%3:01:00::|
+    WN::|abasic%3:01:00::|
+    WN::|abatic%3:01:00::|
+    WN::|neurotic%3:01:00::|
+    WN::|bulimic%3:01:00::|
+    WN::|anaplastic%3:01:00::|
+    WN::|asphyxiated%3:01:00::|
+    WN::|progestational%3:01:00::|
+    WN::|sociopathic%3:01:00::|
+    WN::|gestational%3:01:00::|
     WN::|deaf%3:00:00::|
     WN::|blind%3:00:00::|
     WN::|mute%5:00:01:inarticulate:00|)
@@ -16228,6 +20341,14 @@
   ONT::HAS-VALUE-ON-SCALE
   (INHERIT
     ONT::SCALE-RELATION))
+
+(CONCEPT
+  ONT::HATEFUL-VAL
+  (COMMENT "(hateful)")
+  (INHERIT
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|hateful%3:00:00::|))
 
 (CONCEPT
   ONT::HAVE
@@ -16287,6 +20408,21 @@
        (INHERIT
          SITUATION)
        (TYPE ONT::OBJECTIVE-INFLUENCE)))))
+
+(CONCEPT
+  ONT::HAVE-KNOWLEDGE-VAL
+  (COMMENT "having experience and knowledge (informed, experienced)")
+  (INHERIT
+    ONT::KNOWLEDGE-EXPERIENCE-VAL)
+  (OVERLAP
+    WN::|informed%3:00:00::|
+    WN::|experienced%3:00:00::|
+    WN::|experient%3:00:00::|
+    WN::|sophisticated%3:00:00::|
+    WN::|educated%3:00:00::|
+    WN::|enlightened%3:00:00::|
+    WN::|numerate%3:00:00::|
+    WN::|innumerate%3:00:00::|))
 
 (CONCEPT
   ONT::HAVE-PROPERTY
@@ -16353,6 +20489,24 @@
        (TANGIBLE +)))))
 
 (CONCEPT
+  ONT::HAVING-COMPONENT-OR-PART-VAL
+  (INHERIT
+    ONT::HAVING-CONSTITUENT-PARTS-VAL))
+
+(CONCEPT
+  ONT::HAVING-CONSTITUENT-PARTS-VAL
+  (INHERIT
+    ONT::PHYSICAL-PROPERTY-VAL))
+
+(CONCEPT
+  ONT::HAVING-HUMAN-CONSTITUENTS-VAL
+  (INHERIT
+    ONT::HAVING-CONSTITUENT-PARTS-VAL)
+  (OVERLAP
+    WN::|patronized%3:00:00::|
+    WN::|patronised%3:00:00::|))
+
+(CONCEPT
   ONT::HEAD
   (INHERIT
     ONT::EXTERNAL-BODY-PART)
@@ -16406,7 +20560,7 @@
 (CONCEPT
   ONT::HEALTHY-VAL
   (INHERIT
-    ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL)
+    ONT::NOT-AILING-VAL)
   (OVERLAP
     WN::|well%3:00:01::|
     WN::|healthy%3:00:00::|)
@@ -16467,12 +20621,21 @@
   (INHERIT
     ONT::WEIGHT-VAL)
   (OVERLAP
+    WN::|weighty%3:00:00::|
     WN::|heavy%3:00:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
     (SCALE ONT::WEIGHT-SCALE)
     (TYPE ONT::HEAVY)))
+
+(CONCEPT
+  ONT::HEAVY-DUTY-VAL
+  (COMMENT "(heavy-duty)")
+  (INHERIT
+    ONT::DESIGNED-TO-DEMAND-VAL)
+  (OVERLAP
+    WN::|heavy-duty%3:00:00::|))
 
 (CONCEPT
   ONT::HEIGHT-SCALE
@@ -16504,6 +20667,22 @@
        (CONCEPT
          ABSTR-OBJ))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::HELPFUL-VAL
+  (COMMENT "(helpful)")
+  (INHERIT
+    ONT::HELPFULNESS-VAL)
+  (OVERLAP
+    WN::|helpful%3:00:00::|
+    WN::|accommodating%3:00:00::|
+    WN::|accommodative%3:00:00::|))
+
+(CONCEPT
+  ONT::HELPFULNESS-VAL
+  (COMMENT "(helpful)")
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT
   ONT::HERBACEOUS-PLANT
@@ -16569,6 +20748,7 @@
   (INHERIT
     ONT::INVISIBLE-VAL)
   (OVERLAP
+    WN::|veiled%3:00:00::|
     WN::|concealed%3:00:00::|
     WN::|concealed%5:00:00:invisible:00|))
 
@@ -16650,7 +20830,39 @@
   ONT::HISTORICAL-ERA-VAL
   (COMMENT "relating to the distinct periods in history")
   (INHERIT
-    ONT::TEMPORAL-VAL))
+    ONT::TEMPORAL-VAL)
+  (OVERLAP
+    WN::|medieval%3:01:00::|
+    WN::|mediaeval%3:01:00::|
+    WN::|millenarian%3:01:00::|
+    WN::|chiliastic%3:01:00::|
+    WN::|lenten%3:01:00::|
+    WN::|anaphasic%3:01:00::|
+    WN::|mesolithic%3:01:00::|
+    WN::|elizabethan%3:01:00::|
+    WN::|juvenile%3:01:00::|
+    WN::|terminal%3:01:00::|
+    WN::|matutinal%3:01:00::|
+    WN::|baroque%3:01:00::|
+    WN::|sabbatical%3:01:00::|
+    WN::|neolithic%3:01:00::|
+    WN::|victorian%3:01:00::|
+    WN::|paleolithic%3:01:00::|
+    WN::|palaeolithic%3:01:00::|
+    WN::|adolescent%3:01:00::|
+    WN::|canicular%3:01:02::|
+    WN::|pubertal%3:01:00::|
+    WN::|centennial%3:01:00::|
+    WN::|centenary%3:01:00::|
+    WN::|nocturnal%3:01:01::|
+    WN::|bimillenial%3:01:00::|
+    WN::|millennial%3:01:00::|
+    WN::|millennian%3:01:00::|
+    WN::|quarterly%3:01:00::|
+    WN::|eolithic%3:01:00::|
+    WN::|pre-christian%3:01:00::|
+    WN::|quartan%3:01:00::|
+    WN::|infantile%3:01:00::|))
 
 (CONCEPT
   ONT::HITTING
@@ -16707,6 +20919,8 @@
   (INHERIT
     ONT::HOMOGENEITY-VAL)
   (OVERLAP
+    WN::|uniform%3:00:00::|
+    WN::|unvarying%3:00:04::|
     WN::|homogeneous%3:00:00::|))
 
 (CONCEPT
@@ -16714,6 +20928,8 @@
   (INHERIT
     ONT::HONESTY-VAL)
   (OVERLAP
+    WN::|truthful%3:00:00::|
+    WN::|true%3:00:04::|
     WN::|honest%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -16740,12 +20956,36 @@
     (TYPE ONT::HONESTY-VAL)))
 
 (CONCEPT
+  ONT::HOPEFUL-VAL
+  (COMMENT "(hopeful)")
+  (INHERIT
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|hopeful%3:00:00::|))
+
+(CONCEPT
+  ONT::HOPELESS-VAL
+  (COMMENT "(hopeless)")
+  (INHERIT
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|hopeless%3:00:00::|))
+
+(CONCEPT
   ONT::HORIZONTAL
   (INHERIT
     ONT::ORIENTATION-VAL)
   (OVERLAP
     WN::|horizontal%3:00:00::|
     WN::|parallel%3:00:00::|))
+
+(CONCEPT
+  ONT::HOSPITABLE-VAL
+  (COMMENT "(hospitable)")
+  (INHERIT
+    ONT::FAVORABILITY-TO-LIFE-VAL)
+  (OVERLAP
+    WN::|hospitable%3:00:00::|))
 
 (CONCEPT
   ONT::HOTSPOT
@@ -17000,6 +21240,37 @@
     (TYPE ONT::IMAGINARY-BEING)))
 
 (CONCEPT
+  ONT::IMAGINARY-BEINGS-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-PERSON-VAL)
+  (OVERLAP
+    WN::|heroic%3:01:00::|
+    WN::|sisyphean%3:01:00::|
+    WN::|faustian%3:01:00::|
+    WN::|chimeric%3:01:00::|
+    WN::|chimerical%3:01:00::|
+    WN::|chimeral%3:01:00::|
+    WN::|procrustean%3:01:00::|
+    WN::|orphic%3:01:00::|
+    WN::|arthurian%3:01:00::|
+    WN::|falstaffian%3:01:00::|
+    WN::|cyclopean%3:01:00::|))
+
+(CONCEPT
+  ONT::IMAGINARY-PLACE-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-LOCATION-VAL)
+  (OVERLAP
+    WN::|celestial%3:01:00::|
+    WN::|heavenly%3:01:00::|
+    WN::|lilliputian%3:01:00::|
+    WN::|brobdingnagian%3:01:00::|
+    WN::|laputan%3:01:00::|
+    WN::|ruritanian%3:01:00::|
+    WN::|elysian%3:01:00::|
+    WN::|purgatorial%3:01:00::|))
+
+(CONCEPT
   ONT::IMITATE-SIMULATE
   (INHERIT
     ONT::CREATE)
@@ -17018,6 +21289,7 @@
   (INHERIT
     ONT::EVENT-TIME-REL)
   (OVERLAP
+    WN::|immediate%3:00:00::|
     WN::|immediately%4:02:00::|
     WN::|immediately%4:02:05::|))
 
@@ -17044,10 +21316,21 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::IMPARTING-ENERGY-VAL
+  (COMMENT "(invigorating)")
+  (INHERIT
+    ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
+  (OVERLAP
+    WN::|invigorating%3:00:00::|))
+
+(CONCEPT
   ONT::IMPERCEPTIBLE-VAL
   (INHERIT
     ONT::PERCEPTIBILITY-VAL)
   (OVERLAP
+    WN::|indistinct%3:00:00::|
+    WN::|impalpable%3:00:00::|
+    WN::|indiscernible%3:00:00::|
     WN::|imperceptible%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -17229,6 +21512,7 @@
   (INHERIT
     ONT::EVENT-TIME-WRT-NOW)
   (OVERLAP
+    WN::|noncurrent%3:00:00::|
     WN::|past%3:00:00::|))
 
 (CONCEPT
@@ -17274,6 +21558,7 @@
   (INHERIT
     ONT::FUNCTIONALITY-VAL)
   (OVERLAP
+    WN::|go%3:00:00::|
     WN::|running%5:00:00:functioning:00|
     WN::|functional%5:00:00:functioning:00|
     WN::|operative%5:00:00:functioning:00|
@@ -17286,6 +21571,12 @@
   (INHERIT
     ONT::ACTIVITY-VAL)
   (OVERLAP
+    WN::|inactive%3:00:03::|
+    WN::|inactive%3:00:07::|
+    WN::|inactive%3:00:02::|
+    WN::|inactive%3:00:01::|
+    WN::|vegetative%3:01:01::|
+    WN::|vegetive%3:01:01::|
     WN::|idle%3:00:00::|
     WN::|passive%3:00:01::|))
 
@@ -17326,6 +21617,13 @@
   (INHERIT
     ONT::ADEQUACY-VAL)
   (OVERLAP
+    WN::|meager%3:00:00::|
+    WN::|meagre%3:00:00::|
+    WN::|meagerly%3:00:00::|
+    WN::|stingy%3:00:02::|
+    WN::|scrimpy%3:00:00::|
+    WN::|inadequate%3:00:00::|
+    WN::|unequal%3:00:03::|
     WN::|inadequate%5:00:00:insufficient:00|
     WN::|insufficient%3:00:00::|
     WN::|scarce%3:00:00::|)
@@ -17341,6 +21639,15 @@
        (INHERIT
          PHYS-OBJ)
        (TYPE ONT::MATERIAL)))))
+
+(CONCEPT
+  ONT::INARTICULATE-VAL
+  (COMMENT "unable to talk (inarticulate)")
+  (INHERIT
+    ONT::UNABLE)
+  (OVERLAP
+    WN::|inarticulate%3:00:00::|
+    WN::|unarticulate%3:00:00::|))
 
 (CONCEPT
   ONT::INAUDIBLE-VAL
@@ -17360,7 +21667,17 @@
   (INHERIT
     ONT::ATMOSPHERIC-VAL)
   (OVERLAP
+    WN::|unfavorable%3:00:01::|
+    WN::|unfavourable%3:00:01::|
+    WN::|inclement%3:00:02::|
+    WN::|intemperate%3:00:01::|
     WN::|stormy%3:00:00::|))
+
+(CONCEPT
+  ONT::INCLINED-TO-PASSING-JUDGEMENT-VAL
+  (COMMENT "(critical)")
+  (INHERIT
+    ONT::SOCIAL-INTERACTION-VAL))
 
 (CONCEPT
   ONT::INCLUSIVE
@@ -17372,6 +21689,7 @@
   (INHERIT
     ONT::DIRECTION-VAL)
   (OVERLAP
+    WN::|incoming%3:00:01::|
     WN::|inbound%5:00:00:incoming:00|
     WN::|incoming%3:00:00::|))
 
@@ -17410,6 +21728,7 @@
   (INHERIT
     ONT::CORRECTNESS-VAL)
   (OVERLAP
+    WN::|wrong%3:00:04::|
     WN::|faulty%5:00:00:inaccurate:00|
     WN::|false%5:00:00:incorrect:00|
     WN::|incorrect%3:00:00::|
@@ -17515,6 +21834,7 @@
   (INHERIT
     ONT::COMMERCIAL-ENTERPRISE-VAL)
   (OVERLAP
+    WN::|nonindustrial%3:00:00::|
     WN::|industrial%3:01:00::|
     WN::|industrial%3:00:00::|))
 
@@ -17535,6 +21855,16 @@
     WN::|infection%1:26:00::|))
 
 (CONCEPT
+  ONT::INFECTIOUS-VAL
+  (COMMENT "(infectious, invasive)")
+  (INHERIT
+    ONT::DISEASED-VAL)
+  (OVERLAP
+    WN::|infectious%3:00:00::|
+    WN::|virulent%3:00:00::|
+    WN::|invasive%3:00:00::|))
+
+(CONCEPT
   ONT::INFERIORITY-SCALE
   (INHERIT
     ONT::QUALITY-LEVEL-SCALE)
@@ -17549,6 +21879,27 @@
     WN::|inflammation%1:26:00::|
     WN::|phlebitis%1:26:00::|
     WN::|redness%1:26:00::|))
+
+(CONCEPT
+  ONT::INFLUENCE-SUSCEPTIBILITY-VAL
+  (COMMENT "not allowing penetration or influence (vulnerable)")
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT
+  ONT::INFLUENCE-VAL
+  (COMMENT "(influential)")
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT
+  ONT::INFLUENTIAL-VAL
+  (COMMENT "(influential)")
+  (INHERIT
+    ONT::INFLUENCE-VAL)
+  (OVERLAP
+    WN::|influential%3:00:00::|
+    WN::|dominant%3:00:01::|))
 
 (CONCEPT
   ONT::INFO-HOLDER
@@ -17594,6 +21945,12 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::INFORMATION-DELIVERY-MODE-VAL
+  (COMMENT "(written)")
+  (INHERIT
+    ONT::MODE))
+
+(CONCEPT
   ONT::INFORMATION-FUNCTION-OBJECT
   (INHERIT
     ONT::FUNCTION-OBJECT)
@@ -17620,6 +21977,9 @@
    "properties regarding the evaluation of information, knowledge, or understanding (e.g. credible, correct, consistent)")
   (INHERIT
     ONT::PROPERTY-VAL)
+  (OVERLAP
+    WN::|deductive%3:00:00::|
+    WN::|qualitative%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -17724,6 +22084,14 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::INJURED-VAL
+  (COMMENT "(injured)")
+  (INHERIT
+    ONT::AILING-VAL)
+  (OVERLAP
+    WN::|injured%3:00:00::|))
+
+(CONCEPT
   ONT::INJURY
   (INHERIT
     ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
@@ -17742,6 +22110,7 @@
   (INHERIT
     ONT::MEDICAL-CONDITION-PROPERTY-VAL)
   (OVERLAP
+    WN::|bloody%3:00:00::|
     WN::|puffy%5:00:00:unhealthy:00|))
 
 (CONCEPT
@@ -17775,6 +22144,14 @@
   (OVERLAP
     WN::|inside-out%5:00:00:turned:00|
     WN::|reversed%5:00:00:turned:00|))
+
+(CONCEPT
+  ONT::INSPIRING-AWE-VAL
+  (COMMENT "(impressive)")
+  (INHERIT
+    ONT::AWE-INSPIRATION-VAL)
+  (OVERLAP
+    WN::|impressive%3:00:00::|))
 
 (CONCEPT
   ONT::INSTALL
@@ -17864,12 +22241,48 @@
   (INHERIT
     ONT::TANGIBILITY-VAL)
   (OVERLAP
+    WN::|immaterial%3:00:01::|
+    WN::|nonmaterial%3:00:00::|
     WN::|intangible%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
     (SCALE ONT::INTANGIBILITY-SCALE)
     (TYPE ONT::INTANGIBLE-VAL)))
+
+(CONCEPT
+  ONT::INTELLECT-VAL
+  (COMMENT "(intellectual)")
+  (INHERIT
+    ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+
+(CONCEPT
+  ONT::INTELLECTUAL-PERSON-VAL
+  (INHERIT
+    ONT::FAMOUS-PERSON-VAL)
+  (OVERLAP
+    WN::|platonic%3:01:00::|
+    WN::|presocratic%3:01:00::|
+    WN::|pre-socratic%3:01:00::|
+    WN::|wittgensteinian%3:01:00::|
+    WN::|socratic%3:01:00::|
+    WN::|epicurean%3:01:00::|
+    WN::|deweyan%3:01:00::|
+    WN::|hegelian%3:01:00::|
+    WN::|aristotelian%3:01:00::|
+    WN::|aristotelean%3:01:00::|
+    WN::|aristotelic%3:01:00::|
+    WN::|peripatetic%3:01:00::|
+    WN::|freudian%3:01:00::|
+    WN::|kantian%3:01:00::|))
+
+(CONCEPT
+  ONT::INTELLECTUAL-VAL
+  (COMMENT "(intellectual)")
+  (INHERIT
+    ONT::INTELLECT-VAL)
+  (OVERLAP
+    WN::|intellectual%3:00:00::|))
 
 (CONCEPT
   ONT::INTELLIGENCE-SCALE
@@ -17893,6 +22306,13 @@
   (INHERIT
     ONT::INTENSITY-VAL)
   (OVERLAP
+    WN::|full%3:00:01::|
+    WN::|profound%3:00:00::|
+    WN::|heavy%3:00:08::|
+    WN::|deep%3:00:02::|
+    WN::|potent%3:00:00::|
+    WN::|strong%3:00:04::|
+    WN::|stiff%3:00:00::|
     WN::|potent%5:00:00:powerful:00|
     WN::|acute%5:00:00:sharp:04|
     WN::|strong%5:00:00:powerful:00|
@@ -18003,9 +22423,8 @@
   (INHERIT
     ONT::INTENTIONALITY-VAL)
   (OVERLAP
-    WN::|deliberate%5:00:00:intended:00|
-    WN::|intentional%5:00:00:intended:00|
-    WN::|intended%3:00:00::|)
+    WN::|purposeful%3:00:00::|
+    WN::|nonrandom%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -18087,6 +22506,7 @@
   (INHERIT
     ONT::POS-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
+    WN::|curious%3:00:00::|
     WN::|interested%3:00:00::|
     WN::|curious%5:00:00:interested:00|)
   (SEM-FEATS
@@ -18100,6 +22520,8 @@
   (INHERIT
     ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
+    WN::|colorful%3:00:03::|
+    WN::|colourful%3:00:03::|
     WN::|fascinating%5:00:00:interesting:00|
     WN::|interesting%3:00:00::|)
   (SEM-FEATS
@@ -18167,6 +22589,14 @@
     (TRAJECTORY -)
     (ORIGIN ARTIFACT)
     (TYPE ONT::INTERNAL-ENCLOSURE)))
+
+(CONCEPT
+  ONT::INTERNATIONAL-VAL
+  (COMMENT "(international)")
+  (INHERIT
+    ONT::COUNTRY-RELATED-VAL)
+  (OVERLAP
+    WN::|international%3:00:00::|))
 
 (CONCEPT
   ONT::INTERNET-ORGANIZATION
@@ -18347,6 +22777,8 @@
   (INHERIT
     ONT::REGULARITY-VAL)
   (OVERLAP
+    WN::|aperiodic%3:00:00::|
+    WN::|nonperiodic%3:00:00::|
     WN::|sporadic%3:00:00::|
     WN::|irregular%5:00:00:sporadic:00|
     WN::|casual%5:00:00:irregular:00|)
@@ -18485,6 +22917,14 @@
   ONT::JUDGEMENT-VAL
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT
+  ONT::JUDGEMENTAL-VAL
+  (COMMENT "(critical)")
+  (INHERIT
+    ONT::INCLINED-TO-PASSING-JUDGEMENT-VAL)
+  (OVERLAP
+    WN::|critical%3:00:01::|))
 
 (CONCEPT
   ONT::JUICE
@@ -18641,6 +23081,37 @@
     WN::|tenderness%1:07:00::|))
 
 (CONCEPT
+  ONT::KINSHIP-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-PERSON-VAL)
+  (OVERLAP
+    WN::|lineal%3:00:00::|
+    WN::|direct%3:00:04::|
+    WN::|filial%3:00:00::|
+    WN::|wifely%3:00:00::|
+    WN::|wifelike%3:00:00::|
+    WN::|uxorial%3:00:00::|
+    WN::|parental%3:00:00::|
+    WN::|maternal%3:00:04::|
+    WN::|paternal%3:00:04::|
+    WN::|sisterly%3:00:00::|
+    WN::|sisterlike%3:00:00::|
+    WN::|sororal%3:00:02::|
+    WN::|brotherly%3:00:00::|
+    WN::|brotherlike%3:00:00::|
+    WN::|fraternal%3:00:02::|
+    WN::|fraternal%3:00:00::|
+    WN::|biovular%3:00:00::|
+    WN::|maternal%3:00:00::|
+    WN::|paternal%3:00:00::|
+    WN::|fraternal%3:01:01::|
+    WN::|familial%3:01:00::|
+    WN::|genealogic%3:01:00::|
+    WN::|genealogical%3:01:00::|
+    WN::|patriarchal%3:01:00::|
+    WN::|avuncular%3:01:01::|))
+
+(CONCEPT
   ONT::KISSING
   (INHERIT
     ONT::INTENTIONALLY-ACT)
@@ -18705,6 +23176,12 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::KNOWLEDGE-EXPERIENCE-VAL
+  (COMMENT "having experience and knowledge (informed, experienced)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL))
+
+(CONCEPT
   ONT::LACK
   (INHERIT
     ONT::SITUATION)
@@ -18717,6 +23194,19 @@
        T))))
 
 (CONCEPT
+  ONT::LACK-KNOWLEDGE-VAL
+  (COMMENT "(uninformed)")
+  (INHERIT
+    ONT::KNOWLEDGE-EXPERIENCE-VAL)
+  (OVERLAP
+    WN::|uninformed%3:00:00::|
+    WN::|inexperienced%3:00:00::|
+    WN::|inexperient%3:00:00::|
+    WN::|uneducated%3:00:00::|
+    WN::|untrained%3:00:00::|
+    WN::|unenlightened%3:00:00::|))
+
+(CONCEPT
   ONT::LACK-OF-ENERGY-SCALE
   (INHERIT
     ONT::NEGATIVE-BODY-CONDITION-SCALE))
@@ -18725,6 +23215,8 @@
   ONT::LACK-OF-ENERGY-VAL
   (INHERIT
     ONT::NEGATIVE-BODY-CONDITION-PROPERTY-VAL)
+  (OVERLAP
+    WN::|unanimated%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -18763,6 +23255,11 @@
          ABSTR-OBJ)
        (CONCEPT
          SITUATION)))))
+
+(CONCEPT
+  ONT::LACKING-COMPONENT-OR-PART-VAL
+  (INHERIT
+    ONT::HAVING-CONSTITUENT-PARTS-VAL))
 
 (CONCEPT
   ONT::LAMB
@@ -18851,10 +23348,64 @@
   ONT::LANGUAGE-SPECIFIC-VAL
   (COMMENT "associated specifically with language written or spoken")
   (INHERIT
-    ONT::RELATED-TO-LANGUAGES-VAL)
+    ONT::ASSOCIATED-WITH-LANGUAGES-VAL)
   (OVERLAP
+    WN::|nordic%3:01:01::|
+    WN::|thai%3:01:01::|
+    WN::|tai%3:01:01::|
+    WN::|siamese%3:01:01::|
+    WN::|hebraic%3:01:00::|
+    WN::|hebraical%3:01:00::|
+    WN::|hebrew%3:01:00::|
+    WN::|tamil%3:01:00::|
+    WN::|scythian%3:01:00::|
+    WN::|nilotic%3:01:00::|
+    WN::|altaic%3:01:00::|
+    WN::|turkic%3:01:00::|
+    WN::|koranic%3:01:00::|
+    WN::|syntagmatic%3:01:00::|
+    WN::|aramaic%3:01:00::|
+    WN::|latin%3:01:00::|
+    WN::|amharic%3:01:00::|
+    WN::|gothic%3:01:01::|
+    WN::|germanic%3:01:00::|
+    WN::|bantu-speaking%3:01:00::|
+    WN::|italic%3:01:00::|
+    WN::|demotic%3:01:01::|
+    WN::|slavonic%3:01:00::|
+    WN::|slavic%3:01:00::|
+    WN::|cockney%3:01:01::|
+    WN::|synchronic%3:00:00::|
+    WN::|prakritic%3:01:00::|
+    WN::|sinhala%3:01:00::|
+    WN::|singhalese%3:01:01::|
+    WN::|sinhalese%3:01:01::|
+    WN::|latinate%3:01:00::|
+    WN::|vietnamese%3:01:00::|
+    WN::|sentential%3:01:00::|
+    WN::|indo-european%3:01:01::|
+    WN::|indo-germanic%3:01:00::|
+    WN::|bantoid%3:01:00::|
+    WN::|english%3:01:01::|
+    WN::|malayo-polynesian%3:01:00::|
+    WN::|creole%3:01:02::|
+    WN::|catalan%3:01:00::|
+    WN::|romance%3:01:00::|
+    WN::|latin%3:01:02::|
+    WN::|quechuan%3:01:00::|
+    WN::|kechuan%3:01:00::|
+    WN::|sotho%3:01:00::|
+    WN::|macaronic%3:01:00::|
     WN::|semitic%3:01:01::|
     WN::|cyrillic%3:01:00::|))
+
+(CONCEPT
+  ONT::LANGUAGE-USE-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-LANGUAGES-VAL)
+  (OVERLAP
+    WN::|multilingual%3:00:00::|
+    WN::|monolingual%3:00:00::|))
 
 (CONCEPT
   ONT::LARGE
@@ -18862,6 +23413,7 @@
   (INHERIT
     ONT::SIZE-VAL)
   (OVERLAP
+    WN::|wide%3:00:02::|
     WN::|broad%5:00:00:large:00|
     WN::|large%3:00:00::|))
 
@@ -18870,6 +23422,8 @@
   (INHERIT
     ONT::SEQUENCE-VAL)
   (OVERLAP
+    WN::|closing%3:00:00::|
+    WN::|conclusive%3:00:00::|
     WN::|ultimate%5:00:00:last:00|
     WN::|latter%3:00:00::|
     WN::|final%5:00:00:ultimate:00|
@@ -18897,6 +23451,61 @@
   (OVERLAP
     WN::|late%3:00:02::|
     WN::|late%4:02:00::|))
+
+(CONCEPT
+  ONT::LAW-PROPERTY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-LAW-VAL)
+  (OVERLAP
+    WN::|ultra_vires%3:00:00::|
+    WN::|intra_vires%3:00:00::|
+    WN::|intestate%3:00:00::|
+    WN::|minor%3:00:03::|
+    WN::|nonaged%3:00:00::|
+    WN::|underage%3:00:00::|
+    WN::|residuary%3:01:01::|
+    WN::|testate%3:00:00::|
+    WN::|substantive%3:00:00::|
+    WN::|essential%3:00:04::|
+    WN::|reversionary%3:01:00::|
+    WN::|undue%3:00:02::|
+    WN::|legal%3:01:00::|
+    WN::|major%3:00:03::|
+    WN::|adjective%3:00:00::|
+    WN::|procedural%3:00:00::|
+    WN::|canonic%3:01:00::|
+    WN::|canonical%3:01:00::|
+    WN::|incompetent%3:00:02::|
+    WN::|unqualified%3:00:03::|))
+
+(CONCEPT
+  ONT::LAWFUL-VAL
+  (COMMENT "(legal, lawful)")
+  (INHERIT
+    ONT::PERMISSIBLE-VAL)
+  (OVERLAP
+    WN::|lawful%3:00:00::|))
+
+(CONCEPT
+  ONT::LEADER-VAL
+  (INHERIT
+    ONT::FAMOUS-PERSON-VAL)
+  (OVERLAP
+    WN::|demosthenic%3:01:00::|
+    WN::|bismarckian%3:01:00::|
+    WN::|draconian%3:01:00::|
+    WN::|napoleonic%3:01:00::|
+    WN::|gregorian%3:01:02::|
+    WN::|gandhian%3:01:00::|
+    WN::|gregorian%3:01:01::|
+    WN::|caesarian%3:01:01::|
+    WN::|caesarean%3:01:01::|
+    WN::|cromwellian%3:01:00::|
+    WN::|nestorian%3:01:00::|
+    WN::|hitlerian%3:01:00::|
+    WN::|machiavellian%3:01:00::|
+    WN::|augustan%3:01:00::|
+    WN::|julian%3:01:00::|))
 
 (CONCEPT
   ONT::LEAN-VAL
@@ -19056,6 +23665,12 @@
     ONT::ORIENTED-LOC-RELN))
 
 (CONCEPT
+  ONT::LEGAL-CULPABILITY-VAL
+  (COMMENT "(guilty)")
+  (INHERIT
+    ONT::STATUS-VAL))
+
+(CONCEPT
   ONT::LEGAL-ORGANIZATION
   (INHERIT
     ONT::ORGANIZATION))
@@ -19121,6 +23736,12 @@
   ONT::LESS-VAL
   (INHERIT
     ONT::DOMAIN-PROPERTY)
+  (OVERLAP
+    WN::|worse%3:00:00::|
+    WN::|fewer%3:00:00::|
+    WN::|worse%3:00:02::|
+    WN::|worsened%3:00:00::|
+    WN::|less%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -19156,6 +23777,8 @@
   (INHERIT
     ONT::LACK-OF-ENERGY-VAL)
   (OVERLAP
+    WN::|lax%3:00:01::|
+    WN::|spiritless%3:00:00::|
     WN::|lethargic%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -19247,7 +23870,9 @@
   ONT::LIFE-PROCESS-VAL
   (COMMENT "properties that describe life processes")
   (INHERIT
-    ONT::PROPERTY-VAL))
+    ONT::PROPERTY-VAL)
+  (OVERLAP
+    WN::|flowering%3:00:00::|))
 
 (CONCEPT
   ONT::LIFE-TRANSFORMATION
@@ -19289,10 +23914,22 @@
     (TYPE ONT::LIGHT)))
 
 (CONCEPT
+  ONT::LIGHT-DUTY-VAL
+  (COMMENT "(light-duty)")
+  (INHERIT
+    ONT::DESIGNED-TO-DEMAND-VAL)
+  (OVERLAP
+    WN::|light%3:00:04::|
+    WN::|light-duty%3:00:00::|))
+
+(CONCEPT
   ONT::LIGHT-IN-COLOR-VAL
   (INHERIT
     ONT::COLOR-SATURATION-VAL)
   (OVERLAP
+    WN::|unsaturated%3:00:03::|
+    WN::|saturated%3:00:03::|
+    WN::|pure%3:00:04::|
     WN::|light%3:00:05::|))
 
 (CONCEPT
@@ -19301,10 +23938,22 @@
     ONT::VISUAL-SCALE))
 
 (CONCEPT
+  ONT::LIGHT-PROPERTY-VAL
+  (INHERIT
+    ONT::VISUAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|hard%3:00:05::|
+    WN::|concentrated%3:00:01::|
+    WN::|soft%3:00:05::|
+    WN::|diffuse%3:00:00::|
+    WN::|diffused%3:00:00::|))
+
+(CONCEPT
   ONT::LIGHT-VAL
   (INHERIT
     ONT::PRESENSE-OF-LIGHT-VAL)
   (OVERLAP
+    WN::|unshaded%3:00:01::|
     WN::|light%3:00:06::|)
   (SEM-FEATS
     (INHERIT
@@ -19373,6 +24022,15 @@
     WN::|lightweight%5:00:00:light:01|))
 
 (CONCEPT
+  ONT::LIKED-VAL
+  (COMMENT "(liked, loved)")
+  (INHERIT
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|loved%3:00:00::|
+    WN::|liked%3:00:00::|))
+
+(CONCEPT
   ONT::LIKELIHOOD-SCALE
   (INHERIT
     ONT::INFORMATION-PROPERTY-SCALE)
@@ -19409,6 +24067,10 @@
   (INHERIT
     ONT::LIKELIHOOD-VAL)
   (OVERLAP
+    WN::|expected%3:00:00::|
+    WN::|plausible%3:00:00::|
+    WN::|prospective%3:00:00::|
+    WN::|likely%3:00:00::|
     WN::|likely%3:00:04::|
     WN::|probable%3:00:00::|)
   (SEM-FEATS
@@ -19425,6 +24087,21 @@
     WN::|limited%3:00:00::|
     WN::|minor%5:00:00:limited:00|
     WN::|finite%3:00:00::|))
+
+(CONCEPT
+  ONT::LINEAGE-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-PERSON-VAL)
+  (OVERLAP
+    WN::|capetian%3:01:00::|
+    WN::|seljuk%3:01:00::|
+    WN::|lancastrian%3:01:03::|
+    WN::|carolingian%3:01:00::|
+    WN::|dynastic%3:01:00::|
+    WN::|tudor%3:01:00::|
+    WN::|hanoverian%3:01:00::|
+    WN::|merovingian%3:01:00::|
+    WN::|royal%3:01:01::|))
 
 (CONCEPT
   ONT::LINEAR-EXTENT-SCALE
@@ -19497,8 +24174,148 @@
 (CONCEPT
   ONT::LINGUISTIC-PROPERTY-VAL
   (INHERIT
-    ONT::LINGUISTIC-VAL)
+    ONT::LINGUISTICS-VAL)
   (OVERLAP
+    WN::|syllabic%3:00:00::|
+    WN::|figurative%3:00:00::|
+    WN::|nonliteral%3:00:00::|
+    WN::|antonymous%3:00:00::|
+    WN::|connotative%3:00:00::|
+    WN::|unstressed%3:00:00::|
+    WN::|rhymed%3:00:00::|
+    WN::|rhyming%3:00:04::|
+    WN::|riming%3:00:00::|
+    WN::|soft%3:00:03::|
+    WN::|stressed%3:00:00::|
+    WN::|accented%3:00:00::|
+    WN::|literal%3:00:00::|
+    WN::|hard%3:00:03::|
+    WN::|unvoiced%3:00:00::|
+    WN::|voiceless%3:00:04::|
+    WN::|surd%3:00:00::|
+    WN::|hard%3:00:00::|
+    WN::|nonsyllabic%3:00:00::|
+    WN::|unsyllabic%3:00:00::|
+    WN::|lowercase%3:00:00::|
+    WN::|vocalic%3:00:02::|
+    WN::|syllabic%3:00:02::|
+    WN::|syllabic%3:00:01::|
+    WN::|uninflected%3:00:00::|
+    WN::|tonic%3:00:00::|
+    WN::|accented%3:00:04::|
+    WN::|atonic%3:00:00::|
+    WN::|unaccented%3:00:04::|
+    WN::|late%3:00:01::|
+    WN::|standard%3:00:03::|
+    WN::|received%3:00:04::|
+    WN::|nonstandard%3:00:03::|
+    WN::|attributive%3:00:00::|
+    WN::|prenominal%3:00:00::|
+    WN::|synthetic%3:00:02::|
+    WN::|tense%3:00:02::|
+    WN::|voluble%3:00:00::|
+    WN::|analytic%3:00:02::|
+    WN::|uninflected%3:00:04::|
+    WN::|formal%3:00:02::|
+    WN::|early%3:00:01::|
+    WN::|participial%3:01:00::|
+    WN::|intransitive%3:00:00::|
+    WN::|predicative%3:00:00::|
+    WN::|passive%3:00:02::|
+    WN::|lexical%3:01:01::|
+    WN::|deictic%3:01:00::|
+    WN::|verbal%3:01:00::|
+    WN::|lexicostatistic%3:01:00::|
+    WN::|phonemic%3:01:00::|
+    WN::|titular%3:01:01::|
+    WN::|aphetic%3:01:00::|
+    WN::|imperative%3:01:00::|
+    WN::|independent%3:00:02::|
+    WN::|main%3:00:02::|
+    WN::|phonic%3:01:01::|
+    WN::|objective%3:01:00::|
+    WN::|accusative%3:01:00::|
+    WN::|terminological%3:01:00::|
+    WN::|prepositional%3:01:00::|
+    WN::|prescriptive%3:00:00::|
+    WN::|normative%3:00:00::|
+    WN::|scopal%3:01:00::|
+    WN::|substantival%3:01:00::|
+    WN::|uninflected%3:00:01::|
+    WN::|contextual%3:01:00::|
+    WN::|allophonic%3:01:00::|
+    WN::|dependent%3:00:02::|
+    WN::|subordinate%3:00:03::|
+    WN::|asyndetic%3:00:00::|
+    WN::|syntactic%3:01:00::|
+    WN::|syntactical%3:01:00::|
+    WN::|pronominal%3:01:00::|
+    WN::|lexical%3:01:00::|
+    WN::|nominal%3:01:01::|
+    WN::|descriptive%3:00:00::|
+    WN::|appositional%3:01:00::|
+    WN::|appositive%3:01:00::|
+    WN::|inanimate%3:00:02::|
+    WN::|inflected%3:00:01::|
+    WN::|aphaeretic%3:01:00::|
+    WN::|apheretic%3:01:00::|
+    WN::|anagrammatic%3:01:00::|
+    WN::|anagrammatical%3:01:00::|
+    WN::|homonymic%3:01:00::|
+    WN::|homonymous%3:01:00::|
+    WN::|morphemic%3:01:00::|
+    WN::|adjectival%3:01:00::|
+    WN::|adjective%3:01:00::|
+    WN::|infinitival%3:01:00::|
+    WN::|nominative%3:01:00::|
+    WN::|patronymic%3:01:00::|
+    WN::|syncretic%3:01:01::|
+    WN::|syncretical%3:01:01::|
+    WN::|syncretistic%3:01:01::|
+    WN::|syncretistical%3:01:01::|
+    WN::|lexicographic%3:01:00::|
+    WN::|lexicographical%3:01:00::|
+    WN::|allomorphic%3:01:00::|
+    WN::|syndetic%3:00:00::|
+    WN::|gerundial%3:01:00::|
+    WN::|lax%3:00:02::|
+    WN::|nominal%3:01:00::|
+    WN::|nonlexical%3:01:00::|
+    WN::|vocalic%3:01:00::|
+    WN::|eponymous%3:01:00::|
+    WN::|eponymic%3:01:00::|
+    WN::|consonantal%3:01:00::|
+    WN::|adverbial%3:01:00::|
+    WN::|vocative%3:01:00::|
+    WN::|coreferential%3:01:00::|
+    WN::|co-referent%3:01:00::|
+    WN::|lexicalized%3:01:00::|
+    WN::|lexicalised%3:01:00::|
+    WN::|philological%3:01:00::|
+    WN::|long%3:00:04::|
+    WN::|future%3:01:00::|
+    WN::|aspectual%3:01:00::|
+    WN::|ablative%3:01:00::|
+    WN::|subordinating%3:00:00::|
+    WN::|subordinative%3:00:00::|
+    WN::|morphophonemic%3:01:00::|
+    WN::|titular%3:01:02::|
+    WN::|transitive%3:00:00::|
+    WN::|onomastic%3:01:00::|
+    WN::|aoristic%3:01:00::|
+    WN::|bilabial%3:01:00::|
+    WN::|homophonous%3:01:00::|
+    WN::|modal%3:01:00::|
+    WN::|middle%3:00:01::|
+    WN::|possessive%3:01:00::|
+    WN::|genitive%3:01:00::|
+    WN::|animate%3:00:02::|
+    WN::|acronymic%3:01:00::|
+    WN::|acronymous%3:01:00::|
+    WN::|titular%3:01:00::|
+    WN::|appellative%3:01:00::|
+    WN::|verbal%3:01:01::|
+    WN::|syllabic%3:01:01::|
     WN::|strong%5:00:00:irregular:00|
     WN::|stative%3:00:00::|
     WN::|subjunctive%3:01:00::|
@@ -19534,7 +24351,7 @@
     WN::|phonetic%3:01:01::|))
 
 (CONCEPT
-  ONT::LINGUISTIC-VAL
+  ONT::LINGUISTICS-VAL
   (COMMENT
    "associated with the discipline of linguistics and its various subfields")
   (INHERIT
@@ -19562,6 +24379,19 @@
     WN::|liquefy%2:30:00::|
     WN::|liquefy%2:30:01::|
     WN::|melt%2:30:01::|))
+
+(CONCEPT
+  ONT::LIQUID-PROPERTY-VAL
+  (COMMENT "(effervescent)")
+  (INHERIT
+    ONT::SUBSTANTIAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|effervescent%3:00:00::|
+    WN::|noneffervescent%3:00:00::|
+    WN::|still%3:00:00::|
+    WN::|noneffervescent%3:00:04::|
+    WN::|sparkling%3:00:00::|
+    WN::|effervescent%3:00:04::|))
 
 (CONCEPT
   ONT::LIQUID-SUBSTANCE
@@ -19902,7 +24732,24 @@
 (CONCEPT
   ONT::LOCATION-VAL
   (INHERIT
-    ONT::SPATIAL)
+    ONT::SPATIAL-VAL)
+  (OVERLAP
+    WN::|downstage%3:00:00::|
+    WN::|indoor%3:00:00::|
+    WN::|terminal%3:00:00::|
+    WN::|back%3:00:00::|
+    WN::|sinistral%3:00:00::|
+    WN::|dextral%3:00:00::|
+    WN::|aft%3:00:00::|
+    WN::|inside%3:00:00::|
+    WN::|outside%3:00:00::|
+    WN::|superjacent%3:00:00::|
+    WN::|outward%3:00:00::|
+    WN::|anterior%3:00:00::|
+    WN::|inner%3:00:00::|
+    WN::|outer%3:00:00::|
+    WN::|exterior%3:00:00::|
+    WN::|posterior%3:00:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (OR
@@ -19942,6 +24789,20 @@
     WN::|housing%1:06:00::|
     WN::|lodging%1:06:00::|
     WN::|living_accommodations%1:06:00::|))
+
+(CONCEPT
+  ONT::LOGICAL-VAL
+  (COMMENT "(logical)")
+  (INHERIT
+    ONT::LOGICALITY-VAL)
+  (OVERLAP
+    WN::|logical%3:00:00::|))
+
+(CONCEPT
+  ONT::LOGICALITY-VAL
+  (COMMENT "(logical)")
+  (INHERIT
+    ONT::INFORMATION-PROPERTY-VAL))
 
 (CONCEPT
   ONT::LONELINESS-SCALE
@@ -19989,6 +24850,8 @@
   (INHERIT
     ONT::CONSTRICTING-VAL)
   (OVERLAP
+    WN::|loose%3:00:02::|
+    WN::|unconstricted%3:00:00::|
     WN::|loose%3:00:01::|
     WN::|loose%5:00:00:coarse:00|)
   (SEM-FEATS
@@ -20104,12 +24967,37 @@
           ONT::MATERIAL))))))
 
 (CONCEPT
+  ONT::LOVABLE-VAL
+  (COMMENT "(lovable)")
+  (INHERIT
+    ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
+  (OVERLAP
+    WN::|lovable%3:00:00::|
+    WN::|loveable%3:00:00::|))
+
+(CONCEPT
   ONT::LOW-VAL
   (INHERIT
     ONT::POSITION-ON-DIMENSION-SCALE-VAL)
   (OVERLAP
     WN::|low%3:00:01::|
     WN::|low%3:00:02::|))
+
+(CONCEPT
+  ONT::LOYAL-VAL
+  (COMMENT "(loyal)")
+  (INHERIT
+    ONT::LOYALTY-VAL)
+  (OVERLAP
+    WN::|loyal%3:00:00::|
+    WN::|patriotic%3:00:00::|
+    WN::|loyal%3:00:06::|))
+
+(CONCEPT
+  ONT::LOYALTY-VAL
+  (COMMENT "(loyal)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL))
 
 (CONCEPT
   ONT::LUCKINESS-SCALE
@@ -20133,6 +25021,7 @@
   (INHERIT
     ONT::LUCKINESS-VAL)
   (OVERLAP
+    WN::|lucky%3:00:00::|
     WN::|fortunate%3:00:00::|
     WN::|lucky%5:00:00:fortunate:00|)
   (SEM-FEATS
@@ -20319,6 +25208,19 @@
      (CONCEPT
        SITUATION)
      OPTIONAL)))
+
+(CONCEPT
+  ONT::MAL-INTENDED-VAL
+  (COMMENT "(malicious, artful)")
+  (INHERIT
+    ONT::SOCIAL-INTENT-VAL)
+  (OVERLAP
+    WN::|malicious%3:00:00::|
+    WN::|artful%3:00:00::|
+    WN::|disingenuous%3:00:00::|
+    WN::|artful%3:00:02::|
+    WN::|sadistic%3:00:00::|
+    WN::|maleficent%3:00:00::|))
 
 (CONCEPT
   ONT::MALE-CHILD
@@ -20534,7 +25436,24 @@
 (CONCEPT
   ONT::MANUAL-VAL
   (INHERIT
-    ONT::MODE-OF-CONTROL-VAL))
+    ONT::MODE-OF-CONTROL-VAL)
+  (OVERLAP
+    WN::|manual%3:00:00::|))
+
+(CONCEPT
+  ONT::MANUFACTURE-PROCESS-VAL
+  (COMMENT "(handmade, factory-made)")
+  (INHERIT
+    ONT::PROCESS-VAL)
+  (OVERLAP
+    WN::|factory-made%3:00:00::|
+    WN::|ready-made%3:00:00::|
+    WN::|handmade%3:00:00::|
+    WN::|hand-crafted%3:00:00::|
+    WN::|custom-made%3:00:00::|
+    WN::|custom%3:00:00::|
+    WN::|woven%3:00:00::|
+    WN::|unwoven%3:00:00::|))
 
 (CONCEPT
   ONT::MANUFACTURED-OBJECT
@@ -20565,6 +25484,20 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::MARRIAGE-VAL
+  (COMMENT "(married)")
+  (INHERIT
+    ONT::STATUS-VAL))
+
+(CONCEPT
+  ONT::MARRIED-VAL
+  (COMMENT "(married)")
+  (INHERIT
+    ONT::MARRIAGE-VAL)
+  (OVERLAP
+    WN::|married%3:00:00::|))
+
+(CONCEPT
   ONT::MARRY
   (INHERIT
     ONT::ASSOCIATE)
@@ -20591,9 +25524,35 @@
   (INHERIT
     ONT::QUANTITY-RELATED-PROPERTY-VAL)
   (OVERLAP
-    WN::|algebraic%3:01:00::|
-    WN::|trigonometric%3:01:00::|
-    WN::|additive%3:00:00::|)
+    WN::|closed%3:00:02::|
+    WN::|continuous%3:00:02::|
+    WN::|nonlinear%3:00:00::|
+    WN::|direct%3:00:03::|
+    WN::|geometric%3:01:00::|
+    WN::|geometrical%3:01:00::|
+    WN::|rational%3:01:00::|
+    WN::|scalene%3:01:02::|
+    WN::|statistical%3:01:00::|
+    WN::|bivariate%3:01:00::|
+    WN::|binary%3:01:00::|
+    WN::|exponential%3:01:00::|
+    WN::|logarithmic%3:01:00::|
+    WN::|octal%3:01:00::|
+    WN::|topological%3:01:00::|
+    WN::|topologic%3:01:00::|
+    WN::|nonmonotonic%3:00:00::|
+    WN::|analytic%3:01:00::|
+    WN::|arithmetical%3:01:00::|
+    WN::|arithmetic%3:01:00::|
+    WN::|open%3:00:04::|
+    WN::|discontinuous%3:00:02::|
+    WN::|mathematical%3:01:00::|
+    WN::|polynomial%3:01:00::|
+    WN::|multinomial%3:01:00::|
+    WN::|differential%3:01:01::|
+    WN::|affine%3:01:00::|
+    WN::|isometric%3:01:00::|
+    WN::|irrational%3:01:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -20608,6 +25567,17 @@
          (CONCEPT
            SITUATION))
        (MEASURE-FUNCTION TERM)))))
+
+(CONCEPT
+  ONT::MATHEMATICAL-PROPERTY-VAL
+  (INHERIT
+    ONT::MATHEMATICS-VAL)
+  (OVERLAP
+    WN::|monotonic%3:00:00::|
+    WN::|monotone%3:00:04::|
+    WN::|inverse%3:00:00::|
+    WN::|linear%3:00:02::|
+    WN::|additive%3:00:04::|))
 
 (CONCEPT
   ONT::MATHEMATICAL-TERM
@@ -20631,10 +25601,37 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::MATHEMATICS-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SCIENCE-VAL))
+
+(CONCEPT
+  ONT::MATURE-VAL
+  (COMMENT "(mature)")
+  (INHERIT
+    ONT::MATURITY-VAL)
+  (OVERLAP
+    WN::|mature%3:00:02::|
+    WN::|ripe%3:00:00::|
+    WN::|mature%3:00:06::|
+    WN::|fledged%3:00:00::|
+    WN::|mature%3:00:04::|
+    WN::|mature%3:00:01::|))
+
+(CONCEPT
+  ONT::MATURITY-VAL
+  (COMMENT "(mature)")
+  (INHERIT
+    ONT::LIFE-PROCESS-VAL))
+
+(CONCEPT
   ONT::MAX-VAL
   (INHERIT
     ONT::DOMAIN-PROPERTY)
   (OVERLAP
+    WN::|best%3:00:00::|
+    WN::|most%3:00:01::|
+    WN::|most%3:00:02::|
     WN::|ultimate%3:00:00::|
     WN::|maximum%3:00:00::|)
   (SEM-FEATS
@@ -20706,6 +25703,22 @@
     (TYPE ONT::MEANINGFULNESS-VAL)))
 
 (CONCEPT
+  ONT::MEASURABILITY-VAL
+  (COMMENT "(measurable)")
+  (INHERIT
+    ONT::CAN-BE-DONE-VAL))
+
+(CONCEPT
+  ONT::MEASURABLE-VAL
+  (COMMENT "(measurable)")
+  (INHERIT
+    ONT::MEASURABILITY-VAL)
+  (OVERLAP
+    WN::|fathomable%3:00:00::|
+    WN::|plumbable%3:00:00::|
+    WN::|soundable%3:00:00::|))
+
+(CONCEPT
   ONT::MEASURE
   (INHERIT
     ONT::EVENT-OF-STATE)
@@ -20722,7 +25735,50 @@
 (CONCEPT
   ONT::MEASURE-RELATED-PROPERTY-VAL
   (INHERIT
-    ONT::QUANTITY-RELATED-PROPERTY-VAL))
+    ONT::QUANTITY-RELATED-PROPERTY-VAL)
+  (OVERLAP
+    WN::|thermometric%3:01:00::|
+    WN::|monetary%3:01:00::|
+    WN::|pecuniary%3:01:00::|
+    WN::|multiphase%3:01:00::|
+    WN::|polyphase%3:01:00::|
+    WN::|anthropometric%3:01:00::|
+    WN::|anthropometrical%3:01:00::|
+    WN::|quadratic%3:01:00::|
+    WN::|fahrenheit%3:01:00::|
+    WN::|molal%3:01:00::|
+    WN::|non-metric%3:01:00::|
+    WN::|bathymetric%3:01:00::|
+    WN::|bathymetrical%3:01:00::|
+    WN::|anemometric%3:01:00::|
+    WN::|anemometrical%3:01:00::|
+    WN::|algometric%3:01:00::|
+    WN::|algometrical%3:01:00::|
+    WN::|actinometric%3:01:00::|
+    WN::|actinometrical%3:01:00::|
+    WN::|hydrometric%3:01:00::|
+    WN::|gravimetric%3:01:00::|
+    WN::|molar%3:01:02::|
+    WN::|igneous%3:01:01::|
+    WN::|pyrogenic%3:01:00::|
+    WN::|pyrogenous%3:01:00::|
+    WN::|biquadratic%3:01:00::|
+    WN::|mensural%3:01:01::|
+    WN::|probabilistic%3:01:00::|
+    WN::|calorimetric%3:01:00::|
+    WN::|caloric%3:01:02::|
+    WN::|noncaloric%3:01:00::|
+    WN::|anemographic%3:01:00::|
+    WN::|audiometric%3:01:00::|
+    WN::|cytophotometric%3:01:00::|
+    WN::|ohmic%3:01:00::|
+    WN::|molar%3:01:00::|
+    WN::|photometric%3:01:00::|
+    WN::|photometrical%3:01:00::|
+    WN::|normative%3:01:00::|
+    WN::|centigrade%3:01:00::|
+    WN::|telemetered%3:01:00::|
+    WN::|integral%3:01:00::|))
 
 (CONCEPT
   ONT::MEASURE-SCALE
@@ -20779,6 +25835,7 @@
   (INHERIT
     ONT::PHYSICAL-VAL)
   (OVERLAP
+    WN::|nonmechanical%3:00:00::|
     WN::|mechanical%3:00:00::|))
 
 (CONCEPT
@@ -20882,6 +25939,121 @@
     WN::|surgical_incision%1:04:00::|))
 
 (CONCEPT
+  ONT::MEDICAL-PROPERTY-VAL
+  (INHERIT
+    ONT::MEDICAL-VAL)
+  (OVERLAP
+    WN::|epidemic%3:00:00::|
+    WN::|local%3:00:02::|
+    WN::|chronic%3:00:00::|
+    WN::|positive%3:00:04::|
+    WN::|confirming%3:00:02::|
+    WN::|active%3:00:02::|
+    WN::|general%3:00:02::|
+    WN::|negative%3:00:04::|
+    WN::|disconfirming%3:00:02::|
+    WN::|malign%3:00:00::|
+    WN::|malignant%3:00:02::|
+    WN::|acute%3:00:00::|
+    WN::|hippocratic%3:01:00::|
+    WN::|epidemiologic%3:01:00::|
+    WN::|epidemiological%3:01:00::|
+    WN::|dermatologic%3:01:00::|
+    WN::|dermatological%3:01:00::|
+    WN::|ophthalmic%3:01:00::|
+    WN::|specific%3:00:02::|
+    WN::|autoplastic%3:01:00::|
+    WN::|nonsurgical%3:01:00::|
+    WN::|allopathic%3:01:00::|
+    WN::|pathological%3:01:00::|
+    WN::|pathologic%3:01:00::|
+    WN::|electroencephalographic%3:01:00::|
+    WN::|periodontic%3:01:00::|
+    WN::|periodontal%3:01:00::|
+    WN::|cardiologic%3:01:00::|
+    WN::|anticoagulative%3:01:00::|
+    WN::|dental%3:01:01::|
+    WN::|therapeutic%3:01:00::|
+    WN::|therapeutical%3:01:00::|
+    WN::|bacteriological%3:01:00::|
+    WN::|bacteriologic%3:01:00::|
+    WN::|orthopedic%3:01:00::|
+    WN::|orthopaedic%3:01:00::|
+    WN::|orthopedical%3:01:00::|
+    WN::|orthodontic%3:01:00::|
+    WN::|catatonic%3:01:00::|
+    WN::|premedical%3:01:00::|
+    WN::|oncological%3:01:00::|
+    WN::|oncologic%3:01:00::|
+    WN::|invasive%3:00:01::|
+    WN::|pediatric%3:01:00::|
+    WN::|paediatric%3:01:00::|
+    WN::|cardiographic%3:01:00::|
+    WN::|psychotherapeutic%3:01:00::|
+    WN::|homeopathic%3:01:00::|
+    WN::|prosthetic%3:01:01::|
+    WN::|nonprescription%3:00:00::|
+    WN::|over-the-counter%3:00:00::|
+    WN::|pharmacological%3:01:00::|
+    WN::|pharmacologic%3:01:00::|
+    WN::|psychiatric%3:01:00::|
+    WN::|psychiatrical%3:01:00::|
+    WN::|prosthodontic%3:01:00::|
+    WN::|clonic%3:01:00::|
+    WN::|chemotherapeutic%3:01:00::|
+    WN::|chemotherapeutical%3:01:00::|
+    WN::|immunological%3:01:00::|
+    WN::|immunologic%3:01:00::|
+    WN::|hematologic%3:01:00::|
+    WN::|haematological%3:01:00::|
+    WN::|hematological%3:01:00::|
+    WN::|virological%3:01:00::|
+    WN::|exodontic%3:01:00::|
+    WN::|electrocardiographic%3:01:00::|
+    WN::|neuropsychiatric%3:01:00::|
+    WN::|pharmaceutical%3:01:01::|
+    WN::|empiric%3:01:00::|
+    WN::|empirical%3:01:00::|
+    WN::|noninvasive%3:00:00::|
+    WN::|antiviral%3:01:00::|
+    WN::|biomedical%3:01:00::|
+    WN::|preclinical%3:01:00::|
+    WN::|presymptomatic%3:01:00::|
+    WN::|pharmaceutical%3:01:00::|
+    WN::|pharmaceutic%3:01:00::|
+    WN::|psychopharmacological%3:01:00::|
+    WN::|psychoanalytical%3:01:00::|
+    WN::|psychoanalytic%3:01:00::|
+    WN::|physiotherapeutic%3:01:00::|
+    WN::|surgical%3:01:00::|
+    WN::|prescription%3:00:00::|
+    WN::|clinical%3:01:00::|
+    WN::|endodontic%3:01:00::|
+    WN::|obstetric%3:01:00::|
+    WN::|obstetrical%3:01:00::|
+    WN::|gynecological%3:01:00::|
+    WN::|gynaecological%3:01:00::|
+    WN::|gynecologic%3:01:00::|
+    WN::|nosocomial%3:01:00::|
+    WN::|veterinary%3:01:00::|
+    WN::|parenteral%3:01:01::|
+    WN::|serologic%3:01:00::|
+    WN::|serological%3:01:00::|
+    WN::|neurotropic%3:01:00::|
+    WN::|toxicological%3:01:00::|
+    WN::|toxicologic%3:01:00::|
+    WN::|antidotal%3:01:00::|
+    WN::|immunotherapeutic%3:01:00::|
+    WN::|geriatric%3:01:00::|
+    WN::|gerontological%3:01:00::|
+    WN::|bronchoscopic%3:01:00::|
+    WN::|medicolegal%3:01:00::|
+    WN::|self-limited%3:01:00::|
+    WN::|aeromedical%3:01:00::|
+    WN::|neurological%3:01:00::|
+    WN::|neurologic%3:01:00::|))
+
+(CONCEPT
   ONT::MEDICAL-SYMPTOM
   (INHERIT
     ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
@@ -20893,7 +26065,39 @@
 (CONCEPT
   ONT::MEDICAL-SYMPTOM-VAL
   (INHERIT
-    ONT::MEDICAL-CONDITION-PROPERTY-VAL))
+    ONT::MEDICAL-CONDITION-PROPERTY-VAL)
+  (OVERLAP
+    WN::|sciatic%3:01:01::|
+    WN::|apneic%3:01:00::|
+    WN::|apnoeic%3:01:00::|
+    WN::|natriuretic%3:01:00::|
+    WN::|myalgic%3:01:00::|
+    WN::|arthralgic%3:01:00::|
+    WN::|amenorrheic%3:01:00::|
+    WN::|amenorrhoeic%3:01:00::|
+    WN::|amenorrheal%3:01:00::|
+    WN::|amenorrhoeal%3:01:00::|
+    WN::|calcific%3:01:00::|
+    WN::|congestive%3:01:00::|
+    WN::|granulomatous%3:01:00::|
+    WN::|neuralgic%3:01:00::|
+    WN::|albuminuric%3:01:00::|
+    WN::|catarrhal%3:01:00::|
+    WN::|anicteric%3:01:00::|
+    WN::|icterogenic%3:01:00::|
+    WN::|prodromal%3:01:00::|
+    WN::|prodromic%3:01:00::|
+    WN::|eruptive%3:01:00::|
+    WN::|hyperemic%3:01:00::|
+    WN::|spastic%3:01:00::|
+    WN::|anasarcous%3:01:00::|
+    WN::|neuromatous%3:01:00::|
+    WN::|symptomatic%3:01:00::|
+    WN::|tetanic%3:01:01::|
+    WN::|hypoglycemic%3:01:00::|
+    WN::|hypoglycaemic%3:01:00::|
+    WN::|afebrile%3:01:00::|
+    WN::|atrophic%3:01:00::|))
 
 (CONCEPT
   ONT::MEDICAL-TEST
@@ -20903,8 +26107,11 @@
 (CONCEPT
   ONT::MEDICAL-VAL
   (INHERIT
-    ONT::ASSOCIATED-WITH-VAL)
+    ONT::ASSOCIATED-WITH-SCIENCE-VAL)
   (OVERLAP
+    WN::|surgical%3:00:00::|
+    WN::|operative%3:00:04::|
+    WN::|paramedical%3:01:00::|
     WN::|medical%3:01:00::|))
 
 (CONCEPT
@@ -20939,6 +26146,10 @@
   (COMMENT "means of production and dissemination (c.f. ont::mode)")
   (INHERIT
     ONT::SUBSTANTIAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|magnetic%3:00:00::|
+    WN::|magnetized%3:00:00::|
+    WN::|magnetised%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -21121,6 +26332,9 @@
   (INHERIT
     ONT::ASSOCIATED-WITH-VAL)
   (OVERLAP
+    WN::|inward%3:00:00::|
+    WN::|cerebral%3:00:00::|
+    WN::|intellectual%3:00:05::|
     WN::|mental%3:00:00::|
     WN::|mental%3:01:00::|)
   (SEM-FRAME
@@ -21128,6 +26342,14 @@
      (CONCEPT
        T)
      OPTIONAL)))
+
+(CONCEPT
+  ONT::MENTALLY-SLOW-VAL
+  (COMMENT "(retarded)")
+  (INHERIT
+    ONT::INTELLIGENCE-VAL)
+  (OVERLAP
+    WN::|retarded%3:00:00::|))
 
 (CONCEPT
   ONT::MERE-VAL
@@ -21150,6 +26372,63 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::MESSAGE-PROPERTY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-COMMUNICATION-VAL)
+  (OVERLAP
+    WN::|annunciatory%3:01:00::|
+    WN::|elocutionary%3:01:00::|
+    WN::|poetic%3:01:00::|
+    WN::|poetical%3:01:00::|
+    WN::|formulary%3:01:00::|
+    WN::|synoptic%3:01:00::|
+    WN::|bolographic%3:01:00::|
+    WN::|proverbial%3:01:00::|
+    WN::|rhetorical%3:01:00::|
+    WN::|bromidic%3:01:00::|
+    WN::|idiomatic%3:01:00::|
+    WN::|idiomatical%3:01:00::|
+    WN::|vocal%3:01:00::|
+    WN::|stigmatic%3:01:01::|
+    WN::|articulatory%3:01:00::|
+    WN::|articulative%3:01:00::|
+    WN::|symbolic%3:01:01::|
+    WN::|thematic%3:01:00::|
+    WN::|symbolic%3:01:00::|
+    WN::|symbolical%3:01:00::|
+    WN::|promotional%3:01:00::|
+    WN::|canonist%3:01:00::|
+    WN::|unthematic%3:01:00::|
+    WN::|graphic%3:01:00::|
+    WN::|graphical%3:01:00::|
+    WN::|communicative%3:01:00::|
+    WN::|vocal%3:01:02::|
+    WN::|axiomatic%3:01:00::|
+    WN::|axiomatical%3:01:00::|
+    WN::|postulational%3:01:00::|
+    WN::|testimonial%3:01:01::|
+    WN::|back-channel%3:01:00::|
+    WN::|dialectal%3:01:00::|
+    WN::|dramaturgic%3:01:00::|
+    WN::|dramaturgical%3:01:00::|
+    WN::|pictorial%3:01:00::|
+    WN::|pictural%3:01:00::|
+    WN::|indexical%3:01:00::|
+    WN::|postal%3:01:00::|
+    WN::|theatrical%3:01:00::|
+    WN::|canonic%3:01:02::|
+    WN::|canonical%3:01:02::|
+    WN::|prosodic%3:01:00::|
+    WN::|extropic%3:01:00::|
+    WN::|promissory%3:01:00::|
+    WN::|evidentiary%3:01:00::|
+    WN::|axiomatic%3:01:02::|
+    WN::|aphoristic%3:01:00::|
+    WN::|promotional%3:01:01::|
+    WN::|archaistic%3:01:00::|
+    WN::|testimonial%3:01:00::|))
+
+(CONCEPT
   ONT::MESSY-SCALE
   (INHERIT
     ONT::ORDERLINESS-SCALE)
@@ -21160,8 +26439,10 @@
 (CONCEPT
   ONT::MESSY-VAL
   (INHERIT
-    ONT::ORDERLINESS-VAL)
+    ONT::NOT-ORDERLY-VAL)
   (OVERLAP
+    WN::|disarranged%3:00:00::|
+    WN::|uncombed%3:00:00::|
     WN::|messy%5:00:00:untidy:00|
     WN::|untidy%3:00:00::|)
   (SEM-FEATS
@@ -21239,6 +26520,9 @@
   (INHERIT
     ONT::ATMOSPHERIC-VAL)
   (OVERLAP
+    WN::|temperate%3:00:01::|
+    WN::|favorable%3:00:01::|
+    WN::|favourable%3:00:01::|
     WN::|clement%3:00:02::|))
 
 (CONCEPT
@@ -21281,6 +26565,7 @@
   (INHERIT
     ONT::DOMAIN-PROPERTY)
   (OVERLAP
+    WN::|worst%3:00:00::|
     WN::|minimum%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -21397,6 +26682,8 @@
   (INHERIT
     ONT::SEVERITY-VAL)
   (OVERLAP
+    WN::|gradual%3:00:02::|
+    WN::|gradual%3:00:01::|
     WN::|moderate%3:00:00::|))
 
 (CONCEPT
@@ -21404,6 +26691,7 @@
   (INHERIT
     ONT::HISTORICAL-ERA-VAL)
   (OVERLAP
+    WN::|nonclassical%3:00:00::|
     WN::|modern%3:00:00::|
     WN::|contemporary%5:00:00:modern:00|))
 
@@ -21412,6 +26700,7 @@
   (INHERIT
     ONT::MODESTY-VAL)
   (OVERLAP
+    WN::|humble%3:00:00::|
     WN::|modest%3:00:02::|
     WN::|unassuming%5:00:00:modest:02|)
   (SEM-FEATS
@@ -21569,6 +26858,11 @@
   (INHERIT
     ONT::MORALITY-VAL)
   (OVERLAP
+    WN::|just%3:00:00::|
+    WN::|scrupulous%3:00:00::|
+    WN::|unblemished%3:00:00::|
+    WN::|unmarred%3:00:00::|
+    WN::|unmutilated%3:00:00::|
     WN::|moral%3:00:00::|
     WN::|virtuous%3:00:00::|
     WN::|chaste%3:00:00::|
@@ -21615,6 +26909,10 @@
   ONT::MORE-VAL
   (INHERIT
     ONT::DOMAIN-PROPERTY)
+  (OVERLAP
+    WN::|better%3:00:00::|
+    WN::|better%3:00:02::|
+    WN::|greater%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -21976,6 +27274,104 @@
     WN::|movement%1:10:00::|))
 
 (CONCEPT
+  ONT::MUSIC-PROPERTY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-MUSIC-VAL)
+  (OVERLAP
+    WN::|decreasing%3:00:02::|
+    WN::|piano%3:00:00::|
+    WN::|soft%3:00:07::|
+    WN::|increasing%3:00:02::|
+    WN::|forte%3:00:00::|
+    WN::|loud%3:00:02::|
+    WN::|musical%3:00:02::|
+    WN::|unmelodious%3:00:00::|
+    WN::|unmelodic%3:00:04::|
+    WN::|unmusical%3:00:04::|
+    WN::|pitched%3:44:00::|
+    WN::|unmusical%3:00:02::|
+    WN::|nonmusical%3:00:02::|
+    WN::|euphonious%3:00:00::|
+    WN::|euphonous%3:00:00::|
+    WN::|harmonious%3:00:00::|
+    WN::|inharmonious%3:00:00::|
+    WN::|unharmonious%3:00:02::|
+    WN::|melodious%3:00:00::|
+    WN::|melodic%3:00:04::|
+    WN::|musical%3:00:04::|
+    WN::|tuneful%3:00:00::|
+    WN::|melodious%3:00:04::|
+    WN::|tuneless%3:00:00::|
+    WN::|untuneful%3:00:00::|
+    WN::|unmelodious%3:00:04::|
+    WN::|slow%3:00:02::|
+    WN::|fast%3:00:02::|
+    WN::|tonal%3:00:00::|
+    WN::|musical%3:00:01::|
+    WN::|monophonic%3:00:00::|
+    WN::|plucked%3:00:00::|
+    WN::|staccato%3:00:00::|
+    WN::|disconnected%3:00:02::|
+    WN::|bowed%3:00:00::|
+    WN::|unfretted%3:01:00::|
+    WN::|dramatic%3:00:02::|
+    WN::|natural%3:00:04::|
+    WN::|disjunct%3:00:00::|
+    WN::|major%3:00:04::|
+    WN::|percussive%3:01:00::|
+    WN::|pianistic%3:01:01::|
+    WN::|chordal%3:01:00::|
+    WN::|modal%3:01:01::|
+    WN::|operatic%3:01:00::|
+    WN::|thematic%3:01:01::|
+    WN::|unmusical%3:00:01::|
+    WN::|nonmusical%3:00:01::|
+    WN::|orchestrated%3:01:00::|
+    WN::|prolusory%3:01:00::|
+    WN::|isotonic%3:01:00::|
+    WN::|chromatic%3:00:01::|
+    WN::|harmonic%3:01:00::|
+    WN::|serial%3:01:02::|
+    WN::|contrapuntal%3:01:00::|
+    WN::|orchestral%3:01:00::|
+    WN::|tertian%3:01:01::|
+    WN::|legato%3:00:00::|
+    WN::|smooth%3:00:03::|
+    WN::|musicological%3:01:00::|
+    WN::|scalar%3:01:01::|
+    WN::|conjunct%3:00:00::|
+    WN::|first%3:00:03::|
+    WN::|choral%3:01:01::|
+    WN::|fretted%3:01:00::|
+    WN::|polyphonic%3:00:00::|
+    WN::|contrapuntal%3:00:00::|
+    WN::|atonal%3:00:00::|
+    WN::|unkeyed%3:00:00::|
+    WN::|flat%3:00:00::|
+    WN::|minor%3:00:04::|
+    WN::|musical%3:01:00::|
+    WN::|tympanic%3:01:01::|
+    WN::|instrumental%3:01:00::|
+    WN::|anticlimactic%3:01:00::|
+    WN::|anticlimactical%3:01:00::|
+    WN::|sharp%3:00:03::|
+    WN::|scalic%3:01:00::|
+    WN::|diatonic%3:00:00::|
+    WN::|lyric%3:01:02::|
+    WN::|polyphonic%3:01:00::|
+    WN::|polyphonous%3:01:00::|
+    WN::|fugal%3:01:00::|
+    WN::|philharmonic%3:01:00::|
+    WN::|atonalistic%3:01:00::|
+    WN::|symphonic%3:01:00::|
+    WN::|lyric%3:00:00::|
+    WN::|melodic%3:01:00::|
+    WN::|balletic%3:01:00::|
+    WN::|pentatonic%3:01:00::|
+    WN::|second%3:00:00::|
+    WN::|nonharmonic%3:01:00::|))
+
+(CONCEPT
   ONT::MUSIC-SCALE
   (INHERIT
     ONT::MUSIC-COMPOSITION-ELEMENT)
@@ -22061,6 +27457,15 @@
     WN::|multiple%3:00:00::|))
 
 (CONCEPT
+  ONT::NAIVE-VAL
+  (COMMENT "positive form of inexperience (naive)")
+  (INHERIT
+    ONT::LACK-KNOWLEDGE-VAL)
+  (OVERLAP
+    WN::|naive%3:00:00::|
+    WN::|naif%3:00:00::|))
+
+(CONCEPT
   ONT::NAME
   (INHERIT
     ONT::IDENTIFICATION)
@@ -22111,14 +27516,6 @@
     (TYPE ONT::NARROW-VAL)))
 
 (CONCEPT
-  ONT::NATION-LAND-SPECIFIC-VAL
-  (COMMENT "associated with nation or land")
-  (INHERIT
-    ONT::ASSOCIATED-WITH-CULTURE-VAL)
-  (OVERLAP
-    WN::|northern%3:00:02::|))
-
-(CONCEPT
   ONT::NATIONAL-IDENTITY-VAL
   (COMMENT "identity based on the country/region of origin or residence")
   (INHERIT
@@ -22130,6 +27527,7 @@
   (INHERIT
     ONT::COUNTRY-RELATED-VAL)
   (OVERLAP
+    WN::|national%3:00:00::|
     WN::|domestic%3:00:00::|
     WN::|national%5:00:00:domestic:00|
     WN::|interior%5:00:00:domestic:00|
@@ -22143,10 +27541,25 @@
     ONT::NATIONAL-IDENTITY-VAL))
 
 (CONCEPT
+  ONT::NATIVE-VAL
+  (COMMENT "(native)")
+  (INHERIT
+    ONT::ORIGIN-RELATED-VAL)
+  (OVERLAP
+    WN::|native%3:00:01::|
+    WN::|native%3:00:03::|
+    WN::|native%3:00:02::|
+    WN::|aboriginal%3:00:00::|))
+
+(CONCEPT
   ONT::NATURAL
   (INHERIT
     ONT::ARTIFICIALITY-VAL)
   (OVERLAP
+    WN::|natural%3:00:03::|
+    WN::|artless%3:00:00::|
+    WN::|unaffected%3:00:01::|
+    WN::|natural%3:00:01::|
     WN::|natural%3:00:02::|)
   (SEM-FEATS
     (INHERIT
@@ -22291,6 +27704,7 @@
   (INHERIT
     ONT::DISTANCE-VAL)
   (OVERLAP
+    WN::|close%3:00:01::|
     WN::|near%3:00:00::|
     WN::|close%3:00:02::|
     WN::|nearby%5:00:00:near:00|
@@ -22399,6 +27813,8 @@
   (INHERIT
     ONT::ANIMAL-DISPOSITION-VAL)
   (OVERLAP
+    WN::|temperamental%3:01:00::|
+    WN::|adventuristic%3:01:00::|
     WN::|ill-natured%3:00:00::|))
 
 (CONCEPT
@@ -22491,11 +27907,35 @@
     WN::|night%1:28:00::|))
 
 (CONCEPT
+  ONT::NO-COLOR-VAL
+  (COMMENT "(colorless)")
+  (INHERIT
+    ONT::COLOR-VAL)
+  (OVERLAP
+    WN::|colorless%3:00:03::|
+    WN::|colourless%3:00:03::|
+    WN::|colorless%3:00:02::|
+    WN::|colourless%3:00:02::|
+    WN::|uncolored%3:00:00::|
+    WN::|uncoloured%3:00:00::|
+    WN::|unpigmented%3:01:00::|
+    WN::|black-and-white%3:01:00::|))
+
+(CONCEPT
   ONT::NO-COST-VAL
   (INHERIT
     ONT::COST-VAL)
   (OVERLAP
+    WN::|complimentary%3:00:00::|
     WN::|free%5:00:00:unpaid:00|))
+
+(CONCEPT
+  ONT::NO-SHAPE-VAL
+  (COMMENT "(unformed)")
+  (INHERIT
+    ONT::SHAPE-VAL)
+  (OVERLAP
+    WN::|unformed%3:00:00::|))
 
 (CONCEPT
   ONT::NOD
@@ -22547,6 +27987,8 @@
   (INHERIT
     ONT::ACTUALITY-VAL)
   (OVERLAP
+    WN::|unrealistic%3:00:00::|
+    WN::|unreal%3:00:02::|
     WN::|virtual%5:00:00:essential:00|
     WN::|imaginary%5:00:00:unreal:00|
     WN::|theoretical%3:00:00::|
@@ -22674,10 +28116,35 @@
     WN::|inaccessible%3:00:00::|))
 
 (CONCEPT
+  ONT::NOT-ACKNOWLEDGED-VAL
+  (COMMENT "not acknowledged openly nor publicly (unconfirmed)")
+  (INHERIT
+    ONT::OPEN-ACKNOWLEDGEMENT-VAL)
+  (OVERLAP
+    WN::|illegitimate%3:00:00::|
+    WN::|unacknowledged%3:00:00::|
+    WN::|undeclared%3:00:00::|
+    WN::|unestablished%3:00:00::|
+    WN::|unconfirmed%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-ADAPTABLE-VAL
+  (COMMENT "(unadaptable)")
+  (INHERIT
+    ONT::ADAPTABILITY-VAL)
+  (OVERLAP
+    WN::|unadaptable%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-AFFECTIONATE-VAL
   (INHERIT
     ONT::AFFECTION-VAL)
   (OVERLAP
+    WN::|uncompassionate%3:00:00::|
+    WN::|hardhearted%3:00:00::|
+    WN::|heartless%3:00:02::|
+    WN::|coldhearted%3:00:00::|
+    WN::|cold%3:00:02::|
     WN::|unfriendly%3:00:01::|
     WN::|hostile%3:00:01::|
     WN::|hostile%5:00:00:irreconcilable:00|)
@@ -22693,7 +28160,22 @@
   (INHERIT
     ONT::BINDING-VAL)
   (OVERLAP
+    WN::|insecure%3:00:03::|
     WN::|loose%3:00:04::|))
+
+(CONCEPT
+  ONT::NOT-AILING-VAL
+  (COMMENT "(uninjured)")
+  (INHERIT
+    ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL))
+
+(CONCEPT
+  ONT::NOT-ALERT-VAL
+  (COMMENT "(unwary)")
+  (INHERIT
+    ONT::NEGATIVE-BODY-CONDITION-PROPERTY-VAL)
+  (OVERLAP
+    WN::|unwary%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-AMBITIOUS-VAL
@@ -22721,6 +28203,9 @@
   (INHERIT
     ONT::APPROPRIATENESS-VAL)
   (OVERLAP
+    WN::|inexpedient%3:00:00::|
+    WN::|improper%3:00:00::|
+    WN::|malapropos%3:00:00::|
     WN::|inappropriate%3:00:00::|
     WN::|improper%5:00:00:inappropriate:00|
     WN::|immoderate%3:00:00::|
@@ -22737,6 +28222,13 @@
   (INHERIT
     ONT::ATTENTIVENESS-VAL)
   (OVERLAP
+    WN::|unalert%3:00:00::|
+    WN::|unwatchful%3:00:00::|
+    WN::|unvigilant%3:00:00::|
+    WN::|negligent%3:00:00::|
+    WN::|unmindful%3:00:00::|
+    WN::|forgetful%3:00:02::|
+    WN::|mindless%3:00:00::|
     WN::|inattentive%3:00:00::|
     WN::|heedless%3:00:00::|)
   (SEM-FEATS
@@ -22754,6 +28246,17 @@
     WN::|repugnance%1:12:00::|))
 
 (CONCEPT
+  ONT::NOT-ATTRACTIVE-VAL
+  (COMMENT "(unattractive)")
+  (INHERIT
+    ONT::ATTRACTIVENESS-VAL)
+  (OVERLAP
+    WN::|unattractive%3:00:00::|
+    WN::|unsexy%3:00:00::|
+    WN::|unseductive%3:00:00::|
+    WN::|uninviting%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-AVAILABLE-VAL
   (INHERIT
     ONT::AVAILABILITY-VAL)
@@ -22762,10 +28265,20 @@
     WN::|unavailable%3:00:00::|))
 
 (CONCEPT
+  ONT::NOT-AVOIDABLE-VAL
+  (COMMENT "(inevitable)")
+  (INHERIT
+    ONT::AVOIDABILITY-VAL))
+
+(CONCEPT
   ONT::NOT-AWARE-VAL
   (INHERIT
     ONT::AWARENESS-VAL)
   (OVERLAP
+    WN::|unconscious%3:00:00::|
+    WN::|indiscreet%3:00:00::|
+    WN::|unwitting%3:00:00::|
+    WN::|insensitive%3:00:02::|
     WN::|unaware%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -22775,10 +28288,21 @@
     (TYPE ONT::NOT-AWARE-VAL)))
 
 (CONCEPT
+  ONT::NOT-BASIC-VAL
+  (COMMENT "(inessential)")
+  (INHERIT
+    ONT::BASICNESS-VAL)
+  (OVERLAP
+    WN::|inessential%3:00:00::|
+    WN::|unessential%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-BIASED-VAL
   (INHERIT
     ONT::BIAS-VAL)
   (OVERLAP
+    WN::|equitable%3:00:00::|
+    WN::|just%3:00:02::|
     WN::|impartial%3:00:00::|
     WN::|objective%3:00:00::|
     WN::|fair%3:00:03::|
@@ -22796,6 +28320,11 @@
   (INHERIT
     ONT::BOLDNESS-VAL)
   (OVERLAP
+    WN::|unassertive%3:00:00::|
+    WN::|unadventurous%3:00:00::|
+    WN::|unenterprising%3:00:00::|
+    WN::|nonenterprising%3:00:00::|
+    WN::|backward%3:00:02::|
     WN::|timid%3:00:00::|
     WN::|unaggressive%3:00:00::|)
   (SEM-FEATS
@@ -22810,6 +28339,10 @@
   (INHERIT
     ONT::CAREFULNESS-VAL)
   (OVERLAP
+    WN::|incautious%3:00:00::|
+    WN::|uncritical%3:00:02::|
+    WN::|noncritical%3:00:04::|
+    WN::|imprudent%3:00:00::|
     WN::|careless%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -22817,6 +28350,16 @@
     (ORIENTATION NEG)
     (SCALE ONT::CAUTIOUSNESS-SCALE)
     (TYPE ONT::NOT-CAREFUL-VAL)))
+
+(CONCEPT
+  ONT::NOT-CARING-VAL
+  (COMMENT "(unloving)")
+  (INHERIT
+    ONT::SOCIAL-CARE-AND-SUPPORT-VAL)
+  (OVERLAP
+    WN::|unloving%3:00:00::|
+    WN::|unsupportive%3:00:00::|
+    WN::|unsympathetic%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-CAUSING-DEATH-VAL
@@ -22833,6 +28376,24 @@
     WN::|doubt%1:09:00::|))
 
 (CONCEPT
+  ONT::NOT-CHANGEABLE-VAL
+  (COMMENT "(unchangeable, unmodifiable)")
+  (INHERIT
+    ONT::CHANGEABILITY-VAL)
+  (OVERLAP
+    WN::|invariable%3:00:00::|
+    WN::|immutable%3:00:00::|
+    WN::|changeless%3:00:04::|))
+
+(CONCEPT
+  ONT::NOT-CLEVER-VAL
+  (COMMENT "(impolitic)")
+  (INHERIT
+    ONT::STUPID)
+  (OVERLAP
+    WN::|impolitic%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-COMFORTABLE-SCALE
   (INHERIT
     ONT::COMFORT-SCALE)
@@ -22840,10 +28401,20 @@
     WN::|discomfort%1:26:00::|))
 
 (CONCEPT
+  ONT::NOT-COMMUNICATIVE-VAL
+  (COMMENT "(uncommunicative)")
+  (INHERIT
+    ONT::COMMUNICATIVENESS-VAL)
+  (OVERLAP
+    WN::|uncommunicative%3:00:00::|
+    WN::|incommunicative%3:00:04::|))
+
+(CONCEPT
   ONT::NOT-COMPATIBLE-VAL
   (INHERIT
     ONT::COMPATIBILITY-VAL)
   (OVERLAP
+    WN::|mismatched%3:00:00::|
     WN::|incompatible%3:00:01::|
     WN::|incompatible%3:00:04::|))
 
@@ -22852,6 +28423,9 @@
   (INHERIT
     ONT::COMPREHENSIBILITY-VAL)
   (OVERLAP
+    WN::|incoherent%3:00:00::|
+    WN::|unfathomable%3:00:00::|
+    WN::|unknowable%3:00:00::|
     WN::|incomprehensible%3:00:00::|
     WN::|incomprehensible%3:00:04::|
     WN::|unfriendly%3:00:02::|)
@@ -22861,6 +28435,54 @@
     (ORIENTATION NEG)
     (SCALE ONT::COMPREHENSIBILITY-SCALE)
     (TYPE ONT::NOT-COMPREHENSIBLE-VAL)))
+
+(CONCEPT
+  ONT::NOT-CONCERNED-VAL
+  (COMMENT "(untroubled, unconcerned)")
+  (INHERIT
+    ONT::UNAFFECTED-VAL)
+  (OVERLAP
+    WN::|untroubled%3:00:00::|
+    WN::|unconcerned%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-CONSIDERATE-VAL
+  (COMMENT "(thoughtless, inconsiderate)")
+  (INHERIT
+    ONT::CONSIDERATION-VAL)
+  (OVERLAP
+    WN::|thoughtless%3:00:00::|
+    WN::|inconsiderate%3:00:00::|
+    WN::|unconscientious%3:00:00::|
+    WN::|tactless%3:00:00::|
+    WN::|untactful%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-CONTAINING-SUBSTANCE-VAL
+  (COMMENT "(rustless)")
+  (INHERIT
+    ONT::SUBSTANTIAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|rustless%3:00:00::|
+    WN::|nonalcoholic%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-CONTEMPORANEOUS-VAL
+  (COMMENT "(asynchronous)")
+  (INHERIT
+    ONT::TEMPORAL-RELATION-VAL)
+  (OVERLAP
+    WN::|asynchronous%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-CONTROLLED-VAL
+  (COMMENT "not controlled by human entity (uncontrolled, unguided)")
+  (INHERIT
+    ONT::CONTROL-VAL)
+  (OVERLAP
+    WN::|unrestrained%3:00:00::|
+    WN::|untempered%3:00:01::|
+    WN::|unguided%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-CONVENIENT-SCALE
@@ -22874,6 +28496,7 @@
   (INHERIT
     ONT::CONVENIENCE-VAL)
   (OVERLAP
+    WN::|incommodious%3:00:00::|
     WN::|inconvenient%3:00:00::|
     WN::|awkward%5:00:00:inconvenient:00|)
   (SEM-FEATS
@@ -22890,10 +28513,42 @@
     WN::|originality%1:07:00::|))
 
 (CONCEPT
+  ONT::NOT-CORRESPONDING-VAL
+  (COMMENT "(incommesurate)")
+  (INHERIT
+    ONT::CORRESPONDENCE-VAL)
+  (OVERLAP
+    WN::|incommensurate%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-COURTEOUS-VAL
+  (COMMENT "(discourteous, impolite)")
+  (INHERIT
+    ONT::COURTESY-POLITENESS-VAL)
+  (OVERLAP
+    WN::|merciless%3:00:00::|
+    WN::|unmerciful%3:00:04::|
+    WN::|unkind%3:00:00::|
+    WN::|impolite%3:00:00::|
+    WN::|discourteous%3:00:00::|
+    WN::|ungracious%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-CREATIVE-VAL
+  (COMMENT "(uncreative)")
+  (INHERIT
+    ONT::CREATIVITY-VAL)
+  (OVERLAP
+    WN::|unoriginal%3:00:00::|
+    WN::|uncreative%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-CREDIBLE-VAL
   (INHERIT
     ONT::CREDIBILITY-VAL)
   (OVERLAP
+    WN::|unconvincing%3:00:00::|
+    WN::|flimsy%3:00:02::|
     WN::|unbelievable%3:00:04::|
     WN::|incredible%3:00:00::|)
   (SEM-FEATS
@@ -22902,6 +28557,79 @@
     (ORIENTATION NEG)
     (SCALE ONT::CREDIBILITY-SCALE)
     (TYPE ONT::NOT-CREDIBLE-VAL)))
+
+(CONCEPT
+  ONT::NOT-CULPABLE-VAL
+  (COMMENT "(innocent)")
+  (INHERIT
+    ONT::LEGAL-CULPABILITY-VAL)
+  (OVERLAP
+    WN::|innocent%3:00:00::|
+    WN::|guiltless%3:00:00::|
+    WN::|clean-handed%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-DAMAGED-VAL
+  (COMMENT "(sound, undamaged)")
+  (INHERIT
+    ONT::FUNCTIONALITY-VAL)
+  (OVERLAP
+    WN::|sound%3:00:01::|
+    WN::|undamaged%3:00:00::|
+    WN::|unimpaired%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-DECISIVE-VAL
+  (COMMENT "(indecisive)")
+  (INHERIT
+    ONT::DECISIVENESS-VAL)
+  (OVERLAP
+    WN::|irresolute%3:00:00::|
+    WN::|indecisive%3:00:01::|))
+
+(CONCEPT
+  ONT::NOT-DESIRABLE-VAL
+  (COMMENT "(undesirable)")
+  (INHERIT
+    ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
+  (OVERLAP
+    WN::|unwanted%3:00:00::|
+    WN::|undesirable%3:00:00::|
+    WN::|unwanted%3:00:01::|))
+
+(CONCEPT
+  ONT::NOT-DESIROUS-VAL
+  (COMMENT "(undesirous)")
+  (INHERIT
+    ONT::NEUTRAL-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|undesirous%3:00:00::|
+    WN::|undesiring%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-DIGNIFIED-VAL
+  (COMMENT "(undignified)")
+  (INHERIT
+    ONT::DIGNITY-VAL)
+  (OVERLAP
+    WN::|undignified%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-DISCERNING-VAL
+  (COMMENT "(indiscriminate)")
+  (INHERIT
+    ONT::DISCERNMENT-VAL)
+  (OVERLAP
+    WN::|indiscriminate%3:00:00::|
+    WN::|undiscerning%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-DISEASED-VAL
+  (COMMENT "(antiseptic)")
+  (INHERIT
+    ONT::DISEASE-INFECTION-VAL)
+  (OVERLAP
+    WN::|antiseptic%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-EFFECTIVE-VAL
@@ -22931,6 +28659,23 @@
     (TYPE ONT::NOT-EFFICIENT-VAL)))
 
 (CONCEPT
+  ONT::NOT-EMOTIONAL-VAL
+  (COMMENT "(unemotional)")
+  (INHERIT
+    ONT::EMOTIONALITY-VAL)
+  (OVERLAP
+    WN::|unmoving%3:00:00::|
+    WN::|unemotional%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-ENCLOSED-VAL
+  (COMMENT "(unenclosed)")
+  (INHERIT
+    ONT::ENCLOSURE-VAL)
+  (OVERLAP
+    WN::|unenclosed%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-ENFORCEABLE-VAL
   (INHERIT
     ONT::ENFORCEABILITY-VAL)
@@ -22949,12 +28694,22 @@
   (INHERIT
     ONT::COST-VAL)
   (OVERLAP
+    WN::|downmarket%3:00:00::|
     WN::|cheap%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
     (SCALE ONT::NOT-EXPENSIVE-SCALE)
     (TYPE ONT::NOT-EXPENSIVE-VAL)))
+
+(CONCEPT
+  ONT::NOT-FAITHFUL-VAL
+  (COMMENT "(unfaithful)")
+  (INHERIT
+    ONT::FAITHFULNESS-VAL)
+  (OVERLAP
+    WN::|unfaithful%3:00:01::|
+    WN::|unfaithful%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-FAMILIAR-SCALE
@@ -22983,10 +28738,31 @@
     WN::|inflexible%3:00:01::|))
 
 (CONCEPT
+  ONT::NOT-FORGIVING-VAL
+  (COMMENT "(unforgiving)")
+  (INHERIT
+    ONT::FORGIVENESS-VAL)
+  (OVERLAP
+    WN::|unforgiving%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-FRANK-VAL
+  (COMMENT "indirect, allusive (indirect, allusive)")
+  (INHERIT
+    ONT::FRANKNESS-VAL)
+  (OVERLAP
+    WN::|direct%3:00:02::|
+    WN::|indirect%3:00:02::|))
+
+(CONCEPT
   ONT::NOT-FREE-VAL
   (INHERIT
     ONT::FREEDOM-VAL)
   (OVERLAP
+    WN::|confined%3:00:00::|
+    WN::|bound%3:00:01::|
+    WN::|attached%3:00:01::|
+    WN::|committed%3:00:04::|
     WN::|servile%5:00:00:unfree:01|
     WN::|unfree%3:00:01::|
     WN::|stuck%3:00:00::|
@@ -23005,12 +28781,25 @@
   (INHERIT
     ONT::FRESHNESS-VAL)
   (OVERLAP
+    WN::|soured%3:00:00::|
     WN::|stale%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
     (SCALE ONT::NOT-FRESH-SCALE)
     (TYPE ONT::NOT-FRESH-VAL)))
+
+(CONCEPT
+  ONT::NOT-GENEROUS-VAL
+  (COMMENT "(stingy)")
+  (INHERIT
+    ONT::GENEROSITY-VAL)
+  (OVERLAP
+    WN::|stingy%3:00:00::|
+    WN::|ungenerous%3:00:04::|
+    WN::|uncharitable%3:00:00::|
+    WN::|ungenerous%3:00:00::|
+    WN::|meanspirited%3:00:02::|))
 
 (CONCEPT
   ONT::NOT-GRATEFUL-VAL
@@ -23027,6 +28816,35 @@
     (TYPE ONT::NOT-GRATEFUL-VAL)))
 
 (CONCEPT
+  ONT::NOT-HAVING-FUNCTION-VAL
+  (COMMENT "(nonfunctional)")
+  (INHERIT
+    ONT::FUNCTIONALITY-VAL)
+  (OVERLAP
+    WN::|nonfunctional%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-HEALTHY-VAL
+  (COMMENT "(unhealthy)")
+  (INHERIT
+    ONT::NEGATIVE-BODY-CONDITION-PROPERTY-VAL)
+  (OVERLAP
+    WN::|unhealthy%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-HELPFUL-VAL
+  (COMMENT "(unhelpful)")
+  (INHERIT
+    ONT::HELPFULNESS-VAL)
+  (OVERLAP
+    WN::|unhelpful%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-HEREDITARY-VAL
+  (INHERIT
+    ONT::BODY-SYSTEM-VAL))
+
+(CONCEPT
   ONT::NOT-HOMOGENEOUS-VAL
   (INHERIT
     ONT::HOMOGENEITY-VAL)
@@ -23038,6 +28856,9 @@
   (INHERIT
     ONT::HONESTY-VAL)
   (OVERLAP
+    WN::|pretentious%3:00:00::|
+    WN::|untruthful%3:00:00::|
+    WN::|insincere%3:00:00::|
     WN::|misleading%5:00:00:dishonest:00|
     WN::|dishonest%3:00:00::|)
   (SEM-FEATS
@@ -23046,6 +28867,14 @@
     (ORIENTATION NEG)
     (SCALE ONT::HONESTY-SCALE)
     (TYPE ONT::NOT-HONEST-VAL)))
+
+(CONCEPT
+  ONT::NOT-HOSPITABLE-VAL
+  (COMMENT "(inhospitable)")
+  (INHERIT
+    ONT::FAVORABILITY-TO-LIFE-VAL)
+  (OVERLAP
+    WN::|inhospitable%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-IMPORTANT-SCALE
@@ -23078,6 +28907,47 @@
     WN::|inoperative%3:00:00::|))
 
 (CONCEPT
+  ONT::NOT-INFECTIOUS-VAL
+  (COMMENT "(noninfectious)")
+  (INHERIT
+    ONT::DISEASED-VAL)
+  (OVERLAP
+    WN::|noninfectious%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-INFLUENTIAL-VAL
+  (COMMENT "(uninfluential)")
+  (INHERIT
+    ONT::INFLUENCE-VAL)
+  (OVERLAP
+    WN::|uninfluential%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-INJURED-VAL
+  (COMMENT "(uninjured)")
+  (INHERIT
+    ONT::NOT-AILING-VAL)
+  (OVERLAP
+    WN::|uninjured%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-INSPIRING-AWE-VAL
+  (COMMENT "(unimpressivle)")
+  (INHERIT
+    ONT::AWE-INSPIRATION-VAL)
+  (OVERLAP
+    WN::|unimpressive%3:00:00::|
+    WN::|uninspiring%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-INTELLECTUAL-VAL
+  (COMMENT "(nonintellectual)")
+  (INHERIT
+    ONT::INTELLECT-VAL)
+  (OVERLAP
+    WN::|nonintellectual%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-INTENTIONAL-VAL
   (INHERIT
     ONT::INTENTIONALITY-VAL)
@@ -23097,6 +28967,8 @@
   (INHERIT
     ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
+    WN::|incurious%3:00:00::|
+    WN::|uneager%3:00:00::|
     WN::|uninterested%3:00:00::|
     WN::|disinterested%5:00:00:impartial:00|)
   (SEM-FEATS
@@ -23104,6 +28976,32 @@
       ABSTR-OBJ)
     (SCALE ONT::APATHY-SCALE)
     (TYPE ONT::NOT-INTERESTED-VAL)))
+
+(CONCEPT
+  ONT::NOT-JUDGEMENTAL-VAL
+  (COMMENT "(uncritical)")
+  (INHERIT
+    ONT::INCLINED-TO-PASSING-JUDGEMENT-VAL)
+  (OVERLAP
+    WN::|uncritical%3:00:01::|))
+
+(CONCEPT
+  ONT::NOT-LAWFUL-VAL
+  (COMMENT "(unlawful, illegal)")
+  (INHERIT
+    ONT::NOT-PERMISSIBLE-VAL)
+  (OVERLAP
+    WN::|illegal%3:00:00::|
+    WN::|unlawful%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-LIKED-VAL
+  (COMMENT "(disliked, unloved)")
+  (INHERIT
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|unloved%3:00:00::|
+    WN::|disliked%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-LIKELY-SCALE
@@ -23117,6 +29015,10 @@
   (INHERIT
     ONT::LIKELIHOOD-VAL)
   (OVERLAP
+    WN::|unexpected%3:00:00::|
+    WN::|implausible%3:00:00::|
+    WN::|unthinkable%3:00:00::|
+    WN::|unlikely%3:00:00::|
     WN::|unlikely%3:00:04::|
     WN::|improbable%3:00:00::|)
   (SEM-FEATS
@@ -23139,13 +29041,28 @@
   (INHERIT
     ONT::LIFE-PROCESS-VAL)
   (OVERLAP
+    WN::|inorganic%3:00:02::|
+    WN::|extinct%3:00:01::|
+    WN::|nonextant%3:00:02::|
     WN::|non-living%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-LOGICAL-VAL
+  (COMMENT "(illogical)")
+  (INHERIT
+    ONT::LOGICALITY-VAL)
+  (OVERLAP
+    WN::|illogical%3:00:00::|
+    WN::|unlogical%3:00:04::|))
 
 (CONCEPT
   ONT::NOT-LOOSE-VAL
   (INHERIT
     ONT::CONSTRICTING-VAL)
   (OVERLAP
+    WN::|compact%3:00:00::|
+    WN::|constricted%3:00:00::|
+    WN::|tense%3:00:01::|
     WN::|snug%5:00:00:tight:01|
     WN::|tight%3:00:01::|
     WN::|choky%5:00:00:tight:01|
@@ -23157,10 +29074,46 @@
     (TYPE ONT::NOT-LOOSE-VAL)))
 
 (CONCEPT
+  ONT::NOT-LOYAL-VAL
+  (COMMENT "(disloyal)")
+  (INHERIT
+    ONT::LOYALTY-VAL)
+  (OVERLAP
+    WN::|unpatriotic%3:00:00::|
+    WN::|disloyal%3:00:06::|
+    WN::|disloyal%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-MARRIED-VAL
+  (COMMENT "(unmarried, single)")
+  (INHERIT
+    ONT::MARRIAGE-VAL)
+  (OVERLAP
+    WN::|unmarried%3:00:00::|
+    WN::|single%3:00:02::|))
+
+(CONCEPT
+  ONT::NOT-MATURE-VAL
+  (COMMENT "(immature, green)")
+  (INHERIT
+    ONT::MATURITY-VAL)
+  (OVERLAP
+    WN::|unfledged%3:00:00::|
+    WN::|immature%3:00:04::|
+    WN::|green%3:00:00::|
+    WN::|unripe%3:00:00::|
+    WN::|unripened%3:00:00::|
+    WN::|immature%3:00:06::|
+    WN::|premature%3:00:00::|
+    WN::|immature%3:00:01::|))
+
+(CONCEPT
   ONT::NOT-MEANINGFUL-VAL
   (INHERIT
     ONT::MEANINGFULNESS-VAL)
   (OVERLAP
+    WN::|unenlightening%3:00:00::|
+    WN::|unilluminating%3:00:00::|
     WN::|meaningless%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -23170,10 +29123,18 @@
     (TYPE ONT::NOT-MEANINGFUL-VAL)))
 
 (CONCEPT
+  ONT::NOT-MEASURABLE-VAL
+  (COMMENT "(immeasurable)")
+  (INHERIT
+    ONT::MEASURABILITY-VAL))
+
+(CONCEPT
   ONT::NOT-MORAL-VAL
   (INHERIT
     ONT::MORALITY-VAL)
   (OVERLAP
+    WN::|unrighteous%3:00:00::|
+    WN::|unethical%3:00:00::|
     WN::|immoral%3:00:00::|
     WN::|immoral%3:00:00:wrong:01|
     WN::|unprincipled%3:00:00::|
@@ -23199,6 +29160,7 @@
   (INHERIT
     ONT::NECESSITY-VAL)
   (OVERLAP
+    WN::|extrinsic%3:00:00::|
     WN::|unnecessary%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -23212,6 +29174,12 @@
   (INHERIT
     ONT::OFFENSIVENESS-VAL)
   (OVERLAP
+    WN::|clean%3:00:02::|
+    WN::|unobjectionable%3:00:02::|
+    WN::|euphemistic%3:00:00::|
+    WN::|inoffensive%3:00:05::|
+    WN::|inoffensive%3:00:02::|
+    WN::|unoffending%3:00:02::|
     WN::|inoffensive%3:00:01::|)
   (SEM-FEATS
     (INHERIT
@@ -23221,10 +29189,73 @@
     (TYPE ONT::NOT-OFFENSIVE-VAL)))
 
 (CONCEPT
+  ONT::NOT-OFFICIAL-VAL
+  (COMMENT "(unofficial)")
+  (INHERIT
+    ONT::OFFICIAL-AUTHORITY-VAL)
+  (OVERLAP
+    WN::|unofficial%3:00:00::|
+    WN::|unregistered%3:00:00::|
+    WN::|undocumented%3:00:00::|
+    WN::|uncertified%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-ORDERLY-VAL
+  (COMMENT "(disordered)")
+  (INHERIT
+    ONT::ORDERLINESS-VAL)
+  (OVERLAP
+    WN::|disordered%3:00:00::|
+    WN::|unordered%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-ORGANIZED-VAL
+  (COMMENT "lacking category, organization and/or structure (disorganized)")
+  (INHERIT
+    ONT::NOT-ORDERLY-VAL)
+  (OVERLAP
+    WN::|disorganized%3:00:00::|
+    WN::|disorganised%3:00:00::|
+    WN::|unorganized%3:00:00::|
+    WN::|unorganised%3:00:00::|
+    WN::|unstructured%3:00:00::|
+    WN::|unclassified%3:00:01::|
+    WN::|unsystematic%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-PATIENT-VAL
+  (COMMENT "(impatient)")
+  (INHERIT
+    ONT::PATIENCE-VAL)
+  (OVERLAP
+    WN::|impatient%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-PERMEABLE-VAL
+  (COMMENT "(impermeable, impervious)")
+  (INHERIT
+    ONT::PERMEABILITY-VAL)
+  (OVERLAP
+    WN::|impervious%3:00:00::|
+    WN::|imperviable%3:00:00::|
+    WN::|tight%3:00:02::|
+    WN::|impermeable%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-PERMISSIBLE-VAL
+  (COMMENT "(impermissible)")
+  (INHERIT
+    ONT::PERMISSIBILITY-VAL)
+  (OVERLAP
+    WN::|impermissible%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-PLAIN-VAL
   (INHERIT
     ONT::BASICNESS-VAL)
   (OVERLAP
+    WN::|rhetorical%3:00:00::|
+    WN::|dramatic%3:00:00::|
     WN::|fanciful%5:00:00:fancy:00|
     WN::|fancy%3:00:00::|
     WN::|elaborate%5:00:00:fancy:00|)
@@ -23240,6 +29271,9 @@
   (INHERIT
     ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
+    WN::|unrewarding%3:00:00::|
+    WN::|unpalatable%3:00:00::|
+    WN::|infelicitous%3:00:00::|
     WN::|unwelcome%3:00:00::|
     WN::|disagreeable%5:00:00:uncongenial:00|
     WN::|unpleasant%3:00:00::|
@@ -23276,6 +29310,7 @@
   (INHERIT
     ONT::PRECISION-VAL)
   (OVERLAP
+    WN::|inexact%3:00:00::|
     WN::|imprecise%3:00:00::|
     WN::|vague%3:00:04::|)
   (SEM-FEATS
@@ -23304,6 +29339,10 @@
   (INHERIT
     ONT::PREMEDITATION-VAL)
   (OVERLAP
+    WN::|spontaneous%3:00:00::|
+    WN::|self-generated%3:00:04::|
+    WN::|unstudied%3:00:00::|
+    WN::|uncontrived%3:00:00::|
     WN::|haphazard%5:00:00:random:00|
     WN::|ad_hoc%5:00:00:unplanned:00|
     WN::|impulsive%5:00:00:unpremeditated:00|
@@ -23326,6 +29365,22 @@
     WN::|unprepared%3:00:00::|))
 
 (CONCEPT
+  ONT::NOT-PRODUCTIVE-VAL
+  (COMMENT "(unproductive)")
+  (INHERIT
+    ONT::PRODUCTIVITY-VAL)
+  (OVERLAP
+    WN::|unproductive%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-PROPRIETARY-VAL
+  (COMMENT "(nonproprietary)")
+  (INHERIT
+    ONT::PROTECTED-PROPERTY-VAL)
+  (OVERLAP
+    WN::|nonproprietary%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-PROTECTED-VAL
   (INHERIT
     ONT::PROTECTION-VAL)
@@ -23333,11 +29388,58 @@
     WN::|unprotected%3:00:00::|))
 
 (CONCEPT
+  ONT::NOT-PROVOCATIVE-VAL
+  (COMMENT "(unexciting)")
+  (INHERIT
+    ONT::PROVOKING-EXCITEMENT-VAL)
+  (OVERLAP
+    WN::|unstimulating%3:00:00::|
+    WN::|unexciting%3:00:04::|
+    WN::|unprovocative%3:00:00::|
+    WN::|unprovoking%3:00:04::|
+    WN::|unexciting%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-QUALIFIED-VAL
+  (COMMENT "(unqualified)")
+  (INHERIT
+    ONT::QUALIFICATION-VAL)
+  (OVERLAP
+    WN::|unqualified%3:00:02::|
+    WN::|ineligible%3:00:00::|
+    WN::|unqualified%3:00:01::|))
+
+(CONCEPT
   ONT::NOT-RATIONAL-SCALE
   (INHERIT
     ONT::RATIONALITY-SCALE)
   (OVERLAP
     WN::|irrationality%1:26:00::|))
+
+(CONCEPT
+  ONT::NOT-READABLE-VAL
+  (COMMENT "(unreadable, illegible)")
+  (INHERIT
+    ONT::READABILITY-VAL)
+  (OVERLAP
+    WN::|illegible%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-RECIPROCAL-VAL
+  (COMMENT "(nonreciprocial)")
+  (INHERIT
+    ONT::RECIPROCALITY-VAL)
+  (OVERLAP
+    WN::|nonreciprocal%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-RECOMMENDABLE-VAL
+  (COMMENT "(unadvisable)")
+  (INHERIT
+    ONT::RECOMMENDABILITY-VAL)
+  (OVERLAP
+    WN::|inadvisable%3:00:00::|
+    WN::|unadvisable%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-REGULAR-SCALE
@@ -23348,12 +29450,34 @@
     WN::|irregularity%1:07:00::|))
 
 (CONCEPT
+  ONT::NOT-RELATED-SOCIALLY-VAL
+  (COMMENT "(unrelated)")
+  (INHERIT
+    ONT::SOCIAL-RELATION-VAL)
+  (OVERLAP
+    WN::|unrelated%3:00:01::|))
+
+(CONCEPT
+  ONT::NOT-RELATED-TO-LANGUAGE-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-LANGUAGES-VAL))
+
+(CONCEPT
   ONT::NOT-RELATED-TO-LANGUAGES-VAL
   (INHERIT
     ONT::ASSOCIATED-WITH-LANGUAGES-VAL)
   (OVERLAP
     WN::|nonlinguistic%3:01:00::|
     WN::|extralinguistic%3:01:00::|))
+
+(CONCEPT
+  ONT::NOT-RELATED-VAL
+  (COMMENT "(unrelated)")
+  (INHERIT
+    ONT::RELATEDNESS-VAL)
+  (OVERLAP
+    WN::|unrelated%3:00:02::|
+    WN::|nonassociative%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-RELATIVE-VAL
@@ -23376,6 +29500,16 @@
     (TYPE ONT::NOT-RELEVANT-VAL)))
 
 (CONCEPT
+  ONT::NOT-RELIGIOUS-VAL
+  (INHERIT
+    ONT::RELIGION-VAL)
+  (OVERLAP
+    WN::|irreligious%3:00:00::|
+    WN::|agnostic%3:00:00::|
+    WN::|agnostical%3:00:00::|
+    WN::|secular%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-REPARABLE-VAL
   (INHERIT
     ONT::REPARABILITY-VAL)
@@ -23393,10 +29527,28 @@
     WN::|unrespectable%3:00:00::|))
 
 (CONCEPT
+  ONT::NOT-RESERVED-VAL
+  (COMMENT "(unreserved)")
+  (INHERIT
+    ONT::RESERVATION-VAL)
+  (OVERLAP
+    WN::|unreserved%3:00:02::|))
+
+(CONCEPT
+  ONT::NOT-RESPECTFUL-VAL
+  (COMMENT "(disrespectful, irreverent)")
+  (INHERIT
+    ONT::RESPECT-VAL)
+  (OVERLAP
+    WN::|disrespectful%3:00:00::|
+    WN::|irreverent%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-RESPONSIBLE-VAL
   (INHERIT
     ONT::RESPONSIBILITY-VAL)
   (OVERLAP
+    WN::|immature%3:00:02::|
     WN::|irresponsible%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -23404,6 +29556,46 @@
     (ORIENTATION NEG)
     (SCALE ONT::RESPONSIBILITY-SCALE)
     (TYPE ONT::NOT-RESPONSIBLE-VAL)))
+
+(CONCEPT
+  ONT::NOT-RESTRICTED-VAL
+  (COMMENT "(unrestricted)")
+  (INHERIT
+    ONT::RESTRICTION-VAL)
+  (OVERLAP
+    WN::|unrestricted%3:00:00::|
+    WN::|unrestrictive%3:00:00::|
+    WN::|unconditional%3:00:00::|
+    WN::|unconditioned%3:00:01::|))
+
+(CONCEPT
+  ONT::NOT-RETICENT-VAL
+  (COMMENT "(unreserved)")
+  (INHERIT
+    ONT::RETICENCE-VAL)
+  (OVERLAP
+    WN::|unreserved%3:00:01::|
+    WN::|immodest%3:00:01::|))
+
+(CONCEPT
+  ONT::NOT-RHYTHMIC-VAL
+  (INHERIT
+    ONT::RHYTHM-VAL)
+  (OVERLAP
+    WN::|unrhythmical%3:00:00::|
+    WN::|unrhythmic%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-SACRED-VAL
+  (COMMENT "(profane)")
+  (INHERIT
+    ONT::SACREDNESS-VAL)
+  (OVERLAP
+    WN::|unholy%3:00:00::|
+    WN::|unhallowed%3:00:00::|
+    WN::|desecrated%3:00:00::|
+    WN::|profane%3:00:00::|
+    WN::|secular%3:00:05::|))
 
 (CONCEPT
   ONT::NOT-SATIATED-SCALE
@@ -23428,11 +29620,23 @@
     (TYPE ONT::NOT-SATIATED-VAL)))
 
 (CONCEPT
+  ONT::NOT-SECRET-VAL
+  (COMMENT "(overt)")
+  (INHERIT
+    ONT::SECRECY-VAL)
+  (OVERLAP
+    WN::|overt%3:00:00::|
+    WN::|open%3:00:07::|
+    WN::|unveiled%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-SENSIBLE-VAL
   (COMMENT "unreasonable, irrational")
   (INHERIT
     ONT::SENSIBILITY-VAL)
   (OVERLAP
+    WN::|irrational%3:00:00::|
+    WN::|immoderate%3:00:00::|
     WN::|unreasonable%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -23441,10 +29645,43 @@
     (TYPE ONT::NOT-SENSIBLE-VAL)))
 
 (CONCEPT
+  ONT::NOT-SENSITIVE-VAL
+  (COMMENT "(insensitive)")
+  (INHERIT
+    ONT::SENSITIVITY-VAL)
+  (OVERLAP
+    WN::|unperceptive%3:00:00::|
+    WN::|unperceiving%3:00:00::|
+    WN::|insensible%3:00:00::|
+    WN::|scentless%3:00:00::|
+    WN::|insensitive%3:00:01::|))
+
+(CONCEPT
+  ONT::NOT-SHAPELY-VAL
+  (COMMENT "(unshapely)")
+  (INHERIT
+    ONT::SHAPELINESS-VAL)
+  (OVERLAP
+    WN::|unshapely%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-SKILLFUL-VAL
+  (COMMENT "(unskilled)")
+  (INHERIT
+    ONT::SKILLFULNESS-VAL)
+  (OVERLAP
+    WN::|unskilled%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-SMOOTH-VAL
   (INHERIT
     ONT::SMOOTHNESS-VAL)
   (OVERLAP
+    WN::|unironed%3:00:00::|
+    WN::|wrinkled%3:00:02::|
+    WN::|wrinkled%3:00:00::|
+    WN::|wrinkly%3:00:00::|
+    WN::|uneven%3:00:00::|
     WN::|rough%3:00:00::|
     WN::|granular%5:00:00:coarse:00|
     WN::|coarse%3:00:00::|)
@@ -23459,6 +29696,8 @@
   (INHERIT
     ONT::SOCIAL-INTERACTION-VAL)
   (OVERLAP
+    WN::|unapproachable%3:00:00::|
+    WN::|cool%3:00:02::|
     WN::|ungregarious%3:00:00::|
     WN::|unsociable%3:00:00::|
     WN::|unsocial%3:00:00::|)
@@ -23478,16 +29717,56 @@
     WN::|instability%1:07:00::|))
 
 (CONCEPT
+  ONT::NOT-SUBMISSIVE-VAL
+  (COMMENT "(defiant)")
+  (INHERIT
+    ONT::SUBMISSIVENESS-VAL)
+  (OVERLAP
+    WN::|insubordinate%3:00:00::|
+    WN::|disobedient%3:00:00::|
+    WN::|defiant%3:00:00::|
+    WN::|noncompliant%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-SUBSTANTIATED-VAL
+  (COMMENT "(unsupported)")
+  (INHERIT
+    ONT::SUBSTANTIATION-VAL)
+  (OVERLAP
+    WN::|unsupported%3:00:02::|))
+
+(CONCEPT
   ONT::NOT-SUCCESSFUL-VAL
   (INHERIT
     ONT::SUCCESS-VAL)
   (OVERLAP
+    WN::|unfruitful%3:00:00::|
     WN::|unsuccessful%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
     (SCALE ONT::FAILURE-SCALE)
     (TYPE ONT::NOT-SUCCESSFUL-VAL)))
+
+(CONCEPT
+  ONT::NOT-SURMOUNTABLE-VAL
+  (COMMENT "(unconquerable, insoluble, insurmountable)")
+  (INHERIT
+    ONT::SURMOUNTABILITY-VAL)
+  (OVERLAP
+    WN::|unconquerable%3:00:00::|
+    WN::|insoluble%3:00:02::|
+    WN::|insurmountable%3:00:00::|
+    WN::|unsurmountable%3:00:00::|
+    WN::|inextricable%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-SURPRISING-VAL
+  (COMMENT "(unsurprising)")
+  (INHERIT
+    ONT::EVOKING-SURPRISE-VAL)
+  (OVERLAP
+    WN::|unsurprising%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-TASTY-VAL
@@ -23519,6 +29798,15 @@
     (TYPE ONT::NOT-TOLERABLE-VAL)))
 
 (CONCEPT
+  ONT::NOT-TRANSFERABLE-VAL
+  (COMMENT "(nontransferable, inalienable)")
+  (INHERIT
+    ONT::TRANSFERABILITY-VAL)
+  (OVERLAP
+    WN::|inalienable%3:00:00::|
+    WN::|unalienable%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-TYPICAL-SCALE
   (INHERIT
     ONT::TYPICALITY-SCALE)
@@ -23533,6 +29821,7 @@
   (INHERIT
     ONT::USABILITY-VAL)
   (OVERLAP
+    WN::|unserviceable%3:00:00::|
     WN::|unusable%5:00:00:useless:00|))
 
 (CONCEPT
@@ -23565,10 +29854,35 @@
     WN::|unproved%3:00:00::|))
 
 (CONCEPT
+  ONT::NOT-VULNERABLE-VAL
+  (COMMENT "susceptible to penetration or influence (invulnerable)")
+  (INHERIT
+    ONT::INFLUENCE-SUSCEPTIBILITY-VAL)
+  (OVERLAP
+    WN::|unsusceptible%3:00:00::|
+    WN::|insusceptible%3:00:00::|
+    WN::|invulnerable%3:00:00::|
+    WN::|impenetrable%3:00:00::|
+    WN::|unimpressionable%3:00:00::|
+    WN::|penetrable%3:00:00::|
+    WN::|unbreakable%3:00:00::|))
+
+(CONCEPT
+  ONT::NOT-WILLING-TO-ACCEPT-VAL
+  (COMMENT "(intolerant, unreceptive)")
+  (INHERIT
+    ONT::UNWILLING)
+  (OVERLAP
+    WN::|intolerant%3:00:00::|
+    WN::|unreceptive%3:00:00::|))
+
+(CONCEPT
   ONT::NOT-WORTHY-VAL
   (INHERIT
     ONT::WORTHINESS-VAL)
   (OVERLAP
+    WN::|dishonorable%3:00:00::|
+    WN::|dishonourable%3:00:00::|
     WN::|unworthy%3:00:00::|
     WN::|worthless%3:00:00::|)
   (SEM-FEATS
@@ -23577,6 +29891,14 @@
     (ORIENTATION NEG)
     (SCALE ONT::WORTHINESS-SCALE)
     (TYPE ONT::NOT-WORTHY-VAL)))
+
+(CONCEPT
+  ONT::NOT-WRITTEN-VAL
+  (COMMENT "(unwritten)")
+  (INHERIT
+    ONT::INFORMATION-DELIVERY-MODE-VAL)
+  (OVERLAP
+    WN::|unwritten%3:00:00::|))
 
 (CONCEPT
   ONT::NOTE-LENGTH-UNIT
@@ -23597,6 +29919,11 @@
   (INHERIT
     ONT::ATTENTION-WORTHY-VAL)
   (OVERLAP
+    WN::|protrusive%3:00:00::|
+    WN::|theatrical%3:00:00::|
+    WN::|appealing%3:00:00::|
+    WN::|ostentatious%3:00:00::|
+    WN::|pretentious%3:00:04::|
     WN::|conspicuous%3:00:00::|
     WN::|noticeable%3:00:00::|
     WN::|marked%5:00:00:noticeable:00|
@@ -23633,6 +29960,7 @@
   (INHERIT
     ONT::EVENT-TIME-WRT-NOW)
   (OVERLAP
+    WN::|present%3:00:02::|
     WN::|now%4:02:05::|
     WN::|presently%4:02:00::|
     WN::|present%3:00:01::|))
@@ -23704,12 +30032,19 @@
   (INHERIT
     ONT::QUANTITY-RELATED-PROPERTY-VAL)
   (OVERLAP
-    WN::|numerical%5:00:00:quantitative:00|
-    WN::|numerical%3:01:00::|
-    WN::|decimal%5:00:01:quantitative:00|
-    WN::|duodecimal%5:00:00:quantitative:00|
-    WN::|vicenary%5:00:00:quantitative:00|
-    WN::|three-figure%5:00:00:quantitative:00|))
+    WN::|odd%3:00:00::|
+    WN::|uneven%3:00:04::|
+    WN::|even%3:00:02::|
+    WN::|nilpotent%3:01:00::|
+    WN::|hexadecimal%3:01:00::|
+    WN::|hex%3:01:00::|
+    WN::|vicennial%3:01:00::|
+    WN::|prime%3:01:00::|
+    WN::|vigesimal%3:01:00::|
+    WN::|sexagesimal%3:01:00::|
+    WN::|millenary%3:01:00::|
+    WN::|digital%3:01:01::|
+    WN::|centesimal%3:01:00::|))
 
 (CONCEPT
   ONT::NUMBER-RESULT
@@ -24008,6 +30343,7 @@
   (INHERIT
     ONT::FLOW-VAL)
   (OVERLAP
+    WN::|uncleared%3:00:00::|
     WN::|obstructed%3:00:00::|))
 
 (CONCEPT
@@ -24031,6 +30367,109 @@
     WN::|rare%5:00:00:infrequent:00|
     WN::|infrequent%3:00:00::|
     WN::|occasional%5:00:00:infrequent:00|))
+
+(CONCEPT
+  ONT::OCCUPATION-SPECIFIC-VAL
+  (INHERIT
+    ONT::OCCUPATIONAL-VAL)
+  (OVERLAP
+    WN::|scholarly%3:00:00::|
+    WN::|civilian%3:00:00::|
+    WN::|tonsorial%3:01:00::|
+    WN::|pyrrhic%3:01:00::|
+    WN::|secretarial%3:01:00::|
+    WN::|gubernatorial%3:01:00::|
+    WN::|doctoral%3:01:00::|
+    WN::|doctorial%3:01:00::|
+    WN::|consular%3:01:00::|
+    WN::|masonic%3:01:01::|
+    WN::|fictile%3:01:00::|
+    WN::|pyrotechnic%3:01:00::|
+    WN::|pyrotechnical%3:01:00::|
+    WN::|typographic%3:01:00::|
+    WN::|typographical%3:01:00::|
+    WN::|imperial%3:01:00::|
+    WN::|bibliothecal%3:01:00::|
+    WN::|bibliothecarial%3:01:00::|
+    WN::|solomonic%3:01:00::|
+    WN::|viceregal%3:01:00::|
+    WN::|professorial%3:01:00::|
+    WN::|priestly%3:01:00::|
+    WN::|hieratic%3:01:01::|
+    WN::|hieratical%3:01:01::|
+    WN::|sacerdotal%3:01:00::|
+    WN::|magisterial%3:01:00::|
+    WN::|pianistic%3:01:00::|
+    WN::|apiarian%3:01:00::|
+    WN::|archidiaconal%3:01:00::|
+    WN::|ministerial%3:01:01::|
+    WN::|brahminic%3:01:00::|
+    WN::|brahminical%3:01:00::|
+    WN::|editorial%3:01:01::|
+    WN::|proconsular%3:01:00::|
+    WN::|equestrian%3:01:01::|
+    WN::|papal%3:01:00::|
+    WN::|apostolic%3:01:01::|
+    WN::|apostolical%3:01:01::|
+    WN::|pontifical%3:01:01::|
+    WN::|collegial%3:01:00::|
+    WN::|vicarial%3:01:00::|
+    WN::|czarist%3:01:00::|
+    WN::|czaristic%3:01:00::|
+    WN::|tsarist%3:01:00::|
+    WN::|tsaristic%3:01:00::|
+    WN::|tzarist%3:01:00::|
+    WN::|bureaucratic%3:01:00::|
+    WN::|mediatorial%3:01:00::|
+    WN::|despotic%3:01:00::|
+    WN::|despotical%3:01:00::|
+    WN::|pastoral%3:01:00::|
+    WN::|censorial%3:01:00::|
+    WN::|meretricious%3:01:00::|
+    WN::|supervisory%3:01:00::|
+    WN::|clerical%3:01:01::|
+    WN::|tutorial%3:01:00::|
+    WN::|ambassadorial%3:01:00::|
+    WN::|caroline%3:01:00::|
+    WN::|carolean%3:01:00::|
+    WN::|senatorial%3:01:00::|
+    WN::|rabbinical%3:01:00::|
+    WN::|rabbinic%3:01:00::|
+    WN::|political%3:01:02::|
+    WN::|episcopal%3:01:00::|
+    WN::|pontifical%3:01:00::|
+    WN::|sartorial%3:01:00::|
+    WN::|patristic%3:01:00::|
+    WN::|patristical%3:01:00::|
+    WN::|praetorian%3:01:00::|
+    WN::|praetorial%3:01:00::|
+    WN::|pretorian%3:01:00::|
+    WN::|pretorial%3:01:00::|
+    WN::|mayoral%3:01:00::|
+    WN::|archducal%3:01:00::|
+    WN::|actuarial%3:01:00::|
+    WN::|ministerial%3:01:02::|
+    WN::|presidential%3:01:00::|
+    WN::|clerical%3:01:00::|
+    WN::|demagogic%3:01:00::|
+    WN::|demagogical%3:01:00::|
+    WN::|legal%3:01:01::|))
+
+(CONCEPT
+  ONT::OCCUPATIONAL-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-PERSON-VAL)
+  (OVERLAP
+    WN::|professional%3:00:01::|
+    WN::|unscholarly%3:00:00::|
+    WN::|nonprofessional%3:00:00::|
+    WN::|unprofessional%3:00:00::|
+    WN::|professional%3:00:02::|
+    WN::|professional%3:01:01::|
+    WN::|on-the-job%3:01:00::|
+    WN::|occupational%3:01:00::|
+    WN::|professional%3:01:00::|
+    WN::|vocational%3:01:00::|))
 
 (CONCEPT
   ONT::OCCURING-NOW
@@ -24104,6 +30543,7 @@
   (INHERIT
     ONT::LIFE-PROCESS-VAL)
   (OVERLAP
+    WN::|full-term%3:00:00::|
     WN::|natal%3:01:00::|
     WN::|perinatal%3:00:00::|))
 
@@ -24134,6 +30574,10 @@
   (INHERIT
     ONT::OFFENSIVENESS-VAL)
   (OVERLAP
+    WN::|uncomplimentary%3:00:00::|
+    WN::|contemptible%3:00:00::|
+    WN::|dirty%3:00:02::|
+    WN::|indecent%3:00:00::|
     WN::|offensive%3:00:04::|
     WN::|offensive%3:00:02::|
     WN::|offensive%3:00:01::|
@@ -24183,6 +30627,12 @@
     ONT::COMPANY-ABSTR))
 
 (CONCEPT
+  ONT::OFFICIAL-AUTHORITY-VAL
+  (COMMENT "(official, authorized)")
+  (INHERIT
+    ONT::STATUS-VAL))
+
+(CONCEPT
   ONT::OFFICIAL-DOCUMENT
   (INHERIT
     ONT::DIRECT-REPRESENTATION)
@@ -24190,6 +30640,22 @@
     WN::|document%1:10:00::|
     WN::|written_document%1:10:00::|
     WN::|papers%1:10:00::|))
+
+(CONCEPT
+  ONT::OFFICIAL-VAL
+  (COMMENT "(official, authorized)")
+  (INHERIT
+    ONT::OFFICIAL-AUTHORITY-VAL)
+  (OVERLAP
+    WN::|official%3:00:00::|
+    WN::|legal%3:00:00::|
+    WN::|certified%3:00:00::|
+    WN::|documented%3:00:00::|
+    WN::|registered%3:00:00::|
+    WN::|authorized%3:00:00::|
+    WN::|authorised%3:00:00::|
+    WN::|unauthorized%3:00:00::|
+    WN::|unauthorised%3:00:00::|))
 
 (CONCEPT
   ONT::OFTEN
@@ -24200,10 +30666,17 @@
     WN::|often%4:02:01::|))
 
 (CONCEPT
+  ONT::OLD-FASHIONED-VAL
+  (COMMENT "(old_fashioned)")
+  (INHERIT
+    ONT::TEMPORAL-RELATION-VAL))
+
+(CONCEPT
   ONT::OLD-VAL
   (INHERIT
     ONT::AGE-VAL)
   (OVERLAP
+    WN::|geriatric%3:01:01::|
     WN::|old%3:00:02::|
     WN::|old%3:00:01::|))
 
@@ -24282,7 +30755,17 @@
 (CONCEPT
   ONT::ON-SITE-VAL
   (INHERIT
-    ONT::LOCATION-VAL))
+    ONT::LOCATION-VAL)
+  (OVERLAP
+    WN::|on-site%3:00:00::|))
+
+(CONCEPT
+  ONT::ON-TIME-VAL
+  (COMMENT "(punctual)")
+  (INHERIT
+    ONT::TIMELINESS-VAL)
+  (OVERLAP
+    WN::|punctual%3:00:00::|))
 
 (CONCEPT
   ONT::ONE-BEFORE-LAST-VAL
@@ -24329,6 +30812,24 @@
     WN::|open_up%2:35:00::|
     WN::|open%2:35:06::|
     WN::|open%2:35:00::|))
+
+(CONCEPT
+  ONT::OPEN-ACKNOWLEDGEMENT-VAL
+  (COMMENT "openly and publicly acknowledged (confirmed)")
+  (INHERIT
+    ONT::STATUS-VAL))
+
+(CONCEPT
+  ONT::OPEN-VAL
+  (COMMENT "(open)")
+  (INHERIT
+    ONT::CLOSURE-VAL)
+  (OVERLAP
+    WN::|open%3:00:08::|
+    WN::|opened%3:00:02::|
+    WN::|open%3:00:01::|
+    WN::|unfastened%3:00:04::|
+    WN::|unsealed%3:00:01::|))
 
 (CONCEPT
   ONT::OPENING
@@ -24380,6 +30881,14 @@
     ONT::OBLIGATORINESS-VAL)
   (OVERLAP
     WN::|optional%3:00:00::|))
+
+(CONCEPT
+  ONT::ORAL-MODE-VAL
+  (COMMENT "(spoken)")
+  (INHERIT
+    ONT::NOT-WRITTEN-VAL)
+  (OVERLAP
+    WN::|spoken%3:00:00::|))
 
 (CONCEPT
   ONT::ORANGE
@@ -24454,6 +30963,24 @@
     (TYPE ONT::ORDERLINESS-VAL)))
 
 (CONCEPT
+  ONT::ORDERLY-VAL
+  (COMMENT "(orderly)")
+  (INHERIT
+    ONT::ORDERLINESS-VAL)
+  (OVERLAP
+    WN::|arranged%3:00:00::|
+    WN::|ordered%3:00:04::|
+    WN::|orderly%3:00:00::|))
+
+(CONCEPT
+  ONT::ORDINALITY-VAL
+  (COMMENT "(ordinal)")
+  (INHERIT
+    ONT::NUMBER-RELATED-PROPERTY-VAL)
+  (OVERLAP
+    WN::|ordinal%3:00:00::|))
+
+(CONCEPT
   ONT::ORGANIC-VAL
   (INHERIT
     ONT::SUBSTANTIAL-PROPERTY-VAL)
@@ -24493,6 +31020,44 @@
     WN::|organisation%1:14:00::|))
 
 (CONCEPT
+  ONT::ORGANIZATION-PROPERTY-VAL
+  (INHERIT
+    ONT::SOCIETY-VAL)
+  (OVERLAP
+    WN::|institutional%3:00:00::|
+    WN::|institutional%3:01:00::|
+    WN::|administrative%3:01:00::|
+    WN::|sectarian%3:01:01::|
+    WN::|municipal%3:01:00::|
+    WN::|collegiate%3:01:00::|
+    WN::|collegial%3:01:02::|
+    WN::|colonial%3:01:00::|
+    WN::|allied%3:01:02::|
+    WN::|choric%3:01:00::|
+    WN::|allied%3:01:01::|
+    WN::|capitular%3:01:00::|
+    WN::|capitulary%3:01:00::|
+    WN::|feudal%3:01:00::|
+    WN::|feudalistic%3:01:00::|
+    WN::|congregational%3:01:00::|
+    WN::|meritocratic%3:01:00::|
+    WN::|humanistic%3:01:03::|
+    WN::|humanist%3:01:03::|
+    WN::|intertribal%3:01:00::|
+    WN::|tribal%3:01:00::|))
+
+(CONCEPT
+  ONT::ORGANIZED-VAL
+  (COMMENT "having category, organization and/or structure (organized)")
+  (INHERIT
+    ONT::ORDERLY-VAL)
+  (OVERLAP
+    WN::|organized%3:00:02::|
+    WN::|organized%3:00:01::|
+    WN::|classified%3:00:01::|
+    WN::|structured%3:00:00::|))
+
+(CONCEPT
   ONT::ORGANIZING
   (COMMENT
    "coordinate, manage and execute a program, a project or a production")
@@ -24530,7 +31095,13 @@
 (CONCEPT
   ONT::ORIENTATION-VAL
   (INHERIT
-    ONT::SPATIAL)
+    ONT::SPATIAL-VAL)
+  (OVERLAP
+    WN::|oriented%3:00:00::|
+    WN::|orientated%3:00:00::|
+    WN::|orienting%3:00:00::|
+    WN::|orientating%3:00:00::|
+    WN::|unoriented%3:00:00::|)
   (SEM-FRAME
     (ONT::GROUND
      (CONCEPT
@@ -24578,6 +31149,11 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::ORIGIN-RELATED-VAL
+  (INHERIT
+    ONT::STATUS-VAL))
+
+(CONCEPT
   ONT::ORIGINAL-MATERIAL
   (INHERIT
     ONT::PREDICATE)
@@ -24615,15 +31191,6 @@
        (INFORMATION INFORMATION-CONTENT)
        (INTENTIONAL -))
      OPTIONAL)))
-
-(CONCEPT
-  ONT::ORTHOGRAPHY-PROPERTY-VAL
-  (INHERIT
-    ONT::LINGUISTIC-VAL)
-  (OVERLAP
-    WN::|analphabetic%3:00:00::|
-    WN::|separative%5:00:02:disjunctive:00|
-    WN::|orthographic%3:01:00::|))
 
 (CONCEPT
   ONT::OSTEOARTHRITIS
@@ -24679,6 +31246,8 @@
   (INHERIT
     ONT::DIRECTION-VAL)
   (OVERLAP
+    WN::|exaugural%3:00:00::|
+    WN::|outgoing%3:00:01::|
     WN::|outbound%5:00:00:outgoing:00|
     WN::|outgoing%3:00:00::|))
 
@@ -24781,6 +31350,14 @@
     (TYPE ONT::PAINED-VAL)))
 
 (CONCEPT
+  ONT::PAINLESS-VAL
+  (COMMENT "(painless)")
+  (INHERIT
+    ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL)
+  (OVERLAP
+    WN::|painless%3:00:00::|))
+
+(CONCEPT
   ONT::PALPITATION
   (INHERIT
     ONT::MEDICAL-SYMPTOM)
@@ -24863,6 +31440,11 @@
   (INHERIT
     ONT::COMPLETENESS-VAL)
   (OVERLAP
+    WN::|unfinished%3:00:02::|
+    WN::|discontinued%3:00:00::|
+    WN::|noncomprehensive%3:00:00::|
+    WN::|incomprehensive%3:00:00::|
+    WN::|fractional%3:00:00::|
     WN::|partial%5:00:00:incomplete:00|
     WN::|incomplete%3:00:00::|)
   (SEM-FEATS
@@ -24877,6 +31459,14 @@
     ONT::EVALUATION-SCALE)
   (OVERLAP
     WN::|partiality%1:09:00::|))
+
+(CONCEPT
+  ONT::PARTIALLY-FILLED-VAL
+  (COMMENT "(uncrowded)")
+  (INHERIT
+    ONT::FILLED-VAL)
+  (OVERLAP
+    WN::|uncrowded%3:00:00::|))
 
 (CONCEPT
   ONT::PARTICIPATE-ATTEND
@@ -25015,11 +31605,33 @@
     ONT::MOTION))
 
 (CONCEPT
+  ONT::PATIENCE-VAL
+  (COMMENT "(patient)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL))
+
+(CONCEPT
   ONT::PATIENT
   (INHERIT
     ONT::UNFORTUNATE)
   (OVERLAP
     WN::|patient%1:18:00::|))
+
+(CONCEPT
+  ONT::PATIENT-VAL
+  (COMMENT "(patient)")
+  (INHERIT
+    ONT::PATIENCE-VAL)
+  (OVERLAP
+    WN::|patient%3:00:00::|))
+
+(CONCEPT
+  ONT::PATTERN-VAL
+  (COMMENT "(patterned)")
+  (INHERIT
+    ONT::VISUAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|patterned%3:00:00::|))
 
 (CONCEPT
   ONT::PAUSE
@@ -25045,6 +31657,17 @@
     WN::|attend%2:39:00::|))
 
 (CONCEPT
+  ONT::PEACEFUL-VAL
+  (COMMENT "(peaceful)")
+  (INHERIT
+    ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
+  (OVERLAP
+    WN::|peaceful%3:00:00::|
+    WN::|peaceable%3:00:00::|
+    WN::|conciliatory%3:00:00::|
+    WN::|conciliative%3:00:00::|))
+
+(CONCEPT
   ONT::PENETRATE
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
@@ -25065,6 +31688,52 @@
     (ONT::AGENT
      (CONCEPT
        PHYS-OBJ))))
+
+(CONCEPT
+  ONT::PEOPLE-AND-INHABITANTS-VAL
+  (INHERIT
+    ONT::CULTURE-VAL)
+  (OVERLAP
+    WN::|malay%3:01:00::|
+    WN::|malayan%3:01:00::|
+    WN::|hmong%3:01:00::|
+    WN::|german-american%3:01:00::|
+    WN::|aboriginal%3:01:00::|
+    WN::|arabic%3:01:00::|
+    WN::|shona%3:01:00::|
+    WN::|celtic%3:01:00::|
+    WN::|gaelic%3:01:00::|
+    WN::|romany%3:01:00::|
+    WN::|romani%3:01:00::|
+    WN::|hispanic%3:01:00::|
+    WN::|latino%3:01:00::|
+    WN::|montserratian%3:01:00::|
+    WN::|frankish%3:01:00::|
+    WN::|saxon%3:01:00::|
+    WN::|zapotec%3:01:00::|
+    WN::|alaskan%3:01:00::|
+    WN::|gothic%3:01:00::|
+    WN::|anglo-saxon%3:01:00::|
+    WN::|mongoloid%3:01:02::|
+    WN::|singhalese%3:01:00::|
+    WN::|sinhalese%3:01:00::|
+    WN::|sabine%3:01:00::|
+    WN::|lao%3:01:00::|
+    WN::|cockney%3:01:00::|
+    WN::|briton%3:01:00::|
+    WN::|mesoamerican%3:01:00::|
+    WN::|algonquian%3:01:00::|
+    WN::|algonkian%3:01:00::|
+    WN::|algonquin%3:01:00::|
+    WN::|norman%3:01:00::|
+    WN::|creole%3:01:01::|
+    WN::|teutonic%3:01:00::|
+    WN::|germanic%3:01:02::|
+    WN::|roman%3:01:02::|
+    WN::|muscovite%3:01:00::|
+    WN::|thai%3:01:02::|
+    WN::|tai%3:01:02::|
+    WN::|siamese%3:01:02::|))
 
 (CONCEPT
   ONT::PEOPLE-GROUP
@@ -25154,6 +31823,9 @@
   (INHERIT
     ONT::PERCEPTIBILITY-VAL)
   (OVERLAP
+    WN::|distinct%3:00:00::|
+    WN::|discernible%3:00:00::|
+    WN::|discernable%3:00:00::|
     WN::|perceptible%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -25224,6 +31896,13 @@
   (INHERIT
     ONT::FREQUENCY-VAL)
   (OVERLAP
+    WN::|extrasystolic%3:01:00::|
+    WN::|migrational%3:01:00::|
+    WN::|tidal%3:01:00::|
+    WN::|systolic%3:01:00::|
+    WN::|tertian%3:01:00::|
+    WN::|diastolic%3:01:00::|
+    WN::|cyclic%3:01:00::|
     WN::|periodic%3:00:00::|))
 
 (CONCEPT
@@ -25239,6 +31918,38 @@
    "activities describe the act performed by saying something but beyond the speaker's control (cf. Austin)")
   (INHERIT
     ONT::COMMUNICATION))
+
+(CONCEPT
+  ONT::PERMEABILITY-VAL
+  (COMMENT "(permeable, leaky)")
+  (INHERIT
+    ONT::CAN-BE-DONE-VAL))
+
+(CONCEPT
+  ONT::PERMEABLE-VAL
+  (COMMENT "(permeable, leaky)")
+  (INHERIT
+    ONT::PERMEABILITY-VAL)
+  (OVERLAP
+    WN::|leaky%3:00:00::|
+    WN::|permeable%3:00:00::|
+    WN::|pervious%3:00:00::|))
+
+(CONCEPT
+  ONT::PERMISSIBILITY-VAL
+  (COMMENT "(permissible)")
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT
+  ONT::PERMISSIBLE-VAL
+  (COMMENT "(permissible)")
+  (INHERIT
+    ONT::PERMISSIBILITY-VAL)
+  (OVERLAP
+    WN::|permissive%3:00:02::|
+    WN::|permissible%3:00:00::|
+    WN::|allowable%3:00:00::|))
 
 (CONCEPT
   ONT::PERMISSION-RELATED-VAL
@@ -25278,6 +31989,33 @@
     (SPATIAL-ABSTRACTION SPATIAL-POINT)
     (FORM SOLID-OBJECT)
     (TYPE ONT::PERSON)))
+
+(CONCEPT
+  ONT::PERSON-BEHAVIOR-TENDENCY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-PERSON-VAL)
+  (OVERLAP
+    WN::|bibliopolic%3:01:00::|
+    WN::|philhellenic%3:01:00::|
+    WN::|philhellene%3:01:00::|
+    WN::|graecophile%3:01:00::|
+    WN::|graecophilic%3:01:00::|
+    WN::|chauvinistic%3:01:00::|
+    WN::|amoristic%3:01:00::|
+    WN::|bacchantic%3:01:00::|
+    WN::|voyeuristic%3:01:00::|
+    WN::|voyeuristical%3:01:00::|
+    WN::|puerile%3:01:00::|
+    WN::|androgynous%3:01:01::|
+    WN::|avuncular%3:01:00::|
+    WN::|anthropophagous%3:01:00::|
+    WN::|carpetbag%3:01:00::|
+    WN::|entrepreneurial%3:01:00::|
+    WN::|bibliophilic%3:01:00::|
+    WN::|sophistic%3:01:00::|
+    WN::|valetudinarian%3:01:00::|
+    WN::|valetudinary%3:01:00::|
+    WN::|cannibalistic%3:01:00::|))
 
 (CONCEPT
   ONT::PERSON-OF-NATIONALITY
@@ -25463,6 +32201,363 @@
    "properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects")
   (INHERIT
     ONT::PROPERTY-VAL)
+  (OVERLAP
+    WN::|unguiculate%3:00:00::|
+    WN::|unguiculated%3:00:00::|
+    WN::|nonwoody%3:00:00::|
+    WN::|grassy%3:00:00::|
+    WN::|starry%3:00:00::|
+    WN::|woody%3:00:00::|
+    WN::|unseamanlike%3:00:00::|
+    WN::|unstatesmanlike%3:00:00::|
+    WN::|statesmanlike%3:00:00::|
+    WN::|statesmanly%3:00:00::|
+    WN::|priestly%3:00:00::|
+    WN::|priestlike%3:00:00::|
+    WN::|seamanlike%3:00:00::|
+    WN::|seamanly%3:00:00::|
+    WN::|headless%3:00:00::|
+    WN::|seedless%3:00:00::|
+    WN::|unwooded%3:00:00::|
+    WN::|treeless%3:00:00::|
+    WN::|fingerless%3:00:00::|
+    WN::|unbelted%3:00:00::|
+    WN::|beltless%3:00:00::|
+    WN::|wingless%3:00:00::|
+    WN::|jawless%3:00:00::|
+    WN::|sugarless%3:00:00::|
+    WN::|nonsweet%3:00:00::|
+    WN::|backless%3:00:00::|
+    WN::|dry%3:00:02::|
+    WN::|tearless%3:00:00::|
+    WN::|dry-eyed%3:00:00::|
+    WN::|topless%3:00:00::|
+    WN::|limbless%3:00:00::|
+    WN::|pointless%3:00:00::|
+    WN::|unpointed%3:00:00::|
+    WN::|footless%3:00:00::|
+    WN::|juiceless%3:00:00::|
+    WN::|unbodied%3:00:00::|
+    WN::|branchless%3:00:00::|
+    WN::|bloodless%3:00:00::|
+    WN::|curtained%3:00:00::|
+    WN::|stemless%3:00:00::|
+    WN::|faceless%3:00:00::|
+    WN::|smokeless%3:00:00::|
+    WN::|flowerless%3:00:00::|
+    WN::|nonflowering%3:00:00::|
+    WN::|unheaded%3:00:00::|
+    WN::|lidless%3:00:00::|
+    WN::|avascular%3:01:00::|
+    WN::|armless%3:00:00::|
+    WN::|unrifled%3:00:00::|
+    WN::|smoothbore%3:00:00::|
+    WN::|spineless%3:00:00::|
+    WN::|uncrannied%3:00:00::|
+    WN::|landless%3:00:00::|
+    WN::|memberless%3:00:00::|
+    WN::|starchless%3:00:00::|
+    WN::|bottomless%3:00:00::|
+    WN::|untipped%3:00:00::|
+    WN::|unarmored%3:00:02::|
+    WN::|unarmoured%3:00:02::|
+    WN::|neckless%3:00:00::|
+    WN::|aplacental%3:00:00::|
+    WN::|toothless%3:00:00::|
+    WN::|noncolumned%3:00:00::|
+    WN::|uncolumned%3:00:00::|
+    WN::|unfeathered%3:00:00::|
+    WN::|featherless%3:00:00::|
+    WN::|unsaddled%3:00:00::|
+    WN::|leafless%3:00:00::|
+    WN::|unfaceted%3:00:00::|
+    WN::|untimbered%3:00:00::|
+    WN::|unrhymed%3:00:00::|
+    WN::|unrimed%3:00:00::|
+    WN::|rhymeless%3:00:00::|
+    WN::|rimeless%3:00:00::|
+    WN::|unshelled%3:00:00::|
+    WN::|shell-less%3:00:00::|
+    WN::|apetalous%3:00:00::|
+    WN::|petalless%3:00:00::|
+    WN::|breastless%3:00:00::|
+    WN::|noseless%3:00:00::|
+    WN::|fernless%3:00:00::|
+    WN::|eyeless%3:00:00::|
+    WN::|rimless%3:00:00::|
+    WN::|wheelless%3:00:00::|
+    WN::|meatless%3:00:00::|
+    WN::|ribless%3:00:00::|
+    WN::|skinless%3:00:00::|
+    WN::|sleeveless%3:00:00::|
+    WN::|trackless%3:00:00::|
+    WN::|weightless%3:00:00::|
+    WN::|abranchiate%3:00:00::|
+    WN::|abranchial%3:00:00::|
+    WN::|abranchious%3:00:00::|
+    WN::|gill-less%3:00:00::|
+    WN::|bedless%3:00:00::|
+    WN::|lipless%3:00:00::|
+    WN::|unlipped%3:00:00::|
+    WN::|curtainless%3:00:00::|
+    WN::|uncurtained%3:00:00::|
+    WN::|weedless%3:00:00::|
+    WN::|tubeless%3:00:00::|
+    WN::|handless%3:00:00::|
+    WN::|keyless%3:00:00::|
+    WN::|toeless%3:00:00::|
+    WN::|moneyless%3:00:00::|
+    WN::|bellyless%3:00:00::|
+    WN::|flat-bellied%3:00:00::|
+    WN::|awnless%3:00:00::|
+    WN::|lossless%3:00:00::|
+    WN::|toneless%3:00:00::|
+    WN::|grassless%3:00:00::|
+    WN::|soleless%3:00:00::|
+    WN::|hornless%3:00:00::|
+    WN::|tongueless%3:00:00::|
+    WN::|beakless%3:00:00::|
+    WN::|moonless%3:00:00::|
+    WN::|bibless%3:00:00::|
+    WN::|starless%3:00:00::|
+    WN::|earless%3:00:00::|
+    WN::|hipless%3:00:00::|
+    WN::|loamless%3:00:00::|
+    WN::|handleless%3:00:00::|
+    WN::|roofless%3:00:00::|
+    WN::|legless%3:00:00::|
+    WN::|unparented%3:00:00::|
+    WN::|parentless%3:00:00::|
+    WN::|wigless%3:00:00::|
+    WN::|hatless%3:00:00::|
+    WN::|gloveless%3:00:00::|
+    WN::|punctureless%3:00:00::|
+    WN::|nosed%3:00:00::|
+    WN::|armed%3:00:03::|
+    WN::|headed%3:00:01::|
+    WN::|lipped%3:00:00::|
+    WN::|bony%3:00:00::|
+    WN::|boney%3:00:00::|
+    WN::|multilane%3:00:00::|
+    WN::|shelled%3:00:00::|
+    WN::|spaced%3:00:00::|
+    WN::|cross-eyed%3:00:00::|
+    WN::|armored%3:00:02::|
+    WN::|armoured%3:00:02::|
+    WN::|bedded%3:00:00::|
+    WN::|ceilinged%3:00:00::|
+    WN::|belted%3:00:00::|
+    WN::|rimmed%3:00:00::|
+    WN::|timbered%3:00:00::|
+    WN::|skinned%3:00:00::|
+    WN::|peripteral%3:00:00::|
+    WN::|apteral%3:00:00::|
+    WN::|tracked%3:00:00::|
+    WN::|buttoned%3:00:00::|
+    WN::|fastened%3:00:02::|
+    WN::|columned%3:00:00::|
+    WN::|ferned%3:00:00::|
+    WN::|ferny%3:00:01::|
+    WN::|webbed%3:00:00::|
+    WN::|lined%3:00:00::|
+    WN::|ungulate%3:00:00::|
+    WN::|ungulated%3:00:00::|
+    WN::|hoofed%3:00:00::|
+    WN::|hooved%3:00:00::|
+    WN::|seamed%3:00:00::|
+    WN::|ribbed%3:00:00::|
+    WN::|jawed%3:00:00::|
+    WN::|monaural%3:00:00::|
+    WN::|swept%3:00:00::|
+    WN::|binaural%3:00:00::|
+    WN::|biaural%3:00:00::|
+    WN::|unspaced%3:00:00::|
+    WN::|prognathous%3:00:00::|
+    WN::|prognathic%3:00:00::|
+    WN::|hypognathous%3:00:00::|
+    WN::|germy%3:00:00::|
+    WN::|bound%3:00:02::|
+    WN::|unbound%3:00:02::|
+    WN::|bodied%3:00:00::|
+    WN::|ventral%3:00:00::|
+    WN::|awned%3:00:00::|
+    WN::|awny%3:00:00::|
+    WN::|tongued%3:00:00::|
+    WN::|breasted%3:00:00::|
+    WN::|dolichocephalic%3:00:00::|
+    WN::|dolichocranial%3:00:00::|
+    WN::|dolichocranic%3:00:00::|
+    WN::|bellied%3:00:00::|
+    WN::|fingered%3:00:00::|
+    WN::|juicy%3:00:00::|
+    WN::|bibbed%3:00:00::|
+    WN::|rifled%3:00:00::|
+    WN::|single-barreled%3:00:00::|
+    WN::|single-barrelled%3:00:00::|
+    WN::|floored%3:00:00::|
+    WN::|toned%3:00:00::|
+    WN::|balconied%3:00:00::|
+    WN::|stemmed%3:00:00::|
+    WN::|single-breasted%3:00:00::|
+    WN::|crannied%3:00:00::|
+    WN::|onymous%3:00:00::|
+    WN::|hairy%3:00:00::|
+    WN::|haired%3:00:00::|
+    WN::|hirsute%3:00:00::|
+    WN::|eyed%3:00:00::|
+    WN::|faced%3:00:00::|
+    WN::|winged%3:00:00::|
+    WN::|backed%3:00:00::|
+    WN::|tipped%3:00:00::|
+    WN::|horned%3:00:00::|
+    WN::|necked%3:00:00::|
+    WN::|limbed%3:00:00::|
+    WN::|bottomed%3:00:00::|
+    WN::|footed%3:00:00::|
+    WN::|feathered%3:00:00::|
+    WN::|seedy%3:00:00::|
+    WN::|petalous%3:00:00::|
+    WN::|petaled%3:00:00::|
+    WN::|petalled%3:00:00::|
+    WN::|eared%3:00:00::|
+    WN::|armed%3:00:02::|
+    WN::|hairless%3:00:00::|
+    WN::|legged%3:00:00::|
+    WN::|beaked%3:00:00::|
+    WN::|wooded%3:00:00::|
+    WN::|leafy%3:00:00::|
+    WN::|toothed%3:00:00::|
+    WN::|motorized%3:00:00::|
+    WN::|motorised%3:00:00::|
+    WN::|motored%3:00:00::|
+    WN::|splayfooted%3:00:00::|
+    WN::|splayfoot%3:00:00::|
+    WN::|light-footed%3:00:00::|
+    WN::|tubed%3:00:00::|
+    WN::|corbelled%3:44:00::|
+    WN::|headed%3:00:02::|
+    WN::|parented%3:00:00::|
+    WN::|ridged%3:44:00::|
+    WN::|carinate%3:44:00::|
+    WN::|carinated%3:44:00::|
+    WN::|keeled%3:44:00::|
+    WN::|saddled%3:00:00::|
+    WN::|soled%3:00:00::|
+    WN::|handled%3:00:00::|
+    WN::|appendaged%3:00:00::|
+    WN::|walleyed%3:00:00::|
+    WN::|faceted%3:00:00::|
+    WN::|pigeon-toed%3:00:00::|
+    WN::|quadrupedal%3:00:00::|
+    WN::|quadruped%3:00:00::|
+    WN::|four-footed%3:00:00::|
+    WN::|hipped%3:00:00::|
+    WN::|unmotorized%3:00:00::|
+    WN::|unmotorised%3:00:00::|
+    WN::|motorless%3:00:00::|
+    WN::|lidded%3:00:00::|
+    WN::|double-barreled%3:00:00::|
+    WN::|double-barrelled%3:00:00::|
+    WN::|bipedal%3:00:00::|
+    WN::|biped%3:00:00::|
+    WN::|two-footed%3:00:00::|
+    WN::|wheeled%3:00:00::|
+    WN::|gabled%3:00:00::|
+    WN::|unwebbed%3:00:00::|
+    WN::|roofed%3:00:00::|
+    WN::|carpeted%3:00:00::|
+    WN::|short-spurred%3:00:00::|
+    WN::|long-spurred%3:00:00::|
+    WN::|weedy%3:00:00::|
+    WN::|single-lane%3:00:00::|
+    WN::|porous%3:00:00::|
+    WN::|poriferous%3:00:00::|
+    WN::|toed%3:00:00::|
+    WN::|right-handed%3:00:00::|
+    WN::|left-handed%3:00:00::|
+    WN::|handed%3:00:00::|
+    WN::|heavy-footed%3:00:00::|
+    WN::|invertebrate%3:00:00::|
+    WN::|spineless%3:00:01::|
+    WN::|resinlike%3:01:00::|
+    WN::|chartaceous%3:01:00::|
+    WN::|papery%3:01:00::|
+    WN::|paperlike%3:01:00::|
+    WN::|baccate%3:01:00::|
+    WN::|berrylike%3:01:00::|
+    WN::|shelflike%3:01:00::|
+    WN::|daisylike%3:01:00::|
+    WN::|indexless%3:01:00::|
+    WN::|fungoid%3:01:00::|
+    WN::|funguslike%3:01:00::|
+    WN::|collarless%3:01:00::|
+    WN::|unalike%3:00:00::|
+    WN::|dissimilar%3:00:04::|
+    WN::|brimless%3:01:00::|
+    WN::|sessile%3:00:00::|
+    WN::|stalkless%3:00:00::|
+    WN::|stingless%3:01:00::|
+    WN::|yeasty%3:01:00::|
+    WN::|yeastlike%3:01:00::|
+    WN::|rayless%3:01:00::|
+    WN::|acaulescent%3:00:00::|
+    WN::|stemless%3:00:04::|
+    WN::|gutless%3:00:00::|
+    WN::|burrlike%3:01:00::|
+    WN::|arachnoid%3:01:00::|
+    WN::|arachnidian%3:01:00::|
+    WN::|spidery%3:01:00::|
+    WN::|spiderlike%3:01:00::|
+    WN::|spiderly%3:01:00::|
+    WN::|astomatous%3:00:00::|
+    WN::|mouthless%3:00:00::|
+    WN::|brassy%3:01:00::|
+    WN::|brasslike%3:01:00::|
+    WN::|custard-like%3:01:00::|
+    WN::|hooflike%3:01:00::|
+    WN::|ductless%3:01:00::|
+    WN::|frictionless%3:01:00::|
+    WN::|masted%3:01:00::|
+    WN::|sharp-pointed%3:01:00::|
+    WN::|recoilless%3:01:00::|
+    WN::|flagellate%3:01:00::|
+    WN::|flagellated%3:01:00::|
+    WN::|whiplike%3:01:00::|
+    WN::|lash-like%3:01:00::|
+    WN::|grapelike%3:01:00::|
+    WN::|bracteate%3:01:00::|
+    WN::|bracted%3:01:00::|
+    WN::|wolflike%3:01:00::|
+    WN::|wolfish%3:01:00::|
+    WN::|chaffy%3:01:00::|
+    WN::|chafflike%3:01:00::|
+    WN::|heathlike%3:01:00::|
+    WN::|lung-like%3:01:00::|
+    WN::|clinker-built%3:00:00::|
+    WN::|clincher-built%3:00:00::|
+    WN::|lap-strake%3:00:00::|
+    WN::|lap-straked%3:00:00::|
+    WN::|lap-streak%3:00:00::|
+    WN::|lap-streaked%3:00:00::|
+    WN::|ocellated%3:01:00::|
+    WN::|ratlike%3:01:00::|
+    WN::|ctenoid%3:01:00::|
+    WN::|comb-like%3:01:00::|
+    WN::|bladdery%3:01:00::|
+    WN::|bladderlike%3:01:00::|
+    WN::|conic%3:01:00::|
+    WN::|conical%3:01:00::|
+    WN::|conelike%3:01:00::|
+    WN::|cone-shaped%3:01:00::|
+    WN::|liquid%3:00:00::|
+    WN::|hollow%3:00:00::|
+    WN::|uncharged%3:00:00::|
+    WN::|miscible%3:00:00::|
+    WN::|mixable%3:00:00::|
+    WN::|immiscible%3:00:00::|
+    WN::|non-miscible%3:00:00::|
+    WN::|unmixable%3:00:00::|
+    WN::|solid%3:00:02::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -25569,8 +32664,10 @@
 (CONCEPT
   ONT::PHYSICAL-VAL
   (INHERIT
-    ONT::ASSOCIATED-WITH-VAL)
+    ONT::PHYSICS-VAL)
   (OVERLAP
+    WN::|corporeal%3:00:00::|
+    WN::|material%3:00:04::|
     WN::|physical%3:00:00::|
     WN::|bodily%5:00:00:physical:00|)
   (SEM-FRAME
@@ -25588,6 +32685,120 @@
     WN::|electron_shell%1:14:00::|
     WN::|particle%1:17:00::|
     WN::|halogen%1:27:00::|))
+
+(CONCEPT
+  ONT::PHYSICS-PROPERTY-VAL
+  (INHERIT
+    ONT::PHYSICS-VAL)
+  (OVERLAP
+    WN::|physical%3:01:00::|
+    WN::|astrophysical%3:01:00::|
+    WN::|cosmologic%3:01:00::|
+    WN::|cosmological%3:01:00::|
+    WN::|cosmogonic%3:01:00::|
+    WN::|cosmogonical%3:01:00::|
+    WN::|cosmogenic%3:01:00::|
+    WN::|astronomic%3:01:00::|
+    WN::|astronomical%3:01:00::|
+    WN::|microelectronic%3:01:00::|
+    WN::|kinetic%3:01:00::|
+    WN::|attractive%3:00:02::|
+    WN::|thermal%3:01:00::|
+    WN::|thermic%3:01:00::|
+    WN::|caloric%3:01:00::|
+    WN::|nuclear%3:01:01::|
+    WN::|quantal%3:01:00::|
+    WN::|quantized%3:01:00::|
+    WN::|incoherent%3:00:01::|
+    WN::|mechanical%3:01:00::|
+    WN::|ontological%3:01:00::|
+    WN::|geodetic%3:01:00::|
+    WN::|geodesic%3:01:00::|
+    WN::|geodesical%3:01:00::|
+    WN::|rheologic%3:01:00::|
+    WN::|rheological%3:01:00::|
+    WN::|hydrostatic%3:01:00::|
+    WN::|ballistic%3:01:00::|
+    WN::|refractive%3:01:00::|
+    WN::|refractile%3:01:00::|
+    WN::|holographic%3:01:02::|
+    WN::|frictional%3:01:00::|
+    WN::|electromotive%3:01:00::|
+    WN::|birefringent%3:01:00::|
+    WN::|propulsive%3:01:00::|
+    WN::|self-induced%3:01:00::|
+    WN::|incident%3:01:00::|
+    WN::|fiducial%3:01:01::|
+    WN::|relativistic%3:01:00::|
+    WN::|coherent%3:00:01::|
+    WN::|radio%3:01:00::|
+    WN::|electronic%3:01:00::|
+    WN::|nebular%3:01:00::|
+    WN::|nebulous%3:01:00::|
+    WN::|photoconductive%3:01:00::|
+    WN::|thermodynamic%3:01:00::|
+    WN::|thermodynamical%3:01:00::|
+    WN::|cosmologic%3:01:01::|
+    WN::|cosmological%3:01:01::|
+    WN::|geophysical%3:01:00::|
+    WN::|harmonic%3:01:01::|
+    WN::|dynamic%3:01:02::|
+    WN::|pleochroic%3:01:00::|
+    WN::|acoustic%3:01:00::|
+    WN::|acoustical%3:01:00::|
+    WN::|repulsive%3:00:00::|
+    WN::|aerodynamic%3:01:00::|
+    WN::|geomorphologic%3:01:00::|
+    WN::|geomorphological%3:01:00::|
+    WN::|morphologic%3:01:02::|
+    WN::|morphological%3:01:02::|
+    WN::|structural%3:01:03::|
+    WN::|resistive%3:01:00::|
+    WN::|hydrokinetic%3:01:00::|
+    WN::|hydraulic%3:01:00::|
+    WN::|hydrodynamic%3:01:00::|
+    WN::|chaotic%3:01:00::|
+    WN::|aeronautical%3:01:00::|
+    WN::|aeronautic%3:01:00::|
+    WN::|metaphysical%3:01:00::|
+    WN::|diabatic%3:00:00::|
+    WN::|capacitive%3:01:00::|
+    WN::|photovoltaic%3:01:00::|
+    WN::|avionic%3:01:00::|
+    WN::|gravitational%3:01:00::|
+    WN::|gravitative%3:01:00::|
+    WN::|tensile%3:01:00::|
+    WN::|inertial%3:01:00::|
+    WN::|catoptric%3:01:00::|
+    WN::|catoptrical%3:01:00::|
+    WN::|nonthermal%3:01:00::|
+    WN::|seismological%3:01:00::|
+    WN::|seismologic%3:01:00::|
+    WN::|aeromechanic%3:01:00::|
+    WN::|optical%3:01:01::|
+    WN::|geothermal%3:01:00::|
+    WN::|geothermic%3:01:00::|
+    WN::|high-energy%3:01:00::|
+    WN::|adiabatic%3:00:00::|
+    WN::|pressor%3:01:00::|
+    WN::|magnetic%3:01:00::|
+    WN::|tectonic%3:01:00::|
+    WN::|plane-polarized%3:01:00::|))
+
+(CONCEPT
+  ONT::PHYSICS-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SCIENCE-VAL))
+
+(CONCEPT
+  ONT::PHYSIOLOGICAL-PROPERTY-VAL
+  (INHERIT
+    ONT::BIOLOGY-VAL)
+  (OVERLAP
+    WN::|efferent%3:00:00::|
+    WN::|motorial%3:00:00::|
+    WN::|involuntary%3:00:02::|
+    WN::|afferent%3:00:00::|))
 
 (CONCEPT
   ONT::PIGEON
@@ -25737,6 +32948,10 @@
   (INHERIT
     ONT::BASICNESS-VAL)
   (OVERLAP
+    WN::|unrhetorical%3:00:00::|
+    WN::|plain%3:00:02::|
+    WN::|unpatterned%3:00:04::|
+    WN::|undramatic%3:00:00::|
     WN::|plain%3:00:01::|
     WN::|stark%5:00:00:plain:01|)
   (SEM-FEATS
@@ -25871,6 +33086,10 @@
   (INHERIT
     ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
+    WN::|flattering%3:00:00::|
+    WN::|rewarding%3:00:00::|
+    WN::|congenial%3:00:00::|
+    WN::|felicitous%3:00:00::|
     WN::|pleasing%3:00:00::|
     WN::|welcome%3:00:00::|
     WN::|agreeable%3:00:00::|
@@ -25948,6 +33167,8 @@
   (INHERIT
     ONT::PHYSICAL-PROPERTY-VAL)
   (OVERLAP
+    WN::|bipolar%3:00:00::|
+    WN::|unipolar%3:00:00::|
     WN::|charged%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -25960,6 +33181,8 @@
   (INHERIT
     ONT::POLARITY-VAL)
   (OVERLAP
+    WN::|negative%3:00:01::|
+    WN::|minus%3:00:00::|
     WN::|negative%3:00:05::|
     WN::|negatively%4:02:00::|
     WN::|negative%5:00:00:charged:00|)
@@ -25975,6 +33198,7 @@
   (INHERIT
     ONT::POLARITY-VAL)
   (OVERLAP
+    WN::|plus%3:00:00::|
     WN::|positive%3:00:05::|
     WN::|positively%4:02:02::|
     WN::|positive%5:00:00:charged:00|)
@@ -26005,7 +33229,21 @@
   (INHERIT
     ONT::ASSOCIATED-WITH-VAL)
   (OVERLAP
+    WN::|democratic%3:00:00::|
     WN::|political%3:00:00::|))
+
+(CONCEPT
+  ONT::POLITICAL-PROPERTY-VAL
+  (INHERIT
+    ONT::POLITICAL-VAL)
+  (OVERLAP
+    WN::|statutory%3:01:00::|
+    WN::|legislative%3:01:01::|
+    WN::|congressional%3:01:00::|
+    WN::|legislative%3:01:00::|
+    WN::|unamended%3:00:00::|
+    WN::|parliamentary%3:01:00::|
+    WN::|washingtonian%3:01:02::|))
 
 (CONCEPT
   ONT::POLITICAL-REGION
@@ -26025,6 +33263,13 @@
        SPATIAL-POINT
        SPATIAL-REGION))
     (TYPE ONT::POLITICAL-REGION)))
+
+(CONCEPT
+  ONT::POLITICAL-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-VAL)
+  (OVERLAP
+    WN::|nonpolitical%3:00:00::|))
 
 (CONCEPT
   ONT::POLLUTION
@@ -26050,6 +33295,7 @@
   (INHERIT
     ONT::WEALTHINESS-VAL)
   (OVERLAP
+    WN::|underprivileged%3:00:00::|
     WN::|poor%3:00:03::|
     WN::|poor%3:00:00::|))
 
@@ -26090,6 +33336,7 @@
   (INHERIT
     ONT::MOVABLE-VAL)
   (OVERLAP
+    WN::|mobile%3:00:00::|
     WN::|portable%3:00:00::|
     WN::|movable%5:00:00:portable:00|
     WN::|movable%5:00:00:mobile:00|)
@@ -26569,6 +33816,7 @@
   (INHERIT
     ONT::PRECISION-VAL)
   (OVERLAP
+    WN::|exact%3:00:00::|
     WN::|dead%5:00:00:precise:00|
     WN::|precise%3:00:00::|)
   (SEM-FEATS
@@ -26729,6 +33977,7 @@
   (INHERIT
     ONT::PREMEDITATION-VAL)
   (OVERLAP
+    WN::|studied%3:00:00::|
     WN::|planned%3:00:00::|
     WN::|premeditated%3:00:00::|)
   (SEM-FEATS
@@ -26774,6 +34023,9 @@
   (INHERIT
     ONT::PREPAREDNESS-VAL)
   (OVERLAP
+    WN::|unequipped%3:00:00::|
+    WN::|ready%3:00:00::|
+    WN::|unready%3:00:00::|
     WN::|prepared%3:00:00::|))
 
 (CONCEPT
@@ -26897,6 +34149,7 @@
   (INHERIT
     ONT::SEQUENCE-VAL)
   (OVERLAP
+    WN::|antecedent%3:00:00::|
     WN::|previous%5:00:00:past:00|
     WN::|previous%5:00:00:preceding:00|
     WN::|former%5:00:02:past:00|
@@ -26934,6 +34187,10 @@
   (INHERIT
     ONT::IMPORTANCE-VAL)
   (OVERLAP
+    WN::|primary%3:00:00::|
+    WN::|operative%3:00:00::|
+    WN::|major%3:00:07::|
+    WN::|major%3:00:02::|
     WN::|chief%5:00:02:important:00|
     WN::|important%3:00:00::|
     WN::|all-important%5:00:00:important:00|
@@ -26948,6 +34205,15 @@
       ABSTR-OBJ)
     (SCALE ONT::IMPORTANT-SCALE)
     (TYPE ONT::PRIMARY)))
+
+(CONCEPT
+  ONT::PRINTED-LANGUAGE-PROPERTY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-LANGUAGES-VAL)
+  (OVERLAP
+    WN::|gothic%3:01:02::|
+    WN::|italic%3:01:01::|
+    WN::|roman%3:01:03::|))
 
 (CONCEPT
   ONT::PRIORITY
@@ -27065,6 +34331,13 @@
   (INHERIT
     ONT::RESULTING-STATE-VAL)
   (OVERLAP
+    WN::|treated%3:00:00::|
+    WN::|tempered%3:00:02::|
+    WN::|treated%3:00:04::|
+    WN::|hardened%3:00:04::|
+    WN::|toughened%3:00:04::|
+    WN::|refined%3:00:02::|
+    WN::|processed%3:00:02::|
     WN::|preserved%3:00:02::|
     WN::|processed%3:00:00::|))
 
@@ -27382,10 +34655,25 @@
           ONT::FACT))))))
 
 (CONCEPT
+  ONT::PROPRIETARY-VAL
+  (COMMENT "(proprietary)")
+  (INHERIT
+    ONT::PROTECTED-PROPERTY-VAL)
+  (OVERLAP
+    WN::|proprietary%3:00:00::|))
+
+(CONCEPT
+  ONT::PROTECTED-PROPERTY-VAL
+  (COMMENT "(proprietary)")
+  (INHERIT
+    ONT::STATUS-VAL))
+
+(CONCEPT
   ONT::PROTECTED-VAL
   (INHERIT
     ONT::PROTECTION-VAL)
   (OVERLAP
+    WN::|sheathed%3:00:00::|
     WN::|protected%3:00:00::|))
 
 (CONCEPT
@@ -27452,6 +34740,19 @@
     (TYPE ONT::PROUD-VAL)))
 
 (CONCEPT
+  ONT::PROVOCATIVE-VAL
+  (COMMENT "(exciting, hot, stimulating)")
+  (INHERIT
+    ONT::PROVOKING-EXCITEMENT-VAL)
+  (OVERLAP
+    WN::|stimulating%3:00:00::|
+    WN::|provocative%3:00:00::|
+    WN::|inspiring%3:00:00::|
+    WN::|exciting%3:00:00::|
+    WN::|hot%3:00:02::|
+    WN::|sensational%3:00:00::|))
+
+(CONCEPT
   ONT::PROVOKE
   (INHERIT
     ONT::CAUSE-EFFECT)
@@ -27473,6 +34774,12 @@
            ABSTR-OBJ))
        (INTENTIONAL +))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::PROVOKING-EXCITEMENT-VAL
+  (COMMENT "(exciting, hot, stimulating)")
+  (INHERIT
+    ONT::EVOKING-NEUTRAL-EXPERIENCE-PROPERTY-VAL))
 
 (CONCEPT
   ONT::PROXIMATE-RELN
@@ -27514,6 +34821,15 @@
   (COMMENT "properties pertaining to psychological, mental or emotional states")
   (INHERIT
     ONT::PROPERTY-VAL)
+  (OVERLAP
+    WN::|extroversive%3:00:00::|
+    WN::|extraversive%3:00:00::|
+    WN::|maladjusted%3:00:00::|
+    WN::|abnormal%3:00:03::|
+    WN::|introversive%3:00:00::|
+    WN::|introvertive%3:00:00::|
+    WN::|adjusted%3:00:02::|
+    WN::|psychosexual%3:01:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -27531,6 +34847,53 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::PSYCHOLOGICAL-STATE-VAL
+  (INHERIT
+    ONT::PSYCHOLOGY-VAL)
+  (OVERLAP
+    WN::|hypnotic%3:01:00::|
+    WN::|anxiolytic%3:01:00::|
+    WN::|comatose%3:01:00::|
+    WN::|amnestic%3:01:00::|
+    WN::|amnesic%3:01:00::|
+    WN::|schizoid%3:01:00::|
+    WN::|schizophrenic%3:01:00::|))
+
+(CONCEPT
+  ONT::PSYCHOLOGY-PROPERTY-VAL
+  (INHERIT
+    ONT::PSYCHOLOGY-VAL)
+  (OVERLAP
+    WN::|nomothetic%3:00:00::|
+    WN::|associational%3:01:00::|
+    WN::|retroactive%3:00:00::|
+    WN::|normal%3:00:03::|
+    WN::|proactive%3:00:00::|
+    WN::|behavioristic%3:01:00::|
+    WN::|behaviorist%3:01:00::|
+    WN::|behaviouristic%3:01:00::|
+    WN::|behaviourist%3:01:00::|
+    WN::|neuropsychological%3:01:00::|
+    WN::|presentational%3:01:00::|
+    WN::|molecular%3:00:00::|
+    WN::|attentional%3:01:00::|
+    WN::|abient%3:01:00::|
+    WN::|adient%3:01:00::|
+    WN::|ambiversive%3:00:00::|
+    WN::|conditioned%3:00:00::|
+    WN::|learned%3:00:02::|
+    WN::|molar%3:00:00::|
+    WN::|psychometric%3:01:00::|
+    WN::|idiographic%3:00:00::|))
+
+(CONCEPT
+  ONT::PSYCHOLOGY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SCIENCE-VAL)
+  (OVERLAP
+    WN::|psychological%3:01:00::|))
+
+(CONCEPT
   ONT::PUBLIC-SERVICE-FACILITY
   (INHERIT
     ONT::FACILITY))
@@ -27540,6 +34903,9 @@
   (INHERIT
     ONT::PRIVACY-VAL)
   (OVERLAP
+    WN::|publicized%3:00:00::|
+    WN::|publicised%3:00:00::|
+    WN::|common%3:00:02::|
     WN::|public%3:00:00::|))
 
 (CONCEPT
@@ -27854,6 +35220,7 @@
   (INHERIT
     ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
+    WN::|confused%3:00:00::|
     WN::|perplexed%3:00:00::|
     WN::|baffled%5:00:00:perplexed:00|
     WN::|puzzled%5:00:00:perplexed:00|
@@ -27880,6 +35247,22 @@
     ONT::PREDICATE))
 
 (CONCEPT
+  ONT::QUALIFICATION-VAL
+  (COMMENT "(qualified, eligible)")
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT
+  ONT::QUALIFIED-VAL
+  (COMMENT "(qualified, eligible)")
+  (INHERIT
+    ONT::QUALIFICATION-VAL)
+  (OVERLAP
+    WN::|eligible%3:00:00::|
+    WN::|qualified%3:00:02::|
+    WN::|qualified%3:00:01::|))
+
+(CONCEPT
   ONT::QUALITY-LEVEL-SCALE
   (INHERIT
     ONT::EVALUATION-SCALE))
@@ -27898,6 +35281,11 @@
   ONT::QUANTIFIER
   (INHERIT
     ONT::INDEFINITEQ))
+
+(CONCEPT
+  ONT::QUANTIFIER-VAL
+  (INHERIT
+    ONT::QUANTITY-RELATED-PROPERTY-VAL))
 
 (CONCEPT
   ONT::QUANTITATIVE-RELATION
@@ -27957,7 +35345,11 @@
   (INHERIT
     ONT::PROPERTY-VAL)
   (OVERLAP
-    WN::|quantitative%3:00:00::|)
+    WN::|no%3:00:00::|
+    WN::|some%3:00:00::|
+    WN::|much%3:00:00::|
+    WN::|few%3:00:00::|
+    WN::|many%3:00:00::|)
   (SEM-FRAME
     (ONT::STANDARD
      (CONCEPT
@@ -28066,13 +35458,25 @@
   ONT::RACE-SPECIFIC-VAL
   (COMMENT "associated with race")
   (INHERIT
-    ONT::ASSOCIATED-WITH-RACE-VAL))
+    ONT::RACE-VAL)
+  (OVERLAP
+    WN::|racial%3:01:00::|))
+
+(CONCEPT
+  ONT::RACE-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SOCIETY-AND-CULTURE-VAL)
+  (OVERLAP
+    WN::|black%3:00:02::|
+    WN::|racial%3:00:00::|
+    WN::|white%3:00:02::|))
 
 (CONCEPT
   ONT::RANDOM-VAL
   (INHERIT
     ONT::ORDERED-VAL)
   (OVERLAP
+    WN::|arbitrary%3:00:00::|
     WN::|random%3:00:00::|
     WN::|randomized%5:00:00:irregular:00|))
 
@@ -28238,6 +35642,20 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::READABILITY-VAL
+  (COMMENT "(readable, legible)")
+  (INHERIT
+    ONT::CAN-BE-DONE-VAL))
+
+(CONCEPT
+  ONT::READABLE-VAL
+  (COMMENT "(readable, legible)")
+  (INHERIT
+    ONT::READABILITY-VAL)
+  (OVERLAP
+    WN::|legible%3:00:00::|))
+
+(CONCEPT
   ONT::REAL-VS-FAKE-SCALE
   (INHERIT
     ONT::EVALUATION-SCALE))
@@ -28312,6 +35730,21 @@
     ONT::PERSON))
 
 (CONCEPT
+  ONT::RECIPROCAL-VAL
+  (COMMENT "(reciprocal)")
+  (INHERIT
+    ONT::RECIPROCALITY-VAL)
+  (OVERLAP
+    WN::|reciprocal%3:00:00::|
+    WN::|mutual%3:00:00::|))
+
+(CONCEPT
+  ONT::RECIPROCALITY-VAL
+  (COMMENT "(reciprocal)")
+  (INHERIT
+    ONT::RELATIONAL-ATTRIBUTE-VAL))
+
+(CONCEPT
   ONT::RECOMMENDABILITY-SCALE
   (COMMENT "worthy of recommendation and advice; wise or prudent")
   (INHERIT
@@ -28320,9 +35753,14 @@
     WN::|advisability%1:07:00::|))
 
 (CONCEPT
+  ONT::RECOMMENDABILITY-VAL
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT
   ONT::RECOMMENDABLE-VAL
   (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL)
+    ONT::RECOMMENDABILITY-VAL)
   (OVERLAP
     WN::|advisable%3:00:00::|)
   (SEM-FEATS
@@ -28367,6 +35805,19 @@
       PHYS-OBJ)
     (ORIGIN ARTIFACT)
     (TYPE ONT::RECORDING-DEVICE)))
+
+(CONCEPT
+  ONT::RECREATION-PROPERTY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-ENTERTAINMENT-VAL)
+  (OVERLAP
+    WN::|aerophilatelic%3:01:00::|
+    WN::|terpsichorean%3:01:00::|
+    WN::|philatelic%3:01:00::|
+    WN::|philatelical%3:01:00::|
+    WN::|pyrrhic%3:01:02::|
+    WN::|recreational%3:01:00::|
+    WN::|avocational%3:01:00::|))
 
 (CONCEPT
   ONT::RECTANGULAR-VAL
@@ -28715,6 +36166,14 @@
          ABSTR-OBJ)))))
 
 (CONCEPT
+  ONT::RELATED-SOCIALLY-VAL
+  (COMMENT "(related)")
+  (INHERIT
+    ONT::SOCIAL-RELATION-VAL)
+  (OVERLAP
+    WN::|related%3:00:01::|))
+
+(CONCEPT
   ONT::RELATED-TO-CARDINALITY-VAL
   (INHERIT
     ONT::NUMBER-RELATED-PROPERTY-VAL))
@@ -28722,10 +36181,24 @@
 (CONCEPT
   ONT::RELATED-TO-LANGUAGES-VAL
   (INHERIT
-    ONT::ASSOCIATED-WITH-LANGUAGES-VAL)
+    ONT::ASSOCIATED-WITH-LANGUAGES-VAL))
+
+(CONCEPT
+  ONT::RELATED-VAL
+  (COMMENT "(related)")
+  (INHERIT
+    ONT::RELATEDNESS-VAL)
   (OVERLAP
-    WN::|linguistic%3:01:00::|
-    WN::|intralinguistic%3:01:00::|))
+    WN::|related%3:00:02::|
+    WN::|related_to%3:00:00::|
+    WN::|associative%3:00:00::|
+    WN::|associatory%3:00:00::|))
+
+(CONCEPT
+  ONT::RELATEDNESS-VAL
+  (COMMENT "(related)")
+  (INHERIT
+    ONT::RELATIONAL-ATTRIBUTE-VAL))
 
 (CONCEPT
   ONT::RELATION
@@ -28809,7 +36282,7 @@
 (CONCEPT
   ONT::RELAXED-VAL
   (INHERIT
-    ONT::RESTLESSNESS-VAL)
+    ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
     WN::|relaxed%3:00:00::|
     WN::|restful%3:00:00::|)
@@ -28872,6 +36345,7 @@
   (INHERIT
     ONT::RELEVANCE-VAL)
   (OVERLAP
+    WN::|material%3:00:02::|
     WN::|pertinent%5:00:00:relevant:00|
     WN::|applicable%5:00:00:relevant:00|
     WN::|relevant%3:00:00::|)
@@ -28900,6 +36374,9 @@
   (INHERIT
     ONT::RELIABILITY-VAL)
   (OVERLAP
+    WN::|sound%3:00:00::|
+    WN::|trustful%3:00:00::|
+    WN::|trusting%3:00:02::|
     WN::|trustworthy%3:00:00::|
     WN::|dependable%5:00:00:trustworthy:00|
     WN::|reliable%3:00:00::|)
@@ -28915,7 +36392,130 @@
   (COMMENT
    "identity specifically based on religious affiliation, dogma, or theology (properties referring to the culture of the practicing people or nations belong to ont::culture-specific)")
   (INHERIT
-    ONT::ASSOCIATED-WITH-RELIGION-VAL))
+    ONT::RELIGION-VAL)
+  (OVERLAP
+    WN::|christian%3:00:00::|
+    WN::|unchristian%3:00:00::|
+    WN::|pentecostal%3:01:01::|
+    WN::|rastafarian%3:01:00::|
+    WN::|taoist%3:01:02::|
+    WN::|formalistic%3:01:00::|
+    WN::|formalized%3:01:00::|
+    WN::|formalised%3:01:00::|
+    WN::|catechismal%3:01:00::|
+    WN::|bahai%3:01:00::|
+    WN::|mystic%3:01:00::|
+    WN::|mystical%3:01:00::|
+    WN::|cataphatic%3:01:00::|
+    WN::|apophatic%3:01:00::|
+    WN::|calvinist%3:01:00::|
+    WN::|calvinistic%3:01:00::|
+    WN::|calvinistical%3:01:00::|
+    WN::|unitarian%3:01:00::|
+    WN::|catholic%3:01:00::|
+    WN::|fundamentalist%3:01:00::|
+    WN::|fundamentalistic%3:01:00::|
+    WN::|pantheist%3:01:00::|
+    WN::|pantheistic%3:01:00::|
+    WN::|arminian%3:01:00::|
+    WN::|yogistic%3:01:00::|
+    WN::|yogic%3:01:00::|
+    WN::|tantric%3:01:00::|
+    WN::|tantrik%3:01:00::|
+    WN::|discalced%3:00:00::|
+    WN::|discalceate%3:00:00::|
+    WN::|unshod%3:00:04::|
+    WN::|orthodox%3:01:01::|
+    WN::|eastern_orthodox%3:01:00::|
+    WN::|russian_orthodox%3:01:00::|
+    WN::|greek_orthodox%3:01:00::|
+    WN::|ecclesiastical%3:01:00::|
+    WN::|ecclesiastic%3:01:00::|
+    WN::|shuha%3:01:00::|
+    WN::|donatist%3:01:00::|
+    WN::|mithraic%3:01:00::|
+    WN::|mithraistic%3:01:00::|
+    WN::|kokka%3:01:00::|
+    WN::|wiccan%3:01:00::|
+    WN::|hindu%3:01:00::|
+    WN::|hindi%3:01:00::|
+    WN::|hindoo%3:01:00::|
+    WN::|shinto%3:01:00::|
+    WN::|shintoist%3:01:00::|
+    WN::|shintoistic%3:01:00::|
+    WN::|evangelical%3:01:01::|
+    WN::|roman%3:01:00::|
+    WN::|r.c.%3:01:00::|
+    WN::|romanist%3:01:00::|
+    WN::|romish%3:01:00::|
+    WN::|roman_catholic%3:01:00::|
+    WN::|popish%3:01:00::|
+    WN::|papist%3:01:00::|
+    WN::|papistic%3:01:00::|
+    WN::|papistical%3:01:00::|
+    WN::|muslim%3:01:00::|
+    WN::|moslem%3:01:00::|
+    WN::|islamic%3:01:00::|
+    WN::|sikh%3:01:00::|
+    WN::|carthusian%3:01:00::|
+    WN::|buddhist%3:01:00::|
+    WN::|buddhistic%3:01:00::|
+    WN::|theist%3:01:00::|
+    WN::|theistical%3:01:00::|
+    WN::|theistic%3:01:00::|
+    WN::|orthodox%3:01:00::|
+    WN::|jewish-orthodox%3:01:00::|
+    WN::|manichaean%3:01:00::|
+    WN::|manichean%3:01:00::|
+    WN::|manichee%3:01:00::|
+    WN::|judaic%3:01:00::|
+    WN::|judaical%3:01:00::|
+    WN::|jain%3:01:00::|
+    WN::|jainist%3:01:00::|
+    WN::|uniate%3:01:00::|
+    WN::|hasidic%3:01:00::|
+    WN::|hassidic%3:01:00::|
+    WN::|chasidic%3:01:00::|
+    WN::|chassidic%3:01:00::|
+    WN::|revivalistic%3:01:00::|
+    WN::|byzantine%3:01:01::|
+    WN::|christian%3:01:00::|
+    WN::|judeo-christian%3:01:00::|
+    WN::|shamanist%3:01:00::|
+    WN::|shamanistic%3:01:00::|
+    WN::|albigensian%3:01:00::|))
+
+(CONCEPT
+  ONT::RELIGION-VAL
+  (COMMENT "having to do with religion")
+  (INHERIT
+    ONT::ASSOCIATED-WITH-BELIEF-SYSTEMS-VAL)
+  (OVERLAP
+    WN::|heavenly%3:00:00::|
+    WN::|infernal%3:00:00::|
+    WN::|nonsectarian%3:00:00::|
+    WN::|unsectarian%3:00:00::|
+    WN::|sectarian%3:00:00::|
+    WN::|monotheistic%3:00:00::|
+    WN::|religious%3:00:01::|))
+
+(CONCEPT
+  ONT::RELIGIOUS-DENOMINATION-VAL
+  (INHERIT
+    ONT::RELIGION-SPECIFIC-VAL)
+  (OVERLAP
+    WN::|congregational%3:01:02::|
+    WN::|congregationalist%3:01:00::|
+    WN::|episcopal%3:01:01::|
+    WN::|episcopalian%3:01:00::|
+    WN::|denominational%3:01:00::|
+    WN::|anglo-catholic%3:01:00::|
+    WN::|methodist%3:01:00::|
+    WN::|wesleyan%3:01:00::|
+    WN::|baptistic%3:01:00::|
+    WN::|mormon%3:01:00::|
+    WN::|lutheran%3:01:02::|
+    WN::|anglican%3:01:00::|))
 
 (CONCEPT
   ONT::RELIGIOUS-FACILITY
@@ -28937,9 +36537,71 @@
     WN::|christian%1:18:00::|))
 
 (CONCEPT
+  ONT::RELIGIOUS-PROPERTY-VAL
+  (INHERIT
+    ONT::RELIGION-VAL)
+  (OVERLAP
+    WN::|clean%3:00:04::|
+    WN::|unclean%3:00:00::|
+    WN::|impure%3:00:03::|
+    WN::|homiletic%3:01:01::|
+    WN::|homiletical%3:01:01::|
+    WN::|biblical%3:01:00::|
+    WN::|scriptural%3:01:00::|
+    WN::|evangelical%3:01:00::|
+    WN::|antinomian%3:01:00::|
+    WN::|sacramental%3:01:00::|
+    WN::|dogmatic%3:01:00::|
+    WN::|avestan%3:01:00::|
+    WN::|eucharistic%3:01:00::|
+    WN::|predestinarian%3:01:00::|
+    WN::|vedic%3:01:00::|
+    WN::|christological%3:01:00::|
+    WN::|universalistic%3:01:00::|
+    WN::|universalist%3:01:00::|
+    WN::|gallican%3:01:00::|
+    WN::|apocryphal%3:01:00::|
+    WN::|atheist%3:01:00::|
+    WN::|atheistic%3:01:00::|
+    WN::|atheistical%3:01:00::|
+    WN::|abbatial%3:01:00::|
+    WN::|mishnaic%3:01:00::|
+    WN::|pentecostal%3:01:00::|
+    WN::|baptismal%3:01:00::|
+    WN::|monophysite%3:01:00::|
+    WN::|monophysitic%3:01:00::|
+    WN::|creedal%3:01:00::|
+    WN::|credal%3:01:00::|
+    WN::|levitical%3:01:00::|
+    WN::|deist%3:01:00::|
+    WN::|deistic%3:01:00::|
+    WN::|consubstantial%3:01:00::|
+    WN::|missionary%3:01:00::|
+    WN::|missional%3:01:00::|
+    WN::|ritual%3:01:02::|
+    WN::|biblical%3:01:02::|
+    WN::|postbiblical%3:01:00::|
+    WN::|responsive%3:01:00::|
+    WN::|antiphonal%3:01:00::|
+    WN::|gnostic%3:01:00::|
+    WN::|pietistic%3:01:00::|
+    WN::|pietistical%3:01:00::|
+    WN::|evangelistic%3:01:00::|
+    WN::|synergistic%3:01:00::|
+    WN::|liturgical%3:01:00::|
+    WN::|agrypnotic%3:01:00::|))
+
+(CONCEPT
   ONT::RELIGIOUS-REGION
   (INHERIT
     ONT::GEOGRAPHIC-REGION))
+
+(CONCEPT
+  ONT::RELIGIOUS-VAL
+  (INHERIT
+    ONT::RELIGION-VAL)
+  (OVERLAP
+    WN::|religious%3:00:00::|))
 
 (CONCEPT
   ONT::RELINQUISH
@@ -29041,6 +36703,8 @@
   (INHERIT
     ONT::PART-WHOLE-VAL)
   (OVERLAP
+    WN::|net%3:00:00::|
+    WN::|nett%3:00:00::|
     WN::|left%5:00:00:unexhausted:00|
     WN::|remaining%5:00:00:unexhausted:00|))
 
@@ -29074,10 +36738,22 @@
     WN::|remind%2:31:00::|))
 
 (CONCEPT
+  ONT::REMORSELESS-VAL
+  (COMMENT "(unapologetic, unregretful)")
+  (INHERIT
+    ONT::NEG-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|unashamed%3:00:00::|
+    WN::|unregretful%3:00:00::|
+    WN::|unregretting%3:00:00::|
+    WN::|unapologetic%3:00:00::|))
+
+(CONCEPT
   ONT::REMOTE
   (INHERIT
     ONT::DISTANCE-VAL)
   (OVERLAP
+    WN::|distant%3:00:01::|
     WN::|distant%5:00:02:far:00|
     WN::|distant%3:00:02::|
     WN::|far%3:00:00::|
@@ -29245,6 +36921,8 @@
   (INHERIT
     ONT::FREQUENCY-VAL)
   (OVERLAP
+    WN::|cyclic%3:00:01::|
+    WN::|cyclical%3:00:00::|
     WN::|continual%3:00:00::|))
 
 (CONCEPT
@@ -29372,6 +37050,26 @@
      (CONCEPT
        T)
      OPTIONAL)))
+
+(CONCEPT
+  ONT::REPRESENTATION-METHOD-VAL
+  (INHERIT
+    ONT::MODE)
+  (OVERLAP
+    WN::|anagogic%3:01:00::|
+    WN::|anagogical%3:01:00::|
+    WN::|radiographic%3:01:00::|
+    WN::|roentgenographic%3:01:00::|
+    WN::|antitypic%3:01:00::|
+    WN::|antitypical%3:01:00::|
+    WN::|scenic%3:01:00::|
+    WN::|xerographic%3:01:00::|
+    WN::|paradigmatic%3:01:00::|
+    WN::|concretistic%3:01:00::|
+    WN::|radiological%3:01:00::|
+    WN::|microcosmic%3:01:00::|
+    WN::|photographic%3:01:00::|
+    WN::|anamorphic%3:01:01::|))
 
 (CONCEPT
   ONT::REPRESENTATIVE
@@ -29518,6 +37216,17 @@
          SITUATION)))))
 
 (CONCEPT
+  ONT::RESEMBLING-VAL
+  (INHERIT
+    ONT::HAVING-CONSTITUENT-PARTS-VAL))
+
+(CONCEPT
+  ONT::RESERVATION-VAL
+  (COMMENT "(reserved, booked)")
+  (INHERIT
+    ONT::STATUS-VAL))
+
+(CONCEPT
   ONT::RESERVE
   (INHERIT
     ONT::ACQUIRE)
@@ -29551,6 +37260,14 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::RESERVED-VAL
+  (COMMENT "(reserved, booked)")
+  (INHERIT
+    ONT::RESERVATION-VAL)
+  (OVERLAP
+    WN::|reserved%3:00:02::|))
+
+(CONCEPT
   ONT::RESIDUE
   (INHERIT
     ONT::CHEMICAL))
@@ -29568,6 +37285,22 @@
          ABSTR-OBJ)
        (SCALE ONT::OTHER-SCALE))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::RESPECT-VAL
+  (COMMENT "(respectful, reverent)")
+  (INHERIT
+    ONT::SOCIAL-INTERACTION-VAL))
+
+(CONCEPT
+  ONT::RESPECTFUL-VAL
+  (COMMENT "(respectful, reverent)")
+  (INHERIT
+    ONT::RESPECT-VAL)
+  (OVERLAP
+    WN::|reverent%3:00:00::|
+    WN::|respectful%3:00:00::|
+    WN::|impious%3:00:00::|))
 
 (CONCEPT
   ONT::RESPONSE
@@ -29644,7 +37377,7 @@
 (CONCEPT
   ONT::RESTLESS-VAL
   (INHERIT
-    ONT::RESTLESSNESS-VAL)
+    ONT::NEGATIVE-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
     WN::|restless%3:00:00::|
     WN::|edgy%5:00:00:tense:03|
@@ -29668,19 +37401,26 @@
     WN::|restlessness%1:12:00::|))
 
 (CONCEPT
-  ONT::RESTLESSNESS-VAL
+  ONT::RESTRICTED-VAL
+  (COMMENT "(restricted, restrained)")
   (INHERIT
-    ONT::BODY-CONDITION-PROPERTY-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (SCALE ONT::RESTLESSNESS-SCALE)
-    (TYPE ONT::RESTLESSNESS-VAL)))
+    ONT::RESTRICTION-VAL)
+  (OVERLAP
+    WN::|restrained%3:00:00::|
+    WN::|restricted%3:00:00::|
+    WN::|inhibited%3:00:00::|
+    WN::|restrictive%3:00:00::|))
 
 (CONCEPT
   ONT::RESTRICTION
   (INHERIT
     ONT::PREDICATE))
+
+(CONCEPT
+  ONT::RESTRICTION-VAL
+  (COMMENT "(restricted, restrained)")
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT
   ONT::RESULTING-OBJECT
@@ -29721,7 +37461,540 @@
   (COMMENT
    "adjectives that describe the resulting states of the verb that it pertains to")
   (INHERIT
-    ONT::PROPERTY-VAL))
+    ONT::PROPERTY-VAL)
+  (OVERLAP
+    WN::|modified%3:00:00::|
+    WN::|changed%3:00:00::|
+    WN::|altered%3:00:00::|
+    WN::|paid%3:00:00::|
+    WN::|undiluted%3:00:00::|
+    WN::|unmodified%3:00:00::|
+    WN::|unpaid%3:00:00::|
+    WN::|diluted%3:00:00::|
+    WN::|dilute%3:00:00::|
+    WN::|decreased%3:00:00::|
+    WN::|reduced%3:00:04::|
+    WN::|unsettled%3:00:01::|
+    WN::|inhabited%3:00:00::|
+    WN::|supported%3:00:00::|
+    WN::|increased%3:00:00::|
+    WN::|planted%3:00:00::|
+    WN::|agitated%3:00:02::|
+    WN::|balanced%3:00:00::|
+    WN::|uninhabited%3:00:00::|
+    WN::|saved%3:00:00::|
+    WN::|unmerited%3:00:00::|
+    WN::|unbuttoned%3:00:00::|
+    WN::|unfastened%3:00:02::|
+    WN::|cursed%3:00:00::|
+    WN::|curst%3:00:00::|
+    WN::|extended%3:00:00::|
+    WN::|lowered%3:00:00::|
+    WN::|surmounted%3:44:00::|
+    WN::|settled%3:00:01::|
+    WN::|hurried%3:00:00::|
+    WN::|treated%3:00:02::|
+    WN::|unplanted%3:00:00::|
+    WN::|unfueled%3:00:00::|
+    WN::|appointive%3:00:00::|
+    WN::|appointed%3:00:02::|
+    WN::|elective%3:00:00::|
+    WN::|elected%3:00:02::|
+    WN::|unlisted%3:00:00::|
+    WN::|unaccustomed%3:00:00::|
+    WN::|addressed%3:00:00::|
+    WN::|unaddressed%3:00:00::|
+    WN::|unperplexed%3:00:00::|
+    WN::|unobligated%3:00:00::|
+    WN::|nonaligned%3:00:00::|
+    WN::|aligned%3:00:01::|
+    WN::|opposed%3:00:00::|
+    WN::|fitted%3:44:00::|
+    WN::|scented%3:00:00::|
+    WN::|unsized%3:00:01::|
+    WN::|sized%3:00:01::|
+    WN::|preconceived%3:44:00::|
+    WN::|plugged%3:44:00::|
+    WN::|geared%3:00:00::|
+    WN::|ungeared%3:00:00::|
+    WN::|unmotivated%3:00:00::|
+    WN::|unassisted%3:00:00::|
+    WN::|powered%3:00:00::|
+    WN::|assisted%3:00:00::|
+    WN::|aided%3:00:00::|
+    WN::|fueled%3:00:00::|
+    WN::|cooked%3:00:00::|
+    WN::|covered%3:00:00::|
+    WN::|destroyed%3:00:00::|
+    WN::|frozen%3:00:00::|
+    WN::|involved%3:00:00::|
+    WN::|cut%3:00:01::|
+    WN::|uninhibited%3:00:00::|
+    WN::|melted%3:00:00::|
+    WN::|liquid%3:00:04::|
+    WN::|liquified%3:00:04::|
+    WN::|unfrozen%3:00:00::|
+    WN::|undiversified%3:00:00::|
+    WN::|unaffected%3:00:00::|
+    WN::|recorded%3:00:00::|
+    WN::|cut%3:00:03::|
+    WN::|ununderstood%3:00:00::|
+    WN::|unshaven%3:00:00::|
+    WN::|unshaved%3:00:00::|
+    WN::|segregated%3:00:00::|
+    WN::|unintegrated%3:00:01::|
+    WN::|unventilated%3:00:00::|
+    WN::|unaccompanied%3:00:00::|
+    WN::|moderating%3:00:00::|
+    WN::|trained%3:00:00::|
+    WN::|coated%3:00:00::|
+    WN::|unmitigated%3:00:00::|
+    WN::|afloat%3:00:00::|
+    WN::|undefeated%3:00:00::|
+    WN::|reported%3:00:00::|
+    WN::|painted%3:00:00::|
+    WN::|mined%3:00:00::|
+    WN::|raised%3:00:00::|
+    WN::|crowded%3:00:00::|
+    WN::|abridged%3:00:00::|
+    WN::|encumbered%3:00:00::|
+    WN::|burdened%3:00:00::|
+    WN::|specialized%3:00:00::|
+    WN::|specialised%3:00:00::|
+    WN::|detected%3:00:00::|
+    WN::|furrowed%3:00:00::|
+    WN::|rugged%3:00:02::|
+    WN::|castrated%3:00:00::|
+    WN::|unsexed%3:00:00::|
+    WN::|delineated%3:00:00::|
+    WN::|represented%3:00:02::|
+    WN::|delineate%3:00:00::|
+    WN::|unpolished%3:00:00::|
+    WN::|mitigated%3:00:00::|
+    WN::|ventilated%3:00:00::|
+    WN::|corrected%3:00:00::|
+    WN::|unfixed%3:00:00::|
+    WN::|unprocessed%3:00:00::|
+    WN::|derived%3:00:00::|
+    WN::|improved%3:00:00::|
+    WN::|undetected%3:00:00::|
+    WN::|unplowed%3:00:00::|
+    WN::|unploughed%3:00:00::|
+    WN::|unbroken%3:00:04::|
+    WN::|understood%3:00:00::|
+    WN::|unimproved%3:00:00::|
+    WN::|unagitated%3:00:02::|
+    WN::|unconstipated%3:00:00::|
+    WN::|regular%3:00:06::|
+    WN::|signed%3:00:00::|
+    WN::|motivated%3:00:00::|
+    WN::|reflected%3:00:00::|
+    WN::|blended%3:00:00::|
+    WN::|induced%3:00:00::|
+    WN::|unscheduled%3:00:00::|
+    WN::|developed%3:00:00::|
+    WN::|undeveloped%3:00:00::|
+    WN::|assigned%3:00:00::|
+    WN::|defeated%3:00:00::|
+    WN::|uncut%3:00:01::|
+    WN::|unfastened%3:00:00::|
+    WN::|unmelted%3:00:00::|
+    WN::|used%3:00:00::|
+    WN::|paved%3:00:00::|
+    WN::|loaded%3:00:00::|
+    WN::|unexploited%3:00:00::|
+    WN::|undeveloped%3:00:04::|
+    WN::|wired%3:00:00::|
+    WN::|sold%3:00:00::|
+    WN::|shared%3:00:00::|
+    WN::|caulked%3:00:00::|
+    WN::|unbound%3:00:01::|
+    WN::|unendowed%3:00:00::|
+    WN::|uncared-for%3:00:00::|
+    WN::|undelineated%3:00:00::|
+    WN::|unaccompanied%3:00:01::|
+    WN::|drained%3:00:00::|
+    WN::|unsupported%3:00:00::|
+    WN::|unturned%3:00:00::|
+    WN::|lighted%3:00:00::|
+    WN::|lit%3:00:02::|
+    WN::|shaven%3:00:00::|
+    WN::|shaved%3:00:00::|
+    WN::|lost%3:00:02::|
+    WN::|adjusted%3:00:00::|
+    WN::|expired%3:00:00::|
+    WN::|misused%3:00:00::|
+    WN::|touched%3:00:00::|
+    WN::|unloaded%3:00:00::|
+    WN::|polished%3:00:00::|
+    WN::|fastened%3:00:00::|
+    WN::|cosmopolitan%3:00:02::|
+    WN::|unseasoned%3:00:00::|
+    WN::|buried%3:00:00::|
+    WN::|inhumed%3:00:00::|
+    WN::|interred%3:00:00::|
+    WN::|unarmed%3:00:02::|
+    WN::|unconvinced%3:00:00::|
+    WN::|uncensored%3:00:00::|
+    WN::|unrequested%3:00:00::|
+    WN::|abused%3:00:01::|
+    WN::|ill-treated%3:00:00::|
+    WN::|maltreated%3:00:00::|
+    WN::|mistreated%3:00:00::|
+    WN::|unmarked%3:00:00::|
+    WN::|undifferentiated%3:00:00::|
+    WN::|uniform%3:00:04::|
+    WN::|censored%3:00:00::|
+    WN::|untreated%3:00:00::|
+    WN::|punished%3:00:00::|
+    WN::|unreflected%3:00:00::|
+    WN::|modulated%3:00:00::|
+    WN::|untrimmed%3:00:00::|
+    WN::|uncut%3:00:05::|
+    WN::|determined%3:00:00::|
+    WN::|unmated%3:00:00::|
+    WN::|exploited%3:00:00::|
+    WN::|uncut%3:00:03::|
+    WN::|rough%3:00:05::|
+    WN::|sealed%3:00:01::|
+    WN::|traveled%3:00:00::|
+    WN::|uncorrected%3:00:00::|
+    WN::|unbalanced%3:00:00::|
+    WN::|imbalanced%3:00:00::|
+    WN::|untraveled%3:00:00::|
+    WN::|untravelled%3:00:00::|
+    WN::|trimmed%3:00:00::|
+    WN::|cut%3:00:05::|
+    WN::|packaged%3:00:00::|
+    WN::|untangled%3:00:00::|
+    WN::|unsupervised%3:00:00::|
+    WN::|unlighted%3:00:00::|
+    WN::|unlit%3:00:02::|
+    WN::|mated%3:00:00::|
+    WN::|contracted%3:00:00::|
+    WN::|compartmented%3:00:00::|
+    WN::|unblended%3:00:00::|
+    WN::|unstained%3:00:00::|
+    WN::|unadjusted%3:00:00::|
+    WN::|earned%3:00:00::|
+    WN::|tied%3:00:00::|
+    WN::|fastened%3:00:03::|
+    WN::|unabridged%3:00:00::|
+    WN::|diversified%3:00:00::|
+    WN::|unburdened%3:00:00::|
+    WN::|contaminated%3:00:00::|
+    WN::|cared-for%3:00:00::|
+    WN::|unpunished%3:00:00::|
+    WN::|uninsured%3:00:00::|
+    WN::|unpatronized%3:00:00::|
+    WN::|unpatronised%3:00:00::|
+    WN::|patronless%3:00:00::|
+    WN::|unmodulated%3:00:00::|
+    WN::|scheduled%3:00:00::|
+    WN::|unoccupied%3:00:02::|
+    WN::|unspecialized%3:00:00::|
+    WN::|unspecialised%3:00:00::|
+    WN::|uncrowned%3:00:00::|
+    WN::|crownless%3:00:00::|
+    WN::|uninvolved%3:00:00::|
+    WN::|rusted%3:00:00::|
+    WN::|amended%3:00:00::|
+    WN::|found%3:00:00::|
+    WN::|noticed%3:00:00::|
+    WN::|uncultivated%3:00:00::|
+    WN::|unexpired%3:00:00::|
+    WN::|unstaged%3:00:00::|
+    WN::|unpackaged%3:00:00::|
+    WN::|unconditioned%3:00:00::|
+    WN::|innate%3:00:02::|
+    WN::|unlearned%3:00:02::|
+    WN::|lost%3:00:03::|
+    WN::|sworn%3:00:00::|
+    WN::|silenced%3:00:00::|
+    WN::|unanalyzed%3:00:00::|
+    WN::|awakened%3:00:00::|
+    WN::|insured%3:00:00::|
+    WN::|plowed%3:00:00::|
+    WN::|ploughed%3:00:00::|
+    WN::|blessed%3:00:00::|
+    WN::|blest%3:00:00::|
+    WN::|born%3:00:00::|
+    WN::|unsuspected%3:00:00::|
+    WN::|inbred%3:00:00::|
+    WN::|owned%3:00:00::|
+    WN::|endowed%3:00:00::|
+    WN::|supported%3:00:02::|
+    WN::|shaded%3:00:02::|
+    WN::|seasoned%3:00:00::|
+    WN::|untempered%3:00:02::|
+    WN::|unhardened%3:00:04::|
+    WN::|tapped%3:00:00::|
+    WN::|constipated%3:00:00::|
+    WN::|uncastrated%3:00:00::|
+    WN::|undetermined%3:00:00::|
+    WN::|irremovable%3:00:00::|
+    WN::|unearned%3:00:00::|
+    WN::|inflected%3:00:00::|
+    WN::|designed%3:00:00::|
+    WN::|intentional%3:00:04::|
+    WN::|selected%3:00:00::|
+    WN::|unpaved%3:00:00::|
+    WN::|analyzed%3:00:00::|
+    WN::|calibrated%3:44:00::|
+    WN::|graduated%3:44:00::|
+    WN::|defined%3:00:00::|
+    WN::|unfurnished%3:00:00::|
+    WN::|noninstitutionalized%3:00:00::|
+    WN::|noninstitutionalised%3:00:00::|
+    WN::|undeciphered%3:00:00::|
+    WN::|re-created%3:44:00::|
+    WN::|elapsed%3:44:00::|
+    WN::|parked%3:44:00::|
+    WN::|supervised%3:00:00::|
+    WN::|pursued%3:44:00::|
+    WN::|published%3:00:00::|
+    WN::|unpasteurized%3:44:00::|
+    WN::|unpasteurised%3:44:00::|
+    WN::|ionized%3:00:00::|
+    WN::|ionised%3:00:00::|
+    WN::|contested%3:44:00::|
+    WN::|unwrapped%3:00:00::|
+    WN::|unfunded%3:00:00::|
+    WN::|unconsummated%3:00:00::|
+    WN::|expanded%3:00:01::|
+    WN::|unsigned%3:00:00::|
+    WN::|enfranchised%3:00:00::|
+    WN::|unchartered%3:00:00::|
+    WN::|shrieked%3:44:00::|
+    WN::|disenfranchised%3:00:00::|
+    WN::|disfranchised%3:00:00::|
+    WN::|voiceless%3:00:00::|
+    WN::|voteless%3:00:00::|
+    WN::|uncarved%3:00:00::|
+    WN::|requested%3:00:00::|
+    WN::|accompanied%3:00:00::|
+    WN::|untied%3:00:00::|
+    WN::|unfastened%3:00:03::|
+    WN::|accompanied%3:00:01::|
+    WN::|attended%3:00:00::|
+    WN::|differentiated%3:00:00::|
+    WN::|unrefined%3:00:02::|
+    WN::|unprocessed%3:00:02::|
+    WN::|crude%3:00:02::|
+    WN::|counterrevolutionary%3:00:00::|
+    WN::|unwaxed%3:00:00::|
+    WN::|noncommissioned%3:00:00::|
+    WN::|convinced%3:00:00::|
+    WN::|crystallized%3:00:00::|
+    WN::|crystallised%3:00:00::|
+    WN::|pasteurized%3:44:00::|
+    WN::|pasteurised%3:44:00::|
+    WN::|sheared%3:00:00::|
+    WN::|shorn%3:00:00::|
+    WN::|hypophysectomized%3:44:00::|
+    WN::|hypophysectomised%3:44:00::|
+    WN::|tucked%3:00:00::|
+    WN::|baptized%3:00:00::|
+    WN::|baptised%3:00:00::|
+    WN::|unowned%3:00:00::|
+    WN::|ownerless%3:00:00::|
+    WN::|brainwashed%3:00:00::|
+    WN::|unleavened%3:00:00::|
+    WN::|unraised%3:00:00::|
+    WN::|crossed%3:00:02::|
+    WN::|uncrossed%3:00:02::|
+    WN::|atrophied%3:00:00::|
+    WN::|wasted%3:00:04::|
+    WN::|diminished%3:00:04::|
+    WN::|hypertrophied%3:00:00::|
+    WN::|enlarged%3:00:04::|
+    WN::|cultivated%3:00:00::|
+    WN::|commissioned%3:00:00::|
+    WN::|seated%3:00:00::|
+    WN::|sitting%3:00:02::|
+    WN::|unshaded%3:00:02::|
+    WN::|well-defined%3:00:00::|
+    WN::|clear%3:00:04::|
+    WN::|adopted%3:00:00::|
+    WN::|adoptive%3:00:04::|
+    WN::|reconstructed%3:00:00::|
+    WN::|unreconstructed%3:00:00::|
+    WN::|tempered%3:00:01::|
+    WN::|posed%3:44:00::|
+    WN::|stacked%3:44:00::|
+    WN::|moneyed%3:00:00::|
+    WN::|monied%3:00:00::|
+    WN::|labeled%3:00:00::|
+    WN::|labelled%3:00:00::|
+    WN::|tagged%3:00:00::|
+    WN::|focused%3:00:00::|
+    WN::|focussed%3:00:04::|
+    WN::|thoriated%3:44:00::|
+    WN::|tittering%3:44:00::|
+    WN::|suspected%3:00:00::|
+    WN::|collected%3:44:00::|
+    WN::|gathered%3:44:00::|
+    WN::|laced%3:00:00::|
+    WN::|tied%3:00:02::|
+    WN::|oxidized%3:44:00::|
+    WN::|oxidised%3:44:00::|
+    WN::|regulated%3:00:00::|
+    WN::|deciphered%3:00:00::|
+    WN::|saponified%3:44:00::|
+    WN::|tanned%3:00:00::|
+    WN::|penciled%3:44:00::|
+    WN::|pencilled%3:44:00::|
+    WN::|wrapped%3:00:00::|
+    WN::|solved%3:00:00::|
+    WN::|resolved%3:00:04::|
+    WN::|glazed%3:00:01::|
+    WN::|glassed%3:00:00::|
+    WN::|keyed%3:00:00::|
+    WN::|avenged%3:44:00::|
+    WN::|unavenged%3:44:00::|
+    WN::|enforced%3:00:00::|
+    WN::|implemented%3:00:02::|
+    WN::|sintered%3:44:00::|
+    WN::|funded%3:00:00::|
+    WN::|beneficed%3:00:00::|
+    WN::|chartered%3:00:00::|
+    WN::|hired%3:00:02::|
+    WN::|leased%3:00:02::|
+    WN::|camphorated%3:00:00::|
+    WN::|unoiled%3:00:00::|
+    WN::|unlabeled%3:00:00::|
+    WN::|unlabelled%3:00:00::|
+    WN::|untagged%3:00:00::|
+    WN::|untucked%3:00:00::|
+    WN::|leavened%3:00:00::|
+    WN::|sanitized%3:44:00::|
+    WN::|sanitised%3:44:00::|
+    WN::|sleeved%3:00:00::|
+    WN::|stained%3:00:00::|
+    WN::|branded%3:00:00::|
+    WN::|lamented%3:00:00::|
+    WN::|unposed%3:44:00::|
+    WN::|unassigned%3:00:00::|
+    WN::|uncollected%3:44:00::|
+    WN::|ungathered%3:44:00::|
+    WN::|unburied%3:00:00::|
+    WN::|uncarpeted%3:00:00::|
+    WN::|uncaulked%3:00:00::|
+    WN::|uncompartmented%3:00:00::|
+    WN::|uncamphorated%3:00:00::|
+    WN::|nonionized%3:00:00::|
+    WN::|nonionised%3:00:00::|
+    WN::|unionized%3:00:00::|
+    WN::|unionised%3:00:00::|
+    WN::|nonionic%3:00:00::|
+    WN::|unsaponified%3:44:00::|
+    WN::|untanned%3:00:00::|
+    WN::|uncontaminated%3:00:00::|
+    WN::|uncrossed%3:00:01::|
+    WN::|unlaureled%3:00:00::|
+    WN::|unlaurelled%3:00:00::|
+    WN::|undedicated%3:00:00::|
+    WN::|uncontested%3:44:00::|
+    WN::|undesigned%3:00:00::|
+    WN::|undrained%3:00:00::|
+    WN::|unenforced%3:00:00::|
+    WN::|unextended%3:00:00::|
+    WN::|uncrystallized%3:00:00::|
+    WN::|uncrystallised%3:00:00::|
+    WN::|unglazed%3:00:01::|
+    WN::|glassless%3:00:00::|
+    WN::|untreated%3:00:02::|
+    WN::|unlamented%3:00:00::|
+    WN::|unmourned%3:00:00::|
+    WN::|unbeneficed%3:00:00::|
+    WN::|uncoated%3:00:00::|
+    WN::|unlined%3:00:00::|
+    WN::|unsheathed%3:00:00::|
+    WN::|bare%3:00:04::|
+    WN::|unappendaged%3:00:00::|
+    WN::|unbalconied%3:00:00::|
+    WN::|untouched%3:00:00::|
+    WN::|ungusseted%3:00:00::|
+    WN::|unopposed%3:00:00::|
+    WN::|unpowered%3:00:00::|
+    WN::|unbaptized%3:00:00::|
+    WN::|unbaptised%3:00:00::|
+    WN::|unbanded%3:00:00::|
+    WN::|unbarreled%3:00:00::|
+    WN::|unbarrelled%3:00:00::|
+    WN::|nonintegrated%3:00:00::|
+    WN::|unintegrated%3:00:02::|
+    WN::|confined%3:00:01::|
+    WN::|unlubricated%3:00:00::|
+    WN::|ungreased%3:00:00::|
+    WN::|undimmed%3:00:00::|
+    WN::|bright%3:00:02::|
+    WN::|unenlivened%3:00:00::|
+    WN::|unbranded%3:00:00::|
+    WN::|unfurrowed%3:00:00::|
+    WN::|unmined%3:00:00::|
+    WN::|unabused%3:00:01::|
+    WN::|unpotted%3:00:00::|
+    WN::|unframed%3:00:00::|
+    WN::|unshuttered%3:00:00::|
+    WN::|unpublished%3:00:00::|
+    WN::|unregulated%3:00:00::|
+    WN::|unreported%3:00:00::|
+    WN::|unseeded%3:00:00::|
+    WN::|unselected%3:00:00::|
+    WN::|unsheared%3:00:00::|
+    WN::|unshorn%3:00:00::|
+    WN::|unsilenced%3:00:00::|
+    WN::|unsolved%3:00:00::|
+    WN::|unresolved%3:00:04::|
+    WN::|untapped%3:00:00::|
+    WN::|unbrainwashed%3:00:00::|
+    WN::|unweaned%3:00:00::|
+    WN::|mercerized%3:44:00::|
+    WN::|mercerised%3:44:00::|
+    WN::|malted%3:44:00::|
+    WN::|unmalted%3:44:00::|
+    WN::|platyrrhine%3:00:00::|
+    WN::|platyrrhinian%3:00:00::|
+    WN::|platyrhine%3:00:00::|
+    WN::|platyrhinian%3:00:00::|
+    WN::|platyrrhinic%3:00:00::|
+    WN::|broadnosed%3:00:00::|
+    WN::|potted%3:00:00::|
+    WN::|filled%3:44:00::|
+    WN::|unfilled%3:44:00::|
+    WN::|institutionalized%3:00:00::|
+    WN::|institutionalised%3:00:00::|
+    WN::|listed%3:00:00::|
+    WN::|landed%3:00:00::|
+    WN::|sublimed%3:44:00::|
+    WN::|sublimated%3:44:00::|
+    WN::|forced%3:44:00::|
+    WN::|voiced%3:00:00::|
+    WN::|sonant%3:00:00::|
+    WN::|soft%3:00:00::|
+    WN::|hardened%3:00:06::|
+    WN::|gusseted%3:00:00::|
+    WN::|framed%3:00:00::|
+    WN::|branchiate%3:00:00::|
+    WN::|gilled%3:00:00::|
+    WN::|posted%3:44:00::|
+    WN::|barreled%3:00:00::|
+    WN::|barrelled%3:00:02::|
+    WN::|hammered%3:44:00::|
+    WN::|lubricated%3:00:00::|
+    WN::|greased%3:00:00::|
+    WN::|squashed%3:44:00::|
+    WN::|oiled%3:00:00::|
+    WN::|waxed%3:00:00::|
+    WN::|calced%3:00:00::|
+    WN::|shod%3:00:04::|
+    WN::|staged%3:00:00::|
+    WN::|connected%3:00:00::|
+    WN::|unconnected%3:00:00::|
+    WN::|carved%3:00:00::|
+    WN::|carven%3:00:00::|
+    WN::|committed%3:00:00::|))
 
 (CONCEPT
   ONT::RESUME
@@ -29762,6 +38035,22 @@
          PHYS-OBJ)
        (CONCEPT
          ABSTR-OBJ)))))
+
+(CONCEPT
+  ONT::RETICENCE-VAL
+  (COMMENT "(taciturn, reticent)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL))
+
+(CONCEPT
+  ONT::RETICENT-VAL
+  (COMMENT "(taciturn, reticent)")
+  (INHERIT
+    ONT::RETICENCE-VAL)
+  (OVERLAP
+    WN::|reserved%3:00:01::|
+    WN::|taciturn%3:00:00::|
+    WN::|modest%3:00:01::|))
 
 (CONCEPT
   ONT::RETIRE
@@ -29869,6 +38158,16 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::REVIVED-VAL
+  (COMMENT "(revived)")
+  (INHERIT
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|revived%3:00:00::|
+    WN::|rested%3:00:00::|
+    WN::|enlivened%3:00:00::|))
+
+(CONCEPT
   ONT::REVIVING
   (INHERIT
     ONT::CHANGE-STATE)
@@ -29887,11 +38186,24 @@
     WN::|reward%2:41:01::|))
 
 (CONCEPT
+  ONT::RHYTHM-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-MUSIC-VAL))
+
+(CONCEPT
   ONT::RHYTHMIC-MOTION
   (INHERIT
     ONT::MOTION)
   (OVERLAP
     WN::|beat%2:38:03::|))
+
+(CONCEPT
+  ONT::RHYTHMIC-VAL
+  (INHERIT
+    ONT::RHYTHM-VAL)
+  (OVERLAP
+    WN::|rhythmical%3:00:00::|
+    WN::|rhythmic%3:00:00::|))
 
 (CONCEPT
   ONT::RIBOSYLATION
@@ -30100,8 +38412,9 @@
 (CONCEPT
   ONT::ROUTE-TOPOLOGY-VAL
   (INHERIT
-    ONT::SPATIAL)
+    ONT::SPATIAL-VAL)
   (OVERLAP
+    WN::|straight%3:00:05::|
     WN::|straight%3:00:01::|
     WN::|nonstop%5:00:00:direct:00|
     WN::|direct%3:00:00::|)
@@ -30161,6 +38474,7 @@
   (INHERIT
     ONT::CITY-RELATED-VAL)
   (OVERLAP
+    WN::|provincial%3:00:00::|
     WN::|rural%3:00:00::|
     WN::|rural%3:01:01::|))
 
@@ -30170,15 +38484,31 @@
     ONT::CAN-BE-DONE-VAL))
 
 (CONCEPT
+  ONT::SACRED-VAL
+  (COMMENT "(sacred)")
+  (INHERIT
+    ONT::SACREDNESS-VAL)
+  (OVERLAP
+    WN::|sacred%3:00:00::|
+    WN::|holy%3:00:00::|
+    WN::|consecrated%3:00:00::|
+    WN::|consecrate%3:00:00::|
+    WN::|dedicated%3:00:02::|))
+
+(CONCEPT
+  ONT::SACREDNESS-VAL
+  (COMMENT "(sacred)")
+  (INHERIT
+    ONT::STATUS-VAL))
+
+(CONCEPT
   ONT::SAD-VAL
   (COMMENT
    "feeling sorrow and sadness from misfortune, disappointment or regret")
   (INHERIT
     ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
-    WN::|sad%3:00:00::|
-    WN::|melancholy%5:00:00:sad:00|
-    WN::|sorrowful%3:00:00::|)
+    WN::|joyless%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -30200,6 +38530,7 @@
   (INHERIT
     ONT::SAFETY-VAL)
   (OVERLAP
+    WN::|secure%3:00:03::|
     WN::|secure%3:00:02::|
     WN::|safe%3:00:01::|)
   (SEM-FEATS
@@ -30279,6 +38610,7 @@
   (INHERIT
     ONT::TASTE-PROPERTY-VAL)
   (OVERLAP
+    WN::|salty%3:00:00::|
     WN::|salty%5:00:00:tasty:00|))
 
 (CONCEPT
@@ -30321,6 +38653,7 @@
   (INHERIT
     ONT::POSITIVE-BODY-CONDITION-PROPERTY-VAL)
   (OVERLAP
+    WN::|nourished%3:00:00::|
     WN::|satiated%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -30591,6 +38924,40 @@
     (TYPE ONT::SCIENCE-DISCIPLINE)))
 
 (CONCEPT
+  ONT::SCIENTIST-VAL
+  (INHERIT
+    ONT::FAMOUS-PERSON-VAL)
+  (OVERLAP
+    WN::|jamesian%3:01:01::|
+    WN::|cartesian%3:01:00::|
+    WN::|gaussian%3:01:00::|
+    WN::|riemannian%3:01:00::|
+    WN::|hertzian%3:01:00::|
+    WN::|boolean%3:01:00::|
+    WN::|pythagorean%3:01:00::|
+    WN::|pasteurian%3:01:00::|
+    WN::|ptolemaic%3:01:00::|
+    WN::|einsteinian%3:01:00::|
+    WN::|mendelian%3:01:00::|
+    WN::|malthusian%3:01:00::|
+    WN::|keynesian%3:01:00::|
+    WN::|pavlovian%3:01:00::|
+    WN::|euclidian%3:01:00::|
+    WN::|euclidean%3:01:00::|
+    WN::|postdoctoral%3:01:00::|
+    WN::|piagetian%3:01:00::|
+    WN::|leibnizian%3:01:00::|
+    WN::|leibnitzian%3:01:00::|
+    WN::|skinnerian%3:01:00::|
+    WN::|linnaean%3:01:00::|
+    WN::|linnean%3:01:00::|
+    WN::|jungian%3:01:00::|
+    WN::|newtonian%3:01:00::|
+    WN::|galilean%3:01:01::|
+    WN::|huxleyan%3:01:00::|
+    WN::|huxleian%3:01:00::|))
+
+(CONCEPT
   ONT::SCOUT
   (INHERIT
     ONT::PERSON)
@@ -30672,6 +39039,31 @@
          SITUATION)))))
 
 (CONCEPT
+  ONT::SEA-OCEAN-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-LOCATION-VAL)
+  (OVERLAP
+    WN::|marine%3:00:00::|
+    WN::|aquatic%3:00:00::|
+    WN::|transatlantic%3:01:00::|
+    WN::|pacific%3:01:00::|
+    WN::|mediterranean%3:01:00::|
+    WN::|estuarine%3:01:00::|
+    WN::|estuarial%3:01:00::|
+    WN::|atlantic%3:01:00::|
+    WN::|nilotic%3:01:01::|
+    WN::|fluvial%3:01:00::|
+    WN::|aegean%3:01:00::|
+    WN::|oceanic%3:01:00::|
+    WN::|pelagic%3:01:00::|
+    WN::|thalassic%3:01:00::|
+    WN::|marine%3:01:00::|
+    WN::|lacustrine%3:01:00::|
+    WN::|baltic%3:01:00::|
+    WN::|transoceanic%3:01:00::|
+    WN::|rhenish%3:01:00::|))
+
+(CONCEPT
   ONT::SEAFOOD
   (INHERIT
     ONT::FOOD)
@@ -30686,6 +39078,17 @@
     WN::|season%1:28:00::|))
 
 (CONCEPT
+  ONT::SEASON-PROPERTY-VAL
+  (COMMENT "(summery, wintry)")
+  (INHERIT
+    ONT::ATMOSPHERIC-VAL)
+  (OVERLAP
+    WN::|summery%3:00:00::|
+    WN::|wintry%3:00:00::|
+    WN::|wintery%3:00:00::|
+    WN::|autumnal%3:00:00::|))
+
+(CONCEPT
   ONT::SECOND-DURATION
   (INHERIT
     ONT::TIME-UNIT))
@@ -30696,6 +39099,12 @@
   (INHERIT
     ONT::IMPORTANCE-VAL)
   (OVERLAP
+    WN::|secondary%3:00:01::|
+    WN::|incidental%3:00:00::|
+    WN::|incident%3:00:00::|
+    WN::|minor%3:00:07::|
+    WN::|subordinate%3:00:01::|
+    WN::|low-level%3:00:04::|
     WN::|minor%3:00:06::|
     WN::|junior%3:00:00::|
     WN::|insignificant%5:00:00:minor:06|)
@@ -30715,6 +39124,9 @@
   (INHERIT
     ONT::SECRECY-VAL)
   (OVERLAP
+    WN::|covert%3:00:00::|
+    WN::|suppressed%3:00:00::|
+    WN::|esoteric%3:00:00::|
     WN::|confidential%5:00:02:private:00|
     WN::|secret%5:00:00:concealed:00|
     WN::|private%5:00:00:inward:00|
@@ -30723,6 +39135,19 @@
     WN::|incognito%5:00:00:concealed:00|
     WN::|sealed%5:00:00:concealed:00|
     WN::|sneaking%5:00:00:concealed:00|))
+
+(CONCEPT
+  ONT::SEEING-VAL
+  (COMMENT "(sighted)")
+  (INHERIT
+    ONT::VISIBILITY-VAL)
+  (OVERLAP
+    WN::|sighted%3:00:00::|
+    WN::|farsighted%3:00:00::|
+    WN::|presbyopic%3:00:00::|
+    WN::|nearsighted%3:00:00::|
+    WN::|shortsighted%3:00:00::|
+    WN::|myopic%3:00:00::|))
 
 (CONCEPT
   ONT::SEEK
@@ -30780,6 +39205,12 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::SELF-CENTEREDNESS-VAL
+  (COMMENT "(selfish, egoistic)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL))
+
+(CONCEPT
   ONT::SELF-LOCOMOTE
   (INHERIT
     ONT::MOVE)
@@ -30810,6 +39241,29 @@
           HUMAN
           NON-HUMAN-ANIMAL)))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::SELFISH-VAL
+  (COMMENT "(selfish, egoistic)")
+  (INHERIT
+    ONT::SELF-CENTEREDNESS-VAL)
+  (OVERLAP
+    WN::|unselfish%3:00:00::|
+    WN::|selfish%3:00:00::|
+    WN::|egoistic%3:00:00::|
+    WN::|egoistical%3:00:00::|
+    WN::|egocentric%3:00:00::|
+    WN::|self-centered%3:00:00::|
+    WN::|self-centred%3:00:00::|))
+
+(CONCEPT
+  ONT::SELFLESS-VAL
+  (COMMENT "(selfless)")
+  (INHERIT
+    ONT::SELF-CENTEREDNESS-VAL)
+  (OVERLAP
+    WN::|altruistic%3:00:00::|
+    WN::|selfless%3:00:00::|))
 
 (CONCEPT
   ONT::SEND
@@ -30899,6 +39353,9 @@
   (INHERIT
     ONT::SENSIBILITY-VAL)
   (OVERLAP
+    WN::|rational%3:00:00::|
+    WN::|sober%3:00:01::|
+    WN::|unneurotic%3:00:00::|
     WN::|sensible%3:00:04::|
     WN::|sane%5:00:00:rational:00|
     WN::|sane%3:00:00::|
@@ -30908,6 +39365,14 @@
       ABSTR-OBJ)
     (SCALE ONT::RATIONAL-SCALE)
     (TYPE ONT::SENSIBLE-VAL)))
+
+(CONCEPT
+  ONT::SENSITIVE-VAL
+  (COMMENT "(sensitive, perceptive)")
+  (INHERIT
+    ONT::SENSITIVITY-VAL)
+  (OVERLAP
+    WN::|perceptive%3:00:00::|))
 
 (CONCEPT
   ONT::SENSITIVITY
@@ -30967,6 +39432,45 @@
    "properties relating to the ability to receive sensory input (compare to ont::appearance-property-val)")
   (INHERIT
     ONT::PHYSICAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|sensory%3:00:00::|
+    WN::|sensorial%3:00:00::|
+    WN::|haptic%3:01:00::|
+    WN::|tactile%3:01:00::|
+    WN::|tactual%3:01:00::|
+    WN::|ocular%3:01:04::|
+    WN::|optic%3:01:04::|
+    WN::|optical%3:01:04::|
+    WN::|visual%3:01:04::|
+    WN::|exteroceptive%3:01:00::|
+    WN::|perceptual%3:01:00::|
+    WN::|interoceptive%3:01:00::|
+    WN::|proprioceptive%3:01:00::|
+    WN::|sensational%3:01:00::|
+    WN::|sensory%3:01:00::|
+    WN::|perceptive%3:01:00::|
+    WN::|somatosensory%3:01:00::|
+    WN::|euphonic%3:01:00::|
+    WN::|euphonical%3:01:00::|
+    WN::|allergic%3:01:00::|
+    WN::|cross-modal%3:01:00::|
+    WN::|olfactory%3:01:00::|
+    WN::|olfactive%3:01:00::|
+    WN::|auditory%3:01:00::|
+    WN::|audile%3:01:00::|
+    WN::|auditive%3:01:00::|
+    WN::|gustatory%3:01:00::|
+    WN::|gustative%3:01:00::|
+    WN::|gustatorial%3:01:00::|
+    WN::|auscultatory%3:01:00::|
+    WN::|squinty%3:01:00::|
+    WN::|anaphylactic%3:01:00::|
+    WN::|orthoptic%3:01:00::|
+    WN::|amphoric%3:01:00::|
+    WN::|synesthetic%3:01:00::|
+    WN::|synaesthetic%3:01:00::|
+    WN::|sensitizing%3:00:00::|
+    WN::|sensitising%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -31076,6 +39580,7 @@
   (INHERIT
     ONT::SEQUENCE-VAL)
   (OVERLAP
+    WN::|following%3:00:00::|
     WN::|following%5:00:02:succeeding:00|
     WN::|subsequent%3:00:00::|
     WN::|succeeding%3:00:00::|))
@@ -31085,12 +39590,19 @@
   (INHERIT
     ONT::ORDERED-VAL)
   (OVERLAP
+    WN::|serial%3:01:00::|
     WN::|sequential%5:00:00:ordered:00|
     WN::|consecutive%5:00:00:ordered:00|
     WN::|sequent%5:00:00:ordered:00|
     WN::|successive%5:00:00:ordered:00|
     WN::|serial%5:00:00:ordered:00|
     WN::|progressive%5:00:00:ordered:00|))
+
+(CONCEPT
+  ONT::SERVING-AS-CONNECTION-VAL
+  (COMMENT "(connecting, conjunctive)")
+  (INHERIT
+    ONT::RELATIONAL-ATTRIBUTE-VAL))
 
 (CONCEPT
   ONT::SET-UP-DEVICE
@@ -31111,6 +39623,10 @@
   (INHERIT
     ONT::SEVERITY-VAL)
   (OVERLAP
+    WN::|steep%3:00:00::|
+    WN::|intemperate%3:00:00::|
+    WN::|heavy%3:00:03::|
+    WN::|inclement%3:00:01::|
     WN::|severe%5:00:01:bad:00|
     WN::|severe%5:00:00:intense:00|
     WN::|extreme%5:00:00:intense:00|
@@ -31217,12 +39733,95 @@
 (CONCEPT
   ONT::SHAPE-VAL
   (INHERIT
-    ONT::SPATIAL)
+    ONT::VISUAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|formed%3:00:00::|
+    WN::|rounded%3:00:00::|
+    WN::|curved%3:00:00::|
+    WN::|curving%3:00:00::|
+    WN::|pointed%3:00:00::|
+    WN::|reticulate%3:00:00::|
+    WN::|reticular%3:00:00::|
+    WN::|coiled%3:00:00::|
+    WN::|crosswise%3:00:00::|
+    WN::|uncoiled%3:00:00::|
+    WN::|straight%3:00:02::|
+    WN::|prolate%3:00:00::|
+    WN::|watermelon-shaped%3:00:00::|
+    WN::|oblate%3:00:00::|
+    WN::|pumpkin-shaped%3:00:00::|
+    WN::|crooked%3:00:01::|
+    WN::|concave%3:00:00::|
+    WN::|convex%3:00:00::|
+    WN::|bulging%3:00:06::|
+    WN::|curly%3:00:00::|
+    WN::|straight%3:00:03::|
+    WN::|azimuthal%3:01:00::|
+    WN::|sigmoid%3:01:01::|
+    WN::|hyperbolic%3:01:00::|
+    WN::|two-humped%3:01:00::|
+    WN::|double-humped%3:01:00::|
+    WN::|polygonal%3:01:00::|
+    WN::|pentangular%3:01:00::|
+    WN::|pentagonal%3:01:00::|
+    WN::|sectorial%3:01:00::|
+    WN::|diametral%3:01:00::|
+    WN::|diametric%3:01:00::|
+    WN::|diametrical%3:01:00::|
+    WN::|hemispherical%3:01:00::|
+    WN::|campanulate%3:01:00::|
+    WN::|campanular%3:01:00::|
+    WN::|campanulated%3:01:00::|
+    WN::|octangular%3:01:00::|
+    WN::|octagonal%3:01:00::|
+    WN::|radial%3:01:00::|
+    WN::|bicylindrical%3:01:00::|
+    WN::|icosahedral%3:01:00::|
+    WN::|rhombic%3:01:00::|
+    WN::|rhomboid%3:01:00::|
+    WN::|rhomboidal%3:01:00::|
+    WN::|polyhedral%3:01:00::|
+    WN::|asymptotic%3:01:00::|
+    WN::|shaped%3:01:00::|
+    WN::|triangulate%3:01:00::|
+    WN::|striate%3:01:00::|
+    WN::|quadratic%3:01:01::|
+    WN::|hexangular%3:01:00::|
+    WN::|hexagonal%3:01:00::|
+    WN::|nonspherical%3:01:00::|
+    WN::|angular%3:01:00::|
+    WN::|spherical%3:01:00::|
+    WN::|quadrangular%3:01:00::|
+    WN::|toroidal%3:01:00::|
+    WN::|tangential%3:01:00::|
+    WN::|wedge-shaped%3:01:00::|
+    WN::|cuneal%3:01:00::|
+    WN::|cuneiform%3:01:01::|
+    WN::|trapezoidal%3:01:00::|
+    WN::|tetragonal%3:01:00::|
+    WN::|asteriated%3:01:00::|
+    WN::|one-humped%3:01:00::|
+    WN::|single-humped%3:01:00::|
+    WN::|stemmatic%3:01:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
     (MEASURE-FUNCTION VALUE)
     (TYPE ONT::SHAPE-VAL)))
+
+(CONCEPT
+  ONT::SHAPELINESS-VAL
+  (COMMENT "(shapely)")
+  (INHERIT
+    ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT
+  ONT::SHAPELY-VAL
+  (COMMENT "(shapely)")
+  (INHERIT
+    ONT::SHAPELINESS-VAL)
+  (OVERLAP
+    WN::|shapely%3:00:00::|))
 
 (CONCEPT
   ONT::SHARE
@@ -31260,6 +39859,20 @@
     ONT::TEXTURE-SCALE)
   (OVERLAP
     WN::|sharpness%1:07:01::|))
+
+(CONCEPT
+  ONT::SHARP-TEXTURE-VAL
+  (COMMENT "(sharp)")
+  (INHERIT
+    ONT::TEXTURE-VAL))
+
+(CONCEPT
+  ONT::SHARP-VAL
+  (COMMENT "(sharp)")
+  (INHERIT
+    ONT::SHARP-TEXTURE-VAL)
+  (OVERLAP
+    WN::|sharp%3:00:00::|))
 
 (CONCEPT
   ONT::SHARPEN
@@ -31338,6 +39951,9 @@
   (INHERIT
     ONT::LINEAR-EXTENT-VAL)
   (OVERLAP
+    WN::|low-rise%3:00:00::|
+    WN::|short%3:00:03::|
+    WN::|little%3:00:00::|
     WN::|short%3:00:02::|
     WN::|short%3:00:01::|)
   (SEM-FEATS
@@ -31497,6 +40113,15 @@
     WN::|side%3:00:00::|))
 
 (CONCEPT
+  ONT::SIDED-VAL
+  (COMMENT "(multilateral)")
+  (INHERIT
+    ONT::SHAPE-VAL)
+  (OVERLAP
+    WN::|multilateral%3:00:00::|
+    WN::|many-sided%3:00:04::|))
+
+(CONCEPT
   ONT::SIGHT-SCALE
   (INHERIT
     ONT::SENSORY-SCALE))
@@ -31558,6 +40183,8 @@
   (INHERIT
     ONT::SIMILARITY-VAL)
   (OVERLAP
+    WN::|synonymous%3:00:00::|
+    WN::|similar%3:00:00::|
     WN::|like%5:00:00:same:00|
     WN::|comparable%5:00:00:same:00|
     WN::|like%3:00:04::|
@@ -31607,7 +40234,7 @@
 (CONCEPT
   ONT::SIMILARITY-VAL
   (INHERIT
-    ONT::RELATION)
+    ONT::RELATIONAL-ATTRIBUTE-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -31652,6 +40279,17 @@
     ONT::EVENT-TIME-REL))
 
 (CONCEPT
+  ONT::SINCERE-VAL
+  (COMMENT "(sincere)")
+  (INHERIT
+    ONT::HONEST-VAL)
+  (OVERLAP
+    WN::|unpretentious%3:00:00::|
+    WN::|ingenuous%3:00:00::|
+    WN::|artless%3:00:02::|
+    WN::|sincere%3:00:00::|))
+
+(CONCEPT
   ONT::SING
   (INHERIT
     ONT::SAY)
@@ -31663,11 +40301,7 @@
   (INHERIT
     ONT::NUMERICAL-GROUPING-VAL)
   (OVERLAP
-    WN::|singularity%1:07:01::|
-    WN::|singular%3:00:01::|
-    WN::|alone%5:00:00:exclusive:00|
-    WN::|individual%3:00:00::|
-    WN::|alone%4:02:00::|))
+    WN::|single%3:00:05::|))
 
 (CONCEPT
   ONT::SINK
@@ -31802,6 +40436,8 @@
    "indicates relative extent or magnitude of something on a size scale")
   (INHERIT
     ONT::DIMENSIONAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|sized%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -31820,7 +40456,7 @@
 (CONCEPT
   ONT::SKILLFUL-VAL
   (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL)
+    ONT::SKILLFULNESS-VAL)
   (OVERLAP
     WN::|skilled%3:00:00::|)
   (SEM-FEATS
@@ -31837,6 +40473,11 @@
     WN::|skillfulness%1:09:00::|
     WN::|skill%1:09:01::|
     WN::|expertise%1:09:00::|))
+
+(CONCEPT
+  ONT::SKILLFULNESS-VAL
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL))
 
 (CONCEPT
   ONT::SKINNY-SCALE
@@ -31904,6 +40545,15 @@
     WN::|drowsiness%1:26:00::|))
 
 (CONCEPT
+  ONT::SLIPPERY-VAL
+  (COMMENT "(slippery)")
+  (INHERIT
+    ONT::TEXTURE-VAL)
+  (OVERLAP
+    WN::|slippery%3:00:00::|
+    WN::|slippy%3:00:00::|))
+
+(CONCEPT
   ONT::SLOW-VAL
   (INHERIT
     ONT::SPEED-VAL)
@@ -31921,6 +40571,7 @@
   (INHERIT
     ONT::SIZE-VAL)
   (OVERLAP
+    WN::|narrow%3:00:02::|
     WN::|small%3:00:00::|))
 
 (CONCEPT
@@ -31950,6 +40601,8 @@
    "subjective characteristics of an item perceived through olfactory input")
   (INHERIT
     ONT::APPEARANCE-PROPERTY-VAL)
+  (OVERLAP
+    WN::|odorous%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -32004,6 +40657,10 @@
   (INHERIT
     ONT::SMOOTHNESS-VAL)
   (OVERLAP
+    WN::|seamless%3:00:00::|
+    WN::|ironed%3:00:00::|
+    WN::|unwrinkled%3:00:00::|
+    WN::|wrinkleless%3:00:00::|
     WN::|seamless%5:00:00:smooth:00|
     WN::|smooth%3:00:00::|)
   (SEM-FEATS
@@ -32081,6 +40738,30 @@
     WN::|sociality%1:07:00::|))
 
 (CONCEPT
+  ONT::SOCIAL-ACTION-VAL
+  (INHERIT
+    ONT::SOCIETY-VAL)
+  (OVERLAP
+    WN::|callithumpian%3:01:00::|
+    WN::|executive%3:01:00::|
+    WN::|mediatory%3:01:00::|
+    WN::|directional%3:01:01::|
+    WN::|counterinsurgent%3:01:00::|
+    WN::|counterrevolutionary%3:01:00::|
+    WN::|managerial%3:01:00::|
+    WN::|penal%3:01:00::|
+    WN::|processional%3:01:01::|
+    WN::|procedural%3:01:00::|
+    WN::|confrontational%3:01:00::|
+    WN::|revolutionary%3:01:00::|
+    WN::|insurrectional%3:01:00::|
+    WN::|insurrectionary%3:01:00::|
+    WN::|appellate%3:01:00::|
+    WN::|appellant%3:01:00::|
+    WN::|processional%3:01:00::|
+    WN::|litigious%3:01:00::|))
+
+(CONCEPT
   ONT::SOCIAL-ACTIVITY
   (INHERIT
     ONT::ACTIVITY)
@@ -32109,6 +40790,27 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::SOCIAL-CARE-AND-SUPPORT-VAL
+  (COMMENT "(caring, supportive)")
+  (INHERIT
+    ONT::SOCIAL-INTERACTION-VAL))
+
+(CONCEPT
+  ONT::SOCIAL-CLASS-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-PERSON-VAL)
+  (OVERLAP
+    WN::|noble%3:00:02::|
+    WN::|lowborn%3:00:00::|
+    WN::|subhuman%3:00:00::|
+    WN::|upper-class%3:00:00::|
+    WN::|lower-class%3:00:00::|
+    WN::|low-class%3:00:04::|
+    WN::|middle-class%3:00:00::|
+    WN::|noble%3:00:01::|
+    WN::|ignoble%3:00:01::|))
+
+(CONCEPT
   ONT::SOCIAL-CONTRACT
   (INHERIT
     ONT::MENTAL-CONSTRUCTION)
@@ -32128,6 +40830,26 @@
     (INHERIT
       SITUATION)
     (TYPE ONT::SOCIAL-EVENT)))
+
+(CONCEPT
+  ONT::SOCIAL-EVENT-VAL
+  (INHERIT
+    ONT::SOCIETY-VAL)
+  (OVERLAP
+    WN::|celebratory%3:01:00::|
+    WN::|funerary%3:01:00::|
+    WN::|postnuptial%3:01:00::|
+    WN::|commemorative%3:01:00::|
+    WN::|commemorating%3:01:00::|
+    WN::|prenuptial%3:01:00::|
+    WN::|premarital%3:01:00::|
+    WN::|antenuptial%3:01:00::|
+    WN::|olympic%3:01:00::|
+    WN::|bridal%3:01:01::|
+    WN::|nuptial%3:01:00::|
+    WN::|spousal%3:01:01::|
+    WN::|mortuary%3:01:00::|
+    WN::|burlesque%3:01:00::|))
 
 (CONCEPT
   ONT::SOCIAL-GROUP
@@ -32183,6 +40905,12 @@
     WN::|slavery%1:26:00::|))
 
 (CONCEPT
+  ONT::SOCIAL-INTENT-VAL
+  (COMMENT "(malicious, artful)")
+  (INHERIT
+    ONT::SOCIAL-INTERACTION-VAL))
+
+(CONCEPT
   ONT::SOCIAL-INTERACTION-VAL
   (COMMENT "sociability")
   (INHERIT
@@ -32213,6 +40941,12 @@
     WN::|routine%1:04:00::|))
 
 (CONCEPT
+  ONT::SOCIAL-RELATION-VAL
+  (COMMENT "(related)")
+  (INHERIT
+    ONT::STATUS-VAL))
+
+(CONCEPT
   ONT::SOCIAL-RELATIONSHIP
   (INHERIT
     ONT::SOCIAL-ACTIVITY)
@@ -32221,6 +40955,26 @@
     WN::|relationship%1:26:00::|
     WN::|romance%1:26:00::|
     WN::|affair%1:26:00::|))
+
+(CONCEPT
+  ONT::SOCIAL-SCIENCE-PROPERTY-VAL
+  (INHERIT
+    ONT::SOCIETY-VAL)
+  (OVERLAP
+    WN::|craniometric%3:01:00::|
+    WN::|craniometrical%3:01:00::|
+    WN::|ethnographic%3:01:00::|
+    WN::|ethnographical%3:01:00::|
+    WN::|demographic%3:01:00::|
+    WN::|archaeological%3:01:00::|
+    WN::|archeological%3:01:00::|
+    WN::|archaeologic%3:01:00::|
+    WN::|archeologic%3:01:00::|
+    WN::|geopolitical%3:01:00::|
+    WN::|geostrategic%3:01:00::|
+    WN::|criminological%3:01:00::|
+    WN::|ethnological%3:01:00::|
+    WN::|ethnologic%3:01:00::|))
 
 (CONCEPT
   ONT::SOCIAL-VAL
@@ -32259,6 +41013,59 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::SOCIETY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SOCIETY-AND-CULTURE-VAL)
+  (OVERLAP
+    WN::|social%3:01:02::|))
+
+(CONCEPT
+  ONT::SOCIO-POLITICAL-IDEOLOGY-VAL
+  (INHERIT
+    ONT::POLITICAL-VAL)
+  (OVERLAP
+    WN::|left%3:00:02::|
+    WN::|undemocratic%3:00:00::|
+    WN::|capitalistic%3:00:00::|
+    WN::|capitalist%3:00:04::|
+    WN::|patriarchal%3:00:00::|
+    WN::|socialistic%3:00:00::|
+    WN::|socialist%3:00:04::|
+    WN::|matriarchal%3:00:00::|
+    WN::|center%3:00:00::|
+    WN::|pro-choice%3:00:00::|
+    WN::|pro-life%3:00:00::|
+    WN::|liberal%3:00:00::|
+    WN::|conservative%3:00:00::|
+    WN::|maoist%3:01:00::|
+    WN::|fascist%3:01:00::|
+    WN::|fascistic%3:01:00::|
+    WN::|marxist-leninist%3:01:00::|
+    WN::|post-communist%3:01:00::|
+    WN::|theocratic%3:01:00::|
+    WN::|communist%3:01:00::|
+    WN::|communistic%3:01:00::|
+    WN::|oligarchic%3:01:00::|
+    WN::|oligarchical%3:01:00::|
+    WN::|ideological%3:01:00::|
+    WN::|autarchic%3:01:00::|
+    WN::|autarchical%3:01:00::|
+    WN::|autarkical%3:01:00::|
+    WN::|totalitarian%3:01:00::|
+    WN::|totalistic%3:01:00::|
+    WN::|republican%3:01:01::|
+    WN::|imperialistic%3:01:00::|
+    WN::|imperialist%3:01:00::|
+    WN::|marxist%3:01:00::|
+    WN::|unitary%3:00:00::|
+    WN::|absolutist%3:01:00::|
+    WN::|absolutistic%3:01:00::|
+    WN::|green%3:01:00::|
+    WN::|anarchistic%3:01:00::|
+    WN::|imperial%3:01:01::|
+    WN::|fabian%3:01:00::|))
+
+(CONCEPT
   ONT::SODA
   (INHERIT
     ONT::BEVERAGES)
@@ -32270,6 +41077,7 @@
   (INHERIT
     ONT::HARDNESS-VAL)
   (OVERLAP
+    WN::|tender%3:00:01::|
     WN::|soft%3:00:01::|
     WN::|fluffy%5:00:00:soft:01|
     WN::|plushy%5:00:00:coarse:00|)
@@ -32371,6 +41179,11 @@
   (INHERIT
     ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
+    WN::|ashamed%3:00:00::|
+    WN::|penitent%3:00:00::|
+    WN::|repentant%3:00:00::|
+    WN::|apologetic%3:00:00::|
+    WN::|excusatory%3:00:00::|
     WN::|sorry%3:00:02::|)
   (SEM-FEATS
     (INHERIT
@@ -32398,6 +41211,10 @@
    "subjective characteristics of an item perceived through auditory input")
   (INHERIT
     ONT::APPEARANCE-PROPERTY-VAL)
+  (OVERLAP
+    WN::|reverberant%3:00:00::|
+    WN::|cacophonous%3:00:00::|
+    WN::|cacophonic%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -32458,6 +41275,7 @@
   (INHERIT
     ONT::TASTE-PROPERTY-VAL)
   (OVERLAP
+    WN::|sour%3:00:00::|
     WN::|sour%5:00:00:tasty:00|)
   (SEM-FEATS
     (INHERIT
@@ -32583,38 +41401,6 @@
     WN::|spasm%1:26:00::|))
 
 (CONCEPT
-  ONT::SPATIAL
-  (COMMENT "properties relating to space")
-  (INHERIT
-    ONT::PROPERTY-VAL)
-  (OVERLAP
-    WN::|spatial%3:01:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (SCALE ONT::SPATIAL-SCALE)
-    (TYPE ONT::SPATIAL))
-  (SEM-FRAME
-    (ONT::GROUND
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)
-    (ONT::FIGURE
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)))
-
-(CONCEPT
   ONT::SPATIAL-ARRANGEMENT-VAL
   (INHERIT
     ONT::ORIENTATION-VAL))
@@ -32662,6 +41448,38 @@
     ONT::ORDERED-DOMAIN))
 
 (CONCEPT
+  ONT::SPATIAL-VAL
+  (COMMENT "properties relating to space")
+  (INHERIT
+    ONT::PROPERTY-VAL)
+  (OVERLAP
+    WN::|spatial%3:01:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::SPATIAL-SCALE)
+    (TYPE ONT::SPATIAL-VAL))
+  (SEM-FRAME
+    (ONT::GROUND
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::SPEAKERSTATUS
   (INHERIT
     ONT::PREDICATE)
@@ -32700,6 +41518,10 @@
   (INHERIT
     ONT::SPECIFICITY-VAL)
   (OVERLAP
+    WN::|nonarbitrary%3:00:00::|
+    WN::|unarbitrary%3:00:00::|
+    WN::|determinate%3:00:01::|
+    WN::|unspecified%3:00:00::|
     WN::|specific%3:00:00::|
     WN::|particular%5:00:00:specific:00|
     WN::|specified%3:00:00::|))
@@ -32719,6 +41541,8 @@
   (INHERIT
     ONT::PERIODIC-VAL)
   (OVERLAP
+    WN::|horary%3:01:00::|
+    WN::|circadian%3:01:00::|
     WN::|daily%5:00:00:periodic:00|
     WN::|annual%5:00:00:periodic:00|
     WN::|weekly%5:00:00:periodic:00|
@@ -32849,11 +41673,49 @@
     (TYPE ONT::SPICY-VAL)))
 
 (CONCEPT
+  ONT::SPIRITUAL-BEING-VAL
+  (INHERIT
+    ONT::RELIGION-SPECIFIC-VAL)
+  (OVERLAP
+    WN::|seraphic%3:01:00::|
+    WN::|seraphical%3:01:00::|
+    WN::|satanic%3:01:00::|
+    WN::|jovian%3:01:01::|
+    WN::|cacodemonic%3:01:00::|
+    WN::|cacodaemonic%3:01:00::|
+    WN::|adonic%3:01:00::|
+    WN::|elfin%3:01:00::|
+    WN::|georgian%3:01:00::|
+    WN::|aesculapian%3:01:00::|
+    WN::|medical%3:01:02::|
+    WN::|vestal%3:01:00::|
+    WN::|mercurial%3:01:01::|
+    WN::|satyric%3:01:00::|
+    WN::|satyrical%3:01:00::|
+    WN::|dionysian%3:01:00::|
+    WN::|numinous%3:01:00::|
+    WN::|aeolian%3:01:00::|
+    WN::|angelic%3:01:00::|
+    WN::|angelical%3:01:00::|
+    WN::|franciscan%3:01:00::|
+    WN::|archangelic%3:01:00::|
+    WN::|archangelical%3:01:00::|))
+
+(CONCEPT
+  ONT::SPIRITUAL-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SPIRITUALITY-VAL)
+  (OVERLAP
+    WN::|unworldly%3:00:00::|))
+
+(CONCEPT
   ONT::SPLIT-VAL
   (COMMENT "sub-dividing a complete whole")
   (INHERIT
     ONT::PART-WHOLE-VAL)
   (OVERLAP
+    WN::|divisible%3:00:00::|
+    WN::|uncombined%3:00:00::|
     WN::|split%5:00:00:divided:00|
     WN::|divided%3:00:00::|))
 
@@ -32876,6 +41738,36 @@
   ONT::SPORT
   (INHERIT
     ONT::GAME))
+
+(CONCEPT
+  ONT::SPORTS-PROPERTY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-ENTERTAINMENT-VAL)
+  (OVERLAP
+    WN::|backhand%3:00:00::|
+    WN::|backhanded%3:00:00::|
+    WN::|forehand%3:00:00::|
+    WN::|forehanded%3:00:00::|
+    WN::|fair%3:00:01::|
+    WN::|foul%3:00:00::|
+    WN::|out%3:00:02::|
+    WN::|overhand%3:00:00::|
+    WN::|overhanded%3:00:00::|
+    WN::|overarm%3:00:00::|
+    WN::|gymnastic%3:01:00::|
+    WN::|agonistic%3:01:00::|
+    WN::|safe%3:00:02::|
+    WN::|onside%3:00:00::|
+    WN::|home%3:00:00::|
+    WN::|offside%3:00:00::|
+    WN::|offsides%3:00:00::|
+    WN::|sporting%3:01:00::|
+    WN::|away%3:00:00::|
+    WN::|athletic%3:01:00::|
+    WN::|underhand%3:00:00::|
+    WN::|underhanded%3:00:00::|
+    WN::|underarm%3:00:00::|
+    WN::|sportive%3:01:00::|))
 
 (CONCEPT
   ONT::SPRING
@@ -33031,6 +41923,14 @@
     WN::|premedical%5:00:00:preceding:00|))
 
 (CONCEPT
+  ONT::STARVED-VAL
+  (COMMENT "(starved)")
+  (INHERIT
+    ONT::NOT-SATIATED-VAL)
+  (OVERLAP
+    WN::|malnourished%3:00:00::|))
+
+(CONCEPT
   ONT::STATE
   (INHERIT
     ONT::POLITICAL-REGION)
@@ -33090,10 +41990,14 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::STATIC-VAL
+  ONT::STATIC-NONMOVING-VAL
   (INHERIT
     ONT::MOTION-VAL)
   (OVERLAP
+    WN::|immobile%3:00:00::|
+    WN::|undynamic%3:00:00::|
+    WN::|adynamic%3:00:04::|
+    WN::|still%3:00:03::|
     WN::|static%5:00:00:nonmoving:00|
     WN::|still%5:00:01:nonmoving:00|
     WN::|motionless%5:00:00:nonmoving:00|
@@ -33196,6 +42100,8 @@
   (INHERIT
     ONT::STEADINESS-VAL)
   (OVERLAP
+    WN::|constant%3:00:00::|
+    WN::|inconstant%3:00:00::|
     WN::|stable%3:00:00::|
     WN::|unchanged%3:00:04::|
     WN::|unchanged%3:00:00::|
@@ -33271,6 +42177,7 @@
   (INHERIT
     ONT::TEXTURE-VAL)
   (OVERLAP
+    WN::|nonslippery%3:00:00::|
     WN::|glutinous%5:00:00:adhesive:00|
     WN::|gooey%5:00:00:adhesive:00|
     WN::|gum-like%5:00:00:adhesive:00|
@@ -33377,6 +42284,7 @@
   (INHERIT
     ONT::ATYPICAL-VAL)
   (OVERLAP
+    WN::|paranormal%3:00:00::|
     WN::|irregular%5:00:00:abnormal:00|
     WN::|weird%5:00:00:strange:00|
     WN::|freaky%5:00:00:strange:00|
@@ -33457,7 +42365,10 @@
   (INHERIT
     ONT::PHYSICAL-STRENGTH-VAL)
   (OVERLAP
-    WN::|strong%3:00:00::|)
+    WN::|robust%3:00:00::|
+    WN::|tough%3:00:02::|
+    WN::|toughened%3:00:02::|
+    WN::|rugged%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -33552,7 +42463,24 @@
 (CONCEPT
   ONT::SUBAREA-LOCATION-VAL
   (INHERIT
-    ONT::SPATIAL))
+    ONT::SPATIAL-VAL))
+
+(CONCEPT
+  ONT::SUBMISSIVE-VAL
+  (COMMENT "(submissive, servile)")
+  (INHERIT
+    ONT::SUBMISSIVENESS-VAL)
+  (OVERLAP
+    WN::|subordinate%3:00:02::|
+    WN::|submissive%3:00:00::|
+    WN::|servile%3:00:00::|
+    WN::|obedient%3:00:00::|))
+
+(CONCEPT
+  ONT::SUBMISSIVENESS-VAL
+  (COMMENT "(submissive, servile)")
+  (INHERIT
+    ONT::SOCIAL-INTERACTION-VAL))
 
 (CONCEPT
   ONT::SUBMIT
@@ -33613,6 +42541,8 @@
   (INHERIT
     ONT::QUALITY-VAL)
   (OVERLAP
+    WN::|inferior%3:00:01::|
+    WN::|unfit%3:00:02::|
     WN::|second-rate%5:00:00:inferior:02|
     WN::|low-grade%5:00:00:inferior:02|
     WN::|substandard%5:00:00:nonstandard:02|
@@ -33628,16 +42558,107 @@
   (COMMENT
    "properties having to do with characteristic substance of the described object")
   (INHERIT
-    ONT::PHYSICAL-PROPERTY-VAL))
+    ONT::PHYSICAL-PROPERTY-VAL)
+  (OVERLAP
+    WN::|colloidal%3:01:00::|
+    WN::|subatomic%3:01:00::|
+    WN::|achromatinic%3:01:00::|
+    WN::|hyaloplasmic%3:01:00::|
+    WN::|aplitic%3:01:00::|
+    WN::|monatomic%3:01:00::|
+    WN::|monoatomic%3:01:00::|
+    WN::|micaceous%3:01:00::|
+    WN::|aphanitic%3:01:00::|
+    WN::|centrosomic%3:01:00::|
+    WN::|cytotoxic%3:01:00::|
+    WN::|biocatalytic%3:01:00::|
+    WN::|rupestral%3:01:00::|
+    WN::|rupicolous%3:01:00::|
+    WN::|single-stranded%3:01:00::|
+    WN::|allergenic%3:01:00::|
+    WN::|biotitic%3:01:00::|
+    WN::|porphyritic%3:01:00::|
+    WN::|amethystine%3:01:00::|
+    WN::|chlorophyllose%3:01:00::|
+    WN::|chlorophyllous%3:01:00::|
+    WN::|fungicidal%3:01:00::|
+    WN::|antifungal%3:01:00::|
+    WN::|mineral%3:01:01::|
+    WN::|pyrectic%3:01:00::|
+    WN::|earthen%3:01:00::|
+    WN::|cytoplasmic%3:01:00::|
+    WN::|cytoplasmatic%3:01:00::|
+    WN::|miotic%3:01:00::|
+    WN::|myotic%3:01:00::|
+    WN::|arenicolous%3:01:00::|
+    WN::|marmorean%3:01:00::|
+    WN::|marmoreal%3:01:00::|
+    WN::|antigenic%3:01:00::|
+    WN::|granuliferous%3:01:00::|
+    WN::|viricidal%3:01:00::|
+    WN::|virucidal%3:01:00::|
+    WN::|peaty%3:01:00::|
+    WN::|cryogenic%3:01:00::|
+    WN::|cytoplastic%3:01:00::|
+    WN::|lactogenic%3:01:00::|
+    WN::|alabaster%3:01:00::|
+    WN::|alabastrine%3:01:00::|
+    WN::|humified%3:01:00::|
+    WN::|lithic%3:01:00::|
+    WN::|lactic%3:01:00::|
+    WN::|chromatinic%3:01:00::|
+    WN::|epilithic%3:01:00::|
+    WN::|polyatomic%3:01:00::|
+    WN::|filar%3:01:00::|
+    WN::|nodular%3:01:00::|
+    WN::|fibrillose%3:01:00::|
+    WN::|prandial%3:01:00::|
+    WN::|earthy%3:01:00::|
+    WN::|isotopic%3:01:00::|
+    WN::|alkahestic%3:01:00::|
+    WN::|auxinic%3:01:00::|
+    WN::|calcitic%3:01:00::|
+    WN::|sapphirine%3:01:00::|
+    WN::|bauxitic%3:01:00::|
+    WN::|essential%3:01:00::|
+    WN::|dolomitic%3:01:00::|
+    WN::|quartzose%3:01:00::|
+    WN::|humic%3:01:00::|
+    WN::|narcotic%3:01:00::|
+    WN::|atomic%3:01:00::|
+    WN::|neurotoxic%3:01:00::|
+    WN::|mealy%3:01:00::|
+    WN::|augitic%3:01:00::|
+    WN::|marly%3:01:00::|
+    WN::|diatomic%3:01:00::|
+    WN::|pyrogenic%3:01:01::|
+    WN::|pyrogenous%3:01:01::|
+    WN::|pyrogenetic%3:01:01::|
+    WN::|borated%3:01:00::|))
 
 (CONCEPT
   ONT::SUBSTANTIAL-VAL
   (INHERIT
     ONT::LARGE)
   (OVERLAP
+    WN::|insubstantial%3:00:00::|
+    WN::|unsubstantial%3:00:00::|
+    WN::|unreal%3:00:03::|
     WN::|substantial%5:00:00:considerable:00|
     WN::|considerable%3:00:00::|
     WN::|extensive%5:00:00:large:00|))
+
+(CONCEPT
+  ONT::SUBSTANTIATED-VAL
+  (COMMENT "(substantiated, supported)")
+  (INHERIT
+    ONT::SUBSTANTIATION-VAL))
+
+(CONCEPT
+  ONT::SUBSTANTIATION-VAL
+  (COMMENT "(substantiated, supported)")
+  (INHERIT
+    ONT::INFORMATION-PROPERTY-VAL))
 
 (CONCEPT
   ONT::SUCCESS-VAL
@@ -33812,6 +42833,8 @@
   (INHERIT
     ONT::QUALITY-VAL)
   (OVERLAP
+    WN::|superior%3:00:01::|
+    WN::|rich%3:00:03::|
     WN::|premium%5:00:00:superior:02|
     WN::|superior%3:00:02::|
     WN::|supreme%5:00:00:superior:02|
@@ -33935,6 +42958,21 @@
     WN::|surface%1:15:00::|))
 
 (CONCEPT
+  ONT::SURMOUNTABILITY-VAL
+  (COMMENT "(surmountable,)")
+  (INHERIT
+    ONT::CAN-BE-DONE-VAL))
+
+(CONCEPT
+  ONT::SURMOUNTABLE-VAL
+  (COMMENT "(surmountable,)")
+  (INHERIT
+    ONT::SURMOUNTABILITY-VAL)
+  (OVERLAP
+    WN::|conquerable%3:00:00::|
+    WN::|surmountable%3:00:00::|))
+
+(CONCEPT
   ONT::SURPLUS
   (INHERIT
     ONT::QUANTITY)
@@ -33959,6 +42997,14 @@
       ABSTR-OBJ)
     (SCALE ONT::SURPRISE-SCALE)
     (TYPE ONT::SURPRISED)))
+
+(CONCEPT
+  ONT::SURPRISING-VAL
+  (COMMENT "(surprising)")
+  (INHERIT
+    ONT::EVOKING-SURPRISE-VAL)
+  (OVERLAP
+    WN::|surprising%3:00:00::|))
 
 (CONCEPT
   ONT::SURRENDER
@@ -34019,6 +43065,7 @@
   (INHERIT
     ONT::TASTE-PROPERTY-VAL)
   (OVERLAP
+    WN::|sugary%3:00:00::|
     WN::|sweet%3:00:02::|)
   (SEM-FEATS
     (INHERIT
@@ -34296,6 +43343,7 @@
   (INHERIT
     ONT::VERTICAL-VAL)
   (OVERLAP
+    WN::|high-rise%3:00:00::|
     WN::|tall%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -34411,6 +43459,7 @@
   (INHERIT
     ONT::TANGIBILITY-VAL)
   (OVERLAP
+    WN::|material%3:00:01::|
     WN::|palpable%3:00:00::|
     WN::|tangible%3:00:04::|
     WN::|tangible%3:00:00::|)
@@ -34469,6 +43518,8 @@
    "subjective characteristics of an item perceived through gustatory input")
   (INHERIT
     ONT::APPEARANCE-PROPERTY-VAL)
+  (OVERLAP
+    WN::|dry%3:00:03::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -34499,6 +43550,104 @@
     (ORIENTATION POS)
     (SCALE ONT::TASTE-SCALE)
     (TYPE ONT::TASTY-VAL)))
+
+(CONCEPT
+  ONT::TAXONOMIC-PROPERTY-VAL
+  (INHERIT
+    ONT::BIOLOGY-VAL)
+  (OVERLAP
+    WN::|vibrionic%3:01:00::|
+    WN::|oleaceous%3:01:00::|
+    WN::|liliaceous%3:01:00::|
+    WN::|chelonian%3:01:00::|
+    WN::|artiodactyl%3:01:00::|
+    WN::|artiodactylous%3:01:00::|
+    WN::|even-toed%3:01:00::|
+    WN::|monotypic%3:01:00::|
+    WN::|eutherian%3:01:00::|
+    WN::|lobeliaceous%3:01:00::|
+    WN::|equine%3:01:01::|
+    WN::|branchiopod%3:01:00::|
+    WN::|branchiopodan%3:01:00::|
+    WN::|branchiopodous%3:01:00::|
+    WN::|murine%3:01:00::|
+    WN::|hymenopterous%3:01:00::|
+    WN::|archosaurian%3:01:00::|
+    WN::|aroid%3:01:00::|
+    WN::|araceous%3:01:00::|
+    WN::|ruminant%3:01:00::|
+    WN::|gymnospermous%3:01:00::|
+    WN::|nonruminant%3:01:00::|
+    WN::|rosaceous%3:01:00::|
+    WN::|caecilian%3:01:00::|
+    WN::|cyprinid%3:01:00::|
+    WN::|cyprinoid%3:01:00::|
+    WN::|canine%3:01:00::|
+    WN::|ordinal%3:01:00::|
+    WN::|arthropodal%3:01:00::|
+    WN::|arthropodan%3:01:00::|
+    WN::|arthropodous%3:01:00::|
+    WN::|solanaceous%3:01:00::|
+    WN::|filariid%3:01:00::|
+    WN::|specific%3:01:00::|
+    WN::|araneidal%3:01:00::|
+    WN::|araneidan%3:01:00::|
+    WN::|bovine%3:01:00::|
+    WN::|bovid%3:01:00::|
+    WN::|reptilian%3:01:00::|
+    WN::|brachyurous%3:01:00::|
+    WN::|anopheline%3:01:00::|
+    WN::|annelid%3:01:00::|
+    WN::|annelidan%3:01:00::|
+    WN::|cetacean%3:01:00::|
+    WN::|cetaceous%3:01:00::|
+    WN::|australopithecine%3:01:00::|
+    WN::|cephalopod%3:01:00::|
+    WN::|cephalopodan%3:01:00::|
+    WN::|iridaceous%3:01:00::|
+    WN::|dipterous%3:01:00::|
+    WN::|moraceous%3:01:00::|
+    WN::|orb-weaving%3:01:00::|
+    WN::|asclepiadaceous%3:01:00::|
+    WN::|accipitrine%3:01:00::|
+    WN::|amphibious%3:01:00::|
+    WN::|amphibian%3:01:00::|
+    WN::|moneran%3:01:00::|
+    WN::|dictyopteran%3:01:00::|
+    WN::|umbelliferous%3:01:00::|
+    WN::|composite%3:01:00::|
+    WN::|arundinaceous%3:01:00::|
+    WN::|protozoal%3:01:00::|
+    WN::|protozoan%3:01:00::|
+    WN::|protozoic%3:01:00::|
+    WN::|anserine%3:01:00::|
+    WN::|conspecific%3:01:00::|
+    WN::|buteonine%3:01:00::|
+    WN::|anuran%3:01:00::|
+    WN::|batrachian%3:01:00::|
+    WN::|salientian%3:01:00::|
+    WN::|bignoniaceous%3:01:00::|
+    WN::|chordate%3:01:00::|
+    WN::|crinoid%3:01:00::|
+    WN::|apocynaceous%3:01:00::|
+    WN::|caryophyllaceous%3:01:00::|
+    WN::|cruciferous%3:01:00::|
+    WN::|plumbaginaceous%3:01:00::|
+    WN::|mammalian%3:01:00::|
+    WN::|chaetognathan%3:01:00::|
+    WN::|chaetognathous%3:01:00::|
+    WN::|polemoniaceous%3:01:00::|
+    WN::|cyanobacterial%3:01:00::|
+    WN::|cyanophyte%3:01:00::|
+    WN::|cucurbitaceous%3:01:00::|
+    WN::|isopteran%3:01:00::|
+    WN::|brachiopod%3:01:00::|
+    WN::|brachiopodous%3:01:00::|
+    WN::|carangid%3:01:00::|
+    WN::|clamatorial%3:01:00::|
+    WN::|betulaceous%3:01:00::|
+    WN::|crustaceous%3:01:01::|
+    WN::|crustacean%3:01:00::|))
 
 (CONCEPT
   ONT::TEA
@@ -34646,7 +43795,7 @@
 (CONCEPT
   ONT::TEMPORAL-OCCURRENCE-VAL
   (INHERIT
-    ONT::PROCESS-VAL)
+    ONT::TEMPORAL-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -34663,10 +43812,33 @@
     (TYPE ONT::TEMPORAL-PREDICATE)))
 
 (CONCEPT
+  ONT::TEMPORAL-RELATION-VAL
+  (COMMENT "(contemporary, synchronous)")
+  (INHERIT
+    ONT::TEMPORAL-VAL))
+
+(CONCEPT
   ONT::TEMPORAL-VAL
   (COMMENT "properties relating to time")
   (INHERIT
-    ONT::PROPERTY-VAL))
+    ONT::PROPERTY-VAL)
+  (OVERLAP
+    WN::|dominical%3:01:00::|
+    WN::|sabbatarian%3:01:00::|
+    WN::|semicentennial%3:01:00::|
+    WN::|semicentenary%3:01:00::|
+    WN::|tricentenary%3:01:00::|
+    WN::|tricentennial%3:01:00::|
+    WN::|spatiotemporal%3:01:00::|
+    WN::|quincentennial%3:01:00::|
+    WN::|quincentenary%3:01:00::|
+    WN::|ferial%3:01:00::|
+    WN::|temporal%3:01:01::|
+    WN::|equinoctial%3:01:00::|
+    WN::|bicentennial%3:01:00::|
+    WN::|bicentenary%3:01:00::|
+    WN::|sabbatical%3:01:01::|
+    WN::|sabbatic%3:01:00::|))
 
 (CONCEPT
   ONT::TEMPORARY
@@ -34729,6 +43901,14 @@
     ONT::MOLECULAR-PART))
 
 (CONCEPT
+  ONT::TERRITORY-LAND-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-LOCATION-VAL)
+  (OVERLAP
+    WN::|territorial%3:00:00::|
+    WN::|terrestrial%3:00:00::|))
+
+(CONCEPT
   ONT::TEXT-FIELD
   (INHERIT
     ONT::TEMPLATE-INFO-OBJECT))
@@ -34763,6 +43943,8 @@
   ONT::TEXTURE-VAL
   (INHERIT
     ONT::TOUCH-PROPERTY-VAL)
+  (OVERLAP
+    WN::|fine%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -34967,8 +44149,10 @@
 (CONCEPT
   ONT::TIDY-VAL
   (INHERIT
-    ONT::ORDERLINESS-VAL)
+    ONT::ORDERLY-VAL)
   (OVERLAP
+    WN::|ungroomed%3:00:00::|
+    WN::|combed%3:00:00::|
     WN::|tidy%5:00:00:groomed:00|
     WN::|tidy%3:00:00::|
     WN::|neat%5:00:00:tidy:00|
@@ -35276,6 +44460,12 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::TIMELINESS-VAL
+  (COMMENT "(punctual)")
+  (INHERIT
+    ONT::TEMPORAL-VAL))
+
+(CONCEPT
   ONT::TINY
   (INHERIT
     ONT::SMALL)
@@ -35483,6 +44673,17 @@
     WN::|tow_car%1:06:00::|))
 
 (CONCEPT
+  ONT::TOWARD-CENTER-VAL
+  (COMMENT "(centralizing)")
+  (INHERIT
+    ONT::LOCATION-VAL)
+  (OVERLAP
+    WN::|centripetal%3:00:00::|
+    WN::|centrifugal%3:00:00::|
+    WN::|centralized%3:00:00::|
+    WN::|centralised%3:00:00::|))
+
+(CONCEPT
   ONT::TOWARDS
   (COMMENT "direction towards from a given entity (the GROUND)")
   (INHERIT
@@ -35518,6 +44719,20 @@
     (INHERIT
       SITUATION)
     (TYPE ONT::TRANSFER-EVENT)))
+
+(CONCEPT
+  ONT::TRANSFERABILITY-VAL
+  (COMMENT "(transferable, alienable)")
+  (INHERIT
+    ONT::CAN-BE-DONE-VAL))
+
+(CONCEPT
+  ONT::TRANSFERABLE-VAL
+  (COMMENT "(transferable, alienable)")
+  (INHERIT
+    ONT::TRANSFERABILITY-VAL)
+  (OVERLAP
+    WN::|alienable%3:00:00::|))
 
 (CONCEPT
   ONT::TRANSFORM-TO-PRESERVE
@@ -35601,6 +44816,20 @@
     ONT::MOVE)
   (OVERLAP
     WN::|translocate%2:40:00::|))
+
+(CONCEPT
+  ONT::TRANSMISSION-PROPERTY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-COMMUNICATION-VAL)
+  (OVERLAP
+    WN::|fiber-optic%3:01:00::|
+    WN::|fiberoptic%3:01:00::|
+    WN::|fibre-optic%3:01:00::|
+    WN::|fibreoptic%3:01:00::|
+    WN::|telephonic%3:01:00::|
+    WN::|radiotelephonic%3:01:00::|
+    WN::|radiophonic%3:01:00::|
+    WN::|long-distance%3:01:00::|))
 
 (CONCEPT
   ONT::TRANSMIT
@@ -35928,6 +45157,10 @@
   (INHERIT
     ONT::TYPICALITY-VAL)
   (OVERLAP
+    WN::|standard%3:00:01::|
+    WN::|characteristic%3:00:00::|
+    WN::|neutral%3:00:02::|
+    WN::|standard%3:00:02::|
     WN::|customary%5:00:00:usual:00|
     WN::|typical%5:00:00:normal:01|
     WN::|everyday%5:00:00:ordinary:00|
@@ -35995,6 +45228,11 @@
   (INHERIT
     ONT::ABILITY-VAL)
   (OVERLAP
+    WN::|maladroit%3:00:00::|
+    WN::|incapable%3:00:02::|
+    WN::|untalented%3:00:00::|
+    WN::|talentless%3:00:00::|
+    WN::|unable%3:00:00::|
     WN::|incompetent%3:00:00::|
     WN::|incapable%3:00:00::|
     WN::|unable%5:00:00:incapable:00|)
@@ -36003,6 +45241,30 @@
       ABSTR-OBJ)
     (SCALE ONT::NOT-ABLE-SCALE)
     (TYPE ONT::UNABLE)))
+
+(CONCEPT
+  ONT::UNAFFECTED-VAL
+  (COMMENT "(passionless, unawed)")
+  (INHERIT
+    ONT::NEUTRAL-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|passionless%3:00:00::|
+    WN::|unenthusiastic%3:00:00::|
+    WN::|unawed%3:00:00::|
+    WN::|undemonstrative%3:00:00::|
+    WN::|unresentful%3:00:00::|
+    WN::|unmoved%3:00:00::|
+    WN::|unaffected%3:00:02::|
+    WN::|untouched%3:00:01::|
+    WN::|unangry%3:00:00::|
+    WN::|unrevived%3:00:00::|
+    WN::|unrenewed%3:00:00::|
+    WN::|unagitated%3:00:00::|
+    WN::|unexcited%3:00:00::|
+    WN::|unsurprised%3:00:00::|
+    WN::|not_surprised%3:00:00::|
+    WN::|unafraid%3:00:00::|
+    WN::|fearless%3:00:00::|))
 
 (CONCEPT
   ONT::UNATTACH
@@ -36025,6 +45287,11 @@
   (INHERIT
     ONT::CERTAINTY-VAL)
   (OVERLAP
+    WN::|indefinite%3:00:00::|
+    WN::|uncertain%3:00:03::|
+    WN::|unsettled%3:00:02::|
+    WN::|inconclusive%3:00:00::|
+    WN::|uncertain%3:00:01::|
     WN::|unsure%3:00:00::|
     WN::|unsealed%3:00:02::|
     WN::|uncertain%3:00:02::|)
@@ -36054,6 +45321,7 @@
   (INHERIT
     ONT::CLARITY-VAL)
   (OVERLAP
+    WN::|unobvious%3:00:00::|
     WN::|unclear%3:00:00::|
     WN::|opaque%5:00:00:incomprehensible:00|
     WN::|ill-defined%3:00:00::|
@@ -36155,6 +45423,8 @@
   (INHERIT
     ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
+    WN::|unquiet%3:00:00::|
+    WN::|insecure%3:00:01::|
     WN::|anxious%5:00:00:troubled:00|
     WN::|uneasy%3:00:00::|
     WN::|troubled%3:00:00::|
@@ -36170,6 +45440,7 @@
   (INHERIT
     ONT::FAMILIARITY-VAL)
   (OVERLAP
+    WN::|unknown%3:00:00::|
     WN::|unfamiliar%3:00:00::|
     WN::|strange%5:00:01:unfamiliar:00|)
   (SEM-FEATS
@@ -36184,6 +45455,14 @@
     ONT::FILLED-VAL)
   (OVERLAP
     WN::|empty%3:00:00::|))
+
+(CONCEPT
+  ONT::UNFIT-VAL
+  (COMMENT "(unfit)")
+  (INHERIT
+    ONT::AILING-VAL)
+  (OVERLAP
+    WN::|unfit%3:00:01::|))
 
 (CONCEPT
   ONT::UNFOCUSED-ACTIVITY
@@ -36204,6 +45483,9 @@
   (INHERIT
     ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
+    WN::|displeased%3:00:00::|
+    WN::|discontented%3:00:00::|
+    WN::|discontent%3:00:00::|
     WN::|dysphoric%3:00:00::|
     WN::|unhappy%3:00:00::|
     WN::|gloomy%5:00:00:dejected:00|
@@ -36232,6 +45514,20 @@
     (TYPE ONT::UNIT)))
 
 (CONCEPT
+  ONT::UNITED-VAL
+  (COMMENT "(integrated, united)")
+  (INHERIT
+    ONT::PART-WHOLE-VAL)
+  (OVERLAP
+    WN::|united%3:00:00::|
+    WN::|combined%3:00:00::|
+    WN::|joint%3:00:00::|
+    WN::|integrated%3:00:02::|
+    WN::|integrative%3:00:00::|
+    WN::|integrated%3:00:00::|
+    WN::|convergent%3:00:00::|))
+
+(CONCEPT
   ONT::UNLOAD
   (INHERIT
     ONT::EMPTY)
@@ -36252,6 +45548,8 @@
   (INHERIT
     ONT::LUCKINESS-VAL)
   (OVERLAP
+    WN::|unlucky%3:00:00::|
+    WN::|luckless%3:00:00::|
     WN::|unfortunate%3:00:00::|
     WN::|doomed%5:00:00:unfortunate:00|)
   (SEM-FEATS
@@ -36280,6 +45578,14 @@
   (INHERIT
     ONT::ATTENTION-WORTHY-VAL)
   (OVERLAP
+    WN::|unnoticed%3:00:00::|
+    WN::|unappealing%3:00:00::|
+    WN::|inglorious%3:00:00::|
+    WN::|unostentatious%3:00:00::|
+    WN::|unpretentious%3:00:04::|
+    WN::|unpretending%3:00:00::|
+    WN::|inconsiderable%3:00:00::|
+    WN::|unnoticeable%3:00:00::|
     WN::|unobtrusive%3:00:00::|
     WN::|obscure%5:00:00:inconspicuous:00|
     WN::|inconspicuous%3:00:00::|)
@@ -36295,8 +45601,7 @@
   (INHERIT
     ONT::FLOW-VAL)
   (OVERLAP
-    WN::|unobstructed%3:00:00::|
-    WN::|clear%5:00:00:unobstructed:00|))
+    WN::|cleared%3:00:00::|))
 
 (CONCEPT
   ONT::UNORDERED-DOMAIN
@@ -36321,6 +45626,8 @@
   (INHERIT
     ONT::RELIABILITY-VAL)
   (OVERLAP
+    WN::|untrustworthy%3:00:00::|
+    WN::|untrusty%3:00:00::|
     WN::|uncertain%5:00:00:unreliable:00|
     WN::|unreliable%3:00:00::|)
   (SEM-FEATS
@@ -36380,6 +45687,11 @@
   (INHERIT
     ONT::WILLINGNESS-VAL)
   (OVERLAP
+    WN::|stubborn%3:00:00::|
+    WN::|obstinate%3:00:00::|
+    WN::|unregenerate%3:00:01::|
+    WN::|disinclined%3:00:00::|
+    WN::|uncooperative%3:00:00::|
     WN::|unwilling%3:00:00::|
     WN::|unwilling%5:00:00:involuntary:01|
     WN::|involuntary%3:00:01::|)
@@ -36424,6 +45736,8 @@
   (INHERIT
     ONT::PRIMARY)
   (OVERLAP
+    WN::|noncritical%3:00:01::|
+    WN::|noncrucial%3:00:04::|
     WN::|urgent%5:00:00:imperative:00|
     WN::|serious%5:00:00:critical:03|
     WN::|critical%3:00:03::|
@@ -36431,6 +45745,19 @@
     WN::|seriously%4:02:00::|
     WN::|urgently%4:02:00::|
     WN::|desperately%4:02:01::|))
+
+(CONCEPT
+  ONT::US-PRESIDENT-VAL
+  (INHERIT
+    ONT::FAMOUS-PERSON-VAL)
+  (OVERLAP
+    WN::|lincolnesque%3:01:00::|
+    WN::|lincolnian%3:01:00::|
+    WN::|rooseveltian%3:01:00::|
+    WN::|wilsonian%3:01:00::|
+    WN::|jeffersonian%3:01:00::|
+    WN::|washingtonian%3:01:03::|
+    WN::|jacksonian%3:01:00::|))
 
 (CONCEPT
   ONT::US-STATE
@@ -36448,7 +45775,7 @@
 (CONCEPT
   ONT::USABILITY-VAL
   (INHERIT
-    ONT::OBJECT-AFFORDANCES-VAL)
+    ONT::EVALUATION-ATTRIBUTE-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -36568,7 +45895,7 @@
 (CONCEPT
   ONT::USEFULNESS-VAL
   (INHERIT
-    ONT::PROCESS-EVALUATION-VAL)
+    ONT::EVALUATION-ATTRIBUTE-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -36580,6 +45907,7 @@
   (INHERIT
     ONT::USEFULNESS-VAL)
   (OVERLAP
+    WN::|purposeless%3:00:00::|
     WN::|impractical%3:00:00::|
     WN::|useless%3:00:00::|)
   (SEM-FEATS
@@ -36908,6 +46236,7 @@
   (INHERIT
     ONT::VISIBILITY-VAL)
   (OVERLAP
+    WN::|unconcealed%3:00:00::|
     WN::|visible%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -36963,6 +46292,13 @@
    "subjective characteristics of an item perceived through visual input")
   (INHERIT
     ONT::APPEARANCE-PROPERTY-VAL)
+  (OVERLAP
+    WN::|tangled%3:00:00::|
+    WN::|blemished%3:00:00::|
+    WN::|glazed%3:00:00::|
+    WN::|shiny%3:00:04::|
+    WN::|unfocused%3:00:00::|
+    WN::|unfocussed%3:00:04::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -37077,6 +46413,19 @@
     ONT::WATER-TRAVEL))
 
 (CONCEPT
+  ONT::VULNERABLE-VAL
+  (COMMENT "not allowing penetration or influence (vulnerable)")
+  (INHERIT
+    ONT::INFLUENCE-SUSCEPTIBILITY-VAL)
+  (OVERLAP
+    WN::|vulnerable%3:00:00::|
+    WN::|susceptible%3:00:00::|
+    WN::|impressionable%3:00:00::|
+    WN::|waxy%3:00:00::|
+    WN::|impressible%3:00:00::|
+    WN::|sensitive%3:00:02::|))
+
+(CONCEPT
   ONT::W-ABLE-VAL
   (INHERIT
     ONT::RW-STATUS-VAL))
@@ -37146,6 +46495,7 @@
   (INHERIT
     ONT::TEMPERATURE-VAL)
   (OVERLAP
+    WN::|hot%3:00:01::|
     WN::|warm%3:00:01::|
     WN::|hot%5:00:00:warm:03|
     WN::|warm%3:00:03::|)
@@ -37230,6 +46580,12 @@
   (INHERIT
     ONT::INTENSITY-VAL)
   (OVERLAP
+    WN::|forceless%3:00:00::|
+    WN::|unforceful%3:00:00::|
+    WN::|light%3:00:08::|
+    WN::|thin%3:00:04::|
+    WN::|powerless%3:00:00::|
+    WN::|impotent%3:00:00::|
     WN::|shallow%3:00:02::|
     WN::|dull%3:00:04::|
     WN::|weak%5:00:00:perceptible:00|
@@ -37240,7 +46596,9 @@
   (INHERIT
     ONT::PHYSICAL-STRENGTH-VAL)
   (OVERLAP
-    WN::|weak%3:00:00::|)
+    WN::|tender%3:00:02::|
+    WN::|untoughened%3:00:02::|
+    WN::|delicate%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -37287,6 +46645,7 @@
   (INHERIT
     ONT::WEALTHINESS-VAL)
   (OVERLAP
+    WN::|privileged%3:00:00::|
     WN::|rich%3:00:00::|
     WN::|wealthy%5:00:00:rich:00|))
 
@@ -37451,6 +46810,12 @@
     WN::|receive%2:32:00::|))
 
 (CONCEPT
+  ONT::WELL-INTENDED-VAL
+  (COMMENT "(benevolent)")
+  (INHERIT
+    ONT::SOCIAL-INTENT-VAL))
+
+(CONCEPT
   ONT::WEST
   (INHERIT
     ONT::SUBAREA-LOCATION-VAL)
@@ -37475,6 +46840,7 @@
   (INHERIT
     ONT::MOISTURE-CONTENT-VAL)
   (OVERLAP
+    WN::|hydric%3:00:00::|
     WN::|wet%3:00:01::|)
   (SEM-FEATS
     (INHERIT
@@ -37563,6 +46929,9 @@
   (INHERIT
     ONT::COMPLETENESS-VAL)
   (OVERLAP
+    WN::|finished%3:00:02::|
+    WN::|consummated%3:00:00::|
+    WN::|comprehensive%3:00:00::|
     WN::|complete%3:00:00::|
     WN::|whole%3:00:00::|)
   (SEM-FEATS
@@ -37629,6 +46998,9 @@
   (INHERIT
     ONT::TAMENESS-VAL)
   (OVERLAP
+    WN::|disorderly%3:00:00::|
+    WN::|wild%3:00:01::|
+    WN::|untamed%3:00:04::|
     WN::|wild%3:00:02::|)
   (SEM-FEATS
     (INHERIT
@@ -37646,6 +47018,12 @@
   (INHERIT
     ONT::WILLINGNESS-VAL)
   (OVERLAP
+    WN::|voluntary%3:00:01::|
+    WN::|inclined%3:00:02::|
+    WN::|compliant%3:00:00::|
+    WN::|compromising%3:00:00::|
+    WN::|conciliatory%3:00:04::|
+    WN::|flexible%3:00:04::|
     WN::|willing%3:00:00::|)
   (SEM-FEATS
     (INHERIT
@@ -37664,6 +47042,17 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::WILLING-TO-ACCEPT-VAL
+  (COMMENT "(receptive, broad-minded)")
+  (INHERIT
+    ONT::WILLING)
+  (OVERLAP
+    WN::|receptive%3:00:00::|
+    WN::|open%3:00:00::|
+    WN::|broad-minded%3:00:00::|
+    WN::|tolerant%3:00:00::|))
+
+(CONCEPT
   ONT::WILLINGNESS-SCALE
   (INHERIT
     ONT::BEHAVIORAL-SCALE)
@@ -37673,7 +47062,7 @@
 (CONCEPT
   ONT::WILLINGNESS-VAL
   (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL)
+    ONT::PSYCHOLOGICAL-PROPERTY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -37909,6 +47298,15 @@
     WN::|work%1:06:01::|))
 
 (CONCEPT
+  ONT::WORLDLY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-SPIRITUALITY-VAL)
+  (OVERLAP
+    WN::|worldly%3:00:00::|
+    WN::|secular%3:00:07::|
+    WN::|temporal%3:00:00::|))
+
+(CONCEPT
   ONT::WORRY-CONCERN-SCALE
   (INHERIT
     ONT::EXPERIENCER-CONDITION-SCALE)
@@ -37943,6 +47341,12 @@
   (INHERIT
     ONT::WORTHINESS-VAL)
   (OVERLAP
+    WN::|valuable%3:00:00::|
+    WN::|estimable%3:00:00::|
+    WN::|merited%3:00:00::|
+    WN::|deserved%3:00:00::|
+    WN::|honorable%3:00:00::|
+    WN::|honourable%3:00:00::|
     WN::|worthwhile%5:00:00:worthy:00|
     WN::|worthy%3:00:00::|
     WN::|valuable%5:00:00:worthy:00|
@@ -37984,6 +47388,53 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::WRITER-VAL
+  (INHERIT
+    ONT::FAMOUS-PERSON-VAL)
+  (OVERLAP
+    WN::|donnean%3:01:00::|
+    WN::|donnian%3:01:00::|
+    WN::|ibsenian%3:01:00::|
+    WN::|orwellian%3:01:00::|
+    WN::|gilbertian%3:01:00::|
+    WN::|jamesian%3:01:00::|
+    WN::|hemingwayesque%3:01:00::|
+    WN::|hugoesque%3:01:00::|
+    WN::|autobiographical%3:01:01::|
+    WN::|autobiographic%3:01:01::|
+    WN::|voltarian%3:01:00::|
+    WN::|voltarean%3:01:00::|
+    WN::|coleridgian%3:01:00::|
+    WN::|coleridgean%3:01:00::|
+    WN::|wordsworthian%3:01:00::|
+    WN::|kiplingesque%3:01:00::|
+    WN::|yeatsian%3:01:00::|
+    WN::|kafkaesque%3:01:00::|
+    WN::|dantean%3:01:00::|
+    WN::|dantesque%3:01:00::|
+    WN::|dickensian%3:01:00::|
+    WN::|bardic%3:01:00::|
+    WN::|zolaesque%3:01:00::|
+    WN::|rousseauan%3:01:00::|
+    WN::|shakespearian%3:01:00::|
+    WN::|shakespearean%3:01:00::|
+    WN::|audenesque%3:01:00::|
+    WN::|aeschylean%3:01:00::|
+    WN::|poetic%3:01:01::|
+    WN::|senecan%3:01:00::|
+    WN::|churchillian%3:01:00::|
+    WN::|frostian%3:01:00::|
+    WN::|proustian%3:01:00::|
+    WN::|thoreauvian%3:01:00::|
+    WN::|homeric%3:01:00::|
+    WN::|dostoevskian%3:01:00::|
+    WN::|dostoyevskian%3:01:00::|
+    WN::|balzacian%3:01:00::|
+    WN::|shavian%3:01:00::|
+    WN::|goethean%3:01:00::|
+    WN::|goethian%3:01:00::|))
+
+(CONCEPT
   ONT::WRITING-IMPLEMENT
   (INHERIT
     ONT::MANUFACTURED-OBJECT)
@@ -37995,6 +47446,87 @@
     (OBJECT-FUNCTION INSTRUMENT)
     (MOBILITY NON-SELF-MOVING)
     (TYPE ONT::WRITING-IMPLEMENT)))
+
+(CONCEPT
+  ONT::WRITTEN-COMMUNICATION-PROPERTY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-COMMUNICATION-VAL)
+  (OVERLAP
+    WN::|testamentary%3:01:00::|
+    WN::|masoretic%3:01:00::|
+    WN::|epic%3:01:00::|
+    WN::|epical%3:01:00::|
+    WN::|documentary%3:01:00::|
+    WN::|documental%3:01:00::|
+    WN::|holographic%3:01:00::|
+    WN::|holographical%3:01:00::|
+    WN::|literary%3:01:00::|
+    WN::|stenographic%3:01:00::|
+    WN::|stenographical%3:01:00::|
+    WN::|lithographic%3:01:00::|
+    WN::|planographic%3:01:00::|
+    WN::|dithyrambic%3:01:00::|
+    WN::|antistrophic%3:01:00::|
+    WN::|invitational%3:01:00::|
+    WN::|interlinear%3:01:00::|
+    WN::|interlineal%3:01:00::|
+    WN::|thespian%3:01:00::|
+    WN::|calligraphic%3:01:00::|
+    WN::|calligraphical%3:01:00::|
+    WN::|fictional%3:01:00::|
+    WN::|inscriptive%3:01:00::|
+    WN::|tetrametric%3:01:00::|
+    WN::|textual%3:01:00::|
+    WN::|elegiac%3:01:00::|
+    WN::|dramatic%3:01:00::|
+    WN::|autographic%3:01:00::|
+    WN::|lyric%3:01:01::|
+    WN::|hieroglyphic%3:01:01::|
+    WN::|hieroglyphical%3:01:01::|
+    WN::|puranic%3:01:00::|))
+
+(CONCEPT
+  ONT::WRITTEN-LANGUAGE-PROPERTY-VAL
+  (INHERIT
+    ONT::ASSOCIATED-WITH-LANGUAGES-VAL)
+  (OVERLAP
+    WN::|alphabetic%3:00:00::|
+    WN::|alphabetical%3:00:00::|
+    WN::|majuscule%3:00:00::|
+    WN::|uppercase%3:00:00::|
+    WN::|minuscule%3:00:00::|
+    WN::|minuscular%3:00:00::|
+    WN::|allographic%3:01:00::|
+    WN::|hieroglyphic%3:01:00::|
+    WN::|hieroglyphical%3:01:00::|
+    WN::|hieratic%3:01:00::|
+    WN::|phonogramic%3:01:00::|
+    WN::|boustrophedonic%3:01:00::|
+    WN::|ideographic%3:01:00::|
+    WN::|runic%3:01:00::|
+    WN::|analphabetic%3:01:00::|
+    WN::|logogrammatic%3:01:00::|
+    WN::|logographic%3:01:00::|
+    WN::|alphabetic%3:01:00::|
+    WN::|alphabetical%3:01:00::|
+    WN::|syllabic%3:01:00::|
+    WN::|uncial%3:01:00::|
+    WN::|scriptural%3:01:02::|
+    WN::|pictographic%3:01:00::|
+    WN::|analphabetic%3:00:00::|
+    WN::|separative%5:00:02:disjunctive:00|
+    WN::|orthographic%3:01:00::|))
+
+(CONCEPT
+  ONT::WRITTEN-VAL
+  (COMMENT "(written)")
+  (INHERIT
+    ONT::INFORMATION-DELIVERY-MODE-VAL)
+  (OVERLAP
+    WN::|written%3:00:00::|
+    WN::|written%3:00:02::|
+    WN::|scripted%3:00:00::|
+    WN::|written%3:00:04::|))
 
 (CONCEPT
   ONT::YEAR
@@ -38062,6 +47594,7 @@
   (INHERIT
     ONT::AGE-VAL)
   (OVERLAP
+    WN::|nascent%3:00:00::|
     WN::|young%3:00:00::|
     WN::|immature%3:00:03::|
     WN::|new%3:00:09::|))
@@ -38070,4 +47603,104 @@
   ONT::ZIPCODE
   (INHERIT
     ONT::LOCATION-ID))
+
+(CONCEPT
+  ONT::ZOOLOGICAL-PROPERTY-VAL
+  (INHERIT
+    ONT::BIOLOGY-VAL)
+  (OVERLAP
+    WN::|placental%3:00:00::|
+    WN::|caudate%3:00:00::|
+    WN::|caudated%3:00:00::|
+    WN::|estrous%3:00:00::|
+    WN::|oviparous%3:00:00::|
+    WN::|univalve%3:00:00::|
+    WN::|bivalve%3:00:00::|
+    WN::|bivalved%3:00:00::|
+    WN::|acaudate%3:00:00::|
+    WN::|acaudal%3:00:00::|
+    WN::|cold-blooded%3:00:00::|
+    WN::|warm-blooded%3:00:00::|
+    WN::|anestrous%3:00:00::|
+    WN::|vagile%3:00:00::|
+    WN::|leonine%3:01:00::|
+    WN::|baboonish%3:01:00::|
+    WN::|protozoological%3:01:00::|
+    WN::|ratty%3:01:00::|
+    WN::|oscine%3:01:00::|
+    WN::|zoic%3:01:00::|
+    WN::|plantigrade%3:00:00::|
+    WN::|lupine%3:01:00::|
+    WN::|avifaunal%3:01:00::|
+    WN::|avifaunistic%3:01:00::|
+    WN::|phocine%3:01:00::|
+    WN::|viviparous%3:00:00::|
+    WN::|live-bearing%3:00:00::|
+    WN::|bottom-feeding%3:01:00::|
+    WN::|cercarial%3:01:00::|
+    WN::|jumentous%3:01:00::|
+    WN::|metabolic%3:00:00::|
+    WN::|metabolous%3:00:00::|
+    WN::|gallinaceous%3:01:00::|
+    WN::|vertebrate%3:00:00::|
+    WN::|registered%3:00:02::|
+    WN::|weaned%3:00:00::|
+    WN::|passerine%3:01:00::|
+    WN::|sapiens%3:01:00::|
+    WN::|unregistered%3:00:02::|
+    WN::|ursine%3:01:00::|
+    WN::|avian%3:01:00::|
+    WN::|pedal%3:01:00::|
+    WN::|anthropic%3:01:00::|
+    WN::|anthropical%3:01:00::|
+    WN::|vulpine%3:01:00::|
+    WN::|vulpecular%3:01:00::|
+    WN::|bottom-dwelling%3:01:00::|
+    WN::|limacine%3:01:00::|
+    WN::|limacoid%3:01:00::|
+    WN::|mousy%3:01:00::|
+    WN::|mousey%3:01:00::|
+    WN::|filarial%3:01:00::|
+    WN::|soft-finned%3:01:00::|
+    WN::|ambulacral%3:01:00::|
+    WN::|zoological%3:01:01::|
+    WN::|pachydermatous%3:01:00::|
+    WN::|pachydermal%3:01:00::|
+    WN::|pachydermic%3:01:00::|
+    WN::|pachydermous%3:01:00::|
+    WN::|grubby%3:01:00::|
+    WN::|salamandriform%3:01:00::|
+    WN::|ametabolic%3:00:00::|
+    WN::|ametabolous%3:00:00::|
+    WN::|larval%3:01:00::|
+    WN::|fishy%3:01:00::|
+    WN::|anguine%3:01:00::|
+    WN::|mecopterous%3:01:00::|
+    WN::|blastospheric%3:01:00::|
+    WN::|blastular%3:01:00::|
+    WN::|medusoid%3:01:00::|
+    WN::|feline%3:01:00::|
+    WN::|alular%3:01:00::|
+    WN::|digitigrade%3:00:00::|
+    WN::|ornithological%3:01:00::|
+    WN::|raptorial%3:01:00::|
+    WN::|ungual%3:01:01::|
+    WN::|carnivorous%3:01:00::|
+    WN::|entomological%3:01:00::|
+    WN::|entomologic%3:01:00::|
+    WN::|cloven-hoofed%3:01:00::|
+    WN::|cloven-footed%3:01:00::|
+    WN::|insectan%3:01:00::|
+    WN::|zoological%3:01:00::|
+    WN::|neanderthal%3:01:00::|
+    WN::|neanderthalian%3:01:00::|
+    WN::|neandertal%3:01:00::|
+    WN::|boskopoid%3:01:00::|
+    WN::|piscine%3:01:00::|
+    WN::|nonpasserine%3:01:00::|
+    WN::|fetal%3:01:00::|
+    WN::|foetal%3:01:00::|
+    WN::|ovoviviparous%3:00:00::|
+    WN::|simian%3:01:00::|
+    WN::|spiny-finned%3:01:00::|))
 

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::recommendable-val">
  <relation label="inherit">
-  ont::evaluation-attribute-val
+  ont::recommendability-val
  </relation>
  <relation label="overlap">
   wn::|advisable%3:00:00::|
@@ -124,34 +124,19 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evaluation-attribute-val">
- <comment>
-  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::evaluation-scale</feat>
-  <feat name="type">ont::evaluation-attribute-val</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <feat name="tangible">+</feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::recommendability-scale</feat>
- <feat name="type">ont::recommendable-val</feat>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-attribute-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -205,20 +190,44 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|disadvantageous%3:00:00::|
+  wn::|poor%3:00:02::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::evaluation-scale</feat>
- <feat name="type">ont::evaluation-attribute-val</feat>
+ <feat name="scale">ont::recommendability-scale</feat>
+ <feat name="type">ont::recommendable-val</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <feat name="tangible">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
+ <concept name="ont::recommendability-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ </concept>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

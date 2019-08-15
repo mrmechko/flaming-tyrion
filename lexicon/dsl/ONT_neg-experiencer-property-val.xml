@@ -124,6 +124,18 @@
  <relation label="inherit">
   ont::psychological-property-val
  </relation>
+ <relation label="overlap">
+  wn::|appetitive%3:01:00::|
+  wn::|algolagnic%3:01:00::|
+  wn::|technophobic%3:01:00::|
+  wn::|anglophilic%3:01:00::|
+  wn::|aversive%3:01:00::|
+  wn::|technophilic%3:01:00::|
+  wn::|libidinal%3:01:00::|
+  wn::|emotional%3:01:00::|
+  wn::|anglophobic%3:01:00::|
+  wn::|agonal%3:01:00::|
+ </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
    <sem-feats>
@@ -146,6 +158,16 @@
  </comment>
  <relation label="inherit">
   ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|extroversive%3:00:00::|
+  wn::|extraversive%3:00:00::|
+  wn::|maladjusted%3:00:00::|
+  wn::|abnormal%3:00:03::|
+  wn::|introversive%3:00:00::|
+  wn::|introvertive%3:00:00::|
+  wn::|adjusted%3:00:02::|
+  wn::|psychosexual%3:01:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -413,6 +435,22 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <concept name="ont::bitter-val">
+ <relation label="inherit">
+  ont::neg-experiencer-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|resentful%3:00:00::|
+  wn::|bitter%5:00:00:tasty:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::bitterness-scale</feat>
+  <feat name="type">ont::bitter-val</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::not-grateful-val">
  <relation label="inherit">
   ont::neg-experiencer-property-val
@@ -435,6 +473,8 @@
   ont::neg-experiencer-property-val
  </relation>
  <relation label="overlap">
+  wn::|incurious%3:00:00::|
+  wn::|uneager%3:00:00::|
   wn::|uninterested%3:00:00::|
   wn::|disinterested%5:00:00:impartial:00|
  </relation>
@@ -446,11 +486,27 @@
   <feat name="type">ont::not-interested-val</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::concerned-val">
+ <relation label="inherit">
+  ont::neg-experiencer-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|concerned%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::worry-concern-scale</feat>
+  <feat name="type">ont::concerned-val</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::puzzled-val">
  <relation label="inherit">
   ont::neg-experiencer-property-val
  </relation>
  <relation label="overlap">
+  wn::|confused%3:00:00::|
   wn::|perplexed%3:00:00::|
   wn::|baffled%5:00:00:perplexed:00|
   wn::|puzzled%5:00:00:perplexed:00|
@@ -546,6 +602,8 @@
   ont::neg-experiencer-property-val
  </relation>
  <relation label="overlap">
+  wn::|unquiet%3:00:00::|
+  wn::|insecure%3:00:01::|
   wn::|anxious%5:00:00:troubled:00|
   wn::|uneasy%3:00:00::|
   wn::|troubled%3:00:00::|
@@ -583,6 +641,9 @@
   ont::neg-experiencer-property-val
  </relation>
  <relation label="overlap">
+  wn::|displeased%3:00:00::|
+  wn::|discontented%3:00:00::|
+  wn::|discontent%3:00:00::|
   wn::|dysphoric%3:00:00::|
   wn::|unhappy%3:00:00::|
   wn::|gloomy%5:00:00:dejected:00|
@@ -606,9 +667,7 @@
   ont::neg-experiencer-property-val
  </relation>
  <relation label="overlap">
-  wn::|sad%3:00:00::|
-  wn::|melancholy%5:00:00:sad:00|
-  wn::|sorrowful%3:00:00::|
+  wn::|joyless%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -623,6 +682,11 @@
   ont::neg-experiencer-property-val
  </relation>
  <relation label="overlap">
+  wn::|ashamed%3:00:00::|
+  wn::|penitent%3:00:00::|
+  wn::|repentant%3:00:00::|
+  wn::|apologetic%3:00:00::|
+  wn::|excusatory%3:00:00::|
   wn::|sorry%3:00:02::|
  </relation>
  <sem-feats>
@@ -649,5 +713,53 @@
   <feat name="scale">ont::interest-scale</feat>
   <feat name="type">ont::bored</feat>
  </sem-feats>
+ </concept>
+ <concept name="ont::remorseless-val">
+ <comment>
+  &quot;(unapologetic, unregretful)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::neg-experiencer-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|unashamed%3:00:00::|
+  wn::|unregretful%3:00:00::|
+  wn::|unregretting%3:00:00::|
+  wn::|unapologetic%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::hopeless-val">
+ <comment>
+  &quot;(hopeless)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::neg-experiencer-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|hopeless%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::not-liked-val">
+ <comment>
+  &quot;(disliked, unloved)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::neg-experiencer-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|unloved%3:00:00::|
+  wn::|disliked%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::hateful-val">
+ <comment>
+  &quot;(hateful)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::neg-experiencer-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|hateful%3:00:00::|
+ </relation>
  </concept>
 </dsl>

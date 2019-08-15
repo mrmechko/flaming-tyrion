@@ -321,28 +321,6 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
- <concept name="ont::can-be-done-val">
- <relation label="inherit">
-  ont::process-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::temporal-occurrence-val">
- <relation label="inherit">
-  ont::process-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::temporal-occurrence-scale</feat>
-  <feat name="type">ont::temporal-occurrence-val</feat>
- </sem-feats>
- </concept>
  <concept name="ont::process-status-val">
  <comment>
   &quot;properties relating to status of processes&quot;
@@ -386,5 +364,41 @@
   <feat name="scale">ont::process-evaluation-scale</feat>
   <feat name="type">ont::process-evaluation-val</feat>
  </sem-feats>
+ </concept>
+ <concept name="ont::activity-val">
+ <comment>
+  &quot;properties relating to whether something is operating/active as intended&quot;
+ </comment>
+ <relation label="inherit">
+  ont::process-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="object-function">provides-service</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::manufacture-process-val">
+ <comment>
+  &quot;(handmade, factory-made)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::process-val
+ </relation>
+ <relation label="overlap">
+  wn::|factory-made%3:00:00::|
+  wn::|ready-made%3:00:00::|
+  wn::|handmade%3:00:00::|
+  wn::|hand-crafted%3:00:00::|
+  wn::|custom-made%3:00:00::|
+  wn::|custom%3:00:00::|
+  wn::|woven%3:00:00::|
+  wn::|unwoven%3:00:00::|
+ </relation>
  </concept>
 </dsl>

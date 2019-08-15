@@ -4,9 +4,11 @@
  <provenance name="TRIPS"/>
  <concept name="ont::tidy-val">
  <relation label="inherit">
-  ont::orderliness-val
+  ont::orderly-val
  </relation>
  <relation label="overlap">
+  wn::|ungroomed%3:00:00::|
+  wn::|combed%3:00:00::|
   wn::|tidy%5:00:00:groomed:00|
   wn::|tidy%3:00:00::|
   wn::|neat%5:00:00:tidy:00|
@@ -194,34 +196,18 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::orderliness-scale</feat>
- <feat name="type">ont::orderliness-val</feat>
- </sem-feats>
- <concept name="ont::evaluation-attribute-val">
+ <concept name="ont::orderly-val">
  <comment>
-  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
+  &quot;(orderly)&quot;
  </comment>
  <relation label="inherit">
-  ont::property-val
+  ont::orderliness-val
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::evaluation-scale</feat>
-  <feat name="type">ont::evaluation-attribute-val</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <feat name="tangible">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
+ <relation label="overlap">
+  wn::|arranged%3:00:00::|
+  wn::|ordered%3:00:04::|
+  wn::|orderly%3:00:00::|
+ </relation>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -242,6 +228,39 @@
   <feat name="type">ont::orderliness-val</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|disadvantageous%3:00:00::|
+  wn::|poor%3:00:02::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::orderliness-scale</feat>
+ <feat name="type">ont::orderliness-val</feat>
+ </sem-feats>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

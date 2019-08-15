@@ -1,0 +1,476 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::spiritual-being-val">
+ <relation label="inherit">
+  ont::religion-specific-val
+ </relation>
+ <relation label="overlap">
+  wn::|seraphic%3:01:00::|
+  wn::|seraphical%3:01:00::|
+  wn::|satanic%3:01:00::|
+  wn::|jovian%3:01:01::|
+  wn::|cacodemonic%3:01:00::|
+  wn::|cacodaemonic%3:01:00::|
+  wn::|adonic%3:01:00::|
+  wn::|elfin%3:01:00::|
+  wn::|georgian%3:01:00::|
+  wn::|aesculapian%3:01:00::|
+  wn::|medical%3:01:02::|
+  wn::|vestal%3:01:00::|
+  wn::|mercurial%3:01:01::|
+  wn::|satyric%3:01:00::|
+  wn::|satyrical%3:01:00::|
+  wn::|dionysian%3:01:00::|
+  wn::|numinous%3:01:00::|
+  wn::|aeolian%3:01:00::|
+  wn::|angelic%3:01:00::|
+  wn::|angelical%3:01:00::|
+  wn::|franciscan%3:01:00::|
+  wn::|archangelic%3:01:00::|
+  wn::|archangelical%3:01:00::|
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::refset" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">ont::number</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::scale" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">ont::domain</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::domain</feat>
+ <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <concept name="ont::relation">
+ <comment>
+  &quot;All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|relation%1:03:00::|
+  wn::|amount%2:42:03::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::relation</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::property-val">
+ <relation label="inherit">
+  ont::domain-property
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::standard" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::reason" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::associated-with-belief-systems-val">
+ <relation label="inherit">
+  ont::associated-with-val
+ </relation>
+ </concept>
+ <concept name="ont::religion-val">
+ <comment>
+  &quot;having to do with religion&quot;
+ </comment>
+ <relation label="inherit">
+  ont::associated-with-belief-systems-val
+ </relation>
+ <relation label="overlap">
+  wn::|heavenly%3:00:00::|
+  wn::|infernal%3:00:00::|
+  wn::|nonsectarian%3:00:00::|
+  wn::|unsectarian%3:00:00::|
+  wn::|sectarian%3:00:00::|
+  wn::|monotheistic%3:00:00::|
+  wn::|religious%3:00:01::|
+ </relation>
+ </concept>
+ <concept name="ont::religion-specific-val">
+ <comment>
+  &quot;identity specifically based on religious affiliation, dogma, or theology (properties referring to the culture of the practicing people or nations belong to ont::culture-specific)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::religion-val
+ </relation>
+ <relation label="overlap">
+  wn::|christian%3:00:00::|
+  wn::|unchristian%3:00:00::|
+  wn::|pentecostal%3:01:01::|
+  wn::|rastafarian%3:01:00::|
+  wn::|taoist%3:01:02::|
+  wn::|formalistic%3:01:00::|
+  wn::|formalized%3:01:00::|
+  wn::|formalised%3:01:00::|
+  wn::|catechismal%3:01:00::|
+  wn::|bahai%3:01:00::|
+  wn::|mystic%3:01:00::|
+  wn::|mystical%3:01:00::|
+  wn::|cataphatic%3:01:00::|
+  wn::|apophatic%3:01:00::|
+  wn::|calvinist%3:01:00::|
+  wn::|calvinistic%3:01:00::|
+  wn::|calvinistical%3:01:00::|
+  wn::|unitarian%3:01:00::|
+  wn::|catholic%3:01:00::|
+  wn::|fundamentalist%3:01:00::|
+  wn::|fundamentalistic%3:01:00::|
+  wn::|pantheist%3:01:00::|
+  wn::|pantheistic%3:01:00::|
+  wn::|arminian%3:01:00::|
+  wn::|yogistic%3:01:00::|
+  wn::|yogic%3:01:00::|
+  wn::|tantric%3:01:00::|
+  wn::|tantrik%3:01:00::|
+  wn::|discalced%3:00:00::|
+  wn::|discalceate%3:00:00::|
+  wn::|unshod%3:00:04::|
+  wn::|orthodox%3:01:01::|
+  wn::|eastern_orthodox%3:01:00::|
+  wn::|russian_orthodox%3:01:00::|
+  wn::|greek_orthodox%3:01:00::|
+  wn::|ecclesiastical%3:01:00::|
+  wn::|ecclesiastic%3:01:00::|
+  wn::|shuha%3:01:00::|
+  wn::|donatist%3:01:00::|
+  wn::|mithraic%3:01:00::|
+  wn::|mithraistic%3:01:00::|
+  wn::|kokka%3:01:00::|
+  wn::|wiccan%3:01:00::|
+  wn::|hindu%3:01:00::|
+  wn::|hindi%3:01:00::|
+  wn::|hindoo%3:01:00::|
+  wn::|shinto%3:01:00::|
+  wn::|shintoist%3:01:00::|
+  wn::|shintoistic%3:01:00::|
+  wn::|evangelical%3:01:01::|
+  wn::|roman%3:01:00::|
+  wn::|r.c.%3:01:00::|
+  wn::|romanist%3:01:00::|
+  wn::|romish%3:01:00::|
+  wn::|roman_catholic%3:01:00::|
+  wn::|popish%3:01:00::|
+  wn::|papist%3:01:00::|
+  wn::|papistic%3:01:00::|
+  wn::|papistical%3:01:00::|
+  wn::|muslim%3:01:00::|
+  wn::|moslem%3:01:00::|
+  wn::|islamic%3:01:00::|
+  wn::|sikh%3:01:00::|
+  wn::|carthusian%3:01:00::|
+  wn::|buddhist%3:01:00::|
+  wn::|buddhistic%3:01:00::|
+  wn::|theist%3:01:00::|
+  wn::|theistical%3:01:00::|
+  wn::|theistic%3:01:00::|
+  wn::|orthodox%3:01:00::|
+  wn::|jewish-orthodox%3:01:00::|
+  wn::|manichaean%3:01:00::|
+  wn::|manichean%3:01:00::|
+  wn::|manichee%3:01:00::|
+  wn::|judaic%3:01:00::|
+  wn::|judaical%3:01:00::|
+  wn::|jain%3:01:00::|
+  wn::|jainist%3:01:00::|
+  wn::|uniate%3:01:00::|
+  wn::|hasidic%3:01:00::|
+  wn::|hassidic%3:01:00::|
+  wn::|chasidic%3:01:00::|
+  wn::|chassidic%3:01:00::|
+  wn::|revivalistic%3:01:00::|
+  wn::|byzantine%3:01:01::|
+  wn::|christian%3:01:00::|
+  wn::|judeo-christian%3:01:00::|
+  wn::|shamanist%3:01:00::|
+  wn::|shamanistic%3:01:00::|
+  wn::|albigensian%3:01:00::|
+ </relation>
+ </concept>
+ <concept name="ont::associated-with-val">
+ <comment>
+  &quot;adjectives that classify the noun that it is pertaining to&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::domain-property">
+ <comment>
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">ont::number</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::scale" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">ont::domain</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::standard" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::reason" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::relation</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
+</dsl>

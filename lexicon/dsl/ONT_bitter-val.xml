@@ -4,9 +4,10 @@
  <provenance name="TRIPS"/>
  <concept name="ont::bitter-val">
  <relation label="inherit">
-  ont::taste-property-val
+  ont::neg-experiencer-property-val
  </relation>
  <relation label="overlap">
+  wn::|resentful%3:00:00::|
   wn::|bitter%5:00:00:tasty:00|
  </relation>
  <sem-feats>
@@ -124,12 +125,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::physical-property-scale</feat>
- <feat name="type">ont::physical-property-val</feat>
+ <feat name="scale">ont::psychological-condition-scale</feat>
+ <feat name="type">ont::psychological-property-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -183,30 +200,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::taste-property-val">
+ <concept name="ont::neg-experiencer-property-val">
  <comment>
-  &quot;subjective characteristics of an item perceived through gustatory input&quot;
+  &quot;experiencing negative experiences&quot;
  </comment>
  <relation label="inherit">
-  ont::appearance-property-val
+  ont::experiencer-property-val
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::taste-scale</feat>
-  <feat name="type">ont::taste-property-val</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="object-function">comestible</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -215,60 +215,97 @@
  <feat name="scale">ont::bitterness-scale</feat>
  <feat name="type">ont::bitter-val</feat>
  </sem-feats>
- <concept name="ont::appearance-property-val">
+ <concept name="ont::experiencer-property-val">
  <comment>
-  &quot;subjective chracteristics on HOW something is perceived through sensory input (compare to ont::sensory-property-val)&quot;
+  &quot;state of experiencing a particular emotion or cognitive state&quot;
  </comment>
  <relation label="inherit">
-  ont::physical-property-val
+  ont::psychological-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|appetitive%3:01:00::|
+  wn::|algolagnic%3:01:00::|
+  wn::|technophobic%3:01:00::|
+  wn::|anglophilic%3:01:00::|
+  wn::|aversive%3:01:00::|
+  wn::|technophilic%3:01:00::|
+  wn::|libidinal%3:01:00::|
+  wn::|emotional%3:01:00::|
+  wn::|anglophobic%3:01:00::|
+  wn::|agonal%3:01:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::psychological-property-val">
+ <comment>
+  &quot;properties pertaining to psychological, mental or emotional states&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|extroversive%3:00:00::|
+  wn::|extraversive%3:00:00::|
+  wn::|maladjusted%3:00:00::|
+  wn::|abnormal%3:00:03::|
+  wn::|introversive%3:00:00::|
+  wn::|introvertive%3:00:00::|
+  wn::|adjusted%3:00:02::|
+  wn::|psychosexual%3:01:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::appearance-scale</feat>
-  <feat name="type">ont::appearance-property-val</feat>
+  <feat name="scale">ont::psychological-condition-scale</feat>
+  <feat name="type">ont::psychological-property-val</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::taste-scale</feat>
- <feat name="type">ont::taste-property-val</feat>
- </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::figure" optional="optional">
   <sem-feats>
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="object-function">comestible</feat>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::physical-property-val">
- <comment>
-  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::physical-property-scale</feat>
-  <feat name="type">ont::physical-property-val</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::appearance-scale</feat>
- <feat name="type">ont::appearance-property-val</feat>
- </sem-feats>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

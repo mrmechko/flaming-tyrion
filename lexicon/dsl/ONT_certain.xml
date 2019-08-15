@@ -7,6 +7,12 @@
   ont::certainty-val
  </relation>
  <relation label="overlap">
+  wn::|incontestable%3:00:00::|
+  wn::|incontestible%3:00:00::|
+  wn::|certain%3:00:03::|
+  wn::|sure%3:00:04::|
+  wn::|definite%3:00:00::|
+  wn::|unquestionable%3:00:00::|
   wn::|definite%5:00:00:certain:01|
   wn::|certain%3:00:01::|
   wn::|certain%3:00:02::|
@@ -130,28 +136,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::psychological-condition-scale</feat>
- <feat name="type">ont::psychological-property-val</feat>
+ <feat name="scale">ont::information-property-scale</feat>
+ <feat name="type">ont::information-property-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -217,36 +207,24 @@
  <feat name="scale">ont::certainty-scale</feat>
  <feat name="type">ont::certainty-val</feat>
  </sem-feats>
- <concept name="ont::psychological-property-val">
+ <concept name="ont::information-property-val">
  <comment>
-  &quot;properties pertaining to psychological, mental or emotional states&quot;
+  &quot;properties regarding the evaluation of information, knowledge, or understanding (e.g. credible, correct, consistent)&quot;
  </comment>
  <relation label="inherit">
   ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|deductive%3:00:00::|
+  wn::|qualitative%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::psychological-condition-scale</feat>
-  <feat name="type">ont::psychological-property-val</feat>
+  <feat name="scale">ont::information-property-scale</feat>
+  <feat name="type">ont::information-property-val</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -258,7 +236,7 @@
  </sem-feats>
  <concept name="ont::certainty-val">
  <relation label="inherit">
-  ont::psychological-property-val
+  ont::information-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">

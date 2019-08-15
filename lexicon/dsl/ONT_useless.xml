@@ -7,6 +7,7 @@
   ont::usefulness-val
  </relation>
  <relation label="overlap">
+  wn::|purposeless%3:00:00::|
   wn::|impractical%3:00:00::|
   wn::|useless%3:00:00::|
  </relation>
@@ -126,6 +127,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -178,17 +193,38 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::usefulness-val">
+ <sem-feats>
  <relation label="inherit">
-  ont::process-evaluation-val
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::utility-scale</feat>
+ <feat name="type">ont::usefulness-val</feat>
+ </sem-feats>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|disadvantageous%3:00:00::|
+  wn::|poor%3:00:02::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::utility-scale</feat>
-  <feat name="type">ont::usefulness-val</feat>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -198,43 +234,18 @@
  <feat name="scale">ont::utility-scale</feat>
  <feat name="type">ont::useless</feat>
  </sem-feats>
- <concept name="ont::process-evaluation-val">
- <comment>
-  &quot;evaluation properties of processes&quot;
- </comment>
+ <concept name="ont::usefulness-val">
  <relation label="inherit">
-  ont::process-val
+  ont::evaluation-attribute-val
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::process-evaluation-scale</feat>
-  <feat name="type">ont::process-evaluation-val</feat>
+  <feat name="scale">ont::utility-scale</feat>
+  <feat name="type">ont::usefulness-val</feat>
  </sem-feats>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::utility-scale</feat>
- <feat name="type">ont::usefulness-val</feat>
- </sem-feats>
- <concept name="ont::process-val">
- <comment>
-  &quot;properties that describe processes&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::process-evaluation-scale</feat>
- <feat name="type">ont::process-evaluation-val</feat>
- </sem-feats>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

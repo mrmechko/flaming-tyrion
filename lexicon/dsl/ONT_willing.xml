@@ -7,6 +7,12 @@
   ont::willingness-val
  </relation>
  <relation label="overlap">
+  wn::|voluntary%3:00:01::|
+  wn::|inclined%3:00:02::|
+  wn::|compliant%3:00:00::|
+  wn::|compromising%3:00:00::|
+  wn::|conciliatory%3:00:04::|
+  wn::|flexible%3:00:04::|
   wn::|willing%3:00:00::|
  </relation>
  <sem-feats>
@@ -136,12 +142,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::behavioral-scale</feat>
- <feat name="type">ont::animal-propensity-val</feat>
+ <feat name="scale">ont::psychological-condition-scale</feat>
+ <feat name="type">ont::psychological-property-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -202,20 +224,46 @@
  <feat name="scale">ont::willingness-scale</feat>
  <feat name="type">ont::willingness-val</feat>
  </sem-feats>
- <concept name="ont::animal-propensity-val">
+ <concept name="ont::psychological-property-val">
  <comment>
-  &quot;properties relating to human or animal tendencies or inclinations to behave in a particular manner&quot;
+  &quot;properties pertaining to psychological, mental or emotional states&quot;
  </comment>
  <relation label="inherit">
   ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|extroversive%3:00:00::|
+  wn::|extraversive%3:00:00::|
+  wn::|maladjusted%3:00:00::|
+  wn::|abnormal%3:00:03::|
+  wn::|introversive%3:00:00::|
+  wn::|introvertive%3:00:00::|
+  wn::|adjusted%3:00:02::|
+  wn::|psychosexual%3:01:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::behavioral-scale</feat>
-  <feat name="type">ont::animal-propensity-val</feat>
+  <feat name="scale">ont::psychological-condition-scale</feat>
+  <feat name="type">ont::psychological-property-val</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
@@ -238,7 +286,7 @@
  </sem-feats>
  <concept name="ont::willingness-val">
  <relation label="inherit">
-  ont::animal-propensity-val
+  ont::psychological-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -400,6 +448,20 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <concept name="ont::willing-to-accept-val">
+ <comment>
+  &quot;(receptive, broad-minded)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::willing
+ </relation>
+ <relation label="overlap">
+  wn::|receptive%3:00:00::|
+  wn::|open%3:00:00::|
+  wn::|broad-minded%3:00:00::|
+  wn::|tolerant%3:00:00::|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="adj" />

@@ -1,0 +1,434 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::occupational-val">
+ <relation label="inherit">
+  ont::associated-with-person-val
+ </relation>
+ <relation label="overlap">
+  wn::|professional%3:00:01::|
+  wn::|unscholarly%3:00:00::|
+  wn::|nonprofessional%3:00:00::|
+  wn::|unprofessional%3:00:00::|
+  wn::|professional%3:00:02::|
+  wn::|professional%3:01:01::|
+  wn::|on-the-job%3:01:00::|
+  wn::|occupational%3:01:00::|
+  wn::|professional%3:01:00::|
+  wn::|vocational%3:01:00::|
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::refset" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">ont::number</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::scale" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">ont::domain</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::domain</feat>
+ <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <concept name="ont::relation">
+ <comment>
+  &quot;All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|relation%1:03:00::|
+  wn::|amount%2:42:03::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::relation</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::standard" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::reason" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <concept name="ont::domain-property">
+ <comment>
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">ont::number</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::scale" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">ont::domain</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::associated-with-person-val">
+ <relation label="inherit">
+  ont::associated-with-val
+ </relation>
+ </concept>
+ <concept name="ont::associated-with-val">
+ <comment>
+  &quot;adjectives that classify the noun that it is pertaining to&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ </concept>
+ <concept name="ont::property-val">
+ <relation label="inherit">
+  ont::domain-property
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::standard" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::reason" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::relation</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
+ <concept name="ont::occupation-specific-val">
+ <relation label="inherit">
+  ont::occupational-val
+ </relation>
+ <relation label="overlap">
+  wn::|scholarly%3:00:00::|
+  wn::|civilian%3:00:00::|
+  wn::|tonsorial%3:01:00::|
+  wn::|pyrrhic%3:01:00::|
+  wn::|secretarial%3:01:00::|
+  wn::|gubernatorial%3:01:00::|
+  wn::|doctoral%3:01:00::|
+  wn::|doctorial%3:01:00::|
+  wn::|consular%3:01:00::|
+  wn::|masonic%3:01:01::|
+  wn::|fictile%3:01:00::|
+  wn::|pyrotechnic%3:01:00::|
+  wn::|pyrotechnical%3:01:00::|
+  wn::|typographic%3:01:00::|
+  wn::|typographical%3:01:00::|
+  wn::|imperial%3:01:00::|
+  wn::|bibliothecal%3:01:00::|
+  wn::|bibliothecarial%3:01:00::|
+  wn::|solomonic%3:01:00::|
+  wn::|viceregal%3:01:00::|
+  wn::|professorial%3:01:00::|
+  wn::|priestly%3:01:00::|
+  wn::|hieratic%3:01:01::|
+  wn::|hieratical%3:01:01::|
+  wn::|sacerdotal%3:01:00::|
+  wn::|magisterial%3:01:00::|
+  wn::|pianistic%3:01:00::|
+  wn::|apiarian%3:01:00::|
+  wn::|archidiaconal%3:01:00::|
+  wn::|ministerial%3:01:01::|
+  wn::|brahminic%3:01:00::|
+  wn::|brahminical%3:01:00::|
+  wn::|editorial%3:01:01::|
+  wn::|proconsular%3:01:00::|
+  wn::|equestrian%3:01:01::|
+  wn::|papal%3:01:00::|
+  wn::|apostolic%3:01:01::|
+  wn::|apostolical%3:01:01::|
+  wn::|pontifical%3:01:01::|
+  wn::|collegial%3:01:00::|
+  wn::|vicarial%3:01:00::|
+  wn::|czarist%3:01:00::|
+  wn::|czaristic%3:01:00::|
+  wn::|tsarist%3:01:00::|
+  wn::|tsaristic%3:01:00::|
+  wn::|tzarist%3:01:00::|
+  wn::|bureaucratic%3:01:00::|
+  wn::|mediatorial%3:01:00::|
+  wn::|despotic%3:01:00::|
+  wn::|despotical%3:01:00::|
+  wn::|pastoral%3:01:00::|
+  wn::|censorial%3:01:00::|
+  wn::|meretricious%3:01:00::|
+  wn::|supervisory%3:01:00::|
+  wn::|clerical%3:01:01::|
+  wn::|tutorial%3:01:00::|
+  wn::|ambassadorial%3:01:00::|
+  wn::|caroline%3:01:00::|
+  wn::|carolean%3:01:00::|
+  wn::|senatorial%3:01:00::|
+  wn::|rabbinical%3:01:00::|
+  wn::|rabbinic%3:01:00::|
+  wn::|political%3:01:02::|
+  wn::|episcopal%3:01:00::|
+  wn::|pontifical%3:01:00::|
+  wn::|sartorial%3:01:00::|
+  wn::|patristic%3:01:00::|
+  wn::|patristical%3:01:00::|
+  wn::|praetorian%3:01:00::|
+  wn::|praetorial%3:01:00::|
+  wn::|pretorian%3:01:00::|
+  wn::|pretorial%3:01:00::|
+  wn::|mayoral%3:01:00::|
+  wn::|archducal%3:01:00::|
+  wn::|actuarial%3:01:00::|
+  wn::|ministerial%3:01:02::|
+  wn::|presidential%3:01:00::|
+  wn::|clerical%3:01:00::|
+  wn::|demagogic%3:01:00::|
+  wn::|demagogical%3:01:00::|
+  wn::|legal%3:01:01::|
+ </relation>
+ </concept>
+</dsl>

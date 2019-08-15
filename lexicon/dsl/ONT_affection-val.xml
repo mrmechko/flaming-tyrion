@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::affection-val">
  <relation label="inherit">
-  ont::animal-propensity-val
+  ont::social-interaction-val
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -121,27 +121,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::animal-propensity-val">
- <comment>
-  &quot;properties relating to human or animal tendencies or inclinations to behave in a particular manner&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::behavioral-scale</feat>
-  <feat name="type">ont::animal-propensity-val</feat>
- </sem-feats>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::affection-scale</feat>
- <feat name="type">ont::affection-val</feat>
+ <feat name="scale">ont::behavioral-scale</feat>
+ <feat name="type">ont::animal-propensity-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -195,13 +180,58 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::animal-propensity-val">
+ <comment>
+  &quot;properties relating to human or animal tendencies or inclinations to behave in a particular manner&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|diligent%3:00:00::|
+  wn::|enterprising%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::behavioral-scale</feat>
+  <feat name="type">ont::animal-propensity-val</feat>
+ </sem-feats>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::behavioral-scale</feat>
- <feat name="type">ont::animal-propensity-val</feat>
+ <feat name="scale">ont::affection-scale</feat>
+ <feat name="type">ont::affection-val</feat>
  </sem-feats>
+ <concept name="ont::social-interaction-val">
+ <comment>
+  &quot;sociability&quot;
+ </comment>
+ <relation label="inherit">
+  ont::animal-propensity-val
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
@@ -359,6 +389,11 @@
   ont::affection-val
  </relation>
  <relation label="overlap">
+  wn::|tender%3:00:03::|
+  wn::|soft%3:00:02::|
+  wn::|softhearted%3:00:00::|
+  wn::|soft-boiled%3:00:00::|
+  wn::|warmhearted%3:00:00::|
   wn::|amicable%3:00:00::|
   wn::|warm%3:00:02::|
   wn::|friendly%3:00:01::|
@@ -378,6 +413,11 @@
   ont::affection-val
  </relation>
  <relation label="overlap">
+  wn::|uncompassionate%3:00:00::|
+  wn::|hardhearted%3:00:00::|
+  wn::|heartless%3:00:02::|
+  wn::|coldhearted%3:00:00::|
+  wn::|cold%3:00:02::|
   wn::|unfriendly%3:00:01::|
   wn::|hostile%3:00:01::|
   wn::|hostile%5:00:00:irreconcilable:00|
