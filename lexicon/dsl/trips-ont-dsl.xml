@@ -2826,8 +2826,11 @@
   </relation>
  </concept>
  <concept name="ont::arrive">
+  <comment>
+   &quot;motion that ends in being located with another object&quot;
+  </comment>
   <relation label="inherit">
-   ont::event-of-action
+   ont::motion-wrt-another-object
   </relation>
   <relation label="overlap">
    wn::|come%2:38:04::|
@@ -10228,22 +10231,7 @@
    wn::|smoggy%5:00:00:cloudy:00|
   </relation>
  </concept>
- <concept name="ont::co-motion">
-  <relation label="inherit">
-   ont::motion
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::affected" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-   </role-restr-map>
-   <role-restr-map roles="ont::neutral" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
+ <concept name="ont::co-motion" />
  <concept name="ont::coalesce">
   <relation label="inherit">
    ont::object-change
@@ -14625,8 +14613,11 @@
   </relation>
  </concept>
  <concept name="ont::depart">
+  <comment>
+   &quot;Object moves away from another object&quot;
+  </comment>
   <relation label="inherit">
-   ont::event-of-action
+   ont::motion-wrt-another-object
   </relation>
   <relation label="overlap">
    wn::|depart%2:38:01::|
@@ -20718,7 +20709,7 @@
    <feat name="type">ont::fold</feat>
   </sem-feats>
  </concept>
- <concept name="ont::follow-path">
+ <concept name="ont::follow-something">
   <relation label="inherit">
    ont::co-motion
   </relation>
@@ -20734,7 +20725,7 @@
    <feat name="trajectory">+</feat>
    <feat name="cause">agentive</feat>
    <feat name="aspect">unbounded</feat>
-   <feat name="type">ont::follow-path</feat>
+   <feat name="type">ont::follow-something</feat>
   </sem-feats>
  </concept>
  <concept name="ont::follower-of-doctrine-val">
@@ -21426,6 +21417,7 @@
   </relation>
   <relation label="overlap">
    wn::|game%1:04:00::|
+   wn::|game%1:04:01::|
   </relation>
  </concept>
  <concept name="ont::garden-grounds">
@@ -30799,6 +30791,25 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::motion-wrt-another-object">
+  <comment>
+   &quot;motion defined wrt another object, either moving or static&quot;
+  </comment>
+  <relation label="inherit">
+   ont::motion
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+   <role-restr-map roles="ont::neutral" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::motive">
   <relation label="inherit">
    ont::mental-object
@@ -34954,6 +34965,7 @@
    wn::|play%2:42:00::|
    wn::|set_in%2:30:00::|
    wn::|take_place%2:30:00::|
+   wn::|progress%2:38:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -34964,22 +34976,13 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::affected" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="situation" />
-      <concept name="abstr-obj" />
-      <concept name="phys-obj" />
-     </or>
-     <feat name="tangible">+</feat>
-    </sem-feats>
+    <concept name="phys-obj" />
    </role-restr-map>
    <role-restr-map roles="ont::neutral" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      situation
-     </relation>
-     <feat name="aspect">dynamic</feat>
-    </sem-feats>
+    <or>
+     <concept name="situation" />
+     <concept name="time" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -36145,7 +36148,7 @@
  </concept>
  <concept name="ont::pass-by">
   <relation label="inherit">
-   ont::co-motion
+   ont::motion-wrt-another-object
   </relation>
   <relation label="overlap">
    wn::|travel_by%2:38:01::|
@@ -37849,7 +37852,7 @@
  </concept>
  <concept name="ont::play">
   <relation label="inherit">
-   ont::event-of-action
+   ont::intentionally-act
   </relation>
   <relation label="overlap">
    wn::|play%2:33:00::|
@@ -39513,7 +39516,6 @@
   <relation label="overlap">
    wn::|go%2:30:02::|
    wn::|progress%2:30:00::|
-   wn::|progress%2:38:00::|
    wn::|progress%2:30:01::|
   </relation>
   <sem-feats>
@@ -41475,12 +41477,6 @@
    wn::|relation%1:03:00::|
    wn::|amount%2:42:03::|
   </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">ont::relation</feat>
-  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::compar" optional="optional">
     <concept name="t" />
@@ -50568,6 +50564,29 @@
      </or>
      </feat>
     </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::time-elapse">
+  <comment>
+   &quot;time occurrence - e.g., time passed by, the winter went on, ...&quot;
+  </comment>
+  <relation label="inherit">
+   ont::occurring
+  </relation>
+  <relation label="overlap">
+   wn::|pass%2:38:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">dynamic</feat>
+   <feat name="type">ont::time-elapse</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::neutral" optional="optional">
+    <concept name="time" />
    </role-restr-map>
   </sem-frame>
  </concept>

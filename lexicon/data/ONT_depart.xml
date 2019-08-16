@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../style/onttype.xsl"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
-<ONTTYPE name="depart" parent="event-of-action" modified="Wed Aug  7 01:44:12 2019">
+<ONTTYPE name="depart" parent="motion-wrt-another-object" modified="Fri Aug 16 01:43:59 2019" comment="object moves away from another object">
 <SEM fltype="situation">
 <FEATURES type="depart" time-span="atomic" cause="force" aspect="bounded" tangible="+" container="-" intentional="-" />
 </SEM>
-<ARGUMENT role="agent" optionality="essential" fltype="(? cau2a428 situation abstr-obj phys-obj)" />
-<ARGUMENT role="affected" optionality="optional" fltype="(? cau3a425 situation abstr-obj phys-obj)">
+<ARGUMENT role="affected" optionality="essential" fltype="(? ttype59437 phys-obj abstr-obj)">
+<FEATURES mobility="movable" tangible="+" />
+</ARGUMENT>
+<ARGUMENT role="result" optionality="optional" fltype="abstr-obj">
+<FEATURES type="(? t567 position-reln path)" />
+</ARGUMENT>
+<ARGUMENT role="agent" optionality="optional" fltype="(? causetype56827 phys-obj situation abstr-obj)">
 <FEATURES tangible="+" />
 </ARGUMENT>
-<ARGUMENT role="result" optionality="optional" fltype="abstr-obj" />
+<ARGUMENT role="extent" optionality="optional" fltype="abstr-obj">
+<FEATURES type="quantity" />
+</ARGUMENT>
 <ARGUMENT role="neutral" optionality="optional" fltype="(? neut717 phys-obj situation)" />
 <ARGUMENT role="source" optionality="optional" fltype="?!type" />
 <WORD name="depart" />

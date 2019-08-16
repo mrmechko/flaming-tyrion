@@ -136,6 +136,7 @@
   wn::|play%2:42:00::|
   wn::|set_in%2:30:00::|
   wn::|take_place%2:30:00::|
+  wn::|progress%2:38:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -146,22 +147,13 @@
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::affected" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="tangible">+</feat>
-   </sem-feats>
+   <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
-    <feat name="aspect">dynamic</feat>
-   </sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="time" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>

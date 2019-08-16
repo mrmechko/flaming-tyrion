@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../style/onttype.xsl"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
-<ONTTYPE name="arrive" parent="event-of-action" modified="Wed Aug  7 01:44:19 2019">
+<ONTTYPE name="arrive" parent="motion-wrt-another-object" modified="Fri Aug 16 01:44:05 2019" comment="motion that ends in being located with another object">
 <SEM fltype="situation">
 <FEATURES type="arrive" aspect="bounded" cause="force" tangible="+" container="-" intentional="-" />
 </SEM>
-<ARGUMENT role="affected" optionality="optional" fltype="(? cau3a425 situation abstr-obj phys-obj)">
-<FEATURES tangible="+" />
+<ARGUMENT role="affected" optionality="essential" fltype="(? ttype59437 phys-obj abstr-obj)">
+<FEATURES mobility="movable" tangible="+" />
 </ARGUMENT>
-<ARGUMENT role="result" optionality="optional" fltype="abstr-obj" />
+<ARGUMENT role="neutral" optionality="essential" fltype="?!type" />
+<ARGUMENT role="source" optionality="optional" fltype="?!type" />
+<ARGUMENT role="result" optionality="optional" fltype="abstr-obj">
+<FEATURES type="(? t567 position-reln path)" />
+</ARGUMENT>
+<ARGUMENT role="extent" optionality="optional" fltype="abstr-obj">
+<FEATURES type="quantity" />
+</ARGUMENT>
 <ARGUMENT role="agent" optionality="required" fltype="phys-obj">
-<FEATURES type="(? obf2931 information-function-object phys-object)" />
+<FEATURES type="(? obf2931 information-function-object phys-object)" tangible="+" />
 </ARGUMENT>
 <ARGUMENT role="location" optionality="essential" fltype="phys-obj">
 <FEATURES object-function="(? obf2932 place representation)" />

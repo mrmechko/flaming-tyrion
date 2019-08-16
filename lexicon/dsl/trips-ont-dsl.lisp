@@ -2471,8 +2471,9 @@
 
 (CONCEPT
   ONT::ARRIVE
+  (COMMENT "motion that ends in being located with another object")
   (INHERIT
-    ONT::EVENT-OF-ACTION)
+    ONT::MOTION-WRT-ANOTHER-OBJECT)
   (OVERLAP
     WN::|come%2:38:04::|
     WN::|get%2:38:00::|
@@ -9127,21 +9128,7 @@
     WN::|smoggy%5:00:00:cloudy:00|))
 
 (CONCEPT
-  ONT::CO-MOTION
-  (INHERIT
-    ONT::MOTION)
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (CONCEPT
-       T)
-     OPTIONAL)))
+  ONT::CO-MOTION)
 
 (CONCEPT
   ONT::COALESCE
@@ -12975,8 +12962,9 @@
 
 (CONCEPT
   ONT::DEPART
+  (COMMENT "Object moves away from another object")
   (INHERIT
-    ONT::EVENT-OF-ACTION)
+    ONT::MOTION-WRT-ANOTHER-OBJECT)
   (OVERLAP
     WN::|depart%2:38:01::|
     WN::|leave%2:38:01::|
@@ -18259,7 +18247,7 @@
     (TYPE ONT::FOLD)))
 
 (CONCEPT
-  ONT::FOLLOW-PATH
+  ONT::FOLLOW-SOMETHING
   (INHERIT
     ONT::CO-MOTION)
   (OVERLAP
@@ -18272,7 +18260,7 @@
     (TRAJECTORY +)
     (CAUSE AGENTIVE)
     (ASPECT UNBOUNDED)
-    (TYPE ONT::FOLLOW-PATH)))
+    (TYPE ONT::FOLLOW-SOMETHING)))
 
 (CONCEPT
   ONT::FOLLOWER-OF-DOCTRINE-VAL
@@ -18863,7 +18851,8 @@
   (INHERIT
     ONT::COMPETITION)
   (OVERLAP
-    WN::|game%1:04:00::|))
+    WN::|game%1:04:00::|
+    WN::|game%1:04:01::|))
 
 (CONCEPT
   ONT::GARDEN-GROUNDS
@@ -26998,6 +26987,24 @@
        PHYS-OBJ))))
 
 (CONCEPT
+  ONT::MOTION-WRT-ANOTHER-OBJECT
+  (COMMENT "motion defined wrt another object, either moving or static")
+  (INHERIT
+    ONT::MOTION)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::MOTIVE
   (INHERIT
     ONT::MENTAL-OBJECT)
@@ -30502,7 +30509,8 @@
     WN::|pass_off%2:30:00::|
     WN::|play%2:42:00::|
     WN::|set_in%2:30:00::|
-    WN::|take_place%2:30:00::|)
+    WN::|take_place%2:30:00::|
+    WN::|progress%2:38:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -30510,21 +30518,15 @@
     (TYPE ONT::OCCURRING))
   (SEM-FRAME
     (ONT::AFFECTED
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TANGIBLE +))
+     (CONCEPT
+       PHYS-OBJ)
      OPTIONAL)
     (ONT::NEUTRAL
-     (SEM-FEATS
-       (INHERIT
+     (OR
+       (CONCEPT
          SITUATION)
-       (ASPECT DYNAMIC))
+       (CONCEPT
+         TIME))
      OPTIONAL)))
 
 (CONCEPT
@@ -31522,7 +31524,7 @@
 (CONCEPT
   ONT::PASS-BY
   (INHERIT
-    ONT::CO-MOTION)
+    ONT::MOTION-WRT-ANOTHER-OBJECT)
   (OVERLAP
     WN::|travel_by%2:38:01::|
     WN::|pass_by%2:38:00::|
@@ -33052,7 +33054,7 @@
 (CONCEPT
   ONT::PLAY
   (INHERIT
-    ONT::EVENT-OF-ACTION)
+    ONT::INTENTIONALLY-ACT)
   (OVERLAP
     WN::|play%2:33:00::|
     WN::|play%2:41:03::|
@@ -34498,7 +34500,6 @@
   (OVERLAP
     WN::|go%2:30:02::|
     WN::|progress%2:30:00::|
-    WN::|progress%2:38:00::|
     WN::|progress%2:30:01::|)
   (SEM-FEATS
     (INHERIT
@@ -36209,10 +36210,6 @@
   (OVERLAP
     WN::|relation%1:03:00::|
     WN::|amount%2:42:03::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (TYPE ONT::RELATION))
   (SEM-FRAME
     (ONT::COMPAR
      (CONCEPT
@@ -44279,6 +44276,24 @@
         (OR
           UNBOUNDED
           STAGE-LEVEL)))
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::TIME-ELAPSE
+  (COMMENT "time occurrence - e.g., time passed by, the winter went on, ...")
+  (INHERIT
+    ONT::OCCURRING)
+  (OVERLAP
+    WN::|pass%2:38:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (ASPECT DYNAMIC)
+    (TYPE ONT::TIME-ELAPSE))
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (CONCEPT
+       TIME)
      OPTIONAL)))
 
 (CONCEPT
