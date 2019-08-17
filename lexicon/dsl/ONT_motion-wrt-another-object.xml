@@ -392,6 +392,86 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::follow-something">
+ <relation label="inherit">
+  ont::motion-wrt-another-object
+ </relation>
+ <relation label="overlap">
+  wn::|follow%2:38:00::|
+  wn::|come_after%2:41:00::|
+  wn::|follow%2:42:03::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">+</feat>
+  <feat name="cause">agentive</feat>
+  <feat name="aspect">unbounded</feat>
+  <feat name="type">ont::follow-something</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::pursue">
+ <relation label="inherit">
+  ont::motion-wrt-another-object
+ </relation>
+ <relation label="overlap">
+  wn::|pursue%2:38:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">+</feat>
+  <feat name="cause">agentive</feat>
+  <feat name="aspect">unbounded</feat>
+  <feat name="type">ont::pursue</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::precede">
+ <relation label="inherit">
+  ont::motion-wrt-another-object
+ </relation>
+ <relation label="overlap">
+  wn::|antecede%2:42:00::|
+  wn::|come_before%2:41:00::|
+ </relation>
+ </concept>
+ <concept name="ont::catch">
+ <relation label="inherit">
+  ont::motion-wrt-another-object
+ </relation>
+ <relation label="overlap">
+  wn::|catch%2:33:10::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">+</feat>
+  <feat name="cause">agentive</feat>
+  <feat name="aspect">bounded</feat>
+  <feat name="type">ont::catch</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::depart">
  <comment>
   &quot;Object moves away from another object&quot;
@@ -424,6 +504,23 @@
    </or>
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::pass-across">
+ <relation label="inherit">
+  ont::motion-wrt-another-object
+ </relation>
+ <relation label="overlap">
+  wn::|pass%2:38:00::|
+  wn::|go_through%2:38:00::|
+  wn::|go_across%2:38:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="type">ont::pass-across</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::pass-by">
  <relation label="inherit">

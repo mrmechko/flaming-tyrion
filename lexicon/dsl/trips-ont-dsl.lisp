@@ -7300,7 +7300,7 @@
 (CONCEPT
   ONT::CATCH
   (INHERIT
-    ONT::CO-MOTION)
+    ONT::MOTION-WRT-ANOTHER-OBJECT)
   (OVERLAP
     WN::|catch%2:33:10::|)
   (SEM-FEATS
@@ -9126,9 +9126,6 @@
     WN::|cloudy%3:00:00::|
     WN::|brumous%5:00:00:cloudy:00|
     WN::|smoggy%5:00:00:cloudy:00|))
-
-(CONCEPT
-  ONT::CO-MOTION)
 
 (CONCEPT
   ONT::COALESCE
@@ -18249,7 +18246,7 @@
 (CONCEPT
   ONT::FOLLOW-SOMETHING
   (INHERIT
-    ONT::CO-MOTION)
+    ONT::MOTION-WRT-ANOTHER-OBJECT)
   (OVERLAP
     WN::|follow%2:38:00::|
     WN::|come_after%2:41:00::|
@@ -31510,7 +31507,7 @@
 (CONCEPT
   ONT::PASS-ACROSS
   (INHERIT
-    ONT::CO-MOTION)
+    ONT::MOTION-WRT-ANOTHER-OBJECT)
   (OVERLAP
     WN::|pass%2:38:00::|
     WN::|go_through%2:38:00::|
@@ -33778,7 +33775,7 @@
 (CONCEPT
   ONT::PRECEDE
   (INHERIT
-    ONT::CO-MOTION)
+    ONT::MOTION-WRT-ANOTHER-OBJECT)
   (OVERLAP
     WN::|antecede%2:42:00::|
     WN::|come_before%2:41:00::|))
@@ -35089,7 +35086,7 @@
 (CONCEPT
   ONT::PURSUE
   (INHERIT
-    ONT::CO-MOTION)
+    ONT::MOTION-WRT-ANOTHER-OBJECT)
   (OVERLAP
     WN::|pursue%2:38:00::|)
   (SEM-FEATS
