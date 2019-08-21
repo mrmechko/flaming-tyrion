@@ -25719,6 +25719,15 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::MEASURE-METRIC
+  (INHERIT
+    ONT::INFORMATION)
+  (OVERLAP
+    WN::|metric%1:23:00::|
+    WN::|measure%1:10:03::|
+    WN::|indicator%1:10:00::|))
+
+(CONCEPT
   ONT::MEASURE-RELATED-PROPERTY-VAL
   (INHERIT
     ONT::QUANTITY-RELATED-PROPERTY-VAL)
@@ -31374,6 +31383,15 @@
     ONT::DISEASE)
   (OVERLAP
     WN::|pancreatitis%1:26:00::|))
+
+(CONCEPT
+  ONT::PARAMETER
+  (INHERIT
+    ONT::MATHEMATICAL-TERM)
+  (OVERLAP
+    WN::|parameter%1:10:00::|
+    WN::|variable%1:10:00::|
+    WN::|variable%1:09:00::|))
 
 (CONCEPT
   ONT::PARDON
