@@ -12371,12 +12371,21 @@
 (CONCEPT
   ONT::DANCE
   (INHERIT
-    ONT::SELF-LOCOMOTE)
+    ONT::MOVE)
   (OVERLAP
     WN::|dance%2:38:01::|
     WN::|dance%2:38:02::|
     WN::|dance%2:36:00::|
-    WN::|dancing%1:04:00::|))
+    WN::|dancing%1:04:00::|
+    WN::|stage_dancing%1:04:00::|
+    WN::|choreography%1:04:00::|)
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (SEM-FEATS
+       (INHERIT
+         SITUATION)
+       (TYPE ONT::DANCE))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::DANGEROUS
@@ -12495,7 +12504,9 @@
 (CONCEPT
   ONT::DAY-DURATION
   (INHERIT
-    ONT::TIME-UNIT))
+    ONT::TIME-UNIT)
+  (OVERLAP
+    WN::|day%1:28:00::|))
 
 (CONCEPT
   ONT::DAY-NAME
@@ -18241,7 +18252,13 @@
     (INHERIT
       SITUATION)
     (ASPECT DYNAMIC)
-    (TYPE ONT::FOLD)))
+    (TYPE ONT::FOLD))
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (MOBILITY MOVABLE)))))
 
 (CONCEPT
   ONT::FOLLOW-SOMETHING
@@ -20983,7 +21000,9 @@
 (CONCEPT
   ONT::HOUR-DURATION
   (INHERIT
-    ONT::TIME-UNIT))
+    ONT::TIME-UNIT)
+  (OVERLAP
+    WN::|hour%1:28:00::|))
 
 (CONCEPT
   ONT::HUGE-VAL
@@ -26590,7 +26609,9 @@
 (CONCEPT
   ONT::MINUTE-DURATION
   (INHERIT
-    ONT::TIME-UNIT))
+    ONT::TIME-UNIT)
+  (OVERLAP
+    WN::|minute%1:28:00::|))
 
 (CONCEPT
   ONT::MISINFORM
@@ -39103,7 +39124,9 @@
 (CONCEPT
   ONT::SECOND-DURATION
   (INHERIT
-    ONT::TIME-UNIT))
+    ONT::TIME-UNIT)
+  (OVERLAP
+    WN::|second%1:28:00::|))
 
 (CONCEPT
   ONT::SECONDARY
@@ -46750,7 +46773,9 @@
 (CONCEPT
   ONT::WEEK-DURATION
   (INHERIT
-    ONT::TIME-UNIT))
+    ONT::TIME-UNIT)
+  (OVERLAP
+    WN::|week%1:28:00::|))
 
 (CONCEPT
   ONT::WEEK-OBJECT
@@ -47575,7 +47600,9 @@
 (CONCEPT
   ONT::YEAR-DURATION
   (INHERIT
-    ONT::TIME-UNIT))
+    ONT::TIME-UNIT)
+  (OVERLAP
+    WN::|year%1:28:00::|))
 
 (CONCEPT
   ONT::YEAR-STAGE
