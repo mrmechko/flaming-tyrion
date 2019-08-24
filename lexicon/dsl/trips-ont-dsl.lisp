@@ -15697,6 +15697,7 @@
   (OVERLAP
     WN::|equal%3:00:00::|
     WN::|equivalent%5:00:00:equal:00|
+    WN::|even%3:00:01:equal:00|
     WN::|even%5:00:01:equal:00|
     WN::|even%5:00:02:equal:00|)
   (SEM-FEATS
@@ -38651,7 +38652,6 @@
   (INHERIT
     ONT::IDENTITY-VAL)
   (OVERLAP
-    WN::|even%3:00:01:equal:00|
     WN::|identical%5:00:00:same:02|
     WN::|same%3:00:00::|
     WN::|same%3:00:02::|)
