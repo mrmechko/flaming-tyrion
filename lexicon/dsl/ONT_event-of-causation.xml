@@ -368,6 +368,16 @@
   <feat name="trajectory">+</feat>
   <feat name="type">ont::body-movement</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::body-manipulation">
  <comment>
@@ -940,6 +950,11 @@
   wn::|percolate%2:38:00::|
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <feat name="mobility">movable</feat>
+   </sem-feats>
+  </role-restr-map>
   <role-restr-map roles="ont::affected-result" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -1050,50 +1065,25 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::combine-objects">
- <comment>
-  &quot;symmetric combination of objects, abstract or physical: e.g., X combines with y = y combines with x = x and y combine;  the result is a new combination where the original objects cannot be separated&quot;
- </comment>
+ <concept name="ont::changing-rules">
  <relation label="inherit">
   ont::event-of-causation
  </relation>
- <relation label="overlap">
-  wn::|merge%2:30:01::|
-  wn::|combine%2:30:00::|
-  wn::|meld%2:30:00::|
-  wn::|coalesce%2:30:00::|
-  wn::|fuse%2:30:00::|
-  wn::|immix%2:30:00::|
-  wn::|commingle%2:30:00::|
-  wn::|conflate%2:30:00::|
-  wn::|mix%2:30:00::|
-  wn::|flux%2:30:00::|
-  wn::|blend%2:30:00::|
-  wn::|mix_in%2:30:01::|
-  wn::|mix%2:30:01::|
-  wn::|mix%2:35:00::|
-  wn::|mingle%2:35:00::|
-  wn::|commix%2:35:00::|
-  wn::|unify%2:35:00::|
-  wn::|amalgamate%2:35:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">+</feat>
-  <feat name="cause">agentive</feat>
-  <feat name="type">ont::combine-objects</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::affected1" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">ont::social-contract</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::putting-together">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
  </concept>
  <concept name="ont::transgress">
  <relation label="inherit">

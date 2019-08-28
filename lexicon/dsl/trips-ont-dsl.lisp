@@ -880,7 +880,7 @@
   ONT::ADD-INCLUDE
   (COMMENT "asymettric composition: one object becomes part of another")
   (INHERIT
-    ONT::ADJUST)
+    ONT::PUTTING-TOGETHER)
   (OVERLAP
     WN::|include%2:30:00::|
     WN::|introduce%2:38:00::|
@@ -1995,13 +1995,15 @@
 
 (CONCEPT
   ONT::APPEAR
+  (COMMENT "an entity comes into existence or comes into view")
   (INHERIT
     ONT::EVENT-OF-UNDERGOING-ACTION)
   (OVERLAP
     WN::|appear%2:30:00::|
     WN::|appear%2:30:02::|
     WN::|break%2:32:05::|
-    WN::|come_out%2:32:00::|)
+    WN::|come_out%2:32:00::|
+    WN::|materialize%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -5453,7 +5455,14 @@
     (INHERIT
       SITUATION)
     (TRAJECTORY +)
-    (TYPE ONT::BODY-MOVEMENT)))
+    (TYPE ONT::BODY-MOVEMENT))
+  (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::BODY-MOVEMENT-PLACE
@@ -7409,6 +7418,27 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
+  ONT::CAUSE-CLEAR
+  (INHERIT
+    ONT::CAUSE-COME-FROM)
+  (OVERLAP
+    WN::|evacuate%2:38:01::|
+    WN::|evacuate%2:30:00::|
+    WN::|evacuate%2:38:00::|)
+  (SEM-FRAME
+    (ONT::AFFECTED-RESULT
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::AGENT
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::CAUSE-COME-FROM
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
@@ -7422,6 +7452,10 @@
     WN::|suction%2:38:00::|
     WN::|percolate%2:38:00::|)
   (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (MOBILITY MOVABLE))
+     OPTIONAL)
     (ONT::AFFECTED-RESULT
      (OR
        (CONCEPT
@@ -8284,6 +8318,17 @@
     WN::|changeful%3:00:00::|))
 
 (CONCEPT
+  ONT::CHANGING-RULES
+  (INHERIT
+    ONT::EVENT-OF-CAUSATION)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE ONT::SOCIAL-CONTRACT)))))
+
+(CONCEPT
   ONT::CHARGE-PER-UNIT
   (INHERIT
     ONT::VALUE-COST))
@@ -9128,29 +9173,6 @@
     WN::|smoggy%5:00:00:cloudy:00|))
 
 (CONCEPT
-  ONT::COALESCE
-  (INHERIT
-    ONT::OBJECT-CHANGE)
-  (OVERLAP
-    WN::|cohere%2:42:01::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (TRAJECTORY +)
-    (CAUSE AGENTIVE)
-    (TYPE ONT::COALESCE))
-  (SEM-FRAME
-    (ONT::AFFECTED1
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)))
-
-(CONCEPT
   ONT::COAT-FOOD
   (INHERIT
     ONT::COOKING)
@@ -9523,26 +9545,27 @@
   (COMMENT
    "symmetric combination of objects, abstract or physical: e.g., X combines with y = y combines with x = x and y combine;  the result is a new combination where the original objects cannot be separated")
   (INHERIT
-    ONT::EVENT-OF-CAUSATION)
+    ONT::PUTTING-TOGETHER)
   (OVERLAP
-    WN::|merge%2:30:01::|
-    WN::|combine%2:30:00::|
-    WN::|meld%2:30:00::|
+    WN::|amalgamate%2:35:00::|
+    WN::|blend%2:30:00::|
     WN::|coalesce%2:30:00::|
+    WN::|cohere%2:42:01::|
+    WN::|combine%2:30:00::|
+    WN::|commingle%2:30:00::|
+    WN::|commix%2:35:00::|
+    WN::|conflate%2:30:00::|
+    WN::|flux%2:30:00::|
     WN::|fuse%2:30:00::|
     WN::|immix%2:30:00::|
-    WN::|commingle%2:30:00::|
-    WN::|conflate%2:30:00::|
+    WN::|meld%2:30:00::|
+    WN::|merge%2:30:01::|
+    WN::|mingle%2:35:00::|
     WN::|mix%2:30:00::|
-    WN::|flux%2:30:00::|
-    WN::|blend%2:30:00::|
-    WN::|mix_in%2:30:01::|
     WN::|mix%2:30:01::|
     WN::|mix%2:35:00::|
-    WN::|mingle%2:35:00::|
-    WN::|commix%2:35:00::|
-    WN::|unify%2:35:00::|
-    WN::|amalgamate%2:35:00::|)
+    WN::|mix_in%2:30:01::|
+    WN::|unify%2:35:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -10246,6 +10269,14 @@
     (TIME-SPAN EXTENDED)
     (ASPECT STATIC)
     (TYPE ONT::COMPRISE)))
+
+(CONCEPT
+  ONT::COMPROMISE
+  (INHERIT
+    ONT::ACCEPT-AGREE)
+  (OVERLAP
+    WN::|compromise%2:32:01::|
+    WN::|compromise%2:32:00::|))
 
 (CONCEPT
   ONT::COMPSCI-PROPERTY-VAL
@@ -13833,11 +13864,13 @@
 
 (CONCEPT
   ONT::DISAPPEAR
+  (COMMENT "an entity goes out of existence or goes out of view")
   (INHERIT
     ONT::EVENT-OF-UNDERGOING-ACTION)
   (OVERLAP
     WN::|disappear%2:30:00::|
-    WN::|go_down%2:34:00::|)
+    WN::|go_down%2:34:00::|
+    WN::|vanish%2:30:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -15302,10 +15335,7 @@
     ONT::CAUSE-COME-FROM)
   (OVERLAP
     WN::|empty%2:30:01::|
-    WN::|empty%2:30:00::|
-    WN::|evacuate%2:38:01::|
-    WN::|evacuate%2:30:00::|
-    WN::|evacuate%2:38:00::|)
+    WN::|empty%2:30:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (CONCEPT
@@ -15346,6 +15376,14 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::ENACTING-RULES
+  (INHERIT
+    ONT::CHANGING-RULES)
+  (OVERLAP
+    WN::|enact%2:41:00::|
+    WN::|segregate%2:41:00::|))
 
 (CONCEPT
   ONT::ENCHANTED-VAL
@@ -16474,7 +16512,13 @@
     ONT::IMPROVE-EXPERIENCE)
   (OVERLAP
     WN::|still%2:37:01::|
-    WN::|comfort%2:37:01::|))
+    WN::|comfort%2:37:01::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::EVOKE-SADNESS
@@ -21500,20 +21544,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::IN-LOC-REL
-  (COMMENT "FIGURE is part of the GROUND")
-  (INHERIT
-    ONT::IN-LOC)
-  (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE ONT::MENTAL-CONSTRUCTION)
-       (TANGIBLE +))
-     OPTIONAL)))
-
-(CONCEPT
   ONT::IN-PAST
   (INHERIT
     ONT::EVENT-TIME-WRT-NOW)
@@ -22849,7 +22879,7 @@
   (COMMENT
    "abstract, social, or physical connection of objects such that the objects retain their original make-up/identity (whereas COMBINE-OBJECTS are not un-combinable anymore)")
   (INHERIT
-    ONT::CAUSE-CONTACT)
+    ONT::PUTTING-TOGETHER)
   (OVERLAP
     WN::|conjoin%2:35:00::|
     WN::|join%2:35:00::|)
@@ -24544,7 +24574,7 @@
 (CONCEPT
   ONT::LOC-WHERE-REL
   (COMMENT
-   "A subclass of AT-LOC for relative clause relations, e.g., a place where it never rains")
+   "relative clause relations that could be at-loc or in-loc, e.g., a place where it never rains; the city where I live")
   (INHERIT
     ONT::POSITION-AS-POINT-RELN)
   (SEM-FRAME
@@ -34282,6 +34312,9 @@
   ONT::PRIZE
   (INHERIT
     ONT::FUNCTION-OBJECT)
+  (OVERLAP
+    WN::|prize%1:21:00::|
+    WN::|prize%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -34978,20 +35011,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::PULL-OFF
-  (INHERIT
-    ONT::CAUSE-OUT-OF)
-  (OVERLAP
-    WN::|draw_off%2:35:00::|
-    WN::|draw_away%2:35:01::|
-    WN::|pull_off%2:35:01::|)
-  (SEM-FRAME
-    (ONT::AGENT
-     (CONCEPT
-       T)
-     OPTIONAL)))
-
-(CONCEPT
   ONT::PULL-OUT-OF
   (INHERIT
     ONT::CAUSE-OUT-OF))
@@ -35252,6 +35271,11 @@
        (INHERIT
          PHYS-OBJ)
        (INTENTIONAL +)))))
+
+(CONCEPT
+  ONT::PUTTING-TOGETHER
+  (INHERIT
+    ONT::EVENT-OF-CAUSATION))
 
 (CONCEPT
   ONT::PUZZLED-VAL
@@ -37178,6 +37202,20 @@
     WN::|criterion%1:09:00::|))
 
 (CONCEPT
+  ONT::RESCIND
+  (INHERIT
+    ONT::RESCINDING-RULES)
+  (OVERLAP
+    WN::|repeal%2:32:00::|))
+
+(CONCEPT
+  ONT::RESCINDING-RULES
+  (INHERIT
+    ONT::CHANGING-RULES)
+  (OVERLAP
+    WN::|deregulate%2:41:00::|))
+
+(CONCEPT
   ONT::RESCUE
   (INHERIT
     ONT::HELP)
@@ -38146,6 +38184,13 @@
          ABSTR-OBJ)))))
 
 (CONCEPT
+  ONT::REVENGE-PUNISH
+  (INHERIT
+    ONT::PUNISH)
+  (OVERLAP
+    WN::|revenge%2:33:00::|))
+
+(CONCEPT
   ONT::REVENUE
   (INHERIT
     ONT::VALUE-COST)
@@ -38721,12 +38766,12 @@
   (INHERIT
     ONT::COMMUNICATION)
   (OVERLAP
+    WN::|mention%2:32:00::|
     WN::|note%2:32:00::|
     WN::|observe%2:32:00::|
-    WN::|mention%2:32:00::|
     WN::|remark%2:32:00::|
-    WN::|say%2:32:13::|
     WN::|say%2:32:01::|
+    WN::|say%2:32:13::|
     WN::|talk%2:32:00::|)
   (SEM-FEATS
     (INHERIT
@@ -39928,7 +39973,7 @@
 (CONCEPT
   ONT::SHED
   (INHERIT
-    ONT::CAUSE-COME-FROM)
+    ONT::CAUSE-OFF)
   (OVERLAP
     WN::|shed%2:29:00::|))
 
@@ -40084,13 +40129,14 @@
   (INHERIT
     ONT::COMMUNICATION)
   (OVERLAP
-    WN::|show%2:39:02::|
     WN::|demo%2:39:00::|
-    WN::|exhibit%2:39:00::|
-    WN::|present%2:39:00::|
     WN::|demonstrate%2:39:01::|
+    WN::|exhibit%2:39:00::|
+    WN::|express%2:32:00::|
+    WN::|present%2:39:00::|
+    WN::|prove%2:31:00::|
     WN::|show%2:39:00::|
-    WN::|prove%2:31:00::|)
+    WN::|show%2:39:02::|)
   (SEM-FRAME
     (ONT::AGENT
      (SEM-FEATS
@@ -41038,7 +41084,7 @@
     WN::|ouster%1:04:00::|
     WN::|repatriate%2:41:01::|)
   (SEM-FRAME
-    (ONT::FORMAL
+    (ONT::AFFECTED
      (SEM-FEATS
        (OR
          (CONCEPT
@@ -43057,7 +43103,12 @@
     WN::|submit%2:33:00::|
     WN::|surrender%2:40:00::|
     WN::|yield%2:33:00::|
-    WN::|yield%2:40:01::|))
+    WN::|yield%2:40:01::|)
+  (SEM-FRAME
+    (ONT::AFFECTED-RESULT
+     (CONCEPT
+       PHYS-OBJ)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::SURROUND
@@ -45460,7 +45511,7 @@
 (CONCEPT
   ONT::UNDRESS
   (INHERIT
-    ONT::CAUSE-COME-FROM)
+    ONT::CAUSE-OFF)
   (OVERLAP
     WN::|undress%2:29:00::|
     WN::|discase%2:29:00::|
@@ -45894,6 +45945,13 @@
          SITUATION)
        (CONCEPT
          ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::AFFECTED1
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
      OPTIONAL)
     (ONT::AFFECTED
      (OR

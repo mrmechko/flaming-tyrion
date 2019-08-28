@@ -1002,7 +1002,7 @@
    &quot;asymettric composition: one object becomes part of another&quot;
   </comment>
   <relation label="inherit">
-   ont::adjust
+   ont::putting-together
   </relation>
   <relation label="overlap">
    wn::|include%2:30:00::|
@@ -2288,6 +2288,9 @@
   </relation>
  </concept>
  <concept name="ont::appear">
+  <comment>
+   &quot;an entity comes into existence or comes into view&quot;
+  </comment>
   <relation label="inherit">
    ont::event-of-undergoing-action
   </relation>
@@ -2296,6 +2299,7 @@
    wn::|appear%2:30:02::|
    wn::|break%2:32:05::|
    wn::|come_out%2:32:00::|
+   wn::|materialize%2:30:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -6196,6 +6200,16 @@
    <feat name="trajectory">+</feat>
    <feat name="type">ont::body-movement</feat>
   </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::agent" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="intentional">+</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::body-movement-place">
   <comment>
@@ -8316,6 +8330,27 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::cause-clear">
+  <relation label="inherit">
+   ont::cause-come-from
+  </relation>
+  <relation label="overlap">
+   wn::|evacuate%2:38:01::|
+   wn::|evacuate%2:30:00::|
+   wn::|evacuate%2:38:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected-result" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+   <role-restr-map roles="ont::agent" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::cause-come-from">
   <relation label="inherit">
    ont::event-of-causation
@@ -8331,6 +8366,11 @@
    wn::|percolate%2:38:00::|
   </relation>
   <sem-frame>
+   <role-restr-map roles="ont::affected" optional="optional">
+    <sem-feats>
+     <feat name="mobility">movable</feat>
+    </sem-feats>
+   </role-restr-map>
    <role-restr-map roles="ont::affected-result" optional="optional">
     <or>
      <concept name="phys-obj" />
@@ -9318,6 +9358,21 @@
    wn::|changeful%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::changing-rules">
+  <relation label="inherit">
+   ont::event-of-causation
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="type">ont::social-contract</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::charge-per-unit">
   <relation label="inherit">
    ont::value-cost
@@ -10231,31 +10286,6 @@
    wn::|smoggy%5:00:00:cloudy:00|
   </relation>
  </concept>
- <concept name="ont::coalesce">
-  <relation label="inherit">
-   ont::object-change
-  </relation>
-  <relation label="overlap">
-   wn::|cohere%2:42:01::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="trajectory">+</feat>
-   <feat name="cause">agentive</feat>
-   <feat name="type">ont::coalesce</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::affected1" optional="optional">
-    <or>
-     <concept name="situation" />
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::coat-food">
   <relation label="inherit">
    ont::cooking
@@ -10674,27 +10704,28 @@
    &quot;symmetric combination of objects, abstract or physical: e.g., X combines with y = y combines with x = x and y combine;  the result is a new combination where the original objects cannot be separated&quot;
   </comment>
   <relation label="inherit">
-   ont::event-of-causation
+   ont::putting-together
   </relation>
   <relation label="overlap">
-   wn::|merge%2:30:01::|
-   wn::|combine%2:30:00::|
-   wn::|meld%2:30:00::|
+   wn::|amalgamate%2:35:00::|
+   wn::|blend%2:30:00::|
    wn::|coalesce%2:30:00::|
+   wn::|cohere%2:42:01::|
+   wn::|combine%2:30:00::|
+   wn::|commingle%2:30:00::|
+   wn::|commix%2:35:00::|
+   wn::|conflate%2:30:00::|
+   wn::|flux%2:30:00::|
    wn::|fuse%2:30:00::|
    wn::|immix%2:30:00::|
-   wn::|commingle%2:30:00::|
-   wn::|conflate%2:30:00::|
+   wn::|meld%2:30:00::|
+   wn::|merge%2:30:01::|
+   wn::|mingle%2:35:00::|
    wn::|mix%2:30:00::|
-   wn::|flux%2:30:00::|
-   wn::|blend%2:30:00::|
-   wn::|mix_in%2:30:01::|
    wn::|mix%2:30:01::|
    wn::|mix%2:35:00::|
-   wn::|mingle%2:35:00::|
-   wn::|commix%2:35:00::|
+   wn::|mix_in%2:30:01::|
    wn::|unify%2:35:00::|
-   wn::|amalgamate%2:35:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -11490,6 +11521,15 @@
    <feat name="aspect">static</feat>
    <feat name="type">ont::comprise</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::compromise">
+  <relation label="inherit">
+   ont::accept-agree
+  </relation>
+  <relation label="overlap">
+   wn::|compromise%2:32:01::|
+   wn::|compromise%2:32:00::|
+  </relation>
  </concept>
  <concept name="ont::compsci-property-val">
   <relation label="inherit">
@@ -15631,12 +15671,16 @@
   </sem-frame>
  </concept>
  <concept name="ont::disappear">
+  <comment>
+   &quot;an entity goes out of existence or goes out of view&quot;
+  </comment>
   <relation label="inherit">
    ont::event-of-undergoing-action
   </relation>
   <relation label="overlap">
    wn::|disappear%2:30:00::|
    wn::|go_down%2:34:00::|
+   wn::|vanish%2:30:02::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -17321,9 +17365,6 @@
   <relation label="overlap">
    wn::|empty%2:30:01::|
    wn::|empty%2:30:00::|
-   wn::|evacuate%2:38:01::|
-   wn::|evacuate%2:30:00::|
-   wn::|evacuate%2:38:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected" optional="optional">
@@ -17364,6 +17405,15 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::enacting-rules">
+  <relation label="inherit">
+   ont::changing-rules
+  </relation>
+  <relation label="overlap">
+   wn::|enact%2:41:00::|
+   wn::|segregate%2:41:00::|
+  </relation>
  </concept>
  <concept name="ont::enchanted-val">
   <comment>
@@ -18658,6 +18708,16 @@
    wn::|still%2:37:01::|
    wn::|comfort%2:37:01::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="intentional">+</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::evoke-sadness">
   <comment>
@@ -24450,25 +24510,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::in-loc-rel">
-  <comment>
-   &quot;FIGURE is part of the GROUND&quot;
-  </comment>
-  <relation label="inherit">
-   ont::in-loc
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::figure" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="type">ont::mental-construction</feat>
-     <feat name="tangible">+</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::in-past">
   <relation label="inherit">
    ont::event-time-wrt-now
@@ -26034,7 +26075,7 @@
    &quot;abstract, social, or physical connection of objects such that the objects retain their original make-up/identity (whereas COMBINE-OBJECTS are not un-combinable anymore)&quot;
   </comment>
   <relation label="inherit">
-   ont::cause-contact
+   ont::putting-together
   </relation>
   <relation label="overlap">
    wn::|conjoin%2:35:00::|
@@ -27989,7 +28030,7 @@
  </concept>
  <concept name="ont::loc-where-rel">
   <comment>
-   &quot;A subclass of AT-LOC for relative clause relations, e.g., a place where it never rains&quot;
+   &quot;relative clause relations that could be at-loc or in-loc, e.g., a place where it never rains; the city where I live&quot;
   </comment>
   <relation label="inherit">
    ont::position-as-point-reln
@@ -39271,6 +39312,10 @@
   <relation label="inherit">
    ont::function-object
   </relation>
+  <relation label="overlap">
+   wn::|prize%1:21:00::|
+   wn::|prize%1:06:00::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     abstr-obj
@@ -40064,21 +40109,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::pull-off">
-  <relation label="inherit">
-   ont::cause-out-of
-  </relation>
-  <relation label="overlap">
-   wn::|draw_off%2:35:00::|
-   wn::|draw_away%2:35:01::|
-   wn::|pull_off%2:35:01::|
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::agent" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::pull-out-of">
   <relation label="inherit">
    ont::cause-out-of
@@ -40386,6 +40416,11 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::putting-together">
+  <relation label="inherit">
+   ont::event-of-causation
+  </relation>
  </concept>
  <concept name="ont::puzzled-val">
   <relation label="inherit">
@@ -42553,6 +42588,22 @@
    wn::|criterion%1:09:00::|
   </relation>
  </concept>
+ <concept name="ont::rescind">
+  <relation label="inherit">
+   ont::rescinding-rules
+  </relation>
+  <relation label="overlap">
+   wn::|repeal%2:32:00::|
+  </relation>
+ </concept>
+ <concept name="ont::rescinding-rules">
+  <relation label="inherit">
+   ont::changing-rules
+  </relation>
+  <relation label="overlap">
+   wn::|deregulate%2:41:00::|
+  </relation>
+ </concept>
  <concept name="ont::rescue">
   <relation label="inherit">
    ont::help
@@ -43590,6 +43641,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::revenge-punish">
+  <relation label="inherit">
+   ont::punish
+  </relation>
+  <relation label="overlap">
+   wn::|revenge%2:33:00::|
+  </relation>
+ </concept>
  <concept name="ont::revenue">
   <relation label="inherit">
    ont::value-cost
@@ -44258,12 +44317,12 @@
    ont::communication
   </relation>
   <relation label="overlap">
+   wn::|mention%2:32:00::|
    wn::|note%2:32:00::|
    wn::|observe%2:32:00::|
-   wn::|mention%2:32:00::|
    wn::|remark%2:32:00::|
-   wn::|say%2:32:13::|
    wn::|say%2:32:01::|
+   wn::|say%2:32:13::|
    wn::|talk%2:32:00::|
   </relation>
   <sem-feats>
@@ -45599,7 +45658,7 @@
  </concept>
  <concept name="ont::shed">
   <relation label="inherit">
-   ont::cause-come-from
+   ont::cause-off
   </relation>
   <relation label="overlap">
    wn::|shed%2:29:00::|
@@ -45792,13 +45851,14 @@
    ont::communication
   </relation>
   <relation label="overlap">
-   wn::|show%2:39:02::|
    wn::|demo%2:39:00::|
-   wn::|exhibit%2:39:00::|
-   wn::|present%2:39:00::|
    wn::|demonstrate%2:39:01::|
-   wn::|show%2:39:00::|
+   wn::|exhibit%2:39:00::|
+   wn::|express%2:32:00::|
+   wn::|present%2:39:00::|
    wn::|prove%2:31:00::|
+   wn::|show%2:39:00::|
+   wn::|show%2:39:02::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::agent" optional="optional">
@@ -46882,7 +46942,7 @@
    wn::|repatriate%2:41:01::|
   </relation>
   <sem-frame>
-   <role-restr-map roles="ont::formal">
+   <role-restr-map roles="ont::affected">
     <sem-feats>
      <or>
       <concept name="phys-obj" />
@@ -49179,6 +49239,11 @@
    wn::|yield%2:33:00::|
    wn::|yield%2:40:01::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected-result" optional="optional">
+    <concept name="phys-obj" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::surround">
   <relation label="inherit">
@@ -51936,7 +52001,7 @@
  </concept>
  <concept name="ont::undress">
   <relation label="inherit">
-   ont::cause-come-from
+   ont::cause-off
   </relation>
   <relation label="overlap">
    wn::|undress%2:29:00::|
@@ -52444,6 +52509,12 @@
     <or>
      <concept name="situation" />
      <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+   <role-restr-map roles="ont::affected1" optional="optional">
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
     </or>
    </role-restr-map>
    <role-restr-map roles="ont::affected" optional="optional">

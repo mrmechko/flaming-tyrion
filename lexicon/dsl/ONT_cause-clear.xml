@@ -2,28 +2,24 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::coalesce">
+ <concept name="ont::cause-clear">
  <relation label="inherit">
-  ont::object-change
+  ont::cause-come-from
  </relation>
  <relation label="overlap">
-  wn::|cohere%2:42:01::|
+  wn::|evacuate%2:38:01::|
+  wn::|evacuate%2:30:00::|
+  wn::|evacuate%2:38:00::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">+</feat>
-  <feat name="cause">agentive</feat>
-  <feat name="type">ont::coalesce</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::affected1" optional="optional">
+  <role-restr-map roles="ont::affected-result" optional="optional">
    <or>
-    <concept name="situation" />
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
    </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -114,32 +110,51 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::cause-come-from">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|remove%2:30:00::|
+  wn::|take%2:30:00::|
+  wn::|take_away%2:30:01::|
+  wn::|withdraw%2:30:01::|
+  wn::|remove%2:30:02::|
+  wn::|remove%2:41:00::|
+  wn::|suction%2:38:00::|
+  wn::|percolate%2:38:00::|
+ </relation>
  <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <feat name="mobility">movable</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected-result" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::source">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected-result" optional="optional">
   <or>
    <concept name="phys-obj" />
    <concept name="abstr-obj" />
-   <concept name="situation" />
   </or>
  </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="cause">force</feat>
- <feat name="type">ont::change</feat>
- </sem-feats>
  <concept name="ont::event-of-causation">
  <comment>
   &quot;events involving an AGENT acting on an AFFECTED&quot;
@@ -177,132 +192,24 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::affected-result" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::source" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::affected1" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::affected">
+ <role-restr-map roles="ont::affected" optional="optional">
   <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-   <feat name="intentional">-</feat>
+   <feat name="mobility">movable</feat>
   </sem-feats>
  </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="type">ont::object-change</feat>
- </sem-feats>
- <concept name="ont::change">
- <comment>
-  &quot;an event involving some change in an object&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|change%1:07:00::|
-  wn::|change%1:06:01::|
-  wn::|change%2:30:00::|
-  wn::|change%1:04:00::|
-  wn::|change%1:19:00::|
-  wn::|change%2:30:02::|
-  wn::|change%2:30:08::|
-  wn::|change%2:30:01::|
-  wn::|transition%2:30:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">force</feat>
-  <feat name="type">ont::change</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::affected1" optional="optional">
+ <role-restr-map roles="ont::affected-result" optional="optional">
   <or>
-   <concept name="situation" />
    <concept name="phys-obj" />
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
+ <role-restr-map roles="ont::source">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <concept name="t" />
+ </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">+</feat>
- <feat name="cause">agentive</feat>
- <feat name="type">ont::coalesce</feat>
- </sem-feats>
- <concept name="ont::object-change">
- <relation label="inherit">
-  ont::change
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="type">ont::object-change</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::affected-result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::source" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected1" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
@@ -418,12 +325,24 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="coalesce" />
+  <word first-word="clear" />
  </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="clear the airfield of debris">
+ </example>
  <relation label="inherit">
-  ont::coalesce
-  ont::agent-templ
+  ont::cause-clear
  </relation>
+ <syntax>
+  <template-call template="ont::agent-affectedr-affected-xp-pp-of-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected-result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  <semantics>
   <sem-feats>
    <feat name="time-span">extended</feat>
@@ -435,15 +354,18 @@
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="coalesce" />
+  <word first-word="clear" remaining-words="" particle="out" />
  </morph>
+ <example text="clear out the airfield">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
-  ont::coalesce
+  ont::cause-clear
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-xp-np-templ" xp="'(w::pp w::with)" />
+  <template-call template="ont::agent-affected-xp-np-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::pp" head-word="w::with" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -452,6 +374,80 @@
    <feat name="time-span">extended</feat>
    <feat name="aspect">bounded</feat>
    <feat name="cause">agentive</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="evacuate" />
+ </morph>
+ <example text="evacuate the building (of people)">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cause-clear
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affectedr-affected-xp-pp-of-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected-result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="evacuate" />
+ </morph>
+ <example text="evacuate the people">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cause-clear
+ </relation>
+ <relation label="overlap">
+  vn::banish-10.2
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-source-xp-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::advbl" sem-role="ont::source" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="evacuate" />
+ </morph>
+ <example text="The people evacuated">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cause-clear
+  ont::agent-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">bounded</feat>
   </sem-feats>
  </semantics>
  </sense>

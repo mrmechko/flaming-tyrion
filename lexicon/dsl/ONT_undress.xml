@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::undress">
  <relation label="inherit">
-  ont::cause-come-from
+  ont::cause-off
  </relation>
  <relation label="overlap">
   wn::|undress%2:29:00::|
@@ -105,58 +105,11 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::agent" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-   <feat name="tangible">+</feat>
-  </sem-feats>
- </role-restr-map>
  <role-restr-map roles="ont::affected" optional="optional">
   <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-   <feat name="tangible">+</feat>
+   <feat name="mobility">movable</feat>
   </sem-feats>
  </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="type">ont::event-of-causation</feat>
- </sem-feats>
- <concept name="ont::event-of-action">
- <comment>
-  &quot;events that involve :agent (whether intentional or not)&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-change
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">force</feat>
-  <feat name="type">ont::event-of-action</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
  <role-restr-map roles="ont::affected-result" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -206,6 +159,11 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::cause-come-from">
  <relation label="inherit">
   ont::event-of-causation
@@ -221,6 +179,11 @@
   wn::|percolate%2:38:00::|
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <feat name="mobility">movable</feat>
+   </sem-feats>
+  </role-restr-map>
   <role-restr-map roles="ont::affected-result" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -235,6 +198,72 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::cause-off">
+ <relation label="inherit">
+  ont::cause-come-from
+ </relation>
+ <relation label="overlap">
+  wn::|take_off%2:30:00::|
+  wn::|get_off%2:32:01::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::event-of-action">
+ <comment>
+  &quot;events that involve :agent (whether intentional or not)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+  <feat name="type">ont::event-of-action</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="type">ont::event-of-causation</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::situation-root">
  <comment>
   &quot;root for all events, whether verbal or nominal&quot;

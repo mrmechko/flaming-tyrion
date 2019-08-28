@@ -118,6 +118,11 @@
   wn::|percolate%2:38:00::|
  </relation>
  <sem-frame>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <sem-feats>
+    <feat name="mobility">movable</feat>
+   </sem-feats>
+  </role-restr-map>
   <role-restr-map roles="ont::affected-result" optional="optional">
    <or>
     <concept name="phys-obj" />
@@ -174,6 +179,11 @@
  </sem-frame>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <sem-feats>
+   <feat name="mobility">movable</feat>
+  </sem-feats>
+ </role-restr-map>
  <role-restr-map roles="ont::affected-result" optional="optional">
   <or>
    <concept name="phys-obj" />
@@ -299,6 +309,74 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::shed">
+ <relation label="inherit">
+  ont::cause-off
+ </relation>
+ <relation label="overlap">
+  wn::|shed%2:29:00::|
+ </relation>
+ </concept>
+ <concept name="ont::undress">
+ <relation label="inherit">
+  ont::cause-off
+ </relation>
+ <relation label="overlap">
+  wn::|undress%2:29:00::|
+  wn::|discase%2:29:00::|
+  wn::|uncase%2:29:00::|
+  wn::|unclothe%2:29:00::|
+  wn::|strip%2:29:01::|
+  wn::|strip_down%2:29:00::|
+  wn::|disrobe%2:29:01::|
+  wn::|peel%2:29:02::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="strip" />
+ </morph>
+ <example text="strip the wire of insulation">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cause-off
+ </relation>
+ <relation label="overlap">
+  vn::cheat-10.6
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affectedr-affected-xp-pp-of-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected-result"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="strip" />
+ </morph>
+ <example text="strip the insulation from the wire">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::cause-off
+ </relation>
+ <relation label="overlap">
+  vn::cheat-10.6
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />

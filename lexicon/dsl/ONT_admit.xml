@@ -100,19 +100,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::agent">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="mobility">movable</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::affected">
-  <concept name="phys-obj" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::event-of-causation">
  <comment>
   &quot;events involving an AGENT acting on an AFFECTED&quot;
@@ -196,23 +183,10 @@
  <feat name="trajectory">-</feat>
  <feat name="type">ont::joining</feat>
  </sem-feats>
- <concept name="ont::cause-contact">
+ <concept name="ont::putting-together">
  <relation label="inherit">
   ont::event-of-causation
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="mobility">movable</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <concept name="phys-obj" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::neutral" optional="optional">
@@ -242,7 +216,7 @@
   &quot;abstract, social, or physical connection of objects such that the objects retain their original make-up/identity (whereas COMBINE-OBJECTS are not un-combinable anymore)&quot;
  </comment>
  <relation label="inherit">
-  ont::cause-contact
+  ont::putting-together
  </relation>
  <relation label="overlap">
   wn::|conjoin%2:35:00::|
