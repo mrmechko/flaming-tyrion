@@ -2930,7 +2930,6 @@
   (INHERIT
     ONT::JOINING)
   (OVERLAP
-    WN::|join%2:41:00::|
     WN::|join%2:41:01::|
     WN::|pair%2:35:01::|
     WN::|pair%2:41:00::|
@@ -9272,9 +9271,10 @@
     ONT::TEMPERATURE-VAL)
   (OVERLAP
     WN::|cold%3:00:01::|
-    WN::|cool%3:00:01::|
     WN::|cold%5:00:00:cool:03|
-    WN::|cool%3:00:03::|)
+    WN::|cool%3:00:01::|
+    WN::|cool%3:00:03::|
+    WN::|freeze%2:43:10::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -15584,6 +15584,7 @@
     WN::|enroll%2:41:00::|
     WN::|enter%2:33:00::|
     WN::|enter%2:41:06::|
+    WN::|fall_in%2:41:00::|
     WN::|inscribe%2:41:00::|
     WN::|recruit%2:41:01::|)
   (SEM-FEATS
@@ -15793,6 +15794,17 @@
       TIME)
     (TIME-FUNCTION ERA)
     (TYPE ONT::ERA)))
+
+(CONCEPT
+  ONT::ERR
+  (INHERIT
+    ONT::FAIL)
+  (OVERLAP
+    WN::|err%2:31:00::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::ESSENTIAL-CONTRACT
@@ -16836,16 +16848,17 @@
   (INHERIT
     ONT::EVENT-OF-STATE)
   (OVERLAP
+    WN::|abound%2:42:00::|
     WN::|be%2:42:00::|
-    WN::|exist%2:42:00::|
+    WN::|be%2:42:012::|
     WN::|be%2:42:04::|
-    WN::|dwell%2:42:01::|
     WN::|consist%2:42:00::|
+    WN::|dwell%2:42:01::|
+    WN::|exist%2:42:00::|
     WN::|lie%2:42:01::|
     WN::|lie_in%2:42:00::|
-    WN::|be%2:42:012::|
-    WN::|play%2:36:04::|
-    WN::|abound%2:42:00::|)
+    WN::|live%2:42:00::|
+    WN::|play%2:36:04::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -46797,10 +46810,11 @@
   (INHERIT
     ONT::ATMOSPHERIC-PHENOMENON)
   (OVERLAP
-    WN::|weather%1:19:00::|
-    WN::|weather_condition%1:19:00::|
+    WN::|atmospheric_condition%1:19:00::|
     WN::|conditions%1:19:00::|
-    WN::|atmospheric_condition%1:19:00::|)
+    WN::|freeze%1:19:00::|
+    WN::|weather%1:19:00::|
+    WN::|weather_condition%1:19:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
