@@ -126,6 +126,8 @@
   wn::|assets%1:21:00::|
   wn::|resource%1:21:00::|
   wn::|reserve%1:21:00::|
+  wn::|fund%1:21:00::|
+  wn::|kitty%1:21:01::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -133,6 +135,39 @@
   </relation>
   <feat name="scale">ont::money-scale</feat>
   <feat name="type">ont::assets</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="scale">ont::money-scale</feat>
+    <feat name="measure-function">value</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::debt">
+ <relation label="inherit">
+  ont::function-object
+ </relation>
+ <relation label="overlap">
+  wn::|liabilities%1:21:00::|
+  wn::|obligation%1:26:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::money-scale</feat>
+  <feat name="type">ont::debt</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
@@ -232,6 +267,8 @@
  <relation label="overlap">
   wn::|communication%1:03:00::|
   wn::|criminal_record%1:10:00::|
+  wn::|calculation%1:09:00::|
+  wn::|history%1:28:02::|
  </relation>
  <sem-feats>
   <relation label="inherit">

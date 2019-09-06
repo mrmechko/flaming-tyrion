@@ -108,7 +108,8 @@
     WN::|ability%1:09:00::|
     WN::|capability%1:07:00::|
     WN::|capacity%1:07:00::|
-    WN::|competence%1:07:00::|))
+    WN::|competence%1:07:00::|
+    WN::|capability%1:26:00::|))
 
 (CONCEPT
   ONT::ABOVE
@@ -267,7 +268,8 @@
     WN::|accept%2:32:00::|
     WN::|consent%2:32:00::|
     WN::|go_for%2:32:00::|
-    WN::|affirm%2:32:01::|))
+    WN::|affirm%2:32:01::|
+    WN::|acceptance%1:04:00::|))
 
 (CONCEPT
   ONT::ACCEPTABILITY-SCALE
@@ -593,7 +595,10 @@
   (OVERLAP
     WN::|act%2:29:00::|
     WN::|act%2:36:04::|
-    WN::|behave%2:41:01::|)
+    WN::|behave%2:41:01::|
+    WN::|posturing%1:07:00::|
+    WN::|performance%1:04:00::|
+    WN::|behavior%1:26:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -849,7 +854,9 @@
 (CONCEPT
   ONT::ADAPT
   (INHERIT
-    ONT::ACCOMMODATE))
+    ONT::ACCOMMODATE)
+  (OVERLAP
+    WN::|adaptation%1:22:00::|))
 
 (CONCEPT
   ONT::ADAPTABILITY-SCALE
@@ -884,7 +891,8 @@
   (OVERLAP
     WN::|include%2:30:00::|
     WN::|introduce%2:38:00::|
-    WN::|add%2:30:00::|)
+    WN::|add%2:30:00::|
+    WN::|inclusion%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -1639,7 +1647,8 @@
     WN::|conglomerate%2:30:00::|
     WN::|pile_up%2:30:00::|
     WN::|gather%2:30:00::|
-    WN::|amass%2:30:00::|))
+    WN::|amass%2:30:00::|
+    WN::|accumulation%1:04:00::|))
 
 (CONCEPT
   ONT::AMBIGUOUS-VAL
@@ -2812,7 +2821,9 @@
   (OVERLAP
     WN::|assets%1:21:00::|
     WN::|resource%1:21:00::|
-    WN::|reserve%1:21:00::|)
+    WN::|reserve%1:21:00::|
+    WN::|fund%1:21:00::|
+    WN::|kitty%1:21:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -3889,7 +3900,8 @@
   (INHERIT
     ONT::PSYCHOLOGICAL-CONDITION-SCALE)
   (OVERLAP
-    WN::|consciousness%1:09:01::|))
+    WN::|consciousness%1:09:01::|
+    WN::|light%1:09:02::|))
 
 (CONCEPT
   ONT::AWARENESS-VAL
@@ -3949,7 +3961,7 @@
     (TYPE ONT::AWKWARD-VAL)))
 
 (CONCEPT
-  ONT::BACK
+  ONT::BACK-OF
   (INHERIT
     ONT::ORIENTED-LOC-RELN))
 
@@ -4139,9 +4151,7 @@
 (CONCEPT
   ONT::BASIC-SCALE
   (INHERIT
-    ONT::EVALUATION-SCALE)
-  (OVERLAP
-    WN::|foundation%1:09:00::|))
+    ONT::EVALUATION-SCALE))
 
 (CONCEPT
   ONT::BASIC-VAL
@@ -7449,7 +7459,8 @@
     WN::|remove%2:30:02::|
     WN::|remove%2:41:00::|
     WN::|suction%2:38:00::|
-    WN::|percolate%2:38:00::|)
+    WN::|percolate%2:38:00::|
+    WN::|removal%1:04:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -7648,7 +7659,8 @@
     WN::|bring_on%2:39:00::|
     WN::|produce%2:36:03::|
     WN::|yield%2:40:00::|
-    WN::|yield%2:40:02::|)
+    WN::|yield%2:40:02::|
+    WN::|output%1:23:00::|)
   (SEM-FRAME
     (ONT::AFFECTED-RESULT
      (OR
@@ -9294,7 +9306,8 @@
   (INHERIT
     ONT::AGENT-INTERACTION)
   (OVERLAP
-    WN::|collaborate%2:41:00::|)
+    WN::|collaborate%2:41:00::|
+    WN::|cooperation%1:04:01::|)
   (SEM-FRAME
     (ONT::AGENT
      (CONCEPT
@@ -9836,7 +9849,8 @@
     ONT::ACTIVITY)
   (OVERLAP
     WN::|finance%1:04:00::|
-    WN::|commerce%1:04:00::|)
+    WN::|commerce%1:04:00::|
+    WN::|deal%1:04:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -9856,7 +9870,8 @@
   (INHERIT
     ONT::FACILITY)
   (OVERLAP
-    WN::|shop%1:06:00::|))
+    WN::|shop%1:06:00::|
+    WN::|outlet%1:06:01::|))
 
 (CONCEPT
   ONT::COMMERCIAL-PROPERTY-VAL
@@ -9888,7 +9903,9 @@
 (CONCEPT
   ONT::COMMITMENT
   (INHERIT
-    ONT::PS-OBJECT))
+    ONT::PS-OBJECT)
+  (OVERLAP
+    WN::|commitment%1:04:02::|))
 
 (CONCEPT
   ONT::COMMODITY
@@ -10100,6 +10117,7 @@
     WN::|hold_one's_own%2:42:00::|
     WN::|succeed%2:41:00::|
     WN::|excel%2:42:00::|
+    WN::|completion%1:04:00::|
     WN::|success%1:11:00::|
     WN::|success%1:04:00::|
     WN::|completion%1:04:02::|)
@@ -10790,7 +10808,9 @@
     ONT::SITUATION)
   (OVERLAP
     WN::|restriction%1:09:00::|
-    WN::|limitation%1:09:00::|)
+    WN::|limitation%1:09:00::|
+    WN::|constraint%1:06:00::|
+    WN::|limit%1:23:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -12172,7 +12192,8 @@
     WN::|crush%2:35:00::|
     WN::|squelch%2:35:00::|
     WN::|mash%2:35:00::|
-    WN::|grind%2:35:00::|))
+    WN::|grind%2:35:00::|
+    WN::|crush%1:04:00::|))
 
 (CONCEPT
   ONT::CRUSTACEANS
@@ -12481,13 +12502,6 @@
     WN::|darkness%1:26:00::|))
 
 (CONCEPT
-  ONT::DAT-STAGE-PM
-  (INHERIT
-    ONT::DAY-STAGE)
-  (OVERLAP
-    WN::|morning%1:28:00::|))
-
-(CONCEPT
   ONT::DATA
   (COMMENT "A group of information organized in some way")
   (INHERIT
@@ -12577,6 +12591,11 @@
     (TYPE ONT::DAY-STAGE)))
 
 (CONCEPT
+  ONT::DAY-STAGE-PM
+  (INHERIT
+    ONT::DAY-STAGE))
+
+(CONCEPT
   ONT::DAZED-VAL
   (INHERIT
     ONT::LACK-OF-ENERGY-VAL)
@@ -12609,12 +12628,40 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::DEBT
+  (INHERIT
+    ONT::FUNCTION-OBJECT)
+  (OVERLAP
+    WN::|liabilities%1:21:00::|
+    WN::|obligation%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::MONEY-SCALE)
+    (TYPE ONT::DEBT))
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (SCALE ONT::MONEY-SCALE)
+       (MEASURE-FUNCTION VALUE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         SITUATION)))))
+
+(CONCEPT
   ONT::DECIDE
   (INHERIT
     ONT::ACQUIRE-BELIEF)
   (OVERLAP
     WN::|decide%2:31:00::|
-    WN::|decide%2:31:02::|)
+    WN::|decide%2:31:02::|
+    WN::|decision%1:04:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (SEM-FEATS
@@ -12661,6 +12708,8 @@
     WN::|lessen%2:30:00::|
     WN::|fall%2:30:06::|
     WN::|mitigate%2:32:00::|
+    WN::|reduction%1:04:00::|
+    WN::|decrement%1:07:00::|
     WN::|decrease%1:11:00::|
     WN::|relieve%2:29:00::|))
 
@@ -12730,7 +12779,9 @@
     WN::|calumniate%2:32:00::|
     WN::|smear%2:32:00::|
     WN::|sully%2:32:00::|
-    WN::|besmirch%2:32:00::|))
+    WN::|besmirch%2:32:00::|
+    WN::|charge%1:10:00::|
+    WN::|recrimination%1:10:00::|))
 
 (CONCEPT
   ONT::DEFECTIVE-VAL
@@ -13191,6 +13242,7 @@
     WN::|down%2:38:00::|
     WN::|knock_out%2:30:00::|
     WN::|knock_out%2:30:01::|
+    WN::|destruction%1:04:00::|
     WN::|abortion%1:04:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
@@ -13256,7 +13308,8 @@
     WN::|conclude%2:31:00::|
     WN::|ascertain%2:32:00::|
     WN::|ascertain%2:32:01::|
-    WN::|discover%2:31:01::|)
+    WN::|discover%2:31:01::|
+    WN::|discovery%1:04:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (OR
@@ -15383,7 +15436,8 @@
     ONT::CHANGING-RULES)
   (OVERLAP
     WN::|enact%2:41:00::|
-    WN::|segregate%2:41:00::|))
+    WN::|segregate%2:41:00::|
+    WN::|imposition%1:04:02::|))
 
 (CONCEPT
   ONT::ENCHANTED-VAL
@@ -15948,7 +16002,9 @@
   (INHERIT
     ONT::EVENT-TYPE)
   (OVERLAP
-    WN::|event%1:03:00::|)
+    WN::|event%1:03:00::|
+    WN::|play%1:04:05::|
+    WN::|group_action%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -16259,6 +16315,17 @@
       SITUATION)
     (INTENTIONAL -)
     (TYPE ONT::EVENT-TYPE)))
+
+(CONCEPT
+  ONT::EVIDENCE
+  (INHERIT
+    ONT::INFORMATION)
+  (OVERLAP
+    WN::|basis%1:09:00::|
+    WN::|foundation%1:24:00::|
+    WN::|evidence%1:09:00::|
+    WN::|indication%1:10:00::|
+    WN::|evidence%1:10:00::|))
 
 (CONCEPT
   ONT::EVOKE-AMUSEMENT
@@ -16611,7 +16678,8 @@
     ONT::EVOKE-BOTHER)
   (OVERLAP
     WN::|upset%2:37:01::|
-    WN::|disturb%2:37:00::|))
+    WN::|disturb%2:37:00::|
+    WN::|circus%1:04:01::|))
 
 (CONCEPT
   ONT::EVOKE-WORRY
@@ -17686,7 +17754,9 @@
   (OVERLAP
     WN::|government%1:14:00::|
     WN::|authorities%1:14:00::|
-    WN::|regime%1:14:00::|))
+    WN::|regime%1:14:00::|
+    WN::|federal_department%1:14:00::|
+    WN::|legislature%1:14:00::|))
 
 (CONCEPT
   ONT::FEDERAL-ORGANIZATION-ABSTR
@@ -18305,7 +18375,8 @@
     ONT::SHAPE-CHANGE)
   (OVERLAP
     WN::|fold%2:35:00::|
-    WN::|deformation%1:11:01::|)
+    WN::|deformation%1:11:01::|
+    WN::|line%1:15:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -18953,7 +19024,8 @@
     ONT::LOCATED-EVENT)
   (OVERLAP
     WN::|ceremony%1:04:00::|
-    WN::|gathering%1:14:00::|))
+    WN::|gathering%1:14:00::|
+    WN::|visit%1:04:02::|))
 
 (CONCEPT
   ONT::GENDER-SCALE
@@ -19316,7 +19388,8 @@
   (INHERIT
     ONT::PHYS-OBJECT)
   (OVERLAP
-    WN::|location%1:03:00::|)
+    WN::|location%1:03:00::|
+    WN::|space%1:03:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -19777,7 +19850,9 @@
 (CONCEPT
   ONT::GRAPHIC-SYMBOL
   (INHERIT
-    ONT::SYMBOLIC-REPRESENTATION))
+    ONT::SYMBOLIC-REPRESENTATION)
+  (OVERLAP
+    WN::|mark%1:10:03::|))
 
 (CONCEPT
   ONT::GRASS
@@ -19873,7 +19948,8 @@
     WN::|greet%2:32:00::|
     WN::|recognize%2:32:01::|
     WN::|recognise%2:32:01::|
-    WN::|greet%2:32:01::|))
+    WN::|greet%2:32:01::|
+    WN::|greeting%1:10:00::|))
 
 (CONCEPT
   ONT::GREY-SCALE
@@ -20409,7 +20485,9 @@
   (INHERIT
     ONT::NEG-EXPERIENCER-PROPERTY-VAL)
   (OVERLAP
-    WN::|hateful%3:00:00::|))
+    WN::|hateful%3:00:00::|
+    WN::|hatred%1:12:00::|
+    WN::|evil%1:07:00::|))
 
 (CONCEPT
   ONT::HAVE
@@ -20717,7 +20795,9 @@
   (OVERLAP
     WN::|help%2:41:00::|
     WN::|assist%2:41:02::|
-    WN::|aid%2:41:00::|)
+    WN::|aid%2:41:00::|
+    WN::|help%1:04:00::|
+    WN::|help%1:04:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (OR
@@ -21482,7 +21562,8 @@
   (OVERLAP
     WN::|significance%1:07:00::|
     WN::|importance%1:07:00::|
-    WN::|importance%1:26:00::|))
+    WN::|importance%1:26:00::|
+    WN::|urgency%1:26:00::|))
 
 (CONCEPT
   ONT::IMPRESS
@@ -21510,7 +21591,8 @@
     WN::|enhancement%1:04:00::|
     WN::|sweetening%1:04:02::|
     WN::|meliorate%2:30:01::|
-    WN::|improvement%1:04:00::|)
+    WN::|improvement%1:04:00::|
+    WN::|advance%1:11:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -21796,7 +21878,8 @@
   (OVERLAP
     WN::|increase%1:11:00::|
     WN::|increase%2:30:00::|
-    WN::|rise%2:37:00::|))
+    WN::|rise%2:37:00::|
+    WN::|increase%1:07:00::|))
 
 (CONCEPT
   ONT::INCREASE-NUMBER
@@ -21981,7 +22064,6 @@
     WN::|information%1:09:00::|
     WN::|information%1:10:00::|
     WN::|info%1:10:00::|
-    WN::|indication%1:10:00::|
     WN::|vital_sign%1:26:00::|)
   (SEM-FRAME
     (ONT::FORMAL
@@ -22005,7 +22087,9 @@
     ONT::FUNCTION-OBJECT)
   (OVERLAP
     WN::|communication%1:03:00::|
-    WN::|criminal_record%1:10:00::|)
+    WN::|criminal_record%1:10:00::|
+    WN::|calculation%1:09:00::|
+    WN::|history%1:28:02::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -23094,7 +23178,8 @@
     WN::|kill%2:35:01::|
     WN::|kill%2:35:02::|
     WN::|destroy%2:35:01::|
-    WN::|killing%1:04:00::|)
+    WN::|killing%1:04:00::|
+    WN::|corporal_punishment%1:04:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -23213,7 +23298,8 @@
   (INHERIT
     ONT::MENTAL-CONSTRUCTION)
   (OVERLAP
-    WN::|knowledge%1:03:00::|)
+    WN::|knowledge%1:03:00::|
+    WN::|know-how%1:09:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -24945,7 +25031,8 @@
     WN::|lose%2:40:01::|
     WN::|lose%2:40:02::|
     WN::|lose%2:40:06::|
-    WN::|lose_sight_of%2:39:00::|))
+    WN::|lose_sight_of%2:39:00::|
+    WN::|loss%1:04:00::|))
 
 (CONCEPT
   ONT::LOSE-COMPETE
@@ -26266,7 +26353,8 @@
     ONT::PART)
   (OVERLAP
     WN::|member%1:18:00::|
-    WN::|member%1:24:00::|)
+    WN::|member%1:24:00::|
+    WN::|member%1:14:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -26375,7 +26463,9 @@
   (INHERIT
     ONT::PS-OBJECT)
   (OVERLAP
-    WN::|plan%1:09:01::|))
+    WN::|plan%1:09:01::|
+    WN::|plan%1:09:00::|
+    WN::|plan_of_action%1:09:00::|))
 
 (CONCEPT
   ONT::MENTAL-PSYCHOLOGICAL-ILLNESS-OR-DISORDER
@@ -26523,7 +26613,9 @@
   (OVERLAP
     WN::|manner%1:07:01::|
     WN::|method%1:09:00::|
-    WN::|way%1:04:01::|))
+    WN::|way%1:04:01::|
+    WN::|path%1:04:00::|
+    WN::|path%1:06:00::|))
 
 (CONCEPT
   ONT::METHYLATION
@@ -28451,7 +28543,8 @@
   (INHERIT
     ONT::CERTAINTY-SCALE)
   (OVERLAP
-    WN::|doubt%1:09:00::|))
+    WN::|doubt%1:09:00::|
+    WN::|uncertainty%1:07:00::|))
 
 (CONCEPT
   ONT::NOT-CHANGEABLE-VAL
@@ -30700,6 +30793,14 @@
     ONT::COMPANY-ABSTR))
 
 (CONCEPT
+  ONT::OFFICIAL
+  (COMMENT "Person that serves in some administrative role")
+  (INHERIT
+    ONT::PERSON)
+  (OVERLAP
+    WN::|leader%1:18:00::|))
+
+(CONCEPT
   ONT::OFFICIAL-AUTHORITY-VAL
   (COMMENT "(official, authorized)")
   (INHERIT
@@ -31087,10 +31188,7 @@
 (CONCEPT
   ONT::ORGANIZATION-ABSTR
   (INHERIT
-    ONT::SOCIAL-GROUP-ABSTR)
-  (OVERLAP
-    WN::|organization%1:14:00::|
-    WN::|organisation%1:14:00::|))
+    ONT::SOCIAL-GROUP-ABSTR))
 
 (CONCEPT
   ONT::ORGANIZATION-PROPERTY-VAL
@@ -31540,7 +31638,8 @@
   (INHERIT
     ONT::EVALUATION-SCALE)
   (OVERLAP
-    WN::|partiality%1:09:00::|))
+    WN::|partiality%1:09:00::|
+    WN::|impartiality%1:09:00::|))
 
 (CONCEPT
   ONT::PARTIALLY-FILLED-VAL
@@ -31557,7 +31656,8 @@
   (OVERLAP
     WN::|appear%2:41:03::|
     WN::|attend%2:42:00::|
-    WN::|participate%2:41:00::|)
+    WN::|participate%2:41:00::|
+    WN::|involvement%1:04:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (SEM-FEATS
@@ -32246,7 +32346,8 @@
     WN::|causal_agency%1:03:00::|
     WN::|cause%1:03:00::|
     WN::|causal_agent%1:03:00::|
-    WN::|cause%1:11:00::|)
+    WN::|cause%1:11:00::|
+    WN::|momentum%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -32681,7 +32782,8 @@
     WN::|check%2:31:00::|
     WN::|search%2:35:00::|
     WN::|seek%2:35:00::|
-    WN::|look_for%2:35:00::|)
+    WN::|look_for%2:35:00::|
+    WN::|search%1:04:00::|)
   (SEM-FRAME
     (ONT::LOCATION
      (CONCEPT
@@ -33810,7 +33912,8 @@
     WN::|electricity%1:19:01::|
     WN::|electrical_energy%1:19:00::|
     WN::|electricity%1:19:00::|
-    WN::|energy%1:19:00::|))
+    WN::|energy%1:19:00::|
+    WN::|energy%1:19:01::|))
 
 (CONCEPT
   ONT::POWER-UNIT
@@ -33848,7 +33951,8 @@
   (INHERIT
     ONT::LOADED-CLAIM)
   (OVERLAP
-    WN::|praise%2:32:00::|)
+    WN::|praise%2:32:00::|
+    WN::|applause%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -34189,7 +34293,8 @@
   (OVERLAP
     WN::|presentation%1:10:00::|
     WN::|presentation%1:10:02::|
-    WN::|show%1:04:00::|))
+    WN::|show%1:04:00::|
+    WN::|show%1:10:00::|))
 
 (CONCEPT
   ONT::PRESERVATIVES
@@ -34351,7 +34456,14 @@
 (CONCEPT
   ONT::PROBLEM
   (INHERIT
-    ONT::PS-OBJECT))
+    ONT::PS-OBJECT)
+  (OVERLAP
+    WN::|obstacle%1:09:00::|
+    WN::|obstacle%1:06:00::|
+    WN::|problem%1:26:00::|
+    WN::|problem%1:09:00::|
+    WN::|challenge%1:26:00::|
+    WN::|woe%1:26:00::|))
 
 (CONCEPT
   ONT::PROCEDURE
@@ -34767,7 +34879,8 @@
   (OVERLAP
     WN::|preserve%2:42:01::|
     WN::|keep%2:42:02::|
-    WN::|defend%2:33:00::|)
+    WN::|defend%2:33:00::|
+    WN::|protection%1:21:00::|)
   (SEM-FRAME
     ((ONT::AGENT ONT::CAUSE)
      (SEM-FEATS
@@ -35693,6 +35806,16 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::REACTION-TO-STIMULUS
+  (INHERIT
+    ONT::EVENT-OF-ACTION)
+  (OVERLAP
+    WN::|reaction%1:04:00::|
+    WN::|reaction%1:09:01::|
+    WN::|reaction%1:19:00::|
+    WN::|reaction%1:09:00::|))
+
+(CONCEPT
   ONT::READ
   (INHERIT
     ONT::ACQUIRE-BELIEF)
@@ -36366,9 +36489,12 @@
 
 (CONCEPT
   ONT::RELEASING
+  (COMMENT
+   "An agent removes the affected from some sort of control (confinement, obligation, etc)")
   (INHERIT
     ONT::CONTROL-MANAGE)
   (OVERLAP
+    WN::|release%1:22:00::|
     WN::|free%2:41:00::|
     WN::|liberate%2:41:02::|
     WN::|release%2:41:00::|
@@ -37043,7 +37169,8 @@
     WN::|substitute%2:40:00::|
     WN::|replace%2:40:00::|
     WN::|interchange%2:40:01::|
-    WN::|exchange%2:40:02::|)
+    WN::|exchange%2:40:02::|
+    WN::|substitution%1:11:00::|)
   (SEM-FRAME
     (ONT::AFFECTED1
      (OR
@@ -38086,7 +38213,8 @@
   (INHERIT
     ONT::START)
   (OVERLAP
-    WN::|restart%2:30:00::|)
+    WN::|restart%2:30:00::|
+    WN::|return%1:04:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -38163,7 +38291,8 @@
   (OVERLAP
     WN::|return%2:38:12::|
     WN::|take_back%2:38:03::|
-    WN::|bring_back%2:38:00::|)
+    WN::|bring_back%2:38:00::|
+    WN::|return%1:04:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -38209,7 +38338,9 @@
     ONT::VALUE-COST)
   (OVERLAP
     WN::|financial_gain%1:21:00::|
-    WN::|return%1:21:00::|))
+    WN::|return%1:21:00::|
+    WN::|bonus%1:21:00::|
+    WN::|salary%1:21:00::|))
 
 (CONCEPT
   ONT::REVERSE
@@ -39049,6 +39180,13 @@
     WN::|huxleian%3:01:00::|))
 
 (CONCEPT
+  ONT::SCORE-COMPETE
+  (INHERIT
+    ONT::COMPETE)
+  (OVERLAP
+    WN::|score%1:04:00::|))
+
+(CONCEPT
   ONT::SCOUT
   (INHERIT
     ONT::PERSON)
@@ -39376,7 +39514,8 @@
     WN::|channelize%2:35:00::|
     WN::|channelise%2:35:00::|
     WN::|make_pass%2:38:00::|
-    WN::|bundle_off%2:38:00::|)
+    WN::|bundle_off%2:38:00::|
+    WN::|transmission%1:04:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -39639,13 +39778,16 @@
   (OVERLAP
     WN::|ordering%1:14:00::|
     WN::|order%1:14:00::|
-    WN::|ordination%1:14:00::|))
+    WN::|ordination%1:14:00::|
+    WN::|sequence%1:07:00::|))
 
 (CONCEPT
   ONT::SEQUENCE-POSITION
   (COMMENT "Position related to discourse. e.g., First, we laugh")
   (INHERIT
     ONT::PREDICATE)
+  (OVERLAP
+    WN::|rank%1:26:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -39709,7 +39851,8 @@
   (OVERLAP
     WN::|setting%1:26:00::|
     WN::|background%1:26:00::|
-    WN::|scope%1:26:00::|))
+    WN::|scope%1:26:00::|
+    WN::|situation%1:26:00::|))
 
 (CONCEPT
   ONT::SEVERE-VAL
@@ -40443,7 +40586,8 @@
   (INHERIT
     ONT::EVENT-TYPE)
   (OVERLAP
-    WN::|phenomenon%1:03:00::|)
+    WN::|phenomenon%1:03:00::|
+    WN::|world%1:17:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -40951,7 +41095,8 @@
     ONT::IMPLICIT-GROUP)
   (OVERLAP
     WN::|social_group%1:14:00::|
-    WN::|congregation%1:14:01::|)
+    WN::|congregation%1:14:01::|
+    WN::|defense%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -41032,7 +41177,8 @@
     WN::|custom%1:09:00::|
     WN::|practice%1:09:00::|
     WN::|habit%1:09:00::|
-    WN::|routine%1:04:00::|))
+    WN::|routine%1:04:00::|
+    WN::|ethos%1:07:00::|))
 
 (CONCEPT
   ONT::SOCIAL-RELATION-VAL
@@ -41048,7 +41194,8 @@
     WN::|relationship%1:24:00::|
     WN::|relationship%1:26:00::|
     WN::|romance%1:26:00::|
-    WN::|affair%1:26:00::|))
+    WN::|affair%1:26:00::|
+    WN::|relationship%1:26:01::|))
 
 (CONCEPT
   ONT::SOCIAL-SCIENCE-PROPERTY-VAL
@@ -41069,6 +41216,17 @@
     WN::|criminological%3:01:00::|
     WN::|ethnological%3:01:00::|
     WN::|ethnologic%3:01:00::|))
+
+(CONCEPT
+  ONT::SOCIAL-SYSTEM
+  (INHERIT
+    ONT::TANGIBLE-ABSTRACT-OBJECT)
+  (OVERLAP
+    WN::|political_system%1:14:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (TYPE ONT::SOCIAL-SYSTEM)))
 
 (CONCEPT
   ONT::SOCIAL-VAL
@@ -41095,7 +41253,8 @@
     WN::|expel%2:41:01::|
     WN::|expel%2:41:00::|
     WN::|ouster%1:04:00::|
-    WN::|repatriate%2:41:01::|)
+    WN::|repatriate%2:41:01::|
+    WN::|debarment%1:04:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -42107,7 +42266,7 @@
     WN::|state%1:26:02::|
     WN::|state_of_matter%1:26:00::|
     WN::|state%1:03:00::|
-    WN::|situation%1:26:00::|)
+    WN::|case%1:09:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -42213,7 +42372,8 @@
     ONT::STEADINESS-SCALE)
   (OVERLAP
     WN::|steadiness%1:07:01::|
-    WN::|stability%1:07:00::|))
+    WN::|stability%1:07:00::|
+    WN::|stability%1:07:01::|))
 
 (CONCEPT
   ONT::STEAL
@@ -42532,7 +42692,8 @@
     WN::|wall%1:06:00::|
     WN::|wall%1:06:03::|
     WN::|ceiling%1:06:00::|
-    WN::|floor%1:06:00::|)
+    WN::|floor%1:06:00::|
+    WN::|passageway%1:06:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -43248,7 +43409,8 @@
     ONT::COLLECTION)
   (OVERLAP
     WN::|system%1:14:00::|
-    WN::|system%1:14:00::|))
+    WN::|system%1:14:00::|
+    WN::|system%1:06:00::|))
 
 (CONCEPT
   ONT::SYSTEM-ABSTR
@@ -43256,7 +43418,6 @@
   (INHERIT
     ONT::GROUP-OBJECT-ABSTR)
   (OVERLAP
-    WN::|system%1:06:00::|
     WN::|system%1:14:00::|))
 
 (CONCEPT
@@ -44264,6 +44425,14 @@
     (TYPE ONT::TIDY-VAL)))
 
 (CONCEPT
+  ONT::TIE-COMPETE
+  (INHERIT
+    ONT::COMPETE)
+  (OVERLAP
+    WN::|tie%2:33:00::|
+    WN::|tie%1:11:00::|))
+
+(CONCEPT
   ONT::TIGHTEN
   (INHERIT
     ONT::CHANGE-IN-CONSTRICTION)
@@ -44814,6 +44983,21 @@
     WN::|tower%1:06:00::|))
 
 (CONCEPT
+  ONT::TRAJECTORY
+  (COMMENT "the history of some value over time")
+  (INHERIT
+    ONT::TANGIBLE-ABSTRACT-OBJECT)
+  (OVERLAP
+    WN::|trajectory%1:19:00::|)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)))))
+
+(CONCEPT
   ONT::TRANSFER
   (INHERIT
     ONT::GIVING)
@@ -45093,7 +45277,8 @@
     WN::|problem%1:09:00::|
     WN::|trouble%1:09:00::|
     WN::|trouble%1:11:00::|
-    WN::|disorder%1:26:00::|)
+    WN::|disorder%1:26:00::|
+    WN::|danger%1:26:01::|)
   (SEM-FRAME
     (ONT::ASSOC-WITH
      (CONCEPT
@@ -45200,7 +45385,8 @@
     WN::|attempt%2:41:00::|
     WN::|essay%2:41:00::|
     WN::|assay%2:41:00::|
-    WN::|come_near%2:41:00::|)
+    WN::|come_near%2:41:00::|
+    WN::|push%1:04:01::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (OR
@@ -47201,7 +47387,8 @@
   (INHERIT
     ONT::COMPETE)
   (OVERLAP
-    WN::|win%2:33:00::|))
+    WN::|win%2:33:00::|
+    WN::|triumph%1:11:00::|))
 
 (CONCEPT
   ONT::WINDOW
