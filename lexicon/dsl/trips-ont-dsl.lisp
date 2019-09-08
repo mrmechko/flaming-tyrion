@@ -11058,7 +11058,8 @@
     WN::|control%2:41:00::|
     WN::|control%1:04:00::|
     WN::|command%2:41:00::|
-    WN::|discharge%2:33:01::|)
+    WN::|discharge%2:33:01::|
+    WN::|social_control%1:04:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (OR
@@ -30673,8 +30674,7 @@
     WN::|pass_off%2:30:00::|
     WN::|play%2:42:00::|
     WN::|set_in%2:30:00::|
-    WN::|take_place%2:30:00::|
-    WN::|progress%2:38:00::|)
+    WN::|take_place%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -44555,7 +44555,7 @@
   (INHERIT
     ONT::OCCURRING)
   (OVERLAP
-    WN::|pass%2:38:00::|)
+    WN::|pass%2:38:03::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
