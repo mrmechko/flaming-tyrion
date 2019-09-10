@@ -3532,19 +3532,22 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::ATTRIBUTED-INFORMATION
+  ONT::ATTRIBUTED-TO
   (INHERIT
     ONT::PREDICATE)
   (SEM-FRAME
     (ONT::GROUND
+     (CONCEPT
+       PHYS-OBJ)
+     OPTIONAL)
+    (ONT::FIGURE
      (OR
        (CONCEPT
-         PHYS-OBJ)
+         SITUATION)
        (CONCEPT
-         ABSTR-OBJ)))
-    (ONT::FIGURE
-     (CONCEPT
-       SITUATION)
+         HAVE-PROPERTY)
+       (CONCEPT
+         CORRELATION))
      OPTIONAL)))
 
 (CONCEPT
@@ -11046,6 +11049,16 @@
     (ONT::FIGURE
      (CONCEPT
        SITUATION)
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::CONTRASTIVE
+  (INHERIT
+    ONT::PREDICATE)
+  (SEM-FRAME
+    (ONT::GROUND
+     (CONCEPT
+       T)
      OPTIONAL)))
 
 (CONCEPT
@@ -25522,7 +25535,10 @@
      (SEM-FEATS
        (INHERIT
          SITUATION)
-       (TYPE ONT::EVENT-OF-ACTION))
+       (TYPE
+        (OR
+          ONT::EVENT-OF-ACTION
+          ONT::EVENT-OF-STATE)))
      OPTIONAL)))
 
 (CONCEPT

@@ -2,19 +2,13 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::attributed-information">
+ <concept name="ont::contrastive">
  <relation label="inherit">
   ont::predicate
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="situation" />
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -72,14 +66,8 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::ground">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="situation" />
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::relation">
@@ -181,60 +169,4 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="according" remaining-words="to" />
- </morph>
- <example text="according to what i have the helicopter takes a half hour">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::attributed-information
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::s" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
-  <word first-word="based" remaining-words="on" />
- </morph>
- <example text="based on the locations of people strong is the closest hospital">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::attributed-information
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::s" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
 </dsl>

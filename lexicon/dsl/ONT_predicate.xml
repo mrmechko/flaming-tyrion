@@ -504,19 +504,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::attributed-information">
+ <concept name="ont::attributed-to">
  <relation label="inherit">
   ont::predicate
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="situation" />
+   <or>
+    <concept name="situation" />
+    <concept name="have-property" />
+    <concept name="correlation" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -579,6 +580,16 @@
  </sem-frame>
  </concept>
  <concept name="ont::additive">
+ <relation label="inherit">
+  ont::predicate
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::contrastive">
  <relation label="inherit">
   ont::predicate
  </relation>
