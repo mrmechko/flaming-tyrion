@@ -510,14 +510,25 @@
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="phys-obj" />
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="have-property" />
-    <concept name="correlation" />
-   </or>
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="type">
+    <or>
+     ont::have-property
+     ont::correlation
+    </or>
+    </feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>

@@ -1146,7 +1146,8 @@
   (INHERIT
     ONT::BEHAVIORAL-SCALE)
   (OVERLAP
-    WN::|affection%1:12:00::|))
+    WN::|affection%1:12:00::|
+    WN::|friendliness%1:07:00::|))
 
 (CONCEPT
   ONT::AFFECTION-VAL
@@ -3537,17 +3538,19 @@
     ONT::PREDICATE)
   (SEM-FRAME
     (ONT::GROUND
-     (CONCEPT
-       PHYS-OBJ)
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +))
      OPTIONAL)
     (ONT::FIGURE
-     (OR
-       (CONCEPT
+     (SEM-FEATS
+       (INHERIT
          SITUATION)
-       (CONCEPT
-         HAVE-PROPERTY)
-       (CONCEPT
-         CORRELATION))
+       (TYPE
+        (OR
+          ONT::HAVE-PROPERTY
+          ONT::CORRELATION)))
      OPTIONAL)))
 
 (CONCEPT
