@@ -283,26 +283,8 @@
  </morph>
  <relation label="inherit">
   ont::immediate
+  ont::binary-constraint-s-decl-templ
  </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-s-or-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="(or
-                                              deepsemlex::s
-                                              deepsemlex::np)" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-    pre-vp
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
  </sense>
  <sense>
  <morph>
@@ -346,5 +328,56 @@
   ont::immediate
   ont::pred-s-vp-templ
  </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="once" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="Once I opened the box, the cat jumped out">
+ </example>
+ <relation label="inherit">
+  ont::immediate
+  ont::binary-constraint-s-decl-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="upon" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="upon inspection/loading we found the flaw">
+ </example>
+ <relation label="inherit">
+  ont::immediate
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(or
+                                              deepsemlex::s
+                                              deepsemlex::np)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+    pre-vp
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
  </sense>
 </dsl>
