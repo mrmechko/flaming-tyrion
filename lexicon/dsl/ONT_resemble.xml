@@ -3,11 +3,16 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::resemble">
+ <comment>
+  &quot;one object is similar to another, related to ONT::SIMILAR&quot;
+ </comment>
  <relation label="inherit">
   ont::object-compare
  </relation>
  <relation label="overlap">
   wn::|conform%2:42:06::|
+  wn::|look_like%2:42:00::|
+  wn::|match%2:42:00::|
   wn::|resemble%2:42:00::|
  </relation>
  <sem-feats>
@@ -65,11 +70,13 @@
  </sem-feats>
  </concept>
  <concept name="ont::object-compare">
+ <comment>
+  &quot;one object is defined in terms of a static relationship with another object&quot;
+ </comment>
  <relation label="inherit">
   ont::event-of-state
  </relation>
  <relation label="overlap">
-  wn::|match%2:42:00::|
   wn::|coordinate%2:30:01::|
  </relation>
  <sem-feats>
@@ -247,6 +254,106 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
   </syn-sem>
  </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="look" remaining-words="like" />
+ </morph>
+ <comment>
+  &quot;CALOY1V4&quot;
+ </comment>
+ <example text="they look like dogs">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::resemble
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-neutral1-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">stage-level</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="match" />
+ </morph>
+ <comment>
+  &quot;CALO-Y1SCRIPT&quot;
+ </comment>
+ <example text="it doesn't match your specifications">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::resemble
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-neutral1-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">static</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="match" />
+ </morph>
+ <example text="his story does not match with her story">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::resemble
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-neutral1-xp-templ" xp="'(w::pp w::with)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::pp" head-word="w::with" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">static</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="match" />
+ </morph>
+ <example text="the two stories don't match exactly">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::resemble
+  ont::neutral-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">static</feat>
+  </sem-feats>
+ </semantics>
  </sense>
  <sense>
  <morph>

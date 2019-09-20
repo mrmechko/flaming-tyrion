@@ -6,6 +6,9 @@
  <relation label="inherit">
   ont::predicate
  </relation>
+ <relation label="overlap">
+  wn::|on_the_other_hand%4:02:00::|
+ </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground" optional="optional">
    <concept name="t" />
@@ -169,4 +172,32 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="on" remaining-words="the other hand" />
+ </morph>
+ <example text="on the other hand, Kim volunteered">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::contrastive
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::s" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
 </dsl>

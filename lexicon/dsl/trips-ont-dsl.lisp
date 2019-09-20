@@ -889,10 +889,10 @@
   (INHERIT
     ONT::PUTTING-TOGETHER)
   (OVERLAP
-    WN::|include%2:30:00::|
-    WN::|introduce%2:38:00::|
     WN::|add%2:30:00::|
-    WN::|inclusion%1:04:00::|)
+    WN::|include%2:30:00::|
+    WN::|inclusion%1:04:00::|
+    WN::|introduce%2:38:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -1044,8 +1044,8 @@
   (OVERLAP
     WN::|minimise%2:30:00::|
     WN::|minimize%2:30:00::|
-    WN::|maximize%2:30:00::|
-    WN::|maximise%2:30:00::|))
+    WN::|maximise%2:30:00::|
+    WN::|maximize%2:30:00::|))
 
 (CONCEPT
   ONT::ADMIT
@@ -1612,8 +1612,8 @@
   (INHERIT
     ONT::PROCESSES-OF-CONSCIOUSNESS)
   (OVERLAP
-    WN::|trip%2:34:00::|
-    WN::|hallucinate%2:39:00::|))
+    WN::|hallucinate%2:39:00::|
+    WN::|trip%2:34:00::|))
 
 (CONCEPT
   ONT::ALTERING-CONSCIOUSNESS-VAL
@@ -1644,12 +1644,12 @@
     ONT::ACQUIRE)
   (OVERLAP
     WN::|accumulate%2:30:00::|
-    WN::|cumulate%2:30:00::|
-    WN::|conglomerate%2:30:00::|
-    WN::|pile_up%2:30:00::|
-    WN::|gather%2:30:00::|
+    WN::|accumulation%1:04:00::|
     WN::|amass%2:30:00::|
-    WN::|accumulation%1:04:00::|))
+    WN::|conglomerate%2:30:00::|
+    WN::|cumulate%2:30:00::|
+    WN::|gather%2:30:00::|
+    WN::|pile_up%2:30:00::|))
 
 (CONCEPT
   ONT::AMBIGUOUS-VAL
@@ -2179,12 +2179,12 @@
   (INHERIT
     ONT::ACQUIRE-BY-ACTION)
   (OVERLAP
-    WN::|claim%2:32:03::|
     WN::|assume%2:38:00::|
-    WN::|fill%2:41:00::|
-    WN::|take%2:35:00::|
     WN::|catch%2:35:00::|
+    WN::|claim%2:32:03::|
+    WN::|fill%2:41:00::|
     WN::|snatch%2:35:02::|
+    WN::|take%2:35:00::|
     WN::|take%2:40:15::|)
   (SEM-FEATS
     (INHERIT
@@ -3836,9 +3836,9 @@
   (INHERIT
     ONT::PROCESSES-OF-CONSCIOUSNESS)
   (OVERLAP
-    WN::|wake%2:29:00::|
     WN::|arise%2:29:00::|
-    WN::|awake%2:29:00::|))
+    WN::|awake%2:29:00::|
+    WN::|wake%2:29:00::|))
 
 (CONCEPT
   ONT::AWAKE-VAL
@@ -5374,10 +5374,10 @@
   (INHERIT
     ONT::PHYSICAL-PROCESS)
   (OVERLAP
-    WN::|bodily_process%1:22:00::|
-    WN::|body_process%1:22:00::|
+    WN::|activity%1:22:00::|
     WN::|bodily_function%1:22:00::|
-    WN::|activity%1:22:00::|)
+    WN::|bodily_process%1:22:00::|
+    WN::|body_process%1:22:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -6131,9 +6131,9 @@
     ONT::COOK-IN-LIQUID)
   (OVERLAP
     WN::|blanch%2:30:00::|
-    WN::|boil%2:30:02::|
-    WN::|boil%2:30:01::|
     WN::|boil%2:30:00::|
+    WN::|boil%2:30:01::|
+    WN::|boil%2:30:02::|
     WN::|coddle%2:30:00::|
     WN::|poach%2:30:00::|))
 
@@ -6544,9 +6544,9 @@
     ONT::BODILY-PROCESS)
   (OVERLAP
     WN::|breathe%2:29:00::|
+    WN::|choke%2:29:00::|
     WN::|respire%2:29:00::|
-    WN::|suspire%2:29:03::|
-    WN::|choke%2:29:00::|))
+    WN::|suspire%2:29:03::|))
 
 (CONCEPT
   ONT::BREATHING-DISORDER
@@ -7199,10 +7199,10 @@
   (INHERIT
     ONT::ACQUIRE-BY-ACTION)
   (OVERLAP
-    WN::|take%2:40:01::|
-    WN::|get%2:35:09::|
+    WN::|capture%2:35:01::|
     WN::|catch%2:35:01::|
-    WN::|capture%2:35:01::|))
+    WN::|get%2:35:09::|
+    WN::|take%2:40:01::|))
 
 (CONCEPT
   ONT::CARD
@@ -7506,8 +7506,8 @@
     ONT::CAUSE-POSITION)
   (OVERLAP
     WN::|cover%2:35:00::|
-    WN::|cover%2:35:14::|
     WN::|cover%2:35:01::|
+    WN::|cover%2:35:14::|
     WN::|impregnate%2:30:00::|
     WN::|saturate%2:30:04::|))
 
@@ -9194,11 +9194,11 @@
   (INHERIT
     ONT::COOKING)
   (OVERLAP
-    WN::|ice%2:35:00::|
     WN::|bread%2:35:00::|
+    WN::|crumb%2:35:00::|
     WN::|dredge%2:35:03::|
     WN::|egg%2:35:00::|
-    WN::|crumb%2:35:00::|))
+    WN::|ice%2:35:00::|))
 
 (CONCEPT
   ONT::COFFEE
@@ -9789,16 +9789,16 @@
   (INHERIT
     ONT::COMMERCE)
   (OVERLAP
-    WN::|charge%2:40:03::|
-    WN::|bill%2:40:00::|))
+    WN::|bill%2:40:00::|
+    WN::|charge%2:40:03::|))
 
 (CONCEPT
   ONT::COMMERCE-PAY
   (INHERIT
     ONT::GIVING)
   (OVERLAP
-    WN::|pay%2:40:00::|
     WN::|bid%2:40:00::|
+    WN::|pay%2:40:00::|
     WN::|tithe%2:40:03::|)
   (SEM-FEATS
     (INHERIT
@@ -9832,8 +9832,8 @@
   (INHERIT
     ONT::GIVING)
   (OVERLAP
-    WN::|sell%2:40:00::|
-    WN::|merchandise%2:40:00::|)
+    WN::|merchandise%2:40:00::|
+    WN::|sell%2:40:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -10211,12 +10211,13 @@
   (INHERIT
     ONT::EVENT-OF-ACTION)
   (OVERLAP
-    WN::|keep%2:41:05::|
     WN::|celebrate%2:41:01::|
-    WN::|observe%2:41:02::|
+    WN::|conform%2:30:01::|
     WN::|keep%2:41:03::|
-    WN::|observe%2:41:04::|
-    WN::|obey%2:41:00::|)
+    WN::|keep%2:41:05::|
+    WN::|obey%2:41:00::|
+    WN::|observe%2:41:02::|
+    WN::|observe%2:41:04::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -10283,8 +10284,9 @@
 
 (CONCEPT
   ONT::COMPRISE
+  (COMMENT "one object is defined as a configuration of other objects")
   (INHERIT
-    ONT::IN-RELATION)
+    ONT::OBJECT-COMPARE)
   (OVERLAP
     WN::|consist%2:42:04::|)
   (SEM-FEATS
@@ -11058,6 +11060,8 @@
   ONT::CONTRASTIVE
   (INHERIT
     ONT::PREDICATE)
+  (OVERLAP
+    WN::|on_the_other_hand%4:02:00::|)
   (SEM-FRAME
     (ONT::GROUND
      (CONCEPT
@@ -11300,8 +11304,8 @@
   (INHERIT
     ONT::COOK)
   (OVERLAP
-    WN::|crisp%2:30:00::|
-    WN::|brown%2:30:00::|))
+    WN::|brown%2:30:00::|
+    WN::|crisp%2:30:00::|))
 
 (CONCEPT
   ONT::COOKIES
@@ -11531,6 +11535,7 @@
     WN::|affirm%2:31:00::|
     WN::|argue%2:32:01::|
     WN::|indicate%2:32:02::|
+    WN::|mean%2:42:03::|
     WN::|read%2:32:02::|
     WN::|underlie%2:42:00::|)
   (SEM-FEATS
@@ -12072,8 +12077,8 @@
   (INHERIT
     ONT::COOKING)
   (OVERLAP
-    WN::|prepare%2:36:01::|
-    WN::|brew%2:36:00::|)
+    WN::|brew%2:36:00::|
+    WN::|prepare%2:36:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -12386,9 +12391,9 @@
   (INHERIT
     ONT::TRANSFORMATION)
   (OVERLAP
+    WN::|damage%1:04:00::|
     WN::|damage%2:30:00::|
-    WN::|damage%2:30:01::|
-    WN::|damage%1:04:00::|)
+    WN::|damage%2:30:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -12442,12 +12447,12 @@
   (INHERIT
     ONT::MOVE)
   (OVERLAP
+    WN::|choreography%1:04:00::|
+    WN::|dance%2:36:00::|
     WN::|dance%2:38:01::|
     WN::|dance%2:38:02::|
-    WN::|dance%2:36:00::|
     WN::|dancing%1:04:00::|
-    WN::|stage_dancing%1:04:00::|
-    WN::|choreography%1:04:00::|)
+    WN::|stage_dancing%1:04:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (SEM-FEATS
@@ -13055,9 +13060,9 @@
   (INHERIT
     ONT::DAMAGE)
   (OVERLAP
+    WN::|bruise%2:30:00::|
     WN::|dent%2:35:00::|
-    WN::|indent%2:35:00::|
-    WN::|bruise%2:30:00::|))
+    WN::|indent%2:35:00::|))
 
 (CONCEPT
   ONT::DENTAL-PROPERTY-VAL
@@ -13473,8 +13478,9 @@
 
 (CONCEPT
   ONT::DIFFER
+  (COMMENT "object is not similar to another with respect to some property")
   (INHERIT
-    ONT::IN-RELATION)
+    ONT::OBJECT-COMPARE)
   (OVERLAP
     WN::|differ%2:42:00::|)
   (SEM-FRAME
@@ -13967,8 +13973,8 @@
   (INHERIT
     ONT::RELINQUISH)
   (OVERLAP
-    WN::|eliminate%2:31:00::|
     WN::|eliminate%2:30:01::|
+    WN::|eliminate%2:31:00::|
     WN::|eliminate%2:42:01::|
     WN::|get_rid_of%2:40:01::|)
   (SEM-FRAME
@@ -14514,8 +14520,8 @@
     ONT::GIVING)
   (OVERLAP
     WN::|donate%2:40:00::|
-    WN::|gift%2:40:00::|
-    WN::|gift%1:21:00::|))
+    WN::|gift%1:21:00::|
+    WN::|gift%2:40:00::|))
 
 (CONCEPT
   ONT::DOSE
@@ -14579,9 +14585,9 @@
   (INHERIT
     ONT::MOVE)
   (OVERLAP
+    WN::|drift%2:38:01::|
     WN::|drift%2:38:02::|
-    WN::|drift%2:38:04::|
-    WN::|drift%2:38:01::|))
+    WN::|drift%2:38:04::|))
 
 (CONCEPT
   ONT::DRILLING-TOOL
@@ -15453,8 +15459,8 @@
     ONT::CHANGING-RULES)
   (OVERLAP
     WN::|enact%2:41:00::|
-    WN::|segregate%2:41:00::|
-    WN::|imposition%1:04:02::|))
+    WN::|imposition%1:04:02::|
+    WN::|segregate%2:41:00::|))
 
 (CONCEPT
   ONT::ENCHANTED-VAL
@@ -15807,6 +15813,7 @@
   (OVERLAP
     WN::|equal%3:00:00::|
     WN::|equivalent%5:00:00:equal:00|
+    WN::|even%3:00:01::|
     WN::|even%3:00:01:equal:00|
     WN::|even%5:00:01:equal:00|
     WN::|even%5:00:02:equal:00|)
@@ -15891,17 +15898,17 @@
   (INHERIT
     ONT::CREATE)
   (OVERLAP
-    WN::|launch%2:41:01::|
-    WN::|found%2:41:00::|
-    WN::|set_up%2:41:02::|
-    WN::|establish%2:41:00::|
-    WN::|establish%2:36:00::|
-    WN::|found%2:36:00::|
-    WN::|plant%2:36:00::|
     WN::|constitute%2:36:00::|
-    WN::|institute%2:36:01::|
     WN::|create%2:36:02::|
     WN::|establish%2:35:00::|
+    WN::|establish%2:36:00::|
+    WN::|establish%2:41:00::|
+    WN::|found%2:36:00::|
+    WN::|found%2:41:00::|
+    WN::|institute%2:36:01::|
+    WN::|launch%2:41:01::|
+    WN::|plant%2:36:00::|
+    WN::|set_up%2:41:02::|
     WN::|start%2:36:00::|)
   (SEM-FEATS
     (INHERIT
@@ -15910,10 +15917,12 @@
     (CAUSE AGENTIVE)
     (TYPE ONT::ESTABLISH))
   (SEM-FRAME
-    (ONT::MANNER
+    (ONT::NEUTRAL
      (CONCEPT
-       T)
-     OPTIONAL)
+       T))
+    (ONT::AFFECTED
+     (CONCEPT
+       T))
     (ONT::AGENT
      (CONCEPT
        T)
@@ -16833,10 +16842,10 @@
   (INHERIT
     ONT::EXCRETE)
   (OVERLAP
-    WN::|urinate%2:29:01::|
-    WN::|urinate%2:29:00::|
+    WN::|defecate%2:29:00::|
     WN::|excretion%1:22:00::|
-    WN::|defecate%2:29:00::|))
+    WN::|urinate%2:29:00::|
+    WN::|urinate%2:29:01::|))
 
 (CONCEPT
   ONT::EXECUTE
@@ -16910,16 +16919,16 @@
   (INHERIT
     ONT::BREATHE)
   (OVERLAP
-    WN::|exhale%2:29:00::|
-    WN::|exhalation%1:04:00::|))
+    WN::|exhalation%1:04:00::|
+    WN::|exhale%2:29:00::|))
 
 (CONCEPT
   ONT::EXHALE-FORCEFULLY
   (INHERIT
     ONT::EXHALE)
   (OVERLAP
-    WN::|sneeze%2:29:00::|
-    WN::|cough%2:29:00::|))
+    WN::|cough%2:29:00::|
+    WN::|sneeze%2:29:00::|))
 
 (CONCEPT
   ONT::EXHIBITION
@@ -17483,16 +17492,16 @@
   (INHERIT
     ONT::MOVE-DOWNWARD)
   (OVERLAP
-    WN::|fall%2:38:03::|
-    WN::|fall%2:38:00::|))
+    WN::|fall%2:38:00::|
+    WN::|fall%2:38:03::|))
 
 (CONCEPT
   ONT::FALL-ASLEEP
   (INHERIT
     ONT::PROCESSES-OF-CONSCIOUSNESS)
   (OVERLAP
-    WN::|go_to_bed%2:29:00::|
-    WN::|fall_asleep%2:29:00::|))
+    WN::|fall_asleep%2:29:00::|
+    WN::|go_to_bed%2:29:00::|))
 
 (CONCEPT
   ONT::FALSE-SCALE
@@ -17821,8 +17830,8 @@
   (INHERIT
     ONT::GIVING)
   (OVERLAP
-    WN::|give%2:34:00::|
-    WN::|drench%2:34:00::|))
+    WN::|drench%2:34:00::|
+    WN::|give%2:34:00::|))
 
 (CONCEPT
   ONT::FEELING
@@ -18205,8 +18214,8 @@
   (INHERIT
     ONT::COOKING)
   (OVERLAP
-    WN::|flavor%2:39:00::|
-    WN::|change_taste%2:39:00::|))
+    WN::|change_taste%2:39:00::|
+    WN::|flavor%2:39:00::|))
 
 (CONCEPT
   ONT::FLEXIBILITY-SCALE
@@ -19003,8 +19012,8 @@
     ONT::DONATE-GIVE)
   (OVERLAP
     WN::|bequeath%2:40:00::|
-    WN::|will%2:40:00::|
-    WN::|leave%2:40:01::|))
+    WN::|leave%2:40:01::|
+    WN::|will%2:40:00::|))
 
 (CONCEPT
   ONT::GAME
@@ -19535,11 +19544,11 @@
   (OVERLAP
     WN::|give%2:40:00::|
     WN::|give%2:40:03::|
+    WN::|give%2:40:11::|
     WN::|giving%1:04:00::|
     WN::|offer%1:10:01::|
     WN::|offering%1:10:01::|
-    WN::|send_in%2:41:00::|
-    WN::|give%2:40:11::|)
+    WN::|send_in%2:41:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -20587,7 +20596,6 @@
   (OVERLAP
     WN::|be%2:42:03::|
     WN::|be%2:42:05::|
-    WN::|mean%2:42:03::|
     WN::|sound%2:39:03::|)
   (SEM-FEATS
     (INHERIT
@@ -20935,8 +20943,8 @@
   (OVERLAP
     WN::|foreground%2:30:00::|
     WN::|highlight%2:30:00::|
-    WN::|spotlight%2:30:01::|
-    WN::|play_up%2:30:00::|)
+    WN::|play_up%2:30:00::|
+    WN::|spotlight%2:30:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -22940,14 +22948,15 @@
 
 (CONCEPT
   ONT::IS-COMPATIBLE-WITH
+  (COMMENT "one object meets some criteria defined by another object")
   (INHERIT
-    ONT::STATE-OF-BEING)
+    ONT::EVENT-OF-STATE)
   (OVERLAP
     WN::|accept%2:42:00::|
-    WN::|take%2:42:03::|
     WN::|accompany%2:42:00::|
+    WN::|agree%2:42:03::|
     WN::|apply%2:42:01::|
-    WN::|agree%2:42:03::|)
+    WN::|take%2:42:03::|)
   (SEM-FRAME
     (ONT::NEUTRAL1
      (OR
@@ -23487,13 +23496,13 @@
   (INHERIT
     ONT::ADJUST)
   (OVERLAP
-    WN::|reduce%2:30:08::|
+    WN::|abbreviate%2:30:01::|
+    WN::|abridge%2:30:00::|
     WN::|contract%2:30:05::|
     WN::|cut%2:30:08::|
-    WN::|shorten%2:30:02::|
-    WN::|abbreviate%2:30:01::|
     WN::|foreshorten%2:30:00::|
-    WN::|abridge%2:30:00::|
+    WN::|reduce%2:30:08::|
+    WN::|shorten%2:30:02::|
     WN::|simplify%2:30:00::|))
 
 (CONCEPT
@@ -23711,20 +23720,20 @@
   (INHERIT
     ONT::COMMERCE)
   (OVERLAP
-    WN::|take%2:40:03::|
-    WN::|engage%2:40:00::|
     WN::|charter%2:40:00::|
-    WN::|hire%2:40:00::|
-    WN::|rent%2:40:00::|
-    WN::|lease%2:40:00::|
-    WN::|lease%2:41:01::|
     WN::|charter%2:41:01::|
+    WN::|engage%2:40:00::|
+    WN::|hire%2:40:00::|
     WN::|hire%2:41:01::|
+    WN::|hire_out%2:40:00::|
+    WN::|lease%2:40:00::|
+    WN::|lease%2:41:00::|
+    WN::|lease%2:41:01::|
+    WN::|rent%2:40:00::|
+    WN::|rent%2:40:01::|
     WN::|rent%2:41:00::|
     WN::|rent%2:41:01::|
-    WN::|lease%2:41:00::|
-    WN::|rent%2:40:01::|
-    WN::|hire_out%2:40:00::|)
+    WN::|take%2:40:03::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -23837,11 +23846,11 @@
   (INHERIT
     ONT::COMMERCE-SELL)
   (OVERLAP
-    WN::|loan%2:40:00::|
+    WN::|hock%2:40:00::|
     WN::|lend%2:40:00::|
+    WN::|loan%2:40:00::|
     WN::|pawn%2:40:00::|
-    WN::|soak%2:40:03::|
-    WN::|hock%2:40:00::|))
+    WN::|soak%2:40:03::|))
 
 (CONCEPT
   ONT::LENGTH-SCALE
@@ -24917,9 +24926,9 @@
   (INHERIT
     ONT::SELF-LOCOMOTE)
   (OVERLAP
+    WN::|ascend%2:38:02::|
     WN::|climb%2:38:00::|
-    WN::|climb%2:38:01::|
-    WN::|ascend%2:38:02::|))
+    WN::|climb%2:38:01::|))
 
 (CONCEPT
   ONT::LOCUTION
@@ -25063,8 +25072,8 @@
   (INHERIT
     ONT::PROCESSES-OF-CONSCIOUSNESS)
   (OVERLAP
-    WN::|zonk_out%2:29:01::|
-    WN::|loss_of_consciousness%1:11:00::|))
+    WN::|loss_of_consciousness%1:11:00::|
+    WN::|zonk_out%2:29:01::|))
 
 (CONCEPT
   ONT::LOUDEN
@@ -27218,24 +27227,24 @@
   (INHERIT
     ONT::MOTION)
   (OVERLAP
-    WN::|make%2:38:05::|
-    WN::|take%2:38:05::|
-    WN::|travel%2:38:00::|
-    WN::|go%2:38:00::|
-    WN::|move%2:38:03::|
-    WN::|locomote%2:38:00::|
     WN::|be_active%2:29:00::|
     WN::|draw%2:35:13::|
+    WN::|go%2:33:00::|
+    WN::|go%2:38:00::|
     WN::|go%2:42:06::|
     WN::|jaunt%2:38:00::|
+    WN::|locomote%2:38:00::|
+    WN::|make%2:38:05::|
+    WN::|mobilize%2:30:00::|
     WN::|move%2:38:00::|
     WN::|move%2:38:02::|
+    WN::|move%2:38:03::|
     WN::|move_out%2:41:00::|
-    WN::|wreathe%2:38:00::|
-    WN::|mobilize%2:30:00::|
-    WN::|go%2:33:00::|
+    WN::|relocation%1:04:00::|
+    WN::|take%2:38:05::|
     WN::|transport%1:04:01::|
-    WN::|relocation%1:04:00::|)
+    WN::|travel%2:38:00::|
+    WN::|wreathe%2:38:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -27291,8 +27300,8 @@
   (INHERIT
     ONT::TRANSPORTATION)
   (OVERLAP
-    WN::|take%2:38:02::|
     WN::|drive%2:38:11::|
+    WN::|take%2:38:02::|
     WN::|take%2:38:11::|)
   (SEM-FRAME
     (ONT::FORMAL
@@ -27342,19 +27351,19 @@
   (INHERIT
     ONT::SELF-LOCOMOTE)
   (OVERLAP
-    WN::|run%2:38:00::|
+    WN::|hasten%2:36:00::|
     WN::|hurry%2:38:00::|
-    WN::|rush%2:38:00::|
+    WN::|run%2:38:00::|
     WN::|rush%2:30:00::|
-    WN::|hasten%2:36:00::|))
+    WN::|rush%2:38:00::|))
 
 (CONCEPT
   ONT::MOVE-SLOWLY
   (INHERIT
     ONT::SELF-LOCOMOTE)
   (OVERLAP
-    WN::|mosey%2:38:00::|
-    WN::|amble%2:38:00::|))
+    WN::|amble%2:38:00::|
+    WN::|mosey%2:38:00::|))
 
 (CONCEPT
   ONT::MOVE-TOWARD
@@ -30411,10 +30420,11 @@
 
 (CONCEPT
   ONT::OBJECT-COMPARE
+  (COMMENT
+   "one object is defined in terms of a static relationship with another object")
   (INHERIT
     ONT::EVENT-OF-STATE)
   (OVERLAP
-    WN::|match%2:42:00::|
     WN::|coordinate%2:30:01::|)
   (SEM-FEATS
     (INHERIT
@@ -30542,13 +30552,13 @@
   (INHERIT
     ONT::BREATHE)
   (OVERLAP
-    WN::|wheeze%2:29:00::|
-    WN::|wheeze%1:04:00::|
-    WN::|suffocate%2:29:01::|
-    WN::|suffocate%2:35:01::|
     WN::|choke%2:29:01::|
     WN::|choke%2:29:03::|
-    WN::|pant%2:29:00::|))
+    WN::|pant%2:29:00::|
+    WN::|suffocate%2:29:01::|
+    WN::|suffocate%2:35:01::|
+    WN::|wheeze%1:04:00::|
+    WN::|wheeze%2:29:00::|))
 
 (CONCEPT
   ONT::OCCASIONAL
@@ -30796,10 +30806,14 @@
   ONT::OFFER
   (INHERIT
     ONT::COMMISSIVE)
+  (OVERLAP
+    WN::|volunteer%2:41:00::|
+    WN::|volunteer%2:41:01::|)
   (SEM-FRAME
-    (ONT::RESULT
+    (ONT::FORMAL
      (CONCEPT
-       T))))
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::OFFICE-SUPPLY-COMPANY
@@ -30883,8 +30897,8 @@
   (INHERIT
     ONT::ADJUST)
   (OVERLAP
-    WN::|drop%2:31:00::|
-    WN::|delete%2:35:00::|)
+    WN::|delete%2:35:00::|
+    WN::|drop%2:31:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -31473,7 +31487,7 @@
 (CONCEPT
   ONT::OWE
   (INHERIT
-    ONT::STATE-OF-BEING)
+    ONT::EVENT-OF-STATE)
   (OVERLAP
     WN::|owe%2:40:01::|)
   (SEM-FRAME
@@ -32378,9 +32392,9 @@
   (INHERIT
     ONT::EVENT-OF-UNDERGOING-ACTION)
   (OVERLAP
-    WN::|process%1:03:00::|
+    WN::|physical_phenomenon%1:19:00::|
     WN::|physical_process%1:03:00::|
-    WN::|physical_phenomenon%1:19:00::|)
+    WN::|process%1:03:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -35165,8 +35179,8 @@
   (INHERIT
     ONT::BODILY-PROCESS)
   (OVERLAP
-    WN::|pulse%1:28:00::|
-    WN::|pulse%1:11:00::|)
+    WN::|pulse%1:11:00::|
+    WN::|pulse%1:28:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -35192,16 +35206,17 @@
   (OVERLAP
     WN::|punish%2:41:00::|
     WN::|penalize%2:41:00::|
-    WN::|penalise%2:41:00::|))
+    WN::|penalise%2:41:00::|
+    WN::|revenge%1:04:00::|))
 
 (CONCEPT
   ONT::PURCHASE
   (INHERIT
     ONT::COMMERCE)
   (OVERLAP
-    WN::|purchase%2:40:00::|
     WN::|buy%2:40:00::|
-    WN::|purchase%1:04:00::|)
+    WN::|purchase%1:04:00::|
+    WN::|purchase%2:40:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -35336,13 +35351,15 @@
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
   (OVERLAP
-    WN::|put%2:35:00::|
-    WN::|set%2:35:00::|
+    WN::|base%2:42:04::|
+    WN::|interpose%2:38:01::|
+    WN::|lay%2:35:01::|
+    WN::|locate%2:40:01::|
     WN::|place%2:35:00::|
     WN::|pose%2:35:02::|
     WN::|position%2:35:00::|
-    WN::|lay%2:35:01::|
-    WN::|interpose%2:38:01::|)
+    WN::|put%2:35:00::|
+    WN::|set%2:35:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -37012,8 +37029,8 @@
     ONT::COOKING)
   (OVERLAP
     WN::|bone%2:30:00::|
-    WN::|seed%2:30:01::|
     WN::|pit%2:30:00::|
+    WN::|seed%2:30:01::|
     WN::|shell%2:30:00::|
     WN::|shuck%2:30:03::|))
 
@@ -37423,10 +37440,13 @@
 
 (CONCEPT
   ONT::RESEMBLE
+  (COMMENT "one object is similar to another, related to ONT::SIMILAR")
   (INHERIT
     ONT::OBJECT-COMPARE)
   (OVERLAP
     WN::|conform%2:42:06::|
+    WN::|look_like%2:42:00::|
+    WN::|match%2:42:00::|
     WN::|resemble%2:42:00::|)
   (SEM-FEATS
     (INHERIT
@@ -37463,9 +37483,9 @@
     ONT::ACQUIRE)
   (OVERLAP
     WN::|book%2:41:01::|
+    WN::|booking%1:04:00::|
     WN::|hold%2:41:00::|
     WN::|reserve%2:41:00::|
-    WN::|booking%1:04:00::|
     WN::|reservation%1:04:01::|)
   (SEM-FEATS
     (INHERIT
@@ -38298,10 +38318,10 @@
   (INHERIT
     ONT::ACQUIRE)
   (OVERLAP
-    WN::|recover%2:40:00::|
-    WN::|retrieve%2:40:00::|
     WN::|find%2:40:15::|
-    WN::|regain%2:40:00::|))
+    WN::|recover%2:40:00::|
+    WN::|regain%2:40:00::|
+    WN::|retrieve%2:40:00::|))
 
 (CONCEPT
   ONT::RETURN
@@ -38343,13 +38363,6 @@
          PHYS-OBJ)
        (CONCEPT
          ABSTR-OBJ)))))
-
-(CONCEPT
-  ONT::REVENGE-PUNISH
-  (INHERIT
-    ONT::PUNISH)
-  (OVERLAP
-    WN::|revenge%2:33:00::|))
 
 (CONCEPT
   ONT::REVENUE
@@ -38551,8 +38564,8 @@
   (INHERIT
     ONT::COOK-IN-DRY-HEAT)
   (OVERLAP
-    WN::|roast%2:30:00::|
-    WN::|grill%2:30:00::|))
+    WN::|grill%2:30:00::|
+    WN::|roast%2:30:00::|))
 
 (CONCEPT
   ONT::ROBOT
@@ -39468,8 +39481,8 @@
     WN::|splash%2:35:02::|
     WN::|walk%2:38:00::|
     WN::|walk%2:38:02::|
-    WN::|walk%2:38:04::|
-    WN::|walk%2:38:03::|)
+    WN::|walk%2:38:03::|
+    WN::|walk%2:38:04::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -40787,11 +40800,11 @@
   (INHERIT
     ONT::PROCESSES-OF-CONSCIOUSNESS)
   (OVERLAP
-    WN::|sleep%2:29:00::|
+    WN::|nap%1:28:00::|
     WN::|oversleep%2:29:00::|
     WN::|sleep%1:26:00::|
     WN::|sleep%1:26:02::|
-    WN::|nap%1:28:00::|))
+    WN::|sleep%2:29:00::|))
 
 (CONCEPT
   ONT::SLEEPINESS-SCALE
@@ -42219,26 +42232,6 @@
     ONT::ORDERED-DOMAIN))
 
 (CONCEPT
-  ONT::STATE-OF-BEING
-  (INHERIT
-    ONT::EVENT-OF-STATE)
-  (SEM-FRAME
-    (ONT::FORMAL
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION)))
-    ((ONT::NEUTRAL ONT::DONOR)
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))))
-
-(CONCEPT
   ONT::STATE-OF-WORRYING
   (INHERIT
     ONT::CARE)
@@ -42399,8 +42392,8 @@
   (INHERIT
     ONT::ACQUIRE-BY-ACTION)
   (OVERLAP
-    WN::|loot%2:40:01::|
     WN::|loot%2:40:00::|
+    WN::|loot%2:40:01::|
     WN::|steal%2:40:00::|))
 
 (CONCEPT
@@ -42409,8 +42402,8 @@
   (INHERIT
     ONT::FLAVOR)
   (OVERLAP
-    WN::|steep%2:30:00::|
-    WN::|percolate%2:35:02::|))
+    WN::|percolate%2:35:02::|
+    WN::|steep%2:30:00::|))
 
 (CONCEPT
   ONT::STEP
@@ -42442,8 +42435,8 @@
   (INHERIT
     ONT::COOK-IN-LIQUID)
   (OVERLAP
-    WN::|stew%2:30:00::|
-    WN::|braise%2:30:00::|))
+    WN::|braise%2:30:00::|
+    WN::|stew%2:30:00::|))
 
 (CONCEPT
   ONT::STICKY-VAL
@@ -43168,10 +43161,10 @@
   (INHERIT
     ONT::GIVING)
   (OVERLAP
-    WN::|supply%2:40:00::|
+    WN::|furnish%2:40:00::|
     WN::|provide%2:40:00::|
     WN::|render%2:40:02::|
-    WN::|furnish%2:40:00::|)
+    WN::|supply%2:40:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (CONCEPT
@@ -43490,8 +43483,8 @@
     ONT::ACQUIRE-BY-ACTION)
   (OVERLAP
     WN::|cheat%2:41:00::|
-    WN::|rip_off%2:41:00::|
-    WN::|chisel%2:41:01::|)
+    WN::|chisel%2:41:01::|
+    WN::|rip_off%2:41:00::|)
   (SEM-FRAME
     (ONT::AFFECTED1
      (OR
@@ -46578,13 +46571,13 @@
   (INHERIT
     ONT::ADJUST)
   (OVERLAP
-    WN::|sharpen%2:39:00::|
-    WN::|sharpen%2:30:03::|
-    WN::|soften%2:39:00::|
-    WN::|blur%2:39:00::|
     WN::|blur%2:30:01::|
+    WN::|blur%2:39:00::|
+    WN::|blur%2:39:01::|
     WN::|focus%2:30:00::|
-    WN::|blur%2:39:01::|))
+    WN::|sharpen%2:30:03::|
+    WN::|sharpen%2:39:00::|
+    WN::|soften%2:39:00::|))
 
 (CONCEPT
   ONT::VISUAL-CLARITY-SCALE
@@ -46596,11 +46589,11 @@
   (INHERIT
     ONT::SHOW)
   (OVERLAP
-    WN::|expose%2:39:00::|
     WN::|bring_on%2:36:01::|
-    WN::|project%2:39:01::|
     WN::|confront%2:32:03::|
-    WN::|flash%2:30:03::|))
+    WN::|expose%2:39:00::|
+    WN::|flash%2:30:03::|
+    WN::|project%2:39:01::|))
 
 (CONCEPT
   ONT::VISUAL-DISTINCTIVENSS-SCALE
@@ -46733,8 +46726,8 @@
   (INHERIT
     ONT::EXCRETE)
   (OVERLAP
-    WN::|vomit%2:29:00::|
-    WN::|gag%2:29:01::|))
+    WN::|gag%2:29:01::|
+    WN::|vomit%2:29:00::|))
 
 (CONCEPT
   ONT::VOYAGE

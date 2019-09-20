@@ -203,7 +203,6 @@
  <relation label="overlap">
   wn::|be%2:42:03::|
   wn::|be%2:42:05::|
-  wn::|mean%2:42:03::|
   wn::|sound%2:39:03::|
  </relation>
  <sem-feats>
@@ -282,11 +281,13 @@
  </sem-frame>
  </concept>
  <concept name="ont::object-compare">
+ <comment>
+  &quot;one object is defined in terms of a static relationship with another object&quot;
+ </comment>
  <relation label="inherit">
   ont::event-of-state
  </relation>
  <relation label="overlap">
-  wn::|match%2:42:00::|
   wn::|coordinate%2:30:01::|
  </relation>
  <sem-feats>
@@ -377,23 +378,54 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::state-of-being">
+ <concept name="ont::owe">
  <relation label="inherit">
   ont::event-of-state
  </relation>
+ <relation label="overlap">
+  wn::|owe%2:40:01::|
+ </relation>
  <sem-frame>
-  <role-restr-map roles="ont::formal">
+  <role-restr-map roles="ont::neutral2" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
-    <concept name="situation" />
    </or>
   </role-restr-map>
-  <role-restr-map roles="ont::neutral ont::donor">
+ </sem-frame>
+ </concept>
+ <concept name="ont::is-compatible-with">
+ <comment>
+  &quot;one object meets some criteria defined by another object&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-state
+ </relation>
+ <relation label="overlap">
+  wn::|accept%2:42:00::|
+  wn::|accompany%2:42:00::|
+  wn::|agree%2:42:03::|
+  wn::|apply%2:42:01::|
+  wn::|take%2:42:03::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral1" optional="optional">
    <or>
     <concept name="phys-obj" />
+    <concept name="situation" />
     <concept name="abstr-obj" />
    </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">-</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -566,6 +598,7 @@
   wn::|affirm%2:31:00::|
   wn::|argue%2:32:01::|
   wn::|indicate%2:32:02::|
+  wn::|mean%2:42:03::|
   wn::|read%2:32:02::|
   wn::|underlie%2:42:00::|
  </relation>

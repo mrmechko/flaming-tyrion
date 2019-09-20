@@ -3,8 +3,11 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::comprise">
+ <comment>
+  &quot;one object is defined as a configuration of other objects&quot;
+ </comment>
  <relation label="inherit">
-  ont::in-relation
+  ont::object-compare
  </relation>
  <relation label="overlap">
   wn::|consist%2:42:04::|
@@ -52,74 +55,14 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::neutral1">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="type">ont::object-compare</feat>
- </sem-feats>
- <concept name="ont::event-of-state">
- <comment>
-  &quot;Events describing a state of affairs holding&quot;
- </comment>
- <relation label="inherit">
-  ont::situation-root
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">static</feat>
-  <feat name="type">ont::event-of-state</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="time-span">extended</feat>
- <feat name="aspect">static</feat>
- <feat name="type">ont::in-relation</feat>
- </sem-feats>
  <concept name="ont::object-compare">
+ <comment>
+  &quot;one object is defined in terms of a static relationship with another object&quot;
+ </comment>
  <relation label="inherit">
   ont::event-of-state
  </relation>
  <relation label="overlap">
-  wn::|match%2:42:00::|
   wn::|coordinate%2:30:01::|
  </relation>
  <sem-feats>
@@ -156,26 +99,60 @@
  <feat name="aspect">static</feat>
  <feat name="type">ont::comprise</feat>
  </sem-feats>
- <concept name="ont::in-relation">
+ <concept name="ont::event-of-state">
+ <comment>
+  &quot;Events describing a state of affairs holding&quot;
+ </comment>
  <relation label="inherit">
-  ont::object-compare
- </relation>
- <relation label="overlap">
-  wn::|diverge%2:42:00::|
-  wn::|dominate%2:42:00::|
-  wn::|go_by%2:32:00::|
-  wn::|exceed%2:42:01::|
-  wn::|follow%2:42:00::|
+  ont::situation-root
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="time-span">extended</feat>
   <feat name="aspect">static</feat>
-  <feat name="type">ont::in-relation</feat>
+  <feat name="type">ont::event-of-state</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="type">ont::object-compare</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral1">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::situation-root">
  <comment>
   &quot;root for all events, whether verbal or nominal&quot;

@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::owe">
  <relation label="inherit">
-  ont::state-of-being
+  ont::event-of-state
  </relation>
  <relation label="overlap">
   wn::|owe%2:40:01::|
@@ -55,25 +55,43 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <concept name="ont::state-of-being">
- <relation label="inherit">
-  ont::event-of-state
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::formal">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral ont::donor">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="aspect">static</feat>
+ <feat name="type">ont::event-of-state</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="container">-</feat>
+  <feat name="intentional">-</feat>
+  <feat name="type">ont::situation-root</feat>
+ </sem-feats>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::neutral2" optional="optional">
@@ -115,59 +133,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral ont::donor">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-root">
- <comment>
-  &quot;root for all events, whether verbal or nominal&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="container">-</feat>
-  <feat name="intentional">-</feat>
-  <feat name="type">ont::situation-root</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">static</feat>
- <feat name="type">ont::event-of-state</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -187,6 +152,9 @@
   <pos pos="v" />
   <word first-word="owe" />
  </morph>
+ <example text="he owes them money">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::owe
  </relation>
@@ -197,6 +165,25 @@
   <template-call template="ont::neutral-neutral1-neutral2-xp-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::neutral2"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral1"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="owe" />
+ </morph>
+ <example text="he owed a lot of money">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::owe
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-neutral1-xp-templ" />
+  <syn-sem>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral1"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
   </syn-sem>
