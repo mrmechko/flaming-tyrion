@@ -3524,12 +3524,18 @@
     WN::|attribute%2:31:01::|)
   (SEM-FRAME
     (ONT::NEUTRAL1
-     (CONCEPT
-       SITUATION)
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
      OPTIONAL)
     (ONT::NEUTRAL
-     (CONCEPT
-       SITUATION)
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
      OPTIONAL)))
 
 (CONCEPT
@@ -8222,7 +8228,10 @@
      (SEM-FEATS
        (INHERIT
          ABSTR-OBJ)
-       (TYPE ONT::RESULTING-STATE))
+       (TYPE
+        (OR
+          ONT::RESULTING-STATE
+          ONT::DOMAIN-PROPERTY)))
      OPTIONAL)))
 
 (CONCEPT

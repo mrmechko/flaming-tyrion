@@ -4010,10 +4010,16 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::neutral1" optional="optional">
-    <concept name="situation" />
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+    </or>
    </role-restr-map>
    <role-restr-map roles="ont::neutral" optional="optional">
-    <concept name="situation" />
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -9257,7 +9263,12 @@
      <relation label="inherit">
       abstr-obj
      </relation>
-     <feat name="type">ont::resulting-state</feat>
+     <feat name="type">
+     <or>
+      ont::resulting-state
+      ont::domain-property
+     </or>
+     </feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
