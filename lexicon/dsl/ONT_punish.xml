@@ -12,6 +12,11 @@
   wn::|penalise%2:41:00::|
   wn::|revenge%1:04:00::|
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -120,6 +125,11 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::agent-interaction">
  <comment>
   &quot;events that involve the interaction of two or more agents&quot;
@@ -326,6 +336,9 @@
    </nom>
   </forms>
  </morph>
+ <example text="he punished him for her murder">
+  <provenance name="TRIPS"/>
+ </example>
  <relation label="inherit">
   ont::punish
  </relation>
@@ -339,6 +352,25 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="punish" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="punishment" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="he punished the crime">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::punish
+  ont::agent-neutral-templ
+ </relation>
  </sense>
  <sense>
  <morph>

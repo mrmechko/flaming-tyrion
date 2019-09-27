@@ -1054,7 +1054,6 @@
   (OVERLAP
     WN::|accept%2:40:03::|
     WN::|admit%2:41:00::|
-    WN::|invite%2:35:12::|
     WN::|admit%2:41:01::|))
 
 (CONCEPT
@@ -3774,6 +3773,17 @@
     WN::|handy%5:00:00:accessible:00|
     WN::|available%5:00:00:free:00|
     WN::|unoccupied%3:00:00::|))
+
+(CONCEPT
+  ONT::AVENGE
+  (INHERIT
+    ONT::JUDGEMENT)
+  (OVERLAP
+    WN::|revenge%2:33:00::|)
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::AVOID-LOCATION
@@ -35216,7 +35226,12 @@
     WN::|punish%2:41:00::|
     WN::|penalize%2:41:00::|
     WN::|penalise%2:41:00::|
-    WN::|revenge%1:04:00::|))
+    WN::|revenge%1:04:00::|)
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::PURCHASE
