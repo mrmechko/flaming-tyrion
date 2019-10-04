@@ -12898,6 +12898,7 @@
   (INHERIT
     ONT::DEGREE-MODIFIER)
   (OVERLAP
+    WN::|profusely%4:02:00::|
     WN::|very%4:02:00::|)
   (SEM-FRAME
     (ONT::FIGURE
