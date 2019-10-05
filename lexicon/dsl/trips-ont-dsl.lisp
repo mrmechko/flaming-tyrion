@@ -3896,7 +3896,8 @@
     WN::|think%2:31:00::|
     WN::|cogitate%2:31:00::|
     WN::|cerebrate%2:31:00::|
-    WN::|attention%1:09:00::|)
+    WN::|attention%1:09:00::|
+    WN::|attention%1:09:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -9382,7 +9383,8 @@
     WN::|array%1:10:00::|
     WN::|series%1:14:01::|
     WN::|trinketry%1:14:00::|
-    WN::|population%1:14:01::|))
+    WN::|population%1:14:01::|
+    WN::|batch%1:23:00::|))
 
 (CONCEPT
   ONT::COLLECTION-ABSTR
@@ -11098,7 +11100,8 @@
     WN::|control%1:04:00::|
     WN::|command%2:41:00::|
     WN::|discharge%2:33:01::|
-    WN::|social_control%1:04:00::|)
+    WN::|social_control%1:04:00::|
+    WN::|hegemony%1:14:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (OR
@@ -11238,7 +11241,8 @@
     WN::|talk_of%2:32:00::|
     WN::|converse%2:32:00::|
     WN::|discourse%2:32:01::|
-    WN::|correspond%2:32:00::|)
+    WN::|correspond%2:32:00::|
+    WN::|conversation%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -15744,7 +15748,8 @@
     WN::|go_into%2:38:00::|
     WN::|go_in%2:38:00::|
     WN::|move_into%2:38:00::|
-    WN::|enter%2:36:00::|)
+    WN::|enter%2:36:00::|
+    WN::|entrance%1:11:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (SEM-FEATS
@@ -17417,6 +17422,8 @@
   ONT::FACT
   (INHERIT
     ONT::ABSTRACT-OBJECT-NONTEMPORAL)
+  (OVERLAP
+    WN::|fact%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -19281,7 +19288,7 @@
     ONT::GEO-OBJECT)
   (OVERLAP
     WN::|formation%1:17:00::|
-    WN::|world%1:05:00::|)
+    WN::|world%1:17:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -21924,7 +21931,8 @@
     WN::|increase%1:11:00::|
     WN::|increase%2:30:00::|
     WN::|rise%2:37:00::|
-    WN::|increase%1:07:00::|))
+    WN::|increase%1:07:00::|
+    WN::|rise%1:11:00::|))
 
 (CONCEPT
   ONT::INCREASE-NUMBER
@@ -23854,7 +23862,9 @@
 (CONCEPT
   ONT::LEGAL-ORGANIZATION
   (INHERIT
-    ONT::ORGANIZATION))
+    ONT::ORGANIZATION)
+  (OVERLAP
+    WN::|court%1:14:00::|))
 
 (CONCEPT
   ONT::LEGAL-ORGANIZATION-ABSTR
@@ -25818,7 +25828,8 @@
     WN::|most%3:00:01::|
     WN::|most%3:00:02::|
     WN::|ultimate%3:00:00::|
-    WN::|maximum%3:00:00::|)
+    WN::|maximum%3:00:00::|
+    WN::|peak%1:23:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -25843,6 +25854,10 @@
   ONT::MEAL-EVENT
   (INHERIT
     ONT::EVENT-DEFINED-BY-ACTIVITY)
+  (OVERLAP
+    WN::|meal%1:28:00::|
+    WN::|dinner%1:13:00::|
+    WN::|lunch%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -27005,7 +27020,8 @@
     ONT::MANUFACTURED-OBJECT)
   (OVERLAP
     WN::|change%1:21:03::|
-    WN::|change%1:21:01::|)
+    WN::|change%1:21:01::|
+    WN::|medium_of_exchange%1:21:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -27264,7 +27280,8 @@
     WN::|take%2:38:05::|
     WN::|transport%1:04:01::|
     WN::|travel%2:38:00::|
-    WN::|wreathe%2:38:00::|)
+    WN::|wreathe%2:38:00::|
+    WN::|movement%1:11:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -31450,7 +31467,8 @@
   (INHERIT
     ONT::INFORMATION-FUNCTION-OBJECT)
   (OVERLAP
-    WN::|result%1:11:00::|)
+    WN::|result%1:11:00::|
+    WN::|consequence%1:19:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -31987,7 +32005,8 @@
     WN::|race%1:14:00::|
     WN::|sainthood%1:14:00::|
     WN::|varna%1:14:00::|
-    WN::|tenantry%1:14:00::|))
+    WN::|tenantry%1:14:00::|
+    WN::|world%1:05:00::|))
 
 (CONCEPT
   ONT::PERCEIVABLE-PROPERTY
@@ -33489,7 +33508,9 @@
   (OVERLAP
     WN::|circuit%1:14:00::|
     WN::|free_world%1:14:00::|
-    WN::|third_world%1:14:00::|)
+    WN::|third_world%1:14:00::|
+    WN::|eu%1:14:00::|
+    WN::|world_power%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -34748,7 +34769,8 @@
   (OVERLAP
     WN::|go%2:30:02::|
     WN::|progress%2:30:00::|
-    WN::|progress%2:30:01::|)
+    WN::|progress%2:30:01::|
+    WN::|progress%2:38:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -35352,7 +35374,9 @@
     WN::|thrust%2:38:00::|
     WN::|thrust%2:42:01::|
     WN::|wedge%2:35:00::|
-    WN::|bump%2:35:00::|))
+    WN::|bump%2:35:00::|
+    WN::|push%1:04:00::|
+    WN::|boost%1:04:01::|))
 
 (CONCEPT
   ONT::PUSH-LIQUID
@@ -36166,7 +36190,8 @@
   (INHERIT
     ONT::ANY-SEM)
   (OVERLAP
-    WN::|entity%1:03:00::|)
+    WN::|entity%1:03:00::|
+    WN::|one%1:09:00::|)
   (SEM-FEATS
     (OR
       (CONCEPT
@@ -38973,7 +38998,8 @@
     WN::|remark%2:32:00::|
     WN::|say%2:32:01::|
     WN::|say%2:32:13::|
-    WN::|talk%2:32:00::|)
+    WN::|talk%2:32:00::|
+    WN::|remark%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -41063,7 +41089,8 @@
   (OVERLAP
     WN::|socialize%2:41:01::|
     WN::|socialise%2:41:01::|
-    WN::|mingle%2:41:00::|)
+    WN::|mingle%2:41:00::|
+    WN::|visit%1:04:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -41153,7 +41180,8 @@
   (OVERLAP
     WN::|social_group%1:14:00::|
     WN::|congregation%1:14:01::|
-    WN::|defense%1:14:00::|)
+    WN::|defense%1:14:00::|
+    WN::|unit%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -42812,7 +42840,8 @@
     WN::|substance%1:03:00::|
     WN::|substance%1:03:01::|
     WN::|substance%1:27:00::|
-    WN::|matter%1:03:00::|))
+    WN::|matter%1:03:00::|
+    WN::|paper%1:27:00::|))
 
 (CONCEPT
   ONT::SUBSTANCE-DELIVERY-UNIT
@@ -43617,7 +43646,8 @@
     WN::|put_forward%2:32:00::|
     WN::|state%2:32:01::|
     WN::|submit%2:32:00::|
-    WN::|talk%2:32:01::|)
+    WN::|talk%2:32:01::|
+    WN::|talk%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -44213,7 +44243,9 @@
 (CONCEPT
   ONT::TEXT-REPRESENTATION
   (INHERIT
-    ONT::SYMBOLIC-REPRESENTATION))
+    ONT::SYMBOLIC-REPRESENTATION)
+  (OVERLAP
+    WN::|matter%1:10:00::|))
 
 (CONCEPT
   ONT::TEXTURE-SCALE
@@ -44558,6 +44590,9 @@
   (COMMENT "times defined by events")
   (INHERIT
     ONT::TIME-INTERVAL)
+  (OVERLAP
+    WN::|halftime%1:28:00::|
+    WN::|quarter%1:28:01::|)
   (SEM-FEATS
     (INHERIT
       TIME)
@@ -46497,7 +46532,8 @@
     ONT::KIND)
   (OVERLAP
     WN::|version%1:09:01::|
-    WN::|edition%1:14:00::|))
+    WN::|edition%1:14:00::|
+    WN::|draft%1:10:00::|))
 
 (CONCEPT
   ONT::VERTEBRATE
