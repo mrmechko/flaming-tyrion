@@ -6735,10 +6735,8 @@
      (CONCEPT
        SITUATION))
     (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE ONT::EVENT-OF-CHANGE))
+     (CONCEPT
+       SITUATION)
      OPTIONAL)))
 
 (CONCEPT
@@ -17423,7 +17421,7 @@
   (INHERIT
     ONT::ABSTRACT-OBJECT-NONTEMPORAL)
   (OVERLAP
-    WN::|fact%1:09:00::|)
+    WN::|fact%1:09:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
