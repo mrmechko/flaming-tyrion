@@ -31726,7 +31726,8 @@
     WN::|appear%2:41:03::|
     WN::|attend%2:42:00::|
     WN::|participate%2:41:00::|
-    WN::|involvement%1:04:00::|)
+    WN::|involvement%1:04:00::|
+    WN::|stag%2:41:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (SEM-FEATS
