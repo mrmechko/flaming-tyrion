@@ -18271,9 +18271,10 @@
 (CONCEPT
   ONT::FLOAT
   (INHERIT
-    ONT::MOVE)
+    ONT::BE-AT-LOC)
   (OVERLAP
-    WN::|hover%2:38:01::|))
+    WN::|hover%2:38:01::|
+    WN::|float%2:38:01::|))
 
 (CONCEPT
   ONT::FLOODING
@@ -23791,8 +23792,7 @@
     WN::|leave%2:31:05::|
     WN::|leave%2:30:03::|
     WN::|leave_behind%2:38:00::|
-    WN::|abandon%2:31:01::|
-    WN::|abandon%2:40:01::|)
+    WN::|abandon%2:40:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -27364,7 +27364,9 @@
 (CONCEPT
   ONT::MOVE-FORWARD
   (INHERIT
-    ONT::MOVE))
+    ONT::MOVE)
+  (OVERLAP
+    WN::|progress%2:38:00::|))
 
 (CONCEPT
   ONT::MOVE-LEISURELY
@@ -34768,8 +34770,7 @@
   (OVERLAP
     WN::|go%2:30:02::|
     WN::|progress%2:30:00::|
-    WN::|progress%2:30:01::|
-    WN::|progress%2:38:00::|)
+    WN::|progress%2:30:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -43342,7 +43343,9 @@
     WN::|submit%2:33:00::|
     WN::|surrender%2:40:00::|
     WN::|yield%2:33:00::|
-    WN::|yield%2:40:01::|)
+    WN::|yield%2:40:01::|
+    WN::|abandon%2:31:01::|
+    WN::|abandon%2:40:01::|)
   (SEM-FRAME
     (ONT::AFFECTED-RESULT
      (CONCEPT
@@ -43445,8 +43448,7 @@
   (INHERIT
     ONT::SELF-LOCOMOTE)
   (OVERLAP
-    WN::|float%2:38:01::|
-    WN::|swim%2:38:01::|))
+    WN::|swim%2:38:00::|))
 
 (CONCEPT
   ONT::SWITCH
@@ -44878,6 +44880,15 @@
            ABSTR-OBJ))
        (MOBILITY MOVABLE))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::TO-PRIOR-LOC
+  (COMMENT "to a location wheere the object was previously")
+  (INHERIT
+    ONT::TO-LOC)
+  (OVERLAP
+    WN::|back%4:02:05::|
+    WN::|back%4:02:04::|))
 
 (CONCEPT
   ONT::TODAY
