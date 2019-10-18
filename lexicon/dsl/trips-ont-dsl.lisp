@@ -2143,16 +2143,17 @@
   (INHERIT
     ONT::EXPERIENCER-EMOTION)
   (OVERLAP
-    WN::|savour%2:37:00::|
-    WN::|savor%2:37:00::|
-    WN::|relish%2:37:00::|
-    WN::|bask%2:37:13::|
-    WN::|enjoy%2:37:00::|
+    WN::|appeal%2:37:00::|
     WN::|appreciate%2:37:00::|
+    WN::|bask%2:37:13::|
+    WN::|delight%2:34:00::|
+    WN::|enjoy%2:37:00::|
     WN::|like%2:37:04::|
-    WN::|love%2:37:00::|
     WN::|like%2:37:05::|
-    WN::|appeal%2:37:00::|)
+    WN::|love%2:37:00::|
+    WN::|relish%2:37:00::|
+    WN::|savor%2:37:00::|
+    WN::|savour%2:37:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL1
      (CONCEPT
@@ -3519,8 +3520,9 @@
   (INHERIT
     ONT::CATEGORIZATION)
   (OVERLAP
-    WN::|impute%2:31:00::|
-    WN::|attribute%2:31:01::|)
+    WN::|attribute%2:31:01::|
+    WN::|base%2:31:00::|
+    WN::|impute%2:31:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL1
      (OR
@@ -16393,6 +16395,7 @@
     ONT::EVOKE-UPSET)
   (OVERLAP
     WN::|anger%2:37:00::|
+    WN::|madden%2:37:02::|
     WN::|try%2:37:00::|
     WN::|try%2:37:01::|))
 
@@ -28185,8 +28188,9 @@
   (INHERIT
     ONT::LOUDNESS-VAL)
   (OVERLAP
-    WN::|noisy%3:00:00::|
-    WN::|loud%3:00:00::|)
+    WN::|deafening%5:00:00:loud:00|
+    WN::|loud%3:00:00::|
+    WN::|noisy%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
