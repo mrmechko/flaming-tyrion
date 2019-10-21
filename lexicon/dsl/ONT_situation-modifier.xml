@@ -262,6 +262,10 @@
  <relation label="inherit">
   ont::situation-modifier
  </relation>
+ <relation label="overlap">
+  wn::|therefore%4:02:00::|
+  wn::|therefore%4:02:01::|
+ </relation>
  </concept>
  <concept name="ont::contra-force">
  <relation label="inherit">
@@ -300,35 +304,6 @@
      situation
     </relation>
     <feat name="cause">agentive</feat>
-    <feat name="aspect">dynamic</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::instrument">
- <relation label="inherit">
-  ont::situation-modifier
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     non-living
-     artifact
-    </or>
-    </feat>
-    <feat name="intentional">-</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
     <feat name="aspect">dynamic</feat>
    </sem-feats>
   </role-restr-map>
@@ -377,22 +352,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::situated-out">
- <relation label="inherit">
-  ont::situation-modifier
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <concept name="situation" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::condition">
  <relation label="inherit">
   ont::situation-modifier
@@ -410,10 +369,5 @@
    <concept name="situation" />
   </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::while">
- <relation label="inherit">
-  ont::situation-modifier
- </relation>
  </concept>
 </dsl>

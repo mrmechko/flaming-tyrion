@@ -115,7 +115,9 @@
   ONT::ABOVE
   (COMMENT "FIGURE is higher on some vertical scale than the GROUND")
   (INHERIT
-    ONT::DIRECTIONAL-VERT))
+    ONT::DIRECTIONAL-VERT)
+  (OVERLAP
+    WN::|above%4:02:01::|))
 
 (CONCEPT
   ONT::ABSTRACT-INFORMATION-PROPERTY-VAL
@@ -586,7 +588,10 @@
   (COMMENT
    "FIGURE is a slice through the GROUND from one side to the other. Conceptually on the GROUND")
   (INHERIT
-    ONT::POSITION-WRT-AREA-RELN))
+    ONT::POSITION-WRT-AREA-RELN)
+  (OVERLAP
+    WN::|across%4:02:00::|
+    WN::|across%4:02:01::|))
 
 (CONCEPT
   ONT::ACT-BEHAVE
@@ -2396,7 +2401,12 @@
   (COMMENT
    "FIGURE is an area surrounding the boundary of the GROUND, or distrubuted over the GROUND")
   (INHERIT
-    ONT::POSITION-WRT-AREA-RELN))
+    ONT::POSITION-WRT-AREA-RELN)
+  (OVERLAP
+    WN::|around%4:02:00::|
+    WN::|around%4:02:05::|
+    WN::|around%4:02:06::|
+    WN::|around%4:02:07::|))
 
 (CONCEPT
   ONT::ARRANGE-TEXT
@@ -3988,7 +3998,9 @@
 (CONCEPT
   ONT::BACK-OF
   (INHERIT
-    ONT::ORIENTED-LOC-RELN))
+    ONT::ORIENTED-LOC-RELN)
+  (OVERLAP
+    WN::|behind%4:02:00::|))
 
 (CONCEPT
   ONT::BACKACHE
@@ -4743,7 +4755,10 @@
 (CONCEPT
   ONT::BETWEEN
   (INHERIT
-    ONT::COMPLEX-GROUND-RELN))
+    ONT::COMPLEX-GROUND-RELN)
+  (OVERLAP
+    WN::|between%4:02:00::|
+    WN::|between%4:02:03::|))
 
 (CONCEPT
   ONT::BEVERAGES
@@ -13823,7 +13838,9 @@
   ONT::DIRECTION-IN
   (COMMENT "direction involving moving into some object (the GROUND)")
   (INHERIT
-    ONT::DIRECTION-WRT-CONTAINMENT))
+    ONT::DIRECTION-WRT-CONTAINMENT)
+  (OVERLAP
+    WN::|in%4:02:01::|))
 
 (CONCEPT
   ONT::DIRECTION-LEFTWARD
@@ -13837,7 +13854,10 @@
   ONT::DIRECTION-OUT
   (COMMENT "direction involving moving into some object (the GROUND)")
   (INHERIT
-    ONT::DIRECTION-WRT-CONTAINMENT))
+    ONT::DIRECTION-WRT-CONTAINMENT)
+  (OVERLAP
+    WN::|out%4:02:02::|
+    WN::|out%4:02:04::|))
 
 (CONCEPT
   ONT::DIRECTION-RIGHTWARD
@@ -14307,11 +14327,6 @@
     WN::|dissuade%2:32:00::|))
 
 (CONCEPT
-  ONT::DISTAL-RELN
-  (INHERIT
-    ONT::POS-DISTANCE))
-
-(CONCEPT
   ONT::DISTANCE-PER-GASOLINE-SCALE
   (INHERIT
     ONT::RATIO-SCALE)
@@ -14588,7 +14603,9 @@
 (CONCEPT
   ONT::DOWNTOWN
   (INHERIT
-    ONT::CITY-REL))
+    ONT::CITY-REL)
+  (OVERLAP
+    WN::|downtown%4:02:00::|))
 
 (CONCEPT
   ONT::DRAWER
@@ -14969,7 +14986,9 @@
 (CONCEPT
   ONT::EAST-RELN
   (INHERIT
-    ONT::NAVIGATIONAL-RELN))
+    ONT::NAVIGATIONAL-RELN)
+  (OVERLAP
+    WN::|east%4:02:00::|))
 
 (CONCEPT
   ONT::EASY
@@ -15971,7 +15990,9 @@
 (CONCEPT
   ONT::ETCETERA
   (INHERIT
-    ONT::PREDICATE))
+    ONT::PREDICATE)
+  (OVERLAP
+    WN::|etcetera%4:02:00::|))
 
 (CONCEPT
   ONT::EUPHORIC
@@ -17294,6 +17315,9 @@
   ONT::EXTENSION
   (INHERIT
     ONT::PREDICATE)
+  (OVERLAP
+    WN::|farther%4:02:00::|
+    WN::|further%4:02:02::|)
   (SEM-FRAME
     (ONT::FIGURE
      (OR
@@ -17658,7 +17682,9 @@
 (CONCEPT
   ONT::FAR-RELN
   (INHERIT
-    ONT::DISTAL-RELN))
+    ONT::POS-DISTANCE)
+  (OVERLAP
+    WN::|far%4:02:00::|))
 
 (CONCEPT
   ONT::FARM
@@ -18736,6 +18762,20 @@
   ONT::FREQUENCY
   (INHERIT
     ONT::TEMPORAL-MODIFIER)
+  (OVERLAP
+    WN::|annually%4:02:01::|
+    WN::|any_longer%4:02:01::|
+    WN::|as_usual%4:02:00::|
+    WN::|daily%4:02:00::|
+    WN::|ever%4:02:04::|
+    WN::|generally%4:02:02::|
+    WN::|hourly%4:02:00::|
+    WN::|mostly%4:02:03::|
+    WN::|no_longer%4:02:00::|
+    WN::|per_diem%4:02:00::|
+    WN::|typically%4:02:00::|
+    WN::|weekly%4:02:00::|
+    WN::|yearly%4:02:00::|)
   (SEM-FRAME
     (ONT::GROUND
      (SEM-FEATS
@@ -18862,7 +18902,9 @@
 (CONCEPT
   ONT::FRONT
   (INHERIT
-    ONT::ORIENTED-LOC-RELN))
+    ONT::ORIENTED-LOC-RELN)
+  (OVERLAP
+    WN::|front%3:00:00::|))
 
 (CONCEPT
   ONT::FRUIT
@@ -20917,7 +20959,11 @@
 (CONCEPT
   ONT::HERE
   (INHERIT
-    ONT::POS-WRT-SPEAKER-RELN))
+    ONT::POS-WRT-SPEAKER-RELN)
+  (OVERLAP
+    WN::|here%4:02:00::|
+    WN::|here%4:02:02::|
+    WN::|here%4:02:01::|))
 
 (CONCEPT
   ONT::HEREDITARY-VAL
@@ -22371,27 +22417,6 @@
     ONT::LOCATED-EVENT))
 
 (CONCEPT
-  ONT::INSTRUMENT
-  (INHERIT
-    ONT::SITUATION-MODIFIER)
-  (SEM-FRAME
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (ORIGIN
-        (OR
-          NON-LIVING
-          ARTIFACT))
-       (INTENTIONAL -)))
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (ASPECT DYNAMIC))
-     OPTIONAL)))
-
-(CONCEPT
   ONT::INSTRUMENTATION
   (INHERIT
     ONT::MANUFACTURED-OBJECT)
@@ -23785,7 +23810,9 @@
   ONT::LEAST-EXTENT
   (COMMENT "to the least extent, to any extent")
   (INHERIT
-    ONT::MODIFIER))
+    ONT::MODIFIER)
+  (OVERLAP
+    WN::|least%3:00:00::|))
 
 (CONCEPT
   ONT::LEAVE-BEHIND
@@ -27952,7 +27979,9 @@
 (CONCEPT
   ONT::NEAR-RELN
   (INHERIT
-    ONT::PROXIMATE-RELN))
+    ONT::PROXIMATE-RELN)
+  (OVERLAP
+    WN::|nearby%4:02:00::|))
 
 (CONCEPT
   ONT::NECESSARY
@@ -28330,7 +28359,9 @@
 (CONCEPT
   ONT::NORTH-RELN
   (INHERIT
-    ONT::NAVIGATIONAL-RELN))
+    ONT::NAVIGATIONAL-RELN)
+  (OVERLAP
+    WN::|north%4:02:00::|))
 
 (CONCEPT
   ONT::NOSEBLEED
@@ -30803,7 +30834,10 @@
 (CONCEPT
   ONT::OFF
   (INHERIT
-    ONT::ORIENTED-LOC-RELN))
+    ONT::ORIENTED-LOC-RELN)
+  (OVERLAP
+    WN::|off%4:02:03::|
+    WN::|off%4:02:04::|))
 
 (CONCEPT
   ONT::OFFENSIVE-VAL
@@ -31501,6 +31535,9 @@
   ONT::OUTSIDE
   (INHERIT
     ONT::POS-WRT-CONTAINMENT-RELN)
+  (OVERLAP
+    WN::|outside%4:02:00::|
+    WN::|outside%4:02:01::|)
   (SEM-FRAME
     (ONT::GROUND
      (SEM-FEATS
@@ -32322,6 +32359,8 @@
    "e.g., phases of the moon, stage of the project. This type represents stages of a sequence that is more abstract than time.")
   (INHERIT
     ONT::TIME-INTERVAL)
+  (OVERLAP
+    WN::|phase%1:28:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -34484,7 +34523,9 @@
 (CONCEPT
   ONT::PRIORITY
   (INHERIT
-    ONT::PREDICATE))
+    ONT::PREDICATE)
+  (OVERLAP
+    WN::|anyway%4:02:01::|))
 
 (CONCEPT
   ONT::PRIVACY-VAL
@@ -40590,7 +40631,10 @@
   ONT::SIMULTANEOUS
   (COMMENT "EQUAL in ITL")
   (INHERIT
-    ONT::EVENT-TIME-REL))
+    ONT::EVENT-TIME-REL)
+  (OVERLAP
+    WN::|simultaneous%5:00:00:synchronous:00|
+    WN::|simultaneously%4:02:00::|))
 
 (CONCEPT
   ONT::SINCE
@@ -40644,22 +40688,6 @@
        (INHERIT
          SITUATION)
        (TYPE ONT::SITUATION-ROOT)))
-    (ONT::FIGURE
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         PHYS-OBJ))
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::SITUATED-OUT
-  (INHERIT
-    ONT::SITUATION-MODIFIER)
-  (SEM-FRAME
-    (ONT::GROUND
-     (CONCEPT
-       SITUATION))
     (ONT::FIGURE
      (OR
        (CONCEPT
@@ -41256,7 +41284,10 @@
 (CONCEPT
   ONT::SOCIAL-JUDGEMENT
   (INHERIT
-    ONT::SOCIAL-IMPERATIVE))
+    ONT::SOCIAL-IMPERATIVE)
+  (OVERLAP
+    WN::|approve%2:32:00::|
+    WN::|sanction%2:32:02::|))
 
 (CONCEPT
   ONT::SOCIAL-PRACTICE
@@ -41682,7 +41713,9 @@
 (CONCEPT
   ONT::SOUTH-RELN
   (INHERIT
-    ONT::NAVIGATIONAL-RELN))
+    ONT::NAVIGATIONAL-RELN)
+  (OVERLAP
+    WN::|south%4:02:00::|))
 
 (CONCEPT
   ONT::SOW-SEED
@@ -42243,7 +42276,9 @@
 (CONCEPT
   ONT::START-TIME
   (INHERIT
-    ONT::EVENT-TIME-REL))
+    ONT::EVENT-TIME-REL)
+  (OVERLAP
+    WN::|beginning%5:00:00:opening:00|))
 
 (CONCEPT
   ONT::STARTPOINT
@@ -44313,12 +44348,18 @@
 (CONCEPT
   ONT::THERE
   (INHERIT
-    ONT::POS-WRT-SPEAKER-RELN))
+    ONT::POS-WRT-SPEAKER-RELN)
+  (OVERLAP
+    WN::|there%4:02:00::|
+    WN::|there%4:02:01::|))
 
 (CONCEPT
   ONT::THEREFORE
   (INHERIT
-    ONT::SITUATION-MODIFIER))
+    ONT::SITUATION-MODIFIER)
+  (OVERLAP
+    WN::|therefore%4:02:00::|
+    WN::|therefore%4:02:01::|))
 
 (CONCEPT
   ONT::THICK-TEXTURE-VAL
@@ -44464,7 +44505,10 @@
   ONT::THROUGH
   (COMMENT "FIGURE crosses the GROUND, conceptually IN the ground")
   (INHERIT
-    ONT::POSITION-WRT-AREA-RELN))
+    ONT::POSITION-WRT-AREA-RELN)
+  (OVERLAP
+    WN::|through%4:02:01::|
+    WN::|through%4:02:02::|))
 
 (CONCEPT
   ONT::THRUWAY
@@ -45897,6 +45941,8 @@
   (COMMENT "names of units in various scales/domains")
   (INHERIT
     ONT::ABSTRACT-OBJECT)
+  (OVERLAP
+    WN::|definite_quantity%1:23:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -46104,12 +46150,16 @@
   ONT::UP
   (COMMENT "FIGURE is higher on some vertical scale than the GROUND")
   (INHERIT
-    ONT::DIRECTIONAL-VERT))
+    ONT::DIRECTIONAL-VERT)
+  (OVERLAP
+    WN::|up%4:02:00::|))
 
 (CONCEPT
   ONT::UPTOWN
   (INHERIT
-    ONT::CITY-REL))
+    ONT::CITY-REL)
+  (OVERLAP
+    WN::|uptown%4:02:00::|))
 
 (CONCEPT
   ONT::URBAN-VAL
@@ -46362,7 +46412,10 @@
 (CONCEPT
   ONT::VACATION
   (INHERIT
-    ONT::EVENT-DEFINED-BY-ACTIVITY))
+    ONT::EVENT-DEFINED-BY-ACTIVITY)
+  (OVERLAP
+    WN::|vacation%2:42:00::|
+    WN::|vacation%1:28:00::|))
 
 (CONCEPT
   ONT::VALID-VAL
@@ -47226,7 +47279,9 @@
 (CONCEPT
   ONT::WEST-RELN
   (INHERIT
-    ONT::NAVIGATIONAL-RELN))
+    ONT::NAVIGATIONAL-RELN)
+  (OVERLAP
+    WN::|west%4:02:00::|))
 
 (CONCEPT
   ONT::WET-SCALE
@@ -47299,11 +47354,6 @@
      (CONCEPT
        T)
      OPTIONAL)))
-
-(CONCEPT
-  ONT::WHILE
-  (INHERIT
-    ONT::SITUATION-MODIFIER))
 
 (CONCEPT
   ONT::WHITE
