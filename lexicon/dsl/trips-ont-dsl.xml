@@ -38330,6 +38330,19 @@
    <feat name="type">ont::pointing-to</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::orientation" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="type">
+     <or>
+      ont::direction
+      ont::goal-reln
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
    <role-restr-map roles="ont::neutral1" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -43279,6 +43292,9 @@
   </sem-frame>
  </concept>
  <concept name="ont::resulting-state">
+  <comment>
+   &quot;the RESULT of an event is a new state of the world: e.g., He drove him to despair&quot;
+  </comment>
   <relation label="inherit">
    ont::goal-reln
   </relation>
@@ -44153,6 +44169,11 @@
    wn::|right%1:07:00::|
    wn::|permission%1:10:00::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="situation" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::rise">
   <relation label="inherit">
@@ -47061,6 +47082,13 @@
   <relation label="overlap">
    wn::|social_contract%1:26:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="spatial-abstraction">-</feat>
+   <feat name="type">ont::social-contract</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
     <concept name="situation" />
@@ -51329,7 +51357,7 @@
  </concept>
  <concept name="ont::to-loc">
   <comment>
-   &quot;the ending location of an object undergoing motion&quot;
+   &quot;the ending location of an object undergoing motion - including abstract move&quot;
   </comment>
   <relation label="inherit">
    ont::goal-reln

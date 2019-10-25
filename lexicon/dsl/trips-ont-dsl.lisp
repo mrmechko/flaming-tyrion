@@ -33442,6 +33442,15 @@
     (ASPECT STAGE-LEVEL)
     (TYPE ONT::POINTING-TO))
   (SEM-FRAME
+    (ONT::ORIENTATION
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          ONT::DIRECTION
+          ONT::GOAL-RELN)))
+     OPTIONAL)
     (ONT::NEUTRAL1
      (CONCEPT
        T)
@@ -37788,6 +37797,8 @@
 
 (CONCEPT
   ONT::RESULTING-STATE
+  (COMMENT
+   "the RESULT of an event is a new state of the world: e.g., He drove him to despair")
   (INHERIT
     ONT::GOAL-RELN)
   (SEM-FRAME
@@ -38616,7 +38627,12 @@
     ONT::SOCIAL-CONTRACT)
   (OVERLAP
     WN::|right%1:07:00::|
-    WN::|permission%1:10:00::|))
+    WN::|permission%1:10:00::|)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       SITUATION)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::RISE
@@ -41170,6 +41186,11 @@
     ONT::MENTAL-CONSTRUCTION)
   (OVERLAP
     WN::|social_contract%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SPATIAL-ABSTRACTION -)
+    (TYPE ONT::SOCIAL-CONTRACT))
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -44906,7 +44927,8 @@
 
 (CONCEPT
   ONT::TO-LOC
-  (COMMENT "the ending location of an object undergoing motion")
+  (COMMENT
+   "the ending location of an object undergoing motion - including abstract move")
   (INHERIT
     ONT::GOAL-RELN)
   (SEM-FRAME
