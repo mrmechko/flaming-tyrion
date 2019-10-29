@@ -942,7 +942,9 @@
 (CONCEPT
   ONT::ADDRESSEE
   (INHERIT
-    ONT::PERSON))
+    ONT::PERSON)
+  (OVERLAP
+    WN::|addressee%1:18:00::|))
 
 (CONCEPT
   ONT::ADEQUACY-VAL
@@ -7826,11 +7828,12 @@
   (INHERIT
     ONT::LOC-WRT-GROUND-AS-SPATIAL-OBJ)
   (OVERLAP
+    WN::|center%1:15:00::|
     WN::|center%1:15:01::|
     WN::|centre%1:15:01::|
-    WN::|middle%1:15:00::|
+    WN::|eye%1:15:00::|
     WN::|heart%1:15:00::|
-    WN::|eye%1:15:00::|)
+    WN::|middle%1:15:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -8774,7 +8777,9 @@
 (CONCEPT
   ONT::CHRONICLE
   (INHERIT
-    ONT::INFO-MEDIUM))
+    ONT::INFO-MEDIUM)
+  (OVERLAP
+    WN::|record%1:10:03::|))
 
 (CONCEPT
   ONT::CIRCULAR-MOVE
@@ -9243,7 +9248,7 @@
 (CONCEPT
   ONT::COFFEE-SHOP
   (INHERIT
-    ONT::RESTAURANT)
+    ONT::EATING-ESTABLISHMENT)
   (OVERLAP
     WN::|coffeehouse%1:06:00::|
     WN::|coffee_shop%1:06:00::|
@@ -10024,7 +10029,9 @@
 (CONCEPT
   ONT::COMMUNICATION-CHANNEL
   (INHERIT
-    ONT::INFO-HOLDER))
+    ONT::INFO-HOLDER)
+  (OVERLAP
+    WN::|channel%1:10:01::|))
 
 (CONCEPT
   ONT::COMMUNICATION-PARTY
@@ -14309,7 +14316,12 @@
 (CONCEPT
   ONT::DISPLAY
   (INHERIT
-    ONT::INFO-MEDIUM))
+    ONT::INFO-MEDIUM)
+  (OVERLAP
+    WN::|blackboard%1:06:00::|
+    WN::|display%1:06:00::|
+    WN::|display%1:06:01::|
+    WN::|screen%1:06:06::|))
 
 (CONCEPT
   ONT::DISSOLVE
@@ -24126,6 +24138,10 @@
   ONT::LIGHT
   (INHERIT
     ONT::SUBSTANCE)
+  (OVERLAP
+    WN::|light%1:15:00::|
+    WN::|light%1:19:00::|
+    WN::|light%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -27922,7 +27938,9 @@
 (CONCEPT
   ONT::NATURAL-PHENOMENON
   (INHERIT
-    ONT::NATURAL-OBJECT))
+    ONT::NATURAL-OBJECT)
+  (OVERLAP
+    WN::|natural_phenomenon%1:19:00::|))
 
 (CONCEPT
   ONT::NATURAL-SCALE
@@ -31606,7 +31624,9 @@
 (CONCEPT
   ONT::PAIN-RELIEVER
   (INHERIT
-    ONT::MEDICATION))
+    ONT::MEDICATION)
+  (OVERLAP
+    WN::|painkiller%1:06:00::|))
 
 (CONCEPT
   ONT::PAIN-SCALE
@@ -32335,11 +32355,6 @@
          ABSTR-OBJ)
        (CONCEPT
          SITUATION)))))
-
-(CONCEPT
-  ONT::PERSONS-OF-NATIONALITY
-  (INHERIT
-    ONT::PERSON-OF-NATIONALITY))
 
 (CONCEPT
   ONT::PESTICIDE
@@ -35222,7 +35237,9 @@
 (CONCEPT
   ONT::PUBLIC-SERVICE-FACILITY
   (INHERIT
-    ONT::FACILITY))
+    ONT::FACILITY)
+  (OVERLAP
+    WN::|local_department%1:14:00::|))
 
 (CONCEPT
   ONT::PUBLIC-VAL
@@ -36064,7 +36081,9 @@
 (CONCEPT
   ONT::RECIPIENT
   (INHERIT
-    ONT::PERSON))
+    ONT::PERSON)
+  (OVERLAP
+    WN::|recipient%1:18:00::|))
 
 (CONCEPT
   ONT::RECIPROCAL-VAL
@@ -45930,7 +45949,10 @@
 (CONCEPT
   ONT::UNFORTUNATE
   (INHERIT
-    ONT::PERSON))
+    ONT::PERSON)
+  (OVERLAP
+    WN::|unfortunate%1:18:00::|
+    WN::|victim%1:18:00::|))
 
 (CONCEPT
   ONT::UNHAPPY
@@ -46223,7 +46245,9 @@
 (CONCEPT
   ONT::US-STATE
   (INHERIT
-    ONT::STATE))
+    ONT::STATE)
+  (OVERLAP
+    WN::|american_state%1:15:00::|))
 
 (CONCEPT
   ONT::USABILITY-SCALE
