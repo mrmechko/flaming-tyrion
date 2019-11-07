@@ -17003,7 +17003,7 @@
   (OVERLAP
     WN::|abound%2:42:00::|
     WN::|be%2:42:00::|
-    WN::|be%2:42:012::|
+    WN::|be%2:42:01::|
     WN::|be%2:42:04::|
     WN::|consist%2:42:00::|
     WN::|dwell%2:42:01::|
@@ -39562,16 +39562,17 @@
   (INHERIT
     ONT::CHOOSING)
   (OVERLAP
-    WN::|take%2:40:02::|
-    WN::|pick_out%2:31:00::|
-    WN::|select%2:31:00::|
-    WN::|take%2:31:01::|
     WN::|choose%2:31:00::|
     WN::|choose%2:31:02::|
-    WN::|prefer%2:31:00::|
+    WN::|determine%2:31:01::|
     WN::|opt%2:31:00::|
-    WN::|vote%2:41:09::|
-    WN::|determine%2:31:01::|)
+    WN::|pick_out%2:31:00::|
+    WN::|prefer%2:31:00::|
+    WN::|select%2:31:00::|
+    WN::|selection%1:04:00::|
+    WN::|take%2:31:01::|
+    WN::|take%2:40:02::|
+    WN::|vote%2:41:09::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (OR
