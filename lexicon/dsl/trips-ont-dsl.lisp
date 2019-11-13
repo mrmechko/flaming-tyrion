@@ -1745,7 +1745,9 @@
 (CONCEPT
   ONT::ANATOMY
   (INHERIT
-    ONT::NATURAL-OBJECT))
+    ONT::NATURAL-OBJECT)
+  (OVERLAP
+    WN::|human_body%1:08:00::|))
 
 (CONCEPT
   ONT::ANCIENT-VAL
@@ -10394,17 +10396,25 @@
 (CONCEPT
   ONT::COMPUTER-FIRMWARE
   (INHERIT
-    ONT::COMPUTER-HARDWARE))
+    ONT::COMPUTER-HARDWARE)
+  (OVERLAP
+    WN::|firmware%1:10:00::|))
 
 (CONCEPT
   ONT::COMPUTER-HARDWARE
   (INHERIT
-    ONT::COMPUTER-PART))
+    ONT::COMPUTER-PART)
+  (OVERLAP
+    WN::|hardware%1:06:01::|))
 
 (CONCEPT
   ONT::COMPUTER-INPUT-DEVICE
   (INHERIT
-    ONT::COMPUTER-HARDWARE))
+    ONT::COMPUTER-HARDWARE)
+  (OVERLAP
+    WN::|keyboard%1:06:01::|
+    WN::|mouse%1:06:00::|
+    WN::|scanner%1:06:02::|))
 
 (CONCEPT
   ONT::COMPUTER-LANGUAGE
@@ -10425,6 +10435,8 @@
   ONT::COMPUTER-MONITOR
   (INHERIT
     ONT::COMPUTER-PART)
+  (OVERLAP
+    WN::|monitor%1:06:02::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -10436,17 +10448,22 @@
 (CONCEPT
   ONT::COMPUTER-NETWORK
   (INHERIT
-    ONT::COMPUTER-PART))
-
-(CONCEPT
-  ONT::COMPUTER-NETWORK-TYPE
-  (INHERIT
-    ONT::COMPUTER-NETWORK))
+    ONT::COMPUTER-PART)
+  (OVERLAP
+    WN::|computer_network%1:06:00::|
+    WN::|digital_subscriber_line%1:06:00::|
+    WN::|server%1:06:01::|))
 
 (CONCEPT
   ONT::COMPUTER-PART
   (INHERIT
     ONT::DEVICE)
+  (OVERLAP
+    WN::|chip%1:06:00::|
+    WN::|console%1:06:02::|
+    WN::|jack%1:06:04::|
+    WN::|computer_circuit%1:06:00::|
+    WN::|slot%1:06:02::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -22786,6 +22803,20 @@
   ONT::INTERNAL-BODY-PART
   (INHERIT
     ONT::BODY-PART)
+  (OVERLAP
+    WN::|digestive_system%1:08:00::|
+    WN::|somatic_cell%1:08:00::|
+    WN::|tract%1:08:01::|
+    WN::|vocal_cord%1:08:00::|
+    WN::|brain%1:08:00::|
+    WN::|blood_vessel%1:08:00::|
+    WN::|connective_tissue%1:08:00::|
+    WN::|organ%1:08:00::|
+    WN::|cavity%1:08:00::|
+    WN::|duct%1:08:00::|
+    WN::|abdomen%1:08:00::|
+    WN::|stomach%1:08:00::|
+    WN::|lymphatic_tissue%1:08:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
