@@ -44,18 +44,37 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::database">
+ <relation label="inherit">
+  ont::info-holder
+ </relation>
+ <relation label="overlap">
+  wn::|database%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::info-holder">
+ <comment>
+  &quot;a method/manner or device to store information, may also be used for sharing information&quot;
+ </comment>
+ <relation label="inherit">
+  ont::phys-representation
+ </relation>
  <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="t" />
- </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
  </sem-frame>
+ </concept>
  <concept name="ont::phys-representation">
+ <comment>
+  &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
+ </comment>
  <relation label="inherit">
   ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|representation%1:06:00::|
   wn::|representation%1:04:01::|
+  wn::|representation%1:06:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -74,47 +93,11 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="information">data</feat>
- <feat name="type">ont::info-medium</feat>
- </sem-feats>
- <concept name="ont::info-holder">
- <relation label="inherit">
-  ont::phys-representation
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::info-medium">
- <relation label="inherit">
-  ont::info-holder
- </relation>
- <relation label="overlap">
-  wn::|written_communication%1:10:00::|
-  wn::|speech%1:10:01::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="information">data</feat>
-  <feat name="type">ont::info-medium</feat>
- </sem-feats>
- </concept>
- <concept name="ont::database">
- <relation label="inherit">
-  ont::info-medium
- </relation>
- <relation label="overlap">
-  wn::|database%1:10:00::|
- </relation>
- </concept>
  <concept name="ont::phys-object">
  <comment>
   &quot;All physical objects: things that have substance&quot;

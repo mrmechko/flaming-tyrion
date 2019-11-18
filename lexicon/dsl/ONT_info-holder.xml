@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::info-holder">
+ <comment>
+  &quot;a method/manner or device to store information, may also be used for sharing information&quot;
+ </comment>
  <relation label="inherit">
   ont::phys-representation
  </relation>
@@ -86,12 +89,15 @@
  </role-restr-map>
  </sem-frame>
  <concept name="ont::phys-representation">
+ <comment>
+  &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
+ </comment>
  <relation label="inherit">
   ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|representation%1:06:00::|
   wn::|representation%1:04:01::|
+  wn::|representation%1:06:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -125,19 +131,14 @@
  </sem-feats>
  <concept name="phys-obj" />
  <concept name="ont::communication-channel">
+ <comment>
+  &quot;means to transmit information (through broadcasting/telecasting)&quot;
+ </comment>
  <relation label="inherit">
   ont::info-holder
  </relation>
  <relation label="overlap">
   wn::|channel%1:10:01::|
- </relation>
- </concept>
- <concept name="ont::direct-representation">
- <comment>
-  &quot;a physical object that conatins information (e.g., text, graphics)&quot;
- </comment>
- <relation label="inherit">
-  ont::info-holder
  </relation>
  </concept>
  <concept name="ont::annotation">
@@ -150,6 +151,9 @@
  </relation>
  </concept>
  <concept name="ont::document">
+ <comment>
+  &quot;a report or other types of documents to record information&quot;
+ </comment>
  <relation label="inherit">
   ont::info-holder
  </relation>
@@ -158,21 +162,56 @@
   wn::|document%1:21:00::|
  </relation>
  </concept>
- <concept name="ont::info-medium">
+ <concept name="ont::info-representation">
+ <comment>
+  &quot;method to store/encode information for conveying it in a visual manner&quot;
+ </comment>
  <relation label="inherit">
   ont::info-holder
  </relation>
  <relation label="overlap">
-  wn::|written_communication%1:10:00::|
-  wn::|speech%1:10:01::|
+  wn::|representation%1:09:00::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="information">data</feat>
-  <feat name="type">ont::info-medium</feat>
- </sem-feats>
+ </concept>
+ <concept name="ont::feed">
+ <relation label="inherit">
+  ont::info-holder
+ </relation>
+ </concept>
+ <concept name="ont::database">
+ <relation label="inherit">
+  ont::info-holder
+ </relation>
+ <relation label="overlap">
+  wn::|database%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::website">
+ <relation label="inherit">
+  ont::info-holder
+ </relation>
+ <relation label="overlap">
+  wn::|web_site%1:10:00::|
+  wn::|website%1:10:00::|
+  wn::|internet_site%1:10:00::|
+  wn::|site%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::template-info-object">
+ <comment>
+  &quot;a templatic document to store and provide information&quot;
+ </comment>
+ <relation label="inherit">
+  ont::info-holder
+ </relation>
+ </concept>
+ <concept name="ont::data-storage-medium">
+ <comment>
+  &quot;physical devices used to store data in a soft copy&quot;
+ </comment>
+ <relation label="inherit">
+  ont::info-holder
+ </relation>
  </concept>
  <sense>
  <morph>

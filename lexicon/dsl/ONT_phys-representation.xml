@@ -3,12 +3,15 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::phys-representation">
+ <comment>
+  &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
+ </comment>
  <relation label="inherit">
   ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|representation%1:06:00::|
   wn::|representation%1:04:01::|
+  wn::|representation%1:06:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -110,6 +113,9 @@
  </sem-feats>
  <concept name="phys-obj" />
  <concept name="ont::info-holder">
+ <comment>
+  &quot;a method/manner or device to store information, may also be used for sharing information&quot;
+ </comment>
  <relation label="inherit">
   ont::phys-representation
  </relation>
@@ -119,7 +125,29 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::info-medium">
+ <comment>
+  &quot;a medium to transmit or store information&quot;
+ </comment>
+ <relation label="inherit">
+  ont::phys-representation
+ </relation>
+ <relation label="overlap">
+  wn::|speech%1:10:01::|
+  wn::|written_communication%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">data</feat>
+  <feat name="type">ont::info-medium</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::symbolic-representation">
+ <comment>
+  &quot;method to represent information symbolically&quot;
+ </comment>
  <relation label="inherit">
   ont::phys-representation
  </relation>
@@ -138,29 +166,6 @@
   <feat name="form">object</feat>
   <feat name="type">ont::symbolic-representation</feat>
  </sem-feats>
- </concept>
- <concept name="ont::prescription">
- <relation label="inherit">
-  ont::phys-representation
- </relation>
- <relation label="overlap">
-  wn::|prescription%1:10:02::|
-  wn::|prescription%1:10:01::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="intentional">-</feat>
-  <feat name="origin">artifact</feat>
-  <feat name="form">solid-object</feat>
-  <feat name="type">ont::prescription</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sense>
  <morph>

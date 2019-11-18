@@ -8403,7 +8403,7 @@
 (CONCEPT
   ONT::CHART
   (INHERIT
-    ONT::DIRECT-REPRESENTATION)
+    ONT::INFO-REPRESENTATION)
   (OVERLAP
     WN::|chart%1:10:00::|
     WN::|table%1:14:00::|)
@@ -10030,6 +10030,7 @@
 
 (CONCEPT
   ONT::COMMUNICATION-CHANNEL
+  (COMMENT "means to transmit information (through broadcasting/telecasting)")
   (INHERIT
     ONT::INFO-HOLDER)
   (OVERLAP
@@ -11515,6 +11516,8 @@
 
 (CONCEPT
   ONT::COPY
+  (COMMENT
+   "a copy of a document or other means to store information in a hard copy")
   (INHERIT
     ONT::DIRECT-REPRESENTATION))
 
@@ -12595,8 +12598,9 @@
 
 (CONCEPT
   ONT::DATA-STORAGE-MEDIUM
+  (COMMENT "physical devices used to store data in a soft copy")
   (INHERIT
-    ONT::INFO-MEDIUM))
+    ONT::INFO-HOLDER))
 
 (CONCEPT
   ONT::DATA-STRUCTURE
@@ -12608,7 +12612,7 @@
 (CONCEPT
   ONT::DATABASE
   (INHERIT
-    ONT::INFO-MEDIUM)
+    ONT::INFO-HOLDER)
   (OVERLAP
     WN::|database%1:10:00::|))
 
@@ -13773,10 +13777,7 @@
        (INFORMATION INFORMATION-CONTENT)))))
 
 (CONCEPT
-  ONT::DIRECT-REPRESENTATION
-  (COMMENT "a physical object that conatins information (e.g., text, graphics)")
-  (INHERIT
-    ONT::INFO-HOLDER))
+  ONT::DIRECT-REPRESENTATION)
 
 (CONCEPT
   ONT::DIRECTED-COMMUNICATION
@@ -14332,6 +14333,7 @@
 
 (CONCEPT
   ONT::DISPLAY
+  (COMMENT "a device used to display information")
   (INHERIT
     ONT::INFO-MEDIUM)
   (OVERLAP
@@ -14511,6 +14513,7 @@
 
 (CONCEPT
   ONT::DOCUMENT
+  (COMMENT "a report or other types of documents to record information")
   (INHERIT
     ONT::INFO-HOLDER)
   (OVERLAP
@@ -17905,7 +17908,7 @@
 (CONCEPT
   ONT::FEED
   (INHERIT
-    ONT::PUBLICATION))
+    ONT::INFO-HOLDER))
 
 (CONCEPT
   ONT::FEEDING
@@ -19977,6 +19980,7 @@
 
 (CONCEPT
   ONT::GRAPHIC-SYMBOL
+  (COMMENT "a symbol to represent information but in a pictorial way")
   (INHERIT
     ONT::SYMBOLIC-REPRESENTATION)
   (OVERLAP
@@ -21479,7 +21483,7 @@
 (CONCEPT
   ONT::IMAGE
   (INHERIT
-    ONT::DIRECT-REPRESENTATION)
+    ONT::INFO-REPRESENTATION)
   (OVERLAP
     WN::|picture%1:06:00::|
     WN::|image%1:06:00::|
@@ -22162,6 +22166,8 @@
 
 (CONCEPT
   ONT::INFO-HOLDER
+  (COMMENT
+   "a method/manner or device to store information, may also be used for sharing information")
   (INHERIT
     ONT::PHYS-REPRESENTATION)
   (SEM-FRAME
@@ -22172,16 +22178,26 @@
 
 (CONCEPT
   ONT::INFO-MEDIUM
+  (COMMENT "a medium to transmit or store information")
   (INHERIT
-    ONT::INFO-HOLDER)
+    ONT::PHYS-REPRESENTATION)
   (OVERLAP
-    WN::|written_communication%1:10:00::|
-    WN::|speech%1:10:01::|)
+    WN::|speech%1:10:01::|
+    WN::|written_communication%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
     (INFORMATION DATA)
     (TYPE ONT::INFO-MEDIUM)))
+
+(CONCEPT
+  ONT::INFO-REPRESENTATION
+  (COMMENT
+   "method to store/encode information for conveying it in a visual manner")
+  (INHERIT
+    ONT::INFO-HOLDER)
+  (OVERLAP
+    WN::|representation%1:09:00::|))
 
 (CONCEPT
   ONT::INFORMATION
@@ -24056,13 +24072,14 @@
 (CONCEPT
   ONT::LETTER-MAIL
   (INHERIT
-    ONT::DIRECT-REPRESENTATION)
+    ONT::DOCUMENT)
   (OVERLAP
     WN::|letter%1:10:00::|
     WN::|missive%1:10:00::|))
 
 (CONCEPT
   ONT::LETTER-SYMBOL
+  (COMMENT "a textual symbol to represent information")
   (INHERIT
     ONT::TEXT-REPRESENTATION)
   (OVERLAP
@@ -25740,7 +25757,7 @@
 (CONCEPT
   ONT::MAP
   (INHERIT
-    ONT::DIRECT-REPRESENTATION)
+    ONT::INFO-REPRESENTATION)
   (OVERLAP
     WN::|map%1:06:00::|
     WN::|chart%1:06:00::|)
@@ -27697,7 +27714,7 @@
 (CONCEPT
   ONT::MUSICAL-DOCUMENT
   (INHERIT
-    ONT::INFO-MEDIUM)
+    ONT::DOCUMENT)
   (OVERLAP
     WN::|sheet_music%1:10:00::|)
   (SEM-FEATS
@@ -30964,8 +30981,9 @@
 
 (CONCEPT
   ONT::OFFICIAL-DOCUMENT
+  (COMMENT "a document recording a formal agreement")
   (INHERIT
-    ONT::DIRECT-REPRESENTATION)
+    ONT::DOCUMENT)
   (OVERLAP
     WN::|document%1:10:00::|
     WN::|written_document%1:10:00::|
@@ -32463,11 +32481,13 @@
 
 (CONCEPT
   ONT::PHYS-REPRESENTATION
+  (COMMENT
+   "anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.")
   (INHERIT
     ONT::PHYS-OBJECT)
   (OVERLAP
-    WN::|representation%1:06:00::|
-    WN::|representation%1:04:01::|)
+    WN::|representation%1:04:01::|
+    WN::|representation%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -33458,7 +33478,7 @@
 (CONCEPT
   ONT::PLOT-DIAGRAM-DRAWING
   (INHERIT
-    ONT::DIRECT-REPRESENTATION)
+    ONT::INFO-REPRESENTATION)
   (OVERLAP
     WN::|plot%1:10:01::|
     WN::|spectrum%1:19:00::|
@@ -34428,7 +34448,7 @@
 (CONCEPT
   ONT::PRESCRIPTION
   (INHERIT
-    ONT::PHYS-REPRESENTATION)
+    ONT::DOCUMENT)
   (OVERLAP
     WN::|prescription%1:10:02::|
     WN::|prescription%1:10:01::|)
@@ -35285,8 +35305,9 @@
 
 (CONCEPT
   ONT::PUBLICATION
+  (COMMENT "printed material such as a book")
   (INHERIT
-    ONT::INFO-MEDIUM)
+    ONT::DOCUMENT)
   (OVERLAP
     WN::|publication%1:10:00::|)
   (SEM-FRAME
@@ -43569,6 +43590,7 @@
 
 (CONCEPT
   ONT::SYMBOLIC-REPRESENTATION
+  (COMMENT "method to represent information symbolically")
   (INHERIT
     ONT::PHYS-REPRESENTATION)
   (OVERLAP
@@ -44185,8 +44207,9 @@
 
 (CONCEPT
   ONT::TEMPLATE-INFO-OBJECT
+  (COMMENT "a templatic document to store and provide information")
   (INHERIT
-    ONT::INFO-MEDIUM))
+    ONT::INFO-HOLDER))
 
 (CONCEPT
   ONT::TEMPORAL-LOCATION
@@ -44358,6 +44381,8 @@
 
 (CONCEPT
   ONT::TEXT-REPRESENTATION
+  (COMMENT
+   "textual symbols used to represent information or properties of text used to represent information")
   (INHERIT
     ONT::SYMBOLIC-REPRESENTATION)
   (OVERLAP
@@ -47238,7 +47263,7 @@
 (CONCEPT
   ONT::WEBSITE
   (INHERIT
-    ONT::INFO-MEDIUM)
+    ONT::INFO-HOLDER)
   (OVERLAP
     WN::|web_site%1:10:00::|
     WN::|website%1:10:00::|

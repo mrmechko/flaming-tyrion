@@ -9462,7 +9462,7 @@
  </concept>
  <concept name="ont::chart">
   <relation label="inherit">
-   ont::direct-representation
+   ont::info-representation
   </relation>
   <relation label="overlap">
    wn::|chart%1:10:00::|
@@ -11250,6 +11250,9 @@
   </sem-frame>
  </concept>
  <concept name="ont::communication-channel">
+  <comment>
+   &quot;means to transmit information (through broadcasting/telecasting)&quot;
+  </comment>
   <relation label="inherit">
    ont::info-holder
   </relation>
@@ -12961,6 +12964,9 @@
   </relation>
  </concept>
  <concept name="ont::copy">
+  <comment>
+   &quot;a copy of a document or other means to store information in a hard copy&quot;
+  </comment>
   <relation label="inherit">
    ont::direct-representation
   </relation>
@@ -14211,8 +14217,11 @@
   </relation>
  </concept>
  <concept name="ont::data-storage-medium">
+  <comment>
+   &quot;physical devices used to store data in a soft copy&quot;
+  </comment>
   <relation label="inherit">
-   ont::info-medium
+   ont::info-holder
   </relation>
  </concept>
  <concept name="ont::data-structure">
@@ -14225,7 +14234,7 @@
  </concept>
  <concept name="ont::database">
   <relation label="inherit">
-   ont::info-medium
+   ont::info-holder
   </relation>
   <relation label="overlap">
    wn::|database%1:10:00::|
@@ -15580,14 +15589,7 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::direct-representation">
-  <comment>
-   &quot;a physical object that conatins information (e.g., text, graphics)&quot;
-  </comment>
-  <relation label="inherit">
-   ont::info-holder
-  </relation>
- </concept>
+ <concept name="ont::direct-representation" />
  <concept name="ont::directed-communication">
   <comment>
    &quot;typically asymmetric extended interaction controlled by a single agent&quot;
@@ -16219,6 +16221,9 @@
   </relation>
  </concept>
  <concept name="ont::display">
+  <comment>
+   &quot;a device used to display information&quot;
+  </comment>
   <relation label="inherit">
    ont::info-medium
   </relation>
@@ -16416,6 +16421,9 @@
   </relation>
  </concept>
  <concept name="ont::document">
+  <comment>
+   &quot;a report or other types of documents to record information&quot;
+  </comment>
   <relation label="inherit">
    ont::info-holder
   </relation>
@@ -20340,7 +20348,7 @@
  </concept>
  <concept name="ont::feed">
   <relation label="inherit">
-   ont::publication
+   ont::info-holder
   </relation>
  </concept>
  <concept name="ont::feeding">
@@ -22728,6 +22736,9 @@
   </relation>
  </concept>
  <concept name="ont::graphic-symbol">
+  <comment>
+   &quot;a symbol to represent information but in a pictorial way&quot;
+  </comment>
   <relation label="inherit">
    ont::symbolic-representation
   </relation>
@@ -24458,7 +24469,7 @@
  </concept>
  <concept name="ont::image">
   <relation label="inherit">
-   ont::direct-representation
+   ont::info-representation
   </relation>
   <relation label="overlap">
    wn::|picture%1:06:00::|
@@ -25258,6 +25269,9 @@
   </relation>
  </concept>
  <concept name="ont::info-holder">
+  <comment>
+   &quot;a method/manner or device to store information, may also be used for sharing information&quot;
+  </comment>
   <relation label="inherit">
    ont::phys-representation
   </relation>
@@ -25268,12 +25282,15 @@
   </sem-frame>
  </concept>
  <concept name="ont::info-medium">
+  <comment>
+   &quot;a medium to transmit or store information&quot;
+  </comment>
   <relation label="inherit">
-   ont::info-holder
+   ont::phys-representation
   </relation>
   <relation label="overlap">
-   wn::|written_communication%1:10:00::|
    wn::|speech%1:10:01::|
+   wn::|written_communication%1:10:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -25282,6 +25299,17 @@
    <feat name="information">data</feat>
    <feat name="type">ont::info-medium</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::info-representation">
+  <comment>
+   &quot;method to store/encode information for conveying it in a visual manner&quot;
+  </comment>
+  <relation label="inherit">
+   ont::info-holder
+  </relation>
+  <relation label="overlap">
+   wn::|representation%1:09:00::|
+  </relation>
  </concept>
  <concept name="ont::information">
   <relation label="inherit">
@@ -27452,7 +27480,7 @@
  </concept>
  <concept name="ont::letter-mail">
   <relation label="inherit">
-   ont::direct-representation
+   ont::document
   </relation>
   <relation label="overlap">
    wn::|letter%1:10:00::|
@@ -27460,6 +27488,9 @@
   </relation>
  </concept>
  <concept name="ont::letter-symbol">
+  <comment>
+   &quot;a textual symbol to represent information&quot;
+  </comment>
   <relation label="inherit">
    ont::text-representation
   </relation>
@@ -29415,7 +29446,7 @@
  </concept>
  <concept name="ont::map">
   <relation label="inherit">
-   ont::direct-representation
+   ont::info-representation
   </relation>
   <relation label="overlap">
    wn::|map%1:06:00::|
@@ -31627,7 +31658,7 @@
  </concept>
  <concept name="ont::musical-document">
   <relation label="inherit">
-   ont::info-medium
+   ont::document
   </relation>
   <relation label="overlap">
    wn::|sheet_music%1:10:00::|
@@ -35526,8 +35557,11 @@
   </relation>
  </concept>
  <concept name="ont::official-document">
+  <comment>
+   &quot;a document recording a formal agreement&quot;
+  </comment>
   <relation label="inherit">
-   ont::direct-representation
+   ont::document
   </relation>
   <relation label="overlap">
    wn::|document%1:10:00::|
@@ -37271,12 +37305,15 @@
   </sem-feats>
  </concept>
  <concept name="ont::phys-representation">
+  <comment>
+   &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
+  </comment>
   <relation label="inherit">
    ont::phys-object
   </relation>
   <relation label="overlap">
-   wn::|representation%1:06:00::|
    wn::|representation%1:04:01::|
+   wn::|representation%1:06:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -38356,7 +38393,7 @@
  </concept>
  <concept name="ont::plot-diagram-drawing">
   <relation label="inherit">
-   ont::direct-representation
+   ont::info-representation
   </relation>
   <relation label="overlap">
    wn::|plot%1:10:01::|
@@ -39473,7 +39510,7 @@
  </concept>
  <concept name="ont::prescription">
   <relation label="inherit">
-   ont::phys-representation
+   ont::document
   </relation>
   <relation label="overlap">
    wn::|prescription%1:10:02::|
@@ -40449,8 +40486,11 @@
   </relation>
  </concept>
  <concept name="ont::publication">
+  <comment>
+   &quot;printed material such as a book&quot;
+  </comment>
   <relation label="inherit">
-   ont::info-medium
+   ont::document
   </relation>
   <relation label="overlap">
    wn::|publication%1:10:00::|
@@ -49807,6 +49847,9 @@
   </relation>
  </concept>
  <concept name="ont::symbolic-representation">
+  <comment>
+   &quot;method to represent information symbolically&quot;
+  </comment>
   <relation label="inherit">
    ont::phys-representation
   </relation>
@@ -50509,8 +50552,11 @@
   </sem-feats>
  </concept>
  <concept name="ont::template-info-object">
+  <comment>
+   &quot;a templatic document to store and provide information&quot;
+  </comment>
   <relation label="inherit">
-   ont::info-medium
+   ont::info-holder
   </relation>
  </concept>
  <concept name="ont::temporal-location">
@@ -50692,6 +50738,9 @@
   </relation>
  </concept>
  <concept name="ont::text-representation">
+  <comment>
+   &quot;textual symbols used to represent information or properties of text used to represent information&quot;
+  </comment>
   <relation label="inherit">
    ont::symbolic-representation
   </relation>
@@ -54054,7 +54103,7 @@
  </concept>
  <concept name="ont::website">
   <relation label="inherit">
-   ont::info-medium
+   ont::info-holder
   </relation>
   <relation label="overlap">
    wn::|web_site%1:10:00::|

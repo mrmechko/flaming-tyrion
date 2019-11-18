@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::chart">
  <relation label="inherit">
-  ont::direct-representation
+  ont::info-representation
  </relation>
  <relation label="overlap">
   wn::|chart%1:10:00::|
@@ -57,12 +57,15 @@
  </role-restr-map>
  </sem-frame>
  <concept name="ont::phys-representation">
+ <comment>
+  &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
+ </comment>
  <relation label="inherit">
   ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|representation%1:06:00::|
   wn::|representation%1:04:01::|
+  wn::|representation%1:06:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -81,12 +84,15 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::direct-representation">
+ <concept name="ont::info-representation">
  <comment>
-  &quot;a physical object that conatins information (e.g., text, graphics)&quot;
+  &quot;method to store/encode information for conveying it in a visual manner&quot;
  </comment>
  <relation label="inherit">
   ont::info-holder
+ </relation>
+ <relation label="overlap">
+  wn::|representation%1:09:00::|
  </relation>
  </concept>
  <sem-frame>
@@ -97,6 +103,9 @@
  </role-restr-map>
  </sem-frame>
  <concept name="ont::info-holder">
+ <comment>
+  &quot;a method/manner or device to store information, may also be used for sharing information&quot;
+ </comment>
  <relation label="inherit">
   ont::phys-representation
  </relation>

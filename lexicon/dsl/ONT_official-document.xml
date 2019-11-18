@@ -3,8 +3,11 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::official-document">
+ <comment>
+  &quot;a document recording a formal agreement&quot;
+ </comment>
  <relation label="inherit">
-  ont::direct-representation
+  ont::document
  </relation>
  <relation label="overlap">
   wn::|document%1:10:00::|
@@ -45,15 +48,22 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <concept name="ont::direct-representation">
+ <concept name="ont::document">
  <comment>
-  &quot;a physical object that conatins information (e.g., text, graphics)&quot;
+  &quot;a report or other types of documents to record information&quot;
  </comment>
  <relation label="inherit">
   ont::info-holder
  </relation>
+ <relation label="overlap">
+  wn::|document%1:06:00::|
+  wn::|document%1:21:00::|
+ </relation>
  </concept>
  <concept name="ont::info-holder">
+ <comment>
+  &quot;a method/manner or device to store information, may also be used for sharing information&quot;
+ </comment>
  <relation label="inherit">
   ont::phys-representation
  </relation>
@@ -64,12 +74,15 @@
  </sem-frame>
  </concept>
  <concept name="ont::phys-representation">
+ <comment>
+  &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
+ </comment>
  <relation label="inherit">
   ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|representation%1:06:00::|
   wn::|representation%1:04:01::|
+  wn::|representation%1:06:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">

@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::document">
+ <comment>
+  &quot;a report or other types of documents to record information&quot;
+ </comment>
  <relation label="inherit">
   ont::info-holder
  </relation>
@@ -85,12 +88,15 @@
  </role-restr-map>
  </sem-frame>
  <concept name="ont::phys-representation">
+ <comment>
+  &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
+ </comment>
  <relation label="inherit">
   ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|representation%1:06:00::|
   wn::|representation%1:04:01::|
+  wn::|representation%1:06:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -110,6 +116,9 @@
  </sem-frame>
  </concept>
  <concept name="ont::info-holder">
+ <comment>
+  &quot;a method/manner or device to store information, may also be used for sharing information&quot;
+ </comment>
  <relation label="inherit">
   ont::phys-representation
  </relation>
@@ -133,6 +142,20 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="phys-obj" />
+ <concept name="ont::musical-document">
+ <relation label="inherit">
+  ont::document
+ </relation>
+ <relation label="overlap">
+  wn::|sheet_music%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="type">ont::musical-document</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::chronicle">
  <relation label="inherit">
   ont::document
@@ -140,6 +163,69 @@
  <relation label="overlap">
   wn::|record%1:10:03::|
  </relation>
+ </concept>
+ <concept name="ont::official-document">
+ <comment>
+  &quot;a document recording a formal agreement&quot;
+ </comment>
+ <relation label="inherit">
+  ont::document
+ </relation>
+ <relation label="overlap">
+  wn::|document%1:10:00::|
+  wn::|written_document%1:10:00::|
+  wn::|papers%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::letter-mail">
+ <relation label="inherit">
+  ont::document
+ </relation>
+ <relation label="overlap">
+  wn::|letter%1:10:00::|
+  wn::|missive%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::publication">
+ <comment>
+  &quot;printed material such as a book&quot;
+ </comment>
+ <relation label="inherit">
+  ont::document
+ </relation>
+ <relation label="overlap">
+  wn::|publication%1:10:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <feat name="information">information-content</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::prescription">
+ <relation label="inherit">
+  ont::document
+ </relation>
+ <relation label="overlap">
+  wn::|prescription%1:10:02::|
+  wn::|prescription%1:10:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">solid-object</feat>
+  <feat name="type">ont::prescription</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <sense>
  <morph>
