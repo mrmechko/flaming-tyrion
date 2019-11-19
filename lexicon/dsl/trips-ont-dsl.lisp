@@ -6838,7 +6838,8 @@
     ONT::BECOMING-AWARE-OF-VALUE)
   (OVERLAP
     WN::|account%2:40:00::|
-    WN::|get%2:31:03::|))
+    WN::|get%2:31:03::|
+    WN::|total%2:42:00::|))
 
 (CONCEPT
   ONT::CALM
@@ -9266,10 +9267,12 @@
     WN::|take%2:31:03::|
     WN::|consider%2:31:01::|
     WN::|cogitate%2:31:01::|
+    WN::|cogitate%2:31:00::|
     WN::|bethink%2:39:00::|
     WN::|brood%2:42:00::|
     WN::|consider%2:32:00::|
-    WN::|think%2:31:08::|)
+    WN::|think%2:31:08::|
+    WN::|process%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -23798,7 +23801,8 @@
     WN::|learn%2:31:00::|
     WN::|larn%2:31:00::|
     WN::|acquire%2:31:00::|
-    WN::|study%2:31:03::|)
+    WN::|study%2:31:03::|
+    WN::|learning%1:09:00::|)
   (SEM-FRAME
     (ONT::SOURCE
      (OR
@@ -37533,7 +37537,8 @@
     WN::|call%2:41:04::|
     WN::|insist%2:32:00::|
     WN::|request%1:10:00::|
-    WN::|request%2:32:01::|)
+    WN::|request%2:32:01::|
+    WN::|demand%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -42680,7 +42685,8 @@
     WN::|stop%2:42:00::|
     WN::|strand%2:38:02::|
     WN::|strand%2:38:03::|
-    WN::|terminate%2:30:01::|))
+    WN::|terminate%2:30:01::|
+    WN::|end%2:42:00::|))
 
 (CONCEPT
   ONT::STORAGE-FACILITY
