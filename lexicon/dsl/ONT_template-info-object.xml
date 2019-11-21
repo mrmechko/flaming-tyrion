@@ -43,46 +43,13 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="trajectory">+</feat>
- <feat name="object-function">representation</feat>
- <feat name="intentional">-</feat>
- <feat name="origin">artifact</feat>
- <feat name="form">object</feat>
- <feat name="type">ont::phys-representation</feat>
+ <feat name="information">data</feat>
+ <feat name="type">ont::info-medium</feat>
  </sem-feats>
- <concept name="ont::phys-object">
- <comment>
-  &quot;All physical objects: things that have substance&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <relation label="overlap">
-  wn::|object%1:03:00::|
-  wn::|physical_object%1:03:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::phys-object</feat>
- </sem-feats>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::phys-representation">
  <comment>
   &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
@@ -111,12 +78,36 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::info-medium">
+ <comment>
+  &quot;a medium to transmit or store information&quot;
+ </comment>
+ <relation label="inherit">
+  ont::phys-representation
+ </relation>
+ <relation label="overlap">
+  wn::|speech%1:10:01::|
+  wn::|written_communication%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">data</feat>
+  <feat name="type">ont::info-medium</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::info-holder">
  <comment>
   &quot;a method/manner or device to store information, may also be used for sharing information&quot;
  </comment>
  <relation label="inherit">
-  ont::phys-representation
+  ont::info-medium
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::formal" optional="optional">
@@ -124,6 +115,41 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="trajectory">+</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ <feat name="type">ont::phys-representation</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root

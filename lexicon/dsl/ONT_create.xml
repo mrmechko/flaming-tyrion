@@ -7,9 +7,10 @@
   ont::event-of-creation
  </relation>
  <relation label="overlap">
-  wn::|make%2:36:00::|
   wn::|create%2:36:00::|
   wn::|create%2:36:03::|
+  wn::|creation%1:04:00::|
+  wn::|make%2:36:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -352,6 +353,32 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::invention">
+ <relation label="inherit">
+  ont::create
+ </relation>
+ <relation label="overlap">
+  wn::|invention%1:04:00::|
+  wn::|invention%1:06:00::|
+  wn::|invention%1:09:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::reason" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected-result" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::imitate-simulate">
  <relation label="inherit">
   ont::create

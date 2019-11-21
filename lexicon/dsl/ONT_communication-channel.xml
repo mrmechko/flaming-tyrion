@@ -7,7 +7,7 @@
   &quot;means to transmit information (through broadcasting/telecasting)&quot;
  </comment>
  <relation label="inherit">
-  ont::info-holder
+  ont::info-medium
  </relation>
  <relation label="overlap">
   wn::|channel%1:10:01::|
@@ -81,11 +81,13 @@
   <feat name="type">ont::phys-object</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">data</feat>
+ <feat name="type">ont::info-medium</feat>
+ </sem-feats>
  <concept name="ont::phys-representation">
  <comment>
   &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
@@ -114,18 +116,24 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::info-holder">
+ <concept name="ont::info-medium">
  <comment>
-  &quot;a method/manner or device to store information, may also be used for sharing information&quot;
+  &quot;a medium to transmit or store information&quot;
  </comment>
  <relation label="inherit">
   ont::phys-representation
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
+ <relation label="overlap">
+  wn::|speech%1:10:01::|
+  wn::|written_communication%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">data</feat>
+  <feat name="type">ont::info-medium</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::any-sem">
  <relation label="inherit">

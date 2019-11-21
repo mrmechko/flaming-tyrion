@@ -4334,7 +4334,7 @@
  </concept>
  <concept name="ont::avoid-location">
   <relation label="inherit">
-   ont::path-shape
+   ont::motion
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -11257,7 +11257,7 @@
    &quot;means to transmit information (through broadcasting/telecasting)&quot;
   </comment>
   <relation label="inherit">
-   ont::info-holder
+   ont::info-medium
   </relation>
   <relation label="overlap">
    wn::|channel%1:10:01::|
@@ -12971,7 +12971,7 @@
    &quot;a copy of a document or other means to store information in a hard copy&quot;
   </comment>
   <relation label="inherit">
-   ont::direct-representation
+   ont::info-holder
   </relation>
  </concept>
  <concept name="ont::cordless-val">
@@ -13608,9 +13608,10 @@
    ont::event-of-creation
   </relation>
   <relation label="overlap">
-   wn::|make%2:36:00::|
    wn::|create%2:36:00::|
    wn::|create%2:36:03::|
+   wn::|creation%1:04:00::|
+   wn::|make%2:36:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -15592,7 +15593,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::direct-representation" />
  <concept name="ont::directed-communication">
   <comment>
    &quot;typically asymmetric extended interaction controlled by a single agent&quot;
@@ -19998,18 +19998,35 @@
    <feat name="type">ont::false-val</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::fame-scale">
+  <relation label="inherit">
+   ont::evaluation-scale
+  </relation>
+  <relation label="overlap">
+   wn::|fame%1:26:01::|
+   wn::|fame%1:26:02::|
+   wn::|prominence%1:26:00::|
+  </relation>
+ </concept>
  <concept name="ont::fame-val">
   <comment>
    &quot;social status relating to fame&quot;
   </comment>
   <relation label="inherit">
-   ont::status-val
+   ont::evaluation-attribute-val
   </relation>
   <relation label="overlap">
    wn::|famous%5:00:00:known:00|
    wn::|celebrated%5:00:00:known:00|
    wn::|legendary%5:00:00:known:00|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::fame-scale</feat>
+   <feat name="type">ont::fame-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::familiar">
   <relation label="inherit">
@@ -25276,7 +25293,7 @@
    &quot;a method/manner or device to store information, may also be used for sharing information&quot;
   </comment>
   <relation label="inherit">
-   ont::phys-representation
+   ont::info-medium
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal" optional="optional">
@@ -26214,7 +26231,12 @@
  </concept>
  <concept name="ont::invention">
   <relation label="inherit">
-   ont::event-of-creation
+   ont::create
+  </relation>
+  <relation label="overlap">
+   wn::|invention%1:04:00::|
+   wn::|invention%1:06:00::|
+   wn::|invention%1:09:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::reason" optional="optional">
@@ -28192,7 +28214,7 @@
  </concept>
  <concept name="ont::list">
   <relation label="inherit">
-   ont::database
+   ont::info-holder
   </relation>
   <relation label="overlap">
    wn::|list%1:10:00::|
@@ -31272,10 +31294,10 @@
    wn::|move%2:38:00::|
    wn::|move%2:38:02::|
    wn::|move%2:38:03::|
+   wn::|movement%1:04:02::|
    wn::|move_out%2:41:00::|
    wn::|relocation%1:04:00::|
    wn::|take%2:38:05::|
-   wn::|transport%1:04:01::|
    wn::|travel%2:38:00::|
    wn::|wreathe%2:38:00::|
    wn::|movement%1:11:00::|
@@ -36707,11 +36729,6 @@
     </or>
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::path-shape">
-  <relation label="inherit">
-   ont::motion
-  </relation>
  </concept>
  <concept name="ont::patience-val">
   <comment>
@@ -44641,6 +44658,9 @@
   <relation label="inherit">
    ont::event-of-state
   </relation>
+  <relation label="overlap">
+   wn::|salience%1:26:00::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     situation
@@ -51946,6 +51966,10 @@
  <concept name="ont::transportation">
   <relation label="inherit">
    ont::motion
+  </relation>
+  <relation label="overlap">
+   wn::|transportation%1:04:00::|
+   wn::|transportation%1:04:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">

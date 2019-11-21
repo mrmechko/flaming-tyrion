@@ -3804,7 +3804,7 @@
 (CONCEPT
   ONT::AVOID-LOCATION
   (INHERIT
-    ONT::PATH-SHAPE)
+    ONT::MOTION)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -10035,7 +10035,7 @@
   ONT::COMMUNICATION-CHANNEL
   (COMMENT "means to transmit information (through broadcasting/telecasting)")
   (INHERIT
-    ONT::INFO-HOLDER)
+    ONT::INFO-MEDIUM)
   (OVERLAP
     WN::|channel%1:10:01::|))
 
@@ -11522,7 +11522,7 @@
   (COMMENT
    "a copy of a document or other means to store information in a hard copy")
   (INHERIT
-    ONT::DIRECT-REPRESENTATION))
+    ONT::INFO-HOLDER))
 
 (CONCEPT
   ONT::CORDLESS-VAL
@@ -12087,9 +12087,10 @@
   (INHERIT
     ONT::EVENT-OF-CREATION)
   (OVERLAP
-    WN::|make%2:36:00::|
     WN::|create%2:36:00::|
-    WN::|create%2:36:03::|)
+    WN::|create%2:36:03::|
+    WN::|creation%1:04:00::|
+    WN::|make%2:36:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -13778,9 +13779,6 @@
     (ONT::FORMAL
      (SEM-FEATS
        (INFORMATION INFORMATION-CONTENT)))))
-
-(CONCEPT
-  ONT::DIRECT-REPRESENTATION)
 
 (CONCEPT
   ONT::DIRECTED-COMMUNICATION
@@ -17610,14 +17608,28 @@
     (TYPE ONT::FALSE-VAL)))
 
 (CONCEPT
+  ONT::FAME-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|fame%1:26:01::|
+    WN::|fame%1:26:02::|
+    WN::|prominence%1:26:00::|))
+
+(CONCEPT
   ONT::FAME-VAL
   (COMMENT "social status relating to fame")
   (INHERIT
-    ONT::STATUS-VAL)
+    ONT::EVALUATION-ATTRIBUTE-VAL)
   (OVERLAP
     WN::|famous%5:00:00:known:00|
     WN::|celebrated%5:00:00:known:00|
-    WN::|legendary%5:00:00:known:00|))
+    WN::|legendary%5:00:00:known:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::FAME-SCALE)
+    (TYPE ONT::FAME-VAL)))
 
 (CONCEPT
   ONT::FAMILIAR
@@ -22172,7 +22184,7 @@
   (COMMENT
    "a method/manner or device to store information, may also be used for sharing information")
   (INHERIT
-    ONT::PHYS-REPRESENTATION)
+    ONT::INFO-MEDIUM)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -22981,7 +22993,11 @@
 (CONCEPT
   ONT::INVENTION
   (INHERIT
-    ONT::EVENT-OF-CREATION)
+    ONT::CREATE)
+  (OVERLAP
+    WN::|invention%1:04:00::|
+    WN::|invention%1:06:00::|
+    WN::|invention%1:09:00::|)
   (SEM-FRAME
     (ONT::REASON
      (CONCEPT
@@ -24695,7 +24711,7 @@
 (CONCEPT
   ONT::LIST
   (INHERIT
-    ONT::DATABASE)
+    ONT::INFO-HOLDER)
   (OVERLAP
     WN::|list%1:10:00::|
     WN::|listing%1:10:00::|))
@@ -27370,10 +27386,10 @@
     WN::|move%2:38:00::|
     WN::|move%2:38:02::|
     WN::|move%2:38:03::|
+    WN::|movement%1:04:02::|
     WN::|move_out%2:41:00::|
     WN::|relocation%1:04:00::|
     WN::|take%2:38:05::|
-    WN::|transport%1:04:01::|
     WN::|travel%2:38:00::|
     WN::|wreathe%2:38:00::|
     WN::|movement%1:11:00::|)
@@ -31967,11 +31983,6 @@
        (CONCEPT
          ABSTR-OBJ))
      OPTIONAL)))
-
-(CONCEPT
-  ONT::PATH-SHAPE
-  (INHERIT
-    ONT::MOTION))
 
 (CONCEPT
   ONT::PATIENCE-VAL
@@ -39010,6 +39021,8 @@
   ONT::SALIENCE
   (INHERIT
     ONT::EVENT-OF-STATE)
+  (OVERLAP
+    WN::|salience%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -45412,6 +45425,9 @@
   ONT::TRANSPORTATION
   (INHERIT
     ONT::MOTION)
+  (OVERLAP
+    WN::|transportation%1:04:00::|
+    WN::|transportation%1:04:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
