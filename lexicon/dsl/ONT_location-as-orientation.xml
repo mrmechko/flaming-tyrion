@@ -21,6 +21,19 @@
   <feat name="type">ont::location-as-orientation</feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::orientation" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">
+    <or>
+     ont::direction
+     ont::goal-reln
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <concept name="phys-obj" />
   </role-restr-map>
@@ -200,6 +213,19 @@
  </sem-frame>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::orientation" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">
+   <or>
+    ont::direction
+    ont::goal-reln
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
  <role-restr-map roles="ont::neutral" optional="optional">
   <concept name="phys-obj" />
  </role-restr-map>
@@ -287,4 +313,23 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="slope" />
+ </morph>
+ <example text="the road slopes down">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::location-as-orientation
+ </relation>
+ <syntax>
+  <template-call template="ont::neutral-orientation-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::advbl" sem-role="ont::orientation"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
+ </sense>
 </dsl>

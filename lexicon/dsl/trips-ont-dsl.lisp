@@ -7735,6 +7735,13 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::CAUSE-SURROUND
+  (INHERIT
+    ONT::CAUSE-POSITION)
+  (OVERLAP
+    WN::|enclose%2:35:00::|))
+
+(CONCEPT
   ONT::CAUSE-TO-MOVE
   (INHERIT
     ONT::MOTION)
@@ -12790,6 +12797,13 @@
     WN::|proclaim%2:32:02::|))
 
 (CONCEPT
+  ONT::DECORATE
+  (INHERIT
+    ONT::ARRANGING)
+  (OVERLAP
+    WN::|decorate%2:36:00::|))
+
+(CONCEPT
   ONT::DECREASE
   (INHERIT
     ONT::CHANGE-MAGNITUDE)
@@ -16670,7 +16684,8 @@
     ONT::NEUTRAL-EXPERIENCE)
   (OVERLAP
     WN::|sedate%2:29:00::|
-    WN::|numb%2:39:00::|))
+    WN::|numb%2:39:00::|
+    WN::|anesthetize%2:29:00::|))
 
 (CONCEPT
   ONT::EVOKE-OFFENSE
@@ -22900,7 +22915,6 @@
   (OVERLAP
     WN::|cross%2:38:03::|
     WN::|intersect%2:38:00::|
-    WN::|hold%2:35:01::|
     WN::|coexist%2:42:00::|)
   (SEM-FEATS
     (INHERIT
@@ -24977,6 +24991,15 @@
     (ASPECT STAGE-LEVEL)
     (TYPE ONT::LOCATION-AS-ORIENTATION))
   (SEM-FRAME
+    (ONT::ORIENTATION
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          ONT::DIRECTION
+          ONT::GOAL-RELN)))
+     OPTIONAL)
     (ONT::NEUTRAL
      (CONCEPT
        PHYS-OBJ)
@@ -25025,7 +25048,8 @@
     WN::|flash%2:39:00::|
     WN::|shine%2:43:03::|
     WN::|twinkle%1:11:00::|
-    WN::|shimmer%1:11:00::|)
+    WN::|shimmer%1:11:00::|
+    WN::|glitter%2:39:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -31461,6 +31485,7 @@
 
 (CONCEPT
   ONT::ORIENTATION-VAL
+  (COMMENT "spatial relations defining the orientation or an object")
   (INHERIT
     ONT::SPATIAL-VAL)
   (OVERLAP
@@ -40769,7 +40794,8 @@
   (INHERIT
     ONT::SAY)
   (OVERLAP
-    WN::|sing%2:36:00::|))
+    WN::|sing%2:36:00::|
+    WN::|singing%1:04:00::|))
 
 (CONCEPT
   ONT::SINGULARITY-VAL
@@ -41018,7 +41044,8 @@
   (INHERIT
     ONT::SPEED-VAL)
   (OVERLAP
-    WN::|slow%3:00:01::|))
+    WN::|slow%3:00:01::|
+    WN::|gradually%4:02:00::|))
 
 (CONCEPT
   ONT::SM
@@ -43385,6 +43412,8 @@
   ONT::SUPPORT
   (INHERIT
     ONT::POSITION)
+  (OVERLAP
+    WN::|support%2:35:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -45178,7 +45207,8 @@
     ONT::CAUSE-CONTACT)
   (OVERLAP
     WN::|touch%2:35:00::|
-    WN::|touch%1:04:00::|))
+    WN::|touch%1:04:00::|
+    WN::|caress%2:35:00::|))
 
 (CONCEPT
   ONT::TOUCH-PROPERTY-VAL
