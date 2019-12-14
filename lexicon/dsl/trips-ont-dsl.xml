@@ -704,24 +704,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::action">
-  <relation label="inherit">
-   ont::event-type
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
-   <feat name="cause">agentive</feat>
-   <feat name="type">ont::action</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::figure" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::action-defined-by-game">
   <relation label="inherit">
    ont::event-defined-by-activity
@@ -7772,6 +7754,30 @@
    wn::|calmness%1:12:00::|
   </relation>
  </concept>
+ <concept name="ont::campaign">
+  <relation label="inherit">
+   ont::event-type
+  </relation>
+  <relation label="overlap">
+   wn::|campaign%1:04:02::|
+   wn::|campaign%1:11:00::|
+   wn::|expedition%1:04:00::|
+   wn::|military_operation%1:04:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">dynamic</feat>
+   <feat name="cause">agentive</feat>
+   <feat name="type">ont::campaign</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::can-be-done-scale">
   <relation label="inherit">
    ont::process-property-scale
@@ -8711,31 +8717,6 @@
     </or>
    </role-restr-map>
    <role-restr-map roles="ont::agent" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::caused-event">
-  <relation label="inherit">
-   ont::event-type
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="cause">
-   <or>
-    agentive
-    force
-   </or>
-   </feat>
-   <feat name="type">ont::caused-event</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::formal" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::figure" optional="optional">
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
@@ -12366,6 +12347,9 @@
   <relation label="inherit">
    ont::volume-unit
   </relation>
+  <relation label="overlap">
+   wn::|load%1:23:00::|
+  </relation>
  </concept>
  <concept name="ont::containing-substance-val">
   <comment>
@@ -13961,6 +13945,9 @@
  <concept name="ont::currency">
   <relation label="inherit">
    ont::function-object
+  </relation>
+  <relation label="overlap">
+   wn::|medium_of_exchange%1:21:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -24434,10 +24421,17 @@
   <relation label="inherit">
    ont::identification
   </relation>
+  <relation label="overlap">
+   wn::|identification_number%1:10:00::|
+  </relation>
  </concept>
  <concept name="ont::identification">
   <relation label="inherit">
    ont::information-function-object
+  </relation>
+  <relation label="overlap">
+   wn::|identification%1:10:01::|
+   wn::|identifier%1:10:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
@@ -31031,7 +31025,6 @@
   <relation label="overlap">
    wn::|change%1:21:03::|
    wn::|change%1:21:01::|
-   wn::|medium_of_exchange%1:21:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -31536,6 +31529,11 @@
  <concept name="ont::multiple">
   <relation label="inherit">
    ont::mathematical-term
+  </relation>
+  <relation label="overlap">
+   wn::|multiple%1:09:00::|
+   wn::|factor%1:23:00::|
+   wn::|factor%1:23:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -34907,6 +34905,12 @@
   <relation label="inherit">
    ont::mathematical-term
   </relation>
+  <relation label="overlap">
+   wn::|root%1:23:00::|
+   wn::|cosine%1:24:00::|
+   wn::|sine%1:24:00::|
+   wn::|exponent%1:10:00::|
+  </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure">
     <sem-feats>
@@ -34971,6 +34975,23 @@
   </comment>
   <relation label="inherit">
    ont::unit
+  </relation>
+  <relation label="overlap">
+   wn::|billion%1:23:00::|
+   wn::|billion%1:23:01::|
+   wn::|billion%5:00:00:cardinal:00|
+   wn::|billion%5:00:01:cardinal:00|
+   wn::|dozen%1:23:00::|
+   wn::|dozen%5:00:00:cardinal:00|
+   wn::|hundred%1:23:00::|
+   wn::|hundred%5:00:00:cardinal:00|
+   wn::|thousand%1:23:00::|
+   wn::|thousand%5:00:00:cardinal:00|
+   wn::|million%1:23:00::|
+   wn::|million%5:00:00:cardinal:00|
+   wn::|trillion%1:23:01::|
+   wn::|trillion%5:00:01:cardinal:00|
+   wn::|trillion%5:00:00:cardinal:00|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -36308,13 +36329,29 @@
  </concept>
  <concept name="ont::outcome">
   <relation label="inherit">
-   ont::information-function-object
+   ont::event-type
   </relation>
   <relation label="overlap">
-   wn::|result%1:11:00::|
    wn::|consequence%1:19:00::|
+   wn::|result%1:11:00::|
+   wn::|side_effect%1:19:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="cause">
+   <or>
+    agentive
+    force
+   </or>
+   </feat>
+   <feat name="type">ont::outcome</feat>
+  </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::formal" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
    <role-restr-map roles="ont::figure" optional="optional">
     <concept name="t" />
    </role-restr-map>
@@ -41262,6 +41299,17 @@
   <relation label="inherit">
    ont::formal-unit
   </relation>
+  <relation label="overlap">
+   wn::|miles_per_gallon%1:23:00::|
+   wn::|bits_per_second%1:28:00::|
+   wn::|gigahertz%1:28:00::|
+   wn::|hertz%1:28:00::|
+   wn::|kilohertz%1:28:00::|
+   wn::|megahertz%1:28:00::|
+   wn::|terahertz%1:28:00::|
+   wn::|revolutions_per_minute%1:28:00::|
+   wn::|words_per_minute%1:28:00::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     abstr-obj
@@ -46199,11 +46247,6 @@
    ont::shape
   </relation>
  </concept>
- <concept name="ont::sheet-abstr">
-  <relation label="inherit">
-   ont::group-object-abstr
-  </relation>
- </concept>
  <concept name="ont::shipping-company">
   <relation label="inherit">
    ont::company
@@ -47817,6 +47860,9 @@
   <relation label="inherit">
    ont::function-object
   </relation>
+  <relation label="overlap">
+   wn::|supply%1:23:00::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     abstr-obj
@@ -48406,6 +48452,9 @@
  <concept name="ont::ssn">
   <relation label="inherit">
    ont::id-number
+  </relation>
+  <relation label="overlap">
+   wn::|social_security_number%1:10:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
@@ -51746,7 +51795,11 @@
  </concept>
  <concept name="ont::tour">
   <relation label="inherit">
-   ont::event-defined-by-activity
+   ont::travel
+  </relation>
+  <relation label="overlap">
+   wn::|tour%1:04:00::|
+   wn::|tour%2:38:00::|
   </relation>
  </concept>
  <concept name="ont::tow-truck">
@@ -55211,6 +55264,9 @@
  <concept name="ont::zipcode">
   <relation label="inherit">
    ont::location-id
+  </relation>
+  <relation label="overlap">
+   wn::|zip_code%1:10:00::|
   </relation>
  </concept>
  <concept name="ont::zoological-property-val">

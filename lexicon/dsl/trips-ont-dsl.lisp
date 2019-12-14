@@ -629,22 +629,6 @@
          SITUATION)))))
 
 (CONCEPT
-  ONT::ACTION
-  (INHERIT
-    ONT::EVENT-TYPE)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (ASPECT DYNAMIC)
-    (CAUSE AGENTIVE)
-    (TYPE ONT::ACTION))
-  (SEM-FRAME
-    (ONT::FIGURE
-     (CONCEPT
-       T)
-     OPTIONAL)))
-
-(CONCEPT
   ONT::ACTION-DEFINED-BY-GAME
   (INHERIT
     ONT::EVENT-DEFINED-BY-ACTIVITY)
@@ -6882,6 +6866,27 @@
     WN::|calmness%1:12:00::|))
 
 (CONCEPT
+  ONT::CAMPAIGN
+  (INHERIT
+    ONT::EVENT-TYPE)
+  (OVERLAP
+    WN::|campaign%1:04:02::|
+    WN::|campaign%1:11:00::|
+    WN::|expedition%1:04:00::|
+    WN::|military_operation%1:04:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (ASPECT DYNAMIC)
+    (CAUSE AGENTIVE)
+    (TYPE ONT::CAMPAIGN))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::CAN-BE-DONE-SCALE
   (INHERIT
     ONT::PROCESS-PROPERTY-SCALE))
@@ -7764,28 +7769,6 @@
          ABSTR-OBJ))
      OPTIONAL)
     (ONT::AGENT
-     (CONCEPT
-       T)
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::CAUSED-EVENT
-  (INHERIT
-    ONT::EVENT-TYPE)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (CAUSE
-     (OR
-       AGENTIVE
-       FORCE))
-    (TYPE ONT::CAUSED-EVENT))
-  (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
      (CONCEPT
        T)
      OPTIONAL)))
@@ -10991,7 +10974,9 @@
 (CONCEPT
   ONT::CONTAINER-LOAD
   (INHERIT
-    ONT::VOLUME-UNIT))
+    ONT::VOLUME-UNIT)
+  (OVERLAP
+    WN::|load%1:23:00::|))
 
 (CONCEPT
   ONT::CONTAINING-SUBSTANCE-VAL
@@ -12388,6 +12373,8 @@
   ONT::CURRENCY
   (INHERIT
     ONT::FUNCTION-OBJECT)
+  (OVERLAP
+    WN::|medium_of_exchange%1:21:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -21443,12 +21430,17 @@
 (CONCEPT
   ONT::ID-NUMBER
   (INHERIT
-    ONT::IDENTIFICATION))
+    ONT::IDENTIFICATION)
+  (OVERLAP
+    WN::|identification_number%1:10:00::|))
 
 (CONCEPT
   ONT::IDENTIFICATION
   (INHERIT
     ONT::INFORMATION-FUNCTION-OBJECT)
+  (OVERLAP
+    WN::|identification%1:10:01::|
+    WN::|identifier%1:10:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (OR
@@ -27155,8 +27147,7 @@
     ONT::MANUFACTURED-OBJECT)
   (OVERLAP
     WN::|change%1:21:03::|
-    WN::|change%1:21:01::|
-    WN::|medium_of_exchange%1:21:00::|)
+    WN::|change%1:21:01::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -27595,6 +27586,10 @@
   ONT::MULTIPLE
   (INHERIT
     ONT::MATHEMATICAL-TERM)
+  (OVERLAP
+    WN::|multiple%1:09:00::|
+    WN::|factor%1:23:00::|
+    WN::|factor%1:23:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -30391,6 +30386,11 @@
   ONT::NUMBER-MEASURE-DOMAIN
   (INHERIT
     ONT::MATHEMATICAL-TERM)
+  (OVERLAP
+    WN::|root%1:23:00::|
+    WN::|cosine%1:24:00::|
+    WN::|sine%1:24:00::|
+    WN::|exponent%1:10:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -30446,6 +30446,22 @@
   (COMMENT "words that name measurement units in scales: foot, mile, ...")
   (INHERIT
     ONT::UNIT)
+  (OVERLAP
+    WN::|billion%1:23:00::|
+    WN::|billion%1:23:01::|
+    WN::|billion%5:00:00:cardinal:00|
+    WN::|billion%5:00:01:cardinal:00|
+    WN::|dozen%1:23:00::|
+    WN::|dozen%5:00:00:cardinal:00|
+    WN::|hundred%1:23:00::|
+    WN::|hundred%5:00:00:cardinal:00|
+    WN::|thousand%1:23:00::|
+    WN::|thousand%5:00:00:cardinal:00|
+    WN::|million%1:23:00::|
+    WN::|million%5:00:00:cardinal:00|
+    WN::|trillion%1:23:01::|
+    WN::|trillion%5:00:01:cardinal:00|
+    WN::|trillion%5:00:00:cardinal:00|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -31616,11 +31632,24 @@
 (CONCEPT
   ONT::OUTCOME
   (INHERIT
-    ONT::INFORMATION-FUNCTION-OBJECT)
+    ONT::EVENT-TYPE)
   (OVERLAP
+    WN::|consequence%1:19:00::|
     WN::|result%1:11:00::|
-    WN::|consequence%1:19:00::|)
+    WN::|side_effect%1:19:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (CAUSE
+     (OR
+       AGENTIVE
+       FORCE))
+    (TYPE ONT::OUTCOME))
   (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       T)
+     OPTIONAL)
     (ONT::FIGURE
      (CONCEPT
        T)
@@ -35966,6 +35995,16 @@
   ONT::RATE-UNIT
   (INHERIT
     ONT::FORMAL-UNIT)
+  (OVERLAP
+    WN::|miles_per_gallon%1:23:00::|
+    WN::|bits_per_second%1:28:00::|
+    WN::|gigahertz%1:28:00::|
+    WN::|hertz%1:28:00::|
+    WN::|kilohertz%1:28:00::|
+    WN::|megahertz%1:28:00::|
+    WN::|terahertz%1:28:00::|
+    WN::|revolutions_per_minute%1:28:00::|
+    WN::|words_per_minute%1:28:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -40399,11 +40438,6 @@
     ONT::SHAPE))
 
 (CONCEPT
-  ONT::SHEET-ABSTR
-  (INHERIT
-    ONT::GROUP-OBJECT-ABSTR))
-
-(CONCEPT
   ONT::SHIPPING-COMPANY
   (INHERIT
     ONT::COMPANY))
@@ -41799,6 +41833,8 @@
   ONT::SOURCE
   (INHERIT
     ONT::FUNCTION-OBJECT)
+  (OVERLAP
+    WN::|supply%1:23:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -42321,6 +42357,8 @@
   ONT::SSN
   (INHERIT
     ONT::ID-NUMBER)
+  (OVERLAP
+    WN::|social_security_number%1:10:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -45230,7 +45268,10 @@
 (CONCEPT
   ONT::TOUR
   (INHERIT
-    ONT::EVENT-DEFINED-BY-ACTIVITY))
+    ONT::TRAVEL)
+  (OVERLAP
+    WN::|tour%1:04:00::|
+    WN::|tour%2:38:00::|))
 
 (CONCEPT
   ONT::TOW-TRUCK
@@ -48220,7 +48261,9 @@
 (CONCEPT
   ONT::ZIPCODE
   (INHERIT
-    ONT::LOCATION-ID))
+    ONT::LOCATION-ID)
+  (OVERLAP
+    WN::|zip_code%1:10:00::|))
 
 (CONCEPT
   ONT::ZOOLOGICAL-PROPERTY-VAL

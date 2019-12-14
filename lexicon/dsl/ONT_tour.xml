@@ -4,7 +4,11 @@
  <provenance name="TRIPS"/>
  <concept name="ont::tour">
  <relation label="inherit">
-  ont::event-defined-by-activity
+  ont::travel
+ </relation>
+ <relation label="overlap">
+  wn::|tour%1:04:00::|
+  wn::|tour%2:38:00::|
  </relation>
  </concept>
  <or>
@@ -42,6 +46,18 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::travel">
+ <relation label="inherit">
+  ont::event-defined-by-activity
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">+</feat>
+  <feat name="type">ont::travel</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::event-defined-by-activity">
  <relation label="inherit">
   ont::event-type
@@ -64,6 +80,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">+</feat>
+ <feat name="type">ont::travel</feat>
+ </sem-feats>
  <concept name="ont::event-type">
  <comment>
   &quot;classification of situated events based on social or other criteria, and typically realized by nominals, i.e.,
