@@ -8285,8 +8285,13 @@
        (SCALE ONT::DOMAIN))
      OPTIONAL)
     (ONT::AFFECTED
-     (CONCEPT
-       T)
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          ONT::DOMAIN
+          ONT::QUANTITY-ABSTR)))
      OPTIONAL)))
 
 (CONCEPT
@@ -12919,16 +12924,6 @@
     ONT::INFORMATION-FUNCTION-OBJECT)
   (SEM-FRAME
     (ONT::FIGURE
-     (CONCEPT
-       T)
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::DEGREE
-  (INHERIT
-    ONT::PREDICATE)
-  (SEM-FRAME
-    (ONT::GROUND
      (CONCEPT
        T)
      OPTIONAL)))
@@ -32573,18 +32568,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::PHYS-SHAPE
-  (INHERIT
-    ONT::SHAPE)
-  (SEM-FEATS
-    (INHERIT
-      PHYS-OBJ)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (FORM OBJECT)
-    (TYPE ONT::PHYS-SHAPE)))
-
-(CONCEPT
   ONT::PHYSICAL-ACTIVITY
   (INHERIT
     ONT::ACTIVITY))
@@ -35795,11 +35778,6 @@
     WN::|quantity%1:09:01::|
     WN::|amount%1:21:00::|
     WN::|amount%1:07:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (TANGIBLE +)
-    (TYPE ONT::QUANTITY-ABSTR))
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -40206,31 +40184,6 @@
     (TYPE ONT::SHALLOW-VAL)))
 
 (CONCEPT
-  ONT::SHAPE
-  (INHERIT
-    ONT::PHYS-OBJECT)
-  (OVERLAP
-    WN::|shape%1:07:00::|
-    WN::|form%1:07:01::|
-    WN::|configuration%1:07:00::|
-    WN::|contour%1:07:00::|
-    WN::|conformation%1:07:00::|
-    WN::|form%1:09:00::|
-    WN::|shape%1:09:00::|
-    WN::|pattern%1:09:00::|)
-  (SEM-FEATS
-    (INHERIT
-      PHYS-OBJ)
-    (INFORMATION -)
-    (INTENTIONAL -)
-    (TYPE ONT::SHAPE))
-  (SEM-FRAME
-    (ONT::FIGURE
-     (CONCEPT
-       T)
-     OPTIONAL)))
-
-(CONCEPT
   ONT::SHAPE-CHANGE
   (INHERIT
     ONT::OBJECT-CHANGE)
@@ -40247,7 +40200,7 @@
 (CONCEPT
   ONT::SHAPE-OBJECT
   (INHERIT
-    ONT::SHAPE)
+    ONT::PHYS-OBJECT)
   (OVERLAP
     WN::|shape%1:03:00::|)
   (SEM-FEATS
@@ -40435,7 +40388,7 @@
 (CONCEPT
   ONT::SHEET
   (INHERIT
-    ONT::SHAPE))
+    ONT::SHAPE-OBJECT))
 
 (CONCEPT
   ONT::SHIPPING-COMPANY
