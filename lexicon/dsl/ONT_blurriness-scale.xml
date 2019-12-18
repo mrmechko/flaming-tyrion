@@ -42,79 +42,12 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::tangible-abstract-object">
- <comment>
-  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
- </comment>
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::tangible-abstract-object</feat>
- </sem-feats>
- </concept>
- <concept name="ont::ordered-domain">
- <relation label="inherit">
-  ont::domain
- </relation>
- </concept>
- <concept name="ont::appearance-scale">
- <comment>
-  &quot;scales related to surface appearance of a physical entity or object preceptible through sensory input&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-scale
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <concept name="phys-obj" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::visual-scale">
- <relation label="inherit">
-  ont::appearance-scale
- </relation>
- </concept>
- <concept name="ont::visual-distinctivenss-scale">
- <relation label="inherit">
-  ont::visual-scale
- </relation>
- </concept>
- <concept name="ont::physical-property-scale">
- <comment>
-  &quot;scales associated with properties pertaining to the attributes of physical entities or substances. Note: many properties can apply to non-physical objects.&quot;
- </comment>
- <relation label="inherit">
-  ont::ordered-domain
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <concept name="phys-obj" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::domain">
  <comment>
   &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
  </comment>
  <relation label="inherit">
-  ont::tangible-abstract-object
+  ont::abstract-object
  </relation>
  <relation label="overlap">
   wn::|attribute%1:03:00::|
@@ -130,6 +63,47 @@
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::physical-property-scale">
+ <comment>
+  &quot;scales associated with properties pertaining to the attributes of physical entities or substances. Note: many properties can apply to non-physical objects.&quot;
+ </comment>
+ <relation label="inherit">
+  ont::ordered-domain
+ </relation>
+ </concept>
+ <concept name="ont::visual-distinctivenss-scale">
+ <relation label="inherit">
+  ont::visual-scale
+ </relation>
+ </concept>
+ <concept name="ont::visual-scale">
+ <relation label="inherit">
+  ont::appearance-scale
+ </relation>
+ </concept>
+ <concept name="ont::appearance-scale">
+ <comment>
+  &quot;scales related to surface appearance of a physical entity or object preceptible through sensory input&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-scale
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::ordered-domain">
+ <relation label="inherit">
+  ont::domain
+ </relation>
  </concept>
  <concept name="ont::abstract-object">
  <comment>
@@ -150,13 +124,17 @@
   <feat name="type">ont::abstract-object</feat>
  </sem-feats>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="tangible">+</feat>
- <feat name="type">ont::tangible-abstract-object</feat>
- </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root

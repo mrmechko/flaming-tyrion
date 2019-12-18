@@ -1160,13 +1160,7 @@
  </concept>
  <concept name="ont::adjust-to-extreme">
   <relation label="inherit">
-   ont::adjust
-  </relation>
-  <relation label="overlap">
-   wn::|minimise%2:30:00::|
-   wn::|minimize%2:30:00::|
-   wn::|maximise%2:30:00::|
-   wn::|maximize%2:30:00::|
+   ont::change-magnitude
   </relation>
  </concept>
  <concept name="ont::admit">
@@ -9302,7 +9296,7 @@
  </concept>
  <concept name="ont::change-magnitude">
   <relation label="inherit">
-   ont::change-in-scale
+   ont::event-of-change
   </relation>
   <relation label="overlap">
    wn::|change_magnitude%2:30:00::|
@@ -9341,6 +9335,7 @@
      <or>
       ont::domain
       ont::quantity-abstr
+      ont::level
      </or>
      </feat>
     </sem-feats>
@@ -16443,7 +16438,7 @@
    &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
   </comment>
   <relation label="inherit">
-   ont::tangible-abstract-object
+   ont::abstract-object
   </relation>
   <relation label="overlap">
    wn::|attribute%1:03:00::|
@@ -18350,6 +18345,16 @@
    <feat name="type">ont::event-of-action</feat>
   </sem-feats>
   <sem-frame>
+   <role-restr-map roles="ont::affected" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
+   </role-restr-map>
    <role-restr-map roles="ont::agent" optional="optional">
     <or>
      <concept name="situation" />
@@ -18378,6 +18383,16 @@
      <concept name="situation" />
      <concept name="abstr-obj" />
     </or>
+   </role-restr-map>
+   <role-restr-map roles="ont::affected" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -18436,14 +18451,11 @@
     <concept name="abstr-obj" />
    </role-restr-map>
    <role-restr-map roles="ont::affected" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="situation" />
-      <concept name="abstr-obj" />
-      <concept name="phys-obj" />
-     </or>
-     <feat name="tangible">+</feat>
-    </sem-feats>
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
    </role-restr-map>
    <role-restr-map roles="ont::agent" optional="optional">
     <or>
@@ -29712,6 +29724,9 @@
   <relation label="inherit">
    ont::adjust-to-extreme
   </relation>
+  <relation label="overlap">
+   wn::|maximise%2:30:00::|
+  </relation>
  </concept>
  <concept name="ont::meal-event">
   <relation label="inherit">
@@ -30785,6 +30800,9 @@
   <relation label="inherit">
    ont::adjust-to-extreme
   </relation>
+  <relation label="overlap">
+   wn::|minimise%2:30:00::|
+  </relation>
  </concept>
  <concept name="ont::minute-duration">
   <relation label="inherit">
@@ -31771,6 +31789,18 @@
   <relation label="inherit">
    ont::event-of-change
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::n-plex-val">
   <relation label="inherit">
@@ -35263,10 +35293,13 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::result" optional="optional">
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-    </or>
+    <sem-feats>
+     <or>
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::agent" optional="optional">
     <or>
@@ -41041,7 +41074,7 @@
  </concept>
  <concept name="ont::quantity-abstr">
   <relation label="inherit">
-   ont::group-object-abstr
+   ont::level
   </relation>
   <relation label="overlap">
    wn::|measure%1:03:00::|

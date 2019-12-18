@@ -1031,12 +1031,7 @@
 (CONCEPT
   ONT::ADJUST-TO-EXTREME
   (INHERIT
-    ONT::ADJUST)
-  (OVERLAP
-    WN::|minimise%2:30:00::|
-    WN::|minimize%2:30:00::|
-    WN::|maximise%2:30:00::|
-    WN::|maximize%2:30:00::|))
+    ONT::CHANGE-MAGNITUDE))
 
 (CONCEPT
   ONT::ADMIT
@@ -8259,7 +8254,7 @@
 (CONCEPT
   ONT::CHANGE-MAGNITUDE
   (INHERIT
-    ONT::CHANGE-IN-SCALE)
+    ONT::EVENT-OF-CHANGE)
   (OVERLAP
     WN::|change_magnitude%2:30:00::|
     WN::|change_intensity%2:39:00::|)
@@ -8291,7 +8286,8 @@
        (TYPE
         (OR
           ONT::DOMAIN
-          ONT::QUANTITY-ABSTR)))
+          ONT::QUANTITY-ABSTR
+          ONT::LEVEL)))
      OPTIONAL)))
 
 (CONCEPT
@@ -14522,7 +14518,7 @@
   (COMMENT
    "Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)")
   (INHERIT
-    ONT::TANGIBLE-ABSTRACT-OBJECT)
+    ONT::ABSTRACT-OBJECT)
   (OVERLAP
     WN::|attribute%1:03:00::|)
   (SEM-FRAME
@@ -16165,6 +16161,17 @@
     (CAUSE FORCE)
     (TYPE ONT::EVENT-OF-ACTION))
   (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
+     OPTIONAL)
     (ONT::AGENT
      (OR
        (CONCEPT
@@ -16191,6 +16198,17 @@
          SITUATION)
        (CONCEPT
          ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
      OPTIONAL)))
 
 (CONCEPT
@@ -16243,15 +16261,13 @@
        ABSTR-OBJ)
      OPTIONAL)
     (ONT::AFFECTED
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TANGIBLE +))
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
      OPTIONAL)
     (ONT::AGENT
      (OR
@@ -25970,7 +25986,9 @@
 (CONCEPT
   ONT::MAXIMIZE
   (INHERIT
-    ONT::ADJUST-TO-EXTREME))
+    ONT::ADJUST-TO-EXTREME)
+  (OVERLAP
+    WN::|maximise%2:30:00::|))
 
 (CONCEPT
   ONT::MEAL-EVENT
@@ -26926,7 +26944,9 @@
 (CONCEPT
   ONT::MINIMIZE
   (INHERIT
-    ONT::ADJUST-TO-EXTREME))
+    ONT::ADJUST-TO-EXTREME)
+  (OVERLAP
+    WN::|minimise%2:30:00::|))
 
 (CONCEPT
   ONT::MINUTE-DURATION
@@ -27796,7 +27816,19 @@
 (CONCEPT
   ONT::MUTATION
   (INHERIT
-    ONT::EVENT-OF-CHANGE))
+    ONT::EVENT-OF-CHANGE)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::N-PLEX-VAL
@@ -30695,11 +30727,13 @@
     (TYPE ONT::OBJECTIVE-INFLUENCE))
   (SEM-FRAME
     (ONT::RESULT
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AGENT
      (OR
@@ -35770,7 +35804,7 @@
 (CONCEPT
   ONT::QUANTITY-ABSTR
   (INHERIT
-    ONT::GROUP-OBJECT-ABSTR)
+    ONT::LEVEL)
   (OVERLAP
     WN::|measure%1:03:00::|
     WN::|quantity%1:03:00::|
