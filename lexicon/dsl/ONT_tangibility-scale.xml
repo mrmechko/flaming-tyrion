@@ -64,6 +64,11 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::physical-property-scale">
  <comment>
   &quot;scales associated with properties pertaining to the attributes of physical entities or substances. Note: many properties can apply to non-physical objects.&quot;
@@ -72,18 +77,28 @@
   ont::ordered-domain
  </relation>
  </concept>
- <concept name="ont::sensory-scale">
+ <concept name="ont::tactile-scale">
+ <relation label="inherit">
+  ont::touch-scale
+ </relation>
+ </concept>
+ <concept name="ont::touch-scale">
+ <relation label="inherit">
+  ont::appearance-scale
+ </relation>
+ </concept>
+ <concept name="ont::appearance-scale">
  <comment>
-  &quot;scales that deal with the quality to being perceivable through sensory input&quot;
+  &quot;scales related to surface appearance of a physical entity or object preceptible through sensory input&quot;
  </comment>
  <relation label="inherit">
   ont::physical-property-scale
  </relation>
- </concept>
- <concept name="ont::tactile-scale">
- <relation label="inherit">
-  ont::sensory-scale
- </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::ordered-domain">
  <relation label="inherit">

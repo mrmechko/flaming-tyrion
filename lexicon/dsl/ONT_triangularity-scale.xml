@@ -64,17 +64,17 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::spatial-scale">
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::physical-property-scale">
  <comment>
-  &quot;scales relating to the properties of space&quot;
+  &quot;scales associated with properties pertaining to the attributes of physical entities or substances. Note: many properties can apply to non-physical objects.&quot;
  </comment>
  <relation label="inherit">
   ont::ordered-domain
- </relation>
- </concept>
- <concept name="ont::shape-scale">
- <relation label="inherit">
-  ont::spatial-scale
  </relation>
  </concept>
  <concept name="ont::angularity-scale">
@@ -84,6 +84,24 @@
  <relation label="overlap">
   wn::|angularity%1:07:00::|
  </relation>
+ </concept>
+ <concept name="ont::shape-scale">
+ <relation label="inherit">
+  ont::appearance-scale
+ </relation>
+ </concept>
+ <concept name="ont::appearance-scale">
+ <comment>
+  &quot;scales related to surface appearance of a physical entity or object preceptible through sensory input&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-scale
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::ordered-domain">
  <relation label="inherit">

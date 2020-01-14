@@ -5969,12 +5969,26 @@
    wn::|bandwidth%1:23:00::|
   </relation>
  </concept>
- <concept name="ont::bitter-val">
+ <concept name="ont::bitter-resentful-val">
   <relation label="inherit">
    ont::neg-experiencer-property-val
   </relation>
   <relation label="overlap">
    wn::|resentful%3:00:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::resentfulness-scale</feat>
+   <feat name="type">ont::bitter-resentful-val</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::bitter-val">
+  <relation label="inherit">
+   ont::taste-property-val
+  </relation>
+  <relation label="overlap">
    wn::|bitter%5:00:00:tasty:00|
   </relation>
   <sem-feats>
@@ -6929,22 +6943,6 @@
   </relation>
   <relation label="overlap">
    wn::|tightness%1:09:00::|
-  </relation>
- </concept>
- <concept name="ont::boil">
-  <comment>
-   &quot;cook by fully immersing in boiling (or close to boiling) liquid&quot;
-  </comment>
-  <relation label="inherit">
-   ont::cook-in-liquid
-  </relation>
-  <relation label="overlap">
-   wn::|blanch%2:30:00::|
-   wn::|boil%2:30:00::|
-   wn::|boil%2:30:01::|
-   wn::|boil%2:30:02::|
-   wn::|coddle%2:30:00::|
-   wn::|poach%2:30:00::|
   </relation>
  </concept>
  <concept name="ont::bold-val">
@@ -8888,7 +8886,7 @@
  </concept>
  <concept name="ont::certainty-val">
   <relation label="inherit">
-   ont::information-property-val
+   ont::psychological-property-val
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -10053,7 +10051,6 @@
    wn::|categorize%2:31:00::|
    wn::|take%2:31:07::|
    wn::|read%2:31:09::|
-   wn::|describe%2:31:00::|
    wn::|discern%2:39:00::|
    wn::|discover%2:39:00::|
   </relation>
@@ -12737,6 +12734,21 @@
   </relation>
   <relation label="overlap">
    wn::|cook%2:30:00::|
+  </relation>
+ </concept>
+ <concept name="ont::cook-boil">
+  <comment>
+   &quot;cook by fully immersing in boiling (or close to boiling) liquid&quot;
+  </comment>
+  <relation label="inherit">
+   ont::cook-in-liquid
+  </relation>
+  <relation label="overlap">
+   wn::|blanch%2:30:00::|
+   wn::|boil%2:30:02::|
+   wn::|boil%2:30:00::|
+   wn::|coddle%2:30:00::|
+   wn::|poach%2:30:00::|
   </relation>
  </concept>
  <concept name="ont::cook-in-dry-heat">
@@ -16283,7 +16295,7 @@
  </concept>
  <concept name="ont::distance-val">
   <relation label="inherit">
-   ont::spatial-val
+   ont::dimensional-property-val
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -16351,6 +16363,10 @@
   </comment>
   <relation label="inherit">
    ont::position-wrt-area-reln
+  </relation>
+  <relation label="overlap">
+   wn::|throughout%4:02:00::|
+   wn::|over%4:02:02::|
   </relation>
  </concept>
  <concept name="ont::district">
@@ -21836,6 +21852,15 @@
    <feat name="type">ont::gas-substance</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::gasify-boil">
+  <relation label="inherit">
+   ont::change-integrity
+  </relation>
+  <relation label="overlap">
+   wn::|gasify%2:30:00::|
+   wn::|boil%2:30:01::|
+  </relation>
+ </concept>
  <concept name="ont::gathering-event">
   <relation label="inherit">
    ont::located-event
@@ -24456,6 +24481,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::identify">
+  <relation label="inherit">
+   ont::categorization
+  </relation>
+  <relation label="overlap">
+   wn::|identify%2:31:01::|
+  </relation>
+ </concept>
  <concept name="ont::identity-and-origin">
   <relation label="inherit">
    ont::person-reln
@@ -25802,7 +25835,7 @@
  </concept>
  <concept name="ont::intensify">
   <relation label="inherit">
-   ont::change-in-dimension
+   ont::change-in-scale
   </relation>
   <relation label="overlap">
    wn::|augment%2:30:00::|
@@ -27476,7 +27509,7 @@
  </concept>
  <concept name="ont::lessen-intensity">
   <relation label="inherit">
-   ont::change-in-dimension
+   ont::change-in-scale
   </relation>
   <relation label="overlap">
    wn::|weaken%2:30:03::|
@@ -39889,7 +39922,7 @@
  </concept>
  <concept name="ont::process-evaluation-scale">
   <relation label="inherit">
-   ont::process-property-scale
+   ont::evaluation-scale
   </relation>
  </concept>
  <concept name="ont::process-evaluation-val">
@@ -43257,6 +43290,11 @@
    ont::having-constituent-parts-val
   </relation>
  </concept>
+ <concept name="ont::resentfulness-scale">
+  <relation label="inherit">
+   ont::experiencer-condition-scale
+  </relation>
+ </concept>
  <concept name="ont::reservation-val">
   <comment>
    &quot;(reserved, booked)&quot;
@@ -43326,16 +43364,6 @@
   <relation label="overlap">
    wn::|resolution%1:19:01::|
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      abstr-obj
-     </relation>
-     <feat name="scale">ont::other-scale</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::respect-val">
   <comment>
@@ -46031,12 +46059,12 @@
  </concept>
  <concept name="ont::shape-scale">
   <relation label="inherit">
-   ont::spatial-scale
+   ont::appearance-scale
   </relation>
  </concept>
  <concept name="ont::shape-val">
   <relation label="inherit">
-   ont::visual-property-val
+   ont::appearance-property-val
   </relation>
   <relation label="overlap">
    wn::|formed%3:00:00::|
@@ -48038,7 +48066,7 @@
    &quot;scales relating to the properties of space&quot;
   </comment>
   <relation label="inherit">
-   ont::ordered-domain
+   ont::physical-property-scale
   </relation>
  </concept>
  <concept name="ont::spatial-val">
@@ -50032,7 +50060,7 @@
  </concept>
  <concept name="ont::tactile-scale">
   <relation label="inherit">
-   ont::sensory-scale
+   ont::touch-scale
   </relation>
  </concept>
  <concept name="ont::tactile-softness-scale">
@@ -50298,7 +50326,7 @@
  </concept>
  <concept name="ont::tangibility-val">
   <relation label="inherit">
-   ont::sensory-property-val
+   ont::appearance-property-val
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -50598,7 +50626,7 @@
  </concept>
  <concept name="ont::temperature-scale">
   <relation label="inherit">
-   ont::physical-property-scale
+   ont::measure-scale
   </relation>
   <relation label="overlap">
    wn::|temperature%1:07:00::|
@@ -50640,7 +50668,7 @@
    &quot;having to do with temperature&quot;
   </comment>
   <relation label="inherit">
-   ont::physical-property-val
+   ont::property-val
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -50850,7 +50878,7 @@
  </concept>
  <concept name="ont::texture-scale">
   <relation label="inherit">
-   ont::touch-scale
+   ont::tactile-scale
   </relation>
   <relation label="overlap">
    wn::|texture%1:07:00::|
@@ -50883,6 +50911,7 @@
    <relation label="inherit">
     abstr-obj
    </relation>
+   <feat name="scale">ont::texture-scale</feat>
    <feat name="measure-function">value</feat>
    <feat name="type">ont::texture-val</feat>
   </sem-feats>
@@ -53118,7 +53147,7 @@
  </concept>
  <concept name="ont::usability-val">
   <relation label="inherit">
-   ont::evaluation-attribute-val
+   ont::object-affordances-val
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -54629,7 +54658,7 @@
  </concept>
  <concept name="ont::willingness-scale">
   <relation label="inherit">
-   ont::behavioral-scale
+   ont::psychological-condition-scale
   </relation>
   <relation label="overlap">
    wn::|willingness%1:07:00::|

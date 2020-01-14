@@ -116,91 +116,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::distance-val">
- <relation label="inherit">
-  ont::spatial-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::distance-scale</feat>
-  <feat name="type">ont::distance-val</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::spatial-val">
- <comment>
-  &quot;properties relating to space&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <relation label="overlap">
-  wn::|spatial%3:01:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::spatial-scale</feat>
-  <feat name="type">ont::spatial-val</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::distance-scale</feat>
- <feat name="type">ont::distance-val</feat>
+ <feat name="scale">ont::measure-scale</feat>
+ <feat name="type">ont::dimensional-property-val</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral">
-  <or>
-   <concept name="situation" />
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -253,29 +175,72 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::spatial-scale</feat>
- <feat name="type">ont::spatial-val</feat>
- </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
+ <role-restr-map roles="ont::neutral1" optional="optional">
   <or>
-   <concept name="phys-obj" />
    <concept name="situation" />
+   <concept name="phys-obj" />
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
+ <role-restr-map roles="ont::neutral">
   <or>
-   <concept name="phys-obj" />
    <concept name="situation" />
+   <concept name="phys-obj" />
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::distance-scale</feat>
+ <feat name="type">ont::distance-val</feat>
+ </sem-feats>
+ <concept name="ont::dimensional-property-val">
+ <comment>
+  &quot;properties pertaining to dimensions and measurable extents&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::measure-scale</feat>
+  <feat name="type">ont::dimensional-property-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::distance-val">
+ <relation label="inherit">
+  ont::dimensional-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::distance-scale</feat>
+  <feat name="type">ont::distance-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
