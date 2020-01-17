@@ -2350,7 +2350,6 @@
   </relation>
   <relation label="overlap">
    wn::|look%2:39:01::|
-   wn::|seem%2:39:01::|
    wn::|seem%2:39:02::|
    wn::|seem%2:42:00::|
    wn::|sound%2:39:06::|
@@ -4937,7 +4936,7 @@
  </concept>
  <concept name="ont::be-inactive">
   <relation label="inherit">
-   ont::have-property
+   ont::persistent-state
   </relation>
   <relation label="overlap">
    wn::|rest%2:41:00::|
@@ -11959,7 +11958,7 @@
  </concept>
  <concept name="ont::confine">
   <relation label="inherit">
-   ont::located-move-state
+   ont::persistent-state
   </relation>
   <relation label="overlap">
    wn::|confine%2:41:00::|
@@ -23217,7 +23216,7 @@
    &quot;to linger in a place or location&quot;
   </comment>
   <relation label="inherit">
-   ont::located-move-state
+   ont::persistent-state
   </relation>
   <relation label="overlap">
    wn::|idle%2:41:00::|
@@ -23531,7 +23530,7 @@
  </concept>
  <concept name="ont::have">
   <relation label="inherit">
-   ont::having
+   ont::event-of-state
   </relation>
   <relation label="overlap">
    wn::|keep%2:40:12::|
@@ -23550,6 +23549,36 @@
    wn::|have%2:29:02::|
    wn::|hold%2:40:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="trajectory">-</feat>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">static</feat>
+   <feat name="type">ont::have</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::neutral1" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::neutral">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+      <concept name="situation" />
+     </or>
+     <feat name="tangible">+</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::have-experience">
   <relation label="inherit">
@@ -23655,41 +23684,6 @@
    </role-restr-map>
    <role-restr-map roles="ont::neutral">
     <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::having">
-  <relation label="inherit">
-   ont::event-of-state
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="trajectory">-</feat>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">static</feat>
-   <feat name="type">ont::having</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::neutral1" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="tangible">+</feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::neutral">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-      <concept name="situation" />
-     </or>
-     <feat name="tangible">+</feat>
-    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -28486,37 +28480,6 @@
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::formal" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::located-move-state">
-  <comment>
-   &quot;a state of (passively) maintaining some object's state (e.g., position, possession)&quot;
-  </comment>
-  <relation label="inherit">
-   ont::event-of-action
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="trajectory">-</feat>
-   <feat name="type">ont::located-move-state</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::formal" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::location" optional="optional">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="object-function">place</feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::agent" optional="optional">
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
@@ -37298,6 +37261,37 @@
    wn::|persistent%5:00:00:continual:00|
   </relation>
  </concept>
+ <concept name="ont::persistent-state">
+  <comment>
+   &quot;a state of (passively) maintaining some object's state (e.g., position, possession)&quot;
+  </comment>
+  <relation label="inherit">
+   ont::event-of-action
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="trajectory">-</feat>
+   <feat name="type">ont::persistent-state</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::formal" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::location" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="object-function">place</feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::agent" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::person">
   <relation label="inherit">
    ont::mammal
@@ -39185,6 +39179,9 @@
  <concept name="ont::possibly-true">
   <relation label="inherit">
    ont::event-of-state
+  </relation>
+  <relation label="overlap">
+   wn::|appear%2:39:01::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal">
@@ -44128,7 +44125,7 @@
  </concept>
  <concept name="ont::retain">
   <relation label="inherit">
-   ont::located-move-state
+   ont::persistent-state
   </relation>
   <relation label="overlap">
    wn::|keep%2:35:10::|
@@ -48708,7 +48705,7 @@
  </concept>
  <concept name="ont::stay">
   <relation label="inherit">
-   ont::located-move-state
+   ont::persistent-state
   </relation>
   <relation label="overlap">
    wn::|stay%2:30:00::|

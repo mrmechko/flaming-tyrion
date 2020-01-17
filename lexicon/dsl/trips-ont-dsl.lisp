@@ -2044,7 +2044,6 @@
     ONT::HAVE-PROPERTY)
   (OVERLAP
     WN::|look%2:39:01::|
-    WN::|seem%2:39:01::|
     WN::|seem%2:39:02::|
     WN::|seem%2:42:00::|
     WN::|sound%2:39:06::|
@@ -4323,7 +4322,7 @@
 (CONCEPT
   ONT::BE-INACTIVE
   (INHERIT
-    ONT::HAVE-PROPERTY)
+    ONT::PERSISTENT-STATE)
   (OVERLAP
     WN::|rest%2:41:00::|))
 
@@ -10640,7 +10639,7 @@
 (CONCEPT
   ONT::CONFINE
   (INHERIT
-    ONT::LOCATED-MOVE-STATE)
+    ONT::PERSISTENT-STATE)
   (OVERLAP
     WN::|confine%2:41:00::|
     WN::|confine%2:35:01::|
@@ -20389,7 +20388,7 @@
   ONT::HANG-OUT
   (COMMENT "to linger in a place or location")
   (INHERIT
-    ONT::LOCATED-MOVE-STATE)
+    ONT::PERSISTENT-STATE)
   (OVERLAP
     WN::|idle%2:41:00::|)
   (SEM-FEATS
@@ -20667,7 +20666,7 @@
 (CONCEPT
   ONT::HAVE
   (INHERIT
-    ONT::HAVING)
+    ONT::EVENT-OF-STATE)
   (OVERLAP
     WN::|keep%2:40:12::|
     WN::|keep%2:42:12::|
@@ -20683,7 +20682,34 @@
     WN::|have%2:40:01::|
     WN::|have_got%2:40:00::|
     WN::|have%2:29:02::|
-    WN::|hold%2:40:00::|))
+    WN::|hold%2:40:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TRAJECTORY -)
+    (TIME-SPAN EXTENDED)
+    (ASPECT STATIC)
+    (TYPE ONT::HAVE))
+  (SEM-FRAME
+    (ONT::NEUTRAL1
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TANGIBLE +))
+     OPTIONAL)
+    (ONT::NEUTRAL
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)))))
 
 (CONCEPT
   ONT::HAVE-EXPERIENCE
@@ -20772,38 +20798,6 @@
     (ONT::NEUTRAL
      (CONCEPT
        T))))
-
-(CONCEPT
-  ONT::HAVING
-  (INHERIT
-    ONT::EVENT-OF-STATE)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (TRAJECTORY -)
-    (TIME-SPAN EXTENDED)
-    (ASPECT STATIC)
-    (TYPE ONT::HAVING))
-  (SEM-FRAME
-    (ONT::NEUTRAL1
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
-       (TANGIBLE +))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           SITUATION))
-       (TANGIBLE +)))))
 
 (CONCEPT
   ONT::HAVING-COMPONENT-OR-PART-VAL
@@ -24941,33 +24935,6 @@
        T)
      OPTIONAL)
     (ONT::FORMAL
-     (CONCEPT
-       T)
-     OPTIONAL)))
-
-(CONCEPT
-  ONT::LOCATED-MOVE-STATE
-  (COMMENT
-   "a state of (passively) maintaining some object's state (e.g., position, possession)")
-  (INHERIT
-    ONT::EVENT-OF-ACTION)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (TRAJECTORY -)
-    (TYPE ONT::LOCATED-MOVE-STATE))
-  (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::LOCATION
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (OBJECT-FUNCTION PLACE))
-     OPTIONAL)
-    (ONT::AGENT
      (CONCEPT
        T)
      OPTIONAL)))
@@ -32467,6 +32434,33 @@
     WN::|persistent%5:00:00:continual:00|))
 
 (CONCEPT
+  ONT::PERSISTENT-STATE
+  (COMMENT
+   "a state of (passively) maintaining some object's state (e.g., position, possession)")
+  (INHERIT
+    ONT::EVENT-OF-ACTION)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TRAJECTORY -)
+    (TYPE ONT::PERSISTENT-STATE))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::LOCATION
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (OBJECT-FUNCTION PLACE))
+     OPTIONAL)
+    (ONT::AGENT
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::PERSON
   (INHERIT
     ONT::MAMMAL)
@@ -34157,6 +34151,8 @@
   ONT::POSSIBLY-TRUE
   (INHERIT
     ONT::EVENT-OF-STATE)
+  (OVERLAP
+    WN::|appear%2:39:01::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -38564,7 +38560,7 @@
 (CONCEPT
   ONT::RETAIN
   (INHERIT
-    ONT::LOCATED-MOVE-STATE)
+    ONT::PERSISTENT-STATE)
   (OVERLAP
     WN::|keep%2:35:10::|
     WN::|stay_fresh%2:42:00::|
@@ -42590,7 +42586,7 @@
 (CONCEPT
   ONT::STAY
   (INHERIT
-    ONT::LOCATED-MOVE-STATE)
+    ONT::PERSISTENT-STATE)
   (OVERLAP
     WN::|stay%2:30:00::|
     WN::|remain%2:30:00::|

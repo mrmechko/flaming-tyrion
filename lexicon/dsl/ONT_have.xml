@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::have">
  <relation label="inherit">
-  ont::having
+  ont::event-of-state
  </relation>
  <relation label="overlap">
   wn::|keep%2:40:12::|
@@ -23,6 +23,36 @@
   wn::|have%2:29:02::|
   wn::|hold%2:40:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">static</feat>
+  <feat name="type">ont::have</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -125,7 +155,7 @@
  <feat name="trajectory">-</feat>
  <feat name="time-span">extended</feat>
  <feat name="aspect">static</feat>
- <feat name="type">ont::having</feat>
+ <feat name="type">ont::have</feat>
  </sem-feats>
  <concept name="ont::event-of-state">
  <comment>
@@ -153,41 +183,6 @@
   </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::having">
- <relation label="inherit">
-  ont::event-of-state
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="time-span">extended</feat>
-  <feat name="aspect">static</feat>
-  <feat name="type">ont::having</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="tangible">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
-    <feat name="tangible">+</feat>
-   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>

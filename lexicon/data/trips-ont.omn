@@ -5263,25 +5263,17 @@ Class: have-property
   SubClassOf: _neutral only owl:Thing
   SubClassOf: _formal only ((FLT_abstr-obj or FLT_situation) and F_type some (domain-property or position-reln or predicate or relation or membership)) and _formal some owl:Thing
 
-# ONT type ont::be-inactive
-Class: be-inactive
-  SubClassOf: have-property
-
 # ONT type ont::possibly-true
 Class: possibly-true
   SubClassOf: event-of-state
   SubClassOf: _formal only (FLT_situation) and _formal some owl:Thing
 
-# ONT type ont::having
-Class: having
+# ONT type ont::have
+Class: have
   SubClassOf: event-of-state
   SubClassOf: (FLT_situation and F_aspect some V_static and F_time-span some V_extended and F_trajectory some V_-)
   SubClassOf: _neutral only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation) and F_tangible some V_+) and _neutral some owl:Thing
   SubClassOf: _neutral1 only ((FLT_phys-obj or FLT_abstr-obj) and F_tangible some V_+) and _neutral1 some owl:Thing
-
-# ONT type ont::have
-Class: have
-  SubClassOf: having
 
 # ONT type ont::possess
 Class: possess
@@ -15149,8 +15141,8 @@ Class: press
 Class: squeeze
   SubClassOf: push
 
-# ONT type ont::located-move-state
-Class: located-move-state
+# ONT type ont::persistent-state
+Class: persistent-state
   Annotations: rdfs:comment "a state of (passively) maintaining some object's state (e.g., position, possession)"
   SubClassOf: event-of-action
   SubClassOf: (FLT_situation and F_trajectory some V_-)
@@ -15158,9 +15150,13 @@ Class: located-move-state
   SubClassOf: _location only (FLT_phys-obj and F_object-function some V_place) and _location some owl:Thing
   SubClassOf: _formal only owl:Thing
 
+# ONT type ont::be-inactive
+Class: be-inactive
+  SubClassOf: persistent-state
+
 # ONT type ont::confine
 Class: confine
-  SubClassOf: located-move-state
+  SubClassOf: persistent-state
 
 # ONT type ont::social-event
 Class: social-event
@@ -15224,7 +15220,7 @@ Class: drought
 
 # ONT type ont::stay
 Class: stay
-  SubClassOf: located-move-state
+  SubClassOf: persistent-state
   SubClassOf: (FLT_situation and F_aspect some V_unbounded and F_cause some V_force and F_time-span some V_extended)
   SubClassOf: _affected only (FLT_phys-obj and F_mobility some V_movable) and _affected some owl:Thing
 
@@ -16409,7 +16405,7 @@ Class: click
 
 # ONT type ont::retain
 Class: retain
-  SubClassOf: located-move-state
+  SubClassOf: persistent-state
   SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj)) and _affected some owl:Thing
   SubClassOf: _agent only (FLT_phys-obj and F_intentional some V_+)
 
@@ -17936,7 +17932,7 @@ Class: confuse
 # ONT type ont::hang-out
 Class: hang-out
   Annotations: rdfs:comment "to linger in a place or location"
-  SubClassOf: located-move-state
+  SubClassOf: persistent-state
   SubClassOf: (FLT_situation and F_aspect some V_unbounded and F_cause some V_force and F_time-span some V_extended)
   SubClassOf: _agent only (FLT_phys-obj and F_mobility some V_movable)
   SubClassOf: _extent only (FLT_abstr-obj and F_scale some duration-scale)
@@ -18495,10 +18491,10 @@ DisjointClasses: status, aux, event-type, event-of-state, occurring, event-of-ch
 DisjointClasses: change-magnitude, mutation, event-of-undergoing-action, event-of-awareness, event-of-action
 
 # children of ont::event-of-action
-DisjointClasses: work, compliance, record, nonverbal-expression, direct-information, activity-ongoing, located-move-state, reach, intentionally-act, wear, activity, entering, categorization, reaction-to-stimulus, agent-interaction, activity-event, acting, event-of-creation, event-of-causation
+DisjointClasses: work, compliance, record, nonverbal-expression, direct-information, activity-ongoing, persistent-state, reach, intentionally-act, wear, activity, entering, categorization, reaction-to-stimulus, agent-interaction, activity-event, acting, event-of-creation, event-of-causation
 
 # children of ont::event-of-state
-DisjointClasses: measure, share-property, rely-depend, containment, exists, take-time, refute, relate, encodes-message, correlation, function, lacking, sufficiency, necessity, happen, is-compatible-with, owe, position, direct-at, object-compare, having, possibly-true, have-property, expensiveness, salience, event-of-experience
+DisjointClasses: measure, share-property, rely-depend, containment, exists, take-time, refute, relate, encodes-message, correlation, function, lacking, sufficiency, necessity, happen, is-compatible-with, owe, position, direct-at, object-compare, have, possibly-true, have-property, expensiveness, salience, event-of-experience
 
 # children of ont::abstract-object
 DisjointClasses: domain, dynamics, level, relation, unit, tangible-abstract-object, abstract-object-nontemporal
@@ -19082,11 +19078,11 @@ DisjointClasses: smoking, eat, drink
 # children of ont::aux
 DisjointClasses: habitual, perfective, passive, going-to, progressive, conditional, future, do, must, should, possibility, ability
 
-# children of ont::have-property
-DisjointClasses: be-inclined, appears-to-have-property, be-inactive
-
 # children of ont::have
 DisjointClasses: membership, possess
+
+# children of ont::have-property
+DisjointClasses: be-inclined, appears-to-have-property
 
 # children of ont::object-compare
 DisjointClasses: differ, be, resemble, comprise, in-relation, cohere
@@ -20624,8 +20620,8 @@ DisjointClasses: click, rub-scrape-wipe, blow, push, pull
 # children of ont::push
 DisjointClasses: squeeze, press, push-liquid
 
-# children of ont::located-move-state
-DisjointClasses: hang-out, retain, stay, confine
+# children of ont::persistent-state
+DisjointClasses: hang-out, retain, stay, confine, be-inactive
 
 # children of ont::natural-event
 DisjointClasses: nychthemeron-event, drought, flooding, atmospheric-event

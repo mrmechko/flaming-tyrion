@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::located-move-state">
+ <concept name="ont::persistent-state">
  <comment>
   &quot;a state of (passively) maintaining some object's state (e.g., position, possession)&quot;
  </comment>
@@ -14,7 +14,7 @@
    situation
   </relation>
   <feat name="trajectory">-</feat>
-  <feat name="type">ont::located-move-state</feat>
+  <feat name="type">ont::persistent-state</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::formal" optional="optional">
@@ -107,7 +107,7 @@
   situation
  </relation>
  <feat name="trajectory">-</feat>
- <feat name="type">ont::located-move-state</feat>
+ <feat name="type">ont::persistent-state</feat>
  </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::formal" optional="optional">
@@ -242,9 +242,17 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::be-inactive">
+ <relation label="inherit">
+  ont::persistent-state
+ </relation>
+ <relation label="overlap">
+  wn::|rest%2:41:00::|
+ </relation>
+ </concept>
  <concept name="ont::confine">
  <relation label="inherit">
-  ont::located-move-state
+  ont::persistent-state
  </relation>
  <relation label="overlap">
   wn::|confine%2:41:00::|
@@ -255,7 +263,7 @@
  </concept>
  <concept name="ont::stay">
  <relation label="inherit">
-  ont::located-move-state
+  ont::persistent-state
  </relation>
  <relation label="overlap">
   wn::|stay%2:30:00::|
@@ -290,7 +298,7 @@
  </concept>
  <concept name="ont::retain">
  <relation label="inherit">
-  ont::located-move-state
+  ont::persistent-state
  </relation>
  <relation label="overlap">
   wn::|keep%2:35:10::|
@@ -323,7 +331,7 @@
   &quot;to linger in a place or location&quot;
  </comment>
  <relation label="inherit">
-  ont::located-move-state
+  ont::persistent-state
  </relation>
  <relation label="overlap">
   wn::|idle%2:41:00::|

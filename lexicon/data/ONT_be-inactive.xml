@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../style/onttype.xsl"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
-<ONTTYPE name="be-inactive" parent="have-property" modified="Sat Dec 28 06:43:48 2019">
+<ONTTYPE name="be-inactive" parent="persistent-state" modified="Fri Jan 17 06:44:06 2020">
 <SEM fltype="situation">
-<FEATURES type="be-inactive" trajectory="-" time-span="extended" aspect="static" tangible="+" container="-" intentional="-" />
+<FEATURES type="be-inactive" trajectory="-" cause="force" aspect="dynamic" tangible="+" container="-" intentional="-" />
 </SEM>
-<ARGUMENT role="formal" optionality="essential" fltype="(? formal60844 abstr-obj situation)">
-<FEATURES type="(? cbd609 domain-property position-reln predicate relation membership)" />
+<ARGUMENT role="formal" optionality="essential" fltype="?!type" />
+<ARGUMENT role="location" optionality="essential" fltype="phys-obj">
+<FEATURES object-function="place" />
 </ARGUMENT>
-<ARGUMENT role="neutral" optionality="required" fltype="?!type" />
-<ARGUMENT role="norole" optionality="optional" fltype="?!type" />
+<ARGUMENT role="agent" optionality="essential" fltype="(? cau2a428 situation abstr-obj phys-obj)" />
+<ARGUMENT role="result" optionality="optional" fltype="abstr-obj" />
+<ARGUMENT role="affected" optionality="optional" fltype="(? cau3a4291 situation abstr-obj phys-obj)">
+<FEATURES tangible="+" />
+</ARGUMENT>
 <WORD name="rest" />
 <MAPPING to="wordnet" name="rest%2:41:00::" url="http://wordnetweb.princeton.edu/perl/webwn?s=rest&amp;i=17&amp;o6=1" />
 </ONTTYPE>
