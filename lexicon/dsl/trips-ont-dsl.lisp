@@ -16852,7 +16852,10 @@
 (CONCEPT
   ONT::EXAMPLE
   (INHERIT
-    ONT::KIND))
+    ONT::KIND)
+  (OVERLAP
+    WN::|example%1:09:00::|
+    WN::|example%1:09:02::|))
 
 (CONCEPT
   ONT::EXCEPTIONAL-VAL
@@ -17505,7 +17508,9 @@
   (INHERIT
     ONT::ABSTRACT-OBJECT-NONTEMPORAL)
   (OVERLAP
-    WN::|fact%1:09:01::|)
+    WN::|fact%1:09:01::|
+    WN::|fact%1:09:02::|
+    WN::|fact%1:10:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -22255,7 +22260,7 @@
   (INHERIT
     ONT::INFO-HOLDER)
   (OVERLAP
-    WN::|representation%1:09:00::|))
+    WN::|visual_communication%1:10:00::|))
 
 (CONCEPT
   ONT::INFORMATION
@@ -25914,6 +25919,12 @@
   ONT::MATHEMATICAL-TERM
   (INHERIT
     ONT::ABSTRACT-OBJECT-NONTEMPORAL)
+  (OVERLAP
+    WN::|constant%1:23:00::|
+    WN::|differential_coefficient%1:09:00::|
+    WN::|divisor%1:23:00::|
+    WN::|equation%1:10:00::|
+    WN::|term%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -30399,6 +30410,8 @@
   ONT::NUMBER
   (INHERIT
     ONT::MATHEMATICAL-TERM)
+  (OVERLAP
+    WN::|number%1:23:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -31754,7 +31767,9 @@
 (CONCEPT
   ONT::OWN
   (INHERIT
-    ONT::RELATION))
+    ONT::RELATION)
+  (OVERLAP
+    WN::|own%5:00:00:personal:00|))
 
 (CONCEPT
   ONT::PACKAGE
@@ -33592,7 +33607,6 @@
     ONT::INFO-REPRESENTATION)
   (OVERLAP
     WN::|plot%1:10:01::|
-    WN::|spectrum%1:19:00::|
     WN::|diagram%1:06:00::|)
   (SEM-FRAME
     (ONT::FIGURE
@@ -37568,6 +37582,8 @@
   ONT::REPRESENTATION
   (INHERIT
     ONT::MENTAL-CONSTRUCTION)
+  (OVERLAP
+    WN::|representation%1:09:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -45191,6 +45207,8 @@
   ONT::TOO-MUCH
   (INHERIT
     ONT::DOMAIN-PROPERTY)
+  (OVERLAP
+    WN::|too_much%4:02:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
