@@ -8277,14 +8277,8 @@
        (SCALE ONT::DOMAIN))
      OPTIONAL)
     (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (TYPE
-        (OR
-          ONT::DOMAIN
-          ONT::QUANTITY-ABSTR
-          ONT::LEVEL)))
+     (CONCEPT
+       T)
      OPTIONAL)))
 
 (CONCEPT
@@ -25493,7 +25487,6 @@
     WN::|have%2:30:00::|
     WN::|have%2:32:00::|
     WN::|have%2:40:02::|
-    WN::|have%2:29:00::|
     WN::|make%2:30:00::|)
   (SEM-FEATS
     (INHERIT
