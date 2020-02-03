@@ -98,11 +98,14 @@
    <concept name="abstr-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::affected" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
+   <sem-feats>
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
    <or>
@@ -393,11 +396,14 @@
   <concept name="abstr-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::agent" optional="optional">
   <or>
@@ -421,4 +427,29 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="evaluate" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="evaluation" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="evaluate the problem">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evaluate
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
 </dsl>

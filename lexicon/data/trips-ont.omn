@@ -804,7 +804,7 @@ Class: event-of-change
   SubClassOf: situation-root
   SubClassOf: (FLT_situation and F_aspect some V_dynamic)
   SubClassOf: _agent only ((FLT_situation or FLT_abstr-obj or FLT_phys-obj))
-  SubClassOf: _affected only ((FLT_situation or FLT_abstr-obj or FLT_phys-obj))
+  SubClassOf: _affected only ((FLT_situation or FLT_abstr-obj or FLT_phys-obj) and F_tangible some V_+)
   SubClassOf: _result only (FLT_abstr-obj)
 
 # ONT type ont::occurring
@@ -9435,13 +9435,21 @@ Class: historical-era-val
   Annotations: rdfs:comment "relating to the distinct periods in history"
   SubClassOf: temporal-val
 
+# ONT type ont::relative-time-location-val
+Class: relative-time-location-val
+  SubClassOf: temporal-val
+
 # ONT type ont::ancient-val
 Class: ancient-val
-  SubClassOf: historical-era-val
+  SubClassOf: relative-time-location-val
 
 # ONT type ont::modern-val
 Class: modern-val
-  SubClassOf: historical-era-val
+  SubClassOf: relative-time-location-val
+
+# ONT type ont::current-val
+Class: current-val
+  SubClassOf: relative-time-location-val
 
 # ONT type ont::object-affordances-val
 Class: object-affordances-val
@@ -12095,7 +12103,7 @@ Class: not-contemporaneous-val
 # ONT type ont::old-fashioned-val
 Class: old-fashioned-val
   Annotations: rdfs:comment "(old_fashioned)"
-  SubClassOf: temporal-relation-val
+  SubClassOf: relative-time-location-val
 
 # ONT type ont::timeliness-val
 Class: timeliness-val
@@ -14538,7 +14546,7 @@ Class: giving
   Annotations: rdfs:comment "To relinquish control of AFFECTED AFFECTED-RESULT, typically voluntarily and possibly in exchange for something"
   SubClassOf: relinquish
   SubClassOf: (FLT_situation and F_cause some V_agentive and F_iobj some V_recipient)
-  SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation) and F_type some (phys-object or loaded-claim or mental-construction)) and _affected some owl:Thing
+  SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation) and F_type some (phys-object or loaded-claim or mental-construction or information-function-object)) and _affected some owl:Thing
   SubClassOf: _affected-result only ((FLT_phys-obj or FLT_abstr-obj)) and _affected-result some owl:Thing
   SubClassOf: _result only ((FLT_phys-obj or FLT_abstr-obj))
 
@@ -19607,7 +19615,7 @@ DisjointClasses: portable-val, removable-val
 DisjointClasses: w-able-val, r-able-val
 
 # children of ont::temporal-val
-DisjointClasses: clock-time-val, timeliness-val, temporal-relation-val, historical-era-val, age-val, temporal-occurrence-val
+DisjointClasses: clock-time-val, timeliness-val, temporal-relation-val, relative-time-location-val, historical-era-val, age-val, temporal-occurrence-val
 
 # children of ont::temporal-occurrence-val
 DisjointClasses: persistence-val, incremental-val, frequency-val, continuous-val
@@ -19783,8 +19791,8 @@ DisjointClasses: middle-val, sequence-val-next, last-val, first-val, one-before-
 # children of ont::age-val
 DisjointClasses: young-val, old-val
 
-# children of ont::historical-era-val
-DisjointClasses: modern-val, ancient-val
+# children of ont::relative-time-location-val
+DisjointClasses: old-fashioned-val, current-val, modern-val, ancient-val
 
 # children of ont::object-affordances-val
 DisjointClasses: availability-val, motion-val, usability-val, functionality-val
@@ -20216,7 +20224,7 @@ DisjointClasses: lack-knowledge-val, have-knowledge-val
 DisjointClasses: not-discerning-val, discerning-val
 
 # children of ont::temporal-relation-val
-DisjointClasses: old-fashioned-val, not-contemporaneous-val, contemporaneous-val
+DisjointClasses: not-contemporaneous-val, contemporaneous-val
 
 # children of ont::timeliness-val
 DisjointClasses: at-inconvenient-time-val, at-convenient-time-val, after-expected-time-val, on-time-val

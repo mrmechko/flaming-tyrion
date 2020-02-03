@@ -1731,7 +1731,7 @@
 (CONCEPT
   ONT::ANCIENT-VAL
   (INHERIT
-    ONT::HISTORICAL-ERA-VAL)
+    ONT::RELATIVE-TIME-LOCATION-VAL)
   (OVERLAP
     WN::|nonmodern%3:00:00::|
     WN::|early%3:00:00::|
@@ -12385,6 +12385,14 @@
     (TYPE ONT::CURRENCY)))
 
 (CONCEPT
+  ONT::CURRENT-VAL
+  (INHERIT
+    ONT::RELATIVE-TIME-LOCATION-VAL)
+  (OVERLAP
+    WN::|contemporary%5:00:00:current:00|
+    WN::|current%3:00:00::|))
+
+(CONCEPT
   ONT::CUT
   (INHERIT
     ONT::BREAK-OBJECT)
@@ -16266,13 +16274,15 @@
        ABSTR-OBJ)
      OPTIONAL)
     (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         PHYS-OBJ))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (TANGIBLE +))
      OPTIONAL)
     (ONT::AGENT
      (OR
@@ -19733,7 +19743,8 @@
         (OR
           ONT::PHYS-OBJECT
           ONT::LOADED-CLAIM
-          ONT::MENTAL-CONSTRUCTION))))))
+          ONT::MENTAL-CONSTRUCTION
+          ONT::INFORMATION-FUNCTION-OBJECT))))))
 
 (CONCEPT
   ONT::GLASS
@@ -27049,7 +27060,7 @@
 (CONCEPT
   ONT::MODERN-VAL
   (INHERIT
-    ONT::HISTORICAL-ERA-VAL)
+    ONT::RELATIVE-TIME-LOCATION-VAL)
   (OVERLAP
     WN::|nonclassical%3:00:00::|
     WN::|modern%3:00:00::|
@@ -31110,7 +31121,7 @@
   ONT::OLD-FASHIONED-VAL
   (COMMENT "(old_fashioned)")
   (INHERIT
-    ONT::TEMPORAL-RELATION-VAL))
+    ONT::RELATIVE-TIME-LOCATION-VAL))
 
 (CONCEPT
   ONT::OLD-VAL
@@ -36797,6 +36808,11 @@
   ONT::RELATIVE-LOCATION
   (INHERIT
     ONT::SPECIFIC-LOC))
+
+(CONCEPT
+  ONT::RELATIVE-TIME-LOCATION-VAL
+  (INHERIT
+    ONT::TEMPORAL-VAL))
 
 (CONCEPT
   ONT::RELATIVE-TO-HEIGHT-SCALE
