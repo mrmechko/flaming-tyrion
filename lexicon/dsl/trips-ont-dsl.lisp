@@ -35857,6 +35857,11 @@
     WN::|quantity%1:09:01::|
     WN::|amount%1:21:00::|
     WN::|amount%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (TANGIBLE +)
+    (TYPE ONT::QUANTITY-ABSTR))
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
