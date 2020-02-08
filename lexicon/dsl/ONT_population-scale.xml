@@ -14,6 +14,7 @@
    abstr-obj
   </relation>
   <feat name="measure-function">term</feat>
+  <feat name="scale">ont::population-scale</feat>
   <feat name="type">ont::population-scale</feat>
  </sem-feats>
  <sem-frame>
@@ -59,6 +60,13 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::ordered-domain</feat>
+ <feat name="type">ont::ordered-domain</feat>
+ </sem-feats>
  <concept name="ont::domain">
  <comment>
   &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
@@ -69,6 +77,13 @@
  <relation label="overlap">
   wn::|attribute%1:03:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::extent" optional="optional">
    <concept name="t" />
@@ -81,6 +96,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::number-scale</feat>
+ <feat name="type">ont::number-scale</feat>
+ </sem-feats>
  <concept name="ont::measure-scale">
  <relation label="inherit">
   ont::ordered-domain
@@ -88,6 +110,13 @@
  <relation label="overlap">
   wn::|measurement%1:04:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::measure-scale</feat>
+  <feat name="type">ont::measure-scale</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
    <or>
@@ -98,22 +127,25 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::total-scale">
- <relation label="inherit">
-  ont::number-scale
- </relation>
- <relation label="overlap">
-  wn::|total%1:06:00::|
-  wn::|count%1:23:00::|
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="measure-function">term</feat>
- <feat name="type">ont::population-scale</feat>
+ <feat name="scale">ont::total-scale</feat>
+ <feat name="type">ont::total-scale</feat>
  </sem-feats>
+ <concept name="ont::number-scale">
+ <relation label="inherit">
+  ont::measure-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::number-scale</feat>
+  <feat name="type">ont::number-scale</feat>
+ </sem-feats>
+ </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
   <sem-feats>
@@ -124,16 +156,49 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::number-scale">
+ <sem-feats>
  <relation label="inherit">
-  ont::measure-scale
+  abstr-obj
  </relation>
+ <feat name="measure-function">term</feat>
+ <feat name="scale">ont::population-scale</feat>
+ <feat name="type">ont::population-scale</feat>
+ </sem-feats>
+ <concept name="ont::total-scale">
+ <relation label="inherit">
+  ont::number-scale
+ </relation>
+ <relation label="overlap">
+  wn::|total%1:06:00::|
+  wn::|count%1:23:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::total-scale</feat>
+  <feat name="type">ont::total-scale</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::ordered-domain">
  <relation label="inherit">
   ont::domain
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::ordered-domain</feat>
+  <feat name="type">ont::ordered-domain</feat>
+ </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::measure-scale</feat>
+ <feat name="type">ont::measure-scale</feat>
+ </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::figure" optional="optional">
   <or>
@@ -162,6 +227,13 @@
   <feat name="type">ont::abstract-object</feat>
  </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::domain</feat>
+ <feat name="type">ont::domain</feat>
+ </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::extent" optional="optional">
   <concept name="t" />

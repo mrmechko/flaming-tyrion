@@ -12602,10 +12602,16 @@ Class: economics-property-val
 Class: financial-property-val
   SubClassOf: economics-val
 
+# ONT type ont::body-property
+Class: body-property
+  SubClassOf: attribute
+  SubClassOf: _figure only (FLT_phys-obj and F_origin some V_living)
+
 # ONT type ont::domain
 Class: domain
   Annotations: rdfs:comment "Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)"
   SubClassOf: abstract-object
+  SubClassOf: (FLT_abstr-obj and F_scale some domain)
   SubClassOf: _figure only owl:Thing
   SubClassOf: _ground only owl:Thing
   SubClassOf: _extent only owl:Thing
@@ -12613,243 +12619,300 @@ Class: domain
 # ONT type ont::ordered-domain
 Class: ordered-domain
   SubClassOf: domain
+  SubClassOf: (FLT_abstr-obj and F_scale some ordered-domain)
 
 # ONT type ont::physical-property-scale
 Class: physical-property-scale
   Annotations: rdfs:comment "scales associated with properties pertaining to the attributes of physical entities or substances. Note: many properties can apply to non-physical objects."
   SubClassOf: ordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some physical-property-scale)
 
 # ONT type ont::body-condition-scale
 Class: body-condition-scale
   SubClassOf: physical-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some body-condition-scale)
 
 # ONT type ont::positive-body-condition-scale
 Class: positive-body-condition-scale
   SubClassOf: body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some positive-body-condition-scale)
 
 # ONT type ont::alertness-scale
 Class: alertness-scale
   SubClassOf: positive-body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some alertness-scale)
 
 # ONT type ont::body-energy-scale
 Class: body-energy-scale
   SubClassOf: positive-body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some body-energy-scale)
 
 # ONT type ont::health-scale
 Class: health-scale
   SubClassOf: positive-body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some health-scale)
 
 # ONT type ont::satiated-scale
 Class: satiated-scale
   SubClassOf: positive-body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some satiated-scale)
 
 # ONT type ont::fitness-scale
 Class: fitness-scale
   SubClassOf: positive-body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some fitness-scale)
 
 # ONT type ont::negative-body-condition-scale
 Class: negative-body-condition-scale
   SubClassOf: body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some negative-body-condition-scale)
 
 # ONT type ont::pain-scale
 Class: pain-scale
   SubClassOf: negative-body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some pain-scale)
 
 # ONT type ont::not-satiated-scale
 Class: not-satiated-scale
   SubClassOf: negative-body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-satiated-scale)
 
 # ONT type ont::illness-scale
 Class: illness-scale
   SubClassOf: negative-body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some illness-scale)
 
 # ONT type ont::restlessness-scale
 Class: restlessness-scale
   SubClassOf: negative-body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some restlessness-scale)
 
 # ONT type ont::feebleness-scale
 Class: feebleness-scale
   SubClassOf: negative-body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some feebleness-scale)
 
 # ONT type ont::lack-of-energy-scale
 Class: lack-of-energy-scale
   SubClassOf: negative-body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some lack-of-energy-scale)
 
 # ONT type ont::lethargy-scale
 Class: lethargy-scale
   SubClassOf: lack-of-energy-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some lethargy-scale)
 
 # ONT type ont::fatigue-scale
 Class: fatigue-scale
   SubClassOf: lack-of-energy-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some fatigue-scale)
 
 # ONT type ont::neutral-body-condition-scale
 Class: neutral-body-condition-scale
   SubClassOf: lack-of-energy-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some neutral-body-condition-scale)
 
 # ONT type ont::sleepiness-scale
 Class: sleepiness-scale
   SubClassOf: neutral-body-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sleepiness-scale)
 
 # ONT type ont::polarity-scale
 Class: polarity-scale
   SubClassOf: physical-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some polarity-scale)
 
 # ONT type ont::completeness-scale
 Class: completeness-scale
   SubClassOf: physical-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some completeness-scale)
 
 # ONT type ont::complete-scale
 Class: complete-scale
   SubClassOf: completeness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some complete-scale)
 
 # ONT type ont::incomplete-scale
 Class: incomplete-scale
   SubClassOf: completeness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some incomplete-scale)
 
 # ONT type ont::atmospheric-scale
 Class: atmospheric-scale
   SubClassOf: physical-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some atmospheric-scale)
 
 # ONT type ont::humidity-scale
 Class: humidity-scale
   SubClassOf: atmospheric-scale
-  SubClassOf: (FLT_abstr-obj)
+  SubClassOf: (FLT_abstr-obj and F_scale some humidity-scale)
   SubClassOf: _ground only (FLT_abstr-obj and F_scale some humidity-scale) and _ground some owl:Thing
 
 # ONT type ont::configuration-property-scale
 Class: configuration-property-scale
   Annotations: rdfs:comment "scales for properties regarding the configuration, arrangement or layout of elements"
   SubClassOf: physical-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some configuration-property-scale)
 
 # ONT type ont::constriction-scale
 Class: constriction-scale
   SubClassOf: configuration-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some constriction-scale)
 
 # ONT type ont::tightness-scale
 Class: tightness-scale
   SubClassOf: constriction-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some tightness-scale)
 
 # ONT type ont::looseness-scale
 Class: looseness-scale
   SubClassOf: constriction-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some looseness-scale)
 
 # ONT type ont::appearance-scale
 Class: appearance-scale
   Annotations: rdfs:comment "scales related to surface appearance of a physical entity or object preceptible through sensory input"
   SubClassOf: physical-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some appearance-scale)
   SubClassOf: _figure only (FLT_phys-obj) and _figure some owl:Thing
 
 # ONT type ont::smell-scale
 Class: smell-scale
   SubClassOf: appearance-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some smell-scale)
 
 # ONT type ont::negative-smell-scale
 Class: negative-smell-scale
   SubClassOf: smell-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some negative-smell-scale)
 
 # ONT type ont::positive-smell-scale
 Class: positive-smell-scale
   SubClassOf: smell-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some positive-smell-scale)
 
 # ONT type ont::sound-scale
 Class: sound-scale
   SubClassOf: appearance-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sound-scale)
 
 # ONT type ont::sound-volume-scale
 Class: sound-volume-scale
   SubClassOf: sound-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sound-volume-scale)
 
 # ONT type ont::loudness-scale
 Class: loudness-scale
   SubClassOf: sound-volume-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some loudness-scale)
 
 # ONT type ont::sound-softness-scale
 Class: sound-softness-scale
   Annotations: rdfs:comment "quality of being low in volume"
   SubClassOf: sound-volume-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sound-softness-scale)
 
 # ONT type ont::quietness-scale
 Class: quietness-scale
   Annotations: rdfs:comment "quality of lacking sound"
   SubClassOf: sound-volume-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some quietness-scale)
 
 # ONT type ont::sound-texture-scale
 Class: sound-texture-scale
   SubClassOf: sound-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sound-texture-scale)
 
 # ONT type ont::hoarseness-scale
 Class: hoarseness-scale
   SubClassOf: sound-texture-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some hoarseness-scale)
 
 # ONT type ont::touch-scale
 Class: touch-scale
   SubClassOf: appearance-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some touch-scale)
 
 # ONT type ont::flexibility-scale
 Class: flexibility-scale
   SubClassOf: touch-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some flexibility-scale)
 
 # ONT type ont::tactile-scale
 Class: tactile-scale
   SubClassOf: touch-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some tactile-scale)
 
 # ONT type ont::texture-scale
 Class: texture-scale
   SubClassOf: tactile-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some texture-scale)
 
 # ONT type ont::texture-thickness-scale
 Class: texture-thickness-scale
   SubClassOf: texture-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some texture-thickness-scale)
 
 # ONT type ont::texture-thinness-scale
 Class: texture-thinness-scale
   SubClassOf: texture-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some texture-thinness-scale)
 
 # ONT type ont::roughness-scale
 Class: roughness-scale
   SubClassOf: texture-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some roughness-scale)
 
 # ONT type ont::sharp-texture-scale
 Class: sharp-texture-scale
   SubClassOf: texture-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sharp-texture-scale)
 
 # ONT type ont::smoothness-scale
 Class: smoothness-scale
   SubClassOf: texture-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some smoothness-scale)
 
 # ONT type ont::taste-scale
 Class: taste-scale
   SubClassOf: appearance-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some taste-scale)
 
 # ONT type ont::spiciness-scale
 Class: spiciness-scale
   SubClassOf: taste-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some spiciness-scale)
 
 # ONT type ont::sourness-scale
 Class: sourness-scale
   SubClassOf: taste-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sourness-scale)
 
 # ONT type ont::sweetness-scale
 Class: sweetness-scale
   SubClassOf: taste-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sweetness-scale)
 
 # ONT type ont::bitterness-scale
 Class: bitterness-scale
   SubClassOf: taste-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some bitterness-scale)
 
 # ONT type ont::visual-scale
 Class: visual-scale
   SubClassOf: appearance-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some visual-scale)
 
 # ONT type ont::luminosity-scale
 Class: luminosity-scale
   Annotations: rdfs:comment "quality of giving out or reflecting light"
   SubClassOf: visual-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some luminosity-scale)
 
 # ONT type ont::visual-dullness-scale
 Class: visual-dullness-scale
   SubClassOf: visual-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some visual-dullness-scale)
 
 # ONT type ont::color-scale
 Class: color-scale
@@ -12860,693 +12923,862 @@ Class: color-scale
 # ONT type ont::red-scale
 Class: red-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some red-scale)
 
 # ONT type ont::blue-scale
 Class: blue-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some blue-scale)
 
 # ONT type ont::green-scale
 Class: green-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some green-scale)
 
 # ONT type ont::grey-scale
 Class: grey-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some grey-scale)
 
 # ONT type ont::pink-scale
 Class: pink-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some pink-scale)
 
 # ONT type ont::magenta-scale
 Class: magenta-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some magenta-scale)
 
 # ONT type ont::silver-scale
 Class: silver-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some silver-scale)
 
 # ONT type ont::gold-scale
 Class: gold-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some gold-scale)
 
 # ONT type ont::white-scale
 Class: white-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some white-scale)
 
 # ONT type ont::brown-scale
 Class: brown-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some brown-scale)
 
 # ONT type ont::black-scale
 Class: black-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some black-scale)
 
 # ONT type ont::purple-scale
 Class: purple-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some purple-scale)
 
 # ONT type ont::orange-scale
 Class: orange-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some orange-scale)
 
 # ONT type ont::yellow-scale
 Class: yellow-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some yellow-scale)
 
 # ONT type ont::tan-scale
 Class: tan-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some tan-scale)
 
 # ONT type ont::copper-scale
 Class: copper-scale
   SubClassOf: color-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some copper-scale)
 
 # ONT type ont::presence-of-light-scale
 Class: presence-of-light-scale
   SubClassOf: visual-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some presence-of-light-scale)
 
 # ONT type ont::lightness-scale
 Class: lightness-scale
   SubClassOf: presence-of-light-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some lightness-scale)
 
 # ONT type ont::darkness-scale
 Class: darkness-scale
   SubClassOf: presence-of-light-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some darkness-scale)
 
 # ONT type ont::visual-distinctivenss-scale
 Class: visual-distinctivenss-scale
   SubClassOf: visual-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some visual-distinctivenss-scale)
 
 # ONT type ont::visual-sharpness-scale
 Class: visual-sharpness-scale
   SubClassOf: visual-distinctivenss-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some visual-sharpness-scale)
 
 # ONT type ont::blurriness-scale
 Class: blurriness-scale
   SubClassOf: visual-distinctivenss-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some blurriness-scale)
 
 # ONT type ont::light-passage-scale
 Class: light-passage-scale
   SubClassOf: visual-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some light-passage-scale)
 
 # ONT type ont::opacity-scale
 Class: opacity-scale
   SubClassOf: light-passage-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some opacity-scale)
 
 # ONT type ont::visual-clarity-scale
 Class: visual-clarity-scale
   SubClassOf: light-passage-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some visual-clarity-scale)
 
 # ONT type ont::sensory-scale
 Class: sensory-scale
   Annotations: rdfs:comment "scales that deal with the quality to being perceivable through sensory input"
   SubClassOf: physical-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sensory-scale)
 
 # ONT type ont::perceptibility-scale
 Class: perceptibility-scale
   SubClassOf: sensory-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some perceptibility-scale)
 
 # ONT type ont::sensitivity-scale
 Class: sensitivity-scale
   SubClassOf: sensory-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sensitivity-scale)
 
 # ONT type ont::sight-scale
 Class: sight-scale
   SubClassOf: sensory-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sight-scale)
 
 # ONT type ont::visibility-scale
 Class: visibility-scale
   SubClassOf: sight-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some visibility-scale)
 
 # ONT type ont::invisibility-scale
 Class: invisibility-scale
   SubClassOf: sight-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some invisibility-scale)
 
 # ONT type ont::tactile-hardness-scale
 Class: tactile-hardness-scale
   SubClassOf: texture-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some tactile-hardness-scale)
 
 # ONT type ont::tactile-softness-scale
 Class: tactile-softness-scale
   SubClassOf: texture-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some tactile-softness-scale)
 
 # ONT type ont::tangibility-scale
 Class: tangibility-scale
   SubClassOf: tactile-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some tangibility-scale)
 
 # ONT type ont::intangibility-scale
 Class: intangibility-scale
   SubClassOf: tactile-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some intangibility-scale)
 
 # ONT type ont::olfactory-scale
 Class: olfactory-scale
   SubClassOf: sensory-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some olfactory-scale)
 
 # ONT type ont::auditory-scale
 Class: auditory-scale
   SubClassOf: sensory-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some auditory-scale)
 
 # ONT type ont::moisture-content-scale
 Class: moisture-content-scale
   SubClassOf: physical-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some moisture-content-scale)
 
 # ONT type ont::wet-scale
 Class: wet-scale
   SubClassOf: moisture-content-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some wet-scale)
 
 # ONT type ont::dry-scale
 Class: dry-scale
   SubClassOf: moisture-content-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some dry-scale)
 
 # ONT type ont::dehydrated-scale
 Class: dehydrated-scale
   SubClassOf: dry-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some dehydrated-scale)
 
 # ONT type ont::spatial-scale
 Class: spatial-scale
   Annotations: rdfs:comment "scales relating to the properties of space"
   SubClassOf: physical-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some spatial-scale)
 
 # ONT type ont::shape-scale
 Class: shape-scale
   SubClassOf: appearance-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some shape-scale)
 
 # ONT type ont::angularity-scale
 Class: angularity-scale
   SubClassOf: shape-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some angularity-scale)
 
 # ONT type ont::squareness-scale
 Class: squareness-scale
   SubClassOf: angularity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some squareness-scale)
 
 # ONT type ont::rectangularity-scale
 Class: rectangularity-scale
   SubClassOf: angularity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some rectangularity-scale)
 
 # ONT type ont::triangularity-scale
 Class: triangularity-scale
   SubClassOf: angularity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some triangularity-scale)
 
 # ONT type ont::roundness-scale
 Class: roundness-scale
   SubClassOf: shape-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some roundness-scale)
 
 # ONT type ont::behavioral-scale
 Class: behavioral-scale
   Annotations: rdfs:comment "scales relating to behavioral or psychological attributes that characterize an entity."
   SubClassOf: ordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some behavioral-scale)
 
 # ONT type ont::endurance-scale
 Class: endurance-scale
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some endurance-scale)
 
 # ONT type ont::kindness-scale
 Class: kindness-scale
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some kindness-scale)
 
 # ONT type ont::gracefulness-scale
 Class: gracefulness-scale
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some gracefulness-scale)
 
 # ONT type ont::honesty-scale
 Class: honesty-scale
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some honesty-scale)
 
 # ONT type ont::modesty-scale
 Class: modesty-scale
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some modesty-scale)
 
 # ONT type ont::affection-scale
 Class: affection-scale
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some affection-scale)
 
 # ONT type ont::sociability-scale
 Class: sociability-scale
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sociability-scale)
 
 # ONT type ont::wiseness-scale
 Class: wiseness-scale
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some wiseness-scale)
 
 # ONT type ont::wisdom-scale
 Class: wisdom-scale
   SubClassOf: wiseness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some wisdom-scale)
 
 # ONT type ont::folly-scale
 Class: folly-scale
   SubClassOf: wiseness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some folly-scale)
 
 # ONT type ont::aggressiveness-scale
 Class: aggressiveness-scale
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some aggressiveness-scale)
 
 # ONT type ont::tameness-scale
 Class: tameness-scale
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some tameness-scale)
 
 # ONT type ont::tame-scale
 Class: tame-scale
   SubClassOf: tameness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some tame-scale)
 
 # ONT type ont::wild-scale
 Class: wild-scale
   SubClassOf: tameness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some wild-scale)
 
 # ONT type ont::boldness-scale
 Class: boldness-scale
   Annotations: rdfs:comment "bold and daring; forceful approach to challenge"
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some boldness-scale)
 
 # ONT type ont::courage-scale
 Class: courage-scale
   Annotations: rdfs:comment "positive strength against fear"
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some courage-scale)
 
 # ONT type ont::responsibility-scale
 Class: responsibility-scale
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some responsibility-scale)
 
 # ONT type ont::skillfulness-scale
 Class: skillfulness-scale
   SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some skillfulness-scale)
 
 # ONT type ont::evaluation-scale
 Class: evaluation-scale
   Annotations: rdfs:comment "scales relating to subjective evaluation of an entity or a situation"
   SubClassOf: ordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some evaluation-scale)
 
 # ONT type ont::fame-scale
 Class: fame-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some fame-scale)
 
 # ONT type ont::freshness-scale
 Class: freshness-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some freshness-scale)
 
 # ONT type ont::fresh-scale
 Class: fresh-scale
   SubClassOf: freshness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some fresh-scale)
 
 # ONT type ont::not-fresh-scale
 Class: not-fresh-scale
   SubClassOf: freshness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-fresh-scale)
 
 # ONT type ont::familiarity-scale
 Class: familiarity-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some familiarity-scale)
 
 # ONT type ont::familiar-scale
 Class: familiar-scale
   SubClassOf: familiarity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some familiar-scale)
 
 # ONT type ont::not-familiar-scale
 Class: not-familiar-scale
   SubClassOf: familiarity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-familiar-scale)
 
 # ONT type ont::necessity-scale
 Class: necessity-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some necessity-scale)
 
 # ONT type ont::typicality-scale
 Class: typicality-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some typicality-scale)
 
 # ONT type ont::typical-scale
 Class: typical-scale
   SubClassOf: typicality-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some typical-scale)
 
 # ONT type ont::not-typical-scale
 Class: not-typical-scale
   SubClassOf: typicality-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-typical-scale)
 
 # ONT type ont::comfort-scale
 Class: comfort-scale
   Annotations: rdfs:comment "deals with ease and comfort"
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some comfort-scale)
 
 # ONT type ont::comfortable-scale
 Class: comfortable-scale
   SubClassOf: comfort-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some comfortable-scale)
 
 # ONT type ont::not-comfortable-scale
 Class: not-comfortable-scale
   SubClassOf: comfort-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-comfortable-scale)
 
 # ONT type ont::conventionality-scale
 Class: conventionality-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some conventionality-scale)
 
 # ONT type ont::conventional-scale
 Class: conventional-scale
   SubClassOf: conventionality-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some conventional-scale)
 
 # ONT type ont::not-conventional-scale
 Class: not-conventional-scale
   SubClassOf: conventionality-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-conventional-scale)
 
 # ONT type ont::cleanliness-scale
 Class: cleanliness-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some cleanliness-scale)
 
 # ONT type ont::clean-scale
 Class: clean-scale
   SubClassOf: cleanliness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some clean-scale)
 
 # ONT type ont::unclean-scale
 Class: unclean-scale
   SubClassOf: cleanliness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some unclean-scale)
 
 # ONT type ont::luckiness-scale
 Class: luckiness-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some luckiness-scale)
 
 # ONT type ont::cost-scale
 Class: cost-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some cost-scale)
 
 # ONT type ont::expensive-scale
 Class: expensive-scale
   SubClassOf: cost-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some expensive-scale)
 
 # ONT type ont::not-expensive-scale
 Class: not-expensive-scale
   SubClassOf: cost-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-expensive-scale)
 
 # ONT type ont::ability-scale
 Class: ability-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some ability-scale)
 
 # ONT type ont::able-scale
 Class: able-scale
   SubClassOf: ability-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some able-scale)
 
 # ONT type ont::not-able-scale
 Class: not-able-scale
   SubClassOf: ability-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-able-scale)
 
 # ONT type ont::attraction-scale
 Class: attraction-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some attraction-scale)
 
 # ONT type ont::attractive-scale
 Class: attractive-scale
   SubClassOf: attraction-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some attractive-scale)
 
 # ONT type ont::not-attractive-scale
 Class: not-attractive-scale
   SubClassOf: attraction-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-attractive-scale)
 
 # ONT type ont::acceptability-scale
 Class: acceptability-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some acceptability-scale)
 
 # ONT type ont::goodness-scale
 Class: goodness-scale
   SubClassOf: acceptability-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some goodness-scale)
 
 # ONT type ont::badness-scale
 Class: badness-scale
   SubClassOf: acceptability-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some badness-scale)
 
 # ONT type ont::beauty-scale
 Class: beauty-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some beauty-scale)
 
 # ONT type ont::beautiful-scale
 Class: beautiful-scale
   SubClassOf: beauty-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some beautiful-scale)
 
 # ONT type ont::ugly-scale
 Class: ugly-scale
   SubClassOf: beauty-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some ugly-scale)
 
 # ONT type ont::noticeability-scale
 Class: noticeability-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some noticeability-scale)
 
 # ONT type ont::adaptability-scale
 Class: adaptability-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some adaptability-scale)
 
 # ONT type ont::importance-scale
 Class: importance-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some importance-scale)
 
 # ONT type ont::important-scale
 Class: important-scale
   SubClassOf: importance-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some important-scale)
 
 # ONT type ont::not-important-scale
 Class: not-important-scale
   SubClassOf: importance-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-important-scale)
 
 # ONT type ont::reliability-scale
 Class: reliability-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some reliability-scale)
 
 # ONT type ont::safety-scale
 Class: safety-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some safety-scale)
 
 # ONT type ont::safe-scale
 Class: safe-scale
   SubClassOf: safety-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some safe-scale)
 
 # ONT type ont::unsafe-scale
 Class: unsafe-scale
   SubClassOf: safety-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some unsafe-scale)
 
 # ONT type ont::appropriateness-scale
 Class: appropriateness-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some appropriateness-scale)
 
 # ONT type ont::appropriate-scale
 Class: appropriate-scale
   SubClassOf: appropriateness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some appropriate-scale)
 
 # ONT type ont::not-appropriate-scale
 Class: not-appropriate-scale
   SubClassOf: appropriateness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-appropriate-scale)
 
 # ONT type ont::convenience-scale
 Class: convenience-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some convenience-scale)
 
 # ONT type ont::convenient-scale
 Class: convenient-scale
   SubClassOf: convenience-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some convenient-scale)
 
 # ONT type ont::not-convenient-scale
 Class: not-convenient-scale
   SubClassOf: convenience-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-convenient-scale)
 
 # ONT type ont::basic-scale
 Class: basic-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some basic-scale)
 
 # ONT type ont::plain-scale
 Class: plain-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some plain-scale)
 
 # ONT type ont::quality-level-scale
 Class: quality-level-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some quality-level-scale)
 
 # ONT type ont::superiority-scale
 Class: superiority-scale
   SubClassOf: quality-level-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some superiority-scale)
 
 # ONT type ont::inferiority-scale
 Class: inferiority-scale
   SubClassOf: quality-level-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some inferiority-scale)
 
 # ONT type ont::explicitness-scale
 Class: explicitness-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some explicitness-scale)
 
 # ONT type ont::explicit-scale
 Class: explicit-scale
   SubClassOf: explicitness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some explicit-scale)
 
 # ONT type ont::implicit-scale
 Class: implicit-scale
   SubClassOf: explicitness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some implicit-scale)
 
 # ONT type ont::harmfulness-scale
 Class: harmfulness-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some harmfulness-scale)
 
 # ONT type ont::aesthetic-tastefulness-scale
 Class: aesthetic-tastefulness-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some aesthetic-tastefulness-scale)
 
 # ONT type ont::partiality-scale
 Class: partiality-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some partiality-scale)
 
 # ONT type ont::morality-scale
 Class: morality-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some morality-scale)
 
 # ONT type ont::offensiveness-scale
 Class: offensiveness-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some offensiveness-scale)
 
 # ONT type ont::orderliness-scale
 Class: orderliness-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some orderliness-scale)
 
 # ONT type ont::messy-scale
 Class: messy-scale
   SubClassOf: orderliness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some messy-scale)
 
 # ONT type ont::tidy-scale
 Class: tidy-scale
   SubClassOf: orderliness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some tidy-scale)
 
 # ONT type ont::recommendability-scale
 Class: recommendability-scale
   Annotations: rdfs:comment "worthy of recommendation and advice; wise or prudent"
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some recommendability-scale)
 
 # ONT type ont::specificity-scale
 Class: specificity-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some specificity-scale)
 
 # ONT type ont::general-scale
 Class: general-scale
   SubClassOf: specificity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some general-scale)
 
 # ONT type ont::specific-scale
 Class: specific-scale
   SubClassOf: specificity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some specific-scale)
 
 # ONT type ont::tolerability-scale
 Class: tolerability-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some tolerability-scale)
 
 # ONT type ont::worthiness-scale
 Class: worthiness-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some worthiness-scale)
 
 # ONT type ont::real-vs-fake-scale
 Class: real-vs-fake-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some real-vs-fake-scale)
 
 # ONT type ont::artificiality-scale
 Class: artificiality-scale
   SubClassOf: real-vs-fake-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some artificiality-scale)
 
 # ONT type ont::artificial-scale
 Class: artificial-scale
   SubClassOf: artificiality-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some artificial-scale)
 
 # ONT type ont::natural-scale
 Class: natural-scale
   SubClassOf: artificiality-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some natural-scale)
 
 # ONT type ont::actuality-scale
 Class: actuality-scale
   SubClassOf: real-vs-fake-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some actuality-scale)
 
 # ONT type ont::actual-scale
 Class: actual-scale
   SubClassOf: actuality-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some actual-scale)
 
 # ONT type ont::non-actual-scale
 Class: non-actual-scale
   SubClassOf: actuality-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some non-actual-scale)
 
 # ONT type ont::authenticity-scale
 Class: authenticity-scale
   SubClassOf: real-vs-fake-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some authenticity-scale)
 
 # ONT type ont::information-property-scale
 Class: information-property-scale
   SubClassOf: ordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some information-property-scale)
 
 # ONT type ont::comprehensibility-scale
 Class: comprehensibility-scale
   SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some comprehensibility-scale)
 
 # ONT type ont::consistency-scale
 Class: consistency-scale
   SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some consistency-scale)
 
 # ONT type ont::credibility-scale
 Class: credibility-scale
   SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some credibility-scale)
 
 # ONT type ont::meaningfulness-scale
 Class: meaningfulness-scale
   SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some meaningfulness-scale)
 
 # ONT type ont::precision-scale
 Class: precision-scale
   SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some precision-scale)
 
 # ONT type ont::predictability-scale
 Class: predictability-scale
   SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale)
 
 # ONT type ont::relevance-scale
 Class: relevance-scale
   SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some relevance-scale)
 
 # ONT type ont::validity-scale
 Class: validity-scale
   SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some validity-scale)
 
 # ONT type ont::reproducibility-scale
 Class: reproducibility-scale
   SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale)
 
 # ONT type ont::trueness-scale
 Class: trueness-scale
   Annotations: rdfs:comment "trueness scale as opposed to categorical true/false distinction (see ont::truth-scale)"
   SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some trueness-scale)
 
 # ONT type ont::true-scale
 Class: true-scale
   SubClassOf: trueness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some true-scale)
 
 # ONT type ont::false-scale
 Class: false-scale
   SubClassOf: trueness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some false-scale)
 
 # ONT type ont::likelihood-scale
 Class: likelihood-scale
   SubClassOf: information-property-scale
-  SubClassOf: (FLT_abstr-obj and F_measure-function some V_term)
+  SubClassOf: (FLT_abstr-obj and F_scale some likelihood-scale and F_measure-function some V_term)
   SubClassOf: _figure only (FLT_situation) and _figure some owl:Thing
 
 # ONT type ont::likely-scale
 Class: likely-scale
   SubClassOf: likelihood-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some likely-scale)
 
 # ONT type ont::not-likely-scale
 Class: not-likely-scale
   SubClassOf: likelihood-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-likely-scale)
 
 # ONT type ont::possibility-scale
 Class: possibility-scale
   SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some possibility-scale)
 
 # ONT type ont::possible-scale
 Class: possible-scale
   SubClassOf: possibility-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some possible-scale)
 
 # ONT type ont::not-possible-scale
 Class: not-possible-scale
   SubClassOf: possibility-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-possible-scale)
 
 # ONT type ont::correctness-scale
 Class: correctness-scale
   SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some correctness-scale)
 
 # ONT type ont::measure-scale
 Class: measure-scale
   SubClassOf: ordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some measure-scale)
   SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation)) and _figure some owl:Thing
 
 # ONT type ont::time-measure-scale
@@ -13557,6 +13789,7 @@ Class: time-measure-scale
 # ONT type ont::duration-scale
 Class: duration-scale
   SubClassOf: time-measure-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some duration-scale)
 
 # ONT type ont::temperature-scale
 Class: temperature-scale
@@ -13566,56 +13799,68 @@ Class: temperature-scale
 # ONT type ont::heat-scale
 Class: heat-scale
   SubClassOf: temperature-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some heat-scale)
 
 # ONT type ont::cold-scale
 Class: cold-scale
   SubClassOf: temperature-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some cold-scale)
 
 # ONT type ont::age-scale
 Class: age-scale
   SubClassOf: duration-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some age-scale)
 
 # ONT type ont::time-loc-scale
 Class: time-loc-scale
   SubClassOf: time-measure-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some time-loc-scale)
 
 # ONT type ont::number-scale
 Class: number-scale
   SubClassOf: measure-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some number-scale)
 
 # ONT type ont::total-scale
 Class: total-scale
   SubClassOf: number-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some total-scale)
 
 # ONT type ont::population-scale
 Class: population-scale
   SubClassOf: total-scale
-  SubClassOf: (FLT_abstr-obj and F_measure-function some V_term)
+  SubClassOf: (FLT_abstr-obj and F_scale some population-scale and F_measure-function some V_term)
   SubClassOf: _figure only (FLT_phys-obj and F_form some V_geographical-object) and _figure some owl:Thing
 
 # ONT type ont::money-scale
 Class: money-scale
   SubClassOf: measure-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some money-scale)
 
 # ONT type ont::predefined-measure-scale
 Class: predefined-measure-scale
   SubClassOf: measure-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some predefined-measure-scale)
 
 # ONT type ont::resolution-scale
 Class: resolution-scale
   SubClassOf: measure-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some resolution-scale)
 
 # ONT type ont::dimensional-scale
 Class: dimensional-scale
   SubClassOf: measure-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some dimensional-scale)
 
 # ONT type ont::intensity-scale
 Class: intensity-scale
   SubClassOf: measure-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some intensity-scale)
 
 # ONT type ont::severity-scale
 Class: severity-scale
   SubClassOf: measure-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some severity-scale)
 
 # ONT type ont::size-scale
 Class: size-scale
@@ -13628,14 +13873,17 @@ Class: size-scale
 # ONT type ont::relative-to-height-scale
 Class: relative-to-height-scale
   SubClassOf: size-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some relative-to-height-scale)
 
 # ONT type ont::fat-scale
 Class: fat-scale
   SubClassOf: relative-to-height-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some fat-scale)
 
 # ONT type ont::skinny-scale
 Class: skinny-scale
   SubClassOf: relative-to-height-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some skinny-scale)
 
 # ONT type ont::linear-extent-scale
 Class: linear-extent-scale
@@ -13647,10 +13895,12 @@ Class: linear-extent-scale
 # ONT type ont::length-scale
 Class: length-scale
   SubClassOf: linear-extent-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some length-scale)
 
 # ONT type ont::vertical-scale
 Class: vertical-scale
   SubClassOf: linear-extent-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some vertical-scale)
 
 # ONT type ont::height-scale
 Class: height-scale
@@ -13665,6 +13915,7 @@ Class: depth-scale
 # ONT type ont::non-vertical-scale
 Class: non-vertical-scale
   SubClassOf: linear-extent-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some non-vertical-scale)
 
 # ONT type ont::thickness-scale
 Class: thickness-scale
@@ -13674,6 +13925,7 @@ Class: thickness-scale
 # ONT type ont::thinness-scale
 Class: thinness-scale
   SubClassOf: non-vertical-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some thinness-scale)
 
 # ONT type ont::area-scale
 Class: area-scale
@@ -13695,14 +13947,17 @@ Class: volume-scale
 # ONT type ont::physical-strength-scale
 Class: physical-strength-scale
   SubClassOf: dimensional-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some physical-strength-scale)
 
 # ONT type ont::strength-scale
 Class: strength-scale
   SubClassOf: physical-strength-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some strength-scale)
 
 # ONT type ont::weakness-scale
 Class: weakness-scale
   SubClassOf: physical-strength-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some weakness-scale)
 
 # ONT type ont::weight-scale
 Class: weight-scale
@@ -13713,6 +13968,7 @@ Class: weight-scale
 # ONT type ont::distance-scale
 Class: distance-scale
   SubClassOf: measure-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some distance-scale)
   SubClassOf: _neutral only (FLT_phys-obj) and _neutral some owl:Thing
   SubClassOf: _neutral1 only (FLT_phys-obj)
   SubClassOf: _figure only (FLT_phys-obj)
@@ -13720,31 +13976,38 @@ Class: distance-scale
 # ONT type ont::mileage-scale
 Class: mileage-scale
   SubClassOf: distance-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some mileage-scale)
 
 # ONT type ont::electric-measure-scale
 Class: electric-measure-scale
   SubClassOf: measure-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some electric-measure-scale)
 
 # ONT type ont::ratio-scale
 Class: ratio-scale
   SubClassOf: measure-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some ratio-scale)
 
 # ONT type ont::percent-scale
 Class: percent-scale
   SubClassOf: ratio-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some percent-scale)
 
 # ONT type ont::density-scale
 Class: density-scale
   SubClassOf: ratio-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some density-scale)
   SubClassOf: _figure only (FLT_phys-obj) and _figure some owl:Thing
 
 # ONT type ont::distance-per-gasoline-scale
 Class: distance-per-gasoline-scale
   SubClassOf: ratio-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some distance-per-gasoline-scale)
 
 # ONT type ont::pressure-scale
 Class: pressure-scale
   SubClassOf: ratio-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some pressure-scale)
 
 # ONT type ont::rate-scale
 Class: rate-scale
@@ -13754,723 +14017,471 @@ Class: rate-scale
 # ONT type ont::bit-rate-scale
 Class: bit-rate-scale
   SubClassOf: rate-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some bit-rate-scale)
 
 # ONT type ont::clock-speed-scale
 Class: clock-speed-scale
   SubClassOf: rate-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some clock-speed-scale)
   SubClassOf: _figure only (FLT_phys-obj and F_origin some V_artifact) and _figure some owl:Thing
 
 # ONT type ont::speed-scale
 Class: speed-scale
   SubClassOf: rate-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some speed-scale)
 
 # ONT type ont::voltage-scale
 Class: voltage-scale
   SubClassOf: ratio-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some voltage-scale)
 
 # ONT type ont::process-property-scale
 Class: process-property-scale
   SubClassOf: ordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some process-property-scale)
 
 # ONT type ont::process-evaluation-scale
 Class: process-evaluation-scale
   SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some process-evaluation-scale)
 
 # ONT type ont::task-complexity-scale
 Class: task-complexity-scale
   SubClassOf: process-evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some task-complexity-scale)
 
 # ONT type ont::difficult-scale
 Class: difficult-scale
   SubClassOf: task-complexity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some difficult-scale)
 
 # ONT type ont::easy-scale
 Class: easy-scale
   SubClassOf: task-complexity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some easy-scale)
 
 # ONT type ont::steadiness-scale
 Class: steadiness-scale
   SubClassOf: process-evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some steadiness-scale)
 
 # ONT type ont::steady-scale
 Class: steady-scale
   SubClassOf: steadiness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some steady-scale)
 
 # ONT type ont::not-steady-scale
 Class: not-steady-scale
   SubClassOf: steadiness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-steady-scale)
 
 # ONT type ont::effectiveness-scale
 Class: effectiveness-scale
   SubClassOf: process-evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some effectiveness-scale)
 
 # ONT type ont::efficiency-scale
 Class: efficiency-scale
   SubClassOf: process-evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some efficiency-scale)
 
 # ONT type ont::productivity-scale
 Class: productivity-scale
   SubClassOf: process-evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some productivity-scale)
 
 # ONT type ont::successfulness-scale
 Class: successfulness-scale
   SubClassOf: process-evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some successfulness-scale)
 
 # ONT type ont::successful-scale
 Class: successful-scale
   SubClassOf: successfulness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some successful-scale)
 
 # ONT type ont::failure-scale
 Class: failure-scale
   SubClassOf: successfulness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some failure-scale)
 
 # ONT type ont::utility-scale
 Class: utility-scale
   Annotations: rdfs:comment "useful function (e.g. grep - high utility, low usability)"
   SubClassOf: process-evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some utility-scale)
 
 # ONT type ont::can-be-done-scale
 Class: can-be-done-scale
   SubClassOf: process-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some can-be-done-scale)
 
 # ONT type ont::changeability-scale
 Class: changeability-scale
   SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some changeability-scale)
 
 # ONT type ont::manageability-scale
 Class: manageability-scale
   SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some manageability-scale)
 
 # ONT type ont::mobility-scale
 Class: mobility-scale
   SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some mobility-scale)
 
 # ONT type ont::portability-scale
 Class: portability-scale
   SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some portability-scale)
 
 # ONT type ont::replaceability-scale
 Class: replaceability-scale
   SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some replaceability-scale)
 
 # ONT type ont::process-status-scale
 Class: process-status-scale
   SubClassOf: process-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some process-status-scale)
 
 # ONT type ont::temporal-occurrence-scale
 Class: temporal-occurrence-scale
   SubClassOf: process-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some temporal-occurrence-scale)
 
 # ONT type ont::regularity-scale
 Class: regularity-scale
   SubClassOf: temporal-occurrence-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some regularity-scale)
 
 # ONT type ont::regular-scale
 Class: regular-scale
   SubClassOf: regularity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some regular-scale)
 
 # ONT type ont::not-regular-scale
 Class: not-regular-scale
   SubClassOf: regularity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-regular-scale)
 
 # ONT type ont::relational-property-scale
 Class: relational-property-scale
   SubClassOf: ordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some relational-property-scale)
 
 # ONT type ont::compatibility-scale
 Class: compatibility-scale
   SubClassOf: relational-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some compatibility-scale)
 
 # ONT type ont::similarity-scale
 Class: similarity-scale
   SubClassOf: relational-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some similarity-scale)
 
 # ONT type ont::similar-scale
 Class: similar-scale
   SubClassOf: similarity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some similar-scale)
 
 # ONT type ont::different-scale
 Class: different-scale
   SubClassOf: similarity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some different-scale)
 
 # ONT type ont::equal-scale
 Class: equal-scale
   SubClassOf: similarity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some equal-scale)
 
 # ONT type ont::same-scale
 Class: same-scale
   SubClassOf: similarity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some same-scale)
 
 # ONT type ont::status-property-scale
 Class: status-property-scale
   SubClassOf: ordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some status-property-scale)
 
 # ONT type ont::confidentiality-scale
 Class: confidentiality-scale
   SubClassOf: status-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some confidentiality-scale)
 
 # ONT type ont::object-affordances-scale
 Class: object-affordances-scale
   SubClassOf: ordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some object-affordances-scale)
 
 # ONT type ont::functionality-scale
 Class: functionality-scale
   SubClassOf: object-affordances-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some functionality-scale)
 
 # ONT type ont::availability-scale
 Class: availability-scale
   SubClassOf: object-affordances-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some availability-scale)
 
 # ONT type ont::usability-scale
 Class: usability-scale
   Annotations: rdfs:comment "ease of use (e.g. ipad - high usability, low utility)"
   SubClassOf: object-affordances-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some usability-scale)
 
 # ONT type ont::psychological-condition-scale
 Class: psychological-condition-scale
   SubClassOf: ordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some psychological-condition-scale)
 
 # ONT type ont::willingness-scale
 Class: willingness-scale
   SubClassOf: psychological-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some willingness-scale)
 
 # ONT type ont::intelligence-scale
 Class: intelligence-scale
   SubClassOf: psychological-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some intelligence-scale)
 
 # ONT type ont::intentionality-scale
 Class: intentionality-scale
   SubClassOf: psychological-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some intentionality-scale)
 
 # ONT type ont::attentiveness-scale
 Class: attentiveness-scale
   SubClassOf: psychological-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some attentiveness-scale)
 
 # ONT type ont::premeditation-scale
 Class: premeditation-scale
   SubClassOf: psychological-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some premeditation-scale)
 
 # ONT type ont::ambitiousness-scale
 Class: ambitiousness-scale
   SubClassOf: psychological-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some ambitiousness-scale)
 
 # ONT type ont::cautiousness-scale
 Class: cautiousness-scale
   SubClassOf: psychological-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some cautiousness-scale)
 
 # ONT type ont::awareness-scale
 Class: awareness-scale
   SubClassOf: psychological-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some awareness-scale)
 
 # ONT type ont::certainty-scale
 Class: certainty-scale
   SubClassOf: psychological-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some certainty-scale)
 
 # ONT type ont::certain-scale
 Class: certain-scale
   SubClassOf: certainty-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some certain-scale)
 
 # ONT type ont::not-certain-scale
 Class: not-certain-scale
   SubClassOf: certainty-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-certain-scale)
 
 # ONT type ont::rationality-scale
 Class: rationality-scale
   SubClassOf: psychological-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some rationality-scale)
 
 # ONT type ont::not-rational-scale
 Class: not-rational-scale
   SubClassOf: rationality-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-rational-scale)
 
 # ONT type ont::craziness-scale
 Class: craziness-scale
   SubClassOf: not-rational-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some craziness-scale)
 
 # ONT type ont::rational-scale
 Class: rational-scale
   SubClassOf: rationality-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some rational-scale)
 
 # ONT type ont::experiencer-condition-scale
 Class: experiencer-condition-scale
   SubClassOf: psychological-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some experiencer-condition-scale)
 
 # ONT type ont::confidence-scale
 Class: confidence-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some confidence-scale)
 
 # ONT type ont::interest-scale
 Class: interest-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some interest-scale)
 
 # ONT type ont::apathy-scale
 Class: apathy-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some apathy-scale)
 
 # ONT type ont::desire-scale
 Class: desire-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some desire-scale)
 
 # ONT type ont::pleasurability-scale
 Class: pleasurability-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some pleasurability-scale)
 
 # ONT type ont::loneliness-scale
 Class: loneliness-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some loneliness-scale)
 
 # ONT type ont::nervousness-scale
 Class: nervousness-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some nervousness-scale)
 
 # ONT type ont::sadness-scale
 Class: sadness-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sadness-scale)
 
 # ONT type ont::regret-scale
 Class: regret-scale
   SubClassOf: sadness-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some regret-scale)
 
 # ONT type ont::bother-scale
 Class: bother-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some bother-scale)
 
 # ONT type ont::worry-concern-scale
 Class: worry-concern-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some worry-concern-scale)
 
 # ONT type ont::anger-scale
 Class: anger-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some anger-scale)
 
 # ONT type ont::resentfulness-scale
 Class: resentfulness-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some resentfulness-scale)
 
 # ONT type ont::fear-scale
 Class: fear-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some fear-scale)
 
 # ONT type ont::disgust-scale
 Class: disgust-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some disgust-scale)
 
 # ONT type ont::envy-scale
 Class: envy-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some envy-scale)
 
 # ONT type ont::happiness-scale
 Class: happiness-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some happiness-scale)
 
 # ONT type ont::excitement-scale
 Class: excitement-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some excitement-scale)
 
 # ONT type ont::calmness-scale
 Class: calmness-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some calmness-scale)
 
 # ONT type ont::gratitude-scale
 Class: gratitude-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some gratitude-scale)
 
 # ONT type ont::surprise-scale
 Class: surprise-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some surprise-scale)
 
 # ONT type ont::pleasantness-scale
 Class: pleasantness-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some pleasantness-scale)
 
 # ONT type ont::pride-scale
 Class: pride-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some pride-scale)
 
 # ONT type ont::confusion-scale
 Class: confusion-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some confusion-scale)
 
 # ONT type ont::stress-scale
 Class: stress-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some stress-scale)
 
 # ONT type ont::distress-scale
 Class: distress-scale
   SubClassOf: experiencer-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some distress-scale)
 
 # ONT type ont::state-of-affairs-scale
 Class: state-of-affairs-scale
   SubClassOf: ordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some state-of-affairs-scale)
 
 # ONT type ont::balance-scale
 Class: balance-scale
   SubClassOf: state-of-affairs-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some balance-scale)
 
 # ONT type ont::connectivity-scale
 Class: connectivity-scale
   SubClassOf: state-of-affairs-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some connectivity-scale)
 
 # ONT type ont::unordered-domain
 Class: unordered-domain
   SubClassOf: domain
+  SubClassOf: (FLT_abstr-obj and F_scale some unordered-domain)
 
 # ONT type ont::gender-scale
 Class: gender-scale
   SubClassOf: unordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some gender-scale)
   SubClassOf: _figure only (FLT_phys-obj) and _figure some owl:Thing
 
 # ONT type ont::truth-scale
 Class: truth-scale
   SubClassOf: unordered-domain
+  SubClassOf: (FLT_abstr-obj and F_scale some truth-scale)
 
 # ONT type ont::discrete-color-scale
 Class: discrete-color-scale
   SubClassOf: unordered-domain
-
-# ONT type ont::attribute
-Class: attribute
-  SubClassOf: abstract-object-nontemporal
-  SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj))
-
-# ONT type ont::condition-favorability
-Class: condition-favorability
-  SubClassOf: attribute
-
-# ONT type ont::favorable-condition
-Class: favorable-condition
-  SubClassOf: condition-favorability
-
-# ONT type ont::not-favorable-condition
-Class: not-favorable-condition
-  SubClassOf: condition-favorability
-
-# ONT type ont::body-property
-Class: body-property
-  SubClassOf: attribute
-  SubClassOf: _figure only (FLT_phys-obj and F_origin some V_living)
-
-# ONT type ont::medical-disorders-and-conditions
-Class: medical-disorders-and-conditions
-  SubClassOf: event-type
-  SubClassOf: (FLT_situation)
-  SubClassOf: _figure only (FLT_phys-obj and F_origin some (V_human or V_non-human-animal))
-
-# ONT type ont::medical-symptom
-Class: medical-symptom
-  SubClassOf: medical-disorders-and-conditions
-
-# ONT type ont::muscle-contraction
-Class: muscle-contraction
-  SubClassOf: medical-symptom
-
-# ONT type ont::sniffle
-Class: sniffle
-  SubClassOf: medical-symptom
-
-# ONT type ont::body-tightness
-Class: body-tightness
-  SubClassOf: medical-symptom
-
-# ONT type ont::constipation
-Class: constipation
-  SubClassOf: medical-symptom
-
-# ONT type ont::cough
-Class: cough
-  SubClassOf: medical-symptom
-
-# ONT type ont::diarrhea
-Class: diarrhea
-  SubClassOf: medical-symptom
-
-# ONT type ont::dyspepsia
-Class: dyspepsia
-  SubClassOf: medical-symptom
-
-# ONT type ont::dyspnea
-Class: dyspnea
-  SubClassOf: medical-symptom
-
-# ONT type ont::edema
-Class: edema
-  SubClassOf: medical-symptom
-
-# ONT type ont::fever
-Class: fever
-  SubClassOf: medical-symptom
-
-# ONT type ont::heartburn
-Class: heartburn
-  SubClassOf: medical-symptom
-
-# ONT type ont::hives
-Class: hives
-  SubClassOf: medical-symptom
-
-# ONT type ont::hyperkalemia
-Class: hyperkalemia
-  SubClassOf: medical-symptom
-
-# ONT type ont::hyperventilation
-Class: hyperventilation
-  SubClassOf: medical-symptom
-
-# ONT type ont::hypoglycemia
-Class: hypoglycemia
-  SubClassOf: medical-symptom
-
-# ONT type ont::inflammation
-Class: inflammation
-  SubClassOf: medical-symptom
-
-# ONT type ont::jaundice
-Class: jaundice
-  SubClassOf: medical-symptom
-
-# ONT type ont::lightheadedness
-Class: lightheadedness
-  SubClassOf: medical-symptom
-
-# ONT type ont::nausea
-Class: nausea
-  SubClassOf: medical-symptom
-
-# ONT type ont::nosebleed
-Class: nosebleed
-  SubClassOf: medical-symptom
-
-# ONT type ont::numbness
-Class: numbness
-  SubClassOf: medical-symptom
-
-# ONT type ont::pain
-Class: pain
-  SubClassOf: medical-symptom
-
-# ONT type ont::backache
-Class: backache
-  SubClassOf: pain
-
-# ONT type ont::headache
-Class: headache
-  SubClassOf: pain
-
-# ONT type ont::stomachache
-Class: stomachache
-  SubClassOf: pain
-
-# ONT type ont::palpitation
-Class: palpitation
-  SubClassOf: medical-symptom
-
-# ONT type ont::seizure
-Class: seizure
-  SubClassOf: medical-symptom
-
-# ONT type ont::sneeze
-Class: sneeze
-  SubClassOf: medical-symptom
-
-# ONT type ont::spasm
-Class: spasm
-  SubClassOf: medical-symptom
-
-# ONT type ont::medical-condition
-Class: medical-condition
-  SubClassOf: medical-disorders-and-conditions
-
-# ONT type ont::coma
-Class: coma
-  SubClassOf: medical-condition
-
-# ONT type ont::anesthesia
-Class: anesthesia
-  SubClassOf: medical-condition
-
-# ONT type ont::angina
-Class: angina
-  SubClassOf: medical-condition
-
-# ONT type ont::pregnancy
-Class: pregnancy
-  SubClassOf: medical-condition
-
-# ONT type ont::disability
-Class: disability
-  SubClassOf: medical-condition
-
-# ONT type ont::stroke
-Class: stroke
-  SubClassOf: medical-condition
-
-# ONT type ont::thrombosis
-Class: thrombosis
-  SubClassOf: medical-condition
-
-# ONT type ont::injury
-Class: injury
-  SubClassOf: medical-disorders-and-conditions
-
-# ONT type ont::wound
-Class: wound
-  SubClassOf: injury
-
-# ONT type ont::disease
-Class: disease
-  SubClassOf: medical-disorders-and-conditions
-  SubClassOf: (FLT_situation and F_mobility some V_movable)
-
-# ONT type ont::acquired-immune-deficiency-syndrome
-Class: acquired-immune-deficiency-syndrome
-  SubClassOf: disease
-
-# ONT type ont::allergy
-Class: allergy
-  SubClassOf: disease
-
-# ONT type ont::anemia
-Class: anemia
-  SubClassOf: disease
-
-# ONT type ont::angina-disease
-Class: angina-disease
-  SubClassOf: medical-symptom
-
-# ONT type ont::arteriosclerosis
-Class: arteriosclerosis
-  SubClassOf: disease
-
-# ONT type ont::arthritis
-Class: arthritis
-  SubClassOf: disease
-
-# ONT type ont::gout
-Class: gout
-  SubClassOf: arthritis
-
-# ONT type ont::osteoarthritis
-Class: osteoarthritis
-  SubClassOf: arthritis
-
-# ONT type ont::breathing-disorder
-Class: breathing-disorder
-  SubClassOf: disease
-
-# ONT type ont::brain-disease
-Class: brain-disease
-  SubClassOf: disease
-
-# ONT type ont::cancer
-Class: cancer
-  SubClassOf: disease
-
-# ONT type ont::cardiovascular-disease
-Class: cardiovascular-disease
-  SubClassOf: disease
-
-# ONT type ont::aneurysm
-Class: aneurysm
-  SubClassOf: cardiovascular-disease
-
-# ONT type ont::arrhythmia
-Class: arrhythmia
-  SubClassOf: cardiovascular-disease
-
-# ONT type ont::heart-attack
-Class: heart-attack
-  SubClassOf: cardiovascular-disease
-
-# ONT type ont::hypertension
-Class: hypertension
-  SubClassOf: cardiovascular-disease
-
-# ONT type ont::diabetes
-Class: diabetes
-  SubClassOf: disease
-
-# ONT type ont::ebola
-Class: ebola
-  SubClassOf: disease
-
-# ONT type ont::epilepsy
-Class: epilepsy
-  SubClassOf: disease
-
-# ONT type ont::flu
-Class: flu
-  SubClassOf: breathing-disorder
-
-# ONT type ont::infection
-Class: infection
-  SubClassOf: disease
-
-# ONT type ont::liver-disease
-Class: liver-disease
-  SubClassOf: disease
-
-# ONT type ont::osteoporosis
-Class: osteoporosis
-  SubClassOf: disease
-
-# ONT type ont::pancreatitis
-Class: pancreatitis
-  SubClassOf: disease
-
-# ONT type ont::pneumonia
-Class: pneumonia
-  SubClassOf: breathing-disorder
-
-# ONT type ont::std
-Class: std
-  SubClassOf: disease
-
-# ONT type ont::stones-disease
-Class: stones-disease
-  SubClassOf: disease
-
-# ONT type ont::tuberculosis
-Class: tuberculosis
-  SubClassOf: disease
-
-# ONT type ont::mental-psychological-illness-or-disorder
-Class: mental-psychological-illness-or-disorder
-  SubClassOf: event-type
-
-# ONT type ont::addiction
-Class: addiction
-  SubClassOf: mental-psychological-illness-or-disorder
-
-# ONT type ont::amnesia
-Class: amnesia
-  SubClassOf: mental-psychological-illness-or-disorder
-
-# ONT type ont::eating-disorder
-Class: eating-disorder
-  SubClassOf: mental-psychological-illness-or-disorder
-
-# ONT type ont::anxiety
-Class: anxiety
-  SubClassOf: mental-psychological-illness-or-disorder
-
-# ONT type ont::nervous-disorder
-Class: nervous-disorder
-  SubClassOf: mental-psychological-illness-or-disorder
-
-# ONT type ont::depression
-Class: depression
-  SubClassOf: mental-psychological-illness-or-disorder
-
-# ONT type ont::insanity
-Class: insanity
-  SubClassOf: mental-psychological-illness-or-disorder
-
-# ONT type ont::mania
-Class: mania
-  SubClassOf: mental-psychological-illness-or-disorder
-
-# ONT type ont::phobia
-Class: phobia
-  SubClassOf: mental-psychological-illness-or-disorder
+  SubClassOf: (FLT_abstr-obj and F_scale some discrete-color-scale)
 
 # ONT type ont::mutation
 Class: mutation
@@ -18324,6 +18335,329 @@ Class: measure
   SubClassOf: event-of-state
   SubClassOf: _extent only (FLT_abstr-obj and F_scale some (not V_-)) and _extent some owl:Thing
 
+# ONT type ont::medical-disorders-and-conditions
+Class: medical-disorders-and-conditions
+  SubClassOf: event-type
+  SubClassOf: (FLT_situation)
+  SubClassOf: _figure only (FLT_phys-obj and F_origin some (V_human or V_non-human-animal))
+
+# ONT type ont::medical-symptom
+Class: medical-symptom
+  SubClassOf: medical-disorders-and-conditions
+
+# ONT type ont::muscle-contraction
+Class: muscle-contraction
+  SubClassOf: medical-symptom
+
+# ONT type ont::sniffle
+Class: sniffle
+  SubClassOf: medical-symptom
+
+# ONT type ont::body-tightness
+Class: body-tightness
+  SubClassOf: medical-symptom
+
+# ONT type ont::constipation
+Class: constipation
+  SubClassOf: medical-symptom
+
+# ONT type ont::cough
+Class: cough
+  SubClassOf: medical-symptom
+
+# ONT type ont::diarrhea
+Class: diarrhea
+  SubClassOf: medical-symptom
+
+# ONT type ont::dyspepsia
+Class: dyspepsia
+  SubClassOf: medical-symptom
+
+# ONT type ont::dyspnea
+Class: dyspnea
+  SubClassOf: medical-symptom
+
+# ONT type ont::edema
+Class: edema
+  SubClassOf: medical-symptom
+
+# ONT type ont::fever
+Class: fever
+  SubClassOf: medical-symptom
+
+# ONT type ont::heartburn
+Class: heartburn
+  SubClassOf: medical-symptom
+
+# ONT type ont::hives
+Class: hives
+  SubClassOf: medical-symptom
+
+# ONT type ont::hyperkalemia
+Class: hyperkalemia
+  SubClassOf: medical-symptom
+
+# ONT type ont::hyperventilation
+Class: hyperventilation
+  SubClassOf: medical-symptom
+
+# ONT type ont::hypoglycemia
+Class: hypoglycemia
+  SubClassOf: medical-symptom
+
+# ONT type ont::inflammation
+Class: inflammation
+  SubClassOf: medical-symptom
+
+# ONT type ont::jaundice
+Class: jaundice
+  SubClassOf: medical-symptom
+
+# ONT type ont::lightheadedness
+Class: lightheadedness
+  SubClassOf: medical-symptom
+
+# ONT type ont::nausea
+Class: nausea
+  SubClassOf: medical-symptom
+
+# ONT type ont::nosebleed
+Class: nosebleed
+  SubClassOf: medical-symptom
+
+# ONT type ont::numbness
+Class: numbness
+  SubClassOf: medical-symptom
+
+# ONT type ont::pain
+Class: pain
+  SubClassOf: medical-symptom
+
+# ONT type ont::backache
+Class: backache
+  SubClassOf: pain
+
+# ONT type ont::headache
+Class: headache
+  SubClassOf: pain
+
+# ONT type ont::stomachache
+Class: stomachache
+  SubClassOf: pain
+
+# ONT type ont::palpitation
+Class: palpitation
+  SubClassOf: medical-symptom
+
+# ONT type ont::seizure
+Class: seizure
+  SubClassOf: medical-symptom
+
+# ONT type ont::sneeze
+Class: sneeze
+  SubClassOf: medical-symptom
+
+# ONT type ont::spasm
+Class: spasm
+  SubClassOf: medical-symptom
+
+# ONT type ont::medical-condition
+Class: medical-condition
+  SubClassOf: medical-disorders-and-conditions
+
+# ONT type ont::coma
+Class: coma
+  SubClassOf: medical-condition
+
+# ONT type ont::anesthesia
+Class: anesthesia
+  SubClassOf: medical-condition
+
+# ONT type ont::angina
+Class: angina
+  SubClassOf: medical-condition
+
+# ONT type ont::pregnancy
+Class: pregnancy
+  SubClassOf: medical-condition
+
+# ONT type ont::disability
+Class: disability
+  SubClassOf: medical-condition
+
+# ONT type ont::stroke
+Class: stroke
+  SubClassOf: medical-condition
+
+# ONT type ont::thrombosis
+Class: thrombosis
+  SubClassOf: medical-condition
+
+# ONT type ont::injury
+Class: injury
+  SubClassOf: medical-disorders-and-conditions
+
+# ONT type ont::wound
+Class: wound
+  SubClassOf: injury
+
+# ONT type ont::disease
+Class: disease
+  SubClassOf: medical-disorders-and-conditions
+  SubClassOf: (FLT_situation and F_mobility some V_movable)
+
+# ONT type ont::acquired-immune-deficiency-syndrome
+Class: acquired-immune-deficiency-syndrome
+  SubClassOf: disease
+
+# ONT type ont::allergy
+Class: allergy
+  SubClassOf: disease
+
+# ONT type ont::anemia
+Class: anemia
+  SubClassOf: disease
+
+# ONT type ont::angina-disease
+Class: angina-disease
+  SubClassOf: medical-symptom
+
+# ONT type ont::arteriosclerosis
+Class: arteriosclerosis
+  SubClassOf: disease
+
+# ONT type ont::arthritis
+Class: arthritis
+  SubClassOf: disease
+
+# ONT type ont::gout
+Class: gout
+  SubClassOf: arthritis
+
+# ONT type ont::osteoarthritis
+Class: osteoarthritis
+  SubClassOf: arthritis
+
+# ONT type ont::breathing-disorder
+Class: breathing-disorder
+  SubClassOf: disease
+
+# ONT type ont::brain-disease
+Class: brain-disease
+  SubClassOf: disease
+
+# ONT type ont::cancer
+Class: cancer
+  SubClassOf: disease
+
+# ONT type ont::cardiovascular-disease
+Class: cardiovascular-disease
+  SubClassOf: disease
+
+# ONT type ont::aneurysm
+Class: aneurysm
+  SubClassOf: cardiovascular-disease
+
+# ONT type ont::arrhythmia
+Class: arrhythmia
+  SubClassOf: cardiovascular-disease
+
+# ONT type ont::heart-attack
+Class: heart-attack
+  SubClassOf: cardiovascular-disease
+
+# ONT type ont::hypertension
+Class: hypertension
+  SubClassOf: cardiovascular-disease
+
+# ONT type ont::diabetes
+Class: diabetes
+  SubClassOf: disease
+
+# ONT type ont::ebola
+Class: ebola
+  SubClassOf: disease
+
+# ONT type ont::epilepsy
+Class: epilepsy
+  SubClassOf: disease
+
+# ONT type ont::flu
+Class: flu
+  SubClassOf: breathing-disorder
+
+# ONT type ont::infection
+Class: infection
+  SubClassOf: disease
+
+# ONT type ont::liver-disease
+Class: liver-disease
+  SubClassOf: disease
+
+# ONT type ont::osteoporosis
+Class: osteoporosis
+  SubClassOf: disease
+
+# ONT type ont::pancreatitis
+Class: pancreatitis
+  SubClassOf: disease
+
+# ONT type ont::pneumonia
+Class: pneumonia
+  SubClassOf: breathing-disorder
+
+# ONT type ont::std
+Class: std
+  SubClassOf: disease
+
+# ONT type ont::stones-disease
+Class: stones-disease
+  SubClassOf: disease
+
+# ONT type ont::tuberculosis
+Class: tuberculosis
+  SubClassOf: disease
+
+# ONT type ont::mental-psychological-illness-or-disorder
+Class: mental-psychological-illness-or-disorder
+  SubClassOf: event-type
+
+# ONT type ont::addiction
+Class: addiction
+  SubClassOf: mental-psychological-illness-or-disorder
+
+# ONT type ont::amnesia
+Class: amnesia
+  SubClassOf: mental-psychological-illness-or-disorder
+
+# ONT type ont::eating-disorder
+Class: eating-disorder
+  SubClassOf: mental-psychological-illness-or-disorder
+
+# ONT type ont::anxiety
+Class: anxiety
+  SubClassOf: mental-psychological-illness-or-disorder
+
+# ONT type ont::nervous-disorder
+Class: nervous-disorder
+  SubClassOf: mental-psychological-illness-or-disorder
+
+# ONT type ont::depression
+Class: depression
+  SubClassOf: mental-psychological-illness-or-disorder
+
+# ONT type ont::insanity
+Class: insanity
+  SubClassOf: mental-psychological-illness-or-disorder
+
+# ONT type ont::mania
+Class: mania
+  SubClassOf: mental-psychological-illness-or-disorder
+
+# ONT type ont::phobia
+Class: phobia
+  SubClassOf: mental-psychological-illness-or-disorder
+
 # ONT type ont::social-contract
 Class: social-contract
   SubClassOf: mental-construction
@@ -19109,7 +19443,7 @@ DisjointClasses: miss, err
 DisjointClasses: kissing, leave-behind, working, play, unfocused-activity, ignore, avoiding, choosing
 
 # children of ont::abstract-object-nontemporal
-DisjointClasses: attribute, mathematical-term, group-object-abstr, kind, fact
+DisjointClasses: mathematical-term, group-object-abstr, kind, fact
 
 # children of ont::kind
 DisjointClasses: grouping, example, version
@@ -19190,7 +19524,7 @@ DisjointClasses: content, evidence, measure-metric
 DisjointClasses: name, location-id, password, username, id-number
 
 # children of ont::event-type
-DisjointClasses: lifecycle-stage, natural-event, mental-psychological-illness-or-disorder, medical-disorders-and-conditions, located-event, situation, campaign, outcome, event-defined-by-activity
+DisjointClasses: mental-psychological-illness-or-disorder, medical-disorders-and-conditions, lifecycle-stage, natural-event, located-event, situation, campaign, outcome, event-defined-by-activity
 
 # children of ont::activity
 DisjointClasses: dieting, physical-activity, social-activity, agriculture, commercial-activity
@@ -20539,39 +20873,6 @@ DisjointClasses: connectivity-scale, balance-scale
 # children of ont::unordered-domain
 DisjointClasses: discrete-color-scale, truth-scale, gender-scale
 
-# children of ont::attribute
-DisjointClasses: body-property, condition-favorability
-
-# children of ont::condition-favorability
-DisjointClasses: not-favorable-condition, favorable-condition
-
-# children of ont::medical-disorders-and-conditions
-DisjointClasses: disease, injury, medical-condition, medical-symptom
-
-# children of ont::medical-symptom
-DisjointClasses: angina-disease, spasm, sneeze, seizure, palpitation, pain, numbness, nosebleed, nausea, lightheadedness, jaundice, inflammation, hypoglycemia, hyperventilation, hyperkalemia, hives, heartburn, fever, edema, dyspnea, dyspepsia, diarrhea, cough, constipation, body-tightness, sniffle, muscle-contraction
-
-# children of ont::pain
-DisjointClasses: stomachache, headache, backache
-
-# children of ont::medical-condition
-DisjointClasses: thrombosis, stroke, disability, pregnancy, angina, anesthesia, coma
-
-# children of ont::disease
-DisjointClasses: tuberculosis, stones-disease, std, pancreatitis, osteoporosis, liver-disease, infection, epilepsy, ebola, diabetes, cardiovascular-disease, cancer, brain-disease, breathing-disorder, arthritis, arteriosclerosis, anemia, allergy, acquired-immune-deficiency-syndrome
-
-# children of ont::arthritis
-DisjointClasses: osteoarthritis, gout
-
-# children of ont::cardiovascular-disease
-DisjointClasses: hypertension, heart-attack, arrhythmia, aneurysm
-
-# children of ont::breathing-disorder
-DisjointClasses: pneumonia, flu
-
-# children of ont::mental-psychological-illness-or-disorder
-DisjointClasses: phobia, mania, insanity, depression, nervous-disorder, anxiety, eating-disorder, amnesia, addiction
-
 # children of ont::acquire
 DisjointClasses: collect, find, reserve, acquire-by-action, earning, commerce, amass, retrieve
 
@@ -20934,6 +21235,33 @@ DisjointClasses: terminate, retire, employ
 
 # children of ont::body-movement
 DisjointClasses: body-movement-self, stretch, straddle, body-movement-place, uncontrolled-body-motion
+
+# children of ont::medical-disorders-and-conditions
+DisjointClasses: disease, injury, medical-condition, medical-symptom
+
+# children of ont::medical-symptom
+DisjointClasses: angina-disease, spasm, sneeze, seizure, palpitation, pain, numbness, nosebleed, nausea, lightheadedness, jaundice, inflammation, hypoglycemia, hyperventilation, hyperkalemia, hives, heartburn, fever, edema, dyspnea, dyspepsia, diarrhea, cough, constipation, body-tightness, sniffle, muscle-contraction
+
+# children of ont::pain
+DisjointClasses: stomachache, headache, backache
+
+# children of ont::medical-condition
+DisjointClasses: thrombosis, stroke, disability, pregnancy, angina, anesthesia, coma
+
+# children of ont::disease
+DisjointClasses: tuberculosis, stones-disease, std, pancreatitis, osteoporosis, liver-disease, infection, epilepsy, ebola, diabetes, cardiovascular-disease, cancer, brain-disease, breathing-disorder, arthritis, arteriosclerosis, anemia, allergy, acquired-immune-deficiency-syndrome
+
+# children of ont::arthritis
+DisjointClasses: osteoarthritis, gout
+
+# children of ont::cardiovascular-disease
+DisjointClasses: hypertension, heart-attack, arrhythmia, aneurysm
+
+# children of ont::breathing-disorder
+DisjointClasses: pneumonia, flu
+
+# children of ont::mental-psychological-illness-or-disorder
+DisjointClasses: phobia, mania, insanity, depression, nervous-disorder, anxiety, eating-disorder, amnesia, addiction
 
 # children of ont::social-contract
 DisjointClasses: protection, responsibility, governing-principle, right-permission, social-imperative

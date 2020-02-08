@@ -9,6 +9,13 @@
  <relation label="overlap">
   wn::|thinness%1:07:01::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::thinness-scale</feat>
+  <feat name="type">ont::thinness-scale</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -42,6 +49,13 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::ordered-domain</feat>
+ <feat name="type">ont::ordered-domain</feat>
+ </sem-feats>
  <concept name="ont::domain">
  <comment>
   &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
@@ -52,6 +66,13 @@
  <relation label="overlap">
   wn::|attribute%1:03:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::extent" optional="optional">
    <concept name="t" />
@@ -64,6 +85,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::dimensional-scale</feat>
+ <feat name="type">ont::dimensional-scale</feat>
+ </sem-feats>
  <concept name="ont::measure-scale">
  <relation label="inherit">
   ont::ordered-domain
@@ -71,6 +99,13 @@
  <relation label="overlap">
   wn::|measurement%1:04:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::measure-scale</feat>
+  <feat name="type">ont::measure-scale</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
    <or>
@@ -81,40 +116,27 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::non-vertical-scale">
- <relation label="inherit">
-  ont::linear-extent-scale
- </relation>
- </concept>
- <concept name="ont::linear-extent-scale">
- <relation label="inherit">
-  ont::size-scale
- </relation>
- <relation label="overlap">
-  wn::|dimension%1:07:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::linear-extent-scale</feat>
-  <feat name="type">ont::linear-extent-scale</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="measure-function">value</feat>
-    <feat name="scale">ont::linear-extent-scale</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="measure-function">value</feat>
+   <feat name="scale">ont::linear-extent-scale</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
  </sem-frame>
- </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::linear-extent-scale</feat>
+ <feat name="type">ont::linear-extent-scale</feat>
+ </sem-feats>
  <concept name="ont::size-scale">
  <comment>
   &quot;the property of relative size or extent&quot;
@@ -151,23 +173,57 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::linear-extent-scale</feat>
- <feat name="type">ont::linear-extent-scale</feat>
+ <feat name="scale">ont::non-vertical-scale</feat>
+ <feat name="type">ont::non-vertical-scale</feat>
+ </sem-feats>
+ <concept name="ont::linear-extent-scale">
+ <relation label="inherit">
+  ont::size-scale
+ </relation>
+ <relation label="overlap">
+  wn::|dimension%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::linear-extent-scale</feat>
+  <feat name="type">ont::linear-extent-scale</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="measure-function">value</feat>
-   <feat name="scale">ont::linear-extent-scale</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="measure-function">value</feat>
+    <feat name="scale">ont::linear-extent-scale</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
  </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::thinness-scale</feat>
+ <feat name="type">ont::thinness-scale</feat>
+ </sem-feats>
+ <concept name="ont::non-vertical-scale">
+ <relation label="inherit">
+  ont::linear-extent-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::non-vertical-scale</feat>
+  <feat name="type">ont::non-vertical-scale</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::dimensional-scale">
  <relation label="inherit">
   ont::measure-scale
@@ -175,6 +231,13 @@
  <relation label="overlap">
   wn::|dimension%1:07:01::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::dimensional-scale</feat>
+  <feat name="type">ont::dimensional-scale</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
@@ -198,7 +261,21 @@
  <relation label="inherit">
   ont::domain
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::ordered-domain</feat>
+  <feat name="type">ont::ordered-domain</feat>
+ </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::measure-scale</feat>
+ <feat name="type">ont::measure-scale</feat>
+ </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::figure" optional="optional">
   <or>
@@ -227,6 +304,13 @@
   <feat name="type">ont::abstract-object</feat>
  </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::domain</feat>
+ <feat name="type">ont::domain</feat>
+ </sem-feats>
  <sem-frame>
  <role-restr-map roles="ont::extent" optional="optional">
   <concept name="t" />
