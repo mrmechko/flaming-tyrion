@@ -1504,7 +1504,9 @@
 (CONCEPT
   ONT::AIR-TRAVEL
   (INHERIT
-    ONT::TRIP))
+    ONT::TRIP)
+  (OVERLAP
+    WN::|air_travel%1:04:00::|))
 
 (CONCEPT
   ONT::AIR-VEHICLE
@@ -15156,7 +15158,9 @@
 (CONCEPT
   ONT::DRIVING-TRIP
   (INHERIT
-    ONT::WATER-TRAVEL))
+    ONT::LAND-TRAVEL)
+  (OVERLAP
+    WN::|ride%1:04:00::|))
 
 (CONCEPT
   ONT::DROUGHT
@@ -15559,7 +15563,18 @@
 (CONCEPT
   ONT::ECONOMIC-EVENT
   (INHERIT
-    ONT::EVENT-DEFINED-BY-ACTIVITY))
+    ONT::EVENT-DEFINED-BY-ACTIVITY)
+  (OVERLAP
+    WN::|deflation%1:22:00::|
+    WN::|depression%1:26:02::|
+    WN::|disinflation%1:22:00::|
+    WN::|economic_growth%1:22:00::|
+    WN::|globalization%1:22:00::|
+    WN::|inflation%1:22:00::|
+    WN::|market_forces%1:22:00::|
+    WN::|recession%1:26:00::|
+    WN::|spiral%1:22:00::|
+    WN::|supply%1:22:00::|))
 
 (CONCEPT
   ONT::ECONOMIC-SYSTEM
@@ -18921,7 +18936,9 @@
 (CONCEPT
   ONT::FLIGHT
   (INHERIT
-    ONT::AIR-TRAVEL))
+    ONT::AIR-TRAVEL)
+  (OVERLAP
+    WN::|flight%1:04:00::|))
 
 (CONCEPT
   ONT::FLOAT
@@ -23879,7 +23896,9 @@
 (CONCEPT
   ONT::JAUNT
   (INHERIT
-    ONT::TRIP))
+    ONT::TRIP)
+  (OVERLAP
+    WN::|jaunt%1:04:00::|))
 
 (CONCEPT
   ONT::JOINING
@@ -40183,6 +40202,8 @@
   ONT::ROUND-TRIP
   (INHERIT
     ONT::TRIP)
+  (OVERLAP
+    WN::|round_trip%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -47129,6 +47150,9 @@
   ONT::TRAVEL
   (INHERIT
     ONT::EVENT-DEFINED-BY-ACTIVITY)
+  (OVERLAP
+    WN::|travel%1:04:00::|
+    WN::|travel%2:38:05::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -48769,7 +48793,10 @@
 (CONCEPT
   ONT::VOYAGE
   (INHERIT
-    ONT::WATER-TRAVEL))
+    ONT::WATER-TRAVEL)
+  (OVERLAP
+    WN::|voyage%1:04:01::|
+    WN::|voyage%2:38:00::|))
 
 (CONCEPT
   ONT::VULNERABLE-VAL
@@ -48913,7 +48940,9 @@
 (CONCEPT
   ONT::WATER-TRAVEL
   (INHERIT
-    ONT::TRIP))
+    ONT::TRIP)
+  (OVERLAP
+    WN::|water_travel%1:04:00::|))
 
 (CONCEPT
   ONT::WATERSHED
