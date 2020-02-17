@@ -3607,7 +3607,26 @@
     ONT::EVOKING-NEUTRAL-EXPERIENCE-PROPERTY-VAL))
 
 (CONCEPT
-  ONT::ATTRIBUTE)
+  ONT::ATTRIBUTE
+  (INHERIT
+    ONT::ABSTRACT-OBJECT-NONTEMPORAL)
+  (OVERLAP
+    WN::|dimension%1:09:00::|
+    WN::|attribute%1:09:00::|
+    WN::|property%1:09:00::|
+    WN::|property%1:07:00::|
+    WN::|holding%1:21:00::|
+    WN::|belongings%1:21:00::|
+    WN::|property%1:21:00::|
+    WN::|quality%1:07:00::|)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::ATTRIBUTE-IMPUTE
@@ -10843,6 +10862,11 @@
   ONT::CONDITION
   (INHERIT
     ONT::SITUATION-MODIFIER))
+
+(CONCEPT
+  ONT::CONDITION-FAVORABILITY
+  (INHERIT
+    ONT::ATTRIBUTE))
 
 (CONCEPT
   ONT::CONDITIONAL
@@ -18415,6 +18439,16 @@
   (COMMENT "(hospitable)")
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL))
+
+(CONCEPT
+  ONT::FAVORABLE-CONDITION
+  (INHERIT
+    ONT::CONDITION-FAVORABILITY)
+  (OVERLAP
+    WN::|advantage%1:07:00::|
+    WN::|advantage%1:07:01::|
+    WN::|asset%1:07:00::|
+    WN::|strength%1:07:01::|))
 
 (CONCEPT
   ONT::FAVORITE
@@ -27685,9 +27719,12 @@
     WN::|midnight%1:28:00::|))
 
 (CONCEPT
-  ONT::MIGRATION
+  ONT::MIGRATE
   (INHERIT
-    ONT::TRIP))
+    ONT::MOVE)
+  (OVERLAP
+    WN::|migrate%2:38:00::|
+    WN::|migrate%2:38:01::|))
 
 (CONCEPT
   ONT::MILD-AND-PLEASANT-VAL
@@ -30055,6 +30092,17 @@
       ABSTR-OBJ)
     (SCALE ONT::NOT-FAMILIAR-SCALE)
     (TYPE ONT::NOT-FAMILIAR-SCALE)))
+
+(CONCEPT
+  ONT::NOT-FAVORABLE-CONDITION
+  (INHERIT
+    ONT::CONDITION-FAVORABILITY)
+  (OVERLAP
+    WN::|weak_point%1:07:00::|
+    WN::|liability%1:07:00::|
+    WN::|disadvantage%1:07:00::|
+    WN::|detriment%1:11:00::|
+    WN::|weakness%1:26:00::|))
 
 (CONCEPT
   ONT::NOT-FLEXIBLE-VAL
@@ -36748,7 +36796,8 @@
         (OR
           ONT::PHYS-OBJECT
           ONT::EVENT-OF-ACTION
-          ONT::EVENT-OF-AWARENESS)))
+          ONT::EVENT-OF-AWARENESS
+          ONT::EVENT-OF-EXPERIENCE)))
      OPTIONAL)))
 
 (CONCEPT

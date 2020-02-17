@@ -4139,7 +4139,29 @@
    ont::evoking-neutral-experience-property-val
   </relation>
  </concept>
- <concept name="ont::attribute" />
+ <concept name="ont::attribute">
+  <relation label="inherit">
+   ont::abstract-object-nontemporal
+  </relation>
+  <relation label="overlap">
+   wn::|dimension%1:09:00::|
+   wn::|attribute%1:09:00::|
+   wn::|property%1:09:00::|
+   wn::|property%1:07:00::|
+   wn::|holding%1:21:00::|
+   wn::|belongings%1:21:00::|
+   wn::|property%1:21:00::|
+   wn::|quality%1:07:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::attribute-impute">
   <comment>
    &quot;identify a cause of an event&quot;
@@ -12264,6 +12286,11 @@
  <concept name="ont::condition">
   <relation label="inherit">
    ont::situation-modifier
+  </relation>
+ </concept>
+ <concept name="ont::condition-favorability">
+  <relation label="inherit">
+   ont::attribute
   </relation>
  </concept>
  <concept name="ont::conditional">
@@ -21076,6 +21103,17 @@
   </comment>
   <relation label="inherit">
    ont::evaluation-attribute-val
+  </relation>
+ </concept>
+ <concept name="ont::favorable-condition">
+  <relation label="inherit">
+   ont::condition-favorability
+  </relation>
+  <relation label="overlap">
+   wn::|advantage%1:07:00::|
+   wn::|advantage%1:07:01::|
+   wn::|asset%1:07:00::|
+   wn::|strength%1:07:01::|
   </relation>
  </concept>
  <concept name="ont::favorite">
@@ -31859,9 +31897,13 @@
    wn::|midnight%1:28:00::|
   </relation>
  </concept>
- <concept name="ont::migration">
+ <concept name="ont::migrate">
   <relation label="inherit">
-   ont::trip
+   ont::move
+  </relation>
+  <relation label="overlap">
+   wn::|migrate%2:38:00::|
+   wn::|migrate%2:38:01::|
   </relation>
  </concept>
  <concept name="ont::mild-and-pleasant-val">
@@ -34660,6 +34702,18 @@
    <feat name="scale">ont::not-familiar-scale</feat>
    <feat name="type">ont::not-familiar-scale</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::not-favorable-condition">
+  <relation label="inherit">
+   ont::condition-favorability
+  </relation>
+  <relation label="overlap">
+   wn::|weak_point%1:07:00::|
+   wn::|liability%1:07:00::|
+   wn::|disadvantage%1:07:00::|
+   wn::|detriment%1:11:00::|
+   wn::|weakness%1:26:00::|
+  </relation>
  </concept>
  <concept name="ont::not-flexible-val">
   <relation label="inherit">
@@ -42456,6 +42510,7 @@
       ont::phys-object
       ont::event-of-action
       ont::event-of-awareness
+      ont::event-of-experience
      </or>
      </feat>
     </sem-feats>

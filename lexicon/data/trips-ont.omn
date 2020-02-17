@@ -1307,7 +1307,7 @@ Class: therefore
 # ONT type ont::purpose
 Class: purpose
   SubClassOf: situation-object-modifier
-  SubClassOf: _figure only ((FLT_phys-obj or FLT_situation) and F_type some (phys-object or event-of-action or event-of-awareness)) and _figure some owl:Thing
+  SubClassOf: _figure only ((FLT_phys-obj or FLT_situation) and F_type some (phys-object or event-of-action or event-of-awareness or event-of-experience)) and _figure some owl:Thing
   SubClassOf: _ground only ((FLT_situation or FLT_abstr-obj or FLT_phys-obj) and F_intentional some V_- and F_scale some V_-) and _ground some owl:Thing
   SubClassOf: _norole only owl:Thing
 
@@ -6151,10 +6151,6 @@ Class: voyage
 Class: driving-trip
   SubClassOf: land-travel
 
-# ONT type ont::migration
-Class: migration
-  SubClassOf: trip
-
 # ONT type ont::located-event
 Class: located-event
   Annotations: rdfs:comment "events that are located in time/space - e.g., riot, war, ..."
@@ -6575,6 +6571,28 @@ Class: medical-event
   SubClassOf: event-defined-by-activity
   SubClassOf: (FLT_situation and F_aspect some V_dynamic)
   SubClassOf: _figure only owl:Thing
+
+# ONT type ont::attribute
+Class: attribute
+  SubClassOf: abstract-object-nontemporal
+  SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj))
+
+# ONT type ont::condition-favorability
+Class: condition-favorability
+  SubClassOf: attribute
+
+# ONT type ont::favorable-condition
+Class: favorable-condition
+  SubClassOf: condition-favorability
+
+# ONT type ont::not-favorable-condition
+Class: not-favorable-condition
+  SubClassOf: condition-favorability
+
+# ONT type ont::body-property
+Class: body-property
+  SubClassOf: attribute
+  SubClassOf: _figure only (FLT_phys-obj and F_origin some V_living)
 
 # ONT type ont::property-val
 Class: property-val
@@ -12602,11 +12620,6 @@ Class: economics-property-val
 Class: financial-property-val
   SubClassOf: economics-val
 
-# ONT type ont::body-property
-Class: body-property
-  SubClassOf: attribute
-  SubClassOf: _figure only (FLT_phys-obj and F_origin some V_living)
-
 # ONT type ont::domain
 Class: domain
   Annotations: rdfs:comment "Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)"
@@ -14673,6 +14686,10 @@ Class: move
   SubClassOf: (FLT_situation and F_container some V_- and F_locative some V_- and F_trajectory some V_+)
   SubClassOf: _reason only (FLT_situation and F_cause some V_agentive and F_aspect some V_dynamic)
   SubClassOf: _scale only (FLT_abstr-obj and F_scale some domain) and _scale some owl:Thing
+
+# ONT type ont::migrate
+Class: migrate
+  SubClassOf: move
 
 # ONT type ont::translocate
 Class: translocate
@@ -19443,7 +19460,7 @@ DisjointClasses: miss, err
 DisjointClasses: kissing, leave-behind, working, play, unfocused-activity, ignore, avoiding, choosing
 
 # children of ont::abstract-object-nontemporal
-DisjointClasses: mathematical-term, group-object-abstr, kind, fact
+DisjointClasses: attribute, mathematical-term, group-object-abstr, kind, fact
 
 # children of ont::kind
 DisjointClasses: grouping, example, version
@@ -19539,7 +19556,7 @@ DisjointClasses: vacation, meal-event, transfer-event, social-event, medical-eve
 DisjointClasses: trip, tour
 
 # children of ont::trip
-DisjointClasses: migration, land-travel, water-travel, air-travel, round-trip, jaunt
+DisjointClasses: land-travel, water-travel, air-travel, round-trip, jaunt
 
 # children of ont::located-event
 DisjointClasses: emergency, instruction-event, fire, gathering-event
@@ -19576,6 +19593,12 @@ DisjointClasses: account, charge-per-unit, price, revenue, expense
 
 # children of ont::name
 DisjointClasses: signature, title, fullname, lastname, firstname
+
+# children of ont::attribute
+DisjointClasses: body-property, condition-favorability
+
+# children of ont::condition-favorability
+DisjointClasses: not-favorable-condition, favorable-condition
 
 # children of ont::property-val
 DisjointClasses: quantity-related-property-val, spatial-val, associated-with-val, resulting-state-val, status-val, object-affordances-val, relational-attribute-val, dimensional-property-val, psychological-property-val, animal-propensity-val, temporal-val, can-be-done-val, process-val, life-process-val, temperature-val, physical-property-val, information-property-val, evaluation-attribute-val, state-resulting-from
@@ -20886,7 +20909,7 @@ DisjointClasses: submit, assign, prescribing, transfer, supply, commerce-sell, c
 DisjointClasses: take-by-deception, take-incrementally, capture, steal, appropriate
 
 # children of ont::move
-DisjointClasses: return, go-on, come, dance, self-locomote, scroll, move-around, move-toward, cause-move, drift, move-back-and-forth, pan, bounce-reflect, move-fluidly, unsteady-move, flutter, circular-move, move-quickly, roll, move-back, move-away, move-forward, move-upside-down, move-downward, move-upward, stir, translocate
+DisjointClasses: return, go-on, come, dance, self-locomote, scroll, move-around, move-toward, cause-move, drift, move-back-and-forth, pan, bounce-reflect, move-fluidly, unsteady-move, flutter, circular-move, move-quickly, roll, move-back, move-away, move-forward, move-upside-down, move-downward, move-upward, stir, translocate, migrate
 
 # children of ont::transportation
 DisjointClasses: transport, move-by-means
