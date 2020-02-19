@@ -503,26 +503,15 @@
   ont::predicate
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+  <role-restr-map roles="ont::ground">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
-    <feat name="type">
-    <or>
-     ont::have-property
-     ont::correlation
-    </or>
-    </feat>
-   </sem-feats>
+   <concept name="situation" />
   </role-restr-map>
  </sem-frame>
  </concept>

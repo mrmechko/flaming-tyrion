@@ -7,26 +7,15 @@
   ont::predicate
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+  <role-restr-map roles="ont::ground">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     situation
-    </relation>
-    <feat name="type">
-    <or>
-     ont::have-property
-     ont::correlation
-    </or>
-    </feat>
-   </sem-feats>
+   <concept name="situation" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -85,26 +74,15 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="intentional">+</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::ground">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="type">
-   <or>
-    ont::have-property
-    ont::correlation
-   </or>
-   </feat>
-  </sem-feats>
+  <concept name="situation" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::relation">
@@ -212,6 +190,34 @@
   <word first-word="according" remaining-words="to" />
  </morph>
  <example text="according to what i have the helicopter takes a half hour">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::attributed-to
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::s" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="based" remaining-words="on" />
+ </morph>
+ <example text="Based on what i have the helicopter takes a half hour">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">

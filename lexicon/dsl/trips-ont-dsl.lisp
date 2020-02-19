@@ -3639,18 +3639,12 @@
     WN::|impute%2:31:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL1
-     (OR
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
+     (CONCEPT
+       T)
      OPTIONAL)
     (ONT::NEUTRAL
-     (OR
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION))
+     (CONCEPT
+       T)
      OPTIONAL)))
 
 (CONCEPT
@@ -3659,19 +3653,16 @@
     ONT::PREDICATE)
   (SEM-FRAME
     (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
+     (OR
+       (CONCEPT
          PHYS-OBJ)
-       (INTENTIONAL +))
-     OPTIONAL)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION)))
     (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         SITUATION)
-       (TYPE
-        (OR
-          ONT::HAVE-PROPERTY
-          ONT::CORRELATION)))
+     (CONCEPT
+       SITUATION)
      OPTIONAL)))
 
 (CONCEPT
