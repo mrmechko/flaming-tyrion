@@ -115,10 +115,43 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::adequacy-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
  <sem-frame>
- <role-restr-map roles="ont::standard" optional="optional">
-  <concept name="t" />
- </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|disadvantageous%3:00:00::|
+  wn::|poor%3:00:02::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
  <role-restr-map roles="ont::ground" optional="optional">
   <concept name="t" />
  </role-restr-map>
@@ -175,41 +208,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <feat name="tangible">+</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::quantity-related-property-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <relation label="overlap">
-  wn::|no%3:00:00::|
-  wn::|some%3:00:00::|
-  wn::|much%3:00:00::|
-  wn::|few%3:00:00::|
-  wn::|many%3:00:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::standard" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::adequacy-val">
- <relation label="inherit">
-  ont::quantity-related-property-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

@@ -118,14 +118,61 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::quantity-related-property-val">
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|no%3:00:00::|
+  wn::|some%3:00:00::|
+  wn::|much%3:00:00::|
+  wn::|few%3:00:00::|
+  wn::|many%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::quantity-related-scale</feat>
+  <feat name="type">ont::quantity-related-property-val</feat>
+ </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::standard" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
+  <role-restr-map roles="ont::standard" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::number-related-property-val">
+ <relation label="inherit">
+  ont::quantity-related-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|odd%3:00:00::|
+  wn::|uneven%3:00:04::|
+  wn::|even%3:00:02::|
+  wn::|nilpotent%3:01:00::|
+  wn::|hexadecimal%3:01:00::|
+  wn::|hex%3:01:00::|
+  wn::|vicennial%3:01:00::|
+  wn::|prime%3:01:00::|
+  wn::|vigesimal%3:01:00::|
+  wn::|sexagesimal%3:01:00::|
+  wn::|millenary%3:01:00::|
+  wn::|digital%3:01:01::|
+  wn::|centesimal%3:01:00::|
+ </relation>
+ </concept>
+ <concept name="ont::cardinality-val">
+ <relation label="inherit">
+  ont::number-related-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|cardinal%3:00:00::|
+ </relation>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -178,54 +225,21 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::cardinality-val">
+ <sem-feats>
  <relation label="inherit">
-  ont::number-related-property-val
+  abstr-obj
  </relation>
- <relation label="overlap">
-  wn::|cardinal%3:00:00::|
- </relation>
- </concept>
- <concept name="ont::number-related-property-val">
- <relation label="inherit">
-  ont::quantity-related-property-val
- </relation>
- <relation label="overlap">
-  wn::|odd%3:00:00::|
-  wn::|uneven%3:00:04::|
-  wn::|even%3:00:02::|
-  wn::|nilpotent%3:01:00::|
-  wn::|hexadecimal%3:01:00::|
-  wn::|hex%3:01:00::|
-  wn::|vicennial%3:01:00::|
-  wn::|prime%3:01:00::|
-  wn::|vigesimal%3:01:00::|
-  wn::|sexagesimal%3:01:00::|
-  wn::|millenary%3:01:00::|
-  wn::|digital%3:01:01::|
-  wn::|centesimal%3:01:00::|
- </relation>
- </concept>
- <concept name="ont::quantity-related-property-val">
- <relation label="inherit">
-  ont::property-val
- </relation>
- <relation label="overlap">
-  wn::|no%3:00:00::|
-  wn::|some%3:00:00::|
-  wn::|much%3:00:00::|
-  wn::|few%3:00:00::|
-  wn::|many%3:00:00::|
- </relation>
+ <feat name="scale">ont::quantity-related-scale</feat>
+ <feat name="type">ont::quantity-related-property-val</feat>
+ </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::standard" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
+ <role-restr-map roles="ont::standard" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  </sem-frame>
- </concept>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

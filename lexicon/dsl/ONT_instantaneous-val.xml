@@ -114,6 +114,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::dimensional-scale</feat>
+ <feat name="type">ont::dimensional-property-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -182,17 +189,24 @@
  <feat name="scale">ont::speed-scale</feat>
  <feat name="type">ont::speed-val</feat>
  </sem-feats>
- <concept name="ont::process-val">
+ <concept name="ont::dimensional-property-val">
  <comment>
-  &quot;properties that describe processes&quot;
+  &quot;properties pertaining to dimensions and measurable extents&quot;
  </comment>
  <relation label="inherit">
   ont::property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::dimensional-scale</feat>
+  <feat name="type">ont::dimensional-property-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::speed-val">
  <relation label="inherit">
-  ont::process-val
+  ont::dimensional-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">

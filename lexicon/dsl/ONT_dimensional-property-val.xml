@@ -13,7 +13,7 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::measure-scale</feat>
+  <feat name="scale">ont::dimensional-scale</feat>
   <feat name="type">ont::dimensional-property-val</feat>
  </sem-feats>
  </concept>
@@ -216,7 +216,7 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::measure-scale</feat>
+ <feat name="scale">ont::dimensional-scale</feat>
  <feat name="type">ont::dimensional-property-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
@@ -324,6 +324,27 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <concept name="ont::speed-val">
+ <relation label="inherit">
+  ont::dimensional-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::speed-scale</feat>
+  <feat name="type">ont::speed-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::physical-strength-val">
  <relation label="inherit">
   ont::dimensional-property-val

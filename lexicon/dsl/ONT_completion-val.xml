@@ -124,6 +124,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::process-property-scale</feat>
+ <feat name="type">ont::process-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -176,26 +183,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::process-status-val">
- <comment>
-  &quot;properties relating to status of processes&quot;
- </comment>
- <relation label="inherit">
-  ont::process-val
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="gradability">-</feat>
- <feat name="type">ont::completion-val</feat>
+ <feat name="scale">ont::process-status-scale</feat>
+ <feat name="type">ont::process-status-val</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::process-val">
  <comment>
   &quot;properties that describe processes&quot;
@@ -203,6 +197,40 @@
  <relation label="inherit">
   ont::property-val
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::process-property-scale</feat>
+  <feat name="type">ont::process-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="gradability">-</feat>
+ <feat name="type">ont::completion-val</feat>
+ </sem-feats>
+ <concept name="ont::process-status-val">
+ <comment>
+  &quot;properties relating to status of processes&quot;
+ </comment>
+ <relation label="inherit">
+  ont::process-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::process-status-scale</feat>
+  <feat name="type">ont::process-status-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::domain-property">
  <comment>

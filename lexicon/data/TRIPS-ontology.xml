@@ -1047,6 +1047,9 @@
 <MAPPING to="wordnet" name="cogency%1:07:00::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="life-process-scale">
+<MAPPING to="wordnet" name="organic_phenomenon%1:19:00::" />
+</ONTTYPE>
 <ONTTYPE name="measure-scale">
 <WORD name="measurement" />
 <WORD name="quantity" />
@@ -1251,18 +1254,6 @@
 <MAPPING to="wordnet" name="hotness%1:07:00::" />
 <MAPPING to="wordnet" name="heat%1:09:00::" />
 </ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="time-measure-scale">
-<ONTTYPE name="duration-scale">
-<WORD name="duration" />
-<WORD name="time" />
-<ONTTYPE name="age-scale">
-<WORD name="age" />
-<MAPPING to="wordnet" name="age%1:28:00::" />
-<MAPPING to="wordnet" name="age%1:07:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="time-loc-scale" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="object-affordances-scale">
@@ -1662,20 +1653,6 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="process-status-scale" />
-<ONTTYPE name="temporal-occurrence-scale">
-<WORD name="frequency" />
-<ONTTYPE name="regularity-scale">
-<ONTTYPE name="not-regular-scale">
-<WORD name="irregularity" />
-<MAPPING to="wordnet" name="intermittence%1:07:00::" />
-<MAPPING to="wordnet" name="irregularity%1:07:00::" />
-</ONTTYPE>
-<ONTTYPE name="regular-scale">
-<WORD name="regularity" />
-<MAPPING to="wordnet" name="regularity%1:07:00::" />
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="psychological-condition-scale">
 <MAPPING to="wordnet" name="psychological_state%1:26:00::" />
@@ -1887,6 +1864,34 @@
 <MAPPING to="wordnet" name="privacy%1:26:02::" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="temporal-scale">
+<ONTTYPE name="temporal-occurrence-scale">
+<WORD name="frequency" />
+<ONTTYPE name="regularity-scale">
+<ONTTYPE name="not-regular-scale">
+<WORD name="irregularity" />
+<MAPPING to="wordnet" name="intermittence%1:07:00::" />
+<MAPPING to="wordnet" name="irregularity%1:07:00::" />
+</ONTTYPE>
+<ONTTYPE name="regular-scale">
+<WORD name="regularity" />
+<MAPPING to="wordnet" name="regularity%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="time-measure-scale">
+<ONTTYPE name="duration-scale">
+<WORD name="duration" />
+<WORD name="time" />
+<ONTTYPE name="age-scale">
+<WORD name="age" />
+<MAPPING to="wordnet" name="age%1:28:00::" />
+<MAPPING to="wordnet" name="age%1:07:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="time-loc-scale" />
+</ONTTYPE>
+</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="unordered-domain">
 <ONTTYPE name="discrete-color-scale" />
@@ -1895,6 +1900,7 @@
 <WORD name="sex" />
 <MAPPING to="wordnet" name="sex%1:14:00::" />
 </ONTTYPE>
+<ONTTYPE name="quantity-related-scale" />
 <ONTTYPE name="truth-scale">
 <WORD name="truth" />
 <MAPPING to="wordnet" name="truth%1:09:00::" />
@@ -6745,6 +6751,32 @@
 <WORD name="so_so" />
 </ONTTYPE>
 </ONTTYPE>
+<ONTTYPE name="adequacy-val">
+<ONTTYPE name="abundant-val">
+<MAPPING to="wordnet" name="abundant%3:00:00::" />
+<MAPPING to="wordnet" name="ample%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="adequate">
+<WORD name="adequate" />
+<WORD name="enough" />
+<WORD name="sufficient" />
+<MAPPING to="wordnet" name="adequate%3:00:00::" />
+<MAPPING to="wordnet" name="sufficient%3:00:00::" />
+<MAPPING to="wordnet" name="adequate%5:00:00:sufficient:00" />
+</ONTTYPE>
+<ONTTYPE name="inadequate">
+<WORD name="out_of" />
+<WORD name="inadequate" />
+<WORD name="insufficient" />
+<WORD name="scarce" />
+<WORD name="short" />
+<MAPPING to="wordnet" name="meager%3:00:00::" />
+<MAPPING to="wordnet" name="inadequate%3:00:00::" />
+<MAPPING to="wordnet" name="inadequate%5:00:00:insufficient:00" />
+<MAPPING to="wordnet" name="insufficient%3:00:00::" />
+<MAPPING to="wordnet" name="scarce%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
 <ONTTYPE name="appropriateness-val">
 <ONTTYPE name="appropriate-val">
 <WORD name="appropriate" />
@@ -7376,6 +7408,141 @@
 <ONTTYPE name="preferred-val">
 <WORD name="preferably" />
 <MAPPING to="wordnet" name="preferable%5:00:00:desirable:00" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="process-evaluation-val">
+<ONTTYPE name="effectiveness-val">
+<ONTTYPE name="effective-val">
+<WORD name="effective" />
+<MAPPING to="wordnet" name="effective%3:00:00::" />
+<MAPPING to="wordnet" name="effective%5:00:00:efficacious:00" />
+<MAPPING to="wordnet" name="efficacious%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="not-effective-val">
+<WORD name="toothless" />
+<MAPPING to="wordnet" name="ineffective%3:00:00::" />
+<MAPPING to="wordnet" name="toothless%5:00:00:ineffective:00" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="efficiency-val">
+<ONTTYPE name="efficient-val">
+<WORD name="efficient" />
+<MAPPING to="wordnet" name="efficient%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="not-efficient-val">
+<WORD name="inefficient" />
+<MAPPING to="wordnet" name="inefficient%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="productivity-val">
+<ONTTYPE name="not-productive-val">
+<MAPPING to="wordnet" name="unproductive%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="productive-val">
+<WORD name="productive" />
+<MAPPING to="wordnet" name="productive%3:00:00::" />
+<MAPPING to="wordnet" name="fat%5:00:00:fruitful:00" />
+<MAPPING to="wordnet" name="fruitful%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="steadiness-val">
+<ONTTYPE name="steady">
+<WORD name="constant" />
+<WORD name="stable" />
+<WORD name="steady" />
+<WORD name="unfailing" />
+<MAPPING to="wordnet" name="changeless%5:00:00:invariable:00" />
+<MAPPING to="wordnet" name="inconstant%3:00:00::" />
+<MAPPING to="wordnet" name="stable%3:00:00::" />
+<MAPPING to="wordnet" name="unaltered%3:00:00::" />
+<MAPPING to="wordnet" name="unchanged%3:00:00::" />
+<MAPPING to="wordnet" name="steady%3:00:00::" />
+<MAPPING to="wordnet" name="firm%5:00:02:stable:00" />
+</ONTTYPE>
+<ONTTYPE name="unsteady">
+<WORD name="off_balance" />
+<WORD name="shakey" />
+<WORD name="shaky" />
+<WORD name="unbalanced" />
+<WORD name="wobbly" />
+<MAPPING to="wordnet" name="unsteady%3:00:00::" />
+<MAPPING to="wordnet" name="volatile%3:00:00::" />
+<MAPPING to="wordnet" name="unstable%3:00:00::" />
+<MAPPING to="wordnet" name="shaky%5:00:00:unsteady:00" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="success-val">
+<ONTTYPE name="not-successful-val">
+<WORD name="unsuccessful" />
+<MAPPING to="wordnet" name="unfruitful%3:00:00::" />
+<MAPPING to="wordnet" name="unsuccessful%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="successful-val">
+<WORD name="successful" />
+<MAPPING to="wordnet" name="successful%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="task-complexity-val">
+<ONTTYPE name="designed-to-demand-val">
+<ONTTYPE name="heavy-duty-val">
+<MAPPING to="wordnet" name="heavy-duty%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="light-duty-val">
+<MAPPING to="wordnet" name="light%3:00:04::" />
+<MAPPING to="wordnet" name="light-duty%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="difficulty-val">
+<ONTTYPE name="demanding-val">
+<WORD name="rigorous" />
+<WORD name="strict" />
+<WORD name="stringent" />
+<MAPPING to="wordnet" name="rigorous%5:00:00:demanding:01" />
+<MAPPING to="wordnet" name="demanding%3:00:01::" />
+</ONTTYPE>
+<ONTTYPE name="difficult">
+<WORD name="a_bitch" />
+<WORD name="back_breaking" />
+<WORD name="arduous" />
+<WORD name="backbreaking" />
+<WORD name="challenging" />
+<WORD name="complex" />
+<WORD name="difficult" />
+<WORD name="grueling" />
+<WORD name="hard" />
+<WORD name="laborious" />
+<WORD name="strenuous" />
+<WORD name="tough" />
+<WORD name="tricky" />
+<MAPPING to="wordnet" name="effortful%3:00:00::" />
+<MAPPING to="wordnet" name="tough%3:00:03::" />
+<MAPPING to="wordnet" name="unwieldy%3:00:00::" />
+<MAPPING to="wordnet" name="catchy%5:00:00:difficult:00" />
+<MAPPING to="wordnet" name="complex%3:00:00::" />
+<MAPPING to="wordnet" name="ambitious%5:00:00:difficult:00" />
+<MAPPING to="wordnet" name="arduous%5:00:00:difficult:00" />
+<MAPPING to="wordnet" name="difficult%3:00:00::" />
+<MAPPING to="wordnet" name="rugged%5:00:00:difficult:00" />
+<MAPPING to="wordnet" name="complicated%5:00:00:complex:00" />
+</ONTTYPE>
+<ONTTYPE name="easy">
+<WORD name="easily" />
+<WORD name="easy" />
+<WORD name="easy" />
+<WORD name="simple" />
+<WORD name="straightforwardly" />
+<WORD name="unhindered" />
+<MAPPING to="wordnet" name="undemanding%3:00:01::" />
+<MAPPING to="wordnet" name="effortless%3:00:00::" />
+<MAPPING to="wordnet" name="elementary%5:00:00:easy:01" />
+<MAPPING to="wordnet" name="easy%3:00:01::" />
+<MAPPING to="wordnet" name="simple%3:00:02::" />
+</ONTTYPE>
+<ONTTYPE name="straightforward-val">
+<WORD name="straightforward" />
+<MAPPING to="wordnet" name="straightforward%5:00:00:unequivocal:00" />
+</ONTTYPE>
+</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="qualification-val">
@@ -9925,141 +10092,6 @@
 <MAPPING to="wordnet" name="woven%3:00:00::" />
 <MAPPING to="wordnet" name="unwoven%3:00:00::" />
 </ONTTYPE>
-<ONTTYPE name="process-evaluation-val">
-<ONTTYPE name="effectiveness-val">
-<ONTTYPE name="effective-val">
-<WORD name="effective" />
-<MAPPING to="wordnet" name="effective%3:00:00::" />
-<MAPPING to="wordnet" name="effective%5:00:00:efficacious:00" />
-<MAPPING to="wordnet" name="efficacious%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="not-effective-val">
-<WORD name="toothless" />
-<MAPPING to="wordnet" name="ineffective%3:00:00::" />
-<MAPPING to="wordnet" name="toothless%5:00:00:ineffective:00" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="efficiency-val">
-<ONTTYPE name="efficient-val">
-<WORD name="efficient" />
-<MAPPING to="wordnet" name="efficient%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="not-efficient-val">
-<WORD name="inefficient" />
-<MAPPING to="wordnet" name="inefficient%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="productivity-val">
-<ONTTYPE name="not-productive-val">
-<MAPPING to="wordnet" name="unproductive%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="productive-val">
-<WORD name="productive" />
-<MAPPING to="wordnet" name="productive%3:00:00::" />
-<MAPPING to="wordnet" name="fat%5:00:00:fruitful:00" />
-<MAPPING to="wordnet" name="fruitful%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="steadiness-val">
-<ONTTYPE name="steady">
-<WORD name="constant" />
-<WORD name="stable" />
-<WORD name="steady" />
-<WORD name="unfailing" />
-<MAPPING to="wordnet" name="changeless%5:00:00:invariable:00" />
-<MAPPING to="wordnet" name="inconstant%3:00:00::" />
-<MAPPING to="wordnet" name="stable%3:00:00::" />
-<MAPPING to="wordnet" name="unaltered%3:00:00::" />
-<MAPPING to="wordnet" name="unchanged%3:00:00::" />
-<MAPPING to="wordnet" name="steady%3:00:00::" />
-<MAPPING to="wordnet" name="firm%5:00:02:stable:00" />
-</ONTTYPE>
-<ONTTYPE name="unsteady">
-<WORD name="off_balance" />
-<WORD name="shakey" />
-<WORD name="shaky" />
-<WORD name="unbalanced" />
-<WORD name="wobbly" />
-<MAPPING to="wordnet" name="unsteady%3:00:00::" />
-<MAPPING to="wordnet" name="volatile%3:00:00::" />
-<MAPPING to="wordnet" name="unstable%3:00:00::" />
-<MAPPING to="wordnet" name="shaky%5:00:00:unsteady:00" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="success-val">
-<ONTTYPE name="not-successful-val">
-<WORD name="unsuccessful" />
-<MAPPING to="wordnet" name="unfruitful%3:00:00::" />
-<MAPPING to="wordnet" name="unsuccessful%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="successful-val">
-<WORD name="successful" />
-<MAPPING to="wordnet" name="successful%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="task-complexity-val">
-<ONTTYPE name="designed-to-demand-val">
-<ONTTYPE name="heavy-duty-val">
-<MAPPING to="wordnet" name="heavy-duty%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="light-duty-val">
-<MAPPING to="wordnet" name="light%3:00:04::" />
-<MAPPING to="wordnet" name="light-duty%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="difficulty-val">
-<ONTTYPE name="demanding-val">
-<WORD name="rigorous" />
-<WORD name="strict" />
-<WORD name="stringent" />
-<MAPPING to="wordnet" name="rigorous%5:00:00:demanding:01" />
-<MAPPING to="wordnet" name="demanding%3:00:01::" />
-</ONTTYPE>
-<ONTTYPE name="difficult">
-<WORD name="a_bitch" />
-<WORD name="back_breaking" />
-<WORD name="arduous" />
-<WORD name="backbreaking" />
-<WORD name="challenging" />
-<WORD name="complex" />
-<WORD name="difficult" />
-<WORD name="grueling" />
-<WORD name="hard" />
-<WORD name="laborious" />
-<WORD name="strenuous" />
-<WORD name="tough" />
-<WORD name="tricky" />
-<MAPPING to="wordnet" name="effortful%3:00:00::" />
-<MAPPING to="wordnet" name="tough%3:00:03::" />
-<MAPPING to="wordnet" name="unwieldy%3:00:00::" />
-<MAPPING to="wordnet" name="catchy%5:00:00:difficult:00" />
-<MAPPING to="wordnet" name="complex%3:00:00::" />
-<MAPPING to="wordnet" name="ambitious%5:00:00:difficult:00" />
-<MAPPING to="wordnet" name="arduous%5:00:00:difficult:00" />
-<MAPPING to="wordnet" name="difficult%3:00:00::" />
-<MAPPING to="wordnet" name="rugged%5:00:00:difficult:00" />
-<MAPPING to="wordnet" name="complicated%5:00:00:complex:00" />
-</ONTTYPE>
-<ONTTYPE name="easy">
-<WORD name="easily" />
-<WORD name="easy" />
-<WORD name="easy" />
-<WORD name="simple" />
-<WORD name="straightforwardly" />
-<WORD name="unhindered" />
-<MAPPING to="wordnet" name="undemanding%3:00:01::" />
-<MAPPING to="wordnet" name="effortless%3:00:00::" />
-<MAPPING to="wordnet" name="elementary%5:00:00:easy:01" />
-<MAPPING to="wordnet" name="easy%3:00:01::" />
-<MAPPING to="wordnet" name="simple%3:00:02::" />
-</ONTTYPE>
-<ONTTYPE name="straightforward-val">
-<WORD name="straightforward" />
-<MAPPING to="wordnet" name="straightforward%5:00:00:unequivocal:00" />
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="process-status-val">
 <ONTTYPE name="completion-val">
 <ONTTYPE name="finished">
@@ -10098,37 +10130,6 @@
 <MAPPING to="wordnet" name="probationary%5:00:00:conditional:00" />
 <MAPPING to="wordnet" name="preliminary%5:00:00:exploratory:00" />
 </ONTTYPE>
-</ONTTYPE>
-</ONTTYPE>
-<ONTTYPE name="speed-val">
-<ONTTYPE name="instantaneous-val">
-<WORD name="instant" />
-<WORD name="instantaneous" />
-<WORD name="sudden" />
-<MAPPING to="wordnet" name="instantaneous%5:00:00:fast:01" />
-<MAPPING to="wordnet" name="sudden%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="slow-val">
-<WORD name="slow" />
-<MAPPING to="wordnet" name="slow%3:00:01::" />
-<MAPPING to="wordnet" name="gradually%4:02:00::" />
-</ONTTYPE>
-<ONTTYPE name="speedy">
-<WORD name="in_a_hurry" />
-<WORD name="fast" />
-<WORD name="fast" />
-<WORD name="quick" />
-<WORD name="rapid" />
-<WORD name="speedy" />
-<WORD name="swift" />
-<MAPPING to="wordnet" name="immediate%5:00:00:fast:01" />
-<MAPPING to="wordnet" name="fleet%5:00:00:fast:01" />
-<MAPPING to="wordnet" name="rapid%5:00:00:fast:01" />
-<MAPPING to="wordnet" name="rapid%5:00:02:fast:01" />
-<MAPPING to="wordnet" name="fast%3:00:01::" />
-<MAPPING to="wordnet" name="quick%5:00:00:fast:01" />
-<MAPPING to="wordnet" name="hurried%3:00:00::" />
-<MAPPING to="wordnet" name="hurriedly%4:02:00::" />
 </ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
@@ -10841,32 +10842,6 @@
 <MAPPING to="wordnet" name="extra%5:00:00:additive:00" />
 <MAPPING to="wordnet" name="complemental%5:00:00:additive:00" />
 <MAPPING to="wordnet" name="intercalary%5:00:00:additive:00" />
-</ONTTYPE>
-<ONTTYPE name="adequacy-val">
-<ONTTYPE name="abundant-val">
-<MAPPING to="wordnet" name="abundant%3:00:00::" />
-<MAPPING to="wordnet" name="ample%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="adequate">
-<WORD name="adequate" />
-<WORD name="enough" />
-<WORD name="sufficient" />
-<MAPPING to="wordnet" name="adequate%3:00:00::" />
-<MAPPING to="wordnet" name="sufficient%3:00:00::" />
-<MAPPING to="wordnet" name="adequate%5:00:00:sufficient:00" />
-</ONTTYPE>
-<ONTTYPE name="inadequate">
-<WORD name="out_of" />
-<WORD name="inadequate" />
-<WORD name="insufficient" />
-<WORD name="scarce" />
-<WORD name="short" />
-<MAPPING to="wordnet" name="meager%3:00:00::" />
-<MAPPING to="wordnet" name="inadequate%3:00:00::" />
-<MAPPING to="wordnet" name="inadequate%5:00:00:insufficient:00" />
-<MAPPING to="wordnet" name="insufficient%3:00:00::" />
-<MAPPING to="wordnet" name="scarce%3:00:00::" />
-</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="math-related-property-val">
 <WORD name="algebraic" />
