@@ -616,9 +616,11 @@
     WN::|act%2:29:00::|
     WN::|act%2:36:04::|
     WN::|behave%2:41:01::|
-    WN::|posturing%1:07:00::|
+    WN::|behavior%1:26:00::|
+    WN::|perform%2:36:01::|
     WN::|performance%1:04:00::|
-    WN::|behavior%1:26:00::|)
+    WN::|play%2:36:02::|
+    WN::|posturing%1:07:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -8105,7 +8107,15 @@
 (CONCEPT
   ONT::CEREMONY
   (INHERIT
-    ONT::GATHERING-EVENT))
+    ONT::GATHERING-EVENT)
+  (OVERLAP
+    WN::|ceremony%1:04:00::|
+    WN::|ceremony%1:04:01::|
+    WN::|ceremony%1:11:00::|
+    WN::|christening%1:04:00::|
+    WN::|commencement%1:11:02::|
+    WN::|convocation%1:04:00::|
+    WN::|funeral%1:11:00::|))
 
 (CONCEPT
   ONT::CERTAIN
@@ -18771,7 +18781,9 @@
 (CONCEPT
   ONT::FIRE
   (INHERIT
-    ONT::LOCATED-EVENT))
+    ONT::LOCATED-EVENT)
+  (OVERLAP
+    WN::|fire%1:11:00::|))
 
 (CONCEPT
   ONT::FIRE-TRUCK
@@ -19823,7 +19835,6 @@
   (INHERIT
     ONT::LOCATED-EVENT)
   (OVERLAP
-    WN::|ceremony%1:04:00::|
     WN::|gathering%1:14:00::|
     WN::|visit%1:04:02::|))
 
@@ -33452,7 +33463,9 @@
 (CONCEPT
   ONT::PERFORMANCE-PLAY
   (INHERIT
-    ONT::GATHERING-EVENT))
+    ONT::GATHERING-EVENT)
+  (OVERLAP
+    WN::|show%1:10:00::|))
 
 (CONCEPT
   ONT::PERIODIC-VAL
@@ -35786,8 +35799,7 @@
   (OVERLAP
     WN::|presentation%1:10:00::|
     WN::|presentation%1:10:02::|
-    WN::|show%1:04:00::|
-    WN::|show%1:10:00::|))
+    WN::|show%1:04:00::|))
 
 (CONCEPT
   ONT::PRESERVATIVES
