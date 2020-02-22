@@ -8696,24 +8696,6 @@ Class: process-evaluation-val
   SubClassOf: evaluation-attribute-val
   SubClassOf: (FLT_abstr-obj and F_scale some process-evaluation-scale)
 
-# ONT type ont::speed-val
-Class: speed-val
-  SubClassOf: dimensional-property-val
-  SubClassOf: (FLT_abstr-obj and F_scale some speed-scale)
-  SubClassOf: _figure only ((FLT_phys-obj or FLT_situation or FLT_abstr-obj)) and _figure some owl:Thing
-
-# ONT type ont::slow-val
-Class: slow-val
-  SubClassOf: speed-val
-
-# ONT type ont::instantaneous-val
-Class: instantaneous-val
-  SubClassOf: speed-val
-
-# ONT type ont::speedy
-Class: speedy
-  SubClassOf: speed-val
-
 # ONT type ont::productivity-val
 Class: productivity-val
   SubClassOf: process-evaluation-val
@@ -9059,6 +9041,24 @@ Class: dimensional-property-val
   Annotations: rdfs:comment "properties pertaining to dimensions and measurable extents"
   SubClassOf: property-val
   SubClassOf: (FLT_abstr-obj and F_scale some dimensional-scale)
+
+# ONT type ont::speed-val
+Class: speed-val
+  SubClassOf: dimensional-property-val
+  SubClassOf: (FLT_abstr-obj and F_scale some speed-scale)
+  SubClassOf: _figure only ((FLT_phys-obj or FLT_situation or FLT_abstr-obj)) and _figure some owl:Thing
+
+# ONT type ont::slow-val
+Class: slow-val
+  SubClassOf: speed-val
+
+# ONT type ont::instantaneous-val
+Class: instantaneous-val
+  SubClassOf: speed-val
+
+# ONT type ont::speedy
+Class: speedy
+  SubClassOf: speed-val
 
 # ONT type ont::physical-strength-val
 Class: physical-strength-val
@@ -20020,12 +20020,6 @@ DisjointClasses: incomplete, finished
 # children of ont::stage-val
 DisjointClasses: startup-val, tentative-val
 
-# children of ont::dimensional-property-val
-DisjointClasses: distance-val, predefined-measure-val, proportion-val, severity-val, intensity-val, weight-val, boundedness-val, size-val, position-on-dimension-scale-val, physical-strength-val, speed-val
-
-# children of ont::speed-val
-DisjointClasses: speedy, instantaneous-val, slow-val
-
 # children of ont::process-evaluation-val
 DisjointClasses: task-complexity-val, success-val, steadiness-val, efficiency-val, effectiveness-val, productivity-val
 
@@ -20097,6 +20091,12 @@ DisjointClasses: foolish-val, wise-val
 
 # children of ont::skillfulness-val
 DisjointClasses: not-skillful-val, skillful-val
+
+# children of ont::dimensional-property-val
+DisjointClasses: distance-val, predefined-measure-val, proportion-val, severity-val, intensity-val, weight-val, boundedness-val, size-val, position-on-dimension-scale-val, physical-strength-val, speed-val
+
+# children of ont::speed-val
+DisjointClasses: speedy, instantaneous-val, slow-val
 
 # children of ont::physical-strength-val
 DisjointClasses: weak-in-strength-val, strong-val
