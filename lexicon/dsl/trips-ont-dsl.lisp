@@ -21466,18 +21466,14 @@
   (SEM-FRAME
     (ONT::FORMAL
      (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           SITUATION))
+       (INHERIT
+         ABSTR-OBJ)
        (TYPE
         (OR
           ONT::DOMAIN-PROPERTY
           ONT::POSITION-RELN
           ONT::PREDICATE
-          ONT::RELATION
-          ONT::MEMBERSHIP)))
+          ONT::RELATION)))
      OPTIONAL)
     (ONT::NEUTRAL
      (CONCEPT
