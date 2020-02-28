@@ -11510,7 +11510,6 @@
   (INHERIT
     ONT::CONTROL-VAL)
   (OVERLAP
-    WN::|uncontrolled%3:00:00::|
     WN::|controlled%3:00:00::|
     WN::|guided%3:00:00::|
     WN::|manned%3:00:00::|))
@@ -29857,7 +29856,8 @@
   (OVERLAP
     WN::|unrestrained%3:00:00::|
     WN::|untempered%3:00:01::|
-    WN::|unguided%3:00:00::|))
+    WN::|unguided%3:00:00::|
+    WN::|uncontrolled%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-CONVENIENT-SCALE
@@ -37772,7 +37772,10 @@
     WN::|deny%2:40:00::|
     WN::|refuse%2:40:01::|
     WN::|deny%2:32:05::|
-    WN::|reject%2:31:00::|)
+    WN::|reject%2:31:00::|
+    WN::|refuse%2:40:00::|
+    WN::|refuse%2:32:00::|
+    WN::|refuse%2:42:04::|)
   (SEM-FRAME
     (ONT::EFFECT
      (OR
