@@ -2902,14 +2902,14 @@ Class: liquid-substance
   SubClassOf: substance
   SubClassOf: (FLT_phys-obj and F_form some V_liquid)
 
-# ONT type ont::fuel
-Class: fuel
-  SubClassOf: liquid-substance
-  SubClassOf: (FLT_phys-obj and F_form some V_liquid and F_origin some V_natural)
-
 # ONT type ont::natural-liquid-substance
 Class: natural-liquid-substance
   SubClassOf: liquid-substance
+  SubClassOf: (FLT_phys-obj and F_form some V_liquid and F_origin some V_natural)
+
+# ONT type ont::fuel
+Class: fuel
+  SubClassOf: natural-liquid-substance
   SubClassOf: (FLT_phys-obj and F_form some V_liquid and F_origin some V_natural)
 
 # ONT type ont::natural-gas-substance
@@ -19135,11 +19135,8 @@ DisjointClasses: pain-reliever, antibiotic, allergy-medication, bronchodilator
 # children of ont::bronchodilator
 DisjointClasses: quick-relief-drug, long-term-control-drug
 
-# children of ont::liquid-substance
-DisjointClasses: natural-liquid-substance, fuel
-
 # children of ont::natural-liquid-substance
-DisjointClasses: water, bodily-fluid
+DisjointClasses: water, bodily-fluid, fuel
 
 # children of ont::manufactured-object
 DisjointClasses: tableware, cookware, container, device-component, flag, attire, credit-card, money, writing-implement, instrumentation, equipment, fixture, device, card, window, wheel, furnishings, vessel, stretcher, vehicle, automaton, block, technology

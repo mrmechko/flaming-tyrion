@@ -19617,9 +19617,10 @@
 (CONCEPT
   ONT::FUEL
   (INHERIT
-    ONT::LIQUID-SUBSTANCE)
+    ONT::NATURAL-LIQUID-SUBSTANCE)
   (OVERLAP
-    WN::|fuel%1:27:00::|)
+    WN::|fuel%1:27:00::|
+    WN::|petroleum%1:27:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -43970,7 +43971,9 @@
     WN::|take%2:41:13::|
     WN::|take_to%2:41:01::|
     WN::|begin%2:32:04::|
-    WN::|originate_in%2:42:00::|)
+    WN::|originate_in%2:42:00::|
+    WN::|initiate%2:36:00::|
+    WN::|initiate%2:30:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (OR
