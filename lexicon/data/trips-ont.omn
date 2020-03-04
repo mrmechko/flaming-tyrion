@@ -5061,13 +5061,6 @@ Class: life-process
   SubClassOf: event-of-undergoing-action
   SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj) and F_origin some V_living and F_tangible some V_+)
 
-# ONT type ont::cure
-Class: cure
-  SubClassOf: life-process
-  SubClassOf: _agent only owl:Thing
-  SubClassOf: _affected only owl:Thing
-  SubClassOf: _formal only owl:Thing
-
 # ONT type ont::cause-to-move
 Class: cause-to-move
   SubClassOf: motion
@@ -5354,15 +5347,9 @@ Class: intention
   SubClassOf: _formal only owl:Thing
   SubClassOf: _source only owl:Thing
 
-# ONT type ont::experiencer-obj
-Class: experiencer-obj
+# ONT type ont::experience-body-effect
+Class: experience-body-effect
   SubClassOf: event-of-undergoing-action
-  SubClassOf: (FLT_situation and F_aspect some V_dynamic and F_cause some V_agentive)
-  SubClassOf: _affected only owl:Thing
-
-# ONT type ont::cause-body-effect
-Class: cause-body-effect
-  SubClassOf: experiencer-obj
   SubClassOf: _affected only ((FLT_abstr-obj or FLT_phys-obj) and F_intentional some V_+) and _affected some owl:Thing
   SubClassOf: _agent only owl:Thing
   SubClassOf: _result only owl:Thing
@@ -18061,6 +18048,13 @@ Class: change-state-action
   SubClassOf: change-state
   SubClassOf: _agent only ((FLT_situation or FLT_phys-obj))
 
+# ONT type ont::cure
+Class: cure
+  SubClassOf: change-state-action
+  SubClassOf: _agent only owl:Thing
+  SubClassOf: _affected only owl:Thing
+  SubClassOf: _formal only owl:Thing
+
 # ONT type ont::render-ineffective
 Class: render-ineffective
   SubClassOf: change-state-action
@@ -19433,10 +19427,7 @@ DisjointClasses: suggest, threaten, warn, request
 DisjointClasses: promise, offer
 
 # children of ont::event-of-undergoing-action
-DisjointClasses: undergo-action, become, rise, come-from, incur-inherit-receive, disappear, appear, physical-process, experiencer-obj, life-process
-
-# children of ont::life-process
-DisjointClasses: die, live, be-born, cure
+DisjointClasses: undergo-action, become, rise, come-from, incur-inherit-receive, disappear, appear, physical-process, experience-body-effect, life-process
 
 # children of ont::motion
 DisjointClasses: rhythmic-motion, fluidic-motion, avoid-location, disperse, fly, move, transportation, motion-wrt-another-object, cause-to-move
@@ -20974,6 +20965,9 @@ DisjointClasses: squeeze, press, push-liquid
 # children of ont::persistent-state
 DisjointClasses: hang-out, retain, stay, confine, be-inactive
 
+# children of ont::life-process
+DisjointClasses: die, live, be-born
+
 # children of ont::natural-event
 DisjointClasses: nychthemeron-event, drought, flooding, atmospheric-event
 
@@ -21257,7 +21251,7 @@ DisjointClasses: identify, classify, attribute-impute, ordering
 DisjointClasses: duplicate, archive
 
 # children of ont::change-state-action
-DisjointClasses: change-device-state, closure, replacement, clean, repair, render-ineffective
+DisjointClasses: change-device-state, closure, replacement, clean, repair, render-ineffective, cure
 
 # children of ont::clean
 DisjointClasses: bath, shower

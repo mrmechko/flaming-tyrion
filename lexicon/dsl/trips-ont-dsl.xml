@@ -806,16 +806,17 @@
    ont::perception
   </relation>
   <relation label="overlap">
-   wn::|look%2:39:00::|
    wn::|feel%2:39:00::|
-   wn::|sense%2:39:00::|
-   wn::|note%2:39:02::|
+   wn::|look%2:39:00::|
    wn::|look_on%2:39:00::|
+   wn::|note%2:39:02::|
+   wn::|sample%2:34:00::|
+   wn::|see%2:39:00::|
+   wn::|sense%2:39:00::|
+   wn::|smell%2:39:00::|
+   wn::|taste%2:39:00::|
    wn::|watch%2:39:00::|
    wn::|watch%2:39:03::|
-   wn::|see%2:39:00::|
-   wn::|taste%2:39:00::|
-   wn::|smell%2:39:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal" optional="optional">
@@ -2611,6 +2612,7 @@
    wn::|catch%2:35:00::|
    wn::|claim%2:32:03::|
    wn::|fill%2:41:00::|
+   wn::|seize%2:40:07::|
    wn::|snatch%2:35:02::|
    wn::|take%2:35:00::|
    wn::|take%2:40:15::|
@@ -3318,12 +3320,18 @@
   <relation label="inherit">
    ont::request
   </relation>
+  <relation label="overlap">
+   wn::|ask%2:32:01::|
+   wn::|ask%2:32:05::|
+   wn::|ask%2:32:09::|
+  </relation>
  </concept>
  <concept name="ont::ask-question">
   <relation label="inherit">
    ont::communication
   </relation>
   <relation label="overlap">
+   wn::|ask%2:32:00::|
    wn::|ask%2:32:02::|
    wn::|ask%2:32:04::|
   </relation>
@@ -8447,6 +8455,7 @@
    wn::|capture%2:35:01::|
    wn::|catch%2:35:01::|
    wn::|get%2:35:09::|
+   wn::|seize%2:35:01::|
    wn::|take%2:40:01::|
   </relation>
  </concept>
@@ -8687,28 +8696,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::cause-body-effect">
-  <relation label="inherit">
-   ont::experiencer-obj
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::result" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::agent" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::affected">
-    <sem-feats>
-     <or>
-      <concept name="abstr-obj" />
-      <concept name="phys-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::cause-clear">
   <relation label="inherit">
    ont::cause-come-from
@@ -8807,6 +8794,7 @@
    wn::|drive%2:35:00::|
    wn::|make%2:36:08::|
    wn::|open_up%2:30:00::|
+   wn::|make%2:30:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -13208,9 +13196,10 @@
   </relation>
   <relation label="overlap">
    wn::|convert%2:32:00::|
-   wn::|win_over%2:32:00::|
    wn::|convince%2:32:00::|
    wn::|court%2:41:01::|
+   wn::|persuade%2:32:00::|
+   wn::|win_over%2:32:00::|
   </relation>
  </concept>
  <concept name="ont::cook">
@@ -13364,8 +13353,9 @@
    ont::change-in-temperature
   </relation>
   <relation label="overlap">
-   wn::|cool%2:30:00::|
    wn::|chill%2:30:00::|
+   wn::|cool%2:30:00::|
+   wn::|cool%2:30:01::|
    wn::|cool_down%2:30:01::|
   </relation>
   <sem-frame>
@@ -14469,13 +14459,14 @@
  </concept>
  <concept name="ont::cure">
   <relation label="inherit">
-   ont::life-process
+   ont::change-state-action
   </relation>
   <relation label="overlap">
    wn::|bring_around%2:29:01::|
-   wn::|cure%2:29:00::|
-   wn::|heal%2:29:01::|
    wn::|care_for%2:29:00::|
+   wn::|cure%2:29:     00::|
+   wn::|heal%2:29:01::|
+   wn::|revitalize%2:29:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal" optional="optional">
@@ -17722,7 +17713,6 @@
   <relation label="overlap">
    wn::|eat%2:34:00::|
    wn::|eat%2:34:02::|
-   wn::|taste%2:34:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected">
@@ -19497,6 +19487,7 @@
    ont::evoke-relief
   </relation>
   <relation label="overlap">
+   wn::|comfort%2:37:01::|
    wn::|relax%2:29:00::|
    wn::|relax%2:29:01::|
    wn::|rest%2:32:01::|
@@ -19527,6 +19518,9 @@
   </comment>
   <relation label="inherit">
    ont::worsen-experience
+  </relation>
+  <relation label="overlap">
+   wn::|seize%2:31:04::|
   </relation>
  </concept>
  <concept name="ont::evoke-disgust">
@@ -19563,8 +19557,10 @@
   </relation>
   <relation label="overlap">
    wn::|agitate%2:37:00::|
+   wn::|exalt%2:37:01::|
    wn::|overwhelm%2:37:00::|
    wn::|stir%2:37:01::|
+   wn::|stir%2:39:00::|
   </relation>
  </concept>
  <concept name="ont::evoke-fear">
@@ -19692,7 +19688,6 @@
   </relation>
   <relation label="overlap">
    wn::|still%2:37:01::|
-   wn::|comfort%2:37:01::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected">
@@ -19775,11 +19770,12 @@
    ont::neutral-experience
   </relation>
   <relation label="overlap">
-   wn::|surprise%2:31:00::|
-   wn::|stun%2:39:00::|
    wn::|amaze%2:31:00::|
    wn::|awe%2:37:00::|
+   wn::|stagger%2:37:00::|
+   wn::|stun%2:39:00::|
    wn::|surprise%1:11:00::|
+   wn::|surprise%2:31:00::|
   </relation>
  </concept>
  <concept name="ont::evoke-tiredness">
@@ -20236,6 +20232,31 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::experience-body-effect">
+  <relation label="inherit">
+   ont::event-of-undergoing-action
+  </relation>
+  <relation label="overlap">
+   wn::|cramp%2:29:00::|
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::result" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::agent" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::affected">
+    <sem-feats>
+     <or>
+      <concept name="abstr-obj" />
+      <concept name="phys-obj" />
+     </or>
+     <feat name="intentional">+</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::experiencer-condition-scale">
   <relation label="inherit">
    ont::psychological-condition-scale
@@ -20271,24 +20292,6 @@
     <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::neutral" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::experiencer-obj">
-  <relation label="inherit">
-   ont::event-of-undergoing-action
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="cause">agentive</feat>
-   <feat name="aspect">dynamic</feat>
-   <feat name="type">ont::experiencer-obj</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::affected">
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
@@ -21881,6 +21884,16 @@
  <concept name="ont::flutter">
   <relation label="inherit">
    ont::move
+  </relation>
+  <relation label="overlap">
+   wn::|flutter%1:04:00::|
+   wn::|flutter%1:11:01::|
+   wn::|flutter%1:26:00::|
+   wn::|flutter%2:29:00::|
+   wn::|flutter%2:38:00::|
+   wn::|flutter%2:38:01::|
+   wn::|flutter%2:38:02::|
+   wn::|flutter%2:38:03::|
   </relation>
  </concept>
  <concept name="ont::fly">
@@ -26693,6 +26706,9 @@
   <relation label="inherit">
    ont::located-event
   </relation>
+  <relation label="overlap">
+   wn::|class%1:04:00::|
+  </relation>
  </concept>
  <concept name="ont::instrumentation">
   <relation label="inherit">
@@ -30323,7 +30339,6 @@
    wn::|have%2:30:00::|
    wn::|have%2:32:00::|
    wn::|have%2:40:02::|
-   wn::|make%2:30:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -46232,9 +46247,10 @@
    ont::change-state
   </relation>
   <relation label="overlap">
-   wn::|revive%2:29:01::|
    wn::|resuscitate%2:29:00::|
+   wn::|revive%2:29:01::|
    wn::|revive%2:29:02::|
+   wn::|revitalize%2:30:00::|
   </relation>
  </concept>
  <concept name="ont::reward">
@@ -52875,6 +52891,7 @@
    ont::show
   </relation>
   <relation label="overlap">
+   wn::|lesson%1:04:01::|
    wn::|teach%2:32:00::|
    wn::|teach%2:30:00::|
    wn::|train%2:31:00::|
@@ -54725,29 +54742,27 @@
    ont::cause-effect
   </relation>
   <relation label="overlap">
-   wn::|try%1:04:00::|
-   wn::|endeavour%1:04:00::|
-   wn::|endeavor%1:04:00::|
-   wn::|effort%1:04:00::|
+   wn::|assay%2:41:00::|
    wn::|attempt%1:04:00::|
-   wn::|try%2:29:00::|
-   wn::|try_on%2:29:00::|
-   wn::|taste%2:34:00::|
-   wn::|try_out%2:34:00::|
-   wn::|try%2:34:00::|
+   wn::|attempt%2:41:00::|
+   wn::|come_near%2:41:00::|
+   wn::|effort%1:04:00::|
+   wn::|endeavor%1:04:00::|
+   wn::|endeavour%1:04:00::|
+   wn::|essay%2:41:00::|
    wn::|essay%2:41:01::|
    wn::|examine%2:41:00::|
+   wn::|prove%2:41:03::|
+   wn::|push%1:04:01::|
+   wn::|seek%2:41:00::|
+   wn::|test%2:41:00::|
+   wn::|try%1:04:00::|
+   wn::|try%2:29:00::|
+   wn::|try_on%2:29:00::|
+   wn::|try%2:34:00::|
+   wn::|try%2:41:00::|
    wn::|try_out%2:41:00::|
    wn::|try%2:41:01::|
-   wn::|prove%2:41:03::|
-   wn::|test%2:41:00::|
-   wn::|try%2:41:00::|
-   wn::|seek%2:41:00::|
-   wn::|attempt%2:41:00::|
-   wn::|essay%2:41:00::|
-   wn::|assay%2:41:00::|
-   wn::|come_near%2:41:00::|
-   wn::|push%1:04:01::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::neutral" optional="optional">
@@ -56678,6 +56693,8 @@
    ont::change-in-dimension
   </relation>
   <relation label="overlap">
+   wn::|languish%2:29:00::|
+   wn::|languish%2:30:00::|
    wn::|weaken%2:30:00::|
    wn::|weaken%2:30:01::|
    wn::|waste%2:30:01::|

@@ -2,21 +2,28 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::experiencer-obj">
+ <concept name="ont::experience-body-effect">
  <relation label="inherit">
   ont::event-of-undergoing-action
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">agentive</feat>
-  <feat name="aspect">dynamic</feat>
-  <feat name="type">ont::experiencer-obj</feat>
- </sem-feats>
+ <relation label="overlap">
+  wn::|cramp%2:29:00::|
+ </relation>
  <sem-frame>
-  <role-restr-map roles="ont::affected">
+  <role-restr-map roles="ont::result" optional="optional">
    <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -84,17 +91,21 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="cause">agentive</feat>
- <feat name="aspect">dynamic</feat>
- <feat name="type">ont::experiencer-obj</feat>
- </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::affected">
+ <role-restr-map roles="ont::result" optional="optional">
   <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="intentional">+</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::event-of-change">
@@ -215,45 +226,36 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
- <concept name="ont::cause-body-effect">
- <relation label="inherit">
-  ont::experiencer-obj
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <sense>
  <morph>
   <pos pos="v" />
-  <word first-word="chill" remaining-words="out" />
+  <word first-word="cramp" />
  </morph>
- <example text="He chilled out on the couch">
+ <example text="his body cramped (with pain/convulsions)">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::experiencer-obj
+  ont::experience-body-effect
   ont::affected-templ
  </relation>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">unbounded</feat>
-  </sem-feats>
- </semantics>
+ <relation label="overlap">
+  vn::hurt-40.8.3-2
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="seize" />
+ </morph>
+ <example text="his body seized (with pain/convulsions)">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::experience-body-effect
+  ont::affected-templ
+ </relation>
+ <relation label="overlap">
+  vn::hurt-40.8.3-2
+ </relation>
  </sense>
 </dsl>

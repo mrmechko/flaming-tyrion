@@ -707,16 +707,17 @@
   (INHERIT
     ONT::PERCEPTION)
   (OVERLAP
-    WN::|look%2:39:00::|
     WN::|feel%2:39:00::|
-    WN::|sense%2:39:00::|
-    WN::|note%2:39:02::|
+    WN::|look%2:39:00::|
     WN::|look_on%2:39:00::|
-    WN::|watch%2:39:00::|
-    WN::|watch%2:39:03::|
+    WN::|note%2:39:02::|
+    WN::|sample%2:34:00::|
     WN::|see%2:39:00::|
+    WN::|sense%2:39:00::|
+    WN::|smell%2:39:00::|
     WN::|taste%2:39:00::|
-    WN::|smell%2:39:00::|)
+    WN::|watch%2:39:00::|
+    WN::|watch%2:39:03::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -2254,6 +2255,7 @@
     WN::|catch%2:35:00::|
     WN::|claim%2:32:03::|
     WN::|fill%2:41:00::|
+    WN::|seize%2:40:07::|
     WN::|snatch%2:35:02::|
     WN::|take%2:35:00::|
     WN::|take%2:40:15::|)
@@ -2876,13 +2878,18 @@
 (CONCEPT
   ONT::ASK
   (INHERIT
-    ONT::REQUEST))
+    ONT::REQUEST)
+  (OVERLAP
+    WN::|ask%2:32:01::|
+    WN::|ask%2:32:05::|
+    WN::|ask%2:32:09::|))
 
 (CONCEPT
   ONT::ASK-QUESTION
   (INHERIT
     ONT::COMMUNICATION)
   (OVERLAP
+    WN::|ask%2:32:00::|
     WN::|ask%2:32:02::|
     WN::|ask%2:32:04::|))
 
@@ -7466,6 +7473,7 @@
     WN::|capture%2:35:01::|
     WN::|catch%2:35:01::|
     WN::|get%2:35:09::|
+    WN::|seize%2:35:01::|
     WN::|take%2:40:01::|))
 
 (CONCEPT
@@ -7675,28 +7683,6 @@
        (CAUSE AGENTIVE)))))
 
 (CONCEPT
-  ONT::CAUSE-BODY-EFFECT
-  (INHERIT
-    ONT::EXPERIENCER-OBJ)
-  (SEM-FRAME
-    (ONT::RESULT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::AGENT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (INTENTIONAL +)))))
-
-(CONCEPT
   ONT::CAUSE-CLEAR
   (INHERIT
     ONT::CAUSE-COME-FROM)
@@ -7785,7 +7771,8 @@
     WN::|do%2:36:02::|
     WN::|drive%2:35:00::|
     WN::|make%2:36:08::|
-    WN::|open_up%2:30:00::|)
+    WN::|open_up%2:30:00::|
+    WN::|make%2:30:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -11662,9 +11649,10 @@
     ONT::PERLOCUTION)
   (OVERLAP
     WN::|convert%2:32:00::|
-    WN::|win_over%2:32:00::|
     WN::|convince%2:32:00::|
-    WN::|court%2:41:01::|))
+    WN::|court%2:41:01::|
+    WN::|persuade%2:32:00::|
+    WN::|win_over%2:32:00::|))
 
 (CONCEPT
   ONT::COOK
@@ -11791,8 +11779,9 @@
   (INHERIT
     ONT::CHANGE-IN-TEMPERATURE)
   (OVERLAP
-    WN::|cool%2:30:00::|
     WN::|chill%2:30:00::|
+    WN::|cool%2:30:00::|
+    WN::|cool%2:30:01::|
     WN::|cool_down%2:30:01::|)
   (SEM-FRAME
     (ONT::SCALE
@@ -12744,12 +12733,13 @@
 (CONCEPT
   ONT::CURE
   (INHERIT
-    ONT::LIFE-PROCESS)
+    ONT::CHANGE-STATE-ACTION)
   (OVERLAP
     WN::|bring_around%2:29:01::|
-    WN::|cure%2:29:00::|
+    WN::|care_for%2:29:00::|
+    WN::|cure%2:29:     00::|
     WN::|heal%2:29:01::|
-    WN::|care_for%2:29:00::|)
+    WN::|revitalize%2:29:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -15531,8 +15521,7 @@
     ONT::CONSUME)
   (OVERLAP
     WN::|eat%2:34:00::|
-    WN::|eat%2:34:02::|
-    WN::|taste%2:34:00::|)
+    WN::|eat%2:34:02::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -17080,6 +17069,7 @@
   (INHERIT
     ONT::EVOKE-RELIEF)
   (OVERLAP
+    WN::|comfort%2:37:01::|
     WN::|relax%2:29:00::|
     WN::|relax%2:29:01::|
     WN::|rest%2:32:01::|))
@@ -17106,7 +17096,9 @@
   (COMMENT
    "to cause physical discomfort that are not related to irration/bother")
   (INHERIT
-    ONT::WORSEN-EXPERIENCE))
+    ONT::WORSEN-EXPERIENCE)
+  (OVERLAP
+    WN::|seize%2:31:04::|))
 
 (CONCEPT
   ONT::EVOKE-DISGUST
@@ -17136,8 +17128,10 @@
     ONT::NEUTRAL-EXPERIENCE)
   (OVERLAP
     WN::|agitate%2:37:00::|
+    WN::|exalt%2:37:01::|
     WN::|overwhelm%2:37:00::|
-    WN::|stir%2:37:01::|))
+    WN::|stir%2:37:01::|
+    WN::|stir%2:39:00::|))
 
 (CONCEPT
   ONT::EVOKE-FEAR
@@ -17244,8 +17238,7 @@
   (INHERIT
     ONT::IMPROVE-EXPERIENCE)
   (OVERLAP
-    WN::|still%2:37:01::|
-    WN::|comfort%2:37:01::|)
+    WN::|still%2:37:01::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -17312,11 +17305,12 @@
   (INHERIT
     ONT::NEUTRAL-EXPERIENCE)
   (OVERLAP
-    WN::|surprise%2:31:00::|
-    WN::|stun%2:39:00::|
     WN::|amaze%2:31:00::|
     WN::|awe%2:37:00::|
-    WN::|surprise%1:11:00::|))
+    WN::|stagger%2:37:00::|
+    WN::|stun%2:39:00::|
+    WN::|surprise%1:11:00::|
+    WN::|surprise%2:31:00::|))
 
 (CONCEPT
   ONT::EVOKE-TIREDNESS
@@ -17718,6 +17712,30 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::EXPERIENCE-BODY-EFFECT
+  (INHERIT
+    ONT::EVENT-OF-UNDERGOING-ACTION)
+  (OVERLAP
+    WN::|cramp%2:29:00::|)
+  (SEM-FRAME
+    (ONT::RESULT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::AGENT
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (INTENTIONAL +)))))
+
+(CONCEPT
   ONT::EXPERIENCER-CONDITION-SCALE
   (INHERIT
     ONT::PSYCHOLOGICAL-CONDITION-SCALE)
@@ -17752,21 +17770,6 @@
      (CONCEPT
        T)
      OPTIONAL)))
-
-(CONCEPT
-  ONT::EXPERIENCER-OBJ
-  (INHERIT
-    ONT::EVENT-OF-UNDERGOING-ACTION)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (CAUSE AGENTIVE)
-    (ASPECT DYNAMIC)
-    (TYPE ONT::EXPERIENCER-OBJ))
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (CONCEPT
-       T))))
 
 (CONCEPT
   ONT::EXPERIENCER-PROPERTY-VAL
@@ -19111,7 +19114,16 @@
 (CONCEPT
   ONT::FLUTTER
   (INHERIT
-    ONT::MOVE))
+    ONT::MOVE)
+  (OVERLAP
+    WN::|flutter%1:04:00::|
+    WN::|flutter%1:11:01::|
+    WN::|flutter%1:26:00::|
+    WN::|flutter%2:29:00::|
+    WN::|flutter%2:38:00::|
+    WN::|flutter%2:38:01::|
+    WN::|flutter%2:38:02::|
+    WN::|flutter%2:38:03::|))
 
 (CONCEPT
   ONT::FLY
@@ -23250,7 +23262,9 @@
 (CONCEPT
   ONT::INSTRUCTION-EVENT
   (INHERIT
-    ONT::LOCATED-EVENT))
+    ONT::LOCATED-EVENT)
+  (OVERLAP
+    WN::|class%1:04:00::|))
 
 (CONCEPT
   ONT::INSTRUMENTATION
@@ -26338,8 +26352,7 @@
   (OVERLAP
     WN::|have%2:30:00::|
     WN::|have%2:32:00::|
-    WN::|have%2:40:02::|
-    WN::|make%2:30:00::|)
+    WN::|have%2:40:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -40108,9 +40121,10 @@
   (INHERIT
     ONT::CHANGE-STATE)
   (OVERLAP
-    WN::|revive%2:29:01::|
     WN::|resuscitate%2:29:00::|
-    WN::|revive%2:29:02::|))
+    WN::|revive%2:29:01::|
+    WN::|revive%2:29:02::|
+    WN::|revitalize%2:30:00::|))
 
 (CONCEPT
   ONT::REWARD
@@ -45877,6 +45891,7 @@
   (INHERIT
     ONT::SHOW)
   (OVERLAP
+    WN::|lesson%1:04:01::|
     WN::|teach%2:32:00::|
     WN::|teach%2:30:00::|
     WN::|train%2:31:00::|
@@ -47453,29 +47468,27 @@
   (INHERIT
     ONT::CAUSE-EFFECT)
   (OVERLAP
-    WN::|try%1:04:00::|
-    WN::|endeavour%1:04:00::|
-    WN::|endeavor%1:04:00::|
-    WN::|effort%1:04:00::|
+    WN::|assay%2:41:00::|
     WN::|attempt%1:04:00::|
-    WN::|try%2:29:00::|
-    WN::|try_on%2:29:00::|
-    WN::|taste%2:34:00::|
-    WN::|try_out%2:34:00::|
-    WN::|try%2:34:00::|
+    WN::|attempt%2:41:00::|
+    WN::|come_near%2:41:00::|
+    WN::|effort%1:04:00::|
+    WN::|endeavor%1:04:00::|
+    WN::|endeavour%1:04:00::|
+    WN::|essay%2:41:00::|
     WN::|essay%2:41:01::|
     WN::|examine%2:41:00::|
-    WN::|try_out%2:41:00::|
-    WN::|try%2:41:01::|
     WN::|prove%2:41:03::|
-    WN::|test%2:41:00::|
-    WN::|try%2:41:00::|
+    WN::|push%1:04:01::|
     WN::|seek%2:41:00::|
-    WN::|attempt%2:41:00::|
-    WN::|essay%2:41:00::|
-    WN::|assay%2:41:00::|
-    WN::|come_near%2:41:00::|
-    WN::|push%1:04:01::|)
+    WN::|test%2:41:00::|
+    WN::|try%1:04:00::|
+    WN::|try%2:29:00::|
+    WN::|try_on%2:29:00::|
+    WN::|try%2:34:00::|
+    WN::|try%2:41:00::|
+    WN::|try_out%2:41:00::|
+    WN::|try%2:41:01::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (OR
@@ -49114,6 +49127,8 @@
   (INHERIT
     ONT::CHANGE-IN-DIMENSION)
   (OVERLAP
+    WN::|languish%2:29:00::|
+    WN::|languish%2:30:00::|
     WN::|weaken%2:30:00::|
     WN::|weaken%2:30:01::|
     WN::|waste%2:30:01::|)
