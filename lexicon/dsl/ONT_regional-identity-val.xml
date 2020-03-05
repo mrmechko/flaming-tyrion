@@ -109,11 +109,42 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::status-val">
+ <comment>
+  &quot;properties that describe social, political or official status or position&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::unordered-domain</feat>
+  <feat name="type">ont::status-val</feat>
+ </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::country-related-val">
+ <comment>
+  &quot;adjectives relating to a nation or a country&quot;
+ </comment>
+ <relation label="inherit">
+  ont::status-val
+ </relation>
+ </concept>
+ <concept name="ont::national-identity-val">
+ <comment>
+  &quot;identity based on the country/region of origin or residence&quot;
+ </comment>
+ <relation label="inherit">
+  ont::country-related-val
+ </relation>
+ </concept>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -166,35 +197,18 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::national-identity-val">
- <comment>
-  &quot;identity based on the country/region of origin or residence&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::country-related-val
+  abstr-obj
  </relation>
- </concept>
- <concept name="ont::country-related-val">
- <comment>
-  &quot;adjectives relating to a nation or a country&quot;
- </comment>
- <relation label="inherit">
-  ont::status-val
- </relation>
- </concept>
- <concept name="ont::status-val">
- <comment>
-  &quot;properties that describe social, political or official status or position&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
+ <feat name="scale">ont::unordered-domain</feat>
+ <feat name="type">ont::status-val</feat>
+ </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  </sem-frame>
- </concept>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

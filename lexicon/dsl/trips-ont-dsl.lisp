@@ -3194,7 +3194,12 @@
   ONT::ASSOCIATED-WITH-VAL
   (COMMENT "adjectives that classify the noun that it is pertaining to")
   (INHERIT
-    ONT::PROPERTY-VAL))
+    ONT::PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::UNORDERED-DOMAIN)
+    (TYPE ONT::ASSOCIATED-WITH-VAL)))
 
 (CONCEPT
   ONT::ASSOCIATION-PREDICATE
@@ -39939,7 +39944,12 @@
     WN::|unconnected%3:00:00::|
     WN::|carved%3:00:00::|
     WN::|carven%3:00:00::|
-    WN::|committed%3:00:00::|))
+    WN::|committed%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::UNORDERED-DOMAIN)
+    (TYPE ONT::RESULTING-STATE-VAL)))
 
 (CONCEPT
   ONT::RESUME
@@ -44156,6 +44166,11 @@
    "properties that describe social, political or official status or position")
   (INHERIT
     ONT::PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::UNORDERED-DOMAIN)
+    (TYPE ONT::STATUS-VAL))
   (SEM-FRAME
     (ONT::GROUND
      (CONCEPT

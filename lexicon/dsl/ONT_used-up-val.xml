@@ -205,10 +205,64 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::use-up-val">
+ <sem-feats>
  <relation label="inherit">
-  ont::resulting-state-val
+  abstr-obj
  </relation>
+ <feat name="scale">ont::unordered-domain</feat>
+ <feat name="type">ont::resulting-state-val</feat>
+ </sem-feats>
+ <concept name="ont::property-val">
+ <relation label="inherit">
+  ont::domain-property
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::standard" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::reason" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::resulting-state-val">
  <comment>
@@ -751,58 +805,18 @@
   wn::|carven%3:00:00::|
   wn::|committed%3:00:00::|
  </relation>
- </concept>
- <concept name="ont::property-val">
- <relation label="inherit">
-  ont::domain-property
- </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="intentional">-</feat>
-  <feat name="information">-</feat>
-  <feat name="container">-</feat>
-  <feat name="type">ont::property-val</feat>
+  <feat name="scale">ont::unordered-domain</feat>
+  <feat name="type">ont::resulting-state-val</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::standard" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::reason" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="situation" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
+ </concept>
+ <concept name="ont::use-up-val">
+ <relation label="inherit">
+  ont::resulting-state-val
+ </relation>
  </concept>
  <concept name="ont::abstract-object">
  <comment>
