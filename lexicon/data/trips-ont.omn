@@ -2838,10 +2838,6 @@ Class: residue
 Class: pharmacologic-substance
   SubClassOf: chemical
 
-# ONT type ont::nutrient
-Class: nutrient
-  SubClassOf: chemical
-
 # ONT type ont::fertilizer
 Class: fertilizer
   SubClassOf: chemical
@@ -4311,8 +4307,8 @@ Class: beverages
 Class: alcohol
   SubClassOf: beverages
 
-# ONT type ont::prepared
-Class: prepared
+# ONT type ont::prepared-food
+Class: prepared-food
   SubClassOf: food
 
 # ONT type ont::ingredients
@@ -4349,7 +4345,7 @@ Class: vitamins
 
 # ONT type ont::minerals
 Class: minerals
-  SubClassOf: vitamins-minerals
+  SubClassOf: chemical
 
 # ONT type ont::beef
 Class: beef
@@ -4363,8 +4359,8 @@ Class: pork
 Class: lamb
   SubClassOf: meat
 
-# ONT type ont::meat-other
-Class: meat-other
+# ONT type ont::meat-product
+Class: meat-product
   SubClassOf: meat
 
 # ONT type ont::wild-game
@@ -4433,7 +4429,7 @@ Class: crustaceans
 
 # ONT type ont::baked-goods
 Class: baked-goods
-  SubClassOf: prepared
+  SubClassOf: prepared-food
 
 # ONT type ont::pasta
 Class: pasta
@@ -4461,11 +4457,11 @@ Class: bagels-biscuits
 
 # ONT type ont::sweets
 Class: sweets
-  SubClassOf: prepared
+  SubClassOf: prepared-food
 
 # ONT type ont::meals
 Class: meals
-  SubClassOf: prepared
+  SubClassOf: prepared-food
 
 # ONT type ont::soup
 Class: soup
@@ -4474,11 +4470,11 @@ Class: soup
 
 # ONT type ont::cereals
 Class: cereals
-  SubClassOf: prepared
+  SubClassOf: prepared-food
 
 # ONT type ont::fast-food
 Class: fast-food
-  SubClassOf: prepared
+  SubClassOf: prepared-food
 
 # ONT type ont::spices-herbs
 Class: spices-herbs
@@ -19124,7 +19120,7 @@ DisjointClasses: waste, substance
 DisjointClasses: power, audio, light, food, solid-substance, liquid-substance, gas-substance, natural-substance, chemical, dust
 
 # children of ont::chemical
-DisjointClasses: herbicide, pesticide, fertilizer, nutrient, pharmacologic-substance, residue, amino-acid
+DisjointClasses: minerals, herbicide, pesticide, fertilizer, pharmacologic-substance, residue, amino-acid
 
 # children of ont::medication
 DisjointClasses: pain-reliever, antibiotic, allergy-medication, bronchodilator
@@ -19172,7 +19168,7 @@ DisjointClasses: tank, vehicle-container
 DisjointClasses: tanker, boxcar
 
 # children of ont::food
-DisjointClasses: pasta, seafood, meat, ingredients, prepared, beverages, dairy, food-grains, nutritional-supplement, produce
+DisjointClasses: pasta, seafood, meat, ingredients, prepared-food, beverages, dairy, food-grains, nutritional-supplement, produce
 
 # children of ont::facility
 DisjointClasses: religious-facility, education-facility, health-care-facility, lodging, transportation-facility, production-facility, storage-facility, commercial-facility, business-facility, athletic-facility, research-facility, public-service-facility
@@ -19321,11 +19317,8 @@ DisjointClasses: condiments, nuts-seeds, preservatives, dressings-sauces-coating
 # children of ont::produce
 DisjointClasses: vegetable, fruit
 
-# children of ont::vitamins-minerals
-DisjointClasses: minerals, vitamins
-
 # children of ont::meat
-DisjointClasses: poultry, emu, wild-game, meat-other, lamb, pork, beef
+DisjointClasses: poultry, emu, wild-game, meat-product, lamb, pork, beef
 
 # children of ont::poultry
 DisjointClasses: turkey, ostrich, duck, pigeon, quail, pheasant, goose, chicken
@@ -19333,7 +19326,7 @@ DisjointClasses: turkey, ostrich, duck, pigeon, quail, pheasant, goose, chicken
 # children of ont::seafood
 DisjointClasses: crustaceans, mollusks, freshwater-fish, saltwater-fish
 
-# children of ont::prepared
+# children of ont::prepared-food
 DisjointClasses: fast-food, cereals, meals, sweets, baked-goods
 
 # children of ont::baked-goods

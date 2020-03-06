@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::minerals">
  <relation label="inherit">
-  ont::vitamins-minerals
+  ont::chemical
  </relation>
  </concept>
  <or>
@@ -57,40 +57,6 @@
   <feat name="type">ont::material</feat>
  </sem-feats>
  </concept>
- <concept name="ont::food">
- <relation label="inherit">
-  ont::substance
- </relation>
- <relation label="overlap">
-  wn::|solid_food%1:13:00::|
-  wn::|food%1:13:00::|
-  wn::|meal%1:13:01::|
-  wn::|meal%1:13:00::|
-  wn::|food%1:03:00::|
-  wn::|nutrient%1:03:00::|
-  wn::|nutriment%1:13:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="object-function">comestible</feat>
-  <feat name="type">ont::food</feat>
- </sem-feats>
- </concept>
- <concept name="ont::nutritional-supplement">
- <relation label="inherit">
-  ont::food
- </relation>
- <relation label="overlap">
-  wn::|dietary_supplement%1:13:00::|
- </relation>
- </concept>
- <concept name="ont::vitamins-minerals">
- <relation label="inherit">
-  ont::nutritional-supplement
- </relation>
- </concept>
  <concept name="ont::substance">
  <relation label="inherit">
   ont::material
@@ -103,13 +69,16 @@
   wn::|paper%1:27:00::|
  </relation>
  </concept>
- <sem-feats>
+ <concept name="ont::chemical">
  <relation label="inherit">
-  phys-obj
+  ont::substance
  </relation>
- <feat name="object-function">comestible</feat>
- <feat name="type">ont::food</feat>
- </sem-feats>
+ <relation label="overlap">
+  wn::|chemical%1:27:00::|
+  wn::|chemical_substance%1:27:00::|
+  wn::|chemical_compound%1:27:00::|
+ </relation>
+ </concept>
  <concept name="ont::phys-object">
  <comment>
   &quot;All physical objects: things that have substance&quot;
@@ -164,26 +133,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="calcium" remaining-words="phosphorus" />
- </morph>
- <relation label="inherit">
-  ont::minerals
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="calcium" remaining-words="sulfate" />
- </morph>
- <relation label="inherit">
-  ont::minerals
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="graphite" />
  </morph>
  <example text="a color that matches your macintosh, such as graphite">
@@ -217,16 +166,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="magnesium" remaining-words="chloride" />
- </morph>
- <relation label="inherit">
-  ont::minerals
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="mineral" />
  </morph>
  <example text="vitamins and minerals">
@@ -251,16 +190,6 @@
  <morph>
   <pos pos="n" />
   <word first-word="potassium" />
- </morph>
- <relation label="inherit">
-  ont::minerals
-  ont::mass-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="potassium" remaining-words="chloride" />
  </morph>
  <relation label="inherit">
   ont::minerals

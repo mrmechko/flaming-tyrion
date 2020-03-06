@@ -4257,7 +4257,7 @@
 (CONCEPT
   ONT::BAKED-GOODS
   (INHERIT
-    ONT::PREPARED)
+    ONT::PREPARED-FOOD)
   (OVERLAP
     WN::|baked_goods%1:13:00::|))
 
@@ -6948,7 +6948,9 @@
 (CONCEPT
   ONT::BUTTON
   (INHERIT
-    ONT::OPERATING-SWITCH))
+    ONT::OPERATING-SWITCH)
+  (OVERLAP
+    WN::|push_button%1:06:00::|))
 
 (CONCEPT
   ONT::BY-MEANS-OF
@@ -8092,7 +8094,7 @@
 (CONCEPT
   ONT::CEREALS
   (INHERIT
-    ONT::PREPARED)
+    ONT::PREPARED-FOOD)
   (OVERLAP
     WN::|cereal%1:13:00::|))
 
@@ -10768,7 +10770,10 @@
 (CONCEPT
   ONT::COMPUTER-PROCESSOR
   (INHERIT
-    ONT::COMPUTER-PART))
+    ONT::COMPUTER-PART)
+  (OVERLAP
+    WN::|central_processing_unit%1:06:00::|
+    WN::|microprocessor%1:06:00::|))
 
 (CONCEPT
   ONT::COMPUTER-PROGRAM
@@ -18359,7 +18364,7 @@
 (CONCEPT
   ONT::FAST-FOOD
   (INHERIT
-    ONT::PREPARED)
+    ONT::PREPARED-FOOD)
   (OVERLAP
     WN::|fast_food%1:13:00::|))
 
@@ -19248,13 +19253,14 @@
   (INHERIT
     ONT::SUBSTANCE)
   (OVERLAP
-    WN::|solid_food%1:13:00::|
-    WN::|food%1:13:00::|
-    WN::|meal%1:13:01::|
-    WN::|meal%1:13:00::|
     WN::|food%1:03:00::|
+    WN::|food%1:13:00::|
+    WN::|meal%1:13:00::|
+    WN::|meal%1:13:01::|
     WN::|nutrient%1:03:00::|
-    WN::|nutriment%1:13:00::|)
+    WN::|nutrient%1:03:01::|
+    WN::|nutriment%1:13:00::|
+    WN::|solid_food%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -23680,7 +23686,10 @@
 (CONCEPT
   ONT::INTERNAL-COMPUTER-STORAGE
   (INHERIT
-    ONT::COMPUTER-PART))
+    ONT::COMPUTER-PART)
+  (OVERLAP
+    WN::|storage_device%1:06:00::|
+    WN::|disk_space%1:15:00::|))
 
 (CONCEPT
   ONT::INTERNAL-ENCLOSURE
@@ -23885,7 +23894,11 @@
 (CONCEPT
   ONT::IO-DEVICE
   (INHERIT
-    ONT::COMPUTER-PART))
+    ONT::COMPUTER-PART)
+  (OVERLAP
+    WN::|magnetic_disk%1:06:00::|
+    WN::|disk_drive%1:06:00::|
+    WN::|drive%1:06:03::|))
 
 (CONCEPT
   ONT::IRREGULAR
@@ -24986,7 +24999,9 @@
 (CONCEPT
   ONT::LID
   (INHERIT
-    ONT::COVERING))
+    ONT::COVERING)
+  (OVERLAP
+    WN::|lid%1:06:00::|))
 
 (CONCEPT
   ONT::LIE-DORMANT
@@ -26887,7 +26902,7 @@
 (CONCEPT
   ONT::MEALS
   (INHERIT
-    ONT::PREPARED))
+    ONT::PREPARED-FOOD))
 
 (CONCEPT
   ONT::MEANINGFUL-VAL
@@ -27062,9 +27077,13 @@
     WN::|meat%1:13:01::|))
 
 (CONCEPT
-  ONT::MEAT-OTHER
+  ONT::MEAT-PRODUCT
   (INHERIT
-    ONT::MEAT))
+    ONT::MEAT)
+  (OVERLAP
+    WN::|bacon%1:13:00::|
+    WN::|sausage%1:13:00::|
+    WN::|pastrami%1:13:00::|))
 
 (CONCEPT
   ONT::MECHANICAL-VAL
@@ -27839,7 +27858,7 @@
 (CONCEPT
   ONT::MINERALS
   (INHERIT
-    ONT::VITAMINS-MINERALS))
+    ONT::CHEMICAL))
 
 (CONCEPT
   ONT::MINIMIZE
@@ -31594,13 +31613,6 @@
     WN::|rear%2:41:00::|))
 
 (CONCEPT
-  ONT::NUTRIENT
-  (INHERIT
-    ONT::CHEMICAL)
-  (OVERLAP
-    WN::|nutrient%1:03:01::|))
-
-(CONCEPT
   ONT::NUTRITIONAL-SUPPLEMENT
   (INHERIT
     ONT::FOOD)
@@ -32368,6 +32380,8 @@
   ONT::OPERATING-SWITCH
   (INHERIT
     ONT::DEVICE-COMPONENT)
+  (OVERLAP
+    WN::|control%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -32866,7 +32880,9 @@
 (CONCEPT
   ONT::PACKAGE
   (INHERIT
-    ONT::SMALL-CONTAINER))
+    ONT::SMALL-CONTAINER)
+  (OVERLAP
+    WN::|package%1:06:00::|))
 
 (CONCEPT
   ONT::PAIN
@@ -35716,7 +35732,7 @@
     WN::|sensitize%2:30:01::|))
 
 (CONCEPT
-  ONT::PREPARED
+  ONT::PREPARED-FOOD
   (INHERIT
     ONT::FOOD))
 
@@ -42617,7 +42633,14 @@
 (CONCEPT
   ONT::SMALL-CONTAINER
   (INHERIT
-    ONT::CONTAINER))
+    ONT::CONTAINER)
+  (OVERLAP
+    WN::|basket%1:06:00::|
+    WN::|backpack%1:06:00::|
+    WN::|bottle%1:06:00::|
+    WN::|can%1:06:00::|
+    WN::|jar%1:06:00::|
+    WN::|receptacle%1:06:00::|))
 
 (CONCEPT
   ONT::SMART
@@ -45282,7 +45305,7 @@
 (CONCEPT
   ONT::SWEETS
   (INHERIT
-    ONT::PREPARED)
+    ONT::PREPARED-FOOD)
   (OVERLAP
     WN::|sweet%1:13:00::|))
 
@@ -45323,7 +45346,9 @@
 (CONCEPT
   ONT::SWITCH
   (INHERIT
-    ONT::OPERATING-SWITCH))
+    ONT::OPERATING-SWITCH)
+  (OVERLAP
+    WN::|switch%1:06:01::|))
 
 (CONCEPT
   ONT::SYMBOLIC-REPRESENTATION
