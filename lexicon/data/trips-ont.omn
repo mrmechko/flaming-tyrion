@@ -5795,6 +5795,18 @@ Class: weight-unit
   SubClassOf: (FLT_abstr-obj and F_scale some weight-scale)
   SubClassOf: _figure only (FLT_phys-obj) and _figure some owl:Thing
 
+# ONT type ont::kg
+Class: kg
+  SubClassOf: weight-unit
+  SubClassOf: (FLT_abstr-obj and F_scale some weight-scale)
+  SubClassOf: _figure only (FLT_phys-obj) and _figure some owl:Thing
+
+# ONT type ont::g
+Class: g
+  SubClassOf: weight-unit
+  SubClassOf: (FLT_abstr-obj and F_scale some weight-scale)
+  SubClassOf: _figure only (FLT_phys-obj) and _figure some owl:Thing
+
 # ONT type ont::acoustic-unit
 Class: acoustic-unit
   SubClassOf: formal-unit
@@ -5805,9 +5817,39 @@ Class: length-unit
   SubClassOf: tangible-unit
   SubClassOf: (FLT_abstr-obj and F_scale some linear-extent-scale)
 
+# ONT type ont::km
+Class: km
+  SubClassOf: length-unit
+  SubClassOf: (FLT_abstr-obj and F_scale some linear-extent-scale)
+
+# ONT type ont::m
+Class: m
+  SubClassOf: length-unit
+  SubClassOf: (FLT_abstr-obj and F_scale some linear-extent-scale)
+
+# ONT type ont::cm
+Class: cm
+  SubClassOf: length-unit
+  SubClassOf: (FLT_abstr-obj and F_scale some linear-extent-scale)
+
+# ONT type ont::mm
+Class: mm
+  SubClassOf: length-unit
+  SubClassOf: (FLT_abstr-obj and F_scale some linear-extent-scale)
+
 # ONT type ont::area-unit
 Class: area-unit
   SubClassOf: tangible-unit
+  SubClassOf: (FLT_abstr-obj and F_scale some area-scale)
+
+# ONT type ont::ha
+Class: ha
+  SubClassOf: area-unit
+  SubClassOf: (FLT_abstr-obj and F_scale some area-scale)
+
+# ONT type ont::m2
+Class: m2
+  SubClassOf: area-unit
   SubClassOf: (FLT_abstr-obj and F_scale some area-scale)
 
 # ONT type ont::volume-unit
@@ -19509,6 +19551,15 @@ DisjointClasses: money-unit, percent, angle-unit, temperature-unit, memory-unit,
 
 # children of ont::tangible-unit
 DisjointClasses: volume-unit, area-unit, length-unit, weight-unit
+
+# children of ont::weight-unit
+DisjointClasses: g, kg
+
+# children of ont::length-unit
+DisjointClasses: mm, cm, m, km
+
+# children of ont::area-unit
+DisjointClasses: m2, ha
 
 # children of ont::volume-unit
 DisjointClasses: dose, volume-measure-unit, container-load
