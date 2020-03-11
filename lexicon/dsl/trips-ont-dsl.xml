@@ -2488,6 +2488,7 @@
   </relation>
   <relation label="overlap">
    wn::|appliance%1:06:00::|
+   wn::|burner%1:06:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -4968,7 +4969,10 @@
  </concept>
  <concept name="ont::base">
   <relation label="inherit">
-   ont::kettle-base
+   ont::support-stand
+  </relation>
+  <relation label="overlap">
+   wn::|base%1:06:00::|
   </relation>
  </concept>
  <concept name="ont::basic-scale">
@@ -7872,11 +7876,6 @@
  <concept name="ont::burn-out-light-up-change">
   <relation label="inherit">
    ont::change-device-state
-  </relation>
- </concept>
- <concept name="ont::burner">
-  <relation label="inherit">
-   ont::kettle-base
   </relation>
  </concept>
  <concept name="ont::business-facility">
@@ -15755,8 +15754,9 @@
    ont::manufactured-object
   </relation>
   <relation label="overlap">
-   wn::|device%1:06:00::|
    wn::|buoy%1:10:00::|
+   wn::|device%1:06:00::|
+   wn::|equipment%1:06:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -18068,11 +18068,6 @@
    ont::company-abstr
   </relation>
  </concept>
- <concept name="ont::element">
-  <relation label="inherit">
-   ont::kettle-base
-  </relation>
- </concept>
  <concept name="ont::ellipsis">
   <relation label="inherit">
    ont::situation-root
@@ -18776,24 +18771,6 @@
    </relation>
    <feat name="scale">ont::equal-scale</feat>
    <feat name="type">ont::equal-scale</feat>
-  </sem-feats>
- </concept>
- <concept name="ont::equipment">
-  <comment>
-   &quot;manufactured objects that assist in ior perform some function&quot;
-  </comment>
-  <relation label="inherit">
-   ont::manufactured-object
-  </relation>
-  <relation label="overlap">
-   wn::|equipment%1:06:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">artifact</feat>
-   <feat name="type">ont::equipment</feat>
   </sem-feats>
  </concept>
  <concept name="ont::equipped-val">
@@ -24811,7 +24788,18 @@
  </concept>
  <concept name="ont::heater">
   <relation label="inherit">
-   ont::kettle-base
+   ont::appliance
+  </relation>
+  <relation label="overlap">
+   wn::|heater%1:06:00::|
+  </relation>
+ </concept>
+ <concept name="ont::heating-element">
+  <relation label="inherit">
+   ont::device-component
+  </relation>
+  <relation label="overlap">
+   wn::|heating_element%1:06:00::|
   </relation>
  </concept>
  <concept name="ont::heavy">
@@ -27739,21 +27727,6 @@
   <relation label="overlap">
    wn::|kettle%1:06:01::|
   </relation>
- </concept>
- <concept name="ont::kettle-base">
-  <relation label="inherit">
-   ont::support-stand
-  </relation>
-  <relation label="overlap">
-   wn::|heater%1:06:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="form">solid-object</feat>
-   <feat name="type">ont::kettle-base</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::key">
   <relation label="inherit">
@@ -31259,7 +31232,7 @@
  </concept>
  <concept name="ont::medical-dressing">
   <relation label="inherit">
-   ont::covering
+   ont::medical-instrument
   </relation>
   <relation label="overlap">
    wn::|medical_dressing%1:06:00::|
@@ -50702,11 +50675,6 @@
    wn::|staircase%1:06:00::|
   </relation>
  </concept>
- <concept name="ont::stand">
-  <relation label="inherit">
-   ont::kettle-base
-  </relation>
- </concept>
  <concept name="ont::standard">
   <comment>
    &quot;the ideal in terms of which something can be judged&quot;
@@ -52007,8 +51975,6 @@
    ont::device-component
   </relation>
   <relation label="overlap">
-   wn::|pedestal%1:06:00::|
-   wn::|stand%1:06:00::|
    wn::|support%1:06:00::|
   </relation>
   <sem-feats>
@@ -54173,7 +54139,7 @@
    &quot;a piece of equipment typically controlled manually (whether powered or not)&quot;
   </comment>
   <relation label="inherit">
-   ont::equipment
+   ont::device
   </relation>
   <relation label="overlap">
    wn::|tool%1:06:00::|
@@ -56789,9 +56755,24 @@
    <feat name="type">ont::weakness-scale</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::wealth-scale">
+  <relation label="inherit">
+   ont::evaluation-scale
+  </relation>
+  <relation label="overlap">
+   wn::|financial_condition%1:26:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::wealth-scale</feat>
+   <feat name="type">ont::wealth-scale</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::wealthiness-val">
   <relation label="inherit">
-   ont::status-val
+   ont::evaluation-attribute-val
   </relation>
  </concept>
  <concept name="ont::wealthy-val">

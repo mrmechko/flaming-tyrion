@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::medical-dressing">
  <relation label="inherit">
-  ont::covering
+  ont::medical-instrument
  </relation>
  <relation label="overlap">
   wn::|medical_dressing%1:06:00::|
@@ -43,53 +43,44 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <concept name="ont::covering">
+ <concept name="ont::medical-instrument">
  <relation label="inherit">
-  ont::device-component
+  ont::device
  </relation>
  <relation label="overlap">
-  wn::|covering%1:06:00::|
-  wn::|cover%1:06:03::|
+  wn::|medical_instrument%1:06:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="object-function">covering</feat>
-  <feat name="form">solid-object</feat>
-  <feat name="type">ont::covering</feat>
+  <feat name="object-function">instrument</feat>
+  <feat name="type">ont::medical-instrument</feat>
  </sem-feats>
  </concept>
- <concept name="ont::device-component">
+ <concept name="ont::device">
  <relation label="inherit">
   ont::manufactured-object
  </relation>
  <relation label="overlap">
-  wn::|component%1:06:00::|
-  wn::|constituent%1:06:00::|
-  wn::|element%1:06:00::|
+  wn::|buoy%1:10:00::|
+  wn::|device%1:06:00::|
+  wn::|equipment%1:06:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="form">object</feat>
   <feat name="origin">artifact</feat>
-  <feat name="type">ont::device-component</feat>
+  <feat name="type">ont::device</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="object-function">covering</feat>
- <feat name="form">solid-object</feat>
- <feat name="type">ont::covering</feat>
+ <feat name="object-function">instrument</feat>
+ <feat name="type">ont::medical-instrument</feat>
  </sem-feats>
  <concept name="ont::manufactured-object">
  <relation label="inherit">
@@ -111,15 +102,9 @@
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="form">object</feat>
  <feat name="origin">artifact</feat>
- <feat name="type">ont::device-component</feat>
+ <feat name="type">ont::device</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::phys-object">
  <comment>
   &quot;All physical objects: things that have substance&quot;

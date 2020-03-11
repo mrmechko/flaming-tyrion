@@ -3863,6 +3863,10 @@ Class: medical-instrument
   SubClassOf: device
   SubClassOf: (FLT_phys-obj and F_object-function some V_instrument)
 
+# ONT type ont::medical-dressing
+Class: medical-dressing
+  SubClassOf: medical-instrument
+
 # ONT type ont::stairs
 Class: stairs
   SubClassOf: general-structure
@@ -3910,16 +3914,10 @@ Class: conductor
   SubClassOf: device
   SubClassOf: (FLT_phys-obj and F_origin some V_artifact)
 
-# ONT type ont::equipment
-Class: equipment
-  Annotations: rdfs:comment "manufactured objects that assist in ior perform some function"
-  SubClassOf: manufactured-object
-  SubClassOf: (FLT_phys-obj and F_origin some V_artifact)
-
 # ONT type ont::tool
 Class: tool
   Annotations: rdfs:comment "a piece of equipment typically controlled manually (whether powered or not)"
-  SubClassOf: equipment
+  SubClassOf: device
   SubClassOf: (FLT_phys-obj and F_object-function some V_instrument)
 
 # ONT type ont::cutting-tool
@@ -4116,19 +4114,10 @@ Class: covering
   SubClassOf: device-component
   SubClassOf: (FLT_phys-obj and F_form some V_solid-object and F_object-function some V_covering)
 
-# ONT type ont::medical-dressing
-Class: medical-dressing
-  SubClassOf: covering
-
 # ONT type ont::support-stand
 Class: support-stand
   SubClassOf: device-component
   SubClassOf: (FLT_phys-obj and F_form some V_solid-object and F_object-function some V_support)
-
-# ONT type ont::kettle-base
-Class: kettle-base
-  SubClassOf: support-stand
-  SubClassOf: (FLT_phys-obj and F_form some V_solid-object)
 
 # ONT type ont::operating-switch
 Class: operating-switch
@@ -4145,23 +4134,15 @@ Class: switch
 
 # ONT type ont::base
 Class: base
-  SubClassOf: kettle-base
+  SubClassOf: support-stand
 
 # ONT type ont::heater
 Class: heater
-  SubClassOf: kettle-base
+  SubClassOf: appliance
 
-# ONT type ont::element
-Class: element
-  SubClassOf: kettle-base
-
-# ONT type ont::burner
-Class: burner
-  SubClassOf: kettle-base
-
-# ONT type ont::stand
-Class: stand
-  SubClassOf: kettle-base
+# ONT type ont::heating-element
+Class: heating-element
+  SubClassOf: device-component
 
 # ONT type ont::lid
 Class: lid
@@ -9601,7 +9582,7 @@ Class: unclassified-val
 
 # ONT type ont::wealthiness-val
 Class: wealthiness-val
-  SubClassOf: status-val
+  SubClassOf: evaluation-attribute-val
 
 # ONT type ont::poor-val
 Class: poor-val
@@ -13391,6 +13372,11 @@ Class: expensive-scale
 Class: not-expensive-scale
   SubClassOf: cost-scale
   SubClassOf: (FLT_abstr-obj and F_scale some not-expensive-scale)
+
+# ONT type ont::wealth-scale
+Class: wealth-scale
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some wealth-scale)
 
 # ONT type ont::ability-scale
 Class: ability-scale
@@ -19132,7 +19118,7 @@ DisjointClasses: quick-relief-drug, long-term-control-drug
 DisjointClasses: water, bodily-fluid, fuel
 
 # children of ont::manufactured-object
-DisjointClasses: tableware, cookware, container, device-component, flag, attire, credit-card, money, writing-implement, instrumentation, equipment, fixture, device, card, window, wheel, furnishings, vessel, stretcher, vehicle, automaton, block, technology
+DisjointClasses: tableware, cookware, container, device-component, flag, attire, credit-card, money, writing-implement, instrumentation, fixture, device, card, window, wheel, furnishings, vessel, stretcher, vehicle, automaton, block, technology
 
 # children of ont::animal
 DisjointClasses: vertebrate, invertebrate
@@ -19255,7 +19241,7 @@ DisjointClasses: genome, nucleoplasm, cytosol, plasma-membrane, cell-compartment
 DisjointClasses: cytoplasm, nucleus
 
 # children of ont::device
-DisjointClasses: computer-part, product-model, machine, conductor, musical-instrument, weapon, sensor, acoustic-device, optical-device, medical-instrument, appliance
+DisjointClasses: computer-part, product-model, machine, tool, conductor, musical-instrument, weapon, sensor, acoustic-device, optical-device, medical-instrument, appliance
 
 # children of ont::weapon
 DisjointClasses: firearm, bomb
@@ -19279,16 +19265,13 @@ DisjointClasses: computer-firmware, computer-input-device
 DisjointClasses: sheet, opening
 
 # children of ont::device-component
-DisjointClasses: operating-switch, support-stand, covering
-
-# children of ont::covering
-DisjointClasses: lid, medical-dressing
+DisjointClasses: heating-element, operating-switch, support-stand, covering
 
 # children of ont::operating-switch
 DisjointClasses: switch, button
 
-# children of ont::kettle-base
-DisjointClasses: stand, burner, element, heater, base
+# children of ont::appliance
+DisjointClasses: microwave, refrigerator, heater
 
 # children of ont::container
 DisjointClasses: small-container, dispenser
@@ -19304,9 +19287,6 @@ DisjointClasses: pot, kettle
 
 # children of ont::storage-furnishings
 DisjointClasses: cupboard, cabinet
-
-# children of ont::appliance
-DisjointClasses: microwave, refrigerator
 
 # children of ont::beverages
 DisjointClasses: teas-cocktails-blends, soda, juice, alcohol
@@ -19609,7 +19589,7 @@ DisjointClasses: not-favorable-condition, favorable-condition
 DisjointClasses: quantity-related-property-val, spatial-val, associated-with-val, resulting-state-val, status-val, object-affordances-val, relational-attribute-val, dimensional-property-val, psychological-property-val, animal-propensity-val, temporal-val, can-be-done-val, process-val, life-process-val, temperature-val, physical-property-val, information-property-val, evaluation-attribute-val, state-resulting-from
 
 # children of ont::evaluation-attribute-val
-DisjointClasses: influence-susceptibility-val, influence-val, permissibility-val, control-val, helpfulness-val, qualification-val, restriction-val, favorability-to-life-val, shapeliness-val, dignity-val, adequacy-val, fame-val, usefulness-val, process-evaluation-val, real-vs-fake-val, freedom-val, orderliness-val, offensiveness-val, beauty-val, judgement-val, worthiness-val, reliability-val, quality-val, explicitness-val, basicness-val, typicality-val, familiarity-val, conventionality-val, seniority-val, necessity-val, importance-val, attention-worthy-val, safety-val, harmfulness-val, comfort-val, ability-val, luckiness-val, cleanliness-val, specificity-val, convenience-val, appropriateness-val, preference-val, recommendability-val, tolerability-val, acceptability-val, cost-val, freshness-val
+DisjointClasses: influence-susceptibility-val, influence-val, permissibility-val, control-val, helpfulness-val, qualification-val, restriction-val, favorability-to-life-val, shapeliness-val, dignity-val, adequacy-val, fame-val, wealthiness-val, usefulness-val, process-evaluation-val, real-vs-fake-val, freedom-val, orderliness-val, offensiveness-val, beauty-val, judgement-val, worthiness-val, reliability-val, quality-val, explicitness-val, basicness-val, typicality-val, familiarity-val, conventionality-val, seniority-val, necessity-val, importance-val, attention-worthy-val, safety-val, harmfulness-val, comfort-val, ability-val, luckiness-val, cleanliness-val, specificity-val, convenience-val, appropriateness-val, preference-val, recommendability-val, tolerability-val, acceptability-val, cost-val, freshness-val
 
 # children of ont::freshness-val
 DisjointClasses: not-fresh-val, fresh-val
@@ -20179,7 +20159,7 @@ DisjointClasses: static-nonmoving-val, dynamic-moving-val
 DisjointClasses: available, not-available-val
 
 # children of ont::status-val
-DisjointClasses: protected-property-val, marriage-val, open-acknowledgement-val, official-authority-val, social-relation-val, sacredness-val, legal-culpability-val, employment-status-val, reservation-val, obligatoriness-val, city-related-val, origin-related-val, country-related-val, secrecy-val, privacy-val, wealthiness-val, classification-val, reputability-val
+DisjointClasses: protected-property-val, marriage-val, open-acknowledgement-val, official-authority-val, social-relation-val, sacredness-val, legal-culpability-val, employment-status-val, reservation-val, obligatoriness-val, city-related-val, origin-related-val, country-related-val, secrecy-val, privacy-val, classification-val, reputability-val
 
 # children of ont::reputability-val
 DisjointClasses: not-reputable-val, reputable-val
@@ -20734,7 +20714,7 @@ DisjointClasses: folly-scale, wisdom-scale
 DisjointClasses: wild-scale, tame-scale
 
 # children of ont::evaluation-scale
-DisjointClasses: process-evaluation-scale, real-vs-fake-scale, worthiness-scale, tolerability-scale, specificity-scale, recommendability-scale, orderliness-scale, offensiveness-scale, morality-scale, partiality-scale, aesthetic-tastefulness-scale, harmfulness-scale, explicitness-scale, quality-level-scale, plain-scale, basic-scale, convenience-scale, appropriateness-scale, safety-scale, reliability-scale, importance-scale, adaptability-scale, noticeability-scale, beauty-scale, acceptability-scale, attraction-scale, ability-scale, cost-scale, luckiness-scale, cleanliness-scale, conventionality-scale, comfort-scale, typicality-scale, necessity-scale, familiarity-scale, freshness-scale, fame-scale
+DisjointClasses: process-evaluation-scale, real-vs-fake-scale, worthiness-scale, tolerability-scale, specificity-scale, recommendability-scale, orderliness-scale, offensiveness-scale, morality-scale, partiality-scale, aesthetic-tastefulness-scale, harmfulness-scale, explicitness-scale, quality-level-scale, plain-scale, basic-scale, convenience-scale, appropriateness-scale, safety-scale, reliability-scale, importance-scale, adaptability-scale, noticeability-scale, beauty-scale, acceptability-scale, attraction-scale, ability-scale, wealth-scale, cost-scale, luckiness-scale, cleanliness-scale, conventionality-scale, comfort-scale, typicality-scale, necessity-scale, familiarity-scale, freshness-scale, fame-scale
 
 # children of ont::freshness-scale
 DisjointClasses: not-fresh-scale, fresh-scale

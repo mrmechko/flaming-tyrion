@@ -2145,7 +2145,8 @@
   (INHERIT
     ONT::DEVICE)
   (OVERLAP
-    WN::|appliance%1:06:00::|)
+    WN::|appliance%1:06:00::|
+    WN::|burner%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -4322,7 +4323,9 @@
 (CONCEPT
   ONT::BASE
   (INHERIT
-    ONT::KETTLE-BASE))
+    ONT::SUPPORT-STAND)
+  (OVERLAP
+    WN::|base%1:06:00::|))
 
 (CONCEPT
   ONT::BASIC-SCALE
@@ -6922,11 +6925,6 @@
   ONT::BURN-OUT-LIGHT-UP-CHANGE
   (INHERIT
     ONT::CHANGE-DEVICE-STATE))
-
-(CONCEPT
-  ONT::BURNER
-  (INHERIT
-    ONT::KETTLE-BASE))
 
 (CONCEPT
   ONT::BUSINESS-FACILITY
@@ -13843,8 +13841,9 @@
   (INHERIT
     ONT::MANUFACTURED-OBJECT)
   (OVERLAP
+    WN::|buoy%1:10:00::|
     WN::|device%1:06:00::|
-    WN::|buoy%1:10:00::|)
+    WN::|equipment%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -15822,11 +15821,6 @@
     ONT::COMPANY-ABSTR))
 
 (CONCEPT
-  ONT::ELEMENT
-  (INHERIT
-    ONT::KETTLE-BASE))
-
-(CONCEPT
   ONT::ELLIPSIS
   (INHERIT
     ONT::SITUATION-ROOT))
@@ -16432,19 +16426,6 @@
       ABSTR-OBJ)
     (SCALE ONT::EQUAL-SCALE)
     (TYPE ONT::EQUAL-SCALE)))
-
-(CONCEPT
-  ONT::EQUIPMENT
-  (COMMENT "manufactured objects that assist in ior perform some function")
-  (INHERIT
-    ONT::MANUFACTURED-OBJECT)
-  (OVERLAP
-    WN::|equipment%1:06:00::|)
-  (SEM-FEATS
-    (INHERIT
-      PHYS-OBJ)
-    (ORIGIN ARTIFACT)
-    (TYPE ONT::EQUIPMENT)))
 
 (CONCEPT
   ONT::EQUIPPED-VAL
@@ -21637,7 +21618,16 @@
 (CONCEPT
   ONT::HEATER
   (INHERIT
-    ONT::KETTLE-BASE))
+    ONT::APPLIANCE)
+  (OVERLAP
+    WN::|heater%1:06:00::|))
+
+(CONCEPT
+  ONT::HEATING-ELEMENT
+  (INHERIT
+    ONT::DEVICE-COMPONENT)
+  (OVERLAP
+    WN::|heating_element%1:06:00::|))
 
 (CONCEPT
   ONT::HEAVY
@@ -24132,18 +24122,6 @@
     ONT::COOKWARE)
   (OVERLAP
     WN::|kettle%1:06:01::|))
-
-(CONCEPT
-  ONT::KETTLE-BASE
-  (INHERIT
-    ONT::SUPPORT-STAND)
-  (OVERLAP
-    WN::|heater%1:06:00::|)
-  (SEM-FEATS
-    (INHERIT
-      PHYS-OBJ)
-    (FORM SOLID-OBJECT)
-    (TYPE ONT::KETTLE-BASE)))
 
 (CONCEPT
   ONT::KEY
@@ -27144,7 +27122,7 @@
 (CONCEPT
   ONT::MEDICAL-DRESSING
   (INHERIT
-    ONT::COVERING)
+    ONT::MEDICAL-INSTRUMENT)
   (OVERLAP
     WN::|medical_dressing%1:06:00::|))
 
@@ -43991,11 +43969,6 @@
     WN::|staircase%1:06:00::|))
 
 (CONCEPT
-  ONT::STAND
-  (INHERIT
-    ONT::KETTLE-BASE))
-
-(CONCEPT
   ONT::STANDARD
   (COMMENT "the ideal in terms of which something can be judged")
   (INHERIT
@@ -45128,8 +45101,6 @@
   (INHERIT
     ONT::DEVICE-COMPONENT)
   (OVERLAP
-    WN::|pedestal%1:06:00::|
-    WN::|stand%1:06:00::|
     WN::|support%1:06:00::|)
   (SEM-FEATS
     (INHERIT
@@ -46976,7 +46947,7 @@
   (COMMENT
    "a piece of equipment typically controlled manually (whether powered or not)")
   (INHERIT
-    ONT::EQUIPMENT)
+    ONT::DEVICE)
   (OVERLAP
     WN::|tool%1:06:00::|)
   (SEM-FEATS
@@ -49200,9 +49171,21 @@
     (TYPE ONT::WEAKNESS-SCALE)))
 
 (CONCEPT
+  ONT::WEALTH-SCALE
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (OVERLAP
+    WN::|financial_condition%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::WEALTH-SCALE)
+    (TYPE ONT::WEALTH-SCALE)))
+
+(CONCEPT
   ONT::WEALTHINESS-VAL
   (INHERIT
-    ONT::STATUS-VAL))
+    ONT::EVALUATION-ATTRIBUTE-VAL))
 
 (CONCEPT
   ONT::WEALTHY-VAL

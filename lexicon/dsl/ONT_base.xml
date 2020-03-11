@@ -4,7 +4,10 @@
  <provenance name="TRIPS"/>
  <concept name="ont::base">
  <relation label="inherit">
-  ont::kettle-base
+  ont::support-stand
+ </relation>
+ <relation label="overlap">
+  wn::|base%1:06:00::|
  </relation>
  </concept>
  <or>
@@ -40,43 +43,22 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
+ <concept name="ont::support-stand">
  <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="form">object</feat>
- <feat name="origin">artifact</feat>
- <feat name="type">ont::device-component</feat>
- </sem-feats>
- <concept name="ont::manufactured-object">
- <relation label="inherit">
-  ont::phys-object
+  ont::device-component
  </relation>
  <relation label="overlap">
-  wn::|artifact%1:03:00::|
-  wn::|artefact%1:03:00::|
+  wn::|support%1:06:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="origin">artifact</feat>
-  <feat name="type">ont::manufactured-object</feat>
+  <feat name="object-function">support</feat>
+  <feat name="form">solid-object</feat>
+  <feat name="type">ont::support-stand</feat>
  </sem-feats>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="object-function">support</feat>
- <feat name="form">solid-object</feat>
- <feat name="type">ont::support-stand</feat>
- </sem-feats>
  <concept name="ont::device-component">
  <relation label="inherit">
   ont::manufactured-object
@@ -104,42 +86,39 @@
  <relation label="inherit">
   phys-obj
  </relation>
+ <feat name="object-function">support</feat>
  <feat name="form">solid-object</feat>
- <feat name="type">ont::kettle-base</feat>
+ <feat name="type">ont::support-stand</feat>
  </sem-feats>
- <concept name="ont::support-stand">
+ <concept name="ont::manufactured-object">
  <relation label="inherit">
-  ont::device-component
+  ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|pedestal%1:06:00::|
-  wn::|stand%1:06:00::|
-  wn::|support%1:06:00::|
+  wn::|artifact%1:03:00::|
+  wn::|artefact%1:03:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="object-function">support</feat>
-  <feat name="form">solid-object</feat>
-  <feat name="type">ont::support-stand</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="type">ont::manufactured-object</feat>
  </sem-feats>
  </concept>
- <concept name="ont::kettle-base">
- <relation label="inherit">
-  ont::support-stand
- </relation>
- <relation label="overlap">
-  wn::|heater%1:06:00::|
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="form">solid-object</feat>
-  <feat name="type">ont::kettle-base</feat>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">object</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="type">ont::device-component</feat>
  </sem-feats>
- </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::phys-object">
  <comment>
   &quot;All physical objects: things that have substance&quot;
@@ -196,8 +175,11 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="heater" />
+  <word first-word="stand" />
  </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
  <relation label="inherit">
   ont::base
   ont::count-pred-templ
