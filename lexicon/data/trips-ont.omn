@@ -8858,6 +8858,7 @@ Class: sneaky-val
 Class: boldness-val
   Annotations: rdfs:comment "foreceful approach to situations or challenge"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some boldness-scale)
 
 # ONT type ont::bold-val
 Class: bold-val
@@ -8882,6 +8883,7 @@ Class: docile-val
 Class: courage-val
   Annotations: rdfs:comment "strength in face of fear or tribulation"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some courage-scale)
 
 # ONT type ont::courageous-val
 Class: courageous-val
@@ -8912,6 +8914,7 @@ Class: arrogant-val
 Class: social-interaction-val
   Annotations: rdfs:comment "sociability"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some sociability-scale)
   SubClassOf: _figure only ((FLT_abstr-obj or FLT_phys-obj or FLT_situation)) and _figure some owl:Thing
 
 # ONT type ont::social-val
@@ -9036,6 +9039,7 @@ Class: silly-val
 # ONT type ont::skillfulness-val
 Class: skillfulness-val
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some skillfulness-scale)
 
 # ONT type ont::skillful-val
 Class: skillful-val
@@ -9625,6 +9629,7 @@ Class: unclassified-val
 # ONT type ont::wealthiness-val
 Class: wealthiness-val
   SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some wealth-scale)
 
 # ONT type ont::poor-val
 Class: poor-val
@@ -11888,6 +11893,7 @@ Class: not-faithful-val
 Class: self-centeredness-val
   Annotations: rdfs:comment "(selfish, egoistic)"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some self-centeredness-scale)
 
 # ONT type ont::selfish-val
 Class: selfish-val
@@ -12058,6 +12064,7 @@ Class: not-respectful-val
 Class: forgiveness-val
   Annotations: rdfs:comment "(forgiving)"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some compassion-scale)
 
 # ONT type ont::forgiving-val
 Class: forgiving-val
@@ -13266,11 +13273,10 @@ Class: wild-scale
   SubClassOf: tameness-scale
   SubClassOf: (FLT_abstr-obj and F_scale some wild-scale)
 
-# ONT type ont::boldness-scale
-Class: boldness-scale
-  Annotations: rdfs:comment "bold and daring; forceful approach to challenge"
+# ONT type ont::compassion-scale
+Class: compassion-scale
   SubClassOf: behavioral-scale
-  SubClassOf: (FLT_abstr-obj and F_scale some boldness-scale)
+  SubClassOf: (FLT_abstr-obj and F_scale some compassion-scale)
 
 # ONT type ont::courage-scale
 Class: courage-scale
@@ -13278,10 +13284,26 @@ Class: courage-scale
   SubClassOf: behavioral-scale
   SubClassOf: (FLT_abstr-obj and F_scale some courage-scale)
 
+# ONT type ont::boldness-scale
+Class: boldness-scale
+  Annotations: rdfs:comment "bold and daring; forceful approach to challenge"
+  SubClassOf: courage-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some boldness-scale)
+
+# ONT type ont::reticence-scale
+Class: reticence-scale
+  SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some reticence-scale)
+
 # ONT type ont::responsibility-scale
 Class: responsibility-scale
   SubClassOf: behavioral-scale
   SubClassOf: (FLT_abstr-obj and F_scale some responsibility-scale)
+
+# ONT type ont::self-centeredness-scale
+Class: self-centeredness-scale
+  SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some self-centeredness-scale)
 
 # ONT type ont::skillfulness-scale
 Class: skillfulness-scale
@@ -20756,7 +20778,7 @@ DisjointClasses: roundness-scale, angularity-scale
 DisjointClasses: triangularity-scale, rectangularity-scale, squareness-scale
 
 # children of ont::behavioral-scale
-DisjointClasses: skillfulness-scale, responsibility-scale, courage-scale, boldness-scale, tameness-scale, aggressiveness-scale, wiseness-scale, sociability-scale, affection-scale, modesty-scale, honesty-scale, gracefulness-scale, kindness-scale, endurance-scale
+DisjointClasses: skillfulness-scale, self-centeredness-scale, responsibility-scale, reticence-scale, courage-scale, compassion-scale, tameness-scale, aggressiveness-scale, wiseness-scale, sociability-scale, affection-scale, modesty-scale, honesty-scale, gracefulness-scale, kindness-scale, endurance-scale
 
 # children of ont::wiseness-scale
 DisjointClasses: folly-scale, wisdom-scale
