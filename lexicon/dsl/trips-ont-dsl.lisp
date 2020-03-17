@@ -12777,7 +12777,7 @@
   (OVERLAP
     WN::|bring_around%2:29:01::|
     WN::|care_for%2:29:00::|
-    WN::|cure%2:29:     00::|
+    WN::|cure%2:29:00::|
     WN::|heal%2:29:01::|
     WN::|revitalize%2:29:00::|)
   (SEM-FRAME
