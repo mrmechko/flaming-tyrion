@@ -2238,11 +2238,6 @@
    <feat name="type">ont::animal</feat>
   </sem-feats>
  </concept>
- <concept name="ont::animal-disposition-val">
-  <relation label="inherit">
-   ont::animal-propensity-val
-  </relation>
- </concept>
  <concept name="ont::animal-group">
   <comment>
    &quot;An group defined by a classification of animals&quot;
@@ -7356,15 +7351,16 @@
    ont::neg-experiencer-property-val
   </relation>
   <relation label="overlap">
-   wn::|bored%5:00:00:tired:00|
-   wn::|bored%5:00:00:uninterested:00|
+   wn::|incurious%3:00:00::|
+   wn::|uneager%3:00:00::|
+   wn::|uninterested%3:00:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
     abstr-obj
    </relation>
    <feat name="orientation">neg</feat>
-   <feat name="scale">ont::interest-scale</feat>
+   <feat name="scale">ont::apathy-scale</feat>
    <feat name="type">ont::bored</feat>
   </sem-feats>
  </concept>
@@ -7387,7 +7383,7 @@
     abstr-obj
    </relation>
    <feat name="orientation">neg</feat>
-   <feat name="scale">ont::interest-scale</feat>
+   <feat name="scale">ont::interestingness-scale</feat>
    <feat name="type">ont::boring</feat>
   </sem-feats>
  </concept>
@@ -16894,6 +16890,37 @@
    wn::|display%1:06:01::|
    wn::|screen%1:06:06::|
   </relation>
+ </concept>
+ <concept name="ont::disposition-scale">
+  <relation label="inherit">
+   ont::behavioral-scale
+  </relation>
+  <relation label="overlap">
+   wn::|disposition%1:07:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::disposition-scale</feat>
+   <feat name="type">ont::disposition-scale</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::disposition-val">
+  <relation label="inherit">
+   ont::animal-propensity-val
+  </relation>
+  <relation label="overlap">
+   wn::|temperamental%3:01:00::|
+   wn::|adventuristic%3:01:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::disposition-scale</feat>
+   <feat name="type">ont::disposition-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::dissolve">
   <relation label="inherit">
@@ -27150,22 +27177,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::interest-scale">
-  <relation label="inherit">
-   ont::experiencer-condition-scale
-  </relation>
-  <relation label="overlap">
-   wn::|interest%1:09:00::|
-   wn::|enthusiasm%1:09:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">ont::interest-scale</feat>
-   <feat name="type">ont::interest-scale</feat>
-  </sem-feats>
- </concept>
  <concept name="ont::interested-val">
   <relation label="inherit">
    ont::pos-experiencer-property-val
@@ -27179,8 +27190,24 @@
    <relation label="inherit">
     abstr-obj
    </relation>
-   <feat name="scale">ont::interest-scale</feat>
+   <feat name="scale">ont::interestedness-scale</feat>
    <feat name="type">ont::interested-val</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::interestedness-scale">
+  <relation label="inherit">
+   ont::experiencer-condition-scale
+  </relation>
+  <relation label="overlap">
+   wn::|interestedness%1:09:00::|
+   wn::|enthusiasm%1:09:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::interestedness-scale</feat>
+   <feat name="type">ont::interestedness-scale</feat>
   </sem-feats>
  </concept>
  <concept name="ont::interesting-val">
@@ -27197,8 +27224,23 @@
    <relation label="inherit">
     abstr-obj
    </relation>
-   <feat name="scale">ont::interest-scale</feat>
+   <feat name="scale">ont::interestingness-scale</feat>
    <feat name="type">ont::interesting-val</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::interestingness-scale">
+  <relation label="inherit">
+   ont::evaluation-scale
+  </relation>
+  <relation label="overlap">
+   wn::|interestingness%1:07:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::interestingness-scale</feat>
+   <feat name="type">ont::interestingness-scale</feat>
   </sem-feats>
  </concept>
  <concept name="ont::interference-val">
@@ -33683,13 +33725,26 @@
    <feat name="type">ont::negative-body-condition-scale</feat>
   </sem-feats>
  </concept>
- <concept name="ont::negative-disposition-val">
+ <concept name="ont::negative-disposition-scale">
   <relation label="inherit">
-   ont::animal-disposition-val
+   ont::disposition-scale
   </relation>
   <relation label="overlap">
-   wn::|temperamental%3:01:00::|
-   wn::|adventuristic%3:01:00::|
+   wn::|ill_nature%1:07:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::negative-disposition-scale</feat>
+   <feat name="type">ont::negative-disposition-scale</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::negative-disposition-val">
+  <relation label="inherit">
+   ont::disposition-val
+  </relation>
+  <relation label="overlap">
    wn::|ill-natured%3:00:00::|
   </relation>
  </concept>
@@ -35208,24 +35263,6 @@
    <feat name="orientation">neg</feat>
    <feat name="scale">ont::intentionality-scale</feat>
    <feat name="type">ont::not-intentional-val</feat>
-  </sem-feats>
- </concept>
- <concept name="ont::not-interested-val">
-  <relation label="inherit">
-   ont::neg-experiencer-property-val
-  </relation>
-  <relation label="overlap">
-   wn::|incurious%3:00:00::|
-   wn::|uneager%3:00:00::|
-   wn::|uninterested%3:00:00::|
-   wn::|disinterested%5:00:00:impartial:00|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">ont::apathy-scale</feat>
-   <feat name="type">ont::not-interested-val</feat>
   </sem-feats>
  </concept>
  <concept name="ont::not-judgemental-val">
@@ -40825,9 +40862,24 @@
    <feat name="type">ont::positive-body-condition-scale</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::positive-disposition-scale">
+  <relation label="inherit">
+   ont::disposition-scale
+  </relation>
+  <relation label="overlap">
+   wn::|good-temperedness%1:07:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::positive-disposition-scale</feat>
+   <feat name="type">ont::positive-disposition-scale</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::positive-disposition-val">
   <relation label="inherit">
-   ont::animal-disposition-val
+   ont::disposition-val
   </relation>
   <relation label="overlap">
    wn::|good-natured%3:00:00::|

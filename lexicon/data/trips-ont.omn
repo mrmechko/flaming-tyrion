@@ -8823,17 +8823,18 @@ Class: animal-propensity-val
   SubClassOf: property-val
   SubClassOf: (FLT_abstr-obj and F_scale some behavioral-scale)
 
-# ONT type ont::animal-disposition-val
-Class: animal-disposition-val
+# ONT type ont::disposition-val
+Class: disposition-val
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some disposition-scale)
 
 # ONT type ont::negative-disposition-val
 Class: negative-disposition-val
-  SubClassOf: animal-disposition-val
+  SubClassOf: disposition-val
 
 # ONT type ont::positive-disposition-val
 Class: positive-disposition-val
-  SubClassOf: animal-disposition-val
+  SubClassOf: disposition-val
 
 # ONT type ont::honesty-val
 Class: honesty-val
@@ -9877,7 +9878,7 @@ Class: confusing-val
 # ONT type ont::boring
 Class: boring
   SubClassOf: evoking-neg-experience-property-val
-  SubClassOf: (FLT_abstr-obj and F_scale some interest-scale and F_orientation some V_neg)
+  SubClassOf: (FLT_abstr-obj and F_scale some interestingness-scale and F_orientation some V_neg)
 
 # ONT type ont::evoking-pos-experience-property-val
 Class: evoking-pos-experience-property-val
@@ -9896,7 +9897,7 @@ Class: enjoyable-val
 # ONT type ont::interesting-val
 Class: interesting-val
   SubClassOf: evoking-pos-experience-property-val
-  SubClassOf: (FLT_abstr-obj and F_scale some interest-scale)
+  SubClassOf: (FLT_abstr-obj and F_scale some interestingness-scale)
 
 # ONT type ont::pleasing-val
 Class: pleasing-val
@@ -9947,7 +9948,7 @@ Class: surprised
 # ONT type ont::interested-val
 Class: interested-val
   SubClassOf: pos-experiencer-property-val
-  SubClassOf: (FLT_abstr-obj and F_scale some interest-scale)
+  SubClassOf: (FLT_abstr-obj and F_scale some interestedness-scale)
 
 # ONT type ont::desirous
 Class: desirous
@@ -9998,11 +9999,6 @@ Class: calm
 Class: not-grateful-val
   SubClassOf: neg-experiencer-property-val
   SubClassOf: (FLT_abstr-obj and F_scale some gratitude-scale)
-
-# ONT type ont::not-interested-val
-Class: not-interested-val
-  SubClassOf: neg-experiencer-property-val
-  SubClassOf: (FLT_abstr-obj and F_scale some apathy-scale)
 
 # ONT type ont::concerned-val
 Class: concerned-val
@@ -10069,7 +10065,7 @@ Class: sorry
 # ONT type ont::bored
 Class: bored
   SubClassOf: neg-experiencer-property-val
-  SubClassOf: (FLT_abstr-obj and F_scale some interest-scale and F_orientation some V_neg)
+  SubClassOf: (FLT_abstr-obj and F_scale some apathy-scale and F_orientation some V_neg)
 
 # ONT type ont::intelligence-val
 Class: intelligence-val
@@ -13203,6 +13199,21 @@ Class: behavioral-scale
   SubClassOf: ordered-domain
   SubClassOf: (FLT_abstr-obj and F_scale some behavioral-scale)
 
+# ONT type ont::disposition-scale
+Class: disposition-scale
+  SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some disposition-scale)
+
+# ONT type ont::negative-disposition-scale
+Class: negative-disposition-scale
+  SubClassOf: disposition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some negative-disposition-scale)
+
+# ONT type ont::positive-disposition-scale
+Class: positive-disposition-scale
+  SubClassOf: disposition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some positive-disposition-scale)
+
 # ONT type ont::endurance-scale
 Class: endurance-scale
   SubClassOf: behavioral-scale
@@ -13315,6 +13326,11 @@ Class: evaluation-scale
   Annotations: rdfs:comment "scales relating to subjective evaluation of an entity or a situation"
   SubClassOf: ordered-domain
   SubClassOf: (FLT_abstr-obj and F_scale some evaluation-scale)
+
+# ONT type ont::interestingness-scale
+Class: interestingness-scale
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some interestingness-scale)
 
 # ONT type ont::fame-scale
 Class: fame-scale
@@ -14342,10 +14358,10 @@ Class: confidence-scale
   SubClassOf: experiencer-condition-scale
   SubClassOf: (FLT_abstr-obj and F_scale some confidence-scale)
 
-# ONT type ont::interest-scale
-Class: interest-scale
+# ONT type ont::interestedness-scale
+Class: interestedness-scale
   SubClassOf: experiencer-condition-scale
-  SubClassOf: (FLT_abstr-obj and F_scale some interest-scale)
+  SubClassOf: (FLT_abstr-obj and F_scale some interestedness-scale)
 
 # ONT type ont::apathy-scale
 Class: apathy-scale
@@ -20085,9 +20101,9 @@ DisjointClasses: designed-to-demand-val, difficulty-val
 DisjointClasses: demanding-val, straightforward-val, easy, difficult
 
 # children of ont::animal-propensity-val
-DisjointClasses: discernment-val, knowledge-experience-val, frankness-val, forgiveness-val, patience-val, reticence-val, self-centeredness-val, faithfulness-val, loyalty-val, financial-behavior-val, communicativeness-val, decisiveness-val, skillfulness-val, wiseness-val, gracefulness-val, tameness-val, responsibility-val, social-interaction-val, modesty-val, courage-val, boldness-val, honesty-val, animal-disposition-val
+DisjointClasses: discernment-val, knowledge-experience-val, frankness-val, forgiveness-val, patience-val, reticence-val, self-centeredness-val, faithfulness-val, loyalty-val, financial-behavior-val, communicativeness-val, decisiveness-val, skillfulness-val, wiseness-val, gracefulness-val, tameness-val, responsibility-val, social-interaction-val, modesty-val, courage-val, boldness-val, honesty-val, disposition-val
 
-# children of ont::animal-disposition-val
+# children of ont::disposition-val
 DisjointClasses: positive-disposition-val, negative-disposition-val
 
 # children of ont::honesty-val
@@ -20304,7 +20320,7 @@ DisjointClasses: lovable-val, encouraging-val, imparting-energy-val, peaceful-va
 DisjointClasses: neutral-experiencer-property-val, neg-experiencer-property-val, pos-experiencer-property-val
 
 # children of ont::neg-experiencer-property-val
-DisjointClasses: hateful-val, not-liked-val, hopeless-val, remorseless-val, bored, sorry, sad-val, unhappy, annoyed-val, uneasy, agitated, disgusted, envious, angry, afraid, puzzled-val, concerned-val, not-interested-val, not-grateful-val, bitter-resentful-val
+DisjointClasses: hateful-val, not-liked-val, hopeless-val, remorseless-val, bored, sorry, sad-val, unhappy, annoyed-val, uneasy, agitated, disgusted, envious, angry, afraid, puzzled-val, concerned-val, not-grateful-val, bitter-resentful-val
 
 # children of ont::neutral-experiencer-property-val
 DisjointClasses: not-desirous-val, enchanted-val, unaffected-val, affected-val, surprised
@@ -20778,7 +20794,10 @@ DisjointClasses: roundness-scale, angularity-scale
 DisjointClasses: triangularity-scale, rectangularity-scale, squareness-scale
 
 # children of ont::behavioral-scale
-DisjointClasses: skillfulness-scale, self-centeredness-scale, responsibility-scale, reticence-scale, courage-scale, compassion-scale, tameness-scale, aggressiveness-scale, wiseness-scale, sociability-scale, affection-scale, modesty-scale, honesty-scale, gracefulness-scale, kindness-scale, endurance-scale
+DisjointClasses: skillfulness-scale, self-centeredness-scale, responsibility-scale, reticence-scale, courage-scale, compassion-scale, tameness-scale, aggressiveness-scale, wiseness-scale, sociability-scale, affection-scale, modesty-scale, honesty-scale, gracefulness-scale, kindness-scale, endurance-scale, disposition-scale
+
+# children of ont::disposition-scale
+DisjointClasses: positive-disposition-scale, negative-disposition-scale
 
 # children of ont::wiseness-scale
 DisjointClasses: folly-scale, wisdom-scale
@@ -20787,7 +20806,7 @@ DisjointClasses: folly-scale, wisdom-scale
 DisjointClasses: wild-scale, tame-scale
 
 # children of ont::evaluation-scale
-DisjointClasses: process-evaluation-scale, real-vs-fake-scale, worthiness-scale, tolerability-scale, specificity-scale, recommendability-scale, orderliness-scale, offensiveness-scale, morality-scale, partiality-scale, aesthetic-tastefulness-scale, harmfulness-scale, explicitness-scale, quality-level-scale, plain-scale, basic-scale, convenience-scale, appropriateness-scale, safety-scale, reliability-scale, importance-scale, adaptability-scale, noticeability-scale, beauty-scale, acceptability-scale, attraction-scale, ability-scale, wealth-scale, cost-scale, luckiness-scale, cleanliness-scale, conventionality-scale, comfort-scale, typicality-scale, necessity-scale, familiarity-scale, freshness-scale, fame-scale
+DisjointClasses: process-evaluation-scale, real-vs-fake-scale, worthiness-scale, tolerability-scale, specificity-scale, recommendability-scale, orderliness-scale, offensiveness-scale, morality-scale, partiality-scale, aesthetic-tastefulness-scale, harmfulness-scale, explicitness-scale, quality-level-scale, plain-scale, basic-scale, convenience-scale, appropriateness-scale, safety-scale, reliability-scale, importance-scale, adaptability-scale, noticeability-scale, beauty-scale, acceptability-scale, attraction-scale, ability-scale, wealth-scale, cost-scale, luckiness-scale, cleanliness-scale, conventionality-scale, comfort-scale, typicality-scale, necessity-scale, familiarity-scale, freshness-scale, fame-scale, interestingness-scale
 
 # children of ont::freshness-scale
 DisjointClasses: not-fresh-scale, fresh-scale
@@ -20937,7 +20956,7 @@ DisjointClasses: not-certain-scale, certain-scale
 DisjointClasses: rational-scale, not-rational-scale
 
 # children of ont::experiencer-condition-scale
-DisjointClasses: distress-scale, stress-scale, confusion-scale, pride-scale, pleasantness-scale, surprise-scale, gratitude-scale, calmness-scale, excitement-scale, happiness-scale, envy-scale, disgust-scale, fear-scale, resentfulness-scale, anger-scale, worry-concern-scale, bother-scale, sadness-scale, nervousness-scale, loneliness-scale, pleasurability-scale, desire-scale, apathy-scale, interest-scale, confidence-scale
+DisjointClasses: distress-scale, stress-scale, confusion-scale, pride-scale, pleasantness-scale, surprise-scale, gratitude-scale, calmness-scale, excitement-scale, happiness-scale, envy-scale, disgust-scale, fear-scale, resentfulness-scale, anger-scale, worry-concern-scale, bother-scale, sadness-scale, nervousness-scale, loneliness-scale, pleasurability-scale, desire-scale, apathy-scale, interestedness-scale, confidence-scale
 
 # children of ont::state-of-affairs-scale
 DisjointClasses: connectivity-scale, balance-scale
