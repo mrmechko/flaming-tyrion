@@ -17795,7 +17795,8 @@
     ONT::EVENT-OF-EXPERIENCE)
   (OVERLAP
     WN::|experience%2:37:00::|
-    WN::|feel%2:37:00::|)
+    WN::|feel%2:37:00::|
+    WN::|feel%2:29:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
