@@ -5038,13 +5038,6 @@ Class: life-process
   SubClassOf: event-of-undergoing-action
   SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj) and F_origin some V_living and F_tangible some V_+)
 
-# ONT type ont::cause-to-move
-Class: cause-to-move
-  SubClassOf: motion
-  SubClassOf: (FLT_situation and F_cause some V_force and F_trajectory some V_+)
-  SubClassOf: _agent only owl:Thing
-  SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj)) and _affected some owl:Thing
-
 # ONT type ont::cause-contact
 Class: cause-contact
   SubClassOf: event-of-causation
@@ -16528,12 +16521,12 @@ Class: protecting
 # ONT type ont::dig-scoop
 Class: dig-scoop
   Annotations: rdfs:comment "To move something incrementally, typically using a tool"
-  SubClassOf: cause-to-move
+  SubClassOf: cause-move
 
 # ONT type ont::propel
 Class: propel
   Annotations: rdfs:comment "causing to move by a push and release activity"
-  SubClassOf: cause-to-move
+  SubClassOf: cause-move
 
 # ONT type ont::sow-seed
 Class: sow-seed
@@ -16739,7 +16732,7 @@ Class: collect
 
 # ONT type ont::herd
 Class: herd
-  SubClassOf: cause-to-move
+  SubClassOf: cause-move
   SubClassOf: _agent only owl:Thing
   SubClassOf: _affected only (FLT_phys-obj and F_mobility some V_movable and F_intentional some V_+) and _affected some owl:Thing
 
@@ -19485,11 +19478,11 @@ DisjointClasses: promise, offer
 # children of ont::event-of-undergoing-action
 DisjointClasses: undergo-action, become, rise, come-from, incur-inherit-receive, disappear, appear, physical-process, experience-body-effect, life-process
 
-# children of ont::motion
-DisjointClasses: rhythmic-motion, fluidic-motion, avoid-location, disperse, fly, move, transportation, motion-wrt-another-object, cause-to-move
-
 # children of ont::cause-contact
 DisjointClasses: collide, touch, hitting
+
+# children of ont::motion
+DisjointClasses: rhythmic-motion, fluidic-motion, avoid-location, disperse, fly, move, transportation, motion-wrt-another-object
 
 # children of ont::cause-position
 DisjointClasses: orient, cause-surround, cause-cover
@@ -20997,6 +20990,9 @@ DisjointClasses: transport, move-by-means
 # children of ont::self-locomote
 DisjointClasses: move-slowly, move-rapidly, move-leisurely, move-playfully, swim, locomote-up
 
+# children of ont::cause-move
+DisjointClasses: herd, propel, dig-scoop, walking
+
 # children of ont::physical-process
 DisjointClasses: sensitivity, bodily-process, biological-process
 
@@ -21158,9 +21154,6 @@ DisjointClasses: function-calculation, calc-divide, calc-multiply, calc-subtract
 
 # children of ont::choosing
 DisjointClasses: sampling, select
-
-# children of ont::cause-to-move
-DisjointClasses: herd, propel, dig-scoop
 
 # children of ont::request
 DisjointClasses: remind, ask, appeal-apply-demand, command

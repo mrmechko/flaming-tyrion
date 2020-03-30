@@ -7962,33 +7962,6 @@
     WN::|enclose%2:35:00::|))
 
 (CONCEPT
-  ONT::CAUSE-TO-MOVE
-  (INHERIT
-    ONT::MOTION)
-  (OVERLAP
-    WN::|drive%2:35:01::|
-    WN::|drive%2:41:02::|
-    WN::|move%2:38:01::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (TRAJECTORY +)
-    (CAUSE FORCE)
-    (TYPE ONT::CAUSE-TO-MOVE))
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)
-    (ONT::AGENT
-     (CONCEPT
-       T)
-     OPTIONAL)))
-
-(CONCEPT
   ONT::CAUSING-DEATH-VAL
   (INHERIT
     ONT::OF-DEATH-VAL)
@@ -14088,7 +14061,7 @@
   ONT::DIG-SCOOP
   (COMMENT "To move something incrementally, typically using a tool")
   (INHERIT
-    ONT::CAUSE-TO-MOVE)
+    ONT::CAUSE-MOVE)
   (OVERLAP
     WN::|dig%2:35:01::|
     WN::|dig_out%2:35:00::|
@@ -21801,7 +21774,7 @@
 (CONCEPT
   ONT::HERD
   (INHERIT
-    ONT::CAUSE-TO-MOVE)
+    ONT::CAUSE-MOVE)
   (OVERLAP
     WN::|herd%2:38:00::|
     WN::|herd%2:38:01::|
@@ -36467,7 +36440,7 @@
   ONT::PROPEL
   (COMMENT "causing to move by a push and release activity")
   (INHERIT
-    ONT::CAUSE-TO-MOVE)
+    ONT::CAUSE-MOVE)
   (OVERLAP
     WN::|throw%1:04:00::|
     WN::|propel%2:35:00::|
