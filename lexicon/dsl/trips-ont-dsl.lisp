@@ -4179,7 +4179,8 @@
     WN::|unfavorable%5:00:00:bad:00|
     WN::|mediocre%5:00:00:bad:00|
     WN::|bad%3:00:00::|
-    WN::|unsatisfactory%3:00:00::|)
+    WN::|unsatisfactory%3:00:00::|
+    WN::|disadvantageous%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -15576,11 +15577,7 @@
   (INHERIT
     ONT::ORGANISM)
   (OVERLAP
-    WN::|eater%1:18:00::|
-    WN::|feeder%1:18:00::|
-    WN::|people%1:14:00::|
-    WN::|people%1:14:01::|
-    WN::|masses%1:14:00::|)
+    WN::|eater%1:18:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -16599,9 +16596,6 @@
    "properties which need an observer to be recognized -- subjective to the observer")
   (INHERIT
     ONT::PROPERTY-VAL)
-  (OVERLAP
-    WN::|disadvantageous%3:00:00::|
-    WN::|poor%3:00:02::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -22736,7 +22730,8 @@
     WN::|unequal%3:00:03::|
     WN::|inadequate%5:00:00:insufficient:00|
     WN::|insufficient%3:00:00::|
-    WN::|scarce%3:00:00::|)
+    WN::|scarce%3:00:00::|
+    WN::|poor%3:00:02::|)
   (SEM-FRAME
     (ONT::FIGURE
      (OR
@@ -23169,7 +23164,8 @@
     WN::|inhabitant%1:18:00::|
     WN::|citizen%1:18:00::|
     WN::|national%1:18:00::|
-    WN::|native%1:18:01::|))
+    WN::|native%1:18:01::|
+    WN::|people%1:14:01::|))
 
 (CONCEPT
   ONT::INHALE
@@ -33708,7 +33704,8 @@
   (INHERIT
     ONT::MAMMAL)
   (OVERLAP
-    WN::|person%1:03:00::|)
+    WN::|person%1:03:00::|
+    WN::|people%1:14:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -49360,7 +49357,16 @@
     (INHERIT
       ABSTR-OBJ)
     (SCALE ONT::WEALTH-SCALE)
-    (TYPE ONT::WEALTHINESS-VAL)))
+    (TYPE ONT::WEALTHINESS-VAL))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE
+        (OR
+          ONT::POLITICAL-REGION
+          ONT::PERSON))))))
 
 (CONCEPT
   ONT::WEALTHY-VAL
