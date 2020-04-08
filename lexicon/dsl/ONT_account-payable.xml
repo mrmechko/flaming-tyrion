@@ -52,7 +52,7 @@
  </sem-feats>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::ground">
+ <role-restr-map roles="ont::extent">
   <sem-feats>
    <relation label="inherit">
     abstr-obj
@@ -83,38 +83,26 @@
   <feat name="type">ont::tangible-abstract-object</feat>
  </sem-feats>
  </concept>
- <concept name="ont::account">
- <relation label="inherit">
-  ont::value-cost
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::money-scale</feat>
-  <feat name="object-function">currency</feat>
-  <feat name="measure-function">term</feat>
-  <feat name="type">ont::account</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
  </sem-frame>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
  <feat name="scale">ont::money-scale</feat>
- <feat name="type">ont::account-payable</feat>
+ <feat name="object-function">currency</feat>
+ <feat name="measure-function">term</feat>
+ <feat name="type">ont::account</feat>
  </sem-feats>
  <concept name="ont::value-cost">
  <relation label="inherit">
-  ont::value
+  ont::tangible-abstract-object
  </relation>
  <relation label="overlap">
   wn::|change%1:21:02::|
@@ -142,36 +130,23 @@
   abstr-obj
  </relation>
  <feat name="scale">ont::money-scale</feat>
- <feat name="object-function">currency</feat>
- <feat name="measure-function">term</feat>
- <feat name="type">ont::account</feat>
+ <feat name="type">ont::account-payable</feat>
+ </sem-feats>
+ <concept name="ont::account">
+ <relation label="inherit">
+  ont::value-cost
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::money-scale</feat>
+  <feat name="object-function">currency</feat>
+  <feat name="measure-function">term</feat>
+  <feat name="type">ont::account</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::value">
- <relation label="inherit">
-  ont::tangible-abstract-object
- </relation>
- <relation label="overlap">
-  wn::|value%1:07:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="object-function">currency</feat>
-    <feat name="scale">ont::money-scale</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
+  <role-restr-map roles="ont::figure" optional="optional">
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
@@ -179,23 +154,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="object-function">currency</feat>
-   <feat name="scale">ont::money-scale</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

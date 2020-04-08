@@ -5907,13 +5907,28 @@ Class: number-measure-domain
   SubClassOf: mathematical-term
   SubClassOf: _figure only (FLT_abstr-obj and F_measure-function some V_term) and _figure some owl:Thing
 
+# ONT type ont::scale-value-function
+Class: scale-value-function
+  Annotations: rdfs:comment "words that act as map objects to values on a scale/domain: What is the X on this scale?  Note: We exclude words that are identical to the names of the scales they pertain to (e.g., What is the height on the height scale?)"
+  SubClassOf: abstract-object
+  SubClassOf: (FLT_abstr-obj and F_scale some domain)
+  SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj)) and _figure some owl:Thing
+  SubClassOf: _ground only (FLT_abstr-obj and F_information some V_information-content) and _ground some owl:Thing
+
 # ONT type ont::level
 Class: level
-  Annotations: rdfs:comment "words that act as predicates that return the value on a scale/domain: What is the X on this scale?  Note: We exclude words that are identical to the names of the scales they pertain to (e.g., What is the height on the height scale?)"
-  SubClassOf: abstract-object
+  Annotations: rdfs:comment "words that act as map objects to values on a scale/domain: What is the X on this scale?  Note: We exclude words that are identical to the names of the scales they pertain to (e.g., What is the height on the height scale?)"
+  SubClassOf: scale-value-function
   SubClassOf: (FLT_abstr-obj and F_scale some linear-extent-scale)
   SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj)) and _figure some owl:Thing
   SubClassOf: _ground only (FLT_abstr-obj and F_information some V_information-content) and _ground some owl:Thing
+
+# ONT type ont::value
+Class: value
+  Annotations: rdfs:comment "a function from an object to a value on some scale of worth"
+  SubClassOf: scale-value-function
+  SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj)) and _figure some owl:Thing
+  SubClassOf: _ground only (FLT_abstr-obj and F_scale some money-scale and F_object-function some V_currency) and _ground some owl:Thing
 
 # ONT type ont::range
 Class: range
@@ -6445,15 +6460,9 @@ Class: trajectory
   SubClassOf: tangible-abstract-object
   SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj)) and _figure some owl:Thing
 
-# ONT type ont::value
-Class: value
-  SubClassOf: tangible-abstract-object
-  SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj)) and _figure some owl:Thing
-  SubClassOf: _ground only (FLT_abstr-obj and F_scale some money-scale and F_object-function some V_currency) and _ground some owl:Thing
-
 # ONT type ont::value-cost
 Class: value-cost
-  SubClassOf: value
+  SubClassOf: tangible-abstract-object
   SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj)) and _figure some owl:Thing
   SubClassOf: _extent only (FLT_abstr-obj and F_scale some money-scale and F_object-function some V_currency) and _extent some owl:Thing
 
@@ -18931,10 +18940,10 @@ DisjointClasses: work, compliance, record, nonverbal-expression, direct-informat
 DisjointClasses: measure, share-property, rely-depend, containment, exists, take-time, refute, relate, encodes-message, correlation, function, lacking, sufficiency, necessity, happen, is-compatible-with, owe, position, direct-at, object-compare, have, possibly-true, have-property, expensiveness, salience, event-of-experience
 
 # children of ont::abstract-object
-DisjointClasses: domain, dynamics, level, relation, unit, tangible-abstract-object, abstract-object-nontemporal
+DisjointClasses: domain, dynamics, scale-value-function, relation, unit, tangible-abstract-object, abstract-object-nontemporal
 
 # children of ont::tangible-abstract-object
-DisjointClasses: value, trajectory, social-system, function-object, mental-construction
+DisjointClasses: value-cost, trajectory, social-system, function-object, mental-construction
 
 # children of ont::relation
 DisjointClasses: favorite, own, position-reln, predicate, domain-property
@@ -19595,6 +19604,9 @@ DisjointClasses: m2, ha
 
 # children of ont::volume-unit
 DisjointClasses: dose, volume-measure-unit, container-load
+
+# children of ont::scale-value-function
+DisjointClasses: value, level
 
 # children of ont::level
 DisjointClasses: quantity-abstr, range

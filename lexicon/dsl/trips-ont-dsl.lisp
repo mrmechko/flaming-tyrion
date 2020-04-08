@@ -3625,9 +3625,6 @@
     WN::|attribute%1:09:00::|
     WN::|property%1:09:00::|
     WN::|property%1:07:00::|
-    WN::|holding%1:21:00::|
-    WN::|belongings%1:21:00::|
-    WN::|property%1:21:00::|
     WN::|quality%1:07:00::|)
   (SEM-FRAME
     (ONT::FIGURE
@@ -25038,9 +25035,9 @@
 (CONCEPT
   ONT::LEVEL
   (COMMENT
-   "words that act as predicates that return the value on a scale/domain: What is the X on this scale?  Note: We exclude words that are identical to the names of the scales they pertain to (e.g., What is the height on the height scale?)")
+   "words that act as map objects to values on a scale/domain: What is the X on this scale?  Note: We exclude words that are identical to the names of the scales they pertain to (e.g., What is the height on the height scale?)")
   (INHERIT
-    ONT::ABSTRACT-OBJECT)
+    ONT::SCALE-VALUE-FUNCTION)
   (OVERLAP
     WN::|level%1:26:00::|
     WN::|level%1:07:00::|)
@@ -35375,7 +35372,6 @@
     WN::|have%2:40:04::|
     WN::|possess%2:40:00::|
     WN::|belong%2:40:00::|
-    WN::|possession%1:03:00::|
     WN::|possession%1:04:00::|
     WN::|ownership%1:21:00::|
     WN::|ownership%1:26:00::|)
@@ -41003,6 +40999,35 @@
     (ONT::FIGURE
      (CONCEPT
        T)
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::SCALE-VALUE-FUNCTION
+  (COMMENT
+   "words that act as map objects to values on a scale/domain: What is the X on this scale?  Note: We exclude words that are identical to the names of the scales they pertain to (e.g., What is the height on the height scale?)")
+  (INHERIT
+    ONT::ABSTRACT-OBJECT)
+  (OVERLAP
+    WN::|level%1:26:00::|
+    WN::|level%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::DOMAIN)
+    (TYPE ONT::SCALE-VALUE-FUNCTION))
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (INFORMATION INFORMATION-CONTENT))
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
      OPTIONAL)))
 
 (CONCEPT
@@ -47460,8 +47485,7 @@
   (INHERIT
     ONT::EVENT-DEFINED-BY-ACTIVITY)
   (OVERLAP
-    WN::|travel%1:04:00::|
-    WN::|travel%2:38:05::|)
+    WN::|travel%1:04:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -48664,8 +48688,9 @@
 
 (CONCEPT
   ONT::VALUE
+  (COMMENT "a function from an object to a value on some scale of worth")
   (INHERIT
-    ONT::TANGIBLE-ABSTRACT-OBJECT)
+    ONT::SCALE-VALUE-FUNCTION)
   (OVERLAP
     WN::|value%1:07:00::|)
   (SEM-FRAME
@@ -48685,7 +48710,7 @@
 (CONCEPT
   ONT::VALUE-COST
   (INHERIT
-    ONT::VALUE)
+    ONT::TANGIBLE-ABSTRACT-OBJECT)
   (OVERLAP
     WN::|change%1:21:02::|)
   (SEM-FRAME
