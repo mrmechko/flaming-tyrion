@@ -175,30 +175,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::lack-knowledge-val">
- <comment>
-  &quot;(uninformed)&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::knowledge-experience-val
+  abstr-obj
  </relation>
- <relation label="overlap">
-  wn::|uninformed%3:00:00::|
-  wn::|inexperienced%3:00:00::|
-  wn::|inexperient%3:00:00::|
-  wn::|uneducated%3:00:00::|
-  wn::|untrained%3:00:00::|
-  wn::|unenlightened%3:00:00::|
- </relation>
- </concept>
- <concept name="ont::knowledge-experience-val">
- <comment>
-  &quot;having experience and knowledge (informed, experienced)&quot;
- </comment>
- <relation label="inherit">
-  ont::animal-propensity-val
- </relation>
- </concept>
+ <feat name="scale">ont::knowledge-experience-scale</feat>
+ <feat name="type">ont::knowledge-experience-val</feat>
+ </sem-feats>
  <concept name="ont::animal-propensity-val">
  <comment>
   &quot;properties relating to human or animal tendencies or inclinations to behave in a particular manner&quot;
@@ -217,6 +200,37 @@
   <feat name="scale">ont::behavioral-scale</feat>
   <feat name="type">ont::animal-propensity-val</feat>
  </sem-feats>
+ </concept>
+ <concept name="ont::knowledge-experience-val">
+ <comment>
+  &quot;having experience and knowledge (informed, experienced)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::animal-propensity-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::knowledge-experience-scale</feat>
+  <feat name="type">ont::knowledge-experience-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::lack-knowledge-val">
+ <comment>
+  &quot;(uninformed)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::knowledge-experience-val
+ </relation>
+ <relation label="overlap">
+  wn::|uninformed%3:00:00::|
+  wn::|inexperienced%3:00:00::|
+  wn::|inexperient%3:00:00::|
+  wn::|uneducated%3:00:00::|
+  wn::|untrained%3:00:00::|
+  wn::|unenlightened%3:00:00::|
+ </relation>
  </concept>
  <concept name="ont::domain-property">
  <comment>
@@ -364,4 +378,20 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="naive" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <example text="he was naive">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::naive-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
 </dsl>

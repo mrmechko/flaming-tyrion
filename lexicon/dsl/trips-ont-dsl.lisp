@@ -1393,7 +1393,7 @@
 (CONCEPT
   ONT::AGGRESSIVE-VAL
   (INHERIT
-    ONT::BOLDNESS-VAL)
+    ONT::ANIMAL-PROPENSITY-VAL)
   (OVERLAP
     WN::|domineering%3:00:00::|
     WN::|assertive%3:00:00::|
@@ -2063,7 +2063,8 @@
     ONT::REQUEST)
   (OVERLAP
     WN::|call%2:38:00::|
-    WN::|turn_to%2:30:00::|))
+    WN::|turn_to%2:30:00::|
+    WN::|woo%2:41:01::|))
 
 (CONCEPT
   ONT::APPEAR
@@ -3742,7 +3743,7 @@
   (INHERIT
     ONT::SENSORY-SCALE)
   (OVERLAP
-    WN::|audition%1:09:00::|)
+    WN::|audibility%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -4022,9 +4023,7 @@
   (INHERIT
     ONT::EVENT-OF-EXPERIENCE)
   (OVERLAP
-    WN::|think%2:31:00::|
     WN::|cogitate%2:31:00::|
-    WN::|cerebrate%2:31:00::|
     WN::|attention%1:09:00::|
     WN::|attention%1:09:01::|)
   (SEM-FEATS
@@ -4644,9 +4643,6 @@
   (INHERIT
     ONT::SCRUTINY)
   (OVERLAP
-    WN::|judge%2:31:00::|
-    WN::|pass_judgment%2:31:00::|
-    WN::|evaluate%2:31:01::|
     WN::|figure%2:31:00::|
     WN::|reckon%2:31:01::|
     WN::|work_out%2:31:06::|
@@ -5662,9 +5658,8 @@
   (INHERIT
     ONT::POSITIVE-BODY-CONDITION-SCALE)
   (OVERLAP
-    WN::|vigor%1:07:00::|
-    WN::|energy%1:26:00::|
-    WN::|energy%1:07:01::|)
+    WN::|energy%1:07:01::|
+    WN::|energy%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -6753,7 +6748,6 @@
     WN::|rupture%2:35:00::|
     WN::|snap%2:35:01::|
     WN::|bust%2:35:02::|
-    WN::|fracture%2:29:01::|
     WN::|fracture%2:29:01::|
     WN::|break%2:35:13::|)
   (SEM-FRAME
@@ -7917,11 +7911,10 @@
   (INHERIT
     ONT::CAUSE-EFFECT)
   (OVERLAP
-    WN::|bring_on%2:39:00::|
+    WN::|output%1:23:00::|
     WN::|produce%2:36:03::|
     WN::|yield%2:40:00::|
-    WN::|yield%2:40:02::|
-    WN::|output%1:23:00::|)
+    WN::|yield%2:40:02::|)
   (SEM-FRAME
     (ONT::AFFECTED-RESULT
      (OR
@@ -10299,10 +10292,27 @@
     WN::|communicatory%3:00:00::|))
 
 (CONCEPT
+  ONT::COMMUNICATIVENESS-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|communicativeness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::COMMUNICATIVENESS-SCALE)
+    (TYPE ONT::COMMUNICATIVENESS-SCALE)))
+
+(CONCEPT
   ONT::COMMUNICATIVENESS-VAL
   (COMMENT "(communicative)")
   (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL))
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::COMMUNICATIVENESS-SCALE)
+    (TYPE ONT::COMMUNICATIVENESS-VAL)))
 
 (CONCEPT
   ONT::COMPANY
@@ -11652,7 +11662,6 @@
   (OVERLAP
     WN::|convert%2:32:00::|
     WN::|convince%2:32:00::|
-    WN::|court%2:41:01::|
     WN::|persuade%2:32:00::|
     WN::|win_over%2:32:00::|))
 
@@ -11863,7 +11872,7 @@
   (INHERIT
     ONT::COLOR-SCALE)
   (OVERLAP
-    WN::|yellow%1:07:00::|)
+    WN::|copper%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -13175,10 +13184,27 @@
     WN::|resolute%3:00:00::|))
 
 (CONCEPT
+  ONT::DECISIVENESS-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|decisiveness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::DECISIVENESS-SCALE)
+    (TYPE ONT::DECISIVENESS-SCALE)))
+
+(CONCEPT
   ONT::DECISIVENESS-VAL
   (COMMENT "(decisive)")
   (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL))
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::DECISIVENESS-SCALE)
+    (TYPE ONT::DECISIVENESS-VAL)))
 
 (CONCEPT
   ONT::DECLARE-PERFORMATIVE
@@ -13217,8 +13243,7 @@
     ONT::DECREASE)
   (OVERLAP
     WN::|deplete%2:34:00::|
-    WN::|exhaust%2:30:00::|
-    WN::|reduction%1:04:00::|))
+    WN::|exhaust%2:30:00::|))
 
 (CONCEPT
   ONT::DECREASE-SPEED
@@ -13992,7 +14017,6 @@
     WN::|unlike%3:00:02::|
     WN::|unequal%3:00:00::|
     WN::|unlike%3:00:00::|
-    WN::|unlike%3:00:00::|
     WN::|discrete%5:00:00:separate:00|
     WN::|different%3:00:00::|
     WN::|separate%3:00:00::|
@@ -14490,10 +14514,27 @@
     WN::|discriminate%3:00:00::|))
 
 (CONCEPT
+  ONT::DISCERNMENT-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|discernment%1:09:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::DISCERNMENT-SCALE)
+    (TYPE ONT::DISCERNMENT-SCALE)))
+
+(CONCEPT
   ONT::DISCERNMENT-VAL
   (COMMENT "(discerning, discriminate)")
   (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL))
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::DISCERNMENT-SCALE)
+    (TYPE ONT::DISCERNMENT-VAL)))
 
 (CONCEPT
   ONT::DISCIPLINE
@@ -15396,7 +15437,6 @@
   (INHERIT
     ONT::MEDICAL-SYMPTOM)
   (OVERLAP
-    WN::|dyspnea%1:26:00::|
     WN::|dyspnea%1:26:00::|
     WN::|dyspnoea%1:26:00::|
     WN::|shortness_of_breath%1:26:00::|
@@ -16486,7 +16526,6 @@
   (INHERIT
     ONT::SOCIAL-IMPERATIVE)
   (OVERLAP
-    WN::|right%1:07:00::|
     WN::|absolute%1:09:00::|
     WN::|absolute%5:00:00:inalienable:00|))
 
@@ -17014,8 +17053,7 @@
     ONT::NEUTRAL-EXPERIENCE)
   (OVERLAP
     WN::|interest%2:37:00::|
-    WN::|preoccupy%2:37:00::|
-    WN::|intrigue%2:42:00::|)
+    WN::|preoccupy%2:37:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -17089,7 +17127,6 @@
   (OVERLAP
     WN::|confuse%2:37:00::|
     WN::|confuse%2:31:03::|
-    WN::|bedaze%2:39:00::|
     WN::|flabbergast%2:31:00::|))
 
 (CONCEPT
@@ -17501,7 +17538,6 @@
     WN::|execute%2:36:01::|
     WN::|do%2:36:01::|
     WN::|do%2:41:01::|
-    WN::|play%2:36:05::|
     WN::|conduct%2:41:00::|
     WN::|commit%2:41:00::|
     WN::|commit%2:41:01::|)
@@ -18137,22 +18173,6 @@
     (TYPE ONT::FAILURE-SCALE)))
 
 (CONCEPT
-  ONT::FAITHFUL-VAL
-  (COMMENT "faithful, dedicated, devoted to something (faithful)")
-  (INHERIT
-    ONT::FAITHFULNESS-VAL)
-  (OVERLAP
-    WN::|dedicated%3:00:00::|
-    WN::|faithful%3:00:01::|
-    WN::|faithful%3:00:00::|))
-
-(CONCEPT
-  ONT::FAITHFULNESS-VAL
-  (COMMENT "faithful, dedicated, devoted to something (faithful)")
-  (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL))
-
-(CONCEPT
   ONT::FAKE-VAL
   (INHERIT
     ONT::AUTHENTICITY-VAL)
@@ -18675,24 +18695,28 @@
     WN::|settled%3:00:02::|))
 
 (CONCEPT
-  ONT::FINANCIAL-BEHAVIOR-VAL
-  (COMMENT "(thrifty)")
+  ONT::FINANCIAL-BEHAVIOR-SCALE
   (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL)
+    ONT::BEHAVIORAL-SCALE)
   (OVERLAP
-    WN::|thrifty%3:00:00::|))
+    WN::|frugality%1:07:00::|
+    WN::|wastefulness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::FINANCIAL-BEHAVIOR-SCALE)
+    (TYPE ONT::FINANCIAL-BEHAVIOR-SCALE)))
 
 (CONCEPT
-  ONT::FINANCIAL-CONDITION
+  ONT::FINANCIAL-BEHAVIOR-VAL
+  (COMMENT "(frugal, thrifty, wasteful)")
   (INHERIT
-    ONT::STATUS)
-  (OVERLAP
-    WN::|financial_condition%1:26:00::|)
-  (SEM-FRAME
-    (ONT::FIGURE
-     (CONCEPT
-       T)
-     OPTIONAL)))
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::FINANCIAL-BEHAVIOR-SCALE)
+    (TYPE ONT::FINANCIAL-BEHAVIOR-VAL)))
 
 (CONCEPT
   ONT::FINANCIAL-INSTITUTION
@@ -19284,7 +19308,6 @@
   (INHERIT
     ONT::MEASURE-UNIT)
   (OVERLAP
-    WN::|drink%1:04:00::|
     WN::|serving%1:13:00::|)
   (SEM-FRAME
     (ONT::FIGURE
@@ -19447,13 +19470,32 @@
   ONT::FRANK-VAL
   (COMMENT "direct, blunt (frank, blunt)")
   (INHERIT
-    ONT::FRANKNESS-VAL))
+    ONT::FRANKNESS-VAL)
+  (OVERLAP
+    WN::|direct%3:00:02::|))
+
+(CONCEPT
+  ONT::FRANKNESS-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|frankness%1:07:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::FRANKNESS-SCALE)
+    (TYPE ONT::FRANKNESS-SCALE)))
 
 (CONCEPT
   ONT::FRANKNESS-VAL
   (COMMENT "direct, blunt (frank, blunt)")
   (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL))
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::FRANKNESS-SCALE)
+    (TYPE ONT::FRANKNESS-VAL)))
 
 (CONCEPT
   ONT::FREE-VAL
@@ -19633,6 +19675,14 @@
     ONT::ORIENTED-LOC-RELN)
   (OVERLAP
     WN::|front%3:00:00::|))
+
+(CONCEPT
+  ONT::FRUGAL-VAL
+  (COMMENT "(thrifty, frugal)")
+  (INHERIT
+    ONT::FINANCIAL-BEHAVIOR-VAL)
+  (OVERLAP
+    WN::|thrifty%3:00:00::|))
 
 (CONCEPT
   ONT::FRUIT
@@ -21724,7 +21774,6 @@
     WN::|help%2:41:00::|
     WN::|assist%2:41:02::|
     WN::|aid%2:41:00::|
-    WN::|help%1:04:00::|
     WN::|help%1:04:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
@@ -24384,10 +24433,28 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::KNOWLEDGE-EXPERIENCE-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|knowledgeability%1:07:00::|
+    WN::|experience%1:09:01::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::KNOWLEDGE-EXPERIENCE-SCALE)
+    (TYPE ONT::KNOWLEDGE-EXPERIENCE-SCALE)))
+
+(CONCEPT
   ONT::KNOWLEDGE-EXPERIENCE-VAL
   (COMMENT "having experience and knowledge (informed, experienced)")
   (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL))
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::KNOWLEDGE-EXPERIENCE-SCALE)
+    (TYPE ONT::KNOWLEDGE-EXPERIENCE-VAL)))
 
 (CONCEPT
   ONT::LACK
@@ -26252,20 +26319,41 @@
     WN::|low%3:00:02::|))
 
 (CONCEPT
-  ONT::LOYAL-VAL
-  (COMMENT "(loyal)")
+  ONT::LOYAL-FAITHFUL-VAL
+  (COMMENT "(loyal), faithful, dedicated, devoted to something (faithful)")
   (INHERIT
-    ONT::LOYALTY-VAL)
+    ONT::LOYALTY-FAITHFULNESS-VAL)
   (OVERLAP
     WN::|loyal%3:00:00::|
     WN::|patriotic%3:00:00::|
-    WN::|loyal%3:00:06::|))
+    WN::|loyal%3:00:06::|
+    WN::|dedicated%3:00:00::|
+    WN::|faithful%3:00:01::|
+    WN::|faithful%3:00:00::|))
 
 (CONCEPT
-  ONT::LOYALTY-VAL
-  (COMMENT "(loyal)")
+  ONT::LOYALTY-FAITHFULNESS-SCALE
   (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL))
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|loyalty%1:12:00::|
+    WN::|faithfulness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::LOYALTY-FAITHFULNESS-SCALE)
+    (TYPE ONT::LOYALTY-FAITHFULNESS-SCALE)))
+
+(CONCEPT
+  ONT::LOYALTY-FAITHFULNESS-VAL
+  (COMMENT "(loyal), faithful, dedicated, devoted to something (faithful)")
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::LOYALTY-FAITHFULNESS-SCALE)
+    (TYPE ONT::LOYALTY-FAITHFULNESS-VAL)))
 
 (CONCEPT
   ONT::LUCKINESS-SCALE
@@ -27065,7 +27153,6 @@
     ONT::INFORMATION)
   (OVERLAP
     WN::|metric%1:23:00::|
-    WN::|measure%1:10:03::|
     WN::|indicator%1:10:00::|))
 
 (CONCEPT
@@ -30242,15 +30329,6 @@
     (TYPE ONT::NOT-EXPENSIVE-VAL)))
 
 (CONCEPT
-  ONT::NOT-FAITHFUL-VAL
-  (COMMENT "(unfaithful)")
-  (INHERIT
-    ONT::FAITHFULNESS-VAL)
-  (OVERLAP
-    WN::|unfaithful%3:00:01::|
-    WN::|unfaithful%3:00:00::|))
-
-(CONCEPT
   ONT::NOT-FAMILIAR-SCALE
   (INHERIT
     ONT::FAMILIARITY-SCALE)
@@ -30295,7 +30373,6 @@
   (INHERIT
     ONT::FRANKNESS-VAL)
   (OVERLAP
-    WN::|direct%3:00:02::|
     WN::|indirect%3:00:02::|))
 
 (CONCEPT
@@ -30618,14 +30695,16 @@
     (TYPE ONT::NOT-LOOSE-VAL)))
 
 (CONCEPT
-  ONT::NOT-LOYAL-VAL
-  (COMMENT "(disloyal)")
+  ONT::NOT-LOYAL-FAITHFUL-VAL
+  (COMMENT "(disloyal), (unfaithful)")
   (INHERIT
-    ONT::LOYALTY-VAL)
+    ONT::LOYALTY-FAITHFULNESS-VAL)
   (OVERLAP
-    WN::|unpatriotic%3:00:00::|
+    WN::|disloyal%3:00:00::|
     WN::|disloyal%3:00:06::|
-    WN::|disloyal%3:00:00::|))
+    WN::|unpatriotic%3:00:00::|
+    WN::|unfaithful%3:00:00::|
+    WN::|unfaithful%3:00:01::|))
 
 (CONCEPT
   ONT::NOT-MARRIED-VAL
@@ -31258,7 +31337,7 @@
 (CONCEPT
   ONT::NOT-SOCIAL-VAL
   (INHERIT
-    ONT::SOCIAL-INTERACTION-VAL)
+    ONT::SOCIABILITY-VAL)
   (OVERLAP
     WN::|unapproachable%3:00:00::|
     WN::|cool%3:00:02::|
@@ -33004,7 +33083,6 @@
     ONT::NEGATIVE-BODY-CONDITION-SCALE)
   (OVERLAP
     WN::|painfulness%1:07:00::|
-    WN::|soreness%1:12:00::|
     WN::|pain%1:12:00::|
     WN::|soreness%1:12:00::|)
   (SEM-FEATS
@@ -33295,10 +33373,27 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::PATIENCE-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|patience%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::PATIENCE-SCALE)
+    (TYPE ONT::PATIENCE-SCALE)))
+
+(CONCEPT
   ONT::PATIENCE-VAL
   (COMMENT "(patient)")
   (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL))
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::PATIENCE-SCALE)
+    (TYPE ONT::PATIENCE-VAL)))
 
 (CONCEPT
   ONT::PATIENT
@@ -35513,16 +35608,16 @@
     WN::|bird%1:13:00::|))
 
 (CONCEPT
-  ONT::POVERTY
+  ONT::POVERTY-SCALE
   (INHERIT
-    ONT::FINANCIAL-CONDITION)
+    ONT::WEALTH-SCALE)
   (OVERLAP
     WN::|poverty%1:26:00::|)
-  (SEM-FRAME
-    (ONT::FIGURE
-     (CONCEPT
-       T)
-     OPTIONAL)))
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::POVERTY-SCALE)
+    (TYPE ONT::POVERTY-SCALE)))
 
 (CONCEPT
   ONT::POWER
@@ -36640,7 +36735,6 @@
   (INHERIT
     ONT::CAUSE-EFFECT)
   (OVERLAP
-    WN::|persuade%2:32:00::|
     WN::|force%2:36:00::|
     WN::|coerce%2:41:00::|
     WN::|subject%2:39:03::|
@@ -36819,9 +36913,7 @@
     WN::|force%2:35:01::|
     WN::|draw%2:35:03::|
     WN::|pull%2:35:00::|
-    WN::|pull%2:35:04::|
-    WN::|suck%1:04:00::|
-    WN::|suck%2:34:04::|)
+    WN::|pull%2:35:04::|)
   (SEM-FRAME
     (ONT::SOURCE
      (SEM-FEATS
@@ -37908,28 +38000,6 @@
     WN::|icebox%1:06:00::|))
 
 (CONCEPT
-  ONT::REFUSE
-  (INHERIT
-    ONT::INHIBIT-EFFECT)
-  (OVERLAP
-    WN::|deny%2:40:00::|
-    WN::|refuse%2:40:01::|
-    WN::|deny%2:32:05::|
-    WN::|reject%2:31:00::|
-    WN::|refuse%2:40:00::|
-    WN::|refuse%2:32:00::|
-    WN::|refuse%2:42:04::|)
-  (SEM-FRAME
-    (ONT::EFFECT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         ABSTR-OBJ)))))
-
-(CONCEPT
   ONT::REFUTE
   (INHERIT
     ONT::EVENT-OF-STATE)
@@ -38100,14 +38170,20 @@
   (INHERIT
     ONT::RESPONSE)
   (OVERLAP
-    WN::|refuse%2:40:00::|
-    WN::|reject%2:40:00::|
-    WN::|pass_up%2:40:00::|
-    WN::|turn_down%2:40:00::|
+    WN::|bounce%2:40:01::|
     WN::|decline%2:40:00::|
     WN::|dismiss%2:32:02::|
+    WN::|pass_up%2:40:00::|
+    WN::|refuse%2:40:00::|
     WN::|refuse%2:41:00::|
-    WN::|bounce%2:40:01::|))
+    WN::|reject%2:40:00::|
+    WN::|turn_down%2:40:00::|
+    WN::|deny%2:32:05::|
+    WN::|deny%2:40:00::|
+    WN::|refuse%2:32:00::|
+    WN::|refuse%2:40:01::|
+    WN::|refuse%2:42:04::|
+    WN::|reject%2:31:00::|))
 
 (CONCEPT
   ONT::RELATE
@@ -41702,7 +41778,6 @@
     WN::|part%2:35:01::|
     WN::|break%2:41:13::|
     WN::|divide%2:38:00::|
-    WN::|divide%2:42:00::|
     WN::|disjoint%2:35:00::|
     WN::|separate%2:35:00::|
     WN::|separate%2:35:02::|
@@ -42986,6 +43061,16 @@
     (TYPE ONT::SOCIABILITY-SCALE)))
 
 (CONCEPT
+  ONT::SOCIABILITY-VAL
+  (INHERIT
+    ONT::SOCIAL-INTERACTION-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::SOCIABILITY-SCALE)
+    (TYPE ONT::SOCIABILITY-VAL)))
+
+(CONCEPT
   ONT::SOCIAL-ACTION-VAL
   (INHERIT
     ONT::SOCIETY-VAL)
@@ -43256,7 +43341,7 @@
 (CONCEPT
   ONT::SOCIAL-VAL
   (INHERIT
-    ONT::SOCIAL-INTERACTION-VAL)
+    ONT::SOCIABILITY-VAL)
   (OVERLAP
     WN::|social%3:01:00::|
     WN::|social%3:00:00::|
@@ -44572,8 +44657,7 @@
     WN::|stop%2:42:00::|
     WN::|strand%2:38:02::|
     WN::|strand%2:38:03::|
-    WN::|terminate%2:30:01::|
-    WN::|end%2:42:00::|))
+    WN::|terminate%2:30:01::|))
 
 (CONCEPT
   ONT::STORAGE-FACILITY
@@ -47692,7 +47776,6 @@
     WN::|try%1:04:00::|
     WN::|try%2:29:00::|
     WN::|try_on%2:29:00::|
-    WN::|try%2:34:00::|
     WN::|try%2:41:00::|
     WN::|try_out%2:41:00::|
     WN::|try%2:41:01::|)
@@ -49253,6 +49336,14 @@
     WN::|waste_product%1:27:00::|))
 
 (CONCEPT
+  ONT::WASTEFUL-VAL
+  (COMMENT "(wasteful)")
+  (INHERIT
+    ONT::FINANCIAL-BEHAVIOR-VAL)
+  (OVERLAP
+    WN::|wasteful%3:00:00::|))
+
+(CONCEPT
   ONT::WATER
   (INHERIT
     ONT::NATURAL-LIQUID-SUBSTANCE)
@@ -49574,7 +49665,9 @@
   ONT::WELL-INTENDED-VAL
   (COMMENT "(benevolent)")
   (INHERIT
-    ONT::SOCIAL-INTENT-VAL))
+    ONT::SOCIAL-INTENT-VAL)
+  (OVERLAP
+    WN::|benevolent%3:01:00::|))
 
 (CONCEPT
   ONT::WEST
@@ -49971,6 +50064,13 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::WITHHOLD
+  (INHERIT
+    ONT::INHIBIT-EFFECT)
+  (OVERLAP
+    WN::|withhold%2:40:00::|))
+
+(CONCEPT
   ONT::WITHOUT
   (INHERIT
     ONT::PREDICATE)
@@ -50011,8 +50111,7 @@
     WN::|work%2:41:05::|
     WN::|work%2:41:02::|
     WN::|toil%2:41:00::|
-    WN::|practice%1:04:03::|
-    WN::|practice%2:41:00::|)
+    WN::|practice%1:04:03::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)

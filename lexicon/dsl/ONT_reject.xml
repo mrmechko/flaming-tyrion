@@ -7,14 +7,20 @@
   ont::response
  </relation>
  <relation label="overlap">
-  wn::|refuse%2:40:00::|
-  wn::|reject%2:40:00::|
-  wn::|pass_up%2:40:00::|
-  wn::|turn_down%2:40:00::|
+  wn::|bounce%2:40:01::|
   wn::|decline%2:40:00::|
   wn::|dismiss%2:32:02::|
+  wn::|pass_up%2:40:00::|
+  wn::|refuse%2:40:00::|
   wn::|refuse%2:41:00::|
-  wn::|bounce%2:40:01::|
+  wn::|reject%2:40:00::|
+  wn::|turn_down%2:40:00::|
+  wn::|deny%2:32:05::|
+  wn::|deny%2:40:00::|
+  wn::|refuse%2:32:00::|
+  wn::|refuse%2:40:01::|
+  wn::|refuse%2:42:04::|
+  wn::|reject%2:31:00::|
  </relation>
  </concept>
  <or>
@@ -374,6 +380,28 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="balk" />
+ </morph>
+ <example text="he balked at the obstacle">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::reject
+ </relation>
+ <relation label="overlap">
+  vn::cheat-10.6
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-formal-xp-np-templ" xp="'(w::pp w::at)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::pp" head-word="w::at" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="decline" />
  </morph>
  <example text="decline the cookie">
@@ -395,6 +423,78 @@
    <feat name="aspect">bounded</feat>
   </sem-feats>
  </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="deny" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="denial" />
+   </nom>
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <example text="he denied the charges">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::reject
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="refuse" />
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <example text="he refused the package">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::reject
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-optional-b-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="refuse" />
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <example text="he refused to accept the charges">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::reject
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-formal-subjcontrol-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::cp" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
  </sense>
  <sense>
  <morph>

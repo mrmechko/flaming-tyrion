@@ -8871,7 +8871,7 @@ Class: bold-val
 
 # ONT type ont::aggressive-val
 Class: aggressive-val
-  SubClassOf: boldness-val
+  SubClassOf: animal-propensity-val
   SubClassOf: (FLT_abstr-obj and F_scale some aggressiveness-scale and F_orientation some V_pos)
 
 # ONT type ont::not-bold-val
@@ -8921,14 +8921,19 @@ Class: social-interaction-val
   SubClassOf: (FLT_abstr-obj and F_scale some sociability-scale)
   SubClassOf: _figure only ((FLT_abstr-obj or FLT_phys-obj or FLT_situation)) and _figure some owl:Thing
 
+# ONT type ont::sociability-val
+Class: sociability-val
+  SubClassOf: social-interaction-val
+  SubClassOf: (FLT_abstr-obj and F_scale some sociability-scale)
+
 # ONT type ont::social-val
 Class: social-val
-  SubClassOf: social-interaction-val
+  SubClassOf: sociability-val
   SubClassOf: (FLT_abstr-obj and F_scale some sociability-scale and F_orientation some V_pos)
 
 # ONT type ont::not-social-val
 Class: not-social-val
-  SubClassOf: social-interaction-val
+  SubClassOf: sociability-val
   SubClassOf: (FLT_abstr-obj and F_scale some sociability-scale and F_orientation some V_neg)
 
 # ONT type ont::in-touch-val
@@ -11823,6 +11828,7 @@ Class: earnest-val
 Class: decisiveness-val
   Annotations: rdfs:comment "(decisive)"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some decisiveness-scale)
 
 # ONT type ont::decisive-val
 Class: decisive-val
@@ -11838,6 +11844,7 @@ Class: not-decisive-val
 Class: communicativeness-val
   Annotations: rdfs:comment "(communicative)"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some communicativeness-scale)
 
 # ONT type ont::communicative-val
 Class: communicative-val
@@ -11851,43 +11858,40 @@ Class: not-communicative-val
 
 # ONT type ont::financial-behavior-val
 Class: financial-behavior-val
-  Annotations: rdfs:comment "(thrifty)"
+  Annotations: rdfs:comment "(frugal, thrifty, wasteful)"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some financial-behavior-scale)
+
+# ONT type ont::frugal-val
+Class: frugal-val
+  Annotations: rdfs:comment "(thrifty, frugal)"
+  SubClassOf: financial-behavior-val
+
+# ONT type ont::wasteful-val
+Class: wasteful-val
+  Annotations: rdfs:comment "(wasteful)"
+  SubClassOf: financial-behavior-val
 
 # ONT type ont::not-skillful-val
 Class: not-skillful-val
   Annotations: rdfs:comment "(unskilled)"
   SubClassOf: skillfulness-val
 
-# ONT type ont::loyalty-val
-Class: loyalty-val
-  Annotations: rdfs:comment "(loyal)"
+# ONT type ont::loyalty-faithfulness-val
+Class: loyalty-faithfulness-val
+  Annotations: rdfs:comment "(loyal), faithful, dedicated, devoted to something (faithful)"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some loyalty-faithfulness-scale)
 
-# ONT type ont::loyal-val
-Class: loyal-val
-  Annotations: rdfs:comment "(loyal)"
-  SubClassOf: loyalty-val
+# ONT type ont::loyal-faithful-val
+Class: loyal-faithful-val
+  Annotations: rdfs:comment "(loyal), faithful, dedicated, devoted to something (faithful)"
+  SubClassOf: loyalty-faithfulness-val
 
-# ONT type ont::not-loyal-val
-Class: not-loyal-val
-  Annotations: rdfs:comment "(disloyal)"
-  SubClassOf: loyalty-val
-
-# ONT type ont::faithfulness-val
-Class: faithfulness-val
-  Annotations: rdfs:comment "faithful, dedicated, devoted to something (faithful)"
-  SubClassOf: animal-propensity-val
-
-# ONT type ont::faithful-val
-Class: faithful-val
-  Annotations: rdfs:comment "faithful, dedicated, devoted to something (faithful)"
-  SubClassOf: faithfulness-val
-
-# ONT type ont::not-faithful-val
-Class: not-faithful-val
-  Annotations: rdfs:comment "(unfaithful)"
-  SubClassOf: faithfulness-val
+# ONT type ont::not-loyal-faithful-val
+Class: not-loyal-faithful-val
+  Annotations: rdfs:comment "(disloyal), (unfaithful)"
+  SubClassOf: loyalty-faithfulness-val
 
 # ONT type ont::self-centeredness-val
 Class: self-centeredness-val
@@ -11924,6 +11928,7 @@ Class: not-reticent-val
 Class: patience-val
   Annotations: rdfs:comment "(patient)"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some patience-scale)
 
 # ONT type ont::patient-val
 Class: patient-val
@@ -12080,6 +12085,7 @@ Class: not-forgiving-val
 Class: frankness-val
   Annotations: rdfs:comment "direct, blunt (frank, blunt)"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some frankness-scale)
 
 # ONT type ont::frank-val
 Class: frank-val
@@ -12095,6 +12101,7 @@ Class: not-frank-val
 Class: knowledge-experience-val
   Annotations: rdfs:comment "having experience and knowledge (informed, experienced)"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some knowledge-experience-scale)
 
 # ONT type ont::have-knowledge-val
 Class: have-knowledge-val
@@ -12115,6 +12122,7 @@ Class: naive-val
 Class: discernment-val
   Annotations: rdfs:comment "(discerning, discriminate)"
   SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some discernment-scale)
 
 # ONT type ont::discerning-val
 Class: discerning-val
@@ -13203,6 +13211,21 @@ Class: behavioral-scale
   SubClassOf: ordered-domain
   SubClassOf: (FLT_abstr-obj and F_scale some behavioral-scale)
 
+# ONT type ont::communicativeness-scale
+Class: communicativeness-scale
+  SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some communicativeness-scale)
+
+# ONT type ont::decisiveness-scale
+Class: decisiveness-scale
+  SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some decisiveness-scale)
+
+# ONT type ont::discernment-scale
+Class: discernment-scale
+  SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some discernment-scale)
+
 # ONT type ont::disposition-scale
 Class: disposition-scale
   SubClassOf: behavioral-scale
@@ -13223,10 +13246,30 @@ Class: endurance-scale
   SubClassOf: behavioral-scale
   SubClassOf: (FLT_abstr-obj and F_scale some endurance-scale)
 
+# ONT type ont::financial-behavior-scale
+Class: financial-behavior-scale
+  SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some financial-behavior-scale)
+
+# ONT type ont::frankness-scale
+Class: frankness-scale
+  SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some frankness-scale)
+
 # ONT type ont::kindness-scale
 Class: kindness-scale
   SubClassOf: behavioral-scale
   SubClassOf: (FLT_abstr-obj and F_scale some kindness-scale)
+
+# ONT type ont::knowledge-experience-scale
+Class: knowledge-experience-scale
+  SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some knowledge-experience-scale)
+
+# ONT type ont::loyalty-faithfulness-scale
+Class: loyalty-faithfulness-scale
+  SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some loyalty-faithfulness-scale)
 
 # ONT type ont::gracefulness-scale
 Class: gracefulness-scale
@@ -13242,6 +13285,11 @@ Class: honesty-scale
 Class: modesty-scale
   SubClassOf: behavioral-scale
   SubClassOf: (FLT_abstr-obj and F_scale some modesty-scale)
+
+# ONT type ont::patience-scale
+Class: patience-scale
+  SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some patience-scale)
 
 # ONT type ont::affection-scale
 Class: affection-scale
@@ -13461,6 +13509,11 @@ Class: not-expensive-scale
 Class: wealth-scale
   SubClassOf: evaluation-scale
   SubClassOf: (FLT_abstr-obj and F_scale some wealth-scale)
+
+# ONT type ont::poverty-scale
+Class: poverty-scale
+  SubClassOf: wealth-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some poverty-scale)
 
 # ONT type ont::ability-scale
 Class: ability-scale
@@ -18244,6 +18297,10 @@ Class: prevent
   Annotations: rdfs:comment "prevent an effect or event from taking place"
   SubClassOf: inhibit-effect
 
+# ONT type ont::withhold
+Class: withhold
+  SubClassOf: inhibit-effect
+
 # ONT type ont::downregulate
 Class: downregulate
   SubClassOf: hindering
@@ -18259,11 +18316,6 @@ Class: delay
 # ONT type ont::prohibit
 Class: prohibit
   SubClassOf: inhibit-effect
-
-# ONT type ont::refuse
-Class: refuse
-  SubClassOf: inhibit-effect
-  SubClassOf: _effect only ((FLT_phys-obj or FLT_situation or FLT_abstr-obj)) and _effect some owl:Thing
 
 # ONT type ont::share-property
 Class: share-property
@@ -18364,16 +18416,6 @@ Class: lifecycle-stage
 # ONT type ont::status
 Class: status
   SubClassOf: situation-root
-  SubClassOf: _figure only owl:Thing
-
-# ONT type ont::financial-condition
-Class: financial-condition
-  SubClassOf: status
-  SubClassOf: _figure only owl:Thing
-
-# ONT type ont::poverty
-Class: poverty
-  SubClassOf: financial-condition
   SubClassOf: _figure only owl:Thing
 
 # ONT type ont::physical-sensation
@@ -20108,7 +20150,7 @@ DisjointClasses: designed-to-demand-val, difficulty-val
 DisjointClasses: demanding-val, straightforward-val, easy, difficult
 
 # children of ont::animal-propensity-val
-DisjointClasses: discernment-val, knowledge-experience-val, frankness-val, forgiveness-val, patience-val, reticence-val, self-centeredness-val, faithfulness-val, loyalty-val, financial-behavior-val, communicativeness-val, decisiveness-val, skillfulness-val, wiseness-val, gracefulness-val, tameness-val, responsibility-val, social-interaction-val, modesty-val, courage-val, boldness-val, honesty-val, disposition-val
+DisjointClasses: discernment-val, knowledge-experience-val, frankness-val, forgiveness-val, patience-val, reticence-val, self-centeredness-val, loyalty-faithfulness-val, financial-behavior-val, communicativeness-val, decisiveness-val, skillfulness-val, wiseness-val, gracefulness-val, tameness-val, responsibility-val, social-interaction-val, modesty-val, courage-val, aggressive-val, boldness-val, honesty-val, disposition-val
 
 # children of ont::disposition-val
 DisjointClasses: positive-disposition-val, negative-disposition-val
@@ -20117,7 +20159,7 @@ DisjointClasses: positive-disposition-val, negative-disposition-val
 DisjointClasses: not-honest-val, honest-val
 
 # children of ont::boldness-val
-DisjointClasses: gentle-val, not-bold-val, aggressive-val, bold-val
+DisjointClasses: gentle-val, not-bold-val, bold-val
 
 # children of ont::courage-val
 DisjointClasses: cowardly-val, courageous-val
@@ -20126,7 +20168,10 @@ DisjointClasses: cowardly-val, courageous-val
 DisjointClasses: arrogant-val, modest-val
 
 # children of ont::social-interaction-val
-DisjointClasses: respect-val, courtesy-politeness-val, consideration-val, generosity-val, inclined-to-passing-judgement-val, social-care-and-support-val, social-intent-val, submissiveness-val, affection-val, not-social-val, social-val
+DisjointClasses: respect-val, courtesy-politeness-val, consideration-val, generosity-val, inclined-to-passing-judgement-val, social-care-and-support-val, social-intent-val, submissiveness-val, affection-val, sociability-val
+
+# children of ont::sociability-val
+DisjointClasses: not-social-val, social-val
 
 # children of ont::responsibility-val
 DisjointClasses: not-responsible-val, responsible-val
@@ -20608,11 +20653,11 @@ DisjointClasses: not-decisive-val, decisive-val
 # children of ont::communicativeness-val
 DisjointClasses: not-communicative-val, communicative-val
 
-# children of ont::loyalty-val
-DisjointClasses: not-loyal-val, loyal-val
+# children of ont::financial-behavior-val
+DisjointClasses: wasteful-val, frugal-val
 
-# children of ont::faithfulness-val
-DisjointClasses: not-faithful-val, faithful-val
+# children of ont::loyalty-faithfulness-val
+DisjointClasses: not-loyal-faithful-val, loyal-faithful-val
 
 # children of ont::self-centeredness-val
 DisjointClasses: selfless-val, selfish-val
@@ -20801,7 +20846,7 @@ DisjointClasses: roundness-scale, angularity-scale
 DisjointClasses: triangularity-scale, rectangularity-scale, squareness-scale
 
 # children of ont::behavioral-scale
-DisjointClasses: skillfulness-scale, self-centeredness-scale, responsibility-scale, reticence-scale, courage-scale, compassion-scale, tameness-scale, aggressiveness-scale, wiseness-scale, sociability-scale, affection-scale, modesty-scale, honesty-scale, gracefulness-scale, kindness-scale, endurance-scale, disposition-scale
+DisjointClasses: skillfulness-scale, self-centeredness-scale, responsibility-scale, reticence-scale, courage-scale, compassion-scale, tameness-scale, aggressiveness-scale, wiseness-scale, sociability-scale, affection-scale, patience-scale, modesty-scale, honesty-scale, gracefulness-scale, loyalty-faithfulness-scale, knowledge-experience-scale, kindness-scale, frankness-scale, financial-behavior-scale, endurance-scale, disposition-scale, discernment-scale, decisiveness-scale, communicativeness-scale
 
 # children of ont::disposition-scale
 DisjointClasses: positive-disposition-scale, negative-disposition-scale
@@ -21062,7 +21107,7 @@ DisjointClasses: deteriorate, chemical-change, burn, life-transformation, gasify
 DisjointClasses: nature-change, shape-change, break-object
 
 # children of ont::inhibit-effect
-DisjointClasses: refuse, prohibit, prevent, hindering, disable, pause, stop
+DisjointClasses: prohibit, withhold, prevent, hindering, disable, pause, stop
 
 # children of ont::start
 DisjointClasses: resume, start-object

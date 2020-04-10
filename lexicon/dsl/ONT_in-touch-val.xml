@@ -168,39 +168,35 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
+ <concept name="ont::social-val">
  <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::sociability-scale</feat>
- <feat name="type">ont::social-interaction-val</feat>
- </sem-feats>
- <concept name="ont::animal-propensity-val">
- <comment>
-  &quot;properties relating to human or animal tendencies or inclinations to behave in a particular manner&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
+  ont::sociability-val
  </relation>
  <relation label="overlap">
-  wn::|diligent%3:00:00::|
-  wn::|enterprising%3:00:00::|
+  wn::|social%3:01:00::|
+  wn::|social%3:00:00::|
+  wn::|gregarious%3:00:00::|
+  wn::|sociable%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::behavioral-scale</feat>
-  <feat name="type">ont::animal-propensity-val</feat>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::sociability-scale</feat>
+  <feat name="type">ont::social-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::sociability-val">
+ <relation label="inherit">
+  ont::social-interaction-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::sociability-scale</feat>
+  <feat name="type">ont::sociability-val</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -235,25 +231,48 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::social-val">
+ <sem-feats>
  <relation label="inherit">
-  ont::social-interaction-val
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::sociability-scale</feat>
+ <feat name="type">ont::sociability-val</feat>
+ </sem-feats>
+ <concept name="ont::animal-propensity-val">
+ <comment>
+  &quot;properties relating to human or animal tendencies or inclinations to behave in a particular manner&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
  </relation>
  <relation label="overlap">
-  wn::|social%3:01:00::|
-  wn::|social%3:00:00::|
-  wn::|gregarious%3:00:00::|
-  wn::|sociable%3:00:00::|
+  wn::|diligent%3:00:00::|
+  wn::|enterprising%3:00:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="orientation">pos</feat>
-  <feat name="scale">ont::sociability-scale</feat>
-  <feat name="type">ont::social-val</feat>
+  <feat name="scale">ont::behavioral-scale</feat>
+  <feat name="type">ont::animal-propensity-val</feat>
  </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::sociability-scale</feat>
+ <feat name="type">ont::social-interaction-val</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
