@@ -281,7 +281,8 @@
     WN::|consent%2:32:00::|
     WN::|go_for%2:32:00::|
     WN::|affirm%2:32:01::|
-    WN::|acceptance%1:04:00::|))
+    WN::|acceptance%1:04:00::|
+    WN::|take_a_dare%2:32:00::|))
 
 (CONCEPT
   ONT::ACCEPTABILITY-SCALE
@@ -4023,7 +4024,6 @@
   (INHERIT
     ONT::EVENT-OF-EXPERIENCE)
   (OVERLAP
-    WN::|cogitate%2:31:00::|
     WN::|attention%1:09:00::|
     WN::|attention%1:09:01::|)
   (SEM-FEATS
@@ -7871,7 +7871,9 @@
 (CONCEPT
   ONT::CAUSE-MOVE
   (INHERIT
-    ONT::MOVE))
+    ONT::MOVE)
+  (OVERLAP
+    WN::|move%2:38:01::|))
 
 (CONCEPT
   ONT::CAUSE-OFF
@@ -13406,8 +13408,7 @@
   (OVERLAP
     WN::|almost%4:02:00::|
     WN::|barely%4:02:00::|
-    WN::|barely%4:02:02::|
-    WN::|barely%4:02:03::|
+    WN::|barely%4:02:01::|
     WN::|comparatively%4:02:00::|
     WN::|relatively%4:02:00::|
     WN::|slightly%4:02:01::|
@@ -16309,7 +16310,8 @@
     WN::|enter%2:41:06::|
     WN::|fall_in%2:41:00::|
     WN::|inscribe%2:41:00::|
-    WN::|recruit%2:41:01::|)
+    WN::|recruit%2:41:01::|
+    WN::|take_orders%2:41:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -16621,8 +16623,7 @@
   (INHERIT
     ONT::SCRUTINY)
   (OVERLAP
-    WN::|evaluate%2:31:01::|
-    WN::|contrast%2:31:00::|)
+    WN::|evaluate%2:31:01::|)
   (SEM-FRAME
     (ONT::NEUTRAL1
      (OR
@@ -17060,7 +17061,8 @@
     ONT::NEUTRAL-EXPERIENCE)
   (OVERLAP
     WN::|interest%2:37:00::|
-    WN::|preoccupy%2:37:00::|)
+    WN::|preoccupy%2:37:00::|
+    WN::|take_the_stage%2:41:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -19934,8 +19936,7 @@
   (INHERIT
     ONT::LOCATED-EVENT)
   (OVERLAP
-    WN::|gathering%1:14:00::|
-    WN::|visit%1:04:02::|))
+    WN::|gathering%1:14:00::|))
 
 (CONCEPT
   ONT::GENDER-SCALE
@@ -24002,6 +24003,21 @@
     (TYPE ONT::INVISIBLE-VAL)))
 
 (CONCEPT
+  ONT::INVITE
+  (INHERIT
+    ONT::COMMISSIVE)
+  (OVERLAP
+    WN::|invite%1:10:00::|
+    WN::|invite%2:32:01::|
+    WN::|invite%2:41:00::|
+    WN::|receive%2:35:00::|)
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::IO-DEVICE
   (INHERIT
     ONT::COMPUTER-PART)
@@ -24087,6 +24103,7 @@
     ONT::PUTTING-TOGETHER)
   (OVERLAP
     WN::|conjoin%2:35:00::|
+    WN::|integrate%2:30:01::|
     WN::|join%2:35:00::|)
   (SEM-FEATS
     (INHERIT
@@ -32167,7 +32184,7 @@
   (INHERIT
     ONT::EVENT-TIME-WRT-NOW)
   (OVERLAP
-    WN::|current%3:00:00::|))
+    WN::|underway%5:00:00:current:00|))
 
 (CONCEPT
   ONT::OCCURRING
@@ -34820,7 +34837,6 @@
     WN::|plan%2:31:00::|
     WN::|plan%2:31:01::|
     WN::|time%2:31:00::|
-    WN::|plan%1:09:00::|
     WN::|arrange%2:36:03::|)
   (SEM-FRAME
     (ONT::EFFECT
@@ -36215,8 +36231,8 @@
   (OVERLAP
     WN::|obstacle%1:09:00::|
     WN::|obstacle%1:06:00::|
+    WN::|problem%1:10:00::|
     WN::|problem%1:26:00::|
-    WN::|problem%1:09:00::|
     WN::|challenge%1:26:00::|
     WN::|woe%1:26:00::|))
 
@@ -50457,7 +50473,6 @@
     ONT::DATE-OBJECT-IN)
   (OVERLAP
     WN::|year%1:28:00::|
-    WN::|year%1:28:01::|
     WN::|year%1:28:02::|)
   (SEM-FEATS
     (INHERIT
@@ -50470,7 +50485,7 @@
   (INHERIT
     ONT::TIME-UNIT)
   (OVERLAP
-    WN::|year%1:28:00::|))
+    WN::|year%1:28:01::|))
 
 (CONCEPT
   ONT::YEAR-STAGE
