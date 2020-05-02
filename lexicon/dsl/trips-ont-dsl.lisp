@@ -7476,8 +7476,7 @@
     ONT::ACQUIRE-BY-ACTION)
   (OVERLAP
     WN::|capture%2:35:01::|
-    WN::|catch%2:35:01::|
-    WN::|get%2:35:09::|
+    WN::|capture%2:35:00::|
     WN::|seize%2:35:01::|
     WN::|take%2:40:01::|))
 
@@ -9625,6 +9624,7 @@
     WN::|collect%2:35:00::|
     WN::|pull_together%2:35:00::|
     WN::|assemble%2:41:03::|
+    WN::|collect%2:40:00::|
     WN::|gather%2:35:04::|)
   (SEM-FRAME
     (ONT::AGENT
@@ -9709,7 +9709,8 @@
     WN::|colour%1:07:00::|
     WN::|color%1:07:00::|
     WN::|color%1:09:01::|
-    WN::|colour%1:09:01::|)
+    WN::|colour%1:09:01::|
+    WN::|color%1:27:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -23117,7 +23118,8 @@
     WN::|information%1:09:00::|
     WN::|information%1:10:00::|
     WN::|info%1:10:00::|
-    WN::|vital_sign%1:26:00::|)
+    WN::|vital_sign%1:26:00::|
+    WN::|indicator%1:10:01::|)
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
@@ -28559,7 +28561,6 @@
   (OVERLAP
     WN::|be_active%2:29:00::|
     WN::|draw%2:35:13::|
-    WN::|go%2:33:00::|
     WN::|go%2:38:00::|
     WN::|go%2:42:06::|
     WN::|jaunt%2:38:00::|
@@ -37686,7 +37687,8 @@
     WN::|reaction%1:04:00::|
     WN::|reaction%1:09:01::|
     WN::|reaction%1:19:00::|
-    WN::|reaction%1:09:00::|))
+    WN::|reaction%1:09:00::|
+    WN::|react%2:31:00::|))
 
 (CONCEPT
   ONT::READ
@@ -39478,8 +39480,7 @@
   (INHERIT
     ONT::COMMUNICATION)
   (OVERLAP
-    WN::|react%2:31:00::|
-    WN::|respond%2:31:00::|))
+    WN::|respond%2:32:00::|))
 
 (CONCEPT
   ONT::RESPONSIBILITY
@@ -45741,7 +45742,8 @@
   (OVERLAP
     WN::|cheat%2:41:00::|
     WN::|chisel%2:41:01::|
-    WN::|rip_off%2:41:00::|)
+    WN::|rip_off%2:41:00::|
+    WN::|swindle%1:04:00::|)
   (SEM-FRAME
     (ONT::AFFECTED1
      (OR
@@ -45753,6 +45755,7 @@
 
 (CONCEPT
   ONT::TAKE-EXECUTE
+  (COMMENT "Execute (and complete) a nominalized event, e.g., break, turn")
   (INHERIT
     ONT::EXECUTE)
   (OVERLAP
@@ -45827,6 +45830,14 @@
         (OR
           DYNAMIC
           STAGE-LEVEL))))))
+
+(CONCEPT
+  ONT::TAKE-TURN
+  (INHERIT
+    ONT::TAKE-EXECUTE)
+  (OVERLAP
+    WN::|take_the_floor%2:32:00::|
+    WN::|move%2:33:00::|))
 
 (CONCEPT
   ONT::TAKING-CARE-OF
