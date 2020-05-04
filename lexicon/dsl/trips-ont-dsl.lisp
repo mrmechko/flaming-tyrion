@@ -39478,9 +39478,7 @@
   (COMMENT
    "Communicative act that is in direct response to a previous communicative act")
   (INHERIT
-    ONT::COMMUNICATION)
-  (OVERLAP
-    WN::|respond%2:32:00::|))
+    ONT::COMMUNICATION))
 
 (CONCEPT
   ONT::RESPONSIBILITY
