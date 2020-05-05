@@ -1676,8 +1676,8 @@ Class: on
 Class: off
   SubClassOf: oriented-loc-reln
 
-# ONT type ont::front
-Class: front
+# ONT type ont::front-of
+Class: front-of
   SubClassOf: oriented-loc-reln
 
 # ONT type ont::back-of
@@ -3555,12 +3555,24 @@ Class: object-dependent-location
   SubClassOf: location
   SubClassOf: _figure only (FLT_phys-obj and F_form some V_object)
 
+# ONT type ont::front-location
+Class: front-location
+  SubClassOf: object-dependent-location
+
+# ONT type ont::back-location
+Class: back-location
+  SubClassOf: object-dependent-location
+
 # ONT type ont::top-location
 Class: top-location
   SubClassOf: object-dependent-location
 
 # ONT type ont::bottom-location
 Class: bottom-location
+  SubClassOf: object-dependent-location
+
+# ONT type ont::end-location
+Class: end-location
   SubClassOf: object-dependent-location
 
 # ONT type ont::side-location
@@ -19075,7 +19087,7 @@ DisjointClasses: far-reln, proximate-reln
 DisjointClasses: there, here
 
 # children of ont::oriented-loc-reln
-DisjointClasses: navigational-reln, left-of, right-of, back-of, front, off, on, orients-to, directional-vert
+DisjointClasses: navigational-reln, left-of, right-of, back-of, front-of, off, on, orients-to, directional-vert
 
 # children of ont::directional-vert
 DisjointClasses: up, above, down, below
@@ -19336,7 +19348,7 @@ DisjointClasses: left-loc, right-loc
 DisjointClasses: thoroughfare, shortcut, tunnel, highway, road
 
 # children of ont::object-dependent-location
-DisjointClasses: surface-location, side-location, bottom-location, top-location
+DisjointClasses: surface-location, side-location, end-location, bottom-location, top-location, back-location, front-location
 
 # children of ont::phys-representation
 DisjointClasses: symbolic-representation, info-medium

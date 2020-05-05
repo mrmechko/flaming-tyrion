@@ -163,6 +163,24 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="phys-obj" />
+ <concept name="ont::front-location">
+ <relation label="inherit">
+  ont::object-dependent-location
+ </relation>
+ <relation label="overlap">
+  wn::|front%1:15:00::|
+  wn::|front%1:06:00::|
+ </relation>
+ </concept>
+ <concept name="ont::back-location">
+ <relation label="inherit">
+  ont::object-dependent-location
+ </relation>
+ <relation label="overlap">
+  wn::|back%1:15:02::|
+  wn::|back%1:06:00::|
+ </relation>
+ </concept>
  <concept name="ont::top-location">
  <relation label="inherit">
   ont::object-dependent-location
@@ -179,6 +197,15 @@
  <relation label="overlap">
   wn::|bottom%1:15:00::|
   wn::|bottom%1:15:01::|
+ </relation>
+ </concept>
+ <concept name="ont::end-location">
+ <relation label="inherit">
+  ont::object-dependent-location
+ </relation>
+ <relation label="overlap">
+  wn::|end%1:15:00::|
+  wn::|end%1:15:02::|
  </relation>
  </concept>
  <concept name="ont::side-location">
@@ -198,38 +225,6 @@
   wn::|surface%1:15:00::|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="back" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <example text="the back of the truck">
- </example>
- <relation label="inherit">
-  ont::object-dependent-location
- </relation>
- <syntax>
-  <template-call template="ont::gen-part-of-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="sort">gen-part-of-reln</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">|3s|</feat>
-  </syn-feats>
- </syntax>
- </sense>
  <sense>
  <morph>
   <pos pos="n" />
@@ -303,36 +298,6 @@
  <comment>
   &quot;HTML-PURCHASING-CORPUS&quot;
  </comment>
- <relation label="inherit">
-  ont::object-dependent-location
- </relation>
- <syntax>
-  <template-call template="ont::gen-part-of-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="sort">gen-part-of-reln</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">|3s|</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="front" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
  <relation label="inherit">
   ont::object-dependent-location
  </relation>

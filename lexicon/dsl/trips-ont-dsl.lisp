@@ -4117,6 +4117,14 @@
     (TYPE ONT::AWKWARD-VAL)))
 
 (CONCEPT
+  ONT::BACK-LOCATION
+  (INHERIT
+    ONT::OBJECT-DEPENDENT-LOCATION)
+  (OVERLAP
+    WN::|back%1:15:02::|
+    WN::|back%1:06:00::|))
+
+(CONCEPT
   ONT::BACK-OF
   (INHERIT
     ONT::ORIENTED-LOC-RELN)
@@ -8631,7 +8639,8 @@
   (OVERLAP
     WN::|chemical%1:27:00::|
     WN::|chemical_substance%1:27:00::|
-    WN::|chemical_compound%1:27:00::|))
+    WN::|chemical_compound%1:27:00::|
+    WN::|indicator%1:27:00::|))
 
 (CONCEPT
   ONT::CHEMICAL-CHANGE
@@ -16189,6 +16198,14 @@
     WN::|end%2:42:00::|))
 
 (CONCEPT
+  ONT::END-LOCATION
+  (INHERIT
+    ONT::OBJECT-DEPENDENT-LOCATION)
+  (OVERLAP
+    WN::|end%1:15:00::|
+    WN::|end%1:15:02::|))
+
+(CONCEPT
   ONT::ENDPOINT
   (INHERIT
     ONT::LOC-WRT-GROUND-AS-SPATIAL-OBJ)
@@ -19680,7 +19697,15 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::FRONT
+  ONT::FRONT-LOCATION
+  (INHERIT
+    ONT::OBJECT-DEPENDENT-LOCATION)
+  (OVERLAP
+    WN::|front%1:15:00::|
+    WN::|front%1:06:00::|))
+
+(CONCEPT
+  ONT::FRONT-OF
   (INHERIT
     ONT::ORIENTED-LOC-RELN)
   (OVERLAP
