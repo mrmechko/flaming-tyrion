@@ -262,7 +262,9 @@
 (CONCEPT
   ONT::ACADEMIC-INSTITUTION
   (INHERIT
-    ONT::RESEARCH-INSTITUTION))
+    ONT::RESEARCH-INSTITUTION)
+  (OVERLAP
+    WN::|educational_institution%1:14:00::|))
 
 (CONCEPT
   ONT::ACADEMIC-INSTITUTION-ABSTR
@@ -1212,7 +1214,9 @@
 (CONCEPT
   ONT::AFFILIATE
   (INHERIT
-    ONT::COMPANY))
+    ONT::COMPANY)
+  (OVERLAP
+    WN::|affiliate%1:14:00::|))
 
 (CONCEPT
   ONT::AFFILIATE-ABSTR
@@ -1532,7 +1536,9 @@
 (CONCEPT
   ONT::AIRLINE
   (INHERIT
-    ONT::ENTERPRISE))
+    ONT::ENTERPRISE)
+  (OVERLAP
+    WN::|airline%1:06:00::|))
 
 (CONCEPT
   ONT::AIRLINE-ABSTR
@@ -1550,13 +1556,11 @@
     WN::|drome%1:06:00::|))
 
 (CONCEPT
-  ONT::ALCOHOL
+  ONT::ALCOHOL-COCKTAILS
   (INHERIT
     ONT::BEVERAGES)
   (OVERLAP
-    WN::|alcohol%1:13:00::|
-    WN::|alcoholic_drink%1:13:00::|
-    WN::|alcoholic_beverage%1:13:00::|))
+    WN::|alcohol%1:13:00::|))
 
 (CONCEPT
   ONT::ALERT-VAL
@@ -4676,7 +4680,6 @@
   (INHERIT
     ONT::ACCOMMODATION)
   (OVERLAP
-    WN::|boarding_house%1:06:00::|
     WN::|boarding_house%1:06:00::|))
 
 (CONCEPT
@@ -4932,10 +4935,7 @@
     ONT::FOOD)
   (OVERLAP
     WN::|beverage%1:13:00::|
-    WN::|drink%1:13:00::|
-    WN::|drinkable%1:13:00::|
-    WN::|potable%1:13:00::|
-    WN::|milkshake%1:13:00::|)
+    WN::|drink%1:13:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -5527,6 +5527,13 @@
   (OVERLAP
     WN::|bleed%2:29:00::|
     WN::|menstruation%1:22:00::|))
+
+(CONCEPT
+  ONT::BLENDS
+  (INHERIT
+    ONT::BEVERAGES)
+  (OVERLAP
+    WN::|milkshake%1:13:00::|))
 
 (CONCEPT
   ONT::BLOCK
@@ -6471,7 +6478,7 @@
     (TYPE ONT::BORED)))
 
 (CONCEPT
-  ONT::BORING
+  ONT::BORING-VAL
   (INHERIT
     ONT::EVOKING-NEG-EXPERIENCE-PROPERTY-VAL)
   (OVERLAP
@@ -6488,7 +6495,7 @@
       ABSTR-OBJ)
     (ORIENTATION NEG)
     (SCALE ONT::INTERESTINGNESS-SCALE)
-    (TYPE ONT::BORING)))
+    (TYPE ONT::BORING-VAL)))
 
 (CONCEPT
   ONT::BORROW
@@ -6949,7 +6956,9 @@
 (CONCEPT
   ONT::BUTTER
   (INHERIT
-    ONT::DAIRY))
+    ONT::DAIRY)
+  (OVERLAP
+    WN::|butter%1:13:00::|))
 
 (CONCEPT
   ONT::BUTTON
@@ -8630,7 +8639,9 @@
 (CONCEPT
   ONT::CHEESE
   (INHERIT
-    ONT::DAIRY))
+    ONT::DAIRY)
+  (OVERLAP
+    WN::|cheese%1:13:00::|))
 
 (CONCEPT
   ONT::CHEMICAL
@@ -8919,7 +8930,9 @@
 (CONCEPT
   ONT::CHICKEN
   (INHERIT
-    ONT::POULTRY))
+    ONT::POULTRY)
+  (OVERLAP
+    WN::|chicken%1:13:00::|))
 
 (CONCEPT
   ONT::CHILD
@@ -9484,7 +9497,9 @@
 (CONCEPT
   ONT::COFFEE
   (INHERIT
-    ONT::TEAS-COCKTAILS-BLENDS))
+    ONT::BEVERAGES)
+  (OVERLAP
+    WN::|coffee%1:13:00::|))
 
 (CONCEPT
   ONT::COFFEE-SHOP
@@ -10336,7 +10351,9 @@
 (CONCEPT
   ONT::COMPANY
   (INHERIT
-    ONT::INSTITUTION))
+    ONT::INSTITUTION)
+  (OVERLAP
+    WN::|company%1:14:01::|))
 
 (CONCEPT
   ONT::COMPANY-ABSTR
@@ -12131,8 +12148,10 @@
   (INHERIT
     ONT::POLITICAL-REGION)
   (OVERLAP
+    WN::|country%1:14:00::|
     WN::|country%1:15:00::|
-    WN::|country%1:14:00::|))
+    WN::|state%1:14:01::|
+    WN::|united_states_department_of_state%1:14:00::|))
 
 (CONCEPT
   ONT::COUNTRY-NATION-VAL
@@ -12700,7 +12719,9 @@
 (CONCEPT
   ONT::CRUSTACEANS
   (INHERIT
-    ONT::SEAFOOD))
+    ONT::INVERTEBRATE)
+  (OVERLAP
+    WN::|crustacean%1:05:00::|))
 
 (CONCEPT
   ONT::CULPABLE-VAL
@@ -15891,7 +15912,9 @@
 (CONCEPT
   ONT::ELECTRONICS-COMPANY
   (INHERIT
-    ONT::COMPANY))
+    ONT::COMPANY)
+  (OVERLAP
+    WN::|electronics_company%1:14:00::|))
 
 (CONCEPT
   ONT::ELECTRONICS-COMPANY-ABSTR
@@ -16086,7 +16109,9 @@
 (CONCEPT
   ONT::EMU
   (INHERIT
-    ONT::MEAT))
+    ONT::BIRD)
+  (OVERLAP
+    WN::|emu%1:05:00::|))
 
 (CONCEPT
   ONT::ENABLE
@@ -16263,6 +16288,11 @@
     (TYPE ONT::ENERGIZED-VAL)))
 
 (CONCEPT
+  ONT::ENERGY-DRINK
+  (INHERIT
+    ONT::BEVERAGES))
+
+(CONCEPT
   ONT::ENERGY-UNIT
   (INHERIT
     ONT::FORMAL-UNIT)
@@ -16410,7 +16440,9 @@
 (CONCEPT
   ONT::ENTERPRISE
   (INHERIT
-    ONT::ORGANIZATION))
+    ONT::ORGANIZATION)
+  (OVERLAP
+    WN::|enterprise%1:14:00::|))
 
 (CONCEPT
   ONT::ENTERPRISE-ABSTR
@@ -18748,7 +18780,11 @@
 (CONCEPT
   ONT::FINANCIAL-INSTITUTION
   (INHERIT
-    ONT::INSTITUTION))
+    ONT::INSTITUTION)
+  (OVERLAP
+    WN::|bank%1:14:00::|
+    WN::|financial_institution%1:14:00::|
+    WN::|stock_exchange%1:06:00::|))
 
 (CONCEPT
   ONT::FINANCIAL-INSTITUTION-ABSTR
@@ -18758,7 +18794,9 @@
 (CONCEPT
   ONT::FINANCIAL-ORGANIZATION
   (INHERIT
-    ONT::ORGANIZATION))
+    ONT::ORGANIZATION)
+  (OVERLAP
+    WN::|market%1:04:00::|))
 
 (CONCEPT
   ONT::FINANCIAL-ORGANIZATION-ABSTR
@@ -19477,7 +19515,9 @@
 (CONCEPT
   ONT::FORMATION
   (INHERIT
-    ONT::GROUP-OBJECT))
+    ONT::GROUP-OBJECT)
+  (OVERLAP
+    WN::|formation%1:14:00::|))
 
 (CONCEPT
   ONT::FORMATION-ABSTR
@@ -23389,7 +23429,9 @@
 (CONCEPT
   ONT::INSTITUTION
   (INHERIT
-    ONT::ORGANIZATION))
+    ONT::ORGANIZATION)
+  (OVERLAP
+    WN::|institution%1:14:00::|))
 
 (CONCEPT
   ONT::INSTITUTION-ABSTR
@@ -24214,7 +24256,10 @@
 (CONCEPT
   ONT::JUICE
   (INHERIT
-    ONT::BEVERAGES))
+    ONT::BEVERAGES)
+  (OVERLAP
+    WN::|fruit_drink%1:13:00::|
+    WN::|fruit_juice%1:13:00::|))
 
 (CONCEPT
   ONT::JUMP
@@ -25011,6 +25056,14 @@
   ONT::LEGAL-ORGANIZATION-ABSTR
   (INHERIT
     ONT::ORGANIZATION-ABSTR))
+
+(CONCEPT
+  ONT::LEMONADE-LIMEADE
+  (INHERIT
+    ONT::JUICE)
+  (OVERLAP
+    WN::|lemonade%1:13:00::|
+    WN::|limeade%1:13:00::|))
 
 (CONCEPT
   ONT::LEND
@@ -27599,7 +27652,6 @@
   (INHERIT
     ONT::PHARMACOLOGIC-SUBSTANCE)
   (OVERLAP
-    WN::|medicine%1:06:00::|
     WN::|medication%1:06:00::|
     WN::|medicament%1:06:00::|
     WN::|medicine%1:06:00::|
@@ -28056,7 +28108,9 @@
 (CONCEPT
   ONT::MILK
   (INHERIT
-    ONT::DAIRY))
+    ONT::DAIRY)
+  (OVERLAP
+    WN::|milk%1:13:01::|))
 
 (CONCEPT
   ONT::MIN-VAL
@@ -28324,7 +28378,9 @@
 (CONCEPT
   ONT::MOLLUSKS
   (INHERIT
-    ONT::SEAFOOD))
+    ONT::INVERTEBRATE)
+  (OVERLAP
+    WN::|mollusk%1:05:00::|))
 
 (CONCEPT
   ONT::MONEY
@@ -36084,7 +36140,9 @@
 (CONCEPT
   ONT::PRESERVATIVES
   (INHERIT
-    ONT::INGREDIENTS))
+    ONT::INGREDIENTS)
+  (OVERLAP
+    WN::|preservative%1:27:00::|))
 
 (CONCEPT
   ONT::PRESS
@@ -36507,7 +36565,9 @@
 (CONCEPT
   ONT::PROFESSIONAL-ORGANIZATION
   (INHERIT
-    ONT::ORGANIZATION))
+    ONT::ORGANIZATION)
+  (OVERLAP
+    WN::|professional_organization%1:14:00::|))
 
 (CONCEPT
   ONT::PROFESSIONAL-ORGANIZATION-ABSTR
@@ -37276,7 +37336,9 @@
 (CONCEPT
   ONT::QUAIL
   (INHERIT
-    ONT::POULTRY))
+    ONT::POULTRY)
+  (OVERLAP
+    WN::|wildfowl%1:13:00::|))
 
 (CONCEPT
   ONT::QUALIFICATION
@@ -42230,12 +42292,18 @@
 (CONCEPT
   ONT::SHEET
   (INHERIT
-    ONT::SHAPE-OBJECT))
+    ONT::SHAPE-OBJECT)
+  (OVERLAP
+    WN::|layer%1:06:00::|
+    WN::|layer%1:15:00::|
+    WN::|sheet%1:17:00::|))
 
 (CONCEPT
   ONT::SHIPPING-COMPANY
   (INHERIT
-    ONT::COMPANY))
+    ONT::COMPANY)
+  (OVERLAP
+    WN::|shipping_company%1:14:00::|))
 
 (CONCEPT
   ONT::SHIPPING-COMPANY-ABSTR
@@ -44418,11 +44486,7 @@
   (INHERIT
     ONT::POLITICAL-REGION)
   (OVERLAP
-    WN::|body_politic%1:14:00::|
-    WN::|res_publica%1:14:00::|
-    WN::|commonwealth%1:14:00::|
-    WN::|state%1:15:01::|
-    WN::|province%1:15:00::|))
+    WN::|state%1:15:01::|))
 
 (CONCEPT
   ONT::STATE-OF-AFFAIRS-SCALE
@@ -45398,7 +45462,9 @@
 (CONCEPT
   ONT::SUPPLIER
   (INHERIT
-    ONT::COMPANY))
+    ONT::COMPANY)
+  (OVERLAP
+    WN::|supplier%1:18:00::|))
 
 (CONCEPT
   ONT::SUPPLIER-ABSTR
@@ -45686,7 +45752,6 @@
   (INHERIT
     ONT::COLLECTION)
   (OVERLAP
-    WN::|system%1:14:00::|
     WN::|system%1:14:00::|
     WN::|system%1:06:00::|))
 
@@ -46244,11 +46309,6 @@
     WN::|crustacean%3:01:00::|))
 
 (CONCEPT
-  ONT::TEA
-  (INHERIT
-    ONT::TEAS-COCKTAILS-BLENDS))
-
-(CONCEPT
   ONT::TEACH-TRAIN
   (INHERIT
     ONT::SHOW)
@@ -46264,17 +46324,18 @@
     WN::|sensitize%2:39:00::|))
 
 (CONCEPT
-  ONT::TEAS-COCKTAILS-BLENDS
+  ONT::TEAS
   (INHERIT
-    ONT::BEVERAGES))
+    ONT::BEVERAGES)
+  (OVERLAP
+    WN::|tea%1:13:00::|))
 
 (CONCEPT
   ONT::TECHNOLOGY
   (INHERIT
     ONT::MANUFACTURED-OBJECT)
   (OVERLAP
-    WN::|technology%1:04:00::|
-    WN::|technology%1:06:00::|)
+    WN::|technology%1:04:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -50566,7 +50627,9 @@
 (CONCEPT
   ONT::YOGURT
   (INHERIT
-    ONT::DAIRY))
+    ONT::DAIRY)
+  (OVERLAP
+    WN::|yogurt%1:13:00::|))
 
 (CONCEPT
   ONT::YOUNG-VAL

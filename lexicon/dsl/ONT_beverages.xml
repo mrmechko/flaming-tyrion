@@ -9,9 +9,6 @@
  <relation label="overlap">
   wn::|beverage%1:13:00::|
   wn::|drink%1:13:00::|
-  wn::|drinkable%1:13:00::|
-  wn::|potable%1:13:00::|
-  wn::|milkshake%1:13:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -162,19 +159,12 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="phys-obj" />
- <concept name="ont::alcohol">
+ <concept name="ont::alcohol-cocktails">
  <relation label="inherit">
   ont::beverages
  </relation>
  <relation label="overlap">
   wn::|alcohol%1:13:00::|
-  wn::|alcoholic_drink%1:13:00::|
-  wn::|alcoholic_beverage%1:13:00::|
- </relation>
- </concept>
- <concept name="ont::juice">
- <relation label="inherit">
-  ont::beverages
  </relation>
  </concept>
  <concept name="ont::soda">
@@ -185,45 +175,48 @@
   wn::|soda%1:13:00::|
  </relation>
  </concept>
- <concept name="ont::teas-cocktails-blends">
+ <concept name="ont::juice">
  <relation label="inherit">
   ont::beverages
+ </relation>
+ <relation label="overlap">
+  wn::|fruit_drink%1:13:00::|
+  wn::|fruit_juice%1:13:00::|
+ </relation>
+ </concept>
+ <concept name="ont::energy-drink">
+ <relation label="inherit">
+  ont::beverages
+ </relation>
+ </concept>
+ <concept name="ont::blends">
+ <relation label="inherit">
+  ont::beverages
+ </relation>
+ <relation label="overlap">
+  wn::|milkshake%1:13:00::|
+ </relation>
+ </concept>
+ <concept name="ont::teas">
+ <relation label="inherit">
+  ont::beverages
+ </relation>
+ <relation label="overlap">
+  wn::|tea%1:13:00::|
+ </relation>
+ </concept>
+ <concept name="ont::coffee">
+ <relation label="inherit">
+  ont::beverages
+ </relation>
+ <relation label="overlap">
+  wn::|coffee%1:13:00::|
  </relation>
  </concept>
  <sense>
  <morph>
   <pos pos="n" />
   <word first-word="beverage" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::count-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="cappuccino" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::mass-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="cappuccino" />
  </morph>
  <relation label="inherit">
   ont::beverages
@@ -313,21 +306,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="coffee" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::count-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="eggnog" />
  </morph>
  <relation label="inherit">
@@ -344,186 +322,6 @@
  <morph>
   <pos pos="n" />
   <word first-word="eggnog" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::count-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="electrolyte" remaining-words="solution" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::mass-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="electrolyte" remaining-words="solution" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::count-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="espresso" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::mass-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="espresso" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::count-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="fluid" remaining-words="replacement" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::mass-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="fluid" remaining-words="replacement" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::count-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="gelatin" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::mass-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="latte" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::mass-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="latte" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::count-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="shake" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::count-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="tang" />
- </morph>
- <relation label="inherit">
-  ont::beverages
-  ont::mass-pred-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="form">liquid</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="tang" />
  </morph>
  <relation label="inherit">
   ont::beverages

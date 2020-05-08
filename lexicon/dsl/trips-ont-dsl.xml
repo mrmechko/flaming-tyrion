@@ -304,6 +304,9 @@
   <relation label="inherit">
    ont::research-institution
   </relation>
+  <relation label="overlap">
+   wn::|educational_institution%1:14:00::|
+  </relation>
  </concept>
  <concept name="ont::academic-institution-abstr">
   <relation label="inherit">
@@ -1384,6 +1387,9 @@
   <relation label="inherit">
    ont::company
   </relation>
+  <relation label="overlap">
+   wn::|affiliate%1:14:00::|
+  </relation>
  </concept>
  <concept name="ont::affiliate-abstr">
   <relation label="inherit">
@@ -1765,6 +1771,9 @@
   <relation label="inherit">
    ont::enterprise
   </relation>
+  <relation label="overlap">
+   wn::|airline%1:06:00::|
+  </relation>
  </concept>
  <concept name="ont::airline-abstr">
   <relation label="inherit">
@@ -1782,14 +1791,12 @@
    wn::|drome%1:06:00::|
   </relation>
  </concept>
- <concept name="ont::alcohol">
+ <concept name="ont::alcohol-cocktails">
   <relation label="inherit">
    ont::beverages
   </relation>
   <relation label="overlap">
    wn::|alcohol%1:13:00::|
-   wn::|alcoholic_drink%1:13:00::|
-   wn::|alcoholic_beverage%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::alert-val">
@@ -5381,7 +5388,6 @@
   </relation>
   <relation label="overlap">
    wn::|boarding_house%1:06:00::|
-   wn::|boarding_house%1:06:00::|
   </relation>
  </concept>
  <concept name="ont::bedding">
@@ -5678,9 +5684,6 @@
   <relation label="overlap">
    wn::|beverage%1:13:00::|
    wn::|drink%1:13:00::|
-   wn::|drinkable%1:13:00::|
-   wn::|potable%1:13:00::|
-   wn::|milkshake%1:13:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -6318,6 +6321,14 @@
   <relation label="overlap">
    wn::|bleed%2:29:00::|
    wn::|menstruation%1:22:00::|
+  </relation>
+ </concept>
+ <concept name="ont::blends">
+  <relation label="inherit">
+   ont::beverages
+  </relation>
+  <relation label="overlap">
+   wn::|milkshake%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::block">
@@ -7376,7 +7387,7 @@
    <feat name="type">ont::bored</feat>
   </sem-feats>
  </concept>
- <concept name="ont::boring">
+ <concept name="ont::boring-val">
   <relation label="inherit">
    ont::evoking-neg-experience-property-val
   </relation>
@@ -7396,7 +7407,7 @@
    </relation>
    <feat name="orientation">neg</feat>
    <feat name="scale">ont::interestingness-scale</feat>
-   <feat name="type">ont::boring</feat>
+   <feat name="type">ont::boring-val</feat>
   </sem-feats>
  </concept>
  <concept name="ont::borrow">
@@ -7908,6 +7919,9 @@
  <concept name="ont::butter">
   <relation label="inherit">
    ont::dairy
+  </relation>
+  <relation label="overlap">
+   wn::|butter%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::button">
@@ -9798,6 +9812,9 @@
   <relation label="inherit">
    ont::dairy
   </relation>
+  <relation label="overlap">
+   wn::|cheese%1:13:00::|
+  </relation>
  </concept>
  <concept name="ont::chemical">
   <relation label="inherit">
@@ -10090,6 +10107,9 @@
  <concept name="ont::chicken">
   <relation label="inherit">
    ont::poultry
+  </relation>
+  <relation label="overlap">
+   wn::|chicken%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::child">
@@ -10726,7 +10746,10 @@
  </concept>
  <concept name="ont::coffee">
   <relation label="inherit">
-   ont::teas-cocktails-blends
+   ont::beverages
+  </relation>
+  <relation label="overlap">
+   wn::|coffee%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::coffee-shop">
@@ -11689,6 +11712,9 @@
  <concept name="ont::company">
   <relation label="inherit">
    ont::institution
+  </relation>
+  <relation label="overlap">
+   wn::|company%1:14:01::|
   </relation>
  </concept>
  <concept name="ont::company-abstr">
@@ -13789,8 +13815,10 @@
    ont::political-region
   </relation>
   <relation label="overlap">
-   wn::|country%1:15:00::|
    wn::|country%1:14:00::|
+   wn::|country%1:15:00::|
+   wn::|state%1:14:01::|
+   wn::|united_states_department_of_state%1:14:00::|
   </relation>
  </concept>
  <concept name="ont::country-nation-val">
@@ -14434,7 +14462,10 @@
  </concept>
  <concept name="ont::crustaceans">
   <relation label="inherit">
-   ont::seafood
+   ont::invertebrate
+  </relation>
+  <relation label="overlap">
+   wn::|crustacean%1:05:00::|
   </relation>
  </concept>
  <concept name="ont::culpable-val">
@@ -18173,6 +18204,9 @@
   <relation label="inherit">
    ont::company
   </relation>
+  <relation label="overlap">
+   wn::|electronics_company%1:14:00::|
+  </relation>
  </concept>
  <concept name="ont::electronics-company-abstr">
   <relation label="inherit">
@@ -18395,7 +18429,10 @@
  </concept>
  <concept name="ont::emu">
   <relation label="inherit">
-   ont::meat
+   ont::bird
+  </relation>
+  <relation label="overlap">
+   wn::|emu%1:05:00::|
   </relation>
  </concept>
  <concept name="ont::enable">
@@ -18600,6 +18637,11 @@
    <feat name="type">ont::energized-val</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::energy-drink">
+  <relation label="inherit">
+   ont::beverages
+  </relation>
+ </concept>
  <concept name="ont::energy-unit">
   <relation label="inherit">
    ont::formal-unit
@@ -18772,6 +18814,9 @@
  <concept name="ont::enterprise">
   <relation label="inherit">
    ont::organization
+  </relation>
+  <relation label="overlap">
+   wn::|enterprise%1:14:00::|
   </relation>
  </concept>
  <concept name="ont::enterprise-abstr">
@@ -21475,6 +21520,11 @@
   <relation label="inherit">
    ont::institution
   </relation>
+  <relation label="overlap">
+   wn::|bank%1:14:00::|
+   wn::|financial_institution%1:14:00::|
+   wn::|stock_exchange%1:06:00::|
+  </relation>
  </concept>
  <concept name="ont::financial-institution-abstr">
   <relation label="inherit">
@@ -21484,6 +21534,9 @@
  <concept name="ont::financial-organization">
   <relation label="inherit">
    ont::organization
+  </relation>
+  <relation label="overlap">
+   wn::|market%1:04:00::|
   </relation>
  </concept>
  <concept name="ont::financial-organization-abstr">
@@ -22329,6 +22382,9 @@
  <concept name="ont::formation">
   <relation label="inherit">
    ont::group-object
+  </relation>
+  <relation label="overlap">
+   wn::|formation%1:14:00::|
   </relation>
  </concept>
  <concept name="ont::formation-abstr">
@@ -26883,6 +26939,9 @@
   <relation label="inherit">
    ont::organization
   </relation>
+  <relation label="overlap">
+   wn::|institution%1:14:00::|
+  </relation>
  </concept>
  <concept name="ont::institution-abstr">
   <relation label="inherit">
@@ -27853,6 +27912,10 @@
   <relation label="inherit">
    ont::beverages
   </relation>
+  <relation label="overlap">
+   wn::|fruit_drink%1:13:00::|
+   wn::|fruit_juice%1:13:00::|
+  </relation>
  </concept>
  <concept name="ont::jump">
   <relation label="inherit">
@@ -28775,6 +28838,15 @@
  <concept name="ont::legal-organization-abstr">
   <relation label="inherit">
    ont::organization-abstr
+  </relation>
+ </concept>
+ <concept name="ont::lemonade-limeade">
+  <relation label="inherit">
+   ont::juice
+  </relation>
+  <relation label="overlap">
+   wn::|lemonade%1:13:00::|
+   wn::|limeade%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::lend">
@@ -31792,7 +31864,6 @@
    ont::pharmacologic-substance
   </relation>
   <relation label="overlap">
-   wn::|medicine%1:06:00::|
    wn::|medication%1:06:00::|
    wn::|medicament%1:06:00::|
    wn::|medicine%1:06:00::|
@@ -32321,6 +32392,9 @@
   <relation label="inherit">
    ont::dairy
   </relation>
+  <relation label="overlap">
+   wn::|milk%1:13:01::|
+  </relation>
  </concept>
  <concept name="ont::min-val">
   <relation label="inherit">
@@ -32624,7 +32698,10 @@
  </concept>
  <concept name="ont::mollusks">
   <relation label="inherit">
-   ont::seafood
+   ont::invertebrate
+  </relation>
+  <relation label="overlap">
+   wn::|mollusk%1:05:00::|
   </relation>
  </concept>
  <concept name="ont::money">
@@ -41731,6 +41808,9 @@
   <relation label="inherit">
    ont::ingredients
   </relation>
+  <relation label="overlap">
+   wn::|preservative%1:27:00::|
+  </relation>
  </concept>
  <concept name="ont::press">
   <relation label="inherit">
@@ -42229,6 +42309,9 @@
  <concept name="ont::professional-organization">
   <relation label="inherit">
    ont::organization
+  </relation>
+  <relation label="overlap">
+   wn::|professional_organization%1:14:00::|
   </relation>
  </concept>
  <concept name="ont::professional-organization-abstr">
@@ -43113,6 +43196,9 @@
  <concept name="ont::quail">
   <relation label="inherit">
    ont::poultry
+  </relation>
+  <relation label="overlap">
+   wn::|wildfowl%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::qualification">
@@ -48702,10 +48788,18 @@
   <relation label="inherit">
    ont::shape-object
   </relation>
+  <relation label="overlap">
+   wn::|layer%1:06:00::|
+   wn::|layer%1:15:00::|
+   wn::|sheet%1:17:00::|
+  </relation>
  </concept>
  <concept name="ont::shipping-company">
   <relation label="inherit">
    ont::company
+  </relation>
+  <relation label="overlap">
+   wn::|shipping_company%1:14:00::|
   </relation>
  </concept>
  <concept name="ont::shipping-company-abstr">
@@ -51242,11 +51336,7 @@
    ont::political-region
   </relation>
   <relation label="overlap">
-   wn::|body_politic%1:14:00::|
-   wn::|res_publica%1:14:00::|
-   wn::|commonwealth%1:14:00::|
    wn::|state%1:15:01::|
-   wn::|province%1:15:00::|
   </relation>
  </concept>
  <concept name="ont::state-of-affairs-scale">
@@ -52373,6 +52463,9 @@
   <relation label="inherit">
    ont::company
   </relation>
+  <relation label="overlap">
+   wn::|supplier%1:18:00::|
+  </relation>
  </concept>
  <concept name="ont::supplier-abstr">
   <relation label="inherit">
@@ -52715,7 +52808,6 @@
    ont::collection
   </relation>
   <relation label="overlap">
-   wn::|system%1:14:00::|
    wn::|system%1:14:00::|
    wn::|system%1:06:00::|
   </relation>
@@ -53359,11 +53451,6 @@
    wn::|crustacean%3:01:00::|
   </relation>
  </concept>
- <concept name="ont::tea">
-  <relation label="inherit">
-   ont::teas-cocktails-blends
-  </relation>
- </concept>
  <concept name="ont::teach-train">
   <relation label="inherit">
    ont::show
@@ -53380,9 +53467,12 @@
    wn::|sensitize%2:39:00::|
   </relation>
  </concept>
- <concept name="ont::teas-cocktails-blends">
+ <concept name="ont::teas">
   <relation label="inherit">
    ont::beverages
+  </relation>
+  <relation label="overlap">
+   wn::|tea%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::technology">
@@ -53391,7 +53481,6 @@
   </relation>
   <relation label="overlap">
    wn::|technology%1:04:00::|
-   wn::|technology%1:06:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
@@ -58436,6 +58525,9 @@
  <concept name="ont::yogurt">
   <relation label="inherit">
    ont::dairy
+  </relation>
+  <relation label="overlap">
+   wn::|yogurt%1:13:00::|
   </relation>
  </concept>
  <concept name="ont::young-val">

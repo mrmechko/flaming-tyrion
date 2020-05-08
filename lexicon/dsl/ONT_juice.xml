@@ -6,6 +6,10 @@
  <relation label="inherit">
   ont::beverages
  </relation>
+ <relation label="overlap">
+  wn::|fruit_drink%1:13:00::|
+  wn::|fruit_juice%1:13:00::|
+ </relation>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -113,9 +117,6 @@
  <relation label="overlap">
   wn::|beverage%1:13:00::|
   wn::|drink%1:13:00::|
-  wn::|drinkable%1:13:00::|
-  wn::|potable%1:13:00::|
-  wn::|milkshake%1:13:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -167,6 +168,15 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="phys-obj" />
+ <concept name="ont::lemonade-limeade">
+ <relation label="inherit">
+  ont::juice
+ </relation>
+ <relation label="overlap">
+  wn::|lemonade%1:13:00::|
+  wn::|limeade%1:13:00::|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="n" />
@@ -186,5 +196,30 @@
   ont::juice
   ont::count-pred-templ
  </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="nectar" />
+ </morph>
+ <relation label="inherit">
+  ont::juice
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="oj" />
+ </morph>
+ <relation label="inherit">
+  ont::juice
+  ont::mass-pred-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="form">liquid</feat>
+  </sem-feats>
+ </semantics>
  </sense>
 </dsl>

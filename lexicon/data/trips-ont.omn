@@ -4288,19 +4288,6 @@ Class: food-grains
   SubClassOf: food
   SubClassOf: (FLT_phys-obj and F_origin some V_natural)
 
-# ONT type ont::dairy
-Class: dairy
-  SubClassOf: food
-
-# ONT type ont::beverages
-Class: beverages
-  SubClassOf: food
-  SubClassOf: (FLT_phys-obj and F_form some V_liquid and F_origin some V_natural)
-
-# ONT type ont::alcohol
-Class: alcohol
-  SubClassOf: beverages
-
 # ONT type ont::prepared-food
 Class: prepared-food
   SubClassOf: food
@@ -4363,7 +4350,7 @@ Class: wild-game
 
 # ONT type ont::emu
 Class: emu
-  SubClassOf: meat
+  SubClassOf: bird
 
 # ONT type ont::poultry
 Class: poultry
@@ -4415,11 +4402,11 @@ Class: freshwater-fish
 
 # ONT type ont::mollusks
 Class: mollusks
-  SubClassOf: seafood
+  SubClassOf: invertebrate
 
 # ONT type ont::crustaceans
 Class: crustaceans
-  SubClassOf: seafood
+  SubClassOf: invertebrate
 
 # ONT type ont::baked-goods
 Class: baked-goods
@@ -4494,25 +4481,46 @@ Class: nuts-seeds
 Class: condiments
   SubClassOf: ingredients
 
-# ONT type ont::juice
-Class: juice
+# ONT type ont::beverages
+Class: beverages
+  SubClassOf: food
+  SubClassOf: (FLT_phys-obj and F_form some V_liquid and F_origin some V_natural)
+
+# ONT type ont::alcohol-cocktails
+Class: alcohol-cocktails
   SubClassOf: beverages
 
 # ONT type ont::soda
 Class: soda
   SubClassOf: beverages
 
-# ONT type ont::teas-cocktails-blends
-Class: teas-cocktails-blends
+# ONT type ont::juice
+Class: juice
   SubClassOf: beverages
 
-# ONT type ont::tea
-Class: tea
-  SubClassOf: teas-cocktails-blends
+# ONT type ont::lemonade-limeade
+Class: lemonade-limeade
+  SubClassOf: juice
+
+# ONT type ont::energy-drink
+Class: energy-drink
+  SubClassOf: beverages
+
+# ONT type ont::blends
+Class: blends
+  SubClassOf: beverages
+
+# ONT type ont::teas
+Class: teas
+  SubClassOf: beverages
 
 # ONT type ont::coffee
 Class: coffee
-  SubClassOf: teas-cocktails-blends
+  SubClassOf: beverages
+
+# ONT type ont::dairy
+Class: dairy
+  SubClassOf: food
 
 # ONT type ont::yogurt
 Class: yogurt
@@ -9905,8 +9913,8 @@ Class: grievous-val
 Class: confusing-val
   SubClassOf: evoking-neg-experience-property-val
 
-# ONT type ont::boring
-Class: boring
+# ONT type ont::boring-val
+Class: boring-val
   SubClassOf: evoking-neg-experience-property-val
   SubClassOf: (FLT_abstr-obj and F_scale some interestingness-scale and F_orientation some V_neg)
 
@@ -19281,6 +19289,9 @@ DisjointClasses: mammal, reptile, fish, bird, amphibian
 # children of ont::mammal
 DisjointClasses: person, nonhuman-animal
 
+# children of ont::invertebrate
+DisjointClasses: crustaceans, mollusks, insect
+
 # children of ont::person
 DisjointClasses: recipient, official, addressee, scout, unfortunate, entrant, male-person, female-person, consumer, traveller, athlete, professional, person-reln, family-relation, user, referential-person
 
@@ -19306,7 +19317,7 @@ DisjointClasses: tank, vehicle-container
 DisjointClasses: tanker, boxcar
 
 # children of ont::food
-DisjointClasses: pasta, seafood, meat, ingredients, prepared-food, beverages, dairy, food-grains, nutritional-supplement, produce
+DisjointClasses: dairy, beverages, pasta, seafood, meat, ingredients, prepared-food, food-grains, nutritional-supplement, produce
 
 # children of ont::facility
 DisjointClasses: religious-facility, education-facility, health-care-facility, lodging, transportation-facility, production-facility, storage-facility, commercial-facility, business-facility, athletic-facility, research-facility, public-service-facility
@@ -19440,9 +19451,6 @@ DisjointClasses: pot, kettle
 # children of ont::storage-furnishings
 DisjointClasses: cupboard, cabinet
 
-# children of ont::beverages
-DisjointClasses: teas-cocktails-blends, soda, juice, alcohol
-
 # children of ont::ingredients
 DisjointClasses: condiments, nuts-seeds, preservatives, dressings-sauces-coatings, spices-herbs, fats-oils, sugar
 
@@ -19450,13 +19458,13 @@ DisjointClasses: condiments, nuts-seeds, preservatives, dressings-sauces-coating
 DisjointClasses: vegetable, fruit
 
 # children of ont::meat
-DisjointClasses: poultry, emu, wild-game, meat-product, lamb, pork, beef
+DisjointClasses: poultry, wild-game, meat-product, lamb, pork, beef
 
 # children of ont::poultry
 DisjointClasses: turkey, ostrich, duck, pigeon, quail, pheasant, goose, chicken
 
 # children of ont::seafood
-DisjointClasses: crustaceans, mollusks, freshwater-fish, saltwater-fish
+DisjointClasses: freshwater-fish, saltwater-fish
 
 # children of ont::prepared-food
 DisjointClasses: fast-food, cereals, meals, sweets, baked-goods
@@ -19464,8 +19472,8 @@ DisjointClasses: fast-food, cereals, meals, sweets, baked-goods
 # children of ont::baked-goods
 DisjointClasses: bagels-biscuits, cake-pie, cookies, crackers, bread
 
-# children of ont::teas-cocktails-blends
-DisjointClasses: coffee, tea
+# children of ont::beverages
+DisjointClasses: coffee, teas, blends, energy-drink, juice, soda, alcohol-cocktails
 
 # children of ont::dairy
 DisjointClasses: butter, cheese, milk, yogurt
@@ -20389,7 +20397,7 @@ DisjointClasses: questionable-val, skeptical-val
 DisjointClasses: evoking-neutral-experience-property-val, evoking-pos-experience-property-val, evoking-neg-experience-property-val
 
 # children of ont::evoking-neg-experience-property-val
-DisjointClasses: depressing-val, discouraging-val, not-desirable-val, boring, confusing-val, grievous-val, not-pleasing-val, frightening-val, distressing-val
+DisjointClasses: depressing-val, discouraging-val, not-desirable-val, boring-val, confusing-val, grievous-val, not-pleasing-val, frightening-val, distressing-val
 
 # children of ont::evoking-pos-experience-property-val
 DisjointClasses: lovable-val, encouraging-val, imparting-energy-val, peaceful-val, desirable-val, pleasing-val, interesting-val, enjoyable-val, calming-val
