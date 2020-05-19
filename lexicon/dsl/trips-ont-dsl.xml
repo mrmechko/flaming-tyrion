@@ -2399,6 +2399,7 @@
    wn::|call%2:38:00::|
    wn::|turn_to%2:30:00::|
    wn::|woo%2:41:01::|
+   wn::|call%2:35:05::|
   </relation>
  </concept>
  <concept name="ont::appear">
@@ -2414,6 +2415,7 @@
    wn::|break%2:32:05::|
    wn::|come_out%2:32:00::|
    wn::|materialize%2:30:00::|
+   wn::|arise%2:42:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -2912,7 +2914,6 @@
   <relation label="overlap">
    wn::|arrange%2:35:00::|
    wn::|reorient%2:30:00::|
-   wn::|put%2:35:05::|
    wn::|put_aside%2:35:00::|
    wn::|address%2:32:02::|
    wn::|alternate%2:30:01::|
@@ -8493,6 +8494,8 @@
    wn::|capture%2:35:00::|
    wn::|seize%2:35:01::|
    wn::|take%2:40:01::|
+   wn::|capture%1:04:00::|
+   wn::|arrest%2:35:00::|
   </relation>
  </concept>
  <concept name="ont::card">
@@ -9261,6 +9264,7 @@
    wn::|change%2:30:08::|
    wn::|change%2:30:01::|
    wn::|transition%2:30:00::|
+   wn::|modify%2:30:01::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -11505,9 +11509,10 @@
    ont::activity
   </relation>
   <relation label="overlap">
-   wn::|finance%1:04:00::|
    wn::|commerce%1:04:00::|
    wn::|deal%1:04:02::|
+   wn::|finance%1:04:00::|
+   wn::|shop%2:41:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -15105,12 +15110,14 @@
    wn::|proclaim%2:32:02::|
   </relation>
  </concept>
- <concept name="ont::decorate">
+ <concept name="ont::decorate-primp">
   <relation label="inherit">
    ont::arranging
   </relation>
   <relation label="overlap">
    wn::|decorate%2:36:00::|
+   wn::|arrange%2:29:00::|
+   wn::|primp%2:29:00::|
   </relation>
  </concept>
  <concept name="ont::decrease">
@@ -18529,6 +18536,7 @@
   </relation>
   <relation label="overlap">
    wn::|egg_on%2:35:00::|
+   wn::|encourage%2:37:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected" optional="optional">
@@ -18564,15 +18572,6 @@
  <concept name="ont::end-location">
   <relation label="inherit">
    ont::object-dependent-location
-  </relation>
-  <relation label="overlap">
-   wn::|end%1:15:00::|
-   wn::|end%1:15:02::|
-  </relation>
- </concept>
- <concept name="ont::endpoint">
-  <relation label="inherit">
-   ont::loc-wrt-ground-as-spatial-obj
   </relation>
   <relation label="overlap">
    wn::|end%1:15:00::|
@@ -24874,25 +24873,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::having-component-or-part-val">
-  <relation label="inherit">
-   ont::having-constituent-parts-val
-  </relation>
- </concept>
- <concept name="ont::having-constituent-parts-val">
-  <relation label="inherit">
-   ont::physical-property-val
-  </relation>
- </concept>
- <concept name="ont::having-human-constituents-val">
-  <relation label="inherit">
-   ont::having-constituent-parts-val
-  </relation>
-  <relation label="overlap">
-   wn::|patronized%3:00:00::|
-   wn::|patronised%3:00:00::|
-  </relation>
- </concept>
  <concept name="ont::head">
   <relation label="inherit">
    ont::external-body-part
@@ -28358,11 +28338,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::lacking-component-or-part-val">
-  <relation label="inherit">
-   ont::having-constituent-parts-val
-  </relation>
- </concept>
  <concept name="ont::lamb">
   <relation label="inherit">
    ont::meat
@@ -28658,6 +28633,7 @@
    wn::|acquire%2:31:00::|
    wn::|study%2:31:03::|
    wn::|learning%1:09:00::|
+   wn::|learn%2:31:02::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::source" optional="optional">
@@ -31578,7 +31554,7 @@
  </concept>
  <concept name="ont::medical-condition-property-val">
   <relation label="inherit">
-   ont::physical-property-val
+   ont::negative-body-condition-property-val
   </relation>
  </concept>
  <concept name="ont::medical-diagnostic">
@@ -31864,12 +31840,8 @@
    ont::pharmacologic-substance
   </relation>
   <relation label="overlap">
-   wn::|medication%1:06:00::|
-   wn::|medicament%1:06:00::|
    wn::|medicine%1:06:00::|
-   wn::|medicinal_drug%1:06:00::|
    wn::|antibacterial%1:06:00::|
-   wn::|antibacterial_drug%1:06:00::|
    wn::|drug%1:06:00::|
    wn::|agonist%1:06:00::|
   </relation>
@@ -40380,6 +40352,7 @@
    wn::|plan%2:31:01::|
    wn::|time%2:31:00::|
    wn::|arrange%2:36:03::|
+   wn::|arrange%2:32:04::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::effect" optional="optional">
@@ -45624,11 +45597,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::resembling-val">
-  <relation label="inherit">
-   ont::having-constituent-parts-val
-  </relation>
- </concept>
  <concept name="ont::resentfulness-scale">
   <relation label="inherit">
    ont::experiencer-condition-scale
@@ -47712,24 +47680,11 @@
    ont::cogitation
   </relation>
   <relation label="overlap">
-   wn::|take%2:31:02::|
-   wn::|read%2:31:05::|
    wn::|study%2:31:00::|
-   wn::|learn%2:31:02::|
    wn::|inspect%2:31:00::|
-   wn::|scrutinise%2:31:00::|
-   wn::|scrutinize%2:31:00::|
-   wn::|audit%2:31:01::|
    wn::|inspect%2:39:00::|
-   wn::|try%2:41:06::|
-   wn::|adjudicate%2:41:03::|
    wn::|judge%2:41:09::|
-   wn::|measure%2:31:01::|
-   wn::|evaluate%2:31:00::|
-   wn::|valuate%2:31:00::|
-   wn::|assess%2:31:00::|
    wn::|appraise%2:31:01::|
-   wn::|value%2:31:00::|
    wn::|analyse%2:31:00::|
    wn::|analyse%2:31:01::|
    wn::|analyse%2:31:04::|
@@ -47740,6 +47695,8 @@
    wn::|experiment%2:41:02::|
    wn::|experiment%2:41:01::|
    wn::|surveillance%1:04:01::|
+   wn::|experiment%1:04:00::|
+   wn::|investigation%1:04:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::agent" optional="optional">
@@ -51458,6 +51415,7 @@
    wn::|stay%2:38:01::|
    wn::|stay_in_place%2:38:00::|
    wn::|live%2:42:08::|
+   wn::|arrest%1:26:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -51679,6 +51637,7 @@
    wn::|strand%2:38:02::|
    wn::|strand%2:38:03::|
    wn::|terminate%2:30:01::|
+   wn::|arrest%2:33:00::|
   </relation>
  </concept>
  <concept name="ont::storage-facility">
@@ -53459,7 +53418,6 @@
    wn::|lesson%1:04:01::|
    wn::|teach%2:32:00::|
    wn::|teach%2:30:00::|
-   wn::|train%2:31:00::|
    wn::|train%2:41:02::|
    wn::|train%2:41:00::|
    wn::|train%2:41:01::|
@@ -54944,17 +54902,18 @@
    ont::event-of-causation
   </relation>
   <relation label="overlap">
+   wn::|conflict%1:26:00::|
+   wn::|infringe%2:38:00::|
+   wn::|infringe%2:41:00::|
+   wn::|intrude%2:41:00::|
+   wn::|transgress%2:38:00::|
    wn::|transgress%2:41:00::|
    wn::|transgress%2:41:02::|
-   wn::|transgress%2:38:00::|
-   wn::|infringe%2:41:00::|
-   wn::|infringe%2:38:00::|
-   wn::|intrude%2:41:00::|
-   wn::|violate%2:42:00::|
+   wn::|violate%2:35:00::|
    wn::|violate%2:41:00::|
    wn::|violate%2:41:02::|
-   wn::|violate%2:35:00::|
-   wn::|conflict%1:26:00::|
+   wn::|violate%2:42:00::|
+   wn::|violation%1:04:04::|
   </relation>
  </concept>
  <concept name="ont::translate">
@@ -58025,7 +57984,6 @@
      <relation label="inherit">
       phys-obj
      </relation>
-     <feat name="object-function">instrument</feat>
      <feat name="intentional">-</feat>
      <feat name="origin">artifact</feat>
     </sem-feats>

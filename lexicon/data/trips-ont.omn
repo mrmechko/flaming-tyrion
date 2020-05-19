@@ -1351,7 +1351,7 @@ Class: accompaniment
 Class: with-instrument
   SubClassOf: predicate
   SubClassOf: _figure only (FLT_situation and F_type some event-of-action and F_aspect some V_dynamic) and _figure some owl:Thing
-  SubClassOf: _ground only (FLT_phys-obj and F_origin some V_artifact and F_intentional some V_- and F_object-function some V_instrument) and _ground some owl:Thing
+  SubClassOf: _ground only (FLT_phys-obj and F_origin some V_artifact and F_intentional some V_-) and _ground some owl:Thing
 
 # ONT type ont::without
 Class: without
@@ -3457,10 +3457,6 @@ Class: loc-wrt-ground-as-spatial-obj
 
 # ONT type ont::startpoint
 Class: startpoint
-  SubClassOf: loc-wrt-ground-as-spatial-obj
-
-# ONT type ont::endpoint
-Class: endpoint
   SubClassOf: loc-wrt-ground-as-spatial-obj
 
 # ONT type ont::waypoint
@@ -8397,7 +8393,7 @@ Class: sweaty-val
 
 # ONT type ont::medical-condition-property-val
 Class: medical-condition-property-val
-  SubClassOf: physical-property-val
+  SubClassOf: negative-body-condition-property-val
 
 # ONT type ont::has-medical-condition
 Class: has-medical-condition
@@ -11230,26 +11226,6 @@ Class: disease-property-val
 Class: united-val
   Annotations: rdfs:comment "(integrated, united)"
   SubClassOf: part-whole-val
-
-# ONT type ont::having-constituent-parts-val
-Class: having-constituent-parts-val
-  SubClassOf: physical-property-val
-
-# ONT type ont::having-component-or-part-val
-Class: having-component-or-part-val
-  SubClassOf: having-constituent-parts-val
-
-# ONT type ont::lacking-component-or-part-val
-Class: lacking-component-or-part-val
-  SubClassOf: having-constituent-parts-val
-
-# ONT type ont::resembling-val
-Class: resembling-val
-  SubClassOf: having-constituent-parts-val
-
-# ONT type ont::having-human-constituents-val
-Class: having-human-constituents-val
-  SubClassOf: having-constituent-parts-val
 
 # ONT type ont::containing-substance-val
 Class: containing-substance-val
@@ -17777,8 +17753,8 @@ Class: arranging
 Class: reverse
   SubClassOf: arranging
 
-# ONT type ont::decorate
-Class: decorate
+# ONT type ont::decorate-primp
+Class: decorate-primp
   SubClassOf: arranging
 
 # ONT type ont::exchange
@@ -19350,7 +19326,7 @@ DisjointClasses: farm, lumberyard, bakery, fishery, mine
 DisjointClasses: loc-wrt-orientation, loc-wrt-ground-as-spatial-obj
 
 # children of ont::loc-wrt-ground-as-spatial-obj
-DisjointClasses: center, waypoint, endpoint, startpoint
+DisjointClasses: center, waypoint, startpoint
 
 # children of ont::loc-wrt-orientation
 DisjointClasses: left-loc, right-loc
@@ -19941,7 +19917,7 @@ DisjointClasses: false-val, true-val
 DisjointClasses: not-verifiable-val, verifiable-val
 
 # children of ont::physical-property-val
-DisjointClasses: having-constituent-parts-val, medical-condition-property-val, body-condition-property-val, polarity-val, part-whole-val, sensory-property-val, appearance-property-val, moisture-content-val, atmospheric-val, phosphorilated, substantial-property-val, configuration-property-val
+DisjointClasses: body-condition-property-val, polarity-val, part-whole-val, sensory-property-val, appearance-property-val, moisture-content-val, atmospheric-val, phosphorilated, substantial-property-val, configuration-property-val
 
 # children of ont::configuration-property-val
 DisjointClasses: dispersion-val, closure-val, enclosure-val, clothedness-adornment-val, homogeneity-val, filled-val, flow-val, intersecting-val, binding-val, constricting-val, flexibility-val, equipped-val
@@ -20073,7 +20049,7 @@ DisjointClasses: hyperactive-val, athletic-val
 DisjointClasses: not-injured-val, fit-healthy-val, healthy-val
 
 # children of ont::negative-body-condition-property-val
-DisjointClasses: not-alert-val, not-healthy-val, lack-of-energy-val, feeble-val, ailing-val, not-satiated-val, pained-val, restless-val
+DisjointClasses: not-alert-val, not-healthy-val, medical-condition-property-val, lack-of-energy-val, feeble-val, ailing-val, not-satiated-val, pained-val, restless-val
 
 # children of ont::not-satiated-val
 DisjointClasses: starved-val, dehydration-val, hungry, thirsty-val
@@ -20608,9 +20584,6 @@ DisjointClasses: disease-property-val, not-diseased-val, diseased-val
 
 # children of ont::diseased-val
 DisjointClasses: not-infectious-val, infectious-val
-
-# children of ont::having-constituent-parts-val
-DisjointClasses: having-human-constituents-val, resembling-val, lacking-component-or-part-val, having-component-or-part-val
 
 # children of ont::information-delivery-mode-val
 DisjointClasses: not-written-val, written-val
@@ -21384,7 +21357,7 @@ DisjointClasses: group-conflict, attack
 DisjointClasses: governing, taking-care-of, managing-resources, planning, organizing, guiding, tame
 
 # children of ont::arranging
-DisjointClasses: space, coordinating, collate, sort, arrange-text, set-up-device, exchange, decorate, reverse
+DisjointClasses: space, coordinating, collate, sort, arrange-text, set-up-device, exchange, decorate-primp, reverse
 
 # children of ont::joining
 DisjointClasses: enroll, attach, associate, fit

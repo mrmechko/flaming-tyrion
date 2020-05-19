@@ -2069,7 +2069,8 @@
   (OVERLAP
     WN::|call%2:38:00::|
     WN::|turn_to%2:30:00::|
-    WN::|woo%2:41:01::|))
+    WN::|woo%2:41:01::|
+    WN::|call%2:35:05::|))
 
 (CONCEPT
   ONT::APPEAR
@@ -2081,7 +2082,8 @@
     WN::|appear%2:30:02::|
     WN::|break%2:32:05::|
     WN::|come_out%2:32:00::|
-    WN::|materialize%2:30:00::|)
+    WN::|materialize%2:30:00::|
+    WN::|arise%2:42:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -2512,7 +2514,6 @@
   (OVERLAP
     WN::|arrange%2:35:00::|
     WN::|reorient%2:30:00::|
-    WN::|put%2:35:05::|
     WN::|put_aside%2:35:00::|
     WN::|address%2:32:02::|
     WN::|alternate%2:30:01::|)
@@ -7495,7 +7496,9 @@
     WN::|capture%2:35:01::|
     WN::|capture%2:35:00::|
     WN::|seize%2:35:01::|
-    WN::|take%2:40:01::|))
+    WN::|take%2:40:01::|
+    WN::|capture%1:04:00::|
+    WN::|arrest%2:35:00::|))
 
 (CONCEPT
   ONT::CARD
@@ -8176,7 +8179,8 @@
     WN::|change%2:30:02::|
     WN::|change%2:30:08::|
     WN::|change%2:30:01::|
-    WN::|transition%2:30:00::|)
+    WN::|transition%2:30:00::|
+    WN::|modify%2:30:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -10170,9 +10174,10 @@
   (INHERIT
     ONT::ACTIVITY)
   (OVERLAP
-    WN::|finance%1:04:00::|
     WN::|commerce%1:04:00::|
-    WN::|deal%1:04:02::|)
+    WN::|deal%1:04:02::|
+    WN::|finance%1:04:00::|
+    WN::|shop%2:41:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -13255,11 +13260,13 @@
     WN::|proclaim%2:32:02::|))
 
 (CONCEPT
-  ONT::DECORATE
+  ONT::DECORATE-PRIMP
   (INHERIT
     ONT::ARRANGING)
   (OVERLAP
-    WN::|decorate%2:36:00::|))
+    WN::|decorate%2:36:00::|
+    WN::|arrange%2:29:00::|
+    WN::|primp%2:29:00::|))
 
 (CONCEPT
   ONT::DECREASE
@@ -16193,7 +16200,8 @@
   (INHERIT
     ONT::CAUSE-EFFECT)
   (OVERLAP
-    WN::|egg_on%2:35:00::|)
+    WN::|egg_on%2:35:00::|
+    WN::|encourage%2:37:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (OR
@@ -16226,14 +16234,6 @@
   ONT::END-LOCATION
   (INHERIT
     ONT::OBJECT-DEPENDENT-LOCATION)
-  (OVERLAP
-    WN::|end%1:15:00::|
-    WN::|end%1:15:02::|))
-
-(CONCEPT
-  ONT::ENDPOINT
-  (INHERIT
-    ONT::LOC-WRT-GROUND-AS-SPATIAL-OBJ)
   (OVERLAP
     WN::|end%1:15:00::|
     WN::|end%1:15:02::|))
@@ -21661,24 +21661,6 @@
        T))))
 
 (CONCEPT
-  ONT::HAVING-COMPONENT-OR-PART-VAL
-  (INHERIT
-    ONT::HAVING-CONSTITUENT-PARTS-VAL))
-
-(CONCEPT
-  ONT::HAVING-CONSTITUENT-PARTS-VAL
-  (INHERIT
-    ONT::PHYSICAL-PROPERTY-VAL))
-
-(CONCEPT
-  ONT::HAVING-HUMAN-CONSTITUENTS-VAL
-  (INHERIT
-    ONT::HAVING-CONSTITUENT-PARTS-VAL)
-  (OVERLAP
-    WN::|patronized%3:00:00::|
-    WN::|patronised%3:00:00::|))
-
-(CONCEPT
   ONT::HEAD
   (INHERIT
     ONT::EXTERNAL-BODY-PART)
@@ -24630,11 +24612,6 @@
          SITUATION)))))
 
 (CONCEPT
-  ONT::LACKING-COMPONENT-OR-PART-VAL
-  (INHERIT
-    ONT::HAVING-CONSTITUENT-PARTS-VAL))
-
-(CONCEPT
   ONT::LAMB
   (INHERIT
     ONT::MEAT)
@@ -24900,7 +24877,8 @@
     WN::|larn%2:31:00::|
     WN::|acquire%2:31:00::|
     WN::|study%2:31:03::|
-    WN::|learning%1:09:00::|)
+    WN::|learning%1:09:00::|
+    WN::|learn%2:31:02::|)
   (SEM-FRAME
     (ONT::SOURCE
      (OR
@@ -27388,7 +27366,7 @@
 (CONCEPT
   ONT::MEDICAL-CONDITION-PROPERTY-VAL
   (INHERIT
-    ONT::PHYSICAL-PROPERTY-VAL))
+    ONT::NEGATIVE-BODY-CONDITION-PROPERTY-VAL))
 
 (CONCEPT
   ONT::MEDICAL-DIAGNOSTIC
@@ -27652,12 +27630,8 @@
   (INHERIT
     ONT::PHARMACOLOGIC-SUBSTANCE)
   (OVERLAP
-    WN::|medication%1:06:00::|
-    WN::|medicament%1:06:00::|
     WN::|medicine%1:06:00::|
-    WN::|medicinal_drug%1:06:00::|
     WN::|antibacterial%1:06:00::|
-    WN::|antibacterial_drug%1:06:00::|
     WN::|drug%1:06:00::|
     WN::|agonist%1:06:00::|)
   (SEM-FEATS
@@ -34919,7 +34893,8 @@
     WN::|plan%2:31:00::|
     WN::|plan%2:31:01::|
     WN::|time%2:31:00::|
-    WN::|arrange%2:36:03::|)
+    WN::|arrange%2:36:03::|
+    WN::|arrange%2:32:04::|)
   (SEM-FRAME
     (ONT::EFFECT
      (CONCEPT
@@ -39466,11 +39441,6 @@
          SITUATION)))))
 
 (CONCEPT
-  ONT::RESEMBLING-VAL
-  (INHERIT
-    ONT::HAVING-CONSTITUENT-PARTS-VAL))
-
-(CONCEPT
   ONT::RESENTFULNESS-SCALE
   (INHERIT
     ONT::EXPERIENCER-CONDITION-SCALE)
@@ -41350,24 +41320,11 @@
   (INHERIT
     ONT::COGITATION)
   (OVERLAP
-    WN::|take%2:31:02::|
-    WN::|read%2:31:05::|
     WN::|study%2:31:00::|
-    WN::|learn%2:31:02::|
     WN::|inspect%2:31:00::|
-    WN::|scrutinise%2:31:00::|
-    WN::|scrutinize%2:31:00::|
-    WN::|audit%2:31:01::|
     WN::|inspect%2:39:00::|
-    WN::|try%2:41:06::|
-    WN::|adjudicate%2:41:03::|
     WN::|judge%2:41:09::|
-    WN::|measure%2:31:01::|
-    WN::|evaluate%2:31:00::|
-    WN::|valuate%2:31:00::|
-    WN::|assess%2:31:00::|
     WN::|appraise%2:31:01::|
-    WN::|value%2:31:00::|
     WN::|analyse%2:31:00::|
     WN::|analyse%2:31:01::|
     WN::|analyse%2:31:04::|
@@ -41377,7 +41334,9 @@
     WN::|follow%2:39:13::|
     WN::|experiment%2:41:02::|
     WN::|experiment%2:41:01::|
-    WN::|surveillance%1:04:01::|)
+    WN::|surveillance%1:04:01::|
+    WN::|experiment%1:04:00::|
+    WN::|investigation%1:04:00::|)
   (SEM-FRAME
     (ONT::AGENT
      (SEM-FEATS
@@ -44592,7 +44551,8 @@
     WN::|stand_still%2:38:00::|
     WN::|stay%2:38:01::|
     WN::|stay_in_place%2:38:00::|
-    WN::|live%2:42:08::|)
+    WN::|live%2:42:08::|
+    WN::|arrest%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -44781,7 +44741,8 @@
     WN::|stop%2:42:00::|
     WN::|strand%2:38:02::|
     WN::|strand%2:38:03::|
-    WN::|terminate%2:30:01::|))
+    WN::|terminate%2:30:01::|
+    WN::|arrest%2:33:00::|))
 
 (CONCEPT
   ONT::STORAGE-FACILITY
@@ -46316,7 +46277,6 @@
     WN::|lesson%1:04:01::|
     WN::|teach%2:32:00::|
     WN::|teach%2:30:00::|
-    WN::|train%2:31:00::|
     WN::|train%2:41:02::|
     WN::|train%2:41:00::|
     WN::|train%2:41:01::|
@@ -47579,17 +47539,18 @@
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
   (OVERLAP
+    WN::|conflict%1:26:00::|
+    WN::|infringe%2:38:00::|
+    WN::|infringe%2:41:00::|
+    WN::|intrude%2:41:00::|
+    WN::|transgress%2:38:00::|
     WN::|transgress%2:41:00::|
     WN::|transgress%2:41:02::|
-    WN::|transgress%2:38:00::|
-    WN::|infringe%2:41:00::|
-    WN::|infringe%2:38:00::|
-    WN::|intrude%2:41:00::|
-    WN::|violate%2:42:00::|
+    WN::|violate%2:35:00::|
     WN::|violate%2:41:00::|
     WN::|violate%2:41:02::|
-    WN::|violate%2:35:00::|
-    WN::|conflict%1:26:00::|))
+    WN::|violate%2:42:00::|
+    WN::|violation%1:04:04::|))
 
 (CONCEPT
   ONT::TRANSLATE
@@ -50183,7 +50144,6 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (OBJECT-FUNCTION INSTRUMENT)
        (INTENTIONAL -)
        (ORIGIN ARTIFACT)))
     (ONT::FIGURE

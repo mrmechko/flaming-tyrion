@@ -175,6 +175,36 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::body-condition-property-val">
+ <comment>
+  &quot;properties having to do with with conditions of the human/animal body; note, these adjectives are general purpose. for medical usages see ont::medical-condition-property-val&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::body-condition-scale</feat>
+  <feat name="type">ont::body-condition-property-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::disease-infection-val">
  <comment>
   &quot;(septic)&quot;
@@ -185,7 +215,12 @@
  </concept>
  <concept name="ont::medical-condition-property-val">
  <relation label="inherit">
-  ont::physical-property-val
+  ont::negative-body-condition-property-val
+ </relation>
+ </concept>
+ <concept name="ont::negative-body-condition-property-val">
+ <relation label="inherit">
+  ont::body-condition-property-val
  </relation>
  </concept>
  <concept name="ont::physical-property-val">
@@ -561,6 +596,28 @@
   <feat name="type">ont::physical-property-val</feat>
  </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::body-condition-scale</feat>
+ <feat name="type">ont::body-condition-property-val</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
