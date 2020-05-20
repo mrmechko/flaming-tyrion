@@ -32402,7 +32402,9 @@
   (INHERIT
     ONT::PERSON)
   (OVERLAP
-    WN::|leader%1:18:00::|))
+    WN::|leader%1:18:00::|
+    WN::|ruler%1:18:00::|
+    WN::|head_of_state%1:18:00::|))
 
 (CONCEPT
   ONT::OFFICIAL-AUTHORITY-VAL
