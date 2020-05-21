@@ -906,7 +906,7 @@ Class: tangible-abstract-object
 Class: unit
   Annotations: rdfs:comment "names of units in various scales/domains"
   SubClassOf: abstract-object
-  SubClassOf: (FLT_abstr-obj)
+  SubClassOf: (FLT_abstr-obj and F_scale some domain)
 
 # ONT type ont::mental-construction
 Class: mental-construction
@@ -5739,7 +5739,7 @@ Class: number-result
 # ONT type ont::measure-unit
 Class: measure-unit
   SubClassOf: unit
-  SubClassOf: (FLT_abstr-obj and F_measure-function some V_value and F_container some V_- and F_information some V_- and F_intentional some V_-)
+  SubClassOf: (FLT_abstr-obj and F_measure-function some V_value and F_container some V_- and F_information some V_- and F_intentional some V_- and F_scale some measure-scale)
   SubClassOf: _figure only owl:Thing
 
 # ONT type ont::formal-unit
@@ -9184,6 +9184,7 @@ Class: vertical-val
 Class: tall-val
   SubClassOf: vertical-val
   SubClassOf: (FLT_abstr-obj and F_scale some height-scale)
+  SubClassOf: _figure only (FLT_phys-obj) and _figure some owl:Thing
 
 # ONT type ont::deep-val
 Class: deep-val
