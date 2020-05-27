@@ -227,10 +227,12 @@ DisjointClasses: V_human, V_natural-non-human
 Class: V_non-living
   SubClassOf: V_natural
 
-Class: V_artifact
-  SubClassOf: V_non-living
-
 DisjointClasses: V_living, V_non-living
+
+Class: V_artifact
+  SubClassOf: V_any-origin
+
+DisjointClasses: V_natural, V_artifact
 
 ObjectProperty: F_origin
   Characteristics: Functional
@@ -924,6 +926,18 @@ Class: relation
   SubClassOf: _neutral1 only owl:Thing
   SubClassOf: _norole only owl:Thing
   SubClassOf: _compar only owl:Thing
+
+# ONT type ont::part-reln
+Class: part-reln
+  Annotations: rdfs:comment "Generalized relation between parts and whole"
+  SubClassOf: relation
+  SubClassOf: _figure only ((FLT_phys-obj or FLT_situation or FLT_abstr-obj)) and _figure some owl:Thing
+  SubClassOf: _ground only ((FLT_phys-obj or FLT_situation or FLT_abstr-obj) and F_scale some (not time-measure-scale)) and _ground some owl:Thing
+
+# ONT type ont::member-reln
+Class: member-reln
+  Annotations: rdfs:comment "membership in some group object"
+  SubClassOf: part-reln
 
 # ONT type ont::domain-property
 Class: domain-property
@@ -2623,7 +2637,7 @@ Class: geo-object
 # ONT type ont::location
 Class: location
   SubClassOf: geo-object
-  SubClassOf: (FLT_phys-obj and F_origin some V_non-living and F_form some V_geographical-object and F_mobility some V_fixed)
+  SubClassOf: (FLT_phys-obj and F_origin some (V_non-living or V_artifact) and F_form some V_geographical-object and F_mobility some V_fixed)
   SubClassOf: _figure only ((FLT_situation or FLT_phys-obj))
 
 # ONT type ont::specific-loc
@@ -2768,6 +2782,7 @@ Class: region-for-activity
 Class: man-made-structure
   Annotations: rdfs:comment "man made structures that are attached to the earther and thus act like locations"
   SubClassOf: functional-region
+  SubClassOf: (FLT_phys-obj and F_spatial-abstraction some (V_spatial-point or V_spatial-region) and F_origin some V_artifact and F_trajectory some V_- and F_mobility some V_fixed)
 
 # ONT type ont::general-structure
 Class: general-structure
@@ -3134,8 +3149,8 @@ Class: religious-identity
 Class: communication-party
   SubClassOf: person-reln
 
-# ONT type ont::member-reln
-Class: member-reln
+# ONT type ont::person-defined-by-membership
+Class: person-defined-by-membership
   SubClassOf: person-reln
 
 # ONT type ont::entrant
@@ -5246,7 +5261,7 @@ Class: have-property
   SubClassOf: event-of-state
   SubClassOf: (FLT_situation and F_aspect some V_static and F_time-span some V_extended and F_trajectory some V_-)
   SubClassOf: _neutral only owl:Thing
-  SubClassOf: _formal only (FLT_abstr-obj and F_type some (domain-property or position-reln or predicate or relation)) and _formal some owl:Thing
+  SubClassOf: _formal only (FLT_abstr-obj and F_type some relation) and _formal some owl:Thing
 
 # ONT type ont::possibly-true
 Class: possibly-true
@@ -9350,6 +9365,7 @@ Class: predefined-measure-val
 # ONT type ont::predefined-size-val
 Class: predefined-size-val
   SubClassOf: predefined-measure-val
+  SubClassOf: _figure only (FLT_phys-obj and F_intentional some V_- and F_type some furnishings) and _figure some owl:Thing
 
 # ONT type ont::fat-content
 Class: fat-content
@@ -18022,7 +18038,7 @@ Class: become
   SubClassOf: event-of-undergoing-action
   SubClassOf: (FLT_situation and F_aspect some V_dynamic and F_trajectory some V_-)
   SubClassOf: _affected only owl:Thing
-  SubClassOf: _formal only (FLT_abstr-obj and F_type some property-val) and _formal some owl:Thing
+  SubClassOf: _formal only (FLT_abstr-obj and F_type some relation) and _formal some owl:Thing
 
 # ONT type ont::space
 Class: space
@@ -19000,7 +19016,7 @@ DisjointClasses: domain, dynamics, scale-value-function, relation, unit, tangibl
 DisjointClasses: value-cost, trajectory, social-system, function-object, mental-construction
 
 # children of ont::relation
-DisjointClasses: favorite, own, position-reln, predicate, domain-property
+DisjointClasses: favorite, own, position-reln, predicate, domain-property, part-reln
 
 # children of ont::part
 DisjointClasses: member, important-part, remaining-part
@@ -19276,7 +19292,7 @@ DisjointClasses: recipient, official, addressee, scout, unfortunate, entrant, ma
 DisjointClasses: health-professional, author, scholar
 
 # children of ont::person-reln
-DisjointClasses: possessor-reln, member-reln, communication-party, identity-and-origin, friend, specialist
+DisjointClasses: possessor-reln, person-defined-by-membership, communication-party, identity-and-origin, friend, specialist
 
 # children of ont::identity-and-origin
 DisjointClasses: religious-identity, inhabitant, foreigner, regional-identity, person-of-nationality

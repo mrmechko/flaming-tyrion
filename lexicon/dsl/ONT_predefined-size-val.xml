@@ -9,6 +9,17 @@
  <relation label="overlap">
   wn::|double%5:00:00:large:00|
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="type">ont::furnishings</feat>
+    <feat name="intentional">-</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -112,42 +123,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::predefined-measure-val">
- <comment>
-  &quot;standardized size/quantity given a predefined measure&quot;
- </comment>
- <relation label="inherit">
-  ont::dimensional-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::predefined-measure-scale</feat>
-  <feat name="type">ont::predefined-measure-val</feat>
- </sem-feats>
- </concept>
- <concept name="ont::dimensional-property-val">
- <comment>
-  &quot;properties pertaining to dimensions and measurable extents&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::dimensional-scale</feat>
-  <feat name="type">ont::dimensional-property-val</feat>
- </sem-feats>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::predefined-measure-scale</feat>
- <feat name="type">ont::predefined-measure-val</feat>
+ <feat name="scale">ont::dimensional-scale</feat>
+ <feat name="type">ont::dimensional-property-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -205,9 +186,50 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::dimensional-scale</feat>
- <feat name="type">ont::dimensional-property-val</feat>
+ <feat name="scale">ont::predefined-measure-scale</feat>
+ <feat name="type">ont::predefined-measure-val</feat>
  </sem-feats>
+ <concept name="ont::dimensional-property-val">
+ <comment>
+  &quot;properties pertaining to dimensions and measurable extents&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::dimensional-scale</feat>
+  <feat name="type">ont::dimensional-property-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="type">ont::furnishings</feat>
+   <feat name="intentional">-</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::predefined-measure-val">
+ <comment>
+  &quot;standardized size/quantity given a predefined measure&quot;
+ </comment>
+ <relation label="inherit">
+  ont::dimensional-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::predefined-measure-scale</feat>
+  <feat name="type">ont::predefined-measure-val</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

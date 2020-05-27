@@ -59,7 +59,12 @@
  </relation>
  <feat name="mobility">fixed</feat>
  <feat name="form">geographical-object</feat>
- <feat name="origin">non-living</feat>
+ <feat name="origin">
+ <or>
+  non-living
+  artifact
+ </or>
+ </feat>
  <feat name="type">ont::location</feat>
  </sem-feats>
  <concept name="ont::geo-object">
@@ -96,36 +101,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::functional-region">
- <relation label="inherit">
-  ont::geographic-region
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="container">+</feat>
- <feat name="mobility">fixed</feat>
- <feat name="object-function">provides-service-open-closed</feat>
- <feat name="trajectory">-</feat>
- <feat name="origin">artifact</feat>
- <feat name="spatial-abstraction">
- <or>
-  spatial-point
-  spatial-region
- </or>
- </feat>
- <feat name="type">ont::facility</feat>
- </sem-feats>
- <concept name="ont::man-made-structure">
- <comment>
-  &quot;man made structures that are attached to the earther and thus act like locations&quot;
- </comment>
- <relation label="inherit">
-  ont::functional-region
- </relation>
- </concept>
  <concept name="ont::facility">
  <relation label="inherit">
   ont::man-made-structure
@@ -153,6 +128,66 @@
   <feat name="type">ont::facility</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::man-made-structure">
+ <comment>
+  &quot;man made structures that are attached to the earther and thus act like locations&quot;
+ </comment>
+ <relation label="inherit">
+  ont::functional-region
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="mobility">fixed</feat>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+  </or>
+  </feat>
+  <feat name="type">ont::man-made-structure</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="mobility">fixed</feat>
+ <feat name="object-function">provides-service-open-closed</feat>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="type">ont::facility</feat>
+ </sem-feats>
+ <concept name="ont::functional-region">
+ <relation label="inherit">
+  ont::geographic-region
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="mobility">fixed</feat>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="type">ont::man-made-structure</feat>
+ </sem-feats>
  <concept name="ont::geographic-region">
  <relation label="inherit">
   ont::specific-loc
@@ -182,7 +217,12 @@
   </relation>
   <feat name="mobility">fixed</feat>
   <feat name="form">geographical-object</feat>
-  <feat name="origin">non-living</feat>
+  <feat name="origin">
+  <or>
+   non-living
+   artifact
+  </or>
+  </feat>
   <feat name="type">ont::location</feat>
  </sem-feats>
  <sem-frame>

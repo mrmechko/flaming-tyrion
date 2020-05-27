@@ -5333,7 +5333,7 @@
      <relation label="inherit">
       abstr-obj
      </relation>
-     <feat name="type">ont::property-val</feat>
+     <feat name="type">ont::relation</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::affected" optional="optional">
@@ -24858,14 +24858,7 @@
      <relation label="inherit">
       abstr-obj
      </relation>
-     <feat name="type">
-     <or>
-      ont::domain-property
-      ont::position-reln
-      ont::predicate
-      ont::relation
-     </or>
-     </feat>
+     <feat name="type">ont::relation</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::neutral">
@@ -29961,7 +29954,12 @@
    </relation>
    <feat name="mobility">fixed</feat>
    <feat name="form">geographical-object</feat>
-   <feat name="origin">non-living</feat>
+   <feat name="origin">
+   <or>
+    non-living
+    artifact
+   </or>
+   </feat>
    <feat name="type">ont::location</feat>
   </sem-feats>
   <sem-frame>
@@ -30810,6 +30808,21 @@
   <relation label="inherit">
    ont::functional-region
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="mobility">fixed</feat>
+   <feat name="trajectory">-</feat>
+   <feat name="origin">artifact</feat>
+   <feat name="spatial-abstraction">
+   <or>
+    spatial-point
+    spatial-region
+   </or>
+   </feat>
+   <feat name="type">ont::man-made-structure</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::manage-to-complete">
   <relation label="inherit">
@@ -31956,8 +31969,11 @@
   </sem-frame>
  </concept>
  <concept name="ont::member-reln">
+  <comment>
+   &quot;membership in some group object&quot;
+  </comment>
   <relation label="inherit">
-   ont::person-reln
+   ont::part-reln
   </relation>
  </concept>
  <concept name="ont::membership">
@@ -38514,6 +38530,33 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::part-reln">
+  <comment>
+   &quot;Generalized relation between parts and whole&quot;
+  </comment>
+  <relation label="inherit">
+   ont::relation
+  </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="situation" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="scale">ont::time-measure-scale</feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::part-whole-val">
   <comment>
    &quot;properties describing the relationship between the complete or complex whole and its parts&quot;
@@ -39285,6 +39328,11 @@
    wn::|valetudinarian%3:01:00::|
    wn::|valetudinary%3:01:00::|
    wn::|cannibalistic%3:01:00::|
+  </relation>
+ </concept>
+ <concept name="ont::person-defined-by-membership">
+  <relation label="inherit">
+   ont::person-reln
   </relation>
  </concept>
  <concept name="ont::person-of-nationality">
@@ -41486,6 +41534,17 @@
   <relation label="overlap">
    wn::|double%5:00:00:large:00|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="type">ont::furnishings</feat>
+     <feat name="intentional">-</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::predicate">
   <comment>

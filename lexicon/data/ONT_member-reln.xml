@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../style/onttype.xsl"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
-<ONTTYPE name="member-reln" parent="person-reln" modified="Wed Dec 18 06:43:34 2019">
-<SEM fltype="phys-obj">
-<FEATURES type="member-reln" information="-" intentional="+" container="-" mobility="self-moving" object-function="occupation" origin="human" spatial-abstraction="spatial-point" form="solid-object" trajectory="-" tangible="+" />
+<ONTTYPE name="member-reln" parent="part-reln" modified="Wed May 27 01:44:12 2020" comment="membership in some group object">
+<SEM fltype="abstr-obj">
+<FEATURES type="member-reln" />
 </SEM>
-<ARGUMENT role="figure" optionality="required" fltype="(? lof534 phys-obj abstr-obj situation)" />
-<WORD name="insider" />
-<WORD name="outsider" />
-<WORD name="stranger" />
+<ARGUMENT role="ground" optionality="essential" fltype="(? grd439 phys-obj situation abstr-obj)">
+<FEATURES scale="(? !sc440 time-measure-scale)" />
+</ARGUMENT>
+<ARGUMENT role="figure" optionality="essential" fltype="(? fig438 phys-obj situation abstr-obj)" />
+<ARGUMENT role="neutral" optionality="optional" fltype="?!type" />
+<ARGUMENT role="neutral1" optionality="optional" fltype="?!type" />
+<ARGUMENT role="norole" optionality="optional" fltype="?!type" />
+<ARGUMENT role="compar" optionality="optional" fltype="?!type" />
 </ONTTYPE>

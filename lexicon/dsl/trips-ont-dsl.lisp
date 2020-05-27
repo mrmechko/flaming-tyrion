@@ -4629,7 +4629,7 @@
      (SEM-FEATS
        (INHERIT
          ABSTR-OBJ)
-       (TYPE ONT::PROPERTY-VAL))
+       (TYPE ONT::RELATION))
      OPTIONAL)
     (ONT::AFFECTED
      (CONCEPT
@@ -21649,12 +21649,7 @@
      (SEM-FEATS
        (INHERIT
          ABSTR-OBJ)
-       (TYPE
-        (OR
-          ONT::DOMAIN-PROPERTY
-          ONT::POSITION-RELN
-          ONT::PREDICATE
-          ONT::RELATION)))
+       (TYPE ONT::RELATION))
      OPTIONAL)
     (ONT::NEUTRAL
      (CONCEPT
@@ -26019,7 +26014,10 @@
       PHYS-OBJ)
     (MOBILITY FIXED)
     (FORM GEOGRAPHICAL-OBJECT)
-    (ORIGIN NON-LIVING)
+    (ORIGIN
+     (OR
+       NON-LIVING
+       ARTIFACT))
     (TYPE ONT::LOCATION))
   (SEM-FRAME
     (ONT::FIGURE
@@ -26718,7 +26716,18 @@
   (COMMENT
    "man made structures that are attached to the earther and thus act like locations")
   (INHERIT
-    ONT::FUNCTIONAL-REGION))
+    ONT::FUNCTIONAL-REGION)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (MOBILITY FIXED)
+    (TRAJECTORY -)
+    (ORIGIN ARTIFACT)
+    (SPATIAL-ABSTRACTION
+     (OR
+       SPATIAL-POINT
+       SPATIAL-REGION))
+    (TYPE ONT::MAN-MADE-STRUCTURE)))
 
 (CONCEPT
   ONT::MANAGE-TO-COMPLETE
@@ -27727,8 +27736,9 @@
 
 (CONCEPT
   ONT::MEMBER-RELN
+  (COMMENT "membership in some group object")
   (INHERIT
-    ONT::PERSON-RELN))
+    ONT::PART-RELN))
 
 (CONCEPT
   ONT::MEMBERSHIP
@@ -33265,6 +33275,33 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::PART-RELN
+  (COMMENT "Generalized relation between parts and whole")
+  (INHERIT
+    ONT::RELATION)
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ))
+       (SCALE ONT::TIME-MEASURE-SCALE))
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::PART-WHOLE-VAL
   (COMMENT
    "properties describing the relationship between the complete or complex whole and its parts")
@@ -33922,6 +33959,11 @@
     WN::|valetudinarian%3:01:00::|
     WN::|valetudinary%3:01:00::|
     WN::|cannibalistic%3:01:00::|))
+
+(CONCEPT
+  ONT::PERSON-DEFINED-BY-MEMBERSHIP
+  (INHERIT
+    ONT::PERSON-RELN))
 
 (CONCEPT
   ONT::PERSON-OF-NATIONALITY
@@ -35862,7 +35904,15 @@
   (INHERIT
     ONT::PREDEFINED-MEASURE-VAL)
   (OVERLAP
-    WN::|double%5:00:00:large:00|))
+    WN::|double%5:00:00:large:00|)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::FURNISHINGS)
+       (INTENTIONAL -))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::PREDICATE
