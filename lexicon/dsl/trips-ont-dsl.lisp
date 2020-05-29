@@ -2499,11 +2499,11 @@
   ONT::ARRANGEMENT-CONFIGURATION
   (COMMENT "An group of objects organized in some way")
   (INHERIT
-    ONT::COLLECTION)
+    ONT::SYSTEM)
   (OVERLAP
     WN::|arrangement%1:14:00::|
     WN::|array%1:14:00::|
-    WN::|straggle%1:14:00::|
+    WN::|straggle%1:14:00     ::|
     WN::|configuration%1:09:00::|))
 
 (CONCEPT
@@ -15764,7 +15764,7 @@
   (OVERLAP
     WN::|biotic_community%1:14:00::|
     WN::|ecosystem%1:14:00::|
-    WN::|biosphere%1:15:00::|
+    WN::|biosphere     %1:15:00::|
     WN::|biota%1:14:00::|))
 
 (CONCEPT
@@ -19854,9 +19854,6 @@
    "These are objects that are described by their function in an activity- and have other physical descriptions: e.g., the things you are travelling with is LUGGAGE")
   (INHERIT
     ONT::PHYS-OBJECT)
-  (OVERLAP
-    WN::|instrumentality%1:06:00::|
-    WN::|instrumentation%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -23426,6 +23423,8 @@
   ONT::INSTRUMENTATION
   (INHERIT
     ONT::MANUFACTURED-OBJECT)
+  (OVERLAP
+    WN::|instrumentation%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -44990,8 +44989,9 @@
   ONT::STRUCTURE
   (COMMENT "A collection of objects organized for some purpose")
   (INHERIT
-    ONT::SYSTEM)
+    ONT::ARRANGEMENT-CONFIGURATION)
   (OVERLAP
+    WN::|computer_architecture%1:07:00::|
     WN::|structure%1:07:00::|))
 
 (CONCEPT

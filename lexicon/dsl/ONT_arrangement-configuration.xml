@@ -7,12 +7,12 @@
   &quot;An group of objects organized in some way&quot;
  </comment>
  <relation label="inherit">
-  ont::collection
+  ont::system
  </relation>
  <relation label="overlap">
   wn::|arrangement%1:14:00::|
   wn::|array%1:14:00::|
-  wn::|straggle%1:14:00::|
+  wn::|straggle%1:14:00     ::|
   wn::|configuration%1:09:00::|
  </relation>
  </concept>
@@ -83,6 +83,34 @@
   <feat name="type">ont::phys-object</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::system">
+ <comment>
+  &quot;An interconnected group of objects, abstract or physical&quot;
+ </comment>
+ <relation label="inherit">
+  ont::collection
+ </relation>
+ <relation label="overlap">
+  wn::|system%1:14:00::|
+  wn::|system%1:06:00::|
+ </relation>
+ </concept>
+ <concept name="ont::collection">
+ <comment>
+  &quot;This type contains concepts that explicitly denotethe group (rather than the members of the grop), e.g., group, herd, collection,...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::group-object
+ </relation>
+ <relation label="overlap">
+  wn::|collection%1:14:00::|
+  wn::|array%1:10:00::|
+  wn::|series%1:14:01::|
+  wn::|trinketry%1:14:00::|
+  wn::|population%1:14:01::|
+  wn::|batch%1:23:00::|
+ </relation>
+ </concept>
  <concept name="ont::group-object">
  <comment>
   &quot;a collection of objects considered as a unit. So there are many things but grammatically is a singular noun&quot;
@@ -109,22 +137,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::collection">
- <comment>
-  &quot;This type contains concepts that explicitly denotethe group (rather than the members of the grop), e.g., group, herd, collection,...&quot;
- </comment>
- <relation label="inherit">
-  ont::group-object
- </relation>
- <relation label="overlap">
-  wn::|collection%1:14:00::|
-  wn::|array%1:10:00::|
-  wn::|series%1:14:01::|
-  wn::|trinketry%1:14:00::|
-  wn::|population%1:14:01::|
-  wn::|batch%1:23:00::|
- </relation>
- </concept>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -139,6 +151,18 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="phys-obj" />
+ <concept name="ont::structure">
+ <comment>
+  &quot;A collection of objects organized for some purpose&quot;
+ </comment>
+ <relation label="inherit">
+  ont::arrangement-configuration
+ </relation>
+ <relation label="overlap">
+  wn::|computer_architecture%1:07:00::|
+  wn::|structure%1:07:00::|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="n" />

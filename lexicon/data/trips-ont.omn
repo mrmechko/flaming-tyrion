@@ -4562,11 +4562,6 @@ Class: collection
   Annotations: rdfs:comment "This type contains concepts that explicitly denotethe group (rather than the members of the grop), e.g., group, herd, collection,..."
   SubClassOf: group-object
 
-# ONT type ont::arrangement-configuration
-Class: arrangement-configuration
-  Annotations: rdfs:comment "An group of objects organized in some way"
-  SubClassOf: collection
-
 # ONT type ont::data
 Class: data
   Annotations: rdfs:comment "A group of information organized in some way"
@@ -4619,14 +4614,19 @@ Class: system
   Annotations: rdfs:comment "An interconnected group of objects, abstract or physical"
   SubClassOf: collection
 
-# ONT type ont::ecosystem
-Class: ecosystem
-  Annotations: rdfs:comment "An interconnected group of entities forming an ecosystem"
+# ONT type ont::arrangement-configuration
+Class: arrangement-configuration
+  Annotations: rdfs:comment "An group of objects organized in some way"
   SubClassOf: system
 
 # ONT type ont::structure
 Class: structure
   Annotations: rdfs:comment "A collection of objects organized for some purpose"
+  SubClassOf: arrangement-configuration
+
+# ONT type ont::ecosystem
+Class: ecosystem
+  Annotations: rdfs:comment "An interconnected group of entities forming an ecosystem"
   SubClassOf: system
 
 # ONT type ont::economic-system
@@ -19475,7 +19475,7 @@ DisjointClasses: butter, cheese, milk, yogurt
 DisjointClasses: quantity, combination, sequence, formation, implicit-group, collection
 
 # children of ont::collection
-DisjointClasses: system, data, arrangement-configuration
+DisjointClasses: system, data
 
 # children of ont::implicit-group
 DisjointClasses: social-group, people-subgroup, natural-group, mail
@@ -19484,7 +19484,7 @@ DisjointClasses: social-group, people-subgroup, natural-group, mail
 DisjointClasses: plant-group, animal-group
 
 # children of ont::system
-DisjointClasses: economic-system, structure, ecosystem
+DisjointClasses: economic-system, ecosystem, arrangement-configuration
 
 # children of ont::formation
 DisjointClasses: column-formation, row-formation
