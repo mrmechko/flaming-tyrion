@@ -3324,8 +3324,8 @@
         (OR
           ONT::PHYS-OBJECT
           ONT::TANGIBLE-ABSTRACT-OBJECT
-          ONT::EVENT-TYPE))
-       (TANGIBLE +))
+          ONT::EVENT-TYPE
+          ONT::SCALE-VALUE-FUNCTION)))
      OPTIONAL)))
 
 (CONCEPT
@@ -18654,7 +18654,8 @@
     ONT::MENTAL-CONSTRUCTION)
   (OVERLAP
     WN::|feeling%1:03:00::|
-    WN::|mercy%1:07:00::|)
+    WN::|mercy%1:07:00::|
+    WN::|psychological_state%1:26:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -20006,7 +20007,7 @@
   (INHERIT
     ONT::UNORDERED-DOMAIN)
   (OVERLAP
-    WN::|sex%1:14:00::|)
+    WN::|gender%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -35133,8 +35134,6 @@
   ONT::POLARITY-SCALE
   (INHERIT
     ONT::PHYSICAL-PROPERTY-SCALE)
-  (OVERLAP
-    WN::|polarity%1:24:01::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -36924,7 +36923,7 @@
   (INHERIT
     ONT::ORDERED-DOMAIN)
   (OVERLAP
-    WN::|psychological_state%1:26:00::|)
+    WN::|trait%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -47887,7 +47886,7 @@
   (INHERIT
     ONT::UNORDERED-DOMAIN)
   (OVERLAP
-    WN::|truth%1:09:00::|)
+    WN::|truth%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -49313,7 +49312,7 @@
   (INHERIT
     ONT::SIZE-SCALE)
   (OVERLAP
-    WN::|volume%1:23:00::|)
+    WN::|volume%1:07:03::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
