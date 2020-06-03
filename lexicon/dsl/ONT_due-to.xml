@@ -85,57 +85,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::reason">
- <relation label="inherit">
-  ont::situation-modifier
- </relation>
- </concept>
- <concept name="ont::situation-modifier">
- <relation label="inherit">
-  ont::situation-object-modifier
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="situation" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::situation-object-modifier">
- <relation label="inherit">
-  ont::predicate
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="type">ont::situation-object-modifier</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="situation" />
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+  </or>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::situation-object-modifier</feat>
+ </sem-feats>
  <concept name="ont::predicate">
  <comment>
   &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as)&quot;
@@ -158,20 +121,33 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
+ <concept name="ont::situation-object-modifier">
+ <comment>
+  &quot;modifiers of events that state a property related to one of its arguments&quot;
+ </comment>
  <relation label="inherit">
-  abstr-obj
+  ont::predicate
  </relation>
- <feat name="type">ont::situation-object-modifier</feat>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::situation-object-modifier</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::reason">
+ <relation label="inherit">
+  ont::situation-object-modifier
+ </relation>
+ </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

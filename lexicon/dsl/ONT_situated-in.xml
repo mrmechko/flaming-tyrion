@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::situated-in">
  <relation label="inherit">
-  ont::situation-object-modifier
+  ont::situation-modifier
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::ground">
@@ -102,19 +102,16 @@
  </sem-frame>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
+  <concept name="situation" />
  </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="type">ont::situation-object-modifier</feat>
- </sem-feats>
  <concept name="ont::predicate">
  <comment>
   &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as)&quot;
@@ -153,22 +150,22 @@
   </or>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::situation-object-modifier">
+ <concept name="ont::situation-modifier">
+ <comment>
+  &quot;modifiers of events themselves (and not or an argument to the event)&quot;
+ </comment>
  <relation label="inherit">
   ont::predicate
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="type">ont::situation-object-modifier</feat>
- </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
+   <concept name="situation" />
   </role-restr-map>
  </sem-frame>
  </concept>

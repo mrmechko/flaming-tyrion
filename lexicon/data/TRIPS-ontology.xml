@@ -1883,6 +1883,12 @@
 <WORD name="compatibility" />
 <MAPPING to="wordnet" name="compatibility%1:07:00::" />
 </ONTTYPE>
+<ONTTYPE name="dependence-scale">
+<MAPPING to="wordnet" name="dependence%1:26:00::" />
+</ONTTYPE>
+<ONTTYPE name="reciprocity-scale">
+<MAPPING to="wordnet" name="reciprocality%1:24:00::" />
+</ONTTYPE>
 <ONTTYPE name="similarity-scale">
 <ONTTYPE name="different-scale">
 <WORD name="difference" />
@@ -3413,14 +3419,17 @@
 <MAPPING to="wordnet" name="dietary%3:01:00::" />
 </ONTTYPE>
 <ONTTYPE name="food-property-val">
-<MAPPING to="wordnet" name="vinous%3:01:00::" />
+<WORD name="boneless" />
+<WORD name="skinless" />
 <MAPPING to="wordnet" name="alimentative%3:01:00::" />
+<MAPPING to="wordnet" name="boneless%3:00:00::" />
 <MAPPING to="wordnet" name="carroty%3:01:00::" />
-<MAPPING to="wordnet" name="vanilla%3:01:00::" />
-<MAPPING to="wordnet" name="wheaten%3:01:00::" />
-<MAPPING to="wordnet" name="herbal%3:01:00::" />
 <MAPPING to="wordnet" name="garlicky%3:01:00::" />
+<MAPPING to="wordnet" name="herbal%3:01:00::" />
 <MAPPING to="wordnet" name="oaten%3:01:00::" />
+<MAPPING to="wordnet" name="vanilla%3:01:00::" />
+<MAPPING to="wordnet" name="vinous%3:01:00::" />
+<MAPPING to="wordnet" name="wheaten%3:01:00::" />
 </ONTTYPE>
 <ONTTYPE name="nutritional-val">
 <WORD name="nutritional" />
@@ -7786,6 +7795,7 @@
 <MAPPING to="wordnet" name="reliable%3:00:00::" />
 </ONTTYPE>
 <ONTTYPE name="unreliable">
+<WORD name="noisy" />
 <WORD name="uncertain" />
 <WORD name="unreliable" />
 <MAPPING to="wordnet" name="untrustworthy%3:00:00::" />
@@ -8169,7 +8179,6 @@
 <WORD name="probably" />
 <MAPPING to="wordnet" name="expected%3:00:00::" />
 <MAPPING to="wordnet" name="plausible%3:00:00::" />
-<MAPPING to="wordnet" name="prospective%3:00:00::" />
 <MAPPING to="wordnet" name="likely%3:00:00::" />
 <MAPPING to="wordnet" name="probable%3:00:00::" />
 <ONTTYPE name="at-risk-val">
@@ -10043,18 +10052,6 @@
 <MAPPING to="wordnet" name="cordless%3:01:00::" />
 <MAPPING to="wordnet" name="wireless%3:00:00::" />
 </ONTTYPE>
-<ONTTYPE name="electrical">
-<WORD name="electric" />
-<WORD name="electrical" />
-</ONTTYPE>
-<ONTTYPE name="food-preparation">
-<WORD name="boneless" />
-<WORD name="skinless" />
-<MAPPING to="wordnet" name="boneless%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="interference-val">
-<WORD name="noisy" />
-</ONTTYPE>
 <ONTTYPE name="liquid-property-val">
 <MAPPING to="wordnet" name="effervescent%3:00:00::" />
 <MAPPING to="wordnet" name="noneffervescent%3:00:00::" />
@@ -10068,6 +10065,10 @@
 <WORD name="optical" />
 <WORD name="photographic" />
 <MAPPING to="wordnet" name="magnetic%3:00:00::" />
+<ONTTYPE name="electrical">
+<WORD name="electric" />
+<WORD name="electrical" />
+</ONTTYPE>
 <ONTTYPE name="multimedia-val">
 <WORD name="multimedia" />
 </ONTTYPE>
@@ -11117,30 +11118,11 @@
 <ONTTYPE name="quantifier-val" />
 </ONTTYPE>
 <ONTTYPE name="relational-attribute-val">
-<ONTTYPE name="comparative-val">
-<ONTTYPE name="not-relative-val">
-<WORD name="absolute" />
-<WORD name="absolutely" />
-<MAPPING to="wordnet" name="absolute%3:00:00::" />
-</ONTTYPE>
-<ONTTYPE name="relative">
-<WORD name="comparative" />
-<WORD name="relative" />
-<MAPPING to="wordnet" name="relative%3:00:00::" />
-</ONTTYPE>
-</ONTTYPE>
 <ONTTYPE name="compatibility-val">
 <ONTTYPE name="compatible-val">
 <WORD name="compatible" />
 <MAPPING to="wordnet" name="compatible%3:00:02::" />
 <MAPPING to="wordnet" name="compatible%3:00:01::" />
-</ONTTYPE>
-<ONTTYPE name="not-compatible-val">
-<WORD name="incompatible" />
-<MAPPING to="wordnet" name="mismatched%3:00:00::" />
-<MAPPING to="wordnet" name="incompatible%3:00:01::" />
-<MAPPING to="wordnet" name="uncongenial%3:00:00::" />
-</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="correspondence-val">
 <ONTTYPE name="corresponding-val">
@@ -11150,6 +11132,13 @@
 </ONTTYPE>
 <ONTTYPE name="not-corresponding-val">
 <MAPPING to="wordnet" name="incommensurate%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="not-compatible-val">
+<WORD name="incompatible" />
+<MAPPING to="wordnet" name="mismatched%3:00:00::" />
+<MAPPING to="wordnet" name="incompatible%3:00:01::" />
+<MAPPING to="wordnet" name="uncongenial%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="dependence-val">
@@ -11200,6 +11189,18 @@
 <ONTTYPE name="related-val">
 <MAPPING to="wordnet" name="related%3:00:02::" />
 <MAPPING to="wordnet" name="associative%3:00:00::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="relational-val">
+<ONTTYPE name="not-relative-val">
+<WORD name="absolute" />
+<WORD name="absolutely" />
+<MAPPING to="wordnet" name="absolute%3:00:00::" />
+</ONTTYPE>
+<ONTTYPE name="relative">
+<WORD name="comparative" />
+<WORD name="relative" />
+<MAPPING to="wordnet" name="relative%3:00:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="sequence-val">
@@ -11256,9 +11257,7 @@
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="serving-as-connection-val">
-<ONTTYPE name="connecting-val">
 <MAPPING to="wordnet" name="conjunctive%3:00:00::" />
-</ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="similarity-val">
 <WORD name="alike" />
@@ -13339,29 +13338,7 @@
 <ONTTYPE name="similarity">
 <WORD name="like" />
 </ONTTYPE>
-<ONTTYPE name="situation-object-modifier">
-<ONTTYPE name="purpose">
-<WORD name="in_order_that" />
-<WORD name="in_order_to" />
-<WORD name="so_that" />
-<WORD name="such_that" />
-<WORD name="for" />
-<WORD name="in" />
-<WORD name="to" />
-</ONTTYPE>
-<ONTTYPE name="situated-in">
-<WORD name="in_case" />
-<WORD name="just_in_case" />
-<WORD name="at" />
-<WORD name="in" />
-<WORD name="under" />
-</ONTTYPE>
 <ONTTYPE name="situation-modifier">
-<ONTTYPE name="beneficiary">
-<WORD name="in_behalf_of" />
-<WORD name="on_behalf_of" />
-<WORD name="for" />
-</ONTTYPE>
 <ONTTYPE name="by-means-of">
 <WORD name="by_means_of" />
 <WORD name="by" />
@@ -13386,19 +13363,6 @@
 </ONTTYPE>
 <ONTTYPE name="contra-force">
 <WORD name="against" />
-</ONTTYPE>
-<ONTTYPE name="degree-of-belief">
-<WORD name="in_fact" />
-<WORD name="sort_of" />
-<WORD name="actually" />
-<WORD name="apparently" />
-<WORD name="evidently" />
-<WORD name="hopefully" />
-<WORD name="indeed" />
-<WORD name="really" />
-<WORD name="somehow" />
-<WORD name="sorta" />
-<WORD name="unbelievably" />
 </ONTTYPE>
 <ONTTYPE name="in-scale">
 <WORD name="in" />
@@ -13426,6 +13390,10 @@
 <WORD name="polite" />
 <WORD name="separately" />
 <WORD name="with" />
+<ONTTYPE name="as-if-for">
+<WORD name="as_for" />
+<WORD name="as_if_for" />
+</ONTTYPE>
 <ONTTYPE name="manner-refl">
 <WORD name="auto-" />
 <WORD name="auto-" />
@@ -13436,6 +13404,51 @@
 <WORD name="dis-" />
 <WORD name="un-" />
 </ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="situated-in">
+<WORD name="in_case" />
+<WORD name="just_in_case" />
+<WORD name="at" />
+<WORD name="in" />
+<WORD name="under" />
+</ONTTYPE>
+<ONTTYPE name="therefore">
+<WORD name="to_this_end" />
+<WORD name="so" />
+<WORD name="thereby" />
+<WORD name="therefore" />
+<WORD name="thus" />
+<MAPPING to="wordnet" name="therefore%4:02:00::" />
+<MAPPING to="wordnet" name="consequently%4:02:01::" />
+</ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="situation-object-modifier">
+<ONTTYPE name="beneficiary">
+<WORD name="in_behalf_of" />
+<WORD name="on_behalf_of" />
+<WORD name="for" />
+</ONTTYPE>
+<ONTTYPE name="degree-of-belief">
+<WORD name="in_fact" />
+<WORD name="sort_of" />
+<WORD name="actually" />
+<WORD name="apparently" />
+<WORD name="evidently" />
+<WORD name="hopefully" />
+<WORD name="indeed" />
+<WORD name="really" />
+<WORD name="somehow" />
+<WORD name="sorta" />
+<WORD name="unbelievably" />
+</ONTTYPE>
+<ONTTYPE name="purpose">
+<WORD name="in_order_that" />
+<WORD name="in_order_to" />
+<WORD name="so_that" />
+<WORD name="such_that" />
+<WORD name="for" />
+<WORD name="in" />
+<WORD name="to" />
 </ONTTYPE>
 <ONTTYPE name="reason">
 <WORD name="in_response_to" />
@@ -13452,16 +13465,6 @@
 </ONTTYPE>
 <ONTTYPE name="reason-for">
 <WORD name="why" />
-</ONTTYPE>
-<ONTTYPE name="therefore">
-<WORD name="to_this_end" />
-<WORD name="so" />
-<WORD name="thereby" />
-<WORD name="therefore" />
-<WORD name="thus" />
-<MAPPING to="wordnet" name="therefore%4:02:00::" />
-<MAPPING to="wordnet" name="consequently%4:02:01::" />
-</ONTTYPE>
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="speakerstatus">
@@ -13642,6 +13645,7 @@
 <WORD name="forthcoming" />
 <WORD name="upcoming" />
 <MAPPING to="wordnet" name="future%3:00:00::" />
+<MAPPING to="wordnet" name="prospective%3:00:00::" />
 </ONTTYPE>
 <ONTTYPE name="in-past">
 <WORD name="status_post" />
@@ -20494,7 +20498,8 @@
 </ONTTYPE>
 <ONTTYPE name="dieting">
 <WORD name="diet" />
-<MAPPING to="wordnet" name="abstain%2:34:00::" />
+<MAPPING to="wordnet" name="diet%2:34:00::" />
+<MAPPING to="wordnet" name="diet%2:34:01::" />
 </ONTTYPE>
 <ONTTYPE name="physical-activity">
 <WORD name="fish" />
@@ -21196,6 +21201,8 @@
 <WORD name="expose" />
 <WORD name="uncover" />
 <MAPPING to="wordnet" name="uncover%2:35:00::" />
+<MAPPING to="wordnet" name="expose%2:39:02::" />
+<MAPPING to="wordnet" name="expose%2:39:01::" />
 </ONTTYPE>
 <ONTTYPE name="teach-train">
 <WORD name="teach" />
@@ -24249,6 +24256,7 @@
 <MAPPING to="wordnet" name="perch%2:35:10::" />
 <MAPPING to="wordnet" name="park%2:35:00::" />
 <MAPPING to="wordnet" name="center%2:38:00::" />
+<MAPPING to="wordnet" name="prop_up%2:35:00::" />
 </ONTTYPE>
 <ONTTYPE name="put-away">
 <WORD name="cache" />
@@ -24953,6 +24961,8 @@
 <MAPPING to="wordnet" name="avoid%2:41:03::" />
 <MAPPING to="wordnet" name="keep_off%2:34:00::" />
 <MAPPING to="wordnet" name="refrain%2:42:00::" />
+<MAPPING to="wordnet" name="abstain%2:34:00::" />
+<MAPPING to="wordnet" name="abstain%2:41:00::" />
 <ONTTYPE name="procrastinate">
 <WORD name="dally" />
 <WORD name="dawdle" />

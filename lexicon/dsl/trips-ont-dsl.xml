@@ -3295,6 +3295,14 @@
    wn::|pyrographic%3:01:00::|
   </relation>
  </concept>
+ <concept name="ont::as-if-for">
+  <comment>
+   &quot;act performed in a way described by a purpose: Detailed instructions, as if for a military campaign&quot;
+  </comment>
+  <relation label="inherit">
+   ont::manner
+  </relation>
+ </concept>
  <concept name="ont::as-much-as">
   <relation label="inherit">
    ont::domain-property
@@ -4552,6 +4560,8 @@
    wn::|keep_off%2:34:00::|
    wn::|avoid%2:34:00::|
    wn::|forbear%2:42:00::|
+   wn::|refrain%2:34:00::|
+   wn::|abstain%2:41:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -5600,7 +5610,7 @@
  </concept>
  <concept name="ont::beneficiary">
   <relation label="inherit">
-   ont::situation-modifier
+   ont::situation-object-modifier
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground">
@@ -8936,6 +8946,17 @@
   <relation label="overlap">
    wn::|move%2:38:01::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="phys-obj" />
+      <concept name="abstr-obj" />
+     </or>
+     <feat name="mobility">movable</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::cause-off">
   <relation label="inherit">
@@ -11727,11 +11748,6 @@
    ont::institution-abstr
   </relation>
  </concept>
- <concept name="ont::comparative-val">
-  <relation label="inherit">
-   ont::relational-attribute-val
-  </relation>
- </concept>
  <concept name="ont::compare">
   <relation label="inherit">
    ont::scrutiny
@@ -12613,17 +12629,6 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::connecting-val">
-  <comment>
-   &quot;(connecting, conjunctive)&quot;
-  </comment>
-  <relation label="inherit">
-   ont::serving-as-connection-val
-  </relation>
-  <relation label="overlap">
-   wn::|conjunctive%3:00:00::|
-  </relation>
  </concept>
  <concept name="ont::connectivity-scale">
   <relation label="inherit">
@@ -13690,7 +13695,7 @@
    &quot;(commesurate, congruous)&quot;
   </comment>
   <relation label="inherit">
-   ont::relational-attribute-val
+   ont::compatibility-val
   </relation>
  </concept>
  <concept name="ont::corresponding-val">
@@ -15361,7 +15366,7 @@
  </concept>
  <concept name="ont::degree-of-belief">
   <relation label="inherit">
-   ont::situation-modifier
+   ont::situation-object-modifier
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
@@ -15555,6 +15560,21 @@
     </or>
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::dependence-scale">
+  <relation label="inherit">
+   ont::relational-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|dependence%1:26:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::dependence-scale</feat>
+   <feat name="type">ont::dependence-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::dependence-val">
   <relation label="inherit">
@@ -15980,9 +16000,8 @@
    ont::activity
   </relation>
   <relation label="overlap">
-   wn::|abstain%2:34:00::|
-   wn::|refrain%2:34:00::|
-   wn::|desist%2:34:00::|
+   wn::|diet%2:34:00::|
+   wn::|diet%2:34:01::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::agent">
@@ -18204,7 +18223,7 @@
  </concept>
  <concept name="ont::electrical">
   <relation label="inherit">
-   ont::substantial-property-val
+   ont::medium
   </relation>
  </concept>
  <concept name="ont::electronics-company">
@@ -20575,6 +20594,8 @@
   </relation>
   <relation label="overlap">
    wn::|uncover%2:35:00::|
+   wn::|expose%2:39:02::|
+   wn::|expose%2:39:01::|
   </relation>
  </concept>
  <concept name="ont::extend">
@@ -22237,30 +22258,23 @@
    ont::process
   </relation>
  </concept>
- <concept name="ont::food-preparation">
-  <relation label="inherit">
-   ont::substantial-property-val
-  </relation>
-  <relation label="overlap">
-   wn::|boneless%3:00:00::|
-  </relation>
- </concept>
  <concept name="ont::food-property-val">
   <relation label="inherit">
    ont::associated-with-food-val
   </relation>
   <relation label="overlap">
-   wn::|vinous%3:01:00::|
-   wn::|vinaceous%3:01:00::|
    wn::|alimentative%3:01:00::|
+   wn::|boneless%3:00:00::|
    wn::|carroty%3:01:00::|
-   wn::|vanilla%3:01:00::|
-   wn::|wheaten%3:01:00::|
-   wn::|whole-wheat%3:01:00::|
-   wn::|wholemeal%3:01:00::|
-   wn::|herbal%3:01:00::|
    wn::|garlicky%3:01:00::|
+   wn::|herbal%3:01:00::|
    wn::|oaten%3:01:00::|
+   wn::|vanilla%3:01:00::|
+   wn::|vinaceous%3:01:00::|
+   wn::|vinous%3:01:00::|
+   wn::|wheaten%3:01:00::|
+   wn::|wholemeal%3:01:00::|
+   wn::|whole-wheat%3:01:00::|
   </relation>
  </concept>
  <concept name="ont::foolish-val">
@@ -26064,6 +26078,7 @@
   </relation>
   <relation label="overlap">
    wn::|future%3:00:00::|
+   wn::|prospective%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::in-loc">
@@ -27354,11 +27369,6 @@
    <feat name="scale">ont::interestingness-scale</feat>
    <feat name="type">ont::interestingness-scale</feat>
   </sem-feats>
- </concept>
- <concept name="ont::interference-val">
-  <relation label="inherit">
-   ont::substantial-property-val
-  </relation>
  </concept>
  <concept name="ont::interjection">
   <relation label="inherit">
@@ -29352,7 +29362,6 @@
   <relation label="overlap">
    wn::|expected%3:00:00::|
    wn::|plausible%3:00:00::|
-   wn::|prospective%3:00:00::|
    wn::|likely%3:00:00::|
    wn::|likely%3:00:04::|
    wn::|probable%3:00:00::|
@@ -36111,7 +36120,7 @@
  </concept>
  <concept name="ont::not-relative-val">
   <relation label="inherit">
-   ont::comparative-val
+   ont::relational-val
   </relation>
   <relation label="overlap">
    wn::|absolute%3:00:00::|
@@ -40339,6 +40348,7 @@
    wn::|perch%2:35:10::|
    wn::|park%2:35:00::|
    wn::|center%2:38:00::|
+   wn::|prop%2:35:00::|
   </relation>
  </concept>
  <concept name="ont::plain-scale">
@@ -43809,12 +43819,12 @@
  </concept>
  <concept name="ont::reason">
   <relation label="inherit">
-   ont::situation-modifier
+   ont::situation-object-modifier
   </relation>
  </concept>
  <concept name="ont::reason-for">
   <relation label="inherit">
-   ont::situation-modifier
+   ont::situation-object-modifier
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground">
@@ -43890,6 +43900,21 @@
   <relation label="inherit">
    ont::relational-attribute-val
   </relation>
+ </concept>
+ <concept name="ont::reciprocity-scale">
+  <relation label="inherit">
+   ont::relational-property-scale
+  </relation>
+  <relation label="overlap">
+   wn::|reciprocity%1:24:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::reciprocity-scale</feat>
+   <feat name="type">ont::reciprocity-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::recommendability-scale">
   <comment>
@@ -44516,9 +44541,14 @@
    <feat name="type">ont::relational-property-scale</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::relational-val">
+  <relation label="inherit">
+   ont::relational-attribute-val
+  </relation>
+ </concept>
  <concept name="ont::relative">
   <relation label="inherit">
-   ont::comparative-val
+   ont::relational-val
   </relation>
   <relation label="overlap">
    wn::|relative%3:00:00::|
@@ -48468,6 +48498,9 @@
   <relation label="inherit">
    ont::relational-attribute-val
   </relation>
+  <relation label="overlap">
+   wn::|conjunctive%3:00:00::|
+  </relation>
  </concept>
  <concept name="ont::set-up-device">
   <relation label="inherit">
@@ -49317,7 +49350,7 @@
  </concept>
  <concept name="ont::situated-in">
   <relation label="inherit">
-   ont::situation-object-modifier
+   ont::situation-modifier
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::ground">
@@ -49352,8 +49385,11 @@
   </sem-feats>
  </concept>
  <concept name="ont::situation-modifier">
+  <comment>
+   &quot;modifiers of events themselves (and not or an argument to the event)&quot;
+  </comment>
   <relation label="inherit">
-   ont::situation-object-modifier
+   ont::predicate
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::norole" optional="optional">
@@ -49368,6 +49404,9 @@
   </sem-frame>
  </concept>
  <concept name="ont::situation-object-modifier">
+  <comment>
+   &quot;modifiers of events that state a property related to one of its arguments&quot;
+  </comment>
   <relation label="inherit">
    ont::predicate
   </relation>

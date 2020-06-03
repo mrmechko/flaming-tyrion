@@ -93,85 +93,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="situation" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-object-modifier">
- <relation label="inherit">
-  ont::predicate
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="type">ont::situation-object-modifier</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="intentional">-</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="type">
-   <or>
-    ont::event-of-action
-    ont::event-of-state
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-modifier">
- <relation label="inherit">
-  ont::situation-object-modifier
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="situation" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="situation" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::manner">
  <relation label="inherit">
   ont::situation-modifier
@@ -202,6 +123,58 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="situation" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::situation-modifier">
+ <comment>
+  &quot;modifiers of events themselves (and not or an argument to the event)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::predicate
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="intentional">-</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="type">
+   <or>
+    ont::event-of-action
+    ont::event-of-state
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::predicate">
  <comment>
   &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as)&quot;
@@ -224,18 +197,15 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="type">ont::situation-object-modifier</feat>
- </sem-feats>
  <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-  </or>
+  <concept name="situation" />
  </role-restr-map>
  </sem-frame>
  <concept name="ont::abstract-object">

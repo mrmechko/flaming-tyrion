@@ -2854,6 +2854,13 @@
     WN::|pyrographic%3:01:00::|))
 
 (CONCEPT
+  ONT::AS-IF-FOR
+  (COMMENT
+   "act performed in a way described by a purpose: Detailed instructions, as if for a military campaign")
+  (INHERIT
+    ONT::MANNER))
+
+(CONCEPT
   ONT::AS-MUCH-AS
   (INHERIT
     ONT::DOMAIN-PROPERTY)
@@ -3962,7 +3969,9 @@
     WN::|avoid%2:41:03::|
     WN::|keep_off%2:34:00::|
     WN::|avoid%2:34:00::|
-    WN::|forbear%2:42:00::|)
+    WN::|forbear%2:42:00::|
+    WN::|refrain%2:34:00::|
+    WN::|abstain%2:41:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -4867,7 +4876,7 @@
 (CONCEPT
   ONT::BENEFICIARY
   (INHERIT
-    ONT::SITUATION-MODIFIER)
+    ONT::SITUATION-OBJECT-MODIFIER)
   (SEM-FRAME
     (ONT::GROUND
      (SEM-FEATS
@@ -7892,7 +7901,17 @@
   (INHERIT
     ONT::MOVE)
   (OVERLAP
-    WN::|move%2:38:01::|))
+    WN::|move%2:38:01::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (MOBILITY MOVABLE))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::CAUSE-OFF
@@ -10366,11 +10385,6 @@
     ONT::INSTITUTION-ABSTR))
 
 (CONCEPT
-  ONT::COMPARATIVE-VAL
-  (INHERIT
-    ONT::RELATIONAL-ATTRIBUTE-VAL))
-
-(CONCEPT
   ONT::COMPARE
   (INHERIT
     ONT::SCRUTINY)
@@ -11130,14 +11144,6 @@
      (CONCEPT
        T)
      OPTIONAL)))
-
-(CONCEPT
-  ONT::CONNECTING-VAL
-  (COMMENT "(connecting, conjunctive)")
-  (INHERIT
-    ONT::SERVING-AS-CONNECTION-VAL)
-  (OVERLAP
-    WN::|conjunctive%3:00:00::|))
 
 (CONCEPT
   ONT::CONNECTIVITY-SCALE
@@ -12046,7 +12052,7 @@
   ONT::CORRESPONDENCE-VAL
   (COMMENT "(commesurate, congruous)")
   (INHERIT
-    ONT::RELATIONAL-ATTRIBUTE-VAL))
+    ONT::COMPATIBILITY-VAL))
 
 (CONCEPT
   ONT::CORRESPONDING-VAL
@@ -13480,7 +13486,7 @@
 (CONCEPT
   ONT::DEGREE-OF-BELIEF
   (INHERIT
-    ONT::SITUATION-MODIFIER)
+    ONT::SITUATION-OBJECT-MODIFIER)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -13648,6 +13654,18 @@
        (CONCEPT
          SITUATION))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::DEPENDENCE-SCALE
+  (INHERIT
+    ONT::RELATIONAL-PROPERTY-SCALE)
+  (OVERLAP
+    WN::|dependence%1:26:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::DEPENDENCE-SCALE)
+    (TYPE ONT::DEPENDENCE-SCALE)))
 
 (CONCEPT
   ONT::DEPENDENCE-VAL
@@ -14020,9 +14038,8 @@
   (INHERIT
     ONT::ACTIVITY)
   (OVERLAP
-    WN::|abstain%2:34:00::|
-    WN::|refrain%2:34:00::|
-    WN::|desist%2:34:00::|)
+    WN::|diet%2:34:00::|
+    WN::|diet%2:34:01::|)
   (SEM-FRAME
     (ONT::AGENT
      (SEM-FEATS
@@ -15914,7 +15931,7 @@
 (CONCEPT
   ONT::ELECTRICAL
   (INHERIT
-    ONT::SUBSTANTIAL-PROPERTY-VAL))
+    ONT::MEDIUM))
 
 (CONCEPT
   ONT::ELECTRONICS-COMPANY
@@ -17981,7 +17998,9 @@
   (INHERIT
     ONT::SHOW)
   (OVERLAP
-    WN::|uncover%2:35:00::|))
+    WN::|uncover%2:35:00::|
+    WN::|expose%2:39:02::|
+    WN::|expose%2:39:01::|))
 
 (CONCEPT
   ONT::EXTEND
@@ -19389,28 +19408,22 @@
     ONT::PROCESS))
 
 (CONCEPT
-  ONT::FOOD-PREPARATION
-  (INHERIT
-    ONT::SUBSTANTIAL-PROPERTY-VAL)
-  (OVERLAP
-    WN::|boneless%3:00:00::|))
-
-(CONCEPT
   ONT::FOOD-PROPERTY-VAL
   (INHERIT
     ONT::ASSOCIATED-WITH-FOOD-VAL)
   (OVERLAP
-    WN::|vinous%3:01:00::|
-    WN::|vinaceous%3:01:00::|
     WN::|alimentative%3:01:00::|
+    WN::|boneless%3:00:00::|
     WN::|carroty%3:01:00::|
-    WN::|vanilla%3:01:00::|
-    WN::|wheaten%3:01:00::|
-    WN::|whole-wheat%3:01:00::|
-    WN::|wholemeal%3:01:00::|
-    WN::|herbal%3:01:00::|
     WN::|garlicky%3:01:00::|
-    WN::|oaten%3:01:00::|))
+    WN::|herbal%3:01:00::|
+    WN::|oaten%3:01:00::|
+    WN::|vanilla%3:01:00::|
+    WN::|vinaceous%3:01:00::|
+    WN::|vinous%3:01:00::|
+    WN::|wheaten%3:01:00::|
+    WN::|wholemeal%3:01:00::|
+    WN::|whole-wheat%3:01:00::|))
 
 (CONCEPT
   ONT::FOOLISH-VAL
@@ -22689,7 +22702,8 @@
   (INHERIT
     ONT::EVENT-TIME-WRT-NOW)
   (OVERLAP
-    WN::|future%3:00:00::|))
+    WN::|future%3:00:00::|
+    WN::|prospective%3:00:00::|))
 
 (CONCEPT
   ONT::IN-LOC
@@ -23785,11 +23799,6 @@
       ABSTR-OBJ)
     (SCALE ONT::INTERESTINGNESS-SCALE)
     (TYPE ONT::INTERESTINGNESS-SCALE)))
-
-(CONCEPT
-  ONT::INTERFERENCE-VAL
-  (INHERIT
-    ONT::SUBSTANTIAL-PROPERTY-VAL))
 
 (CONCEPT
   ONT::INTERJECTION
@@ -25477,7 +25486,6 @@
   (OVERLAP
     WN::|expected%3:00:00::|
     WN::|plausible%3:00:00::|
-    WN::|prospective%3:00:00::|
     WN::|likely%3:00:00::|
     WN::|likely%3:00:04::|
     WN::|probable%3:00:00::|)
@@ -31208,7 +31216,7 @@
 (CONCEPT
   ONT::NOT-RELATIVE-VAL
   (INHERIT
-    ONT::COMPARATIVE-VAL)
+    ONT::RELATIONAL-VAL)
   (OVERLAP
     WN::|absolute%3:00:00::|))
 
@@ -34885,7 +34893,8 @@
     WN::|stand%2:35:01::|
     WN::|perch%2:35:10::|
     WN::|park%2:35:00::|
-    WN::|center%2:38:00::|))
+    WN::|center%2:38:00::|
+    WN::|prop%2:35:00::|))
 
 (CONCEPT
   ONT::PLAIN-SCALE
@@ -37864,12 +37873,12 @@
 (CONCEPT
   ONT::REASON
   (INHERIT
-    ONT::SITUATION-MODIFIER))
+    ONT::SITUATION-OBJECT-MODIFIER))
 
 (CONCEPT
   ONT::REASON-FOR
   (INHERIT
-    ONT::SITUATION-MODIFIER)
+    ONT::SITUATION-OBJECT-MODIFIER)
   (SEM-FRAME
     (ONT::GROUND
      (CONCEPT
@@ -37936,6 +37945,18 @@
   (COMMENT "(reciprocal)")
   (INHERIT
     ONT::RELATIONAL-ATTRIBUTE-VAL))
+
+(CONCEPT
+  ONT::RECIPROCITY-SCALE
+  (INHERIT
+    ONT::RELATIONAL-PROPERTY-SCALE)
+  (OVERLAP
+    WN::|reciprocity%1:24:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::RECIPROCITY-SCALE)
+    (TYPE ONT::RECIPROCITY-SCALE)))
 
 (CONCEPT
   ONT::RECOMMENDABILITY-SCALE
@@ -38472,9 +38493,14 @@
     (TYPE ONT::RELATIONAL-PROPERTY-SCALE)))
 
 (CONCEPT
+  ONT::RELATIONAL-VAL
+  (INHERIT
+    ONT::RELATIONAL-ATTRIBUTE-VAL))
+
+(CONCEPT
   ONT::RELATIVE
   (INHERIT
-    ONT::COMPARATIVE-VAL)
+    ONT::RELATIONAL-VAL)
   (OVERLAP
     WN::|relative%3:00:00::|
     WN::|comparative%3:00:00::|))
@@ -42013,7 +42039,9 @@
   ONT::SERVING-AS-CONNECTION-VAL
   (COMMENT "(connecting, conjunctive)")
   (INHERIT
-    ONT::RELATIONAL-ATTRIBUTE-VAL))
+    ONT::RELATIONAL-ATTRIBUTE-VAL)
+  (OVERLAP
+    WN::|conjunctive%3:00:00::|))
 
 (CONCEPT
   ONT::SET-UP-DEVICE
@@ -42741,7 +42769,7 @@
 (CONCEPT
   ONT::SITUATED-IN
   (INHERIT
-    ONT::SITUATION-OBJECT-MODIFIER)
+    ONT::SITUATION-MODIFIER)
   (SEM-FRAME
     (ONT::GROUND
      (SEM-FEATS
@@ -42770,8 +42798,10 @@
 
 (CONCEPT
   ONT::SITUATION-MODIFIER
+  (COMMENT
+   "modifiers of events themselves (and not or an argument to the event)")
   (INHERIT
-    ONT::SITUATION-OBJECT-MODIFIER)
+    ONT::PREDICATE)
   (SEM-FRAME
     (ONT::NOROLE
      (CONCEPT
@@ -42788,6 +42818,8 @@
 
 (CONCEPT
   ONT::SITUATION-OBJECT-MODIFIER
+  (COMMENT
+   "modifiers of events that state a property related to one of its arguments")
   (INHERIT
     ONT::PREDICATE)
   (SEM-FEATS

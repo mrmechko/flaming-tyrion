@@ -1189,13 +1189,15 @@ Class: grade-modifier
 
 # ONT type ont::situation-object-modifier
 Class: situation-object-modifier
+  Annotations: rdfs:comment "modifiers of events that state a property related to one of its arguments"
   SubClassOf: predicate
   SubClassOf: (FLT_abstr-obj)
   SubClassOf: _figure only ((FLT_phys-obj or FLT_situation)) and _figure some owl:Thing
 
 # ONT type ont::situation-modifier
 Class: situation-modifier
-  SubClassOf: situation-object-modifier
+  Annotations: rdfs:comment "modifiers of events themselves (and not or an argument to the event)"
+  SubClassOf: predicate
   SubClassOf: _figure only (FLT_situation) and _figure some owl:Thing
   SubClassOf: _ground only owl:Thing
   SubClassOf: _norole only owl:Thing
@@ -1294,7 +1296,7 @@ Class: topic
 
 # ONT type ont::degree-of-belief
 Class: degree-of-belief
-  SubClassOf: situation-modifier
+  SubClassOf: situation-object-modifier
   SubClassOf: _figure only (FLT_situation) and _figure some owl:Thing
 
 # ONT type ont::interjection
@@ -1304,7 +1306,7 @@ Class: interjection
 
 # ONT type ont::reason
 Class: reason
-  SubClassOf: situation-modifier
+  SubClassOf: situation-object-modifier
 
 # ONT type ont::reason-informal
 Class: reason-informal
@@ -1333,7 +1335,7 @@ Class: contra-force
 
 # ONT type ont::beneficiary
 Class: beneficiary
-  SubClassOf: situation-modifier
+  SubClassOf: situation-object-modifier
   SubClassOf: _figure only (FLT_situation and F_aspect some V_dynamic and F_cause some V_agentive) and _figure some owl:Thing
   SubClassOf: _ground only (FLT_phys-obj and F_origin some V_human and F_intentional some V_+) and _ground some owl:Thing
 
@@ -1424,6 +1426,11 @@ Class: manner-refl
   SubClassOf: _figure only (FLT_situation) and _figure some owl:Thing
   SubClassOf: _ground only (FLT_phys-obj) and _ground some owl:Thing
 
+# ONT type ont::as-if-for
+Class: as-if-for
+  Annotations: rdfs:comment "act performed in a way described by a purpose: Detailed instructions, as if for a military campaign"
+  SubClassOf: manner
+
 # ONT type ont::manner-undo
 Class: manner-undo
   SubClassOf: manner
@@ -1432,7 +1439,7 @@ Class: manner-undo
 
 # ONT type ont::situated-in
 Class: situated-in
-  SubClassOf: situation-object-modifier
+  SubClassOf: situation-modifier
   SubClassOf: _figure only ((FLT_situation or FLT_phys-obj)) and _figure some owl:Thing
   SubClassOf: _ground only (FLT_situation and F_type some situation-root) and _ground some owl:Thing
 
@@ -1466,7 +1473,7 @@ Class: such
 
 # ONT type ont::reason-for
 Class: reason-for
-  SubClassOf: situation-modifier
+  SubClassOf: situation-object-modifier
   SubClassOf: _figure only (FLT_situation) and _figure some owl:Thing
   SubClassOf: _ground only owl:Thing
 
@@ -7683,24 +7690,16 @@ Class: organic-val
 Class: nuclear-val
   SubClassOf: substantial-property-val
 
-# ONT type ont::electrical
-Class: electrical
-  SubClassOf: substantial-property-val
-
-# ONT type ont::food-preparation
-Class: food-preparation
-  SubClassOf: substantial-property-val
-
-# ONT type ont::interference-val
-Class: interference-val
-  SubClassOf: substantial-property-val
-
 # ONT type ont::medium
 Class: medium
   Annotations: rdfs:comment "means of production and dissemination (c.f. ont::mode)"
   SubClassOf: substantial-property-val
   SubClassOf: (FLT_abstr-obj and F_gradability some V_-)
   SubClassOf: _figure only owl:Thing
+
+# ONT type ont::electrical
+Class: electrical
+  SubClassOf: medium
 
 # ONT type ont::multimedia-val
 Class: multimedia-val
@@ -9419,17 +9418,17 @@ Class: equal
   SubClassOf: similarity-val
   SubClassOf: (FLT_abstr-obj and F_scale some equal-scale)
 
-# ONT type ont::comparative-val
-Class: comparative-val
+# ONT type ont::relational-val
+Class: relational-val
   SubClassOf: relational-attribute-val
 
 # ONT type ont::relative
 Class: relative
-  SubClassOf: comparative-val
+  SubClassOf: relational-val
 
 # ONT type ont::not-relative-val
 Class: not-relative-val
-  SubClassOf: comparative-val
+  SubClassOf: relational-val
 
 # ONT type ont::dependence-val
 Class: dependence-val
@@ -10800,15 +10799,10 @@ Class: serving-as-connection-val
   Annotations: rdfs:comment "(connecting, conjunctive)"
   SubClassOf: relational-attribute-val
 
-# ONT type ont::connecting-val
-Class: connecting-val
-  Annotations: rdfs:comment "(connecting, conjunctive)"
-  SubClassOf: serving-as-connection-val
-
 # ONT type ont::correspondence-val
 Class: correspondence-val
   Annotations: rdfs:comment "(commesurate, congruous)"
-  SubClassOf: relational-attribute-val
+  SubClassOf: compatibility-val
 
 # ONT type ont::corresponding-val
 Class: corresponding-val
@@ -14291,6 +14285,16 @@ Class: compatibility-scale
   SubClassOf: relational-property-scale
   SubClassOf: (FLT_abstr-obj and F_scale some compatibility-scale)
 
+# ONT type ont::dependence-scale
+Class: dependence-scale
+  SubClassOf: relational-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some dependence-scale)
+
+# ONT type ont::reciprocity-scale
+Class: reciprocity-scale
+  SubClassOf: relational-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some reciprocity-scale)
+
 # ONT type ont::similarity-scale
 Class: similarity-scale
   SubClassOf: relational-property-scale
@@ -14931,6 +14935,7 @@ Class: drift
 # ONT type ont::cause-move
 Class: cause-move
   SubClassOf: move
+  SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj) and F_mobility some V_movable) and _affected some owl:Thing
 
 # ONT type ont::move-toward
 Class: move-toward
@@ -19040,22 +19045,22 @@ DisjointClasses: quantifier, bare, sm, indef-set, a, indefinite
 DisjointClasses: impro-set, impro
 
 # children of ont::predicate
-DisjointClasses: whereby, cost-relation, rate-rel, iteration-period, temporal-predicate, extent-predicate, extension, destination-loc, approximate-at-loc, original-material, resulting-object, path, pivot, completely, as-role, physical-symptom-manner, politeness, speakerstatus, orientation, etcetera, parenthetical, contrastive, additive, association-predicate, sequence-position, such, similarity, attributed-to, choice-option, dimension, scale-relation, without, with-instrument, accompaniment, originator, assoc-with, on-medication, topic, topic-signal, restriction, qualification, priority, neg, location-distance-modifier, assess, conjunct, situation-object-modifier, modifier
+DisjointClasses: whereby, cost-relation, rate-rel, iteration-period, temporal-predicate, extent-predicate, extension, destination-loc, approximate-at-loc, original-material, resulting-object, path, pivot, completely, as-role, physical-symptom-manner, politeness, speakerstatus, orientation, etcetera, parenthetical, contrastive, additive, association-predicate, sequence-position, such, similarity, attributed-to, choice-option, dimension, scale-relation, without, with-instrument, accompaniment, originator, assoc-with, on-medication, topic, topic-signal, restriction, qualification, priority, neg, location-distance-modifier, assess, conjunct, situation-modifier, situation-object-modifier, modifier
 
 # children of ont::modifier
 DisjointClasses: intensifier, least-extent, degree-modifier, grade-modifier, qmodifier, eval-wrt-expectation
 
-# children of ont::situation-object-modifier
-DisjointClasses: situated-in, purpose, situation-modifier
-
 # children of ont::situation-modifier
-DisjointClasses: reason-for, condition, by-means-of, manner, beneficiary, contra-force, therefore, reason, interjection, degree-of-belief, in-scale
+DisjointClasses: condition, situated-in, by-means-of, manner, contra-force, therefore, interjection, in-scale
 
 # children of ont::conjunct
 DisjointClasses: but-exception, clause-condition
 
 # children of ont::degree-modifier
 DisjointClasses: degree-modifier-verylow, degree-modifier-low, degree-modifier-med, degree-modifier-high-event, degree-modifier-high, degree-modifier-veryhigh
+
+# children of ont::situation-object-modifier
+DisjointClasses: reason-for, beneficiary, purpose, reason, degree-of-belief
 
 # children of ont::reason
 DisjointClasses: due-to, reason-informal
@@ -19064,7 +19069,7 @@ DisjointClasses: due-to, reason-informal
 DisjointClasses: more-than-rel, less-than-rel
 
 # children of ont::manner
-DisjointClasses: manner-undo, manner-refl
+DisjointClasses: manner-undo, as-if-for, manner-refl
 
 # children of ont::condition
 DisjointClasses: time-condition, neg-condition, pos-condition
@@ -19961,7 +19966,10 @@ DisjointClasses: not-homogeneous-val, homogeneous-val
 DisjointClasses: bare-val, clothed-val, adorned-val
 
 # children of ont::substantial-property-val
-DisjointClasses: liquid-property-val, not-containing-substance-val, containing-substance-val, mode, medium, interference-val, food-preparation, electrical, nuclear-val, organic-val, cordless-val
+DisjointClasses: liquid-property-val, not-containing-substance-val, containing-substance-val, mode, medium, nuclear-val, organic-val, cordless-val
+
+# children of ont::medium
+DisjointClasses: multimedia-val, electrical
 
 # children of ont::mode
 DisjointClasses: representation-method-val, information-delivery-mode-val, sensory-mode-val, signal-representation-val, mode-of-control-val
@@ -20273,7 +20281,7 @@ DisjointClasses: fatty-val, lean-val
 DisjointClasses: fat-content, predefined-size-val
 
 # children of ont::relational-attribute-val
-DisjointClasses: correspondence-val, serving-as-connection-val, reciprocality-val, relatedness-val, sequence-val, ordered-val, compatibility-val, dependence-val, comparative-val, similarity-val
+DisjointClasses: serving-as-connection-val, reciprocality-val, relatedness-val, sequence-val, ordered-val, compatibility-val, dependence-val, relational-val, similarity-val
 
 # children of ont::similarity-val
 DisjointClasses: equal, different, similar, identity-val, exemplifies
@@ -20281,14 +20289,14 @@ DisjointClasses: equal, different, similar, identity-val, exemplifies
 # children of ont::identity-val
 DisjointClasses: other, same
 
-# children of ont::comparative-val
+# children of ont::relational-val
 DisjointClasses: not-relative-val, relative
 
 # children of ont::dependence-val
 DisjointClasses: independent, dependent
 
 # children of ont::compatibility-val
-DisjointClasses: not-compatible-val, compatible-val
+DisjointClasses: correspondence-val, not-compatible-val, compatible-val
 
 # children of ont::ordered-val
 DisjointClasses: random-val, sequential-val
@@ -21014,7 +21022,7 @@ DisjointClasses: process-status-scale, can-be-done-scale
 DisjointClasses: replaceability-scale, portability-scale, mobility-scale, manageability-scale, changeability-scale
 
 # children of ont::relational-property-scale
-DisjointClasses: similarity-scale, compatibility-scale
+DisjointClasses: similarity-scale, reciprocity-scale, dependence-scale, compatibility-scale
 
 # children of ont::similarity-scale
 DisjointClasses: same-scale, equal-scale, different-scale, similar-scale

@@ -3,6 +3,9 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::situation-object-modifier">
+ <comment>
+  &quot;modifiers of events that state a property related to one of its arguments&quot;
+ </comment>
  <relation label="inherit">
   ont::predicate
  </relation>
@@ -188,21 +191,20 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
- <concept name="ont::situation-modifier">
+ <concept name="ont::degree-of-belief">
  <relation label="inherit">
   ont::situation-object-modifier
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
    <concept name="situation" />
   </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::reason">
+ <relation label="inherit">
+  ont::situation-object-modifier
+ </relation>
  </concept>
  <concept name="ont::purpose">
  <relation label="inherit">
@@ -242,7 +244,7 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::situated-in">
+ <concept name="ont::beneficiary">
  <relation label="inherit">
   ont::situation-object-modifier
  </relation>
@@ -250,16 +252,33 @@
   <role-restr-map roles="ont::ground">
    <sem-feats>
     <relation label="inherit">
-     situation
+     phys-obj
     </relation>
-    <feat name="type">ont::situation-root</feat>
+    <feat name="intentional">+</feat>
+    <feat name="origin">human</feat>
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="phys-obj" />
-   </or>
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="cause">agentive</feat>
+    <feat name="aspect">dynamic</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::reason-for">
+ <relation label="inherit">
+  ont::situation-object-modifier
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="situation" />
   </role-restr-map>
  </sem-frame>
  </concept>
