@@ -14,12 +14,11 @@
    <concept name="phys-obj" />
   </role-restr-map>
   <role-restr-map roles="ont::figure" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="mobility">movable</feat>
-   </sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -144,12 +143,11 @@
   <concept name="phys-obj" />
  </role-restr-map>
  <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="mobility">movable</feat>
-  </sem-feats>
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::source-reln">
@@ -266,16 +264,18 @@
   ont::source-as-loc
  </relation>
  <syntax>
-  <template-call template="ont::binary-constraint-np-templ" />
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(or
+                                              deepsemlex::s
+                                              deepsemlex::np)" sem-role="ont::figure"/>
   </syn-sem>
   <syn-feats>
    <feat name="atype">
    <or>
-    post
     pre
+    post
     pre-vp
    </or>
    </feat>

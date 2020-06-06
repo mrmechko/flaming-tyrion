@@ -43859,10 +43859,13 @@
        PHYS-OBJ)
      OPTIONAL)
     (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
          PHYS-OBJ)
-       (MOBILITY MOVABLE))
+       (CONCEPT
+         ABSTR-OBJ))
      OPTIONAL)))
 
 (CONCEPT
