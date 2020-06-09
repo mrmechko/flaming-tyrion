@@ -8660,21 +8660,6 @@ Class: specified-period-val
 Class: repetitive-val
   SubClassOf: frequency-val
 
-# ONT type ont::regularity-val
-Class: regularity-val
-  SubClassOf: frequency-val
-  SubClassOf: (FLT_abstr-obj and F_scale some regularity-scale)
-
-# ONT type ont::regular
-Class: regular
-  SubClassOf: regularity-val
-  SubClassOf: (FLT_abstr-obj and F_scale some regular-scale)
-
-# ONT type ont::irregular
-Class: irregular
-  SubClassOf: regularity-val
-  SubClassOf: (FLT_abstr-obj and F_scale some not-regular-scale)
-
 # ONT type ont::frequent
 Class: frequent
   SubClassOf: frequency-val
@@ -9456,23 +9441,29 @@ Class: compatible-val
 Class: not-compatible-val
   SubClassOf: compatibility-val
 
-# ONT type ont::ordered-val
-Class: ordered-val
+# ONT type ont::systematicity-val
+Class: systematicity-val
   Annotations: rdfs:comment "properties that deal with ordered nature of objects"
   SubClassOf: relational-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some systematicity-scale)
+
+# ONT type ont::systematic-val
+Class: systematic-val
+  SubClassOf: systematicity-val
+
+# ONT type ont::organized-val
+Class: organized-val
+  Annotations: rdfs:comment "having category, organization and/or structure (organized)"
+  SubClassOf: systematic-val
 
 # ONT type ont::sequential-val
 Class: sequential-val
-  SubClassOf: ordered-val
-
-# ONT type ont::random-val
-Class: random-val
-  SubClassOf: ordered-val
+  SubClassOf: systematic-val
 
 # ONT type ont::sequence-val
 Class: sequence-val
   Annotations: rdfs:comment "properties that deal with an object's location with respect to another object in an ordered sequence"
-  SubClassOf: relational-attribute-val
+  SubClassOf: systematic-val
   SubClassOf: (FLT_abstr-obj and F_gradability some V_-)
   SubClassOf: _ground only owl:Thing
 
@@ -9499,6 +9490,29 @@ Class: sequence-val-next
 # ONT type ont::middle-val
 Class: middle-val
   SubClassOf: sequence-val
+
+# ONT type ont::regular
+Class: regular
+  SubClassOf: systematic-val
+  SubClassOf: (FLT_abstr-obj and F_scale some regular-scale)
+
+# ONT type ont::nonsystematic-val
+Class: nonsystematic-val
+  SubClassOf: systematicity-val
+
+# ONT type ont::not-organized-val
+Class: not-organized-val
+  Annotations: rdfs:comment "lacking category, organization and/or structure (disorganized)"
+  SubClassOf: nonsystematic-val
+
+# ONT type ont::random-val
+Class: random-val
+  SubClassOf: nonsystematic-val
+
+# ONT type ont::irregular
+Class: irregular
+  SubClassOf: nonsystematic-val
+  SubClassOf: (FLT_abstr-obj and F_scale some not-regular-scale)
 
 # ONT type ont::age-val
 Class: age-val
@@ -10918,16 +10932,6 @@ Class: not-helpful-val
 Class: bad-for-health-val
   Annotations: rdfs:comment "(unhealthful)"
   SubClassOf: not-helpful-val
-
-# ONT type ont::organized-val
-Class: organized-val
-  Annotations: rdfs:comment "having category, organization and/or structure (organized)"
-  SubClassOf: orderly-val
-
-# ONT type ont::not-organized-val
-Class: not-organized-val
-  Annotations: rdfs:comment "lacking category, organization and/or structure (disorganized)"
-  SubClassOf: not-orderly-val
 
 # ONT type ont::control-val
 Class: control-val
@@ -14320,6 +14324,26 @@ Class: same-scale
   SubClassOf: similarity-scale
   SubClassOf: (FLT_abstr-obj and F_scale some same-scale)
 
+# ONT type ont::systematicity-scale
+Class: systematicity-scale
+  SubClassOf: relational-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some systematicity-scale)
+
+# ONT type ont::regularity-scale
+Class: regularity-scale
+  SubClassOf: systematicity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some regularity-scale)
+
+# ONT type ont::regular-scale
+Class: regular-scale
+  SubClassOf: regularity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some regular-scale)
+
+# ONT type ont::not-regular-scale
+Class: not-regular-scale
+  SubClassOf: regularity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some not-regular-scale)
+
 # ONT type ont::status-property-scale
 Class: status-property-scale
   SubClassOf: ordered-domain
@@ -14610,21 +14634,6 @@ Class: time-loc-scale
 Class: temporal-occurrence-scale
   SubClassOf: temporal-scale
   SubClassOf: (FLT_abstr-obj and F_scale some temporal-occurrence-scale)
-
-# ONT type ont::regularity-scale
-Class: regularity-scale
-  SubClassOf: temporal-occurrence-scale
-  SubClassOf: (FLT_abstr-obj and F_scale some regularity-scale)
-
-# ONT type ont::regular-scale
-Class: regular-scale
-  SubClassOf: regularity-scale
-  SubClassOf: (FLT_abstr-obj and F_scale some regular-scale)
-
-# ONT type ont::not-regular-scale
-Class: not-regular-scale
-  SubClassOf: regularity-scale
-  SubClassOf: (FLT_abstr-obj and F_scale some not-regular-scale)
 
 # ONT type ont::unordered-domain
 Class: unordered-domain
@@ -19869,12 +19878,6 @@ DisjointClasses: not-offensive-val, offensive-val
 # children of ont::orderliness-val
 DisjointClasses: not-orderly-val, orderly-val
 
-# children of ont::orderly-val
-DisjointClasses: organized-val, tidy-val
-
-# children of ont::not-orderly-val
-DisjointClasses: not-organized-val, messy-val
-
 # children of ont::freedom-val
 DisjointClasses: not-free-val, free-val
 
@@ -20137,10 +20140,7 @@ DisjointClasses: persistence-val, incremental-val, frequency-val, continuous-val
 DisjointClasses: discontinuous, continuous
 
 # children of ont::frequency-val
-DisjointClasses: occasional, frequent, regularity-val, repetitive-val, periodic-val
-
-# children of ont::regularity-val
-DisjointClasses: irregular, regular
+DisjointClasses: occasional, frequent, repetitive-val, periodic-val
 
 # children of ont::persistence-val
 DisjointClasses: temporary, persistent
@@ -20281,7 +20281,7 @@ DisjointClasses: fatty-val, lean-val
 DisjointClasses: fat-content, predefined-size-val
 
 # children of ont::relational-attribute-val
-DisjointClasses: serving-as-connection-val, reciprocality-val, relatedness-val, sequence-val, ordered-val, compatibility-val, dependence-val, relational-val, similarity-val
+DisjointClasses: serving-as-connection-val, reciprocality-val, relatedness-val, systematicity-val, compatibility-val, dependence-val, relational-val, similarity-val
 
 # children of ont::similarity-val
 DisjointClasses: equal, different, similar, identity-val, exemplifies
@@ -20298,11 +20298,17 @@ DisjointClasses: independent, dependent
 # children of ont::compatibility-val
 DisjointClasses: correspondence-val, not-compatible-val, compatible-val
 
-# children of ont::ordered-val
-DisjointClasses: random-val, sequential-val
+# children of ont::systematicity-val
+DisjointClasses: nonsystematic-val, systematic-val
+
+# children of ont::systematic-val
+DisjointClasses: regular, sequence-val, sequential-val, organized-val
 
 # children of ont::sequence-val
 DisjointClasses: middle-val, sequence-val-next, last-val, first-val, one-before-last-val, previous-val
+
+# children of ont::nonsystematic-val
+DisjointClasses: irregular, random-val, not-organized-val
 
 # children of ont::age-val
 DisjointClasses: young-val, old-val
@@ -21022,10 +21028,13 @@ DisjointClasses: process-status-scale, can-be-done-scale
 DisjointClasses: replaceability-scale, portability-scale, mobility-scale, manageability-scale, changeability-scale
 
 # children of ont::relational-property-scale
-DisjointClasses: similarity-scale, reciprocity-scale, dependence-scale, compatibility-scale
+DisjointClasses: systematicity-scale, similarity-scale, reciprocity-scale, dependence-scale, compatibility-scale
 
 # children of ont::similarity-scale
 DisjointClasses: same-scale, equal-scale, different-scale, similar-scale
+
+# children of ont::regularity-scale
+DisjointClasses: not-regular-scale, regular-scale
 
 # children of ont::object-affordances-scale
 DisjointClasses: usability-scale, availability-scale, functionality-scale
@@ -21050,9 +21059,6 @@ DisjointClasses: temporal-occurrence-scale, time-measure-scale
 
 # children of ont::time-measure-scale
 DisjointClasses: time-loc-scale, duration-scale
-
-# children of ont::regularity-scale
-DisjointClasses: not-regular-scale, regular-scale
 
 # children of ont::unordered-domain
 DisjointClasses: discrete-color-scale, truth-scale, gender-scale, quantity-related-scale

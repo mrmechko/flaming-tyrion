@@ -7,7 +7,7 @@
   &quot;having category, organization and/or structure (organized)&quot;
  </comment>
  <relation label="inherit">
-  ont::orderly-val
+  ont::systematic-val
  </relation>
  <relation label="overlap">
   wn::|organized%3:00:02::|
@@ -118,59 +118,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::orderly-val">
- <comment>
-  &quot;(orderly)&quot;
- </comment>
- <relation label="inherit">
-  ont::orderliness-val
- </relation>
- <relation label="overlap">
-  wn::|arranged%3:00:00::|
-  wn::|ordered%3:00:04::|
-  wn::|orderly%3:00:00::|
- </relation>
- </concept>
- <concept name="ont::orderliness-val">
- <relation label="inherit">
-  ont::evaluation-attribute-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::orderliness-scale</feat>
-  <feat name="type">ont::orderliness-val</feat>
- </sem-feats>
- </concept>
- <concept name="ont::evaluation-attribute-val">
- <comment>
-  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::evaluation-scale</feat>
-  <feat name="type">ont::evaluation-attribute-val</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <feat name="tangible">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::orderliness-scale</feat>
- <feat name="type">ont::orderliness-val</feat>
+ <feat name="scale">ont::relational-property-scale</feat>
+ <feat name="type">ont::relational-attribute-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -228,16 +181,47 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::evaluation-scale</feat>
- <feat name="type">ont::evaluation-attribute-val</feat>
+ <feat name="scale">ont::systematicity-scale</feat>
+ <feat name="type">ont::systematicity-val</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <feat name="tangible">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
+ <concept name="ont::relational-attribute-val">
+ <comment>
+  &quot;properties that describe an entity with respect to another related entity, an implicit second entity always present when these properties are evoked&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::relational-property-scale</feat>
+  <feat name="type">ont::relational-attribute-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::systematicity-val">
+ <comment>
+  &quot;properties that deal with ordered nature of objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relational-attribute-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::systematicity-scale</feat>
+  <feat name="type">ont::systematicity-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::systematic-val">
+ <relation label="inherit">
+  ont::systematicity-val
+ </relation>
+ <relation label="overlap">
+  wn::|systematic%3:00:00::|
+ </relation>
+ </concept>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

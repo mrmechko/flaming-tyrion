@@ -1845,6 +1845,9 @@
   <relation label="inherit">
    ont::procedure
   </relation>
+  <relation label="overlap">
+   wn::|algorithm%1:09:00::|
+  </relation>
  </concept>
  <concept name="ont::alive">
   <relation label="inherit">
@@ -27707,7 +27710,7 @@
  </concept>
  <concept name="ont::irregular">
   <relation label="inherit">
-   ont::regularity-val
+   ont::nonsystematic-val
   </relation>
   <relation label="overlap">
    wn::|aperiodic%3:00:00::|
@@ -34238,6 +34241,14 @@
    <feat name="type">ont::nonhuman-animal</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::nonsystematic-val">
+  <relation label="inherit">
+   ont::systematicity-val
+  </relation>
+  <relation label="overlap">
+   wn::|unsystematic%3:00:00::|
+  </relation>
+ </concept>
  <concept name="ont::nonverbal-expression">
   <relation label="inherit">
    ont::event-of-action
@@ -35768,7 +35779,7 @@
    &quot;lacking category, organization and/or structure (disorganized)&quot;
   </comment>
   <relation label="inherit">
-   ont::not-orderly-val
+   ont::nonsystematic-val
   </relation>
   <relation label="overlap">
    wn::|disorganized%3:00:00::|
@@ -37497,6 +37508,7 @@
    ont::commissive
   </relation>
   <relation label="overlap">
+   wn::|offer%1:10:00::|
    wn::|volunteer%2:41:00::|
    wn::|volunteer%2:41:01::|
   </relation>
@@ -37546,8 +37558,8 @@
   </relation>
   <relation label="overlap">
    wn::|document%1:10:00::|
-   wn::|written_document%1:10:00::|
    wn::|papers%1:10:00::|
+   wn::|written_document%1:10:00::|
   </relation>
  </concept>
  <concept name="ont::official-val">
@@ -37918,17 +37930,6 @@
    <feat name="type">ont::ordered-domain</feat>
   </sem-feats>
  </concept>
- <concept name="ont::ordered-val">
-  <comment>
-   &quot;properties that deal with ordered nature of objects&quot;
-  </comment>
-  <relation label="inherit">
-   ont::relational-attribute-val
-  </relation>
-  <relation label="overlap">
-   wn::|ordered%3:00:00::|
-  </relation>
- </concept>
  <concept name="ont::ordering">
   <comment>
    &quot;Identify an ordering or ranking of objects along some dimention&quot;
@@ -38067,7 +38068,7 @@
    &quot;having category, organization and/or structure (organized)&quot;
   </comment>
   <relation label="inherit">
-   ont::orderly-val
+   ont::systematic-val
   </relation>
   <relation label="overlap">
    wn::|organized%3:00:02::|
@@ -40712,6 +40713,9 @@
   <relation label="inherit">
    ont::procedure
   </relation>
+  <relation label="overlap">
+   wn::|policy%1:09:00::|
+  </relation>
  </concept>
  <concept name="ont::politeness">
   <relation label="inherit">
@@ -42061,6 +42065,11 @@
   <relation label="inherit">
    ont::ps-object
   </relation>
+  <relation label="overlap">
+   wn::|procedure%1:10:00::|
+   wn::|procedure%1:04:00::|
+   wn::|procedure%1:04:02::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     abstr-obj
@@ -42073,10 +42082,6 @@
  <concept name="ont::process">
   <relation label="inherit">
    ont::procedure
-  </relation>
-  <relation label="overlap">
-   wn::|procedure%1:04:00::|
-   wn::|process%1:04:00::|
   </relation>
  </concept>
  <concept name="ont::process-evaluation-scale">
@@ -42511,6 +42516,9 @@
   <relation label="inherit">
    ont::ps-object
   </relation>
+  <relation label="overlap">
+   wn::|proposal%1:10:00::|
+  </relation>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
     <concept name="t" />
@@ -42622,6 +42630,9 @@
  <concept name="ont::protocol">
   <relation label="inherit">
    ont::procedure
+  </relation>
+  <relation label="overlap">
+   wn::|protocol%1:10:01::|
   </relation>
  </concept>
  <concept name="ont::proud-val">
@@ -43541,7 +43552,7 @@
  </concept>
  <concept name="ont::random-val">
   <relation label="inherit">
-   ont::ordered-val
+   ont::nonsystematic-val
   </relation>
   <relation label="overlap">
    wn::|arbitrary%3:00:00::|
@@ -43871,6 +43882,9 @@
  <concept name="ont::recipe">
   <relation label="inherit">
    ont::procedure
+  </relation>
+  <relation label="overlap">
+   wn::|instruction%1:10:04::|
   </relation>
  </concept>
  <concept name="ont::recipient">
@@ -44294,7 +44308,7 @@
  </concept>
  <concept name="ont::regular">
   <relation label="inherit">
-   ont::regularity-val
+   ont::systematic-val
   </relation>
   <relation label="overlap">
    wn::|regular%5:00:00:steady:00|
@@ -44325,7 +44339,7 @@
  </concept>
  <concept name="ont::regularity-scale">
   <relation label="inherit">
-   ont::temporal-occurrence-scale
+   ont::systematicity-scale
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -44333,18 +44347,6 @@
    </relation>
    <feat name="scale">ont::regularity-scale</feat>
    <feat name="type">ont::regularity-scale</feat>
-  </sem-feats>
- </concept>
- <concept name="ont::regularity-val">
-  <relation label="inherit">
-   ont::frequency-val
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">ont::regularity-scale</feat>
-   <feat name="type">ont::regularity-val</feat>
   </sem-feats>
  </concept>
  <concept name="ont::regulatory-organization">
@@ -48451,7 +48453,7 @@
    &quot;properties that deal with an object's location with respect to another object in an ordered sequence&quot;
   </comment>
   <relation label="inherit">
-   ont::relational-attribute-val
+   ont::systematic-val
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -48479,16 +48481,11 @@
  </concept>
  <concept name="ont::sequential-val">
   <relation label="inherit">
-   ont::ordered-val
+   ont::systematic-val
   </relation>
   <relation label="overlap">
+   wn::|ordered%3:00:00::|
    wn::|serial%3:01:00::|
-   wn::|sequential%5:00:00:ordered:00|
-   wn::|consecutive%5:00:00:ordered:00|
-   wn::|sequent%5:00:00:ordered:00|
-   wn::|successive%5:00:00:ordered:00|
-   wn::|serial%5:00:00:ordered:00|
-   wn::|progressive%5:00:00:ordered:00|
   </relation>
  </concept>
  <concept name="ont::serving-as-connection-val">
@@ -52378,7 +52375,7 @@
   </relation>
   <relation label="overlap">
    wn::|advise%2:32:02::|
-   wn::|proposal%1:10:00::|
+   wn::|proposal%1:10:01::|
    wn::|propose%2:32:00::|
    wn::|suggest%2:32:00::|
   </relation>
@@ -52879,6 +52876,41 @@
   <relation label="overlap">
    wn::|system%1:14:00::|
   </relation>
+ </concept>
+ <concept name="ont::systematic-val">
+  <relation label="inherit">
+   ont::systematicity-val
+  </relation>
+  <relation label="overlap">
+   wn::|systematic%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::systematicity-scale">
+  <relation label="inherit">
+   ont::relational-property-scale
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::systematicity-scale</feat>
+   <feat name="type">ont::systematicity-scale</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::systematicity-val">
+  <comment>
+   &quot;properties that deal with ordered nature of objects&quot;
+  </comment>
+  <relation label="inherit">
+   ont::relational-attribute-val
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::systematicity-scale</feat>
+   <feat name="type">ont::systematicity-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::table">
   <relation label="inherit">

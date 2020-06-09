@@ -1600,7 +1600,9 @@
 (CONCEPT
   ONT::ALGORITHM
   (INHERIT
-    ONT::PROCEDURE))
+    ONT::PROCEDURE)
+  (OVERLAP
+    WN::|algorithm%1:09:00::|))
 
 (CONCEPT
   ONT::ALIVE
@@ -24084,7 +24086,7 @@
 (CONCEPT
   ONT::IRREGULAR
   (INHERIT
-    ONT::REGULARITY-VAL)
+    ONT::NONSYSTEMATIC-VAL)
   (OVERLAP
     WN::|aperiodic%3:00:00::|
     WN::|nonperiodic%3:00:00::|
@@ -29701,6 +29703,13 @@
     (TYPE ONT::NONHUMAN-ANIMAL)))
 
 (CONCEPT
+  ONT::NONSYSTEMATIC-VAL
+  (INHERIT
+    ONT::SYSTEMATICITY-VAL)
+  (OVERLAP
+    WN::|unsystematic%3:00:00::|))
+
+(CONCEPT
   ONT::NONVERBAL-EXPRESSION
   (INHERIT
     ONT::EVENT-OF-ACTION)
@@ -30931,7 +30940,7 @@
   ONT::NOT-ORGANIZED-VAL
   (COMMENT "lacking category, organization and/or structure (disorganized)")
   (INHERIT
-    ONT::NOT-ORDERLY-VAL)
+    ONT::NONSYSTEMATIC-VAL)
   (OVERLAP
     WN::|disorganized%3:00:00::|
     WN::|disorganised%3:00:00::|
@@ -32397,6 +32406,7 @@
   (INHERIT
     ONT::COMMISSIVE)
   (OVERLAP
+    WN::|offer%1:10:00::|
     WN::|volunteer%2:41:00::|
     WN::|volunteer%2:41:01::|)
   (SEM-FRAME
@@ -32438,8 +32448,8 @@
     ONT::DOCUMENT)
   (OVERLAP
     WN::|document%1:10:00::|
-    WN::|written_document%1:10:00::|
-    WN::|papers%1:10:00::|))
+    WN::|papers%1:10:00::|
+    WN::|written_document%1:10:00::|))
 
 (CONCEPT
   ONT::OFFICIAL-VAL
@@ -32751,14 +32761,6 @@
     (TYPE ONT::ORDERED-DOMAIN)))
 
 (CONCEPT
-  ONT::ORDERED-VAL
-  (COMMENT "properties that deal with ordered nature of objects")
-  (INHERIT
-    ONT::RELATIONAL-ATTRIBUTE-VAL)
-  (OVERLAP
-    WN::|ordered%3:00:00::|))
-
-(CONCEPT
   ONT::ORDERING
   (COMMENT "Identify an ordering or ranking of objects along some dimention")
   (INHERIT
@@ -32876,7 +32878,7 @@
   ONT::ORGANIZED-VAL
   (COMMENT "having category, organization and/or structure (organized)")
   (INHERIT
-    ONT::ORDERLY-VAL)
+    ONT::SYSTEMATIC-VAL)
   (OVERLAP
     WN::|organized%3:00:02::|
     WN::|organized%3:00:01::|
@@ -35199,7 +35201,9 @@
 (CONCEPT
   ONT::POLICY
   (INHERIT
-    ONT::PROCEDURE))
+    ONT::PROCEDURE)
+  (OVERLAP
+    WN::|policy%1:09:00::|))
 
 (CONCEPT
   ONT::POLITENESS
@@ -36359,6 +36363,10 @@
   ONT::PROCEDURE
   (INHERIT
     ONT::PS-OBJECT)
+  (OVERLAP
+    WN::|procedure%1:10:00::|
+    WN::|procedure%1:04:00::|
+    WN::|procedure%1:04:02::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -36369,10 +36377,7 @@
 (CONCEPT
   ONT::PROCESS
   (INHERIT
-    ONT::PROCEDURE)
-  (OVERLAP
-    WN::|procedure%1:04:00::|
-    WN::|process%1:04:00::|))
+    ONT::PROCEDURE))
 
 (CONCEPT
   ONT::PROCESS-EVALUATION-SCALE
@@ -36749,6 +36754,8 @@
   ONT::PROPOSAL
   (INHERIT
     ONT::PS-OBJECT)
+  (OVERLAP
+    WN::|proposal%1:10:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -36844,7 +36851,9 @@
 (CONCEPT
   ONT::PROTOCOL
   (INHERIT
-    ONT::PROCEDURE))
+    ONT::PROCEDURE)
+  (OVERLAP
+    WN::|protocol%1:10:01::|))
 
 (CONCEPT
   ONT::PROUD-VAL
@@ -37633,7 +37642,7 @@
 (CONCEPT
   ONT::RANDOM-VAL
   (INHERIT
-    ONT::ORDERED-VAL)
+    ONT::NONSYSTEMATIC-VAL)
   (OVERLAP
     WN::|arbitrary%3:00:00::|
     WN::|random%3:00:00::|
@@ -37922,7 +37931,9 @@
 (CONCEPT
   ONT::RECIPE
   (INHERIT
-    ONT::PROCEDURE))
+    ONT::PROCEDURE)
+  (OVERLAP
+    WN::|instruction%1:10:04::|))
 
 (CONCEPT
   ONT::RECIPIENT
@@ -38273,7 +38284,7 @@
 (CONCEPT
   ONT::REGULAR
   (INHERIT
-    ONT::REGULARITY-VAL)
+    ONT::SYSTEMATIC-VAL)
   (OVERLAP
     WN::|regular%5:00:00:steady:00|
     WN::|regular%3:00:00::|)
@@ -38298,22 +38309,12 @@
 (CONCEPT
   ONT::REGULARITY-SCALE
   (INHERIT
-    ONT::TEMPORAL-OCCURRENCE-SCALE)
+    ONT::SYSTEMATICITY-SCALE)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
     (SCALE ONT::REGULARITY-SCALE)
     (TYPE ONT::REGULARITY-SCALE)))
-
-(CONCEPT
-  ONT::REGULARITY-VAL
-  (INHERIT
-    ONT::FREQUENCY-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (SCALE ONT::REGULARITY-SCALE)
-    (TYPE ONT::REGULARITY-VAL)))
 
 (CONCEPT
   ONT::REGULATORY-ORGANIZATION
@@ -42000,7 +42001,7 @@
   (COMMENT
    "properties that deal with an object's location with respect to another object in an ordered sequence")
   (INHERIT
-    ONT::RELATIONAL-ATTRIBUTE-VAL)
+    ONT::SYSTEMATIC-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -42025,15 +42026,10 @@
 (CONCEPT
   ONT::SEQUENTIAL-VAL
   (INHERIT
-    ONT::ORDERED-VAL)
+    ONT::SYSTEMATIC-VAL)
   (OVERLAP
-    WN::|serial%3:01:00::|
-    WN::|sequential%5:00:00:ordered:00|
-    WN::|consecutive%5:00:00:ordered:00|
-    WN::|sequent%5:00:00:ordered:00|
-    WN::|successive%5:00:00:ordered:00|
-    WN::|serial%5:00:00:ordered:00|
-    WN::|progressive%5:00:00:ordered:00|))
+    WN::|ordered%3:00:00::|
+    WN::|serial%3:01:00::|))
 
 (CONCEPT
   ONT::SERVING-AS-CONNECTION-VAL
@@ -45389,7 +45385,7 @@
     ONT::DIRECTIVE)
   (OVERLAP
     WN::|advise%2:32:02::|
-    WN::|proposal%1:10:00::|
+    WN::|proposal%1:10:01::|
     WN::|propose%2:32:00::|
     WN::|suggest%2:32:00::|))
 
@@ -45810,6 +45806,34 @@
     ONT::GROUP-OBJECT-ABSTR)
   (OVERLAP
     WN::|system%1:14:00::|))
+
+(CONCEPT
+  ONT::SYSTEMATIC-VAL
+  (INHERIT
+    ONT::SYSTEMATICITY-VAL)
+  (OVERLAP
+    WN::|systematic%3:00:00::|))
+
+(CONCEPT
+  ONT::SYSTEMATICITY-SCALE
+  (INHERIT
+    ONT::RELATIONAL-PROPERTY-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::SYSTEMATICITY-SCALE)
+    (TYPE ONT::SYSTEMATICITY-SCALE)))
+
+(CONCEPT
+  ONT::SYSTEMATICITY-VAL
+  (COMMENT "properties that deal with ordered nature of objects")
+  (INHERIT
+    ONT::RELATIONAL-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::SYSTEMATICITY-SCALE)
+    (TYPE ONT::SYSTEMATICITY-VAL)))
 
 (CONCEPT
   ONT::TABLE
