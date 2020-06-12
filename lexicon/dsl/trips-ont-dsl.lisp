@@ -19734,13 +19734,11 @@
     ONT::SOURCE-RELN)
   (SEM-FRAME
     (ONT::GROUND
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
-       (SPATIAL-ABSTRACTION ?!SA))
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
      OPTIONAL)
     (ONT::FIGURE
      (OR
@@ -22713,10 +22711,6 @@
   (INHERIT
     ONT::POS-WRT-CONTAINMENT-RELN)
   (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (TYPE ONT::EVENT-OF-EXPERIENCE))
-     OPTIONAL)
     (ONT::GROUND
      (SEM-FEATS
        (OR
