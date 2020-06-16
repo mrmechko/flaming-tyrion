@@ -191,76 +191,28 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::experiencer-property-val">
- <comment>
-  &quot;state of experiencing a particular emotion or cognitive state&quot;
- </comment>
- <relation label="inherit">
-  ont::psychological-property-val
- </relation>
- <relation label="overlap">
-  wn::|appetitive%3:01:00::|
-  wn::|algolagnic%3:01:00::|
-  wn::|technophobic%3:01:00::|
-  wn::|anglophilic%3:01:00::|
-  wn::|aversive%3:01:00::|
-  wn::|technophilic%3:01:00::|
-  wn::|libidinal%3:01:00::|
-  wn::|emotional%3:01:00::|
-  wn::|anglophobic%3:01:00::|
-  wn::|agonal%3:01:00::|
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::neutral-experiencer-property-val">
- <comment>
-  &quot;experiencing experiences that are neither positive nor negative&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::experiencer-property-val
+  abstr-obj
  </relation>
- </concept>
- <concept name="ont::unaffected-val">
- <comment>
-  &quot;(passionless, unawed)&quot;
- </comment>
- <relation label="inherit">
-  ont::neutral-experiencer-property-val
- </relation>
- <relation label="overlap">
-  wn::|passionless%3:00:00::|
-  wn::|unenthusiastic%3:00:00::|
-  wn::|unawed%3:00:00::|
-  wn::|undemonstrative%3:00:00::|
-  wn::|unresentful%3:00:00::|
-  wn::|unmoved%3:00:00::|
-  wn::|unaffected%3:00:02::|
-  wn::|untouched%3:00:01::|
-  wn::|unangry%3:00:00::|
-  wn::|unrevived%3:00:00::|
-  wn::|unrenewed%3:00:00::|
-  wn::|unagitated%3:00:00::|
-  wn::|unexcited%3:00:00::|
-  wn::|unsurprised%3:00:00::|
-  wn::|not_surprised%3:00:00::|
-  wn::|unafraid%3:00:00::|
-  wn::|fearless%3:00:00::|
- </relation>
- </concept>
+ <feat name="scale">ont::experiencer-condition-scale</feat>
+ <feat name="type">ont::experiencer-property-val</feat>
+ </sem-feats>
  <concept name="ont::psychological-property-val">
  <comment>
   &quot;properties pertaining to psychological, mental or emotional states&quot;
@@ -302,21 +254,83 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::unaffected-val">
+ <comment>
+  &quot;(passionless, unawed)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::neutral-experiencer-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|passionless%3:00:00::|
+  wn::|unenthusiastic%3:00:00::|
+  wn::|unawed%3:00:00::|
+  wn::|undemonstrative%3:00:00::|
+  wn::|unresentful%3:00:00::|
+  wn::|unmoved%3:00:00::|
+  wn::|unaffected%3:00:02::|
+  wn::|untouched%3:00:01::|
+  wn::|unangry%3:00:00::|
+  wn::|unrevived%3:00:00::|
+  wn::|unrenewed%3:00:00::|
+  wn::|unagitated%3:00:00::|
+  wn::|unexcited%3:00:00::|
+  wn::|unsurprised%3:00:00::|
+  wn::|not_surprised%3:00:00::|
+  wn::|unafraid%3:00:00::|
+  wn::|fearless%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::neutral-experiencer-property-val">
+ <comment>
+  &quot;experiencing experiences that are neither positive nor negative&quot;
+ </comment>
+ <relation label="inherit">
+  ont::experiencer-property-val
+ </relation>
+ </concept>
+ <concept name="ont::experiencer-property-val">
+ <comment>
+  &quot;state of experiencing a particular emotion or cognitive state&quot;
+ </comment>
+ <relation label="inherit">
+  ont::psychological-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|appetitive%3:01:00::|
+  wn::|algolagnic%3:01:00::|
+  wn::|technophobic%3:01:00::|
+  wn::|anglophilic%3:01:00::|
+  wn::|aversive%3:01:00::|
+  wn::|technophilic%3:01:00::|
+  wn::|libidinal%3:01:00::|
+  wn::|emotional%3:01:00::|
+  wn::|anglophobic%3:01:00::|
+  wn::|agonal%3:01:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::experiencer-condition-scale</feat>
+  <feat name="type">ont::experiencer-property-val</feat>
+ </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
  </sem-frame>
+ </concept>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

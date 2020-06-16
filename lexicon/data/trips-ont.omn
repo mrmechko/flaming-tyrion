@@ -4129,6 +4129,7 @@ Class: flag
 # ONT type ont::opening
 Class: opening
   SubClassOf: shape-object
+  SubClassOf: _figure only (FLT_phys-obj)
 
 # ONT type ont::exit
 Class: exit
@@ -8220,7 +8221,7 @@ Class: part-whole-val
 # ONT type ont::completeness-val
 Class: completeness-val
   Annotations: rdfs:comment "having or not having all the necessary parts"
-  SubClassOf: part-whole-val
+  SubClassOf: physical-property-val
   SubClassOf: (FLT_abstr-obj and F_scale some completeness-scale)
 
 # ONT type ont::partial-incomplete
@@ -9977,6 +9978,7 @@ Class: desirable-val
 Class: experiencer-property-val
   Annotations: rdfs:comment "state of experiencing a particular emotion or cognitive state"
   SubClassOf: psychological-property-val
+  SubClassOf: (FLT_abstr-obj and F_scale some experiencer-condition-scale)
   SubClassOf: _figure only (FLT_phys-obj and F_origin some (V_human or V_non-human-animal)) and _figure some owl:Thing
 
 # ONT type ont::pos-experiencer-property-val
@@ -11628,6 +11630,7 @@ Class: not-willing-to-accept-val
 Class: creativity-val
   Annotations: rdfs:comment "(creative)"
   SubClassOf: psychological-property-val
+  SubClassOf: (FLT_abstr-obj and F_scale some creativity-scale)
 
 # ONT type ont::creative-val
 Class: creative-val
@@ -13192,7 +13195,7 @@ Class: dehydrated-scale
 # ONT type ont::spatial-scale
 Class: spatial-scale
   Annotations: rdfs:comment "scales relating to the properties of space"
-  SubClassOf: physical-property-scale
+  SubClassOf: ordered-domain
   SubClassOf: (FLT_abstr-obj and F_scale some spatial-scale)
 
 # ONT type ont::shape-scale
@@ -14379,6 +14382,11 @@ Class: usability-scale
 Class: psychological-condition-scale
   SubClassOf: ordered-domain
   SubClassOf: (FLT_abstr-obj and F_scale some psychological-condition-scale)
+
+# ONT type ont::creativity-scale
+Class: creativity-scale
+  SubClassOf: psychological-condition-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some creativity-scale)
 
 # ONT type ont::willingness-scale
 Class: willingness-scale
@@ -16667,7 +16675,7 @@ Class: encourage
 # ONT type ont::provoke
 Class: provoke
   SubClassOf: cause-effect
-  SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj) and F_intentional some V_+) and _affected some owl:Thing
+  SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj)) and _affected some owl:Thing
 
 # ONT type ont::cause-stimulate
 Class: cause-stimulate
@@ -19942,7 +19950,7 @@ DisjointClasses: false-val, true-val
 DisjointClasses: not-verifiable-val, verifiable-val
 
 # children of ont::physical-property-val
-DisjointClasses: body-condition-property-val, polarity-val, part-whole-val, sensory-property-val, appearance-property-val, moisture-content-val, atmospheric-val, phosphorilated, substantial-property-val, configuration-property-val
+DisjointClasses: body-condition-property-val, polarity-val, completeness-val, part-whole-val, sensory-property-val, appearance-property-val, moisture-content-val, atmospheric-val, phosphorilated, substantial-property-val, configuration-property-val
 
 # children of ont::configuration-property-val
 DisjointClasses: dispersion-val, closure-val, enclosure-val, clothedness-adornment-val, homogeneity-val, filled-val, flow-val, intersecting-val, binding-val, constricting-val, flexibility-val, equipped-val
@@ -20055,11 +20063,11 @@ DisjointClasses: seeing-val, invisible-val, visible-val
 # children of ont::perceptibility-val
 DisjointClasses: imperceptible-val, perceptible-val
 
-# children of ont::part-whole-val
-DisjointClasses: united-val, supplemental-val, split-val, remaining-val, completeness-val
-
 # children of ont::completeness-val
 DisjointClasses: whole-complete, partial-incomplete
+
+# children of ont::part-whole-val
+DisjointClasses: united-val, supplemental-val, split-val, remaining-val
 
 # children of ont::polarity-val
 DisjointClasses: polarity-val-negative, polarity-val-positive
@@ -20806,10 +20814,10 @@ DisjointClasses: financial-property-val, economics-property-val
 DisjointClasses: unordered-domain, ordered-domain
 
 # children of ont::ordered-domain
-DisjointClasses: temporal-scale, state-of-affairs-scale, psychological-condition-scale, object-affordances-scale, status-property-scale, relational-property-scale, process-property-scale, measure-scale, life-process-scale, information-property-scale, evaluation-scale, behavioral-scale, physical-property-scale
+DisjointClasses: temporal-scale, state-of-affairs-scale, psychological-condition-scale, object-affordances-scale, status-property-scale, relational-property-scale, process-property-scale, measure-scale, life-process-scale, information-property-scale, evaluation-scale, behavioral-scale, spatial-scale, physical-property-scale
 
 # children of ont::physical-property-scale
-DisjointClasses: spatial-scale, moisture-content-scale, sensory-scale, appearance-scale, configuration-property-scale, atmospheric-scale, completeness-scale, polarity-scale, body-condition-scale
+DisjointClasses: moisture-content-scale, sensory-scale, appearance-scale, configuration-property-scale, atmospheric-scale, completeness-scale, polarity-scale, body-condition-scale
 
 # children of ont::body-condition-scale
 DisjointClasses: negative-body-condition-scale, positive-body-condition-scale
@@ -21040,7 +21048,7 @@ DisjointClasses: not-regular-scale, regular-scale
 DisjointClasses: usability-scale, availability-scale, functionality-scale
 
 # children of ont::psychological-condition-scale
-DisjointClasses: experiencer-condition-scale, rationality-scale, certainty-scale, awareness-scale, cautiousness-scale, ambitiousness-scale, premeditation-scale, attentiveness-scale, intentionality-scale, intelligence-scale, willingness-scale
+DisjointClasses: experiencer-condition-scale, rationality-scale, certainty-scale, awareness-scale, cautiousness-scale, ambitiousness-scale, premeditation-scale, attentiveness-scale, intentionality-scale, intelligence-scale, willingness-scale, creativity-scale
 
 # children of ont::certainty-scale
 DisjointClasses: not-certain-scale, certain-scale

@@ -2402,7 +2402,7 @@
    wn::|call%2:38:00::|
    wn::|turn_to%2:30:00::|
    wn::|woo%2:41:01::|
-   wn::|call%2:35:05::|
+   wn::|call%2:32:05::|
   </relation>
  </concept>
  <concept name="ont::appear">
@@ -11953,7 +11953,7 @@
    &quot;having or not having all the necessary parts&quot;
   </comment>
   <relation label="inherit">
-   ont::part-whole-val
+   ont::physical-property-val
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -14337,6 +14337,21 @@
    wn::|originative%3:00:00::|
   </relation>
  </concept>
+ <concept name="ont::creativity-scale">
+  <relation label="inherit">
+   ont::psychological-condition-scale
+  </relation>
+  <relation label="overlap">
+   wn::|creativity%1:09:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::creativity-scale</feat>
+   <feat name="type">ont::creativity-scale</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::creativity-val">
   <comment>
    &quot;(creative)&quot;
@@ -14344,6 +14359,13 @@
   <relation label="inherit">
    ont::psychological-property-val
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::creativity-scale</feat>
+   <feat name="type">ont::creativity-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::credibility-scale">
   <relation label="inherit">
@@ -20486,6 +20508,13 @@
    wn::|anglophobic%3:01:00::|
    wn::|agonal%3:01:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::experiencer-condition-scale</feat>
+   <feat name="type">ont::experiencer-property-val</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::figure" optional="optional">
     <sem-feats>
@@ -32333,6 +32362,8 @@
   <relation label="overlap">
    wn::|migrate%2:38:00::|
    wn::|migrate%2:38:01::|
+   wn::|migration%1:04:00::|
+   wn::|migration%1:11:00::|
   </relation>
  </concept>
  <concept name="ont::mild-and-pleasant-val">
@@ -35994,6 +36025,7 @@
   </relation>
   <relation label="overlap">
    wn::|unprotected%3:00:00::|
+   wn::|in_the_lurch%4:02:00::|
   </relation>
  </concept>
  <concept name="ont::not-provocative-val">
@@ -37805,6 +37837,11 @@
    wn::|opening%1:17:00::|
    wn::|gap%1:17:00::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="phys-obj" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::operating-switch">
   <relation label="inherit">
@@ -42677,13 +42714,10 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected" optional="optional">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -50789,7 +50823,7 @@
    &quot;scales relating to the properties of space&quot;
   </comment>
   <relation label="inherit">
-   ont::physical-property-scale
+   ont::ordered-domain
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -51729,6 +51763,7 @@
    wn::|strand%2:38:03::|
    wn::|terminate%2:30:01::|
    wn::|arrest%2:33:00::|
+   wn::|conclude%2:42:02::|
   </relation>
  </concept>
  <concept name="ont::storage-facility">

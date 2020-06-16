@@ -46,35 +46,19 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <sem-feats>
+ <concept name="ont::opening">
  <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="object-function">representation</feat>
- <feat name="information">-</feat>
- <feat name="intentional">-</feat>
- <feat name="form">object</feat>
- <feat name="origin">artifact</feat>
- <feat name="type">ont::shape-object</feat>
- </sem-feats>
- <concept name="ont::phys-object">
- <comment>
-  &quot;All physical objects: things that have substance&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
+  ont::shape-object
  </relation>
  <relation label="overlap">
-  wn::|object%1:03:00::|
-  wn::|physical_object%1:03:00::|
+  wn::|opening%1:17:00::|
+  wn::|gap%1:17:00::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::phys-object</feat>
- </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::shape-object">
  <relation label="inherit">
@@ -95,15 +79,41 @@
   <feat name="type">ont::shape-object</feat>
  </sem-feats>
  </concept>
- <concept name="ont::opening">
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
  <relation label="inherit">
-  ont::shape-object
+  ont::referential-sem
  </relation>
  <relation label="overlap">
-  wn::|opening%1:17:00::|
-  wn::|gap%1:17:00::|
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="object-function">representation</feat>
+ <feat name="information">-</feat>
+ <feat name="intentional">-</feat>
+ <feat name="form">object</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="type">ont::shape-object</feat>
+ </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -118,33 +128,6 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="phys-obj" />
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="entrance" />
- </morph>
- <relation label="inherit">
-  ont::exit
- </relation>
- <syntax>
-  <template-call template="ont::gen-part-of-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="sort">gen-part-of-reln</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">|3s|</feat>
-  </syn-feats>
- </syntax>
- </sense>
  <sense>
  <morph>
   <pos pos="n" />

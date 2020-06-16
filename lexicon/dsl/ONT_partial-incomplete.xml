@@ -184,47 +184,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::completeness-val">
- <comment>
-  &quot;having or not having all the necessary parts&quot;
- </comment>
- <relation label="inherit">
-  ont::part-whole-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::completeness-scale</feat>
-  <feat name="type">ont::completeness-val</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::incomplete-scale</feat>
- <feat name="type">ont::partial-incomplete</feat>
- </sem-feats>
- <concept name="ont::part-whole-val">
- <comment>
-  &quot;properties describing the relationship between the complete or complex whole and its parts&quot;
- </comment>
- <relation label="inherit">
-  ont::physical-property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="type">ont::part-whole-val</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
@@ -609,13 +568,24 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="type">ont::part-whole-val</feat>
+ <feat name="scale">ont::incomplete-scale</feat>
+ <feat name="type">ont::partial-incomplete</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
+ <concept name="ont::completeness-val">
+ <comment>
+  &quot;having or not having all the necessary parts&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::completeness-scale</feat>
+  <feat name="type">ont::completeness-val</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

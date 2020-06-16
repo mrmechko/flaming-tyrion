@@ -2072,7 +2072,7 @@
     WN::|call%2:38:00::|
     WN::|turn_to%2:30:00::|
     WN::|woo%2:41:01::|
-    WN::|call%2:35:05::|))
+    WN::|call%2:32:05::|))
 
 (CONCEPT
   ONT::APPEAR
@@ -10562,7 +10562,7 @@
   ONT::COMPLETENESS-VAL
   (COMMENT "having or not having all the necessary parts")
   (INHERIT
-    ONT::PART-WHOLE-VAL)
+    ONT::PHYSICAL-PROPERTY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -12616,10 +12616,27 @@
     WN::|originative%3:00:00::|))
 
 (CONCEPT
+  ONT::CREATIVITY-SCALE
+  (INHERIT
+    ONT::PSYCHOLOGICAL-CONDITION-SCALE)
+  (OVERLAP
+    WN::|creativity%1:09:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::CREATIVITY-SCALE)
+    (TYPE ONT::CREATIVITY-SCALE)))
+
+(CONCEPT
   ONT::CREATIVITY-VAL
   (COMMENT "(creative)")
   (INHERIT
-    ONT::PSYCHOLOGICAL-PROPERTY-VAL))
+    ONT::PSYCHOLOGICAL-PROPERTY-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::CREATIVITY-SCALE)
+    (TYPE ONT::CREATIVITY-VAL)))
 
 (CONCEPT
   ONT::CREDIBILITY-SCALE
@@ -17910,6 +17927,11 @@
     WN::|emotional%3:01:00::|
     WN::|anglophobic%3:01:00::|
     WN::|agonal%3:01:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::EXPERIENCER-CONDITION-SCALE)
+    (TYPE ONT::EXPERIENCER-PROPERTY-VAL))
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -28051,7 +28073,9 @@
     ONT::MOVE)
   (OVERLAP
     WN::|migrate%2:38:00::|
-    WN::|migrate%2:38:01::|))
+    WN::|migrate%2:38:01::|
+    WN::|migration%1:04:00::|
+    WN::|migration%1:11:00::|))
 
 (CONCEPT
   ONT::MILD-AND-PLEASANT-VAL
@@ -31116,7 +31140,8 @@
   (INHERIT
     ONT::PROTECTION-VAL)
   (OVERLAP
-    WN::|unprotected%3:00:00::|))
+    WN::|unprotected%3:00:00::|
+    WN::|in_the_lurch%4:02:00::|))
 
 (CONCEPT
   ONT::NOT-PROVOCATIVE-VAL
@@ -32655,7 +32680,12 @@
     ONT::SHAPE-OBJECT)
   (OVERLAP
     WN::|opening%1:17:00::|
-    WN::|gap%1:17:00::|))
+    WN::|gap%1:17:00::|)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       PHYS-OBJ)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::OPERATING-SWITCH
@@ -36891,13 +36921,11 @@
     WN::|provoke%2:32:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
-       (INTENTIONAL +))
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
      OPTIONAL)))
 
 (CONCEPT
@@ -43999,7 +44027,7 @@
   ONT::SPATIAL-SCALE
   (COMMENT "scales relating to the properties of space")
   (INHERIT
-    ONT::PHYSICAL-PROPERTY-SCALE)
+    ONT::ORDERED-DOMAIN)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -44822,7 +44850,8 @@
     WN::|strand%2:38:02::|
     WN::|strand%2:38:03::|
     WN::|terminate%2:30:01::|
-    WN::|arrest%2:33:00::|))
+    WN::|arrest%2:33:00::|
+    WN::|conclude%2:42:02::|))
 
 (CONCEPT
   ONT::STORAGE-FACILITY
