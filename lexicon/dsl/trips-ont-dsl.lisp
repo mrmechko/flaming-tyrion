@@ -18348,10 +18348,6 @@
   (COMMENT "social status relating to fame")
   (INHERIT
     ONT::EVALUATION-ATTRIBUTE-VAL)
-  (OVERLAP
-    WN::|famous%5:00:00:known:00|
-    WN::|celebrated%5:00:00:known:00|
-    WN::|legendary%5:00:00:known:00|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -18462,6 +18458,15 @@
     WN::|columbian%3:01:00::|
     WN::|jacobinic%3:01:00::|
     WN::|jacobinical%3:01:00::|))
+
+(CONCEPT
+  ONT::FAMOUS-VAL
+  (INHERIT
+    ONT::FAME-VAL)
+  (OVERLAP
+    WN::|famous%5:00:00:known:00|
+    WN::|celebrated%5:00:00:known:00|
+    WN::|legendary%5:00:00:known:00|))
 
 (CONCEPT
   ONT::FAR-RELN
