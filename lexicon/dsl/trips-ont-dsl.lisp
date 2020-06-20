@@ -2231,7 +2231,8 @@
     WN::|love%2:37:00::|
     WN::|relish%2:37:00::|
     WN::|savor%2:37:00::|
-    WN::|savour%2:37:00::|)
+    WN::|savour%2:37:00::|
+    WN::|respect%2:31:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL1
      (CONCEPT
@@ -29450,8 +29451,21 @@
 
 (CONCEPT
   ONT::NEG
+  (COMMENT "the opposite of an action and some properties")
   (INHERIT
-    ONT::PREDICATE))
+    ONT::PREDICATE)
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           SITUATION)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE
+        (OR
+          ONT::SITUATION-ROOT
+          ONT::RELATION))))))
 
 (CONCEPT
   ONT::NEG-CONDITION

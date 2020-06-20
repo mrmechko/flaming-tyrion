@@ -3,9 +3,28 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::neg">
+ <comment>
+  &quot;the opposite of an action and some properties&quot;
+ </comment>
  <relation label="inherit">
   ont::predicate
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="type">
+    <or>
+     ont::situation-root
+     ont::relation
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -61,6 +80,22 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="type">
+   <or>
+    ont::situation-root
+    ont::relation
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::relation">
  <comment>
   &quot;All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier&quot;
