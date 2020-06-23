@@ -1220,10 +1220,6 @@ Class: clause-condition
 Class: but-exception
   SubClassOf: conjunct
 
-# ONT type ont::assess
-Class: assess
-  SubClassOf: predicate
-
 # ONT type ont::degree-modifier
 Class: degree-modifier
   SubClassOf: modifier
@@ -6676,6 +6672,25 @@ Class: evaluation-attribute-val
   SubClassOf: (FLT_abstr-obj and F_scale some evaluation-scale)
   SubClassOf: _figure only (root and F_tangible some V_+) and _figure some owl:Thing
 
+# ONT type ont::desirability-val
+Class: desirability-val
+  SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some desire-scale)
+
+# ONT type ont::desirable-val
+Class: desirable-val
+  SubClassOf: desirability-val
+
+# ONT type ont::not-desirable-val
+Class: not-desirable-val
+  Annotations: rdfs:comment "(undesirable)"
+  SubClassOf: desirability-val
+
+# ONT type ont::lovable-val
+Class: lovable-val
+  Annotations: rdfs:comment "(lovable)"
+  SubClassOf: evaluation-attribute-val
+
 # ONT type ont::freshness-val
 Class: freshness-val
   Annotations: rdfs:comment "property of items made or obtained recently/a while back"
@@ -6980,6 +6995,7 @@ Class: not-necessary-val
 # ONT type ont::seniority-val
 Class: seniority-val
   SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some seniority-scale)
 
 # ONT type ont::senior-val
 Class: senior-val
@@ -7146,6 +7162,7 @@ Class: not-worthy-val
 # ONT type ont::judgement-val
 Class: judgement-val
   SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some judgement-scale)
 
 # ONT type ont::morality-val
 Class: morality-val
@@ -7257,6 +7274,7 @@ Class: messy-val
 # ONT type ont::freedom-val
 Class: freedom-val
   SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some freedom-scale)
 
 # ONT type ont::free-val
 Class: free-val
@@ -9916,7 +9934,7 @@ Class: questionable-val
 # ONT type ont::evoking-experience-property-val
 Class: evoking-experience-property-val
   Annotations: rdfs:comment "attributes that indicate the evocation of a particular emotion"
-  SubClassOf: psychological-property-val
+  SubClassOf: property-val
 
 # ONT type ont::evoking-neg-experience-property-val
 Class: evoking-neg-experience-property-val
@@ -9974,11 +9992,6 @@ Class: interesting-val
 Class: pleasing-val
   SubClassOf: evoking-pos-experience-property-val
   SubClassOf: (FLT_abstr-obj and F_scale some pleasantness-scale)
-
-# ONT type ont::desirable-val
-Class: desirable-val
-  SubClassOf: evoking-pos-experience-property-val
-  SubClassOf: (FLT_abstr-obj and F_scale some desire-scale)
 
 # ONT type ont::experiencer-property-val
 Class: experiencer-property-val
@@ -10855,6 +10868,7 @@ Class: not-dignified-val
 Class: shapeliness-val
   Annotations: rdfs:comment "(shapely)"
   SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some shapeliness-scale)
 
 # ONT type ont::shapely-val
 Class: shapely-val
@@ -10871,40 +10885,27 @@ Class: not-recommendable-val
   Annotations: rdfs:comment "(unadvisable)"
   SubClassOf: recommendability-val
 
-# ONT type ont::favorability-to-life-val
-Class: favorability-to-life-val
+# ONT type ont::hospitability-val
+Class: hospitability-val
   Annotations: rdfs:comment "(hospitable)"
   SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some hospitability-scale)
 
 # ONT type ont::hospitable-val
 Class: hospitable-val
   Annotations: rdfs:comment "(hospitable)"
-  SubClassOf: favorability-to-life-val
+  SubClassOf: hospitability-val
 
 # ONT type ont::not-hospitable-val
 Class: not-hospitable-val
   Annotations: rdfs:comment "(inhospitable)"
-  SubClassOf: favorability-to-life-val
-
-# ONT type ont::restriction-val
-Class: restriction-val
-  Annotations: rdfs:comment "(restricted, restrained)"
-  SubClassOf: evaluation-attribute-val
-
-# ONT type ont::restricted-val
-Class: restricted-val
-  Annotations: rdfs:comment "(restricted, restrained)"
-  SubClassOf: restriction-val
-
-# ONT type ont::not-restricted-val
-Class: not-restricted-val
-  Annotations: rdfs:comment "(unrestricted)"
-  SubClassOf: restriction-val
+  SubClassOf: hospitability-val
 
 # ONT type ont::qualification-val
 Class: qualification-val
   Annotations: rdfs:comment "(qualified, eligible)"
   SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some qualification-scale)
 
 # ONT type ont::qualified-val
 Class: qualified-val
@@ -10920,6 +10921,7 @@ Class: not-qualified-val
 Class: helpfulness-val
   Annotations: rdfs:comment "(helpful)"
   SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some helpfulness-scale)
 
 # ONT type ont::helpful-val
 Class: helpful-val
@@ -10955,6 +10957,21 @@ Class: controlled-val
 Class: not-controlled-val
   Annotations: rdfs:comment "not controlled by human entity (uncontrolled, unguided)"
   SubClassOf: control-val
+
+# ONT type ont::restriction-val
+Class: restriction-val
+  Annotations: rdfs:comment "(restricted, restrained)"
+  SubClassOf: control-val
+
+# ONT type ont::restricted-val
+Class: restricted-val
+  Annotations: rdfs:comment "(restricted, restrained)"
+  SubClassOf: restriction-val
+
+# ONT type ont::not-restricted-val
+Class: not-restricted-val
+  Annotations: rdfs:comment "(unrestricted)"
+  SubClassOf: restriction-val
 
 # ONT type ont::inarticulate-val
 Class: inarticulate-val
@@ -10995,6 +11012,7 @@ Class: not-lawful-val
 Class: influence-val
   Annotations: rdfs:comment "(influential)"
   SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some influence-scale)
 
 # ONT type ont::influential-val
 Class: influential-val
@@ -11010,6 +11028,7 @@ Class: not-influential-val
 Class: influence-susceptibility-val
   Annotations: rdfs:comment "not allowing penetration or influence (vulnerable)"
   SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some influence-susceptibility-scale)
 
 # ONT type ont::vulnerable-val
 Class: vulnerable-val
@@ -11512,11 +11531,6 @@ Class: not-surprising-val
   Annotations: rdfs:comment "(unsurprising)"
   SubClassOf: evoking-surprise-val
 
-# ONT type ont::not-desirable-val
-Class: not-desirable-val
-  Annotations: rdfs:comment "(undesirable)"
-  SubClassOf: evoking-neg-experience-property-val
-
 # ONT type ont::discouraging-val
 Class: discouraging-val
   Annotations: rdfs:comment "(discouraging)"
@@ -11540,11 +11554,6 @@ Class: imparting-energy-val
 # ONT type ont::encouraging-val
 Class: encouraging-val
   Annotations: rdfs:comment "(encouraging)"
-  SubClassOf: evoking-pos-experience-property-val
-
-# ONT type ont::lovable-val
-Class: lovable-val
-  Annotations: rdfs:comment "(lovable)"
   SubClassOf: evoking-pos-experience-property-val
 
 # ONT type ont::remorseless-val
@@ -13408,6 +13417,26 @@ Class: evaluation-scale
   SubClassOf: ordered-domain
   SubClassOf: (FLT_abstr-obj and F_scale some evaluation-scale)
 
+# ONT type ont::freedom-scale
+Class: freedom-scale
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some freedom-scale)
+
+# ONT type ont::helpfulness-scale
+Class: helpfulness-scale
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some helpfulness-scale)
+
+# ONT type ont::influence-susceptibility-scale
+Class: influence-susceptibility-scale
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some influence-susceptibility-scale)
+
+# ONT type ont::influence-scale
+Class: influence-scale
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some influence-scale)
+
 # ONT type ont::interestingness-scale
 Class: interestingness-scale
   SubClassOf: evaluation-scale
@@ -13448,10 +13477,35 @@ Class: not-familiar-scale
   SubClassOf: familiarity-scale
   SubClassOf: (FLT_abstr-obj and F_scale some not-familiar-scale)
 
+# ONT type ont::hospitability-scale
+Class: hospitability-scale
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some hospitability-scale)
+
+# ONT type ont::judgement-scale
+Class: judgement-scale
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some judgement-scale)
+
 # ONT type ont::necessity-scale
 Class: necessity-scale
   SubClassOf: evaluation-scale
   SubClassOf: (FLT_abstr-obj and F_scale some necessity-scale)
+
+# ONT type ont::qualification-scale
+Class: qualification-scale
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some qualification-scale)
+
+# ONT type ont::seniority-scale
+Class: seniority-scale
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some seniority-scale)
+
+# ONT type ont::shapeliness-scale
+Class: shapeliness-scale
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some shapeliness-scale)
 
 # ONT type ont::typicality-scale
 Class: typicality-scale
@@ -14489,10 +14543,10 @@ Class: apathy-scale
   SubClassOf: experiencer-condition-scale
   SubClassOf: (FLT_abstr-obj and F_scale some apathy-scale)
 
-# ONT type ont::desire-scale
-Class: desire-scale
-  SubClassOf: experiencer-condition-scale
-  SubClassOf: (FLT_abstr-obj and F_scale some desire-scale)
+# ONT type ont::desirability-scale
+Class: desirability-scale
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some desirability-scale)
 
 # ONT type ont::pleasurability-scale
 Class: pleasurability-scale
@@ -19068,7 +19122,7 @@ DisjointClasses: quantifier, bare, sm, indef-set, a, indefinite
 DisjointClasses: impro-set, impro
 
 # children of ont::predicate
-DisjointClasses: whereby, cost-relation, rate-rel, iteration-period, temporal-predicate, extent-predicate, extension, destination-loc, approximate-at-loc, original-material, resulting-object, path, pivot, completely, as-role, physical-symptom-manner, politeness, speakerstatus, orientation, etcetera, parenthetical, contrastive, additive, association-predicate, sequence-position, such, similarity, attributed-to, choice-option, dimension, scale-relation, without, with-instrument, accompaniment, originator, assoc-with, on-medication, topic, topic-signal, restriction, qualification, priority, neg, location-distance-modifier, assess, conjunct, situation-modifier, situation-object-modifier, modifier
+DisjointClasses: whereby, cost-relation, rate-rel, iteration-period, temporal-predicate, extent-predicate, extension, destination-loc, approximate-at-loc, original-material, resulting-object, path, pivot, completely, as-role, physical-symptom-manner, politeness, speakerstatus, orientation, etcetera, parenthetical, contrastive, additive, association-predicate, sequence-position, such, similarity, attributed-to, choice-option, dimension, scale-relation, without, with-instrument, accompaniment, originator, assoc-with, on-medication, topic, topic-signal, restriction, qualification, priority, neg, location-distance-modifier, conjunct, situation-modifier, situation-object-modifier, modifier
 
 # children of ont::modifier
 DisjointClasses: intensifier, least-extent, degree-modifier, grade-modifier, qmodifier, eval-wrt-expectation
@@ -19779,10 +19833,13 @@ DisjointClasses: body-property, condition-favorability
 DisjointClasses: not-favorable-condition, favorable-condition
 
 # children of ont::property-val
-DisjointClasses: quantity-related-property-val, spatial-val, associated-with-val, resulting-state-val, status-val, object-affordances-val, relational-attribute-val, dimensional-property-val, psychological-property-val, animal-propensity-val, temporal-val, can-be-done-val, process-val, life-process-val, temperature-val, physical-property-val, information-property-val, evaluation-attribute-val, state-resulting-from
+DisjointClasses: quantity-related-property-val, spatial-val, associated-with-val, resulting-state-val, evoking-experience-property-val, status-val, object-affordances-val, relational-attribute-val, dimensional-property-val, psychological-property-val, animal-propensity-val, temporal-val, can-be-done-val, process-val, life-process-val, temperature-val, physical-property-val, information-property-val, evaluation-attribute-val, state-resulting-from
 
 # children of ont::evaluation-attribute-val
-DisjointClasses: influence-susceptibility-val, influence-val, permissibility-val, control-val, helpfulness-val, qualification-val, restriction-val, favorability-to-life-val, shapeliness-val, dignity-val, adequacy-val, fame-val, wealthiness-val, usefulness-val, process-evaluation-val, real-vs-fake-val, freedom-val, orderliness-val, offensiveness-val, beauty-val, judgement-val, worthiness-val, reliability-val, quality-val, explicitness-val, basicness-val, typicality-val, familiarity-val, conventionality-val, seniority-val, necessity-val, importance-val, attention-worthy-val, safety-val, harmfulness-val, comfort-val, ability-val, luckiness-val, cleanliness-val, specificity-val, convenience-val, appropriateness-val, preference-val, recommendability-val, tolerability-val, acceptability-val, cost-val, freshness-val
+DisjointClasses: influence-susceptibility-val, influence-val, permissibility-val, control-val, helpfulness-val, qualification-val, hospitability-val, shapeliness-val, dignity-val, adequacy-val, fame-val, wealthiness-val, usefulness-val, process-evaluation-val, real-vs-fake-val, freedom-val, orderliness-val, offensiveness-val, beauty-val, judgement-val, worthiness-val, reliability-val, quality-val, explicitness-val, basicness-val, typicality-val, familiarity-val, conventionality-val, seniority-val, necessity-val, importance-val, attention-worthy-val, safety-val, harmfulness-val, comfort-val, ability-val, luckiness-val, cleanliness-val, specificity-val, convenience-val, appropriateness-val, preference-val, recommendability-val, tolerability-val, acceptability-val, cost-val, freshness-val, lovable-val, desirability-val
+
+# children of ont::desirability-val
+DisjointClasses: not-desirable-val, desirable-val
 
 # children of ont::freshness-val
 DisjointClasses: not-fresh-val, fresh-val
@@ -20226,7 +20283,7 @@ DisjointClasses: not-social-val, social-val
 DisjointClasses: not-responsible-val, responsible-val
 
 # children of ont::psychological-property-val
-DisjointClasses: intellect-val, creativity-val, premeditation-val, intentionality-val, intelligence-val, experiencer-property-val, evoking-experience-property-val, certainty-val, ambitiousness-val, attention-val, sensibility-val, willingness-val
+DisjointClasses: intellect-val, creativity-val, premeditation-val, intentionality-val, intelligence-val, experiencer-property-val, certainty-val, ambitiousness-val, attention-val, sensibility-val, willingness-val
 
 # children of ont::willingness-val
 DisjointClasses: willing, unwilling
@@ -20421,10 +20478,10 @@ DisjointClasses: questionable-val, skeptical-val
 DisjointClasses: evoking-neutral-experience-property-val, evoking-pos-experience-property-val, evoking-neg-experience-property-val
 
 # children of ont::evoking-neg-experience-property-val
-DisjointClasses: depressing-val, discouraging-val, not-desirable-val, boring-val, confusing-val, grievous-val, not-pleasing-val, frightening-val, distressing-val
+DisjointClasses: depressing-val, discouraging-val, boring-val, confusing-val, grievous-val, not-pleasing-val, frightening-val, distressing-val
 
 # children of ont::evoking-pos-experience-property-val
-DisjointClasses: lovable-val, encouraging-val, imparting-energy-val, peaceful-val, desirable-val, pleasing-val, interesting-val, enjoyable-val, calming-val
+DisjointClasses: encouraging-val, imparting-energy-val, peaceful-val, pleasing-val, interesting-val, enjoyable-val, calming-val
 
 # children of ont::experiencer-property-val
 DisjointClasses: neutral-experiencer-property-val, neg-experiencer-property-val, pos-experiencer-property-val
@@ -20573,11 +20630,8 @@ DisjointClasses: not-dignified-val, dignified-val
 # children of ont::shapeliness-val
 DisjointClasses: not-shapely-val, shapely-val
 
-# children of ont::favorability-to-life-val
+# children of ont::hospitability-val
 DisjointClasses: not-hospitable-val, hospitable-val
-
-# children of ont::restriction-val
-DisjointClasses: not-restricted-val, restricted-val
 
 # children of ont::qualification-val
 DisjointClasses: not-qualified-val, qualified-val
@@ -20586,7 +20640,10 @@ DisjointClasses: not-qualified-val, qualified-val
 DisjointClasses: not-helpful-val, helpful-val
 
 # children of ont::control-val
-DisjointClasses: not-controlled-val, controlled-val
+DisjointClasses: restriction-val, not-controlled-val, controlled-val
+
+# children of ont::restriction-val
+DisjointClasses: not-restricted-val, restricted-val
 
 # children of ont::permissibility-val
 DisjointClasses: not-permissible-val, permissible-val
@@ -20913,7 +20970,7 @@ DisjointClasses: folly-scale, wisdom-scale
 DisjointClasses: wild-scale, tame-scale
 
 # children of ont::evaluation-scale
-DisjointClasses: process-evaluation-scale, real-vs-fake-scale, worthiness-scale, tolerability-scale, specificity-scale, recommendability-scale, orderliness-scale, offensiveness-scale, morality-scale, partiality-scale, aesthetic-tastefulness-scale, harmfulness-scale, explicitness-scale, quality-level-scale, plain-scale, basic-scale, convenience-scale, appropriateness-scale, safety-scale, reliability-scale, importance-scale, adaptability-scale, noticeability-scale, beauty-scale, acceptability-scale, attraction-scale, ability-scale, wealth-scale, cost-scale, luckiness-scale, cleanliness-scale, conventionality-scale, comfort-scale, typicality-scale, necessity-scale, familiarity-scale, freshness-scale, fame-scale, interestingness-scale
+DisjointClasses: desirability-scale, process-evaluation-scale, real-vs-fake-scale, worthiness-scale, tolerability-scale, specificity-scale, recommendability-scale, orderliness-scale, offensiveness-scale, morality-scale, partiality-scale, aesthetic-tastefulness-scale, harmfulness-scale, explicitness-scale, quality-level-scale, plain-scale, basic-scale, convenience-scale, appropriateness-scale, safety-scale, reliability-scale, importance-scale, adaptability-scale, noticeability-scale, beauty-scale, acceptability-scale, attraction-scale, ability-scale, wealth-scale, cost-scale, luckiness-scale, cleanliness-scale, conventionality-scale, comfort-scale, typicality-scale, shapeliness-scale, seniority-scale, qualification-scale, necessity-scale, judgement-scale, hospitability-scale, familiarity-scale, freshness-scale, fame-scale, interestingness-scale, influence-scale, influence-susceptibility-scale, helpfulness-scale, freedom-scale
 
 # children of ont::freshness-scale
 DisjointClasses: not-fresh-scale, fresh-scale
@@ -21066,7 +21123,7 @@ DisjointClasses: not-certain-scale, certain-scale
 DisjointClasses: rational-scale, not-rational-scale
 
 # children of ont::experiencer-condition-scale
-DisjointClasses: distress-scale, stress-scale, confusion-scale, pride-scale, pleasantness-scale, surprise-scale, gratitude-scale, calmness-scale, excitement-scale, happiness-scale, envy-scale, disgust-scale, fear-scale, resentfulness-scale, anger-scale, worry-concern-scale, bother-scale, sadness-scale, nervousness-scale, loneliness-scale, pleasurability-scale, desire-scale, apathy-scale, interestedness-scale, confidence-scale
+DisjointClasses: distress-scale, stress-scale, confusion-scale, pride-scale, pleasantness-scale, surprise-scale, gratitude-scale, calmness-scale, excitement-scale, happiness-scale, envy-scale, disgust-scale, fear-scale, resentfulness-scale, anger-scale, worry-concern-scale, bother-scale, sadness-scale, nervousness-scale, loneliness-scale, pleasurability-scale, apathy-scale, interestedness-scale, confidence-scale
 
 # children of ont::state-of-affairs-scale
 DisjointClasses: connectivity-scale, balance-scale

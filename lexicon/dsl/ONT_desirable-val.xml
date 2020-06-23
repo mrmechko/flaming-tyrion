@@ -4,18 +4,12 @@
  <provenance name="TRIPS"/>
  <concept name="ont::desirable-val">
  <relation label="inherit">
-  ont::evoking-pos-experience-property-val
+  ont::desirability-val
  </relation>
  <relation label="overlap">
   wn::|desirable%3:00:00::|
+  wn::|wanted%3:00:00::|
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::desire-scale</feat>
-  <feat name="type">ont::desirable-val</feat>
- </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -119,28 +113,46 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::desirability-val">
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::desire-scale</feat>
+  <feat name="type">ont::desirability-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::figure">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
  </sem-frame>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::psychological-condition-scale</feat>
- <feat name="type">ont::psychological-property-val</feat>
+ <feat name="scale">ont::desire-scale</feat>
+ <feat name="type">ont::desirability-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -194,67 +206,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::evoking-pos-experience-property-val">
- <relation label="inherit">
-  ont::evoking-experience-property-val
- </relation>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::desire-scale</feat>
- <feat name="type">ont::desirable-val</feat>
- </sem-feats>
- <concept name="ont::evoking-experience-property-val">
- <comment>
-  &quot;attributes that indicate the evocation of a particular emotion&quot;
- </comment>
- <relation label="inherit">
-  ont::psychological-property-val
- </relation>
- </concept>
- <concept name="ont::psychological-property-val">
- <comment>
-  &quot;properties pertaining to psychological, mental or emotional states&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <relation label="overlap">
-  wn::|extroversive%3:00:00::|
-  wn::|extraversive%3:00:00::|
-  wn::|maladjusted%3:00:00::|
-  wn::|abnormal%3:00:03::|
-  wn::|introversive%3:00:00::|
-  wn::|introvertive%3:00:00::|
-  wn::|adjusted%3:00:02::|
-  wn::|psychosexual%3:01:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::psychological-condition-scale</feat>
-  <feat name="type">ont::psychological-property-val</feat>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-attribute-val</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
