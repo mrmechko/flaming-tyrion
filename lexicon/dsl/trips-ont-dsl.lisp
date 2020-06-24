@@ -16207,6 +16207,13 @@
     ONT::CONFIGURATION-PROPERTY-VAL))
 
 (CONCEPT
+  ONT::ENCODE
+  (INHERIT
+    ONT::TRANSFORMATION)
+  (OVERLAP
+    WN::|encode%2:32:00::|))
+
+(CONCEPT
   ONT::ENCODES-MESSAGE
   (COMMENT "some artifact conveys some message")
   (INHERIT
@@ -47824,9 +47831,10 @@
   (INHERIT
     ONT::CHANGE)
   (OVERLAP
+    WN::|convert%2:30:03::|
+    WN::|metabolize%2:34:00::|
     WN::|transform%2:30:00::|
-    WN::|transform%2:30:03::|
-    WN::|metabolize%2:34:00::|)
+    WN::|transform%2:30:03::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
