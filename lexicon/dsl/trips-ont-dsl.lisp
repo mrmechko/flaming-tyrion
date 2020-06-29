@@ -38832,6 +38832,30 @@
     (TYPE ONT::RELIABLE)))
 
 (CONCEPT
+  ONT::RELIEF-SCALE
+  (INHERIT
+    ONT::EXPERIENCER-CONDITION-SCALE)
+  (OVERLAP
+    WN::|relief%1:12:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::RELIEF-SCALE)
+    (TYPE ONT::RELIEF-SCALE)))
+
+(CONCEPT
+  ONT::RELIEVED
+  (INHERIT
+    ONT::POS-EXPERIENCER-PROPERTY-VAL)
+  (OVERLAP
+    WN::|alleviated%5:00:00:mitigated:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::RELIEF-SCALE)
+    (TYPE ONT::RELIEVED)))
+
+(CONCEPT
   ONT::RELIGION-SPECIFIC-VAL
   (COMMENT
    "identity specifically based on religious affiliation, dogma, or theology (properties referring to the culture of the practicing people or nations belong to ont::culture-specific)")
