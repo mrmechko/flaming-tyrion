@@ -9005,7 +9005,7 @@ Class: not-responsible-val
 # ONT type ont::psychological-property-val
 Class: psychological-property-val
   Annotations: rdfs:comment "properties pertaining to psychological, mental or emotional states"
-  SubClassOf: property-val
+  SubClassOf: evaluation-attribute-val
   SubClassOf: (FLT_abstr-obj and F_scale some psychological-condition-scale)
   SubClassOf: _figure only (FLT_phys-obj and F_intentional some V_+ and F_origin some (V_human or V_non-human-animal)) and _figure some owl:Thing
 
@@ -10175,6 +10175,16 @@ Class: clever-val
 Class: stupid
   SubClassOf: intelligence-val
   SubClassOf: (FLT_abstr-obj and F_scale some intelligence-scale and F_orientation some V_neg)
+
+# ONT type ont::intellectual-val
+Class: intellectual-val
+  Annotations: rdfs:comment "(intellectual)"
+  SubClassOf: intelligence-val
+
+# ONT type ont::not-intellectual-val
+Class: not-intellectual-val
+  Annotations: rdfs:comment "(nonintellectual)"
+  SubClassOf: intelligence-val
 
 # ONT type ont::intentionality-val
 Class: intentionality-val
@@ -11661,21 +11671,6 @@ Class: creative-val
 Class: not-creative-val
   Annotations: rdfs:comment "(uncreative)"
   SubClassOf: creativity-val
-
-# ONT type ont::intellect-val
-Class: intellect-val
-  Annotations: rdfs:comment "(intellectual)"
-  SubClassOf: psychological-property-val
-
-# ONT type ont::intellectual-val
-Class: intellectual-val
-  Annotations: rdfs:comment "(intellectual)"
-  SubClassOf: intellect-val
-
-# ONT type ont::not-intellectual-val
-Class: not-intellectual-val
-  Annotations: rdfs:comment "(nonintellectual)"
-  SubClassOf: intellect-val
 
 # ONT type ont::reservation-val
 Class: reservation-val
@@ -19847,10 +19842,10 @@ DisjointClasses: body-property, condition-favorability
 DisjointClasses: not-favorable-condition, favorable-condition
 
 # children of ont::property-val
-DisjointClasses: quantity-related-property-val, spatial-val, associated-with-val, resulting-state-val, evoking-experience-property-val, status-val, object-affordances-val, relational-attribute-val, dimensional-property-val, psychological-property-val, animal-propensity-val, temporal-val, can-be-done-val, process-val, life-process-val, temperature-val, physical-property-val, information-property-val, evaluation-attribute-val, state-resulting-from
+DisjointClasses: quantity-related-property-val, spatial-val, associated-with-val, resulting-state-val, evoking-experience-property-val, status-val, object-affordances-val, relational-attribute-val, dimensional-property-val, animal-propensity-val, temporal-val, can-be-done-val, process-val, life-process-val, temperature-val, physical-property-val, information-property-val, evaluation-attribute-val, state-resulting-from
 
 # children of ont::evaluation-attribute-val
-DisjointClasses: influence-susceptibility-val, influence-val, permissibility-val, control-val, helpfulness-val, qualification-val, hospitability-val, shapeliness-val, dignity-val, adequacy-val, fame-val, wealthiness-val, usefulness-val, process-evaluation-val, real-vs-fake-val, freedom-val, orderliness-val, offensiveness-val, beauty-val, judgement-val, worthiness-val, reliability-val, quality-val, explicitness-val, basicness-val, typicality-val, familiarity-val, conventionality-val, seniority-val, necessity-val, importance-val, attention-worthy-val, safety-val, harmfulness-val, comfort-val, ability-val, luckiness-val, cleanliness-val, specificity-val, convenience-val, appropriateness-val, preference-val, recommendability-val, tolerability-val, acceptability-val, cost-val, freshness-val, lovable-val, desirability-val
+DisjointClasses: influence-susceptibility-val, influence-val, permissibility-val, control-val, helpfulness-val, qualification-val, hospitability-val, shapeliness-val, dignity-val, adequacy-val, fame-val, wealthiness-val, psychological-property-val, usefulness-val, process-evaluation-val, real-vs-fake-val, freedom-val, orderliness-val, offensiveness-val, beauty-val, judgement-val, worthiness-val, reliability-val, quality-val, explicitness-val, basicness-val, typicality-val, familiarity-val, conventionality-val, seniority-val, necessity-val, importance-val, attention-worthy-val, safety-val, harmfulness-val, comfort-val, ability-val, luckiness-val, cleanliness-val, specificity-val, convenience-val, appropriateness-val, preference-val, recommendability-val, tolerability-val, acceptability-val, cost-val, freshness-val, lovable-val, desirability-val
 
 # children of ont::desirability-val
 DisjointClasses: not-desirable-val, desirable-val
@@ -20297,7 +20292,7 @@ DisjointClasses: not-social-val, social-val
 DisjointClasses: not-responsible-val, responsible-val
 
 # children of ont::psychological-property-val
-DisjointClasses: intellect-val, creativity-val, premeditation-val, intentionality-val, intelligence-val, experiencer-property-val, certainty-val, ambitiousness-val, attention-val, sensibility-val, willingness-val
+DisjointClasses: creativity-val, premeditation-val, intentionality-val, intelligence-val, experiencer-property-val, certainty-val, ambitiousness-val, attention-val, sensibility-val, willingness-val
 
 # children of ont::willingness-val
 DisjointClasses: willing, unwilling
@@ -20510,7 +20505,7 @@ DisjointClasses: not-desirous-val, enchanted-val, unaffected-val, affected-val, 
 DisjointClasses: revived-val, hopeful-val, liked-val, relieved, calm, amused, excited, happy-val, proud-val, grateful, eager-val, desirous, interested-val
 
 # children of ont::intelligence-val
-DisjointClasses: mentally-slow-val, stupid, smart
+DisjointClasses: mentally-slow-val, not-intellectual-val, intellectual-val, stupid, smart
 
 # children of ont::intentionality-val
 DisjointClasses: not-intentional-val, intentional-val
@@ -20742,9 +20737,6 @@ DisjointClasses: not-surprising-val, surprising-val
 
 # children of ont::creativity-val
 DisjointClasses: not-creative-val, creative-val
-
-# children of ont::intellect-val
-DisjointClasses: not-intellectual-val, intellectual-val
 
 # children of ont::reservation-val
 DisjointClasses: not-reserved-val, reserved-val

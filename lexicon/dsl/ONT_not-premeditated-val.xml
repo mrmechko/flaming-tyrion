@@ -133,16 +133,7 @@
  <sem-frame>
  <role-restr-map roles="ont::figure">
   <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-   <feat name="intentional">+</feat>
+   <feat name="tangible">+</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
@@ -150,8 +141,8 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::psychological-condition-scale</feat>
- <feat name="type">ont::psychological-property-val</feat>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-attribute-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -205,19 +196,35 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::premeditation-val">
+ <comment>
+  &quot;is the process planned (careful forethought and planning)?&quot;
+ </comment>
+ <relation label="inherit">
+  ont::psychological-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::premeditation-scale</feat>
+  <feat name="type">ont::premeditation-val</feat>
+ </sem-feats>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
+ <feat name="orientation">neg</feat>
  <feat name="scale">ont::premeditation-scale</feat>
- <feat name="type">ont::premeditation-val</feat>
+ <feat name="type">ont::not-premeditated-val</feat>
  </sem-feats>
  <concept name="ont::psychological-property-val">
  <comment>
   &quot;properties pertaining to psychological, mental or emotional states&quot;
  </comment>
  <relation label="inherit">
-  ont::property-val
+  ont::evaluation-attribute-val
  </relation>
  <relation label="overlap">
   wn::|extroversive%3:00:00::|
@@ -257,25 +264,54 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="orientation">neg</feat>
  <feat name="scale">ont::premeditation-scale</feat>
- <feat name="type">ont::not-premeditated-val</feat>
+ <feat name="type">ont::premeditation-val</feat>
  </sem-feats>
- <concept name="ont::premeditation-val">
+ <concept name="ont::evaluation-attribute-val">
  <comment>
-  &quot;is the process planned (careful forethought and planning)?&quot;
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
  </comment>
  <relation label="inherit">
-  ont::psychological-property-val
+  ont::property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::premeditation-scale</feat>
-  <feat name="type">ont::premeditation-val</feat>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <feat name="tangible">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::psychological-condition-scale</feat>
+ <feat name="type">ont::psychological-property-val</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

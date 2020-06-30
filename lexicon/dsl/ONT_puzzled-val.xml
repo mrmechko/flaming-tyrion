@@ -126,16 +126,7 @@
  <sem-frame>
  <role-restr-map roles="ont::figure">
   <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="origin">
-   <or>
-    human
-    non-human-animal
-   </or>
-   </feat>
-   <feat name="intentional">+</feat>
+   <feat name="tangible">+</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
@@ -143,8 +134,8 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::psychological-condition-scale</feat>
- <feat name="type">ont::psychological-property-val</feat>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-attribute-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -198,21 +189,69 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::neg-experiencer-property-val">
- <comment>
-  &quot;experiencing negative experiences&quot;
- </comment>
- <relation label="inherit">
-  ont::experiencer-property-val
- </relation>
- </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="origin">
+   <or>
+    human
+    non-human-animal
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::confusion-scale</feat>
- <feat name="type">ont::puzzled-val</feat>
+ <feat name="scale">ont::experiencer-condition-scale</feat>
+ <feat name="type">ont::experiencer-property-val</feat>
  </sem-feats>
+ <concept name="ont::psychological-property-val">
+ <comment>
+  &quot;properties pertaining to psychological, mental or emotional states&quot;
+ </comment>
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ <relation label="overlap">
+  wn::|extroversive%3:00:00::|
+  wn::|extraversive%3:00:00::|
+  wn::|maladjusted%3:00:00::|
+  wn::|abnormal%3:00:03::|
+  wn::|introversive%3:00:00::|
+  wn::|introvertive%3:00:00::|
+  wn::|adjusted%3:00:02::|
+  wn::|psychosexual%3:01:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::psychological-condition-scale</feat>
+  <feat name="type">ont::psychological-property-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="origin">
+    <or>
+     human
+     non-human-animal
+    </or>
+    </feat>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::experiencer-property-val">
  <comment>
   &quot;state of experiencing a particular emotion or cognitive state&quot;
@@ -255,43 +294,39 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::psychological-property-val">
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::confusion-scale</feat>
+ <feat name="type">ont::puzzled-val</feat>
+ </sem-feats>
+ <concept name="ont::neg-experiencer-property-val">
  <comment>
-  &quot;properties pertaining to psychological, mental or emotional states&quot;
+  &quot;experiencing negative experiences&quot;
+ </comment>
+ <relation label="inherit">
+  ont::experiencer-property-val
+ </relation>
+ </concept>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
  </comment>
  <relation label="inherit">
   ont::property-val
- </relation>
- <relation label="overlap">
-  wn::|extroversive%3:00:00::|
-  wn::|extraversive%3:00:00::|
-  wn::|maladjusted%3:00:00::|
-  wn::|abnormal%3:00:03::|
-  wn::|introversive%3:00:00::|
-  wn::|introvertive%3:00:00::|
-  wn::|adjusted%3:00:02::|
-  wn::|psychosexual%3:01:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::psychological-condition-scale</feat>
-  <feat name="type">ont::psychological-property-val</feat>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::figure">
    <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="origin">
-    <or>
-     human
-     non-human-animal
-    </or>
-    </feat>
-    <feat name="intentional">+</feat>
+    <feat name="tangible">+</feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
@@ -300,11 +335,11 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::experiencer-condition-scale</feat>
- <feat name="type">ont::experiencer-property-val</feat>
+ <feat name="scale">ont::psychological-condition-scale</feat>
+ <feat name="type">ont::psychological-property-val</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
+ <role-restr-map roles="ont::figure">
   <sem-feats>
    <relation label="inherit">
     phys-obj
@@ -315,6 +350,7 @@
     non-human-animal
    </or>
    </feat>
+   <feat name="intentional">+</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>

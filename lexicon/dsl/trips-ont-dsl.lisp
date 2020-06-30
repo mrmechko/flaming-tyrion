@@ -22122,6 +22122,7 @@
     ONT::CAUSE-CONTACT)
   (OVERLAP
     WN::|beat%2:35:01::|
+    WN::|blow%1:04:01::|
     WN::|hit%2:35:03::|
     WN::|strike%2:35:01::|)
   (SEM-FEATS
@@ -23612,12 +23613,6 @@
     (TYPE ONT::INTANGIBLE-VAL)))
 
 (CONCEPT
-  ONT::INTELLECT-VAL
-  (COMMENT "(intellectual)")
-  (INHERIT
-    ONT::PSYCHOLOGICAL-PROPERTY-VAL))
-
-(CONCEPT
   ONT::INTELLECTUAL-PERSON-VAL
   (INHERIT
     ONT::FAMOUS-PERSON-VAL)
@@ -23641,7 +23636,7 @@
   ONT::INTELLECTUAL-VAL
   (COMMENT "(intellectual)")
   (INHERIT
-    ONT::INTELLECT-VAL)
+    ONT::INTELLIGENCE-VAL)
   (OVERLAP
     WN::|intellectual%3:00:00::|))
 
@@ -30830,7 +30825,7 @@
   ONT::NOT-INTELLECTUAL-VAL
   (COMMENT "(nonintellectual)")
   (INHERIT
-    ONT::INTELLECT-VAL)
+    ONT::INTELLIGENCE-VAL)
   (OVERLAP
     WN::|nonintellectual%3:00:00::|))
 
@@ -37107,7 +37102,7 @@
   ONT::PSYCHOLOGICAL-PROPERTY-VAL
   (COMMENT "properties pertaining to psychological, mental or emotional states")
   (INHERIT
-    ONT::PROPERTY-VAL)
+    ONT::EVALUATION-ATTRIBUTE-VAL)
   (OVERLAP
     WN::|extroversive%3:00:00::|
     WN::|extraversive%3:00:00::|
@@ -47723,9 +47718,10 @@
   (INHERIT
     ONT::CAUSE-CONTACT)
   (OVERLAP
-    WN::|touch%2:35:00::|
+    WN::|caress%2:35:00::|
+    WN::|lick%2:35:00::|
     WN::|touch%1:04:00::|
-    WN::|caress%2:35:00::|))
+    WN::|touch%2:35:00::|))
 
 (CONCEPT
   ONT::TOUCH-PROPERTY-VAL
