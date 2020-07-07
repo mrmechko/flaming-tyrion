@@ -9773,6 +9773,7 @@
   (INHERIT
     ONT::VISUAL-PROPERTY-VAL)
   (OVERLAP
+    WN::|carroty%3:01:00::|
     WN::|colored%3:00:00::|
     WN::|coloured%3:00:00::|
     WN::|colorful%3:00:02::|
@@ -11365,15 +11366,10 @@
     WN::|metallic%3:00:00::|
     WN::|metal%3:00:00::|
     WN::|crystalline%3:00:00::|
-    WN::|noncrystalline%3:00:00::|
-    WN::|unleaded%3:00:00::|
-    WN::|leadless%3:00:00::|
     WN::|leaded%3:00:00::|
     WN::|starchy%3:00:00::|
-    WN::|nonmetallic%3:00:00::|
     WN::|nonmetal%3:00:00::|
     WN::|alcoholic%3:00:00::|
-    WN::|wet%3:00:04::|
     WN::|vegetal%3:00:00::|
     WN::|vegetational%3:00:00::|
     WN::|vegetative%3:00:00::|))
@@ -19448,8 +19444,6 @@
   (OVERLAP
     WN::|alimentative%3:01:00::|
     WN::|boneless%3:00:00::|
-    WN::|carroty%3:01:00::|
-    WN::|garlicky%3:01:00::|
     WN::|herbal%3:01:00::|
     WN::|oaten%3:01:00::|
     WN::|vanilla%3:01:00::|
@@ -24971,7 +24965,8 @@
   (INHERIT
     ONT::PERMISSIBLE-VAL)
   (OVERLAP
-    WN::|lawful%3:00:00::|))
+    WN::|lawful%3:00:00::|
+    WN::|wet%3:00:04::|))
 
 (CONCEPT
   ONT::LEADER-VAL
@@ -28465,7 +28460,7 @@
 (CONCEPT
   ONT::MOISTURE-CONTENT-VAL
   (INHERIT
-    ONT::PHYSICAL-PROPERTY-VAL)
+    ONT::SUBSTANTIAL-PROPERTY-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -30324,8 +30319,11 @@
   (INHERIT
     ONT::SUBSTANTIAL-PROPERTY-VAL)
   (OVERLAP
+    WN::|nonalcoholic%3:00:00::|
+    WN::|noncrystalline%3:00:00::|
+    WN::|nonmetallic%3:00:00::|
     WN::|rustless%3:00:00::|
-    WN::|nonalcoholic%3:00:00::|))
+    WN::|unleaded%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-CONTEMPORANEOUS-VAL
@@ -30858,6 +30856,7 @@
   (INHERIT
     ONT::NOT-PERMISSIBLE-VAL)
   (OVERLAP
+    WN::|dry%3:00:04::|
     WN::|illegal%3:00:00::|
     WN::|unlawful%3:00:00::|))
 
@@ -40203,7 +40202,6 @@
     WN::|uncrowned%3:00:00::|
     WN::|crownless%3:00:00::|
     WN::|uninvolved%3:00:00::|
-    WN::|rusted%3:00:00::|
     WN::|amended%3:00:00::|
     WN::|found%3:00:00::|
     WN::|noticed%3:00:00::|
@@ -46475,7 +46473,8 @@
   (INHERIT
     ONT::APPEARANCE-PROPERTY-VAL)
   (OVERLAP
-    WN::|dry%3:00:03::|)
+    WN::|dry%3:00:03::|
+    WN::|garlicky%3:01:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
