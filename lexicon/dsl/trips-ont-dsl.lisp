@@ -11363,13 +11363,14 @@
   (INHERIT
     ONT::SUBSTANTIAL-PROPERTY-VAL)
   (OVERLAP
-    WN::|metallic%3:00:00::|
-    WN::|metal%3:00:00::|
+    WN::|alcoholic%3:00:00::|
     WN::|crystalline%3:00:00::|
     WN::|leaded%3:00:00::|
-    WN::|starchy%3:00:00::|
+    WN::|metallic%3:00:00::|
+    WN::|metal%3:00:00::|
     WN::|nonmetal%3:00:00::|
-    WN::|alcoholic%3:00:00::|
+    WN::|organic%3:00:01::|
+    WN::|starchy%3:00:00::|
     WN::|vegetal%3:00:00::|
     WN::|vegetational%3:00:00::|
     WN::|vegetative%3:00:00::|))
@@ -11930,7 +11931,7 @@
 (CONCEPT
   ONT::CORDLESS-VAL
   (INHERIT
-    ONT::SUBSTANTIAL-PROPERTY-VAL)
+    ONT::CONFIGURATION-PROPERTY-VAL)
   (OVERLAP
     WN::|cordless%3:01:00::|
     WN::|wireless%3:00:00::|))
@@ -27490,7 +27491,7 @@
 (CONCEPT
   ONT::MECHANICAL-VAL
   (INHERIT
-    ONT::PHYSICAL-VAL)
+    ONT::PROCESS-TYPE-VAL)
   (OVERLAP
     WN::|nonmechanical%3:00:00::|
     WN::|mechanical%3:00:00::|))
@@ -31877,9 +31878,11 @@
 (CONCEPT
   ONT::NUCLEAR-VAL
   (INHERIT
-    ONT::SUBSTANTIAL-PROPERTY-VAL)
+    ONT::PROCESS-TYPE-VAL)
   (OVERLAP
-    WN::|nuclear%3:00:00::|))
+    WN::|nuclear%3:00:00::|
+    WN::|nuclear%3:01:01::|
+    WN::|nuclear%3:01:02::|))
 
 (CONCEPT
   ONT::NUCLEOPLASM
@@ -32967,7 +32970,6 @@
   (INHERIT
     ONT::SUBSTANTIAL-PROPERTY-VAL)
   (OVERLAP
-    WN::|organic%3:00:01::|
     WN::|organic%3:00:02::|))
 
 (CONCEPT
@@ -34772,7 +34774,7 @@
 (CONCEPT
   ONT::PHYSICAL-VAL
   (INHERIT
-    ONT::PHYSICS-VAL)
+    ONT::ASSOCIATED-WITH-BODY-VAL)
   (OVERLAP
     WN::|corporeal%3:00:00::|
     WN::|material%3:00:04::|
@@ -36581,6 +36583,12 @@
       ABSTR-OBJ)
     (SCALE ONT::PROCESS-STATUS-SCALE)
     (TYPE ONT::PROCESS-STATUS-VAL)))
+
+(CONCEPT
+  ONT::PROCESS-TYPE-VAL
+  (COMMENT "properties that describe process types")
+  (INHERIT
+    ONT::PROCESS-VAL))
 
 (CONCEPT
   ONT::PROCESS-VAL

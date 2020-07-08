@@ -7590,6 +7590,10 @@ Class: configuration-property-val
   SubClassOf: physical-property-val
   SubClassOf: (FLT_abstr-obj and F_scale some configuration-property-scale)
 
+# ONT type ont::cordless-val
+Class: cordless-val
+  SubClassOf: configuration-property-val
+
 # ONT type ont::equipped-val
 Class: equipped-val
   SubClassOf: configuration-property-val
@@ -7699,16 +7703,8 @@ Class: substantial-property-val
   Annotations: rdfs:comment "properties having to do with characteristic substance of the described object"
   SubClassOf: physical-property-val
 
-# ONT type ont::cordless-val
-Class: cordless-val
-  SubClassOf: substantial-property-val
-
 # ONT type ont::organic-val
 Class: organic-val
-  SubClassOf: substantial-property-val
-
-# ONT type ont::nuclear-val
-Class: nuclear-val
   SubClassOf: substantial-property-val
 
 # ONT type ont::medium
@@ -8521,6 +8517,19 @@ Class: process-val
   Annotations: rdfs:comment "properties that describe processes"
   SubClassOf: property-val
   SubClassOf: (FLT_abstr-obj and F_scale some process-property-scale)
+
+# ONT type ont::process-type-val
+Class: process-type-val
+  Annotations: rdfs:comment "properties that describe process types"
+  SubClassOf: process-val
+
+# ONT type ont::mechanical-val
+Class: mechanical-val
+  SubClassOf: process-type-val
+
+# ONT type ont::nuclear-val
+Class: nuclear-val
+  SubClassOf: process-type-val
 
 # ONT type ont::can-be-done-val
 Class: can-be-done-val
@@ -10409,12 +10418,8 @@ Class: physics-val
 
 # ONT type ont::physical-val
 Class: physical-val
-  SubClassOf: physics-val
+  SubClassOf: associated-with-body-val
   SubClassOf: _ground only owl:Thing
-
-# ONT type ont::mechanical-val
-Class: mechanical-val
-  SubClassOf: physical-val
 
 # ONT type ont::political
 Class: political
@@ -20025,7 +20030,7 @@ DisjointClasses: not-verifiable-val, verifiable-val
 DisjointClasses: body-condition-property-val, polarity-val, completeness-val, part-whole-val, sensory-property-val, appearance-property-val, atmospheric-val, phosphorilated, substantial-property-val, configuration-property-val
 
 # children of ont::configuration-property-val
-DisjointClasses: dispersion-val, closure-val, enclosure-val, clothedness-adornment-val, homogeneity-val, filled-val, flow-val, intersecting-val, binding-val, constricting-val, flexibility-val, equipped-val
+DisjointClasses: dispersion-val, closure-val, enclosure-val, clothedness-adornment-val, homogeneity-val, filled-val, flow-val, intersecting-val, binding-val, constricting-val, flexibility-val, equipped-val, cordless-val
 
 # children of ont::flexibility-val
 DisjointClasses: flexible-val, not-flexible-val
@@ -20049,7 +20054,7 @@ DisjointClasses: not-homogeneous-val, homogeneous-val
 DisjointClasses: bare-val, clothed-val, adorned-val
 
 # children of ont::substantial-property-val
-DisjointClasses: liquid-property-val, not-containing-substance-val, containing-substance-val, moisture-content-val, mode, medium, nuclear-val, organic-val, cordless-val
+DisjointClasses: liquid-property-val, not-containing-substance-val, containing-substance-val, moisture-content-val, mode, medium, organic-val
 
 # children of ont::medium
 DisjointClasses: multimedia-val, electrical
@@ -20189,6 +20194,12 @@ DisjointClasses: before-birth-val, after-birth-val
 # children of ont::living-val
 DisjointClasses: dead, alive
 
+# children of ont::process-val
+DisjointClasses: manufacture-process-val, activity-val, process-status-val, process-type-val
+
+# children of ont::process-type-val
+DisjointClasses: nuclear-val, mechanical-val
+
 # children of ont::can-be-done-val
 DisjointClasses: surmountability-val, adaptability-val, changeability-val, permeability-val, transferability-val, readability-val, measurability-val, avoidability-val, rw-status-val, movable-val, replaceability-val, networkable-val, expandability-val, chargeability-val, enforceability-val, manageability-val, adhearable-val, accessibility-val, reparability-val
 
@@ -20224,9 +20235,6 @@ DisjointClasses: occasional, frequent, repetitive-val, periodic-val
 
 # children of ont::persistence-val
 DisjointClasses: temporary, persistent
-
-# children of ont::process-val
-DisjointClasses: manufacture-process-val, activity-val, process-status-val
 
 # children of ont::process-status-val
 DisjointClasses: outcome-val, stage-val, completion-val
@@ -20544,13 +20552,10 @@ DisjointClasses: computer-science-val, mathematics-val, psychology-val, geology-
 DisjointClasses: dental-property-val, medical-property-val, medicinal-val
 
 # children of ont::associated-with-body-val
-DisjointClasses: animal-material-val, body-substance-val, body-part-val, body-system-val
+DisjointClasses: animal-material-val, body-substance-val, physical-val, body-part-val, body-system-val
 
 # children of ont::body-system-val
 DisjointClasses: not-hereditary-val, hereditary-val, congenital-val
-
-# children of ont::physics-val
-DisjointClasses: artifact-property-val, physics-property-val, physical-val
 
 # children of ont::associated-with-languages-val
 DisjointClasses: language-use-val, not-related-to-language-val, printed-language-property-val, written-language-property-val, linguistics-val, not-related-to-languages-val, language-specific-val, related-to-languages-val
@@ -20863,6 +20868,9 @@ DisjointClasses: spiritual-being-val, religious-denomination-val, follower-of-do
 
 # children of ont::biology-val
 DisjointClasses: zoological-property-val, physiological-property-val, taxonomic-property-val, genetic-property-val, botanical-property-val, biological-theory-val, biological-property-val
+
+# children of ont::physics-val
+DisjointClasses: artifact-property-val, physics-property-val
 
 # children of ont::psychology-val
 DisjointClasses: cognitive-process-val, psychological-state-val, psychology-property-val
