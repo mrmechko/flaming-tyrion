@@ -14938,10 +14938,6 @@ Class: migrate
 Class: translocate
   SubClassOf: move
 
-# ONT type ont::stir
-Class: stir
-  SubClassOf: move
-
 # ONT type ont::move-by-means
 Class: move-by-means
   SubClassOf: transportation
@@ -15023,6 +15019,10 @@ Class: drift
 Class: cause-move
   SubClassOf: move
   SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj) and F_mobility some V_movable) and _affected some owl:Thing
+
+# ONT type ont::stir
+Class: stir
+  SubClassOf: cause-move
 
 # ONT type ont::move-toward
 Class: move-toward
@@ -18148,10 +18148,6 @@ Class: meal-event
   SubClassOf: event-defined-by-activity
   SubClassOf: (FLT_situation and F_cause some V_agentive and F_time-span some V_extended and F_aspect some V_dynamic and F_trajectory some V_-)
 
-# ONT type ont::nychthemeron-event
-Class: nychthemeron-event
-  SubClassOf: natural-event
-
 # ONT type ont::nonverbal-expression
 Class: nonverbal-expression
   SubClassOf: event-of-action
@@ -21167,16 +21163,16 @@ DisjointClasses: submit, assign, prescribing, transfer, supply, commerce-sell, c
 DisjointClasses: take-by-deception, take-incrementally, capture, steal, appropriate
 
 # children of ont::move
-DisjointClasses: return, go-on, come, dance, self-locomote, scroll, move-around, move-toward, cause-move, drift, move-back-and-forth, pan, bounce-reflect, move-fluidly, unsteady-move, flutter, circular-move, move-quickly, roll, move-back, move-away, move-forward, move-upside-down, move-downward, move-upward, stir, translocate, migrate
+DisjointClasses: return, go-on, come, dance, self-locomote, scroll, move-around, move-toward, cause-move, drift, move-back-and-forth, pan, bounce-reflect, move-fluidly, unsteady-move, flutter, circular-move, move-quickly, roll, move-back, move-away, move-forward, move-upside-down, move-downward, move-upward, translocate, migrate
 
 # children of ont::transportation
 DisjointClasses: transport, move-by-means
 
+# children of ont::cause-move
+DisjointClasses: herd, propel, dig-scoop, walking, stir
+
 # children of ont::self-locomote
 DisjointClasses: move-slowly, move-rapidly, move-leisurely, move-playfully, swim, locomote-up
-
-# children of ont::cause-move
-DisjointClasses: herd, propel, dig-scoop, walking
 
 # children of ont::physical-process
 DisjointClasses: sensitivity, bodily-process, biological-process
@@ -21218,7 +21214,7 @@ DisjointClasses: hang-out, retain, stay, confine, be-inactive
 DisjointClasses: die, live, be-born
 
 # children of ont::natural-event
-DisjointClasses: nychthemeron-event, drought, flooding, atmospheric-event
+DisjointClasses: drought, flooding, atmospheric-event
 
 # children of ont::change
 DisjointClasses: fluctuate, transformation, object-change, change-state
