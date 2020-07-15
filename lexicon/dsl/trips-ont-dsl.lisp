@@ -4912,6 +4912,9 @@
   ONT::BET
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
+  (OVERLAP
+    WN::|bet%1:04:00::|
+    WN::|bet%2:33:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -28126,10 +28129,11 @@
     ONT::PS-OBJECT)
   (OVERLAP
     WN::|manner%1:07:01::|
+    WN::|means%1:06:00::|
     WN::|method%1:09:00::|
-    WN::|way%1:04:01::|
     WN::|path%1:04:00::|
-    WN::|path%1:06:00::|))
+    WN::|path%1:06:00::|
+    WN::|way%1:04:01::|))
 
 (CONCEPT
   ONT::METHYLATION
