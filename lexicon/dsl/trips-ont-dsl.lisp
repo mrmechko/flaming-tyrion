@@ -15115,6 +15115,7 @@
     ONT::KNOWLEDGE-BELIEF)
   (OVERLAP
     WN::|doctrine%1:09:00::|
+    WN::|faith%1:09:00::|
     WN::|ideology%1:09:01::|))
 
 (CONCEPT
