@@ -7409,21 +7409,6 @@ Class: not-likely-val
   SubClassOf: likelihood-val
   SubClassOf: (FLT_abstr-obj and F_scale some not-likely-scale)
 
-# ONT type ont::predictability-val
-Class: predictability-val
-  SubClassOf: information-property-val
-  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale)
-
-# ONT type ont::predictable-val
-Class: predictable-val
-  SubClassOf: predictability-val
-  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale and F_orientation some V_pos)
-
-# ONT type ont::not-predictable-val
-Class: not-predictable-val
-  SubClassOf: predictability-val
-  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale and F_orientation some V_neg)
-
 # ONT type ont::comprehensibility-val
 Class: comprehensibility-val
   Annotations: rdfs:comment "able to be grasped or understood (different from ont::clarity-val e.g., an explanation might be clear but it still may not be understandable because of external reasons"
@@ -7562,21 +7547,6 @@ Class: true-val
 Class: false-val
   SubClassOf: truth-value-val
   SubClassOf: (FLT_abstr-obj and F_scale some false-scale)
-
-# ONT type ont::verifiability-val
-Class: verifiability-val
-  SubClassOf: information-property-val
-  SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale)
-
-# ONT type ont::verifiable-val
-Class: verifiable-val
-  SubClassOf: verifiability-val
-  SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale and F_orientation some V_pos)
-
-# ONT type ont::not-verifiable-val
-Class: not-verifiable-val
-  SubClassOf: verifiability-val
-  SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale and F_orientation some V_neg)
 
 # ONT type ont::physical-property-val
 Class: physical-property-val
@@ -8648,6 +8618,36 @@ Class: r-able-val
 # ONT type ont::w-able-val
 Class: w-able-val
   SubClassOf: rw-status-val
+
+# ONT type ont::predictability-val
+Class: predictability-val
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale)
+
+# ONT type ont::predictable-val
+Class: predictable-val
+  SubClassOf: predictability-val
+  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale and F_orientation some V_pos)
+
+# ONT type ont::not-predictable-val
+Class: not-predictable-val
+  SubClassOf: predictability-val
+  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale and F_orientation some V_neg)
+
+# ONT type ont::verifiability-val
+Class: verifiability-val
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale)
+
+# ONT type ont::verifiable-val
+Class: verifiable-val
+  SubClassOf: verifiability-val
+  SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale and F_orientation some V_pos)
+
+# ONT type ont::not-verifiable-val
+Class: not-verifiable-val
+  SubClassOf: verifiability-val
+  SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale and F_orientation some V_neg)
 
 # ONT type ont::temporal-val
 Class: temporal-val
@@ -10873,6 +10873,7 @@ Class: not-corresponding-val
 Class: dignity-val
   Annotations: rdfs:comment "(dignified)"
   SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some pride-scale)
 
 # ONT type ont::dignified-val
 Class: dignified-val
@@ -13894,11 +13895,6 @@ Class: information-property-scale
   SubClassOf: ordered-domain
   SubClassOf: (FLT_abstr-obj and F_scale some information-property-scale)
 
-# ONT type ont::comprehensibility-scale
-Class: comprehensibility-scale
-  SubClassOf: information-property-scale
-  SubClassOf: (FLT_abstr-obj and F_scale some comprehensibility-scale)
-
 # ONT type ont::consistency-scale
 Class: consistency-scale
   SubClassOf: information-property-scale
@@ -13919,11 +13915,6 @@ Class: precision-scale
   SubClassOf: information-property-scale
   SubClassOf: (FLT_abstr-obj and F_scale some precision-scale)
 
-# ONT type ont::predictability-scale
-Class: predictability-scale
-  SubClassOf: information-property-scale
-  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale)
-
 # ONT type ont::relevance-scale
 Class: relevance-scale
   SubClassOf: information-property-scale
@@ -13933,11 +13924,6 @@ Class: relevance-scale
 Class: validity-scale
   SubClassOf: information-property-scale
   SubClassOf: (FLT_abstr-obj and F_scale some validity-scale)
-
-# ONT type ont::reproducibility-scale
-Class: reproducibility-scale
-  SubClassOf: information-property-scale
-  SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale)
 
 # ONT type ont::trueness-scale
 Class: trueness-scale
@@ -14314,13 +14300,18 @@ Class: utility-scale
 
 # ONT type ont::can-be-done-scale
 Class: can-be-done-scale
-  SubClassOf: process-property-scale
+  SubClassOf: ordered-domain
   SubClassOf: (FLT_abstr-obj and F_scale some can-be-done-scale)
 
 # ONT type ont::changeability-scale
 Class: changeability-scale
   SubClassOf: can-be-done-scale
   SubClassOf: (FLT_abstr-obj and F_scale some changeability-scale)
+
+# ONT type ont::comprehensibility-scale
+Class: comprehensibility-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some comprehensibility-scale)
 
 # ONT type ont::manageability-scale
 Class: manageability-scale
@@ -14337,10 +14328,20 @@ Class: portability-scale
   SubClassOf: can-be-done-scale
   SubClassOf: (FLT_abstr-obj and F_scale some portability-scale)
 
+# ONT type ont::predictability-scale
+Class: predictability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale)
+
 # ONT type ont::replaceability-scale
 Class: replaceability-scale
   SubClassOf: can-be-done-scale
   SubClassOf: (FLT_abstr-obj and F_scale some replaceability-scale)
+
+# ONT type ont::reproducibility-scale
+Class: reproducibility-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale)
 
 # ONT type ont::process-status-scale
 Class: process-status-scale
@@ -19975,7 +19976,7 @@ DisjointClasses: nonactual, actual
 DisjointClasses: authentic-val, fake-val
 
 # children of ont::information-property-val
-DisjointClasses: substantiation-val, logicality-val, verifiability-val, truth-value-val, possibility-val, basis-of-evidence-val, relevance-val, validity-val, correctness-val, consistent-val, clarity-val, comprehensibility-val, predictability-val, likelihood-val, credibility-val, meaningfulness-val, precision-val
+DisjointClasses: substantiation-val, logicality-val, truth-value-val, possibility-val, basis-of-evidence-val, relevance-val, validity-val, correctness-val, consistent-val, clarity-val, comprehensibility-val, likelihood-val, credibility-val, meaningfulness-val, precision-val
 
 # children of ont::precision-val
 DisjointClasses: precise, not-precise-val
@@ -19988,9 +19989,6 @@ DisjointClasses: not-credible-val, credible-val
 
 # children of ont::likelihood-val
 DisjointClasses: not-likely-val, likely-val
-
-# children of ont::predictability-val
-DisjointClasses: not-predictable-val, predictable-val
 
 # children of ont::comprehensibility-val
 DisjointClasses: not-comprehensible-val, comprehensible-val
@@ -20018,9 +20016,6 @@ DisjointClasses: possible, not-possible-val
 
 # children of ont::truth-value-val
 DisjointClasses: false-val, true-val
-
-# children of ont::verifiability-val
-DisjointClasses: not-verifiable-val, verifiable-val
 
 # children of ont::physical-property-val
 DisjointClasses: body-condition-property-val, polarity-val, completeness-val, part-whole-val, sensory-property-val, appearance-property-val, atmospheric-val, phosphorilated, substantial-property-val, configuration-property-val
@@ -20197,7 +20192,7 @@ DisjointClasses: manufacture-process-val, activity-val, process-status-val, proc
 DisjointClasses: nuclear-val, mechanical-val
 
 # children of ont::can-be-done-val
-DisjointClasses: surmountability-val, adaptability-val, changeability-val, permeability-val, transferability-val, readability-val, measurability-val, avoidability-val, rw-status-val, movable-val, replaceability-val, networkable-val, expandability-val, chargeability-val, enforceability-val, manageability-val, adhearable-val, accessibility-val, reparability-val
+DisjointClasses: surmountability-val, adaptability-val, changeability-val, permeability-val, transferability-val, readability-val, measurability-val, avoidability-val, verifiability-val, predictability-val, rw-status-val, movable-val, replaceability-val, networkable-val, expandability-val, chargeability-val, enforceability-val, manageability-val, adhearable-val, accessibility-val, reparability-val
 
 # children of ont::reparability-val
 DisjointClasses: not-reparable-val, reparable-val
@@ -20216,6 +20211,12 @@ DisjointClasses: portable-val, removable-val
 
 # children of ont::rw-status-val
 DisjointClasses: w-able-val, r-able-val
+
+# children of ont::predictability-val
+DisjointClasses: not-predictable-val, predictable-val
+
+# children of ont::verifiability-val
+DisjointClasses: not-verifiable-val, verifiable-val
 
 # children of ont::temporal-val
 DisjointClasses: clock-time-val, timeliness-val, temporal-relation-val, relative-time-location-val, historical-era-val, age-val, temporal-occurrence-val
@@ -20890,7 +20891,7 @@ DisjointClasses: financial-property-val, economics-property-val
 DisjointClasses: unordered-domain, ordered-domain
 
 # children of ont::ordered-domain
-DisjointClasses: temporal-scale, state-of-affairs-scale, psychological-condition-scale, object-affordances-scale, status-property-scale, relational-property-scale, process-property-scale, measure-scale, life-process-scale, information-property-scale, evaluation-scale, behavioral-scale, spatial-scale, physical-property-scale
+DisjointClasses: temporal-scale, state-of-affairs-scale, psychological-condition-scale, object-affordances-scale, status-property-scale, relational-property-scale, can-be-done-scale, process-property-scale, measure-scale, life-process-scale, information-property-scale, evaluation-scale, behavioral-scale, spatial-scale, physical-property-scale
 
 # children of ont::physical-property-scale
 DisjointClasses: moisture-content-scale, sensory-scale, appearance-scale, configuration-property-scale, atmospheric-scale, completeness-scale, polarity-scale, body-condition-scale
@@ -21049,7 +21050,7 @@ DisjointClasses: natural-scale, artificial-scale
 DisjointClasses: non-actual-scale, actual-scale
 
 # children of ont::information-property-scale
-DisjointClasses: correctness-scale, possibility-scale, likelihood-scale, trueness-scale, reproducibility-scale, validity-scale, relevance-scale, predictability-scale, precision-scale, meaningfulness-scale, credibility-scale, consistency-scale, comprehensibility-scale
+DisjointClasses: correctness-scale, possibility-scale, likelihood-scale, trueness-scale, validity-scale, relevance-scale, precision-scale, meaningfulness-scale, credibility-scale, consistency-scale
 
 # children of ont::trueness-scale
 DisjointClasses: false-scale, true-scale
@@ -21105,11 +21106,8 @@ DisjointClasses: not-steady-scale, steady-scale
 # children of ont::successfulness-scale
 DisjointClasses: failure-scale, successful-scale
 
-# children of ont::process-property-scale
-DisjointClasses: process-status-scale, can-be-done-scale
-
 # children of ont::can-be-done-scale
-DisjointClasses: replaceability-scale, portability-scale, mobility-scale, manageability-scale, changeability-scale
+DisjointClasses: reproducibility-scale, replaceability-scale, predictability-scale, portability-scale, mobility-scale, manageability-scale, comprehensibility-scale, changeability-scale
 
 # children of ont::relational-property-scale
 DisjointClasses: systematicity-scale, similarity-scale, reciprocity-scale, dependence-scale, compatibility-scale
