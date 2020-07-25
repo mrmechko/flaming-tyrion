@@ -18,11 +18,6 @@
   wn::|sound%2:39:01::|
   wn::|ring%2:39:01::|
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::effect" optional="optional">
-   <concept name="situation" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -210,47 +205,20 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::cause-make-things">
- <relation label="inherit">
-  ont::create
- </relation>
- <relation label="overlap">
-  wn::|create_from_raw_material%2:36:00::|
-  wn::|create_from_raw_stuff%2:36:00::|
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::affected-result" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::result" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::effect" optional="optional">
-  <concept name="situation" />
+ <role-restr-map roles="ont::affected-result" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::emit-giveoff-discharge">
- <relation label="inherit">
-  ont::cause-make-things
- </relation>
- <relation label="overlap">
-  wn::|bubble%2:30:01::|
-  wn::|discharge%2:29:00::|
-  wn::|emanation%1:04:00::|
-  wn::|emission%1:04:00::|
-  wn::|emit%2:43:00::|
-  wn::|leak%2:30:00::|
- </relation>
- </concept>
  <concept name="ont::create">
  <relation label="inherit">
   ont::event-of-creation
@@ -317,20 +285,42 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::cause-make-things">
+ <relation label="inherit">
+  ont::create
+ </relation>
+ <relation label="overlap">
+  wn::|create_from_raw_material%2:36:00::|
+  wn::|create_from_raw_stuff%2:36:00::|
+ </relation>
  <sem-frame>
- <role-restr-map roles="ont::affected-result" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::result" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
+  <role-restr-map roles="ont::affected-result" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::result" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
  </sem-frame>
+ </concept>
+ <concept name="ont::emit-giveoff-discharge">
+ <relation label="inherit">
+  ont::cause-make-things
+ </relation>
+ <relation label="overlap">
+  wn::|bubble%2:30:01::|
+  wn::|discharge%2:29:00::|
+  wn::|emanation%1:04:00::|
+  wn::|emission%1:04:00::|
+  wn::|emit%2:43:00::|
+  wn::|leak%2:30:00::|
+ </relation>
+ </concept>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;

@@ -4453,7 +4453,8 @@
     WN::|hang%2:42:01::|
     WN::|lie%2:35:00::|
     WN::|trail%2:35:05::|
-    WN::|lie%2:42:00::|)
+    WN::|lie%2:42:00::|
+    WN::|rise%2:42:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -10284,6 +10285,7 @@
     WN::|intercommunicate%2:32:00::|
     WN::|communicate%2:32:00::|
     WN::|communication%1:10:01::|
+    WN::|speech_act%1:10:00::|
     WN::|communication%1:24:00::|)
   (SEM-FEATS
     (INHERIT
@@ -15116,6 +15118,7 @@
 
 (CONCEPT
   ONT::DOCTRINE
+  (COMMENT "A system of beliefs")
   (INHERIT
     ONT::KNOWLEDGE-BELIEF)
   (OVERLAP
@@ -26814,12 +26817,7 @@
     WN::|play%2:36:11::|
     WN::|play%2:36:05::|
     WN::|sound%2:39:01::|
-    WN::|ring%2:39:01::|)
-  (SEM-FRAME
-    (ONT::EFFECT
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)))
+    WN::|ring%2:39:01::|))
 
 (CONCEPT
   ONT::MAL-INTENDED-VAL
@@ -27537,7 +27535,8 @@
   (INHERIT
     ONT::EVENT-TYPE)
   (OVERLAP
-    WN::|disorder%1:26:03::|)
+    WN::|disorder%1:26:03::|
+    WN::|pathological_state%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -38526,7 +38525,8 @@
     WN::|refuse%2:32:00::|
     WN::|refuse%2:40:01::|
     WN::|refuse%2:42:04::|
-    WN::|reject%2:31:00::|))
+    WN::|reject%2:31:00::|
+    WN::|rejection%1:04:00::|))
 
 (CONCEPT
   ONT::RELATE
@@ -39523,7 +39523,8 @@
   (INHERIT
     ONT::MENTAL-CONSTRUCTION)
   (OVERLAP
-    WN::|representation%1:09:00::|)
+    WN::|representation%1:09:00::|
+    WN::|figure%1:25:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -42271,8 +42272,7 @@
   (OVERLAP
     WN::|setting%1:26:00::|
     WN::|background%1:26:00::|
-    WN::|scope%1:26:00::|
-    WN::|situation%1:26:00::|))
+    WN::|scope%1:26:00::|))
 
 (CONCEPT
   ONT::SEVERE-VAL
@@ -42365,6 +42365,8 @@
   ONT::SHAPE-SCALE
   (INHERIT
     ONT::APPEARANCE-SCALE)
+  (OVERLAP
+    WN::|shape%1:03:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -44822,7 +44824,8 @@
     WN::|state%1:26:02::|
     WN::|state_of_matter%1:26:00::|
     WN::|state%1:03:00::|
-    WN::|case%1:09:00::|)
+    WN::|case%1:09:00::|
+    WN::|situation%1:26:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -47204,7 +47207,8 @@
     ONT::COMPETE)
   (OVERLAP
     WN::|tie%2:33:00::|
-    WN::|tie%1:11:00::|))
+    WN::|tie%1:11:00::|
+    WN::|tie%1:26:00::|))
 
 (CONCEPT
   ONT::TIGHTEN
@@ -47434,6 +47438,8 @@
   (COMMENT "objects that refer to temporal locations in some way")
   (INHERIT
     ONT::ANY-TIME-OBJECT)
+  (OVERLAP
+    WN::|time%1:03:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
