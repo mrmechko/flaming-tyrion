@@ -8,6 +8,7 @@
  </relation>
  <relation label="overlap">
   wn::|compare%2:31:00::|
+  wn::|comparison%1:04:00::|
   wn::|contrast%2:31:00::|
  </relation>
  <sem-frame>
@@ -416,6 +417,46 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="analogy" />
+ </morph>
+ <comment>
+  &quot;PORTABILITY-EXPERIMENT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::compare
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp
+                                                        (or
+                                                          w::to
+                                                          w::between))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="(or
+                                                                       w::to
+                                                                       w::between)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
  <sense>
  <morph>
   <pos pos="v" />

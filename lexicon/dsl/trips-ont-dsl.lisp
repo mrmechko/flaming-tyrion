@@ -843,7 +843,8 @@
   (INHERIT
     ONT::ACTUALITY-SCALE)
   (OVERLAP
-    WN::|actuality%1:26:00::|)
+    WN::|actuality%1:26:00::|
+    WN::|reality%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -10394,6 +10395,7 @@
     ONT::SCRUTINY)
   (OVERLAP
     WN::|compare%2:31:00::|
+    WN::|comparison%1:04:00::|
     WN::|contrast%2:31:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL1
@@ -14596,38 +14598,6 @@
      OPTIONAL)))
 
 (CONCEPT
-  ONT::DISCERNING-VAL
-  (COMMENT "(discerning, discriminate)")
-  (INHERIT
-    ONT::DISCERNMENT-VAL)
-  (OVERLAP
-    WN::|discerning%3:00:00::|
-    WN::|discriminate%3:00:00::|))
-
-(CONCEPT
-  ONT::DISCERNMENT-SCALE
-  (INHERIT
-    ONT::BEHAVIORAL-SCALE)
-  (OVERLAP
-    WN::|discernment%1:09:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (SCALE ONT::DISCERNMENT-SCALE)
-    (TYPE ONT::DISCERNMENT-SCALE)))
-
-(CONCEPT
-  ONT::DISCERNMENT-VAL
-  (COMMENT "(discerning, discriminate)")
-  (INHERIT
-    ONT::ANIMAL-PROPENSITY-VAL)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (SCALE ONT::DISCERNMENT-SCALE)
-    (TYPE ONT::DISCERNMENT-VAL)))
-
-(CONCEPT
   ONT::DISCIPLINE
   (INHERIT
     ONT::FUNCTION-OBJECT)
@@ -17242,7 +17212,8 @@
   (OVERLAP
     WN::|confuse%2:37:00::|
     WN::|confuse%2:31:03::|
-    WN::|flabbergast%2:31:00::|))
+    WN::|flabbergast%2:31:00::|
+    WN::|misrepresentation%1:04:00::|))
 
 (CONCEPT
   ONT::EVOKE-CURIOSITY
@@ -22517,6 +22488,15 @@
       SITUATION)
     (CAUSE AGENTIVE)
     (TYPE ONT::ILLOCUTION)))
+
+(CONCEPT
+  ONT::ILLUSION
+  (COMMENT "misconception")
+  (INHERIT
+    ONT::KNOWLEDGE-BELIEF)
+  (OVERLAP
+    WN::|illusion%1:09:01::|
+    WN::|misconception%1:09:00::|))
 
 (CONCEPT
   ONT::IMAGE
@@ -27958,24 +27938,6 @@
     (TYPE ONT::MENTAL-CONSTRUCTION)))
 
 (CONCEPT
-  ONT::MENTAL-OBJECT
-  (INHERIT
-    ONT::MENTAL-CONSTRUCTION)
-  (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION)
-     OPTIONAL)
-    (ONT::GROUND
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (CONCEPT
-       T)
-     OPTIONAL)))
-
-(CONCEPT
   ONT::MENTAL-PLAN
   (INHERIT
     ONT::PS-OBJECT)
@@ -28745,7 +28707,7 @@
 (CONCEPT
   ONT::MOTIVE
   (INHERIT
-    ONT::MENTAL-OBJECT)
+    ONT::MENTAL-CONSTRUCTION)
   (OVERLAP
     WN::|motivation%1:03:00::|
     WN::|reason%1:10:00::|))
@@ -30498,7 +30460,7 @@
   ONT::NOT-DISCERNING-VAL
   (COMMENT "(indiscriminate)")
   (INHERIT
-    ONT::DISCERNMENT-VAL)
+    ONT::WISENESS-VAL)
   (OVERLAP
     WN::|indiscriminate%3:00:00::|
     WN::|undiscerning%3:00:00::|))
@@ -42218,6 +42180,18 @@
        SITUATION))))
 
 (CONCEPT
+  ONT::SEQUENCE-SCALE
+  (INHERIT
+    ONT::SYSTEMATICITY-SCALE)
+  (OVERLAP
+    WN::|earliness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::SEQUENCE-SCALE)
+    (TYPE ONT::SEQUENCE-SCALE)))
+
+(CONCEPT
   ONT::SEQUENCE-VAL
   (COMMENT
    "properties that deal with an object's location with respect to another object in an ordered sequence")
@@ -42226,6 +42200,7 @@
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
+    (SCALE ONT::SEQUENCE-SCALE)
     (GRADABILITY -)
     (TYPE ONT::SEQUENCE-VAL))
   (SEM-FRAME
@@ -50462,6 +50437,7 @@
   (INHERIT
     ONT::WISENESS-SCALE)
   (OVERLAP
+    WN::|discernment%1:09:00::|
     WN::|judgment%1:07:00::|
     WN::|wisdom%1:09:01::|
     WN::|wiseness%1:07:00::|)
@@ -50476,6 +50452,8 @@
   (INHERIT
     ONT::WISENESS-VAL)
   (OVERLAP
+    WN::|discerning%3:00:00::|
+    WN::|discriminate%3:00:00::|
     WN::|wise%3:00:00::|)
   (SEM-FEATS
     (INHERIT

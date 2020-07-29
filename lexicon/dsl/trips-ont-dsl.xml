@@ -961,6 +961,7 @@
   </relation>
   <relation label="overlap">
    wn::|actuality%1:26:00::|
+   wn::|reality%1:07:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -11760,6 +11761,7 @@
   </relation>
   <relation label="overlap">
    wn::|compare%2:31:00::|
+   wn::|comparison%1:04:00::|
    wn::|contrast%2:31:00::|
   </relation>
   <sem-frame>
@@ -16667,48 +16669,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::discerning-val">
-  <comment>
-   &quot;(discerning, discriminate)&quot;
-  </comment>
-  <relation label="inherit">
-   ont::discernment-val
-  </relation>
-  <relation label="overlap">
-   wn::|discerning%3:00:00::|
-   wn::|discriminate%3:00:00::|
-  </relation>
- </concept>
- <concept name="ont::discernment-scale">
-  <relation label="inherit">
-   ont::behavioral-scale
-  </relation>
-  <relation label="overlap">
-   wn::|discernment%1:09:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">ont::discernment-scale</feat>
-   <feat name="type">ont::discernment-scale</feat>
-  </sem-feats>
- </concept>
- <concept name="ont::discernment-val">
-  <comment>
-   &quot;(discerning, discriminate)&quot;
-  </comment>
-  <relation label="inherit">
-   ont::animal-propensity-val
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">ont::discernment-scale</feat>
-   <feat name="type">ont::discernment-val</feat>
-  </sem-feats>
- </concept>
  <concept name="ont::discipline">
   <relation label="inherit">
    ont::function-object
@@ -19721,6 +19681,7 @@
    wn::|confuse%2:37:00::|
    wn::|confuse%2:31:03::|
    wn::|flabbergast%2:31:00::|
+   wn::|misrepresentation%1:04:00::|
   </relation>
  </concept>
  <concept name="ont::evoke-curiosity">
@@ -25880,6 +25841,18 @@
    <feat name="cause">agentive</feat>
    <feat name="type">ont::illocution</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::illusion">
+  <comment>
+   &quot;misconception&quot;
+  </comment>
+  <relation label="inherit">
+   ont::knowledge-belief
+  </relation>
+  <relation label="overlap">
+   wn::|illusion%1:09:01::|
+   wn::|misconception%1:09:00::|
+  </relation>
  </concept>
  <concept name="ont::image">
   <relation label="inherit">
@@ -32256,22 +32229,6 @@
    <feat name="type">ont::mental-construction</feat>
   </sem-feats>
  </concept>
- <concept name="ont::mental-object">
-  <relation label="inherit">
-   ont::mental-construction
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::formal" optional="optional">
-    <concept name="situation" />
-   </role-restr-map>
-   <role-restr-map roles="ont::ground" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::figure" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::mental-plan">
   <relation label="inherit">
    ont::ps-object
@@ -33150,7 +33107,7 @@
  </concept>
  <concept name="ont::motive">
   <relation label="inherit">
-   ont::mental-object
+   ont::mental-construction
   </relation>
   <relation label="overlap">
    wn::|motivation%1:03:00::|
@@ -35234,7 +35191,7 @@
    &quot;(indiscriminate)&quot;
   </comment>
   <relation label="inherit">
-   ont::discernment-val
+   ont::wiseness-val
   </relation>
   <relation label="overlap">
    wn::|indiscriminate%3:00:00::|
@@ -48731,6 +48688,21 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::sequence-scale">
+  <relation label="inherit">
+   ont::systematicity-scale
+  </relation>
+  <relation label="overlap">
+   wn::|earliness%1:07:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::sequence-scale</feat>
+   <feat name="type">ont::sequence-scale</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::sequence-val">
   <comment>
    &quot;properties that deal with an object's location with respect to another object in an ordered sequence&quot;
@@ -48742,6 +48714,7 @@
    <relation label="inherit">
     abstr-obj
    </relation>
+   <feat name="scale">ont::sequence-scale</feat>
    <feat name="gradability">-</feat>
    <feat name="type">ont::sequence-val</feat>
   </sem-feats>
@@ -58380,6 +58353,7 @@
    ont::wiseness-scale
   </relation>
   <relation label="overlap">
+   wn::|discernment%1:09:00::|
    wn::|judgment%1:07:00::|
    wn::|wisdom%1:09:01::|
    wn::|wiseness%1:07:00::|
@@ -58397,6 +58371,8 @@
    ont::wiseness-val
   </relation>
   <relation label="overlap">
+   wn::|discerning%3:00:00::|
+   wn::|discriminate%3:00:00::|
    wn::|wise%3:00:00::|
   </relation>
   <sem-feats>

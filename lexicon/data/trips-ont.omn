@@ -6244,13 +6244,6 @@ Class: presentation
 Class: exhibition
   SubClassOf: gathering-event
 
-# ONT type ont::mental-object
-Class: mental-object
-  SubClassOf: mental-construction
-  SubClassOf: _figure only owl:Thing
-  SubClassOf: _ground only owl:Thing
-  SubClassOf: _formal only (FLT_situation)
-
 # ONT type ont::mental-attitude
 Class: mental-attitude
   SubClassOf: mental-construction
@@ -6264,6 +6257,11 @@ Class: knowledge-belief
 # ONT type ont::doctrine
 Class: doctrine
   Annotations: rdfs:comment "A system of beliefs"
+  SubClassOf: knowledge-belief
+
+# ONT type ont::illusion
+Class: illusion
+  Annotations: rdfs:comment "misconception"
   SubClassOf: knowledge-belief
 
 # ONT type ont::understanding
@@ -6290,7 +6288,7 @@ Class: feeling
 
 # ONT type ont::motive
 Class: motive
-  SubClassOf: mental-object
+  SubClassOf: mental-construction
 
 # ONT type ont::ps-object
 Class: ps-object
@@ -9086,6 +9084,11 @@ Class: wiseness-val
   SubClassOf: animal-propensity-val
   SubClassOf: (FLT_abstr-obj and F_scale some wiseness-scale)
 
+# ONT type ont::not-discerning-val
+Class: not-discerning-val
+  Annotations: rdfs:comment "(indiscriminate)"
+  SubClassOf: wiseness-val
+
 # ONT type ont::wise-val
 Class: wise-val
   SubClassOf: wiseness-val
@@ -9495,7 +9498,7 @@ Class: sequential-val
 Class: sequence-val
   Annotations: rdfs:comment "properties that deal with an object's location with respect to another object in an ordered sequence"
   SubClassOf: systematic-val
-  SubClassOf: (FLT_abstr-obj and F_gradability some V_-)
+  SubClassOf: (FLT_abstr-obj and F_gradability some V_- and F_scale some sequence-scale)
   SubClassOf: _ground only owl:Thing
 
 # ONT type ont::previous-val
@@ -12163,22 +12166,6 @@ Class: naive-val
   Annotations: rdfs:comment "positive form of inexperience (naive)"
   SubClassOf: lack-knowledge-val
 
-# ONT type ont::discernment-val
-Class: discernment-val
-  Annotations: rdfs:comment "(discerning, discriminate)"
-  SubClassOf: animal-propensity-val
-  SubClassOf: (FLT_abstr-obj and F_scale some discernment-scale)
-
-# ONT type ont::discerning-val
-Class: discerning-val
-  Annotations: rdfs:comment "(discerning, discriminate)"
-  SubClassOf: discernment-val
-
-# ONT type ont::not-discerning-val
-Class: not-discerning-val
-  Annotations: rdfs:comment "(indiscriminate)"
-  SubClassOf: discernment-val
-
 # ONT type ont::temporal-relation-val
 Class: temporal-relation-val
   Annotations: rdfs:comment "(contemporary, synchronous)"
@@ -13265,11 +13252,6 @@ Class: communicativeness-scale
 Class: decisiveness-scale
   SubClassOf: behavioral-scale
   SubClassOf: (FLT_abstr-obj and F_scale some decisiveness-scale)
-
-# ONT type ont::discernment-scale
-Class: discernment-scale
-  SubClassOf: behavioral-scale
-  SubClassOf: (FLT_abstr-obj and F_scale some discernment-scale)
 
 # ONT type ont::disposition-scale
 Class: disposition-scale
@@ -14413,6 +14395,11 @@ Class: regular-scale
 Class: not-regular-scale
   SubClassOf: regularity-scale
   SubClassOf: (FLT_abstr-obj and F_scale some not-regular-scale)
+
+# ONT type ont::sequence-scale
+Class: sequence-scale
+  SubClassOf: systematicity-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some sequence-scale)
 
 # ONT type ont::status-property-scale
 Class: status-property-scale
@@ -19697,7 +19684,7 @@ DisjointClasses: attribute, mathematical-term, group-object-abstr, kind, fact
 DisjointClasses: grouping, example, version
 
 # children of ont::mental-construction
-DisjointClasses: social-contract, linguistic-object, ps-object, feeling, concept-notion, knowledge-belief, mental-attitude, mental-object, perceptual-construction, desire, social-practice, representation
+DisjointClasses: social-contract, linguistic-object, ps-object, motive, feeling, concept-notion, knowledge-belief, mental-attitude, perceptual-construction, desire, social-practice, representation
 
 # children of ont::perceptual-construction
 DisjointClasses: perceivable-property, ability-to-perceive
@@ -19808,7 +19795,7 @@ DisjointClasses: emergency, instruction-event, fire, gathering-event
 DisjointClasses: exhibition, presentation, performance-play, ceremony
 
 # children of ont::knowledge-belief
-DisjointClasses: opinion, understanding, doctrine
+DisjointClasses: opinion, understanding, illusion, doctrine
 
 # children of ont::ps-object
 DisjointClasses: comparison, problem, commitment, proposal, goal, method, procedure, standard, mental-plan, requirements
@@ -20270,7 +20257,7 @@ DisjointClasses: designed-to-demand-val, difficulty-val
 DisjointClasses: demanding-val, straightforward-val, easy, difficult
 
 # children of ont::animal-propensity-val
-DisjointClasses: discernment-val, knowledge-experience-val, frankness-val, forgiveness-val, patience-val, reticence-val, self-centeredness-val, loyalty-faithfulness-val, financial-behavior-val, communicativeness-val, decisiveness-val, skillfulness-val, wiseness-val, gracefulness-val, tameness-val, responsibility-val, social-interaction-val, modesty-val, courage-val, aggressive-val, boldness-val, honesty-val, disposition-val
+DisjointClasses: knowledge-experience-val, frankness-val, forgiveness-val, patience-val, reticence-val, self-centeredness-val, loyalty-faithfulness-val, financial-behavior-val, communicativeness-val, decisiveness-val, skillfulness-val, wiseness-val, gracefulness-val, tameness-val, responsibility-val, social-interaction-val, modesty-val, courage-val, aggressive-val, boldness-val, honesty-val, disposition-val
 
 # children of ont::disposition-val
 DisjointClasses: positive-disposition-val, negative-disposition-val
@@ -20312,7 +20299,7 @@ DisjointClasses: tame-val, wild-val
 DisjointClasses: graceful-val, awkward-val
 
 # children of ont::wiseness-val
-DisjointClasses: foolish-val, wise-val
+DisjointClasses: foolish-val, wise-val, not-discerning-val
 
 # children of ont::skillfulness-val
 DisjointClasses: not-skillful-val, skillful-val
@@ -20821,9 +20808,6 @@ DisjointClasses: not-frank-val, frank-val
 # children of ont::knowledge-experience-val
 DisjointClasses: lack-knowledge-val, have-knowledge-val
 
-# children of ont::discernment-val
-DisjointClasses: not-discerning-val, discerning-val
-
 # children of ont::temporal-relation-val
 DisjointClasses: not-contemporaneous-val, contemporaneous-val
 
@@ -20969,7 +20953,7 @@ DisjointClasses: roundness-scale, angularity-scale
 DisjointClasses: triangularity-scale, rectangularity-scale, squareness-scale
 
 # children of ont::behavioral-scale
-DisjointClasses: skillfulness-scale, self-centeredness-scale, responsibility-scale, reticence-scale, courage-scale, compassion-scale, tameness-scale, aggressiveness-scale, wiseness-scale, sociability-scale, affection-scale, patience-scale, modesty-scale, honesty-scale, gracefulness-scale, loyalty-faithfulness-scale, knowledge-experience-scale, kindness-scale, frankness-scale, financial-behavior-scale, endurance-scale, disposition-scale, discernment-scale, decisiveness-scale, communicativeness-scale
+DisjointClasses: skillfulness-scale, self-centeredness-scale, responsibility-scale, reticence-scale, courage-scale, compassion-scale, tameness-scale, aggressiveness-scale, wiseness-scale, sociability-scale, affection-scale, patience-scale, modesty-scale, honesty-scale, gracefulness-scale, loyalty-faithfulness-scale, knowledge-experience-scale, kindness-scale, frankness-scale, financial-behavior-scale, endurance-scale, disposition-scale, decisiveness-scale, communicativeness-scale
 
 # children of ont::disposition-scale
 DisjointClasses: positive-disposition-scale, negative-disposition-scale
@@ -21114,6 +21098,9 @@ DisjointClasses: systematicity-scale, similarity-scale, reciprocity-scale, depen
 
 # children of ont::similarity-scale
 DisjointClasses: same-scale, equal-scale, different-scale, similar-scale
+
+# children of ont::systematicity-scale
+DisjointClasses: sequence-scale, regularity-scale
 
 # children of ont::regularity-scale
 DisjointClasses: not-regular-scale, regular-scale
