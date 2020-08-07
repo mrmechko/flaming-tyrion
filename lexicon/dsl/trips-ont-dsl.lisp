@@ -7172,7 +7172,6 @@
     WN::|adoptable%3:00:00::|
     WN::|adsorbable%3:00:00::|
     WN::|adsorbate%3:00:00::|
-    WN::|alterable%3:00:00::|
     WN::|appealable%3:00:00::|
     WN::|appealing%3:00:02::|
     WN::|apposable%3:00:00::|
@@ -7246,7 +7245,6 @@
     WN::|implacable%3:00:00::|
     WN::|imponderable%3:00:00::|
     WN::|inadmissible%3:00:00::|
-    WN::|inalterable%3:00:00::|
     WN::|incalculable%3:00:00::|
     WN::|incombustible%3:00:00::|
     WN::|incommutable%3:00:00::|
@@ -8632,7 +8630,8 @@
     WN::|modifiable%3:00:00::|
     WN::|unmodifiable%3:00:00::|
     WN::|changeable%3:00:00::|
-    WN::|changeful%3:00:00::|))
+    WN::|changeful%3:00:00::|
+    WN::|alterable%3:00:00::|))
 
 (CONCEPT
   ONT::CHANGING-RULES
@@ -13764,7 +13763,8 @@
   (OVERLAP
     WN::|describe%2:32:00::|
     WN::|depict%2:32:01::|
-    WN::|draw%2:32:00::|)
+    WN::|draw%2:32:00::|
+    WN::|qualify%2:32:01::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (CONCEPT
@@ -26623,7 +26623,8 @@
     ONT::VISUAL-SCALE)
   (OVERLAP
     WN::|brightness%1:07:00::|
-    WN::|brightness%1:07:02::|)
+    WN::|brightness%1:07:02::|
+    WN::|illumination%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -30217,7 +30218,8 @@
   (OVERLAP
     WN::|invariable%3:00:00::|
     WN::|immutable%3:00:00::|
-    WN::|changeless%3:00:04::|))
+    WN::|changeless%3:00:04::|
+    WN::|inalterable%3:00:00::|))
 
 (CONCEPT
   ONT::NOT-CLEVER-VAL
@@ -38499,7 +38501,8 @@
     WN::|refuse%2:40:01::|
     WN::|refuse%2:42:04::|
     WN::|reject%2:31:00::|
-    WN::|rejection%1:04:00::|))
+    WN::|rejection%1:04:00::|
+    WN::|rejection%1:26:00::|))
 
 (CONCEPT
   ONT::RELATE
