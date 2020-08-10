@@ -378,4 +378,51 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="compromise" />
+ </morph>
+ <example text="they decided on a compromise">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::compromise
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-neutral-xp-templ" xp="'(w::pp
+                                                              (or
+                                                                w::to
+                                                                w::on
+                                                                w::with
+                                                                w::upon))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::pp" head-word="(or
+                                                                     w::to
+                                                                     w::on
+                                                                     w::with
+                                                                     w::upon)" sem-role="ont::neutral"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="compromise" />
+ </morph>
+ <example text="he compromised">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::compromise
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-agent1-xp-pp-optional-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::with" sem-role="ont::agent1" optional="optional"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
 </dsl>
