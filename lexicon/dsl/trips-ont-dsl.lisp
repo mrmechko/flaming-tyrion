@@ -2512,7 +2512,7 @@
   (OVERLAP
     WN::|arrangement%1:14:00::|
     WN::|array%1:14:00::|
-    WN::|straggle%1:14:00     ::|
+    WN::|straggle%1:14:00::|
     WN::|configuration%1:09:00::|))
 
 (CONCEPT
@@ -2666,79 +2666,80 @@
 (CONCEPT
   ONT::ARTIFACT-PROPERTY-VAL
   (INHERIT
-    ONT::PHYSICS-VAL)
+    ONT::SUBSTANTIAL-PROPERTY-VAL)
   (OVERLAP
-    WN::|electrolytic%3:01:00::|
-    WN::|axial%3:01:00::|
-    WN::|telegraphic%3:01:00::|
-    WN::|forcipate%3:01:00::|
-    WN::|antisatellite%3:01:00::|
-    WN::|asat%3:01:00::|
-    WN::|paramagnetic%3:01:00::|
-    WN::|archival%3:01:00::|
-    WN::|closed-circuit%3:01:00::|
-    WN::|artifactual%3:01:00::|
-    WN::|artefactual%3:01:00::|
-    WN::|viscometric%3:01:00::|
-    WN::|viscosimetric%3:01:00::|
-    WN::|stereoscopic%3:01:01::|
-    WN::|tiered%3:01:00::|
-    WN::|prismatic%3:01:00::|
-    WN::|audiovisual%3:01:00::|
-    WN::|spring-loaded%3:01:00::|
-    WN::|ceramic%3:01:00::|
-    WN::|catapultic%3:01:00::|
-    WN::|catapultian%3:01:00::|
-    WN::|textile%3:01:00::|
-    WN::|interstitial%3:01:00::|
-    WN::|anodic%3:01:00::|
-    WN::|anodal%3:01:00::|
-    WN::|antiquarian%3:01:00::|
-    WN::|funicular%3:01:00::|
-    WN::|spermicidal%3:01:00::|
-    WN::|gyroscopic%3:01:00::|
-    WN::|woolen%3:01:00::|
-    WN::|woollen%3:01:00::|
-    WN::|bladed%3:01:01::|
-    WN::|electromechanical%3:01:00::|
-    WN::|mechanical%3:01:01::|
-    WN::|mechanically_skillful%3:01:00::|
     WN::|anastigmatic%3:01:00::|
-    WN::|stigmatic%3:01:00::|
-    WN::|three-wheel%3:01:00::|
-    WN::|three-wheeled%3:01:00::|
-    WN::|fisheye%3:01:00::|
-    WN::|wide-angle%3:01:00::|
-    WN::|valved%3:01:00::|
-    WN::|servomechanical%3:01:00::|
-    WN::|servo%3:01:00::|
-    WN::|journalistic%3:01:00::|
-    WN::|mud-brick%3:01:00::|
-    WN::|ropy%3:01:00::|
-    WN::|ropey%3:01:00::|
-    WN::|vehicular%3:01:00::|
-    WN::|coin-operated%3:01:00::|
-    WN::|prosthetic%3:01:00::|
-    WN::|tegular%3:01:00::|
-    WN::|valvular%3:01:00::|
-    WN::|two-wheel%3:01:00::|
-    WN::|two-wheeled%3:01:00::|
-    WN::|four-wheel%3:01:00::|
-    WN::|four-wheeled%3:01:00::|
-    WN::|calico%3:01:00::|
-    WN::|threaded%3:01:00::|
+    WN::|anodal%3:01:00::|
+    WN::|anodic%3:01:00::|
+    WN::|antiquarian%3:01:00::|
+    WN::|antisatellite%3:01:00::|
+    WN::|archival%3:01:00::|
+    WN::|artefactual%3:01:00::|
+    WN::|artifactual%3:01:00::|
+    WN::|asat%3:01:00::|
+    WN::|audiovisual%3:01:00::|
+    WN::|axial%3:01:00::|
     WN::|barometric%3:01:00::|
     WN::|barometrical%3:01:00::|
-    WN::|robotic%3:01:00::|
-    WN::|broadband%3:01:01::|
-    WN::|cathodic%3:01:00::|
-    WN::|cinematic%3:01:00::|
-    WN::|life-support%3:01:00::|
-    WN::|cementitious%3:01:00::|
-    WN::|muzzle-loading%3:01:00::|
     WN::|biedermeier%3:01:00::|
+    WN::|bladed%3:01:01::|
     WN::|bolometric%3:01:00::|
-    WN::|vestiary%3:01:00::|))
+    WN::|broadband%3:01:01::|
+    WN::|calico%3:01:00::|
+    WN::|catapultian%3:01:00::|
+    WN::|catapultic%3:01:00::|
+    WN::|cathodic%3:01:00::|
+    WN::|cementitious%3:01:00::|
+    WN::|ceramic%3:01:00::|
+    WN::|cinematic%3:01:00::|
+    WN::|closed-circuit%3:01:00::|
+    WN::|coin-operated%3:01:00::|
+    WN::|electrolytic%3:01:00::|
+    WN::|electromechanical%3:01:00::|
+    WN::|fisheye%3:01:00::|
+    WN::|forcipate%3:01:00::|
+    WN::|four-wheel%3:01:00::|
+    WN::|four-wheeled%3:01:00::|
+    WN::|funicular%3:01:00::|
+    WN::|gyroscopic%3:01:00::|
+    WN::|interstitial%3:01:00::|
+    WN::|journalistic%3:01:00::|
+    WN::|life-support%3:01:00::|
+    WN::|magnetic%3:00:00::|
+    WN::|mechanical%3:01:01::|
+    WN::|mechanically_skillful%3:01:00::|
+    WN::|mud-brick%3:01:00::|
+    WN::|muzzle-loading%3:01:00::|
+    WN::|paramagnetic%3:01:00::|
+    WN::|prismatic%3:01:00::|
+    WN::|prosthetic%3:01:00::|
+    WN::|robotic%3:01:00::|
+    WN::|ropey%3:01:00::|
+    WN::|ropy%3:01:00::|
+    WN::|servo%3:01:00::|
+    WN::|servomechanical%3:01:00::|
+    WN::|spermicidal%3:01:00::|
+    WN::|spring-loaded%3:01:00::|
+    WN::|stereoscopic%3:01:01::|
+    WN::|stigmatic%3:01:00::|
+    WN::|tegular%3:01:00::|
+    WN::|telegraphic%3:01:00::|
+    WN::|textile%3:01:00::|
+    WN::|threaded%3:01:00::|
+    WN::|three-wheel%3:01:00::|
+    WN::|three-wheeled%3:01:00::|
+    WN::|tiered%3:01:00::|
+    WN::|two-wheel%3:01:00::|
+    WN::|two-wheeled%3:01:00::|
+    WN::|valved%3:01:00::|
+    WN::|valvular%3:01:00::|
+    WN::|vehicular%3:01:00::|
+    WN::|vestiary%3:01:00::|
+    WN::|viscometric%3:01:00::|
+    WN::|viscosimetric%3:01:00::|
+    WN::|wide-angle%3:01:00::|
+    WN::|woolen%3:01:00::|
+    WN::|woollen%3:01:00::|))
 
 (CONCEPT
   ONT::ARTIFICIAL
@@ -3105,7 +3106,11 @@
 (CONCEPT
   ONT::ASSOCIATED-WITH-BODY-VAL
   (INHERIT
-    ONT::ASSOCIATED-WITH-VAL))
+    ONT::ASSOCIATED-WITH-VAL)
+  (OVERLAP
+    WN::|atonic%3:01:00::|
+    WN::|myotonic%3:01:00::|
+    WN::|tonic%3:01:02::|))
 
 (CONCEPT
   ONT::ASSOCIATED-WITH-COMMUNICATION-VAL
@@ -9093,110 +9098,85 @@
   (INHERIT
     ONT::GEO-LOCATION-VAL)
   (OVERLAP
-    WN::|singaporean%3:01:01::|
-    WN::|roman%3:01:01::|
-    WN::|romanic%3:01:00::|
-    WN::|venetian%3:01:00::|
-    WN::|sarawakian%3:01:00::|
-    WN::|ephesian%3:01:00::|
-    WN::|damascene%3:01:00::|
-    WN::|athenian%3:01:00::|
-    WN::|low-tension%3:00:00::|
-    WN::|low-voltage%3:00:00::|
-    WN::|kuwaiti%3:01:00::|
-    WN::|milanese%3:01:00::|
-    WN::|nicaean%3:01:00::|
-    WN::|nicene%3:01:00::|
-    WN::|inductive%3:01:00::|
-    WN::|palestinian%3:01:00::|
-    WN::|tyrolean%3:01:00::|
-    WN::|tyrolese%3:01:00::|
-    WN::|alternating%3:00:00::|
-    WN::|sicilian%3:01:00::|
-    WN::|viennese%3:01:00::|
-    WN::|territorial%3:01:00::|
-    WN::|electrostatic%3:01:00::|
-    WN::|static%3:01:00::|
-    WN::|piezoelectric%3:01:00::|
-    WN::|florentine%3:01:00::|
-    WN::|tuscan%3:01:00::|
-    WN::|quebecois%3:01:00::|
-    WN::|cornish%3:01:00::|
-    WN::|tunisian%3:01:02::|
-    WN::|texan%3:01:00::|
-    WN::|national%3:01:00::|
-    WN::|pyroelectric%3:01:00::|
-    WN::|pyroelectrical%3:01:00::|
-    WN::|genoese%3:01:00::|
-    WN::|genovese%3:01:00::|
-    WN::|thermoelectric%3:01:00::|
-    WN::|thermoelectrical%3:01:00::|
-    WN::|oxonian%3:01:00::|
-    WN::|photoelectric%3:01:00::|
-    WN::|photoelectrical%3:01:00::|
-    WN::|suburban%3:01:00::|
     WN::|aberdonian%3:01:00::|
-    WN::|noncyclic%3:00:00::|
-    WN::|noncyclical%3:00:00::|
-    WN::|neapolitan%3:01:00::|
-    WN::|myotonic%3:01:00::|
-    WN::|glaswegian%3:01:00::|
-    WN::|californian%3:01:00::|
-    WN::|hydroelectric%3:01:00::|
-    WN::|sabahan%3:01:00::|
-    WN::|lancastrian%3:01:02::|
-    WN::|babylonian%3:01:00::|
-    WN::|atonic%3:01:00::|
-    WN::|prefectural%3:01:00::|
-    WN::|bavarian%3:01:00::|
     WN::|abkhaz%3:01:00::|
     WN::|abkhazian%3:01:00::|
-    WN::|mancunian%3:01:00::|
-    WN::|mycenaean%3:01:00::|
-    WN::|corinthian%3:01:00::|
-    WN::|boeotian%3:01:00::|
-    WN::|liverpudlian%3:01:00::|
     WN::|archdiocesan%3:01:00::|
-    WN::|washingtonian%3:01:01::|
-    WN::|tonic%3:01:02::|
-    WN::|theban%3:01:01::|
-    WN::|communal%3:01:02::|
-    WN::|latin%3:01:01::|
-    WN::|hawaiian%3:01:00::|
-    WN::|civil%3:01:01::|
-    WN::|sardinian%3:01:00::|
-    WN::|voltaic%3:01:00::|
-    WN::|galvanic%3:01:00::|
-    WN::|metropolitan%3:01:00::|
-    WN::|direct%3:00:01::|
-    WN::|galwegian%3:01:00::|
-    WN::|frisian%3:01:00::|
-    WN::|washingtonian%3:01:00::|
-    WN::|spartan%3:01:00::|
-    WN::|parisian%3:01:00::|
-    WN::|luxemburger%3:01:02::|
-    WN::|georgian%3:01:04::|
-    WN::|attic%3:01:00::|
-    WN::|delphic%3:01:00::|
-    WN::|delphian%3:01:00::|
-    WN::|theban%3:01:00::|
-    WN::|trojan%3:01:00::|
-    WN::|carthaginian%3:01:00::|
-    WN::|punic%3:01:00::|
-    WN::|calcuttan%3:01:00::|
     WN::|argive%3:01:00::|
-    WN::|eparchial%3:01:00::|
-    WN::|electrical%3:01:00::|
-    WN::|parochial%3:01:00::|
-    WN::|electric%3:01:00::|
-    WN::|electrical%3:01:01::|
     WN::|assamese%3:01:00::|
-    WN::|tasmanian%3:01:00::|
-    WN::|diocesan%3:01:00::|
-    WN::|catalan%3:01:01::|
-    WN::|ionian%3:01:00::|
+    WN::|athenian%3:01:00::|
+    WN::|attic%3:01:00::|
+    WN::|babylonian%3:01:00::|
+    WN::|bavarian%3:01:00::|
+    WN::|boeotian%3:01:00::|
+    WN::|calcuttan%3:01:00::|
+    WN::|californian%3:01:00::|
     WN::|cantonal%3:01:00::|
-    WN::|provincial%3:01:00::|))
+    WN::|carthaginian%3:01:00::|
+    WN::|catalan%3:01:01::|
+    WN::|civil%3:01:01::|
+    WN::|communal%3:01:02::|
+    WN::|corinthian%3:01:00::|
+    WN::|cornish%3:01:00::|
+    WN::|damascene%3:01:00::|
+    WN::|delphian%3:01:00::|
+    WN::|delphic%3:01:00::|
+    WN::|diocesan%3:01:00::|
+    WN::|eparchial%3:01:00::|
+    WN::|ephesian%3:01:00::|
+    WN::|florentine%3:01:00::|
+    WN::|frisian%3:01:00::|
+    WN::|galwegian%3:01:00::|
+    WN::|genoese%3:01:00::|
+    WN::|genovese%3:01:00::|
+    WN::|georgian%3:01:04::|
+    WN::|glaswegian%3:01:00::|
+    WN::|hawaiian%3:01:00::|
+    WN::|ionian%3:01:00::|
+    WN::|kuwaiti%3:01:00::|
+    WN::|lancastrian%3:01:02::|
+    WN::|latin%3:01:01::|
+    WN::|liverpudlian%3:01:00::|
+    WN::|luxemburger%3:01:02::|
+    WN::|mancunian%3:01:00::|
+    WN::|metropolitan%3:01:00::|
+    WN::|milanese%3:01:00::|
+    WN::|mycenaean%3:01:00::|
+    WN::|national%3:01:00::|
+    WN::|neapolitan%3:01:00::|
+    WN::|nicaean%3:01:00::|
+    WN::|nicene%3:01:00::|
+    WN::|oxonian%3:01:00::|
+    WN::|palestinian%3:01:00::|
+    WN::|parisian%3:01:00::|
+    WN::|parochial%3:01:00::|
+    WN::|prefectural%3:01:00::|
+    WN::|provincial%3:01:00::|
+    WN::|punic%3:01:00::|
+    WN::|quebecois%3:01:00::|
+    WN::|roman%3:01:01::|
+    WN::|romanic%3:01:00::|
+    WN::|sabahan%3:01:00::|
+    WN::|sarawakian%3:01:00::|
+    WN::|sardinian%3:01:00::|
+    WN::|sicilian%3:01:00::|
+    WN::|singaporean%3:01:01::|
+    WN::|spartan%3:01:00::|
+    WN::|suburban%3:01:00::|
+    WN::|tasmanian%3:01:00::|
+    WN::|territorial%3:01:00::|
+    WN::|texan%3:01:00::|
+    WN::|theban%3:01:00::|
+    WN::|theban%3:01:01::|
+    WN::|trojan%3:01:00::|
+    WN::|tunisian%3:01:02::|
+    WN::|tuscan%3:01:00::|
+    WN::|tyrolean%3:01:00::|
+    WN::|tyrolese%3:01:00::|
+    WN::|venetian%3:01:00::|
+    WN::|viennese%3:01:00::|
+    WN::|washingtonian%3:01:00::|
+    WN::|washingtonian%3:01:01::|))
 
 (CONCEPT
   ONT::CLARITY-VAL
@@ -15792,7 +15772,7 @@
   (OVERLAP
     WN::|biotic_community%1:14:00::|
     WN::|ecosystem%1:14:00::|
-    WN::|biosphere     %1:15:00::|
+    WN::|biosphere%1:15:00::|
     WN::|biota%1:14:00::|))
 
 (CONCEPT
@@ -15942,7 +15922,28 @@
 (CONCEPT
   ONT::ELECTRICAL
   (INHERIT
-    ONT::MEDIUM))
+    ONT::ARTIFACT-PROPERTY-VAL)
+  (OVERLAP
+    WN::|alternating%3:00:00::|
+    WN::|direct%3:00:01::|
+    WN::|electric%3:01:00::|
+    WN::|electrical%3:01:00::|
+    WN::|electrical%3:01:01::|
+    WN::|electrostatic%3:01:00::|
+    WN::|galvanic%3:01:00::|
+    WN::|hydroelectric%3:01:00::|
+    WN::|inductive%3:01:00::|
+    WN::|low-tension%3:00:00::|
+    WN::|low-voltage%3:00:00::|
+    WN::|photoelectric%3:01:00::|
+    WN::|photoelectrical%3:01:00::|
+    WN::|piezoelectric%3:01:00::|
+    WN::|pyroelectric%3:01:00::|
+    WN::|pyroelectrical%3:01:00::|
+    WN::|static%3:01:00::|
+    WN::|thermoelectric%3:01:00::|
+    WN::|thermoelectrical%3:01:00::|
+    WN::|voltaic%3:01:00::|))
 
 (CONCEPT
   ONT::ELECTRONICS-COMPANY
@@ -27795,26 +27796,6 @@
     WN::|medicinal%5:00:00:healthful:00|))
 
 (CONCEPT
-  ONT::MEDIUM
-  (COMMENT "means of production and dissemination (c.f. ont::mode)")
-  (INHERIT
-    ONT::SUBSTANTIAL-PROPERTY-VAL)
-  (OVERLAP
-    WN::|magnetic%3:00:00::|
-    WN::|magnetized%3:00:00::|
-    WN::|magnetised%3:00:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (GRADABILITY -)
-    (TYPE ONT::MEDIUM))
-  (SEM-FRAME
-    (ONT::FIGURE
-     (CONCEPT
-       T)
-     OPTIONAL)))
-
-(CONCEPT
   ONT::MEDIUM-VAL
   (INHERIT
     ONT::POSITION-ON-DIMENSION-SCALE-VAL)
@@ -28937,7 +28918,7 @@
 (CONCEPT
   ONT::MULTIMEDIA-VAL
   (INHERIT
-    ONT::MEDIUM))
+    ONT::INFORMATION-DELIVERY-MODE-VAL))
 
 (CONCEPT
   ONT::MULTIPLE
@@ -33953,14 +33934,16 @@
   (INHERIT
     ONT::FREQUENCY-VAL)
   (OVERLAP
+    WN::|cyclic%3:01:00::|
+    WN::|diastolic%3:01:00::|
     WN::|extrasystolic%3:01:00::|
     WN::|migrational%3:01:00::|
-    WN::|tidal%3:01:00::|
+    WN::|noncyclic%3:00:00::|
+    WN::|noncyclical%3:00:00::|
+    WN::|periodic%3:00:00::|
     WN::|systolic%3:01:00::|
     WN::|tertian%3:01:00::|
-    WN::|diastolic%3:01:00::|
-    WN::|cyclic%3:01:00::|
-    WN::|periodic%3:00:00::|))
+    WN::|tidal%3:01:00::|))
 
 (CONCEPT
   ONT::PERIPHERAL-VAL

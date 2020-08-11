@@ -7676,21 +7676,6 @@ Class: substantial-property-val
 Class: organic-val
   SubClassOf: substantial-property-val
 
-# ONT type ont::medium
-Class: medium
-  Annotations: rdfs:comment "means of production and dissemination (c.f. ont::mode)"
-  SubClassOf: substantial-property-val
-  SubClassOf: (FLT_abstr-obj and F_gradability some V_-)
-  SubClassOf: _figure only owl:Thing
-
-# ONT type ont::electrical
-Class: electrical
-  SubClassOf: medium
-
-# ONT type ont::multimedia-val
-Class: multimedia-val
-  SubClassOf: medium
-
 # ONT type ont::mode
 Class: mode
   Annotations: rdfs:comment "means of representation (c.f. ont::medium)"
@@ -11315,6 +11300,10 @@ Class: information-delivery-mode-val
   Annotations: rdfs:comment "(written)"
   SubClassOf: mode
 
+# ONT type ont::multimedia-val
+Class: multimedia-val
+  SubClassOf: information-delivery-mode-val
+
 # ONT type ont::written-val
 Class: written-val
   Annotations: rdfs:comment "(written)"
@@ -12586,7 +12575,11 @@ Class: physics-property-val
 
 # ONT type ont::artifact-property-val
 Class: artifact-property-val
-  SubClassOf: physics-val
+  SubClassOf: substantial-property-val
+
+# ONT type ont::electrical
+Class: electrical
+  SubClassOf: artifact-property-val
 
 # ONT type ont::psychology-val
 Class: psychology-val
@@ -20034,10 +20027,7 @@ DisjointClasses: not-homogeneous-val, homogeneous-val
 DisjointClasses: bare-val, clothed-val, adorned-val
 
 # children of ont::substantial-property-val
-DisjointClasses: liquid-property-val, not-containing-substance-val, containing-substance-val, moisture-content-val, mode, medium, organic-val
-
-# children of ont::medium
-DisjointClasses: multimedia-val, electrical
+DisjointClasses: artifact-property-val, liquid-property-val, not-containing-substance-val, containing-substance-val, moisture-content-val, mode, organic-val
 
 # children of ont::mode
 DisjointClasses: representation-method-val, information-delivery-mode-val, sensory-mode-val, signal-representation-val, mode-of-control-val
@@ -20691,7 +20681,7 @@ DisjointClasses: disease-property-val, not-diseased-val, diseased-val
 DisjointClasses: not-infectious-val, infectious-val
 
 # children of ont::information-delivery-mode-val
-DisjointClasses: not-written-val, written-val
+DisjointClasses: not-written-val, written-val, multimedia-val
 
 # children of ont::sensitivity-val
 DisjointClasses: not-sensitive-val, sensitive-val
@@ -20851,9 +20841,6 @@ DisjointClasses: spiritual-being-val, religious-denomination-val, follower-of-do
 
 # children of ont::biology-val
 DisjointClasses: zoological-property-val, physiological-property-val, taxonomic-property-val, genetic-property-val, botanical-property-val, biological-theory-val, biological-property-val
-
-# children of ont::physics-val
-DisjointClasses: artifact-property-val, physics-property-val
 
 # children of ont::psychology-val
 DisjointClasses: cognitive-process-val, psychological-state-val, psychology-property-val
