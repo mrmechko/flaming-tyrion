@@ -11309,15 +11309,10 @@ Class: written-val
   Annotations: rdfs:comment "(written)"
   SubClassOf: information-delivery-mode-val
 
-# ONT type ont::not-written-val
-Class: not-written-val
-  Annotations: rdfs:comment "(unwritten)"
-  SubClassOf: information-delivery-mode-val
-
 # ONT type ont::oral-mode-val
 Class: oral-mode-val
   Annotations: rdfs:comment "(spoken)"
-  SubClassOf: not-written-val
+  SubClassOf: information-delivery-mode-val
 
 # ONT type ont::representation-method-val
 Class: representation-method-val
@@ -20681,7 +20676,7 @@ DisjointClasses: disease-property-val, not-diseased-val, diseased-val
 DisjointClasses: not-infectious-val, infectious-val
 
 # children of ont::information-delivery-mode-val
-DisjointClasses: not-written-val, written-val, multimedia-val
+DisjointClasses: oral-mode-val, written-val, multimedia-val
 
 # children of ont::sensitivity-val
 DisjointClasses: not-sensitive-val, sensitive-val
