@@ -7384,7 +7384,6 @@
     WN::|two-sided%3:00:02::|
     WN::|unactable%3:00:00::|
     WN::|unadoptable%3:00:00::|
-    WN::|unalterable%3:00:00::|
     WN::|unappealable%3:00:00::|
     WN::|unappealing%3:00:02::|
     WN::|unascribable%3:00:00::|
@@ -11364,7 +11363,6 @@
     WN::|leaded%3:00:00::|
     WN::|metallic%3:00:00::|
     WN::|metal%3:00:00::|
-    WN::|nonmetal%3:00:00::|
     WN::|organic%3:00:01::|
     WN::|starchy%3:00:00::|
     WN::|vegetal%3:00:00::|
@@ -41571,7 +41569,6 @@
     WN::|inspect%2:39:00::|
     WN::|investigation%1:04:00::|
     WN::|judge%2:41:09::|
-    WN::|study%2:31:00::|
     WN::|surveillance%1:04:01::|)
   (SEM-FRAME
     (ONT::AGENT
