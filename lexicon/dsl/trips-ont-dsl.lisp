@@ -11537,7 +11537,23 @@
   ONT::CONTROL-VAL
   (COMMENT "controlled or controllable by a human entity (controlled, guided)")
   (INHERIT
-    ONT::EVALUATION-ATTRIBUTE-VAL))
+    ONT::EVALUATION-ATTRIBUTE-VAL)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::CONTROLLED-SCALE)
+    (TYPE ONT::CONTROL-VAL)))
+
+(CONCEPT
+  ONT::CONTROLLED-SCALE
+  (COMMENT "scale corresponding to being controlled")
+  (INHERIT
+    ONT::EVALUATION-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::CONTROL-SCALE)
+    (TYPE ONT::CONTROLLED-SCALE)))
 
 (CONCEPT
   ONT::CONTROLLED-VAL

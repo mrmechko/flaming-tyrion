@@ -10957,6 +10957,7 @@ Class: bad-for-health-val
 Class: control-val
   Annotations: rdfs:comment "controlled or controllable by a human entity (controlled, guided)"
   SubClassOf: evaluation-attribute-val
+  SubClassOf: (FLT_abstr-obj and F_scale some controlled-scale)
 
 # ONT type ont::controlled-val
 Class: controlled-val
@@ -13516,6 +13517,12 @@ Class: comfortable-scale
 Class: not-comfortable-scale
   SubClassOf: comfort-scale
   SubClassOf: (FLT_abstr-obj and F_scale some not-comfortable-scale)
+
+# ONT type ont::controlled-scale
+Class: controlled-scale
+  Annotations: rdfs:comment "scale corresponding to being controlled"
+  SubClassOf: evaluation-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some control-scale)
 
 # ONT type ont::conventionality-scale
 Class: conventionality-scale
@@ -20949,7 +20956,7 @@ DisjointClasses: folly-scale, wisdom-scale
 DisjointClasses: wild-scale, tame-scale
 
 # children of ont::evaluation-scale
-DisjointClasses: desirability-scale, process-evaluation-scale, real-vs-fake-scale, worthiness-scale, tolerability-scale, specificity-scale, recommendability-scale, orderliness-scale, offensiveness-scale, morality-scale, partiality-scale, aesthetic-tastefulness-scale, harmfulness-scale, explicitness-scale, quality-level-scale, plain-scale, basic-scale, convenience-scale, appropriateness-scale, safety-scale, reliability-scale, importance-scale, adaptability-scale, noticeability-scale, beauty-scale, acceptability-scale, attraction-scale, ability-scale, wealth-scale, cost-scale, luckiness-scale, cleanliness-scale, conventionality-scale, comfort-scale, typicality-scale, shapeliness-scale, seniority-scale, qualification-scale, necessity-scale, judgement-scale, hospitability-scale, familiarity-scale, freshness-scale, fame-scale, interestingness-scale, influence-scale, influence-susceptibility-scale, helpfulness-scale, freedom-scale
+DisjointClasses: desirability-scale, process-evaluation-scale, real-vs-fake-scale, worthiness-scale, tolerability-scale, specificity-scale, recommendability-scale, orderliness-scale, offensiveness-scale, morality-scale, partiality-scale, aesthetic-tastefulness-scale, harmfulness-scale, explicitness-scale, quality-level-scale, plain-scale, basic-scale, convenience-scale, appropriateness-scale, safety-scale, reliability-scale, importance-scale, adaptability-scale, noticeability-scale, beauty-scale, acceptability-scale, attraction-scale, ability-scale, wealth-scale, cost-scale, luckiness-scale, cleanliness-scale, conventionality-scale, controlled-scale, comfort-scale, typicality-scale, shapeliness-scale, seniority-scale, qualification-scale, necessity-scale, judgement-scale, hospitability-scale, familiarity-scale, freshness-scale, fame-scale, interestingness-scale, influence-scale, influence-susceptibility-scale, helpfulness-scale, freedom-scale
 
 # children of ont::freshness-scale
 DisjointClasses: not-fresh-scale, fresh-scale
