@@ -3371,14 +3371,6 @@
     WN::|athletic_facility%1:06:00::|))
 
 (CONCEPT
-  ONT::ATHLETIC-GAME
-  (INHERIT
-    ONT::SPORT)
-  (OVERLAP
-    WN::|athletics%1:04:00::|
-    WN::|sport%1:04:00::|))
-
-(CONCEPT
   ONT::ATHLETIC-VAL
   (INHERIT
     ONT::ENERGIZED-VAL)
@@ -10398,7 +10390,9 @@
 (CONCEPT
   ONT::COMPARISON
   (INHERIT
-    ONT::PS-OBJECT))
+    ONT::PS-OBJECT)
+  (OVERLAP
+    WN::|comparison%1:24:00::|))
 
 (CONCEPT
   ONT::COMPASSION-SCALE
@@ -12429,7 +12423,9 @@
 (CONCEPT
   ONT::COURT-GAME
   (INHERIT
-    ONT::ATHLETIC-GAME))
+    ONT::SPORT)
+  (OVERLAP
+    WN::|court_game%1:04:00::|))
 
 (CONCEPT
   ONT::COURTEOUS-VAL
@@ -14196,7 +14192,9 @@
 (CONCEPT
   ONT::DIGITAL-VAL
   (INHERIT
-    ONT::SIGNAL-REPRESENTATION-VAL))
+    ONT::SIGNAL-REPRESENTATION-VAL)
+  (OVERLAP
+    WN::|digital%3:00:00::|))
 
 (CONCEPT
   ONT::DIGNIFIED-VAL
@@ -42043,7 +42041,9 @@
 (CONCEPT
   ONT::SENSORY-MODE-VAL
   (INHERIT
-    ONT::MODE))
+    ONT::MODE)
+  (OVERLAP
+    WN::|ocular%3:01:04::|))
 
 (CONCEPT
   ONT::SENSORY-PROPERTY-VAL
@@ -42052,44 +42052,40 @@
   (INHERIT
     ONT::PHYSICAL-PROPERTY-VAL)
   (OVERLAP
-    WN::|sensory%3:00:00::|
-    WN::|sensorial%3:00:00::|
-    WN::|haptic%3:01:00::|
-    WN::|tactile%3:01:00::|
-    WN::|tactual%3:01:00::|
-    WN::|ocular%3:01:04::|
-    WN::|optic%3:01:04::|
-    WN::|optical%3:01:04::|
-    WN::|visual%3:01:04::|
-    WN::|exteroceptive%3:01:00::|
-    WN::|perceptual%3:01:00::|
-    WN::|interoceptive%3:01:00::|
-    WN::|proprioceptive%3:01:00::|
-    WN::|sensational%3:01:00::|
-    WN::|sensory%3:01:00::|
-    WN::|perceptive%3:01:00::|
-    WN::|somatosensory%3:01:00::|
-    WN::|euphonic%3:01:00::|
-    WN::|euphonical%3:01:00::|
     WN::|allergic%3:01:00::|
-    WN::|cross-modal%3:01:00::|
-    WN::|olfactory%3:01:00::|
-    WN::|olfactive%3:01:00::|
-    WN::|auditory%3:01:00::|
+    WN::|amphoric%3:01:00::|
+    WN::|anaphylactic%3:01:00::|
     WN::|audile%3:01:00::|
     WN::|auditive%3:01:00::|
-    WN::|gustatory%3:01:00::|
+    WN::|auditory%3:01:00::|
+    WN::|auscultatory%3:01:00::|
+    WN::|cross-modal%3:01:00::|
+    WN::|euphonic%3:01:00::|
+    WN::|euphonical%3:01:00::|
+    WN::|exteroceptive%3:01:00::|
     WN::|gustative%3:01:00::|
     WN::|gustatorial%3:01:00::|
-    WN::|auscultatory%3:01:00::|
-    WN::|squinty%3:01:00::|
-    WN::|anaphylactic%3:01:00::|
+    WN::|gustatory%3:01:00::|
+    WN::|haptic%3:01:00::|
+    WN::|interoceptive%3:01:00::|
+    WN::|olfactive%3:01:00::|
+    WN::|olfactory%3:01:00::|
     WN::|orthoptic%3:01:00::|
-    WN::|amphoric%3:01:00::|
-    WN::|synesthetic%3:01:00::|
-    WN::|synaesthetic%3:01:00::|
+    WN::|perceptive%3:01:00::|
+    WN::|perceptual%3:01:00::|
+    WN::|proprioceptive%3:01:00::|
+    WN::|sensational%3:01:00::|
+    WN::|sensitising%3:00:00::|
     WN::|sensitizing%3:00:00::|
-    WN::|sensitising%3:00:00::|)
+    WN::|sensorial%3:00:00::|
+    WN::|sensory%3:00:00::|
+    WN::|sensory%3:01:00::|
+    WN::|somatosensory%3:01:00::|
+    WN::|squinty%3:01:00::|
+    WN::|synaesthetic%3:01:00::|
+    WN::|synesthetic%3:01:00::|
+    WN::|tactile%3:01:00::|
+    WN::|tactual%3:01:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -44541,7 +44537,11 @@
 (CONCEPT
   ONT::SPORT
   (INHERIT
-    ONT::GAME))
+    ONT::GAME)
+  (OVERLAP
+    WN::|athletic_game%1:04:00::|
+    WN::|athletics%1:04:00::|
+    WN::|sport%1:04:00::|))
 
 (CONCEPT
   ONT::SPORTS-PROPERTY-VAL
@@ -48136,8 +48136,6 @@
 
 (CONCEPT
   ONT::TRUENESS-SCALE
-  (COMMENT
-   "trueness scale as opposed to categorical true/false distinction (see ont::truth-scale)")
   (INHERIT
     ONT::INFORMATION-PROPERTY-SCALE)
   (SEM-FEATS
@@ -48168,18 +48166,6 @@
          (CONCEPT
            PHYS-OBJ))
        (INTENTIONAL +)))))
-
-(CONCEPT
-  ONT::TRUTH-SCALE
-  (INHERIT
-    ONT::UNORDERED-DOMAIN)
-  (OVERLAP
-    WN::|truth%1:26:00::|)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (SCALE ONT::TRUTH-SCALE)
-    (TYPE ONT::TRUTH-SCALE)))
 
 (CONCEPT
   ONT::TRUTH-VALUE-VAL

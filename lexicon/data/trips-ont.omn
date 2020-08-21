@@ -6382,13 +6382,9 @@ Class: game
 Class: sport
   SubClassOf: game
 
-# ONT type ont::athletic-game
-Class: athletic-game
-  SubClassOf: sport
-
 # ONT type ont::court-game
 Class: court-game
-  SubClassOf: athletic-game
+  SubClassOf: sport
 
 # ONT type ont::board-game
 Class: board-game
@@ -13907,7 +13903,6 @@ Class: validity-scale
 
 # ONT type ont::trueness-scale
 Class: trueness-scale
-  Annotations: rdfs:comment "trueness scale as opposed to categorical true/false distinction (see ont::truth-scale)"
   SubClassOf: information-property-scale
   SubClassOf: (FLT_abstr-obj and F_scale some trueness-scale)
 
@@ -14714,11 +14709,6 @@ Class: gender-scale
   SubClassOf: unordered-domain
   SubClassOf: (FLT_abstr-obj and F_scale some gender-scale)
   SubClassOf: _figure only (FLT_phys-obj) and _figure some owl:Thing
-
-# ONT type ont::truth-scale
-Class: truth-scale
-  SubClassOf: unordered-domain
-  SubClassOf: (FLT_abstr-obj and F_scale some truth-scale)
 
 # ONT type ont::discrete-color-scale
 Class: discrete-color-scale
@@ -21121,7 +21111,7 @@ DisjointClasses: temporal-occurrence-scale, time-measure-scale
 DisjointClasses: time-loc-scale, duration-scale
 
 # children of ont::unordered-domain
-DisjointClasses: discrete-color-scale, truth-scale, gender-scale, quantity-related-scale
+DisjointClasses: discrete-color-scale, gender-scale, quantity-related-scale
 
 # children of ont::acquire
 DisjointClasses: collect, find, reserve, acquire-by-action, earning, commerce, amass, retrieve

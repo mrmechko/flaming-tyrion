@@ -3,9 +3,6 @@
 <dsl>
  <provenance name="TRIPS"/>
  <concept name="ont::trueness-scale">
- <comment>
-  &quot;trueness scale as opposed to categorical true/false distinction (see ont::truth-scale)&quot;
- </comment>
  <relation label="inherit">
   ont::information-property-scale
  </relation>
@@ -204,4 +201,39 @@
   <feat name="type">ont::false-scale</feat>
  </sem-feats>
  </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="truth" />
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <relation label="inherit">
+  ont::trueness-scale
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
 </dsl>

@@ -3864,15 +3864,6 @@
    wn::|athletic_facility%1:06:00::|
   </relation>
  </concept>
- <concept name="ont::athletic-game">
-  <relation label="inherit">
-   ont::sport
-  </relation>
-  <relation label="overlap">
-   wn::|athletics%1:04:00::|
-   wn::|sport%1:04:00::|
-  </relation>
- </concept>
  <concept name="ont::athletic-val">
   <relation label="inherit">
    ont::energized-val
@@ -11771,6 +11762,9 @@
   <relation label="inherit">
    ont::ps-object
   </relation>
+  <relation label="overlap">
+   wn::|comparison%1:24:00::|
+  </relation>
  </concept>
  <concept name="ont::compassion-scale">
   <relation label="inherit">
@@ -14124,7 +14118,10 @@
  </concept>
  <concept name="ont::court-game">
   <relation label="inherit">
-   ont::athletic-game
+   ont::sport
+  </relation>
+  <relation label="overlap">
+   wn::|court_game%1:04:00::|
   </relation>
  </concept>
  <concept name="ont::courteous-val">
@@ -16201,6 +16198,9 @@
  <concept name="ont::digital-val">
   <relation label="inherit">
    ont::signal-representation-val
+  </relation>
+  <relation label="overlap">
+   wn::|digital%3:00:00::|
   </relation>
  </concept>
  <concept name="ont::dignified-val">
@@ -48543,6 +48543,9 @@
   <relation label="inherit">
    ont::mode
   </relation>
+  <relation label="overlap">
+   wn::|ocular%3:01:04::|
+  </relation>
  </concept>
  <concept name="ont::sensory-property-val">
   <comment>
@@ -48552,44 +48555,40 @@
    ont::physical-property-val
   </relation>
   <relation label="overlap">
-   wn::|sensory%3:00:00::|
-   wn::|sensorial%3:00:00::|
-   wn::|haptic%3:01:00::|
-   wn::|tactile%3:01:00::|
-   wn::|tactual%3:01:00::|
-   wn::|ocular%3:01:04::|
-   wn::|optic%3:01:04::|
-   wn::|optical%3:01:04::|
-   wn::|visual%3:01:04::|
-   wn::|exteroceptive%3:01:00::|
-   wn::|perceptual%3:01:00::|
-   wn::|interoceptive%3:01:00::|
-   wn::|proprioceptive%3:01:00::|
-   wn::|sensational%3:01:00::|
-   wn::|sensory%3:01:00::|
-   wn::|perceptive%3:01:00::|
-   wn::|somatosensory%3:01:00::|
-   wn::|euphonic%3:01:00::|
-   wn::|euphonical%3:01:00::|
    wn::|allergic%3:01:00::|
-   wn::|cross-modal%3:01:00::|
-   wn::|olfactory%3:01:00::|
-   wn::|olfactive%3:01:00::|
-   wn::|auditory%3:01:00::|
+   wn::|amphoric%3:01:00::|
+   wn::|anaphylactic%3:01:00::|
    wn::|audile%3:01:00::|
    wn::|auditive%3:01:00::|
-   wn::|gustatory%3:01:00::|
+   wn::|auditory%3:01:00::|
+   wn::|auscultatory%3:01:00::|
+   wn::|cross-modal%3:01:00::|
+   wn::|euphonic%3:01:00::|
+   wn::|euphonical%3:01:00::|
+   wn::|exteroceptive%3:01:00::|
    wn::|gustative%3:01:00::|
    wn::|gustatorial%3:01:00::|
-   wn::|auscultatory%3:01:00::|
-   wn::|squinty%3:01:00::|
-   wn::|anaphylactic%3:01:00::|
+   wn::|gustatory%3:01:00::|
+   wn::|haptic%3:01:00::|
+   wn::|interoceptive%3:01:00::|
+   wn::|olfactive%3:01:00::|
+   wn::|olfactory%3:01:00::|
    wn::|orthoptic%3:01:00::|
-   wn::|amphoric%3:01:00::|
-   wn::|synesthetic%3:01:00::|
-   wn::|synaesthetic%3:01:00::|
-   wn::|sensitizing%3:00:00::|
+   wn::|perceptive%3:01:00::|
+   wn::|perceptual%3:01:00::|
+   wn::|proprioceptive%3:01:00::|
+   wn::|sensational%3:01:00::|
    wn::|sensitising%3:00:00::|
+   wn::|sensitizing%3:00:00::|
+   wn::|sensorial%3:00:00::|
+   wn::|sensory%3:00:00::|
+   wn::|sensory%3:01:00::|
+   wn::|somatosensory%3:01:00::|
+   wn::|squinty%3:01:00::|
+   wn::|synaesthetic%3:01:00::|
+   wn::|synesthetic%3:01:00::|
+   wn::|tactile%3:01:00::|
+   wn::|tactual%3:01:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -51447,6 +51446,11 @@
  <concept name="ont::sport">
   <relation label="inherit">
    ont::game
+  </relation>
+  <relation label="overlap">
+   wn::|athletic_game%1:04:00::|
+   wn::|athletics%1:04:00::|
+   wn::|sport%1:04:00::|
   </relation>
  </concept>
  <concept name="ont::sports-property-val">
@@ -55628,9 +55632,6 @@
   </sem-feats>
  </concept>
  <concept name="ont::trueness-scale">
-  <comment>
-   &quot;trueness scale as opposed to categorical true/false distinction (see ont::truth-scale)&quot;
-  </comment>
   <relation label="inherit">
    ont::information-property-scale
   </relation>
@@ -55671,21 +55672,6 @@
     </sem-feats>
    </role-restr-map>
   </sem-frame>
- </concept>
- <concept name="ont::truth-scale">
-  <relation label="inherit">
-   ont::unordered-domain
-  </relation>
-  <relation label="overlap">
-   wn::|truth%1:26:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">ont::truth-scale</feat>
-   <feat name="type">ont::truth-scale</feat>
-  </sem-feats>
  </concept>
  <concept name="ont::truth-value-val">
   <relation label="inherit">
