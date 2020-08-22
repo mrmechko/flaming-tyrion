@@ -10,6 +10,8 @@
   ont::person
  </relation>
  <relation label="overlap">
+  wn::|agent%1:18:01::|
+  wn::|agent%1:18:02::|
   wn::|professional%1:18:00::|
   wn::|professional_person%1:18:00::|
   wn::|skilled_worker%1:18:00::|
@@ -292,6 +294,59 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="phys-obj" />
+ <concept name="ont::assistant">
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|assistant%1:18:00::|
+  wn::|helper%1:18:01::|
+  wn::|help%1:18:00::|
+  wn::|supporter%1:18:01::|
+ </relation>
+ </concept>
+ <concept name="ont::athlete">
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|athlete%1:18:00::|
+  wn::|jock%1:18:00::|
+ </relation>
+ </concept>
+ <concept name="ont::author">
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|writer%1:18:00::|
+  wn::|author%1:18:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="information">information-content</feat>
+    <feat name="origin">artifact</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::official">
+ <comment>
+  &quot;Person that serves in some administrative role&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|leader%1:18:00::|
+  wn::|ruler%1:18:00::|
+  wn::|head_of_state%1:18:00::|
+ </relation>
+ </concept>
  <concept name="ont::scholar">
  <relation label="inherit">
   ont::professional
@@ -314,25 +369,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::author">
+ <concept name="ont::scout">
  <relation label="inherit">
   ont::professional
  </relation>
  <relation label="overlap">
-  wn::|writer%1:18:00::|
-  wn::|author%1:18:00::|
+  wn::|scout%1:18:00::|
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="information">information-content</feat>
-    <feat name="origin">artifact</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
  <concept name="ont::health-professional">
  <relation label="inherit">
@@ -384,6 +427,16 @@
  <example text="the network administrator has the information you need">
   <provenance name="TRIPS"/>
  </example>
+ <relation label="inherit">
+  ont::professional
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="agent" />
+ </morph>
  <relation label="inherit">
   ont::professional
   ont::count-pred-templ
@@ -1475,6 +1528,36 @@
  <sense>
  <morph>
   <pos pos="n" />
+  <word first-word="proxy" />
+ </morph>
+ <example text="connect through a proxy server">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-theme-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
   <word first-word="publisher" />
  </morph>
  <comment>
@@ -1553,36 +1636,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="scientist" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="secretary" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="secretary" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="seller" />
  </morph>
  <comment>
@@ -1646,19 +1699,6 @@
  <example text="confirm the sponsor name">
   <provenance name="TRIPS"/>
  </example>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="student" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
  <relation label="inherit">
   ont::professional
   ont::count-pred-templ

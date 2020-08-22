@@ -3071,15 +3071,28 @@ Class: professional
   SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj))
   SubClassOf: _norole only owl:Thing
 
-# ONT type ont::scholar
-Class: scholar
+# ONT type ont::athlete
+Class: athlete
   SubClassOf: professional
-  SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj))
 
 # ONT type ont::author
 Class: author
   SubClassOf: professional
   SubClassOf: _figure only (FLT_phys-obj and F_origin some V_artifact and F_information some V_information-content)
+
+# ONT type ont::official
+Class: official
+  Annotations: rdfs:comment "Person that serves in some administrative role"
+  SubClassOf: professional
+
+# ONT type ont::scholar
+Class: scholar
+  SubClassOf: professional
+  SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj))
+
+# ONT type ont::scout
+Class: scout
+  SubClassOf: professional
 
 # ONT type ont::specialist
 Class: specialist
@@ -3088,10 +3101,6 @@ Class: specialist
 # ONT type ont::health-professional
 Class: health-professional
   SubClassOf: professional
-
-# ONT type ont::athlete
-Class: athlete
-  SubClassOf: person
 
 # ONT type ont::traveller
 Class: traveller
@@ -3234,17 +3243,8 @@ Class: unfortunate
 Class: patient
   SubClassOf: unfortunate
 
-# ONT type ont::scout
-Class: scout
-  SubClassOf: person
-
 # ONT type ont::addressee
 Class: addressee
-  SubClassOf: person
-
-# ONT type ont::official
-Class: official
-  Annotations: rdfs:comment "Person that serves in some administrative role"
   SubClassOf: person
 
 # ONT type ont::recipient
@@ -6402,18 +6402,9 @@ Class: option
 Class: favorite
   SubClassOf: relation
 
-# ONT type ont::agent
-Class: agent
-  SubClassOf: phys-object
-  SubClassOf: (FLT_phys-obj and F_information some V_information-content and F_intentional some V_+)
-
 # ONT type ont::assistant
 Class: assistant
-  SubClassOf: agent
-
-# ONT type ont::harmful-agency
-Class: harmful-agency
-  SubClassOf: agent
+  SubClassOf: professional
 
 # ONT type ont::computer-software
 Class: computer-software
@@ -19260,7 +19251,7 @@ DisjointClasses: season, week-object, month-name
 DisjointClasses: autumn, summer, spring, winter
 
 # children of ont::phys-object
-DisjointClasses: agent, group-object, shape-object, functional-phys-object, phys-representation, manufactured-object, material, geo-object, natural-object, object-defined-by-relationship
+DisjointClasses: group-object, shape-object, functional-phys-object, phys-representation, manufactured-object, material, geo-object, natural-object, object-defined-by-relationship
 
 # children of ont::defined-by-sequence-relationship
 DisjointClasses: successor, predecessor
@@ -19353,10 +19344,10 @@ DisjointClasses: person, nonhuman-animal
 DisjointClasses: crustaceans, mollusks, insect
 
 # children of ont::person
-DisjointClasses: recipient, official, addressee, scout, unfortunate, entrant, male-person, female-person, consumer, traveller, athlete, professional, person-reln, family-relation, user, referential-person
+DisjointClasses: recipient, addressee, unfortunate, entrant, male-person, female-person, consumer, traveller, professional, person-reln, family-relation, user, referential-person
 
 # children of ont::professional
-DisjointClasses: health-professional, author, scholar
+DisjointClasses: assistant, health-professional, scout, scholar, official, author, athlete
 
 # children of ont::person-reln
 DisjointClasses: possessor-reln, person-defined-by-membership, communication-party, identity-and-origin, friend, specialist
@@ -19795,9 +19786,6 @@ DisjointClasses: food-prep-process, signaling-pathway
 
 # children of ont::game
 DisjointClasses: board-game, sport
-
-# children of ont::agent
-DisjointClasses: harmful-agency, assistant
 
 # children of ont::computer-software
 DisjointClasses: web-browser, computer-program, software-feature

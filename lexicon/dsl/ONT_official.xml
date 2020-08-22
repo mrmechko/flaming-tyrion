@@ -7,7 +7,7 @@
   &quot;Person that serves in some administrative role&quot;
  </comment>
  <relation label="inherit">
-  ont::person
+  ont::professional
  </relation>
  <relation label="overlap">
   wn::|leader%1:18:00::|
@@ -110,6 +110,53 @@
   <feat name="type">ont::animal</feat>
  </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">-</feat>
+ <feat name="intentional">+</feat>
+ <feat name="container">-</feat>
+ <feat name="mobility">self-moving</feat>
+ <feat name="object-function">occupation</feat>
+ <feat name="origin">human</feat>
+ <feat name="spatial-abstraction">spatial-point</feat>
+ <feat name="form">solid-object</feat>
+ <feat name="type">ont::person</feat>
+ </sem-feats>
+ <concept name="ont::mammal">
+ <relation label="inherit">
+  ont::vertebrate
+ </relation>
+ <relation label="overlap">
+  wn::|mammal%1:05:00::|
+  wn::|mammalian%1:05:00::|
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">-</feat>
+ <feat name="intentional">+</feat>
+ <feat name="container">-</feat>
+ <feat name="object-function">occupation</feat>
+ <feat name="origin">human</feat>
+ <feat name="spatial-abstraction">spatial-point</feat>
+ <feat name="form">solid-object</feat>
+ <feat name="type">ont::professional</feat>
+ </sem-feats>
  <concept name="ont::person">
  <relation label="inherit">
   ont::mammal
@@ -133,29 +180,45 @@
   <feat name="type">ont::person</feat>
  </sem-feats>
  </concept>
- <concept name="ont::mammal">
+ <concept name="ont::professional">
+ <comment>
+  &quot;a person defined by a role that they play. e.g., doctor, leader, ...&quot;
+ </comment>
  <relation label="inherit">
-  ont::vertebrate
+  ont::person
  </relation>
  <relation label="overlap">
-  wn::|mammal%1:05:00::|
-  wn::|mammalian%1:05:00::|
+  wn::|agent%1:18:01::|
+  wn::|agent%1:18:02::|
+  wn::|professional%1:18:00::|
+  wn::|professional_person%1:18:00::|
+  wn::|skilled_worker%1:18:00::|
  </relation>
- </concept>
  <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="information">-</feat>
- <feat name="intentional">+</feat>
- <feat name="container">-</feat>
- <feat name="mobility">self-moving</feat>
- <feat name="object-function">occupation</feat>
- <feat name="origin">human</feat>
- <feat name="spatial-abstraction">spatial-point</feat>
- <feat name="form">solid-object</feat>
- <feat name="type">ont::person</feat>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">-</feat>
+  <feat name="intentional">+</feat>
+  <feat name="container">-</feat>
+  <feat name="object-function">occupation</feat>
+  <feat name="origin">human</feat>
+  <feat name="spatial-abstraction">spatial-point</feat>
+  <feat name="form">solid-object</feat>
+  <feat name="type">ont::professional</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::vertebrate">
  <relation label="inherit">
   ont::animal

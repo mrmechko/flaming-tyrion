@@ -1362,17 +1362,6 @@
     (TYPE ONT::AGE-VAL)))
 
 (CONCEPT
-  ONT::AGENT
-  (INHERIT
-    ONT::PHYS-OBJECT)
-  (SEM-FEATS
-    (INHERIT
-      PHYS-OBJ)
-    (INTENTIONAL +)
-    (INFORMATION INFORMATION-CONTENT)
-    (TYPE ONT::AGENT)))
-
-(CONCEPT
   ONT::AGENT-INTERACTION
   (COMMENT "events that involve the interaction of two or more agents")
   (INHERIT
@@ -3020,7 +3009,7 @@
 (CONCEPT
   ONT::ASSISTANT
   (INHERIT
-    ONT::AGENT)
+    ONT::PROFESSIONAL)
   (OVERLAP
     WN::|assistant%1:18:00::|
     WN::|helper%1:18:01::|
@@ -3358,7 +3347,7 @@
 (CONCEPT
   ONT::ATHLETE
   (INHERIT
-    ONT::PERSON)
+    ONT::PROFESSIONAL)
   (OVERLAP
     WN::|athlete%1:18:00::|
     WN::|jock%1:18:00::|))
@@ -21435,11 +21424,6 @@
     ONT::TEXTURE-VAL))
 
 (CONCEPT
-  ONT::HARMFUL-AGENCY
-  (INHERIT
-    ONT::AGENT))
-
-(CONCEPT
   ONT::HARMFUL-VAL
   (INHERIT
     ONT::HARMFULNESS-VAL)
@@ -32545,7 +32529,7 @@
   ONT::OFFICIAL
   (COMMENT "Person that serves in some administrative role")
   (INHERIT
-    ONT::PERSON)
+    ONT::PROFESSIONAL)
   (OVERLAP
     WN::|leader%1:18:00::|
     WN::|ruler%1:18:00::|
@@ -36704,6 +36688,8 @@
   (INHERIT
     ONT::PERSON)
   (OVERLAP
+    WN::|agent%1:18:01::|
+    WN::|agent%1:18:02::|
     WN::|professional%1:18:00::|
     WN::|professional_person%1:18:00::|
     WN::|skilled_worker%1:18:00::|)
@@ -41546,7 +41532,7 @@
 (CONCEPT
   ONT::SCOUT
   (INHERIT
-    ONT::PERSON)
+    ONT::PROFESSIONAL)
   (OVERLAP
     WN::|scout%1:18:00::|))
 
