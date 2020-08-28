@@ -261,4 +261,35 @@
   </syn-feats>
  </syntax>
  </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="owing" remaining-words="to" />
+ </morph>
+ <example text="changes owing to a damaged bulb">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::due-to
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(or
+                                              deepsemlex::s
+                                              deepsemlex::np)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+    pre-vp
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
 </dsl>

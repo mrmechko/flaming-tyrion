@@ -2172,6 +2172,7 @@ Class: since-until
 # ONT type ont::since
 Class: since
   SubClassOf: since-until
+  SubClassOf: _ground only ((FLT_time or FLT_situation) and F_type some (any-time-object or event-of-change)) and _ground some owl:Thing
 
 # ONT type ont::until
 Class: until
@@ -2313,21 +2314,6 @@ Class: time-defined-by-duration
   Annotations: rdfs:comment "times defined by events"
   SubClassOf: time-interval
 
-# ONT type ont::month
-Class: month
-  Annotations: rdfs:comment "time interval of a named month"
-  SubClassOf: time-interval
-
-# ONT type ont::week
-Class: week
-  Annotations: rdfs:comment "time interval of a week"
-  SubClassOf: time-interval
-
-# ONT type ont::day
-Class: day
-  Annotations: rdfs:comment "time interval of a day"
-  SubClassOf: time-interval
-
 # ONT type ont::time-point
 Class: time-point
   SubClassOf: time-object
@@ -2342,6 +2328,21 @@ Class: date-object-on
 Class: date-object-in
   Annotations: rdfs:comment "temporal objects that use IN - e.g., in June"
   SubClassOf: time-object
+
+# ONT type ont::month
+Class: month
+  Annotations: rdfs:comment "time interval of a named month"
+  SubClassOf: date-object-in
+
+# ONT type ont::week
+Class: week
+  Annotations: rdfs:comment "time interval of a week"
+  SubClassOf: date-object-in
+
+# ONT type ont::day
+Class: day
+  Annotations: rdfs:comment "time interval of a day"
+  SubClassOf: date-object-in
 
 # ONT type ont::today
 Class: today
@@ -4789,7 +4790,7 @@ Class: activity-event
 Class: cause-effect
   Annotations: rdfs:comment "an AGENT causes some event to occur or proposition to become true. Usually the verbs that fall under this category are very general causal verbs that take other events as their arguments and are positive causes- i.e., events are caused to happen as opposed to negative causes as in an event is prevented."
   SubClassOf: acting
-  SubClassOf: (FLT_situation and F_cause some (V_force or V_agentive) and F_trajectory some V_-)
+  SubClassOf: (FLT_situation and F_cause some V_agentive and F_trajectory some V_-)
   SubClassOf: _agent only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation)) and _agent some owl:Thing
   SubClassOf: _affected only ((FLT_situation or FLT_abstr-obj or FLT_phys-obj))
   SubClassOf: _formal only ((FLT_situation or FLT_abstr-obj) and F_type some (situation-root or property-val))
@@ -4801,7 +4802,7 @@ Class: inhibit-effect
   SubClassOf: (FLT_situation and F_cause some (V_force or V_agentive) and F_trajectory some V_-)
   SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation)) and _affected some owl:Thing
   SubClassOf: _formal only (FLT_situation)
-  SubClassOf: _agent only ((FLT_phys-obj or FLT_abstr-obj))
+  SubClassOf: _agent only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation))
 
 # ONT type ont::have-influence
 Class: have-influence
@@ -5298,7 +5299,7 @@ Class: membership
 Class: wear
   SubClassOf: event-of-action
   SubClassOf: (FLT_situation and F_aspect some V_unbounded and F_time-span some V_extended)
-  SubClassOf: _neutral only (FLT_phys-obj) and _neutral some owl:Thing
+  SubClassOf: _neutral only (FLT_phys-obj and F_type some attire) and _neutral some owl:Thing
 
 # ONT type ont::appears-to-have-property
 Class: appears-to-have-property
@@ -6492,7 +6493,7 @@ Class: trajectory
 # ONT type ont::value-cost
 Class: value-cost
   SubClassOf: tangible-abstract-object
-  SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj)) and _figure some owl:Thing
+  SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation)) and _figure some owl:Thing
   SubClassOf: _extent only (FLT_abstr-obj and F_scale some money-scale and F_object-function some V_currency) and _extent some owl:Thing
 
 # ONT type ont::expense
@@ -14755,8 +14756,8 @@ Class: earning
 Class: borrow
   SubClassOf: commerce-collect
 
-# ONT type ont::purchase
-Class: purchase
+# ONT type ont::commerce-buy
+Class: commerce-buy
   SubClassOf: commerce
   SubClassOf: (FLT_situation and F_aspect some V_dynamic)
   SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation)) and _affected some owl:Thing
@@ -14824,7 +14825,7 @@ Class: lend
 Class: supply
   SubClassOf: giving
   SubClassOf: _agent only owl:Thing
-  SubClassOf: _affected only (FLT_phys-obj)
+  SubClassOf: _affected only owl:Thing
 
 # ONT type ont::surrender
 Class: surrender
@@ -17505,6 +17506,10 @@ Class: maximize
 Class: fluctuate
   SubClassOf: change
 
+# ONT type ont::stabilize
+Class: stabilize
+  SubClassOf: change
+
 # ONT type ont::translate
 Class: translate
   SubClassOf: adjust
@@ -19230,13 +19235,13 @@ DisjointClasses: time-deadline-rel, time-culmination-rel, time-duration-rel, int
 DisjointClasses: date-object-in, date-object-on, time-point, time-loc, time-interval
 
 # children of ont::time-interval
-DisjointClasses: day, week, month, time-defined-by-duration, time-defined-by-event, recurring-time-of-day, phase
+DisjointClasses: time-defined-by-duration, time-defined-by-event, recurring-time-of-day, phase
+
+# children of ont::date-object-in
+DisjointClasses: year-stage, day-stage, century, year, era, time-span, day, week, month
 
 # children of ont::time-loc
 DisjointClasses: tomorrow, yesterday, today
-
-# children of ont::date-object-in
-DisjointClasses: year-stage, day-stage, century, year, era, time-span
 
 # children of ont::date-object-on
 DisjointClasses: recurring-event, day-name
@@ -21105,7 +21110,7 @@ DisjointClasses: discrete-color-scale, gender-scale, quantity-related-scale
 DisjointClasses: collect, find, reserve, acquire-by-action, earning, commerce, amass, retrieve
 
 # children of ont::commerce
-DisjointClasses: lease-hire, purchase, commerce-collect
+DisjointClasses: lease-hire, commerce-buy, commerce-collect
 
 # children of ont::relinquish
 DisjointClasses: discard, lose, surrender, giving
@@ -21171,7 +21176,7 @@ DisjointClasses: die, live, be-born
 DisjointClasses: drought, flooding, atmospheric-event
 
 # children of ont::change
-DisjointClasses: fluctuate, transformation, object-change, change-state
+DisjointClasses: stabilize, fluctuate, transformation, object-change, change-state
 
 # children of ont::change-state
 DisjointClasses: change-state-action, destroy, reviving, collapse, explode, change-integrity

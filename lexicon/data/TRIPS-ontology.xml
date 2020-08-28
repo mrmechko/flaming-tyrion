@@ -11,6 +11,10 @@
 <WORD name="century" />
 <MAPPING to="wordnet" name="century%1:28:00::" />
 </ONTTYPE>
+<ONTTYPE name="day">
+<WORD name="day" />
+<WORD name="weekday" />
+</ONTTYPE>
 <ONTTYPE name="day-stage">
 <WORD name="daytime" />
 <WORD name="nighttime" />
@@ -82,9 +86,15 @@
 <MAPPING to="wordnet" name="era%1:28:00::" />
 <MAPPING to="wordnet" name="era%1:28:01::" />
 </ONTTYPE>
+<ONTTYPE name="month">
+<WORD name="month" />
+</ONTTYPE>
 <ONTTYPE name="time-span">
 <WORD name="future" />
 <WORD name="past" />
+</ONTTYPE>
+<ONTTYPE name="week">
+<WORD name="week" />
 </ONTTYPE>
 <ONTTYPE name="year">
 <WORD name="year" />
@@ -213,13 +223,6 @@
 <MAPPING to="wordnet" name="time%1:28:00::" />
 <MAPPING to="wordnet" name="time%1:28:05::" />
 <MAPPING to="wordnet" name="time_period%1:28:00::" />
-<ONTTYPE name="day">
-<WORD name="day" />
-<WORD name="weekday" />
-</ONTTYPE>
-<ONTTYPE name="month">
-<WORD name="month" />
-</ONTTYPE>
 <ONTTYPE name="phase">
 <WORD name="phase" />
 <WORD name="stage" />
@@ -248,9 +251,6 @@
 <WORD name="stopover" />
 <MAPPING to="wordnet" name="halftime%1:28:00::" />
 <MAPPING to="wordnet" name="quarter%1:28:01::" />
-</ONTTYPE>
-<ONTTYPE name="week">
-<WORD name="week" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="time-loc">
@@ -6892,6 +6892,7 @@
 <MAPPING to="wordnet" name="adequate%5:00:00:sufficient:00" />
 </ONTTYPE>
 <ONTTYPE name="inadequate">
+<WORD name="in_need" />
 <WORD name="out_of" />
 <WORD name="inadequate" />
 <WORD name="insufficient" />
@@ -8030,7 +8031,6 @@
 <MAPPING to="wordnet" name="composed%3:00:00::" />
 </ONTTYPE>
 <ONTTYPE name="desirous">
-<WORD name="in_need" />
 <WORD name="desirous" />
 <MAPPING to="wordnet" name="desirous%3:00:00::" />
 <MAPPING to="wordnet" name="avariciously%4:02:00::" />
@@ -12696,6 +12696,7 @@
 <WORD name="sideways" />
 <WORD name="straight" />
 <WORD name="through" />
+<WORD name="trend" />
 <WORD name="upwind" />
 <WORD name="way" />
 <MAPPING to="wordnet" name="direction%1:15:00::" />
@@ -13552,6 +13553,7 @@
 <WORD name="because" />
 <WORD name="since" />
 <ONTTYPE name="due-to">
+<WORD name="owing_to" />
 <WORD name="due" />
 </ONTTYPE>
 <ONTTYPE name="reason-informal">
@@ -16742,7 +16744,6 @@
 <WORD name="light" />
 <WORD name="load" />
 <WORD name="socket" />
-<WORD name="source" />
 <WORD name="tab" />
 <WORD name="terminal" />
 <WORD name="viewfinder" />
@@ -20187,7 +20188,6 @@
 </ONTTYPE>
 <ONTTYPE name="enable">
 <WORD name="enable" />
-<WORD name="provide" />
 <MAPPING to="wordnet" name="enable%2:30:00::" />
 <ONTTYPE name="facilitate">
 <WORD name="ease" />
@@ -21694,6 +21694,14 @@
 <MAPPING to="wordnet" name="gather%2:35:04::" />
 </ONTTYPE>
 <ONTTYPE name="commerce">
+<ONTTYPE name="commerce-buy">
+<WORD name="buy" />
+<WORD name="import" />
+<WORD name="purchase" />
+<MAPPING to="wordnet" name="purchase%1:04:00::" />
+<MAPPING to="wordnet" name="buy%2:40:00::" />
+<MAPPING to="wordnet" name="import%2:40:00::" />
+</ONTTYPE>
 <ONTTYPE name="commerce-collect">
 <WORD name="bill" />
 <WORD name="charge" />
@@ -21713,12 +21721,6 @@
 <MAPPING to="wordnet" name="rent%2:41:00::" />
 <MAPPING to="wordnet" name="rent%2:41:01::" />
 <MAPPING to="wordnet" name="lease%2:40:00::" />
-</ONTTYPE>
-<ONTTYPE name="purchase">
-<WORD name="buy" />
-<WORD name="purchase" />
-<MAPPING to="wordnet" name="purchase%1:04:00::" />
-<MAPPING to="wordnet" name="buy%2:40:00::" />
 </ONTTYPE>
 </ONTTYPE>
 <ONTTYPE name="earning">
@@ -22921,6 +22923,10 @@
 <MAPPING to="wordnet" name="line%1:15:01::" />
 </ONTTYPE>
 </ONTTYPE>
+</ONTTYPE>
+<ONTTYPE name="stabilize">
+<WORD name="flood" />
+<MAPPING to="wordnet" name="stabilize%2:30:01::" />
 </ONTTYPE>
 <ONTTYPE name="transformation">
 <WORD name="make" />
@@ -24221,9 +24227,7 @@
 <WORD name="bus" />
 <WORD name="carry" />
 <WORD name="convey" />
-<WORD name="export" />
 <WORD name="ferry" />
-<WORD name="import" />
 <WORD name="ship" />
 <WORD name="shuttle" />
 <WORD name="traffic" />
@@ -24576,9 +24580,11 @@
 </ONTTYPE>
 <ONTTYPE name="commerce-sell">
 <WORD name="cash" />
+<WORD name="export" />
 <WORD name="sell" />
 <MAPPING to="wordnet" name="trade%2:40:01::" />
 <MAPPING to="wordnet" name="sell%2:40:00::" />
+<MAPPING to="wordnet" name="export%2:40:00::" />
 <ONTTYPE name="lend">
 <WORD name="advance" />
 <WORD name="hock" />
@@ -25595,7 +25601,6 @@
 <WORD name="scour" />
 <WORD name="scout" />
 <WORD name="search" />
-<WORD name="shop" />
 <WORD name="sift" />
 <WORD name="survey" />
 <WORD name="trawl" />
@@ -26496,6 +26501,7 @@
 <ONTTYPE name="owe">
 <WORD name="owe" />
 <MAPPING to="wordnet" name="owe%2:40:01::" />
+<MAPPING to="wordnet" name="owe%2:40:00::" />
 </ONTTYPE>
 <ONTTYPE name="position">
 <WORD name="mirror" />

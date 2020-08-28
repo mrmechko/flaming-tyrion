@@ -7,62 +7,19 @@
   &quot;time interval of a day&quot;
  </comment>
  <relation label="inherit">
-  ont::time-interval
+  ont::date-object-in
  </relation>
  </concept>
  <concept name="time" />
  <concept name="ont::root" />
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-time-object">
+ <concept name="ont::date-object-in">
+ <comment>
+  &quot;temporal objects that use IN - e.g., in June&quot;
+ </comment>
  <relation label="inherit">
-  ont::any-sem
+  ont::time-object
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="scale">ont::time-loc-scale</feat>
-  <feat name="time-function">any-time-function</feat>
-  <feat name="type">ont::any-time-object</feat>
- </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::extent" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">ont::duration-scale</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    time
-   </relation>
-   <feat name="scale">ont::duration-scale</feat>
-   <feat name="time-function">time-frame</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="tangible">+</feat>
- <feat name="type">ont::time-interval</feat>
- </sem-feats>
  <concept name="ont::time-object">
  <comment>
   &quot;objects that refer to temporal locations in some way&quot;
@@ -79,53 +36,24 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::time-interval">
+ <concept name="ont::any-time-object">
  <relation label="inherit">
-  ont::time-object
- </relation>
- <relation label="overlap">
-  wn::|interval%1:28:00::|
-  wn::|time_interval%1:28:00::|
-  wn::|time%1:28:03::|
-  wn::|clock_time%1:28:00::|
-  wn::|time%1:28:00::|
-  wn::|time%1:28:05::|
-  wn::|time_period%1:28:00::|
+  ont::any-sem
  </relation>
  <sem-feats>
   <relation label="inherit">
    time
   </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::time-interval</feat>
+  <feat name="scale">ont::time-loc-scale</feat>
+  <feat name="time-function">any-time-function</feat>
+  <feat name="type">ont::any-time-object</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::extent" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="scale">ont::duration-scale</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     time
-    </relation>
-    <feat name="scale">ont::duration-scale</feat>
-    <feat name="time-function">time-frame</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root

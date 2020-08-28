@@ -8850,12 +8850,7 @@
     situation
    </relation>
    <feat name="trajectory">-</feat>
-   <feat name="cause">
-   <or>
-    force
-    agentive
-   </or>
-   </feat>
+   <feat name="cause">agentive</feat>
    <feat name="type">ont::cause-effect</feat>
   </sem-feats>
   <sem-frame>
@@ -11427,6 +11422,33 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::commerce-buy">
+  <relation label="inherit">
+   ont::commerce
+  </relation>
+  <relation label="overlap">
+   wn::|buy%2:40:00::|
+   wn::|purchase%1:04:00::|
+   wn::|purchase%2:40:00::|
+   wn::|import%2:40:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="aspect">dynamic</feat>
+   <feat name="type">ont::commerce-buy</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::affected">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::commerce-collect">
   <relation label="inherit">
    ont::commerce
@@ -11483,6 +11505,7 @@
   <relation label="overlap">
    wn::|merchandise%2:40:00::|
    wn::|sell%2:40:00::|
+   wn::|export%2:40:00::|
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -14936,7 +14959,7 @@
    &quot;time interval of a day&quot;
   </comment>
   <relation label="inherit">
-   ont::time-interval
+   ont::date-object-in
   </relation>
  </concept>
  <concept name="ont::day-duration">
@@ -26974,6 +26997,7 @@
     <or>
      <concept name="phys-obj" />
      <concept name="abstr-obj" />
+     <concept name="situation" />
     </or>
    </role-restr-map>
    <role-restr-map roles="ont::formal" optional="optional">
@@ -32893,7 +32917,7 @@
    &quot;time interval of a named month&quot;
   </comment>
   <relation label="inherit">
-   ont::time-interval
+   ont::date-object-in
   </relation>
  </concept>
  <concept name="ont::month-name">
@@ -38515,6 +38539,7 @@
   </relation>
   <relation label="overlap">
    wn::|owe%2:40:01::|
+   wn::|owe%2:40:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::neutral2" optional="optional">
@@ -43097,32 +43122,6 @@
   <sem-frame>
    <role-restr-map roles="ont::neutral" optional="optional">
     <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::purchase">
-  <relation label="inherit">
-   ont::commerce
-  </relation>
-  <relation label="overlap">
-   wn::|buy%2:40:00::|
-   wn::|purchase%1:04:00::|
-   wn::|purchase%2:40:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
-   <feat name="type">ont::purchase</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::affected">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-     <concept name="situation" />
-    </or>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -49573,6 +49572,22 @@
   <relation label="inherit">
    ont::since-until
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::ground" optional="optional">
+    <sem-feats>
+     <or>
+      <concept name="time" />
+      <concept name="situation" />
+     </or>
+     <feat name="type">
+     <or>
+      ont::any-time-object
+      ont::event-of-change
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::since-until">
   <relation label="inherit">
@@ -51528,6 +51543,14 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::stabilize">
+  <relation label="inherit">
+   ont::change
+  </relation>
+  <relation label="overlap">
+   wn::|stabilize%2:30:01::|
+  </relation>
+ </concept>
  <concept name="ont::stage-val">
   <relation label="inherit">
    ont::process-status-val
@@ -52821,7 +52844,7 @@
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected" optional="optional">
-    <concept name="phys-obj" />
+    <concept name="t" />
    </role-restr-map>
    <role-restr-map roles="ont::agent" optional="optional">
     <concept name="t" />
@@ -56908,6 +56931,7 @@
     <or>
      <concept name="phys-obj" />
      <concept name="abstr-obj" />
+     <concept name="situation" />
     </or>
    </role-restr-map>
   </sem-frame>
@@ -57767,7 +57791,12 @@
   </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::neutral">
-    <concept name="phys-obj" />
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="type">ont::attire</feat>
+    </sem-feats>
    </role-restr-map>
   </sem-frame>
  </concept>
@@ -57811,7 +57840,7 @@
    &quot;time interval of a week&quot;
   </comment>
   <relation label="inherit">
-   ont::time-interval
+   ont::date-object-in
   </relation>
  </concept>
  <concept name="ont::week-duration">

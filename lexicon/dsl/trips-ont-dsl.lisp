@@ -7806,10 +7806,7 @@
     (INHERIT
       SITUATION)
     (TRAJECTORY -)
-    (CAUSE
-     (OR
-       FORCE
-       AGENTIVE))
+    (CAUSE AGENTIVE)
     (TYPE ONT::CAUSE-EFFECT))
   (SEM-FRAME
     (ONT::FORMAL
@@ -10097,6 +10094,30 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::COMMERCE-BUY
+  (INHERIT
+    ONT::COMMERCE)
+  (OVERLAP
+    WN::|buy%2:40:00::|
+    WN::|purchase%1:04:00::|
+    WN::|purchase%2:40:00::|
+    WN::|import%2:40:00::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (ASPECT DYNAMIC)
+    (TYPE ONT::COMMERCE-BUY))
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION)))))
+
+(CONCEPT
   ONT::COMMERCE-COLLECT
   (INHERIT
     ONT::COMMERCE)
@@ -10145,7 +10166,8 @@
     ONT::GIVING)
   (OVERLAP
     WN::|merchandise%2:40:00::|
-    WN::|sell%2:40:00::|)
+    WN::|sell%2:40:00::|
+    WN::|export%2:40:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -13102,7 +13124,7 @@
   ONT::DAY
   (COMMENT "time interval of a day")
   (INHERIT
-    ONT::TIME-INTERVAL))
+    ONT::DATE-OBJECT-IN))
 
 (CONCEPT
   ONT::DAY-DURATION
@@ -23437,7 +23459,9 @@
        (CONCEPT
          PHYS-OBJ)
        (CONCEPT
-         ABSTR-OBJ))
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
      OPTIONAL)
     (ONT::FORMAL
      (CONCEPT
@@ -28514,7 +28538,7 @@
   ONT::MONTH
   (COMMENT "time interval of a named month")
   (INHERIT
-    ONT::TIME-INTERVAL))
+    ONT::DATE-OBJECT-IN))
 
 (CONCEPT
   ONT::MONTH-NAME
@@ -33235,7 +33259,8 @@
   (INHERIT
     ONT::EVENT-OF-STATE)
   (OVERLAP
-    WN::|owe%2:40:01::|)
+    WN::|owe%2:40:01::|
+    WN::|owe%2:40:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL2
      (CONCEPT
@@ -37229,29 +37254,6 @@
      (CONCEPT
        T)
      OPTIONAL)))
-
-(CONCEPT
-  ONT::PURCHASE
-  (INHERIT
-    ONT::COMMERCE)
-  (OVERLAP
-    WN::|buy%2:40:00::|
-    WN::|purchase%1:04:00::|
-    WN::|purchase%2:40:00::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (ASPECT DYNAMIC)
-    (TYPE ONT::PURCHASE))
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)
-       (CONCEPT
-         SITUATION)))))
 
 (CONCEPT
   ONT::PURCHASE-COST
@@ -42923,7 +42925,20 @@
 (CONCEPT
   ONT::SINCE
   (INHERIT
-    ONT::SINCE-UNTIL))
+    ONT::SINCE-UNTIL)
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           TIME)
+         (CONCEPT
+           SITUATION))
+       (TYPE
+        (OR
+          ONT::ANY-TIME-OBJECT
+          ONT::EVENT-OF-CHANGE)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::SINCE-UNTIL
@@ -44611,6 +44626,13 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::STABILIZE
+  (INHERIT
+    ONT::CHANGE)
+  (OVERLAP
+    WN::|stabilize%2:30:01::|))
+
+(CONCEPT
   ONT::STAGE-VAL
   (INHERIT
     ONT::PROCESS-STATUS-VAL))
@@ -45736,7 +45758,7 @@
   (SEM-FRAME
     (ONT::AFFECTED
      (CONCEPT
-       PHYS-OBJ)
+       T)
      OPTIONAL)
     (ONT::AGENT
      (CONCEPT
@@ -49223,7 +49245,9 @@
        (CONCEPT
          PHYS-OBJ)
        (CONCEPT
-         ABSTR-OBJ)))))
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION)))))
 
 (CONCEPT
   ONT::VEGETABLE
@@ -49937,8 +49961,10 @@
     (TYPE ONT::WEAR))
   (SEM-FRAME
     (ONT::NEUTRAL
-     (CONCEPT
-       PHYS-OBJ))))
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::ATTIRE)))))
 
 (CONCEPT
   ONT::WEATHER
@@ -49975,7 +50001,7 @@
   ONT::WEEK
   (COMMENT "time interval of a week")
   (INHERIT
-    ONT::TIME-INTERVAL))
+    ONT::DATE-OBJECT-IN))
 
 (CONCEPT
   ONT::WEEK-DURATION

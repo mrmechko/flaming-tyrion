@@ -6,6 +6,22 @@
  <relation label="inherit">
   ont::since-until
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="time" />
+     <concept name="situation" />
+    </or>
+    <feat name="type">
+    <or>
+     ont::any-time-object
+     ont::event-of-change
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -112,11 +128,56 @@
   <feat name="type">ont::temporal-predicate</feat>
  </sem-feats>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <or>
+   <concept name="time" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="time" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::temporal-location">
+ <relation label="inherit">
+  ont::temporal-modifier
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+    <concept name="time" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::since-until">
  <relation label="inherit">
   ont::event-time-rel
  </relation>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="time" />
+    <concept name="situation" />
+   </or>
+   <feat name="type">
+   <or>
+    ont::any-time-object
+    ont::event-of-change
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::event-time-rel">
  <relation label="inherit">
   ont::temporal-location
@@ -136,35 +197,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::temporal-location">
- <relation label="inherit">
-  ont::temporal-modifier
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-    <concept name="situation" />
-    <concept name="time" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <or>
-   <concept name="time" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="time" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::temporal-modifier">
  <relation label="inherit">
   ont::temporal-predicate

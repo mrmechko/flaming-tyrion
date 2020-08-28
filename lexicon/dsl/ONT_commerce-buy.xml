@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::purchase">
+ <concept name="ont::commerce-buy">
  <relation label="inherit">
   ont::commerce
  </relation>
@@ -10,13 +10,14 @@
   wn::|buy%2:40:00::|
   wn::|purchase%1:04:00::|
   wn::|purchase%2:40:00::|
+  wn::|import%2:40:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
   <feat name="aspect">dynamic</feat>
-  <feat name="type">ont::purchase</feat>
+  <feat name="type">ont::commerce-buy</feat>
  </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::affected">
@@ -327,7 +328,7 @@
   situation
  </relation>
  <feat name="aspect">dynamic</feat>
- <feat name="type">ont::purchase</feat>
+ <feat name="type">ont::commerce-buy</feat>
  </sem-feats>
  <concept name="ont::commerce">
  <relation label="inherit">
@@ -523,7 +524,7 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::purchase
+  ont::commerce-buy
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-xp-np-templ" />
@@ -543,6 +544,31 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="import" />
+  <forms>
+   -VB
+   <nom>
+    <word first-word="import" />
+   </nom>
+  </forms>
+ </morph>
+ <example text="import the goods">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::commerce-buy
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-np-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="purchase" />
   <forms>
    -VB
@@ -558,7 +584,7 @@
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">
-  ont::purchase
+  ont::commerce-buy
  </relation>
  <syntax>
   <template-call template="ont::agent-affected-xp-np-templ" />
