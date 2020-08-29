@@ -16948,15 +16948,13 @@
        ABSTR-OBJ)
      OPTIONAL)
     (ONT::AFFECTED
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           SITUATION)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ))
-       (TANGIBLE +))
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ))
      OPTIONAL)
     (ONT::AGENT
      (OR
