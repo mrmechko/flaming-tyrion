@@ -441,6 +441,13 @@
     (TYPE ONT::ACCOUNT-PAYABLE)))
 
 (CONCEPT
+  ONT::ACCOUNTANT
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|accountant%1:18:00::|))
+
+(CONCEPT
   ONT::ACCUSE
   (INHERIT
     ONT::LOADED-CLAIM)
@@ -14443,6 +14450,15 @@
     WN::|out%4:02:04::|))
 
 (CONCEPT
+  ONT::DIRECTION-OVER
+  (COMMENT
+   "relates to changes in position as in -hand it over to me- or changes in orientation as in -knock the lamp over-")
+  (INHERIT
+    ONT::DIRECTION)
+  (OVERLAP
+    WN::|over%4:02:01::|))
+
+(CONCEPT
   ONT::DIRECTION-RIGHTWARD
   (COMMENT "direction rightward wrt respect to a given entity (the GROUND)")
   (INHERIT
@@ -26924,6 +26940,15 @@
     (ORIENTATION POS)
     (SCALE ONT::MANAGEABILITY-SCALE)
     (TYPE ONT::MANAGEABLE)))
+
+(CONCEPT
+  ONT::MANAGER
+  (COMMENT
+   "Person that performs a managing role, e.g., boss, ceo, executive etc")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|head%1:18:00::|))
 
 (CONCEPT
   ONT::MANAGING

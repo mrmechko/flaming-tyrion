@@ -1926,6 +1926,11 @@ Class: direction
   SubClassOf: _ground only (FLT_phys-obj) and _ground some owl:Thing
   SubClassOf: _norole only owl:Thing
 
+# ONT type ont::direction-over
+Class: direction-over
+  Annotations: rdfs:comment "relates to changes in position as in -hand it over to me- or changes in orientation as in -knock the lamp over-"
+  SubClassOf: direction
+
 # ONT type ont::direction-wrt-entity
 Class: direction-wrt-entity
   Annotations: rdfs:comment "direction wrt respect to a given entity (the GROUND), i.e., the relation between the FIGUREs orginal and final position is defined with respect to the GROUND"
@@ -3072,6 +3077,10 @@ Class: professional
   SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj))
   SubClassOf: _norole only owl:Thing
 
+# ONT type ont::accountant
+Class: accountant
+  SubClassOf: professional
+
 # ONT type ont::athlete
 Class: athlete
   SubClassOf: professional
@@ -3080,6 +3089,11 @@ Class: athlete
 Class: author
   SubClassOf: professional
   SubClassOf: _figure only (FLT_phys-obj and F_origin some V_artifact and F_information some V_information-content)
+
+# ONT type ont::manager
+Class: manager
+  Annotations: rdfs:comment "Person that performs a managing role, e.g., boss, ceo, executive etc"
+  SubClassOf: professional
 
 # ONT type ont::official
 Class: official
@@ -19187,7 +19201,7 @@ DisjointClasses: to-loc, goal-as-containment, goal-as-on, to, resulting-state
 DisjointClasses: from-loc, from
 
 # children of ont::direction
-DisjointClasses: cardinal-direction, direction-wrt-containment, direction-wrt-verticality, direction-rotation, direction-wrt-entity
+DisjointClasses: cardinal-direction, direction-wrt-containment, direction-wrt-verticality, direction-rotation, direction-wrt-entity, direction-over
 
 # children of ont::direction-wrt-entity
 DisjointClasses: away, towards, direction-leftward, direction-rightward, direction-backward, direction-forward
@@ -19352,7 +19366,7 @@ DisjointClasses: crustaceans, mollusks, insect
 DisjointClasses: recipient, addressee, unfortunate, entrant, male-person, female-person, consumer, traveller, professional, person-reln, family-relation, user, referential-person
 
 # children of ont::professional
-DisjointClasses: assistant, health-professional, scout, scholar, official, author, athlete
+DisjointClasses: assistant, health-professional, scout, scholar, official, manager, author, athlete, accountant
 
 # children of ont::person-reln
 DisjointClasses: possessor-reln, person-defined-by-membership, communication-party, identity-and-origin, friend, specialist
