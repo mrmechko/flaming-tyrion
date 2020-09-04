@@ -3340,6 +3340,19 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::AT-LOC-RELATIVE
+  (COMMENT "prototypical locating of a FIGURE wrt a point-like GROUND")
+  (INHERIT
+    ONT::AT-LOC)
+  (SEM-FRAME
+    (ONT::GROUND
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::LOC-WRT-ORIENTATION))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::AT-RISK-VAL
   (INHERIT
     ONT::LIKELY-VAL))

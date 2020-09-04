@@ -1573,6 +1573,12 @@ Class: at-loc
   SubClassOf: position-as-point-reln
   SubClassOf: _ground only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation) and F_type some (phys-object or tangible-abstract-object or event-type or scale-value-function) and F_scale some (not (time-measure-scale or rate-scale or money-scale or number-scale))) and _ground some owl:Thing
 
+# ONT type ont::at-loc-relative
+Class: at-loc-relative
+  Annotations: rdfs:comment "prototypical locating of a FIGURE wrt a point-like GROUND"
+  SubClassOf: at-loc
+  SubClassOf: _ground only (FLT_phys-obj and F_type some loc-wrt-orientation) and _ground some owl:Thing
+
 # ONT type ont::loc-where-rel
 Class: loc-where-rel
   Annotations: rdfs:comment "relative clause relations that could be at-loc or in-loc, e.g., a place where it never rains; the city where I live"
