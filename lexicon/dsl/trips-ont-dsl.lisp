@@ -2792,6 +2792,14 @@
     (TYPE ONT::ARTIFICIALITY-VAL)))
 
 (CONCEPT
+  ONT::ARTIST
+  (COMMENT "a person who creates art/performs artistic work")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|artist%1:18:00::|))
+
+(CONCEPT
   ONT::ARTIST-CRAFTSMAN-VAL
   (INHERIT
     ONT::FAMOUS-PERSON-VAL)
@@ -9276,6 +9284,14 @@
     (TYPE ONT::CLEAN-VAL)))
 
 (CONCEPT
+  ONT::CLEANER
+  (COMMENT "a person whose occupation is cleaning")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|cleaner%1:18:00::|))
+
+(CONCEPT
   ONT::CLEANLINESS-SCALE
   (INHERIT
     ONT::EVALUATION-SCALE)
@@ -11298,6 +11314,24 @@
       ABSTR-OBJ)
     (SCALE ONT::CONSTRICTION-SCALE)
     (TYPE ONT::CONSTRICTION-SCALE)))
+
+(CONCEPT
+  ONT::CONSTRUCTION-WORKER
+  (COMMENT
+   "a person whose work is related to construction of buildings etc, e.g., bricklayer, builder, plumber and roofer")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|builder%1:18:00::|
+    WN::|construction_worker%1:18:00::|))
+
+(CONCEPT
+  ONT::CONSULTANT
+  (COMMENT "an expert whose job is to give advise")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|consultant%1:18:00::|))
 
 (CONCEPT
   ONT::CONSUME
@@ -13981,6 +14015,14 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::DEVELOPER-PROGRAMMER
+  (COMMENT "a person who designs, writes and tests computer programs")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|programmer%1:18:00::|))
+
+(CONCEPT
   ONT::DEVICE
   (INHERIT
     ONT::MANUFACTURED-OBJECT)
@@ -15856,6 +15898,14 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::EDITOR
+  (COMMENT "a person responsible for editorial aspect of publication")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|editor%1:18:00::|))
+
+(CONCEPT
   ONT::EDUCATION-FACILITY
   (INHERIT
     ONT::FACILITY)
@@ -16557,6 +16607,15 @@
     ONT::PERSON)
   (OVERLAP
     WN::|entrant%1:18:02::|))
+
+(CONCEPT
+  ONT::ENTREPRENEUR
+  (COMMENT
+   "a person who engages in industrial enterprise, organizes business venture")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|businessperson%1:18:00::|))
 
 (CONCEPT
   ONT::ENVIOUS
@@ -32325,87 +32384,87 @@
   (INHERIT
     ONT::OCCUPATIONAL-VAL)
   (OVERLAP
-    WN::|scholarly%3:00:00::|
-    WN::|civilian%3:00:00::|
-    WN::|tonsorial%3:01:00::|
-    WN::|pyrrhic%3:01:00::|
-    WN::|secretarial%3:01:00::|
-    WN::|gubernatorial%3:01:00::|
-    WN::|doctoral%3:01:00::|
-    WN::|doctorial%3:01:00::|
-    WN::|consular%3:01:00::|
-    WN::|masonic%3:01:01::|
-    WN::|fictile%3:01:00::|
-    WN::|pyrotechnic%3:01:00::|
-    WN::|pyrotechnical%3:01:00::|
-    WN::|typographic%3:01:00::|
-    WN::|typographical%3:01:00::|
-    WN::|imperial%3:01:00::|
-    WN::|bibliothecal%3:01:00::|
-    WN::|bibliothecarial%3:01:00::|
-    WN::|solomonic%3:01:00::|
-    WN::|viceregal%3:01:00::|
-    WN::|professorial%3:01:00::|
-    WN::|priestly%3:01:00::|
-    WN::|hieratic%3:01:01::|
-    WN::|hieratical%3:01:01::|
-    WN::|sacerdotal%3:01:00::|
-    WN::|magisterial%3:01:00::|
-    WN::|pianistic%3:01:00::|
+    WN::|actuarial%3:01:00::|
+    WN::|ambassadorial%3:01:00::|
     WN::|apiarian%3:01:00::|
-    WN::|archidiaconal%3:01:00::|
-    WN::|ministerial%3:01:01::|
-    WN::|brahminic%3:01:00::|
-    WN::|brahminical%3:01:00::|
-    WN::|editorial%3:01:01::|
-    WN::|proconsular%3:01:00::|
-    WN::|equestrian%3:01:01::|
-    WN::|papal%3:01:00::|
     WN::|apostolic%3:01:01::|
     WN::|apostolical%3:01:01::|
-    WN::|pontifical%3:01:01::|
+    WN::|archducal%3:01:00::|
+    WN::|archidiaconal%3:01:00::|
+    WN::|bibliothecal%3:01:00::|
+    WN::|bibliothecarial%3:01:00::|
+    WN::|brahminic%3:01:00::|
+    WN::|brahminical%3:01:00::|
+    WN::|bureaucratic%3:01:00::|
+    WN::|carolean%3:01:00::|
+    WN::|caroline%3:01:00::|
+    WN::|censorial%3:01:00::|
+    WN::|civilian%3:00:00::|
+    WN::|clerical%3:01:00::|
+    WN::|clerical%3:01:01::|
     WN::|collegial%3:01:00::|
-    WN::|vicarial%3:01:00::|
+    WN::|consular%3:01:00::|
     WN::|czarist%3:01:00::|
     WN::|czaristic%3:01:00::|
-    WN::|tsarist%3:01:00::|
-    WN::|tsaristic%3:01:00::|
-    WN::|tzarist%3:01:00::|
-    WN::|bureaucratic%3:01:00::|
-    WN::|mediatorial%3:01:00::|
-    WN::|despotic%3:01:00::|
-    WN::|despotical%3:01:00::|
-    WN::|pastoral%3:01:00::|
-    WN::|censorial%3:01:00::|
-    WN::|meretricious%3:01:00::|
-    WN::|supervisory%3:01:00::|
-    WN::|clerical%3:01:01::|
-    WN::|tutorial%3:01:00::|
-    WN::|ambassadorial%3:01:00::|
-    WN::|caroline%3:01:00::|
-    WN::|carolean%3:01:00::|
-    WN::|senatorial%3:01:00::|
-    WN::|rabbinical%3:01:00::|
-    WN::|rabbinic%3:01:00::|
-    WN::|political%3:01:02::|
-    WN::|episcopal%3:01:00::|
-    WN::|pontifical%3:01:00::|
-    WN::|sartorial%3:01:00::|
-    WN::|patristic%3:01:00::|
-    WN::|patristical%3:01:00::|
-    WN::|praetorian%3:01:00::|
-    WN::|praetorial%3:01:00::|
-    WN::|pretorian%3:01:00::|
-    WN::|pretorial%3:01:00::|
-    WN::|mayoral%3:01:00::|
-    WN::|archducal%3:01:00::|
-    WN::|actuarial%3:01:00::|
-    WN::|ministerial%3:01:02::|
-    WN::|presidential%3:01:00::|
-    WN::|clerical%3:01:00::|
     WN::|demagogic%3:01:00::|
     WN::|demagogical%3:01:00::|
-    WN::|legal%3:01:01::|))
+    WN::|despotic%3:01:00::|
+    WN::|despotical%3:01:00::|
+    WN::|doctoral%3:01:00::|
+    WN::|doctorial%3:01:00::|
+    WN::|editorial%3:01:01::|
+    WN::|episcopal%3:01:00::|
+    WN::|equestrian%3:01:01::|
+    WN::|fictile%3:01:00::|
+    WN::|gubernatorial%3:01:00::|
+    WN::|hieratic%3:01:01::|
+    WN::|hieratical%3:01:01::|
+    WN::|imperial%3:01:00::|
+    WN::|legal%3:01:01::|
+    WN::|magisterial%3:01:00::|
+    WN::|masonic%3:01:01::|
+    WN::|mayoral%3:01:00::|
+    WN::|mediatorial%3:01:00::|
+    WN::|meretricious%3:01:00::|
+    WN::|ministerial%3:01:01::|
+    WN::|ministerial%3:01:02::|
+    WN::|papal%3:01:00::|
+    WN::|pastoral%3:01:00::|
+    WN::|patristic%3:01:00::|
+    WN::|patristical%3:01:00::|
+    WN::|pianistic%3:01:00::|
+    WN::|political%3:01:02::|
+    WN::|pontifical%3:01:00::|
+    WN::|pontifical%3:01:01::|
+    WN::|praetorial%3:01:00::|
+    WN::|praetorian%3:01:00::|
+    WN::|presidential%3:01:00::|
+    WN::|pretorial%3:01:00::|
+    WN::|pretorian%3:01:00::|
+    WN::|priestly%3:01:00::|
+    WN::|proconsular%3:01:00::|
+    WN::|professorial%3:01:00::|
+    WN::|pyrotechnic%3:01:00::|
+    WN::|pyrotechnical%3:01:00::|
+    WN::|pyrrhic%3:01:00::|
+    WN::|rabbinic%3:01:00::|
+    WN::|rabbinical%3:01:00::|
+    WN::|sacerdotal%3:01:00::|
+    WN::|sartorial%3:01:00::|
+    WN::|scholarly%3:00:00::|
+    WN::|secretarial%3:01:00::|
+    WN::|senatorial%3:01:00::|
+    WN::|solomonic%3:01:00::|
+    WN::|supervisory%3:01:00::|
+    WN::|tonsorial%3:01:00::|
+    WN::|tsarist%3:01:00::|
+    WN::|tsaristic%3:01:00::|
+    WN::|tutorial%3:01:00::|
+    WN::|typographic%3:01:00::|
+    WN::|typographical%3:01:00::|
+    WN::|tzarist%3:01:00::|
+    WN::|vicarial%3:01:00::|
+    WN::|viceregal%3:01:00::|))
 
 (CONCEPT
   ONT::OCCUPATIONAL-VAL
@@ -34115,27 +34174,27 @@
   (INHERIT
     ONT::ASSOCIATED-WITH-PERSON-VAL)
   (OVERLAP
+    WN::|amoristic%3:01:00::|
+    WN::|androgynous%3:01:01::|
+    WN::|anthropophagous%3:01:00::|
+    WN::|avuncular%3:01:00::|
+    WN::|bacchantic%3:01:00::|
+    WN::|bibliophilic%3:01:00::|
     WN::|bibliopolic%3:01:00::|
-    WN::|philhellenic%3:01:00::|
-    WN::|philhellene%3:01:00::|
+    WN::|cannibalistic%3:01:00::|
+    WN::|carpetbag%3:01:00::|
+    WN::|chauvinistic%3:01:00::|
+    WN::|entrepreneurial%3:01:00::|
     WN::|graecophile%3:01:00::|
     WN::|graecophilic%3:01:00::|
-    WN::|chauvinistic%3:01:00::|
-    WN::|amoristic%3:01:00::|
-    WN::|bacchantic%3:01:00::|
-    WN::|voyeuristic%3:01:00::|
-    WN::|voyeuristical%3:01:00::|
+    WN::|philhellene%3:01:00::|
+    WN::|philhellenic%3:01:00::|
     WN::|puerile%3:01:00::|
-    WN::|androgynous%3:01:01::|
-    WN::|avuncular%3:01:00::|
-    WN::|anthropophagous%3:01:00::|
-    WN::|carpetbag%3:01:00::|
-    WN::|entrepreneurial%3:01:00::|
-    WN::|bibliophilic%3:01:00::|
     WN::|sophistic%3:01:00::|
     WN::|valetudinarian%3:01:00::|
     WN::|valetudinary%3:01:00::|
-    WN::|cannibalistic%3:01:00::|))
+    WN::|voyeuristic%3:01:00::|
+    WN::|voyeuristical%3:01:00::|))
 
 (CONCEPT
   ONT::PERSON-DEFINED-BY-MEMBERSHIP
