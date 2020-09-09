@@ -915,6 +915,7 @@ Class: mental-construction
   Annotations: rdfs:comment "constructions of the mind: plans, goals, beliefs, ..."
   SubClassOf: tangible-abstract-object
   SubClassOf: (FLT_abstr-obj and F_information some V_mental-construct)
+  SubClassOf: _figure only owl:Thing
 
 # ONT type ont::relation
 Class: relation
@@ -3131,14 +3132,54 @@ Class: entrepreneur
   Annotations: rdfs:comment "a person who engages in industrial enterprise, organizes business venture"
   SubClassOf: professional
 
+# ONT type ont::food-industry-professional
+Class: food-industry-professional
+  Annotations: rdfs:comment "a person whose profession is related to food industry, e.g., chef, waiter, etc"
+  SubClassOf: professional
+
+# ONT type ont::gamer
+Class: gamer
+  Annotations: rdfs:comment "a person who plays video games for profession"
+  SubClassOf: professional
+
+# ONT type ont::legal-professional
+Class: legal-professional
+  Annotations: rdfs:comment "a person whose profession is related to law, such as practicing it, giving legal advice, conducting lawsuits, providing judgements on court cases, and administering law"
+  SubClassOf: professional
+
 # ONT type ont::manager
 Class: manager
   Annotations: rdfs:comment "Person that performs a managing role, e.g., boss, ceo, executive etc"
   SubClassOf: professional
 
+# ONT type ont::media-professional
+Class: media-professional
+  Annotations: rdfs:comment "a person whose profession is related to media, such as producing content for media, reporting, journalism"
+  SubClassOf: professional
+
+# ONT type ont::meteorologist
+Class: meteorologist
+  Annotations: rdfs:comment "a person whose profession is to study and predict weather conditions"
+  SubClassOf: professional
+
 # ONT type ont::official
 Class: official
   Annotations: rdfs:comment "Person that serves in some administrative role"
+  SubClassOf: professional
+
+# ONT type ont::pilot
+Class: pilot
+  Annotations: rdfs:comment "a person who operates aircrafts"
+  SubClassOf: professional
+
+# ONT type ont::police
+Class: police
+  Annotations: rdfs:comment "a person whose profession is in law enforcement"
+  SubClassOf: professional
+
+# ONT type ont::politics-professional
+Class: politics-professional
+  Annotations: rdfs:comment "a person whose profession is in law enforcement"
   SubClassOf: professional
 
 # ONT type ont::scholar
@@ -6345,6 +6386,7 @@ Class: feeling
 # ONT type ont::motive
 Class: motive
   SubClassOf: mental-construction
+  SubClassOf: _formal only owl:Thing
 
 # ONT type ont::ps-object
 Class: ps-object
@@ -19407,7 +19449,7 @@ DisjointClasses: crustaceans, mollusks, insect
 DisjointClasses: recipient, addressee, unfortunate, entrant, male-person, female-person, consumer, traveller, professional, person-reln, family-relation, user, referential-person
 
 # children of ont::professional
-DisjointClasses: assistant, health-professional, scout, scholar, official, manager, entrepreneur, editor, developer-programmer, consultant, construction-worker, cleaner, author, artist, athlete, accountant
+DisjointClasses: assistant, health-professional, scout, scholar, politics-professional, police, pilot, official, meteorologist, media-professional, manager, legal-professional, gamer, food-industry-professional, entrepreneur, editor, developer-programmer, consultant, construction-worker, cleaner, author, artist, athlete, accountant
 
 # children of ont::person-reln
 DisjointClasses: possessor-reln, person-defined-by-membership, communication-party, identity-and-origin, friend, specialist

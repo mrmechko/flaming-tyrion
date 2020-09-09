@@ -46,13 +46,53 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::mental-construction">
+ <comment>
+  &quot;constructions of the mind: plans, goals, beliefs, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::tangible-abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="information">mental-construct</feat>
+  <feat name="type">ont::mental-construction</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::tangible-abstract-object">
+ <comment>
+  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::tangible-abstract-object</feat>
+ </sem-feats>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="tangible">+</feat>
- <feat name="type">ont::tangible-abstract-object</feat>
+ <feat name="information">mental-construct</feat>
+ <feat name="type">ont::mental-construction</feat>
  </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -76,39 +116,9 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="information">mental-construct</feat>
- <feat name="type">ont::mental-construction</feat>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::tangible-abstract-object</feat>
  </sem-feats>
- <concept name="ont::tangible-abstract-object">
- <comment>
-  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
- </comment>
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::tangible-abstract-object</feat>
- </sem-feats>
- </concept>
- <concept name="ont::mental-construction">
- <comment>
-  &quot;constructions of the mind: plans, goals, beliefs, ...&quot;
- </comment>
- <relation label="inherit">
-  ont::tangible-abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="information">mental-construct</feat>
-  <feat name="type">ont::mental-construction</feat>
- </sem-feats>
- </concept>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root

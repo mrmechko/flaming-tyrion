@@ -420,6 +420,40 @@
   wn::|businessperson%1:18:00::|
  </relation>
  </concept>
+ <concept name="ont::food-industry-professional">
+ <comment>
+  &quot;a person whose profession is related to food industry, e.g., chef, waiter, etc&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|chef%1:18:01::|
+  wn::|cook%1:18:00::|
+  wn::|restaurant_attendant%1:18:00::|
+ </relation>
+ </concept>
+ <concept name="ont::gamer">
+ <comment>
+  &quot;a person who plays video games for profession&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ </concept>
+ <concept name="ont::legal-professional">
+ <comment>
+  &quot;a person whose profession is related to law, such as practicing it, giving legal advice, conducting lawsuits, providing judgements on court cases, and administering law&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|attorney%1:18:00::|
+  wn::|judge%1:18:00::|
+  wn::|lawman%1:18:00::|
+ </relation>
+ </concept>
  <concept name="ont::manager">
  <comment>
   &quot;Person that performs a managing role, e.g., boss, ceo, executive etc&quot;
@@ -429,6 +463,29 @@
  </relation>
  <relation label="overlap">
   wn::|head%1:18:00::|
+ </relation>
+ </concept>
+ <concept name="ont::media-professional">
+ <comment>
+  &quot;a person whose profession is related to media, such as producing content for media, reporting, journalism&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|journalist%1:18:00::|
+  wn::|reporter%1:18:00::|
+ </relation>
+ </concept>
+ <concept name="ont::meteorologist">
+ <comment>
+  &quot;a person whose profession is to study and predict weather conditions&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|meteorologist%1:18:00::|
  </relation>
  </concept>
  <concept name="ont::official">
@@ -442,6 +499,43 @@
   wn::|leader%1:18:00::|
   wn::|ruler%1:18:00::|
   wn::|head_of_state%1:18:00::|
+ </relation>
+ </concept>
+ <concept name="ont::pilot">
+ <comment>
+  &quot;a person who operates aircrafts&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|aviator%1:18:00::|
+ </relation>
+ </concept>
+ <concept name="ont::police">
+ <comment>
+  &quot;a person whose profession is in law enforcement&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|police_officer%1:18:00::|
+ </relation>
+ </concept>
+ <concept name="ont::politics-professional">
+ <comment>
+  &quot;a person whose profession is in law enforcement&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|politician%1:18:00::|
+  wn::|politician%1:18:01::|
+  wn::|president_of_the_united_states%1:04:00::|
+  wn::|senator%1:18:00::|
+  wn::|speaker%1:18:01::|
  </relation>
  </concept>
  <concept name="ont::scholar">
@@ -505,70 +599,6 @@
   ont::professional
   ont::count-pred-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="attorney" remaining-words="general" />
- </morph>
- <relation label="inherit">
-  ont::professional
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="attorney" />
- </morph>
- <relation label="inherit">
-  ont::professional
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
  </sense>
  <sense>
  <morph>
@@ -637,115 +667,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="congressman" />
- </morph>
- <relation label="inherit">
-  ont::professional
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="congressperson" />
- </morph>
- <relation label="inherit">
-  ont::professional
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="congresswoman" />
- </morph>
- <relation label="inherit">
-  ont::professional
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="dean" />
- </morph>
- <comment>
-  &quot;PROJECTOR-PURCHASING&quot;
- </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="designer" />
  </morph>
  <comment>
@@ -805,66 +726,11 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="gamer" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="governor" />
- </morph>
- <relation label="inherit">
-  ont::professional
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="guru" />
  </morph>
  <comment>
   &quot;HTML-PURCHASING-CORPUS&quot;
  </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="journalist" />
- </morph>
  <relation label="inherit">
   ont::professional
   ont::count-pred-templ
@@ -883,76 +749,12 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="lawyer" />
- </morph>
- <relation label="inherit">
-  ont::professional
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="mathematician" />
  </morph>
  <relation label="inherit">
   ont::professional
   ont::count-pred-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="mayor" />
- </morph>
- <relation label="inherit">
-  ont::professional
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
  </sense>
  <sense>
  <morph>
@@ -971,55 +773,6 @@
  <morph>
   <pos pos="n" />
   <word first-word="peer" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="pilot" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="police" />
-  <forms>
-   -NONE
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-3p-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="policeman" />
-  <forms>
-   -S-3P
-   <plur>
-    <word first-word="policemen" />
-   </plur>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="politician" />
  </morph>
  <relation label="inherit">
   ont::professional
@@ -1064,38 +817,6 @@
   ont::professional
   ont::count-pred-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="president" />
- </morph>
- <relation label="inherit">
-  ont::professional
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
  </sense>
  <sense>
  <morph>
@@ -1191,29 +912,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="registered" remaining-words="nurse" />
- </morph>
- <example text="check with your rn">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="reporter" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="researcher" />
  </morph>
  <relation label="inherit">
@@ -1229,51 +927,6 @@
  <comment>
   &quot;HTML-PURCHASING-CORPUS&quot;
  </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="senator" />
- </morph>
- <relation label="inherit">
-  ont::professional
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="speaker" />
- </morph>
- <example text="who is the speaker">
-  <provenance name="TRIPS"/>
- </example>
  <relation label="inherit">
   ont::professional
   ont::count-pred-templ
@@ -1352,39 +1005,6 @@
  <example text="personal trainer">
   <provenance name="TRIPS"/>
  </example>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="waiter" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="waitress" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="weatherman" />
- </morph>
- <comment>
-  &quot;WEATHER-FORECAST&quot;
- </comment>
  <relation label="inherit">
   ont::professional
   ont::count-pred-templ

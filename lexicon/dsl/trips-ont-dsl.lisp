@@ -19523,6 +19523,17 @@
     (TYPE ONT::FOOD-GRAINS)))
 
 (CONCEPT
+  ONT::FOOD-INDUSTRY-PROFESSIONAL
+  (COMMENT
+   "a person whose profession is related to food industry, e.g., chef, waiter, etc")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|chef%1:18:01::|
+    WN::|cook%1:18:00::|
+    WN::|restaurant_attendant%1:18:00::|))
+
+(CONCEPT
   ONT::FOOD-MEASURE-UNIT
   (INHERIT
     ONT::MEASURE-UNIT)
@@ -20125,6 +20136,12 @@
   (OVERLAP
     WN::|game%1:04:00::|
     WN::|game%1:04:01::|))
+
+(CONCEPT
+  ONT::GAMER
+  (COMMENT "a person who plays video games for profession")
+  (INHERIT
+    ONT::PROFESSIONAL))
 
 (CONCEPT
   ONT::GARDEN-GROUNDS
@@ -25282,6 +25299,17 @@
     ONT::ORGANIZATION-ABSTR))
 
 (CONCEPT
+  ONT::LEGAL-PROFESSIONAL
+  (COMMENT
+   "a person whose profession is related to law, such as practicing it, giving legal advice, conducting lawsuits, providing judgements on court cases, and administering law")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|attorney%1:18:00::|
+    WN::|judge%1:18:00::|
+    WN::|lawman%1:18:00::|))
+
+(CONCEPT
   ONT::LEMONADE-LIMEADE
   (INHERIT
     ONT::JUICE)
@@ -27620,6 +27648,16 @@
     ONT::MAX-VAL))
 
 (CONCEPT
+  ONT::MEDIA-PROFESSIONAL
+  (COMMENT
+   "a person whose profession is related to media, such as producing content for media, reporting, journalism")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|journalist%1:18:00::|
+    WN::|reporter%1:18:00::|))
+
+(CONCEPT
   ONT::MEDICAL-CONDITION
   (INHERIT
     ONT::MEDICAL-DISORDERS-AND-CONDITIONS)
@@ -28046,7 +28084,12 @@
     (INHERIT
       ABSTR-OBJ)
     (INFORMATION MENTAL-CONSTRUCT)
-    (TYPE ONT::MENTAL-CONSTRUCTION)))
+    (TYPE ONT::MENTAL-CONSTRUCTION))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::MENTAL-PLAN
@@ -28200,6 +28243,15 @@
     ONT::BODILY-PROCESS)
   (OVERLAP
     WN::|metabolism%1:22:00::|))
+
+(CONCEPT
+  ONT::METEOROLOGIST
+  (COMMENT
+   "a person whose profession is to study and predict weather conditions")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|meteorologist%1:18:00::|))
 
 (CONCEPT
   ONT::METHOD
@@ -28821,7 +28873,12 @@
     ONT::MENTAL-CONSTRUCTION)
   (OVERLAP
     WN::|motivation%1:03:00::|
-    WN::|reason%1:10:00::|))
+    WN::|reason%1:10:00::|)
+  (SEM-FRAME
+    (ONT::FORMAL
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::MOUNTAIN
@@ -34991,6 +35048,14 @@
     WN::|pigeon%1:05:00::|))
 
 (CONCEPT
+  ONT::PILOT
+  (COMMENT "a person who operates aircrafts")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|aviator%1:18:00::|))
+
+(CONCEPT
   ONT::PINK
   (INHERIT
     ONT::COLOR-VAL)
@@ -35425,6 +35490,14 @@
     (TYPE ONT::POLARITY-VAL-POSITIVE)))
 
 (CONCEPT
+  ONT::POLICE
+  (COMMENT "a person whose profession is in law enforcement")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|police_officer%1:18:00::|))
+
+(CONCEPT
   ONT::POLICY
   (INHERIT
     ONT::PROCEDURE)
@@ -35489,6 +35562,18 @@
     ONT::ASSOCIATED-WITH-VAL)
   (OVERLAP
     WN::|nonpolitical%3:00:00::|))
+
+(CONCEPT
+  ONT::POLITICS-PROFESSIONAL
+  (COMMENT "a person whose profession is in law enforcement")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|politician%1:18:00::|
+    WN::|politician%1:18:01::|
+    WN::|president_of_the_united_states%1:04:00::|
+    WN::|senator%1:18:00::|
+    WN::|speaker%1:18:01::|))
 
 (CONCEPT
   ONT::POLLUTION
