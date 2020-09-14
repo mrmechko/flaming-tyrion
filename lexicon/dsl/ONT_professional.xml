@@ -409,6 +409,17 @@
   wn::|editor%1:18:00::|
  </relation>
  </concept>
+ <concept name="ont::engineer">
+ <comment>
+  &quot;a person who uses scientific knowledge to solve practical problems&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|engineer%1:18:00::|
+ </relation>
+ </concept>
  <concept name="ont::entrepreneur">
  <comment>
   &quot;a person who engages in industrial enterprise, organizes business venture&quot;
@@ -538,18 +549,31 @@
   wn::|speaker%1:18:01::|
  </relation>
  </concept>
+ <concept name="ont::publisher">
+ <comment>
+  &quot;a person engaged in publishing books etc&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|publisher%1:18:00::|
+ </relation>
+ </concept>
  <concept name="ont::scholar">
  <relation label="inherit">
   ont::professional
  </relation>
  <relation label="overlap">
-  wn::|student%1:18:01::|
   wn::|bookman%1:18:00::|
-  wn::|scholarly_person%1:18:00::|
-  wn::|scholar%1:18:00::|
-  wn::|student%1:18:00::|
-  wn::|pupil%1:18:00::|
   wn::|educatee%1:18:00::|
+  wn::|pupil%1:18:00::|
+  wn::|scholar%1:18:00::|
+  wn::|scholarly_person%1:18:00::|
+  wn::|scientist%1:18:00::|
+  wn::|student%1:18:00::|
+  wn::|student%1:18:01::|
+  wn::|theorist%1:18:00::|
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure" optional="optional">
@@ -568,6 +592,17 @@
   wn::|scout%1:18:00::|
  </relation>
  </concept>
+ <concept name="ont::seller-trader">
+ <comment>
+  &quot;a person engaged in retail trade&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|merchant%1:18:00::|
+ </relation>
+ </concept>
  <concept name="ont::health-professional">
  <relation label="inherit">
   ont::professional
@@ -580,34 +615,35 @@
   wn::|caregiver%1:18:01::|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="academic" />
- </morph>
+ <concept name="ont::teacher-trainer">
+ <comment>
+  &quot;a person who educates others&quot;
+ </comment>
  <relation label="inherit">
   ont::professional
-  ont::count-pred-templ
  </relation>
- </sense>
+ <relation label="overlap">
+  wn::|educator%1:18:00::|
+  wn::|trainer%1:18:00::|
+ </relation>
+ </concept>
+ <concept name="ont::technician">
+ <comment>
+  &quot;a person whose occupation involves training in a specific technique etc&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|technician%1:18:00::|
+  wn::|technician%1:18:01::|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="n" />
   <word first-word="agent" />
  </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="biologist" />
- </morph>
- <comment>
-  &quot;CALOY3-TEST-DATA&quot;
- </comment>
  <relation label="inherit">
   ont::professional
   ont::count-pred-templ
@@ -706,16 +742,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="engineer" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="fixer" />
  </morph>
  <relation label="inherit">
@@ -726,30 +752,7 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="guru" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="laborer" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="mathematician" />
  </morph>
  <relation label="inherit">
   ont::professional
@@ -782,32 +785,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="post" remaining-words="doc" />
- </morph>
- <comment>
-  &quot;CALOY3-TEST-DATA&quot;
- </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="postdoc" />
- </morph>
- <comment>
-  &quot;CALOY3-TEST-DATA&quot;
- </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="practitioner" />
  </morph>
  <example text="check with your nurse practitioner">
@@ -825,19 +802,6 @@
  </morph>
  <comment>
   &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="professor" />
- </morph>
- <comment>
-  &quot;PROJECTOR-PURCHASING&quot;
  </comment>
  <relation label="inherit">
   ont::professional
@@ -877,132 +841,9 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="publisher" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::professional
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="researcher" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="seller" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="sponsor" />
  </morph>
  <example text="confirm the sponsor name">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="teacher" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="technician" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="theorist" />
- </morph>
- <comment>
-  &quot;MEETING-UNDERSTANDING&quot;
- </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="trader" />
- </morph>
- <example text="he is a trader on wall street">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="trainer" />
- </morph>
- <comment>
-  &quot;LM-VOCAB&quot;
- </comment>
- <example text="personal trainer">
   <provenance name="TRIPS"/>
  </example>
  <relation label="inherit">

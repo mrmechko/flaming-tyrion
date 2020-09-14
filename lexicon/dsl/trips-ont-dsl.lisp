@@ -16456,6 +16456,14 @@
     WN::|enforceable%3:00:00::|))
 
 (CONCEPT
+  ONT::ENGINEER
+  (COMMENT "a person who uses scientific knowledge to solve practical problems")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|engineer%1:18:00::|))
+
+(CONCEPT
   ONT::ENJOYABLE-VAL
   (INHERIT
     ONT::EVOKING-POS-EXPERIENCE-PROPERTY-VAL)
@@ -37374,6 +37382,14 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::PUBLISHER
+  (COMMENT "a person engaged in publishing books etc")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|publisher%1:18:00::|))
+
+(CONCEPT
   ONT::PULL
   (INHERIT
     ONT::APPLY-FORCE)
@@ -41642,13 +41658,15 @@
   (INHERIT
     ONT::PROFESSIONAL)
   (OVERLAP
-    WN::|student%1:18:01::|
     WN::|bookman%1:18:00::|
-    WN::|scholarly_person%1:18:00::|
-    WN::|scholar%1:18:00::|
-    WN::|student%1:18:00::|
+    WN::|educatee%1:18:00::|
     WN::|pupil%1:18:00::|
-    WN::|educatee%1:18:00::|)
+    WN::|scholar%1:18:00::|
+    WN::|scholarly_person%1:18:00::|
+    WN::|scientist%1:18:00::|
+    WN::|student%1:18:00::|
+    WN::|student%1:18:01::|
+    WN::|theorist%1:18:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (OR
@@ -42026,6 +42044,14 @@
   (OVERLAP
     WN::|altruistic%3:00:00::|
     WN::|selfless%3:00:00::|))
+
+(CONCEPT
+  ONT::SELLER-TRADER
+  (COMMENT "a person engaged in retail trade")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|merchant%1:18:00::|))
 
 (CONCEPT
   ONT::SEND
@@ -46812,11 +46838,30 @@
     WN::|sensitize%2:39:00::|))
 
 (CONCEPT
+  ONT::TEACHER-TRAINER
+  (COMMENT "a person who educates others")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|educator%1:18:00::|
+    WN::|trainer%1:18:00::|))
+
+(CONCEPT
   ONT::TEAS
   (INHERIT
     ONT::BEVERAGES)
   (OVERLAP
     WN::|tea%1:13:00::|))
+
+(CONCEPT
+  ONT::TECHNICIAN
+  (COMMENT
+   "a person whose occupation involves training in a specific technique etc")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|technician%1:18:00::|
+    WN::|technician%1:18:01::|))
 
 (CONCEPT
   ONT::TECHNOLOGY
