@@ -2510,6 +2510,18 @@
    <feat name="type">ont::appliance</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::applicant">
+  <comment>
+   &quot;a person who seeks employment and has applied for it&quot;
+  </comment>
+  <relation label="inherit">
+   ont::professional
+  </relation>
+  <relation label="overlap">
+   wn::|applicant%1:18:00::|
+   wn::|candidate%1:18:00::|
+  </relation>
+ </concept>
  <concept name="ont::applied-val">
   <relation label="inherit">
    ont::basis-of-evidence-val
@@ -3868,7 +3880,7 @@
    &quot;The main predicate for associating an object with a value on a scale&quot;
   </comment>
   <relation label="inherit">
-   ont::position-reln
+   ont::relation
   </relation>
  </concept>
  <concept name="ont::athlete">
@@ -8867,6 +8879,11 @@
    wn::|impregnate%2:30:00::|
    wn::|saturate%2:30:04::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected1" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::cause-effect">
   <comment>
@@ -9022,14 +9039,6 @@
   <relation label="inherit">
    ont::event-of-causation
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::affected1" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::affected-result" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::cause-produce-reproduce">
   <comment>
@@ -9080,6 +9089,8 @@
   </relation>
   <relation label="overlap">
    wn::|enclose%2:35:00::|
+   wn::|surround%2:33:00::|
+   wn::|surround%2:33:01::|
   </relation>
  </concept>
  <concept name="ont::causing-death-val">
@@ -18517,6 +18528,17 @@
    wn::|hire%2:41:00::|
    wn::|engage%2:41:01::|
    wn::|employ%2:41:00::|
+  </relation>
+ </concept>
+ <concept name="ont::employee">
+  <comment>
+   &quot;a person who is hired to perform a job&quot;
+  </comment>
+  <relation label="inherit">
+   ont::professional
+  </relation>
+  <relation label="overlap">
+   wn::|employee%1:18:00::|
   </relation>
  </concept>
  <concept name="ont::employment">
@@ -31241,6 +31263,7 @@
    ont::professional
   </relation>
   <relation label="overlap">
+   wn::|employer%1:18:00::|
    wn::|head%1:18:00::|
   </relation>
  </concept>
@@ -42778,6 +42801,18 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::professional-associate">
+  <comment>
+   &quot;the colleague/peer relation/role an individual has in a professional setting&quot;
+  </comment>
+  <relation label="inherit">
+   ont::professional
+  </relation>
+  <relation label="overlap">
+   wn::|colleague%1:18:00::|
+   wn::|colleague%1:18:01::|
+  </relation>
+ </concept>
  <concept name="ont::professional-organization">
   <relation label="inherit">
    ont::organization
@@ -43511,6 +43546,17 @@
    wn::|splash%2:35:04::|
    wn::|splash%2:35:00::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::affected">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="mobility">movable</feat>
+     <feat name="form">liquid</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::push-out-of">
   <relation label="inherit">
@@ -52350,6 +52396,16 @@
   <relation label="inherit">
    ont::body-movement
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::neutral">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="intentional">-</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::straightforward-val">
   <relation label="inherit">
@@ -58767,6 +58823,18 @@
     <concept name="t" />
    </role-restr-map>
   </sem-frame>
+ </concept>
+ <concept name="ont::worker">
+  <comment>
+   &quot;a person who performs manual labor&quot;
+  </comment>
+  <relation label="inherit">
+   ont::professional
+  </relation>
+  <relation label="overlap">
+   wn::|workman%1:18:00::|
+   wn::|worker%1:18:01::|
+  </relation>
  </concept>
  <concept name="ont::working">
   <relation label="inherit">

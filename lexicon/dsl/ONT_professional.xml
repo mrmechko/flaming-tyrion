@@ -313,6 +313,18 @@
   wn::|accountant%1:18:00::|
  </relation>
  </concept>
+ <concept name="ont::applicant">
+ <comment>
+  &quot;a person who seeks employment and has applied for it&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|applicant%1:18:00::|
+  wn::|candidate%1:18:00::|
+ </relation>
+ </concept>
  <concept name="ont::athlete">
  <relation label="inherit">
   ont::professional
@@ -409,6 +421,17 @@
   wn::|editor%1:18:00::|
  </relation>
  </concept>
+ <concept name="ont::employee">
+ <comment>
+  &quot;a person who is hired to perform a job&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|employee%1:18:00::|
+ </relation>
+ </concept>
  <concept name="ont::engineer">
  <comment>
   &quot;a person who uses scientific knowledge to solve practical problems&quot;
@@ -473,6 +496,7 @@
   ont::professional
  </relation>
  <relation label="overlap">
+  wn::|employer%1:18:00::|
   wn::|head%1:18:00::|
  </relation>
  </concept>
@@ -547,6 +571,18 @@
   wn::|president_of_the_united_states%1:04:00::|
   wn::|senator%1:18:00::|
   wn::|speaker%1:18:01::|
+ </relation>
+ </concept>
+ <concept name="ont::professional-associate">
+ <comment>
+  &quot;the colleague/peer relation/role an individual has in a professional setting&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|colleague%1:18:00::|
+  wn::|colleague%1:18:01::|
  </relation>
  </concept>
  <concept name="ont::publisher">
@@ -639,62 +675,23 @@
   wn::|technician%1:18:01::|
  </relation>
  </concept>
+ <concept name="ont::worker">
+ <comment>
+  &quot;a person who performs manual labor&quot;
+ </comment>
+ <relation label="inherit">
+  ont::professional
+ </relation>
+ <relation label="overlap">
+  wn::|workman%1:18:00::|
+  wn::|worker%1:18:01::|
+ </relation>
+ </concept>
  <sense>
  <morph>
   <pos pos="n" />
   <word first-word="agent" />
  </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="candidate" />
- </morph>
- <comment>
-  &quot;CALOY3&quot;
- </comment>
- <example text="interview the job candidates">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::professional
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="colleague" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
  <relation label="inherit">
   ont::professional
   ont::count-pred-templ
@@ -716,32 +713,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="employee" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="employer" />
- </morph>
- <comment>
-  &quot;PROJECTOR-PURCHASING&quot;
- </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="fixer" />
  </morph>
  <relation label="inherit">
@@ -752,31 +723,11 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="laborer" />
- </morph>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="networker" />
  </morph>
  <comment>
   &quot;HTML-PURCHASING-CORPUS&quot;
  </comment>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="peer" />
- </morph>
  <relation label="inherit">
   ont::professional
   ont::count-pred-templ
@@ -846,16 +797,6 @@
  <example text="confirm the sponsor name">
   <provenance name="TRIPS"/>
  </example>
- <relation label="inherit">
-  ont::professional
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="worker" />
- </morph>
  <relation label="inherit">
   ont::professional
   ont::count-pred-templ

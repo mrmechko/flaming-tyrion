@@ -105,66 +105,32 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::apply-force">
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="cause">force</feat>
-  <feat name="type">ont::apply-force</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">
-    <or>
-     ont::position-reln
-     ont::direction
-     ont::path
-    </or>
-    </feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
+ <role-restr-map roles="ont::result" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">
+   <or>
+    ont::position-reln
+    ont::direction
+    ont::path
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::push">
+ <sem-feats>
  <relation label="inherit">
-  ont::apply-force
+  situation
  </relation>
- <relation label="overlap">
-  wn::|poke%2:35:01::|
-  wn::|push%2:38:00::|
-  wn::|force%2:38:00::|
-  wn::|thrust%2:38:00::|
-  wn::|thrust%2:42:01::|
-  wn::|wedge%2:35:00::|
-  wn::|bump%2:35:00::|
-  wn::|push%1:04:00::|
-  wn::|boost%1:04:01::|
- </relation>
- </concept>
- <concept name="ont::push-liquid">
- <relation label="inherit">
-  ont::push
- </relation>
- <relation label="overlap">
-  wn::|squirt%2:35:00::|
-  wn::|squirt%2:35:10::|
-  wn::|sprinkle%2:35:01::|
-  wn::|spray%2:35:03::|
-  wn::|splash%2:35:04::|
-  wn::|splash%2:35:00::|
- </relation>
- </concept>
+ <feat name="cause">force</feat>
+ <feat name="type">ont::apply-force</feat>
+ </sem-feats>
  <concept name="ont::event-of-causation">
  <comment>
   &quot;events involving an AGENT acting on an AFFECTED&quot;
@@ -201,32 +167,88 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
+ <concept name="ont::push-liquid">
  <relation label="inherit">
-  situation
+  ont::push
  </relation>
- <feat name="cause">force</feat>
- <feat name="type">ont::apply-force</feat>
- </sem-feats>
+ <relation label="overlap">
+  wn::|squirt%2:35:00::|
+  wn::|squirt%2:35:10::|
+  wn::|sprinkle%2:35:01::|
+  wn::|spray%2:35:03::|
+  wn::|splash%2:35:04::|
+  wn::|splash%2:35:00::|
+ </relation>
  <sem-frame>
- <role-restr-map roles="ont::result" optional="optional">
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="mobility">movable</feat>
+    <feat name="form">liquid</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::push">
+ <relation label="inherit">
+  ont::apply-force
+ </relation>
+ <relation label="overlap">
+  wn::|poke%2:35:01::|
+  wn::|push%2:38:00::|
+  wn::|force%2:38:00::|
+  wn::|thrust%2:38:00::|
+  wn::|thrust%2:42:01::|
+  wn::|wedge%2:35:00::|
+  wn::|bump%2:35:00::|
+  wn::|push%1:04:00::|
+  wn::|boost%1:04:01::|
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected">
   <sem-feats>
    <relation label="inherit">
-    abstr-obj
+    phys-obj
    </relation>
-   <feat name="type">
-   <or>
-    ont::position-reln
-    ont::direction
-    ont::path
-   </or>
-   </feat>
+   <feat name="mobility">movable</feat>
+   <feat name="form">liquid</feat>
   </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  </sem-frame>
+ <concept name="ont::apply-force">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+  <feat name="type">ont::apply-force</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">
+    <or>
+     ont::position-reln
+     ont::direction
+     ont::path
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
@@ -367,10 +389,10 @@
   vn::breathe-40.1.2
  </relation>
  <syntax>
-  <template-call template="ont::affected-affected1-xp-np-templ" />
+  <template-call template="ont::agent-affected-xp-np-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected1"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
  </sense>
@@ -390,7 +412,7 @@
  </morph>
  <relation label="inherit">
   ont::expectorate
-  ont::affected-templ
+  ont::agent-templ
  </relation>
  <relation label="overlap">
   vn::breathe-40.1.2

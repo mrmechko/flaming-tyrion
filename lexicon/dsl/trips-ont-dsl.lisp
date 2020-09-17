@@ -2161,6 +2161,15 @@
     (TYPE ONT::APPLIANCE)))
 
 (CONCEPT
+  ONT::APPLICANT
+  (COMMENT "a person who seeks employment and has applied for it")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|applicant%1:18:00::|
+    WN::|candidate%1:18:00::|))
+
+(CONCEPT
   ONT::APPLIED-VAL
   (INHERIT
     ONT::BASIS-OF-EVIDENCE-VAL)
@@ -3370,7 +3379,7 @@
   (COMMENT
    "The main predicate for associating an object with a value on a scale")
   (INHERIT
-    ONT::POSITION-RELN))
+    ONT::RELATION))
 
 (CONCEPT
   ONT::ATHLETE
@@ -7816,7 +7825,12 @@
     WN::|cover%2:35:01::|
     WN::|cover%2:35:14::|
     WN::|impregnate%2:30:00::|
-    WN::|saturate%2:30:04::|))
+    WN::|saturate%2:30:04::|)
+  (SEM-FRAME
+    (ONT::AFFECTED1
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::CAUSE-EFFECT
@@ -7962,16 +7976,7 @@
 (CONCEPT
   ONT::CAUSE-POSITION
   (INHERIT
-    ONT::EVENT-OF-CAUSATION)
-  (SEM-FRAME
-    (ONT::AFFECTED1
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::AFFECTED-RESULT
-     (CONCEPT
-       T)
-     OPTIONAL)))
+    ONT::EVENT-OF-CAUSATION))
 
 (CONCEPT
   ONT::CAUSE-PRODUCE-REPRODUCE
@@ -8018,7 +8023,9 @@
   (INHERIT
     ONT::CAUSE-POSITION)
   (OVERLAP
-    WN::|enclose%2:35:00::|))
+    WN::|enclose%2:35:00::|
+    WN::|surround%2:33:00::|
+    WN::|surround%2:33:01::|))
 
 (CONCEPT
   ONT::CAUSING-DEATH-VAL
@@ -16165,6 +16172,14 @@
     WN::|hire%2:41:00::|
     WN::|engage%2:41:01::|
     WN::|employ%2:41:00::|))
+
+(CONCEPT
+  ONT::EMPLOYEE
+  (COMMENT "a person who is hired to perform a job")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|employee%1:18:00::|))
 
 (CONCEPT
   ONT::EMPLOYMENT
@@ -27056,6 +27071,7 @@
   (INHERIT
     ONT::PROFESSIONAL)
   (OVERLAP
+    WN::|employer%1:18:00::|
     WN::|head%1:18:00::|))
 
 (CONCEPT
@@ -36931,6 +36947,16 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::PROFESSIONAL-ASSOCIATE
+  (COMMENT
+   "the colleague/peer relation/role an individual has in a professional setting")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|colleague%1:18:00::|
+    WN::|colleague%1:18:01::|))
+
+(CONCEPT
   ONT::PROFESSIONAL-ORGANIZATION
   (INHERIT
     ONT::ORGANIZATION)
@@ -37567,7 +37593,14 @@
     WN::|sprinkle%2:35:01::|
     WN::|spray%2:35:03::|
     WN::|splash%2:35:04::|
-    WN::|splash%2:35:00::|))
+    WN::|splash%2:35:00::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (MOBILITY MOVABLE)
+       (FORM LIQUID)))))
 
 (CONCEPT
   ONT::PUSH-OUT-OF
@@ -45303,7 +45336,13 @@
 (CONCEPT
   ONT::STRADDLE
   (INHERIT
-    ONT::BODY-MOVEMENT))
+    ONT::BODY-MOVEMENT)
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL -)))))
 
 (CONCEPT
   ONT::STRAIGHTFORWARD-VAL
@@ -50767,6 +50806,15 @@
      (CONCEPT
        T)
      OPTIONAL)))
+
+(CONCEPT
+  ONT::WORKER
+  (COMMENT "a person who performs manual labor")
+  (INHERIT
+    ONT::PROFESSIONAL)
+  (OVERLAP
+    WN::|workman%1:18:00::|
+    WN::|worker%1:18:01::|))
 
 (CONCEPT
   ONT::WORKING

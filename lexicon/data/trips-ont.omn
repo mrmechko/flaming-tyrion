@@ -1561,7 +1561,7 @@ Class: position-reln
 # ONT type ont::at-scale-value
 Class: at-scale-value
   Annotations: rdfs:comment "The main predicate for associating an object with a value on a scale"
-  SubClassOf: position-reln
+  SubClassOf: relation
 
 # ONT type ont::position-as-point-reln
 Class: position-as-point-reln
@@ -3088,6 +3088,11 @@ Class: professional
 Class: accountant
   SubClassOf: professional
 
+# ONT type ont::applicant
+Class: applicant
+  Annotations: rdfs:comment "a person who seeks employment and has applied for it"
+  SubClassOf: professional
+
 # ONT type ont::athlete
 Class: athlete
   SubClassOf: professional
@@ -3125,6 +3130,11 @@ Class: developer-programmer
 # ONT type ont::editor
 Class: editor
   Annotations: rdfs:comment "a person responsible for editorial aspect of publication"
+  SubClassOf: professional
+
+# ONT type ont::employee
+Class: employee
+  Annotations: rdfs:comment "a person who is hired to perform a job"
   SubClassOf: professional
 
 # ONT type ont::engineer
@@ -3187,6 +3197,11 @@ Class: politics-professional
   Annotations: rdfs:comment "a person whose profession is in law enforcement"
   SubClassOf: professional
 
+# ONT type ont::professional-associate
+Class: professional-associate
+  Annotations: rdfs:comment "the colleague/peer relation/role an individual has in a professional setting"
+  SubClassOf: professional
+
 # ONT type ont::publisher
 Class: publisher
   Annotations: rdfs:comment "a person engaged in publishing books etc"
@@ -3226,6 +3241,11 @@ Class: teacher-trainer
 # ONT type ont::technician
 Class: technician
   Annotations: rdfs:comment "a person whose occupation involves training in a specific technique etc"
+  SubClassOf: professional
+
+# ONT type ont::worker
+Class: worker
+  Annotations: rdfs:comment "a person who performs manual labor"
   SubClassOf: professional
 
 # ONT type ont::consumer
@@ -5236,12 +5256,11 @@ Class: motion-wrt-another-object
 # ONT type ont::cause-position
 Class: cause-position
   SubClassOf: event-of-causation
-  SubClassOf: _affected-result only owl:Thing
-  SubClassOf: _affected1 only owl:Thing
 
 # ONT type ont::cause-cover
 Class: cause-cover
   SubClassOf: cause-position
+  SubClassOf: _affected1 only owl:Thing
 
 # ONT type ont::cause-surround
 Class: cause-surround
@@ -15491,6 +15510,7 @@ Class: push
 # ONT type ont::push-liquid
 Class: push-liquid
   SubClassOf: push
+  SubClassOf: _affected only (FLT_phys-obj and F_form some V_liquid and F_mobility some V_movable) and _affected some owl:Thing
 
 # ONT type ont::expectorate
 Class: expectorate
@@ -18604,6 +18624,7 @@ Class: body-movement-place
 # ONT type ont::straddle
 Class: straddle
   SubClassOf: body-movement
+  SubClassOf: _neutral only (FLT_phys-obj and F_intentional some V_-) and _neutral some owl:Thing
 
 # ONT type ont::stretch
 Class: stretch
@@ -19201,7 +19222,7 @@ DisjointClasses: domain, dynamics, scale-value-function, relation, unit, tangibl
 DisjointClasses: value-cost, trajectory, social-system, function-object, mental-construction
 
 # children of ont::relation
-DisjointClasses: favorite, own, position-reln, predicate, domain-property, part-reln
+DisjointClasses: favorite, own, at-scale-value, position-reln, predicate, domain-property, part-reln
 
 # children of ont::part
 DisjointClasses: member, important-part, remaining-part
@@ -19255,7 +19276,7 @@ DisjointClasses: manner-undo, as-if-for, manner-refl
 DisjointClasses: time-condition, neg-condition, pos-condition
 
 # children of ont::position-reln
-DisjointClasses: direction, conventional-position-reln, position-wrt-linear-area-reln, position-wrt-area-reln, complex-ground-reln, pos-wrt-containment-reln, position-as-point-reln, at-scale-value
+DisjointClasses: direction, conventional-position-reln, position-wrt-linear-area-reln, position-wrt-area-reln, complex-ground-reln, pos-wrt-containment-reln, position-as-point-reln
 
 # children of ont::position-as-point-reln
 DisjointClasses: oriented-loc-reln, pos-wrt-speaker-reln, pos-distance, loc-where-rel, at-loc
@@ -19474,7 +19495,7 @@ DisjointClasses: crustaceans, mollusks, insect
 DisjointClasses: recipient, addressee, unfortunate, entrant, male-person, female-person, consumer, traveller, professional, person-reln, family-relation, user, referential-person
 
 # children of ont::professional
-DisjointClasses: assistant, technician, teacher-trainer, health-professional, seller-trader, scout, scholar, publisher, politics-professional, police, pilot, official, meteorologist, media-professional, manager, legal-professional, gamer, food-industry-professional, entrepreneur, engineer, editor, developer-programmer, consultant, construction-worker, cleaner, author, artist, athlete, accountant
+DisjointClasses: assistant, worker, technician, teacher-trainer, health-professional, seller-trader, scout, scholar, publisher, professional-associate, politics-professional, police, pilot, official, meteorologist, media-professional, manager, legal-professional, gamer, food-industry-professional, entrepreneur, engineer, employee, editor, developer-programmer, consultant, construction-worker, cleaner, author, artist, athlete, applicant, accountant
 
 # children of ont::person-reln
 DisjointClasses: possessor-reln, person-defined-by-membership, communication-party, identity-and-origin, friend, specialist
