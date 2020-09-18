@@ -7,13 +7,20 @@
   ont::rate-unit
  </relation>
  <relation label="overlap">
-  wn::|mph%1:28:01::|
+  wn::|mph%1:28:00::|
   wn::|miles_per_hour%1:28:01::|
   wn::|kilometers_per_hour%1:28:00::|
   wn::|kilometres_per_hour%1:28:00::|
   wn::|kph%1:28:00::|
   wn::|km/h%1:28:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::speed-scale</feat>
+  <feat name="type">ont::speed-unit</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -87,12 +94,6 @@
  </relation>
  <relation label="overlap">
   wn::|miles_per_gallon%1:23:00::|
-  wn::|bits_per_second%1:28:00::|
-  wn::|gigahertz%1:28:00::|
-  wn::|hertz%1:28:00::|
-  wn::|kilohertz%1:28:00::|
-  wn::|megahertz%1:28:00::|
-  wn::|terahertz%1:28:00::|
   wn::|revolutions_per_minute%1:28:00::|
   wn::|words_per_minute%1:28:00::|
  </relation>
@@ -112,6 +113,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::speed-scale</feat>
+ <feat name="type">ont::speed-unit</feat>
+ </sem-feats>
  <concept name="ont::formal-unit">
  <relation label="inherit">
   ont::measure-unit
@@ -198,342 +206,8 @@
  </sem-feats>
  <concept name="abstr-obj" />
  <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="ghz" />
-  <forms>
-   -S-3P
-   <plur>
-    <word first-word="ghz" />
-   </plur>
-  </forms>
- </morph>
  <relation label="inherit">
   ont::speed-unit
  </relation>
- <syntax>
-  <template-call template="ont::attribute-unit-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">attribute-unit</feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="gigahertz" />
-  <forms>
-   -S-3P
-   <plur>
-    <word first-word="gigahertz" />
-   </plur>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::speed-unit
- </relation>
- <syntax>
-  <template-call template="ont::attribute-unit-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">attribute-unit</feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="hertz" />
-  <forms>
-   -S-3P
-   <plur>
-    <word first-word="hertz" />
-   </plur>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::speed-unit
- </relation>
- <syntax>
-  <template-call template="ont::attribute-unit-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">attribute-unit</feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="hz" />
-  <forms>
-   -S-3P
-   <plur>
-    <word first-word="hz" />
-   </plur>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::speed-unit
- </relation>
- <syntax>
-  <template-call template="ont::attribute-unit-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">attribute-unit</feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="khz" />
-  <forms>
-   -S-3P
-   <plur>
-    <word first-word="khz" />
-   </plur>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::speed-unit
- </relation>
- <syntax>
-  <template-call template="ont::attribute-unit-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">attribute-unit</feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="kilohertz" />
-  <forms>
-   -S-3P
-   <plur>
-    <word first-word="kilohertz" />
-   </plur>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::speed-unit
- </relation>
- <syntax>
-  <template-call template="ont::attribute-unit-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">attribute-unit</feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="megahertz" />
-  <forms>
-   -S-3P
-   <plur>
-    <word first-word="megahertz" />
-   </plur>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::speed-unit
- </relation>
- <syntax>
-  <template-call template="ont::attribute-unit-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">attribute-unit</feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="mhz" />
-  <forms>
-   -S-3P
-   <plur>
-    <word first-word="mhz" />
-   </plur>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::speed-unit
- </relation>
- <syntax>
-  <template-call template="ont::attribute-unit-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">attribute-unit</feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="mph" />
- </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
- <relation label="inherit">
-  ont::speed-unit
- </relation>
- <syntax>
-  <template-call template="ont::attribute-unit-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="sort">attribute-unit</feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
  </sense>
 </dsl>

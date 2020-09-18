@@ -8,12 +8,6 @@
  </relation>
  <relation label="overlap">
   wn::|miles_per_gallon%1:23:00::|
-  wn::|bits_per_second%1:28:00::|
-  wn::|gigahertz%1:28:00::|
-  wn::|hertz%1:28:00::|
-  wn::|kilohertz%1:28:00::|
-  wn::|megahertz%1:28:00::|
-  wn::|terahertz%1:28:00::|
   wn::|revolutions_per_minute%1:28:00::|
   wn::|words_per_minute%1:28:00::|
  </relation>
@@ -189,40 +183,56 @@
   ont::rate-unit
  </relation>
  <relation label="overlap">
-  wn::|mph%1:28:01::|
+  wn::|mph%1:28:00::|
   wn::|miles_per_hour%1:28:01::|
   wn::|kilometers_per_hour%1:28:00::|
   wn::|kilometres_per_hour%1:28:00::|
   wn::|kph%1:28:00::|
   wn::|km/h%1:28:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::speed-scale</feat>
+  <feat name="type">ont::speed-unit</feat>
+ </sem-feats>
  </concept>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="m" remaining-words="p h" />
- </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
+ <concept name="ont::frequency-unit">
  <relation label="inherit">
   ont::rate-unit
-  ont::bare-pred-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="m" remaining-words="p g" />
- </morph>
- <comment>
-  &quot;CALOY2&quot;
- </comment>
+ <relation label="overlap">
+  wn::|hz%1:28:00::|
+  wn::|khz%1:28:00::|
+  wn::|mhz%1:28:00::|
+  wn::|ghz%1:28:00::|
+  wn::|thz%1:28:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::frequency-scale</feat>
+  <feat name="type">ont::frequency-unit</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::bandwidth-unit">
  <relation label="inherit">
   ont::rate-unit
-  ont::bare-pred-templ
  </relation>
- </sense>
+ <relation label="overlap">
+  wn::|bps%1:28:00::|
+  wn::|baud%1:23:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::bit-rate-scale</feat>
+  <feat name="type">ont::bandwidth-unit</feat>
+ </sem-feats>
+ </concept>
  <sense>
  <morph>
   <pos pos="n" />
@@ -235,40 +245,5 @@
   ont::rate-unit
   ont::bare-pred-templ
  </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="rpm" />
- </morph>
- <comment>
-  &quot;HTML-PURCHASING-CORPUS&quot;
- </comment>
- <relation label="inherit">
-  ont::rate-unit
- </relation>
- <syntax>
-  <template-call template="ont::other-reln-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="mass">count</feat>
-   <feat name="allow-deleted-comp">+</feat>
-   <feat name="sort">other-reln</feat>
-   <feat name="case">
-   <or>
-    sub
-    obj
-   </or>
-   </feat>
-   <feat name="agr">
-   <or>
-    |3s|
-    |3p|
-   </or>
-   </feat>
-  </syn-feats>
- </syntax>
  </sense>
 </dsl>

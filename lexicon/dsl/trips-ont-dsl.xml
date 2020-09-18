@@ -315,7 +315,7 @@
  </concept>
  <concept name="ont::accept-agree">
   <relation label="inherit">
-   ont::response
+   ont::judgement
   </relation>
   <relation label="overlap">
    wn::|grudge%2:37:00::|
@@ -4987,6 +4987,22 @@
    </relation>
    <feat name="scale">ont::balance-scale</feat>
    <feat name="type">ont::balance-scale</feat>
+  </sem-feats>
+ </concept>
+ <concept name="ont::bandwidth-unit">
+  <relation label="inherit">
+   ont::rate-unit
+  </relation>
+  <relation label="overlap">
+   wn::|bps%1:28:00::|
+   wn::|baud%1:23:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::bit-rate-scale</feat>
+   <feat name="type">ont::bandwidth-unit</feat>
   </sem-feats>
  </concept>
  <concept name="ont::bar-measure">
@@ -10617,28 +10633,6 @@
    <feat name="origin">non-living</feat>
    <feat name="type">ont::climate</feat>
   </sem-feats>
- </concept>
- <concept name="ont::clock-speed-scale">
-  <relation label="inherit">
-   ont::rate-scale
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">ont::clock-speed-scale</feat>
-   <feat name="type">ont::clock-speed-scale</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::figure">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="origin">artifact</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::clock-time-val">
   <comment>
@@ -22752,6 +22746,47 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::frequency-scale">
+  <relation label="inherit">
+   ont::rate-scale
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::clock-speed-scale</feat>
+   <feat name="type">ont::frequency-scale</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::figure">
+    <sem-feats>
+     <relation label="inherit">
+      phys-obj
+     </relation>
+     <feat name="origin">artifact</feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
+ <concept name="ont::frequency-unit">
+  <relation label="inherit">
+   ont::rate-unit
+  </relation>
+  <relation label="overlap">
+   wn::|hz%1:28:00::|
+   wn::|khz%1:28:00::|
+   wn::|mhz%1:28:00::|
+   wn::|ghz%1:28:00::|
+   wn::|thz%1:28:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::frequency-scale</feat>
+   <feat name="type">ont::frequency-unit</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::frequency-val">
   <relation label="inherit">
    ont::temporal-occurrence-val
@@ -26763,6 +26798,7 @@
      <or>
       <concept name="phys-obj" />
       <concept name="abstr-obj" />
+      <concept name="situation" />
      </or>
      <feat name="intentional">-</feat>
     </sem-feats>
@@ -28099,6 +28135,7 @@
      <relation label="inherit">
       phys-obj
      </relation>
+     <feat name="type">ont::manufactured-object</feat>
      <feat name="intentional">-</feat>
     </sem-feats>
    </role-restr-map>
@@ -44094,12 +44131,6 @@
   </relation>
   <relation label="overlap">
    wn::|miles_per_gallon%1:23:00::|
-   wn::|bits_per_second%1:28:00::|
-   wn::|gigahertz%1:28:00::|
-   wn::|hertz%1:28:00::|
-   wn::|kilohertz%1:28:00::|
-   wn::|megahertz%1:28:00::|
-   wn::|terahertz%1:28:00::|
    wn::|revolutions_per_minute%1:28:00::|
    wn::|words_per_minute%1:28:00::|
   </relation>
@@ -51557,13 +51588,20 @@
    ont::rate-unit
   </relation>
   <relation label="overlap">
-   wn::|mph%1:28:01::|
+   wn::|mph%1:28:00::|
    wn::|miles_per_hour%1:28:01::|
    wn::|kilometers_per_hour%1:28:00::|
    wn::|kilometres_per_hour%1:28:00::|
    wn::|kph%1:28:00::|
    wn::|km/h%1:28:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::speed-scale</feat>
+   <feat name="type">ont::speed-unit</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::speed-val">
   <relation label="inherit">

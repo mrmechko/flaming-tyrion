@@ -6067,6 +6067,17 @@ Class: rate-unit
 # ONT type ont::speed-unit
 Class: speed-unit
   SubClassOf: rate-unit
+  SubClassOf: (FLT_abstr-obj and F_scale some speed-scale)
+
+# ONT type ont::frequency-unit
+Class: frequency-unit
+  SubClassOf: rate-unit
+  SubClassOf: (FLT_abstr-obj and F_scale some frequency-scale)
+
+# ONT type ont::bandwidth-unit
+Class: bandwidth-unit
+  SubClassOf: rate-unit
+  SubClassOf: (FLT_abstr-obj and F_scale some bit-rate-scale)
 
 # ONT type ont::memory-unit
 Class: memory-unit
@@ -14314,8 +14325,8 @@ Class: bit-rate-scale
   SubClassOf: rate-scale
   SubClassOf: (FLT_abstr-obj and F_scale some bit-rate-scale)
 
-# ONT type ont::clock-speed-scale
-Class: clock-speed-scale
+# ONT type ont::frequency-scale
+Class: frequency-scale
   SubClassOf: rate-scale
   SubClassOf: (FLT_abstr-obj and F_scale some clock-speed-scale)
   SubClassOf: _figure only (FLT_phys-obj and F_origin some V_artifact) and _figure some owl:Thing
@@ -14993,7 +15004,7 @@ Class: owe
 Class: is-compatible-with
   Annotations: rdfs:comment "one object meets some criteria defined by another object"
   SubClassOf: event-of-state
-  SubClassOf: _neutral only (FLT_phys-obj and F_intentional some V_-) and _neutral some owl:Thing
+  SubClassOf: _neutral only (FLT_phys-obj and F_intentional some V_- and F_type some manufactured-object) and _neutral some owl:Thing
   SubClassOf: _neutral1 only ((FLT_phys-obj or FLT_situation or FLT_abstr-obj)) and _neutral1 some owl:Thing
 
 # ONT type ont::acquire-by-action
@@ -16239,10 +16250,6 @@ Class: differ
   SubClassOf: _formal only owl:Thing
   SubClassOf: _extent only (FLT_abstr-obj and F_measure-function some V_term) and _extent some owl:Thing
 
-# ONT type ont::accept-agree
-Class: accept-agree
-  SubClassOf: response
-
 # ONT type ont::compromise
 Class: compromise
   SubClassOf: accept-agree
@@ -16269,6 +16276,10 @@ Class: judgement
   SubClassOf: (FLT_situation and F_cause some V_agentive)
   SubClassOf: _affected only owl:Thing
   SubClassOf: _formal only owl:Thing
+
+# ONT type ont::accept-agree
+Class: accept-agree
+  SubClassOf: judgement
 
 # ONT type ont::advancing-status
 Class: advancing-status
@@ -16661,7 +16672,7 @@ Class: ritual-classification
 # ONT type ont::incur-inherit-receive
 Class: incur-inherit-receive
   SubClassOf: event-of-undergoing-action
-  SubClassOf: _affected1 only ((FLT_phys-obj or FLT_abstr-obj) and F_intentional some V_-) and _affected1 some owl:Thing
+  SubClassOf: _affected1 only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation) and F_intentional some V_-) and _affected1 some owl:Thing
 
 # ONT type ont::receive-punishment
 Class: receive-punishment
@@ -19881,6 +19892,9 @@ DisjointClasses: m2, ha
 # children of ont::volume-unit
 DisjointClasses: dose, volume-measure-unit, container-load
 
+# children of ont::rate-unit
+DisjointClasses: bandwidth-unit, frequency-unit, speed-unit
+
 # children of ont::scale-value-function
 DisjointClasses: value, level
 
@@ -21193,7 +21207,7 @@ DisjointClasses: weakness-scale, strength-scale
 DisjointClasses: voltage-scale, rate-scale, pressure-scale, distance-per-gasoline-scale, density-scale, percent-scale
 
 # children of ont::rate-scale
-DisjointClasses: speed-scale, clock-speed-scale, bit-rate-scale
+DisjointClasses: speed-scale, frequency-scale, bit-rate-scale
 
 # children of ont::process-evaluation-scale
 DisjointClasses: utility-scale, successfulness-scale, productivity-scale, efficiency-scale, effectiveness-scale, steadiness-scale, task-complexity-scale
@@ -21385,13 +21399,13 @@ DisjointClasses: evoke-upset, evoke-worry, evoke-annoyance, evoke-social-irritat
 DisjointClasses: evoke-disgust, evoke-sadness, evoke-anger, evoke-distress
 
 # children of ont::response
-DisjointClasses: answer, reject, contest, accept-agree, acknowledge
+DisjointClasses: answer, reject, contest, acknowledge
 
 # children of ont::contest
 DisjointClasses: object, contest-deny-oppose-protest
 
 # children of ont::judgement
-DisjointClasses: forgive, blame, impress, avenge, punish, compensate, reward, abuse, approve-authorize, grade-score, advancing-status
+DisjointClasses: forgive, blame, impress, avenge, punish, compensate, reward, abuse, approve-authorize, grade-score, advancing-status, accept-agree
 
 # children of ont::grade-score
 DisjointClasses: failing, passing

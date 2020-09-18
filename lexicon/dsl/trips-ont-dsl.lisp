@@ -274,7 +274,7 @@
 (CONCEPT
   ONT::ACCEPT-AGREE
   (INHERIT
-    ONT::RESPONSE)
+    ONT::JUDGEMENT)
   (OVERLAP
     WN::|grudge%2:37:00::|
     WN::|agree%2:32:00::|
@@ -4325,6 +4325,19 @@
       ABSTR-OBJ)
     (SCALE ONT::BALANCE-SCALE)
     (TYPE ONT::BALANCE-SCALE)))
+
+(CONCEPT
+  ONT::BANDWIDTH-UNIT
+  (INHERIT
+    ONT::RATE-UNIT)
+  (OVERLAP
+    WN::|bps%1:28:00::|
+    WN::|baud%1:23:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::BIT-RATE-SCALE)
+    (TYPE ONT::BANDWIDTH-UNIT)))
 
 (CONCEPT
   ONT::BAR-MEASURE
@@ -9376,22 +9389,6 @@
       PHYS-OBJ)
     (ORIGIN NON-LIVING)
     (TYPE ONT::CLIMATE)))
-
-(CONCEPT
-  ONT::CLOCK-SPEED-SCALE
-  (INHERIT
-    ONT::RATE-SCALE)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (SCALE ONT::CLOCK-SPEED-SCALE)
-    (TYPE ONT::CLOCK-SPEED-SCALE))
-  (SEM-FRAME
-    (ONT::FIGURE
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (ORIGIN ARTIFACT)))))
 
 (CONCEPT
   ONT::CLOCK-TIME-VAL
@@ -19809,6 +19806,38 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::FREQUENCY-SCALE
+  (INHERIT
+    ONT::RATE-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::CLOCK-SPEED-SCALE)
+    (TYPE ONT::FREQUENCY-SCALE))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN ARTIFACT)))))
+
+(CONCEPT
+  ONT::FREQUENCY-UNIT
+  (INHERIT
+    ONT::RATE-UNIT)
+  (OVERLAP
+    WN::|Hz%1:28:00::|
+    WN::|khz%1:28:00::|
+    WN::|mhz%1:28:00::|
+    WN::|ghz%1:28:00::|
+    WN::|thz%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::FREQUENCY-SCALE)
+    (TYPE ONT::FREQUENCY-UNIT)))
+
+(CONCEPT
   ONT::FREQUENCY-VAL
   (INHERIT
     ONT::TEMPORAL-OCCURRENCE-VAL)
@@ -23250,7 +23279,9 @@
          (CONCEPT
            PHYS-OBJ)
          (CONCEPT
-           ABSTR-OBJ))
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
        (INTENTIONAL -)))))
 
 (CONCEPT
@@ -24388,6 +24419,7 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
+       (TYPE ONT::MANUFACTURED-OBJECT)
        (INTENTIONAL -)))))
 
 (CONCEPT
@@ -38060,12 +38092,6 @@
     ONT::FORMAL-UNIT)
   (OVERLAP
     WN::|miles_per_gallon%1:23:00::|
-    WN::|bits_per_second%1:28:00::|
-    WN::|gigahertz%1:28:00::|
-    WN::|hertz%1:28:00::|
-    WN::|kilohertz%1:28:00::|
-    WN::|megahertz%1:28:00::|
-    WN::|terahertz%1:28:00::|
     WN::|revolutions_per_minute%1:28:00::|
     WN::|words_per_minute%1:28:00::|)
   (SEM-FEATS
@@ -44606,12 +44632,17 @@
   (INHERIT
     ONT::RATE-UNIT)
   (OVERLAP
-    WN::|mph%1:28:01::|
+    WN::|mph%1:28:00::|
     WN::|miles_per_hour%1:28:01::|
     WN::|kilometers_per_hour%1:28:00::|
     WN::|kilometres_per_hour%1:28:00::|
     WN::|kph%1:28:00::|
-    WN::|km/h%1:28:00::|))
+    WN::|km/h%1:28:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::SPEED-SCALE)
+    (TYPE ONT::SPEED-UNIT)))
 
 (CONCEPT
   ONT::SPEED-VAL
