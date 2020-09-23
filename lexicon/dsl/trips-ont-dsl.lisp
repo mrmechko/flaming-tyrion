@@ -443,7 +443,7 @@
 (CONCEPT
   ONT::ACCOUNTANT
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|accountant%1:18:00::|))
 
@@ -1398,6 +1398,15 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::AGENT-REPRESENTATIVE
+  (COMMENT "a person who represents a person or party")
+  (INHERIT
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
+  (OVERLAP
+    WN::|fixer%1:18:00::|
+    WN::|representative%1:18:00::|))
+
+(CONCEPT
   ONT::AGGRESSIVE-VAL
   (INHERIT
     ONT::ANIMAL-PROPENSITY-VAL)
@@ -1642,7 +1651,8 @@
   (INHERIT
     ONT::CAUSE-EFFECT)
   (OVERLAP
-    WN::|allow%2:41:00::|)
+    WN::|allow%2:41:00::|
+    WN::|permit%2:32:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (OR
@@ -2164,7 +2174,7 @@
   ONT::APPLICANT
   (COMMENT "a person who seeks employment and has applied for it")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|applicant%1:18:00::|
     WN::|candidate%1:18:00::|))
@@ -2804,7 +2814,7 @@
   ONT::ARTIST
   (COMMENT "a person who creates art/performs artistic work")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|artist%1:18:00::|))
 
@@ -3033,7 +3043,7 @@
 (CONCEPT
   ONT::ASSISTANT
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|assistant%1:18:00::|
     WN::|helper%1:18:01::|
@@ -3384,7 +3394,7 @@
 (CONCEPT
   ONT::ATHLETE
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|athlete%1:18:00::|
     WN::|jock%1:18:00::|))
@@ -3839,7 +3849,7 @@
 (CONCEPT
   ONT::AUTHOR
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|writer%1:18:00::|
     WN::|author%1:18:00::|)
@@ -4917,6 +4927,14 @@
     ONT::DIRECTIONAL-VERT)
   (OVERLAP
     WN::|below%4:02:01::|))
+
+(CONCEPT
+  ONT::BENEFACTOR
+  (COMMENT "a person/agency that sponsors other people/agencies")
+  (INHERIT
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
+  (OVERLAP
+    WN::|benefactor%1:18:00::|))
 
 (CONCEPT
   ONT::BENEFICIARY
@@ -9307,7 +9325,7 @@
   ONT::CLEANER
   (COMMENT "a person whose occupation is cleaning")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|cleaner%1:18:00::|))
 
@@ -10372,7 +10390,7 @@
 (CONCEPT
   ONT::COMMUNICATION-PARTY
   (INHERIT
-    ONT::PERSON-RELN)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|communicator%1:18:00::|))
 
@@ -10730,7 +10748,12 @@
     ONT::ACCEPT-AGREE)
   (OVERLAP
     WN::|compromise%2:32:01::|
-    WN::|compromise%2:32:00::|))
+    WN::|compromise%2:32:00::|)
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (CONCEPT
+       T)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::COMPSCI-PROPERTY-VAL
@@ -11324,7 +11347,7 @@
   (COMMENT
    "a person whose work is related to construction of buildings etc, e.g., bricklayer, builder, plumber and roofer")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|builder%1:18:00::|
     WN::|construction_worker%1:18:00::|))
@@ -11333,7 +11356,7 @@
   ONT::CONSULTANT
   (COMMENT "an expert whose job is to give advise")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|consultant%1:18:00::|))
 
@@ -14022,7 +14045,7 @@
   ONT::DEVELOPER-PROGRAMMER
   (COMMENT "a person who designs, writes and tests computer programs")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|programmer%1:18:00::|))
 
@@ -15905,7 +15928,7 @@
   ONT::EDITOR
   (COMMENT "a person responsible for editorial aspect of publication")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|editor%1:18:00::|))
 
@@ -16174,7 +16197,7 @@
   ONT::EMPLOYEE
   (COMMENT "a person who is hired to perform a job")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|employee%1:18:00::|))
 
@@ -16471,7 +16494,7 @@
   ONT::ENGINEER
   (COMMENT "a person who uses scientific knowledge to solve practical problems")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|engineer%1:18:00::|))
 
@@ -16633,7 +16656,7 @@
   (COMMENT
    "a person who engages in industrial enterprise, organizes business venture")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|businessperson%1:18:00::|))
 
@@ -19547,7 +19570,7 @@
   (COMMENT
    "a person whose profession is related to food industry, e.g., chef, waiter, etc")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|chef%1:18:01::|
     WN::|cook%1:18:00::|
@@ -20193,7 +20216,7 @@
   ONT::GAMER
   (COMMENT "a person who plays video games for profession")
   (INHERIT
-    ONT::PROFESSIONAL))
+    ONT::PERSON-DEFINED-BY-ACTIVITY))
 
 (CONCEPT
   ONT::GARDEN-GROUNDS
@@ -21909,7 +21932,7 @@
 (CONCEPT
   ONT::HEALTH-PROFESSIONAL
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|health_professional%1:18:00::|
     WN::|primary_care_provider%1:18:00::|
@@ -25358,7 +25381,7 @@
   (COMMENT
    "a person whose profession is related to law, such as practicing it, giving legal advice, conducting lawsuits, providing judgements on court cases, and administering law")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|attorney%1:18:00::|
     WN::|judge%1:18:00::|
@@ -27101,7 +27124,7 @@
   (COMMENT
    "Person that performs a managing role, e.g., boss, ceo, executive etc")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|employer%1:18:00::|
     WN::|head%1:18:00::|))
@@ -27708,7 +27731,7 @@
   (COMMENT
    "a person whose profession is related to media, such as producing content for media, reporting, journalism")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|journalist%1:18:00::|
     WN::|reporter%1:18:00::|))
@@ -28305,7 +28328,7 @@
   (COMMENT
    "a person whose profession is to study and predict weather conditions")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|meteorologist%1:18:00::|))
 
@@ -32761,7 +32784,7 @@
   ONT::OFFICIAL
   (COMMENT "Person that serves in some administrative role")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|leader%1:18:00::|
     WN::|ruler%1:18:00::|
@@ -34310,6 +34333,42 @@
     WN::|voyeuristical%3:01:00::|))
 
 (CONCEPT
+  ONT::PERSON-DEFINED-BY-ACTIVITY
+  (COMMENT
+   "a person defined by a role that they play. e.g., doctor, leader, ...")
+  (INHERIT
+    ONT::PERSON)
+  (OVERLAP
+    WN::|agent%1:18:01::|
+    WN::|agent%1:18:02::|
+    WN::|professional%1:18:00::|
+    WN::|professional_person%1:18:00::|
+    WN::|skilled_worker%1:18:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (INFORMATION -)
+    (INTENTIONAL +)
+    (CONTAINER -)
+    (OBJECT-FUNCTION OCCUPATION)
+    (ORIGIN HUMAN)
+    (SPATIAL-ABSTRACTION SPATIAL-POINT)
+    (FORM SOLID-OBJECT)
+    (TYPE ONT::PERSON-DEFINED-BY-ACTIVITY))
+  (SEM-FRAME
+    (ONT::NOROLE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::FIGURE
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)))
+
+(CONCEPT
   ONT::PERSON-DEFINED-BY-MEMBERSHIP
   (INHERIT
     ONT::PERSON-RELN))
@@ -35107,7 +35166,7 @@
   ONT::PILOT
   (COMMENT "a person who operates aircrafts")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|aviator%1:18:00::|))
 
@@ -35549,7 +35608,7 @@
   ONT::POLICE
   (COMMENT "a person whose profession is in law enforcement")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|police_officer%1:18:00::|))
 
@@ -35623,7 +35682,7 @@
   ONT::POLITICS-PROFESSIONAL
   (COMMENT "a person whose profession is in law enforcement")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|politician%1:18:00::|
     WN::|politician%1:18:01::|
@@ -36943,47 +37002,11 @@
     (TYPE ONT::PRODUCTIVITY-VAL)))
 
 (CONCEPT
-  ONT::PROFESSIONAL
-  (COMMENT
-   "a person defined by a role that they play. e.g., doctor, leader, ...")
-  (INHERIT
-    ONT::PERSON)
-  (OVERLAP
-    WN::|agent%1:18:01::|
-    WN::|agent%1:18:02::|
-    WN::|professional%1:18:00::|
-    WN::|professional_person%1:18:00::|
-    WN::|skilled_worker%1:18:00::|)
-  (SEM-FEATS
-    (INHERIT
-      PHYS-OBJ)
-    (INFORMATION -)
-    (INTENTIONAL +)
-    (CONTAINER -)
-    (OBJECT-FUNCTION OCCUPATION)
-    (ORIGIN HUMAN)
-    (SPATIAL-ABSTRACTION SPATIAL-POINT)
-    (FORM SOLID-OBJECT)
-    (TYPE ONT::PROFESSIONAL))
-  (SEM-FRAME
-    (ONT::NOROLE
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::FIGURE
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)))
-
-(CONCEPT
   ONT::PROFESSIONAL-ASSOCIATE
   (COMMENT
    "the colleague/peer relation/role an individual has in a professional setting")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|colleague%1:18:00::|
     WN::|colleague%1:18:01::|))
@@ -37443,7 +37466,7 @@
   ONT::PUBLISHER
   (COMMENT "a person engaged in publishing books etc")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|publisher%1:18:00::|))
 
@@ -41715,7 +41738,7 @@
 (CONCEPT
   ONT::SCHOLAR
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|bookman%1:18:00::|
     WN::|educatee%1:18:00::|
@@ -41791,7 +41814,7 @@
 (CONCEPT
   ONT::SCOUT
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|scout%1:18:00::|))
 
@@ -42108,7 +42131,7 @@
   ONT::SELLER-TRADER
   (COMMENT "a person engaged in retail trade")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|merchant%1:18:00::|))
 
@@ -46911,7 +46934,7 @@
   ONT::TEACHER-TRAINER
   (COMMENT "a person who educates others")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|educator%1:18:00::|
     WN::|trainer%1:18:00::|))
@@ -46928,7 +46951,7 @@
   (COMMENT
    "a person whose occupation involves training in a specific technique etc")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|technician%1:18:00::|
     WN::|technician%1:18:01::|))
@@ -50842,7 +50865,7 @@
   ONT::WORKER
   (COMMENT "a person who performs manual labor")
   (INHERIT
-    ONT::PROFESSIONAL)
+    ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|workman%1:18:00::|
     WN::|worker%1:18:01::|))

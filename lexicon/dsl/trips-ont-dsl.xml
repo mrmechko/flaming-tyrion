@@ -508,7 +508,7 @@
  </concept>
  <concept name="ont::accountant">
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|accountant%1:18:00::|
@@ -1602,6 +1602,18 @@
    </role-restr-map>
   </sem-frame>
  </concept>
+ <concept name="ont::agent-representative">
+  <comment>
+   &quot;a person who represents a person or party&quot;
+  </comment>
+  <relation label="inherit">
+   ont::person-defined-by-activity
+  </relation>
+  <relation label="overlap">
+   wn::|fixer%1:18:00::|
+   wn::|representative%1:18:00::|
+  </relation>
+ </concept>
  <concept name="ont::aggressive-val">
   <relation label="inherit">
    ont::animal-propensity-val
@@ -1895,6 +1907,7 @@
   </relation>
   <relation label="overlap">
    wn::|allow%2:41:00::|
+   wn::|permit%2:32:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected">
@@ -2515,7 +2528,7 @@
    &quot;a person who seeks employment and has applied for it&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|applicant%1:18:00::|
@@ -3250,7 +3263,7 @@
    &quot;a person who creates art/performs artistic work&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|artist%1:18:00::|
@@ -3499,7 +3512,7 @@
  </concept>
  <concept name="ont::assistant">
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|assistant%1:18:00::|
@@ -3885,7 +3898,7 @@
  </concept>
  <concept name="ont::athlete">
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|athlete%1:18:00::|
@@ -4419,7 +4432,7 @@
  </concept>
  <concept name="ont::author">
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|writer%1:18:00::|
@@ -5669,6 +5682,17 @@
   </relation>
   <relation label="overlap">
    wn::|below%4:02:01::|
+  </relation>
+ </concept>
+ <concept name="ont::benefactor">
+  <comment>
+   &quot;a person/agency that sponsors other people/agencies&quot;
+  </comment>
+  <relation label="inherit">
+   ont::person-defined-by-activity
+  </relation>
+  <relation label="overlap">
+   wn::|benefactor%1:18:00::|
   </relation>
  </concept>
  <concept name="ont::beneficiary">
@@ -10538,7 +10562,7 @@
    &quot;a person whose occupation is cleaning&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|cleaner%1:18:00::|
@@ -11741,7 +11765,7 @@
  </concept>
  <concept name="ont::communication-party">
   <relation label="inherit">
-   ont::person-reln
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|communicator%1:18:00::|
@@ -12170,6 +12194,11 @@
    wn::|compromise%2:32:01::|
    wn::|compromise%2:32:00::|
   </relation>
+  <sem-frame>
+   <role-restr-map roles="ont::neutral" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::compsci-property-val">
   <relation label="inherit">
@@ -12855,7 +12884,7 @@
    &quot;a person whose work is related to construction of buildings etc, e.g., bricklayer, builder, plumber and roofer&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|builder%1:18:00::|
@@ -12867,7 +12896,7 @@
    &quot;an expert whose job is to give advise&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|consultant%1:18:00::|
@@ -16006,7 +16035,7 @@
    &quot;a person who designs, writes and tests computer programs&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|programmer%1:18:00::|
@@ -18213,7 +18242,7 @@
    &quot;a person responsible for editorial aspect of publication&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|editor%1:18:00::|
@@ -18529,7 +18558,7 @@
    &quot;a person who is hired to perform a job&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|employee%1:18:00::|
@@ -18872,7 +18901,7 @@
    &quot;a person who uses scientific knowledge to solve practical problems&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|engineer%1:18:00::|
@@ -19059,7 +19088,7 @@
    &quot;a person who engages in industrial enterprise, organizes business venture&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|businessperson%1:18:00::|
@@ -22442,7 +22471,7 @@
    &quot;a person whose profession is related to food industry, e.g., chef, waiter, etc&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|chef%1:18:01::|
@@ -23215,7 +23244,7 @@
    &quot;a person who plays video games for profession&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
  </concept>
  <concept name="ont::garden-grounds">
@@ -25189,7 +25218,7 @@
  </concept>
  <concept name="ont::health-professional">
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|health_professional%1:18:00::|
@@ -29229,7 +29258,7 @@
    &quot;a person whose profession is related to law, such as practicing it, giving legal advice, conducting lawsuits, providing judgements on court cases, and administering law&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|attorney%1:18:00::|
@@ -31297,7 +31326,7 @@
    &quot;Person that performs a managing role, e.g., boss, ceo, executive etc&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|employer%1:18:00::|
@@ -31996,7 +32025,7 @@
    &quot;a person whose profession is related to media, such as producing content for media, reporting, journalism&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|journalist%1:18:00::|
@@ -32674,7 +32703,7 @@
    &quot;a person whose profession is to study and predict weather conditions&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|meteorologist%1:18:00::|
@@ -37963,7 +37992,7 @@
    &quot;Person that serves in some administrative role&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|leader%1:18:00::|
@@ -39777,6 +39806,45 @@
    wn::|voyeuristical%3:01:00::|
   </relation>
  </concept>
+ <concept name="ont::person-defined-by-activity">
+  <comment>
+   &quot;a person defined by a role that they play. e.g., doctor, leader, ...&quot;
+  </comment>
+  <relation label="inherit">
+   ont::person
+  </relation>
+  <relation label="overlap">
+   wn::|agent%1:18:01::|
+   wn::|agent%1:18:02::|
+   wn::|professional%1:18:00::|
+   wn::|professional_person%1:18:00::|
+   wn::|skilled_worker%1:18:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="information">-</feat>
+   <feat name="intentional">+</feat>
+   <feat name="container">-</feat>
+   <feat name="object-function">occupation</feat>
+   <feat name="origin">human</feat>
+   <feat name="spatial-abstraction">spatial-point</feat>
+   <feat name="form">solid-object</feat>
+   <feat name="type">ont::person-defined-by-activity</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::norole" optional="optional">
+    <concept name="t" />
+   </role-restr-map>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::person-defined-by-membership">
   <relation label="inherit">
    ont::person-reln
@@ -40631,7 +40699,7 @@
    &quot;a person who operates aircrafts&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|aviator%1:18:00::|
@@ -41162,7 +41230,7 @@
    &quot;a person whose profession is in law enforcement&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|police_officer%1:18:00::|
@@ -41248,7 +41316,7 @@
    &quot;a person whose profession is in law enforcement&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|politician%1:18:00::|
@@ -42799,51 +42867,12 @@
    <feat name="type">ont::productivity-val</feat>
   </sem-feats>
  </concept>
- <concept name="ont::professional">
-  <comment>
-   &quot;a person defined by a role that they play. e.g., doctor, leader, ...&quot;
-  </comment>
-  <relation label="inherit">
-   ont::person
-  </relation>
-  <relation label="overlap">
-   wn::|agent%1:18:01::|
-   wn::|agent%1:18:02::|
-   wn::|professional%1:18:00::|
-   wn::|professional_person%1:18:00::|
-   wn::|skilled_worker%1:18:00::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="information">-</feat>
-   <feat name="intentional">+</feat>
-   <feat name="container">-</feat>
-   <feat name="object-function">occupation</feat>
-   <feat name="origin">human</feat>
-   <feat name="spatial-abstraction">spatial-point</feat>
-   <feat name="form">solid-object</feat>
-   <feat name="type">ont::professional</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::norole" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::figure" optional="optional">
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::professional-associate">
   <comment>
    &quot;the colleague/peer relation/role an individual has in a professional setting&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|colleague%1:18:00::|
@@ -43368,7 +43397,7 @@
    &quot;a person engaged in publishing books etc&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|publisher%1:18:00::|
@@ -48202,7 +48231,7 @@
  </concept>
  <concept name="ont::scholar">
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|bookman%1:18:00::|
@@ -48284,7 +48313,7 @@
  </concept>
  <concept name="ont::scout">
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|scout%1:18:00::|
@@ -48647,7 +48676,7 @@
    &quot;a person engaged in retail trade&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|merchant%1:18:00::|
@@ -54228,7 +54257,7 @@
    &quot;a person who educates others&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|educator%1:18:00::|
@@ -54248,7 +54277,7 @@
    &quot;a person whose occupation involves training in a specific technique etc&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|technician%1:18:00::|
@@ -58867,7 +58896,7 @@
    &quot;a person who performs manual labor&quot;
   </comment>
   <relation label="inherit">
-   ont::professional
+   ont::person-defined-by-activity
   </relation>
   <relation label="overlap">
    wn::|workman%1:18:00::|
