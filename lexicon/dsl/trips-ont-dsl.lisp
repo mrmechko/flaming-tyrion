@@ -10825,7 +10825,10 @@
 (CONCEPT
   ONT::COMPUTER-LANGUAGE
   (INHERIT
-    ONT::LANGUAGE))
+    ONT::LANGUAGE)
+  (OVERLAP
+    WN::|markup_language%1:10:00::|
+    WN::|programming_language%1:10:00::|))
 
 (CONCEPT
   ONT::COMPUTER-MAKE
@@ -10916,6 +10919,8 @@
   ONT::COMPUTER-SOFTWARE
   (INHERIT
     ONT::REPRESENTATION)
+  (OVERLAP
+    WN::|computer_code%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -18919,7 +18924,9 @@
 (CONCEPT
   ONT::FILE-FORMAT
   (INHERIT
-    ONT::COMPUTER-LANGUAGE))
+    ONT::COMPUTER-LANGUAGE)
+  (OVERLAP
+    WN::|mpeg%1:04:00::|))
 
 (CONCEPT
   ONT::FILL-CONTAINER
@@ -21183,7 +21190,32 @@
 (CONCEPT
   ONT::GREEK-LETTER-SYMBOL
   (INHERIT
-    ONT::LETTER-SYMBOL))
+    ONT::LETTER-SYMBOL)
+  (OVERLAP
+    WN::|alpha%1:10:00::|
+    WN::|beta%1:10:00::|
+    WN::|chi%1:10:00::|
+    WN::|delta%1:10:00::|
+    WN::|epsilon%1:10:00::|
+    WN::|eta%1:10:00::|
+    WN::|gamma%1:10:00::|
+    WN::|iota%1:10:00::|
+    WN::|kappa%1:10:00::|
+    WN::|lambda%1:10:00::|
+    WN::|mu%1:10:00::|
+    WN::|nu%1:10:00::|
+    WN::|omega%1:10:00::|
+    WN::|omicron%1:10:00::|
+    WN::|phi%1:10:00::|
+    WN::|pi%1:10:00::|
+    WN::|psi%1:10:00::|
+    WN::|rho%1:10:00::|
+    WN::|sigma%1:10:00::|
+    WN::|tau%1:10:00::|
+    WN::|theta%1:10:00::|
+    WN::|upsilon%1:10:00::|
+    WN::|xi%1:10:00::|
+    WN::|zeta%1:10:00::|))
 
 (CONCEPT
   ONT::GREEN
@@ -32151,6 +32183,8 @@
   ONT::NUMBER-OBJECT
   (INHERIT
     ONT::NUMBER)
+  (OVERLAP
+    WN::|digit%1:23:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -50303,7 +50337,9 @@
 (CONCEPT
   ONT::WEB-BROWSER
   (INHERIT
-    ONT::COMPUTER-SOFTWARE))
+    ONT::COMPUTER-SOFTWARE)
+  (OVERLAP
+    WN::|browser%1:10:00::|))
 
 (CONCEPT
   ONT::WEBSITE
