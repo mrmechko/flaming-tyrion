@@ -409,7 +409,13 @@
 (CONCEPT
   ONT::ACCOUNT
   (INHERIT
-    ONT::VALUE-COST)
+    ONT::FUNCTION-OBJECT)
+  (OVERLAP
+    WN::|account%1:26:00::|
+    WN::|financial_aid%1:21:00::|
+    WN::|fund%1:21:01::|
+    WN::|funding%1:21:00::|
+    WN::|grant%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -8694,7 +8700,9 @@
 (CONCEPT
   ONT::CHARGE-PER-UNIT
   (INHERIT
-    ONT::VALUE-COST))
+    ONT::RATIO-SCALE)
+  (OVERLAP
+    WN::|charge_per_unit%1:21:00::|))
 
 (CONCEPT
   ONT::CHARGEABILITY-VAL
@@ -13515,6 +13523,8 @@
   ONT::DEFINITION
   (INHERIT
     ONT::INFORMATION-FUNCTION-OBJECT)
+  (OVERLAP
+    WN::|definition%1:10:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (CONCEPT
@@ -18591,6 +18601,7 @@
   (INHERIT
     ONT::SOCIAL-GROUP)
   (OVERLAP
+    WN::|family%1:14:01::|
     WN::|family%1:14:02::|))
 
 (CONCEPT
@@ -19123,6 +19134,8 @@
   ONT::FIRSTNAME
   (INHERIT
     ONT::NAME)
+  (OVERLAP
+    WN::|first_name%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -25155,6 +25168,8 @@
   ONT::LASTNAME
   (INHERIT
     ONT::NAME)
+  (OVERLAP
+    WN::|surname%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -27785,7 +27800,7 @@
 (CONCEPT
   ONT::MEDICAL-DIAGNOSTIC
   (INHERIT
-    ONT::MEDICAL-TEST)
+    ONT::MEDICAL-PROCEDURE)
   (OVERLAP
     WN::|diagnostic_procedure%1:04:00::|
     WN::|diagnostic_technique%1:04:00::|))
@@ -27859,8 +27874,9 @@
   (INHERIT
     ONT::PROCEDURE)
   (OVERLAP
-    WN::|medical_procedure%1:04:00::|
+    WN::|checkup%1:04:00::|
     WN::|incision%1:04:00::|
+    WN::|medical_procedure%1:04:00::|
     WN::|section%1:04:00::|
     WN::|surgical_incision%1:04:00::|))
 
@@ -28024,11 +28040,6 @@
     WN::|hypoglycaemic%3:01:00::|
     WN::|afebrile%3:01:00::|
     WN::|atrophic%3:01:00::|))
-
-(CONCEPT
-  ONT::MEDICAL-TEST
-  (INHERIT
-    ONT::PROCEDURE))
 
 (CONCEPT
   ONT::MEDICAL-VAL
@@ -29473,6 +29484,8 @@
   ONT::NAME
   (INHERIT
     ONT::IDENTIFICATION)
+  (OVERLAP
+    WN::|name%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -36694,6 +36707,12 @@
   ONT::PRICE
   (INHERIT
     ONT::VALUE-COST)
+  (OVERLAP
+    WN::|price%1:07:00::|
+    WN::|price%1:07:01::|
+    WN::|price%1:07:02::|
+    WN::|price%1:21:00::|
+    WN::|price%1:21:02::|)
   (SEM-FRAME
     (ONT::EXTENT
      (SEM-FEATS
@@ -38134,7 +38153,6 @@
   (INHERIT
     ONT::RATIO-SCALE)
   (OVERLAP
-    WN::|rate%1:21:00::|
     WN::|rate%1:28:00::|
     WN::|incidence%1:24:00::|)
   (SEM-FEATS
@@ -47897,6 +47915,11 @@
   ONT::TITLE
   (INHERIT
     ONT::NAME)
+  (OVERLAP
+    WN::|designation%1:10:00::|
+    WN::|highness%1:18:00::|
+    WN::|sir%1:18:01::|
+    WN::|sir%1:18:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
