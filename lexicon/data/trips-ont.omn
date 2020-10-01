@@ -6124,7 +6124,7 @@ Class: scale-value-function
 Class: level
   Annotations: rdfs:comment "words that act as map objects to values on a scale/domain: What is the X on this scale?  Note: We exclude words that are identical to the names of the scales they pertain to (e.g., What is the height on the height scale?)"
   SubClassOf: scale-value-function
-  SubClassOf: (FLT_abstr-obj and F_scale some linear-extent-scale)
+  SubClassOf: (FLT_abstr-obj and F_scale some domain)
   SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj)) and _figure some owl:Thing
   SubClassOf: _ground only (FLT_abstr-obj and F_information some V_information-content) and _ground some owl:Thing
 
@@ -6472,6 +6472,10 @@ Class: mental-plan
 
 # ONT type ont::budget
 Class: budget
+  SubClassOf: mental-plan
+
+# ONT type ont::design-plan
+Class: design-plan
   SubClassOf: mental-plan
 
 # ONT type ont::standard
@@ -17181,7 +17185,7 @@ Class: take-time
   SubClassOf: (FLT_situation and F_cause some V_- and F_trajectory some V_-)
   SubClassOf: _formal only ((FLT_situation or FLT_phys-obj) and F_aspect some (V_dynamic or V_stage-level)) and _formal some owl:Thing
   SubClassOf: _extent only (FLT_abstr-obj and F_scale some duration-scale) and _extent some owl:Thing
-  SubClassOf: _neutral only (FLT_phys-obj)
+  SubClassOf: _neutral only ((FLT_phys-obj or FLT_situation))
 
 # ONT type ont::leave-time
 Class: leave-time
@@ -19946,6 +19950,9 @@ DisjointClasses: opinion, understanding, illusion, doctrine
 
 # children of ont::ps-object
 DisjointClasses: comparison, problem, commitment, proposal, goal, method, procedure, standard, mental-plan, requirements
+
+# children of ont::mental-plan
+DisjointClasses: design-plan, budget
 
 # children of ont::procedure
 DisjointClasses: medical-procedure, process, algorithm, policy, protocol, recipe

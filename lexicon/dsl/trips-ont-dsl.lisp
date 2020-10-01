@@ -2546,7 +2546,8 @@
     WN::|reorient%2:30:00::|
     WN::|put_aside%2:35:00::|
     WN::|address%2:32:02::|
-    WN::|alternate%2:30:01::|)
+    WN::|alternate%2:30:01::|
+    WN::|organization%1:04:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -13865,6 +13866,13 @@
     (ONT::NEUTRAL
      (CONCEPT
        T))))
+
+(CONCEPT
+  ONT::DESIGN-PLAN
+  (INHERIT
+    ONT::MENTAL-PLAN)
+  (OVERLAP
+    WN::|design%1:09:01::|))
 
 (CONCEPT
   ONT::DESIGNED-TO-DEMAND-VAL
@@ -25594,7 +25602,7 @@
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
-    (SCALE ONT::LINEAR-EXTENT-SCALE)
+    (SCALE ONT::DOMAIN)
     (TYPE ONT::LEVEL))
   (SEM-FRAME
     (ONT::GROUND
@@ -28218,7 +28226,6 @@
   (INHERIT
     ONT::PS-OBJECT)
   (OVERLAP
-    WN::|plan%1:09:01::|
     WN::|plan%1:09:00::|
     WN::|plan_of_action%1:09:00::|))
 
@@ -46553,8 +46560,11 @@
     (TYPE ONT::TAKE-TIME))
   (SEM-FRAME
     (ONT::NEUTRAL
-     (CONCEPT
-       PHYS-OBJ)
+     (OR
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         SITUATION))
      OPTIONAL)
     (ONT::EXTENT
      (SEM-FEATS
