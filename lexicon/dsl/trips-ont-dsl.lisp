@@ -15835,7 +15835,9 @@
 (CONCEPT
   ONT::EATING-PLAN
   (INHERIT
-    ONT::RECIPE))
+    ONT::RECIPE)
+  (OVERLAP
+    WN::|diet%1:04:00::|))
 
 (CONCEPT
   ONT::EBOLA
@@ -19617,11 +19619,6 @@
          PHYS-OBJ)
        (FORM SUBSTANCE))
      OPTIONAL)))
-
-(CONCEPT
-  ONT::FOOD-PREP-PROCESS
-  (INHERIT
-    ONT::PROCESS))
 
 (CONCEPT
   ONT::FOOD-PROPERTY-VAL
@@ -37720,7 +37717,10 @@
 (CONCEPT
   ONT::PUSH-OUT-OF
   (INHERIT
-    ONT::CAUSE-OUT-OF))
+    ONT::CAUSE-OUT-OF)
+  (OVERLAP
+    WN::|expel%2:41:00::|
+    WN::|push_out%2:38:00::|))
 
 (CONCEPT
   ONT::PUT
@@ -44084,10 +44084,10 @@
   (OVERLAP
     WN::|banishment%1:04:00::|
     WN::|expel%2:41:01::|
-    WN::|expel%2:41:00::|
     WN::|ouster%1:04:00::|
     WN::|repatriate%2:41:01::|
-    WN::|debarment%1:04:00::|)
+    WN::|debarment%1:04:00::|
+    WN::|purge%2:41:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
