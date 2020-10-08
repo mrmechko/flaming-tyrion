@@ -33916,6 +33916,22 @@
    <feat name="type">ont::music-scale</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::music-unit">
+  <relation label="inherit">
+   ont::measure-unit
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">ont::music-unit</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::figure" optional="optional">
+    <concept name="abstr-obj" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::musical-document">
   <relation label="inherit">
    ont::document
@@ -37193,7 +37209,7 @@
  </concept>
  <concept name="ont::note-length-unit">
   <relation label="inherit">
-   ont::sound-unit
+   ont::music-unit
   </relation>
   <relation label="overlap">
    wn::|whole_note%1:10:00::|
@@ -40853,7 +40869,7 @@
  </concept>
  <concept name="ont::pitch-unit">
   <relation label="inherit">
-   ont::sound-unit
+   ont::music-unit
   </relation>
   <sem-feats>
    <relation label="inherit">
@@ -43498,6 +43514,9 @@
  <concept name="ont::pull-out-of">
   <relation label="inherit">
    ont::cause-out-of
+  </relation>
+  <relation label="overlap">
+   wn::|pull%2:38:03::|
   </relation>
  </concept>
  <concept name="ont::pulse">
@@ -51259,22 +51278,6 @@
    <feat name="scale">ont::sound-texture-scale</feat>
    <feat name="type">ont::sound-texture-scale</feat>
   </sem-feats>
- </concept>
- <concept name="ont::sound-unit">
-  <relation label="inherit">
-   ont::measure-unit
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">ont::sound-unit</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::figure" optional="optional">
-    <concept name="abstr-obj" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::sound-volume-scale">
   <relation label="inherit">
