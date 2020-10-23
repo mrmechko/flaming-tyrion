@@ -12251,6 +12251,13 @@
     (TYPE ONT::COULD-BE-AT)))
 
 (CONCEPT
+  ONT::COUNT
+  (INHERIT
+    ONT::DETERMINE)
+  (OVERLAP
+    WN::|count%2:32:00::|))
+
+(CONCEPT
   ONT::COUNTERCLOCKWISE
   (INHERIT
     ONT::DIRECTION-ROTATION)
@@ -47619,6 +47626,7 @@
          TIME)
        (TIME-FUNCTION
         (OR
+          DATE
           CLOCK-TIME
           DAY-POINT)))
      OPTIONAL)))
