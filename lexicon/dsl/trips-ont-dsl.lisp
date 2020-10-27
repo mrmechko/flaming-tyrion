@@ -19628,6 +19628,19 @@
      OPTIONAL)))
 
 (CONCEPT
+  ONT::FOOD-PRODUCE
+  (INHERIT
+    ONT::FOOD)
+  (OVERLAP
+    WN::|produce%1:13:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (FORM SOLID)
+    (ORIGIN NATURAL)
+    (TYPE ONT::FOOD-PRODUCE)))
+
+(CONCEPT
   ONT::FOOD-PROPERTY-VAL
   (INHERIT
     ONT::ASSOCIATED-WITH-FOOD-VAL)
@@ -20041,7 +20054,7 @@
 (CONCEPT
   ONT::FRUIT
   (INHERIT
-    ONT::PRODUCE)
+    ONT::FOOD-PRODUCE)
   (OVERLAP
     WN::|edible_fruit%1:13:00::|))
 
@@ -36993,19 +37006,6 @@
     WN::|reproduce%2:29:00::|))
 
 (CONCEPT
-  ONT::PRODUCE
-  (INHERIT
-    ONT::FOOD)
-  (OVERLAP
-    WN::|produce%1:13:00::|)
-  (SEM-FEATS
-    (INHERIT
-      PHYS-OBJ)
-    (FORM SOLID)
-    (ORIGIN NATURAL)
-    (TYPE ONT::PRODUCE)))
-
-(CONCEPT
   ONT::PRODUCT
   (INHERIT
     ONT::COMMODITY)
@@ -49647,7 +49647,7 @@
 (CONCEPT
   ONT::VEGETABLE
   (INHERIT
-    ONT::PRODUCE)
+    ONT::FOOD-PRODUCE)
   (OVERLAP
     WN::|vegetable%1:13:00::|
     WN::|veggie%1:13:00::|
