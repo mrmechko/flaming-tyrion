@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::retire">
  <relation label="inherit">
-  ont::employment
+  ont::stop
  </relation>
  <relation label="overlap">
   wn::|pension_off%2:41:00::|
@@ -107,88 +107,123 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::employment">
+ <concept name="ont::stop">
  <relation label="inherit">
-  ont::agent-interaction
+  ont::inhibit-effect
  </relation>
+ <relation label="overlap">
+  wn::|abort%2:29:00::|
+  wn::|blow_out%2:43:00::|
+  wn::|bog_down%2:38:01::|
+  wn::|break%2:42:04::|
+  wn::|cease%2:42:00::|
+  wn::|discontinue%2:42:00::|
+  wn::|expire%2:42:00::|
+  wn::|get_off%2:41:00::|
+  wn::|give_up%2:42:00::|
+  wn::|halt%2:38:01::|
+  wn::|lay_off%2:42:00::|
+  wn::|quit%2:42:04::|
+  wn::|run_out%2:42:00::|
+  wn::|stop%2:38:01::|
+  wn::|stop%2:42:00::|
+  wn::|strand%2:38:02::|
+  wn::|strand%2:38:03::|
+  wn::|terminate%2:30:01::|
+  wn::|arrest%2:33:00::|
+  wn::|conclude%2:42:02::|
+ </relation>
+ </concept>
+ <concept name="ont::inhibit-effect">
+ <comment>
+  &quot;an AGENT prevents some activity from occuring or proposition from becoming true&quot;
+ </comment>
+ <relation label="inherit">
+  ont::acting
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">
+  <or>
+   force
+   agentive
+  </or>
+  </feat>
+  <feat name="type">ont::inhibit-effect</feat>
+ </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+  <role-restr-map roles="ont::agent ont::cause" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
   </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::effect">
+  <role-restr-map roles="ont::formal" optional="optional">
    <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::agent-interaction">
+ <concept name="ont::acting">
  <comment>
-  &quot;events that involve the interaction of two or more agents&quot;
+  &quot;abstract event of doing something: behave, activity, ...&quot;
  </comment>
  <relation label="inherit">
   ont::event-of-action
  </relation>
- <relation label="overlap">
-  wn::|interaction%1:04:00::|
- </relation>
  <sem-frame>
-  <role-restr-map roles="ont::agent1" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="tangible">+</feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="tangible">+</feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+  <role-restr-map roles="ont::agent">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">
+ <or>
+  force
+  agentive
+ </or>
+ </feat>
+ <feat name="type">ont::inhibit-effect</feat>
+ </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::affected">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::agent ont::cause" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
  </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::effect">
+ <role-restr-map roles="ont::formal" optional="optional">
   <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::event-of-action">
@@ -226,25 +261,15 @@
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::agent1" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="tangible">+</feat>
-   <feat name="intentional">+</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="tangible">+</feat>
-   <feat name="intentional">+</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::situation-root">

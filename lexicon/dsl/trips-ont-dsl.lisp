@@ -16219,11 +16219,12 @@
 (CONCEPT
   ONT::EMPLOY
   (INHERIT
-    ONT::EMPLOYMENT)
+    ONT::AGENT-INTERACTION)
   (OVERLAP
-    WN::|hire%2:41:00::|
+    WN::|employ%2:41:00::|
+    WN::|employment%1:04:02::|
     WN::|engage%2:41:01::|
-    WN::|employ%2:41:00::|))
+    WN::|hire%2:41:00::|))
 
 (CONCEPT
   ONT::EMPLOYEE
@@ -16232,31 +16233,6 @@
     ONT::PERSON-DEFINED-BY-ACTIVITY)
   (OVERLAP
     WN::|employee%1:18:00::|))
-
-(CONCEPT
-  ONT::EMPLOYMENT
-  (INHERIT
-    ONT::AGENT-INTERACTION)
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
-       (INTENTIONAL +)))
-    (ONT::AGENT
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ))
-       (INTENTIONAL +)))
-    (ONT::EFFECT
-     (CONCEPT
-       SITUATION))))
 
 (CONCEPT
   ONT::EMPLOYMENT-CLASS-VAL
@@ -20124,6 +20100,17 @@
   ONT::FUNCTION-CALCULATION
   (INHERIT
     ONT::CALCULATION)
+  (OVERLAP
+    WN::|average%2:31:00::|
+    WN::|cube%2:31:00::|
+    WN::|differentiate%2:31:00::|
+    WN::|extrapolate%2:31:00::|
+    WN::|factor%2:31:00::|
+    WN::|factorize%2:31:00::|
+    WN::|integrate%2:31:00::|
+    WN::|prorate%2:31:00::|
+    WN::|raise%2:31:00differentiate%2:31:00|
+    WN::|square%2:31:00::|)
   (SEM-FRAME
     (ONT::FORMAL
      (SEM-FEATS
@@ -40905,7 +40892,7 @@
 (CONCEPT
   ONT::RETIRE
   (INHERIT
-    ONT::EMPLOYMENT)
+    ONT::STOP)
   (OVERLAP
     WN::|pension_off%2:41:00::|
     WN::|retire%2:41:01::|
@@ -44103,7 +44090,7 @@
 (CONCEPT
   ONT::SOCIALLY-REMOVE
   (INHERIT
-    ONT::CAUSE-COME-FROM)
+    ONT::AGENT-INTERACTION)
   (OVERLAP
     WN::|banishment%1:04:00::|
     WN::|expel%2:41:01::|
@@ -47235,7 +47222,7 @@
 (CONCEPT
   ONT::TERMINATE
   (INHERIT
-    ONT::EMPLOYMENT)
+    ONT::SOCIALLY-REMOVE)
   (OVERLAP
     WN::|displace%2:41:04::|
     WN::|fire%2:41:00::|
@@ -50954,10 +50941,12 @@
   (INHERIT
     ONT::INTENTIONALLY-ACT)
   (OVERLAP
-    WN::|work%2:41:05::|
-    WN::|work%2:41:02::|
+    WN::|employ%1:26:00::|
+    WN::|job%1:04:00::|
+    WN::|practice%1:04:03::|
     WN::|toil%2:41:00::|
-    WN::|practice%1:04:03::|)
+    WN::|work%2:41:02::|
+    WN::|work%2:41:05::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)

@@ -18585,12 +18585,13 @@
  </concept>
  <concept name="ont::employ">
   <relation label="inherit">
-   ont::employment
+   ont::agent-interaction
   </relation>
   <relation label="overlap">
-   wn::|hire%2:41:00::|
-   wn::|engage%2:41:01::|
    wn::|employ%2:41:00::|
+   wn::|employment%1:04:02::|
+   wn::|engage%2:41:01::|
+   wn::|hire%2:41:00::|
   </relation>
  </concept>
  <concept name="ont::employee">
@@ -18603,34 +18604,6 @@
   <relation label="overlap">
    wn::|employee%1:18:00::|
   </relation>
- </concept>
- <concept name="ont::employment">
-  <relation label="inherit">
-   ont::agent-interaction
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::affected">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::agent">
-    <sem-feats>
-     <or>
-      <concept name="phys-obj" />
-      <concept name="abstr-obj" />
-     </or>
-     <feat name="intentional">+</feat>
-    </sem-feats>
-   </role-restr-map>
-   <role-restr-map roles="ont::effect">
-    <concept name="situation" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::employment-class-val">
   <comment>
@@ -23131,6 +23104,18 @@
  <concept name="ont::function-calculation">
   <relation label="inherit">
    ont::calculation
+  </relation>
+  <relation label="overlap">
+   wn::|average%2:31:00::|
+   wn::|cube%2:31:00::|
+   wn::|differentiate%2:31:00::|
+   wn::|extrapolate%2:31:00::|
+   wn::|factor%2:31:00::|
+   wn::|factorize%2:31:00::|
+   wn::|integrate%2:31:00::|
+   wn::|prorate%2:31:00::|
+   wn::|raise%2:31:00differentiate%2:31:00|
+   wn::|square%2:31:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::formal">
@@ -47290,7 +47275,7 @@
  </concept>
  <concept name="ont::retire">
   <relation label="inherit">
-   ont::employment
+   ont::stop
   </relation>
   <relation label="overlap">
    wn::|pension_off%2:41:00::|
@@ -50988,7 +50973,7 @@
  </concept>
  <concept name="ont::socially-remove">
   <relation label="inherit">
-   ont::cause-come-from
+   ont::agent-interaction
   </relation>
   <relation label="overlap">
    wn::|banishment%1:04:00::|
@@ -54606,7 +54591,7 @@
  </concept>
  <concept name="ont::terminate">
   <relation label="inherit">
-   ont::employment
+   ont::socially-remove
   </relation>
   <relation label="overlap">
    wn::|displace%2:41:04::|
@@ -59006,10 +58991,12 @@
    ont::intentionally-act
   </relation>
   <relation label="overlap">
-   wn::|work%2:41:05::|
-   wn::|work%2:41:02::|
-   wn::|toil%2:41:00::|
+   wn::|employ%1:26:00::|
+   wn::|job%1:04:00::|
    wn::|practice%1:04:03::|
+   wn::|toil%2:41:00::|
+   wn::|work%2:41:02::|
+   wn::|work%2:41:05::|
   </relation>
   <sem-feats>
    <relation label="inherit">

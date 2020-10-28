@@ -417,6 +417,30 @@
   wn::|compete%2:33:00::|
  </relation>
  </concept>
+ <concept name="ont::socially-remove">
+ <relation label="inherit">
+  ont::agent-interaction
+ </relation>
+ <relation label="overlap">
+  wn::|banishment%1:04:00::|
+  wn::|expel%2:41:01::|
+  wn::|ouster%1:04:00::|
+  wn::|repatriate%2:41:01::|
+  wn::|debarment%1:04:00::|
+  wn::|purge%2:41:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::share">
  <comment>
   &quot;two or more agents sharing something&quot;
@@ -434,32 +458,15 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::employment">
+ <concept name="ont::employ">
  <relation label="inherit">
   ont::agent-interaction
  </relation>
- <sem-frame>
-  <role-restr-map roles="ont::affected">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::effect">
-   <concept name="situation" />
-  </role-restr-map>
- </sem-frame>
+ <relation label="overlap">
+  wn::|employ%2:41:00::|
+  wn::|employment%1:04:02::|
+  wn::|engage%2:41:01::|
+  wn::|hire%2:41:00::|
+ </relation>
  </concept>
 </dsl>

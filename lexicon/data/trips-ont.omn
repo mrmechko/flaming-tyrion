@@ -17120,7 +17120,7 @@ Class: pull-out-of
 
 # ONT type ont::socially-remove
 Class: socially-remove
-  SubClassOf: cause-come-from
+  SubClassOf: agent-interaction
   SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj) and F_intentional some V_+) and _affected some owl:Thing
 
 # ONT type ont::cause-clear
@@ -18600,20 +18600,13 @@ Class: compliance
   SubClassOf: _agent only ((FLT_phys-obj or FLT_abstr-obj) and F_intentional some V_+)
   SubClassOf: _formal only (FLT_abstr-obj) and _formal some owl:Thing
 
-# ONT type ont::employment
-Class: employment
-  SubClassOf: agent-interaction
-  SubClassOf: _effect only (FLT_situation) and _effect some owl:Thing
-  SubClassOf: _agent only ((FLT_phys-obj or FLT_abstr-obj) and F_intentional some V_+) and _agent some owl:Thing
-  SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj) and F_intentional some V_+) and _affected some owl:Thing
-
 # ONT type ont::employ
 Class: employ
-  SubClassOf: employment
+  SubClassOf: agent-interaction
 
 # ONT type ont::retire
 Class: retire
-  SubClassOf: employment
+  SubClassOf: stop
 
 # ONT type ont::work
 Class: work
@@ -18622,7 +18615,7 @@ Class: work
 
 # ONT type ont::terminate
 Class: terminate
-  SubClassOf: employment
+  SubClassOf: socially-remove
   SubClassOf: _effect only (FLT_situation) and _effect some owl:Thing
   SubClassOf: _agent only ((FLT_phys-obj or FLT_abstr-obj) and F_intentional some V_+) and _agent some owl:Thing
   SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj) and F_intentional some V_+) and _affected some owl:Thing
@@ -19736,7 +19729,7 @@ DisjointClasses: act-behave, execute, use, cause-action, complete, fail, inhibit
 DisjointClasses: make-it-so, maintain-keep, enable, allow, help, cause-stimulate, provoke, encourage, ensure, start, cause-produce-reproduce, try, have-influence
 
 # children of ont::agent-interaction
-DisjointClasses: employment, share, compete, collaborate, judgement, fighting, interact, meet, communication
+DisjointClasses: employ, share, socially-remove, compete, collaborate, judgement, fighting, interact, meet, communication
 
 # children of ont::communication
 DisjointClasses: establish-communication, show, say, conversing, ask-question, response, directed-communication, perlocution, exclamation, illocution, locution
@@ -21358,6 +21351,9 @@ DisjointClasses: nature-change, shape-change, break-object
 # children of ont::inhibit-effect
 DisjointClasses: prohibit, withhold, prevent, hindering, disable, pause, stop
 
+# children of ont::stop
+DisjointClasses: retire, deactivate
+
 # children of ont::start
 DisjointClasses: resume, start-object
 
@@ -21482,7 +21478,7 @@ DisjointClasses: facilitate, prepare
 DisjointClasses: save-cost, costs, afford
 
 # children of ont::cause-come-from
-DisjointClasses: empty, cause-clear, socially-remove, cause-off, cause-out-of
+DisjointClasses: empty, cause-clear, cause-off, cause-out-of
 
 # children of ont::cause-off
 DisjointClasses: undress, shed
@@ -21633,9 +21629,6 @@ DisjointClasses: extinguish, burn-out-light-up-change
 
 # children of ont::hindering
 DisjointClasses: delay, deprive, downregulate
-
-# children of ont::employment
-DisjointClasses: terminate, retire, employ
 
 # children of ont::body-movement
 DisjointClasses: body-movement-self, stretch, straddle, body-movement-place, uncontrolled-body-motion
