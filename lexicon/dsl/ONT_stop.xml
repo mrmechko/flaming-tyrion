@@ -319,7 +319,7 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
- <concept name="ont::deactivate">
+ <concept name="ont::deactivate-turn-off">
  <comment>
   &quot;Stoping the running of some ongoing process or object that causes a process&quot;
  </comment>
@@ -459,6 +459,28 @@
  <sense>
  <morph>
   <pos pos="v" />
+  <word first-word="burn" remaining-words="out" />
+ </morph>
+ <comment>
+  &quot;MOCKUP-1&quot;
+ </comment>
+ <example text="a lightbub burned out">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::stop
+  ont::affected-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
   <word first-word="cease" />
   <forms>
    -VB
@@ -586,69 +608,6 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="deactivate" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="deactivation" />
-   </nom>
-  </forms>
- </morph>
- <example text="deactivate all alerting">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::stop
- </relation>
- <syntax>
-  <template-call template="ont::agent-formal-xp-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::formal"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="deactivate" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="deactivation" />
-   </nom>
-  </forms>
- </morph>
- <example text="deactivate the alarm">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::stop
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
-  </sem-feats>
- </semantics>
  </sense>
  <sense>
  <morph>
@@ -920,35 +879,6 @@
   <sem-feats>
    <feat name="time-span">atomic</feat>
    <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="inactivate" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="inactivation" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::stop
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-   <feat name="cause">agentive</feat>
   </sem-feats>
  </semantics>
  </sense>

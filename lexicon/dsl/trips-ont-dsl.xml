@@ -8008,11 +8008,6 @@
    wn::|combust%2:43:02::|
   </relation>
  </concept>
- <concept name="ont::burn-out-light-up-change">
-  <relation label="inherit">
-   ont::change-device-state
-  </relation>
- </concept>
  <concept name="ont::business-facility">
   <relation label="inherit">
    ont::facility
@@ -9431,25 +9426,6 @@
       <concept name="phys-obj" />
      </or>
      <feat name="intentional">+</feat>
-    </sem-feats>
-   </role-restr-map>
-  </sem-frame>
- </concept>
- <concept name="ont::change-device-state">
-  <relation label="inherit">
-   ont::change-state-action
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::result" optional="optional">
-    <concept name="t" />
-   </role-restr-map>
-   <role-restr-map roles="ont::affected">
-    <sem-feats>
-     <relation label="inherit">
-      phys-obj
-     </relation>
-     <feat name="origin">artifact</feat>
-     <feat name="form">object</feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -15159,7 +15135,7 @@
    wn::|groggy%5:00:00:lethargic:00|
   </relation>
  </concept>
- <concept name="ont::deactivate">
+ <concept name="ont::deactivate-turn-off">
   <comment>
    &quot;Stoping the running of some ongoing process or object that causes a process&quot;
   </comment>
@@ -16847,7 +16823,6 @@
    ont::relinquish
   </relation>
   <relation label="overlap">
-   wn::|eliminate%2:30:01::|
    wn::|eliminate%2:31:00::|
    wn::|eliminate%2:42:01::|
    wn::|get_rid_of%2:40:01::|
@@ -20979,23 +20954,6 @@
    <feat name="intentional">-</feat>
    <feat name="type">ont::external-body-part</feat>
   </sem-feats>
- </concept>
- <concept name="ont::extinguish">
-  <relation label="inherit">
-   ont::change-device-state
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
-   <feat name="type">ont::extinguish</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::affected">
-    <concept name="phys-obj" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::extra-sensory-property-val">
   <comment>
@@ -28543,12 +28501,13 @@
    ont::destroy
   </relation>
   <relation label="overlap">
+   wn::|eliminate%2:30:01::|
+   wn::|corporal_punishment%1:04:00::|
+   wn::|destroy%2:35:01::|
    wn::|kill%2:35:00::|
    wn::|kill%2:35:01::|
    wn::|kill%2:35:02::|
-   wn::|destroy%2:35:01::|
    wn::|killing%1:04:00::|
-   wn::|corporal_punishment%1:04:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::affected" optional="optional">
@@ -29714,6 +29673,11 @@
    wn::|soft%3:00:05::|
    wn::|diffuse%3:00:00::|
    wn::|diffused%3:00:00::|
+  </relation>
+ </concept>
+ <concept name="ont::light-up-change">
+  <relation label="inherit">
+   ont::start-object
   </relation>
  </concept>
  <concept name="ont::light-val">
@@ -56244,23 +56208,6 @@
   <relation label="overlap">
    wn::|turkey%1:05:00::|
   </relation>
- </concept>
- <concept name="ont::turn-off">
-  <relation label="inherit">
-   ont::extinguish
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="aspect">dynamic</feat>
-   <feat name="type">ont::turn-off</feat>
-  </sem-feats>
-  <sem-frame>
-   <role-restr-map roles="ont::agent">
-    <concept name="t" />
-   </role-restr-map>
-  </sem-frame>
  </concept>
  <concept name="ont::two-dimensional-val">
   <comment>

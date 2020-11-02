@@ -15747,8 +15747,8 @@ Class: nature-change
 Class: stop
   SubClassOf: inhibit-effect
 
-# ONT type ont::deactivate
-Class: deactivate
+# ONT type ont::deactivate-turn-off
+Class: deactivate-turn-off
   Annotations: rdfs:comment "Stoping the running of some ongoing process or object that causes a process"
   SubClassOf: stop
 
@@ -18488,27 +18488,9 @@ Class: close
 Class: clog
   SubClassOf: closure
 
-# ONT type ont::change-device-state
-Class: change-device-state
-  SubClassOf: change-state-action
-  SubClassOf: _affected only (FLT_phys-obj and F_form some V_object and F_origin some V_artifact) and _affected some owl:Thing
-  SubClassOf: _result only owl:Thing
-
-# ONT type ont::burn-out-light-up-change
-Class: burn-out-light-up-change
-  SubClassOf: change-device-state
-
-# ONT type ont::extinguish
-Class: extinguish
-  SubClassOf: change-device-state
-  SubClassOf: (FLT_situation and F_aspect some V_dynamic)
-  SubClassOf: _affected only (FLT_phys-obj) and _affected some owl:Thing
-
-# ONT type ont::turn-off
-Class: turn-off
-  SubClassOf: extinguish
-  SubClassOf: (FLT_situation and F_aspect some V_dynamic)
-  SubClassOf: _agent only owl:Thing
+# ONT type ont::light-up-change
+Class: light-up-change
+  SubClassOf: start-object
 
 # ONT type ont::register
 Class: register
@@ -21352,10 +21334,13 @@ DisjointClasses: nature-change, shape-change, break-object
 DisjointClasses: prohibit, withhold, prevent, hindering, disable, pause, stop
 
 # children of ont::stop
-DisjointClasses: retire, deactivate
+DisjointClasses: retire, deactivate-turn-off
 
 # children of ont::start
 DisjointClasses: resume, start-object
+
+# children of ont::start-object
+DisjointClasses: light-up-change, boot-up
 
 # children of ont::social-activity
 DisjointClasses: social-relationship, represent
@@ -21616,16 +21601,13 @@ DisjointClasses: identify, classify, attribute-impute, ordering
 DisjointClasses: duplicate, archive
 
 # children of ont::change-state-action
-DisjointClasses: change-device-state, closure, replacement, clean, repair, render-ineffective, cure
+DisjointClasses: closure, replacement, clean, repair, render-ineffective, cure
 
 # children of ont::clean
 DisjointClasses: bath, shower
 
 # children of ont::closure
 DisjointClasses: clog, close, open
-
-# children of ont::change-device-state
-DisjointClasses: extinguish, burn-out-light-up-change
 
 # children of ont::hindering
 DisjointClasses: delay, deprive, downregulate

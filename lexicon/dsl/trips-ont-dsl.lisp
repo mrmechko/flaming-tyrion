@@ -7020,11 +7020,6 @@
     WN::|combust%2:43:02::|))
 
 (CONCEPT
-  ONT::BURN-OUT-LIGHT-UP-CHANGE
-  (INHERIT
-    ONT::CHANGE-DEVICE-STATE))
-
-(CONCEPT
   ONT::BUSINESS-FACILITY
   (INHERIT
     ONT::FACILITY)
@@ -8322,22 +8317,6 @@
          (CONCEPT
            PHYS-OBJ))
        (INTENTIONAL +)))))
-
-(CONCEPT
-  ONT::CHANGE-DEVICE-STATE
-  (INHERIT
-    ONT::CHANGE-STATE-ACTION)
-  (SEM-FRAME
-    (ONT::RESULT
-     (CONCEPT
-       T)
-     OPTIONAL)
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (ORIGIN ARTIFACT)
-       (FORM OBJECT)))))
 
 (CONCEPT
   ONT::CHANGE-IN-APPEARANCE
@@ -13286,7 +13265,7 @@
     WN::|groggy%5:00:00:lethargic:00|))
 
 (CONCEPT
-  ONT::DEACTIVATE
+  ONT::DEACTIVATE-TURN-OFF
   (COMMENT
    "Stoping the running of some ongoing process or object that causes a process")
   (INHERIT
@@ -14728,7 +14707,6 @@
   (INHERIT
     ONT::RELINQUISH)
   (OVERLAP
-    WN::|eliminate%2:30:01::|
     WN::|eliminate%2:31:00::|
     WN::|eliminate%2:42:01::|
     WN::|get_rid_of%2:40:01::|)
@@ -18299,20 +18277,6 @@
       PHYS-OBJ)
     (INTENTIONAL -)
     (TYPE ONT::EXTERNAL-BODY-PART)))
-
-(CONCEPT
-  ONT::EXTINGUISH
-  (INHERIT
-    ONT::CHANGE-DEVICE-STATE)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (ASPECT DYNAMIC)
-    (TYPE ONT::EXTINGUISH))
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (CONCEPT
-       PHYS-OBJ))))
 
 (CONCEPT
   ONT::EXTRA-SENSORY-PROPERTY-VAL
@@ -24753,12 +24717,13 @@
   (INHERIT
     ONT::DESTROY)
   (OVERLAP
+    WN::|eliminate%2:30:01::|
+    WN::|corporal_punishment%1:04:00::|
+    WN::|destroy%2:35:01::|
     WN::|kill%2:35:00::|
     WN::|kill%2:35:01::|
     WN::|kill%2:35:02::|
-    WN::|destroy%2:35:01::|
-    WN::|killing%1:04:00::|
-    WN::|corporal_punishment%1:04:00::|)
+    WN::|killing%1:04:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
      (SEM-FEATS
@@ -25760,6 +25725,11 @@
     WN::|soft%3:00:05::|
     WN::|diffuse%3:00:00::|
     WN::|diffused%3:00:00::|))
+
+(CONCEPT
+  ONT::LIGHT-UP-CHANGE
+  (INHERIT
+    ONT::START-OBJECT))
 
 (CONCEPT
   ONT::LIGHT-VAL
@@ -48626,20 +48596,6 @@
     ONT::POULTRY)
   (OVERLAP
     WN::|turkey%1:05:00::|))
-
-(CONCEPT
-  ONT::TURN-OFF
-  (INHERIT
-    ONT::EXTINGUISH)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (ASPECT DYNAMIC)
-    (TYPE ONT::TURN-OFF))
-  (SEM-FRAME
-    (ONT::AGENT
-     (CONCEPT
-       T))))
 
 (CONCEPT
   ONT::TWO-DIMENSIONAL-VAL
