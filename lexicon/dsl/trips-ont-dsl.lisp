@@ -44076,7 +44076,11 @@
            PHYS-OBJ)
          (CONCEPT
            ABSTR-OBJ))
-       (INTENTIONAL +)))))
+       (INTENTIONAL +)))
+    (ONT::SOURCE
+     (CONCEPT
+       PHYS-OBJ)
+     OPTIONAL)))
 
 (CONCEPT
   ONT::SOCIETY-VAL
