@@ -17814,7 +17814,7 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (ORIGIN HUMAN)
+       (ORIGIN LIVING)
        (INTENTIONAL +))
      OPTIONAL)))
 
@@ -23015,6 +23015,9 @@
   (COMMENT "FIGURE is within or inside the GROUND")
   (INHERIT
     ONT::POS-WRT-CONTAINMENT-RELN)
+  (OVERLAP
+    WN::|inside%4:02:00::|
+    WN::|inside%4:02:01::|)
   (SEM-FRAME
     (ONT::GROUND
      (SEM-FEATS
@@ -25729,7 +25732,9 @@
 (CONCEPT
   ONT::LIGHT-UP-CHANGE
   (INHERIT
-    ONT::START-OBJECT))
+    ONT::START-OBJECT)
+  (OVERLAP
+    WN::|light_up%2:34:00::|))
 
 (CONCEPT
   ONT::LIGHT-VAL
