@@ -9418,7 +9418,7 @@
 (CONCEPT
   ONT::CLOG
   (INHERIT
-    ONT::CLOSURE)
+    ONT::HINDERING)
   (OVERLAP
     WN::|obstruct%2:35:00::|
     WN::|clog%2:35:00::|
@@ -9432,7 +9432,7 @@
 (CONCEPT
   ONT::CLOSE
   (INHERIT
-    ONT::CLOSURE)
+    ONT::CHANGE-STATE-ACTION)
   (OVERLAP
     WN::|close%2:41:00::|
     WN::|close%2:35:00::|
@@ -9450,17 +9450,6 @@
     WN::|shut%3:00:00::|
     WN::|unopen%3:00:04::|
     WN::|closed%3:00:04::|))
-
-(CONCEPT
-  ONT::CLOSURE
-  (INHERIT
-    ONT::CHANGE-STATE-ACTION)
-  (SEM-FRAME
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (FORM OBJECT)))))
 
 (CONCEPT
   ONT::CLOSURE-VAL
@@ -22255,25 +22244,26 @@
   (INHERIT
     ONT::INHIBIT-EFFECT)
   (OVERLAP
-    WN::|hold_back%2:41:00::|
-    WN::|keep_back%2:41:00::|
-    WN::|restrain%2:41:01::|
-    WN::|throttle%2:30:01::|
-    WN::|confine%2:30:00::|
-    WN::|bound%2:30:00::|
-    WN::|limit%2:30:01::|
-    WN::|trammel%2:30:00::|
-    WN::|restrain%2:30:00::|
-    WN::|restrict%2:30:00::|
-    WN::|handicap%2:33:00::|
-    WN::|hinder%2:33:00::|
-    WN::|hamper%2:33:00::|
     WN::|barricade%1:06:00::|
-    WN::|obstruction%1:06:00::|
+    WN::|bound%2:30:00::|
+    WN::|closure%1:04:01::|
+    WN::|compromise%2:32:03::|
+    WN::|confine%2:30:00::|
     WN::|crush%2:41:00::|
     WN::|disrupt%2:30:01::|
-    WN::|compromise%2:32:03::|
-    WN::|hinder%2:41:01::|))
+    WN::|hamper%2:33:00::|
+    WN::|handicap%2:33:00::|
+    WN::|hinder%2:33:00::|
+    WN::|hinder%2:41:01::|
+    WN::|hold_back%2:41:00::|
+    WN::|keep_back%2:41:00::|
+    WN::|limit%2:30:01::|
+    WN::|obstruction%1:06:00::|
+    WN::|restrain%2:30:00::|
+    WN::|restrain%2:41:01::|
+    WN::|restrict%2:30:00::|
+    WN::|throttle%2:30:01::|
+    WN::|trammel%2:30:00::|))
 
 (CONCEPT
   ONT::HINT
@@ -33027,7 +33017,7 @@
 (CONCEPT
   ONT::OPEN
   (INHERIT
-    ONT::CLOSURE)
+    ONT::CHANGE-STATE-ACTION)
   (OVERLAP
     WN::|open%2:41:00::|
     WN::|premier%2:36:01::|

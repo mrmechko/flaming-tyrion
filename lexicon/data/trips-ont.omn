@@ -18472,22 +18472,13 @@ Class: replacement
   SubClassOf: _affected only ((FLT_situation or FLT_abstr-obj or FLT_phys-obj)) and _affected some owl:Thing
   SubClassOf: _affected1 only ((FLT_situation or FLT_abstr-obj or FLT_phys-obj)) and _affected1 some owl:Thing
 
-# ONT type ont::closure
-Class: closure
-  SubClassOf: change-state-action
-  SubClassOf: _affected only (FLT_phys-obj and F_form some V_object) and _affected some owl:Thing
-
 # ONT type ont::open
 Class: open
-  SubClassOf: closure
+  SubClassOf: change-state-action
 
 # ONT type ont::close
 Class: close
-  SubClassOf: closure
-
-# ONT type ont::clog
-Class: clog
-  SubClassOf: closure
+  SubClassOf: change-state-action
 
 # ONT type ont::light-up-change
 Class: light-up-change
@@ -18528,6 +18519,10 @@ Class: fluidic-motion
 Class: hindering
   Annotations: rdfs:comment "make it difficult for an effect or event to complete; obstruct an ongoing event"
   SubClassOf: inhibit-effect
+
+# ONT type ont::clog
+Class: clog
+  SubClassOf: hindering
 
 # ONT type ont::prevent
 Class: prevent
@@ -21602,16 +21597,13 @@ DisjointClasses: identify, classify, attribute-impute, ordering
 DisjointClasses: duplicate, archive
 
 # children of ont::change-state-action
-DisjointClasses: closure, replacement, clean, repair, render-ineffective, cure
+DisjointClasses: close, open, replacement, clean, repair, render-ineffective, cure
 
 # children of ont::clean
 DisjointClasses: bath, shower
 
-# children of ont::closure
-DisjointClasses: clog, close, open
-
 # children of ont::hindering
-DisjointClasses: delay, deprive, downregulate
+DisjointClasses: delay, deprive, downregulate, clog
 
 # children of ont::body-movement
 DisjointClasses: body-movement-self, stretch, straddle, body-movement-place, uncontrolled-body-motion
