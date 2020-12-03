@@ -3935,10 +3935,10 @@
    ont::natural-event
   </relation>
   <relation label="overlap">
+   wn::|blow%2:43:00::|
+   wn::|boom%2:43:00::|
    wn::|brighten%2:43:00::|
    wn::|storm%2:43:01::|
-   wn::|boom%2:43:00::|
-   wn::|blow%2:43:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::norole" optional="optional">
@@ -5204,6 +5204,7 @@
    wn::|sit%2:35:00::|
    wn::|sit_down%2:35:03::|
    wn::|settle%2:30:00::|
+   wn::|straddle%2:42:01::|
    wn::|hang%2:35:03::|
    wn::|hang%2:35:05::|
    wn::|hang%2:35:06::|
@@ -9111,6 +9112,7 @@
    ont::cause-effect
   </relation>
   <relation label="overlap">
+   wn::|energize%2:30:00::|
    wn::|fuel%2:37:00::|
   </relation>
   <sem-frame>
@@ -12196,8 +12198,8 @@
   </relation>
   <relation label="overlap">
    wn::|computer%1:06:00::|
-   wn::|computing_machine%1:06:00::|
    wn::|computing_device%1:06:00::|
+   wn::|computing_machine%1:06:00::|
    wn::|data_processor%1:06:00::|
    wn::|electronic_computer%1:06:00::|
    wn::|information_processing_system%1:06:00::|
@@ -12255,11 +12257,6 @@
   <relation label="overlap">
    wn::|markup_language%1:10:00::|
    wn::|programming_language%1:10:00::|
-  </relation>
- </concept>
- <concept name="ont::computer-make">
-  <relation label="inherit">
-   ont::computer
   </relation>
  </concept>
  <concept name="ont::computer-model">
@@ -12335,9 +12332,14 @@
    wn::|microprocessor%1:06:00::|
   </relation>
  </concept>
- <concept name="ont::computer-program">
+ <concept name="ont::computer-science-val">
   <relation label="inherit">
-   ont::computer-software
+   ont::associated-with-science-val
+  </relation>
+ </concept>
+ <concept name="ont::computer-software">
+  <relation label="inherit">
+   ont::computer-software-related
   </relation>
   <relation label="overlap">
    wn::|applications_programme%1:10:00::|
@@ -12349,14 +12351,9 @@
    wn::|computer_programme%1:10:00::|
   </relation>
  </concept>
- <concept name="ont::computer-science-val">
+ <concept name="ont::computer-software-related">
   <relation label="inherit">
-   ont::associated-with-science-val
-  </relation>
- </concept>
- <concept name="ont::computer-software">
-  <relation label="inherit">
-   ont::representation
+   ont::mental-construction
   </relation>
   <relation label="overlap">
    wn::|computer_code%1:10:00::|
@@ -12367,8 +12364,17 @@
    </relation>
    <feat name="information">mental-construct</feat>
    <feat name="origin">artifact</feat>
-   <feat name="type">ont::computer-software</feat>
+   <feat name="type">ont::computer-software-related</feat>
   </sem-feats>
+ </concept>
+ <concept name="ont::computer-system">
+  <relation label="inherit">
+   ont::computer
+  </relation>
+  <relation label="overlap">
+   wn::|firewall%1:06:01::|
+   wn::|screen_saver%1:06:00::|
+  </relation>
  </concept>
  <concept name="ont::computer-type">
   <relation label="inherit">
@@ -51068,7 +51074,7 @@
  </concept>
  <concept name="ont::software-feature">
   <relation label="inherit">
-   ont::computer-software
+   ont::computer-software-related
   </relation>
   <relation label="overlap">
    wn::|expose%1:10:00::|
@@ -52491,7 +52497,10 @@
  </concept>
  <concept name="ont::straddle">
   <relation label="inherit">
-   ont::body-movement
+   ont::body-movement-place
+  </relation>
+  <relation label="overlap">
+   wn::|straddle%1:04:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::neutral">
@@ -58253,7 +58262,7 @@
  </concept>
  <concept name="ont::web-browser">
   <relation label="inherit">
-   ont::computer-software
+   ont::computer-system
   </relation>
   <relation label="overlap">
    wn::|browser%1:10:00::|

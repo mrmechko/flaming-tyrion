@@ -4155,8 +4155,8 @@ Class: computer
 Class: computer-model
   SubClassOf: computer
 
-# ONT type ont::computer-make
-Class: computer-make
+# ONT type ont::computer-system
+Class: computer-system
   SubClassOf: computer
 
 # ONT type ont::computer-type
@@ -6577,22 +6577,22 @@ Class: favorite
 Class: assistant
   SubClassOf: person-defined-by-activity
 
-# ONT type ont::computer-software
-Class: computer-software
-  SubClassOf: representation
+# ONT type ont::computer-software-related
+Class: computer-software-related
+  SubClassOf: mental-construction
   SubClassOf: (FLT_abstr-obj and F_origin some V_artifact and F_information some V_mental-construct)
 
 # ONT type ont::software-feature
 Class: software-feature
-  SubClassOf: computer-software
+  SubClassOf: computer-software-related
 
-# ONT type ont::computer-program
-Class: computer-program
-  SubClassOf: computer-software
+# ONT type ont::computer-software
+Class: computer-software
+  SubClassOf: computer-software-related
 
 # ONT type ont::web-browser
 Class: web-browser
-  SubClassOf: computer-software
+  SubClassOf: computer-system
 
 # ONT type ont::linguistic-object
 Class: linguistic-object
@@ -18616,7 +18616,7 @@ Class: body-movement-place
 
 # ONT type ont::straddle
 Class: straddle
-  SubClassOf: body-movement
+  SubClassOf: body-movement-place
   SubClassOf: _neutral only (FLT_phys-obj and F_intentional some V_-) and _neutral some owl:Thing
 
 # ONT type ont::stretch
@@ -19608,7 +19608,7 @@ DisjointClasses: gripping-tool, hammer-tool, drilling-tool, cutting-tool
 DisjointClasses: computer, projector, recording-device
 
 # children of ont::computer
-DisjointClasses: computer-type, computer-make, computer-model
+DisjointClasses: computer-type, computer-system, computer-model
 
 # children of ont::computer-part
 DisjointClasses: wireless, io-device, internal-computer-storage, computer-processor, computer-card, computer-network, computer-hardware, computer-monitor
@@ -19803,7 +19803,7 @@ DisjointClasses: attribute, mathematical-term, group-object-abstr, kind, fact
 DisjointClasses: grouping, example, version
 
 # children of ont::mental-construction
-DisjointClasses: social-contract, linguistic-object, ps-object, motive, feeling, concept-notion, knowledge-belief, mental-attitude, perceptual-construction, desire, social-practice, representation
+DisjointClasses: social-contract, linguistic-object, computer-software-related, ps-object, motive, feeling, concept-notion, knowledge-belief, mental-attitude, perceptual-construction, desire, social-practice, representation
 
 # children of ont::perceptual-construction
 DisjointClasses: perceivable-property, ability-to-perceive
@@ -19931,8 +19931,8 @@ DisjointClasses: medical-procedure, process, algorithm, policy, protocol, recipe
 # children of ont::game
 DisjointClasses: board-game, sport
 
-# children of ont::computer-software
-DisjointClasses: web-browser, computer-program, software-feature
+# children of ont::computer-software-related
+DisjointClasses: computer-software, software-feature
 
 # children of ont::linguistic-object
 DisjointClasses: grammatical-category, linguistic-component, question, language
@@ -21606,7 +21606,7 @@ DisjointClasses: bath, shower
 DisjointClasses: delay, deprive, downregulate, clog
 
 # children of ont::body-movement
-DisjointClasses: body-movement-self, stretch, straddle, body-movement-place, uncontrolled-body-motion
+DisjointClasses: body-movement-self, stretch, body-movement-place, uncontrolled-body-motion
 
 # children of ont::medical-disorders-and-conditions
 DisjointClasses: disease, injury, medical-condition, medical-symptom

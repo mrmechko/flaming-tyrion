@@ -3426,10 +3426,10 @@
   (INHERIT
     ONT::NATURAL-EVENT)
   (OVERLAP
-    WN::|brighten%2:43:00::|
-    WN::|storm%2:43:01::|
+    WN::|blow%2:43:00::|
     WN::|boom%2:43:00::|
-    WN::|blow%2:43:00::|)
+    WN::|brighten%2:43:00::|
+    WN::|storm%2:43:01::|)
   (SEM-FRAME
     (ONT::NOROLE
      (CONCEPT
@@ -4510,6 +4510,7 @@
     WN::|sit%2:35:00::|
     WN::|sit_down%2:35:03::|
     WN::|settle%2:30:00::|
+    WN::|straddle%2:42:01::|
     WN::|hang%2:35:03::|
     WN::|hang%2:35:05::|
     WN::|hang%2:35:06::|
@@ -8037,6 +8038,7 @@
   (INHERIT
     ONT::CAUSE-EFFECT)
   (OVERLAP
+    WN::|energize%2:30:00::|
     WN::|fuel%2:37:00::|)
   (SEM-FRAME
     (ONT::AFFECTED
@@ -10755,8 +10757,8 @@
     ONT::MACHINE)
   (OVERLAP
     WN::|computer%1:06:00::|
-    WN::|computing_machine%1:06:00::|
     WN::|computing_device%1:06:00::|
+    WN::|computing_machine%1:06:00::|
     WN::|data_processor%1:06:00::|
     WN::|electronic_computer%1:06:00::|
     WN::|information_processing_system%1:06:00::|)
@@ -10806,11 +10808,6 @@
   (OVERLAP
     WN::|markup_language%1:10:00::|
     WN::|programming_language%1:10:00::|))
-
-(CONCEPT
-  ONT::COMPUTER-MAKE
-  (INHERIT
-    ONT::COMPUTER))
 
 (CONCEPT
   ONT::COMPUTER-MODEL
@@ -10875,9 +10872,14 @@
     WN::|microprocessor%1:06:00::|))
 
 (CONCEPT
-  ONT::COMPUTER-PROGRAM
+  ONT::COMPUTER-SCIENCE-VAL
   (INHERIT
-    ONT::COMPUTER-SOFTWARE)
+    ONT::ASSOCIATED-WITH-SCIENCE-VAL))
+
+(CONCEPT
+  ONT::COMPUTER-SOFTWARE
+  (INHERIT
+    ONT::COMPUTER-SOFTWARE-RELATED)
   (OVERLAP
     WN::|applications_programme%1:10:00::|
     WN::|application_program%1:10:00::|
@@ -10888,14 +10890,9 @@
     WN::|computer_programme%1:10:00::|))
 
 (CONCEPT
-  ONT::COMPUTER-SCIENCE-VAL
+  ONT::COMPUTER-SOFTWARE-RELATED
   (INHERIT
-    ONT::ASSOCIATED-WITH-SCIENCE-VAL))
-
-(CONCEPT
-  ONT::COMPUTER-SOFTWARE
-  (INHERIT
-    ONT::REPRESENTATION)
+    ONT::MENTAL-CONSTRUCTION)
   (OVERLAP
     WN::|computer_code%1:10:00::|)
   (SEM-FEATS
@@ -10903,7 +10900,15 @@
       ABSTR-OBJ)
     (INFORMATION MENTAL-CONSTRUCT)
     (ORIGIN ARTIFACT)
-    (TYPE ONT::COMPUTER-SOFTWARE)))
+    (TYPE ONT::COMPUTER-SOFTWARE-RELATED)))
+
+(CONCEPT
+  ONT::COMPUTER-SYSTEM
+  (INHERIT
+    ONT::COMPUTER)
+  (OVERLAP
+    WN::|firewall%1:06:01::|
+    WN::|screen_saver%1:06:00::|))
 
 (CONCEPT
   ONT::COMPUTER-TYPE
@@ -44181,7 +44186,7 @@
 (CONCEPT
   ONT::SOFTWARE-FEATURE
   (INHERIT
-    ONT::COMPUTER-SOFTWARE)
+    ONT::COMPUTER-SOFTWARE-RELATED)
   (OVERLAP
     WN::|expose%1:10:00::|
     WN::|unmasking%1:10:00::|))
@@ -45414,7 +45419,9 @@
 (CONCEPT
   ONT::STRADDLE
   (INHERIT
-    ONT::BODY-MOVEMENT)
+    ONT::BODY-MOVEMENT-PLACE)
+  (OVERLAP
+    WN::|straddle%1:04:00::|)
   (SEM-FRAME
     (ONT::NEUTRAL
      (SEM-FEATS
@@ -50322,7 +50329,7 @@
 (CONCEPT
   ONT::WEB-BROWSER
   (INHERIT
-    ONT::COMPUTER-SOFTWARE)
+    ONT::COMPUTER-SYSTEM)
   (OVERLAP
     WN::|browser%1:10:00::|))
 

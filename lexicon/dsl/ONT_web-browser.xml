@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::web-browser">
  <relation label="inherit">
-  ont::computer-software
+  ont::computer-system
  </relation>
  <relation label="overlap">
   wn::|browser%1:10:00::|
@@ -18,9 +18,10 @@
  <concept name="ont::root" />
  <sem-feats>
  <relation label="inherit">
-  abstr-obj
+  phys-obj
  </relation>
- <feat name="type">ont::abstract-object</feat>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -42,135 +43,143 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
-  abstr-obj
+  phys-obj
  </relation>
- <feat name="information">mental-construct</feat>
- <feat name="type">ont::mental-construction</feat>
- </sem-feats>
- <concept name="ont::tangible-abstract-object">
- <comment>
-  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
- </comment>
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::tangible-abstract-object</feat>
- </sem-feats>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="container">+</feat>
- <feat name="type">ont::representation</feat>
- </sem-feats>
- <concept name="ont::mental-construction">
- <comment>
-  &quot;constructions of the mind: plans, goals, beliefs, ...&quot;
- </comment>
- <relation label="inherit">
-  ont::tangible-abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="information">mental-construct</feat>
-  <feat name="type">ont::mental-construction</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="information">mental-construct</feat>
  <feat name="origin">artifact</feat>
- <feat name="type">ont::computer-software</feat>
+ <feat name="type">ont::device</feat>
  </sem-feats>
- <concept name="ont::representation">
+ <concept name="ont::manufactured-object">
  <relation label="inherit">
-  ont::mental-construction
+  ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|representation%1:09:00::|
-  wn::|figure%1:25:00::|
+  wn::|artifact%1:03:00::|
+  wn::|artefact%1:03:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
-   abstr-obj
+   phys-obj
   </relation>
-  <feat name="container">+</feat>
-  <feat name="type">ont::representation</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::computer-software">
- <relation label="inherit">
-  ont::representation
- </relation>
- <relation label="overlap">
-  wn::|computer_code%1:10:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="information">mental-construct</feat>
   <feat name="origin">artifact</feat>
-  <feat name="type">ont::computer-software</feat>
+  <feat name="type">ont::manufactured-object</feat>
  </sem-feats>
  </concept>
- <concept name="ont::abstract-object">
+ <concept name="ont::computer-system">
+ <relation label="inherit">
+  ont::computer
+ </relation>
+ <relation label="overlap">
+  wn::|firewall%1:06:01::|
+  wn::|screen_saver%1:06:00::|
+ </relation>
+ </concept>
+ <concept name="ont::computer">
+ <relation label="inherit">
+  ont::machine
+ </relation>
+ <relation label="overlap">
+  wn::|computer%1:06:00::|
+  wn::|computing_device%1:06:00::|
+  wn::|computing_machine%1:06:00::|
+  wn::|data_processor%1:06:00::|
+  wn::|electronic_computer%1:06:00::|
+  wn::|information_processing_system%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">
+  <or>
+   provides-service-on-off
+   provides-service-up-down
+  </or>
+  </feat>
+  <feat name="form">object</feat>
+  <feat name="mobility">non-self-moving</feat>
+  <feat name="type">ont::computer</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::machine">
+ <relation label="inherit">
+  ont::device
+ </relation>
+ <relation label="overlap">
+  wn::|machine%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">artifact</feat>
+  <feat name="type">ont::machine</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="object-function">
+ <or>
+  provides-service-on-off
+  provides-service-up-down
+ </or>
+ </feat>
+ <feat name="form">object</feat>
+ <feat name="mobility">non-self-moving</feat>
+ <feat name="type">ont::computer</feat>
+ </sem-feats>
+ <concept name="ont::device">
+ <relation label="inherit">
+  ont::manufactured-object
+ </relation>
+ <relation label="overlap">
+  wn::|buoy%1:10:00::|
+  wn::|device%1:06:00::|
+  wn::|equipment%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">artifact</feat>
+  <feat name="type">ont::device</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">artifact</feat>
+ <feat name="type">ont::machine</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
  <comment>
-  &quot;abstract objects, mental constructions, with no physical realization&quot;
+  &quot;All physical objects: things that have substance&quot;
  </comment>
  <relation label="inherit">
   ont::referential-sem
  </relation>
  <relation label="overlap">
-  wn::|psychological_feature%1:03:00::|
-  wn::|abstraction%1:03:00::|
-  wn::|abstract_entity%1:03:00::|
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
-   abstr-obj
+   phys-obj
   </relation>
-  <feat name="type">ont::abstract-object</feat>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
  </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
-  abstr-obj
+  phys-obj
  </relation>
- <feat name="tangible">+</feat>
- <feat name="type">ont::tangible-abstract-object</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="type">ont::manufactured-object</feat>
  </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
@@ -185,7 +194,7 @@
  </or>
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
- <concept name="abstr-obj" />
+ <concept name="phys-obj" />
  <sense>
  <morph>
   <pos pos="n" />
