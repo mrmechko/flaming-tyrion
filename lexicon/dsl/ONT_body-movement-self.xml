@@ -9,6 +9,11 @@
  <relation label="inherit">
   ont::body-movement
  </relation>
+ <relation label="overlap">
+  wn::|bend%2:35:08::|
+  wn::|bend%2:38:03::|
+  wn::|stand_up%2:38:00::|
+ </relation>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -302,6 +307,33 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::stretch">
+ <relation label="inherit">
+  ont::body-movement-self
+ </relation>
+ <relation label="overlap">
+  wn::|stretch%2:29:01::|
+  wn::|stretch%2:29:02::|
+ </relation>
+ </concept>
+ <concept name="ont::uncontrolled-body-motion">
+ <relation label="inherit">
+  ont::body-movement-self
+ </relation>
+ <relation label="overlap">
+  wn::|jerk%2:38:00::|
+  wn::|move_involuntarily%2:29:00::|
+  wn::|move_reflexively%2:29:00::|
+  wn::|tremble%2:38:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+  <feat name="type">ont::uncontrolled-body-motion</feat>
+ </sem-feats>
+ </concept>
  <sense>
  <morph>
   <pos pos="v" />
@@ -411,31 +443,6 @@
  </relation>
  <relation label="overlap">
   vn::assuming_position-50
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="lie" remaining-words="" particle="down" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="lay" />
-   </past>
-   <pastpart>
-    <word first-word="lain" />
-   </pastpart>
-   <ing>
-    <word first-word="lying" />
-   </ing>
-  </forms>
- </morph>
- <example text="You had better lie down">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::body-movement-self
-  ont::agent-templ
  </relation>
  </sense>
  <sense>

@@ -4,12 +4,13 @@
  <provenance name="TRIPS"/>
  <concept name="ont::uncontrolled-body-motion">
  <relation label="inherit">
-  ont::body-movement
+  ont::body-movement-self
  </relation>
  <relation label="overlap">
-  wn::|tremble%2:38:00::|
+  wn::|jerk%2:38:00::|
   wn::|move_involuntarily%2:29:00::|
   wn::|move_reflexively%2:29:00::|
+  wn::|tremble%2:38:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -114,37 +115,22 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::body-movement">
- <relation label="inherit">
-  ont::event-of-causation
- </relation>
- <relation label="overlap">
-  wn::|change_posture%2:38:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">+</feat>
-  <feat name="type">ont::body-movement</feat>
- </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
  </sem-frame>
- </concept>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="cause">force</feat>
- <feat name="type">ont::uncontrolled-body-motion</feat>
+ <feat name="trajectory">+</feat>
+ <feat name="type">ont::body-movement</feat>
  </sem-feats>
  <concept name="ont::event-of-causation">
  <comment>
@@ -182,23 +168,51 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <concept name="ont::body-movement">
+ <relation label="inherit">
+  ont::event-of-causation
+ </relation>
+ <relation label="overlap">
+  wn::|change_posture%2:38:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">+</feat>
+  <feat name="type">ont::body-movement</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="trajectory">+</feat>
- <feat name="type">ont::body-movement</feat>
+ <feat name="cause">force</feat>
+ <feat name="type">ont::uncontrolled-body-motion</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::agent" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
+ <concept name="ont::body-movement-self">
+ <comment>
+  &quot;Verbs of posture that can be independent of any location: e.g., bow is not with respect to a location, but to sit it must be somewhere&quot;
+ </comment>
+ <relation label="inherit">
+  ont::body-movement
+ </relation>
+ <relation label="overlap">
+  wn::|bend%2:35:08::|
+  wn::|bend%2:38:03::|
+  wn::|stand_up%2:38:00::|
+ </relation>
+ </concept>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;

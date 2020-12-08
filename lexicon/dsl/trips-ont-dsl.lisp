@@ -2445,7 +2445,9 @@
 (CONCEPT
   ONT::ARCHIVE
   (INHERIT
-    ONT::RECORD)
+    ONT::PERSISTENT-STATE)
+  (OVERLAP
+    WN::|archive%2:35:00::|)
   (SEM-FRAME
     (ONT::SOURCE
      (SEM-FEATS
@@ -4507,18 +4509,19 @@
   (INHERIT
     ONT::BE-AT)
   (OVERLAP
-    WN::|sit%2:35:00::|
-    WN::|sit_down%2:35:03::|
-    WN::|settle%2:30:00::|
-    WN::|straddle%2:42:01::|
     WN::|hang%2:35:03::|
     WN::|hang%2:35:05::|
     WN::|hang%2:35:06::|
     WN::|hang%2:42:01::|
     WN::|lie%2:35:00::|
-    WN::|trail%2:35:05::|
     WN::|lie%2:42:00::|
-    WN::|rise%2:42:00::|)
+    WN::|rise%2:42:00::|
+    WN::|settle%2:30:00::|
+    WN::|sit%2:35:00::|
+    WN::|sit_down%2:35:03::|
+    WN::|stand%2:35:00::|
+    WN::|straddle%2:42:01::|
+    WN::|trail%2:35:05::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -5821,14 +5824,21 @@
   (INHERIT
     ONT::BODY-MOVEMENT)
   (OVERLAP
-    WN::|poise%2:35:01::|))
+    WN::|flop%2:38:00::|
+    WN::|flop%2:38:01::|
+    WN::|lie%2:38:00::|
+    WN::|sit%2:38:00::|))
 
 (CONCEPT
   ONT::BODY-MOVEMENT-SELF
   (COMMENT
    "Verbs of posture that can be independent of any location: e.g., bow is not with respect to a location, but to sit it must be somewhere")
   (INHERIT
-    ONT::BODY-MOVEMENT))
+    ONT::BODY-MOVEMENT)
+  (OVERLAP
+    WN::|bend%2:35:08::|
+    WN::|bend%2:38:03::|
+    WN::|stand_up%2:38:00::|))
 
 (CONCEPT
   ONT::BODY-OF-WATER
@@ -11061,8 +11071,9 @@
   (INHERIT
     ONT::PERSISTENT-STATE)
   (OVERLAP
-    WN::|confine%2:41:00::|
     WN::|confine%2:35:01::|
+    WN::|confine%2:35:03::|
+    WN::|confine%2:41:00::|
     WN::|confinement%1:04:00::|
     WN::|confinement%1:04:01::|))
 
@@ -15531,6 +15542,9 @@
   ONT::DUPLICATE
   (INHERIT
     ONT::RECORD)
+  (OVERLAP
+    WN::|copy%2:36:01::|
+    WN::|reproduce%2:36:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -24607,6 +24621,7 @@
   (INHERIT
     ONT::BOUNCE-REFLECT)
   (OVERLAP
+    WN::|jerk%2:38:01::|
     WN::|jump%2:38:01::|))
 
 (CONCEPT
@@ -25229,7 +25244,9 @@
   ONT::LEANING
   (COMMENT "The state of being in a position of leaning (against something)")
   (INHERIT
-    ONT::BE-AT-LOC))
+    ONT::BE-AT-LOC)
+  (OVERLAP
+    WN::|lean%2:38:00::|))
 
 (CONCEPT
   ONT::LEARN
@@ -35337,14 +35354,17 @@
   (INHERIT
     ONT::PUT)
   (OVERLAP
-    WN::|lean%2:35:00::|
-    WN::|set_down%2:35:00::|
-    WN::|seat%2:35:00::|
-    WN::|stand%2:35:01::|
-    WN::|perch%2:35:10::|
-    WN::|park%2:35:00::|
     WN::|center%2:38:00::|
-    WN::|prop%2:35:00::|))
+    WN::|lean%2:35:00::|
+    WN::|lean%2:38:07::|
+    WN::|park%2:35:00::|
+    WN::|perch%2:35:10::|
+    WN::|prop%2:35:00::|
+    WN::|seat%2:35:00::|
+    WN::|set_down%2:35:00::|
+    WN::|set_down%2:35:02::|
+    WN::|stand%2:35:01::|
+    WN::|stand_up%2:35:03::|))
 
 (CONCEPT
   ONT::PLAIN-SCALE
@@ -37125,9 +37145,10 @@
   (INHERIT
     ONT::CAUSE-MOVE)
   (OVERLAP
-    WN::|throw%1:04:00::|
     WN::|propel%2:35:00::|
-    WN::|throw%2:35:02::|))
+    WN::|throw%1:04:00::|
+    WN::|throw%2:35:02::|
+    WN::|twitch%2:38:00::|))
 
 (CONCEPT
   ONT::PROPERTY-VAL
@@ -40811,13 +40832,15 @@
   (INHERIT
     ONT::PERSISTENT-STATE)
   (OVERLAP
-    WN::|keep%2:35:10::|
-    WN::|stay_fresh%2:42:00::|
-    WN::|keep%2:42:03::|
-    WN::|keep%2:40:00::|
-    WN::|hold_on%2:40:00::|
     WN::|cling%2:37:00::|
-    WN::|lay_aside%2:40:00::|)
+    WN::|hold_on%2:40:00::|
+    WN::|keep%2:35:10::|
+    WN::|keep%2:40:00::|
+    WN::|keep%2:42:03::|
+    WN::|lay_aside%2:40:00::|
+    WN::|stash_away%2:40:00::|
+    WN::|stay_fresh%2:42:00::|
+    WN::|stock%2:40:01::|)
   (SEM-FRAME
     ((ONT::AGENT ONT::CAUSE)
      (SEM-FEATS
@@ -41152,8 +41175,9 @@
   (INHERIT
     ONT::EVENT-OF-CAUSATION)
   (OVERLAP
-    WN::|turn%2:38:00::|
-    WN::|rotate%2:38:01::|)
+    WN::|bend%2:38:02::|
+    WN::|rotate%2:38:01::|
+    WN::|turn%2:38:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -42627,14 +42651,17 @@
   (INHERIT
     ONT::OBJECT-CHANGE)
   (OVERLAP
+    WN::|bend%2:35:00::|
+    WN::|bend%2:38:00::|
     WN::|forge%2:36:03::|
-    WN::|mould%2:36:01::|
-    WN::|mold%2:36:01::|
-    WN::|work%2:36:12::|
+    WN::|form%2:30:01::|
     WN::|form%2:36:00::|
-    WN::|shape%2:36:00::|
+    WN::|mold%2:36:01::|
+    WN::|mould%2:36:01::|
     WN::|shape%2:30:00::|
-    WN::|form%2:30:01::|))
+    WN::|shape%2:36:00::|
+    WN::|stretch%2:38:00::|
+    WN::|work%2:36:12::|))
 
 (CONCEPT
   ONT::SHAPE-OBJECT
@@ -45506,7 +45533,10 @@
 (CONCEPT
   ONT::STRETCH
   (INHERIT
-    ONT::BODY-MOVEMENT))
+    ONT::BODY-MOVEMENT-SELF)
+  (OVERLAP
+    WN::|stretch%2:29:01::|
+    WN::|stretch%2:29:02::|))
 
 (CONCEPT
   ONT::STRETCHER
@@ -48834,11 +48864,12 @@
 (CONCEPT
   ONT::UNCONTROLLED-BODY-MOTION
   (INHERIT
-    ONT::BODY-MOVEMENT)
+    ONT::BODY-MOVEMENT-SELF)
   (OVERLAP
-    WN::|tremble%2:38:00::|
+    WN::|jerk%2:38:00::|
     WN::|move_involuntarily%2:29:00::|
-    WN::|move_reflexively%2:29:00::|)
+    WN::|move_reflexively%2:29:00::|
+    WN::|tremble%2:38:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)

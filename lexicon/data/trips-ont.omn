@@ -18370,7 +18370,7 @@ Class: record
 
 # ONT type ont::archive
 Class: archive
-  SubClassOf: record
+  SubClassOf: persistent-state
   SubClassOf: _affected only (root and F_information some V_information-content) and _affected some owl:Thing
   SubClassOf: _source only (root and F_object-function some V_instrument) and _source some owl:Thing
 
@@ -18604,11 +18604,6 @@ Class: participate-attend
   SubClassOf: _agent only (FLT_phys-obj and F_intentional some V_+) and _agent some owl:Thing
   SubClassOf: _neutral only (FLT_situation and F_type some gathering-event) and _neutral some owl:Thing
 
-# ONT type ont::uncontrolled-body-motion
-Class: uncontrolled-body-motion
-  SubClassOf: body-movement
-  SubClassOf: (FLT_situation and F_cause some V_force)
-
 # ONT type ont::body-movement-place
 Class: body-movement-place
   Annotations: rdfs:comment "Verbs of posture that are with respect to some place"
@@ -18619,14 +18614,19 @@ Class: straddle
   SubClassOf: body-movement-place
   SubClassOf: _neutral only (FLT_phys-obj and F_intentional some V_-) and _neutral some owl:Thing
 
-# ONT type ont::stretch
-Class: stretch
-  SubClassOf: body-movement
-
 # ONT type ont::body-movement-self
 Class: body-movement-self
   Annotations: rdfs:comment "Verbs of posture that can be independent of any location: e.g., bow is not with respect to a location, but to sit it must be somewhere"
   SubClassOf: body-movement
+
+# ONT type ont::stretch
+Class: stretch
+  SubClassOf: body-movement-self
+
+# ONT type ont::uncontrolled-body-motion
+Class: uncontrolled-body-motion
+  SubClassOf: body-movement-self
+  SubClassOf: (FLT_situation and F_cause some V_force)
 
 # ONT type ont::whereby
 Class: whereby
@@ -21306,7 +21306,7 @@ DisjointClasses: click, rub-scrape-wipe, blow, push, pull
 DisjointClasses: squeeze, press, push-liquid
 
 # children of ont::persistent-state
-DisjointClasses: hang-out, retain, stay, confine, be-inactive
+DisjointClasses: archive, hang-out, retain, stay, confine, be-inactive
 
 # children of ont::life-process
 DisjointClasses: die, live, be-born
@@ -21593,9 +21593,6 @@ DisjointClasses: facial-expression, sound-expression
 # children of ont::categorization
 DisjointClasses: identify, classify, attribute-impute, ordering
 
-# children of ont::record
-DisjointClasses: duplicate, archive
-
 # children of ont::change-state-action
 DisjointClasses: close, open, replacement, clean, repair, render-ineffective, cure
 
@@ -21606,7 +21603,10 @@ DisjointClasses: bath, shower
 DisjointClasses: delay, deprive, downregulate, clog
 
 # children of ont::body-movement
-DisjointClasses: body-movement-self, stretch, body-movement-place, uncontrolled-body-motion
+DisjointClasses: body-movement-self, body-movement-place
+
+# children of ont::body-movement-self
+DisjointClasses: uncontrolled-body-motion, stretch
 
 # children of ont::medical-disorders-and-conditions
 DisjointClasses: disease, injury, medical-condition, medical-symptom
