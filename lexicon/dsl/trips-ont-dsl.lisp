@@ -3585,7 +3585,7 @@
 (CONCEPT
   ONT::ATTIRE
   (INHERIT
-    ONT::MANUFACTURED-OBJECT)
+    ONT::PERSONAL-ITEM)
   (OVERLAP
     WN::|clothing%1:06:00::|
     WN::|article_of_clothing%1:06:00::|
@@ -34456,6 +34456,20 @@
          SITUATION)))))
 
 (CONCEPT
+  ONT::PERSONAL-ITEM
+  (INHERIT
+    ONT::MANUFACTURED-OBJECT)
+  (OVERLAP
+    WN::|jewelry%1:06:00::|
+    WN::|watch%1:06:00::|
+    WN::|glasses%1:06:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (ORIGIN ARTIFACT)
+    (TYPE ONT::PERSONAL-ITEM)))
+
+(CONCEPT
   ONT::PESTICIDE
   (INHERIT
     ONT::CHEMICAL)
@@ -50339,7 +50353,7 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE ONT::ATTIRE)))))
+       (TYPE ONT::PERSONAL-ITEM)))))
 
 (CONCEPT
   ONT::WEATHER

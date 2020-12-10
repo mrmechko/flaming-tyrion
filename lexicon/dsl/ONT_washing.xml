@@ -43,30 +43,41 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <sem-feats>
+ <concept name="ont::attire">
  <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="origin">artifact</feat>
- <feat name="type">ont::manufactured-object</feat>
- </sem-feats>
- <concept name="ont::phys-object">
- <comment>
-  &quot;All physical objects: things that have substance&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
+  ont::personal-item
  </relation>
  <relation label="overlap">
-  wn::|object%1:03:00::|
-  wn::|physical_object%1:03:00::|
+  wn::|clothing%1:06:00::|
+  wn::|article_of_clothing%1:06:00::|
+  wn::|vesture%1:06:00::|
+  wn::|wear%1:06:00::|
+  wn::|wearable%1:06:00::|
+  wn::|habiliment%1:06:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::phys-object</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="type">ont::attire</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::personal-item">
+ <relation label="inherit">
+  ont::manufactured-object
+ </relation>
+ <relation label="overlap">
+  wn::|jewelry%1:06:00::|
+  wn::|watch%1:06:00::|
+  wn::|glasses%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">artifact</feat>
+  <feat name="type">ont::personal-item</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -92,26 +103,39 @@
   <feat name="type">ont::manufactured-object</feat>
  </sem-feats>
  </concept>
- <concept name="ont::attire">
+ <sem-feats>
  <relation label="inherit">
-  ont::manufactured-object
+  phys-obj
+ </relation>
+ <feat name="origin">artifact</feat>
+ <feat name="type">ont::personal-item</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
  </relation>
  <relation label="overlap">
-  wn::|clothing%1:06:00::|
-  wn::|article_of_clothing%1:06:00::|
-  wn::|vesture%1:06:00::|
-  wn::|wear%1:06:00::|
-  wn::|wearable%1:06:00::|
-  wn::|habiliment%1:06:00::|
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="origin">artifact</feat>
-  <feat name="type">ont::attire</feat>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
  </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">artifact</feat>
+ <feat name="type">ont::manufactured-object</feat>
+ </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root

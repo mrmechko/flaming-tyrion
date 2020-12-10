@@ -4252,9 +4252,14 @@ Class: credit-card
   SubClassOf: (FLT_phys-obj and F_object-function some V_currency)
   SubClassOf: _figure only (FLT_phys-obj and F_origin some V_human and F_intentional some V_+)
 
+# ONT type ont::personal-item
+Class: personal-item
+  SubClassOf: manufactured-object
+  SubClassOf: (FLT_phys-obj and F_origin some V_artifact)
+
 # ONT type ont::attire
 Class: attire
-  SubClassOf: manufactured-object
+  SubClassOf: personal-item
   SubClassOf: (FLT_phys-obj and F_origin some V_artifact)
 
 # ONT type ont::washing
@@ -5453,7 +5458,7 @@ Class: membership
 Class: wear
   SubClassOf: event-of-action
   SubClassOf: (FLT_situation and F_aspect some V_unbounded and F_time-span some V_extended)
-  SubClassOf: _neutral only (FLT_phys-obj and F_type some attire) and _neutral some owl:Thing
+  SubClassOf: _neutral only (FLT_phys-obj and F_type some personal-item) and _neutral some owl:Thing
 
 # ONT type ont::appears-to-have-property
 Class: appears-to-have-property
@@ -19470,7 +19475,7 @@ DisjointClasses: quick-relief-drug, long-term-control-drug
 DisjointClasses: water, bodily-fluid, fuel
 
 # children of ont::manufactured-object
-DisjointClasses: tableware, cookware, container, device-component, flag, attire, credit-card, money, writing-implement, instrumentation, fixture, device, card, window, wheel, furnishings, vessel, stretcher, vehicle, automaton, block, technology
+DisjointClasses: tableware, cookware, container, device-component, flag, personal-item, credit-card, money, writing-implement, instrumentation, fixture, device, card, window, wheel, furnishings, vessel, stretcher, vehicle, automaton, block, technology
 
 # children of ont::animal
 DisjointClasses: vertebrate, invertebrate
