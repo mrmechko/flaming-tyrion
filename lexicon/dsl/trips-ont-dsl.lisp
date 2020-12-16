@@ -7246,7 +7246,6 @@
     WN::|attributable%3:00:00::|
     WN::|breakable%3:00:00::|
     WN::|bridgeable%3:00:00::|
-    WN::|broad-minded%3:00:04::|
     WN::|calculable%3:00:00::|
     WN::|charitable%3:01:00::|
     WN::|cognisable%3:00:00::|
@@ -7275,7 +7274,6 @@
     WN::|diagonalizable%3:01:00::|
     WN::|differentiable%3:01:00::|
     WN::|digestible%3:00:00::|
-    WN::|disconsolate%3:00:04::|
     WN::|dispensable%3:00:00::|
     WN::|disposable%3:00:01::|
     WN::|disposable%3:00:02::|
@@ -7288,7 +7286,6 @@
     WN::|exchangeable%3:00:04::|
     WN::|excitable%3:00:00::|
     WN::|excusable%3:00:00::|
-    WN::|exempt%3:00:02::|
     WN::|exhaustible%3:00:00::|
     WN::|expendable%3:00:00::|
     WN::|explicable%3:00:00::|
@@ -7304,50 +7301,9 @@
     WN::|forgettable%3:00:00::|
     WN::|heritable%3:00:00::|
     WN::|hydrolyzable%3:01:00::|
-    WN::|immeasurable%3:00:00::|
-    WN::|immensurable%3:00:00::|
-    WN::|impassable%3:00:00::|
-    WN::|imperishable%3:00:00::|
-    WN::|implacable%3:00:00::|
-    WN::|imponderable%3:00:00::|
-    WN::|inadmissible%3:00:00::|
-    WN::|incalculable%3:00:00::|
-    WN::|incombustible%3:00:00::|
-    WN::|incommutable%3:00:00::|
-    WN::|incompressible%3:00:00::|
-    WN::|inconsolable%3:00:00::|
-    WN::|inconvertible%3:00:00::|
-    WN::|incorrigible%3:00:00::|
-    WN::|incurable%3:00:00::|
-    WN::|indefeasible%3:00:00::|
-    WN::|indestructible%3:00:00::|
-    WN::|indeterminable%3:00:00::|
-    WN::|indeterminate%3:00:01::|
-    WN::|indigestible%3:00:00::|
-    WN::|indispensable%3:00:00::|
-    WN::|indistinguishable%3:00:00::|
-    WN::|indivisible%3:00:00::|
-    WN::|inedible%3:00:00::|
-    WN::|inevitable%3:00:00::|
-    WN::|inexcusable%3:00:00::|
-    WN::|inexhaustible%3:00:00::|
-    WN::|inexpressible%3:00:00::|
-    WN::|inextensible%3:00:00::|
-    WN::|inextinguishable%3:00:00::|
-    WN::|infallible%3:00:00::|
     WN::|inheritable%3:00:00::|
-    WN::|inhospitable%3:00:02::|
     WN::|injectable%3:00:00::|
-    WN::|inoperable%3:00:00::|
-    WN::|intractable%3:00:00::|
     WN::|invertible%3:00:00::|
-    WN::|inviolable%3:00:00::|
-    WN::|irrecoverable%3:00:00::|
-    WN::|irreducible%3:00:00::|
-    WN::|irreplaceable%3:00:00::|
-    WN::|irreversible%3:00:00::|
-    WN::|irrevocable%3:00:00::|
-    WN::|irrevokable%3:00:00::|
     WN::|knowable%3:00:00::|
     WN::|likable%3:00:02::|
     WN::|likeable%3:00:02::|
@@ -7361,38 +7317,6 @@
     WN::|mensural%3:01:00::|
     WN::|metastable%3:01:00::|
     WN::|narrow-minded%3:00:04::|
-    WN::|non-invertible%3:00:00::|
-    WN::|nonabsorbent%3:00:00::|
-    WN::|nonabsorptive%3:00:00::|
-    WN::|nonadsorbent%3:00:00::|
-    WN::|nonadsorptive%3:00:00::|
-    WN::|nonarbitrable%3:00:00::|
-    WN::|noncollapsable%3:00:00::|
-    WN::|noncollapsible%3:00:00::|
-    WN::|noncombustible%3:00:00::|
-    WN::|nondeductible%3:00:00::|
-    WN::|nondisposable%3:00:01::|
-    WN::|nondisposable%3:00:02::|
-    WN::|nonextensile%3:00:00::|
-    WN::|nonfissionable%3:00:00::|
-    WN::|nonheritable%3:00:00::|
-    WN::|noninheritable%3:00:00::|
-    WN::|nonprotractile%3:00:00::|
-    WN::|nonreflecting%3:00:00::|
-    WN::|nonreflective%3:00:00::|
-    WN::|nonrenewable%3:00:00::|
-    WN::|nonretractable%3:00:00::|
-    WN::|nonretractile%3:00:00::|
-    WN::|nonreturnable%3:00:00::|
-    WN::|nonreversible%3:00:00::|
-    WN::|nonsubmergible%3:00:00::|
-    WN::|nonsubmersible%3:00:00::|
-    WN::|nontaxable%3:00:00::|
-    WN::|nonvolatile%3:00:00::|
-    WN::|nonvolatilisable%3:00:00::|
-    WN::|nonvolatilizable%3:00:00::|
-    WN::|nonwashable%3:00:00::|
-    WN::|one-sided%3:00:02::|
     WN::|operable%3:00:00::|
     WN::|opposable%3:00:00::|
     WN::|packable%3:01:00::|
@@ -7444,6 +7368,101 @@
     WN::|trackable%3:00:00::|
     WN::|translatable%3:00:00::|
     WN::|two-sided%3:00:02::|
+    WN::|violable%3:00:00::|
+    WN::|washable%3:00:00::|
+    WN::|wearable%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::CAN-BE-DONE-SCALE)
+    (TYPE ONT::CAN-BE-DONE-VAL))
+  (SEM-FRAME
+    (ONT::GROUND
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
+  ONT::CAN-NOT-BE-DONE-VAL
+  (INHERIT
+    ONT::PROPERTY-VAL)
+  (OVERLAP
+    WN::|broad-minded%3:00:04::|
+    WN::|disconsolate%3:00:04::|
+    WN::|exempt%3:00:02::|
+    WN::|immeasurable%3:00:00::|
+    WN::|immensurable%3:00:00::|
+    WN::|impassable%3:00:00::|
+    WN::|imperishable%3:00:00::|
+    WN::|implacable%3:00:00::|
+    WN::|imponderable%3:00:00::|
+    WN::|inadmissible%3:00:00::|
+    WN::|incalculable%3:00:00::|
+    WN::|incombustible%3:00:00::|
+    WN::|incommutable%3:00:00::|
+    WN::|incompressible%3:00:00::|
+    WN::|inconsolable%3:00:00::|
+    WN::|inconvertible%3:00:00::|
+    WN::|incorrigible%3:00:00::|
+    WN::|incurable%3:00:00::|
+    WN::|indefeasible%3:00:00::|
+    WN::|indestructible%3:00:00::|
+    WN::|indeterminable%3:00:00::|
+    WN::|indeterminate%3:00:01::|
+    WN::|indigestible%3:00:00::|
+    WN::|indispensable%3:00:00::|
+    WN::|indistinguishable%3:00:00::|
+    WN::|indivisible%3:00:00::|
+    WN::|inedible%3:00:00::|
+    WN::|inevitable%3:00:00::|
+    WN::|inexcusable%3:00:00::|
+    WN::|inexhaustible%3:00:00::|
+    WN::|inexpressible%3:00:00::|
+    WN::|inextensible%3:00:00::|
+    WN::|inextinguishable%3:00:00::|
+    WN::|infallible%3:00:00::|
+    WN::|inhospitable%3:00:02::|
+    WN::|inoperable%3:00:00::|
+    WN::|intractable%3:00:00::|
+    WN::|inviolable%3:00:00::|
+    WN::|irrecoverable%3:00:00::|
+    WN::|irreducible%3:00:00::|
+    WN::|irreplaceable%3:00:00::|
+    WN::|irreversible%3:00:00::|
+    WN::|irrevocable%3:00:00::|
+    WN::|irrevokable%3:00:00::|
+    WN::|non-invertible%3:00:00::|
+    WN::|nonabsorbent%3:00:00::|
+    WN::|nonabsorptive%3:00:00::|
+    WN::|nonadsorbent%3:00:00::|
+    WN::|nonadsorptive%3:00:00::|
+    WN::|nonarbitrable%3:00:00::|
+    WN::|noncollapsable%3:00:00::|
+    WN::|noncollapsible%3:00:00::|
+    WN::|noncombustible%3:00:00::|
+    WN::|nondeductible%3:00:00::|
+    WN::|nondisposable%3:00:01::|
+    WN::|nondisposable%3:00:02::|
+    WN::|nonextensile%3:00:00::|
+    WN::|nonfissionable%3:00:00::|
+    WN::|nonheritable%3:00:00::|
+    WN::|noninheritable%3:00:00::|
+    WN::|nonprotractile%3:00:00::|
+    WN::|nonreflecting%3:00:00::|
+    WN::|nonreflective%3:00:00::|
+    WN::|nonrenewable%3:00:00::|
+    WN::|nonretractable%3:00:00::|
+    WN::|nonretractile%3:00:00::|
+    WN::|nonreturnable%3:00:00::|
+    WN::|nonreversible%3:00:00::|
+    WN::|nonsubmergible%3:00:00::|
+    WN::|nonsubmersible%3:00:00::|
+    WN::|nontaxable%3:00:00::|
+    WN::|nonvolatile%3:00:00::|
+    WN::|nonvolatilisable%3:00:00::|
+    WN::|nonvolatilizable%3:00:00::|
+    WN::|nonwashable%3:00:00::|
+    WN::|one-sided%3:00:02::|
     WN::|unactable%3:00:00::|
     WN::|unadoptable%3:00:00::|
     WN::|unappealable%3:00:00::|
@@ -7507,15 +7526,12 @@
     WN::|unsympathetic%3:00:02::|
     WN::|untraceable%3:00:00::|
     WN::|untranslatable%3:00:00::|
-    WN::|unwearable%3:00:00::|
-    WN::|violable%3:00:00::|
-    WN::|washable%3:00:00::|
-    WN::|wearable%3:00:00::|)
+    WN::|unwearable%3:00:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
-    (SCALE ONT::CAN-BE-DONE-SCALE)
-    (TYPE ONT::CAN-BE-DONE-VAL))
+    (SCALE ONT::CAN-NOT-BE-DONE-SCALE)
+    (TYPE ONT::CAN-NOT-BE-DONE-VAL))
   (SEM-FRAME
     (ONT::GROUND
      (CONCEPT
@@ -31678,11 +31694,16 @@
 (CONCEPT
   ONT::NOT-REPARABLE-VAL
   (INHERIT
-    ONT::REPARABILITY-VAL)
+    ONT::CAN-NOT-BE-DONE-VAL)
   (OVERLAP
     WN::|irreconcilable%3:00:00::|
     WN::|irremediable%3:00:00::|
-    WN::|irreparable%3:00:00::|))
+    WN::|irreparable%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::REPARABILITY-SCALE)
+    (TYPE ONT::NOT-REPARABLE-VAL)))
 
 (CONCEPT
   ONT::NOT-REPUTABLE-VAL
@@ -39658,19 +39679,29 @@
        (INTENTIONAL +)))))
 
 (CONCEPT
-  ONT::REPARABILITY-VAL
+  ONT::REPARABILITY-SCALE
   (INHERIT
-    ONT::CAN-BE-DONE-VAL))
+    ONT::CAN-BE-DONE-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::REPARABILITY-SCALE)
+    (TYPE ONT::REPARABILITY-SCALE)))
 
 (CONCEPT
   ONT::REPARABLE-VAL
   (COMMENT "resolvable, reparable, fixable, remediable")
   (INHERIT
-    ONT::REPARABILITY-VAL)
+    ONT::CAN-BE-DONE-VAL)
   (OVERLAP
     WN::|remediable%3:00:00::|
     WN::|reconcilable%3:00:00::|
-    WN::|reparable%3:00:00::|))
+    WN::|reparable%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::REPARABILITY-SCALE)
+    (TYPE ONT::REPARABLE-VAL)))
 
 (CONCEPT
   ONT::REPEAT

@@ -8642,18 +8642,11 @@ Class: can-be-done-val
   SubClassOf: (FLT_abstr-obj and F_scale some can-be-done-scale)
   SubClassOf: _ground only owl:Thing
 
-# ONT type ont::reparability-val
-Class: reparability-val
-  SubClassOf: can-be-done-val
-
 # ONT type ont::reparable-val
 Class: reparable-val
   Annotations: rdfs:comment "resolvable, reparable, fixable, remediable"
-  SubClassOf: reparability-val
-
-# ONT type ont::not-reparable-val
-Class: not-reparable-val
-  SubClassOf: reparability-val
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some reparability-scale)
 
 # ONT type ont::accessibility-val
 Class: accessibility-val
@@ -8783,6 +8776,17 @@ Class: verifiable-val
 Class: not-verifiable-val
   SubClassOf: verifiability-val
   SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale and F_orientation some V_neg)
+
+# ONT type ont::can-not-be-done-val
+Class: can-not-be-done-val
+  SubClassOf: property-val
+  SubClassOf: (FLT_abstr-obj and F_scale some can-not-be-done-scale)
+  SubClassOf: _ground only owl:Thing
+
+# ONT type ont::not-reparable-val
+Class: not-reparable-val
+  SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some reparability-scale)
 
 # ONT type ont::temporal-val
 Class: temporal-val
@@ -14467,6 +14471,11 @@ Class: predictability-scale
   SubClassOf: can-be-done-scale
   SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale)
 
+# ONT type ont::reparability-scale
+Class: reparability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some reparability-scale)
+
 # ONT type ont::replaceability-scale
 Class: replaceability-scale
   SubClassOf: can-be-done-scale
@@ -19955,7 +19964,7 @@ DisjointClasses: body-property, condition-favorability
 DisjointClasses: not-favorable-condition, favorable-condition
 
 # children of ont::property-val
-DisjointClasses: quantity-related-property-val, spatial-val, associated-with-val, resulting-state-val, evoking-experience-property-val, status-val, object-affordances-val, relational-attribute-val, dimensional-property-val, animal-propensity-val, temporal-val, can-be-done-val, process-val, life-process-val, temperature-val, physical-property-val, information-property-val, evaluation-attribute-val, state-resulting-from
+DisjointClasses: quantity-related-property-val, spatial-val, associated-with-val, resulting-state-val, evoking-experience-property-val, status-val, object-affordances-val, relational-attribute-val, dimensional-property-val, animal-propensity-val, temporal-val, can-not-be-done-val, can-be-done-val, process-val, life-process-val, temperature-val, physical-property-val, information-property-val, evaluation-attribute-val, state-resulting-from
 
 # children of ont::evaluation-attribute-val
 DisjointClasses: attractiveness-val, adaptability-val, influence-susceptibility-val, influence-val, permissibility-val, control-val, helpfulness-val, qualification-val, hospitability-val, shapeliness-val, dignity-val, adequacy-val, fame-val, wealthiness-val, psychological-property-val, usefulness-val, process-evaluation-val, real-vs-fake-val, freedom-val, orderliness-val, offensiveness-val, beauty-val, judgement-val, worthiness-val, reliability-val, quality-val, explicitness-val, basicness-val, typicality-val, familiarity-val, conventionality-val, seniority-val, necessity-val, importance-val, attention-worthy-val, safety-val, harmfulness-val, comfort-val, ability-val, luckiness-val, cleanliness-val, specificity-val, convenience-val, appropriateness-val, preference-val, recommendability-val, tolerability-val, acceptability-val, cost-val, freshness-val, lovable-val, desirability-val
@@ -20300,10 +20309,7 @@ DisjointClasses: manufacture-process-val, activity-val, process-status-val, proc
 DisjointClasses: nuclear-val, mechanical-val
 
 # children of ont::can-be-done-val
-DisjointClasses: surmountability-val, changeability-val, permeability-val, transferability-val, readability-val, measurability-val, avoidability-val, verifiability-val, predictability-val, rw-status-val, movable-val, replaceability-val, networkable-val, expandability-val, chargeability-val, enforceability-val, manageability-val, adhearable-val, accessibility-val, reparability-val
-
-# children of ont::reparability-val
-DisjointClasses: not-reparable-val, reparable-val
+DisjointClasses: surmountability-val, changeability-val, permeability-val, transferability-val, readability-val, measurability-val, avoidability-val, verifiability-val, predictability-val, rw-status-val, movable-val, replaceability-val, networkable-val, expandability-val, chargeability-val, enforceability-val, manageability-val, adhearable-val, accessibility-val, reparable-val
 
 # children of ont::accessibility-val
 DisjointClasses: not-accessible-val, accessible-val
@@ -21209,7 +21215,7 @@ DisjointClasses: not-steady-scale, steady-scale
 DisjointClasses: failure-scale, successful-scale
 
 # children of ont::can-be-done-scale
-DisjointClasses: reproducibility-scale, replaceability-scale, predictability-scale, portability-scale, mobility-scale, manageability-scale, comprehensibility-scale, changeability-scale
+DisjointClasses: reproducibility-scale, replaceability-scale, reparability-scale, predictability-scale, portability-scale, mobility-scale, manageability-scale, comprehensibility-scale, changeability-scale
 
 # children of ont::relational-property-scale
 DisjointClasses: systematicity-scale, similarity-scale, reciprocity-scale, dependence-scale, compatibility-scale
