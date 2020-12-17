@@ -473,6 +473,142 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <concept name="ont::not-accessible-val">
+ <relation label="inherit">
+  ont::can-not-be-done-val
+ </relation>
+ <relation label="overlap">
+  wn::|inaccessible%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::accessibility-scale</feat>
+  <feat name="type">ont::not-accessible-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::not-avoidable-val">
+ <comment>
+  &quot;(inevitable)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::can-not-be-done-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::avoidability-scale</feat>
+  <feat name="type">ont::not-avoidable-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::not-changeable-val">
+ <comment>
+  &quot;(unchangeable, unmodifiable)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::can-not-be-done-val
+ </relation>
+ <relation label="overlap">
+  wn::|invariable%3:00:00::|
+  wn::|immutable%3:00:00::|
+  wn::|changeless%3:00:04::|
+  wn::|inalterable%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::changeability-scale</feat>
+  <feat name="type">ont::not-changeable-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::not-enforceable-val">
+ <relation label="inherit">
+  ont::can-not-be-done-val
+ </relation>
+ <relation label="overlap">
+  wn::|unenforceable%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::enforceability-scale</feat>
+  <feat name="type">ont::not-enforceable-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::not-measurable-val">
+ <comment>
+  &quot;(immeasurable)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::can-not-be-done-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::measurability-scale</feat>
+  <feat name="type">ont::not-measurable-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::not-permeable-val">
+ <comment>
+  &quot;(impermeable, impervious)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::can-not-be-done-val
+ </relation>
+ <relation label="overlap">
+  wn::|impervious%3:00:00::|
+  wn::|imperviable%3:00:00::|
+  wn::|tight%3:00:02::|
+  wn::|impermeable%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::permeability-scale</feat>
+  <feat name="type">ont::not-permeable-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::not-predictable-val">
+ <relation label="inherit">
+  ont::can-not-be-done-val
+ </relation>
+ <relation label="overlap">
+  wn::|unpredictable%3:00:00::|
+  wn::|unforeseeable%5:00:00:unpredictable:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::predictability-scale</feat>
+  <feat name="type">ont::not-predictable-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::not-readable-val">
+ <comment>
+  &quot;(unreadable, illegible)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::can-not-be-done-val
+ </relation>
+ <relation label="overlap">
+  wn::|illegible%3:00:00::|
+ </relation>
+ </concept>
  <concept name="ont::not-reparable-val">
  <relation label="inherit">
   ont::can-not-be-done-val
@@ -488,6 +624,60 @@
   </relation>
   <feat name="scale">ont::reparability-scale</feat>
   <feat name="type">ont::not-reparable-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::not-transferable-val">
+ <comment>
+  &quot;(nontransferable, inalienable)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::can-not-be-done-val
+ </relation>
+ <relation label="overlap">
+  wn::|inalienable%3:00:00::|
+  wn::|unalienable%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::transferability-scale</feat>
+  <feat name="type">ont::not-transferable-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::not-verifiable-val">
+ <relation label="inherit">
+  ont::can-not-be-done-val
+ </relation>
+ <relation label="overlap">
+  wn::|unverifiable%5:00:00:subjective:00|
+  wn::|unreproducible%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::reproducibility-scale</feat>
+  <feat name="type">ont::not-verifiable-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::unmanageable">
+ <relation label="inherit">
+  ont::can-not-be-done-val
+ </relation>
+ <relation label="overlap">
+  wn::|indocile%5:00:00:unmanageable:00|
+  wn::|unmanageable%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::manageability-scale</feat>
+  <feat name="type">ont::unmanageable</feat>
  </sem-feats>
  </concept>
 </dsl>

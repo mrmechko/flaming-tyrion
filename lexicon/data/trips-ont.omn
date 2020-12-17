@@ -8642,89 +8642,74 @@ Class: can-be-done-val
   SubClassOf: (FLT_abstr-obj and F_scale some can-be-done-scale)
   SubClassOf: _ground only owl:Thing
 
+# ONT type ont::accessible-val
+Class: accessible-val
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some accessibility-scale and F_orientation some V_pos)
+
+# ONT type ont::adhearable-val
+Class: adhearable-val
+  SubClassOf: can-be-done-val
+
+# ONT type ont::avoidable-val
+Class: avoidable-val
+  Annotations: rdfs:comment "(evitable)"
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some avoidability-scale and F_orientation some V_pos)
+
+# ONT type ont::changeable-val
+Class: changeable-val
+  Annotations: rdfs:comment "(modifiable, changeable)"
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some changeability-scale and F_orientation some V_pos)
+
+# ONT type ont::chargeable-val
+Class: chargeable-val
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some chargeability-scale and F_orientation some V_pos)
+
+# ONT type ont::enforceable-val
+Class: enforceable-val
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some enforceability-scale and F_orientation some V_pos)
+
+# ONT type ont::expandable-val
+Class: expandable-val
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some expandability-scale and F_orientation some V_pos)
+
+# ONT type ont::permeable-val
+Class: permeable-val
+  Annotations: rdfs:comment "(permeable, leaky)"
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some permeability-scale and F_orientation some V_pos)
+
+# ONT type ont::readable-val
+Class: readable-val
+  Annotations: rdfs:comment "(readable, legible)"
+  SubClassOf: can-be-done-val
+
 # ONT type ont::reparable-val
 Class: reparable-val
   Annotations: rdfs:comment "resolvable, reparable, fixable, remediable"
   SubClassOf: can-be-done-val
   SubClassOf: (FLT_abstr-obj and F_scale some reparability-scale)
 
-# ONT type ont::accessibility-val
-Class: accessibility-val
-  SubClassOf: can-be-done-val
-  SubClassOf: _figure only (FLT_phys-obj) and _figure some owl:Thing
-  SubClassOf: _ground only (FLT_phys-obj) and _ground some owl:Thing
-
-# ONT type ont::accessible-val
-Class: accessible-val
-  SubClassOf: accessibility-val
-
-# ONT type ont::not-accessible-val
-Class: not-accessible-val
-  SubClassOf: accessibility-val
-
-# ONT type ont::adhearable-val
-Class: adhearable-val
-  SubClassOf: can-be-done-val
-
-# ONT type ont::manageability-val
-Class: manageability-val
-  SubClassOf: can-be-done-val
-
 # ONT type ont::manageable
 Class: manageable
-  SubClassOf: manageability-val
+  SubClassOf: can-be-done-val
   SubClassOf: (FLT_abstr-obj and F_scale some manageability-scale and F_orientation some V_pos)
 
-# ONT type ont::unmanageable
-Class: unmanageable
-  SubClassOf: manageability-val
-  SubClassOf: (FLT_abstr-obj and F_scale some manageability-scale and F_orientation some V_neg)
-
-# ONT type ont::enforceability-val
-Class: enforceability-val
+# ONT type ont::measurable-val
+Class: measurable-val
+  Annotations: rdfs:comment "(measurable)"
   SubClassOf: can-be-done-val
-
-# ONT type ont::not-enforceable-val
-Class: not-enforceable-val
-  SubClassOf: enforceability-val
-
-# ONT type ont::enforceable-val
-Class: enforceable-val
-  SubClassOf: enforceability-val
-
-# ONT type ont::chargeability-val
-Class: chargeability-val
-  SubClassOf: can-be-done-val
-
-# ONT type ont::chargeable-val
-Class: chargeable-val
-  SubClassOf: chargeability-val
-
-# ONT type ont::expandability-val
-Class: expandability-val
-  SubClassOf: can-be-done-val
-
-# ONT type ont::expandable-val
-Class: expandable-val
-  SubClassOf: expandability-val
-
-# ONT type ont::networkable-val
-Class: networkable-val
-  SubClassOf: can-be-done-val
-
-# ONT type ont::replaceability-val
-Class: replaceability-val
-  SubClassOf: can-be-done-val
-  SubClassOf: (FLT_abstr-obj and F_scale some replaceability-scale)
-
-# ONT type ont::replaceable-val
-Class: replaceable-val
-  SubClassOf: replaceability-val
-  SubClassOf: (FLT_abstr-obj and F_scale some replaceability-scale and F_orientation some V_pos)
+  SubClassOf: (FLT_abstr-obj and F_scale some measurability-scale and F_orientation some V_pos)
 
 # ONT type ont::movable-val
 Class: movable-val
   SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some mobility-scale and F_orientation some V_pos)
 
 # ONT type ont::removable-val
 Class: removable-val
@@ -8734,6 +8719,21 @@ Class: removable-val
 Class: portable-val
   SubClassOf: movable-val
   SubClassOf: (FLT_abstr-obj and F_scale some portability-scale)
+
+# ONT type ont::networkable-val
+Class: networkable-val
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some networkability-scale and F_orientation some V_pos)
+
+# ONT type ont::predictable-val
+Class: predictable-val
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale and F_orientation some V_pos)
+
+# ONT type ont::replaceable-val
+Class: replaceable-val
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some replaceability-scale and F_orientation some V_pos)
 
 # ONT type ont::rw-status-val
 Class: rw-status-val
@@ -8747,35 +8747,16 @@ Class: r-able-val
 Class: w-able-val
   SubClassOf: rw-status-val
 
-# ONT type ont::predictability-val
-Class: predictability-val
+# ONT type ont::transferable-val
+Class: transferable-val
+  Annotations: rdfs:comment "(transferable, alienable)"
   SubClassOf: can-be-done-val
-  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale)
-
-# ONT type ont::predictable-val
-Class: predictable-val
-  SubClassOf: predictability-val
-  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale and F_orientation some V_pos)
-
-# ONT type ont::not-predictable-val
-Class: not-predictable-val
-  SubClassOf: predictability-val
-  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale and F_orientation some V_neg)
-
-# ONT type ont::verifiability-val
-Class: verifiability-val
-  SubClassOf: can-be-done-val
-  SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale)
+  SubClassOf: (FLT_abstr-obj and F_scale some transferability-scale and F_orientation some V_pos)
 
 # ONT type ont::verifiable-val
 Class: verifiable-val
-  SubClassOf: verifiability-val
+  SubClassOf: can-be-done-val
   SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale and F_orientation some V_pos)
-
-# ONT type ont::not-verifiable-val
-Class: not-verifiable-val
-  SubClassOf: verifiability-val
-  SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale and F_orientation some V_neg)
 
 # ONT type ont::can-not-be-done-val
 Class: can-not-be-done-val
@@ -8783,10 +8764,70 @@ Class: can-not-be-done-val
   SubClassOf: (FLT_abstr-obj and F_scale some can-not-be-done-scale)
   SubClassOf: _ground only owl:Thing
 
+# ONT type ont::not-accessible-val
+Class: not-accessible-val
+  SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some accessibility-scale and F_orientation some V_neg)
+
+# ONT type ont::not-avoidable-val
+Class: not-avoidable-val
+  Annotations: rdfs:comment "(inevitable)"
+  SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some avoidability-scale and F_orientation some V_neg)
+
+# ONT type ont::not-changeable-val
+Class: not-changeable-val
+  Annotations: rdfs:comment "(unchangeable, unmodifiable)"
+  SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some changeability-scale and F_orientation some V_neg)
+
+# ONT type ont::not-enforceable-val
+Class: not-enforceable-val
+  SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some enforceability-scale and F_orientation some V_neg)
+
+# ONT type ont::not-measurable-val
+Class: not-measurable-val
+  Annotations: rdfs:comment "(immeasurable)"
+  SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some measurability-scale and F_orientation some V_neg)
+
+# ONT type ont::not-permeable-val
+Class: not-permeable-val
+  Annotations: rdfs:comment "(impermeable, impervious)"
+  SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some permeability-scale and F_orientation some V_neg)
+
+# ONT type ont::not-predictable-val
+Class: not-predictable-val
+  SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale and F_orientation some V_neg)
+
+# ONT type ont::not-readable-val
+Class: not-readable-val
+  Annotations: rdfs:comment "(unreadable, illegible)"
+  SubClassOf: can-not-be-done-val
+
 # ONT type ont::not-reparable-val
 Class: not-reparable-val
   SubClassOf: can-not-be-done-val
   SubClassOf: (FLT_abstr-obj and F_scale some reparability-scale)
+
+# ONT type ont::not-transferable-val
+Class: not-transferable-val
+  Annotations: rdfs:comment "(nontransferable, inalienable)"
+  SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some transferability-scale and F_orientation some V_neg)
+
+# ONT type ont::not-verifiable-val
+Class: not-verifiable-val
+  SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale and F_orientation some V_neg)
+
+# ONT type ont::unmanageable
+Class: unmanageable
+  SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some manageability-scale and F_orientation some V_neg)
 
 # ONT type ont::temporal-val
 Class: temporal-val
@@ -11235,96 +11276,6 @@ Class: heavy-duty-val
 Class: light-duty-val
   Annotations: rdfs:comment "(light-duty)"
   SubClassOf: designed-to-demand-val
-
-# ONT type ont::avoidability-val
-Class: avoidability-val
-  Annotations: rdfs:comment "(evitable)"
-  SubClassOf: can-be-done-val
-
-# ONT type ont::avoidable-val
-Class: avoidable-val
-  Annotations: rdfs:comment "(evitable)"
-  SubClassOf: avoidability-val
-
-# ONT type ont::not-avoidable-val
-Class: not-avoidable-val
-  Annotations: rdfs:comment "(inevitable)"
-  SubClassOf: avoidability-val
-
-# ONT type ont::measurability-val
-Class: measurability-val
-  Annotations: rdfs:comment "(measurable)"
-  SubClassOf: can-be-done-val
-
-# ONT type ont::measurable-val
-Class: measurable-val
-  Annotations: rdfs:comment "(measurable)"
-  SubClassOf: measurability-val
-
-# ONT type ont::not-measurable-val
-Class: not-measurable-val
-  Annotations: rdfs:comment "(immeasurable)"
-  SubClassOf: measurability-val
-
-# ONT type ont::readability-val
-Class: readability-val
-  Annotations: rdfs:comment "(readable, legible)"
-  SubClassOf: can-be-done-val
-
-# ONT type ont::readable-val
-Class: readable-val
-  Annotations: rdfs:comment "(readable, legible)"
-  SubClassOf: readability-val
-
-# ONT type ont::not-readable-val
-Class: not-readable-val
-  Annotations: rdfs:comment "(unreadable, illegible)"
-  SubClassOf: readability-val
-
-# ONT type ont::transferability-val
-Class: transferability-val
-  Annotations: rdfs:comment "(transferable, alienable)"
-  SubClassOf: can-be-done-val
-
-# ONT type ont::transferable-val
-Class: transferable-val
-  Annotations: rdfs:comment "(transferable, alienable)"
-  SubClassOf: transferability-val
-
-# ONT type ont::not-transferable-val
-Class: not-transferable-val
-  Annotations: rdfs:comment "(nontransferable, inalienable)"
-  SubClassOf: transferability-val
-
-# ONT type ont::permeability-val
-Class: permeability-val
-  Annotations: rdfs:comment "(permeable, leaky)"
-  SubClassOf: can-be-done-val
-
-# ONT type ont::permeable-val
-Class: permeable-val
-  Annotations: rdfs:comment "(permeable, leaky)"
-  SubClassOf: permeability-val
-
-# ONT type ont::not-permeable-val
-Class: not-permeable-val
-  Annotations: rdfs:comment "(impermeable, impervious)"
-  SubClassOf: permeability-val
-
-# ONT type ont::changeability-val
-Class: changeability-val
-  Annotations: rdfs:comment "(modifiable, changeable)"
-  SubClassOf: can-be-done-val
-
-# ONT type ont::changeable-val
-Class: changeable-val
-  Annotations: rdfs:comment "(modifiable, changeable)"
-  SubClassOf: changeability-val
-
-# ONT type ont::not-changeable-val
-Class: not-changeable-val
-  Annotations: rdfs:comment "(unchangeable, unmodifiable)"
-  SubClassOf: changeability-val
 
 # ONT type ont::adaptability-val
 Class: adaptability-val
@@ -14441,25 +14392,65 @@ Class: can-be-done-scale
   SubClassOf: ordered-domain
   SubClassOf: (FLT_abstr-obj and F_scale some can-be-done-scale)
 
+# ONT type ont::accessibility-scale
+Class: accessibility-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some accessibility-scale)
+
+# ONT type ont::avoidability-scale
+Class: avoidability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some avoidability-scale)
+
 # ONT type ont::changeability-scale
 Class: changeability-scale
   SubClassOf: can-be-done-scale
   SubClassOf: (FLT_abstr-obj and F_scale some changeability-scale)
+
+# ONT type ont::chargeability-scale
+Class: chargeability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some chargeability-scale)
 
 # ONT type ont::comprehensibility-scale
 Class: comprehensibility-scale
   SubClassOf: can-be-done-scale
   SubClassOf: (FLT_abstr-obj and F_scale some comprehensibility-scale)
 
+# ONT type ont::enforceability-scale
+Class: enforceability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some enforceability-scale)
+
+# ONT type ont::expandability-scale
+Class: expandability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some expandability-scale)
+
 # ONT type ont::manageability-scale
 Class: manageability-scale
   SubClassOf: can-be-done-scale
   SubClassOf: (FLT_abstr-obj and F_scale some manageability-scale)
 
+# ONT type ont::measurability-scale
+Class: measurability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some measurability-scale)
+
 # ONT type ont::mobility-scale
 Class: mobility-scale
   SubClassOf: can-be-done-scale
   SubClassOf: (FLT_abstr-obj and F_scale some mobility-scale)
+
+# ONT type ont::networkability-scale
+Class: networkability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some networkability-scale)
+
+# ONT type ont::permeability-scale
+Class: permeability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some permeability-scale)
 
 # ONT type ont::portability-scale
 Class: portability-scale
@@ -14470,6 +14461,11 @@ Class: portability-scale
 Class: predictability-scale
   SubClassOf: can-be-done-scale
   SubClassOf: (FLT_abstr-obj and F_scale some predictability-scale)
+
+# ONT type ont::readability-scale
+Class: readability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some readability-scale)
 
 # ONT type ont::reparability-scale
 Class: reparability-scale
@@ -14485,6 +14481,11 @@ Class: replaceability-scale
 Class: reproducibility-scale
   SubClassOf: can-be-done-scale
   SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale)
+
+# ONT type ont::transferability-scale
+Class: transferability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some transferability-scale)
 
 # ONT type ont::process-status-scale
 Class: process-status-scale
@@ -20309,16 +20310,7 @@ DisjointClasses: manufacture-process-val, activity-val, process-status-val, proc
 DisjointClasses: nuclear-val, mechanical-val
 
 # children of ont::can-be-done-val
-DisjointClasses: surmountability-val, changeability-val, permeability-val, transferability-val, readability-val, measurability-val, avoidability-val, verifiability-val, predictability-val, rw-status-val, movable-val, replaceability-val, networkable-val, expandability-val, chargeability-val, enforceability-val, manageability-val, adhearable-val, accessibility-val, reparable-val
-
-# children of ont::accessibility-val
-DisjointClasses: not-accessible-val, accessible-val
-
-# children of ont::manageability-val
-DisjointClasses: unmanageable, manageable
-
-# children of ont::enforceability-val
-DisjointClasses: enforceable-val, not-enforceable-val
+DisjointClasses: surmountability-val, verifiable-val, transferable-val, rw-status-val, replaceable-val, predictable-val, networkable-val, movable-val, measurable-val, manageable, reparable-val, readable-val, permeable-val, expandable-val, enforceable-val, chargeable-val, changeable-val, avoidable-val, adhearable-val, accessible-val
 
 # children of ont::movable-val
 DisjointClasses: portable-val, removable-val
@@ -20326,11 +20318,8 @@ DisjointClasses: portable-val, removable-val
 # children of ont::rw-status-val
 DisjointClasses: w-able-val, r-able-val
 
-# children of ont::predictability-val
-DisjointClasses: not-predictable-val, predictable-val
-
-# children of ont::verifiability-val
-DisjointClasses: not-verifiable-val, verifiable-val
+# children of ont::can-not-be-done-val
+DisjointClasses: unmanageable, not-verifiable-val, not-transferable-val, not-reparable-val, not-readable-val, not-predictable-val, not-permeable-val, not-measurable-val, not-enforceable-val, not-changeable-val, not-avoidable-val, not-accessible-val
 
 # children of ont::temporal-val
 DisjointClasses: clock-time-val, timeliness-val, temporal-relation-val, relative-time-location-val, historical-era-val, age-val, temporal-occurrence-val
@@ -20782,24 +20771,6 @@ DisjointClasses: not-vulnerable-val, vulnerable-val
 # children of ont::designed-to-demand-val
 DisjointClasses: light-duty-val, heavy-duty-val
 
-# children of ont::avoidability-val
-DisjointClasses: not-avoidable-val, avoidable-val
-
-# children of ont::measurability-val
-DisjointClasses: not-measurable-val, measurable-val
-
-# children of ont::readability-val
-DisjointClasses: not-readable-val, readable-val
-
-# children of ont::transferability-val
-DisjointClasses: not-transferable-val, transferable-val
-
-# children of ont::permeability-val
-DisjointClasses: not-permeable-val, permeable-val
-
-# children of ont::changeability-val
-DisjointClasses: not-changeable-val, changeable-val
-
 # children of ont::adaptability-val
 DisjointClasses: not-adaptable-val, adaptable-val
 
@@ -21215,7 +21186,7 @@ DisjointClasses: not-steady-scale, steady-scale
 DisjointClasses: failure-scale, successful-scale
 
 # children of ont::can-be-done-scale
-DisjointClasses: reproducibility-scale, replaceability-scale, reparability-scale, predictability-scale, portability-scale, mobility-scale, manageability-scale, comprehensibility-scale, changeability-scale
+DisjointClasses: transferability-scale, reproducibility-scale, replaceability-scale, reparability-scale, readability-scale, predictability-scale, portability-scale, permeability-scale, networkability-scale, mobility-scale, measurability-scale, manageability-scale, expandability-scale, enforceability-scale, comprehensibility-scale, chargeability-scale, changeability-scale, avoidability-scale, accessibility-scale
 
 # children of ont::relational-property-scale
 DisjointClasses: systematicity-scale, similarity-scale, reciprocity-scale, dependence-scale, compatibility-scale

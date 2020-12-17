@@ -4,11 +4,19 @@
  <provenance name="TRIPS"/>
  <concept name="ont::accessible-val">
  <relation label="inherit">
-  ont::accessibility-val
+  ont::can-be-done-val
  </relation>
  <relation label="overlap">
   wn::|accessible%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::accessibility-scale</feat>
+  <feat name="type">ont::accessible-val</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -109,19 +117,6 @@
   </role-restr-map>
   <role-restr-map roles="ont::figure">
    <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::accessibility-val">
- <relation label="inherit">
-  ont::can-be-done-val
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="phys-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="phys-obj" />
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -284,14 +279,14 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="phys-obj" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="phys-obj" />
- </role-restr-map>
- </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="orientation">pos</feat>
+ <feat name="scale">ont::accessibility-scale</feat>
+ <feat name="type">ont::accessible-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property

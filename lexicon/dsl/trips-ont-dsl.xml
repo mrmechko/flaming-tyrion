@@ -356,26 +356,33 @@
    <feat name="type">ont::acceptability-val</feat>
   </sem-feats>
  </concept>
- <concept name="ont::accessibility-val">
+ <concept name="ont::accessibility-scale">
   <relation label="inherit">
-   ont::can-be-done-val
+   ont::can-be-done-scale
   </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::ground" optional="optional">
-    <concept name="phys-obj" />
-   </role-restr-map>
-   <role-restr-map roles="ont::figure">
-    <concept name="phys-obj" />
-   </role-restr-map>
-  </sem-frame>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::accessibility-scale</feat>
+   <feat name="type">ont::accessibility-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::accessible-val">
   <relation label="inherit">
-   ont::accessibility-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|accessible%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::accessibility-scale</feat>
+   <feat name="type">ont::accessible-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::accidental">
   <relation label="inherit">
@@ -4598,20 +4605,24 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::avoidability-val">
-  <comment>
-   &quot;(evitable)&quot;
-  </comment>
+ <concept name="ont::avoidability-scale">
   <relation label="inherit">
-   ont::can-be-done-val
+   ont::can-be-done-scale
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::avoidability-scale</feat>
+   <feat name="type">ont::avoidability-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::avoidable-val">
   <comment>
    &quot;(evitable)&quot;
   </comment>
   <relation label="inherit">
-   ont::avoidability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|evitable%3:00:00::|
@@ -4619,6 +4630,14 @@
    wn::|avertible%3:00:00::|
    wn::|avertable%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::avoidability-scale</feat>
+   <feat name="type">ont::avoidable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::avoiding">
   <relation label="inherit">
@@ -9862,20 +9881,12 @@
    <feat name="type">ont::changeability-scale</feat>
   </sem-feats>
  </concept>
- <concept name="ont::changeability-val">
-  <comment>
-   &quot;(modifiable, changeable)&quot;
-  </comment>
-  <relation label="inherit">
-   ont::can-be-done-val
-  </relation>
- </concept>
  <concept name="ont::changeable-val">
   <comment>
    &quot;(modifiable, changeable)&quot;
   </comment>
   <relation label="inherit">
-   ont::changeability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|variable%3:00:00::|
@@ -9887,6 +9898,14 @@
    wn::|changeful%3:00:00::|
    wn::|alterable%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::changeability-scale</feat>
+   <feat name="type">ont::changeable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::changing-rules">
   <relation label="inherit">
@@ -9911,15 +9930,30 @@
    wn::|charge_per_unit%1:21:00::|
   </relation>
  </concept>
- <concept name="ont::chargeability-val">
+ <concept name="ont::chargeability-scale">
   <relation label="inherit">
-   ont::can-be-done-val
+   ont::can-be-done-scale
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::chargeability-scale</feat>
+   <feat name="type">ont::chargeability-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::chargeable-val">
   <relation label="inherit">
-   ont::chargeability-val
+   ont::can-be-done-val
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::chargeability-scale</feat>
+   <feat name="type">ont::chargeable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::chart">
   <relation label="inherit">
@@ -18898,18 +18932,33 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::enforceability-val">
+ <concept name="ont::enforceability-scale">
   <relation label="inherit">
-   ont::can-be-done-val
+   ont::can-be-done-scale
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::enforceability-scale</feat>
+   <feat name="type">ont::enforceability-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::enforceable-val">
   <relation label="inherit">
-   ont::enforceability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|enforceable%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::enforceability-scale</feat>
+   <feat name="type">ont::enforceable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::engineer">
   <comment>
@@ -20522,20 +20571,35 @@
    wn::|way_out%1:06:00::|
   </relation>
  </concept>
- <concept name="ont::expandability-val">
+ <concept name="ont::expandability-scale">
   <relation label="inherit">
-   ont::can-be-done-val
+   ont::can-be-done-scale
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::expandability-scale</feat>
+   <feat name="type">ont::expandability-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::expandable-val">
   <relation label="inherit">
-   ont::expandability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|expandable%5:00:00:expansive:00|
    wn::|expansive%3:00:00::|
    wn::|expandable%5:00:00:elastic:00|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::expandability-scale</feat>
+   <feat name="type">ont::expandable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::expectation">
   <comment>
@@ -31374,14 +31438,9 @@
    <feat name="type">ont::manageability-scale</feat>
   </sem-feats>
  </concept>
- <concept name="ont::manageability-val">
-  <relation label="inherit">
-   ont::can-be-done-val
-  </relation>
- </concept>
  <concept name="ont::manageable">
   <relation label="inherit">
-   ont::manageability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|controllable%5:00:00:manageable:00|
@@ -31917,26 +31976,41 @@
    <feat name="type">ont::meaningfulness-val</feat>
   </sem-feats>
  </concept>
- <concept name="ont::measurability-val">
-  <comment>
-   &quot;(measurable)&quot;
-  </comment>
+ <concept name="ont::measurability-scale">
   <relation label="inherit">
-   ont::can-be-done-val
+   ont::can-be-done-scale
   </relation>
+  <relation label="overlap">
+   wn::|measurability%1:07:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::measurability-scale</feat>
+   <feat name="type">ont::measurability-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::measurable-val">
   <comment>
    &quot;(measurable)&quot;
   </comment>
   <relation label="inherit">
-   ont::measurability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|fathomable%3:00:00::|
    wn::|plumbable%3:00:00::|
    wn::|soundable%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::measurability-scale</feat>
+   <feat name="type">ont::measurable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::measure">
   <relation label="inherit">
@@ -33518,6 +33592,14 @@
   <relation label="inherit">
    ont::can-be-done-val
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::mobility-scale</feat>
+   <feat name="type">ont::movable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::move">
   <relation label="inherit">
@@ -34588,10 +34670,30 @@
    <feat name="type">ont::nervousness-scale</feat>
   </sem-feats>
  </concept>
+ <concept name="ont::networkability-scale">
+  <relation label="inherit">
+   ont::can-be-done-scale
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::networkability-scale</feat>
+   <feat name="type">ont::networkability-scale</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::networkable-val">
   <relation label="inherit">
    ont::can-be-done-val
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::networkability-scale</feat>
+   <feat name="type">ont::networkable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::neutral-acceptability-val">
   <relation label="inherit">
@@ -34921,11 +35023,19 @@
  </concept>
  <concept name="ont::not-accessible-val">
   <relation label="inherit">
-   ont::accessibility-val
+   ont::can-not-be-done-val
   </relation>
   <relation label="overlap">
    wn::|inaccessible%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">neg</feat>
+   <feat name="scale">ont::accessibility-scale</feat>
+   <feat name="type">ont::not-accessible-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::not-acknowledged-val">
   <comment>
@@ -35125,8 +35235,16 @@
    &quot;(inevitable)&quot;
   </comment>
   <relation label="inherit">
-   ont::avoidability-val
+   ont::can-not-be-done-val
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">neg</feat>
+   <feat name="scale">ont::avoidability-scale</feat>
+   <feat name="type">ont::not-avoidable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::not-aware-val">
   <relation label="inherit">
@@ -35266,7 +35384,7 @@
    &quot;(unchangeable, unmodifiable)&quot;
   </comment>
   <relation label="inherit">
-   ont::changeability-val
+   ont::can-not-be-done-val
   </relation>
   <relation label="overlap">
    wn::|invariable%3:00:00::|
@@ -35274,6 +35392,14 @@
    wn::|changeless%3:00:04::|
    wn::|inalterable%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">neg</feat>
+   <feat name="scale">ont::changeability-scale</feat>
+   <feat name="type">ont::not-changeable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::not-clever-val">
   <comment>
@@ -35671,11 +35797,19 @@
  </concept>
  <concept name="ont::not-enforceable-val">
   <relation label="inherit">
-   ont::enforceability-val
+   ont::can-not-be-done-val
   </relation>
   <relation label="overlap">
    wn::|unenforceable%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">neg</feat>
+   <feat name="scale">ont::enforceability-scale</feat>
+   <feat name="type">ont::not-enforceable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::not-expensive-scale">
   <relation label="inherit">
@@ -36237,8 +36371,16 @@
    &quot;(immeasurable)&quot;
   </comment>
   <relation label="inherit">
-   ont::measurability-val
+   ont::can-not-be-done-val
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">neg</feat>
+   <feat name="scale">ont::measurability-scale</feat>
+   <feat name="type">ont::not-measurable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::not-moral-val">
   <relation label="inherit">
@@ -36368,7 +36510,7 @@
    &quot;(impermeable, impervious)&quot;
   </comment>
   <relation label="inherit">
-   ont::permeability-val
+   ont::can-not-be-done-val
   </relation>
   <relation label="overlap">
    wn::|impervious%3:00:00::|
@@ -36376,6 +36518,14 @@
    wn::|tight%3:00:02::|
    wn::|impermeable%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">neg</feat>
+   <feat name="scale">ont::permeability-scale</feat>
+   <feat name="type">ont::not-permeable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::not-permissible-val">
   <comment>
@@ -36481,7 +36631,7 @@
  </concept>
  <concept name="ont::not-predictable-val">
   <relation label="inherit">
-   ont::predictability-val
+   ont::can-not-be-done-val
   </relation>
   <relation label="overlap">
    wn::|unpredictable%3:00:00::|
@@ -36609,7 +36759,7 @@
    &quot;(unreadable, illegible)&quot;
   </comment>
   <relation label="inherit">
-   ont::readability-val
+   ont::can-not-be-done-val
   </relation>
   <relation label="overlap">
    wn::|illegible%3:00:00::|
@@ -37110,12 +37260,20 @@
    &quot;(nontransferable, inalienable)&quot;
   </comment>
   <relation label="inherit">
-   ont::transferability-val
+   ont::can-not-be-done-val
   </relation>
   <relation label="overlap">
    wn::|inalienable%3:00:00::|
    wn::|unalienable%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">neg</feat>
+   <feat name="scale">ont::transferability-scale</feat>
+   <feat name="type">ont::not-transferable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::not-typical-scale">
   <relation label="inherit">
@@ -37154,7 +37312,7 @@
  </concept>
  <concept name="ont::not-verifiable-val">
   <relation label="inherit">
-   ont::verifiability-val
+   ont::can-not-be-done-val
   </relation>
   <relation label="overlap">
    wn::|unverifiable%5:00:00:subjective:00|
@@ -39760,26 +39918,38 @@
    ont::communication
   </relation>
  </concept>
- <concept name="ont::permeability-val">
-  <comment>
-   &quot;(permeable, leaky)&quot;
-  </comment>
+ <concept name="ont::permeability-scale">
   <relation label="inherit">
-   ont::can-be-done-val
+   ont::can-be-done-scale
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::permeability-scale</feat>
+   <feat name="type">ont::permeability-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::permeable-val">
   <comment>
    &quot;(permeable, leaky)&quot;
   </comment>
   <relation label="inherit">
-   ont::permeability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|leaky%3:00:00::|
    wn::|permeable%3:00:00::|
    wn::|pervious%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::permeability-scale</feat>
+   <feat name="type">ont::permeable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::permissibility-val">
   <comment>
@@ -42276,21 +42446,9 @@
    <feat name="type">ont::predictability-scale</feat>
   </sem-feats>
  </concept>
- <concept name="ont::predictability-val">
-  <relation label="inherit">
-   ont::can-be-done-val
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">ont::predictability-scale</feat>
-   <feat name="type">ont::predictability-val</feat>
-  </sem-feats>
- </concept>
  <concept name="ont::predictable-val">
   <relation label="inherit">
-   ont::predictability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|predictable%3:00:00::|
@@ -44437,20 +44595,24 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::readability-val">
-  <comment>
-   &quot;(readable, legible)&quot;
-  </comment>
+ <concept name="ont::readability-scale">
   <relation label="inherit">
-   ont::can-be-done-val
+   ont::can-be-done-scale
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::readability-scale</feat>
+   <feat name="type">ont::readability-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::readable-val">
   <comment>
    &quot;(readable, legible)&quot;
   </comment>
   <relation label="inherit">
-   ont::readability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|legible%3:00:00::|
@@ -46033,21 +46195,9 @@
    <feat name="type">ont::replaceability-scale</feat>
   </sem-feats>
  </concept>
- <concept name="ont::replaceability-val">
-  <relation label="inherit">
-   ont::can-be-done-val
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">ont::replaceability-scale</feat>
-   <feat name="type">ont::replaceability-val</feat>
-  </sem-feats>
- </concept>
  <concept name="ont::replaceable-val">
   <relation label="inherit">
-   ont::replaceability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|interchangeable%5:00:00:replaceable:00|
@@ -55835,24 +55985,39 @@
    <feat name="type">ont::transfer-event</feat>
   </sem-feats>
  </concept>
- <concept name="ont::transferability-val">
-  <comment>
-   &quot;(transferable, alienable)&quot;
-  </comment>
+ <concept name="ont::transferability-scale">
   <relation label="inherit">
-   ont::can-be-done-val
+   ont::can-be-done-scale
   </relation>
+  <relation label="overlap">
+   wn::|transferability%1:07:00::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::transferability-scale</feat>
+   <feat name="type">ont::transferability-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::transferable-val">
   <comment>
    &quot;(transferable, alienable)&quot;
   </comment>
   <relation label="inherit">
-   ont::transferability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|alienable%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::transferability-scale</feat>
+   <feat name="type">ont::transferable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::transform-to-preserve">
   <relation label="inherit">
@@ -56846,7 +57011,7 @@
  </concept>
  <concept name="ont::unmanageable">
   <relation label="inherit">
-   ont::manageability-val
+   ont::can-not-be-done-val
   </relation>
   <relation label="overlap">
    wn::|indocile%5:00:00:unmanageable:00|
@@ -57533,21 +57698,9 @@
    ont::vehicle
   </relation>
  </concept>
- <concept name="ont::verifiability-val">
-  <relation label="inherit">
-   ont::can-be-done-val
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="scale">ont::reproducibility-scale</feat>
-   <feat name="type">ont::verifiability-val</feat>
-  </sem-feats>
- </concept>
  <concept name="ont::verifiable-val">
   <relation label="inherit">
-   ont::verifiability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|verifiable%5:00:00:objective:00|
