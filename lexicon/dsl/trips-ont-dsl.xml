@@ -1159,6 +1159,18 @@
    wn::|adequate%5:00:00:sufficient:00|
   </relation>
  </concept>
+ <concept name="ont::adhearability-scale">
+  <relation label="inherit">
+   ont::can-be-done-scale
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::adhearability-scale</feat>
+   <feat name="type">ont::adhearability-scale</feat>
+  </sem-feats>
+ </concept>
  <concept name="ont::adhearable-val">
   <relation label="inherit">
    ont::can-be-done-val
@@ -1166,6 +1178,14 @@
   <relation label="overlap">
    wn::|adhesive%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::adhearability-scale</feat>
+   <feat name="type">ont::adhearable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::adjacent">
   <relation label="inherit">
@@ -8258,6 +8278,9 @@
   <relation label="inherit">
    ont::ordered-domain
   </relation>
+  <relation label="overlap">
+   wn::|separability%1:26:00::|
+  </relation>
   <sem-feats>
    <relation label="inherit">
     abstr-obj
@@ -8393,6 +8416,7 @@
    wn::|saleable%3:00:00::|
    wn::|scalable%3:00:00::|
    wn::|seasonable%3:00:00::|
+   wn::|separable%5:00:01:divisible:00|
    wn::|shockable%3:00:00::|
    wn::|shrinkable%3:00:00::|
    wn::|sinkable%3:00:00::|
@@ -8466,6 +8490,7 @@
    wn::|infallible%3:00:00::|
    wn::|inhospitable%3:00:02::|
    wn::|inoperable%3:00:00::|
+   wn::|inseparable%5:00:00:indivisible:00|
    wn::|intractable%3:00:00::|
    wn::|inviolable%3:00:00::|
    wn::|irrecoverable%3:00:00::|
@@ -36764,6 +36789,14 @@
   <relation label="overlap">
    wn::|illegible%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">neg</feat>
+   <feat name="scale">ont::readability-scale</feat>
+   <feat name="type">ont::not-readable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::not-reciprocal-val">
   <comment>
@@ -37199,7 +37232,7 @@
    &quot;(unconquerable, insoluble, insurmountable)&quot;
   </comment>
   <relation label="inherit">
-   ont::surmountability-val
+   ont::can-not-be-done-val
   </relation>
   <relation label="overlap">
    wn::|unconquerable%3:00:00::|
@@ -37208,6 +37241,14 @@
    wn::|unsurmountable%3:00:00::|
    wn::|inextricable%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">neg</feat>
+   <feat name="scale">ont::surmountability-scale</feat>
+   <feat name="type">ont::not-surmountable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::not-surprising-val">
   <comment>
@@ -44617,6 +44658,14 @@
   <relation label="overlap">
    wn::|legible%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::readability-scale</feat>
+   <feat name="type">ont::readable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::real-vs-fake-scale">
   <relation label="inherit">
@@ -53578,25 +53627,37 @@
    wn::|surface%1:15:00::|
   </relation>
  </concept>
- <concept name="ont::surmountability-val">
-  <comment>
-   &quot;(surmountable,)&quot;
-  </comment>
+ <concept name="ont::surmountability-scale">
   <relation label="inherit">
-   ont::can-be-done-val
+   ont::can-be-done-scale
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="scale">ont::surmountability-scale</feat>
+   <feat name="type">ont::surmountability-scale</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::surmountable-val">
   <comment>
    &quot;(surmountable,)&quot;
   </comment>
   <relation label="inherit">
-   ont::surmountability-val
+   ont::can-be-done-val
   </relation>
   <relation label="overlap">
    wn::|conquerable%3:00:00::|
    wn::|surmountable%3:00:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="orientation">pos</feat>
+   <feat name="scale">ont::surmountability-scale</feat>
+   <feat name="type">ont::surmountable-val</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::surplus">
   <relation label="inherit">

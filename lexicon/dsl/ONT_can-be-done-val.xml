@@ -129,6 +129,7 @@
   wn::|saleable%3:00:00::|
   wn::|scalable%3:00:00::|
   wn::|seasonable%3:00:00::|
+  wn::|separable%5:00:01:divisible:00|
   wn::|shockable%3:00:00::|
   wn::|shrinkable%3:00:00::|
   wn::|sinkable%3:00:00::|
@@ -496,6 +497,14 @@
  <relation label="overlap">
   wn::|adhesive%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::adhearability-scale</feat>
+  <feat name="type">ont::adhearable-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::avoidable-val">
  <comment>
@@ -623,6 +632,14 @@
  <relation label="overlap">
   wn::|legible%3:00:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::readability-scale</feat>
+  <feat name="type">ont::readable-val</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::reparable-val">
  <comment>
@@ -747,6 +764,26 @@
   ont::can-be-done-val
  </relation>
  </concept>
+ <concept name="ont::surmountable-val">
+ <comment>
+  &quot;(surmountable,)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::can-be-done-val
+ </relation>
+ <relation label="overlap">
+  wn::|conquerable%3:00:00::|
+  wn::|surmountable%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">pos</feat>
+  <feat name="scale">ont::surmountability-scale</feat>
+  <feat name="type">ont::surmountable-val</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::transferable-val">
  <comment>
   &quot;(transferable, alienable)&quot;
@@ -783,14 +820,6 @@
   <feat name="scale">ont::reproducibility-scale</feat>
   <feat name="type">ont::verifiable-val</feat>
  </sem-feats>
- </concept>
- <concept name="ont::surmountability-val">
- <comment>
-  &quot;(surmountable,)&quot;
- </comment>
- <relation label="inherit">
-  ont::can-be-done-val
- </relation>
  </concept>
  <sense>
  <morph>

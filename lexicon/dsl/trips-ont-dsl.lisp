@@ -1009,11 +1009,27 @@
     WN::|adequate%5:00:00:sufficient:00|))
 
 (CONCEPT
+  ONT::ADHEARABILITY-SCALE
+  (INHERIT
+    ONT::CAN-BE-DONE-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::ADHEARABILITY-SCALE)
+    (TYPE ONT::ADHEARABILITY-SCALE)))
+
+(CONCEPT
   ONT::ADHEARABLE-VAL
   (INHERIT
     ONT::CAN-BE-DONE-VAL)
   (OVERLAP
-    WN::|adhesive%3:00:00::|))
+    WN::|adhesive%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE ONT::ADHEARABILITY-SCALE)
+    (TYPE ONT::ADHEARABLE-VAL)))
 
 (CONCEPT
   ONT::ADJACENT
@@ -7233,6 +7249,8 @@
   ONT::CAN-BE-DONE-SCALE
   (INHERIT
     ONT::ORDERED-DOMAIN)
+  (OVERLAP
+    WN::|separability%1:26:00::|)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
@@ -7366,6 +7384,7 @@
     WN::|saleable%3:00:00::|
     WN::|scalable%3:00:00::|
     WN::|seasonable%3:00:00::|
+    WN::|separable%5:00:01:divisible:00|
     WN::|shockable%3:00:00::|
     WN::|shrinkable%3:00:00::|
     WN::|sinkable%3:00:00::|
@@ -7436,6 +7455,7 @@
     WN::|infallible%3:00:00::|
     WN::|inhospitable%3:00:02::|
     WN::|inoperable%3:00:00::|
+    WN::|inseparable%5:00:00:indivisible:00|
     WN::|intractable%3:00:00::|
     WN::|inviolable%3:00:00::|
     WN::|irrecoverable%3:00:00::|
@@ -31710,7 +31730,13 @@
   (INHERIT
     ONT::CAN-NOT-BE-DONE-VAL)
   (OVERLAP
-    WN::|illegible%3:00:00::|))
+    WN::|illegible%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE ONT::READABILITY-SCALE)
+    (TYPE ONT::NOT-READABLE-VAL)))
 
 (CONCEPT
   ONT::NOT-RECIPROCAL-VAL
@@ -32060,13 +32086,19 @@
   ONT::NOT-SURMOUNTABLE-VAL
   (COMMENT "(unconquerable, insoluble, insurmountable)")
   (INHERIT
-    ONT::SURMOUNTABILITY-VAL)
+    ONT::CAN-NOT-BE-DONE-VAL)
   (OVERLAP
     WN::|unconquerable%3:00:00::|
     WN::|insoluble%3:00:02::|
     WN::|insurmountable%3:00:00::|
     WN::|unsurmountable%3:00:00::|
-    WN::|inextricable%3:00:00::|))
+    WN::|inextricable%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION NEG)
+    (SCALE ONT::SURMOUNTABILITY-SCALE)
+    (TYPE ONT::NOT-SURMOUNTABLE-VAL)))
 
 (CONCEPT
   ONT::NOT-SURPRISING-VAL
@@ -38483,7 +38515,13 @@
   (INHERIT
     ONT::CAN-BE-DONE-VAL)
   (OVERLAP
-    WN::|legible%3:00:00::|))
+    WN::|legible%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE ONT::READABILITY-SCALE)
+    (TYPE ONT::READABLE-VAL)))
 
 (CONCEPT
   ONT::REAL-VS-FAKE-SCALE
@@ -46331,19 +46369,29 @@
     WN::|surface%1:15:00::|))
 
 (CONCEPT
-  ONT::SURMOUNTABILITY-VAL
-  (COMMENT "(surmountable,)")
+  ONT::SURMOUNTABILITY-SCALE
   (INHERIT
-    ONT::CAN-BE-DONE-VAL))
+    ONT::CAN-BE-DONE-SCALE)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::SURMOUNTABILITY-SCALE)
+    (TYPE ONT::SURMOUNTABILITY-SCALE)))
 
 (CONCEPT
   ONT::SURMOUNTABLE-VAL
   (COMMENT "(surmountable,)")
   (INHERIT
-    ONT::SURMOUNTABILITY-VAL)
+    ONT::CAN-BE-DONE-VAL)
   (OVERLAP
     WN::|conquerable%3:00:00::|
-    WN::|surmountable%3:00:00::|))
+    WN::|surmountable%3:00:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE ONT::SURMOUNTABILITY-SCALE)
+    (TYPE ONT::SURMOUNTABLE-VAL)))
 
 (CONCEPT
   ONT::SURPLUS

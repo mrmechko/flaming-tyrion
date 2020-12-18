@@ -8650,6 +8650,7 @@ Class: accessible-val
 # ONT type ont::adhearable-val
 Class: adhearable-val
   SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some adhearability-scale and F_orientation some V_pos)
 
 # ONT type ont::avoidable-val
 Class: avoidable-val
@@ -8688,6 +8689,7 @@ Class: permeable-val
 Class: readable-val
   Annotations: rdfs:comment "(readable, legible)"
   SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some readability-scale and F_orientation some V_pos)
 
 # ONT type ont::reparable-val
 Class: reparable-val
@@ -8746,6 +8748,12 @@ Class: r-able-val
 # ONT type ont::w-able-val
 Class: w-able-val
   SubClassOf: rw-status-val
+
+# ONT type ont::surmountable-val
+Class: surmountable-val
+  Annotations: rdfs:comment "(surmountable,)"
+  SubClassOf: can-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some surmountability-scale and F_orientation some V_pos)
 
 # ONT type ont::transferable-val
 Class: transferable-val
@@ -8807,11 +8815,18 @@ Class: not-predictable-val
 Class: not-readable-val
   Annotations: rdfs:comment "(unreadable, illegible)"
   SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some readability-scale and F_orientation some V_neg)
 
 # ONT type ont::not-reparable-val
 Class: not-reparable-val
   SubClassOf: can-not-be-done-val
   SubClassOf: (FLT_abstr-obj and F_scale some reparability-scale)
+
+# ONT type ont::not-surmountable-val
+Class: not-surmountable-val
+  Annotations: rdfs:comment "(unconquerable, insoluble, insurmountable)"
+  SubClassOf: can-not-be-done-val
+  SubClassOf: (FLT_abstr-obj and F_scale some surmountability-scale and F_orientation some V_neg)
 
 # ONT type ont::not-transferable-val
 Class: not-transferable-val
@@ -11292,21 +11307,6 @@ Class: adaptable-val
 Class: not-adaptable-val
   Annotations: rdfs:comment "(unadaptable)"
   SubClassOf: adaptability-val
-
-# ONT type ont::surmountability-val
-Class: surmountability-val
-  Annotations: rdfs:comment "(surmountable,)"
-  SubClassOf: can-be-done-val
-
-# ONT type ont::surmountable-val
-Class: surmountable-val
-  Annotations: rdfs:comment "(surmountable,)"
-  SubClassOf: surmountability-val
-
-# ONT type ont::not-surmountable-val
-Class: not-surmountable-val
-  Annotations: rdfs:comment "(unconquerable, insoluble, insurmountable)"
-  SubClassOf: surmountability-val
 
 # ONT type ont::season-property-val
 Class: season-property-val
@@ -14397,6 +14397,11 @@ Class: accessibility-scale
   SubClassOf: can-be-done-scale
   SubClassOf: (FLT_abstr-obj and F_scale some accessibility-scale)
 
+# ONT type ont::adhearability-scale
+Class: adhearability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some adhearability-scale)
+
 # ONT type ont::avoidability-scale
 Class: avoidability-scale
   SubClassOf: can-be-done-scale
@@ -14481,6 +14486,11 @@ Class: replaceability-scale
 Class: reproducibility-scale
   SubClassOf: can-be-done-scale
   SubClassOf: (FLT_abstr-obj and F_scale some reproducibility-scale)
+
+# ONT type ont::surmountability-scale
+Class: surmountability-scale
+  SubClassOf: can-be-done-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some surmountability-scale)
 
 # ONT type ont::transferability-scale
 Class: transferability-scale
@@ -20310,7 +20320,7 @@ DisjointClasses: manufacture-process-val, activity-val, process-status-val, proc
 DisjointClasses: nuclear-val, mechanical-val
 
 # children of ont::can-be-done-val
-DisjointClasses: surmountability-val, verifiable-val, transferable-val, rw-status-val, replaceable-val, predictable-val, networkable-val, movable-val, measurable-val, manageable, reparable-val, readable-val, permeable-val, expandable-val, enforceable-val, chargeable-val, changeable-val, avoidable-val, adhearable-val, accessible-val
+DisjointClasses: verifiable-val, transferable-val, surmountable-val, rw-status-val, replaceable-val, predictable-val, networkable-val, movable-val, measurable-val, manageable, reparable-val, readable-val, permeable-val, expandable-val, enforceable-val, chargeable-val, changeable-val, avoidable-val, adhearable-val, accessible-val
 
 # children of ont::movable-val
 DisjointClasses: portable-val, removable-val
@@ -20319,7 +20329,7 @@ DisjointClasses: portable-val, removable-val
 DisjointClasses: w-able-val, r-able-val
 
 # children of ont::can-not-be-done-val
-DisjointClasses: unmanageable, not-verifiable-val, not-transferable-val, not-reparable-val, not-readable-val, not-predictable-val, not-permeable-val, not-measurable-val, not-enforceable-val, not-changeable-val, not-avoidable-val, not-accessible-val
+DisjointClasses: unmanageable, not-verifiable-val, not-transferable-val, not-surmountable-val, not-reparable-val, not-readable-val, not-predictable-val, not-permeable-val, not-measurable-val, not-enforceable-val, not-changeable-val, not-avoidable-val, not-accessible-val
 
 # children of ont::temporal-val
 DisjointClasses: clock-time-val, timeliness-val, temporal-relation-val, relative-time-location-val, historical-era-val, age-val, temporal-occurrence-val
@@ -20774,9 +20784,6 @@ DisjointClasses: light-duty-val, heavy-duty-val
 # children of ont::adaptability-val
 DisjointClasses: not-adaptable-val, adaptable-val
 
-# children of ont::surmountability-val
-DisjointClasses: not-surmountable-val, surmountable-val
-
 # children of ont::ailing-val
 DisjointClasses: unfit-val, injured-val
 
@@ -21186,7 +21193,7 @@ DisjointClasses: not-steady-scale, steady-scale
 DisjointClasses: failure-scale, successful-scale
 
 # children of ont::can-be-done-scale
-DisjointClasses: transferability-scale, reproducibility-scale, replaceability-scale, reparability-scale, readability-scale, predictability-scale, portability-scale, permeability-scale, networkability-scale, mobility-scale, measurability-scale, manageability-scale, expandability-scale, enforceability-scale, comprehensibility-scale, chargeability-scale, changeability-scale, avoidability-scale, accessibility-scale
+DisjointClasses: transferability-scale, surmountability-scale, reproducibility-scale, replaceability-scale, reparability-scale, readability-scale, predictability-scale, portability-scale, permeability-scale, networkability-scale, mobility-scale, measurability-scale, manageability-scale, expandability-scale, enforceability-scale, comprehensibility-scale, chargeability-scale, changeability-scale, avoidability-scale, adhearability-scale, accessibility-scale
 
 # children of ont::relational-property-scale
 DisjointClasses: systematicity-scale, similarity-scale, reciprocity-scale, dependence-scale, compatibility-scale
