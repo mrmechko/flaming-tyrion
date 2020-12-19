@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::question">
  <relation label="inherit">
-  ont::linguistic-object
+  ont::linguistic-component
  </relation>
  <relation label="overlap">
   wn::|question%1:10:00::|
@@ -42,15 +42,74 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="information">mental-construct</feat>
+ <feat name="type">ont::mental-construction</feat>
+ </sem-feats>
+ <concept name="ont::tangible-abstract-object">
+ <comment>
+  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::tangible-abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::linguistic-component">
+ <relation label="inherit">
+  ont::linguistic-object
+ </relation>
+ <relation label="overlap">
+  wn::|conjugation%1:14:01::|
+  wn::|declension%1:14:00::|
+  wn::|grammatical_category%1:10:00::|
+  wn::|lexeme%1:10:00::|
+  wn::|linguistic_relation%1:24:00::|
+  wn::|linguistic_unit%1:10:00::|
+  wn::|morpheme%1:10:00::|
+  wn::|phone%1:10:00::|
+  wn::|syllable%1:10:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="information">information-content</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::linguistic-object">
  <relation label="inherit">
   ont::mental-construction
  </relation>
- <relation label="overlap">
-  wn::|language_unit%1:10:00::|
-  wn::|linguistic_unit%1:10:00::|
- </relation>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="information">information-content</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::mental-construction">
  <comment>
   &quot;constructions of the mind: plans, goals, beliefs, ...&quot;
@@ -71,33 +130,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::tangible-abstract-object">
- <comment>
-  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
- </comment>
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::tangible-abstract-object</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="information">mental-construct</feat>
- <feat name="type">ont::mental-construction</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;

@@ -2,16 +2,20 @@
 <?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
 <dsl>
  <provenance name="TRIPS"/>
- <concept name="ont::grammatical-category">
+ <concept name="ont::competitiveness-scale">
  <relation label="inherit">
-  ont::linguistic-object
+  ont::behavioral-scale
  </relation>
  <relation label="overlap">
-  wn::|grammatical_category%1:10:00::|
-  wn::|declension%1:14:00::|
-  wn::|conjugation%1:14:01::|
-  wn::|linguistic_relation%1:24:00::|
+  wn::|competitiveness%1:07:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::competitiveness-scale</feat>
+  <feat name="type">ont::competitiveness-scale</feat>
+ </sem-feats>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -45,62 +49,83 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <concept name="ont::linguistic-object">
- <relation label="inherit">
-  ont::mental-construction
- </relation>
- <relation label="overlap">
-  wn::|language_unit%1:10:00::|
-  wn::|linguistic_unit%1:10:00::|
- </relation>
- </concept>
- <concept name="ont::mental-construction">
- <comment>
-  &quot;constructions of the mind: plans, goals, beliefs, ...&quot;
- </comment>
- <relation label="inherit">
-  ont::tangible-abstract-object
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="information">mental-construct</feat>
-  <feat name="type">ont::mental-construction</feat>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::ordered-domain</feat>
+ <feat name="type">ont::ordered-domain</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::tangible-abstract-object">
+ <concept name="ont::domain">
  <comment>
-  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
+  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
  </comment>
  <relation label="inherit">
   ont::abstract-object
  </relation>
+ <relation label="overlap">
+  wn::|attribute%1:03:00::|
+ </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::tangible-abstract-object</feat>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::behavioral-scale</feat>
+ <feat name="type">ont::behavioral-scale</feat>
+ </sem-feats>
+ <concept name="ont::ordered-domain">
+ <relation label="inherit">
+  ont::domain
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::ordered-domain</feat>
+  <feat name="type">ont::ordered-domain</feat>
  </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="information">mental-construct</feat>
- <feat name="type">ont::mental-construction</feat>
+ <feat name="scale">ont::competitiveness-scale</feat>
+ <feat name="type">ont::competitiveness-scale</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
+ <concept name="ont::behavioral-scale">
+ <comment>
+  &quot;scales relating to behavioral or psychological attributes that characterize an entity.&quot;
+ </comment>
+ <relation label="inherit">
+  ont::ordered-domain
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::behavioral-scale</feat>
+  <feat name="type">ont::behavioral-scale</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
@@ -124,9 +149,20 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="tangible">+</feat>
- <feat name="type">ont::tangible-abstract-object</feat>
+ <feat name="scale">ont::domain</feat>
+ <feat name="type">ont::domain</feat>
  </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root

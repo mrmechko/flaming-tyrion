@@ -6612,14 +6612,14 @@ Class: number-object
 Class: language
   SubClassOf: linguistic-object
 
-# ONT type ont::question
-Class: question
-  SubClassOf: linguistic-object
-
 # ONT type ont::linguistic-component
 Class: linguistic-component
   SubClassOf: linguistic-object
   SubClassOf: _figure only (FLT_abstr-obj and F_information some V_information-content) and _figure some owl:Thing
+
+# ONT type ont::question
+Class: question
+  SubClassOf: linguistic-component
 
 # ONT type ont::computer-language
 Class: computer-language
@@ -6637,10 +6637,6 @@ Class: punctuation
 Class: letter-symbol
   Annotations: rdfs:comment "a textual symbol to represent information"
   SubClassOf: text-representation
-
-# ONT type ont::grammatical-category
-Class: grammatical-category
-  SubClassOf: linguistic-object
 
 # ONT type ont::greek-letter-symbol
 Class: greek-letter-symbol
@@ -9131,6 +9127,11 @@ Class: not-bold-val
 # ONT type ont::docile-val
 Class: docile-val
   SubClassOf: not-bold-val
+
+# ONT type ont::competitive-val
+Class: competitive-val
+  SubClassOf: animal-propensity-val
+  SubClassOf: (FLT_abstr-obj and F_scale some competitiveness-scale and F_orientation some V_pos)
 
 # ONT type ont::courage-val
 Class: courage-val
@@ -13464,6 +13465,11 @@ Class: wild-scale
 Class: compassion-scale
   SubClassOf: behavioral-scale
   SubClassOf: (FLT_abstr-obj and F_scale some compassion-scale)
+
+# ONT type ont::competitiveness-scale
+Class: competitiveness-scale
+  SubClassOf: behavioral-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some competitiveness-scale)
 
 # ONT type ont::courage-scale
 Class: courage-scale
@@ -19960,7 +19966,7 @@ DisjointClasses: board-game, sport
 DisjointClasses: computer-software, software-feature
 
 # children of ont::linguistic-object
-DisjointClasses: grammatical-category, linguistic-component, question, language
+DisjointClasses: linguistic-component, language
 
 # children of ont::value-cost
 DisjointClasses: price, revenue, expense
@@ -20383,7 +20389,7 @@ DisjointClasses: designed-to-demand-val, difficulty-val
 DisjointClasses: demanding-val, straightforward-val, easy, difficult
 
 # children of ont::animal-propensity-val
-DisjointClasses: knowledge-experience-val, frankness-val, forgiveness-val, patience-val, reticence-val, self-centeredness-val, loyalty-faithfulness-val, financial-behavior-val, communicativeness-val, decisiveness-val, skillfulness-val, wiseness-val, gracefulness-val, tameness-val, responsibility-val, social-interaction-val, modesty-val, courage-val, aggressive-val, boldness-val, honesty-val, disposition-val
+DisjointClasses: knowledge-experience-val, frankness-val, forgiveness-val, patience-val, reticence-val, self-centeredness-val, loyalty-faithfulness-val, financial-behavior-val, communicativeness-val, decisiveness-val, skillfulness-val, wiseness-val, gracefulness-val, tameness-val, responsibility-val, social-interaction-val, modesty-val, courage-val, competitive-val, aggressive-val, boldness-val, honesty-val, disposition-val
 
 # children of ont::disposition-val
 DisjointClasses: positive-disposition-val, negative-disposition-val
@@ -21055,7 +21061,7 @@ DisjointClasses: roundness-scale, angularity-scale
 DisjointClasses: triangularity-scale, rectangularity-scale, squareness-scale
 
 # children of ont::behavioral-scale
-DisjointClasses: skillfulness-scale, self-centeredness-scale, responsibility-scale, reticence-scale, courage-scale, compassion-scale, tameness-scale, aggressiveness-scale, wiseness-scale, sociability-scale, affection-scale, patience-scale, modesty-scale, honesty-scale, gracefulness-scale, loyalty-faithfulness-scale, knowledge-experience-scale, kindness-scale, frankness-scale, financial-behavior-scale, endurance-scale, disposition-scale, decisiveness-scale, communicativeness-scale
+DisjointClasses: skillfulness-scale, self-centeredness-scale, responsibility-scale, reticence-scale, courage-scale, competitiveness-scale, compassion-scale, tameness-scale, aggressiveness-scale, wiseness-scale, sociability-scale, affection-scale, patience-scale, modesty-scale, honesty-scale, gracefulness-scale, loyalty-faithfulness-scale, knowledge-experience-scale, kindness-scale, frankness-scale, financial-behavior-scale, endurance-scale, disposition-scale, decisiveness-scale, communicativeness-scale
 
 # children of ont::disposition-scale
 DisjointClasses: positive-disposition-scale, negative-disposition-scale

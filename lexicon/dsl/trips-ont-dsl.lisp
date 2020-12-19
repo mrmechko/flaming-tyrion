@@ -10576,6 +10576,33 @@
     WN::|competition%1:11:00::|))
 
 (CONCEPT
+  ONT::COMPETITIVE-VAL
+  (INHERIT
+    ONT::ANIMAL-PROPENSITY-VAL)
+  (OVERLAP
+    WN::|competitive%3:00:00::|
+    WN::|competitive%5:00:00:capitalistic:00|
+    WN::|competitive%5:00:00:aggressive:00|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (ORIENTATION POS)
+    (SCALE ONT::COMPETITIVENESS-SCALE)
+    (TYPE ONT::COMPETITIVE-VAL)))
+
+(CONCEPT
+  ONT::COMPETITIVENESS-SCALE
+  (INHERIT
+    ONT::BEHAVIORAL-SCALE)
+  (OVERLAP
+    WN::|competitiveness%1:07:00::|)
+  (SEM-FEATS
+    (INHERIT
+      ABSTR-OBJ)
+    (SCALE ONT::COMPETITIVENESS-SCALE)
+    (TYPE ONT::COMPETITIVENESS-SCALE)))
+
+(CONCEPT
   ONT::COMPLAIN
   (INHERIT
     ONT::LOADED-CLAIM)
@@ -21174,16 +21201,6 @@
     WN::|teff%1:20:00::|))
 
 (CONCEPT
-  ONT::GRAMMATICAL-CATEGORY
-  (INHERIT
-    ONT::LINGUISTIC-OBJECT)
-  (OVERLAP
-    WN::|grammatical_category%1:10:00::|
-    WN::|declension%1:14:00::|
-    WN::|conjugation%1:14:01::|
-    WN::|linguistic_relation%1:24:00::|))
-
-(CONCEPT
   ONT::GRANULATE
   (INHERIT
     ONT::CHANGE-INTEGRITY)
@@ -24265,19 +24282,20 @@
   (INHERIT
     ONT::BODY-PART)
   (OVERLAP
-    WN::|digestive_system%1:08:00::|
-    WN::|somatic_cell%1:08:00::|
-    WN::|tract%1:08:01::|
-    WN::|vocal_cord%1:08:00::|
-    WN::|brain%1:08:00::|
-    WN::|blood_vessel%1:08:00::|
-    WN::|connective_tissue%1:08:00::|
-    WN::|organ%1:08:00::|
-    WN::|cavity%1:08:00::|
-    WN::|duct%1:08:00::|
     WN::|abdomen%1:08:00::|
+    WN::|blood_vessel%1:08:00::|
+    WN::|brain%1:08:00::|
+    WN::|cavity%1:08:00::|
+    WN::|connective_tissue%1:08:00::|
+    WN::|digestive_system%1:08:00::|
+    WN::|duct%1:08:00::|
+    WN::|lymphatic_tissue%1:08:00::|
+    WN::|mind%1:09:00::|
+    WN::|organ%1:08:00::|
+    WN::|somatic_cell%1:08:00::|
     WN::|stomach%1:08:00::|
-    WN::|lymphatic_tissue%1:08:00::|)
+    WN::|tract%1:08:01::|
+    WN::|vocal_cord%1:08:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -26048,6 +26066,16 @@
   ONT::LINGUISTIC-COMPONENT
   (INHERIT
     ONT::LINGUISTIC-OBJECT)
+  (OVERLAP
+    WN::|conjugation%1:14:01::|
+    WN::|declension%1:14:00::|
+    WN::|grammatical_category%1:10:00::|
+    WN::|lexeme%1:10:00::|
+    WN::|linguistic_relation%1:24:00::|
+    WN::|linguistic_unit%1:10:00::|
+    WN::|morpheme%1:10:00::|
+    WN::|phone%1:10:00::|
+    WN::|syllable%1:10:00::|)
   (SEM-FRAME
     (ONT::FIGURE
      (SEM-FEATS
@@ -26058,10 +26086,7 @@
 (CONCEPT
   ONT::LINGUISTIC-OBJECT
   (INHERIT
-    ONT::MENTAL-CONSTRUCTION)
-  (OVERLAP
-    WN::|language_unit%1:10:00::|
-    WN::|linguistic_unit%1:10:00::|))
+    ONT::MENTAL-CONSTRUCTION))
 
 (CONCEPT
   ONT::LINGUISTIC-PROPERTY-VAL
@@ -29761,12 +29786,13 @@
   (INHERIT
     ONT::PHYS-OBJECT)
   (OVERLAP
-    WN::|natural_object%1:03:00::|
     WN::|actinoid%1:27:00::|
-    WN::|rare_earth%1:27:00::|
     WN::|galaxy%1:14:00::|
     WN::|galaxy%1:14:01::|
-    WN::|oort_cloud%1:14:00::|)
+    WN::|natural_object%1:03:00::|
+    WN::|nodule%1:17:00::|
+    WN::|oort_cloud%1:14:00::|
+    WN::|rare_earth%1:27:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -36907,6 +36933,7 @@
   (INHERIT
     ONT::VALUE-COST)
   (OVERLAP
+    WN::|charge%1:21:02::|
     WN::|price%1:07:00::|
     WN::|price%1:07:01::|
     WN::|price%1:07:02::|
@@ -38187,7 +38214,7 @@
 (CONCEPT
   ONT::QUESTION
   (INHERIT
-    ONT::LINGUISTIC-OBJECT)
+    ONT::LINGUISTIC-COMPONENT)
   (OVERLAP
     WN::|question%1:10:00::|))
 
