@@ -33366,6 +33366,18 @@
          PHYS-OBJ)))))
 
 (CONCEPT
+  ONT::ORDER-TRANQUILITY
+  (INHERIT
+    ONT::SITUATION)
+  (OVERLAP
+    WN::|order%1:26:00::|)
+  (SEM-FRAME
+    (ONT::ASSOC-WITH
+     (CONCEPT
+       T)
+     OPTIONAL)))
+
+(CONCEPT
   ONT::ORDERED-DOMAIN
   (INHERIT
     ONT::DOMAIN)
@@ -35710,6 +35722,7 @@
   (INHERIT
     ONT::INTENTIONALLY-ACT)
   (OVERLAP
+    WN::|playing%1:04:00::|
     WN::|play%2:33:00::|
     WN::|play%2:41:03::|
     WN::|play%2:41:00::|))
