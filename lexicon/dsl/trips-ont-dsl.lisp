@@ -2119,10 +2119,11 @@
   (OVERLAP
     WN::|appear%2:30:00::|
     WN::|appear%2:30:02::|
+    WN::|arise%2:42:00::|
     WN::|break%2:32:05::|
     WN::|come_out%2:32:00::|
     WN::|materialize%2:30:00::|
-    WN::|arise%2:42:00::|)
+    WN::|rise%2:42:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -4363,6 +4364,11 @@
     WN::|bakery%1:06:00::|))
 
 (CONCEPT
+  ONT::BALANCE
+  (INHERIT
+    ONT::BE-AT-LOC))
+
+(CONCEPT
   ONT::BALANCE-SCALE
   (INHERIT
     ONT::STATE-OF-AFFAIRS-SCALE)
@@ -4538,19 +4544,12 @@
   (INHERIT
     ONT::BE-AT)
   (OVERLAP
-    WN::|hang%2:35:03::|
-    WN::|hang%2:35:05::|
-    WN::|hang%2:35:06::|
-    WN::|hang%2:42:01::|
     WN::|lie%2:35:00::|
     WN::|lie%2:42:00::|
-    WN::|rise%2:42:00::|
-    WN::|settle%2:30:00::|
     WN::|sit%2:35:00::|
     WN::|sit_down%2:35:03::|
     WN::|stand%2:35:00::|
-    WN::|straddle%2:42:01::|
-    WN::|trail%2:35:05::|)
+    WN::|straddle%2:42:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -15441,6 +15440,13 @@
     WN::|downtown%4:02:00::|))
 
 (CONCEPT
+  ONT::DRAG-HAUL
+  (INHERIT
+    ONT::CAUSE-MOVE)
+  (OVERLAP
+    WN::|pull%2:35:00::|))
+
+(CONCEPT
   ONT::DRAWER
   (INHERIT
     ONT::FURNISHINGS-COMPONENT)
@@ -21652,6 +21658,16 @@
          PHYS-OBJ)
        (MOBILITY MOVABLE))
      OPTIONAL)))
+
+(CONCEPT
+  ONT::HANG-SUSPEND-DANGLE
+  (INHERIT
+    ONT::BE-AT-LOC)
+  (OVERLAP
+    WN::|hang%2:35:03::|
+    WN::|hang%2:35:05::|
+    WN::|hang%2:35:06::|
+    WN::|hang%2:42:01::|))
 
 (CONCEPT
   ONT::HAPPEN
@@ -37755,9 +37771,6 @@
   (INHERIT
     ONT::APPLY-FORCE)
   (OVERLAP
-    WN::|force%2:35:01::|
-    WN::|draw%2:35:03::|
-    WN::|pull%2:35:00::|
     WN::|pull%2:35:04::|)
   (SEM-FRAME
     (ONT::SOURCE

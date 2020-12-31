@@ -15186,6 +15186,10 @@ Class: cause-move
   SubClassOf: move
   SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj) and F_mobility some V_movable) and _affected some owl:Thing
 
+# ONT type ont::drag-haul
+Class: drag-haul
+  SubClassOf: cause-move
+
 # ONT type ont::stir
 Class: stir
   SubClassOf: cause-move
@@ -18245,8 +18249,16 @@ Class: be-at-loc
   SubClassOf: (FLT_situation and F_aspect some V_stage-level)
   SubClassOf: _neutral only (FLT_phys-obj) and _neutral some owl:Thing
 
+# ONT type ont::balance
+Class: balance
+  SubClassOf: be-at-loc
+
 # ONT type ont::float
 Class: float
+  SubClassOf: be-at-loc
+
+# ONT type ont::hang-suspend-dangle
+Class: hang-suspend-dangle
   SubClassOf: be-at-loc
 
 # ONT type ont::location-as-motion
@@ -21267,7 +21279,7 @@ DisjointClasses: return, go-on, come, dance, self-locomote, scroll, move-around,
 DisjointClasses: transport, move-by-means
 
 # children of ont::cause-move
-DisjointClasses: herd, propel, dig-scoop, walking, stir
+DisjointClasses: herd, propel, dig-scoop, walking, stir, drag-haul
 
 # children of ont::self-locomote
 DisjointClasses: move-slowly, move-rapidly, move-leisurely, move-playfully, swim, locomote-up
@@ -21585,7 +21597,7 @@ DisjointClasses: enroll, attach, associate, fit
 DisjointClasses: location-as-orientation, location-as-motion, be-at-loc, could-be-at, should-be-at, span, end-at-loc, start-at-loc
 
 # children of ont::be-at-loc
-DisjointClasses: leaning, float
+DisjointClasses: leaning, hang-suspend-dangle, float, balance
 
 # children of ont::nonverbal-expression
 DisjointClasses: facial-expression, sound-expression

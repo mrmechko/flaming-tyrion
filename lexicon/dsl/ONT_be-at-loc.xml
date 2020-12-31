@@ -10,19 +10,12 @@
   ont::be-at
  </relation>
  <relation label="overlap">
-  wn::|hang%2:35:03::|
-  wn::|hang%2:35:05::|
-  wn::|hang%2:35:06::|
-  wn::|hang%2:42:01::|
   wn::|lie%2:35:00::|
   wn::|lie%2:42:00::|
-  wn::|rise%2:42:00::|
-  wn::|settle%2:30:00::|
   wn::|sit%2:35:00::|
   wn::|sit_down%2:35:03::|
   wn::|stand%2:35:00::|
   wn::|straddle%2:42:01::|
-  wn::|trail%2:35:05::|
  </relation>
  <sem-feats>
   <relation label="inherit">
@@ -298,6 +291,11 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="situation" />
+ <concept name="ont::balance">
+ <relation label="inherit">
+  ont::be-at-loc
+ </relation>
+ </concept>
  <concept name="ont::float">
  <relation label="inherit">
   ont::be-at-loc
@@ -305,6 +303,17 @@
  <relation label="overlap">
   wn::|hover%2:38:01::|
   wn::|float%2:38:01::|
+ </relation>
+ </concept>
+ <concept name="ont::hang-suspend-dangle">
+ <relation label="inherit">
+  ont::be-at-loc
+ </relation>
+ <relation label="overlap">
+  wn::|hang%2:35:03::|
+  wn::|hang%2:35:05::|
+  wn::|hang%2:35:06::|
+  wn::|hang%2:42:01::|
  </relation>
  </concept>
  <concept name="ont::leaning">
@@ -318,66 +327,6 @@
   wn::|lean%2:38:00::|
  </relation>
  </concept>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="balance" />
- </morph>
- <example text="the cup is balancing on the table">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::be-at-loc
-  ont::neutral-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">stage-level</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="dangle" />
- </morph>
- <relation label="inherit">
-  ont::be-at-loc
-  ont::neutral-templ
- </relation>
- <relation label="overlap">
-  vn::put_spatial-9.2-1
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="hang" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="hung" />
-   </past>
-   <pastpart>
-    <word first-word="hung" />
-   </pastpart>
-  </forms>
- </morph>
- <example text="he was hanging from the tree">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::be-at-loc
-  ont::neutral-templ
- </relation>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">stage-level</feat>
-  </sem-feats>
- </semantics>
- </sense>
  <sense>
  <morph>
   <pos pos="v" />
@@ -699,24 +648,5 @@
    <feat name="aspect">stage-level</feat>
   </sem-feats>
  </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="suspend" />
-  <forms>
-   -VB
-   <nom>
-    <word first-word="suspension" />
-   </nom>
-  </forms>
- </morph>
- <relation label="inherit">
-  ont::be-at-loc
-  ont::neutral-templ
- </relation>
- <relation label="overlap">
-  vn::put_spatial-9.2-1
- </relation>
  </sense>
 </dsl>
