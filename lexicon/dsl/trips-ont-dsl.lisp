@@ -4544,12 +4544,7 @@
   (INHERIT
     ONT::BE-AT)
   (OVERLAP
-    WN::|lie%2:35:00::|
-    WN::|lie%2:42:00::|
-    WN::|sit%2:35:00::|
-    WN::|sit_down%2:35:03::|
-    WN::|stand%2:35:00::|
-    WN::|straddle%2:42:01::|)
+    WN::|lie%2:42:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -25727,6 +25722,13 @@
     WN::|lid%1:06:00::|))
 
 (CONCEPT
+  ONT::LIE
+  (INHERIT
+    ONT::BE-AT-LOC)
+  (OVERLAP
+    WN::|lie%2:35:00::|))
+
+(CONCEPT
   ONT::LIE-DORMANT
   (INHERIT
     ONT::SLEEP)
@@ -43580,6 +43582,14 @@
     WN::|sink%1:06:00::|))
 
 (CONCEPT
+  ONT::SIT
+  (INHERIT
+    ONT::BE-AT-LOC)
+  (OVERLAP
+    WN::|sit%2:35:00::|
+    WN::|straddle%2:42:01::|))
+
+(CONCEPT
   ONT::SITUATED-IN
   (INHERIT
     ONT::SITUATION-MODIFIER)
@@ -45240,6 +45250,13 @@
   (OVERLAP
     WN::|stairway%1:06:00::|
     WN::|staircase%1:06:00::|))
+
+(CONCEPT
+  ONT::STAND
+  (INHERIT
+    ONT::BE-AT-LOC)
+  (OVERLAP
+    WN::|stand%2:35:00::|))
 
 (CONCEPT
   ONT::STANDARD
