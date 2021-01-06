@@ -6959,7 +6959,9 @@
   (INHERIT
     ONT::CHANGE-IN-VISUAL-SCALE)
   (OVERLAP
-    WN::|brighten%2:30:01::|)
+    WN::|brighten%2:30:01::|
+    WN::|light%2:30:00::|
+    WN::|light_up%2:43:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -12234,27 +12236,6 @@
     WN::|congruous%3:00:00::|
     WN::|congruent%3:00:04::|
     WN::|homologous%3:00:01::|))
-
-(CONCEPT
-  ONT::COST-RELATION
-  (INHERIT
-    ONT::PREDICATE)
-  (SEM-FEATS
-    (INHERIT
-      ABSTR-OBJ)
-    (INFORMATION INFORMATION-CONTENT)
-    (SCALE ONT::MONEY-SCALE)
-    (TYPE ONT::COST-RELATION))
-  (SEM-FRAME
-    (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         ABSTR-OBJ)
-       (OBJECT-FUNCTION CURRENCY)
-       (SCALE ONT::MONEY-SCALE)))
-    (ONT::FIGURE
-     (CONCEPT
-       T))))
 
 (CONCEPT
   ONT::COST-SCALE
@@ -25861,9 +25842,11 @@
 
 (CONCEPT
   ONT::LIGHT-UP-CHANGE
+  (COMMENT "start an object by igniting it, e.g., light a cigarette")
   (INHERIT
     ONT::START-OBJECT)
   (OVERLAP
+    WN::|light%2:43:00::|
     WN::|light_up%2:34:00::|))
 
 (CONCEPT
@@ -37832,7 +37815,7 @@
 (CONCEPT
   ONT::PURCHASE-COST
   (INHERIT
-    ONT::COST-RELATION)
+    ONT::PREDICATE)
   (SEM-FRAME
     (ONT::GROUND
      (SEM-FEATS

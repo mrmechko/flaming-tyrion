@@ -6647,16 +6647,9 @@ Class: letter-symbol
 Class: greek-letter-symbol
   SubClassOf: letter-symbol
 
-# ONT type ont::cost-relation
-Class: cost-relation
-  SubClassOf: predicate
-  SubClassOf: (FLT_abstr-obj and F_scale some money-scale and F_information some V_information-content)
-  SubClassOf: _figure only owl:Thing
-  SubClassOf: _ground only (FLT_abstr-obj and F_scale some money-scale and F_object-function some V_currency) and _ground some owl:Thing
-
 # ONT type ont::purchase-cost
 Class: purchase-cost
-  SubClassOf: cost-relation
+  SubClassOf: predicate
   SubClassOf: _figure only (FLT_situation and F_aspect some V_dynamic) and _figure some owl:Thing
   SubClassOf: _ground only (FLT_abstr-obj and F_scale some money-scale and F_object-function some V_currency) and _ground some owl:Thing
 
@@ -18542,6 +18535,7 @@ Class: close
 
 # ONT type ont::light-up-change
 Class: light-up-change
+  Annotations: rdfs:comment "start an object by igniting it, e.g., light a cigarette"
   SubClassOf: start-object
 
 # ONT type ont::register
@@ -19299,7 +19293,7 @@ DisjointClasses: quantifier, bare, sm, indef-set, a, indefinite
 DisjointClasses: impro-set, impro
 
 # children of ont::predicate
-DisjointClasses: whereby, cost-relation, rate-rel, iteration-period, temporal-predicate, extent-predicate, extension, destination-loc, approximate-at-loc, original-material, resulting-object, path, pivot, completely, as-role, physical-symptom-manner, politeness, speakerstatus, orientation, etcetera, parenthetical, contrastive, additive, association-predicate, sequence-position, such, similarity, attributed-to, choice-option, dimension, scale-relation, without, with-instrument, accompaniment, originator, assoc-with, on-medication, topic, topic-signal, restriction, qualification, priority, neg, location-distance-modifier, conjunct, situation-modifier, situation-object-modifier, modifier
+DisjointClasses: whereby, purchase-cost, rate-rel, iteration-period, temporal-predicate, extent-predicate, extension, destination-loc, approximate-at-loc, original-material, resulting-object, path, pivot, completely, as-role, physical-symptom-manner, politeness, speakerstatus, orientation, etcetera, parenthetical, contrastive, additive, association-predicate, sequence-position, such, similarity, attributed-to, choice-option, dimension, scale-relation, without, with-instrument, accompaniment, originator, assoc-with, on-medication, topic, topic-signal, restriction, qualification, priority, neg, location-distance-modifier, conjunct, situation-modifier, situation-object-modifier, modifier
 
 # children of ont::modifier
 DisjointClasses: intensifier, least-extent, degree-modifier, grade-modifier, qmodifier, eval-wrt-expectation

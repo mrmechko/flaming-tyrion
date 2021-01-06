@@ -155,18 +155,10 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
- <concept name="ont::cost-relation">
+ <concept name="ont::purchase-cost">
  <relation label="inherit">
   ont::predicate
  </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="information">information-content</feat>
-  <feat name="scale">ont::money-scale</feat>
-  <feat name="type">ont::cost-relation</feat>
- </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::ground">
    <sem-feats>
@@ -178,7 +170,12 @@
    </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::figure">
-   <concept name="t" />
+   <sem-feats>
+    <relation label="inherit">
+     situation
+    </relation>
+    <feat name="aspect">dynamic</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>
