@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../style/onttype.xsl"?>
 <!DOCTYPE ONTTYPE SYSTEM "onttype.dtd">
-<ONTTYPE name="rise" parent="event-of-undergoing-action" modified="Sat Aug 29 01:45:36 2020">
+<ONTTYPE name="rise" parent="move-upward" modified="Tue Jan 12 01:45:34 2021">
 <SEM fltype="situation">
-<FEATURES type="rise" aspect="dynamic" tangible="+" container="-" intentional="-" />
+<FEATURES type="rise" trajectory="+" locative="-" container="-" aspect="dynamic" cause="force" tangible="+" intentional="-" />
 </SEM>
-<ARGUMENT role="affected" optionality="essential" fltype="(? aff4323 abstr-obj phys-obj situation)">
+<ARGUMENT role="extent" optionality="optional" fltype="abstr-obj">
+<FEATURES type="quantity" />
+</ARGUMENT>
+<ARGUMENT role="result" optionality="optional" fltype="abstr-obj">
+<FEATURES type="(? t575 position-reln path)" />
+</ARGUMENT>
+<ARGUMENT role="source" optionality="optional" fltype="?!type" />
+<ARGUMENT role="affected" optionality="required" fltype="(? th157430 phys-obj abstr-obj situation)">
+<FEATURES mobility="movable" tangible="+" />
+</ARGUMENT>
+<ARGUMENT role="reason" optionality="optional" fltype="situation">
+<FEATURES cause="agentive" aspect="dynamic" />
+</ARGUMENT>
+<ARGUMENT role="scale" optionality="essential" fltype="abstr-obj">
+<FEATURES scale="domain" />
+</ARGUMENT>
+<ARGUMENT role="agent" optionality="optional" fltype="(? causetype57631 phys-obj situation abstr-obj)">
 <FEATURES tangible="+" />
 </ARGUMENT>
-<ARGUMENT role="result" optionality="optional" fltype="abstr-obj" />
-<ARGUMENT role="agent" optionality="optional" fltype="(? cau4424 situation abstr-obj phys-obj)" />
 <WORD name="rise" />
 <MAPPING to="wordnet" name="rise%2:38:00::" url="http://wordnetweb.princeton.edu/perl/webwn?s=rise&amp;i=10&amp;o6=1" />
 </ONTTYPE>
