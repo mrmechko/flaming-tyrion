@@ -4544,7 +4544,8 @@
   (INHERIT
     ONT::BE-AT)
   (OVERLAP
-    WN::|lie%2:42:00::|)
+    WN::|lie%2:42:00::|
+    WN::|rest%2:35:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -5861,6 +5862,11 @@
   (OVERLAP
     WN::|bend%2:35:08::|
     WN::|bend%2:38:03::|
+    WN::|bow%2:32:00::|
+    WN::|bow%2:38:00::|
+    WN::|rise%2:38:05::|
+    WN::|slouch%2:38:01::|
+    WN::|slump%2:38:00::|
     WN::|stand_up%2:38:00::|))
 
 (CONCEPT
