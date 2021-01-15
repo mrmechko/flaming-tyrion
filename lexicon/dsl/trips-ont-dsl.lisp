@@ -2167,23 +2167,6 @@
        PHYS-OBJ))))
 
 (CONCEPT
-  ONT::APPEARS-TO-HAVE-PROPERTY
-  (INHERIT
-    ONT::HAVE-PROPERTY)
-  (OVERLAP
-    WN::|look%2:39:01::|
-    WN::|seem%2:39:02::|
-    WN::|seem%2:42:00::|
-    WN::|sound%2:39:06::|
-    WN::|taste%2:39:02::|)
-  (SEM-FEATS
-    (INHERIT
-      SITUATION)
-    (TIME-SPAN EXTENDED)
-    (ASPECT STAGE-LEVEL)
-    (TYPE ONT::APPEARS-TO-HAVE-PROPERTY)))
-
-(CONCEPT
   ONT::APPLIANCE
   (INHERIT
     ONT::DEVICE)
@@ -4486,7 +4469,10 @@
 (CONCEPT
   ONT::BATH
   (INHERIT
-    ONT::CLEAN))
+    ONT::CLEAN)
+  (OVERLAP
+    WN::|bath%2:29:00::|
+    WN::|bathing%1:04:01::|))
 
 (CONCEPT
   ONT::BE
@@ -4605,18 +4591,28 @@
 (CONCEPT
   ONT::BE-INCLINED
   (INHERIT
-    ONT::HAVE-PROPERTY)
+    ONT::EVENT-OF-STATE)
   (OVERLAP
     WN::|tend%2:42:01::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN EXTENDED)
+    (ASPECT INDIV-LEVEL)
+    (TYPE ONT::BE-INCLINED))
   (SEM-FRAME
     (ONT::FORMAL
      (SEM-FEATS
        (OR
          (CONCEPT
-           SITUATION)
+           ABSTR-OBJ)
          (CONCEPT
-           ABSTR-OBJ))
-       (INTENTIONAL -)))))
+           SITUATION))
+       (INTENTIONAL -)
+       (TYPE
+        (OR
+          ONT::RELATION
+          ONT::SITUATION-ROOT))))))
 
 (CONCEPT
   ONT::BEANS-PEAS
@@ -8687,6 +8683,8 @@
   ONT::CHANGE-STATE-ACTION
   (INHERIT
     ONT::CHANGE-STATE)
+  (OVERLAP
+    WN::|reset%2:32:00::|)
   (SEM-FRAME
     (ONT::AGENT
      (OR
@@ -36417,17 +36415,6 @@
     (TYPE ONT::POSSIBLE-SCALE)))
 
 (CONCEPT
-  ONT::POSSIBLY-TRUE
-  (INHERIT
-    ONT::EVENT-OF-STATE)
-  (OVERLAP
-    WN::|appear%2:39:01::|)
-  (SEM-FRAME
-    (ONT::FORMAL
-     (CONCEPT
-       SITUATION))))
-
-(CONCEPT
   ONT::POST-TRANSLATIONAL-MODIFICATION
   (INHERIT
     ONT::CHEMICAL-CHANGE)
@@ -42300,6 +42287,38 @@
     ONT::SCRUTINY))
 
 (CONCEPT
+  ONT::SEEM
+  (INHERIT
+    ONT::EVENT-OF-STATE)
+  (OVERLAP
+    WN::|look%2:39:01::|
+    WN::|seem%2:39:02::|
+    WN::|seem%2:42:00::|
+    WN::|sound%2:39:06::|
+    WN::|taste%2:39:02::|)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (TIME-SPAN EXTENDED)
+    (ASPECT INDIV-LEVEL)
+    (TYPE ONT::SEEM))
+  (SEM-FRAME
+    (ONT::FORMAL
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TYPE
+        (OR
+          ONT::RELATION
+          ONT::SITUATION-ROOT))))
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T))))
+
+(CONCEPT
   ONT::SEIZURE
   (INHERIT
     ONT::MEDICAL-SYMPTOM)
@@ -43295,7 +43314,8 @@
   (INHERIT
     ONT::CLEAN)
   (OVERLAP
-    WN::|shower%1:04:00::|))
+    WN::|shower%1:04:00::|
+    WN::|shower%2:29:00::|))
 
 (CONCEPT
   ONT::SHRINK

@@ -4,19 +4,33 @@
  <provenance name="TRIPS"/>
  <concept name="ont::be-inclined">
  <relation label="inherit">
-  ont::have-property
+  ont::event-of-state
  </relation>
  <relation label="overlap">
   wn::|tend%2:42:01::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="time-span">extended</feat>
+  <feat name="aspect">indiv-level</feat>
+  <feat name="type">ont::be-inclined</feat>
+ </sem-feats>
  <sem-frame>
   <role-restr-map roles="ont::formal">
    <sem-feats>
     <or>
-     <concept name="situation" />
      <concept name="abstr-obj" />
+     <concept name="situation" />
     </or>
     <feat name="intentional">-</feat>
+    <feat name="type">
+    <or>
+     ont::relation
+     ont::situation-root
+    </or>
+    </feat>
    </sem-feats>
   </role-restr-map>
  </sem-frame>
@@ -56,49 +70,69 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <concept name="ont::have-property">
+ <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
  <relation label="inherit">
-  ont::event-of-state
+  situation
  </relation>
- <relation label="overlap">
-  wn::|be%2:42:03::|
-  wn::|be%2:42:05::|
-  wn::|sound%2:39:03::|
+ <feat name="aspect">static</feat>
+ <feat name="type">ont::event-of-state</feat>
+ </sem-feats>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="time-span">extended</feat>
-  <feat name="aspect">static</feat>
-  <feat name="type">ont::have-property</feat>
+  <feat name="tangible">+</feat>
+  <feat name="container">-</feat>
+  <feat name="intentional">-</feat>
+  <feat name="type">ont::situation-root</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">ont::relation</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::formal">
   <sem-feats>
    <or>
-    <concept name="situation" />
     <concept name="abstr-obj" />
+    <concept name="situation" />
    </or>
    <feat name="intentional">-</feat>
+   <feat name="type">
+   <or>
+    ont::relation
+    ont::situation-root
+   </or>
+   </feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">indiv-level</feat>
+ <feat name="type">ont::be-inclined</feat>
+ </sem-feats>
  <concept name="ont::event-of-state">
  <comment>
   &quot;Events describing a state of affairs holding&quot;
@@ -128,66 +162,6 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="time-span">extended</feat>
- <feat name="aspect">static</feat>
- <feat name="type">ont::have-property</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">ont::relation</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::neutral">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-root">
- <comment>
-  &quot;root for all events, whether verbal or nominal&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="container">-</feat>
-  <feat name="intentional">-</feat>
-  <feat name="type">ont::situation-root</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">static</feat>
- <feat name="type">ont::event-of-state</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::any-sem">
  <relation label="inherit">
   ont::root
@@ -220,11 +194,5 @@
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
   </syn-sem>
  </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">stage-level</feat>
-  </sem-feats>
- </semantics>
  </sense>
 </dsl>

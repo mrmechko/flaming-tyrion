@@ -5429,11 +5429,6 @@ Class: have-property
   SubClassOf: _neutral only owl:Thing
   SubClassOf: _formal only (FLT_abstr-obj and F_type some relation) and _formal some owl:Thing
 
-# ONT type ont::possibly-true
-Class: possibly-true
-  SubClassOf: event-of-state
-  SubClassOf: _formal only (FLT_situation) and _formal some owl:Thing
-
 # ONT type ont::have
 Class: have
   SubClassOf: event-of-state
@@ -5460,10 +5455,12 @@ Class: wear
   SubClassOf: (FLT_situation and F_aspect some V_unbounded and F_time-span some V_extended)
   SubClassOf: _neutral only (FLT_phys-obj and F_type some personal-item) and _neutral some owl:Thing
 
-# ONT type ont::appears-to-have-property
-Class: appears-to-have-property
-  SubClassOf: have-property
-  SubClassOf: (FLT_situation and F_aspect some V_stage-level and F_time-span some V_extended)
+# ONT type ont::seem
+Class: seem
+  SubClassOf: event-of-state
+  SubClassOf: (FLT_situation and F_aspect some V_indiv-level and F_time-span some V_extended)
+  SubClassOf: _neutral1 only owl:Thing
+  SubClassOf: _formal only ((FLT_abstr-obj or FLT_situation) and F_type some (relation or situation-root)) and _formal some owl:Thing
 
 # ONT type ont::object-compare
 Class: object-compare
@@ -5579,8 +5576,9 @@ Class: miss
 
 # ONT type ont::be-inclined
 Class: be-inclined
-  SubClassOf: have-property
-  SubClassOf: _formal only ((FLT_situation or FLT_abstr-obj) and F_intentional some V_-) and _formal some owl:Thing
+  SubClassOf: event-of-state
+  SubClassOf: (FLT_situation and F_aspect some V_indiv-level and F_time-span some V_extended)
+  SubClassOf: _formal only ((FLT_abstr-obj or FLT_situation) and F_type some (relation or situation-root) and F_intentional some V_-) and _formal some owl:Thing
 
 # ONT type ont::direct-at
 Class: direct-at
@@ -19260,7 +19258,7 @@ DisjointClasses: change-magnitude, mutation, event-of-undergoing-action, event-o
 DisjointClasses: work, compliance, record, nonverbal-expression, direct-information, activity-ongoing, persistent-state, reach, intentionally-act, wear, activity, entering, categorization, reaction-to-stimulus, agent-interaction, activity-event, acting, event-of-creation, event-of-causation
 
 # children of ont::event-of-state
-DisjointClasses: measure, share-property, rely-depend, containment, exists, take-time, refute, relate, encodes-message, correlation, function, lacking, sufficiency, necessity, happen, is-compatible-with, owe, position, direct-at, object-compare, have, possibly-true, have-property, expensiveness, salience, event-of-experience
+DisjointClasses: measure, share-property, rely-depend, containment, exists, take-time, refute, relate, encodes-message, correlation, function, lacking, sufficiency, necessity, happen, is-compatible-with, owe, position, direct-at, be-inclined, object-compare, seem, have, have-property, expensiveness, salience, event-of-experience
 
 # children of ont::abstract-object
 DisjointClasses: domain, dynamics, scale-value-function, relation, unit, tangible-abstract-object, abstract-object-nontemporal
@@ -19831,9 +19829,6 @@ DisjointClasses: habitual, perfective, passive, going-to, progressive, condition
 
 # children of ont::have
 DisjointClasses: membership, possess
-
-# children of ont::have-property
-DisjointClasses: be-inclined, appears-to-have-property
 
 # children of ont::object-compare
 DisjointClasses: differ, be, resemble, comprise, in-relation, cohere

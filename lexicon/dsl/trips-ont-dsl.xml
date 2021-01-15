@@ -2522,26 +2522,6 @@
    </role-restr-map>
   </sem-frame>
  </concept>
- <concept name="ont::appears-to-have-property">
-  <relation label="inherit">
-   ont::have-property
-  </relation>
-  <relation label="overlap">
-   wn::|look%2:39:01::|
-   wn::|seem%2:39:02::|
-   wn::|seem%2:42:00::|
-   wn::|sound%2:39:06::|
-   wn::|taste%2:39:02::|
-  </relation>
-  <sem-feats>
-   <relation label="inherit">
-    situation
-   </relation>
-   <feat name="time-span">extended</feat>
-   <feat name="aspect">stage-level</feat>
-   <feat name="type">ont::appears-to-have-property</feat>
-  </sem-feats>
- </concept>
  <concept name="ont::appliance">
   <relation label="inherit">
    ont::device
@@ -5183,6 +5163,10 @@
   <relation label="inherit">
    ont::clean
   </relation>
+  <relation label="overlap">
+   wn::|bath%2:29:00::|
+   wn::|bathing%1:04:01::|
+  </relation>
  </concept>
  <concept name="ont::be">
   <comment>
@@ -5320,19 +5304,33 @@
  </concept>
  <concept name="ont::be-inclined">
   <relation label="inherit">
-   ont::have-property
+   ont::event-of-state
   </relation>
   <relation label="overlap">
    wn::|tend%2:42:01::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">indiv-level</feat>
+   <feat name="type">ont::be-inclined</feat>
+  </sem-feats>
   <sem-frame>
    <role-restr-map roles="ont::formal">
     <sem-feats>
      <or>
-      <concept name="situation" />
       <concept name="abstr-obj" />
+      <concept name="situation" />
      </or>
      <feat name="intentional">-</feat>
+     <feat name="type">
+     <or>
+      ont::relation
+      ont::situation-root
+     </or>
+     </feat>
     </sem-feats>
    </role-restr-map>
   </sem-frame>
@@ -9883,6 +9881,9 @@
  <concept name="ont::change-state-action">
   <relation label="inherit">
    ont::change-state
+  </relation>
+  <relation label="overlap">
+   wn::|reset%2:32:00::|
   </relation>
   <sem-frame>
    <role-restr-map roles="ont::agent" optional="optional">
@@ -42201,19 +42202,6 @@
    <feat name="type">ont::possible-scale</feat>
   </sem-feats>
  </concept>
- <concept name="ont::possibly-true">
-  <relation label="inherit">
-   ont::event-of-state
-  </relation>
-  <relation label="overlap">
-   wn::|appear%2:39:01::|
-  </relation>
-  <sem-frame>
-   <role-restr-map roles="ont::formal">
-    <concept name="situation" />
-   </role-restr-map>
-  </sem-frame>
- </concept>
  <concept name="ont::post-translational-modification">
   <relation label="inherit">
    ont::chemical-change
@@ -48899,6 +48887,45 @@
    ont::scrutiny
   </relation>
  </concept>
+ <concept name="ont::seem">
+  <relation label="inherit">
+   ont::event-of-state
+  </relation>
+  <relation label="overlap">
+   wn::|look%2:39:01::|
+   wn::|seem%2:39:02::|
+   wn::|seem%2:42:00::|
+   wn::|sound%2:39:06::|
+   wn::|taste%2:39:02::|
+  </relation>
+  <sem-feats>
+   <relation label="inherit">
+    situation
+   </relation>
+   <feat name="time-span">extended</feat>
+   <feat name="aspect">indiv-level</feat>
+   <feat name="type">ont::seem</feat>
+  </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::formal">
+    <sem-feats>
+     <or>
+      <concept name="abstr-obj" />
+      <concept name="situation" />
+     </or>
+     <feat name="type">
+     <or>
+      ont::relation
+      ont::situation-root
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+   <role-restr-map roles="ont::neutral1">
+    <concept name="t" />
+   </role-restr-map>
+  </sem-frame>
+ </concept>
  <concept name="ont::seizure">
   <relation label="inherit">
    ont::medical-symptom
@@ -50072,6 +50099,7 @@
   </relation>
   <relation label="overlap">
    wn::|shower%1:04:00::|
+   wn::|shower%2:29:00::|
   </relation>
  </concept>
  <concept name="ont::shrink">
