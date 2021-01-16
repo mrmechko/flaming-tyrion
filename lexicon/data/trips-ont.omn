@@ -2593,6 +2593,10 @@ Class: molecular-domain
 Class: molecular-site
   SubClassOf: molecular-part
 
+# ONT type ont::egg
+Class: egg
+  SubClassOf: organism
+
 # ONT type ont::microorganism
 Class: microorganism
   SubClassOf: organism
@@ -4528,7 +4532,7 @@ Class: emu
 
 # ONT type ont::poultry
 Class: poultry
-  SubClassOf: meat
+  SubClassOf: nonhuman-animal
 
 # ONT type ont::chicken
 Class: chicken
@@ -18180,6 +18184,7 @@ Class: exists
   SubClassOf: event-of-state
   SubClassOf: (FLT_situation and F_aspect some V_stage-level and F_time-span some V_extended and F_cause some V_- and F_locative some V_located and F_trajectory some V_-)
   SubClassOf: _neutral only owl:Thing
+  SubClassOf: _location only owl:Thing
 
 # ONT type ont::connected
 Class: connected
@@ -19459,7 +19464,7 @@ DisjointClasses: molecular-site, molecular-domain, promoter, rna, macromolecular
 DisjointClasses: protein-family, protein, gene
 
 # children of ont::organism
-DisjointClasses: imaginary-being, supernatural-being, eater, animal, fungus, plant, microorganism
+DisjointClasses: imaginary-being, supernatural-being, eater, animal, fungus, plant, microorganism, egg
 
 # children of ont::plant
 DisjointClasses: alga, plant-part, vine, herbaceous-plant, shrub, tree, grains
@@ -19702,7 +19707,7 @@ DisjointClasses: condiments, nuts-seeds, preservatives, dressings-sauces-coating
 DisjointClasses: vegetable, fruit
 
 # children of ont::meat
-DisjointClasses: poultry, wild-game, meat-product, lamb, pork, beef
+DisjointClasses: wild-game, meat-product, lamb, pork, beef
 
 # children of ont::poultry
 DisjointClasses: turkey, ostrich, duck, pigeon, quail, pheasant, goose, chicken

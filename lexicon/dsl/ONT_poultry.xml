@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::poultry">
  <relation label="inherit">
-  ont::meat
+  ont::nonhuman-animal
  </relation>
  <relation label="overlap">
   wn::|bird%1:13:00::|
@@ -43,72 +43,143 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <concept name="ont::material">
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">living</feat>
+ <feat name="type">ont::organism</feat>
+ </sem-feats>
+ <concept name="ont::natural-object">
  <relation label="inherit">
   ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|material%1:27:00::|
-  wn::|stuff%1:27:00::|
+  wn::|actinoid%1:27:00::|
+  wn::|galaxy%1:14:00::|
+  wn::|galaxy%1:14:01::|
+  wn::|natural_object%1:03:00::|
+  wn::|nodule%1:17:00::|
+  wn::|oort_cloud%1:14:00::|
+  wn::|rare_earth%1:27:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="form">substance</feat>
-  <feat name="mobility">non-self-moving</feat>
-  <feat name="type">ont::material</feat>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+  </or>
+  </feat>
+  <feat name="origin">natural</feat>
+  <feat name="type">ont::natural-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::animal">
+ <relation label="inherit">
+  ont::organism
+ </relation>
+ <relation label="overlap">
+  wn::|animal%1:03:00::|
+  wn::|animate_being%1:03:00::|
+  wn::|beast%1:03:00::|
+  wn::|brute%1:03:00::|
+  wn::|creature%1:03:00::|
+  wn::|fauna%1:14:00::|
+  wn::|wildlife%1:14:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">
+  <or>
+   human
+   non-human-animal
+  </or>
+  </feat>
+  <feat name="form">solid-object</feat>
+  <feat name="intentional">+</feat>
+  <feat name="type">ont::animal</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::nonhuman-animal">
+ <relation label="inherit">
+  ont::mammal
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">non-human-animal</feat>
+  <feat name="intentional">+</feat>
+  <feat name="type">ont::nonhuman-animal</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::mammal">
+ <relation label="inherit">
+  ont::vertebrate
+ </relation>
+ <relation label="overlap">
+  wn::|mammal%1:05:00::|
+  wn::|mammalian%1:05:00::|
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">non-human-animal</feat>
+ <feat name="intentional">+</feat>
+ <feat name="type">ont::nonhuman-animal</feat>
+ </sem-feats>
+ <concept name="ont::vertebrate">
+ <relation label="inherit">
+  ont::animal
+ </relation>
+ <relation label="overlap">
+  wn::|vertebrate%1:05:00::|
+ </relation>
+ </concept>
+ <concept name="ont::organism">
+ <relation label="inherit">
+  ont::natural-object
+ </relation>
+ <relation label="overlap">
+  wn::|organism%1:03:00::|
+  wn::|being%1:03:00::|
+  wn::|life%1:19:00::|
+  wn::|life%1:26:00::|
+  wn::|life%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">living</feat>
+  <feat name="type">ont::organism</feat>
  </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="object-function">comestible</feat>
- <feat name="type">ont::food</feat>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">
+ <or>
+  human
+  non-human-animal
+ </or>
+ </feat>
+ <feat name="form">solid-object</feat>
+ <feat name="intentional">+</feat>
+ <feat name="type">ont::animal</feat>
  </sem-feats>
- <concept name="ont::substance">
- <relation label="inherit">
-  ont::material
- </relation>
- <relation label="overlap">
-  wn::|substance%1:03:00::|
-  wn::|substance%1:03:01::|
-  wn::|substance%1:27:00::|
-  wn::|matter%1:03:00::|
-  wn::|paper%1:27:00::|
- </relation>
- </concept>
- <concept name="ont::food">
- <relation label="inherit">
-  ont::substance
- </relation>
- <relation label="overlap">
-  wn::|food%1:03:00::|
-  wn::|food%1:13:00::|
-  wn::|meal%1:13:00::|
-  wn::|meal%1:13:01::|
-  wn::|nutrient%1:03:00::|
-  wn::|nutrient%1:03:01::|
-  wn::|nutriment%1:13:00::|
-  wn::|solid_food%1:13:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="object-function">comestible</feat>
-  <feat name="type">ont::food</feat>
- </sem-feats>
- </concept>
- <concept name="ont::meat">
- <relation label="inherit">
-  ont::food
- </relation>
- <relation label="overlap">
-  wn::|meat%1:13:01::|
- </relation>
- </concept>
  <concept name="ont::phys-object">
  <comment>
   &quot;All physical objects: things that have substance&quot;
@@ -132,9 +203,14 @@
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="form">substance</feat>
- <feat name="mobility">non-self-moving</feat>
- <feat name="type">ont::material</feat>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="origin">natural</feat>
+ <feat name="type">ont::natural-object</feat>
  </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">

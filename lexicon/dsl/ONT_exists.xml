@@ -31,6 +31,9 @@
   <feat name="type">ont::exists</feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::location" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
   <role-restr-map roles="ont::neutral">
    <concept name="t" />
   </role-restr-map>
@@ -110,6 +113,9 @@
  </sem-feats>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::location" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  <role-restr-map roles="ont::neutral">
   <concept name="t" />
  </role-restr-map>
@@ -452,8 +458,14 @@
  </morph>
  <relation label="inherit">
   ont::exists
-  ont::neutral-templ
  </relation>
+ <syntax>
+  <template-call template="ont::neutral-location-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::advbl" sem-role="ont::location"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
+  </syn-sem>
+ </syntax>
  </sense>
  <sense>
  <morph>
