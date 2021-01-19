@@ -7651,6 +7651,7 @@ Class: not-relevant-val
 # ONT type ont::basis-of-evidence-val
 Class: basis-of-evidence-val
   SubClassOf: information-property-val
+  SubClassOf: (FLT_abstr-obj and F_scale some basis-of-evidence-scale)
 
 # ONT type ont::theoretical-val
 Class: theoretical-val
@@ -13986,6 +13987,11 @@ Class: authenticity-scale
 Class: information-property-scale
   SubClassOf: ordered-domain
   SubClassOf: (FLT_abstr-obj and F_scale some information-property-scale)
+
+# ONT type ont::basis-of-evidence-scale
+Class: basis-of-evidence-scale
+  SubClassOf: information-property-scale
+  SubClassOf: (FLT_abstr-obj and F_scale some basis-of-evidence-scale)
 
 # ONT type ont::consistency-scale
 Class: consistency-scale
@@ -21165,7 +21171,7 @@ DisjointClasses: natural-scale, artificial-scale
 DisjointClasses: non-actual-scale, actual-scale
 
 # children of ont::information-property-scale
-DisjointClasses: correctness-scale, possibility-scale, likelihood-scale, trueness-scale, validity-scale, relevance-scale, precision-scale, meaningfulness-scale, credibility-scale, consistency-scale
+DisjointClasses: correctness-scale, possibility-scale, likelihood-scale, trueness-scale, validity-scale, relevance-scale, precision-scale, meaningfulness-scale, credibility-scale, consistency-scale, basis-of-evidence-scale
 
 # children of ont::trueness-scale
 DisjointClasses: false-scale, true-scale
