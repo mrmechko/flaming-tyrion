@@ -7561,6 +7561,11 @@ Class: comprehensibility-val
   SubClassOf: information-property-val
   SubClassOf: (FLT_abstr-obj and F_scale some comprehensibility-scale)
 
+# ONT type ont::ambiguous-val
+Class: ambiguous-val
+  Annotations: rdfs:comment "(ambiguous)"
+  SubClassOf: comprehensibility-val
+
 # ONT type ont::comprehensible-val
 Class: comprehensible-val
   SubClassOf: comprehensibility-val
@@ -7571,18 +7576,13 @@ Class: not-comprehensible-val
   SubClassOf: comprehensibility-val
   SubClassOf: (FLT_abstr-obj and F_scale some comprehensibility-scale and F_orientation some V_neg)
 
-# ONT type ont::clarity-val
-Class: clarity-val
-  Annotations: rdfs:comment "clear, obvious vs. unclear, obscure"
-  SubClassOf: information-property-val
-
 # ONT type ont::clear
 Class: clear
-  SubClassOf: clarity-val
+  SubClassOf: comprehensibility-val
 
 # ONT type ont::unclear
 Class: unclear
-  SubClassOf: clarity-val
+  SubClassOf: comprehensibility-val
 
 # ONT type ont::consistent-val
 Class: consistent-val
@@ -12311,25 +12311,15 @@ Class: clock-time-val
   Annotations: rdfs:comment "(noon)"
   SubClassOf: temporal-val
 
-# ONT type ont::logicality-val
-Class: logicality-val
-  Annotations: rdfs:comment "(logical)"
-  SubClassOf: information-property-val
-
 # ONT type ont::logical-val
 Class: logical-val
   Annotations: rdfs:comment "(logical)"
-  SubClassOf: logicality-val
+  SubClassOf: comprehensibility-val
 
 # ONT type ont::not-logical-val
 Class: not-logical-val
   Annotations: rdfs:comment "(illogical)"
-  SubClassOf: logicality-val
-
-# ONT type ont::ambiguous-val
-Class: ambiguous-val
-  Annotations: rdfs:comment "(ambiguous)"
-  SubClassOf: clarity-val
+  SubClassOf: comprehensibility-val
 
 # ONT type ont::substantiation-val
 Class: substantiation-val
@@ -20142,7 +20132,7 @@ DisjointClasses: nonactual, actual
 DisjointClasses: authentic-val, fake-val
 
 # children of ont::information-property-val
-DisjointClasses: substantiation-val, logicality-val, truth-value-val, possibility-val, basis-of-evidence-val, relevance-val, validity-val, correctness-val, consistent-val, clarity-val, comprehensibility-val, likelihood-val, credibility-val, meaningfulness-val, precision-val
+DisjointClasses: substantiation-val, truth-value-val, possibility-val, basis-of-evidence-val, relevance-val, validity-val, correctness-val, consistent-val, comprehensibility-val, likelihood-val, credibility-val, meaningfulness-val, precision-val
 
 # children of ont::precision-val
 DisjointClasses: precise, not-precise-val
@@ -20157,10 +20147,7 @@ DisjointClasses: not-credible-val, credible-val
 DisjointClasses: not-likely-val, likely-val
 
 # children of ont::comprehensibility-val
-DisjointClasses: not-comprehensible-val, comprehensible-val
-
-# children of ont::clarity-val
-DisjointClasses: ambiguous-val, unclear, clear
+DisjointClasses: not-logical-val, logical-val, unclear, clear, not-comprehensible-val, comprehensible-val, ambiguous-val
 
 # children of ont::consistent-val
 DisjointClasses: inconsistent, consistent
@@ -20953,9 +20940,6 @@ DisjointClasses: not-contemporaneous-val, contemporaneous-val
 
 # children of ont::timeliness-val
 DisjointClasses: at-inconvenient-time-val, at-convenient-time-val, after-expected-time-val, on-time-val
-
-# children of ont::logicality-val
-DisjointClasses: not-logical-val, logical-val
 
 # children of ont::substantiation-val
 DisjointClasses: not-substantiated-val, substantiated-val

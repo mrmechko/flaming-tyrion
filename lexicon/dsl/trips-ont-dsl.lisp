@@ -1744,7 +1744,7 @@
   ONT::AMBIGUOUS-VAL
   (COMMENT "(ambiguous)")
   (INHERIT
-    ONT::CLARITY-VAL)
+    ONT::COMPREHENSIBILITY-VAL)
   (OVERLAP
     WN::|ambiguous%3:00:00::|
     WN::|equivocal%3:00:00::|
@@ -9298,12 +9298,6 @@
     WN::|washingtonian%3:01:01::|))
 
 (CONCEPT
-  ONT::CLARITY-VAL
-  (COMMENT "clear, obvious vs. unclear, obscure")
-  (INHERIT
-    ONT::INFORMATION-PROPERTY-VAL))
-
-(CONCEPT
   ONT::CLASSIFICATION-VAL
   (COMMENT "official designation that allows access to only authorized persons")
   (INHERIT
@@ -9429,7 +9423,7 @@
 (CONCEPT
   ONT::CLEAR
   (INHERIT
-    ONT::CLARITY-VAL)
+    ONT::COMPREHENSIBILITY-VAL)
   (OVERLAP
     WN::|unequivocal%3:00:00::|
     WN::|univocal%3:00:00::|
@@ -26732,15 +26726,9 @@
   ONT::LOGICAL-VAL
   (COMMENT "(logical)")
   (INHERIT
-    ONT::LOGICALITY-VAL)
+    ONT::COMPREHENSIBILITY-VAL)
   (OVERLAP
     WN::|logical%3:00:00::|))
-
-(CONCEPT
-  ONT::LOGICALITY-VAL
-  (COMMENT "(logical)")
-  (INHERIT
-    ONT::INFORMATION-PROPERTY-VAL))
 
 (CONCEPT
   ONT::LONELINESS-SCALE
@@ -31392,7 +31380,7 @@
   ONT::NOT-LOGICAL-VAL
   (COMMENT "(illogical)")
   (INHERIT
-    ONT::LOGICALITY-VAL)
+    ONT::COMPREHENSIBILITY-VAL)
   (OVERLAP
     WN::|illogical%3:00:00::|
     WN::|unlogical%3:00:04::|))
@@ -46153,7 +46141,9 @@
   ONT::SUBSTANTIATED-VAL
   (COMMENT "(substantiated, supported)")
   (INHERIT
-    ONT::SUBSTANTIATION-VAL))
+    ONT::SUBSTANTIATION-VAL)
+  (OVERLAP
+    WN::|supported%3:00:02::|))
 
 (CONCEPT
   ONT::SUBSTANTIATION-VAL
@@ -49162,7 +49152,7 @@
 (CONCEPT
   ONT::UNCLEAR
   (INHERIT
-    ONT::CLARITY-VAL)
+    ONT::COMPREHENSIBILITY-VAL)
   (OVERLAP
     WN::|unobvious%3:00:00::|
     WN::|unclear%3:00:00::|

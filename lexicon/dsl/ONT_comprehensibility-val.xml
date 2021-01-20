@@ -350,6 +350,19 @@
  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  <concept name="abstr-obj" />
+ <concept name="ont::ambiguous-val">
+ <comment>
+  &quot;(ambiguous)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::comprehensibility-val
+ </relation>
+ <relation label="overlap">
+  wn::|ambiguous%3:00:00::|
+  wn::|equivocal%3:00:00::|
+  wn::|ambiguous%3:00:04::|
+ </relation>
+ </concept>
  <concept name="ont::comprehensible-val">
  <relation label="inherit">
   ont::comprehensibility-val
@@ -388,5 +401,54 @@
   <feat name="scale">ont::comprehensibility-scale</feat>
   <feat name="type">ont::not-comprehensible-val</feat>
  </sem-feats>
+ </concept>
+ <concept name="ont::clear">
+ <relation label="inherit">
+  ont::comprehensibility-val
+ </relation>
+ <relation label="overlap">
+  wn::|unequivocal%3:00:00::|
+  wn::|univocal%3:00:00::|
+  wn::|unambiguous%3:00:04::|
+  wn::|unambiguous%3:00:00::|
+  wn::|apparent%5:00:00:obvious:00|
+  wn::|obvious%3:00:00::|
+  wn::|clear%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::unclear">
+ <relation label="inherit">
+  ont::comprehensibility-val
+ </relation>
+ <relation label="overlap">
+  wn::|unobvious%3:00:00::|
+  wn::|unclear%3:00:00::|
+  wn::|opaque%5:00:00:incomprehensible:00|
+  wn::|ill-defined%3:00:00::|
+  wn::|obscure%5:00:00:unclear:00|
+ </relation>
+ </concept>
+ <concept name="ont::logical-val">
+ <comment>
+  &quot;(logical)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::comprehensibility-val
+ </relation>
+ <relation label="overlap">
+  wn::|logical%3:00:00::|
+ </relation>
+ </concept>
+ <concept name="ont::not-logical-val">
+ <comment>
+  &quot;(illogical)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::comprehensibility-val
+ </relation>
+ <relation label="overlap">
+  wn::|illogical%3:00:00::|
+  wn::|unlogical%3:00:04::|
+ </relation>
  </concept>
 </dsl>

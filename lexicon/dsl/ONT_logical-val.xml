@@ -7,7 +7,7 @@
   &quot;(logical)&quot;
  </comment>
  <relation label="inherit">
-  ont::logicality-val
+  ont::comprehensibility-val
  </relation>
  <relation label="overlap">
   wn::|logical%3:00:00::|
@@ -115,105 +115,46 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::standard" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::reason" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="intentional">-</feat>
- <feat name="information">-</feat>
- <feat name="container">-</feat>
- <feat name="type">ont::property-val</feat>
- </sem-feats>
- <concept name="ont::domain-property">
+ <concept name="ont::comprehensibility-val">
  <comment>
-  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+  &quot;able to be grasped or understood (different from ont::clarity-val e.g., an explanation might be clear but it still may not be understandable because of external reasons&quot;
  </comment>
  <relation label="inherit">
-  ont::relation
+  ont::information-property-val
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::domain</feat>
-  <feat name="type">ont::domain-property</feat>
+  <feat name="scale">ont::comprehensibility-scale</feat>
+  <feat name="type">ont::comprehensibility-val</feat>
  </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::refset" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::compar" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="type">ont::number</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::scale" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">ont::domain</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
+ </concept>
+ <concept name="ont::information-property-val">
+ <comment>
+  &quot;properties regarding the evaluation of information, knowledge, or understanding (e.g. credible, correct, consistent)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|deductive%3:00:00::|
+  wn::|qualitative%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::information-property-scale</feat>
+  <feat name="type">ont::information-property-val</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::information-property-scale</feat>
- <feat name="type">ont::information-property-val</feat>
+ <feat name="scale">ont::comprehensibility-scale</feat>
+ <feat name="type">ont::comprehensibility-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -267,33 +208,106 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::information-property-val">
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::information-property-scale</feat>
+ <feat name="type">ont::information-property-val</feat>
+ </sem-feats>
+ <concept name="ont::domain-property">
  <comment>
-  &quot;properties regarding the evaluation of information, knowledge, or understanding (e.g. credible, correct, consistent)&quot;
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
  </comment>
  <relation label="inherit">
-  ont::property-val
- </relation>
- <relation label="overlap">
-  wn::|deductive%3:00:00::|
-  wn::|qualitative%3:00:00::|
+  ont::relation
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::information-property-scale</feat>
-  <feat name="type">ont::information-property-val</feat>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain-property</feat>
  </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">ont::number</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::scale" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">ont::domain</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <concept name="ont::logicality-val">
- <comment>
-  &quot;(logical)&quot;
- </comment>
+ <sem-feats>
  <relation label="inherit">
-  ont::information-property-val
+  abstr-obj
  </relation>
- </concept>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::standard" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::reason" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::abstract-object">
  <comment>
   &quot;abstract objects, mental constructions, with no physical realization&quot;
