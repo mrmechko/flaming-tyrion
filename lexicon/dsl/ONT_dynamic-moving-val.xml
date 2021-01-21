@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::dynamic-moving-val">
  <relation label="inherit">
-  ont::motion-val
+  ont::activity-val
  </relation>
  <relation label="overlap">
   wn::|standing%3:00:02::|
@@ -122,8 +122,8 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="scale">ont::object-affordances-scale</feat>
- <feat name="type">ont::object-affordances-val</feat>
+ <feat name="scale">ont::process-property-scale</feat>
+ <feat name="type">ont::process-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -179,12 +179,17 @@
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure">
-  <concept name="phys-obj" />
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="object-function">provides-service</feat>
+  </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::object-affordances-val">
+ <concept name="ont::process-val">
  <comment>
-  &quot;properties pertaining to the function of an entity or an object&quot;
+  &quot;properties that describe processes&quot;
  </comment>
  <relation label="inherit">
   ont::property-val
@@ -193,20 +198,25 @@
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::object-affordances-scale</feat>
-  <feat name="type">ont::object-affordances-val</feat>
+  <feat name="scale">ont::process-property-scale</feat>
+  <feat name="type">ont::process-val</feat>
  </sem-feats>
  </concept>
- <concept name="ont::motion-val">
+ <concept name="ont::activity-val">
  <comment>
-  &quot;describes dynamicity of motion&quot;
+  &quot;properties relating to whether something is operating/active as intended&quot;
  </comment>
  <relation label="inherit">
-  ont::object-affordances-val
+  ont::process-val
  </relation>
  <sem-frame>
   <role-restr-map roles="ont::figure">
-   <concept name="phys-obj" />
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="object-function">provides-service</feat>
+   </sem-feats>
   </role-restr-map>
  </sem-frame>
  </concept>

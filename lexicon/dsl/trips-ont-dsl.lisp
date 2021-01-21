@@ -15676,7 +15676,7 @@
 (CONCEPT
   ONT::DYNAMIC-MOVING-VAL
   (INHERIT
-    ONT::MOTION-VAL)
+    ONT::ACTIVITY-VAL)
   (OVERLAP
     WN::|standing%3:00:02::|
     WN::|moving%3:00:02::|
@@ -29095,16 +29095,6 @@
        (MOBILITY MOVABLE)))))
 
 (CONCEPT
-  ONT::MOTION-VAL
-  (COMMENT "describes dynamicity of motion")
-  (INHERIT
-    ONT::OBJECT-AFFORDANCES-VAL)
-  (SEM-FRAME
-    (ONT::FIGURE
-     (CONCEPT
-       PHYS-OBJ))))
-
-(CONCEPT
   ONT::MOTION-WRT-ANOTHER-OBJECT
   (COMMENT "motion defined wrt another object, either moving or static")
   (INHERIT
@@ -42311,7 +42301,8 @@
     WN::|seem%2:39:02::|
     WN::|seem%2:42:00::|
     WN::|sound%2:39:06::|
-    WN::|taste%2:39:02::|)
+    WN::|taste%2:39:02::|
+    WN::|appear%2:39:01::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -45429,7 +45420,7 @@
 (CONCEPT
   ONT::STATIC-NONMOVING-VAL
   (INHERIT
-    ONT::MOTION-VAL)
+    ONT::ACTIVITY-VAL)
   (OVERLAP
     WN::|immobile%3:00:00::|
     WN::|undynamic%3:00:00::|

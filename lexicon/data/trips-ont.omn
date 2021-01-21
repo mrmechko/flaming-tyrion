@@ -9862,19 +9862,13 @@ Class: inactive-closed
   SubClassOf: inactive
   SubClassOf: _figure only (FLT_phys-obj and F_object-function some V_provides-service-open-closed) and _figure some owl:Thing
 
-# ONT type ont::motion-val
-Class: motion-val
-  Annotations: rdfs:comment "describes dynamicity of motion"
-  SubClassOf: object-affordances-val
-  SubClassOf: _figure only (FLT_phys-obj) and _figure some owl:Thing
-
 # ONT type ont::dynamic-moving-val
 Class: dynamic-moving-val
-  SubClassOf: motion-val
+  SubClassOf: activity-val
 
 # ONT type ont::static-nonmoving-val
 Class: static-nonmoving-val
-  SubClassOf: motion-val
+  SubClassOf: activity-val
 
 # ONT type ont::availability-val
 Class: availability-val
@@ -20537,7 +20531,7 @@ DisjointClasses: young-val, old-val
 DisjointClasses: old-fashioned-val, current-val, modern-val, ancient-val
 
 # children of ont::object-affordances-val
-DisjointClasses: availability-val, motion-val, usability-val, functionality-val
+DisjointClasses: availability-val, usability-val, functionality-val
 
 # children of ont::functionality-val
 DisjointClasses: not-having-function-val, not-damaged-val, damaged-val, in-working-order-val, not-in-working-order-val, defective-val
@@ -20546,16 +20540,13 @@ DisjointClasses: not-having-function-val, not-damaged-val, damaged-val, in-worki
 DisjointClasses: not-usable-val, usable-val
 
 # children of ont::activity-val
-DisjointClasses: inactive, active
+DisjointClasses: static-nonmoving-val, dynamic-moving-val, inactive, active
 
 # children of ont::active
 DisjointClasses: active-on, active-open
 
 # children of ont::inactive
 DisjointClasses: inactive-closed, inactive-off
-
-# children of ont::motion-val
-DisjointClasses: static-nonmoving-val, dynamic-moving-val
 
 # children of ont::availability-val
 DisjointClasses: available, not-available-val
