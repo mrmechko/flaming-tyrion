@@ -3551,11 +3551,21 @@ Class: furnishings-component
   Annotations: rdfs:comment "parts typically of furnishings: e.g., drawer"
   SubClassOf: furnishings
 
+# ONT type ont::household-linen-covering
+Class: household-linen-covering
+  SubClassOf: manufactured-object
+  SubClassOf: (FLT_phys-obj and F_form some V_solid-object)
+
+# ONT type ont::towel
+Class: towel
+  SubClassOf: household-linen-covering
+  SubClassOf: (FLT_phys-obj and F_form some V_solid-object)
+
 # ONT type ont::bedding
 Class: bedding
   Annotations: rdfs:comment "objects related to bedding: pillow, blanket"
-  SubClassOf: furnishings
-  SubClassOf: (FLT_phys-obj and F_form some V_solid-object and F_object-function some V_furniture)
+  SubClassOf: household-linen-covering
+  SubClassOf: (FLT_phys-obj and F_form some V_solid-object)
 
 # ONT type ont::wh-location
 Class: wh-location
@@ -19517,7 +19527,7 @@ DisjointClasses: quick-relief-drug, long-term-control-drug
 DisjointClasses: water, bodily-fluid, fuel
 
 # children of ont::manufactured-object
-DisjointClasses: tableware, cookware, container, device-component, flag, personal-item, credit-card, money, writing-implement, instrumentation, fixture, device, card, window, wheel, furnishings, vessel, stretcher, vehicle, automaton, block, technology
+DisjointClasses: tableware, cookware, container, device-component, flag, personal-item, credit-card, money, writing-implement, instrumentation, fixture, device, card, window, wheel, household-linen-covering, furnishings, vessel, stretcher, vehicle, automaton, block, technology
 
 # children of ont::animal
 DisjointClasses: vertebrate, invertebrate
@@ -19571,7 +19581,10 @@ DisjointClasses: coffee-shop, restaurant
 DisjointClasses: step, structure-external-component, structure-internal-component
 
 # children of ont::furnishings
-DisjointClasses: table, storage-furnishings, bedding, furnishings-component
+DisjointClasses: table, storage-furnishings, furnishings-component
+
+# children of ont::household-linen-covering
+DisjointClasses: bedding, towel
 
 # children of ont::location-by-description
 DisjointClasses: hotspot, cardinal-point, edge, corner, junction, loc-as-area

@@ -4799,7 +4799,7 @@
   ONT::BEDDING
   (COMMENT "objects related to bedding: pillow, blanket")
   (INHERIT
-    ONT::FURNISHINGS)
+    ONT::HOUSEHOLD-LINEN-COVERING)
   (OVERLAP
     WN::|bedclothes%1:06:00::|
     WN::|bed_clothing%1:06:00::|
@@ -4807,7 +4807,6 @@
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
-    (OBJECT-FUNCTION FURNITURE)
     (FORM SOLID-OBJECT)
     (TYPE ONT::BEDDING)))
 
@@ -22616,6 +22615,18 @@
     ONT::TIME-UNIT)
   (OVERLAP
     WN::|hour%1:28:00::|))
+
+(CONCEPT
+  ONT::HOUSEHOLD-LINEN-COVERING
+  (INHERIT
+    ONT::MANUFACTURED-OBJECT)
+  (OVERLAP
+    WN::|household_linen%1:06:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (FORM SOLID-OBJECT)
+    (TYPE ONT::HOUSEHOLD-LINEN-COVERING)))
 
 (CONCEPT
   ONT::HUGE-VAL
@@ -48467,6 +48478,18 @@
   (COMMENT "direction towards from a given entity (the GROUND)")
   (INHERIT
     ONT::DIRECTION-WRT-ENTITY))
+
+(CONCEPT
+  ONT::TOWEL
+  (INHERIT
+    ONT::HOUSEHOLD-LINEN-COVERING)
+  (OVERLAP
+    WN::|towel%1:06:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (FORM SOLID-OBJECT)
+    (TYPE ONT::TOWEL)))
 
 (CONCEPT
   ONT::TOWER
