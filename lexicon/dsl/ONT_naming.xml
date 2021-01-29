@@ -10,6 +10,11 @@
   wn::|designate%2:32:00::|
   wn::|denominate%2:32:00::|
  </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral1">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <or>
  <concept name="phys-obj" />
@@ -106,13 +111,76 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::conventional-speech-act">
+ <sem-frame>
+ <role-restr-map roles="ont::location" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">agentive</feat>
+ <feat name="type">ont::communication</feat>
+ </sem-feats>
+ <concept name="ont::agent-interaction">
  <comment>
-  &quot;speech act that is conventional in nature and generally determined by an explicit performative verb (cf. Searle)&quot;
+  &quot;events that involve the interaction of two or more agents&quot;
  </comment>
  <relation label="inherit">
-  ont::illocution
+  ont::event-of-action
  </relation>
+ <relation label="overlap">
+  wn::|interaction%1:04:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::agent1" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="tangible">+</feat>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="tangible">+</feat>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
  </concept>
  <concept name="ont::illocution">
  <comment>
@@ -128,6 +196,19 @@
   <feat name="cause">agentive</feat>
   <feat name="type">ont::illocution</feat>
  </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral1">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::conventional-speech-act">
+ <comment>
+  &quot;speech act that is conventional in nature and generally determined by an explicit performative verb (cf. Searle)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::illocution
+ </relation>
  </concept>
  <concept name="ont::communication">
  <comment>
@@ -194,77 +275,6 @@
  <feat name="cause">agentive</feat>
  <feat name="type">ont::illocution</feat>
  </sem-feats>
- <concept name="ont::agent-interaction">
- <comment>
-  &quot;events that involve the interaction of two or more agents&quot;
- </comment>
- <relation label="inherit">
-  ont::event-of-action
- </relation>
- <relation label="overlap">
-  wn::|interaction%1:04:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::agent1" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="tangible">+</feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="tangible">+</feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">agentive</feat>
- <feat name="type">ont::communication</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::location" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
-  <or>
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::event-of-action">
  <comment>
   &quot;events that involve :agent (whether intentional or not)&quot;
@@ -390,9 +400,9 @@
   vn::dub-29.3-1
  </relation>
  <syntax>
-  <template-call template="ont::agent-neutral-formal-2-xp-3-xp2-np-optional-templ" />
+  <template-call template="ont::agent-neutral-neutral1-xp-templ" xp="'w::np" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::neutral1"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
@@ -440,9 +450,9 @@
   vn::dub-29.3
  </relation>
  <syntax>
-  <template-call template="ont::agent-neutral-formal-2-xp-3-xp2-np-templ" />
+  <template-call template="ont::agent-neutral-neutral1-xp-templ" xp="'w::np" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::neutral1"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
@@ -466,9 +476,9 @@
   ont::naming
  </relation>
  <syntax>
-  <template-call template="ont::agent-formal-xp-templ" />
+  <template-call template="ont::agent-neutral-xp-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -491,9 +501,9 @@
   vn::dub-29.3-1
  </relation>
  <syntax>
-  <template-call template="ont::agent-neutral-formal-2-xp-3-xp2-np-optional-templ" />
+  <template-call template="ont::agent-neutral-neutral1-xp-templ" xp="'w::np" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::neutral1"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
@@ -548,9 +558,9 @@
   vn::dub-29.3-1
  </relation>
  <syntax>
-  <template-call template="ont::agent-neutral-formal-2-xp-3-xp2-np-templ" />
+  <template-call template="ont::agent-neutral-neutral1-xp-templ" xp="'w::np" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::neutral1"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
@@ -612,9 +622,10 @@
   vn::dub-29.3-1
  </relation>
  <syntax>
-  <template-call template="ont::agent-neutral-formal-2-xp-3-xp2-pp-templ" />
+  <template-call template="ont::agent-neutral-neutral1-2-xp-3-xp2-templ" xp2="'(w::pp
+                                                                                w::as)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::as" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::as" sem-role="ont::neutral1"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
@@ -632,9 +643,9 @@
   vn::dub-29.3-1
  </relation>
  <syntax>
-  <template-call template="ont::agent-neutral-formal-2-xp-3-xp2-np-optional-templ" />
+  <template-call template="ont::agent-neutral-neutral1-xp-templ" xp="'w::np" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::neutral1"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
@@ -671,9 +682,9 @@
   ont::naming
  </relation>
  <syntax>
-  <template-call template="ont::agent-neutral-formal-2-xp-3-xp2-np-optional-templ" />
+  <template-call template="ont::agent-neutral-neutral1-xp-templ" xp="'w::np" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::formal" optional="optional"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::np" sem-role="ont::neutral1"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::neutral"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>

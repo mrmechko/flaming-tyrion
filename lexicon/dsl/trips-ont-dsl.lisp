@@ -22889,7 +22889,6 @@
       PHYS-OBJ)
     (INFORMATION -)
     (INTENTIONAL +)
-    (CONTAINER -)
     (MOBILITY SELF-MOVING)
     (SPATIAL-ABSTRACTION SPATIAL-POINT)
     (FORM SOLID-OBJECT)
@@ -23296,10 +23295,8 @@
        (CONCEPT
          ABSTR-OBJ)))
     (ONT::GROUND
-     (SEM-FEATS
-       (INHERIT
-         PHYS-OBJ)
-       (TYPE ONT::MATERIAL)))))
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::INARTICULATE-VAL
@@ -27538,7 +27535,8 @@
     ONT::PHYS-OBJECT)
   (OVERLAP
     WN::|material%1:27:00::|
-    WN::|stuff%1:27:00::|)
+    WN::|stuff%1:27:00::|
+    WN::|material%1:06:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
@@ -29657,7 +29655,11 @@
     ONT::CONVENTIONAL-SPEECH-ACT)
   (OVERLAP
     WN::|designate%2:32:00::|
-    WN::|denominate%2:32:00::|))
+    WN::|denominate%2:32:00::|)
+  (SEM-FRAME
+    (ONT::NEUTRAL1
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::NARROW
@@ -33480,6 +33482,7 @@
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
+    (CONTAINER +)
     (ORIGIN LIVING)
     (TYPE ONT::ORGANISM)))
 
@@ -34596,7 +34599,6 @@
       PHYS-OBJ)
     (INFORMATION -)
     (INTENTIONAL +)
-    (CONTAINER -)
     (MOBILITY SELF-MOVING)
     (OBJECT-FUNCTION OCCUPATION)
     (ORIGIN HUMAN)
@@ -34648,7 +34650,6 @@
       PHYS-OBJ)
     (INFORMATION -)
     (INTENTIONAL +)
-    (CONTAINER -)
     (OBJECT-FUNCTION OCCUPATION)
     (ORIGIN HUMAN)
     (SPATIAL-ABSTRACTION SPATIAL-POINT)
@@ -46371,7 +46372,6 @@
       PHYS-OBJ)
     (INFORMATION -)
     (INTENTIONAL +)
-    (CONTAINER -)
     (MOBILITY SELF-MOVING)
     (OBJECT-FUNCTION OCCUPATION)
     (ORIGIN HUMAN)

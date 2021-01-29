@@ -2532,7 +2532,7 @@ Class: cell-line
 # ONT type ont::organism
 Class: organism
   SubClassOf: natural-object
-  SubClassOf: (FLT_phys-obj and F_origin some V_living)
+  SubClassOf: (FLT_phys-obj and F_origin some V_living and F_container some V_+)
 
 # ONT type ont::molecular-part
 Class: molecular-part
@@ -3050,7 +3050,7 @@ Class: eater
 # ONT type ont::person
 Class: person
   SubClassOf: mammal
-  SubClassOf: (FLT_phys-obj and F_form some V_solid-object and F_spatial-abstraction some V_spatial-point and F_origin some V_human and F_object-function some V_occupation and F_mobility some V_self-moving and F_container some V_- and F_intentional some V_+ and F_information some V_-)
+  SubClassOf: (FLT_phys-obj and F_form some V_solid-object and F_spatial-abstraction some V_spatial-point and F_origin some V_human and F_object-function some V_occupation and F_mobility some V_self-moving and F_intentional some V_+ and F_information some V_-)
 
 # ONT type ont::referential-person
 Class: referential-person
@@ -3059,12 +3059,12 @@ Class: referential-person
 # ONT type ont::supernatural-being
 Class: supernatural-being
   SubClassOf: organism
-  SubClassOf: (FLT_phys-obj and F_form some V_solid-object and F_spatial-abstraction some V_spatial-point and F_origin some V_human and F_object-function some V_occupation and F_mobility some V_self-moving and F_container some V_- and F_intentional some V_+ and F_information some V_-)
+  SubClassOf: (FLT_phys-obj and F_form some V_solid-object and F_spatial-abstraction some V_spatial-point and F_origin some V_human and F_object-function some V_occupation and F_mobility some V_self-moving and F_intentional some V_+ and F_information some V_-)
 
 # ONT type ont::imaginary-being
 Class: imaginary-being
   SubClassOf: organism
-  SubClassOf: (FLT_phys-obj and F_form some V_solid-object and F_spatial-abstraction some V_spatial-point and F_mobility some V_self-moving and F_container some V_- and F_intentional some V_+ and F_information some V_-)
+  SubClassOf: (FLT_phys-obj and F_form some V_solid-object and F_spatial-abstraction some V_spatial-point and F_mobility some V_self-moving and F_intentional some V_+ and F_information some V_-)
 
 # ONT type ont::user
 Class: user
@@ -3084,7 +3084,7 @@ Class: person-reln
 Class: person-defined-by-activity
   Annotations: rdfs:comment "a person defined by a role that they play. e.g., doctor, leader, ..."
   SubClassOf: person
-  SubClassOf: (FLT_phys-obj and F_form some V_solid-object and F_spatial-abstraction some V_spatial-point and F_origin some V_human and F_object-function some V_occupation and F_container some V_- and F_intentional some V_+ and F_information some V_-)
+  SubClassOf: (FLT_phys-obj and F_form some V_solid-object and F_spatial-abstraction some V_spatial-point and F_origin some V_human and F_object-function some V_occupation and F_intentional some V_+ and F_information some V_-)
   SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj))
   SubClassOf: _norole only owl:Thing
 
@@ -10994,7 +10994,7 @@ Class: duplicate-val
 # ONT type ont::inadequate
 Class: inadequate
   SubClassOf: adequacy-val
-  SubClassOf: _ground only (FLT_phys-obj and F_type some material) and _ground some owl:Thing
+  SubClassOf: _ground only owl:Thing
   SubClassOf: _figure only ((FLT_phys-obj or FLT_abstr-obj)) and _figure some owl:Thing
 
 # ONT type ont::adequate
@@ -16706,6 +16706,7 @@ Class: nominate
 # ONT type ont::naming
 Class: naming
   SubClassOf: conventional-speech-act
+  SubClassOf: _neutral1 only owl:Thing
 
 # ONT type ont::declare-performative
 Class: declare-performative
