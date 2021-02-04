@@ -32753,6 +32753,15 @@
          ABSTR-OBJ)))))
 
 (CONCEPT
+  ONT::OBJECTIVE-INFLUENCE-NEG
+  (INHERIT
+    ONT::OBJECTIVE-INFLUENCE)
+  (OVERLAP
+    WN::|afflict%2:37:00::|
+    WN::|afflict%2:30:00::|
+    WN::|hit%2:35:05::|))
+
+(CONCEPT
   ONT::OBLIGATORINESS-VAL
   (INHERIT
     ONT::STATUS-VAL))
