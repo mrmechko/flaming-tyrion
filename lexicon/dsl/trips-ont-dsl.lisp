@@ -1489,7 +1489,9 @@
   (INHERIT
     ONT::ACTIVITY)
   (OVERLAP
-    WN::|agriculture%1:04:01::|)
+    WN::|agriculture%1:04:01::|
+    WN::|cultivation%1:04:00::|
+    WN::|cultivation%1:04:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
