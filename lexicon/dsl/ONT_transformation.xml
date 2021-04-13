@@ -164,7 +164,18 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">
+    <or>
+     ont::resulting-state
+     ont::domain-property
+     ont::resulting-object
+    </or>
+    </feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
    <or>
@@ -248,7 +259,18 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::result" optional="optional">
-  <concept name="t" />
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">
+   <or>
+    ont::resulting-state
+    ont::domain-property
+    ont::resulting-object
+   </or>
+   </feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::agent" optional="optional">
   <or>
@@ -610,10 +632,8 @@
   ont::transformation
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-result-xp-np-templ" xp="'(w::pp
-                                                                         w::into)" />
+  <template-call template="ont::agent-affected-xp-np-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::into" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
@@ -717,14 +737,8 @@
   ont::transformation
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-result-xp-pp-into-optional-templ" xp="'(w::pp
-                                                                                       (or
-                                                                                         w::into
-                                                                                         w::to))" />
+  <template-call template="ont::agent-affected-xp-np-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="(or
-                                                                      w::into
-                                                                      w::to)" sem-role="ont::result" optional="optional"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
@@ -752,19 +766,8 @@
  </comment>
  <relation label="inherit">
   ont::transformation
+  ont::affected-templ
  </relation>
- <syntax>
-  <template-call template="ont::affected-result-xp-optional-templ" xp="'(w::pp
-                                                                         (or
-                                                                           w::into
-                                                                           w::to))" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="(or
-                                                                      w::into
-                                                                      w::to)" sem-role="ont::result" optional="optional"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-  </syn-sem>
- </syntax>
  <semantics>
   <sem-feats>
    <feat name="time-span">atomic</feat>
@@ -795,11 +798,64 @@
   ont::transformation
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-result-xp-np-templ" xp="'w::pp" />
+  <template-call template="ont::agent-affected-xp-np-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" sem-role="ont::result"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="turn" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="turning" />
+   </ing>
+   <nom>
+    <word first-word="turn" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="x turned into y">
+ </example>
+ <relation label="inherit">
+  ont::transformation
+  ont::affected-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="turn" />
+  <forms>
+   -VB
+   <ing>
+    <word first-word="turning" />
+   </ing>
+   <nom>
+    <word first-word="turn" />
+   </nom>
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="It turned green">
+ </example>
+ <relation label="inherit">
+  ont::transformation
+ </relation>
+ <syntax>
+  <template-call template="ont::affected-formal-xp-pred-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pred" sem-role="ont::formal"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
   </syn-sem>
  </syntax>
  </sense>

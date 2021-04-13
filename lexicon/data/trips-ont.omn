@@ -15681,7 +15681,7 @@ Class: change
   SubClassOf: event-of-causation
   SubClassOf: (FLT_situation and F_cause some V_force)
   SubClassOf: _agent only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation))
-  SubClassOf: _result only owl:Thing
+  SubClassOf: _result only (FLT_abstr-obj and F_type some (resulting-state or domain-property or resulting-object))
   SubClassOf: _formal only ((FLT_abstr-obj or FLT_situation or FLT_time))
 
 # ONT type ont::change-state
@@ -17246,7 +17246,7 @@ Class: spend-time
 Class: create
   SubClassOf: event-of-creation
   SubClassOf: (FLT_situation and F_cause some V_agentive and F_trajectory some V_-)
-  SubClassOf: _agent only ((FLT_phys-obj or FLT_abstr-obj))
+  SubClassOf: _agent only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation))
   SubClassOf: _affected-result only ((FLT_phys-obj or FLT_abstr-obj) and F_type some (phys-object or mental-construction or information-function-object)) and _affected-result some owl:Thing
   SubClassOf: _affected only ((FLT_phys-obj or FLT_abstr-obj) and F_type some (phys-object or mental-construction or information-function-object)) and _affected some owl:Thing
   SubClassOf: _result only ((FLT_phys-obj or FLT_abstr-obj) and F_intentional some V_-)
@@ -18331,6 +18331,7 @@ Class: become
   SubClassOf: event-of-undergoing-action
   SubClassOf: (FLT_situation and F_aspect some V_dynamic and F_trajectory some V_-)
   SubClassOf: _affected only owl:Thing
+  SubClassOf: _affected1 only ((FLT_abstr-obj or FLT_phys-obj or FLT_situation)) and _affected1 some owl:Thing
   SubClassOf: _formal only (FLT_abstr-obj and F_type some relation) and _formal some owl:Thing
 
 # ONT type ont::space

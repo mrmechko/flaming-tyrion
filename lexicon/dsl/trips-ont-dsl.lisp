@@ -4745,6 +4745,15 @@
          ABSTR-OBJ)
        (TYPE ONT::RELATION))
      OPTIONAL)
+    (ONT::AFFECTED1
+     (OR
+       (CONCEPT
+         ABSTR-OBJ)
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         SITUATION))
+     OPTIONAL)
     (ONT::AFFECTED
      (CONCEPT
        T)
@@ -8354,8 +8363,14 @@
          TIME))
      OPTIONAL)
     (ONT::RESULT
-     (CONCEPT
-       T)
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          ONT::RESULTING-STATE
+          ONT::DOMAIN-PROPERTY
+          ONT::RESULTING-OBJECT)))
      OPTIONAL)
     (ONT::AGENT
      (OR
@@ -12750,7 +12765,9 @@
        (CONCEPT
          PHYS-OBJ)
        (CONCEPT
-         ABSTR-OBJ))
+         ABSTR-OBJ)
+       (CONCEPT
+         SITUATION))
      OPTIONAL)))
 
 (CONCEPT
@@ -20367,7 +20384,10 @@
     ONT::CHANGE-INTEGRITY)
   (OVERLAP
     WN::|gasify%2:30:00::|
-    WN::|boil%2:30:01::|))
+    WN::|boil%2:30:01::|
+    WN::|evaporate%2:30:00::|
+    WN::|evaporate%2:30:01::|
+    WN::|evaporate%2:30:02::|))
 
 (CONCEPT
   ONT::GATHERING-EVENT

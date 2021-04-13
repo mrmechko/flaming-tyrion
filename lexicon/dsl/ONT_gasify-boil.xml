@@ -9,6 +9,9 @@
  <relation label="overlap">
   wn::|gasify%2:30:00::|
   wn::|boil%2:30:01::|
+  wn::|evaporate%2:30:00::|
+  wn::|evaporate%2:30:01::|
+  wn::|evaporate%2:30:02::|
  </relation>
  </concept>
  <or>
@@ -115,7 +118,18 @@
   </or>
  </role-restr-map>
  <role-restr-map roles="ont::result" optional="optional">
-  <concept name="t" />
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">
+   <or>
+    ont::resulting-state
+    ont::domain-property
+    ont::resulting-object
+   </or>
+   </feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::agent" optional="optional">
   <or>
@@ -286,7 +300,18 @@
    </or>
   </role-restr-map>
   <role-restr-map roles="ont::result" optional="optional">
-   <concept name="t" />
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">
+    <or>
+     ont::resulting-state
+     ont::domain-property
+     ont::resulting-object
+    </or>
+    </feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
    <or>
