@@ -16659,6 +16659,11 @@
       SITUATION)
     (TYPE ONT::ENROLL))
   (SEM-FRAME
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)))
     (ONT::NEUTRAL
      (OR
        (CONCEPT
