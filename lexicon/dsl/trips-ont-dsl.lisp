@@ -643,7 +643,12 @@
   (SEM-FRAME
     (ONT::FORMAL
      (CONCEPT
-       PHYS-OBJ))))
+       PHYS-OBJ))
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::ACTING
@@ -29847,6 +29852,7 @@
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
+    (CONTAINER +)
     (SPATIAL-ABSTRACTION
      (OR
        SPATIAL-POINT
@@ -34858,7 +34864,8 @@
     WN::|cause%1:03:00::|
     WN::|causal_agent%1:03:00::|
     WN::|cause%1:11:00::|
-    WN::|momentum%1:07:00::|)
+    WN::|momentum%1:07:00::|
+    WN::|wave%1:11:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)

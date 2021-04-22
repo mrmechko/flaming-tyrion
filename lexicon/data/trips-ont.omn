@@ -2509,7 +2509,7 @@ Class: successor
 # ONT type ont::natural-object
 Class: natural-object
   SubClassOf: phys-object
-  SubClassOf: (FLT_phys-obj and F_origin some V_natural and F_spatial-abstraction some (V_spatial-point or V_spatial-region))
+  SubClassOf: (FLT_phys-obj and F_origin some V_natural and F_spatial-abstraction some (V_spatial-point or V_spatial-region) and F_container some V_+)
 
 # ONT type ont::physics-object
 Class: physics-object
@@ -17218,6 +17218,7 @@ Class: take-in
 # ONT type ont::act-behave
 Class: act-behave
   SubClassOf: acting
+  SubClassOf: _agent only (FLT_phys-obj and F_intentional some V_+) and _agent some owl:Thing
   SubClassOf: _formal only (FLT_phys-obj) and _formal some owl:Thing
 
 # ONT type ont::take-time
