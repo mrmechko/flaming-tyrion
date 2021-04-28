@@ -4046,7 +4046,7 @@ Class: genome
 # ONT type ont::device
 Class: device
   SubClassOf: manufactured-object
-  SubClassOf: (FLT_phys-obj and F_origin some V_artifact)
+  SubClassOf: (FLT_phys-obj and F_origin some V_artifact and F_container some V_+)
 
 # ONT type ont::appliance
 Class: appliance
@@ -6830,7 +6830,7 @@ Class: evaluation-attribute-val
   Annotations: rdfs:comment "properties which need an observer to be recognized -- subjective to the observer"
   SubClassOf: property-val
   SubClassOf: (FLT_abstr-obj and F_scale some evaluation-scale)
-  SubClassOf: _figure only (root and F_tangible some V_+) and _figure some owl:Thing
+  SubClassOf: _figure only owl:Thing
 
 # ONT type ont::desirability-val
 Class: desirability-val
@@ -18094,6 +18094,13 @@ Class: unattach
   SubClassOf: separation
   SubClassOf: (FLT_situation and F_aspect some V_dynamic and F_cause some V_agentive)
 
+# ONT type ont::social-separation
+Class: social-separation
+  SubClassOf: separation
+  SubClassOf: (FLT_situation and F_aspect some V_dynamic and F_cause some V_agentive)
+  SubClassOf: _agent only (FLT_phys-obj and F_intentional some V_+) and _agent some owl:Thing
+  SubClassOf: _affected only (FLT_phys-obj and F_intentional some V_+) and _affected some owl:Thing
+
 # ONT type ont::cut
 Class: cut
   SubClassOf: break-object
@@ -21598,6 +21605,9 @@ DisjointClasses: governing, taking-care-of, managing-resources, planning, organi
 
 # children of ont::arranging
 DisjointClasses: space, coordinating, collate, sort, arrange-text, set-up-device, exchange, decorate-primp, reverse
+
+# children of ont::separation
+DisjointClasses: social-separation, unattach
 
 # children of ont::joining
 DisjointClasses: enroll, attach, associate, fit

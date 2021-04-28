@@ -14174,6 +14174,7 @@
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
+    (CONTAINER +)
     (ORIGIN ARTIFACT)
     (TYPE ONT::DEVICE)))
 
@@ -17012,8 +17013,8 @@
     (TYPE ONT::EVALUATION-ATTRIBUTE-VAL))
   (SEM-FRAME
     (ONT::FIGURE
-     (SEM-FEATS
-       (TANGIBLE +)))))
+     (CONCEPT
+       T))))
 
 (CONCEPT
   ONT::EVALUATION-SCALE
@@ -44391,6 +44392,28 @@
     WN::|criminological%3:01:00::|
     WN::|ethnological%3:01:00::|
     WN::|ethnologic%3:01:00::|))
+
+(CONCEPT
+  ONT::SOCIAL-SEPARATION
+  (INHERIT
+    ONT::SEPARATION)
+  (SEM-FEATS
+    (INHERIT
+      SITUATION)
+    (CAUSE AGENTIVE)
+    (ASPECT DYNAMIC)
+    (TYPE ONT::SOCIAL-SEPARATION))
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)))
+    (ONT::AGENT
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (INTENTIONAL +)))))
 
 (CONCEPT
   ONT::SOCIAL-SYSTEM

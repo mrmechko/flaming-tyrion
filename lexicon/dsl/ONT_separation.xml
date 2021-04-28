@@ -345,50 +345,37 @@
   <feat name="type">ont::unattach</feat>
  </sem-feats>
  </concept>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="break" remaining-words="" particle="up" />
-  <forms>
-   -VB
-   <past>
-    <word first-word="broke" />
-   </past>
-   <pastpart>
-    <word first-word="broken" />
-   </pastpart>
-   <nom>
-    <word first-word="break" remaining-words="up" />
-   </nom>
-  </forms>
- </morph>
+ <concept name="ont::social-separation">
  <relation label="inherit">
   ont::separation
  </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
- </syntax>
- <semantics>
-  <sem-feats>
-   <feat name="time-span">atomic</feat>
-   <feat name="aspect">bounded</feat>
-  </sem-feats>
- </semantics>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="breakup" />
- </morph>
- <relation label="inherit">
-  ont::separation
-  ont::count-pred-templ
- </relation>
- </sense>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">agentive</feat>
+  <feat name="aspect">dynamic</feat>
+  <feat name="type">ont::social-separation</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::affected">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <sense>
  <morph>
   <pos pos="v" />
@@ -642,25 +629,6 @@
    </feat>
    <feat name="agr">|3s|</feat>
   </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="v" />
-  <word first-word="divorce" />
- </morph>
- <relation label="inherit">
-  ont::separation
- </relation>
- <relation label="overlap">
-  vn::separate-23.1-1
- </relation>
- <syntax>
-  <template-call template="ont::agent-affected-xp-np-templ" />
-  <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
-   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
-  </syn-sem>
  </syntax>
  </sense>
  <sense>
