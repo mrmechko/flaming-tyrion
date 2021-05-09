@@ -3794,14 +3794,13 @@
 (CONCEPT
   ONT::AUDIO
   (INHERIT
-    ONT::SUBSTANCE)
+    ONT::PHYSICAL-PHENOMENON)
   (OVERLAP
     WN::|audio%1:10:00::|
     WN::|sound%1:10:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
-    (CONTAINER -)
     (INTENTIONAL -)
     (FORM WAVE)
     (TYPE ONT::AUDIO))
@@ -16732,11 +16731,7 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (OBJECT-FUNCTION
-        (OR
-          SPATIAL-OBJECT
-          BUILDING))
-       (SPATIAL-ABSTRACTION SPATIAL-REGION))
+       (CONTAINER +))
      OPTIONAL)
     (ONT::AFFECTED
      (CONCEPT
@@ -25856,7 +25851,7 @@
 (CONCEPT
   ONT::LIGHT
   (INHERIT
-    ONT::SUBSTANCE)
+    ONT::PHYSICAL-PHENOMENON)
   (OVERLAP
     WN::|light%1:15:00::|
     WN::|light%1:19:00::|
@@ -41476,7 +41471,17 @@
     (INHERIT
       SITUATION)
     (ASPECT DYNAMIC)
-    (TYPE ONT::ROTATE)))
+    (TYPE ONT::ROTATE))
+  (SEM-FRAME
+    (ONT::RESULT
+     (SEM-FEATS
+       (INHERIT
+         ABSTR-OBJ)
+       (TYPE
+        (OR
+          ONT::TO-LOC
+          ONT::GOAL-AS-ON)))
+     OPTIONAL)))
 
 (CONCEPT
   ONT::ROUGHNESS-SCALE
@@ -46085,7 +46090,12 @@
     WN::|substance%1:03:01::|
     WN::|substance%1:27:00::|
     WN::|matter%1:03:00::|
-    WN::|paper%1:27:00::|))
+    WN::|paper%1:27:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (CONTAINER +)
+    (TYPE ONT::SUBSTANCE)))
 
 (CONCEPT
   ONT::SUBSTANCE-DELIVERY-UNIT

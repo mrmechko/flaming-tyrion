@@ -2855,6 +2855,7 @@ Class: material
 # ONT type ont::substance
 Class: substance
   SubClassOf: material
+  SubClassOf: (FLT_phys-obj and F_container some V_+)
 
 # ONT type ont::dust
 Class: dust
@@ -3414,7 +3415,7 @@ Class: food
 
 # ONT type ont::light
 Class: light
-  SubClassOf: substance
+  SubClassOf: physical-phenomenon
   SubClassOf: (FLT_phys-obj and F_origin some V_non-living)
 
 # ONT type ont::food-produce
@@ -4247,8 +4248,8 @@ Class: member
 
 # ONT type ont::audio
 Class: audio
-  SubClassOf: substance
-  SubClassOf: (FLT_phys-obj and F_form some V_wave and F_intentional some V_- and F_container some V_-)
+  SubClassOf: physical-phenomenon
+  SubClassOf: (FLT_phys-obj and F_form some V_wave and F_intentional some V_-)
   SubClassOf: _figure only (FLT_phys-obj)
 
 # ONT type ont::power
@@ -5319,7 +5320,7 @@ Class: put
 Class: entering
   SubClassOf: event-of-action
   SubClassOf: _affected only (FLT_phys-obj) and _affected some owl:Thing
-  SubClassOf: _neutral only (FLT_phys-obj and F_spatial-abstraction some V_spatial-region and F_object-function some (V_spatial-object or V_building)) and _neutral some owl:Thing
+  SubClassOf: _neutral only (FLT_phys-obj and F_container some V_+) and _neutral some owl:Thing
 
 # ONT type ont::penetrate
 Class: penetrate
@@ -15387,6 +15388,7 @@ Class: bike
 Class: rotate
   SubClassOf: event-of-causation
   SubClassOf: (FLT_situation and F_aspect some V_dynamic)
+  SubClassOf: _result only (FLT_abstr-obj and F_type some (to-loc or goal-as-on))
 
 # ONT type ont::ride
 Class: ride
@@ -19528,7 +19530,7 @@ DisjointClasses: district, city, county, country, state
 DisjointClasses: waste, substance
 
 # children of ont::substance
-DisjointClasses: power, audio, light, food, solid-substance, liquid-substance, gas-substance, natural-substance, chemical, dust
+DisjointClasses: power, food, solid-substance, liquid-substance, gas-substance, natural-substance, chemical, dust
 
 # children of ont::chemical
 DisjointClasses: minerals, herbicide, pesticide, fertilizer, pharmacologic-substance, residue, amino-acid
@@ -19580,6 +19582,9 @@ DisjointClasses: tank, vehicle-container
 
 # children of ont::vehicle-container
 DisjointClasses: tanker, boxcar
+
+# children of ont::physical-phenomenon
+DisjointClasses: audio, light
 
 # children of ont::food
 DisjointClasses: dairy, beverages, pasta, seafood, meat, ingredients, prepared-food, food-grains, nutritional-supplement, food-produce

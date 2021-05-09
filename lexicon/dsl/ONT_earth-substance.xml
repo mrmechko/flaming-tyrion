@@ -45,6 +45,44 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
+ <concept name="ont::natural-substance">
+ <relation label="inherit">
+  ont::substance
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">natural</feat>
+  <feat name="type">ont::natural-substance</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::substance">
+ <relation label="inherit">
+  ont::material
+ </relation>
+ <relation label="overlap">
+  wn::|substance%1:03:00::|
+  wn::|substance%1:03:01::|
+  wn::|substance%1:27:00::|
+  wn::|matter%1:03:00::|
+  wn::|paper%1:27:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="type">ont::substance</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">natural</feat>
+ <feat name="type">ont::natural-substance</feat>
+ </sem-feats>
  <concept name="ont::material">
  <relation label="inherit">
   ont::phys-object
@@ -67,33 +105,9 @@
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="origin">natural</feat>
- <feat name="type">ont::natural-substance</feat>
+ <feat name="container">+</feat>
+ <feat name="type">ont::substance</feat>
  </sem-feats>
- <concept name="ont::substance">
- <relation label="inherit">
-  ont::material
- </relation>
- <relation label="overlap">
-  wn::|substance%1:03:00::|
-  wn::|substance%1:03:01::|
-  wn::|substance%1:27:00::|
-  wn::|matter%1:03:00::|
-  wn::|paper%1:27:00::|
- </relation>
- </concept>
- <concept name="ont::natural-substance">
- <relation label="inherit">
-  ont::substance
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="origin">natural</feat>
-  <feat name="type">ont::natural-substance</feat>
- </sem-feats>
- </concept>
  <concept name="ont::phys-object">
  <comment>
   &quot;All physical objects: things that have substance&quot;

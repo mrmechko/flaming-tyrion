@@ -4371,7 +4371,7 @@
  </concept>
  <concept name="ont::audio">
   <relation label="inherit">
-   ont::substance
+   ont::physical-phenomenon
   </relation>
   <relation label="overlap">
    wn::|audio%1:10:00::|
@@ -4381,7 +4381,6 @@
    <relation label="inherit">
     phys-obj
    </relation>
-   <feat name="container">-</feat>
    <feat name="intentional">-</feat>
    <feat name="form">wave</feat>
    <feat name="type">ont::audio</feat>
@@ -19196,13 +19195,7 @@
      <relation label="inherit">
       phys-obj
      </relation>
-     <feat name="object-function">
-     <or>
-      spatial-object
-      building
-     </or>
-     </feat>
-     <feat name="spatial-abstraction">spatial-region</feat>
+     <feat name="container">+</feat>
     </sem-feats>
    </role-restr-map>
    <role-restr-map roles="ont::affected">
@@ -29836,7 +29829,7 @@
  </concept>
  <concept name="ont::light">
   <relation label="inherit">
-   ont::substance
+   ont::physical-phenomenon
   </relation>
   <relation label="overlap">
    wn::|light%1:15:00::|
@@ -47974,6 +47967,21 @@
    <feat name="aspect">dynamic</feat>
    <feat name="type">ont::rotate</feat>
   </sem-feats>
+  <sem-frame>
+   <role-restr-map roles="ont::result" optional="optional">
+    <sem-feats>
+     <relation label="inherit">
+      abstr-obj
+     </relation>
+     <feat name="type">
+     <or>
+      ont::to-loc
+      ont::goal-as-on
+     </or>
+     </feat>
+    </sem-feats>
+   </role-restr-map>
+  </sem-frame>
  </concept>
  <concept name="ont::roughness-scale">
   <relation label="inherit">
@@ -53317,6 +53325,13 @@
    wn::|matter%1:03:00::|
    wn::|paper%1:27:00::|
   </relation>
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="container">+</feat>
+   <feat name="type">ont::substance</feat>
+  </sem-feats>
  </concept>
  <concept name="ont::substance-delivery-unit">
   <relation label="inherit">

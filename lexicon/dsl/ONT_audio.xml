@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::audio">
  <relation label="inherit">
-  ont::substance
+  ont::physical-phenomenon
  </relation>
  <relation label="overlap">
   wn::|audio%1:10:00::|
@@ -14,7 +14,6 @@
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="container">-</feat>
   <feat name="intentional">-</feat>
   <feat name="form">wave</feat>
   <feat name="type">ont::audio</feat>
@@ -58,23 +57,48 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <concept name="ont::material">
+ <concept name="ont::natural-object">
  <relation label="inherit">
   ont::phys-object
  </relation>
  <relation label="overlap">
-  wn::|material%1:27:00::|
-  wn::|stuff%1:27:00::|
-  wn::|material%1:06:00::|
+  wn::|actinoid%1:27:00::|
+  wn::|galaxy%1:14:00::|
+  wn::|galaxy%1:14:01::|
+  wn::|natural_object%1:03:00::|
+  wn::|nodule%1:17:00::|
+  wn::|oort_cloud%1:14:00::|
+  wn::|rare_earth%1:27:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="form">substance</feat>
-  <feat name="mobility">non-self-moving</feat>
-  <feat name="type">ont::material</feat>
+  <feat name="container">+</feat>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+  </or>
+  </feat>
+  <feat name="origin">natural</feat>
+  <feat name="type">ont::natural-object</feat>
  </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">non-living</feat>
+ <feat name="type">ont::physical-phenomenon</feat>
+ </sem-feats>
+ <concept name="ont::natural-phenomenon">
+ <relation label="inherit">
+  ont::natural-object
+ </relation>
+ <relation label="overlap">
+  wn::|natural_phenomenon%1:19:00::|
+ </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure" optional="optional">
@@ -85,22 +109,30 @@
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="container">-</feat>
  <feat name="intentional">-</feat>
  <feat name="form">wave</feat>
  <feat name="type">ont::audio</feat>
  </sem-feats>
- <concept name="ont::substance">
+ <concept name="ont::physical-phenomenon">
  <relation label="inherit">
-  ont::material
+  ont::natural-phenomenon
  </relation>
  <relation label="overlap">
-  wn::|substance%1:03:00::|
-  wn::|substance%1:03:01::|
-  wn::|substance%1:27:00::|
-  wn::|matter%1:03:00::|
-  wn::|paper%1:27:00::|
+  wn::|force%1:19:00::|
+  wn::|causal_agency%1:03:00::|
+  wn::|cause%1:03:00::|
+  wn::|causal_agent%1:03:00::|
+  wn::|cause%1:11:00::|
+  wn::|momentum%1:07:00::|
+  wn::|wave%1:11:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">non-living</feat>
+  <feat name="type">ont::physical-phenomenon</feat>
+ </sem-feats>
  </concept>
  <concept name="ont::phys-object">
  <comment>
@@ -125,9 +157,15 @@
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="form">substance</feat>
- <feat name="mobility">non-self-moving</feat>
- <feat name="type">ont::material</feat>
+ <feat name="container">+</feat>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="origin">natural</feat>
+ <feat name="type">ont::natural-object</feat>
  </sem-feats>
  <concept name="ont::any-sem">
  <relation label="inherit">

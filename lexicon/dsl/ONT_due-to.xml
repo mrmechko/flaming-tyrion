@@ -236,34 +236,6 @@
  <sense>
  <morph>
   <pos pos="adv" />
-  <word first-word="due" />
- </morph>
- <example text="The car is brown due to rust">
-  <provenance name="TRIPS"/>
- </example>
- <relation label="inherit">
-  ont::due-to
- </relation>
- <syntax>
-  <template-call template="ont::binary-constraint-pred-templ" xp="'(w::pp w::to)" />
-  <syn-sem>
-   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::to" sem-role="ont::ground"/>
-   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::pred" sem-role="ont::figure"/>
-  </syn-sem>
-  <syn-feats>
-   <feat name="atype">
-   <or>
-    pre
-    post
-   </or>
-   </feat>
-   <feat name="sort">binary-constraint</feat>
-  </syn-feats>
- </syntax>
- </sense>
- <sense>
- <morph>
-  <pos pos="adv" />
   <word first-word="owing" remaining-words="to" />
  </morph>
  <example text="changes owing to a damaged bulb">
@@ -276,6 +248,38 @@
   <template-call template="ont::binary-constraint-s-or-np-templ" />
   <syn-sem>
    <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::np" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="(or
+                                              deepsemlex::s
+                                              deepsemlex::np)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">
+   <or>
+    pre
+    post
+    pre-vp
+   </or>
+   </feat>
+   <feat name="sort">binary-constraint</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adv" />
+  <word first-word="thanks" />
+ </morph>
+ <example text="I was late thanks to the rain">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::due-to
+ </relation>
+ <syntax>
+  <template-call template="ont::binary-constraint-s-or-np-templ" xp="'(w::pp
+                                                                       w::to)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::to" sem-role="ont::ground"/>
    <syn-sem-map syn-arg="argument" syn-cat="(or
                                               deepsemlex::s
                                               deepsemlex::np)" sem-role="ont::figure"/>
