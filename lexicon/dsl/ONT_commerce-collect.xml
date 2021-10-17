@@ -548,14 +548,14 @@
   ont::commerce-collect
  </relation>
  <syntax>
-  <template-call template="ont::agent-affected-source-xp-templ" xp="'(w::pp
-                                                                      (or
-                                                                        w::to
-                                                                        w::on))" />
+  <template-call template="ont::agent-affected-affectedr-xp-templ" xp="'(w::pp
+                                                                         (or
+                                                                           w::to
+                                                                           w::on))" />
   <syn-sem>
    <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="(or
                                                                       w::to
-                                                                      w::on)" sem-role="ont::source"/>
+                                                                      w::on)" sem-role="ont::affected-result"/>
    <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
@@ -582,9 +582,11 @@
   ont::commerce-collect
  </relation>
  <syntax>
-  <template-call template="ont::agent-source-xp-templ" />
+  <template-call template="ont::agent-affectedr-affected-xp-pp-with-2-optional-templ" xp="'(w::pp
+                                                                                            w::for)" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::source"/>
+   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::affected" optional="optional"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected-result"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

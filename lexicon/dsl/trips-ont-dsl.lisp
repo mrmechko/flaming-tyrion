@@ -3797,7 +3797,8 @@
     ONT::PHYSICAL-PHENOMENON)
   (OVERLAP
     WN::|audio%1:10:00::|
-    WN::|sound%1:10:00::|)
+    WN::|sound%1:10:00::|
+    WN::|echo%1:07:00::|)
   (SEM-FEATS
     (INHERIT
       PHYS-OBJ)
