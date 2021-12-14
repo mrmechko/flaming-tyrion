@@ -114,45 +114,12 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::position-on-dimension-scale-val">
- <comment>
-  &quot;indicates a position given a dimensional scale. These adjectives do not specify the shape, direction, or alignment of the scale.&quot;
- </comment>
- <relation label="inherit">
-  ont::dimensional-property-val
- </relation>
- <relation label="overlap">
-  wn::|scale_value%1:09:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::dimensional-scale</feat>
-  <feat name="type">ont::position-on-dimension-scale-val</feat>
- </sem-feats>
- </concept>
- <concept name="ont::dimensional-property-val">
- <comment>
-  &quot;properties pertaining to dimensions and measurable extents&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">ont::dimensional-scale</feat>
-  <feat name="type">ont::dimensional-property-val</feat>
- </sem-feats>
- </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
  <feat name="scale">ont::dimensional-scale</feat>
- <feat name="type">ont::position-on-dimension-scale-val</feat>
+ <feat name="type">ont::dimensional-property-val</feat>
  </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
@@ -206,13 +173,78 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+   <feat name="type">
+   <or>
+    ont::domain
+    ont::value-cost
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
  <feat name="scale">ont::dimensional-scale</feat>
- <feat name="type">ont::dimensional-property-val</feat>
+ <feat name="type">ont::position-on-dimension-scale-val</feat>
  </sem-feats>
+ <concept name="ont::dimensional-property-val">
+ <comment>
+  &quot;properties pertaining to dimensions and measurable extents&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::dimensional-scale</feat>
+  <feat name="type">ont::dimensional-property-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::position-on-dimension-scale-val">
+ <comment>
+  &quot;indicates a position given a dimensional scale. These adjectives do not specify the shape, direction, or alignment of the scale.&quot;
+ </comment>
+ <relation label="inherit">
+  ont::dimensional-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|scale_value%1:09:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::dimensional-scale</feat>
+  <feat name="type">ont::position-on-dimension-scale-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="situation" />
+    </or>
+    <feat name="type">
+    <or>
+     ont::domain
+     ont::value-cost
+    </or>
+    </feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::domain-property">
  <comment>
   &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;

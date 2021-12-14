@@ -9524,7 +9524,6 @@
   (INHERIT
     ONT::HINDERING)
   (OVERLAP
-    WN::|obstruct%2:35:00::|
     WN::|clog%2:35:00::|
     WN::|choke_off%2:35:00::|
     WN::|clog_up%2:35:00::|
@@ -20526,7 +20525,8 @@
   (OVERLAP
     WN::|structure%1:06:00::|
     WN::|petting_zoo%1:14:00::|
-    WN::|herbarium%1:14:00::|))
+    WN::|herbarium%1:14:00::|
+    WN::|dam%1:06:00::|))
 
 (CONCEPT
   ONT::GENERAL-VAL
@@ -22427,7 +22427,9 @@
     WN::|restrain%2:41:01::|
     WN::|restrict%2:30:00::|
     WN::|throttle%2:30:01::|
-    WN::|trammel%2:30:00::|))
+    WN::|trammel%2:30:00::|
+    WN::|obstruct%2:35:00::|
+    WN::|obstruction%1:04:01::|))
 
 (CONCEPT
   ONT::HINT
@@ -36267,7 +36269,19 @@
     (INHERIT
       ABSTR-OBJ)
     (SCALE ONT::DIMENSIONAL-SCALE)
-    (TYPE ONT::POSITION-ON-DIMENSION-SCALE-VAL)))
+    (TYPE ONT::POSITION-ON-DIMENSION-SCALE-VAL))
+  (SEM-FRAME
+    (ONT::FIGURE
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TYPE
+        (OR
+          ONT::DOMAIN
+          ONT::VALUE-COST))))))
 
 (CONCEPT
   ONT::POSITION-RELN
@@ -42621,10 +42635,8 @@
 
 (CONCEPT
   ONT::SENSIBILITY-VAL
-  (COMMENT
-   "describing mental ability or sensitivity to respond to emotional influences")
   (INHERIT
-    ONT::PSYCHOLOGICAL-PROPERTY-VAL)
+    ONT::EVALUATION-ATTRIBUTE-VAL)
   (SEM-FEATS
     (INHERIT
       ABSTR-OBJ)
