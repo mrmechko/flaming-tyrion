@@ -1,0 +1,512 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::not-verifiable-val">
+ <relation label="inherit">
+  ont::can-not-be-done-val
+ </relation>
+ <relation label="overlap">
+  wn::|unverifiable%5:00:00:subjective:00|
+  wn::|unreproducible%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="orientation">neg</feat>
+  <feat name="scale">ont::reproducibility-scale</feat>
+  <feat name="type">ont::not-verifiable-val</feat>
+ </sem-feats>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::refset" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">ont::number</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::scale" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">ont::domain</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::domain</feat>
+ <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <concept name="ont::relation">
+ <comment>
+  &quot;All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|relation%1:03:00::|
+  wn::|amount%2:42:03::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::can-not-be-done-val">
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|broad-minded%3:00:04::|
+  wn::|disconsolate%3:00:04::|
+  wn::|exempt%3:00:02::|
+  wn::|immeasurable%3:00:00::|
+  wn::|immensurable%3:00:00::|
+  wn::|impassable%3:00:00::|
+  wn::|imperishable%3:00:00::|
+  wn::|implacable%3:00:00::|
+  wn::|imponderable%3:00:00::|
+  wn::|inadmissible%3:00:00::|
+  wn::|incalculable%3:00:00::|
+  wn::|incombustible%3:00:00::|
+  wn::|incommutable%3:00:00::|
+  wn::|incompressible%3:00:00::|
+  wn::|inconsolable%3:00:00::|
+  wn::|inconvertible%3:00:00::|
+  wn::|incorrigible%3:00:00::|
+  wn::|incurable%3:00:00::|
+  wn::|indefeasible%3:00:00::|
+  wn::|indestructible%3:00:00::|
+  wn::|indeterminable%3:00:00::|
+  wn::|indeterminate%3:00:01::|
+  wn::|indigestible%3:00:00::|
+  wn::|indispensable%3:00:00::|
+  wn::|indistinguishable%3:00:00::|
+  wn::|indivisible%3:00:00::|
+  wn::|inedible%3:00:00::|
+  wn::|inevitable%3:00:00::|
+  wn::|inexcusable%3:00:00::|
+  wn::|inexhaustible%3:00:00::|
+  wn::|inexpressible%3:00:00::|
+  wn::|inextensible%3:00:00::|
+  wn::|inextinguishable%3:00:00::|
+  wn::|infallible%3:00:00::|
+  wn::|inhospitable%3:00:02::|
+  wn::|inoperable%3:00:00::|
+  wn::|inseparable%5:00:00:indivisible:00|
+  wn::|intractable%3:00:00::|
+  wn::|inviolable%3:00:00::|
+  wn::|irrecoverable%3:00:00::|
+  wn::|irreducible%3:00:00::|
+  wn::|irreplaceable%3:00:00::|
+  wn::|irreversible%3:00:00::|
+  wn::|irrevocable%3:00:00::|
+  wn::|irrevokable%3:00:00::|
+  wn::|non-invertible%3:00:00::|
+  wn::|nonabsorbent%3:00:00::|
+  wn::|nonabsorptive%3:00:00::|
+  wn::|nonadsorbent%3:00:00::|
+  wn::|nonadsorptive%3:00:00::|
+  wn::|nonarbitrable%3:00:00::|
+  wn::|noncollapsable%3:00:00::|
+  wn::|noncollapsible%3:00:00::|
+  wn::|noncombustible%3:00:00::|
+  wn::|nondeductible%3:00:00::|
+  wn::|nondisposable%3:00:01::|
+  wn::|nondisposable%3:00:02::|
+  wn::|nonextensile%3:00:00::|
+  wn::|nonfissionable%3:00:00::|
+  wn::|nonheritable%3:00:00::|
+  wn::|noninheritable%3:00:00::|
+  wn::|nonprotractile%3:00:00::|
+  wn::|nonreflecting%3:00:00::|
+  wn::|nonreflective%3:00:00::|
+  wn::|nonrenewable%3:00:00::|
+  wn::|nonretractable%3:00:00::|
+  wn::|nonretractile%3:00:00::|
+  wn::|nonreturnable%3:00:00::|
+  wn::|nonreversible%3:00:00::|
+  wn::|nonsubmergible%3:00:00::|
+  wn::|nonsubmersible%3:00:00::|
+  wn::|nontaxable%3:00:00::|
+  wn::|nonvolatile%3:00:00::|
+  wn::|nonvolatilisable%3:00:00::|
+  wn::|nonvolatilizable%3:00:00::|
+  wn::|nonwashable%3:00:00::|
+  wn::|one-sided%3:00:02::|
+  wn::|unactable%3:00:00::|
+  wn::|unadoptable%3:00:00::|
+  wn::|unappealable%3:00:00::|
+  wn::|unappealing%3:00:02::|
+  wn::|unascribable%3:00:00::|
+  wn::|unattributable%3:00:00::|
+  wn::|unbridgeable%3:00:00::|
+  wn::|unchangeable%3:00:00::|
+  wn::|unclimbable%3:00:00::|
+  wn::|unconsolable%3:00:00::|
+  wn::|unconvertible%3:00:00::|
+  wn::|undatable%3:00:00::|
+  wn::|undeniable%3:00:00::|
+  wn::|undeterminable%3:00:00::|
+  wn::|undetermined%3:00:04::|
+  wn::|undistinguishable%3:00:00::|
+  wn::|undrinkable%3:00:00::|
+  wn::|uneatable%3:00:00::|
+  wn::|unemployable%3:00:00::|
+  wn::|unexchangeable%3:00:00::|
+  wn::|unexchangeable%3:00:04::|
+  wn::|unexcitable%3:00:00::|
+  wn::|unexpendable%3:00:00::|
+  wn::|unexportable%3:00:00::|
+  wn::|unexpressible%3:00:00::|
+  wn::|unforgettable%3:00:00::|
+  wn::|uninjectable%3:00:00::|
+  wn::|unintelligible%3:00:00::|
+  wn::|unlikable%3:00:02::|
+  wn::|unlikeable%3:00:02::|
+  wn::|unlivable%3:00:00::|
+  wn::|unliveable%3:00:00::|
+  wn::|unmeasurable%3:00:00::|
+  wn::|unmeasured%3:00:00::|
+  wn::|unopposable%3:00:00::|
+  wn::|unpaintable%3:00:00::|
+  wn::|unpardonable%3:00:00::|
+  wn::|unpassable%3:00:00::|
+  wn::|unplayable%3:00:00::|
+  wn::|unportable%3:00:00::|
+  wn::|unpreventable%3:00:00::|
+  wn::|unprintable%3:00:00::|
+  wn::|unprofitable%3:00:00::|
+  wn::|unpronounceable%3:00:00::|
+  wn::|unpublishable%3:00:00::|
+  wn::|unquotable%3:00:00::|
+  wn::|unrecoverable%3:00:00::|
+  wn::|unrenewable%3:00:00::|
+  wn::|unrentable%3:00:00::|
+  wn::|unrepeatable%3:00:00::|
+  wn::|unreplaceable%3:00:00::|
+  wn::|unreportable%3:00:00::|
+  wn::|unsalable%3:00:00::|
+  wn::|unsaleable%3:00:00::|
+  wn::|unscalable%3:00:00::|
+  wn::|unseasonable%3:00:00::|
+  wn::|unshockable%3:00:00::|
+  wn::|unshrinkable%3:00:00::|
+  wn::|unsinkable%3:00:00::|
+  wn::|unstoppable%3:00:00::|
+  wn::|unsympathetic%3:00:02::|
+  wn::|untraceable%3:00:00::|
+  wn::|untranslatable%3:00:00::|
+  wn::|unwearable%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::can-not-be-done-scale</feat>
+  <feat name="type">ont::can-not-be-done-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="orientation">neg</feat>
+ <feat name="scale">ont::reproducibility-scale</feat>
+ <feat name="type">ont::not-verifiable-val</feat>
+ </sem-feats>
+ <concept name="ont::property-val">
+ <relation label="inherit">
+  ont::domain-property
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::standard" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::reason" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::can-not-be-done-scale</feat>
+ <feat name="type">ont::can-not-be-done-val</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::domain-property">
+ <comment>
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">ont::number</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::scale" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">ont::domain</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::standard" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::reason" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="unverifiable" />
+ </morph>
+ <relation label="inherit">
+  ont::not-verifiable-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
+</dsl>

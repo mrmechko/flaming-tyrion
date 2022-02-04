@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::successor">
+ <relation label="inherit">
+  ont::defined-by-sequence-relationship
+ </relation>
+ <relation label="overlap">
+  wn::|successor%1:18:01::|
+  wn::|successor%1:09:00::|
+  wn::|successor%1:18:00::|
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::defined-by-sequence-relationship">
+ <relation label="inherit">
+  ont::object-defined-by-relationship
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::object-defined-by-relationship">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|possession%1:03:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="phys-obj" />
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="successor" />
+ </morph>
+ <example text="vantage reasearch is the successor of lernout and hauspie">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::successor
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-theme-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

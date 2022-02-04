@@ -1,0 +1,457 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::author">
+ <relation label="inherit">
+  ont::person-defined-by-activity
+ </relation>
+ <relation label="overlap">
+  wn::|writer%1:18:00::|
+  wn::|author%1:18:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="information">information-content</feat>
+    <feat name="origin">artifact</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="origin">living</feat>
+ <feat name="type">ont::organism</feat>
+ </sem-feats>
+ <concept name="ont::natural-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|actinoid%1:27:00::|
+  wn::|galaxy%1:14:00::|
+  wn::|galaxy%1:14:01::|
+  wn::|natural_object%1:03:00::|
+  wn::|nodule%1:17:00::|
+  wn::|oort_cloud%1:14:00::|
+  wn::|rare_earth%1:27:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+  </or>
+  </feat>
+  <feat name="origin">natural</feat>
+  <feat name="type">ont::natural-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::animal">
+ <relation label="inherit">
+  ont::organism
+ </relation>
+ <relation label="overlap">
+  wn::|animal%1:03:00::|
+  wn::|animate_being%1:03:00::|
+  wn::|beast%1:03:00::|
+  wn::|brute%1:03:00::|
+  wn::|creature%1:03:00::|
+  wn::|fauna%1:14:00::|
+  wn::|wildlife%1:14:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">
+  <or>
+   human
+   non-human-animal
+  </or>
+  </feat>
+  <feat name="form">solid-object</feat>
+  <feat name="intentional">+</feat>
+  <feat name="type">ont::animal</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">-</feat>
+ <feat name="intentional">+</feat>
+ <feat name="mobility">self-moving</feat>
+ <feat name="object-function">occupation</feat>
+ <feat name="origin">human</feat>
+ <feat name="spatial-abstraction">spatial-point</feat>
+ <feat name="form">solid-object</feat>
+ <feat name="type">ont::person</feat>
+ </sem-feats>
+ <concept name="ont::mammal">
+ <relation label="inherit">
+  ont::vertebrate
+ </relation>
+ <relation label="overlap">
+  wn::|mammal%1:05:00::|
+  wn::|mammalian%1:05:00::|
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">-</feat>
+ <feat name="intentional">+</feat>
+ <feat name="object-function">occupation</feat>
+ <feat name="origin">human</feat>
+ <feat name="spatial-abstraction">spatial-point</feat>
+ <feat name="form">solid-object</feat>
+ <feat name="type">ont::person-defined-by-activity</feat>
+ </sem-feats>
+ <concept name="ont::person">
+ <relation label="inherit">
+  ont::mammal
+ </relation>
+ <relation label="overlap">
+  wn::|person%1:03:00::|
+  wn::|people%1:14:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">-</feat>
+  <feat name="intentional">+</feat>
+  <feat name="mobility">self-moving</feat>
+  <feat name="object-function">occupation</feat>
+  <feat name="origin">human</feat>
+  <feat name="spatial-abstraction">spatial-point</feat>
+  <feat name="form">solid-object</feat>
+  <feat name="type">ont::person</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    phys-obj
+   </relation>
+   <feat name="information">information-content</feat>
+   <feat name="origin">artifact</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::person-defined-by-activity">
+ <comment>
+  &quot;a person defined by a role that they play. e.g., doctor, leader, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::person
+ </relation>
+ <relation label="overlap">
+  wn::|agent%1:18:01::|
+  wn::|agent%1:18:02::|
+  wn::|professional%1:18:00::|
+  wn::|professional_person%1:18:00::|
+  wn::|skilled_worker%1:18:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">-</feat>
+  <feat name="intentional">+</feat>
+  <feat name="object-function">occupation</feat>
+  <feat name="origin">human</feat>
+  <feat name="spatial-abstraction">spatial-point</feat>
+  <feat name="form">solid-object</feat>
+  <feat name="type">ont::person-defined-by-activity</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::vertebrate">
+ <relation label="inherit">
+  ont::animal
+ </relation>
+ <relation label="overlap">
+  wn::|vertebrate%1:05:00::|
+ </relation>
+ </concept>
+ <concept name="ont::organism">
+ <relation label="inherit">
+  ont::natural-object
+ </relation>
+ <relation label="overlap">
+  wn::|organism%1:03:00::|
+  wn::|being%1:03:00::|
+  wn::|life%1:19:00::|
+  wn::|life%1:26:00::|
+  wn::|life%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="origin">living</feat>
+  <feat name="type">ont::organism</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="origin">
+ <or>
+  human
+  non-human-animal
+ </or>
+ </feat>
+ <feat name="form">solid-object</feat>
+ <feat name="intentional">+</feat>
+ <feat name="type">ont::animal</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="origin">natural</feat>
+ <feat name="type">ont::natural-object</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="phys-obj" />
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="author" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::author
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="coauthor" />
+ </morph>
+ <comment>
+  &quot;PLOW-REQ&quot;
+ </comment>
+ <relation label="inherit">
+  ont::author
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="essayist" />
+ </morph>
+ <relation label="inherit">
+  ont::author
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="poet" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::author
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="writer" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::author
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

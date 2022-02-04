@@ -1,0 +1,1287 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::difficult">
+ <relation label="inherit">
+  ont::difficulty-val
+ </relation>
+ <relation label="overlap">
+  wn::|effortful%3:00:00::|
+  wn::|tough%3:00:03::|
+  wn::|unwieldy%3:00:00::|
+  wn::|unmanageable%3:00:04::|
+  wn::|catchy%5:00:00:difficult:00|
+  wn::|complex%3:00:00::|
+  wn::|ambitious%5:00:00:difficult:00|
+  wn::|arduous%5:00:00:difficult:00|
+  wn::|difficult%3:00:00::|
+  wn::|rugged%5:00:00:difficult:00|
+  wn::|complicated%5:00:00:complex:00|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::difficult-scale</feat>
+  <feat name="type">ont::difficult</feat>
+ </sem-feats>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::refset" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">ont::number</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::scale" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">ont::domain</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::domain</feat>
+ <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <concept name="ont::relation">
+ <comment>
+  &quot;All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|relation%1:03:00::|
+  wn::|amount%2:42:03::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
+ <concept name="ont::property-val">
+ <relation label="inherit">
+  ont::domain-property
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::standard" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::reason" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::task-complexity-scale</feat>
+ <feat name="type">ont::task-complexity-val</feat>
+ </sem-feats>
+ <concept name="ont::process-evaluation-val">
+ <comment>
+  &quot;evaluation properties of processes&quot;
+ </comment>
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::process-evaluation-scale</feat>
+  <feat name="type">ont::process-evaluation-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::task-complexity-val">
+ <relation label="inherit">
+  ont::process-evaluation-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::task-complexity-scale</feat>
+  <feat name="type">ont::task-complexity-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::difficult-scale</feat>
+ <feat name="type">ont::difficult</feat>
+ </sem-feats>
+ <concept name="ont::difficulty-val">
+ <relation label="inherit">
+  ont::task-complexity-val
+ </relation>
+ </concept>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::process-evaluation-scale</feat>
+ <feat name="type">ont::process-evaluation-val</feat>
+ </sem-feats>
+ <concept name="ont::domain-property">
+ <comment>
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">ont::number</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::scale" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">ont::domain</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::standard" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::reason" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="a" remaining-words="bitch" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <example text="Programmers are a bitch to interview">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+  ont::adj-content-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="a" remaining-words="bitch" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <example text="Programmers are a bitch for managers">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="a" remaining-words="bitch" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <example text="it's a bitch to see him">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="a" remaining-words="bitch" />
+  <forms>
+   -NONE
+  </forms>
+ </morph>
+ <example text="Programmers are a bitch for managers to interview">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-control-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="deepsemlex::cp" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="arduous" />
+ </morph>
+ <comment>
+  &quot;20090821&quot;
+ </comment>
+ <example text="It's tiresome [for him]">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-optional-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="arduous" />
+ </morph>
+ <comment>
+  &quot;20090821&quot;
+ </comment>
+ <example text="it's tiresome to do">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="back" remaining-words="breaking" />
+ </morph>
+ <example text="It's tiresome [for him]">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-optional-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="back" remaining-words="breaking" />
+ </morph>
+ <example text="it's tiresome to do">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="backbreaking" />
+ </morph>
+ <example text="It's tiresome [for him]">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-optional-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="backbreaking" />
+ </morph>
+ <example text="it's tiresome to do">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="challenging" />
+ </morph>
+ <comment>
+  &quot;20090821&quot;
+ </comment>
+ <example text="It's challenging [for him]">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-optional-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="challenging" />
+ </morph>
+ <comment>
+  &quot;20090821&quot;
+ </comment>
+ <example text="it's challenging to do">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="complex" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <example text="the task is too complex [for him]">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-optional-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="complex" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <example text="the task is too complex to finish">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="difficult" />
+ </morph>
+ <comment>
+  &quot;20090821&quot;
+ </comment>
+ <example text="It's difficult [for him]">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-optional-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="difficult" />
+ </morph>
+ <comment>
+  &quot;20090821&quot;
+ </comment>
+ <example text="Frogs are difficult to cook">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-to-inf-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="grueling" />
+ </morph>
+ <example text="It's grueling [for him]">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-optional-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="grueling" />
+ </morph>
+ <example text="it's grueling to do">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="hard" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <comment>
+  &quot;CSLI-TS&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="that's hard">
+ </example>
+ <relation label="inherit">
+  ont::difficult
+  ont::adj-content-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="hard" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <comment>
+  &quot;CSLI-TS&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="that's hard for him">
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="hard" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <comment>
+  &quot;CSLI-TS&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it's hard to see him">
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="hard" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <comment>
+  &quot;CSLI-TS&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="it's hard for me to see him">
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-control-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="deepsemlex::cp" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="laborious" />
+ </morph>
+ <example text="It's laborious [for him]">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-optional-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="laborious" />
+ </morph>
+ <example text="it's laborious to do">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="strenuous" />
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <example text="Programmers are strenuous to interview">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+  ont::adj-content-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="strenuous" />
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <example text="Programmers are stressful for managers">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="strenuous" />
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <example text="it's stressful to see him">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="strenuous" />
+ </morph>
+ <comment>
+  &quot;LM-VOCAB&quot;
+ </comment>
+ <example text="Programmers are stressful for managers to interview">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-control-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="deepsemlex::cp" sem-role="ont::ground"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="tough" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <example text="that's tough [for him]">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-optional-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="tough" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <example text="it's tough to do">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="tricky" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <example text="that's tricky [for him]">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-content-affected-optional-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="tricky" />
+  <forms>
+   -ER
+  </forms>
+ </morph>
+ <example text="the car is tricky to repair">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::difficult
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-expletive-content-xp-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::cp" sem-role="ont::figure"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" head-word="w::it" sem-role="ont::norole"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="allow-deleted-comp">-</feat>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

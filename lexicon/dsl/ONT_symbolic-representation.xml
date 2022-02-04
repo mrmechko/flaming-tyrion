@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::symbolic-representation">
+ <comment>
+  &quot;method to represent information symbolically&quot;
+ </comment>
+ <relation label="inherit">
+  ont::phys-representation
+ </relation>
+ <relation label="overlap">
+  wn::|symbol%1:09:00::|
+  wn::|url%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">data</feat>
+  <feat name="object-function">representation</feat>
+  <feat name="intentional">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">object</feat>
+  <feat name="type">ont::symbolic-representation</feat>
+ </sem-feats>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="trajectory">+</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ <feat name="type">ont::phys-representation</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">data</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ <feat name="type">ont::symbolic-representation</feat>
+ </sem-feats>
+ <concept name="ont::phys-representation">
+ <comment>
+  &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
+ </comment>
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|representation%1:04:01::|
+  wn::|representation%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="trajectory">+</feat>
+  <feat name="object-function">representation</feat>
+  <feat name="intentional">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">object</feat>
+  <feat name="type">ont::phys-representation</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="phys-obj" />
+ <concept name="ont::text-representation">
+ <comment>
+  &quot;textual symbols used to represent information or properties of text used to represent information&quot;
+ </comment>
+ <relation label="inherit">
+  ont::symbolic-representation
+ </relation>
+ <relation label="overlap">
+  wn::|hypertext%1:10:00::|
+  wn::|matter%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::graphic-symbol">
+ <comment>
+  &quot;a symbol to represent information but in a pictorial way&quot;
+ </comment>
+ <relation label="inherit">
+  ont::symbolic-representation
+ </relation>
+ <relation label="overlap">
+  wn::|mark%1:10:03::|
+ </relation>
+ </concept>
+ <concept name="ont::link">
+ <relation label="inherit">
+  ont::symbolic-representation
+ </relation>
+ <relation label="overlap">
+  wn::|link%1:06:03::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="i" remaining-words="d" />
+ </morph>
+ <relation label="inherit">
+  ont::symbolic-representation
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="id" />
+ </morph>
+ <relation label="inherit">
+  ont::symbolic-representation
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="identification" />
+ </morph>
+ <comment>
+  &quot;CALO-Y2&quot;
+ </comment>
+ <relation label="inherit">
+  ont::symbolic-representation
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="menu" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::symbolic-representation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="numeral" />
+ </morph>
+ <comment>
+  &quot;TOP500&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="a numeral is a representation of a number">
+ </example>
+ <relation label="inherit">
+  ont::symbolic-representation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="pop" remaining-words="up menu" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="pop" remaining-words="up menus" />
+   </plur>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::symbolic-representation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="popup" remaining-words="menu" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="popup" remaining-words="menus" />
+   </plur>
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::symbolic-representation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="u" remaining-words="r l" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="click on the url">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::symbolic-representation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="url" />
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="click on the url">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::symbolic-representation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="url" />
+  <forms>
+   -S-3P
+  </forms>
+ </morph>
+ <comment>
+  &quot;CALOY2&quot;
+ </comment>
+ <example text="click on the url">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::symbolic-representation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

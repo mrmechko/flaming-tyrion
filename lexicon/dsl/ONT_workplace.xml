@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::workplace">
+ <relation label="inherit">
+  ont::area-def-by-use
+ </relation>
+ <relation label="overlap">
+  wn::|work%1:06:01::|
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="mobility">fixed</feat>
+ <feat name="form">geographical-object</feat>
+ <feat name="origin">
+ <or>
+  non-living
+  artifact
+ </or>
+ </feat>
+ <feat name="type">ont::location</feat>
+ </sem-feats>
+ <concept name="ont::geo-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|location%1:03:00::|
+  wn::|space%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="form">geographical-object</feat>
+  <feat name="type">ont::geo-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::location-by-description">
+ <relation label="inherit">
+  ont::location
+ </relation>
+ </concept>
+ <concept name="ont::loc-as-area">
+ <comment>
+  &quot;places that occupy space&quot;
+ </comment>
+ <relation label="inherit">
+  ont::location-by-description
+ </relation>
+ </concept>
+ <concept name="ont::area-def-by-use">
+ <comment>
+  &quot;places defined by their function: e.g.,  lot, plot, region, scene, section, site, territory, zone&quot;
+ </comment>
+ <relation label="inherit">
+  ont::loc-as-area
+ </relation>
+ <relation label="overlap">
+  wn::|field%1:15:00::|
+  wn::|field%1:15:05::|
+  wn::|pasture%1:15:00::|
+ </relation>
+ </concept>
+ <concept name="ont::location">
+ <relation label="inherit">
+  ont::geo-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="mobility">fixed</feat>
+  <feat name="form">geographical-object</feat>
+  <feat name="origin">
+  <or>
+   non-living
+   artifact
+  </or>
+  </feat>
+  <feat name="type">ont::location</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="form">geographical-object</feat>
+ <feat name="type">ont::geo-object</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="phys-obj" />
+ <concept name="ont::mine">
+ <relation label="inherit">
+  ont::workplace
+ </relation>
+ <relation label="overlap">
+  wn::|mine%1:06:01::|
+ </relation>
+ </concept>
+ <concept name="ont::fishery">
+ <relation label="inherit">
+  ont::workplace
+ </relation>
+ <relation label="overlap">
+  wn::|fishery%1:06:00::|
+  wn::|fish_farm%1:06:00::|
+ </relation>
+ </concept>
+ <concept name="ont::bakery">
+ <relation label="inherit">
+  ont::workplace
+ </relation>
+ <relation label="overlap">
+  wn::|bakery%1:06:00::|
+ </relation>
+ </concept>
+ <concept name="ont::lumberyard">
+ <relation label="inherit">
+  ont::workplace
+ </relation>
+ <relation label="overlap">
+  wn::|lumberyard%1:06:00::|
+ </relation>
+ </concept>
+ <concept name="ont::farm">
+ <relation label="inherit">
+  ont::workplace
+ </relation>
+ <relation label="overlap">
+  wn::|farm%1:06:00::|
+ </relation>
+ </concept>
+</dsl>

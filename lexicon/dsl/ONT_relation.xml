@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::relation">
+ <comment>
+  &quot;All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|relation%1:03:00::|
+  wn::|amount%2:42:03::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
+ <concept name="ont::own">
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <relation label="overlap">
+  wn::|own%5:00:00:personal:00|
+ </relation>
+ </concept>
+ <concept name="ont::favorite">
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <relation label="overlap">
+  wn::|favorite%1:09:00::|
+ </relation>
+ </concept>
+ <concept name="ont::predicate">
+ <comment>
+  &quot;predications that require a subcat to form a modifier, typically adverbials (e.g., on, as well as)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::predicate</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::part-reln">
+ <comment>
+  &quot;Generalized relation between parts and whole&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="scale">ont::time-measure-scale</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::domain-property">
+ <comment>
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">ont::number</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::scale" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">ont::domain</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::position-reln">
+ <comment>
+  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="scale">ont::time-measure-scale</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::at-scale-value">
+ <comment>
+  &quot;The main predicate for associating an object with a value on a scale&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="opposite" />
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <example text="they are opposites">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::relation
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="relation" />
+ </morph>
+ <comment>
+  &quot;PROJECTOR-PURCHASING&quot;
+ </comment>
+ <example text="the relation between those entities">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <syntax>
+  <template-call template="ont::reln-between-neutral-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::between" sem-role="ont::neutral"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="relationship" />
+ </morph>
+ <comment>
+  &quot;PROJECTOR-PURCHASING&quot;
+ </comment>
+ <example text="the relationship bewteen unemployment and political attitudes">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <syntax>
+  <template-call template="ont::reln-between-neutral-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::between" sem-role="ont::neutral"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="sort">other-reln</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="reverse" />
+ </morph>
+ <comment>
+  &quot;CALOY3&quot;
+ </comment>
+ <example text="we thought he was happy but the reverse was true">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::relation
+  ont::mass-pred-templ
+ </relation>
+ </sense>
+</dsl>

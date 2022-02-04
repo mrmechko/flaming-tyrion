@@ -1,0 +1,793 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::bronze">
+ <relation label="inherit">
+  ont::color-val
+ </relation>
+ <relation label="overlap">
+  wn::|bronze%5:00:00:chromatic:00|
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::refset" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">ont::number</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::scale" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">ont::domain</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::domain</feat>
+ <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <concept name="ont::relation">
+ <comment>
+  &quot;All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|relation%1:03:00::|
+  wn::|amount%2:42:03::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::physical-property-scale</feat>
+ <feat name="type">ont::physical-property-val</feat>
+ </sem-feats>
+ <concept name="ont::property-val">
+ <relation label="inherit">
+  ont::domain-property
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::standard" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::reason" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::visual-scale</feat>
+ <feat name="type">ont::visual-property-val</feat>
+ </sem-feats>
+ <concept name="ont::appearance-property-val">
+ <comment>
+  &quot;subjective chracteristics on HOW something is perceived through sensory input (compare to ont::sensory-property-val)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::physical-property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::appearance-scale</feat>
+  <feat name="type">ont::appearance-property-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="phys-obj" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::color-scale</feat>
+ <feat name="measure-function">value</feat>
+ <feat name="type">ont::color-val</feat>
+ </sem-feats>
+ <concept name="ont::visual-property-val">
+ <comment>
+  &quot;subjective characteristics of an item perceived through visual input&quot;
+ </comment>
+ <relation label="inherit">
+  ont::appearance-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|tangled%3:00:00::|
+  wn::|blemished%3:00:00::|
+  wn::|glazed%3:00:00::|
+  wn::|shiny%3:00:04::|
+  wn::|unfocused%3:00:00::|
+  wn::|unfocussed%3:00:04::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::visual-scale</feat>
+  <feat name="type">ont::visual-property-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::color-val">
+ <relation label="inherit">
+  ont::visual-property-val
+ </relation>
+ <relation label="overlap">
+  wn::|carroty%3:01:00::|
+  wn::|colored%3:00:00::|
+  wn::|coloured%3:00:00::|
+  wn::|colorful%3:00:02::|
+  wn::|colorful%3:00:00::|
+  wn::|colourful%3:00:00::|
+  wn::|brunet%3:00:00::|
+  wn::|brunette%3:00:00::|
+  wn::|blond%3:00:00::|
+  wn::|blonde%3:00:00::|
+  wn::|light-haired%3:00:00::|
+  wn::|bistered%3:01:00::|
+  wn::|bistred%3:01:00::|
+  wn::|chromatic%3:00:00::|
+  wn::|achromatic%3:00:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::color-scale</feat>
+  <feat name="measure-function">value</feat>
+  <feat name="type">ont::color-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::physical-property-val">
+ <comment>
+  &quot;properties pertaining to the attributes of physical entities or substances. note many physical adjectives can be used on non-physical objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|unguiculate%3:00:00::|
+  wn::|unguiculated%3:00:00::|
+  wn::|nonwoody%3:00:00::|
+  wn::|grassy%3:00:00::|
+  wn::|starry%3:00:00::|
+  wn::|woody%3:00:00::|
+  wn::|unseamanlike%3:00:00::|
+  wn::|unstatesmanlike%3:00:00::|
+  wn::|statesmanlike%3:00:00::|
+  wn::|statesmanly%3:00:00::|
+  wn::|priestly%3:00:00::|
+  wn::|priestlike%3:00:00::|
+  wn::|seamanlike%3:00:00::|
+  wn::|seamanly%3:00:00::|
+  wn::|headless%3:00:00::|
+  wn::|seedless%3:00:00::|
+  wn::|unwooded%3:00:00::|
+  wn::|treeless%3:00:00::|
+  wn::|fingerless%3:00:00::|
+  wn::|unbelted%3:00:00::|
+  wn::|beltless%3:00:00::|
+  wn::|wingless%3:00:00::|
+  wn::|jawless%3:00:00::|
+  wn::|sugarless%3:00:00::|
+  wn::|nonsweet%3:00:00::|
+  wn::|backless%3:00:00::|
+  wn::|dry%3:00:02::|
+  wn::|tearless%3:00:00::|
+  wn::|dry-eyed%3:00:00::|
+  wn::|topless%3:00:00::|
+  wn::|limbless%3:00:00::|
+  wn::|pointless%3:00:00::|
+  wn::|unpointed%3:00:00::|
+  wn::|footless%3:00:00::|
+  wn::|juiceless%3:00:00::|
+  wn::|unbodied%3:00:00::|
+  wn::|branchless%3:00:00::|
+  wn::|bloodless%3:00:00::|
+  wn::|curtained%3:00:00::|
+  wn::|stemless%3:00:00::|
+  wn::|faceless%3:00:00::|
+  wn::|smokeless%3:00:00::|
+  wn::|flowerless%3:00:00::|
+  wn::|nonflowering%3:00:00::|
+  wn::|unheaded%3:00:00::|
+  wn::|lidless%3:00:00::|
+  wn::|avascular%3:01:00::|
+  wn::|armless%3:00:00::|
+  wn::|unrifled%3:00:00::|
+  wn::|smoothbore%3:00:00::|
+  wn::|spineless%3:00:00::|
+  wn::|uncrannied%3:00:00::|
+  wn::|landless%3:00:00::|
+  wn::|memberless%3:00:00::|
+  wn::|starchless%3:00:00::|
+  wn::|bottomless%3:00:00::|
+  wn::|untipped%3:00:00::|
+  wn::|unarmored%3:00:02::|
+  wn::|unarmoured%3:00:02::|
+  wn::|neckless%3:00:00::|
+  wn::|aplacental%3:00:00::|
+  wn::|toothless%3:00:00::|
+  wn::|noncolumned%3:00:00::|
+  wn::|uncolumned%3:00:00::|
+  wn::|unfeathered%3:00:00::|
+  wn::|featherless%3:00:00::|
+  wn::|unsaddled%3:00:00::|
+  wn::|leafless%3:00:00::|
+  wn::|unfaceted%3:00:00::|
+  wn::|untimbered%3:00:00::|
+  wn::|unrhymed%3:00:00::|
+  wn::|unrimed%3:00:00::|
+  wn::|rhymeless%3:00:00::|
+  wn::|rimeless%3:00:00::|
+  wn::|unshelled%3:00:00::|
+  wn::|shell-less%3:00:00::|
+  wn::|apetalous%3:00:00::|
+  wn::|petalless%3:00:00::|
+  wn::|breastless%3:00:00::|
+  wn::|noseless%3:00:00::|
+  wn::|fernless%3:00:00::|
+  wn::|eyeless%3:00:00::|
+  wn::|rimless%3:00:00::|
+  wn::|wheelless%3:00:00::|
+  wn::|meatless%3:00:00::|
+  wn::|ribless%3:00:00::|
+  wn::|skinless%3:00:00::|
+  wn::|sleeveless%3:00:00::|
+  wn::|trackless%3:00:00::|
+  wn::|weightless%3:00:00::|
+  wn::|abranchiate%3:00:00::|
+  wn::|abranchial%3:00:00::|
+  wn::|abranchious%3:00:00::|
+  wn::|gill-less%3:00:00::|
+  wn::|bedless%3:00:00::|
+  wn::|lipless%3:00:00::|
+  wn::|unlipped%3:00:00::|
+  wn::|curtainless%3:00:00::|
+  wn::|uncurtained%3:00:00::|
+  wn::|weedless%3:00:00::|
+  wn::|tubeless%3:00:00::|
+  wn::|handless%3:00:00::|
+  wn::|keyless%3:00:00::|
+  wn::|toeless%3:00:00::|
+  wn::|moneyless%3:00:00::|
+  wn::|bellyless%3:00:00::|
+  wn::|flat-bellied%3:00:00::|
+  wn::|awnless%3:00:00::|
+  wn::|lossless%3:00:00::|
+  wn::|toneless%3:00:00::|
+  wn::|grassless%3:00:00::|
+  wn::|soleless%3:00:00::|
+  wn::|hornless%3:00:00::|
+  wn::|tongueless%3:00:00::|
+  wn::|beakless%3:00:00::|
+  wn::|moonless%3:00:00::|
+  wn::|bibless%3:00:00::|
+  wn::|starless%3:00:00::|
+  wn::|earless%3:00:00::|
+  wn::|hipless%3:00:00::|
+  wn::|loamless%3:00:00::|
+  wn::|handleless%3:00:00::|
+  wn::|roofless%3:00:00::|
+  wn::|legless%3:00:00::|
+  wn::|unparented%3:00:00::|
+  wn::|parentless%3:00:00::|
+  wn::|wigless%3:00:00::|
+  wn::|hatless%3:00:00::|
+  wn::|gloveless%3:00:00::|
+  wn::|punctureless%3:00:00::|
+  wn::|nosed%3:00:00::|
+  wn::|armed%3:00:03::|
+  wn::|headed%3:00:01::|
+  wn::|lipped%3:00:00::|
+  wn::|bony%3:00:00::|
+  wn::|boney%3:00:00::|
+  wn::|multilane%3:00:00::|
+  wn::|shelled%3:00:00::|
+  wn::|spaced%3:00:00::|
+  wn::|cross-eyed%3:00:00::|
+  wn::|armored%3:00:02::|
+  wn::|armoured%3:00:02::|
+  wn::|bedded%3:00:00::|
+  wn::|ceilinged%3:00:00::|
+  wn::|belted%3:00:00::|
+  wn::|rimmed%3:00:00::|
+  wn::|timbered%3:00:00::|
+  wn::|skinned%3:00:00::|
+  wn::|peripteral%3:00:00::|
+  wn::|apteral%3:00:00::|
+  wn::|tracked%3:00:00::|
+  wn::|buttoned%3:00:00::|
+  wn::|fastened%3:00:02::|
+  wn::|columned%3:00:00::|
+  wn::|ferned%3:00:00::|
+  wn::|ferny%3:00:01::|
+  wn::|webbed%3:00:00::|
+  wn::|lined%3:00:00::|
+  wn::|ungulate%3:00:00::|
+  wn::|ungulated%3:00:00::|
+  wn::|hoofed%3:00:00::|
+  wn::|hooved%3:00:00::|
+  wn::|seamed%3:00:00::|
+  wn::|ribbed%3:00:00::|
+  wn::|jawed%3:00:00::|
+  wn::|monaural%3:00:00::|
+  wn::|swept%3:00:00::|
+  wn::|binaural%3:00:00::|
+  wn::|biaural%3:00:00::|
+  wn::|unspaced%3:00:00::|
+  wn::|prognathous%3:00:00::|
+  wn::|prognathic%3:00:00::|
+  wn::|hypognathous%3:00:00::|
+  wn::|germy%3:00:00::|
+  wn::|bound%3:00:02::|
+  wn::|unbound%3:00:02::|
+  wn::|bodied%3:00:00::|
+  wn::|ventral%3:00:00::|
+  wn::|awned%3:00:00::|
+  wn::|awny%3:00:00::|
+  wn::|tongued%3:00:00::|
+  wn::|breasted%3:00:00::|
+  wn::|dolichocephalic%3:00:00::|
+  wn::|dolichocranial%3:00:00::|
+  wn::|dolichocranic%3:00:00::|
+  wn::|bellied%3:00:00::|
+  wn::|fingered%3:00:00::|
+  wn::|juicy%3:00:00::|
+  wn::|bibbed%3:00:00::|
+  wn::|rifled%3:00:00::|
+  wn::|single-barreled%3:00:00::|
+  wn::|single-barrelled%3:00:00::|
+  wn::|floored%3:00:00::|
+  wn::|toned%3:00:00::|
+  wn::|balconied%3:00:00::|
+  wn::|stemmed%3:00:00::|
+  wn::|single-breasted%3:00:00::|
+  wn::|crannied%3:00:00::|
+  wn::|onymous%3:00:00::|
+  wn::|hairy%3:00:00::|
+  wn::|haired%3:00:00::|
+  wn::|hirsute%3:00:00::|
+  wn::|eyed%3:00:00::|
+  wn::|faced%3:00:00::|
+  wn::|winged%3:00:00::|
+  wn::|backed%3:00:00::|
+  wn::|tipped%3:00:00::|
+  wn::|horned%3:00:00::|
+  wn::|necked%3:00:00::|
+  wn::|limbed%3:00:00::|
+  wn::|bottomed%3:00:00::|
+  wn::|footed%3:00:00::|
+  wn::|feathered%3:00:00::|
+  wn::|seedy%3:00:00::|
+  wn::|petalous%3:00:00::|
+  wn::|petaled%3:00:00::|
+  wn::|petalled%3:00:00::|
+  wn::|eared%3:00:00::|
+  wn::|armed%3:00:02::|
+  wn::|hairless%3:00:00::|
+  wn::|legged%3:00:00::|
+  wn::|beaked%3:00:00::|
+  wn::|wooded%3:00:00::|
+  wn::|leafy%3:00:00::|
+  wn::|toothed%3:00:00::|
+  wn::|motorized%3:00:00::|
+  wn::|motorised%3:00:00::|
+  wn::|motored%3:00:00::|
+  wn::|splayfooted%3:00:00::|
+  wn::|splayfoot%3:00:00::|
+  wn::|light-footed%3:00:00::|
+  wn::|tubed%3:00:00::|
+  wn::|corbelled%3:44:00::|
+  wn::|headed%3:00:02::|
+  wn::|parented%3:00:00::|
+  wn::|ridged%3:44:00::|
+  wn::|carinate%3:44:00::|
+  wn::|carinated%3:44:00::|
+  wn::|keeled%3:44:00::|
+  wn::|saddled%3:00:00::|
+  wn::|soled%3:00:00::|
+  wn::|handled%3:00:00::|
+  wn::|appendaged%3:00:00::|
+  wn::|walleyed%3:00:00::|
+  wn::|faceted%3:00:00::|
+  wn::|pigeon-toed%3:00:00::|
+  wn::|quadrupedal%3:00:00::|
+  wn::|quadruped%3:00:00::|
+  wn::|four-footed%3:00:00::|
+  wn::|hipped%3:00:00::|
+  wn::|unmotorized%3:00:00::|
+  wn::|unmotorised%3:00:00::|
+  wn::|motorless%3:00:00::|
+  wn::|lidded%3:00:00::|
+  wn::|double-barreled%3:00:00::|
+  wn::|double-barrelled%3:00:00::|
+  wn::|bipedal%3:00:00::|
+  wn::|biped%3:00:00::|
+  wn::|two-footed%3:00:00::|
+  wn::|wheeled%3:00:00::|
+  wn::|gabled%3:00:00::|
+  wn::|unwebbed%3:00:00::|
+  wn::|roofed%3:00:00::|
+  wn::|carpeted%3:00:00::|
+  wn::|short-spurred%3:00:00::|
+  wn::|long-spurred%3:00:00::|
+  wn::|weedy%3:00:00::|
+  wn::|single-lane%3:00:00::|
+  wn::|porous%3:00:00::|
+  wn::|poriferous%3:00:00::|
+  wn::|toed%3:00:00::|
+  wn::|right-handed%3:00:00::|
+  wn::|left-handed%3:00:00::|
+  wn::|handed%3:00:00::|
+  wn::|heavy-footed%3:00:00::|
+  wn::|invertebrate%3:00:00::|
+  wn::|spineless%3:00:01::|
+  wn::|resinlike%3:01:00::|
+  wn::|chartaceous%3:01:00::|
+  wn::|papery%3:01:00::|
+  wn::|paperlike%3:01:00::|
+  wn::|baccate%3:01:00::|
+  wn::|berrylike%3:01:00::|
+  wn::|shelflike%3:01:00::|
+  wn::|daisylike%3:01:00::|
+  wn::|indexless%3:01:00::|
+  wn::|fungoid%3:01:00::|
+  wn::|funguslike%3:01:00::|
+  wn::|collarless%3:01:00::|
+  wn::|unalike%3:00:00::|
+  wn::|dissimilar%3:00:04::|
+  wn::|brimless%3:01:00::|
+  wn::|sessile%3:00:00::|
+  wn::|stalkless%3:00:00::|
+  wn::|stingless%3:01:00::|
+  wn::|yeasty%3:01:00::|
+  wn::|yeastlike%3:01:00::|
+  wn::|rayless%3:01:00::|
+  wn::|acaulescent%3:00:00::|
+  wn::|stemless%3:00:04::|
+  wn::|gutless%3:00:00::|
+  wn::|burrlike%3:01:00::|
+  wn::|arachnoid%3:01:00::|
+  wn::|arachnidian%3:01:00::|
+  wn::|spidery%3:01:00::|
+  wn::|spiderlike%3:01:00::|
+  wn::|spiderly%3:01:00::|
+  wn::|astomatous%3:00:00::|
+  wn::|mouthless%3:00:00::|
+  wn::|brassy%3:01:00::|
+  wn::|brasslike%3:01:00::|
+  wn::|custard-like%3:01:00::|
+  wn::|hooflike%3:01:00::|
+  wn::|ductless%3:01:00::|
+  wn::|frictionless%3:01:00::|
+  wn::|masted%3:01:00::|
+  wn::|sharp-pointed%3:01:00::|
+  wn::|recoilless%3:01:00::|
+  wn::|flagellate%3:01:00::|
+  wn::|flagellated%3:01:00::|
+  wn::|whiplike%3:01:00::|
+  wn::|lash-like%3:01:00::|
+  wn::|grapelike%3:01:00::|
+  wn::|bracteate%3:01:00::|
+  wn::|bracted%3:01:00::|
+  wn::|wolflike%3:01:00::|
+  wn::|wolfish%3:01:00::|
+  wn::|chaffy%3:01:00::|
+  wn::|chafflike%3:01:00::|
+  wn::|heathlike%3:01:00::|
+  wn::|lung-like%3:01:00::|
+  wn::|clinker-built%3:00:00::|
+  wn::|clincher-built%3:00:00::|
+  wn::|lap-strake%3:00:00::|
+  wn::|lap-straked%3:00:00::|
+  wn::|lap-streak%3:00:00::|
+  wn::|lap-streaked%3:00:00::|
+  wn::|ocellated%3:01:00::|
+  wn::|ratlike%3:01:00::|
+  wn::|ctenoid%3:01:00::|
+  wn::|comb-like%3:01:00::|
+  wn::|bladdery%3:01:00::|
+  wn::|bladderlike%3:01:00::|
+  wn::|conic%3:01:00::|
+  wn::|conical%3:01:00::|
+  wn::|conelike%3:01:00::|
+  wn::|cone-shaped%3:01:00::|
+  wn::|liquid%3:00:00::|
+  wn::|hollow%3:00:00::|
+  wn::|uncharged%3:00:00::|
+  wn::|miscible%3:00:00::|
+  wn::|mixable%3:00:00::|
+  wn::|immiscible%3:00:00::|
+  wn::|non-miscible%3:00:00::|
+  wn::|unmixable%3:00:00::|
+  wn::|solid%3:00:02::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::physical-property-scale</feat>
+  <feat name="type">ont::physical-property-val</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::appearance-scale</feat>
+ <feat name="type">ont::appearance-property-val</feat>
+ </sem-feats>
+ <concept name="ont::domain-property">
+ <comment>
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">ont::number</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::scale" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">ont::domain</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::standard" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::reason" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
+</dsl>

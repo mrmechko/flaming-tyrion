@@ -1,0 +1,382 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::order">
+ <relation label="inherit">
+  ont::template-info-object
+ </relation>
+ <relation label="overlap">
+  wn::|order%1:10:01::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">data</feat>
+ <feat name="type">ont::info-medium</feat>
+ </sem-feats>
+ <concept name="ont::phys-representation">
+ <comment>
+  &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
+ </comment>
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|representation%1:04:01::|
+  wn::|representation%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="trajectory">+</feat>
+  <feat name="object-function">representation</feat>
+  <feat name="intentional">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">object</feat>
+  <feat name="type">ont::phys-representation</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::info-holder">
+ <comment>
+  &quot;a method/manner or device to store information, may also be used for sharing information&quot;
+ </comment>
+ <relation label="inherit">
+  ont::info-medium
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <or>
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::template-info-object">
+ <comment>
+  &quot;a templatic document to store and provide information&quot;
+ </comment>
+ <relation label="inherit">
+  ont::info-holder
+ </relation>
+ </concept>
+ <concept name="ont::info-medium">
+ <comment>
+  &quot;a medium to transmit or store information&quot;
+ </comment>
+ <relation label="inherit">
+  ont::phys-representation
+ </relation>
+ <relation label="overlap">
+  wn::|speech%1:10:01::|
+  wn::|written_communication%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">data</feat>
+  <feat name="type">ont::info-medium</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="trajectory">+</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ <feat name="type">ont::phys-representation</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="phys-obj" />
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="bid" />
+ </morph>
+ <example text="your bid is no longer the highest bid">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::order
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp
+                                                        (or
+                                                          w::for
+                                                          w::on))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="(or
+                                                                       w::for
+                                                                       w::on)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="order" />
+ </morph>
+ <comment>
+  &quot;CALO-Y1SCRIPT&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="send the order to purchasing">
+ </example>
+ <relation label="inherit">
+  ont::order
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="req" />
+ </morph>
+ <comment>
+  &quot;CALO-Y1SCRIPT&quot;
+ </comment>
+ <example text="send the req to purchasing">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::order
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="requisition" />
+ </morph>
+ <comment>
+  &quot;CALO-Y1SCRIPT&quot;
+ </comment>
+ <example text="send the requisition to purchasing">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::order
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::for)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::for" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="subscription" />
+ </morph>
+ <example text="which subscriptions have new content">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::order
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" xp="'(w::pp w::to)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::to" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

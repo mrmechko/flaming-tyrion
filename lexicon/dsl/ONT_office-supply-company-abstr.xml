@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::office-supply-company-abstr">
+ <relation label="inherit">
+  ont::company-abstr
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object-nontemporal">
+ <comment>
+  &quot;formal constructions with no temporal existence: e.g., facts, types, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object-nontemporal</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::social-group-abstr">
+ <relation label="inherit">
+  ont::group-object-abstr
+ </relation>
+ <relation label="overlap">
+  wn::|social_group%1:14:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="container">-</feat>
+  <feat name="object-function">occupation</feat>
+  <feat name="intentional">+</feat>
+  <feat name="information">information-content</feat>
+  <feat name="type">ont::social-group-abstr</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::company-abstr">
+ <relation label="inherit">
+  ont::institution-abstr
+ </relation>
+ </concept>
+ <concept name="ont::institution-abstr">
+ <relation label="inherit">
+  ont::organization-abstr
+ </relation>
+ </concept>
+ <concept name="ont::organization-abstr">
+ <relation label="inherit">
+  ont::social-group-abstr
+ </relation>
+ </concept>
+ <concept name="ont::group-object-abstr">
+ <comment>
+  &quot;a formal concept of a group of objects, e.g., mathematical&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object-nontemporal
+ </relation>
+ <relation label="overlap">
+  wn::|mathematical_group%1:09:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="container">-</feat>
+ <feat name="object-function">occupation</feat>
+ <feat name="intentional">+</feat>
+ <feat name="information">information-content</feat>
+ <feat name="type">ont::social-group-abstr</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object-nontemporal</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
+</dsl>

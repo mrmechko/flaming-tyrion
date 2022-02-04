@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::natural-substance">
+ <relation label="inherit">
+  ont::substance
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="origin">natural</feat>
+  <feat name="type">ont::natural-substance</feat>
+ </sem-feats>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::substance">
+ <relation label="inherit">
+  ont::material
+ </relation>
+ <relation label="overlap">
+  wn::|substance%1:03:00::|
+  wn::|substance%1:03:01::|
+  wn::|substance%1:27:00::|
+  wn::|matter%1:03:00::|
+  wn::|paper%1:27:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="type">ont::substance</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="origin">natural</feat>
+ <feat name="type">ont::natural-substance</feat>
+ </sem-feats>
+ <concept name="ont::material">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|material%1:27:00::|
+  wn::|stuff%1:27:00::|
+  wn::|material%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">substance</feat>
+  <feat name="mobility">non-self-moving</feat>
+  <feat name="type">ont::material</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="type">ont::substance</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">substance</feat>
+ <feat name="mobility">non-self-moving</feat>
+ <feat name="type">ont::material</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="phys-obj" />
+ <concept name="ont::earth-substance">
+ <relation label="inherit">
+  ont::natural-substance
+ </relation>
+ <relation label="overlap">
+  wn::|soil%1:27:01::|
+  wn::|soil%1:17:00::|
+  wn::|earth%1:27:00::|
+ </relation>
+ </concept>
+</dsl>

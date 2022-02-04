@@ -1,0 +1,810 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::letter-symbol">
+ <comment>
+  &quot;a textual symbol to represent information&quot;
+ </comment>
+ <relation label="inherit">
+  ont::text-representation
+ </relation>
+ <relation label="overlap">
+  wn::|letter%1:10:01::|
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="trajectory">+</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ <feat name="type">ont::phys-representation</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">data</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ <feat name="type">ont::symbolic-representation</feat>
+ </sem-feats>
+ <concept name="ont::phys-representation">
+ <comment>
+  &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
+ </comment>
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|representation%1:04:01::|
+  wn::|representation%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="trajectory">+</feat>
+  <feat name="object-function">representation</feat>
+  <feat name="intentional">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">object</feat>
+  <feat name="type">ont::phys-representation</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::symbolic-representation">
+ <comment>
+  &quot;method to represent information symbolically&quot;
+ </comment>
+ <relation label="inherit">
+  ont::phys-representation
+ </relation>
+ <relation label="overlap">
+  wn::|symbol%1:09:00::|
+  wn::|url%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">data</feat>
+  <feat name="object-function">representation</feat>
+  <feat name="intentional">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="form">object</feat>
+  <feat name="type">ont::symbolic-representation</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::text-representation">
+ <comment>
+  &quot;textual symbols used to represent information or properties of text used to represent information&quot;
+ </comment>
+ <relation label="inherit">
+  ont::symbolic-representation
+ </relation>
+ <relation label="overlap">
+  wn::|hypertext%1:10:00::|
+  wn::|matter%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="phys-obj" />
+ <concept name="ont::greek-letter-symbol">
+ <relation label="inherit">
+  ont::letter-symbol
+ </relation>
+ <relation label="overlap">
+  wn::|alpha%1:10:00::|
+  wn::|beta%1:10:00::|
+  wn::|chi%1:10:00::|
+  wn::|delta%1:10:00::|
+  wn::|epsilon%1:10:00::|
+  wn::|eta%1:10:00::|
+  wn::|gamma%1:10:00::|
+  wn::|iota%1:10:00::|
+  wn::|kappa%1:10:00::|
+  wn::|lambda%1:10:00::|
+  wn::|mu%1:10:00::|
+  wn::|nu%1:10:00::|
+  wn::|omega%1:10:00::|
+  wn::|omicron%1:10:00::|
+  wn::|phi%1:10:00::|
+  wn::|pi%1:10:00::|
+  wn::|psi%1:10:00::|
+  wn::|rho%1:10:00::|
+  wn::|sigma%1:10:00::|
+  wn::|tau%1:10:00::|
+  wn::|theta%1:10:00::|
+  wn::|upsilon%1:10:00::|
+  wn::|xi%1:10:00::|
+  wn::|zeta%1:10:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="a" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="alfa" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="b" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="bravo" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="c" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="carriage" remaining-words="return" />
+ </morph>
+ <example text="join the text from both cells, separated by a carriage return">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="charlie" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="d" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="dash" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="delta" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="e" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="echo" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="f" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="foxtrot" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="g" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="golf" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="h" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="hotel" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="hyphen" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="i" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="india" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="j" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="juliett" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="k" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="kilo" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="l" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="lima" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="m" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="mike" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="n" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="november" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="oscar" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="p" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="papa" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="parenthesis" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="parentheses" />
+   </plur>
+  </forms>
+ </morph>
+ <example text="use parentheses to refine your search">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="q" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="quebec" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="r" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="return" />
+ </morph>
+ <example text="join the text from both cells, separated by a carriage return">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="romeo" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="s" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="sierra" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="space" />
+ </morph>
+ <example text="type space">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="t" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="tango" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="u" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="underscore" />
+ </morph>
+ <example text="add three underscore characters">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="uniform" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="v" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="victor" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="w" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="whiskey" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="x" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="xray" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="y" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="yankee" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="z" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="value" />
+  <word first-word="zulu" />
+ </morph>
+ <relation label="inherit">
+  ont::letter-symbol
+  ont::value-templ
+ </relation>
+ </sense>
+</dsl>

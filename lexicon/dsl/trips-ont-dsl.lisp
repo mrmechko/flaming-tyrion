@@ -1,16 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
 (PROVENANCE
   (NAME TRIPS))
 

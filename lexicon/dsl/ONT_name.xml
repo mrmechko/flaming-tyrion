@@ -1,0 +1,426 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::name">
+ <relation label="inherit">
+  ont::identification
+ </relation>
+ <relation label="overlap">
+  wn::|name%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="information">information-content</feat>
+  <feat name="type">ont::name</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::function-object</feat>
+ </sem-feats>
+ <concept name="ont::tangible-abstract-object">
+ <comment>
+  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::tangible-abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::identification">
+ <relation label="inherit">
+  ont::information-function-object
+ </relation>
+ <relation label="overlap">
+  wn::|identification%1:10:01::|
+  wn::|identifier%1:10:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="information">information-content</feat>
+ <feat name="type">ont::name</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::information-function-object">
+ <relation label="inherit">
+  ont::function-object
+ </relation>
+ <relation label="overlap">
+  wn::|communication%1:03:00::|
+  wn::|criminal_record%1:10:00::|
+  wn::|calculation%1:09:00::|
+  wn::|history%1:28:02::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="mobility">movable</feat>
+  <feat name="container">+</feat>
+  <feat name="intentional">-</feat>
+  <feat name="information">information-content</feat>
+  <feat name="type">ont::information-function-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::function-object">
+ <relation label="inherit">
+  ont::tangible-abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::function-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="mobility">movable</feat>
+ <feat name="container">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">information-content</feat>
+ <feat name="type">ont::information-function-object</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::tangible-abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
+ <concept name="ont::firstname">
+ <relation label="inherit">
+  ont::name
+ </relation>
+ <relation label="overlap">
+  wn::|first_name%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="information">information-content</feat>
+  <feat name="type">ont::firstname</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::lastname">
+ <relation label="inherit">
+  ont::name
+ </relation>
+ <relation label="overlap">
+  wn::|surname%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="information">information-content</feat>
+  <feat name="type">ont::lastname</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::fullname">
+ <relation label="inherit">
+  ont::name
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="information">information-content</feat>
+  <feat name="type">ont::fullname</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::title">
+ <relation label="inherit">
+  ont::name
+ </relation>
+ <relation label="overlap">
+  wn::|designation%1:10:00::|
+  wn::|highness%1:18:00::|
+  wn::|sir%1:18:01::|
+  wn::|sir%1:18:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="information">information-content</feat>
+  <feat name="type">ont::title</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="information">information-content</feat>
+    <feat name="origin">artifact</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::signature">
+ <relation label="inherit">
+  ont::name
+ </relation>
+ <relation label="overlap">
+  wn::|signature%1:10:00::|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="alias" />
+ </morph>
+ <example text="The first parameter is an alias specifying the file to display">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::name
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-theme-templ" xp="'(w::pp
+                                                              (or
+                                                                w::for
+                                                                w::of))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="(or
+                                                                       w::for
+                                                                       w::of)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="brand" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <relation label="inherit">
+  ont::name
+ </relation>
+ <syntax>
+  <template-call template="ont::gen-part-of-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">gen-part-of-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="filename" />
+ </morph>
+ <example text="the filename is example.txt">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::name
+ </relation>
+ <syntax>
+  <template-call template="ont::gen-part-of-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">gen-part-of-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="name" />
+  <forms>
+   -S-3P
+  </forms>
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="My name is Chester">
+ </example>
+ <relation label="inherit">
+  ont::name
+ </relation>
+ <syntax>
+  <template-call template="ont::gen-part-of-reln-templ" xp="'(w::pp
+                                                              (or
+                                                                w::of
+                                                                w::for))" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="(or
+                                                                       w::of
+                                                                       w::for)" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="sort">gen-part-of-reln</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">|3s|</feat>
+  </syn-feats>
+ </syntax>
+ </sense>
+</dsl>

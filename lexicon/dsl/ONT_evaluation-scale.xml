@@ -1,0 +1,906 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::evaluation-scale">
+ <comment>
+  &quot;scales relating to subjective evaluation of an entity or a situation&quot;
+ </comment>
+ <relation label="inherit">
+  ont::ordered-domain
+ </relation>
+ <relation label="overlap">
+  wn::|quality%1:07:02::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-scale</feat>
+ </sem-feats>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::ordered-domain">
+ <relation label="inherit">
+  ont::domain
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::ordered-domain</feat>
+  <feat name="type">ont::ordered-domain</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-scale</feat>
+ </sem-feats>
+ <concept name="ont::domain">
+ <comment>
+  &quot;Nouns that name domain/scales, and can serve as relational nouns (e.g., the COLOR of the box)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|attribute%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::extent" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::ordered-domain</feat>
+ <feat name="type">ont::ordered-domain</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::domain</feat>
+ <feat name="type">ont::domain</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::extent" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
+ <concept name="ont::freedom-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|freedom%1:26:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::freedom-scale</feat>
+  <feat name="type">ont::freedom-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::helpfulness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|helpfulness%1:07:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::helpfulness-scale</feat>
+  <feat name="type">ont::helpfulness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::influence-susceptibility-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|susceptibility%1:26:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::influence-susceptibility-scale</feat>
+  <feat name="type">ont::influence-susceptibility-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::influence-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|influence%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::influence-scale</feat>
+  <feat name="type">ont::influence-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::interestingness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|interestingness%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::interestingness-scale</feat>
+  <feat name="type">ont::interestingness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::fame-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|fame%1:26:01::|
+  wn::|fame%1:26:02::|
+  wn::|prominence%1:26:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::fame-scale</feat>
+  <feat name="type">ont::fame-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::freshness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::freshness-scale</feat>
+  <feat name="type">ont::freshness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::familiarity-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::familiarity-scale</feat>
+  <feat name="type">ont::familiarity-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::hospitability-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|hospitableness%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::hospitability-scale</feat>
+  <feat name="type">ont::hospitability-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::judgement-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::judgement-scale</feat>
+  <feat name="type">ont::judgement-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::necessity-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|necessity%1:17:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::necessity-scale</feat>
+  <feat name="type">ont::necessity-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::qualification-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|eligibility%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::qualification-scale</feat>
+  <feat name="type">ont::qualification-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::seniority-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|seniority%1:26:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::seniority-scale</feat>
+  <feat name="type">ont::seniority-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::shapeliness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|shapeliness%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::shapeliness-scale</feat>
+  <feat name="type">ont::shapeliness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::typicality-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::typicality-scale</feat>
+  <feat name="type">ont::typicality-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::comfort-scale">
+ <comment>
+  &quot;deals with ease and comfort&quot;
+ </comment>
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::comfort-scale</feat>
+  <feat name="type">ont::comfort-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::controlled-scale">
+ <comment>
+  &quot;scale corresponding to being controlled&quot;
+ </comment>
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::control-scale</feat>
+  <feat name="type">ont::controlled-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::conventionality-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::conventionality-scale</feat>
+  <feat name="type">ont::conventionality-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::cleanliness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::cleanliness-scale</feat>
+  <feat name="type">ont::cleanliness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::luckiness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|luck%1:26:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::luckiness-scale</feat>
+  <feat name="type">ont::luckiness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::cost-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::cost-scale</feat>
+  <feat name="type">ont::cost-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::wealth-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|financial_condition%1:26:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::wealth-scale</feat>
+  <feat name="type">ont::wealth-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::ability-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::ability-scale</feat>
+  <feat name="type">ont::ability-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::attraction-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::attraction-scale</feat>
+  <feat name="type">ont::attraction-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::acceptability-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::acceptability-scale</feat>
+  <feat name="type">ont::acceptability-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::beauty-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::beauty-scale</feat>
+  <feat name="type">ont::beauty-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::noticeability-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|conspicuousness%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::noticeability-scale</feat>
+  <feat name="type">ont::noticeability-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::adaptability-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|flexibility%1:07:01::|
+  wn::|adaptability%1:07:00::|
+  wn::|pliability%1:07:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::adaptability-scale</feat>
+  <feat name="type">ont::adaptability-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::importance-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::importance-scale</feat>
+  <feat name="type">ont::importance-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::reliability-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|reliability%1:07:00::|
+  wn::|trustworthiness%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::reliability-scale</feat>
+  <feat name="type">ont::reliability-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::safety-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::safety-scale</feat>
+  <feat name="type">ont::safety-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::appropriateness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::appropriateness-scale</feat>
+  <feat name="type">ont::appropriateness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::convenience-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::convenience-scale</feat>
+  <feat name="type">ont::convenience-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::basic-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|simplicity%1:07:02::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::basic-scale</feat>
+  <feat name="type">ont::basic-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::plain-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|plainness%1:26:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::plain-scale</feat>
+  <feat name="type">ont::plain-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::quality-level-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::quality-level-scale</feat>
+  <feat name="type">ont::quality-level-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::explicitness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::explicitness-scale</feat>
+  <feat name="type">ont::explicitness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::harmfulness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|harmfulness%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::harmfulness-scale</feat>
+  <feat name="type">ont::harmfulness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::aesthetic-tastefulness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|stylishness%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::aesthetic-tastefulness-scale</feat>
+  <feat name="type">ont::aesthetic-tastefulness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::partiality-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|partiality%1:09:00::|
+  wn::|impartiality%1:09:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::partiality-scale</feat>
+  <feat name="type">ont::partiality-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::morality-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|morality%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::morality-scale</feat>
+  <feat name="type">ont::morality-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::offensiveness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|offensiveness%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::offensiveness-scale</feat>
+  <feat name="type">ont::offensiveness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::orderliness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::orderliness-scale</feat>
+  <feat name="type">ont::orderliness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::recommendability-scale">
+ <comment>
+  &quot;worthy of recommendation and advice; wise or prudent&quot;
+ </comment>
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|advisability%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::recommendability-scale</feat>
+  <feat name="type">ont::recommendability-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::specificity-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::specificity-scale</feat>
+  <feat name="type">ont::specificity-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::tolerability-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|tolerance%1:07:03::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::tolerability-scale</feat>
+  <feat name="type">ont::tolerability-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::worthiness-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|worthiness%1:07:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::worthiness-scale</feat>
+  <feat name="type">ont::worthiness-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::real-vs-fake-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::real-vs-fake-scale</feat>
+  <feat name="type">ont::real-vs-fake-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::process-evaluation-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::process-evaluation-scale</feat>
+  <feat name="type">ont::process-evaluation-scale</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::desirability-scale">
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <relation label="overlap">
+  wn::|desirability%1:07:00::|
+  wn::|desire%1:26:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::desirability-scale</feat>
+  <feat name="type">ont::desirability-scale</feat>
+ </sem-feats>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="quality" />
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <example text="The quality (calibre) of the students has risen">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::evaluation-scale
+ </relation>
+ <syntax>
+  <template-call template="ont::other-reln-templ" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::of" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="mass">count</feat>
+   <feat name="allow-deleted-comp">+</feat>
+   <feat name="sort">other-reln</feat>
+   <feat name="case">
+   <or>
+    sub
+    obj
+   </or>
+   </feat>
+   <feat name="agr">
+   <or>
+    |3s|
+    |3p|
+   </or>
+   </feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="scale">
+   <or>
+    ont::evaluation-scale
+    ont::domain
+   </or>
+   </feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+</dsl>

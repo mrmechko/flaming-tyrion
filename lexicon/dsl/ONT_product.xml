@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::product">
+ <relation label="inherit">
+  ont::commodity
+ </relation>
+ <relation label="overlap">
+  wn::|ware%1:06:01::|
+  wn::|product%1:06:01::|
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="type">ont::functional-phys-object</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">any-form</feat>
+ <feat name="mobility">movable</feat>
+ <feat name="type">ont::commodity</feat>
+ </sem-feats>
+ <concept name="ont::functional-phys-object">
+ <comment>
+  &quot;These are objects that are described by their function in an activity- and have other physical descriptions: e.g., the things you are travelling with is LUGGAGE&quot;
+ </comment>
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="type">ont::functional-phys-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::commodity">
+ <relation label="inherit">
+  ont::functional-phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|commodity%1:06:00::|
+  wn::|trade_good%1:06:00::|
+  wn::|good%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">any-form</feat>
+  <feat name="mobility">movable</feat>
+  <feat name="type">ont::commodity</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="phys-obj" />
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="product" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="The SOFTWARE PRODUCT may contain support for programs written in Java">
+ </example>
+ <relation label="inherit">
+  ont::product
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

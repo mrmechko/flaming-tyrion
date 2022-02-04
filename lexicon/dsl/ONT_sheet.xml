@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::sheet">
+ <relation label="inherit">
+  ont::shape-object
+ </relation>
+ <relation label="overlap">
+  wn::|layer%1:06:00::|
+  wn::|layer%1:15:00::|
+  wn::|sheet%1:17:00::|
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <concept name="ont::shape-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|shape%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="object-function">representation</feat>
+  <feat name="information">-</feat>
+  <feat name="intentional">-</feat>
+  <feat name="form">object</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="type">ont::shape-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="object-function">representation</feat>
+ <feat name="information">-</feat>
+ <feat name="intentional">-</feat>
+ <feat name="form">object</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="type">ont::shape-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="phys-obj" />
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="layer" />
+ </morph>
+ <comment>
+  &quot;WEATHER&quot;
+ </comment>
+ <example text="the ozone layer">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sheet
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="sheet" />
+ </morph>
+ <comment>
+  &quot;WEATHER&quot;
+ </comment>
+ <example text="sheet of paper/ice">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sheet
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="slice" />
+ </morph>
+ <comment>
+  &quot;WEATHER&quot;
+ </comment>
+ <example text="a slice of pie">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::sheet
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>

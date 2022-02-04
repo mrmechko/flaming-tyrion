@@ -1,0 +1,638 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::typical-val">
+ <relation label="inherit">
+  ont::typicality-val
+ </relation>
+ <relation label="overlap">
+  wn::|standard%3:00:01::|
+  wn::|characteristic%3:00:00::|
+  wn::|neutral%3:00:02::|
+  wn::|standard%3:00:02::|
+  wn::|customary%5:00:00:usual:00|
+  wn::|typical%5:00:00:normal:01|
+  wn::|everyday%5:00:00:ordinary:00|
+  wn::|run-of-the-mill%5:00:00:ordinary:00|
+  wn::|typical%3:00:00::|
+  wn::|regular%5:00:00:typical:00|
+  wn::|regular%5:00:00:normal:01|
+  wn::|normal%3:00:01::|
+  wn::|common%5:00:00:ordinary:00|
+  wn::|ordinary%5:00:02:common:01|
+  wn::|usual%3:00:00::|
+  wn::|ordinary%3:00:00::|
+  wn::|standard%5:00:00:common:01|
+  wn::|common%3:00:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::typical-scale</feat>
+  <feat name="type">ont::typical-val</feat>
+ </sem-feats>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::refset" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">ont::number</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::scale" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">ont::domain</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::domain</feat>
+ <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <concept name="ont::relation">
+ <comment>
+  &quot;All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|relation%1:03:00::|
+  wn::|amount%2:42:03::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::evaluation-scale</feat>
+ <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
+ <concept name="ont::property-val">
+ <relation label="inherit">
+  ont::domain-property
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="information">-</feat>
+  <feat name="container">-</feat>
+  <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::standard" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::reason" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+    <concept name="situation" />
+   </or>
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="situation" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::typicality-scale</feat>
+ <feat name="type">ont::typicality-val</feat>
+ </sem-feats>
+ <concept name="ont::evaluation-attribute-val">
+ <comment>
+  &quot;properties which need an observer to be recognized -- subjective to the observer&quot;
+ </comment>
+ <relation label="inherit">
+  ont::property-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::evaluation-scale</feat>
+  <feat name="type">ont::evaluation-attribute-val</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::typical-scale</feat>
+ <feat name="type">ont::typical-val</feat>
+ </sem-feats>
+ <concept name="ont::typicality-val">
+ <comment>
+  &quot;abiding by or breaking with customary or usual practices&quot;
+ </comment>
+ <relation label="inherit">
+  ont::evaluation-attribute-val
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::typicality-scale</feat>
+  <feat name="type">ont::typicality-val</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::domain-property">
+ <comment>
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain-property</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">ont::number</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::scale" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">ont::domain</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::standard" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::reason" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="abstr-obj" />
+ <concept name="ont::stereotypical-val">
+ <relation label="inherit">
+  ont::typical-val
+ </relation>
+ <relation label="overlap">
+  wn::|stereotypical%5:00:00:conventional:01|
+  wn::|formulaic%5:00:00:conventional:00|
+  wn::|generic%3:01:00::|
+  wn::|white-bread%5:00:00:conventional:01|
+ </relation>
+ </concept>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="common" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::typical-val
+ </relation>
+ <syntax>
+  <template-call template="ont::adj-co-theme-templ" xp="'(w::pp w::to)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="subcat2" syn-cat="common-lisp:-" sem-role="ont::norole"/>
+   <syn-sem-map syn-arg="subcat" syn-cat="deepsemlex::pp" head-word="w::to" sem-role="ont::ground" optional="optional"/>
+   <syn-sem-map syn-arg="argument" syn-cat="deepsemlex::np" sem-role="ont::figure"/>
+  </syn-sem>
+  <syn-feats>
+   <feat name="atype">central</feat>
+   <feat name="sort">pred</feat>
+  </syn-feats>
+ </syntax>
+ <semantics>
+  <sem-feats>
+   <feat name="orientation">pos</feat>
+   <feat name="intensity">ont::med</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="customary" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <example text="it's customary to distribute code on cdrom">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::typical-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="habitual" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <example text="they had habitual meetings">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::typical-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="normal" />
+ </morph>
+ <relation label="inherit">
+  ont::typical-val
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="orientation">pos</feat>
+   <feat name="intensity">ont::med</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="ordinary" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <example text="the ordinary GPL">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::typical-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="regular" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::typical-val
+  ont::less-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="routine" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <relation label="inherit">
+  ont::typical-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="standard" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <example text="They are unusual">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::typical-val
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="orientation">pos</feat>
+   <feat name="intensity">ont::med</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="typical" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <example text="The typical configuration">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::typical-val
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="orientation">pos</feat>
+   <feat name="intensity">ont::med</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="unexceptional" />
+ </morph>
+ <relation label="inherit">
+  ont::typical-val
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="orientation">pos</feat>
+   <feat name="intensity">ont::med</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="unremarkable" />
+ </morph>
+ <relation label="inherit">
+  ont::typical-val
+  ont::central-adj-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="orientation">pos</feat>
+   <feat name="intensity">ont::med</feat>
+   <feat name="gradability">+</feat>
+  </sem-feats>
+ </semantics>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="adj" />
+  <word first-word="usual" />
+  <forms>
+   -LY
+  </forms>
+ </morph>
+ <comment>
+  &quot;HTML-PURCHASING-CORPUS&quot;
+ </comment>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="The usual suspects">
+ </example>
+ <relation label="inherit">
+  ont::typical-val
+  ont::central-adj-templ
+ </relation>
+ </sense>
+</dsl>

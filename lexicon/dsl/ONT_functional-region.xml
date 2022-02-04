@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::functional-region">
+ <relation label="inherit">
+  ont::geographic-region
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="mobility">fixed</feat>
+ <feat name="form">geographical-object</feat>
+ <feat name="origin">
+ <or>
+  non-living
+  artifact
+ </or>
+ </feat>
+ <feat name="type">ont::location</feat>
+ </sem-feats>
+ <concept name="ont::geo-object">
+ <relation label="inherit">
+  ont::phys-object
+ </relation>
+ <relation label="overlap">
+  wn::|location%1:03:00::|
+  wn::|space%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="container">+</feat>
+  <feat name="form">geographical-object</feat>
+  <feat name="type">ont::geo-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::location">
+ <relation label="inherit">
+  ont::geo-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="mobility">fixed</feat>
+  <feat name="form">geographical-object</feat>
+  <feat name="origin">
+  <or>
+   non-living
+   artifact
+  </or>
+  </feat>
+  <feat name="type">ont::location</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="phys-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="form">geographical-object</feat>
+ <feat name="type">ont::geographic-region</feat>
+ </sem-feats>
+ <concept name="ont::specific-loc">
+ <relation label="inherit">
+  ont::location
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::geographic-region">
+ <relation label="inherit">
+  ont::specific-loc
+ </relation>
+ <relation label="overlap">
+  wn::|north_america%1:14:00::|
+  wn::|south_america%1:14:00::|
+  wn::|central_america%1:14:00::|
+  wn::|asia%1:14:00::|
+  wn::|europe%1:14:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="form">geographical-object</feat>
+  <feat name="type">ont::geographic-region</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="form">geographical-object</feat>
+ <feat name="type">ont::geo-object</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="phys-obj" />
+ <concept name="ont::region-for-activity">
+ <relation label="inherit">
+  ont::functional-region
+ </relation>
+ </concept>
+ <concept name="ont::man-made-structure">
+ <comment>
+  &quot;man made structures that are attached to the earther and thus act like locations&quot;
+ </comment>
+ <relation label="inherit">
+  ont::functional-region
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="mobility">fixed</feat>
+  <feat name="trajectory">-</feat>
+  <feat name="origin">artifact</feat>
+  <feat name="spatial-abstraction">
+  <or>
+   spatial-point
+   spatial-region
+  </or>
+  </feat>
+  <feat name="type">ont::man-made-structure</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::route">
+ <relation label="inherit">
+  ont::functional-region
+ </relation>
+ <relation label="overlap">
+  wn::|path%1:17:00::|
+  wn::|track%1:17:00::|
+  wn::|course%1:17:00::|
+  wn::|route%1:15:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="trajectory">+</feat>
+  <feat name="spatial-abstraction">
+  <or>
+   line
+   strip
+  </or>
+  </feat>
+  <feat name="container">+</feat>
+  <feat name="mobility">fixed</feat>
+  <feat name="object-function">path</feat>
+  <feat name="form">geographical-object</feat>
+  <feat name="origin">non-living</feat>
+  <feat name="type">ont::route</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="phys-obj" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+</dsl>

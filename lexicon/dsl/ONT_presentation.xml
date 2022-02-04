@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ont-type.xsl"?>
+<dsl>
+ <provenance name="TRIPS"/>
+ <concept name="ont::presentation">
+ <relation label="inherit">
+  ont::gathering-event
+ </relation>
+ <relation label="overlap">
+  wn::|presentation%1:10:00::|
+  wn::|presentation%1:10:02::|
+  wn::|show%1:04:00::|
+ </relation>
+ </concept>
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
+ <concept name="ont::root" />
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="container">-</feat>
+ <feat name="intentional">-</feat>
+ <feat name="type">ont::situation-root</feat>
+ </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::gathering-event">
+ <relation label="inherit">
+  ont::located-event
+ </relation>
+ <relation label="overlap">
+  wn::|gathering%1:14:00::|
+ </relation>
+ </concept>
+ <concept name="ont::located-event">
+ <comment>
+  &quot;events that are located in time/space - e.g., riot, war, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-type
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="locative">located</feat>
+  <feat name="trajectory">-</feat>
+  <feat name="type">ont::located-event</feat>
+ </sem-feats>
+ <sem-frame>
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::event-type">
+ <comment>
+  &quot;classification of situated events based on social or other criteria, and typically realized by nominals, i.e.,
+        they are not nominalization of verbal events&quot;
+ </comment>
+ <relation label="inherit">
+  ont::situation-root
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="intentional">-</feat>
+  <feat name="type">ont::event-type</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="locative">located</feat>
+ <feat name="trajectory">-</feat>
+ <feat name="type">ont::located-event</feat>
+ </sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::situation-root">
+ <comment>
+  &quot;root for all events, whether verbal or nominal&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="container">-</feat>
+  <feat name="intentional">-</feat>
+  <feat name="type">ont::situation-root</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="type">ont::event-type</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="situation" />
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="colloquium" />
+  <forms>
+   -S-3P
+   <plur>
+    <word first-word="colloquia" />
+   </plur>
+  </forms>
+ </morph>
+ <example text="I need an lcd projector for our colloquium series">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::presentation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="demo" />
+ </morph>
+ <example text="I need an lcd projector for the demo">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::presentation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="lecture" />
+ </morph>
+ <example text="I need an lcd projector for my lecture">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::presentation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="presentation" />
+ </morph>
+ <example text="I need an lcd projector for my presentations">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::presentation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="show" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <relation label="inherit">
+  ont::presentation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="speech" />
+ </morph>
+ <example text="he gave a speech to the people">
+  <provenance name="TRIPS"/>
+ </example>
+ <relation label="inherit">
+  ont::presentation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="n" />
+  <word first-word="talk" />
+ </morph>
+ <provenance name="TRIPS">
+  <provenance name="BASE500"/>
+ </provenance>
+ <example text="I need an lcd projector for my talk">
+ </example>
+ <relation label="inherit">
+  ont::presentation
+  ont::count-pred-templ
+ </relation>
+ </sense>
+</dsl>
