@@ -12,176 +12,161 @@
   wn::|rightmost%5:00:00:right:00|
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
  <concept name="abstr-obj" />
- <concept name="situation" />
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
  </or>
- <concept name="ont::root" />
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="type">ont::abstract-object</feat>
+ <feat name="type">ont::referential-sem</feat>
  </sem-feats>
- <concept name="ont::referential-sem">
- <comment>
-  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
- </comment>
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::any-sem
+  ont::root
  </relation>
- <relation label="overlap">
-  wn::|entity%1:03:00::|
-  wn::|one%1:09:00::|
- </relation>
- <sem-feats>
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
-  <feat name="type">ont::referential-sem</feat>
- </sem-feats>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::refset" optional="optional">
-  <concept name="t" />
- </role-restr-map>
  <role-restr-map roles="ont::compar" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="type">ont::number</feat>
-  </sem-feats>
+  <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::scale" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    abstr-obj
-   </relation>
-   <feat name="type">ont::domain</feat>
-  </sem-feats>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::figure">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::domain</feat>
- <feat name="type">ont::domain-property</feat>
- </sem-feats>
- <concept name="ont::relation">
+ <concept name="ont::abstract-object">
  <comment>
-  &quot;All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier&quot;
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
  </comment>
  <relation label="inherit">
-  ont::abstract-object
+  ont::referential-sem
  </relation>
  <relation label="overlap">
-  wn::|relation%1:03:00::|
-  wn::|amount%2:42:03::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::compar" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral1" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::ground">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::figure">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::location-val">
- <relation label="inherit">
-  ont::spatial-val
- </relation>
- <relation label="overlap">
-  wn::|downstage%3:00:00::|
-  wn::|indoor%3:00:00::|
-  wn::|terminal%3:00:00::|
-  wn::|back%3:00:00::|
-  wn::|sinistral%3:00:00::|
-  wn::|dextral%3:00:00::|
-  wn::|aft%3:00:00::|
-  wn::|inside%3:00:00::|
-  wn::|outside%3:00:00::|
-  wn::|superjacent%3:00:00::|
-  wn::|outward%3:00:00::|
-  wn::|anterior%3:00:00::|
-  wn::|inner%3:00:00::|
-  wn::|outer%3:00:00::|
-  wn::|exterior%3:00:00::|
-  wn::|posterior%3:00:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::spatial-val">
- <comment>
-  &quot;properties relating to space&quot;
- </comment>
- <relation label="inherit">
-  ont::property-val
- </relation>
- <relation label="overlap">
-  wn::|spatial%3:01:00::|
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::spatial-scale</feat>
-  <feat name="type">ont::spatial-val</feat>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::standard" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::reason" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="situation" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="intentional">-</feat>
+ <feat name="information">-</feat>
+ <feat name="container">-</feat>
+ <feat name="type">ont::property-val</feat>
+ </sem-feats>
+ <concept name="ont::domain-property">
+ <comment>
+  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">ont::domain</feat>
+  <feat name="type">ont::domain-property</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
+  <role-restr-map roles="ont::refset" optional="optional">
+   <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
+  <role-restr-map roles="ont::compar" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="type">ont::number</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::scale" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     abstr-obj
+    </relation>
+    <feat name="type">ont::domain</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::figure">
+   <concept name="t" />
   </role-restr-map>
  </sem-frame>
  </concept>
  <sem-frame>
- <role-restr-map roles="ont::figure">
+ <role-restr-map roles="ont::ground" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
   <or>
    <concept name="phys-obj" />
    <concept name="situation" />
@@ -189,6 +174,13 @@
   </or>
  </role-restr-map>
  </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">ont::spatial-scale</feat>
+ <feat name="type">ont::spatial-val</feat>
+ </sem-feats>
  <concept name="ont::property-val">
  <relation label="inherit">
   ont::domain-property
@@ -241,22 +233,8 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">ont::spatial-scale</feat>
- <feat name="type">ont::spatial-val</feat>
- </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
+ <role-restr-map roles="ont::figure">
   <or>
    <concept name="phys-obj" />
    <concept name="situation" />
@@ -264,45 +242,97 @@
   </or>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::domain-property">
+ <concept name="ont::spatial-val">
  <comment>
-  &quot;these are modifiers that characterize an object/event with respect to a scale/domain (in ONT::DOMAIN)&quot;
+  &quot;properties relating to space&quot;
  </comment>
  <relation label="inherit">
-  ont::relation
+  ont::property-val
+ </relation>
+ <relation label="overlap">
+  wn::|spatial%3:01:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    abstr-obj
   </relation>
-  <feat name="scale">ont::domain</feat>
-  <feat name="type">ont::domain-property</feat>
+  <feat name="scale">ont::spatial-scale</feat>
+  <feat name="type">ont::spatial-val</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::refset" optional="optional">
-   <concept name="t" />
+  <role-restr-map roles="ont::ground" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::location-val">
+ <relation label="inherit">
+  ont::spatial-val
+ </relation>
+ <relation label="overlap">
+  wn::|downstage%3:00:00::|
+  wn::|indoor%3:00:00::|
+  wn::|terminal%3:00:00::|
+  wn::|back%3:00:00::|
+  wn::|sinistral%3:00:00::|
+  wn::|dextral%3:00:00::|
+  wn::|aft%3:00:00::|
+  wn::|inside%3:00:00::|
+  wn::|outside%3:00:00::|
+  wn::|superjacent%3:00:00::|
+  wn::|outward%3:00:00::|
+  wn::|anterior%3:00:00::|
+  wn::|inner%3:00:00::|
+  wn::|outer%3:00:00::|
+  wn::|exterior%3:00:00::|
+  wn::|posterior%3:00:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::relation">
+ <comment>
+  &quot;All types that denote relations. This is the root of terms under abstract objects that take the ONT::F specifier&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <relation label="overlap">
+  wn::|relation%1:03:00::|
+  wn::|amount%2:42:03::|
+ </relation>
+ <sem-frame>
   <role-restr-map roles="ont::compar" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="type">ont::number</feat>
-   </sem-feats>
+   <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::scale" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     abstr-obj
-    </relation>
-    <feat name="type">ont::domain</feat>
-   </sem-feats>
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::ground" optional="optional">
+  <role-restr-map roles="ont::neutral" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::ground">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::figure">
@@ -314,102 +344,72 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="intentional">-</feat>
- <feat name="information">-</feat>
- <feat name="container">-</feat>
- <feat name="type">ont::property-val</feat>
+ <feat name="scale">ont::domain</feat>
+ <feat name="type">ont::domain-property</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::standard" optional="optional">
+ <role-restr-map roles="ont::refset" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::ground" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::reason" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="situation" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::abstract-object">
- <comment>
-  &quot;abstract objects, mental constructions, with no physical realization&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00::|
-  wn::|abstraction%1:03:00::|
-  wn::|abstract_entity%1:03:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="type">ont::abstract-object</feat>
- </sem-feats>
- </concept>
- <sem-frame>
  <role-restr-map roles="ont::compar" optional="optional">
-  <concept name="t" />
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="type">ont::number</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::norole" optional="optional">
   <concept name="t" />
  </role-restr-map>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <concept name="t" />
+ <role-restr-map roles="ont::scale" optional="optional">
+  <sem-feats>
+   <relation label="inherit">
+    abstr-obj
+   </relation>
+   <feat name="type">ont::domain</feat>
+  </sem-feats>
  </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground">
+ <role-restr-map roles="ont::ground" optional="optional">
   <concept name="t" />
  </role-restr-map>
  <role-restr-map roles="ont::figure">
   <concept name="t" />
  </role-restr-map>
  </sem-frame>
- <concept name="ont::any-sem">
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
  <relation label="inherit">
-  ont::root
+  ont::any-sem
  </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
- </or>
- <feat name="type">ont::referential-sem</feat>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::abstract-object</feat>
  </sem-feats>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
  <sense>
  <morph>
   <pos pos="adj" />

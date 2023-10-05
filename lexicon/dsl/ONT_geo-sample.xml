@@ -20,71 +20,19 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <or>
  <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
- </or>
- <concept name="ont::root" />
  <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="tangible">+</feat>
- <feat name="type">ont::phys-object</feat>
- </sem-feats>
- <concept name="ont::referential-sem">
- <comment>
-  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
- </comment>
- <relation label="inherit">
-  ont::any-sem
- </relation>
- <relation label="overlap">
-  wn::|entity%1:03:00::|
-  wn::|one%1:09:00::|
- </relation>
- <sem-feats>
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
-  <feat name="type">ont::referential-sem</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="container">+</feat>
- <feat name="spatial-abstraction">
  <or>
-  spatial-point
-  spatial-region
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
  </or>
- </feat>
- <feat name="origin">natural</feat>
- <feat name="type">ont::natural-object</feat>
+ <feat name="type">ont::referential-sem</feat>
  </sem-feats>
- <concept name="ont::phys-object">
- <comment>
-  &quot;All physical objects: things that have substance&quot;
- </comment>
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::referential-sem
+  ont::root
  </relation>
- <relation label="overlap">
-  wn::|object%1:03:00::|
-  wn::|physical_object%1:03:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::phys-object</feat>
- </sem-feats>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::figure" optional="optional">
@@ -124,20 +72,72 @@
   <feat name="type">ont::natural-object</feat>
  </sem-feats>
  </concept>
- <concept name="ont::any-sem">
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
  <relation label="inherit">
-  ont::root
+  ont::referential-sem
  </relation>
+ <relation label="overlap">
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="spatial-abstraction">
  <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
+  spatial-point
+  spatial-region
  </or>
- <feat name="type">ont::referential-sem</feat>
+ </feat>
+ <feat name="origin">natural</feat>
+ <feat name="type">ont::natural-object</feat>
  </sem-feats>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
+ </sem-feats>
+ <concept name="ont::root" />
+ <or>
  <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
  <sense>
  <morph>
   <pos pos="n" />

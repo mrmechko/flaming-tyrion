@@ -16,17 +16,157 @@
   <feat name="type">ont::key</feat>
  </sem-feats>
  </concept>
- <or>
- <concept name="phys-obj" />
  <concept name="abstr-obj" />
- <concept name="situation" />
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
  </or>
- <concept name="ont::root" />
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
  <sem-feats>
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="type">ont::abstract-object</feat>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::tangible-abstract-object</feat>
+ </sem-feats>
+ <concept name="ont::abstract-object">
+ <comment>
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
+ </relation>
+ <relation label="overlap">
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="mobility">movable</feat>
+ <feat name="container">+</feat>
+ <feat name="intentional">-</feat>
+ <feat name="information">information-content</feat>
+ <feat name="type">ont::information-function-object</feat>
+ </sem-feats>
+ <concept name="ont::function-object">
+ <relation label="inherit">
+  ont::tangible-abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::function-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::composition">
+ <comment>
+  &quot;composition, e.g., result of event-of-creation&quot;
+ </comment>
+ <relation label="inherit">
+  ont::information-function-object
+ </relation>
+ <relation label="overlap">
+  wn::|composition%1:07:01::|
+  wn::|composition%1:07:02::|
+  wn::|composition%1:04:01::|
+ </relation>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="scale">-</feat>
+ <feat name="type">ont::music-composition-element</feat>
+ </sem-feats>
+ <concept name="ont::music">
+ <relation label="inherit">
+  ont::composition
+ </relation>
+ <relation label="overlap">
+  wn::|music%1:10:00::|
+ </relation>
+ </concept>
+ <concept name="ont::music-composition-element">
+ <relation label="inherit">
+  ont::music
+ </relation>
+ <relation label="overlap">
+  wn::|musical_notation%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="scale">-</feat>
+  <feat name="type">ont::music-composition-element</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::key</feat>
+ </sem-feats>
+ <concept name="ont::information-function-object">
+ <relation label="inherit">
+  ont::function-object
+ </relation>
+ <relation label="overlap">
+  wn::|communication%1:03:00::|
+  wn::|criminal_record%1:10:00::|
+  wn::|calculation%1:09:00::|
+  wn::|history%1:28:02::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="mobility">movable</feat>
+  <feat name="container">+</feat>
+  <feat name="intentional">-</feat>
+  <feat name="information">information-content</feat>
+  <feat name="type">ont::information-function-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::tangible-abstract-object">
+ <comment>
+  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
+ </comment>
+ <relation label="inherit">
+  ont::abstract-object
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::tangible-abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  abstr-obj
+ </relation>
+ <feat name="type">ont::function-object</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>
@@ -52,154 +192,14 @@
  <relation label="inherit">
   abstr-obj
  </relation>
- <feat name="type">ont::function-object</feat>
+ <feat name="type">ont::abstract-object</feat>
  </sem-feats>
- <concept name="ont::tangible-abstract-object">
- <comment>
-  &quot;abstract notions that act like things. They can be created, transfered, e.g., mental objects&quot;
- </comment>
- <relation label="inherit">
-  ont::abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::tangible-abstract-object</feat>
- </sem-feats>
- </concept>
- <concept name="ont::information-function-object">
- <relation label="inherit">
-  ont::function-object
- </relation>
- <relation label="overlap">
-  wn::|communication%1:03:00::|
-  wn::|criminal_record%1:10:00::|
-  wn::|calculation%1:09:00::|
-  wn::|history%1:28:02::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="mobility">movable</feat>
-  <feat name="container">+</feat>
-  <feat name="intentional">-</feat>
-  <feat name="information">information-content</feat>
-  <feat name="type">ont::information-function-object</feat>
- </sem-feats>
- </concept>
- <concept name="ont::music-composition-element">
- <relation label="inherit">
-  ont::music
- </relation>
- <relation label="overlap">
-  wn::|musical_notation%1:10:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="scale">-</feat>
-  <feat name="type">ont::music-composition-element</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="type">ont::key</feat>
- </sem-feats>
- <concept name="ont::music">
- <relation label="inherit">
-  ont::composition
- </relation>
- <relation label="overlap">
-  wn::|music%1:10:00::|
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="scale">-</feat>
- <feat name="type">ont::music-composition-element</feat>
- </sem-feats>
- <concept name="ont::composition">
- <comment>
-  &quot;composition, e.g., result of event-of-creation&quot;
- </comment>
- <relation label="inherit">
-  ont::information-function-object
- </relation>
- <relation label="overlap">
-  wn::|composition%1:07:01::|
-  wn::|composition%1:07:02::|
-  wn::|composition%1:04:01::|
- </relation>
- </concept>
- <concept name="ont::function-object">
- <relation label="inherit">
-  ont::tangible-abstract-object
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="type">ont::function-object</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="mobility">movable</feat>
- <feat name="container">+</feat>
- <feat name="intentional">-</feat>
- <feat name="information">information-content</feat>
- <feat name="type">ont::information-function-object</feat>
- </sem-feats>
- <concept name="ont::abstract-object">
- <comment>
-  &quot;abstract objects, mental constructions, with no physical realization&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <relation label="overlap">
-  wn::|psychological_feature%1:03:00::|
-  wn::|abstraction%1:03:00::|
-  wn::|abstract_entity%1:03:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="type">ont::abstract-object</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="tangible">+</feat>
- <feat name="type">ont::tangible-abstract-object</feat>
- </sem-feats>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <sem-feats>
+ <concept name="ont::root" />
  <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
- </or>
- <feat name="type">ont::referential-sem</feat>
- </sem-feats>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
  <sense>
  <morph>
   <pos pos="n" />

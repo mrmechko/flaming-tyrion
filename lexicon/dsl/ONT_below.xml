@@ -13,55 +13,146 @@
   wn::|below%4:02:01::|
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
  <concept name="abstr-obj" />
- <concept name="situation" />
- </or>
- <concept name="ont::root" />
  <sem-feats>
- <relation label="inherit">
-  abstr-obj
- </relation>
- <feat name="type">ont::abstract-object</feat>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
+ </or>
+ <feat name="type">ont::referential-sem</feat>
  </sem-feats>
- <concept name="ont::referential-sem">
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::compar" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::ground">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::abstract-object">
  <comment>
-  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+  &quot;abstract objects, mental constructions, with no physical realization&quot;
  </comment>
  <relation label="inherit">
-  ont::any-sem
+  ont::referential-sem
  </relation>
  <relation label="overlap">
-  wn::|entity%1:03:00::|
-  wn::|one%1:09:00::|
+  wn::|psychological_feature%1:03:00::|
+  wn::|abstraction%1:03:00::|
+  wn::|abstract_entity%1:03:00::|
  </relation>
  <sem-feats>
+  <relation label="inherit">
+   abstr-obj
+  </relation>
+  <feat name="type">ont::abstract-object</feat>
+ </sem-feats>
+ </concept>
+ <concept name="ont::position-reln">
+ <comment>
+  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
+ </comment>
+ <relation label="inherit">
+  ont::relation
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="scale">ont::time-measure-scale</feat>
+   </sem-feats>
+  </role-restr-map>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::directional-vert">
+ <comment>
+  &quot;FIGURE is related via a vertical orientation to the GROUND&quot;
+ </comment>
+ <relation label="inherit">
+  ont::oriented-loc-reln
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <or>
+    <concept name="phys-obj" />
+    <concept name="abstr-obj" />
+   </or>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::oriented-loc-reln">
+ <comment>
+  &quot;FIGURE is located by a directional relationship with the GROUND&quot;
+ </comment>
+ <relation label="inherit">
+  ont::position-as-point-reln
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::ground" optional="optional">
+   <sem-feats>
+    <or>
+     <concept name="phys-obj" />
+     <concept name="abstr-obj" />
+    </or>
+    <feat name="type">ont::time-measure-scale</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::ground" optional="optional">
   <or>
    <concept name="phys-obj" />
    <concept name="abstr-obj" />
-   <concept name="situation" />
   </or>
-  <feat name="type">ont::referential-sem</feat>
- </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::position-as-point-reln">
+ <comment>
+  &quot;locating an object (FIGURE) wrt a point-like object (GROUND)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::position-reln
+ </relation>
  </concept>
  <sem-frame>
  <role-restr-map roles="ont::ground" optional="optional">
   <sem-feats>
    <or>
     <concept name="phys-obj" />
-    <concept name="situation" />
     <concept name="abstr-obj" />
    </or>
-   <feat name="scale">ont::time-measure-scale</feat>
+   <feat name="type">ont::time-measure-scale</feat>
   </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::figure" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-  </or>
  </role-restr-map>
  </sem-frame>
  <concept name="ont::relation">
@@ -101,143 +192,52 @@
   <sem-feats>
    <or>
     <concept name="phys-obj" />
+    <concept name="situation" />
     <concept name="abstr-obj" />
    </or>
-   <feat name="type">ont::time-measure-scale</feat>
+   <feat name="scale">ont::time-measure-scale</feat>
   </sem-feats>
  </role-restr-map>
- </sem-frame>
- <concept name="ont::position-as-point-reln">
- <comment>
-  &quot;locating an object (FIGURE) wrt a point-like object (GROUND)&quot;
- </comment>
- <relation label="inherit">
-  ont::position-reln
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::ground" optional="optional">
+ <role-restr-map roles="ont::figure" optional="optional">
   <or>
    <concept name="phys-obj" />
+   <concept name="situation" />
    <concept name="abstr-obj" />
   </or>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::oriented-loc-reln">
+ <concept name="ont::referential-sem">
  <comment>
-  &quot;FIGURE is located by a directional relationship with the GROUND&quot;
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
  </comment>
  <relation label="inherit">
-  ont::position-as-point-reln
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="type">ont::time-measure-scale</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::directional-vert">
- <comment>
-  &quot;FIGURE is related via a vertical orientation to the GROUND&quot;
- </comment>
- <relation label="inherit">
-  ont::oriented-loc-reln
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::position-reln">
- <comment>
-  &quot;Spatial relations that locate one object (the figure) in terms of another object (the ground), which often is implicit&quot;
- </comment>
- <relation label="inherit">
-  ont::relation
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::ground" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="scale">ont::time-measure-scale</feat>
-   </sem-feats>
-  </role-restr-map>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <or>
-    <concept name="phys-obj" />
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::abstract-object">
- <comment>
-  &quot;abstract objects, mental constructions, with no physical realization&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
+  ont::any-sem
  </relation>
  <relation label="overlap">
-  wn::|psychological_feature%1:03:00::|
-  wn::|abstraction%1:03:00::|
-  wn::|abstract_entity%1:03:00::|
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
  </relation>
  <sem-feats>
-  <relation label="inherit">
-   abstr-obj
-  </relation>
-  <feat name="type">ont::abstract-object</feat>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::compar" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::ground">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
+ <sem-feats>
  <relation label="inherit">
-  ont::root
+  abstr-obj
  </relation>
- </concept>
- <sem-feats>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
- </or>
- <feat name="type">ont::referential-sem</feat>
+ <feat name="type">ont::abstract-object</feat>
  </sem-feats>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
  <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
  <sense>
  <morph>
   <pos pos="adv" />

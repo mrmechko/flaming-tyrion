@@ -20,46 +20,136 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <or>
  <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
  </or>
- <concept name="ont::root" />
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="tangible">+</feat>
- <feat name="type">ont::phys-object</feat>
+ <feat name="trajectory">+</feat>
+ <feat name="object-function">representation</feat>
+ <feat name="intentional">-</feat>
+ <feat name="origin">artifact</feat>
+ <feat name="form">object</feat>
+ <feat name="type">ont::phys-representation</feat>
  </sem-feats>
- <concept name="ont::referential-sem">
+ <concept name="ont::phys-object">
  <comment>
-  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+  &quot;All physical objects: things that have substance&quot;
  </comment>
  <relation label="inherit">
-  ont::any-sem
+  ont::referential-sem
  </relation>
  <relation label="overlap">
-  wn::|entity%1:03:00::|
-  wn::|one%1:09:00::|
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
  </relation>
  <sem-feats>
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
-  <feat name="type">ont::referential-sem</feat>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
  </sem-feats>
  </concept>
- <sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::info-medium">
+ <comment>
+  &quot;a medium to transmit or store information&quot;
+ </comment>
  <relation label="inherit">
-  phys-obj
+  ont::phys-representation
  </relation>
- <feat name="information">data</feat>
- <feat name="type">ont::info-medium</feat>
+ <relation label="overlap">
+  wn::|speech%1:10:01::|
+  wn::|written_communication%1:10:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="information">data</feat>
+  <feat name="type">ont::info-medium</feat>
  </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <feat name="information">information-content</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::publication">
+ <comment>
+  &quot;printed material such as a book&quot;
+ </comment>
+ <relation label="inherit">
+  ont::document
+ </relation>
+ <relation label="overlap">
+  wn::|publication%1:10:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <sem-feats>
+    <feat name="information">information-content</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <concept name="ont::document">
+ <comment>
+  &quot;a report or other types of documents to record information&quot;
+ </comment>
+ <relation label="inherit">
+  ont::info-holder
+ </relation>
+ <relation label="overlap">
+  wn::|document%1:06:00::|
+  wn::|document%1:21:00::|
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <sem-feats>
+   <feat name="information">information-content</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::info-holder">
+ <comment>
+  &quot;a method/manner or device to store information, may also be used for sharing information&quot;
+ </comment>
+ <relation label="inherit">
+  ont::info-medium
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
  <concept name="ont::phys-representation">
  <comment>
   &quot;anything used to encode/store or share information physically, e.g., it could be a device to store information, or a physical representation to enable encoding information etc.&quot;
@@ -88,136 +178,46 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::info-holder">
- <comment>
-  &quot;a method/manner or device to store information, may also be used for sharing information&quot;
- </comment>
- <relation label="inherit">
-  ont::info-medium
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <feat name="information">information-content</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::document">
- <comment>
-  &quot;a report or other types of documents to record information&quot;
- </comment>
- <relation label="inherit">
-  ont::info-holder
- </relation>
- <relation label="overlap">
-  wn::|document%1:06:00::|
-  wn::|document%1:21:00::|
- </relation>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <sem-feats>
-   <feat name="information">information-content</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::publication">
- <comment>
-  &quot;printed material such as a book&quot;
- </comment>
- <relation label="inherit">
-  ont::document
- </relation>
- <relation label="overlap">
-  wn::|publication%1:10:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <sem-feats>
-    <feat name="information">information-content</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <concept name="ont::info-medium">
- <comment>
-  &quot;a medium to transmit or store information&quot;
- </comment>
- <relation label="inherit">
-  ont::phys-representation
- </relation>
- <relation label="overlap">
-  wn::|speech%1:10:01::|
-  wn::|written_communication%1:10:00::|
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="information">data</feat>
-  <feat name="type">ont::info-medium</feat>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="information">data</feat>
+ <feat name="type">ont::info-medium</feat>
  </sem-feats>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::phys-object">
+ <concept name="ont::referential-sem">
  <comment>
-  &quot;All physical objects: things that have substance&quot;
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
  </comment>
  <relation label="inherit">
-  ont::referential-sem
+  ont::any-sem
  </relation>
  <relation label="overlap">
-  wn::|object%1:03:00::|
-  wn::|physical_object%1:03:00::|
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
  </relation>
  <sem-feats>
-  <relation label="inherit">
-   phys-obj
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::phys-object</feat>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="trajectory">+</feat>
- <feat name="object-function">representation</feat>
- <feat name="intentional">-</feat>
- <feat name="origin">artifact</feat>
- <feat name="form">object</feat>
- <feat name="type">ont::phys-representation</feat>
+ <feat name="tangible">+</feat>
+ <feat name="type">ont::phys-object</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <sem-feats>
+ <concept name="ont::root" />
  <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
- </or>
- <feat name="type">ont::referential-sem</feat>
- </sem-feats>
  <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
+ </or>
  <sense>
  <morph>
   <pos pos="n" />

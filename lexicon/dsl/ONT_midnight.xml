@@ -10,25 +10,49 @@
   wn::|midnight%1:28:00::|
  </relation>
  </concept>
- <concept name="time" />
- <concept name="ont::root" />
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-time-object">
- <relation label="inherit">
-  ont::any-sem
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="scale">ont::time-loc-scale</feat>
-  <feat name="time-function">any-time-function</feat>
-  <feat name="type">ont::any-time-object</feat>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="scale">ont::time-loc-scale</feat>
+ <feat name="time-function">any-time-function</feat>
+ <feat name="type">ont::any-time-object</feat>
  </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <concept name="ont::time-object">
+ <comment>
+  &quot;objects that refer to temporal locations in some way&quot;
+ </comment>
+ <relation label="inherit">
+  ont::any-time-object
+ </relation>
+ <relation label="overlap">
+  wn::|time%1:03:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-feats>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="time-function">day-period</feat>
+ <feat name="type">ont::day-stage</feat>
+ </sem-feats>
+ <concept name="ont::date-object-in">
+ <comment>
+  &quot;temporal objects that use IN - e.g., in June&quot;
+ </comment>
+ <relation label="inherit">
+  ont::time-object
+ </relation>
  </concept>
  <concept name="ont::day-stage">
  <comment>
@@ -48,50 +72,26 @@
   <feat name="type">ont::day-stage</feat>
  </sem-feats>
  </concept>
- <concept name="ont::date-object-in">
- <comment>
-  &quot;temporal objects that use IN - e.g., in June&quot;
- </comment>
+ <concept name="ont::any-time-object">
  <relation label="inherit">
-  ont::time-object
+  ont::any-sem
  </relation>
- </concept>
  <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="time-function">day-period</feat>
- <feat name="type">ont::day-stage</feat>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="scale">ont::time-loc-scale</feat>
+  <feat name="time-function">any-time-function</feat>
+  <feat name="type">ont::any-time-object</feat>
  </sem-feats>
- <concept name="ont::time-object">
- <comment>
-  &quot;objects that refer to temporal locations in some way&quot;
- </comment>
- <relation label="inherit">
-  ont::any-time-object
- </relation>
- <relation label="overlap">
-  wn::|time%1:03:00::|
- </relation>
+ </concept>
  <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
  </sem-frame>
- </concept>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  time
- </relation>
- <feat name="scale">ont::time-loc-scale</feat>
- <feat name="time-function">any-time-function</feat>
- <feat name="type">ont::any-time-object</feat>
- </sem-feats>
+ <concept name="ont::root" />
+ <concept name="time" />
  <sense>
  <morph>
   <pos pos="pro" />

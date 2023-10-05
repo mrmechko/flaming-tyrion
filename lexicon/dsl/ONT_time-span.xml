@@ -12,39 +12,19 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="time" />
- <concept name="ont::root" />
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-time-object">
- <relation label="inherit">
-  ont::any-sem
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="scale">ont::time-loc-scale</feat>
-  <feat name="time-function">any-time-function</feat>
-  <feat name="type">ont::any-time-object</feat>
- </sem-feats>
- </concept>
- <concept name="ont::date-object-in">
- <comment>
-  &quot;temporal objects that use IN - e.g., in June&quot;
- </comment>
  <relation label="inherit">
-  ont::time-object
+  time
+ </relation>
+ <feat name="scale">ont::time-loc-scale</feat>
+ <feat name="time-function">any-time-function</feat>
+ <feat name="type">ont::any-time-object</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
  </relation>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <concept name="ont::time-object">
  <comment>
   &quot;objects that refer to temporal locations in some way&quot;
@@ -61,19 +41,39 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::any-sem">
+ <concept name="ont::date-object-in">
+ <comment>
+  &quot;temporal objects that use IN - e.g., in June&quot;
+ </comment>
  <relation label="inherit">
-  ont::root
+  ont::time-object
  </relation>
  </concept>
- <sem-feats>
+ <sem-frame>
+ <role-restr-map roles="ont::figure">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::any-time-object">
  <relation label="inherit">
-  time
+  ont::any-sem
  </relation>
- <feat name="scale">ont::time-loc-scale</feat>
- <feat name="time-function">any-time-function</feat>
- <feat name="type">ont::any-time-object</feat>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="scale">ont::time-loc-scale</feat>
+  <feat name="time-function">any-time-function</feat>
+  <feat name="type">ont::any-time-object</feat>
  </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::root" />
+ <concept name="time" />
  <sense>
  <morph>
   <pos pos="n" />

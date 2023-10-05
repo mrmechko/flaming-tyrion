@@ -18,67 +18,42 @@
   <feat name="type">ont::trip</feat>
  </sem-feats>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
  <concept name="situation" />
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
  </or>
- <concept name="ont::root" />
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="tangible">+</feat>
- <feat name="container">-</feat>
- <feat name="intentional">-</feat>
- <feat name="type">ont::situation-root</feat>
+ <feat name="type">ont::referential-sem</feat>
  </sem-feats>
- <concept name="ont::referential-sem">
- <comment>
-  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
- </comment>
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::any-sem
+  ont::root
  </relation>
- <relation label="overlap">
-  wn::|entity%1:03:00::|
-  wn::|one%1:09:00::|
- </relation>
- <sem-feats>
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
-  <feat name="type">ont::referential-sem</feat>
- </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">dynamic</feat>
- <feat name="type">ont::event-defined-by-activity</feat>
+ <feat name="intentional">-</feat>
+ <feat name="type">ont::event-type</feat>
  </sem-feats>
- <concept name="ont::event-type">
+ <concept name="ont::situation-root">
  <comment>
-  &quot;classification of situated events based on social or other criteria, and typically realized by nominals, i.e.,
-        they are not nominalization of verbal events&quot;
+  &quot;root for all events, whether verbal or nominal&quot;
  </comment>
  <relation label="inherit">
-  ont::situation-root
+  ont::referential-sem
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
+  <feat name="tangible">+</feat>
+  <feat name="container">-</feat>
   <feat name="intentional">-</feat>
-  <feat name="type">ont::event-type</feat>
+  <feat name="type">ont::situation-root</feat>
  </sem-feats>
  </concept>
  <sem-feats>
@@ -86,8 +61,23 @@
   situation
  </relation>
  <feat name="trajectory">+</feat>
- <feat name="type">ont::travel</feat>
+ <feat name="type">ont::trip</feat>
  </sem-feats>
+ <concept name="ont::travel">
+ <relation label="inherit">
+  ont::event-defined-by-activity
+ </relation>
+ <relation label="overlap">
+  wn::|travel%1:04:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">+</feat>
+  <feat name="type">ont::travel</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::event-defined-by-activity">
  <relation label="inherit">
   ont::event-type
@@ -115,61 +105,71 @@
   situation
  </relation>
  <feat name="trajectory">+</feat>
- <feat name="type">ont::trip</feat>
+ <feat name="type">ont::travel</feat>
  </sem-feats>
- <concept name="ont::travel">
- <relation label="inherit">
-  ont::event-defined-by-activity
- </relation>
- <relation label="overlap">
-  wn::|travel%1:04:00::|
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="trajectory">+</feat>
-  <feat name="type">ont::travel</feat>
- </sem-feats>
- </concept>
- <concept name="ont::situation-root">
+ <concept name="ont::event-type">
  <comment>
-  &quot;root for all events, whether verbal or nominal&quot;
+  &quot;classification of situated events based on social or other criteria, and typically realized by nominals, i.e.,
+        they are not nominalization of verbal events&quot;
  </comment>
  <relation label="inherit">
-  ont::referential-sem
+  ont::situation-root
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="tangible">+</feat>
-  <feat name="container">-</feat>
   <feat name="intentional">-</feat>
-  <feat name="type">ont::situation-root</feat>
+  <feat name="type">ont::event-type</feat>
  </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="intentional">-</feat>
- <feat name="type">ont::event-type</feat>
+ <feat name="aspect">dynamic</feat>
+ <feat name="type">ont::event-defined-by-activity</feat>
  </sem-feats>
- <concept name="ont::any-sem">
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
  <relation label="inherit">
-  ont::root
+  ont::any-sem
  </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
- </or>
- <feat name="type">ont::referential-sem</feat>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="container">-</feat>
+ <feat name="intentional">-</feat>
+ <feat name="type">ont::situation-root</feat>
  </sem-feats>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
  <concept name="situation" />
+ </or>
  <concept name="ont::jaunt">
  <relation label="inherit">
   ont::trip

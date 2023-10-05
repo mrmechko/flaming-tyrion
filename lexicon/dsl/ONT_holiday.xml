@@ -13,45 +13,17 @@
   wn::|leisure%1:28:00::|
  </relation>
  </concept>
- <concept name="time" />
- <concept name="ont::root" />
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-time-object">
- <relation label="inherit">
-  ont::any-sem
- </relation>
  <sem-feats>
-  <relation label="inherit">
-   time
-  </relation>
-  <feat name="scale">ont::time-loc-scale</feat>
-  <feat name="time-function">any-time-function</feat>
-  <feat name="type">ont::any-time-object</feat>
+ <relation label="inherit">
+  time
+ </relation>
+ <feat name="scale">ont::time-loc-scale</feat>
+ <feat name="time-function">any-time-function</feat>
+ <feat name="type">ont::any-time-object</feat>
  </sem-feats>
- </concept>
- <concept name="ont::recurring-event">
- <comment>
-  &quot;events that recur every year (or some time interval)&quot;
- </comment>
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::date-object-on
- </relation>
- <relation label="overlap">
-  wn::|day%1:28:01::|
-  wn::|season%1:28:01::|
-  wn::|season%1:28:02::|
- </relation>
- </concept>
- <concept name="ont::date-object-on">
- <comment>
-  &quot;date objects that use ON - e.g., on Monday, on my birthday&quot;
- </comment>
- <relation label="inherit">
-  ont::time-object
+  ont::root
  </relation>
  </concept>
  <concept name="ont::time-object">
@@ -70,19 +42,47 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::any-sem">
+ <concept name="ont::date-object-on">
+ <comment>
+  &quot;date objects that use ON - e.g., on Monday, on my birthday&quot;
+ </comment>
  <relation label="inherit">
-  ont::root
+  ont::time-object
  </relation>
  </concept>
- <sem-feats>
+ <concept name="ont::recurring-event">
+ <comment>
+  &quot;events that recur every year (or some time interval)&quot;
+ </comment>
  <relation label="inherit">
-  time
+  ont::date-object-on
  </relation>
- <feat name="scale">ont::time-loc-scale</feat>
- <feat name="time-function">any-time-function</feat>
- <feat name="type">ont::any-time-object</feat>
+ <relation label="overlap">
+  wn::|day%1:28:01::|
+  wn::|season%1:28:01::|
+  wn::|season%1:28:02::|
+ </relation>
+ </concept>
+ <concept name="ont::any-time-object">
+ <relation label="inherit">
+  ont::any-sem
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   time
+  </relation>
+  <feat name="scale">ont::time-loc-scale</feat>
+  <feat name="time-function">any-time-function</feat>
+  <feat name="type">ont::any-time-object</feat>
  </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::root" />
+ <concept name="time" />
  <sense>
  <morph>
   <pos pos="name" />

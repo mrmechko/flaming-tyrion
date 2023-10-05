@@ -7,31 +7,24 @@
   ont::part
  </relation>
  </concept>
+ <sem-feats>
  <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
- <concept name="situation" />
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
  </or>
- <concept name="ont::root" />
- <concept name="ont::part">
- <comment>
-  &quot;Part is actually a conceptualization of things that fill the part-of role&quot;
- </comment>
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::referential-sem
+  ont::root
  </relation>
- <relation label="overlap">
-  wn::|part%1:24:00::|
-  wn::|part%1:09:00::|
-  wn::|part%1:17:00::|
-  wn::|part%1:21:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::figure" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
- </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::figure" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -52,24 +45,31 @@
   <feat name="type">ont::referential-sem</feat>
  </sem-feats>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::figure" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
+ <concept name="ont::part">
+ <comment>
+  &quot;Part is actually a conceptualization of things that fill the part-of role&quot;
+ </comment>
  <relation label="inherit">
-  ont::root
+  ont::referential-sem
  </relation>
+ <relation label="overlap">
+  wn::|part%1:24:00::|
+  wn::|part%1:09:00::|
+  wn::|part%1:17:00::|
+  wn::|part%1:21:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::figure" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+ </sem-frame>
  </concept>
- <sem-feats>
+ <concept name="ont::root" />
  <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
+ <concept name="situation" />
  </or>
- <feat name="type">ont::referential-sem</feat>
- </sem-feats>
  <sense>
  <morph>
   <pos pos="n" />

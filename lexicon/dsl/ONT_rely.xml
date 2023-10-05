@@ -50,76 +50,144 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
  <concept name="situation" />
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
  </or>
- <concept name="ont::root" />
+ <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
+ <concept name="ont::any-sem">
+ <relation label="inherit">
+  ont::root
+ </relation>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="tangible">+</feat>
- <feat name="container">-</feat>
- <feat name="intentional">-</feat>
- <feat name="type">ont::situation-root</feat>
+ <feat name="aspect">static</feat>
+ <feat name="type">ont::event-of-state</feat>
  </sem-feats>
- <concept name="ont::referential-sem">
+ <concept name="ont::situation-root">
  <comment>
-  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+  &quot;root for all events, whether verbal or nominal&quot;
  </comment>
  <relation label="inherit">
-  ont::any-sem
- </relation>
- <relation label="overlap">
-  wn::|entity%1:03:00::|
-  wn::|one%1:09:00::|
- </relation>
- <sem-feats>
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
-  <feat name="type">ont::referential-sem</feat>
- </sem-feats>
- </concept>
- <sem-frame>
- <role-restr-map roles="ont::experiencer" optional="optional">
-  <sem-feats>
-   <relation label="inherit">
-    phys-obj
-   </relation>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::event-of-state">
- <comment>
-  &quot;Events describing a state of affairs holding&quot;
- </comment>
- <relation label="inherit">
-  ont::situation-root
+  ont::referential-sem
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="aspect">static</feat>
-  <feat name="type">ont::event-of-state</feat>
+  <feat name="tangible">+</feat>
+  <feat name="container">-</feat>
+  <feat name="intentional">-</feat>
+  <feat name="type">ont::situation-root</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral1" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::neutral" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="trajectory">-</feat>
+ <feat name="cause">mental</feat>
+ <feat name="type">ont::awareness</feat>
+ </sem-feats>
+ <concept name="ont::event-of-experience">
+ <comment>
+  &quot;A stative event involving a sentient being in a mental state&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-state
+ </relation>
+ <relation label="overlap">
+  wn::|basic_cognitive_process%1:09:00::|
+ </relation>
+ <sem-frame>
+  <role-restr-map roles="ont::experiencer" optional="optional">
+   <sem-feats>
+    <relation label="inherit">
+     phys-obj
+    </relation>
+    <feat name="intentional">+</feat>
+   </sem-feats>
+  </role-restr-map>
+ </sem-frame>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::neutral1">
+  <sem-feats>
+   <or>
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="intentional">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="time-span">extended</feat>
+ <feat name="aspect">static</feat>
+ <feat name="type">ont::believe-source</feat>
+ </sem-feats>
+ <concept name="ont::awareness">
+ <comment>
+  &quot;a state in which an EXPERIENCER holds some attitude towards a proposition&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-experience
+ </relation>
+ <relation label="overlap">
+  wn::|attention%1:09:00::|
+  wn::|attention%1:09:01::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="trajectory">-</feat>
+  <feat name="cause">mental</feat>
+  <feat name="type">ont::awareness</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
+  <role-restr-map roles="ont::neutral1" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::neutral" optional="optional">
    <concept name="t" />
   </role-restr-map>
   <role-restr-map roles="ont::formal" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::neutral" optional="optional">
    <concept name="t" />
   </role-restr-map>
  </sem-frame>
@@ -178,148 +246,80 @@
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::awareness">
+ <concept name="ont::event-of-state">
  <comment>
-  &quot;a state in which an EXPERIENCER holds some attitude towards a proposition&quot;
+  &quot;Events describing a state of affairs holding&quot;
  </comment>
  <relation label="inherit">
-  ont::event-of-experience
- </relation>
- <relation label="overlap">
-  wn::|attention%1:09:00::|
-  wn::|attention%1:09:01::|
+  ont::situation-root
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="trajectory">-</feat>
-  <feat name="cause">mental</feat>
-  <feat name="type">ont::awareness</feat>
+  <feat name="aspect">static</feat>
+  <feat name="type">ont::event-of-state</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::neutral1" optional="optional">
+  <role-restr-map roles="ont::norole" optional="optional">
    <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::formal" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::neutral" optional="optional">
    <concept name="t" />
   </role-restr-map>
-  <role-restr-map roles="ont::formal" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="time-span">extended</feat>
- <feat name="aspect">static</feat>
- <feat name="type">ont::believe-source</feat>
- </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::neutral1">
+ <role-restr-map roles="ont::experiencer" optional="optional">
   <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
+   <relation label="inherit">
+    phys-obj
+   </relation>
    <feat name="intentional">+</feat>
   </sem-feats>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::event-of-experience">
+ <concept name="ont::referential-sem">
  <comment>
-  &quot;A stative event involving a sentient being in a mental state&quot;
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
  </comment>
  <relation label="inherit">
-  ont::event-of-state
+  ont::any-sem
  </relation>
  <relation label="overlap">
-  wn::|basic_cognitive_process%1:09:00::|
- </relation>
- <sem-frame>
-  <role-restr-map roles="ont::experiencer" optional="optional">
-   <sem-feats>
-    <relation label="inherit">
-     phys-obj
-    </relation>
-    <feat name="intentional">+</feat>
-   </sem-feats>
-  </role-restr-map>
- </sem-frame>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">mental</feat>
- <feat name="type">ont::awareness</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::neutral1" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-root">
- <comment>
-  &quot;root for all events, whether verbal or nominal&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
  </relation>
  <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="container">-</feat>
-  <feat name="intentional">-</feat>
-  <feat name="type">ont::situation-root</feat>
- </sem-feats>
- </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="aspect">static</feat>
- <feat name="type">ont::event-of-state</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::formal" optional="optional">
   <or>
-   <concept name="situation" />
+   <concept name="phys-obj" />
    <concept name="abstr-obj" />
+   <concept name="situation" />
   </or>
- </role-restr-map>
- <role-restr-map roles="ont::neutral" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- </sem-frame>
- <concept name="ont::any-sem">
- <relation label="inherit">
-  ont::root
- </relation>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
- </or>
- <feat name="type">ont::referential-sem</feat>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="container">-</feat>
+ <feat name="intentional">-</feat>
+ <feat name="type">ont::situation-root</feat>
  </sem-feats>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
  <concept name="situation" />
+ </or>
  <sense>
  <morph>
   <pos pos="v" />

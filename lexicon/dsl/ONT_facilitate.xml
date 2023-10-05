@@ -11,51 +11,30 @@
   wn::|smooth%2:40:00::|
  </relation>
  </concept>
- <or>
- <concept name="phys-obj" />
- <concept name="abstr-obj" />
  <concept name="situation" />
+ <sem-feats>
+ <or>
+  <concept name="phys-obj" />
+  <concept name="abstr-obj" />
+  <concept name="situation" />
  </or>
- <concept name="ont::root" />
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="tangible">+</feat>
- <feat name="container">-</feat>
- <feat name="intentional">-</feat>
- <feat name="type">ont::situation-root</feat>
+ <feat name="type">ont::referential-sem</feat>
  </sem-feats>
- <concept name="ont::referential-sem">
- <comment>
-  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
- </comment>
+ <concept name="ont::any-sem">
  <relation label="inherit">
-  ont::any-sem
+  ont::root
  </relation>
- <relation label="overlap">
-  wn::|entity%1:03:00::|
-  wn::|one%1:09:00::|
- </relation>
- <sem-feats>
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
-  <feat name="type">ont::referential-sem</feat>
- </sem-feats>
  </concept>
  <sem-frame>
+ <role-restr-map roles="ont::result" optional="optional">
+  <concept name="abstr-obj" />
+ </role-restr-map>
  <role-restr-map roles="ont::affected" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="tangible">+</feat>
-  </sem-feats>
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
  </role-restr-map>
  <role-restr-map roles="ont::agent" optional="optional">
   <or>
@@ -69,33 +48,62 @@
  <relation label="inherit">
   situation
  </relation>
- <feat name="cause">force</feat>
- <feat name="type">ont::event-of-action</feat>
+ <feat name="aspect">dynamic</feat>
+ <feat name="type">ont::event-of-change</feat>
  </sem-feats>
- <concept name="ont::event-of-change">
+ <concept name="ont::situation-root">
  <comment>
-  &quot;Events that involve change or force: should have an AGENT or AFFECTED role&quot;
+  &quot;root for all events, whether verbal or nominal&quot;
  </comment>
  <relation label="inherit">
-  ont::situation-root
+  ont::referential-sem
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="aspect">dynamic</feat>
-  <feat name="type">ont::event-of-change</feat>
+  <feat name="tangible">+</feat>
+  <feat name="container">-</feat>
+  <feat name="intentional">-</feat>
+  <feat name="type">ont::situation-root</feat>
+ </sem-feats>
+ </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::norole" optional="optional">
+  <concept name="t" />
+ </role-restr-map>
+ <role-restr-map roles="ont::agent">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <concept name="ont::event-of-action">
+ <comment>
+  &quot;events that involve :agent (whether intentional or not)&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-change
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="cause">force</feat>
+  <feat name="type">ont::event-of-action</feat>
  </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="abstr-obj" />
-  </role-restr-map>
   <role-restr-map roles="ont::affected" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
+   <sem-feats>
+    <or>
+     <concept name="situation" />
+     <concept name="abstr-obj" />
+     <concept name="phys-obj" />
+    </or>
+    <feat name="tangible">+</feat>
+   </sem-feats>
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
    <or>
@@ -106,15 +114,56 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <concept name="ont::enable">
+ <sem-frame>
+ <role-restr-map roles="ont::formal" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+   </or>
+   <feat name="type">
+   <or>
+    ont::situation-root
+    ont::property-val
+   </or>
+   </feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
+ <sem-feats>
  <relation label="inherit">
-  ont::cause-effect
+  situation
  </relation>
- <relation label="overlap">
-  wn::|enable%2:30:00::|
+ <feat name="trajectory">-</feat>
+ <feat name="cause">agentive</feat>
+ <feat name="type">ont::cause-effect</feat>
+ </sem-feats>
+ <concept name="ont::acting">
+ <comment>
+  &quot;abstract event of doing something: behave, activity, ...&quot;
+ </comment>
+ <relation label="inherit">
+  ont::event-of-action
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::affected" optional="optional">
+  <role-restr-map roles="ont::norole" optional="optional">
+   <concept name="t" />
+  </role-restr-map>
+  <role-restr-map roles="ont::agent">
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
@@ -123,6 +172,15 @@
   </role-restr-map>
  </sem-frame>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <concept name="ont::cause-effect">
  <comment>
   &quot;an AGENT causes some event to occur or proposition to become true. Usually the verbs that fall under this category are very general causal verbs that take other events as their arguments and are positive causes- i.e., events are caused to happen as opposed to negative causes as in an event is prevented.&quot;
@@ -176,27 +234,15 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::acting">
- <comment>
-  &quot;abstract event of doing something: behave, activity, ...&quot;
- </comment>
+ <concept name="ont::enable">
  <relation label="inherit">
-  ont::event-of-action
+  ont::cause-effect
+ </relation>
+ <relation label="overlap">
+  wn::|enable%2:30:00::|
  </relation>
  <sem-frame>
-  <role-restr-map roles="ont::norole" optional="optional">
-   <concept name="t" />
-  </role-restr-map>
-  <role-restr-map roles="ont::agent">
+  <role-restr-map roles="ont::affected" optional="optional">
    <or>
     <concept name="phys-obj" />
     <concept name="abstr-obj" />
@@ -205,68 +251,30 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-feats>
- <relation label="inherit">
-  situation
- </relation>
- <feat name="trajectory">-</feat>
- <feat name="cause">agentive</feat>
- <feat name="type">ont::cause-effect</feat>
- </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::formal" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="type">
-   <or>
-    ont::situation-root
-    ont::property-val
-   </or>
-   </feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::event-of-action">
+ <concept name="ont::event-of-change">
  <comment>
-  &quot;events that involve :agent (whether intentional or not)&quot;
+  &quot;Events that involve change or force: should have an AGENT or AFFECTED role&quot;
  </comment>
  <relation label="inherit">
-  ont::event-of-change
+  ont::situation-root
  </relation>
  <sem-feats>
   <relation label="inherit">
    situation
   </relation>
-  <feat name="cause">force</feat>
-  <feat name="type">ont::event-of-action</feat>
+  <feat name="aspect">dynamic</feat>
+  <feat name="type">ont::event-of-change</feat>
  </sem-feats>
  <sem-frame>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="abstr-obj" />
+  </role-restr-map>
   <role-restr-map roles="ont::affected" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="situation" />
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="tangible">+</feat>
-   </sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
    <or>
@@ -277,52 +285,23 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::norole" optional="optional">
-  <concept name="t" />
- </role-restr-map>
- <role-restr-map roles="ont::agent">
-  <or>
-   <concept name="phys-obj" />
-   <concept name="abstr-obj" />
-   <concept name="situation" />
-  </or>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::situation-root">
- <comment>
-  &quot;root for all events, whether verbal or nominal&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="tangible">+</feat>
-  <feat name="container">-</feat>
-  <feat name="intentional">-</feat>
-  <feat name="type">ont::situation-root</feat>
- </sem-feats>
- </concept>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="aspect">dynamic</feat>
- <feat name="type">ont::event-of-change</feat>
+ <feat name="cause">force</feat>
+ <feat name="type">ont::event-of-action</feat>
  </sem-feats>
  <sem-frame>
- <role-restr-map roles="ont::result" optional="optional">
-  <concept name="abstr-obj" />
- </role-restr-map>
  <role-restr-map roles="ont::affected" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
  </role-restr-map>
  <role-restr-map roles="ont::agent" optional="optional">
   <or>
@@ -332,20 +311,41 @@
   </or>
  </role-restr-map>
  </sem-frame>
- <concept name="ont::any-sem">
+ <concept name="ont::referential-sem">
+ <comment>
+  &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
+ </comment>
  <relation label="inherit">
-  ont::root
+  ont::any-sem
  </relation>
+ <relation label="overlap">
+  wn::|entity%1:03:00::|
+  wn::|one%1:09:00::|
+ </relation>
+ <sem-feats>
+  <or>
+   <concept name="phys-obj" />
+   <concept name="abstr-obj" />
+   <concept name="situation" />
+  </or>
+  <feat name="type">ont::referential-sem</feat>
+ </sem-feats>
  </concept>
  <sem-feats>
- <or>
-  <concept name="phys-obj" />
-  <concept name="abstr-obj" />
-  <concept name="situation" />
- </or>
- <feat name="type">ont::referential-sem</feat>
+ <relation label="inherit">
+  situation
+ </relation>
+ <feat name="tangible">+</feat>
+ <feat name="container">-</feat>
+ <feat name="intentional">-</feat>
+ <feat name="type">ont::situation-root</feat>
  </sem-feats>
+ <concept name="ont::root" />
+ <or>
+ <concept name="phys-obj" />
+ <concept name="abstr-obj" />
  <concept name="situation" />
+ </or>
  <sense>
  <morph>
   <pos pos="v" />
