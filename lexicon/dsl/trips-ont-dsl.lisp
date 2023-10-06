@@ -3395,7 +3395,10 @@
      (SEM-FEATS
        (INHERIT
          PHYS-OBJ)
-       (TYPE ONT::LOC-WRT-ORIENTATION))
+       (TYPE
+        (OR
+          ONT::LOC-WRT-ORIENTATION
+          ONT::CARDINAL-POINT)))
      OPTIONAL)))
 
 (CONCEPT
