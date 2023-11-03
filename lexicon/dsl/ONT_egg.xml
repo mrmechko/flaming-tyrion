@@ -9,6 +9,12 @@
  <relation label="overlap">
   wn::|egg%1:05:00::|
  </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="type">ont::egg</feat>
+ </sem-feats>
  </concept>
  <concept name="phys-obj" />
  <sem-feats>
@@ -24,26 +30,47 @@
   ont::root
  </relation>
  </concept>
- <concept name="ont::organism">
+ <sem-feats>
  <relation label="inherit">
-  ont::natural-object
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="spatial-abstraction">
+ <or>
+  spatial-point
+  spatial-region
+ </or>
+ </feat>
+ <feat name="origin">natural</feat>
+ <feat name="type">ont::natural-object</feat>
+ </sem-feats>
+ <concept name="ont::phys-object">
+ <comment>
+  &quot;All physical objects: things that have substance&quot;
+ </comment>
+ <relation label="inherit">
+  ont::referential-sem
  </relation>
  <relation label="overlap">
-  wn::|organism%1:03:00::|
-  wn::|being%1:03:00::|
-  wn::|life%1:19:00::|
-  wn::|life%1:26:00::|
-  wn::|life%1:03:00::|
+  wn::|object%1:03:00::|
+  wn::|physical_object%1:03:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="container">+</feat>
-  <feat name="origin">living</feat>
-  <feat name="type">ont::organism</feat>
+  <feat name="tangible">+</feat>
+  <feat name="type">ont::phys-object</feat>
  </sem-feats>
  </concept>
+ <sem-feats>
+ <relation label="inherit">
+  phys-obj
+ </relation>
+ <feat name="container">+</feat>
+ <feat name="origin">living</feat>
+ <feat name="type">ont::organism</feat>
+ </sem-feats>
  <concept name="ont::natural-object">
  <relation label="inherit">
   ont::phys-object
@@ -72,46 +99,31 @@
   <feat name="type">ont::natural-object</feat>
  </sem-feats>
  </concept>
- <sem-feats>
+ <concept name="ont::organism">
  <relation label="inherit">
-  phys-obj
- </relation>
- <feat name="container">+</feat>
- <feat name="origin">living</feat>
- <feat name="type">ont::organism</feat>
- </sem-feats>
- <concept name="ont::phys-object">
- <comment>
-  &quot;All physical objects: things that have substance&quot;
- </comment>
- <relation label="inherit">
-  ont::referential-sem
+  ont::natural-object
  </relation>
  <relation label="overlap">
-  wn::|object%1:03:00::|
-  wn::|physical_object%1:03:00::|
+  wn::|organism%1:03:00::|
+  wn::|being%1:03:00::|
+  wn::|life%1:19:00::|
+  wn::|life%1:26:00::|
+  wn::|life%1:03:00::|
  </relation>
  <sem-feats>
   <relation label="inherit">
    phys-obj
   </relation>
-  <feat name="tangible">+</feat>
-  <feat name="type">ont::phys-object</feat>
+  <feat name="container">+</feat>
+  <feat name="origin">living</feat>
+  <feat name="type">ont::organism</feat>
  </sem-feats>
  </concept>
  <sem-feats>
  <relation label="inherit">
   phys-obj
  </relation>
- <feat name="container">+</feat>
- <feat name="spatial-abstraction">
- <or>
-  spatial-point
-  spatial-region
- </or>
- </feat>
- <feat name="origin">natural</feat>
- <feat name="type">ont::natural-object</feat>
+ <feat name="type">ont::egg</feat>
  </sem-feats>
  <concept name="ont::referential-sem">
  <comment>

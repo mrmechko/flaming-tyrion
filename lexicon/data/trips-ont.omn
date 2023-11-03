@@ -2596,6 +2596,7 @@ Class: molecular-site
 # ONT type ont::egg
 Class: egg
   SubClassOf: organism
+  SubClassOf: (FLT_phys-obj)
 
 # ONT type ont::microorganism
 Class: microorganism
@@ -4544,6 +4545,7 @@ Class: emu
 # ONT type ont::poultry
 Class: poultry
   SubClassOf: nonhuman-animal
+  SubClassOf: (FLT_phys-obj and F_object-function some V_comestible)
 
 # ONT type ont::chicken
 Class: chicken
@@ -5453,7 +5455,7 @@ Class: have
   SubClassOf: event-of-state
   SubClassOf: (FLT_situation and F_aspect some V_static and F_time-span some V_extended and F_trajectory some V_-)
   SubClassOf: _neutral only ((FLT_phys-obj or FLT_abstr-obj or FLT_situation) and F_tangible some V_+) and _neutral some owl:Thing
-  SubClassOf: _neutral1 only ((FLT_phys-obj or FLT_abstr-obj) and F_tangible some V_+) and _neutral1 some owl:Thing
+  SubClassOf: _neutral1 only ((FLT_phys-obj or FLT_abstr-obj) and F_tangible some V_+ and F_object-function some (not V_comestible)) and _neutral1 some owl:Thing
 
 # ONT type ont::possess
 Class: possess

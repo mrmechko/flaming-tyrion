@@ -16165,7 +16165,11 @@
   (INHERIT
     ONT::ORGANISM)
   (OVERLAP
-    WN::|egg%1:05:00::|))
+    WN::|egg%1:05:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (TYPE ONT::EGG)))
 
 (CONCEPT
   ONT::ELECTRIC-MEASURE-SCALE
@@ -21985,6 +21989,7 @@
            PHYS-OBJ)
          (CONCEPT
            ABSTR-OBJ))
+       (OBJECT-FUNCTION COMESTIBLE)
        (TANGIBLE +))
      OPTIONAL)
     (ONT::NEUTRAL
@@ -36535,7 +36540,12 @@
   (INHERIT
     ONT::NONHUMAN-ANIMAL)
   (OVERLAP
-    WN::|bird%1:13:00::|))
+    WN::|bird%1:13:00::|)
+  (SEM-FEATS
+    (INHERIT
+      PHYS-OBJ)
+    (OBJECT-FUNCTION COMESTIBLE)
+    (TYPE ONT::POULTRY)))
 
 (CONCEPT
   ONT::POVERTY-SCALE
