@@ -45606,7 +45606,8 @@
     WN::|stay%2:38:01::|
     WN::|stay_in_place%2:38:00::|
     WN::|live%2:42:08::|
-    WN::|arrest%1:26:00::|)
+    WN::|arrest%1:26:00::|
+    WN::|board%2:34:00::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
