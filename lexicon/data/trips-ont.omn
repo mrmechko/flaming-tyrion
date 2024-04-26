@@ -3338,6 +3338,11 @@ Class: vehicle
   SubClassOf: manufactured-object
   SubClassOf: (FLT_phys-obj and F_object-function some V_vehicle and F_mobility some V_self-moving and F_trajectory some V_+ and F_container some (V_+ or V_-))
 
+# ONT type ont::water-vehicle
+Class: water-vehicle
+  SubClassOf: vehicle
+  SubClassOf: (FLT_phys-obj and F_mobility some V_water-movable and F_form some V_enclosure and F_spatial-abstraction some V_spatial-point)
+
 # ONT type ont::air-vehicle
 Class: air-vehicle
   SubClassOf: vehicle
@@ -19574,7 +19579,7 @@ DisjointClasses: possessor-reln, person-defined-by-membership, identity-and-orig
 DisjointClasses: religious-identity, inhabitant, foreigner, regional-identity, person-of-nationality
 
 # children of ont::vehicle
-DisjointClasses: vehicle-part, land-vehicle, air-vehicle
+DisjointClasses: vehicle-part, land-vehicle, air-vehicle, water-vehicle
 
 # children of ont::truck
 DisjointClasses: fire-truck, tow-truck

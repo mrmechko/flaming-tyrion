@@ -131,6 +131,23 @@
  <concept name="abstr-obj" />
  <concept name="situation" />
  </or>
+ <concept name="ont::water-vehicle">
+ <relation label="inherit">
+  ont::vehicle
+ </relation>
+ <relation label="overlap">
+  wn::|vessel%1:06:00::|
+ </relation>
+ <sem-feats>
+  <relation label="inherit">
+   phys-obj
+  </relation>
+  <feat name="spatial-abstraction">spatial-point</feat>
+  <feat name="form">enclosure</feat>
+  <feat name="mobility">water-movable</feat>
+  <feat name="type">ont::water-vehicle</feat>
+ </sem-feats>
+ </concept>
  <concept name="ont::air-vehicle">
  <relation label="inherit">
   ont::vehicle
@@ -183,19 +200,6 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="boat" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <relation label="inherit">
-  ont::vehicle
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="metro" />
  </morph>
  <comment>
@@ -209,46 +213,10 @@
  <sense>
  <morph>
   <pos pos="n" />
-  <word first-word="ship" />
- </morph>
- <provenance name="TRIPS">
-  <provenance name="BASE500"/>
- </provenance>
- <relation label="inherit">
-  ont::vehicle
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
   <word first-word="subway" />
  </morph>
  <comment>
   &quot;PLOW-REQ&quot;
- </comment>
- <relation label="inherit">
-  ont::vehicle
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="train" />
- </morph>
- <relation label="inherit">
-  ont::vehicle
-  ont::count-pred-templ
- </relation>
- </sense>
- <sense>
- <morph>
-  <pos pos="n" />
-  <word first-word="tram" />
- </morph>
- <comment>
-  &quot;CALOY3-TEST-DATA&quot;
  </comment>
  <relation label="inherit">
   ont::vehicle
