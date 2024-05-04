@@ -4,7 +4,7 @@
  <provenance name="TRIPS"/>
  <concept name="ont::meet">
  <relation label="inherit">
-  ont::agent-interaction
+  ont::event-of-action
  </relation>
  <relation label="overlap">
   wn::|meet%2:41:00::|
@@ -82,43 +82,63 @@
   <feat name="type">ont::situation-root</feat>
  </sem-feats>
  </concept>
+ <sem-frame>
+ <role-restr-map roles="ont::affected" optional="optional">
+  <sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
+   <feat name="tangible">+</feat>
+  </sem-feats>
+ </role-restr-map>
+ <role-restr-map roles="ont::agent" optional="optional">
+  <or>
+   <concept name="situation" />
+   <concept name="abstr-obj" />
+   <concept name="phys-obj" />
+  </or>
+ </role-restr-map>
+ </sem-frame>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="trajectory">-</feat>
- <feat name="type">ont::meet</feat>
+ <feat name="cause">force</feat>
+ <feat name="type">ont::event-of-action</feat>
  </sem-feats>
- <concept name="ont::agent-interaction">
+ <concept name="ont::event-of-change">
  <comment>
-  &quot;events that involve the interaction of two or more agents&quot;
+  &quot;Events that involve change or force: should have an AGENT or AFFECTED role&quot;
  </comment>
  <relation label="inherit">
-  ont::event-of-action
+  ont::situation-root
  </relation>
- <relation label="overlap">
-  wn::|interaction%1:04:00::|
- </relation>
+ <sem-feats>
+  <relation label="inherit">
+   situation
+  </relation>
+  <feat name="aspect">dynamic</feat>
+  <feat name="type">ont::event-of-change</feat>
+ </sem-feats>
  <sem-frame>
-  <role-restr-map roles="ont::agent1" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="abstr-obj" />
-     <concept name="phys-obj" />
-    </or>
-    <feat name="tangible">+</feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+  <role-restr-map roles="ont::result" optional="optional">
+   <concept name="abstr-obj" />
+  </role-restr-map>
+  <role-restr-map roles="ont::affected" optional="optional">
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
   </role-restr-map>
   <role-restr-map roles="ont::agent" optional="optional">
-   <sem-feats>
-    <or>
-     <concept name="phys-obj" />
-     <concept name="abstr-obj" />
-    </or>
-    <feat name="tangible">+</feat>
-    <feat name="intentional">+</feat>
-   </sem-feats>
+   <or>
+    <concept name="situation" />
+    <concept name="abstr-obj" />
+    <concept name="phys-obj" />
+   </or>
   </role-restr-map>
  </sem-frame>
  </concept>
@@ -156,88 +176,13 @@
   </role-restr-map>
  </sem-frame>
  </concept>
- <sem-frame>
- <role-restr-map roles="ont::agent1" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="tangible">+</feat>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="phys-obj" />
-    <concept name="abstr-obj" />
-   </or>
-   <feat name="tangible">+</feat>
-   <feat name="intentional">+</feat>
-  </sem-feats>
- </role-restr-map>
- </sem-frame>
- <concept name="ont::event-of-change">
- <comment>
-  &quot;Events that involve change or force: should have an AGENT or AFFECTED role&quot;
- </comment>
- <relation label="inherit">
-  ont::situation-root
- </relation>
- <sem-feats>
-  <relation label="inherit">
-   situation
-  </relation>
-  <feat name="aspect">dynamic</feat>
-  <feat name="type">ont::event-of-change</feat>
- </sem-feats>
- <sem-frame>
-  <role-restr-map roles="ont::result" optional="optional">
-   <concept name="abstr-obj" />
-  </role-restr-map>
-  <role-restr-map roles="ont::affected" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
-  <role-restr-map roles="ont::agent" optional="optional">
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-  </role-restr-map>
- </sem-frame>
- </concept>
  <sem-feats>
  <relation label="inherit">
   situation
  </relation>
- <feat name="cause">force</feat>
- <feat name="type">ont::event-of-action</feat>
+ <feat name="trajectory">-</feat>
+ <feat name="type">ont::meet</feat>
  </sem-feats>
- <sem-frame>
- <role-restr-map roles="ont::affected" optional="optional">
-  <sem-feats>
-   <or>
-    <concept name="situation" />
-    <concept name="abstr-obj" />
-    <concept name="phys-obj" />
-   </or>
-   <feat name="tangible">+</feat>
-  </sem-feats>
- </role-restr-map>
- <role-restr-map roles="ont::agent" optional="optional">
-  <or>
-   <concept name="situation" />
-   <concept name="abstr-obj" />
-   <concept name="phys-obj" />
-  </or>
- </role-restr-map>
- </sem-frame>
  <concept name="ont::referential-sem">
  <comment>
   &quot;The root type for all things that can be referred to: abstract meaning for THIS and IT&quot;
@@ -374,6 +319,41 @@
  <relation label="overlap">
   vn::herd-47.5.2
  </relation>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="converge" />
+ </morph>
+ <relation label="inherit">
+  ont::meet
+ </relation>
+ <relation label="overlap">
+  vn::focus-87
+ </relation>
+ <syntax>
+  <template-call template="ont::agent-affected-xp-np-templ" xp="'(w::pp w::on)" />
+  <syn-sem>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::pp" head-word="w::on" sem-role="ont::affected"/>
+   <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
+  </syn-sem>
+ </syntax>
+ </sense>
+ <sense>
+ <morph>
+  <pos pos="v" />
+  <word first-word="converge" />
+ </morph>
+ <relation label="inherit">
+  ont::meet
+  ont::agent-np-plural-templ
+ </relation>
+ <semantics>
+  <sem-feats>
+   <feat name="time-span">atomic</feat>
+   <feat name="aspect">bounded</feat>
+  </sem-feats>
+ </semantics>
  </sense>
  <sense>
  <morph>
@@ -531,9 +511,9 @@
   ont::meet
  </relation>
  <syntax>
-  <template-call template="ont::agent-agent1-xp-np-templ" />
+  <template-call template="ont::agent-affected-xp-np-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>
@@ -559,9 +539,9 @@
   ont::meet
  </relation>
  <syntax>
-  <template-call template="ont::agent-agent1-xp-pp-templ" />
+  <template-call template="ont::agent-affected-xp-np-templ" />
   <syn-sem>
-   <syn-sem-map syn-arg="lcomp" syn-cat="deepsemlex::pp" head-word="w::with" sem-role="ont::agent1"/>
+   <syn-sem-map syn-arg="lobj" syn-cat="deepsemlex::np" sem-role="ont::affected"/>
    <syn-sem-map syn-arg="lsubj" syn-cat="deepsemlex::np" sem-role="ont::agent"/>
   </syn-sem>
  </syntax>

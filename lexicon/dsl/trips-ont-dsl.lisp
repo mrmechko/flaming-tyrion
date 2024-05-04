@@ -28274,7 +28274,7 @@
 (CONCEPT
   ONT::MEET
   (INHERIT
-    ONT::AGENT-INTERACTION)
+    ONT::EVENT-OF-ACTION)
   (OVERLAP
     WN::|meet%2:41:00::|
     WN::|gather%2:41:00::|
