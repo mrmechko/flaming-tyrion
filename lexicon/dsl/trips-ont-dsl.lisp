@@ -20936,11 +20936,13 @@
          ABSTR-OBJ))
      OPTIONAL)
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR

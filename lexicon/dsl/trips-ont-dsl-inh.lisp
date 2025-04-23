@@ -15184,11 +15184,13 @@
     (TYPE ONT::ASSIGN))
   (SEM-FRAME
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::RESULT
      (SEM-FEATS
        (INHERIT
@@ -45590,11 +45592,13 @@
           ONT::LOADED-CLAIM
           ONT::PHYS-OBJECT))))
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::RESULT
      (SEM-FEATS
        (INHERIT
@@ -45671,11 +45675,13 @@
        (TYPE ONT::ABSTRACT-OBJECT))
      OPTIONAL)
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -62651,11 +62657,13 @@
           ONT::LOADED-CLAIM
           ONT::PHYS-OBJECT))))
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     ((ONT::DONOR ONT::AGENT)
      (SEM-FEATS
        (OR
@@ -70617,11 +70625,13 @@
        (TYPE ONT::ABSTRACT-OBJECT))
      OPTIONAL)
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -71110,11 +71120,13 @@
        (TYPE ONT::ABSTRACT-OBJECT))
      OPTIONAL)
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -72061,11 +72073,13 @@
        (TYPE ONT::ABSTRACT-OBJECT))
      OPTIONAL)
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -89319,11 +89333,13 @@
        (TYPE ONT::ABSTRACT-OBJECT))
      OPTIONAL)
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -96147,11 +96163,13 @@
        (TYPE ONT::ABSTRACT-OBJECT))
      OPTIONAL)
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -98586,11 +98604,13 @@
        (TYPE ONT::ABSTRACT-OBJECT))
      OPTIONAL)
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -122146,11 +122166,13 @@
        (TYPE ONT::ABSTRACT-OBJECT))
      OPTIONAL)
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -183543,11 +183565,13 @@
           ONT::LOADED-CLAIM
           ONT::PHYS-OBJECT))))
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::RESULT
      (SEM-FEATS
        (INHERIT
@@ -209321,11 +209345,13 @@
           ONT::LOADED-CLAIM
           ONT::PHYS-OBJECT))))
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     ((ONT::DONOR ONT::AGENT)
      (SEM-FEATS
        (OR
@@ -209365,11 +209391,13 @@
     (TYPE ONT::SENDCOPY))
   (SEM-FRAME
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -227723,11 +227751,13 @@
     (TYPE ONT::SUBMIT))
   (SEM-FRAME
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::RESULT
      (SEM-FEATS
        (INHERIT
@@ -229691,11 +229721,13 @@
     WN::|supply%2:40:00::|)
   (SEM-FRAME
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::RESULT
      (SEM-FEATS
        (INHERIT
@@ -239954,11 +239986,13 @@
        (TYPE ONT::ABSTRACT-OBJECT))
      OPTIONAL)
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     (ONT::AFFECTED
      (SEM-FEATS
        (OR
@@ -240655,11 +240689,13 @@
           ONT::LOADED-CLAIM
           ONT::PHYS-OBJECT))))
     (ONT::AFFECTED-RESULT
-     (OR
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ)))
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ))
+       (TYPE ONT::MEASURE-SCALE)))
     ((ONT::DONOR ONT::AGENT)
      (SEM-FEATS
        (OR
