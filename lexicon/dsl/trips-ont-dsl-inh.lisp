@@ -48007,7 +48007,11 @@
     WN::|keep%2:41:05::|
     WN::|obey%2:41:00::|
     WN::|observe%2:41:02::|
-    WN::|observe%2:41:04::|)
+    WN::|observe%2:41:04::|
+    WN::|adhere%2:30:00::|
+    WN::|adhere%2:42:00::|
+    WN::|adhere%2:42:02::|
+    WN::|attachment%1:04:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -92502,18 +92506,22 @@
     (ASPECT F::UNBOUNDED)
     (TYPE ONT::FOLLOW-SOMETHING))
   (SEM-FRAME
-    (ONT::SOURCE
-     (CONCEPT
-       T)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           PHYS-OBJ))
+       (MOBILITY F::MOVABLE)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +))
      OPTIONAL)
-    (ONT::RESULT
+    (ONT::EXTENT
      (SEM-FEATS
        (INHERIT
          ABSTR-OBJ)
-       (TYPE
-        (OR
-          ONT::POSITION-RELN
-          ONT::PATH)))
+       (TYPE ONT::QUANTITY))
      OPTIONAL)
     (ONT::AGENT
      (SEM-FEATS
@@ -92527,27 +92535,29 @@
        (TANGIBLE +)
        (TYPE ONT::REFERENTIAL-SEM))
      OPTIONAL)
-    (ONT::EXTENT
+    (ONT::RESULT
      (SEM-FEATS
        (INHERIT
          ABSTR-OBJ)
-       (TYPE ONT::QUANTITY))
+       (TYPE
+        (OR
+          ONT::POSITION-RELN
+          ONT::PATH)))
      OPTIONAL)
-    (ONT::AFFECTED
+    (ONT::SOURCE
+     (CONCEPT
+       T)
+     OPTIONAL)
+    (ONT::NEUTRAL
      (SEM-FEATS
        (OR
+         (CONCEPT
+           SITUATION)
          (CONCEPT
            ABSTR-OBJ)
          (CONCEPT
            PHYS-OBJ))
-       (MOBILITY F::MOVABLE)
-       (TYPE ONT::REFERENTIAL-SEM)
-       (TANGIBLE +))
-     OPTIONAL)
-    (ONT::NEUTRAL
-     (CONCEPT
-       T)
-     OPTIONAL)))
+       (TYPE ONT::MENTAL-CONSTRUCTION)))))
 
 (CONCEPT
   ONT::FOLLOWER-OF-DOCTRINE-VAL
@@ -163211,6 +163221,38 @@
     ONT::CONTROL-MANAGE)
   (OVERLAP
     WN::|rear%2:41:00::|)
+  (SEM-FRAME
+    ((ONT::AGENT ONT::CAUSE)
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TANGIBLE +)
+       (TYPE ONT::REFERENTIAL-SEM)))
+    (ONT::FORMAL
+     (OR
+       (CONCEPT
+         SITUATION)
+       (CONCEPT
+         PHYS-OBJ)
+       (CONCEPT
+         ABSTR-OBJ))
+     OPTIONAL)
+    (ONT::RESULT
+     (CONCEPT
+       ABSTR-OBJ)
+     OPTIONAL)
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (TYPE ONT::REFERENTIAL-SEM)
+       (TANGIBLE +)
+       (ORIGIN F::LIVING))))
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -163226,43 +163268,7 @@
     (CONTAINER -)
     (TANGIBLE +)
     (ASPECT F::DYNAMIC)
-    (TYPE ONT::EVENT-OF-CAUSATION))
-  (SEM-FRAME
-    (ONT::RESULT
-     (CONCEPT
-       ABSTR-OBJ)
-     OPTIONAL)
-    (ONT::FORMAL
-     (OR
-       (CONCEPT
-         SITUATION)
-       (CONCEPT
-         PHYS-OBJ)
-       (CONCEPT
-         ABSTR-OBJ))
-     OPTIONAL)
-    ((ONT::AGENT ONT::CAUSE)
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           SITUATION))
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM)))
-    (ONT::AFFECTED
-     (SEM-FEATS
-       (OR
-         (CONCEPT
-           ABSTR-OBJ)
-         (CONCEPT
-           PHYS-OBJ)
-         (CONCEPT
-           SITUATION))
-       (TANGIBLE +)
-       (TYPE ONT::REFERENTIAL-SEM)))))
+    (TYPE ONT::EVENT-OF-CAUSATION)))
 
 (CONCEPT
   ONT::NUTRITIONAL-SUPPLEMENT

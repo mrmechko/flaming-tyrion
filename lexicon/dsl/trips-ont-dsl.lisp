@@ -10768,7 +10768,11 @@
     WN::|keep%2:41:05::|
     WN::|obey%2:41:00::|
     WN::|observe%2:41:02::|
-    WN::|observe%2:41:04::|)
+    WN::|observe%2:41:04::|
+    WN::|adhere%2:30:00::|
+    WN::|adhere%2:42:00::|
+    WN::|adhere%2:42:02::|
+    WN::|attachment%1:04:02::|)
   (SEM-FEATS
     (INHERIT
       SITUATION)
@@ -19608,7 +19612,18 @@
     (TRAJECTORY +)
     (CAUSE AGENTIVE)
     (ASPECT UNBOUNDED)
-    (TYPE ONT::FOLLOW-SOMETHING)))
+    (TYPE ONT::FOLLOW-SOMETHING))
+  (SEM-FRAME
+    (ONT::NEUTRAL
+     (SEM-FEATS
+       (OR
+         (CONCEPT
+           PHYS-OBJ)
+         (CONCEPT
+           ABSTR-OBJ)
+         (CONCEPT
+           SITUATION))
+       (TYPE ONT::MENTAL-CONSTRUCTION)))))
 
 (CONCEPT
   ONT::FOLLOWER-OF-DOCTRINE-VAL
@@ -32578,7 +32593,13 @@
   (INHERIT
     ONT::CONTROL-MANAGE)
   (OVERLAP
-    WN::|rear%2:41:00::|))
+    WN::|rear%2:41:00::|)
+  (SEM-FRAME
+    (ONT::AFFECTED
+     (SEM-FEATS
+       (INHERIT
+         PHYS-OBJ)
+       (ORIGIN LIVING)))))
 
 (CONCEPT
   ONT::NUTRITIONAL-SUPPLEMENT
